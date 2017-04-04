@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\usr\;CMake Files\..\..\..\usr\local\;CMake Files\..\..\..\usr\local\share\;CMake Files\..\..\..\usr\local\share\OpenCV\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/bruno/proy-grado/cmake-build-debug"/>
+				<Option working_dir="/home/bruno/proy-grado"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/bruno/proy-grado/cmake-build-debug"/>
+				<Option working_dir="/home/bruno/proy-grado"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/bruno/proy-grado/cmake-build-debug"/>
+				<Option working_dir="/home/bruno/proy-grado"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="proy_grado">
-				<Option output="/home/bruno/proy-grado/cmake-build-debug/proy_grado" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/bruno/proy-grado/cmake-build-debug"/>
+				<Option output="/home/bruno/proy-grado/proy_grado" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -55,15 +55,15 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 proy_grado"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 proy_grado"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="proy_grado/fast">
-				<Option output="/home/bruno/proy-grado/cmake-build-debug/proy_grado" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/bruno/proy-grado/cmake-build-debug"/>
+				<Option output="/home/bruno/proy-grado/proy_grado" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -79,10 +79,10 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 proy_grado/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 proy_grado/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
@@ -111,6 +111,12 @@
 			<Option target="proy_grado"/>
 		</Unit>
 		<Unit filename="/home/bruno/proy-grado/src/tracking/MultiTracker.h">
+			<Option target="proy_grado"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/src/tracking/Track.cpp">
+			<Option target="proy_grado"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/src/tracking/Track.h">
 			<Option target="proy_grado"/>
 		</Unit>
 		<Unit filename="/home/bruno/proy-grado/src/tracking/TrackingAlgorithm.h">
