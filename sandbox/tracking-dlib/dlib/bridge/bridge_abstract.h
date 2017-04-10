@@ -120,7 +120,7 @@ namespace dlib
 
                 Note also that this object contains a dlib::logger object
                 which will log various events taking place inside a bridge.
-                If you want to see these log messages then enable the logger
+                If you want to see these log protos then enable the logger
                 named "dlib.bridge".
 
             

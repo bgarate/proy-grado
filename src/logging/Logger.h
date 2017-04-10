@@ -18,16 +18,18 @@ public:
     enum class LogType { CRITICAL, ERROR, WARNING, INFO, DEBUG};
     void Log(std::string msg, LogType severity);
 
-    static void LogCritical(std::string msg);
-    static void LogError(std::string msg);
-    static void LogWarning(std::string msg);
-    static void LogInfo(std::string msg);
-    static void LogDebug(std::string msg);
+    static void logCritical(std::string msg);
+    static void logError(std::string msg);
+    static void logWarning(std::string msg);
+    static void logInfo(std::string msg);
+    static void logDebug(std::string msg);
 
+    void setSource(std::string source);
 
 private:
     std::shared_ptr<spdlog::logger> console;
-
+    std::string source;
+    void initConsole(std::string name);
 };
 
 

@@ -169,7 +169,7 @@ namespace dlib
               into a minimization problem.  Therefore, the values of model() and its derivative
               reported to the stopping strategy will be negated.  That is, stop_strategy
               will see -model() and -derivative.  All this really means is that the status 
-              messages from a stopping strategy in verbose mode will display a negated objective
+              protos from a stopping strategy in verbose mode will display a negated objective
               value.
     !*/
 

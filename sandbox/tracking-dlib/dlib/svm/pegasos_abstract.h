@@ -388,7 +388,7 @@ namespace dlib
                   to train a decision function.
                 - #get_min_learning_rate() == min_learning_rate_
                 - if (verbose_ == true) then
-                    - this object will output status messages to standard out while
+                    - this object will output status protos to standard out while
                       training is under way.
                 - if (use_cache_ == true) then
                     - this object will cache up to cache_size_ columns of the kernel 

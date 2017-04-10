@@ -101,7 +101,7 @@ png_default_flush(png_structp png_ptr)
  *                 data to be written, and a 32-bit unsigned int that is
  *                 the number of bytes to be written.  The new write
  *                 function should call png_error(png_ptr, "Error msg")
- *                 to exit and output any fatal error messages.  May be
+ *                 to exit and output any fatal error protos.  May be
  *                 NULL, in which case libpng's default function will
  *                 be used.
  * flush_data_fn - pointer to a new flush function that takes as its

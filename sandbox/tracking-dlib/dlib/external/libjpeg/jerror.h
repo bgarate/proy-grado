@@ -248,7 +248,7 @@ JMESSAGE(JWRN_TOO_MUCH_DATA, "Application transferred too many scanlines")
    (cinfo)->err->msg_parm.i[1] = (p2), \
    (*(cinfo)->err->emit_message) ((j_common_ptr) (cinfo), -1))
 
-/* Informational/debugging messages */
+/* Informational/debugging protos */
 #define TRACEMS(cinfo,lvl,code)  \
   ((cinfo)->err->msg_code = (code), \
    (*(cinfo)->err->emit_message) ((j_common_ptr) (cinfo), (lvl)))

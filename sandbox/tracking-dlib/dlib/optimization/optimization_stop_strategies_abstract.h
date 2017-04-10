@@ -57,7 +57,7 @@ namespace dlib
         );
         /*!
             ensures
-                - causes this object to print status messages to standard out 
+                - causes this object to print status protos to standard out
                   every time should_continue_search() is called.
                 - returns *this
         !*/
@@ -124,7 +124,7 @@ namespace dlib
         );
         /*!
             ensures
-                - causes this object to print status messages to standard out 
+                - causes this object to print status protos to standard out
                   every time should_continue_search() is called.
                 - returns *this
         !*/

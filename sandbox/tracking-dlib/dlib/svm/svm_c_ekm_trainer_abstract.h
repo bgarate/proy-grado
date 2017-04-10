@@ -112,7 +112,7 @@ namespace dlib
         );
         /*!
             ensures
-                - This object will print status messages to standard out so that a 
+                - This object will print status protos to standard out so that a
                   user can observe the progress of the algorithm.
         !*/
 
@@ -120,9 +120,9 @@ namespace dlib
         );
         /*!
             ensures
-                - This object will print a lot of status messages to standard out so that a 
+                - This object will print a lot of status protos to standard out so that a
                   user can observe the progress of the algorithm.  In addition to the
-                  few status messages normal verbosity produces this setting also causes
+                  few status protos normal verbosity produces this setting also causes
                   the underlying svm_c_linear_trainer to be verbose.
         !*/
 

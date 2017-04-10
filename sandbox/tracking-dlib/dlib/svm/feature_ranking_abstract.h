@@ -103,7 +103,7 @@ namespace dlib
             - is_binary_classification_problem(samples, labels) == true
         ensures
             - This function does the same exact thing as the above find_gamma_with_big_centroid_gap()
-              except that it is also verbose in the sense that it will print status messages to
+              except that it is also verbose in the sense that it will print status protos to
               standard out during its processing.
     !*/
 

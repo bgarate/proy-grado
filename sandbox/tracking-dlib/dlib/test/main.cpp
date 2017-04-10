@@ -28,7 +28,7 @@ int main (int argc, char** argv)
         parser.add_option("n","How many times to run the selected tests. The default is 1.",1);
         parser.add_option("d","log debugging statements to file debug.txt.");
         parser.add_option("l","Set the logging level (all, trace, debug, info, warn, error, or fatal), the default is all.",1);
-        parser.add_option("a","Append debugging messages to debug.txt rather than clearing the file at program startup.");
+        parser.add_option("a","Append debugging protos to debug.txt rather than clearing the file at program startup.");
         parser.add_option("q","Be quiet.  Don't print the testing progress or results to standard out.");
 
         unsigned long num = 1;

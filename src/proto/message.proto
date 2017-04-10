@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "ping.proto";
+
+message Message {
+
+    Type type = 1;
+
+    enum Type {
+        PING = 0;
+    }
+
+    Ping ping = 100;
+
+}

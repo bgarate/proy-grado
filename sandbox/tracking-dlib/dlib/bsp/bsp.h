@@ -249,8 +249,8 @@ namespace dlib
                 dlib::uint64 sequence_number;
 
                 // Make it so that when msg_wrap objects are in a std::priority_queue,
-                // messages with a smaller epoch number always come first.  Then, within an
-                // epoch, messages are ordered by their sequence number (so smaller first
+                // protos with a smaller epoch number always come first.  Then, within an
+                // epoch, protos are ordered by their sequence number (so smaller first
                 // there as well).
                 bool operator<(const msg_wrap& item) const
                 {
@@ -431,7 +431,7 @@ namespace dlib
         ) 
         {
             if(!try_receive(item))
-                throw dlib::socket_error("bsp_context::receive(): no messages to receive, all nodes currently blocked.");
+                throw dlib::socket_error("bsp_context::receive(): no protos to receive, all nodes currently blocked.");
         }
 
         template <typename T>
@@ -450,7 +450,7 @@ namespace dlib
         ) 
         {
             if(!try_receive(item, sending_node_id))
-                throw dlib::socket_error("bsp_context::receive(): no messages to receive, all nodes currently blocked.");
+                throw dlib::socket_error("bsp_context::receive(): no protos to receive, all nodes currently blocked.");
         }
 
         template <typename T>

@@ -150,7 +150,7 @@ namespace dlib
             )
             /*!
                 we can't call this function from this objects constructor because 
-                starting the event thread in windows involves sending messages to the
+                starting the event thread in windows involves sending protos to the
                 WndProc() and that requires this object to be fully constructed.
             !*/
             {
