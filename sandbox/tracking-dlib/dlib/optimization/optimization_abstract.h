@@ -177,7 +177,7 @@ namespace dlib
             - Note that this function solves the maximization problem by converting it 
               into a minimization problem.  Therefore, the values of f and its derivative
               reported to the stopping strategy will be negated.  That is, stop_strategy
-              will see -f() and -der().  All this really means is that the status messages
+              will see -f() and -der().  All this really means is that the status protos
               from a stopping strategy in verbose mode will display a negated objective
               value.
     !*/
@@ -255,7 +255,7 @@ namespace dlib
             - Note that this function solves the maximization problem by converting it 
               into a minimization problem.  Therefore, the values of f and its derivative
               reported to the stopping strategy will be negated.  That is, stop_strategy
-              will see -f() and -der().  All this really means is that the status messages
+              will see -f() and -der().  All this really means is that the status protos
               from a stopping strategy in verbose mode will display a negated objective
               value.
     !*/
@@ -416,7 +416,7 @@ namespace dlib
             - Note that this function solves the maximization problem by converting it 
               into a minimization problem.  Therefore, the values of f and its derivative
               reported to the stopping strategy will be negated.  That is, stop_strategy
-              will see -f() and -der().  All this really means is that the status messages
+              will see -f() and -der().  All this really means is that the status protos
               from a stopping strategy in verbose mode will display a negated objective
               value.
     !*/

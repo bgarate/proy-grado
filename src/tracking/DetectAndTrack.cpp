@@ -24,7 +24,8 @@ std::vector<Track> DetectAndTrack::update(cv::Mat frame) {
         int oldTrackingCount = trackCount;
         tracks = updateDetections(detector->getFound());
 
-        Logger::LogDebug(std::to_string(detector->getFound().size()) + " objects detected. " + std::to_string(trackCount - oldTrackingCount) + " new tracks");
+        Logger::logDebug(std::to_string(detector->getFound().size()) + " objects detected. " +
+                         std::to_string(trackCount - oldTrackingCount) + " new tracks");
 
     }
 
@@ -36,7 +37,7 @@ std::vector<Track> DetectAndTrack::update(cv::Mat frame) {
         trackedFrames++;
         return tracks;
     } else {
-        Logger::LogDebug("Tracking lost");
+        Logger::logDebug("Tracking lost");
         trackedFrames = 0;
         return {};
     }

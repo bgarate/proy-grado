@@ -21,7 +21,7 @@ namespace dlib
         /*!
             WHAT THIS OBJECT REPRESENTS
                 This object is a simple named level to log at.  It contains a numeric 
-                priority and a name to use in the logging messages.
+                priority and a name to use in the logging protos.
         !*/
     public:
         log_level(
@@ -74,7 +74,7 @@ namespace dlib
             - for all loggers L (even loggers not yet constructed):
                 - #L.output_streambuf() == out.rdbuf() 
                 - Removes any previous output hook from L.  So now the logger
-                  L will write all its messages to the given output stream.
+                  L will write all its protos to the given output stream.
         throws
             - std::bad_alloc
     !*/
@@ -341,7 +341,7 @@ namespace dlib
             ensures
                 - for all loggers L such that L.is_child_of(*this) == true:
                     - #L.output_streambuf() == 0
-                    - #L will not send its log messages to an ostream object anymore.  Instead
+                    - #L will not send its log protos to an ostream object anymore.  Instead
                       it will call the given hook member function (i.e. (object.*hook)(name,l,id,msg) )
                       for each message that needs to be logged.
                     - The arguments to the hook function have the following meanings:
@@ -363,7 +363,7 @@ namespace dlib
             ensures
                 - if (an output hook isn't set) then
                     - returns the output stream buffer that this logger writes all
-                      messages to.
+                      protos to.
                 - else
                     - returns 0
         !*/
@@ -376,7 +376,7 @@ namespace dlib
                 - for all loggers L such that L.is_child_of(*this) == true:
                     - #L.output_streambuf() == out.rdbuf() 
                     - Removes any previous output hook from L.  So now the logger
-                      L will write all its messages to the given output stream.
+                      L will write all its protos to the given output stream.
             throws
                 - std::bad_alloc
         !*/

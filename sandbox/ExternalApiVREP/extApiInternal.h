@@ -37,7 +37,7 @@
 #define _REPLY_WAIT_TIMEOUT_IN_MS 5000
 #define _MIN_SPLIT_AMOUNT_IN_BYTES 100
 
-/* Out buffer for messages */
+/* Out buffer for protos */
 simxUChar* _messageToSend[MAX_EXT_API_CONNECTIONS];
 simxInt _messageToSend_bufferSize[MAX_EXT_API_CONNECTIONS];
 simxInt _messageToSend_dataSize[MAX_EXT_API_CONNECTIONS];
@@ -47,7 +47,7 @@ simxUChar* _splitCommandsToSend[MAX_EXT_API_CONNECTIONS];
 simxInt _splitCommandsToSend_bufferSize[MAX_EXT_API_CONNECTIONS];
 simxInt _splitCommandsToSend_dataSize[MAX_EXT_API_CONNECTIONS];
 
-/* In buffer for messages */
+/* In buffer for protos */
 simxUChar* _messageReceived[MAX_EXT_API_CONNECTIONS];
 simxInt _messageReceived_bufferSize[MAX_EXT_API_CONNECTIONS];
 simxInt _messageReceived_dataSize[MAX_EXT_API_CONNECTIONS];

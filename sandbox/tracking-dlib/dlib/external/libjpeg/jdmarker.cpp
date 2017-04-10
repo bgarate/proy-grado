@@ -187,7 +187,7 @@ typedef my_marker_reader * my_marker_ptr;
  * but the data source will point to the next chunk of marker data.
  * The marker processor must retain internal state to deal with this.
  *
- * Note that we don't bother to avoid duplicate trace messages if a
+ * Note that we don't bother to avoid duplicate trace protos if a
  * suspension occurs within marker parameters.  Other side effects
  * require more care.
  */
@@ -612,11 +612,11 @@ examine_app0 (j_decompress_ptr cinfo, JOCTET FAR * data,
     if (cinfo->JFIF_major_version != 1)
       WARNMS2(cinfo, JWRN_JFIF_MAJOR,
 	      cinfo->JFIF_major_version, cinfo->JFIF_minor_version);
-    /* Generate trace messages */
+    /* Generate trace protos */
     TRACEMS5(cinfo, 1, JTRC_JFIF,
 	     cinfo->JFIF_major_version, cinfo->JFIF_minor_version,
 	     cinfo->X_density, cinfo->Y_density, cinfo->density_unit);
-    /* Validate thumbnail dimensions and issue appropriate messages */
+    /* Validate thumbnail dimensions and issue appropriate protos */
     if (GETJOCTET(data[12]) | GETJOCTET(data[13]))
       TRACEMS2(cinfo, 1, JTRC_JFIF_THUMBNAIL,
 	       GETJOCTET(data[12]), GETJOCTET(data[13]));
