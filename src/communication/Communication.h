@@ -12,6 +12,8 @@
 using boost::asio::ip::tcp;
 using boost::asio::io_service;
 
+class Message;
+
 class Communication {
 
 public:

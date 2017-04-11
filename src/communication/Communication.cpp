@@ -61,14 +61,14 @@ void Communication::send(Message msg) {
 
     writeBuffer.clear();
     packedMessage.pack(writeBuffer);
-    asio::write(socket, asio::buffer(writeBuffer));
+    asio::write(*socket, asio::buffer(writeBuffer));
 
 }
 
 Message Communication::receive() {
 
     readBuffer.resize(PackedMessage<Message>::HEADER_SIZE);
-    asio::read(socket, readBuffer);
+    asio::read(*socket, asio::buffer(readBuffer));
 
     unsigned messageLength = PackedMessage<Message>::decode_header(readBuffer);
 
@@ -76,7 +76,7 @@ Message Communication::receive() {
 
     asio::mutable_buffers_1 buffer = asio::buffer(&readBuffer[PackedMessage<Message>::HEADER_SIZE], messageLength);
 
-    asio::read(socket, buffer);
+    asio::read(*socket, buffer);
 
     PackedMessage<Message> packedMessage;
     packedMessage.unpack(readBuffer);

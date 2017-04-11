@@ -18,7 +18,7 @@ public:
     static const unsigned HEADER_SIZE = 4;
     typedef boost::shared_ptr<T> MessagePointer;
 
-    PackedMessage(MessagePointer msg = MessagePointer())
+    PackedMessage(MessagePointer msg = MessagePointer(new T))
             : msg(msg) {
 
     }
@@ -54,8 +54,7 @@ public:
         return msg_size;
     }
 
-    bool unpack(const data_buffer& buf)
-    {
+    bool unpack(const data_buffer& buf) {
         return msg->ParseFromArray(&buf[HEADER_SIZE], buf.size() - HEADER_SIZE);
     }
 

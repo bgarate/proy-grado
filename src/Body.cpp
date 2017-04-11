@@ -8,6 +8,9 @@
 
 
 void Body::communicate(std::string brainHost, unsigned short port) {
+
+    sleep(2);
+
     communication.connect(brainHost, port);
     Logger::logInfo("Body has established a connection!");
 

@@ -37,7 +37,7 @@ int main(int argc, const char* args[]) {
     if(startBody && startBrain) {
         pid_t pid = fork();
 
-        startBody = pid == 0;
+        startBody = pid != 0;
         startBrain = !startBody;
     }
 

@@ -3,6 +3,7 @@
 //
 
 #include <src/proto/message.pb.h>
+#include <src/communication/MessageBuilder.h>
 #include "Brain.h"
 #include "logging/Logger.h"
 
@@ -10,13 +11,8 @@ void Brain::communicate(unsigned short port) {
     communication.serve(port);
     Logger::logInfo("Brain has established a connection!");
 
-    Message msg;
-    msg.set_type(Message_Type::Message_Type_PING);
-
-    Ping ping;
-    ping.set_type(Ping_PingType::Ping_PingType_REQUEST);
-
-    msg.set_allocated_ping(&ping);
+    Message msg = MessageBuilder::build(Message_Type_PING);
+    msg.mutable_ping()->set_type(Ping_PingType::Ping_PingType_REQUEST);
 
     communication.send(msg);
 
