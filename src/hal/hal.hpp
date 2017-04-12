@@ -4,10 +4,7 @@
 //Velocidad de giro por defecto
 #define DEFAULT_ROTATE_VEL 1;
 
-class Hal{
-	public:
-
-	//Enumerado cámara
+//Enumerado cámara
 	enum class Camera {Front, Bottom};
 
 	//Definicion frame
@@ -23,11 +20,14 @@ class Hal{
 		double z;
 	} Point; 
 
+class Hal{
+	public:
+
 
 	/************Movimiento*************/ 
 
 	// --> Rotación horizontal
-	virtual void hrotate(double angle, double vel) = 0;
+	virtual void hrotate(int dir, double vel) = 0;
 
 	// --> Movimiento horizontal
 	virtual void hmove(double angle, double vel) = 0;
