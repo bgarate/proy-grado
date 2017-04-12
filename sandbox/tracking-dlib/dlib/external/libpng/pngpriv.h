@@ -362,7 +362,7 @@
 
 /* If warnings or errors are turned off the code is disabled or redirected here.
  * From 1.5.4 functions have been added to allow very limited formatting of
- * error and warning messages - this code will also be disabled here.
+ * error and warning protos - this code will also be disabled here.
  */
 #ifdef PNG_WARNINGS_SUPPORTED
 #  define PNG_WARNING_PARAMETERS(p) png_warning_parameters p;
@@ -889,7 +889,7 @@ PNG_INTERNAL_FUNCTION(png_fixed_point,png_fixed,(png_const_structrp png_ptr,
 PNG_INTERNAL_FUNCTION(int,png_user_version_check,(png_structrp png_ptr,
    png_const_charp user_png_ver),PNG_EMPTY);
 
-/* Internal base allocator - no messages, NULL on failure to allocate.  This
+/* Internal base allocator - no protos, NULL on failure to allocate.  This
  * does, however, call the application provided allocator and that could call
  * png_error (although that would be a bug in the application implementation.)
  */
@@ -898,7 +898,7 @@ PNG_INTERNAL_FUNCTION(png_voidp,png_malloc_base,(png_const_structrp png_ptr,
 
 #if defined(PNG_TEXT_SUPPORTED) || defined(PNG_sPLT_SUPPORTED) ||\
    defined(PNG_STORE_UNKNOWN_CHUNKS_SUPPORTED)
-/* Internal array allocator, outputs no error or warning messages on failure,
+/* Internal array allocator, outputs no error or warning protos on failure,
  * just returns NULL.  
  */
 PNG_INTERNAL_FUNCTION(png_voidp,png_malloc_array,(png_const_structrp png_ptr,
@@ -1665,7 +1665,7 @@ PNG_INTERNAL_FUNCTION(void,png_fixed_error,(png_const_structrp png_ptr,
 PNG_INTERNAL_FUNCTION(size_t,png_safecat,(png_charp buffer, size_t bufsize,
    size_t pos, png_const_charp string),PNG_EMPTY);
 
-/* Various internal functions to handle formatted warning messages, currently
+/* Various internal functions to handle formatted warning protos, currently
  * only implemented for warnings.
  */
 #if defined(PNG_WARNINGS_SUPPORTED) || defined(PNG_TIME_RFC1123_SUPPORTED)

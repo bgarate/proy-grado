@@ -136,7 +136,7 @@ namespace dlib
         );
         /*!
             ensures
-                - This object will print status messages to standard out so the user can
+                - This object will print status protos to standard out so the user can
                   observe the progress of the train() routine.
         !*/
 

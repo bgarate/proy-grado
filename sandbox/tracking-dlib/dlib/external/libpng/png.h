@@ -1772,7 +1772,7 @@ PNG_EXPORT(74, void, png_init_io, (png_structrp png_ptr, png_FILE_p fp));
 #endif
 
 /* Replace the (error and abort), and warning functions with user
- * supplied functions.  If no messages are to be printed you must still
+ * supplied functions.  If no protos are to be printed you must still
  * write and use replacement functions. The replacement error_fn should
  * still do a longjmp to the last setjmp location if you are using this
  * method of error handling.  If error_fn or warning_fn is NULL, the
@@ -2541,7 +2541,7 @@ PNG_EXPORT(184, png_uint_32, png_permit_mng_features, (png_structrp png_ptr,
 #define PNG_HANDLE_CHUNK_LAST         4
 
 /* Strip the prepended error numbers ("#nnn ") from error and warning
- * messages before passing them to the error or warning handler.
+ * protos before passing them to the error or warning handler.
  */
 #ifdef PNG_ERROR_NUMBERS_SUPPORTED
 PNG_EXPORT(185, void, png_set_strip_error_numbers, (png_structrp png_ptr,

@@ -63,7 +63,7 @@ namespace dlib
         );
         /*!
             ensures
-                - This object will print status messages to standard out.
+                - This object will print status protos to standard out.
         !*/
 
         void be_quiet (

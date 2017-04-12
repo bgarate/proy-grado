@@ -122,7 +122,7 @@ namespace dlib
         const static char NODE_TERMINATE            = 5; 
 
         // broadcast by the controller node when it determines that all nodes are blocked
-        // on calls to receive_data() and there aren't any messages in flight.  This is also
+        // on calls to receive_data() and there aren't any protos in flight.  This is also
         // what makes us go to the next epoch.
         const static char SEE_ALL_IN_WAITING_STATE  = 6; 
 
@@ -273,8 +273,8 @@ namespace dlib
             if (outstanding_messages != 0)
             {
                 std::ostringstream sout;
-                sout << "A BSP job was allowed to terminate before all sent messages have been received.\n";
-                sout << "There are at least " << outstanding_messages << " messages still in flight.   Make sure all sent messages\n";
+                sout << "A BSP job was allowed to terminate before all sent protos have been received.\n";
+                sout << "There are at least " << outstanding_messages << " protos still in flight.   Make sure all sent protos\n";
                 sout << "have a corresponding call to receive().";
                 throw dlib::socket_error(sout.str());
             }
@@ -338,11 +338,11 @@ namespace dlib
 
         while (true)
         {
-            // If there aren't any nodes left to give us messages then return right now.
+            // If there aren't any nodes left to give us protos then return right now.
             // We need to check the msg_buffer size to make sure there aren't any
             // unprocessed message there.  Recall that this can happen because status
-            // messages always jump to the front of the message buffer.  So we might have
-            // learned about the node terminations before processing their messages for us.
+            // protos always jump to the front of the message buffer.  So we might have
+            // learned about the node terminations before processing their protos for us.
             if (num_terminated_nodes == _cons.size() && msg_buffer.size() == 0)
             {
                 return false;

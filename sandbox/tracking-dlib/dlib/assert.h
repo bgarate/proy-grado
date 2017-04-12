@@ -92,7 +92,7 @@ namespace dlib
 #endif
 
 // Use the newer static_assert if it's available since it produces much more readable error
-// messages.
+// protos.
 #ifdef DLIB_HAS_STATIC_ASSERT
     #define COMPILE_TIME_ASSERT(expression) static_assert(expression, "Failed assertion")
     #define ASSERT_ARE_SAME_TYPE(type1, type2) static_assert(::dlib::assert_types_match<type1,type2>::value, "These types should be the same but aren't.")

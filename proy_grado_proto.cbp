@@ -2,10 +2,10 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6"/>
 	<Project>
-		<Option title="proy_grado"/>
+		<Option title="proy_grado_proto"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\usr\;CMake Files\..\..\..\usr\local\;CMake Files\..\..\..\usr\local\share\;CMake Files\..\..\..\usr\local\share\OpenCV\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\usr\;CMake Files\..\..\..\usr\local\;CMake Files\..\..\..\usr\local\share\;CMake Files\..\..\..\usr\local\share\OpenCV\;CMake Files\src\;CMake Files\src\protos\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/bruno/proy-grado"/>
@@ -44,6 +44,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/spdlog/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
@@ -68,6 +69,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/spdlog/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
@@ -86,6 +88,24 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/bruno/proy-grado/src/Body.cpp">
+			<Option target="proy_grado"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/src/Body.h">
+			<Option target="proy_grado"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/src/Brain.cpp">
+			<Option target="proy_grado"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/src/Brain.h">
+			<Option target="proy_grado"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/src/communication/Communication.cpp">
+			<Option target="proy_grado"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/src/communication/Communication.h">
+			<Option target="proy_grado"/>
+		</Unit>
 		<Unit filename="/home/bruno/proy-grado/src/logging/Logger.cpp">
 			<Option target="proy_grado"/>
 		</Unit>
@@ -136,6 +156,9 @@
 		</Unit>
 		<Unit filename="/home/bruno/proy-grado/../../../usr/local/share/OpenCV/OpenCVModules-release.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/src/protos/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\protos\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

@@ -272,7 +272,7 @@ namespace dlib
             - chunks_per_thread > 0
         ensures
             - This function is identical to the parallel_for() routine defined above except
-              that it will print messages to cout showing the progress in executing the
+              that it will print protos to cout showing the progress in executing the
               parallel for loop.
     !*/
 
@@ -293,7 +293,7 @@ namespace dlib
             - chunks_per_thread > 0
         ensures
             - This function is identical to the parallel_for() routine defined above except
-              that it will print messages to cout showing the progress in executing the
+              that it will print protos to cout showing the progress in executing the
               parallel for loop.
     !*/
 
@@ -313,7 +313,7 @@ namespace dlib
             - chunks_per_thread > 0
         ensures
             - This function is identical to the parallel_for() routine defined above except
-              that it will print messages to cout showing the progress in executing the
+              that it will print protos to cout showing the progress in executing the
               parallel for loop.
     !*/
 
@@ -333,7 +333,7 @@ namespace dlib
             - chunks_per_thread > 0
         ensures
             - This function is identical to the parallel_for() routine defined above except
-              that it will print messages to cout showing the progress in executing the
+              that it will print protos to cout showing the progress in executing the
               parallel for loop.
     !*/
 
@@ -352,7 +352,7 @@ namespace dlib
             - chunks_per_thread > 0
         ensures
             - This function is identical to the parallel_for() routine defined above except
-              that it will print messages to cout showing the progress in executing the
+              that it will print protos to cout showing the progress in executing the
               parallel for loop.
             - It will also use the default_thread_pool().
     !*/
@@ -375,7 +375,7 @@ namespace dlib
             - chunks_per_thread > 0
         ensures
             - This function is identical to the parallel_for_blocked() routine defined
-              above except that it will print messages to cout showing the progress in
+              above except that it will print protos to cout showing the progress in
               executing the parallel for loop.
     !*/
 
@@ -396,7 +396,7 @@ namespace dlib
             - chunks_per_thread > 0
         ensures
             - This function is identical to the parallel_for_blocked() routine defined
-              above except that it will print messages to cout showing the progress in
+              above except that it will print protos to cout showing the progress in
               executing the parallel for loop.
     !*/
 
@@ -416,7 +416,7 @@ namespace dlib
             - chunks_per_thread > 0
         ensures
             - This function is identical to the parallel_for_blocked() routine defined
-              above except that it will print messages to cout showing the progress in
+              above except that it will print protos to cout showing the progress in
               executing the parallel for loop.
     !*/
 
@@ -436,7 +436,7 @@ namespace dlib
             - chunks_per_thread > 0
         ensures
             - This function is identical to the parallel_for_blocked() routine defined
-              above except that it will print messages to cout showing the progress in
+              above except that it will print protos to cout showing the progress in
               executing the parallel for loop.
     !*/
 
@@ -455,7 +455,7 @@ namespace dlib
             - chunks_per_thread > 0
         ensures
             - This function is identical to the parallel_for_blocked() routine defined
-              above except that it will print messages to cout showing the progress in
+              above except that it will print protos to cout showing the progress in
               executing the parallel for loop.
             - It will also use the default_thread_pool()
     !*/

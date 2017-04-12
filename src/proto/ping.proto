@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message Ping {
+
+    PingType Type = 1;
+
+    enum PingType {
+        REQUEST = 0;
+        ACK = 1;
+    }
+}

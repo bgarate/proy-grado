@@ -408,7 +408,7 @@ namespace dlib
                         }
                         else
                         {
-                            // Since we don't have a receive pipe to put messages into we will
+                            // Since we don't have a receive pipe to put protos into we will
                             // just read the bytes from the connection and ignore them.
                             char buf[1000];
                             while (con->read(buf, sizeof(buf)) > 0) ;

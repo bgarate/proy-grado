@@ -161,7 +161,7 @@ enum { /* Model properties (serialized): */
 };
 
 enum { /* Check the documentation instead of comments below!! */
-        /* Following messages are dispatched to the Lua-message container: */
+        /* Following protos are dispatched to the Lua-message container: */
         sim_message_ui_button_state_change=0,   /* a UI button, slider, etc. changed (due to a user's action). aux[0]=UI handle, aux[1]=button handle, aux[2]=button attributes, aux[3]=slider position (if slider) */
         sim_message_reserved9,                  /* Do not use */
         sim_message_object_selection_changed,
@@ -177,7 +177,7 @@ enum { /* Check the documentation instead of comments below!! */
         sim_message_pick_select_down,           /* a "pick" click select (mouse down) was registered. aux[0]=objectID */
 
 
-        /* Following messages are dispatched only to the C-API (not available from Lua): */
+        /* Following protos are dispatched only to the C-API (not available from Lua): */
         sim_message_for_c_api_only_start=0x0100,            /* Do not use */
         sim_message_reserved1,                              /* Do not use */
         sim_message_reserved2,                              /* Do not use */
@@ -507,7 +507,7 @@ enum { /* General callback IDs */
 };
 
 
-enum { /* API call error messages */
+enum { /* API call error protos */
     sim_api_error_report =1,
     sim_api_error_output =2,
     sim_api_warning_output =4,

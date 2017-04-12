@@ -187,7 +187,7 @@ local gzFile gz_open(path, fd, mode)
         state->direct = 1;      /* for empty file */
     }
 
-    /* save the path name for error messages */
+    /* save the path name for error protos */
 #ifdef _WIN32
     if (fd == -2) {
         len = wcstombs(NULL, path, 0);
@@ -285,7 +285,7 @@ gzFile ZEXPORT gzdopen(fd, mode)
     int fd;
     const char *mode;
 {
-    char *path;         /* identifier for error messages */
+    char *path;         /* identifier for error protos */
     gzFile gz;
 
     if (fd == -1 || (path = (char *)malloc(7 + 3 * sizeof(int))) == NULL)

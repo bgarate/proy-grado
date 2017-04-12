@@ -89,7 +89,7 @@ namespace dlib
         );
         /*!
             ensures
-                - This object will print status messages to standard out so that a 
+                - This object will print status protos to standard out so that a
                   user can observe the progress of the algorithm.
         !*/
 

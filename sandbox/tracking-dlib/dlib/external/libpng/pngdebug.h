@@ -34,7 +34,7 @@
  */
 #ifndef PNGDEBUG_H
 #define PNGDEBUG_H
-/* These settings control the formatting of messages in png.c and pngerror.c */
+/* These settings control the formatting of protos in png.c and pngerror.c */
 /* Moved to pngdebug.h at 1.5.0 */
 #  ifndef PNG_LITERAL_SHARP
 #    define PNG_LITERAL_SHARP 0x23

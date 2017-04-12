@@ -270,10 +270,10 @@ namespace dlib
                     const unsigned long id_j = prob.node_id(j);
                     const unsigned long num_states_xj = prob.num_states(j);
 
-                    // messages from j to i
+                    // protos from j to i
                     double* const delta_ji = &delta_elements[delta_idx(id_j,id_i)];
 
-                    // messages from i to j
+                    // protos from i to j
                     double* const delta_ij = &delta_elements[delta_idx(id_i,id_j)];
 
                     for (unsigned long xj = 0; xj < num_states_xj; ++xj)

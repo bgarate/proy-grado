@@ -21,12 +21,12 @@ namespace dlib
                 processing nodes, each executing in parallel.  The general flow of
                 execution in each processing node is the following:
                     1. Do work locally on some data.
-                    2. Send some messages to other nodes.
-                    3. Receive messages from other nodes.
+                    2. Send some protos to other nodes.
+                    3. Receive protos from other nodes.
                     4. Go to step 1 or terminate if complete.
 
                 To do this, each processing node needs an API used to send and receive
-                messages.  This API is implemented by the bsp_connect object which provides
+                protos.  This API is implemented by the bsp_connect object which provides
                 these services to a BSP node.  
 
                 Note that BSP processing nodes are spawned using the bsp_connect() and
@@ -39,7 +39,7 @@ namespace dlib
                 you call at the end of step 3.  Instead, you can simply call a method such
                 as try_receive() until it returns false.  That is, the bsp_context's
                 receive methods incorporate a barrier synchronization that happens once all
-                the BSP nodes are blocked on receive calls and there are no more messages
+                the BSP nodes are blocked on receive calls and there are no more protos
                 in flight. 
 
 
@@ -124,10 +124,10 @@ namespace dlib
                     - The following must have been true for this function to return false:
                         - All other nodes were blocked on calls to receive(),
                           try_receive(), or have terminated.
-                        - There were not any messages in flight between any nodes.  
+                        - There were not any protos in flight between any nodes.
                         - That is, if all the nodes had continued to block on receive
                           methods then they all would have blocked forever.  Therefore,
-                          this function only returns false once there are no more messages
+                          this function only returns false once there are no more protos
                           to process by any node and there is no possibility of more being
                           generated until control is returned to the callers of receive
                           methods. 
@@ -189,10 +189,10 @@ namespace dlib
                     - The following must have been true for this function to return false:
                         - All other nodes were blocked on calls to receive(),
                           try_receive(), or have terminated.
-                        - There were not any messages in flight between any nodes.  
+                        - There were not any protos in flight between any nodes.
                         - That is, if all the nodes had continued to block on receive
                           methods then they all would have blocked forever.  Therefore,
-                          this function only returns false once there are no more messages
+                          this function only returns false once there are no more protos
                           to process by any node and there is no possibility of more being
                           generated until control is returned to the callers of receive
                           methods. 
@@ -245,10 +245,10 @@ namespace dlib
                 - Waits for the following to all be true:
                     - All other nodes were blocked on calls to receive(), try_receive(), or
                       have terminated.
-                    - There are not any messages in flight between any nodes.  
+                    - There are not any protos in flight between any nodes.
                     - That is, if all the nodes had continued to block on receive methods
                       then they all would have blocked forever.  Therefore, this function
-                      only returns once there are no more messages to process by any node
+                      only returns once there are no more protos to process by any node
                       and there is no possibility of more being generated until control is
                       returned to the callers of receive methods. 
                 - When one BSP node's receive method returns because of the above

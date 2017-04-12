@@ -1523,7 +1523,7 @@ namespace dlib
                     message_sent = false;
                     for (unsigned long i = 1; i < remaining_msg_to_send.size(); ++i)
                     {
-                        // if node i hasn't sent any messages but has received all but one then send a message to the one
+                        // if node i hasn't sent any protos but has received all but one then send a message to the one
                         // node who hasn't sent i a message
                         if (remaining_msg_to_send[i].size() == join_tree.node(i).number_of_neighbors() && remaining_msg_to_receive[i].size() == 1)
                         {
@@ -1554,7 +1554,7 @@ namespace dlib
 
                     if (remaining_msg_to_receive[0].size() == 0)
                     {
-                        // send a message to all of the root nodes neighbors unless we have already sent out he messages
+                        // send a message to all of the root nodes neighbors unless we have already sent out he protos
                         while (remaining_msg_to_send[0].size() > 0)
                         {
                             unsigned long to;

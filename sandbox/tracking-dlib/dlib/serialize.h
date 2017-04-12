@@ -1556,7 +1556,7 @@ namespace dlib
     template <typename T>
     typename enable_if<is_protocol_buffer<T> >::type serialize(const T& item, std::ostream& out)
     {
-        // Note that Google protocol buffer messages are not self delimiting 
+        // Note that Google protocol buffer protos are not self delimiting
         // (see https://developers.google.com/protocol-buffers/docs/techniques)
         // This means they don't record their length or where they end, so we have 
         // to record this information ourselves.  So we save the size as a little endian 32bit 
@@ -1581,7 +1581,7 @@ namespace dlib
     template <typename T>
     typename enable_if<is_protocol_buffer<T> >::type deserialize(T& item, std::istream& in)
     {
-        // Note that Google protocol buffer messages are not self delimiting 
+        // Note that Google protocol buffer protos are not self delimiting
         // (see https://developers.google.com/protocol-buffers/docs/techniques)
         // This means they don't record their length or where they end, so we have 
         // to record this information ourselves.  So we save the size as a little endian 32bit 

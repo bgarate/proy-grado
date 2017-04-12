@@ -264,7 +264,7 @@ namespace dlib
                         XFree(xim_styles);
                     }
 
-                    // make this window just so we can send messages to it and trigger
+                    // make this window just so we can send protos to it and trigger
                     // events in the event thread
                     XSetWindowAttributes attr;
                     window_table.get_mutex().lock();
@@ -662,7 +662,7 @@ namespace dlib
                         win = *win_;
 
 
-                    // ignore messages for unmapped windows
+                    // ignore protos for unmapped windows
                     if (ev.type != MapNotify && win != 0) 
                     {
                         if (win->is_mapped == false)

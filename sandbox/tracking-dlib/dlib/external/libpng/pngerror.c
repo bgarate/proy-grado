@@ -238,10 +238,10 @@ png_warning(png_const_structrp png_ptr, png_const_charp warning_message)
       png_default_warning(png_ptr, warning_message + offset);
 }
 
-/* These functions support 'formatted' warning messages with up to
+/* These functions support 'formatted' warning protos with up to
  * PNG_WARNING_PARAMETER_COUNT parameters.  In the format string the parameter
  * is introduced by @<number>, where 'number' starts at 1.  This follows the
- * standard established by X/Open for internationalizable error messages.
+ * standard established by X/Open for internationalizable error protos.
  */
 void
 png_warning_parameter(png_warning_parameters p, int number,
@@ -284,7 +284,7 @@ void
 png_formatted_warning(png_const_structrp png_ptr, png_warning_parameters p,
    png_const_charp message)
 {
-   /* The internal buffer is just 192 bytes - enough for all our messages,
+   /* The internal buffer is just 192 bytes - enough for all our protos,
     * overflow doesn't happen because this code checks!  If someone figures
     * out how to send us a message longer than 192 bytes, all that will
     * happen is that the message will be truncated appropriately.
