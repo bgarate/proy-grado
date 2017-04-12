@@ -1,8 +1,8 @@
-#ifndef __HAL_H
-#define __HAL_H
+#ifndef __HAL_HPP
+#define __HAL_HPP
 
 //Velocidad de giro por defecto
-#define rotateVel 1;
+#define DEFAULT_ROTATE_VEL 1;
 
 class Hal{
 	public:
@@ -12,8 +12,8 @@ class Hal{
 
 	//Definicion frame
 	typedef struct {
-		unsigned int * data;
-		//todo
+		char ** data;
+		int Width, height;
 	} Frame;
 
 	//Definicion point
@@ -23,28 +23,29 @@ class Hal{
 		double z;
 	} Point; 
 
+
 	/************Movimiento*************/ 
 
 	// --> Rotación horizontal
-	void hrotate(double angle, double vel) = 0;
+	virtual void hrotate(double angle, double vel) = 0;
 
 	// --> Movimiento horizontal
-	void hmove(angle double, double vel) = 0;
+	virtual void hmove(double angle, double vel) = 0;
 
 	// --> Movimiento vertical
-	void vmove(double angle, double vel) = 0;
+	virtual void vmove(double vel) = 0;
 
 	// --> Despegue y aterrizaje
-	void land() = 0;
-	void takeoff() = 0;
+	virtual void land() = 0;
+	virtual void takeoff() = 0;
 
 	// --> Altura objetivo
-	void targetAltitude(double altitude) = 0;
+	virtual void targetAltitude(double altitude) = 0;
 
 	/************Estado del drone*************/
 
 	// --> Batería 
-	int bateryLevel() = 0;
+	virtual int bateryLevel() = 0;
 
 	// --> Intensidad de la conexión
 	//todo
@@ -52,18 +53,20 @@ class Hal{
 	/************Cámara*************/
 
 	// --> Obtener captura de imagen (ambas cámaras)
-	Frame getFrame(Camera cam) = 0;
+	virtual Frame getFrame(Camera cam) = 0;
 
 	/************Posición*************/
 
 	// --> Altura
-	double getAltitude() = 0;
+	virtual double getAltitude() = 0;
 
 	// --> Orientación 
-	Point getOrientation() = 0;	
+	virtual Point getOrientation() = 0;	
 
 	// --> Coordenadas
 
-	Point getGPSPosition() = 0;
+	virtual Point getGPSPosition() = 0;
 
-}
+};
+
+#endif
