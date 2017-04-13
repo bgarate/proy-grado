@@ -10,7 +10,7 @@
 
 class MessageBuilder {
 public:
-    static Message& build(Message_Type type);
+    static Message build(Message_Type type);
 
 };
 

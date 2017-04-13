@@ -3,3 +3,17 @@
 //
 
 #include "MessageHandler.h"
+
+void MessageHandler::registerHandler(Message_Type type, std::function<void(Message)> fn) {
+
+    handlers.insert(HandlerPair(type, fn));
+
+}
+
+void MessageHandler::handle(Message &msg) {
+
+    std::function<void(Message)> fn = handlers.at(msg.type());
+
+    fn(msg);
+
+}

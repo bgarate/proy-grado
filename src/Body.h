@@ -7,12 +7,19 @@
 
 #include <iostream>
 #include "communication/Communication.h"
+#include "MessageHandler.h"
 
 class Body {
 public:
+    Body();
     void communicate(std::string brainHost, unsigned short port);
 private:
     Communication communication;
+    MessageHandler messsageHandler;
+
+    void PingHandler(Message &msg);
+
+    void loop();
 };
 
 

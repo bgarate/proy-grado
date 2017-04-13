@@ -4,18 +4,19 @@
 
 #include "MessageBuilder.h"
 
-Message& MessageBuilder::build(Message_Type type) {
+Message MessageBuilder::build(Message_Type type) {
 
     Message msg;
     msg.set_type(type);
 
     switch (type){
-        case Message_Type_PING:
+        case Message_Type_PING: {
             Ping ping;
             msg.set_allocated_ping(&ping);
             break;
+        }
         default:
-            throw;
+            throw "dasd";
     }
 
     return msg;

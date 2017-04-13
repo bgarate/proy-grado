@@ -7,13 +7,20 @@
 
 
 #include "communication/Communication.h"
+#include "MessageHandler.h"
 
 class Brain {
 public:
+    Brain();
+
     void communicate(unsigned short port);
 private:
     Communication communication;
+    MessageHandler messsageHandler;
 
+    void PingHandler(Message &msg);
+
+    void loop();
 };
 
 
