@@ -29,22 +29,22 @@ int main(int argc, const char* args[]) {
     bool startBrain = vm.count("brain") > 0;
     bool startBody = vm.count("brain") > 0;
 
-    if(!startBody && !startBrain) {
+    if (!startBody && !startBrain) {
         std::cout << desc << "\n";
         return 0;
     }
 
-    if(startBody && startBrain) {
+    if (startBody && startBrain) {
         pid_t pid = fork();
 
         startBody = pid != 0;
         startBrain = !startBody;
     }
 
-    if(startBody){
+    if (startBody) {
         Body body;
         Logger::getInstance().setSource("BODY");
-        body.communicate("localhost",11500);
+        body.communicate("localhost", 11500);
     } else {
         Brain brain;
         Logger::getInstance().setSource("BRAIN");

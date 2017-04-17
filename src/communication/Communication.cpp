@@ -11,12 +11,13 @@
 #include "boost/asio/write.hpp"
 #include "boost/asio/read.hpp"
 #include "boost/asio/ip/tcp.hpp"
+#include "boost/asio/basic_socket.hpp"
 #include "../logging/Logger.h"
 #include "PackedMessage.h"
 
 namespace asio = boost::asio;
 
-void Communication::connect(std::string host, unsigned short port) {
+void Communication::tryConnect(std::string host, unsigned short port){
 
     Logger::logDebug("Connecting to " + host + ":" + std::to_string(port));
 
@@ -31,6 +32,27 @@ void Communication::connect(std::string host, unsigned short port) {
     Logger::logDebug("Connected to " + socket->remote_endpoint().address().to_string() + ":" + std::to_string(port));
 
     isServing = false;
+}
+
+void Communication::connect(std::string host, unsigned short port) {
+
+    int retries = 0;
+    bool success = false;
+
+    while (!success) {
+        try {
+            tryConnect(host, port);
+            success = true;
+        } catch (const boost::system::system_error &ex) {
+            if (retries >= MAX_NUMBER_RETRIES) {
+                Logger::logError("Couldn't connect. Maximum number of retries reached");
+                throw;
+            }
+            retries++;
+            Logger::logWarning("Couldn't connect. Retry " + std::to_string(retries) + " of " + std::to_string(MAX_NUMBER_RETRIES));
+            sleep(1);
+        }
+    }
 
 }
 
@@ -82,6 +104,16 @@ Message Communication::receive() {
     packedMessage.unpack(readBuffer);
 
     return *packedMessage.getMsg();
+
+}
+
+bool Communication::messageAvailable() {
+
+    boost::asio::socket_base::bytes_readable command(true);
+    socket->io_control(command);
+    std::size_t bytes_readable = command.get();
+
+    return bytes_readable >= PackedMessage<Message>::HEADER_SIZE;
 
 }
 

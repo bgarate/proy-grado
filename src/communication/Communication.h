@@ -25,13 +25,18 @@ public:
     Message receive();
     void send(Message msg);
 
+    bool messageAvailable();
+
 private:
+    static const int MAX_NUMBER_RETRIES = 3;
     bool isServing;
     io_service service;
     tcp::socket* socket;
 
     std::vector<uint8_t> writeBuffer;
     std::vector<uint8_t> readBuffer;
+
+    void tryConnect(std::string host, unsigned short port);
 };
 
 

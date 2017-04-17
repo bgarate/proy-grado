@@ -8,23 +8,19 @@
 #include <typeindex>
 #include <boost/function.hpp>
 #include <map>
+#include "proto/message.pb.h"
 
 class MessageHandler {
 
-    typedef std::pair<std::type_index,std::function> handlerPair;
+    typedef std::pair<Message_Type,std::function<void (Message)>> HandlerPair;
 
 public:
-    template <class T>
-    void registerHandler(std::function<void(T)> fn);
+    void registerHandler(Message_Type type, std::function<void(Message)> fn);
+    void handle(Message& msg);
 
 private:
-    std::map<std::type_index,std::function> handlers;
+    std::map<Message_Type,std::function<void (Message)>> handlers;
 };
-
-template<class T>
-void MessageHandler::registerHandler(std::function<void(T)> fn) {
-    handlers.insert(handlerPair(std::type_index(typeid(T)),fn));
-}
 
 
 #endif //PROY_GRADO_MESSAGEHANDLER_H
