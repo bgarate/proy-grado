@@ -3,6 +3,9 @@ extern "C" {
      #include "extApi.h"
 }
 #include <math.h>
+#include <iostream>
+#include <string>
+#include <algorithm>
 
 
 class Vrephal: public Hal {
@@ -29,42 +32,66 @@ class Vrephal: public Hal {
 	    simxInt res2 = simxGetObjectHandle(clientID, "Quadricopter",&quadricopterHandler,simx_opmode_blocking);
 	    simxInt res3 = simxGetObjectHandle(clientID, "Quadricopter_floorCamera",&quadricopterFloorCamHandler,simx_opmode_blocking);
 	    simxInt res4 = simxGetObjectHandle(clientID, "Quadricopter_frontCamera",&quadricopterFrontCamHandler,simx_opmode_blocking);
-	 
+
+	    //Enviar señal a motores
+	    //simxSetStringSignal(clientID,"deltavel",(const simxUChar*)"1 1 1 1",8,simx_opmode_blocking);
 	}
 
 
 	/************Movimiento*************/ 
 
+
 	// --> Rotación horizontal
 	void hrotate(int dir, double vel){
 
-		int auxdir = 1;
+		/*int auxdir = 1;
 		if (dir<0){
 			auxdir = -1;
 		}
 
 		simxFloat * orientation = new simxFloat[3];
-	  	simxGetObjectOrientation(clientID, quadricopterHandler, -1, orientation, simx_opmode_blocking);
+	  	simxGetObjectOrientation(clientID, targetHandler, -1, orientation, simx_opmode_blocking);
 
 	  	//Calcular orientacion
-		orientation[2] = orientation[2] + (vel*auxdir);
+		orientation[2] = orientation[2] + (vel*auxdir*0.1);
 		
-		simxSetObjectOrientation(clientID, targetHandler, -1, orientation, simx_opmode_oneshot);
+		simxSetObjectOrientation(clientID, quadricopterHandler, -1, orientation, simx_opmode_blocking);
+		simxSetObjectOrientation(clientID, targetHandler, -1, orientation, simx_opmode_blocking);*/
+
+		simxSetIntegerSignal(clientID,"flag",1,simx_opmode_blocking);
+		if (dir<0){
+
+			simxSetFloatSignal(clientID,"vel1",-vel,simx_opmode_blocking);
+	    	simxSetFloatSignal(clientID,"vel2",vel,simx_opmode_blocking);
+	    	simxSetFloatSignal(clientID,"vel3",-vel,simx_opmode_blocking);
+	    	simxSetFloatSignal(clientID,"vel4",vel,simx_opmode_blocking);
+		} else {
+
+			simxSetFloatSignal(clientID,"vel1",vel,simx_opmode_blocking);
+	    	simxSetFloatSignal(clientID,"vel2",-vel,simx_opmode_blocking);
+	    	simxSetFloatSignal(clientID,"vel3",vel,simx_opmode_blocking);
+	    	simxSetFloatSignal(clientID,"vel4",-vel,simx_opmode_blocking);
+		}
+    	
+    	simxSetIntegerSignal(clientID,"flag",0,simx_opmode_blocking);
+		
+		//Enviar señal a motores
+	    //simxSetStringSignal(clientID,"deltavel",(const simxUChar*)vels.c_str(),7,simx_opmode_blocking);
 	}
 
 	// --> Movimiento horizontal
 	void hmove(double angle, double vel){
 
 		//calcular vector
-		double x = vel*cos(angle);
-		double y = vel*sin(angle);
+		double x = vel*cos(angle*2*M_PI/360.0);
+		double y = vel*sin(angle*2*M_PI/360.0);
 
 		simxFloat * position = new simxFloat[3];
-		simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
+		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
 
 	    //Modificar posicion
-	    position[0] = position[0] + x;
-	    position[1] = position[1] + y;
+	    position[0] = position[0] + x*0.1;
+	    position[1] = position[1] + y*0.10;
 
 	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
 	}
@@ -201,6 +228,7 @@ class Vrephal: public Hal {
 
 		return pos;
 	}
+
 
 };
 
