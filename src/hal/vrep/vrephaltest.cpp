@@ -1,47 +1,39 @@
 #include "../hal.hpp"
 #include "vrephal.cpp"
 #include <unistd.h>
+#include <iostream>
 
+using namespace std;
 
 int main(int argc, char** argv){
 
 	Vrephal hal;
-	double vel = 0.5;
-	double rotvel = 0.5;
+	double vel = 1;
 
+	//despegar
+	cout << "Despegar..." << endl;
+	hal.takeoff();
 
-	hal.hrotate(1, rotvel);
 	sleep(2);
-	hal.hrotate(1, 0);
 
-
-	hal.hrotate(-1, rotvel);
-	sleep(4);
-	hal.hrotate(1, 0);
-
-	hal.hrotate(1, rotvel);
-	sleep(2);
-	hal.hrotate(1, 0);
-
-
-
-	//hal.hrotate2(90);
-
-	/*//girar en un sentido
-	for(int i = 0; i < 50; i++){
-		hal.hrotate(1, vel);
+	//girar en un sentido
+	cout << "Giro positivo..." << endl;
+	for(int i = 0; i < 20; i++){
+		hal.hrotate(vel);
 	}
 
 	sleep(2);
 
 	//girar en el otro
-	for(int i = 0; i < 50; i++){
-		hal.hrotate(-1, vel);
+	cout << "Giro negativo..." << endl;
+	for(int i = 0; i < 20; i++){
+		hal.hrotate(-vel);
 	}
 
 	sleep(2);
 
 	//adelante
+	cout << "Adelante..." << endl;
 	for(int i = 0; i < 20; i++){
 		hal.hmove(0, vel);
 	}
@@ -49,13 +41,19 @@ int main(int argc, char** argv){
 	sleep(2);
 
 	//atras
+	cout << "Atras..." << endl;
 	for(int i = 0; i < 20; i++){
 		hal.hmove(180, vel);
 	}
 
 	sleep(2);
 
+	//cambio latura objetivo
+	cout << "Cambio en altura objetivo..." << endl;
+	hal.targetAltitude(0.5);
+
 	//a un lado
+	cout << "Para un lado..." << endl;
 	for(int i = 0; i < 20; i++){
 		hal.hmove(90, vel);
 	}
@@ -63,12 +61,33 @@ int main(int argc, char** argv){
 	sleep(2);
 
 	//al otro lado
+	cout << "Para el otro..." << endl;
 	for(int i = 0; i < 20; i++){
 		hal.hmove(270, vel);
 	}
 
-	//al otro lado
+	sleep(2);
+
+	//arriba
+	cout << "Arriba..." << endl;
 	for(int i = 0; i < 20; i++){
-		hal.hmove(270, vel);
-	}*/		
+		hal.vmove(vel);
+	}
+
+	sleep(2);
+
+	//abajo
+	cout << "Abajo..." << endl;
+	for(int i = 0; i < 20; i++){
+		hal.vmove(-vel);
+	}
+
+	sleep(2);
+
+
+	//aterrizar
+	cout << "Aterrizar..." << endl;
+	hal.land();
+
+	sleep(2);
 }

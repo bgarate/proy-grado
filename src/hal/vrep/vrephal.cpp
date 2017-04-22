@@ -42,23 +42,28 @@ class Vrephal: public Hal {
 
 
 	// --> Rotación horizontal
-	void hrotate(int dir, double vel){
+	void hrotate(double vel){
 
 		/*int auxdir = 1;
 		if (dir<0){
 			auxdir = -1;
-		}
+		}*/
 
 		simxFloat * orientation = new simxFloat[3];
+		simxFloat * neworientation = new simxFloat[3];
 	  	simxGetObjectOrientation(clientID, targetHandler, -1, orientation, simx_opmode_blocking);
 
-	  	//Calcular orientacion
-		orientation[2] = orientation[2] + (vel*auxdir*0.1);
-		
-		simxSetObjectOrientation(clientID, quadricopterHandler, -1, orientation, simx_opmode_blocking);
-		simxSetObjectOrientation(clientID, targetHandler, -1, orientation, simx_opmode_blocking);*/
+	  	//Calcular orientacion	  	
+	  	neworientation[0]= orientation[0];
+	  	neworientation[1]= orientation[1]; 
+		neworientation[2]= orientation[2] + (vel/**auxdir*/*0.1);
 
-		simxSetIntegerSignal(clientID,"flag",1,simx_opmode_blocking);
+
+		simxSetObjectOrientation(clientID, targetHandler, -1, neworientation, simx_opmode_blocking);
+		simxSetObjectOrientation(clientID, targetHandler, -1, orientation, simx_opmode_blocking);
+		simxSetObjectOrientation(clientID, targetHandler, -1, neworientation, simx_opmode_blocking);
+		
+		/*simxSetIntegerSignal(clientID,"flag",1,simx_opmode_blocking);
 		if (dir<0){
 
 			simxSetFloatSignal(clientID,"vel1",-vel,simx_opmode_blocking);
@@ -76,7 +81,7 @@ class Vrephal: public Hal {
     	simxSetIntegerSignal(clientID,"flag",0,simx_opmode_blocking);
 		
 		//Enviar señal a motores
-	    //simxSetStringSignal(clientID,"deltavel",(const simxUChar*)vels.c_str(),7,simx_opmode_blocking);
+	    //simxSetStringSignal(clientID,"deltavel",(const simxUChar*)vels.c_str(),7,simx_opmode_blocking);*/
 	}
 
 	// --> Movimiento horizontal
@@ -87,25 +92,34 @@ class Vrephal: public Hal {
 		double y = vel*sin(angle*2*M_PI/360.0);
 
 		simxFloat * position = new simxFloat[3];
+		simxFloat * newposition = new simxFloat[3];
 		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
 
 	    //Modificar posicion
-	    position[0] = position[0] + x*0.1;
-	    position[1] = position[1] + y*0.10;
+	    newposition[0] = position[0] + x*0.1;
+	    newposition[1] = position[1] + y*0.1;
+	    newposition[2] = position[2];
 
-	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
+	    simxSetObjectPosition(clientID, targetHandler, -1, newposition, simx_opmode_blocking);
+	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
+	    simxSetObjectPosition(clientID, targetHandler, -1, newposition, simx_opmode_blocking);
 	}
 
 	// --> Movimiento vertical
 	void vmove(double vel){
 
 		simxFloat * position = new simxFloat[3];
-		simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
+		simxFloat * newposition = new simxFloat[3];
+		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
 
 	    //Modificar posicion
-	    position[2] = position[2] + vel;
+	    newposition[0] = position[0];
+	    newposition[1] = position[1];
+	    newposition[2] = position[2] + vel*0.1;
 
-	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
+	    simxSetObjectPosition(clientID, targetHandler, -1, newposition, simx_opmode_blocking);
+	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
+	    simxSetObjectPosition(clientID, targetHandler, -1, newposition, simx_opmode_blocking);
 
 	}
 
@@ -113,31 +127,47 @@ class Vrephal: public Hal {
 	void land(){
 
 		simxFloat * position = new simxFloat[3];
-		simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
+		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
 
 	    //Modificar posicion
 	    position[2] = 0;
 
-	    simxSetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_oneshot);
+	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
+
+	   	while(1){
+			simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
+			if(position[2]< 0.1){
+				break;
+			}
+	    }
+
+	    simxSetIntegerSignal(clientID,"motorsoff",1,simx_opmode_blocking);
 
 	}
 	void takeoff(){
 
 		simxFloat * position = new simxFloat[3];
-		simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
+		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
 
 	    //Modificar posicion
 	    position[2] = 1;
 
+	    simxSetIntegerSignal(clientID,"motorsoff",0,simx_opmode_blocking);
 	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
 
+	    while(1){
+			simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
+			if(position[2] > 0.9){
+				break;
+			}
+	    }
 	}
 
 	// --> Altura objetivo
 	void targetAltitude(double altitude){
 
 		simxFloat * position = new simxFloat[3];
-		simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
+		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
 
 	    //Modificar posicion
 	    position[2] = altitude;

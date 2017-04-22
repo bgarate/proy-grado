@@ -27,7 +27,7 @@ class Hal{
 	/************Movimiento*************/ 
 
 	// --> Rotación horizontal
-	virtual void hrotate(int dir, double vel) = 0;
+	virtual void hrotate(double vel) = 0;
 
 	// --> Movimiento horizontal
 	virtual void hmove(double angle, double vel) = 0;
