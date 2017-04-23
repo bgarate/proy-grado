@@ -8,6 +8,9 @@ using namespace std;
 int main(int argc, char** argv){
 
 	Vrephal hal;
+
+	/************** MOVIMIENTO *****************/
+
 	double vel = 1;
 
 	//despegar
@@ -90,4 +93,17 @@ int main(int argc, char** argv){
 	hal.land();
 
 	sleep(2);
+
+	/************** INFORMACION *****************/
+
+	//Altura
+	cout << "Altura: " << hal.getAltitude() << endl;
+
+	//Orientacion
+	Point o = hal.getOrientation();
+	cout << "Orientación: [" << o.x << ", " << o.y << ", " << o.z << "]" << endl;
+
+	//Posicion
+	Point p = hal.getOrientation();
+	cout << "Posición: [" << p.x << ", " << p.y << ", " << p.z << "]" << endl;
 }
