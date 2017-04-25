@@ -1,26 +1,13 @@
 #include "../hal.hpp"
+#include "vrephal.hpp"
+
 extern "C" {
      #include "extApi.h"
 }
 #include <math.h>
 
 
-class Vrephal: public Hal {
-
-	//Constantes
-	const int PORT = 19997;
-	const char * HOST = "127.0.0.1"; 
-
-	//Variables aux 
-	int clientID;
-	simxInt targetHandler, quadricopterHandler, quadricopterFloorCamHandler, quadricopterFrontCamHandler;
-
-
-	public:
-
-	/************Constructor*************/ 
-
-	Vrephal(){
+Vrephal::Vrephal(){
 		//Conectar con V-REP
 		clientID = simxStart(HOST, PORT, true, true, 5000, 5); 
 		
@@ -36,7 +23,7 @@ class Vrephal: public Hal {
 	/************Movimiento*************/ 
 
 	// --> Rotación horizontal
-	void hrotate(int dir, double vel){
+	void Vrephal::hrotate(int dir, double vel){
 
 		int auxdir = 1;
 		if (dir<0){
@@ -53,7 +40,7 @@ class Vrephal: public Hal {
 	}
 
 	// --> Movimiento horizontal
-	void hmove(double angle, double vel){
+	void Vrephal::hmove(double angle, double vel){
 
 		//calcular vector
 		double x = vel*cos(angle);
@@ -70,7 +57,7 @@ class Vrephal: public Hal {
 	}
 
 	// --> Movimiento vertical
-	void vmove(double vel){
+	void Vrephal::vmove(double vel){
 
 		simxFloat * position = new simxFloat[3];
 		simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
@@ -83,7 +70,7 @@ class Vrephal: public Hal {
 	}
 
 	// --> Despegue y aterrizaje
-	void land(){
+	void Vrephal::land(){
 
 		simxFloat * position = new simxFloat[3];
 		simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
@@ -94,7 +81,7 @@ class Vrephal: public Hal {
 	    simxSetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_oneshot);
 
 	}
-	void takeoff(){
+	void Vrephal::takeoff(){
 
 		simxFloat * position = new simxFloat[3];
 		simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
@@ -107,7 +94,7 @@ class Vrephal: public Hal {
 	}
 
 	// --> Altura objetivo
-	void targetAltitude(double altitude){
+	void Vrephal::targetAltitude(double altitude){
 
 		simxFloat * position = new simxFloat[3];
 		simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
@@ -121,7 +108,7 @@ class Vrephal: public Hal {
 	/************Estado del drone*************/
 
 	// --> Batería 
-	int bateryLevel(){
+	int Vrephal::bateryLevel(){
 		return 100;
 	}
 
@@ -131,7 +118,7 @@ class Vrephal: public Hal {
 	/************Cámara*************/
 
 	// --> Obtener captura de imagen (ambas cámaras)
-	Frame getFrame(Camera cam){
+	Frame Vrephal::getFrame(Camera cam){
 
 		simxInt cameraHandler;
 		if (cam == Camera::Front){
@@ -165,7 +152,7 @@ class Vrephal: public Hal {
 	/************Posición*************/
 
 	// --> Altura
-	double getAltitude(){
+	double Vrephal::getAltitude(){
 
 		simxFloat * position = new simxFloat[3];
 		simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
@@ -175,7 +162,7 @@ class Vrephal: public Hal {
 	}
 
 	// --> Orientación 
-	Point getOrientation(){
+	Point Vrephal::getOrientation(){
 
 		simxFloat * orientation = new simxFloat[3];
 	  	simxGetObjectOrientation(clientID, quadricopterHandler, -1, orientation, simx_opmode_blocking);
@@ -189,18 +176,16 @@ class Vrephal: public Hal {
 	}	
 
 	// --> Coordenadas
-	Point getGPSPosition(){
+	Point Vrephal::getGPSPosition() {
 
-		simxFloat * position = new simxFloat[3];
+		simxFloat *position = new simxFloat[3];
 		simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
 
 		Point pos;
-	  	pos.x = position[0];
-	  	pos.y = position[1];
-	  	pos.z = position[2];
+		pos.x = position[0];
+		pos.y = position[1];
+		pos.z = position[2];
 
 		return pos;
 	}
-
-};
 

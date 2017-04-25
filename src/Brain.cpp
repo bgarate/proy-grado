@@ -21,8 +21,6 @@ void Brain::communicate(unsigned short port) {
     communication.send(ping);
     Logger::logInfo("PING REQUEST sent");
 
-    loop();
-
 }
 
 void Brain::loop() {

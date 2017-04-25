@@ -14,13 +14,15 @@ public:
     Brain();
 
     void communicate(unsigned short port);
+
+    void loop();
+
 private:
     Communication communication;
     MessageHandler messsageHandler;
 
     void PingHandler(Message &msg);
 
-    void loop();
 };
 
 
