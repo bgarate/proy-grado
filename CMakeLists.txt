@@ -9,7 +9,7 @@ find_package(Boost REQUIRED system program_options)
 find_package(Protobuf REQUIRED)
 
 set(CMAKE_CXX_STANDARD 11)
-set(SOURCE_FILES src/main.cpp src/tracking/TrackingAlgorithm.h src/tracking/HogDetector.cpp src/tracking/HogDetector.h src/tracking/MultiTracker.cpp src/tracking/MultiTracker.h src/tracking/DetectAndTrack.cpp src/tracking/DetectAndTrack.h src/logging/Logger.cpp src/logging/Logger.h src/tracking/Track.cpp src/tracking/Track.h src/Brain.cpp src/Brain.h src/Body.cpp src/Body.h src/communication/Communication.cpp src/communication/Communication.h src/communication/PackedMessage.h src/communication/MessageBuilder.cpp src/communication/MessageBuilder.h src/MessageHandler.cpp src/MessageHandler.h src/hal/hal.hpp src/hal/vrep/extApi.c src/hal/vrep/extApi.h src/hal/vrep/extApiInternal.h src/hal/vrep/extApiPlatform.c src/hal/vrep/extApiPlatform.h src/hal/vrep/v_repConst.h src/hal/vrep/vrephal.hpp src/hal/vrep/vrephal.cpp)
+set(SOURCE_FILES src/main.cpp src/tracking/TrackingAlgorithm.h src/tracking/HogDetector.cpp src/tracking/HogDetector.h src/tracking/MultiTracker.cpp src/tracking/MultiTracker.h src/tracking/DetectAndTrack.cpp src/tracking/DetectAndTrack.h src/logging/Logger.cpp src/logging/Logger.h src/tracking/Track.cpp src/tracking/Track.h src/Brain.cpp src/Brain.h src/Body.cpp src/Body.h src/communication/Communication.cpp src/communication/Communication.h src/communication/PackedMessage.h src/communication/MessageBuilder.cpp src/communication/MessageBuilder.h src/MessageHandler.cpp src/MessageHandler.h src/hal/hal.hpp src/hal/vrep/extApi.c src/hal/vrep/extApi.h src/hal/vrep/extApiInternal.h src/hal/vrep/extApiPlatform.c src/hal/vrep/extApiPlatform.h src/hal/vrep/v_repConst.h src/hal/vrep/vrephal.cpp)
 
 ADD_SUBDIRECTORY(src/proto)
 

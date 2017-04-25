@@ -4,7 +4,7 @@
 #include "logging/Logger.h"
 #include "Body.h"
 #include "Brain.h"
-#include "hal/vrep/vrephal.hpp"
+#include "hal/vrep/vrephal.cpp"
 
 namespace po = boost::program_options;
 
@@ -61,3 +61,4 @@ int main(int argc, const char* args[]) {
 
     return 0;
 }
+
