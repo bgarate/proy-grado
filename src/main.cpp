@@ -4,6 +4,7 @@
 #include "logging/Logger.h"
 #include "Body.h"
 #include "Brain.h"
+#include "hal/vrep/vrephal.cpp"
 
 namespace po = boost::program_options;
 
@@ -37,21 +38,27 @@ int main(int argc, const char* args[]) {
     if (startBody && startBrain) {
         pid_t pid = fork();
 
-        startBody = pid != 0;
+        startBody = pid == 0;
         startBrain = !startBody;
     }
 
     if (startBody) {
-        Body body;
+        Hal* hal = new Vrephal();
+        Body body(hal);
         Logger::getInstance().setSource("BODY");
         body.communicate("localhost", 11500);
+        body.loop();
+        delete hal;
     } else {
         Brain brain;
         Logger::getInstance().setSource("BRAIN");
         brain.communicate(11500);
+        brain.loop();
     }
 
     waitpid(-1, NULL, 0);
 
+
     return 0;
 }
+

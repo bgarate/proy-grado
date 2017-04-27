@@ -8,7 +8,8 @@
 #include "Brain.h"
 
 
-Body::Body() {
+Body::Body(Hal *hal) {
+    this->hal = hal;
     messsageHandler.registerHandler(Message_Type::Message_Type_PING, [this](Message m){this->PingHandler(m);});
 }
 
@@ -17,7 +18,6 @@ void Body::communicate(std::string brainHost, unsigned short port) {
     communication.connect(brainHost, port);
     Logger::logInfo("Body has established a connection!");
 
-    loop();
 }
 
 void Body::loop() {
