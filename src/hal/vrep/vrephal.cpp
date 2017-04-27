@@ -6,7 +6,9 @@ extern "C" {
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <iostream>
 
+using namespace std;
 
 class Vrephal: public Hal {
 
@@ -30,8 +32,11 @@ class Vrephal: public Hal {
 	    //Obtener handlers
 	    simxInt res1 = simxGetObjectHandle(clientID, "Quadricopter_target",&targetHandler,simx_opmode_blocking);
 	    simxInt res2 = simxGetObjectHandle(clientID, "Quadricopter",&quadricopterHandler,simx_opmode_blocking);
-	    simxInt res3 = simxGetObjectHandle(clientID, "Quadricopter_floorCamera",&quadricopterFloorCamHandler,simx_opmode_blocking);
-	    simxInt res4 = simxGetObjectHandle(clientID, "Quadricopter_frontCamera",&quadricopterFrontCamHandler,simx_opmode_blocking);
+	    //simxInt res3 = simxGetObjectHandle(clientID, "Quadricopter_floorCamera",&quadricopterFloorCamHandler,simx_opmode_blocking);
+	    //simxInt res4 = simxGetObjectHandle(clientID, "Quadricopter_frontCamera",&quadricopterFrontCamHandler,simx_opmode_blocking);
+	    simxInt res3 = simxGetObjectHandle(clientID, "Vision_sensorFloor",&quadricopterFloorCamHandler,simx_opmode_blocking);
+	    simxInt res4 = simxGetObjectHandle(clientID, "Vision_sensorFront",&quadricopterFrontCamHandler,simx_opmode_blocking);
+
 
 	    //Enviar señal a motores
 	    //simxSetStringSignal(clientID,"deltavel",(const simxUChar*)"1 1 1 1",8,simx_opmode_blocking);
@@ -130,7 +135,7 @@ class Vrephal: public Hal {
 		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
 
 	    //Modificar posicion
-	    position[2] = 0;
+	    position[2] = 0.01;
 
 	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
 
@@ -199,22 +204,27 @@ class Vrephal: public Hal {
 
 		simxInt* resolution = new simxInt[2];
 		simxUChar** image;
+		int size = 32;
 
-		simxGetVisionSensorImage(clientID, cameraHandler,resolution,image,0,simx_opmode_blocking);
+		image = new simxUChar*[size];
+		for (int i=0; i<size; i++){
+			image[i]= new simxUChar[size];
+		}
+
+		simxInt aux = simxGetVisionSensorImage(clientID, cameraHandler,resolution,image,1,simx_opmode_blocking);
 
 		//convertir imagen
 		Frame res;
-		res.Width = resolution[0]; 
+		res.width = resolution[0]; 
 		res.height = resolution[1];
-		res.data = new char*[res.Width];
-		for (int i=0; i<res.Width; i++){
+		res.data = new char*[res.width];
+		for (int i=0; i<res.width; i++){
 
 			res.data[i]= new char[res.height];
 			for(int j=0; j<res.height; j++){
 				res.data[i][j]=image[i][j];
 			}
 		}
-		
 
 		return res;
 	}

@@ -10,7 +10,7 @@
 	//Definicion frame
 	typedef struct {
 		char ** data;
-		int Width, height;
+		int width, height;
 	} Frame;
 
 	//Definicion point

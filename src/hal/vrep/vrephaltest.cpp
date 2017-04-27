@@ -19,7 +19,11 @@ int main(int argc, char** argv){
 
 	sleep(2);
 
-	//girar en un sentido
+	Frame res = hal.getFrame(Camera::Front);
+
+	//cv::imshow("Imagen",res);
+
+	/*//girar en un sentido
 	cout << "Giro positivo..." << endl;
 	for(int i = 0; i < 20; i++){
 		hal.hrotate(vel);
@@ -83,7 +87,7 @@ int main(int argc, char** argv){
 	cout << "Abajo..." << endl;
 	for(int i = 0; i < 20; i++){
 		hal.vmove(-vel);
-	}
+	}*/
 
 	sleep(2);
 
@@ -95,6 +99,11 @@ int main(int argc, char** argv){
 	sleep(2);
 
 	/************** INFORMACION *****************/
+
+	//Imagen
+	cout << "Pixel 0,0: " << res.data[0][0] << endl;
+	cout << "width: " << res.width << endl;
+	cout << "height: " << res.height << endl;
 
 	//Altura
 	cout << "Altura: " << hal.getAltitude() << endl;
