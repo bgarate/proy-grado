@@ -1,42 +1,17 @@
 //
-// Created by bruno on 09/04/17.
+// Created by bruno on 27/04/17.
 //
 
 #ifndef PROY_GRADO_COMMUNICATION_H
 #define PROY_GRADO_COMMUNICATION_H
 
-#include <boost/asio/io_service.hpp>
-#include <boost/asio/ip/tcp.hpp>
-#include "iostream"
-
-using boost::asio::ip::tcp;
-using boost::asio::io_service;
-
-class Message;
 
 class Communication {
-
 public:
-    ~Communication();
-    bool isServer();
-    void connect(std::string host, unsigned short port);
-    void serve(unsigned short  port);
+    void serve();
+    void advertise();
+    void join();
 
-    Message receive();
-    void send(Message msg);
-
-    bool messageAvailable();
-
-private:
-    static const int MAX_NUMBER_RETRIES = 3;
-    bool isServing;
-    io_service service;
-    tcp::socket* socket;
-
-    std::vector<uint8_t> writeBuffer;
-    std::vector<uint8_t> readBuffer;
-
-    void tryConnect(std::string host, unsigned short port);
 };
 
 

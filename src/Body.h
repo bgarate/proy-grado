@@ -6,7 +6,7 @@
 #define PROY_GRADO_BODY_H
 
 #include <iostream>
-#include "communication/Communication.h"
+#include "src/communication/SocketChannel.h"
 #include "MessageHandler.h"
 #include "hal/hal.hpp"
 
@@ -18,7 +18,7 @@ public:
     void loop();
 
 private:
-    Communication communication;
+    SocketChannel communication;
     MessageHandler messsageHandler;
     Hal* hal;
     void PingHandler(Message &msg);
