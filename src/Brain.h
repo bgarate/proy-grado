@@ -6,7 +6,7 @@
 #define PROY_GRADO_BRAIN_H
 
 
-#include "communication/Communication.h"
+#include "src/communication/SocketChannel.h"
 #include "MessageHandler.h"
 
 class Brain {
@@ -18,7 +18,7 @@ public:
     void loop();
 
 private:
-    Communication communication;
+    SocketChannel communication;
     MessageHandler messsageHandler;
 
     void PingHandler(Message &msg);
