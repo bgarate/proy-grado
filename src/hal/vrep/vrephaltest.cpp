@@ -3,10 +3,7 @@
 #include <unistd.h>
 #include <iostream>
 #include <stdio.h>
-
-//#include <cv.h>
-//#include <highgui.h>
-
+//opencv
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/core/core.hpp>
@@ -42,9 +39,7 @@ int main(int argc, char** argv){
 
 	sleep(2);
 
-	Frame res = hal.getFrame(Camera::Front);
-
-	//cv::imshow("Imagen",res);
+	cv::Mat res = hal.getFrame(Camera::Front);
 
 	//girar en un sentido
 	cout << "Giro positivo..." << endl;
@@ -124,30 +119,9 @@ int main(int argc, char** argv){
 	/************** INFORMACION *****************/
 
 	//Imagen
-	cout << "Pixel 0,0: " << res.data[0][0] << endl;
-	cout << "Pixel 255,255: " << res.data[0][255*255*3] << endl;
-	cout << "width: " << res.width << endl;
-	cout << "height: " << res.height << endl;
-
-	//OPENCV
-	//cv::Mat cameraFrame = cv::Mat(res.width, res.height, CV_8UC1, res.data);
-	//cv::Mat myMat = convertToMat(res.width, res.height, res.data);
-
-	/*char * auxdata = new char[res.height*res.width]();
-	for (int x = 0; x < res.height; x++) {
-        for (int y = 0; y < res.width; y++) {
-            auxdata[(x*res.width)+y] = res.data[x][y];
-        }
-    }*/
-
-	//cv::Mat image = cv::Mat(res.height,res.width,CV_8UC1,res.data);
-	cv::Mat image = cv::Mat(res.height,res.width,CV_8UC3,res.data[0]);
-
 	cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
-    cv::imshow( "Display window", image );                   // Show our image inside it.
-
-    cv::waitKey(0); 
-
+    cv::imshow( "Display window", res );                   // Show our image inside it.
+    cv::waitKey(0);
 
 	//Altura
 	cout << "Altura: " << hal.getAltitude() << endl;

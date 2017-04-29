@@ -1,6 +1,10 @@
 #ifndef __HAL_HPP
 #define __HAL_HPP
 
+//opencv
+#include <opencv2/opencv.hpp>
+#include <opencv2/highgui/highgui.hpp>
+
 //Velocidad de giro por defecto
 #define DEFAULT_ROTATE_VEL 1;
 
@@ -53,7 +57,7 @@ class Hal{
 	/************Cámara*************/
 
 	// --> Obtener captura de imagen (ambas cámaras)
-	virtual Frame getFrame(Camera cam) = 0;
+	virtual cv::Mat getFrame(Camera cam) = 0;
 
 	/************Posición*************/
 
