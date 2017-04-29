@@ -2,8 +2,28 @@
 #include "vrephal.cpp"
 #include <unistd.h>
 #include <iostream>
+#include <stdio.h>
+//opencv
+#include <opencv2/opencv.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 using namespace std;
+
+
+cv::Mat convertToMat(int width, int height, char **buffer) {
+    cv::Mat tmp;
+    tmp = cv::Mat(width, height, CV_8SC1);
+    for (int x = 0; x < height; x++) {
+        for (int y = 0; y < width; y++) {
+            int value = (int) buffer[x][y];
+           	tmp.at<int>(y, x) = value; 
+        }
+    }
+    return tmp;
+}
+
 
 int main(int argc, char** argv){
 
@@ -19,11 +39,9 @@ int main(int argc, char** argv){
 
 	sleep(2);
 
-	Frame res = hal.getFrame(Camera::Front);
+	cv::Mat res = hal.getFrame(Camera::Front);
 
-	//cv::imshow("Imagen",res);
-
-	/*//girar en un sentido
+	//girar en un sentido
 	cout << "Giro positivo..." << endl;
 	for(int i = 0; i < 20; i++){
 		hal.hrotate(vel);
@@ -87,7 +105,7 @@ int main(int argc, char** argv){
 	cout << "Abajo..." << endl;
 	for(int i = 0; i < 20; i++){
 		hal.vmove(-vel);
-	}*/
+	}
 
 	sleep(2);
 
@@ -101,9 +119,9 @@ int main(int argc, char** argv){
 	/************** INFORMACION *****************/
 
 	//Imagen
-	cout << "Pixel 0,0: " << res.data[0][0] << endl;
-	cout << "width: " << res.width << endl;
-	cout << "height: " << res.height << endl;
+	cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
+    cv::imshow( "Display window", res );                   // Show our image inside it.
+    cv::waitKey(0);
 
 	//Altura
 	cout << "Altura: " << hal.getAltitude() << endl;
