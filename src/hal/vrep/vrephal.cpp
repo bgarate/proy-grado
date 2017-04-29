@@ -135,7 +135,7 @@ class Vrephal: public Hal {
 		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
 
 	    //Modificar posicion
-	    position[2] = 0.01;
+	    position[2] = 0.05;
 
 	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
 
@@ -203,27 +203,38 @@ class Vrephal: public Hal {
 		}
 
 		simxInt* resolution = new simxInt[2];
-		simxUChar** image;
-		int size = 32;
+		//simxUChar** image;
+		simxUChar* image;
+		int size = 256;
 
-		image = new simxUChar*[size];
+		image = new simxUChar[size*size*3];
+		/*image = new simxUChar*[size];
 		for (int i=0; i<size; i++){
 			image[i]= new simxUChar[size];
 		}
+		image[0][0]= 'H';*/
 
-		simxInt aux = simxGetVisionSensorImage(clientID, cameraHandler,resolution,image,1,simx_opmode_blocking);
+		simxInt aux = simxGetVisionSensorImage(clientID, cameraHandler,resolution,&image,/*1*/0,simx_opmode_blocking);
+
+		cout << "Error code: " << aux << endl;
 
 		//convertir imagen
 		Frame res;
 		res.width = resolution[0]; 
 		res.height = resolution[1];
-		res.data = new char*[res.width];
+		/*res.data = new char*[res.width];
 		for (int i=0; i<res.width; i++){
 
 			res.data[i]= new char[res.height];
 			for(int j=0; j<res.height; j++){
 				res.data[i][j]=image[i][j];
 			}
+		}*/
+
+		res.data = new char*[1];
+		res.data[0] = new char[size*size*3];
+		for (int i=0; i<size*size*3; i++){
+				res.data[0][i]=image[i];
 		}
 
 		return res;

@@ -2,8 +2,31 @@
 #include "vrephal.cpp"
 #include <unistd.h>
 #include <iostream>
+#include <stdio.h>
+
+//#include <cv.h>
+//#include <highgui.h>
+
+#include <opencv2/opencv.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 using namespace std;
+
+
+cv::Mat convertToMat(int width, int height, char **buffer) {
+    cv::Mat tmp;
+    tmp = cv::Mat(width, height, CV_8SC1);
+    for (int x = 0; x < height; x++) {
+        for (int y = 0; y < width; y++) {
+            int value = (int) buffer[x][y];
+           	tmp.at<int>(y, x) = value; 
+        }
+    }
+    return tmp;
+}
+
 
 int main(int argc, char** argv){
 
@@ -23,7 +46,7 @@ int main(int argc, char** argv){
 
 	//cv::imshow("Imagen",res);
 
-	/*//girar en un sentido
+	//girar en un sentido
 	cout << "Giro positivo..." << endl;
 	for(int i = 0; i < 20; i++){
 		hal.hrotate(vel);
@@ -87,7 +110,7 @@ int main(int argc, char** argv){
 	cout << "Abajo..." << endl;
 	for(int i = 0; i < 20; i++){
 		hal.vmove(-vel);
-	}*/
+	}
 
 	sleep(2);
 
@@ -102,8 +125,29 @@ int main(int argc, char** argv){
 
 	//Imagen
 	cout << "Pixel 0,0: " << res.data[0][0] << endl;
+	cout << "Pixel 255,255: " << res.data[0][255*255*3] << endl;
 	cout << "width: " << res.width << endl;
 	cout << "height: " << res.height << endl;
+
+	//OPENCV
+	//cv::Mat cameraFrame = cv::Mat(res.width, res.height, CV_8UC1, res.data);
+	//cv::Mat myMat = convertToMat(res.width, res.height, res.data);
+
+	/*char * auxdata = new char[res.height*res.width]();
+	for (int x = 0; x < res.height; x++) {
+        for (int y = 0; y < res.width; y++) {
+            auxdata[(x*res.width)+y] = res.data[x][y];
+        }
+    }*/
+
+	//cv::Mat image = cv::Mat(res.height,res.width,CV_8UC1,res.data);
+	cv::Mat image = cv::Mat(res.height,res.width,CV_8UC3,res.data[0]);
+
+	cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
+    cv::imshow( "Display window", image );                   // Show our image inside it.
+
+    cv::waitKey(0); 
+
 
 	//Altura
 	cout << "Altura: " << hal.getAltitude() << endl;
