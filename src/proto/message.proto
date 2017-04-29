@@ -1,6 +1,8 @@
 syntax = "proto3";
 
 import "ping.proto";
+import "advertisement.proto";
+import "shutdown.proto";
 
 message Message {
 
@@ -8,8 +10,12 @@ message Message {
 
     enum Type {
         PING = 0;
+        SHUTDOWN = 1;
+        ADVERTISEMENT = 2;
     }
 
     Ping ping = 100;
+    DoShutdown shutdown = 101;
+    Advertisement advertisement = 102;
 
 }

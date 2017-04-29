@@ -6,15 +6,15 @@
 #define PROY_GRADO_BODY_H
 
 #include <iostream>
-#include "src/communication/SocketChannel.h"
+#include "src/messages/SocketChannel.h"
 #include "MessageHandler.h"
 #include "hal/hal.hpp"
 
 class Body {
 public:
     Body(Hal* hal);
-    void communicate(std::string brainHost, unsigned short port);
 
+    void setup(std::string brainHost);
     void loop();
 
 private:
@@ -22,7 +22,11 @@ private:
     MessageHandler messsageHandler;
     Hal* hal;
     void PingHandler(Message &msg);
+    void communicateWithBrain(std::string brainHost, unsigned short port);
 
+    bool should_exit = false;
+
+    void ShutdownHandler(Message &msg);
 };
 
 

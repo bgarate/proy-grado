@@ -11,9 +11,15 @@
 Body::Body(Hal *hal) {
     this->hal = hal;
     messsageHandler.registerHandler(Message_Type::Message_Type_PING, [this](Message m){this->PingHandler(m);});
+    messsageHandler.registerHandler(Message_Type::Message_Type_SHUTDOWN, [this](Message m){this->ShutdownHandler(m);});
 }
 
-void Body::communicate(std::string brainHost, unsigned short port) {
+
+void Body::setup(std::string brainHost) {
+    Logger::getInstance().setSource("BODY");
+    communicateWithBrain(brainHost, Brain::BRAIN_SERVE_PORT);
+}
+void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
     communication.connect(brainHost, port);
     Logger::logInfo("Body has established a connection!");
@@ -27,6 +33,9 @@ void Body::loop() {
             Message msg = communication.receive();
             messsageHandler.handle(msg);
         }
+
+        if(should_exit)
+            break;
 
         sleep(0);
     }
@@ -42,6 +51,18 @@ void Body::PingHandler(Message& msg){
         Logger::logInfo("PING ACK sent");
     } else {
         Logger::logInfo("PING ACK received");
+
     }
 
 }
+
+void Body::ShutdownHandler(Message& msg){
+
+    //DoShutdown* shutdown = msg.mutable_shutdown();
+    Logger::logWarning("SHUTDOWN requested");
+
+    should_exit = true;
+
+}
+
+

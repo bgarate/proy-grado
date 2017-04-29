@@ -21,14 +21,16 @@ int main(int argc, const char* args[]) {
 
     desc.add_options()
             ("brain", "Starts the brain")
-            ("body", "Starts the body");
+            ("body", "Starts the body")
+            ("root", "Acts as root node to which other brains connect to");
 
     po::variables_map vm;
     po::store(po::parse_command_line(argc, args, desc), vm);
     po::notify(vm);
 
     bool startBrain = vm.count("brain") > 0;
-    bool startBody = vm.count("brain") > 0;
+    bool startBody = vm.count("body") > 0;
+    bool isRoot = vm.count("root") > 0;
 
     if (!startBody && !startBrain) {
         std::cout << desc << "\n";
@@ -45,17 +47,18 @@ int main(int argc, const char* args[]) {
     if (startBody) {
         Hal* hal = new Vrephal();
         Body body(hal);
-        Logger::getInstance().setSource("BODY");
-        body.communicate("localhost", 11500);
+
+        body.setup("localhost");
         body.loop();
         delete hal;
     } else {
         Brain brain;
-        Logger::getInstance().setSource("BRAIN");
-        brain.communicate(11500);
+
+        brain.setup(isRoot);
         brain.loop();
     }
 
+    Logger::logWarning("Program exiting");
     waitpid(-1, NULL, 0);
 
 

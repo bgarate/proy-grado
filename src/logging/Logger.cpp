@@ -46,6 +46,8 @@ void Logger::Log(std::string msg, Logger::LogType severity) {
             console->debug(msg);
             break;
     }
+
+    console->flush();
 }
 
 Logger::~Logger() {

@@ -36,6 +36,8 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _oneof_case_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, type_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, ping_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, shutdown_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, advertisement_),
 };
 
 static const ::google::protobuf::internal::MigrationSchema schemas[] = {
@@ -79,9 +81,15 @@ void TableStruct::InitDefaultsImpl() {
 
   ::google::protobuf::internal::InitProtobufDefaults();
   ::protobuf_ping_2eproto::InitDefaults();
+  ::protobuf_advertisement_2eproto::InitDefaults();
+  ::protobuf_shutdown_2eproto::InitDefaults();
   _Message_default_instance_.DefaultConstruct();
   _Message_default_instance_.get_mutable()->ping_ = const_cast< ::Ping*>(
       ::Ping::internal_default_instance());
+  _Message_default_instance_.get_mutable()->shutdown_ = const_cast< ::DoShutdown*>(
+      ::DoShutdown::internal_default_instance());
+  _Message_default_instance_.get_mutable()->advertisement_ = const_cast< ::Advertisement*>(
+      ::Advertisement::internal_default_instance());
 }
 
 void InitDefaults() {
@@ -91,15 +99,21 @@ void InitDefaults() {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] = {
-      "\n\rmessage.proto\032\nping.proto\"M\n\007Message\022\033"
-      "\n\004type\030\001 \001(\0162\r.Message.Type\022\023\n\004ping\030d \001("
-      "\0132\005.Ping\"\020\n\004Type\022\010\n\004PING\020\000b\006proto3"
+      "\n\rmessage.proto\032\nping.proto\032\023advertiseme"
+      "nt.proto\032\016shutdown.proto\"\264\001\n\007Message\022\033\n\004"
+      "type\030\001 \001(\0162\r.Message.Type\022\023\n\004ping\030d \001(\0132"
+      "\005.Ping\022\035\n\010shutdown\030e \001(\0132\013.DoShutdown\022%\n"
+      "\radvertisement\030f \001(\0132\016.Advertisement\"1\n\004"
+      "Type\022\010\n\004PING\020\000\022\014\n\010SHUTDOWN\020\001\022\021\n\rADVERTIS"
+      "EMENT\020\002b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 114);
+      descriptor, 255);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "message.proto", &protobuf_RegisterTypes);
   ::protobuf_ping_2eproto::AddDescriptors();
+  ::protobuf_advertisement_2eproto::AddDescriptors();
+  ::protobuf_shutdown_2eproto::AddDescriptors();
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
 }
 
@@ -123,6 +137,8 @@ const ::google::protobuf::EnumDescriptor* Message_Type_descriptor() {
 bool Message_Type_IsValid(int value) {
   switch (value) {
     case 0:
+    case 1:
+    case 2:
       return true;
     default:
       return false;
@@ -131,6 +147,8 @@ bool Message_Type_IsValid(int value) {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const Message_Type Message::PING;
+const Message_Type Message::SHUTDOWN;
+const Message_Type Message::ADVERTISEMENT;
 const Message_Type Message::Type_MIN;
 const Message_Type Message::Type_MAX;
 const int Message::Type_ARRAYSIZE;
@@ -141,6 +159,8 @@ const int Message::Type_ARRAYSIZE;
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Message::kTypeFieldNumber;
 const int Message::kPingFieldNumber;
+const int Message::kShutdownFieldNumber;
+const int Message::kAdvertisementFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Message::Message()
@@ -161,6 +181,16 @@ Message::Message(const Message& from)
   } else {
     ping_ = NULL;
   }
+  if (from.has_shutdown()) {
+    shutdown_ = new ::DoShutdown(*from.shutdown_);
+  } else {
+    shutdown_ = NULL;
+  }
+  if (from.has_advertisement()) {
+    advertisement_ = new ::Advertisement(*from.advertisement_);
+  } else {
+    advertisement_ = NULL;
+  }
   type_ = from.type_;
   // @@protoc_insertion_point(copy_constructor:Message)
 }
@@ -179,6 +209,12 @@ Message::~Message() {
 void Message::SharedDtor() {
   if (this != internal_default_instance()) {
     delete ping_;
+  }
+  if (this != internal_default_instance()) {
+    delete shutdown_;
+  }
+  if (this != internal_default_instance()) {
+    delete advertisement_;
   }
 }
 
@@ -211,6 +247,14 @@ void Message::Clear() {
     delete ping_;
   }
   ping_ = NULL;
+  if (GetArenaNoVirtual() == NULL && shutdown_ != NULL) {
+    delete shutdown_;
+  }
+  shutdown_ = NULL;
+  if (GetArenaNoVirtual() == NULL && advertisement_ != NULL) {
+    delete advertisement_;
+  }
+  advertisement_ = NULL;
   type_ = 0;
 }
 
@@ -245,6 +289,30 @@ bool Message::MergePartialFromCodedStream(
             static_cast< ::google::protobuf::uint8>(802u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_ping()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .DoShutdown shutdown = 101;
+      case 101: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(810u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_shutdown()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .Advertisement advertisement = 102;
+      case 102: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(818u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_advertisement()));
         } else {
           goto handle_unusual;
         }
@@ -287,6 +355,18 @@ void Message::SerializeWithCachedSizes(
       100, *this->ping_, output);
   }
 
+  // .DoShutdown shutdown = 101;
+  if (this->has_shutdown()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      101, *this->shutdown_, output);
+  }
+
+  // .Advertisement advertisement = 102;
+  if (this->has_advertisement()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      102, *this->advertisement_, output);
+  }
+
   // @@protoc_insertion_point(serialize_end:Message)
 }
 
@@ -307,6 +387,20 @@ void Message::SerializeWithCachedSizes(
         100, *this->ping_, false, target);
   }
 
+  // .DoShutdown shutdown = 101;
+  if (this->has_shutdown()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        101, *this->shutdown_, false, target);
+  }
+
+  // .Advertisement advertisement = 102;
+  if (this->has_advertisement()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        102, *this->advertisement_, false, target);
+  }
+
   // @@protoc_insertion_point(serialize_to_array_end:Message)
   return target;
 }
@@ -320,6 +414,20 @@ size_t Message::ByteSizeLong() const {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
         *this->ping_);
+  }
+
+  // .DoShutdown shutdown = 101;
+  if (this->has_shutdown()) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->shutdown_);
+  }
+
+  // .Advertisement advertisement = 102;
+  if (this->has_advertisement()) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->advertisement_);
   }
 
   // .Message.Type type = 1;
@@ -357,6 +465,12 @@ void Message::MergeFrom(const Message& from) {
   if (from.has_ping()) {
     mutable_ping()->::Ping::MergeFrom(from.ping());
   }
+  if (from.has_shutdown()) {
+    mutable_shutdown()->::DoShutdown::MergeFrom(from.shutdown());
+  }
+  if (from.has_advertisement()) {
+    mutable_advertisement()->::Advertisement::MergeFrom(from.advertisement());
+  }
   if (from.type() != 0) {
     set_type(from.type());
   }
@@ -386,6 +500,8 @@ void Message::Swap(Message* other) {
 }
 void Message::InternalSwap(Message* other) {
   std::swap(ping_, other->ping_);
+  std::swap(shutdown_, other->shutdown_);
+  std::swap(advertisement_, other->advertisement_);
   std::swap(type_, other->type_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -449,6 +565,84 @@ void Message::set_allocated_ping(::Ping* ping) {
     
   }
   // @@protoc_insertion_point(field_set_allocated:Message.ping)
+}
+
+// .DoShutdown shutdown = 101;
+bool Message::has_shutdown() const {
+  return this != internal_default_instance() && shutdown_ != NULL;
+}
+void Message::clear_shutdown() {
+  if (GetArenaNoVirtual() == NULL && shutdown_ != NULL) delete shutdown_;
+  shutdown_ = NULL;
+}
+const ::DoShutdown& Message::shutdown() const {
+  // @@protoc_insertion_point(field_get:Message.shutdown)
+  return shutdown_ != NULL ? *shutdown_
+                         : *::DoShutdown::internal_default_instance();
+}
+::DoShutdown* Message::mutable_shutdown() {
+  
+  if (shutdown_ == NULL) {
+    shutdown_ = new ::DoShutdown;
+  }
+  // @@protoc_insertion_point(field_mutable:Message.shutdown)
+  return shutdown_;
+}
+::DoShutdown* Message::release_shutdown() {
+  // @@protoc_insertion_point(field_release:Message.shutdown)
+  
+  ::DoShutdown* temp = shutdown_;
+  shutdown_ = NULL;
+  return temp;
+}
+void Message::set_allocated_shutdown(::DoShutdown* shutdown) {
+  delete shutdown_;
+  shutdown_ = shutdown;
+  if (shutdown) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:Message.shutdown)
+}
+
+// .Advertisement advertisement = 102;
+bool Message::has_advertisement() const {
+  return this != internal_default_instance() && advertisement_ != NULL;
+}
+void Message::clear_advertisement() {
+  if (GetArenaNoVirtual() == NULL && advertisement_ != NULL) delete advertisement_;
+  advertisement_ = NULL;
+}
+const ::Advertisement& Message::advertisement() const {
+  // @@protoc_insertion_point(field_get:Message.advertisement)
+  return advertisement_ != NULL ? *advertisement_
+                         : *::Advertisement::internal_default_instance();
+}
+::Advertisement* Message::mutable_advertisement() {
+  
+  if (advertisement_ == NULL) {
+    advertisement_ = new ::Advertisement;
+  }
+  // @@protoc_insertion_point(field_mutable:Message.advertisement)
+  return advertisement_;
+}
+::Advertisement* Message::release_advertisement() {
+  // @@protoc_insertion_point(field_release:Message.advertisement)
+  
+  ::Advertisement* temp = advertisement_;
+  advertisement_ = NULL;
+  return temp;
+}
+void Message::set_allocated_advertisement(::Advertisement* advertisement) {
+  delete advertisement_;
+  advertisement_ = advertisement;
+  if (advertisement) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:Message.advertisement)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

@@ -123,4 +123,3 @@ SocketChannel::~SocketChannel() {
     }
     delete socket;
 }
-

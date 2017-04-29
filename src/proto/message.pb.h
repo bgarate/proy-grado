@@ -30,7 +30,15 @@
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "ping.pb.h"
+#include "advertisement.pb.h"
+#include "shutdown.pb.h"
 // @@protoc_insertion_point(includes)
+class Advertisement;
+class AdvertisementDefaultTypeInternal;
+extern AdvertisementDefaultTypeInternal _Advertisement_default_instance_;
+class DoShutdown;
+class DoShutdownDefaultTypeInternal;
+extern DoShutdownDefaultTypeInternal _DoShutdown_default_instance_;
 class Message;
 class MessageDefaultTypeInternal;
 extern MessageDefaultTypeInternal _Message_default_instance_;
@@ -51,12 +59,14 @@ void InitDefaults();
 
 enum Message_Type {
   Message_Type_PING = 0,
+  Message_Type_SHUTDOWN = 1,
+  Message_Type_ADVERTISEMENT = 2,
   Message_Type_Message_Type_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
   Message_Type_Message_Type_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
 bool Message_Type_IsValid(int value);
 const Message_Type Message_Type_Type_MIN = Message_Type_PING;
-const Message_Type Message_Type_Type_MAX = Message_Type_PING;
+const Message_Type Message_Type_Type_MAX = Message_Type_ADVERTISEMENT;
 const int Message_Type_Type_ARRAYSIZE = Message_Type_Type_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Message_Type_descriptor();
@@ -139,6 +149,10 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   typedef Message_Type Type;
   static const Type PING =
     Message_Type_PING;
+  static const Type SHUTDOWN =
+    Message_Type_SHUTDOWN;
+  static const Type ADVERTISEMENT =
+    Message_Type_ADVERTISEMENT;
   static inline bool Type_IsValid(int value) {
     return Message_Type_IsValid(value);
   }
@@ -171,6 +185,24 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::Ping* release_ping();
   void set_allocated_ping(::Ping* ping);
 
+  // .DoShutdown shutdown = 101;
+  bool has_shutdown() const;
+  void clear_shutdown();
+  static const int kShutdownFieldNumber = 101;
+  const ::DoShutdown& shutdown() const;
+  ::DoShutdown* mutable_shutdown();
+  ::DoShutdown* release_shutdown();
+  void set_allocated_shutdown(::DoShutdown* shutdown);
+
+  // .Advertisement advertisement = 102;
+  bool has_advertisement() const;
+  void clear_advertisement();
+  static const int kAdvertisementFieldNumber = 102;
+  const ::Advertisement& advertisement() const;
+  ::Advertisement* mutable_advertisement();
+  ::Advertisement* release_advertisement();
+  void set_allocated_advertisement(::Advertisement* advertisement);
+
   // .Message.Type type = 1;
   void clear_type();
   static const int kTypeFieldNumber = 1;
@@ -182,6 +214,8 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::Ping* ping_;
+  ::DoShutdown* shutdown_;
+  ::Advertisement* advertisement_;
   int type_;
   mutable int _cached_size_;
   friend struct protobuf_message_2eproto::TableStruct;
@@ -245,6 +279,84 @@ inline void Message::set_allocated_ping(::Ping* ping) {
     
   }
   // @@protoc_insertion_point(field_set_allocated:Message.ping)
+}
+
+// .DoShutdown shutdown = 101;
+inline bool Message::has_shutdown() const {
+  return this != internal_default_instance() && shutdown_ != NULL;
+}
+inline void Message::clear_shutdown() {
+  if (GetArenaNoVirtual() == NULL && shutdown_ != NULL) delete shutdown_;
+  shutdown_ = NULL;
+}
+inline const ::DoShutdown& Message::shutdown() const {
+  // @@protoc_insertion_point(field_get:Message.shutdown)
+  return shutdown_ != NULL ? *shutdown_
+                         : *::DoShutdown::internal_default_instance();
+}
+inline ::DoShutdown* Message::mutable_shutdown() {
+  
+  if (shutdown_ == NULL) {
+    shutdown_ = new ::DoShutdown;
+  }
+  // @@protoc_insertion_point(field_mutable:Message.shutdown)
+  return shutdown_;
+}
+inline ::DoShutdown* Message::release_shutdown() {
+  // @@protoc_insertion_point(field_release:Message.shutdown)
+  
+  ::DoShutdown* temp = shutdown_;
+  shutdown_ = NULL;
+  return temp;
+}
+inline void Message::set_allocated_shutdown(::DoShutdown* shutdown) {
+  delete shutdown_;
+  shutdown_ = shutdown;
+  if (shutdown) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:Message.shutdown)
+}
+
+// .Advertisement advertisement = 102;
+inline bool Message::has_advertisement() const {
+  return this != internal_default_instance() && advertisement_ != NULL;
+}
+inline void Message::clear_advertisement() {
+  if (GetArenaNoVirtual() == NULL && advertisement_ != NULL) delete advertisement_;
+  advertisement_ = NULL;
+}
+inline const ::Advertisement& Message::advertisement() const {
+  // @@protoc_insertion_point(field_get:Message.advertisement)
+  return advertisement_ != NULL ? *advertisement_
+                         : *::Advertisement::internal_default_instance();
+}
+inline ::Advertisement* Message::mutable_advertisement() {
+  
+  if (advertisement_ == NULL) {
+    advertisement_ = new ::Advertisement;
+  }
+  // @@protoc_insertion_point(field_mutable:Message.advertisement)
+  return advertisement_;
+}
+inline ::Advertisement* Message::release_advertisement() {
+  // @@protoc_insertion_point(field_release:Message.advertisement)
+  
+  ::Advertisement* temp = advertisement_;
+  advertisement_ = NULL;
+  return temp;
+}
+inline void Message::set_allocated_advertisement(::Advertisement* advertisement) {
+  delete advertisement_;
+  advertisement_ = advertisement;
+  if (advertisement) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:Message.advertisement)
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS

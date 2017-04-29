@@ -11,12 +11,22 @@ Message MessageBuilder::build(Message_Type type) {
 
     switch (type){
         case Message_Type_PING: {
-            Ping ping;
-            msg.set_allocated_ping(&ping);
+            Ping* ping = new Ping();
+            msg.set_allocated_ping(ping);
+            break;
+        }
+        case Message_Type_ADVERTISEMENT: {
+            Advertisement* advertisement = new Advertisement();
+            msg.set_allocated_advertisement(advertisement);
+            break;
+        }
+        case Message_Type_SHUTDOWN: {
+            DoShutdown* shutdown = new DoShutdown();
+            msg.set_allocated_shutdown(shutdown);
             break;
         }
         default:
-            throw "dasd";
+            throw new std::runtime_error("Message type not recognized");
     }
 
     return msg;
