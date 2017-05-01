@@ -1,5 +1,7 @@
 INCLUDE(FindProtobuf)
+
 FIND_PACKAGE(Protobuf REQUIRED)
+
 
 INCLUDE_DIRECTORIES(${PROTOBUF_INCLUDE_DIR})
 PROTOBUF_GENERATE_CPP(PROTO_SRC PROTO_HEADER message.proto ping.proto shutdown.proto advertisement.proto)
