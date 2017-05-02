@@ -21,7 +21,9 @@ public:
 private:
     io_service service;
     udp::socket* socket;
+
     udp::endpoint endpoint;
+
     std::vector<uint8_t> writeBuffer;
     std::vector<uint8_t> readBuffer;
 

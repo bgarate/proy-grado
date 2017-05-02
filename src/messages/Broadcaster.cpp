@@ -33,6 +33,7 @@ void Broadcaster::broadcast(Message msg) {
 }
 
 Message Broadcaster::receive() {
+
     if(!binded) {
         socket->bind(udp::endpoint(asio::ip::address_v4::any(),port));
     }

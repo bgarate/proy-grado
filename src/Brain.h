@@ -7,6 +7,7 @@
 
 
 #include "src/messages/SocketChannel.h"
+#include "src/messages/Broadcaster.h"
 #include "MessageHandler.h"
 
 class Brain {
@@ -38,6 +39,7 @@ private:
     long runningTime = 0;
     long lastAdvertisementTime = 0;
     static const long ADVERTISEMENT_LAPSE = 5000;
+    Broadcaster broadcaster;
 };
 
 

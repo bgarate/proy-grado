@@ -19,16 +19,8 @@ void Brain::setup(bool isRoot) {
     this->isRoot = isRoot;
     Logger::getInstance().setSource("BRAIN");
 
-    if(!isRoot) {
-        Broadcaster broadcaster;
-        broadcaster.setup(BROADCAST_PORT);
-        Logger::logInfo("Waiting for advertisement");
-        Message msg = broadcaster.receive();
-        Logger::logInfo("Advertisement received");
-    }
-
     communicateWithBody(BRAIN_SERVE_PORT);
-
+    broadcaster.setup(BROADCAST_PORT);
 
 };
 
@@ -42,12 +34,17 @@ void Brain::communicateWithBody(unsigned short port) {
     communication.send(ping);
     Logger::logInfo("PING REQUEST sent");
 
+
 }
 
 void Brain::loop() {
     chrono::steady_clock::time_point startTime = chrono::steady_clock::now();
     chrono::steady_clock::time_point lastTime = startTime;
     chrono::steady_clock::time_point newTime = startTime;
+
+
+    Message msg = broadcaster.receive();
+    Logger::logInfo("Advertisement received");
 
     while (true) {
         lastTime = newTime;
@@ -61,9 +58,7 @@ void Brain::loop() {
             messsageHandler.handle(msg);
         }
 
-        if(isRoot) {
-            advertise();
-        }
+        advertise();
 
         if(should_exit) {
             break;
