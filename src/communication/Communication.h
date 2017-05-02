@@ -5,13 +5,14 @@
 #ifndef PROY_GRADO_COMMUNICATION_H
 #define PROY_GRADO_COMMUNICATION_H
 
+#include "boost/asio/ip/address_v4.hpp"
+
+using boost::asio::ip::address_v4;
 
 class Communication {
 public:
     void serve();
-    void advertise();
-    void join();
-
+    void add(address_v4 address, unsigned short port);
 };
 
 

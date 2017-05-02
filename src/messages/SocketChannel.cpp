@@ -123,3 +123,11 @@ SocketChannel::~SocketChannel() {
     }
     delete socket;
 }
+
+asio::ip::address_v4 SocketChannel::getIp() {
+    return socket->local_endpoint().address().to_v4();
+}
+
+unsigned short SocketChannel::getPort() {
+    return socket->local_endpoint().port();
+}

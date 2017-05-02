@@ -18,15 +18,20 @@ public:
     void broadcast(Message msg);
     void setup(unsigned short port);
     Message receive();
+
+    bool messageAvailable();
 private:
     io_service service;
     udp::socket* socket;
+
     udp::endpoint endpoint;
+
     std::vector<uint8_t> writeBuffer;
     std::vector<uint8_t> readBuffer;
 
     bool binded = false;
     unsigned short port;
+
 };
 
 
