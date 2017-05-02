@@ -179,9 +179,9 @@ class Vrephal: public Hal {
 
 		simxInt* resolution = new simxInt[2];
 		simxUChar* image;
-		int size = 256;
+		int size = 512*256;
 
-		image = new simxUChar[size*size*3];
+		image = new simxUChar[size*3];
 
 		simxInt aux = simxGetVisionSensorImage(clientID, cameraHandler,resolution,&image,0,simx_opmode_blocking);
 
