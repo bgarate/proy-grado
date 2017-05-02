@@ -18,6 +18,8 @@ public:
     void broadcast(Message msg);
     void setup(unsigned short port);
     Message receive();
+
+    bool messageAvailable();
 private:
     io_service service;
     udp::socket* socket;
@@ -29,6 +31,7 @@ private:
 
     bool binded = false;
     unsigned short port;
+
 };
 
 

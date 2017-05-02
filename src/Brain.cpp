@@ -4,7 +4,6 @@
 
 #include <src/proto/message.pb.h>
 #include <src/messages/MessageBuilder.h>
-#include <src/messages/MessageBuilder.h>
 #include <src/messages/Broadcaster.h>
 #include "Brain.h"
 #include "logging/Logger.h"
@@ -12,7 +11,10 @@
 namespace chrono = std::chrono;
 
 Brain::Brain() {
-    messsageHandler.registerHandler(Message_Type::Message_Type_PING, [this](Message m){this->PingHandler(m);});
+    messsageHandler.registerHandler(Message_Type::Message_Type_PING,
+                                    [this](Message m){this->PingHandler(m);});
+    messsageHandler.registerHandler(Message_Type::Message_Type_ADVERTISEMENT,
+                                    [this](Message m){this->AdvertisementHandler(m);});
 }
 
 void Brain::setup(bool isRoot) {
@@ -42,8 +44,6 @@ void Brain::loop() {
     chrono::steady_clock::time_point lastTime = startTime;
     chrono::steady_clock::time_point newTime = startTime;
 
-
-    Message msg = broadcaster.receive();
     Logger::logInfo("Advertisement received");
 
     while (true) {
@@ -53,10 +53,7 @@ void Brain::loop() {
         deltaTime = std::chrono::duration_cast<std::chrono::milliseconds>(newTime - lastTime).count();
         runningTime = std::chrono::duration_cast<std::chrono::milliseconds>(newTime - startTime).count();
 
-        if(communication.messageAvailable()) {
-            Message msg = communication.receive();
-            messsageHandler.handle(msg);
-        }
+        handleMessages();
 
         advertise();
 
@@ -65,6 +62,18 @@ void Brain::loop() {
         }
 
         sleep(0);
+    }
+}
+
+void Brain::handleMessages() {
+    if(communication.messageAvailable()) {
+        Message msg = communication.receive();
+        messsageHandler.handle(msg);
+    }
+
+    if(broadcaster.messageAvailable()) {
+        Message msg = broadcaster.receive();
+        messsageHandler.handle(msg);
     }
 }
 
@@ -94,11 +103,25 @@ void Brain::advertise() {
 
         Message msg = MessageBuilder::build(Message_Type::Message_Type_ADVERTISEMENT);
 
-        Broadcaster broadcaster;
-        broadcaster.setup(BROADCAST_PORT);
+        Advertisement* advertisement = msg.mutable_advertisement();
+
+        advertisement->set_ip((uint32_t) communication.getIp().to_ulong());
+        advertisement->set_port(communication.getPort());
+
         broadcaster.broadcast(msg);
         Logger::logDebug("Advertising sent");
 
         lastAdvertisementTime = runningTime;
     }
 }
+
+void Brain::AdvertisementHandler(Message& msg){
+
+    Advertisement* advertisement = msg.mutable_advertisement();
+
+    Logger::logDebug("Advertisement received from " +
+                             boost::asio::ip::address_v4(advertisement->ip()).to_string() + ":" +
+                             std::to_string(advertisement->port()));
+
+}
+

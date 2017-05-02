@@ -7,6 +7,7 @@
 
 #include <boost/asio/io_service.hpp>
 #include <boost/asio/ip/tcp.hpp>
+#include <boost/asio/ip/address.hpp>
 #include "iostream"
 
 using boost::asio::ip::tcp;
@@ -27,6 +28,9 @@ public:
 
     bool messageAvailable();
 
+    asio::ip::address_v4 getIp();
+    unsigned short getPort();
+
 private:
     static const int MAX_NUMBER_RETRIES = 3;
     bool isServing;
@@ -37,6 +41,7 @@ private:
     std::vector<uint8_t> readBuffer;
 
     void tryConnect(std::string host, unsigned short port);
+
 };
 
 

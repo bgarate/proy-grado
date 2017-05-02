@@ -17,6 +17,8 @@ void Broadcaster::setup(unsigned short port) {
     socket->set_option(asio::socket_base::broadcast(true));
 
     endpoint = udp::endpoint(asio::ip::address_v4::broadcast(), port);
+    socket->bind(udp::endpoint(asio::ip::address_v4::any(),port));
+
     this->port = port;
 }
 
@@ -32,23 +34,19 @@ void Broadcaster::broadcast(Message msg) {
 
 }
 
+bool Broadcaster::messageAvailable() {
+    return socket->available() >= PackedMessage<Message>::HEADER_SIZE;
+}
+
 Message Broadcaster::receive() {
 
-    if(!binded) {
-        socket->bind(udp::endpoint(asio::ip::address_v4::any(),port));
-    }
-    readBuffer.resize(PackedMessage<Message>::HEADER_SIZE);
+    readBuffer.resize(socket->available());
     socket->receive_from(asio::buffer(readBuffer), endpoint);
 
     unsigned messageLength = PackedMessage<Message>::decode_header(readBuffer);
 
-    readBuffer.resize(PackedMessage<Message>::HEADER_SIZE + messageLength);
-
-    asio::mutable_buffers_1 buffer = asio::buffer(&readBuffer[PackedMessage<Message>::HEADER_SIZE], messageLength);
-
-    socket->receive_from(buffer, endpoint);
-
     PackedMessage<Message> packedMessage;
+
     packedMessage.unpack(readBuffer);
 
     return *packedMessage.getMsg();

@@ -40,6 +40,12 @@ private:
     long lastAdvertisementTime = 0;
     static const long ADVERTISEMENT_LAPSE = 5000;
     Broadcaster broadcaster;
+
+    void handleMessages() const;
+
+    void handleMessages();
+
+    void AdvertisementHandler(Message &msg);
 };
 
 
