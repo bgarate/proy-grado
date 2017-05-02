@@ -185,8 +185,6 @@ class Vrephal: public Hal {
 
 		simxInt aux = simxGetVisionSensorImage(clientID, cameraHandler,resolution,&image,0,simx_opmode_blocking);
 
-		cout << "Error code: " << aux << endl;
-
 		//convertir imagen
 		cv::Mat res = cv::Mat(resolution[1],resolution[0],CV_8UC3,image);
 

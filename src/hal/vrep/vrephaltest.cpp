@@ -11,20 +11,6 @@
 
 using namespace std;
 
-
-cv::Mat convertToMat(int width, int height, char **buffer) {
-    cv::Mat tmp;
-    tmp = cv::Mat(width, height, CV_8SC1);
-    for (int x = 0; x < height; x++) {
-        for (int y = 0; y < width; y++) {
-            int value = (int) buffer[x][y];
-           	tmp.at<int>(y, x) = value; 
-        }
-    }
-    return tmp;
-}
-
-
 int main(int argc, char** argv){
 
 	Vrephal hal;
