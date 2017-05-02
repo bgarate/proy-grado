@@ -18,18 +18,18 @@ int main(int argc, char** argv)
   if(clientID >-1)
   {
         //Iniciar siumulacion
-        simxStartSimulation(clientID,simx_opmode_oneshot);
+        //simxStartSimulation(clientID,simx_opmode_oneshot);
         //getchar();
         //simxStopSimulation(clientID, simx_opmode_oneshot_wait);
 
-        simxInt targetHandler;
+        simxInt targetHandler, quadricopterHandler;
         
     
         //Obtener handler del targer
         simxInt res = simxGetObjectHandle(clientID, "Quadricopter_target",&targetHandler,simx_opmode_blocking);
-
+        simxInt res2 = simxGetObjectHandle(clientID, "Quadricopter",&quadricopterHandler,simx_opmode_blocking);
         int i = 0;
-        simxFloat delta = 0.05;
+        simxFloat delta = 0.5;
         int axis = 0;
 
 
@@ -37,7 +37,7 @@ int main(int argc, char** argv)
 
           //Cambio de direccion
           i++;
-          if (i == 40){
+          if (i == 20){
             if (axis==0){
               axis=1;
               delta = -delta;
@@ -48,17 +48,37 @@ int main(int argc, char** argv)
           }
 
 
+          //MOVIMIMIENTO 
+
           simxFloat * position = new simxFloat[3];
           //Obtener pos
-          simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
+          simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
 
-          cout << position[0] ; 
-          cout <<  "\n";
+          //cout << position[0] ; 
+          //cout <<  "\n";
           
 
           //Cambiar pos
-          position[axis] = position[axis] + delta;
+          position[axis] = position[axis] + delta;//Movimiento horizontal
+          position[2] = position[2] + (delta/4);//Movimiento vertical
           simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
+
+
+          //ROTACION 
+
+          simxFloat * orientation = new simxFloat[3];
+          //Obtener rot
+          simxGetObjectOrientation(clientID, quadricopterHandler, -1, orientation, simx_opmode_blocking);
+
+          //cout << orientation[0] ; 
+          //cout <<  "\n";
+          
+
+          //Cambiar rot
+          //orientation[2] = orientation[2] + delta;
+          simxSetObjectOrientation(clientID, targetHandler, -1, orientation, simx_opmode_oneshot);
+
+
 
         }
   }
