@@ -188,6 +188,9 @@ class Vrephal: public Hal {
 		//convertir imagen
 		cv::Mat res = cv::Mat(resolution[1],resolution[0],CV_8UC3,image);
 
+        cv::cvtColor(res,res,cv::COLOR_BGR2RGB);
+        cv::flip(res,res,0);
+
 		return res;
 	}
 
