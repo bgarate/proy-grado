@@ -179,7 +179,7 @@ class Vrephal: public Hal {
 
 		simxInt* resolution = new simxInt[2];
 		simxUChar* image;
-		int size = 512*256;
+		int size = 512*512;
 
 		image = new simxUChar[size*3];
 

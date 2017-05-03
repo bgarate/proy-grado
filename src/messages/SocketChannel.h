@@ -28,7 +28,7 @@ public:
 
     bool messageAvailable();
 
-    asio::ip::address_v4 getIp();
+    boost::asio::ip::address_v4 getIp();
     unsigned short getPort();
 
 private:
