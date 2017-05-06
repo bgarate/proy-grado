@@ -1,7 +1,7 @@
 #ifndef PROY_GRADO_BODYTEST1_H
 #define PROY_GRADO_BODYTEST1_H
 
-#include "hal/hal.hpp"
+#include "src/hal/hal.hpp"
 
 class BodyTest {
 

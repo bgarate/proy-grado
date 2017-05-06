@@ -1,7 +1,7 @@
 #include "BodyTest.h"
-#include "tracking/DetectAndTrack.h"
-#include "tracking/MultiTracker.h"
-#include "tracking/HogDetector.h"
+#include "src/tracking/DetectAndTrack.h"
+#include "src/tracking/MultiTracker.h"
+#include "src/tracking/HogDetector.h"
 
 class BodyTest1: public BodyTest {
 private:

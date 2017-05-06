@@ -9,8 +9,9 @@
 #include "tracking/DetectAndTrack.h"
 #include "tracking/MultiTracker.h"
 #include "tracking/HogDetector.h"
-#include "BodyTest.h"
-#include "BodyTest1.cpp"
+#include "src/bodytests/BodyTest.h"
+#include "src/bodytests/BodyTest1.cpp"
+#include "src/bodytests/BodyTest2.cpp"
 
 Body::Body(Hal *hal) {
     this->hal = hal;
@@ -32,7 +33,8 @@ void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
 void Body::loop() {
 
-    BodyTest* bt = new BodyTest1();
+    //BodyTest* bt = new BodyTest1();
+    BodyTest* bt = new BodyTest2();
     bt->InitBodyTest(this->hal);
 
     while (true) {
@@ -40,7 +42,7 @@ void Body::loop() {
             Message msg = communication.receive();
             messsageHandler.handle(msg);
         }
-        
+
         bt->BodyTestStep();
 
         if(should_exit)
