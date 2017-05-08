@@ -57,7 +57,7 @@ class Hal{
 	/************Cámara*************/
 
 	// --> Obtener captura de imagen (ambas cámaras)
-	virtual cv::Mat getFrame(Camera cam) = 0;
+	virtual cv::Mat* getFrame(Camera cam) = 0;
 
 	/************Posición*************/
 

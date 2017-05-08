@@ -33,8 +33,8 @@ void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
 void Body::loop() {
 
-    //BodyTest* bt = new BodyTest1();
-    BodyTest* bt = new BodyTest2();
+    BodyTest* bt = new BodyTest1();
+    //BodyTest* bt = new BodyTest2();
     bt->InitBodyTest(this->hal);
 
     while (true) {

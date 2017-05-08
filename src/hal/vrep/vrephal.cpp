@@ -168,7 +168,7 @@ class Vrephal: public Hal {
 	/************Cámara*************/
 
 	// --> Obtener captura de imagen (ambas cámaras)
-	cv::Mat getFrame(Camera cam){
+	cv::Mat* getFrame(Camera cam){
 
 		simxInt cameraHandler;
 		if (cam == Camera::Front){
@@ -186,10 +186,10 @@ class Vrephal: public Hal {
 		simxInt aux = simxGetVisionSensorImage(clientID, cameraHandler,resolution,&image,0,simx_opmode_blocking);
 
 		//convertir imagen
-		cv::Mat res = cv::Mat(resolution[1],resolution[0],CV_8UC3,image);
+		cv::Mat* res = new cv::Mat(resolution[1],resolution[0],CV_8UC3,image);
 
-        cv::cvtColor(res,res,cv::COLOR_BGR2RGB);
-        cv::flip(res,res,0);
+        cv::cvtColor(*res,*res,cv::COLOR_BGR2RGB);
+        cv::flip(*res,*res,0);
 
 		return res;
 	}

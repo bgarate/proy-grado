@@ -25,7 +25,7 @@ int main(int argc, char** argv){
 
 	sleep(2);
 
-	cv::Mat res = hal.getFrame(Camera::Front);
+	cv::Mat* res = hal.getFrame(Camera::Front);
 
 	//girar en un sentido
 	cout << "Giro positivo..." << endl;
@@ -106,7 +106,7 @@ int main(int argc, char** argv){
 
 	//Imagen
 	cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
-    cv::imshow( "Display window", res );                   // Show our image inside it.
+    cv::imshow( "Display window", *res );                   // Show our image inside it.
     cv::waitKey(0);
 
 	//Altura

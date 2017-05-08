@@ -11,7 +11,7 @@ private:
     int auxind = 0;
     int auxarr[2] = {0,180};
 
-    cv::Mat frame;
+    cv::Mat* frame;
 
     cv::Scalar colors[9];
     DetectionAlgorithm* detector;
@@ -56,14 +56,14 @@ public:
 
         //test track begin
         //update the tracking result
-        std::vector<Track> objects = detectAndTrack->update(frame);
+        std::vector<Track> objects = detectAndTrack->update(*frame);
 
         // draw the tracked object
         for (unsigned i = 0; i < objects.size(); i++)
-            rectangle(frame, objects[i].getRect(), colors[objects[i].getNumber() % (sizeof(colors)/sizeof(cv::Scalar))], 2, 1);
+            rectangle(*frame, objects[i].getRect(), colors[objects[i].getNumber() % (sizeof(colors)/sizeof(cv::Scalar))], 2, 1);
 
         // show image with the tracked object
-        imshow("tracker", frame);
+        imshow("tracker", *frame);
         cv::waitKey(1);
         //test track end
 
