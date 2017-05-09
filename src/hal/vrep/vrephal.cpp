@@ -65,12 +65,11 @@ class Vrephal: public Hal {
 
             	position[0] = -position[0]/2;//pitch
 	            position[1] = -position[1]/2;//yaw
-	            position[2] = -position[2]/2;//gaz
+	            position[2] = 0;//gaz
 	            orientation[0]= 0;
 	            orientation[1]= 0;
 	            orientation[2]= -orientation[2]/2;//roll
 
-	            simxSetObjectOrientation(clientID, targetHandler, targetHandler, orientation, simx_opmode_blocking);
             	simxSetObjectPosition(clientID, targetHandler, targetHandler, position, simx_opmode_blocking);
 
 				this->roll=0;
