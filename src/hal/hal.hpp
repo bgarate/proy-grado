@@ -28,7 +28,13 @@ class Hal{
 	public:
 
 
-	/************Movimiento*************/ 
+	/************Movimiento*************/
+
+	//roll = rotate
+	//pitch =  backward-forward
+	//yaw = derecha-izuquierda
+	//gaz = arriba-abajo
+	virtual void move(int roll, int pitch, int yaw, int gaz) = 0;
 
 	// --> Rotación horizontal
 	virtual void hrotate(double vel) = 0;

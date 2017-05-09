@@ -17,96 +17,94 @@ int main(int argc, char** argv){
 
 	/************** MOVIMIENTO *****************/
 
-	double vel = 1;
+	double vel = 100;
 
 	//despegar
-	cout << "Despegar..." << endl;
-	hal.takeoff();
+	//cout << "Despegar..." << endl;
+	//hal.takeoff();
 
-	sleep(2);
+	//sleep(2);
 
-	cv::Mat* res = hal.getFrame(Camera::Front);
+	//cv::Mat* res = hal.getFrame(Camera::Front);
+
+	//sleep(2);
 
 	//girar en un sentido
-	cout << "Giro positivo..." << endl;
-	for(int i = 0; i < 20; i++){
-		hal.hrotate(vel);
-	}
+	hal.move(vel, 0, 0, 0);
 	sleep(2);
+	hal.move(0, 0, 0, 0);
+
+	sleep(4);
 
 	//girar en el otro
 	cout << "Giro negativo..." << endl;
-	for(int i = 0; i < 20; i++){
-		hal.hrotate(-vel);
-	}
-
+	hal.move(-vel, 0, 0, 0);
 	sleep(2);
+	hal.move(0, 0, 0, 0);
+
+	sleep(4);
 
 	//adelante
 	cout << "Adelante..." << endl;
-	for(int i = 0; i < 20; i++){
-		hal.hmove(0, vel);
-	}
+	hal.move(0, vel, 0, 0);
+	sleep(2);
+	hal.move(0, 0, 0, 0);
 
 	sleep(2);
 
 	//atras
-	cout << "Atras..." << endl;
-	for(int i = 0; i < 20; i++){
-		hal.hmove(180, vel);
-	}
+	hal.move(0, -vel, 0, 0);
+	sleep(2);
+	hal.move(0, 0, 0, 0);
 
 	sleep(2);
 
 	//cambio latura objetivo
-	cout << "Cambio en altura objetivo..." << endl;
-	hal.targetAltitude(0.5);
+	//cout << "Cambio en altura objetivo..." << endl;
+	//hal.targetAltitude(0.5);
 
 	//a un lado
 	cout << "Para un lado..." << endl;
-	for(int i = 0; i < 20; i++){
-		hal.hmove(90, vel);
-	}
+	hal.move(0, 0, vel, 0);
+	sleep(2);
+	hal.move(0, 0, 0, 0);
 
 	sleep(2);
 
 	//al otro lado
-	cout << "Para el otro..." << endl;
-	for(int i = 0; i < 20; i++){
-		hal.hmove(270, vel);
-	}
+	hal.move(0, 0, -vel, 0);
+	sleep(2);
+	hal.move(0, 0, 0, 0);
 
 	sleep(2);
 
 	//arriba
-	cout << "Arriba..." << endl;
-	for(int i = 0; i < 20; i++){
-		hal.vmove(vel);
-	}
+	hal.move(0, 0, 0, vel);
+	sleep(2);
+	hal.move(0, 0, 0, 0);
 
 	sleep(2);
 
 	//abajo
-	cout << "Abajo..." << endl;
-	for(int i = 0; i < 20; i++){
-		hal.vmove(-vel);
-	}
+	hal.move(0, 0, 0, -vel);
+	sleep(2);
+	hal.move(0, 0, 0, 0);
 
 	sleep(2);
 
 
 	//aterrizar
-	cout << "Aterrizar..." << endl;
-	hal.land();
+	//cout << "Aterrizar..." << endl;
+	//hal.land();
 
 	sleep(2);
 
 	/************** INFORMACION *****************/
 
 	//Imagen
-	cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
-    cv::imshow( "Display window", *res );                   // Show our image inside it.
-    cv::waitKey(0);
+	//cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
+    //cv::imshow( "Display window", *res );                   // Show our image inside it.
+    //cv::waitKey(0);
 
 	//Altura
 	cout << "Altura: " << hal.getAltitude() << endl;
