@@ -3,6 +3,9 @@
 #include "src/tracking/MultiTracker.h"
 #include "src/tracking/HogDetector.h"
 
+#include <thread>
+#include <unistd.h>
+
 class BodyTest1: public BodyTest {
 private:
     Hal* hal;
@@ -10,6 +13,8 @@ private:
     int auxl=30;
     int auxind = 0;
     int auxarr[2] = {0,180};
+
+    std::thread* t;
 
     cv::Mat* frame;
 
@@ -39,6 +44,28 @@ public:
         detectAndTrack =  new DetectAndTrack(detector, tracker);
 
         cv::namedWindow("tracker", cv::WINDOW_AUTOSIZE);
+
+        this->t = new std::thread(&BodyTest1::deamon, this);
+    }
+
+    void deamon(){
+
+        this->hal->move(0,50,0,0);
+        sleep(6);
+        this->hal->move(0,0,0,0);
+        sleep(2);
+
+        while(1){
+            this->hal->move(0,-50,0,0);
+            sleep(20);
+            this->hal->move(0,0,0,0);
+            sleep(2);
+
+            this->hal->move(0,50,0,0);
+            sleep(20);
+            this->hal->move(0,0,0,0);
+            sleep(2);
+        }
     }
 
     void BodyTestStep(){
@@ -50,7 +77,8 @@ public:
             aux=0;
             auxind=(auxind+1) % 2;
         }
-        this->hal->hmove(auxarr[auxind],1);
+        //this->hal->hmove(auxarr[auxind],1);
+
         frame = this->hal->getFrame(Camera::Front);
         //test hal end
 
