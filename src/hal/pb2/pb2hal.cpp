@@ -1,7 +1,5 @@
 #include "../hal.hpp"
-extern "C" {
-     #include "extApi.h"
-}
+
 #include <math.h>
 #include <iostream>
 #include <string>
@@ -13,61 +11,74 @@ extern "C" {
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
+//sdk
+extern "C"{
+	#include <libARSAL/ARSAL.h>
+	#include <libARController/ARController.h>
+	#include <libARDiscovery/ARDiscovery.h>	
+}
+
 using namespace std;
 
-class pb2hal: public Hal {
+
+
+class Pb2hal: public Hal {
 
 	//Constantes
 	const int PORT = 44444;
 	const char * HOST = "192.168.42.1"; 
 
 	//Variables aux 
+	//static ARSAL_Sem_t statesem;
+	//ARSAL_Sem_t Pb2hal::statesem;
+	//ARSAL_Sem_t statesem;
 	ARDISCOVERY_Device_t *device = NULL;
 	ARCONTROLLER_Device_t *deviceController = NULL;
 
 	/******Funciones auxiliares******/
 	//Discovery
-	ARDiscovery_Device_t* createDiscoveryDevice(eARDISCOVERY_PRODUCT product, const char *name, const char *ip, int port){
+	ARDISCOVERY_Device_t* createDiscoveryDevice(eARDISCOVERY_PRODUCT product, const char *name, const char *ip, int port){
 
 	    eARDISCOVERY_ERROR errorDiscovery = ARDISCOVERY_OK;
-	    ARDiscovery_Device_t *device = NULL;
+	    ARDISCOVERY_Device_t *device = NULL;
 
 	    if (ip == NULL || port == 0)
 	    {
 	        fprintf(stderr, "Bad parameters");
 	        return device;
 	    }
-	    if (product < ARDISCOVERY_PRODUCT_NSNETSERVICE || product >= ARDISCOVERY_PRODUCT_BLESERVICE)
-	    {
-	        fprintf(stderr, "Bad product (not a wifi product)");
-	        return device;
-	    }
 
 	    device = ARDISCOVERY_Device_New(&errorDiscovery);
 
-	    if (errorDiscovery == ARDISCOVERY_OK)
-	    {
-	        errorDiscovery = ARDISCOVERY_Device_InitWifi (device, product, name, port);
-	    }
+	    if (errorDiscovery == ARDISCOVERY_OK){
+	        
+	        errorDiscovery = ARDISCOVERY_Device_InitWifi (device, product, name, ip, port);
 
-	    if (errorDiscovery != ARDISCOVERY_OK)
-	    {
+	    	cout << "ARDISCOVERY_Device_InitWifi error code: " << ARDISCOVERY_Error_ToString(errorDiscovery) << endl; 
+
+	    } else {
+
 	        ARDISCOVERY_Device_Delete(&device);
 	    }
+
+	    cout << "ARDISCOVERY_Device_New error code: " << ARDISCOVERY_Error_ToString(errorDiscovery) << endl;
 
 	    return device;
 	}
 
 	// called when the state of the device controller has changed
-	void stateChanged (eARCONTROLLER_DEVICE_STATE newState, eARCONTROLLER_ERROR error, void *customData)
+	static void changedState(eARCONTROLLER_DEVICE_STATE newState, eARCONTROLLER_ERROR error, void *customData)
 	{
 	    switch (newState)
 	    {
 	        case ARCONTROLLER_DEVICE_STATE_RUNNING:
 	            break;
 	        case ARCONTROLLER_DEVICE_STATE_STOPPED:
+	        		//ARSAL_Sem_Post(&(statesem));
+	        		
 	            break;
 	        case ARCONTROLLER_DEVICE_STATE_STARTING:
+	            	//ARSAL_Sem_Post(&(statesem));
 	            break;
 	        case ARCONTROLLER_DEVICE_STATE_STOPPING:
 	            break;
@@ -76,10 +87,8 @@ class pb2hal: public Hal {
 	    }
 	}
 
-	error = ARCONTROLLER_Device_AddCommandReceivedCallback(deviceController, onCommandReceived, NULL);
-
 	// called when a command has been received from the drone
-	void onCommandReceived (eARCONTROLLER_DICTIONARY_KEY commandKey, ARCONTROLLER_DICTIONARY_ELEMENT_t *elementDictionary, void *customData)
+	static void receivedOnCommand (eARCONTROLLER_DICTIONARY_KEY commandKey, ARCONTROLLER_DICTIONARY_ELEMENT_t *elementDictionary, void *customData)
 	{
 	    if (elementDictionary != NULL)
 	    {
@@ -107,8 +116,9 @@ class pb2hal: public Hal {
 	    }
 	}
 
+
 	//VideoStreming auxs
-	/*static eARCONTROLLER_ERROR configDecoderCallback (ARCONTROLLER_Stream_Codec_t codec, void *customData){
+	static eARCONTROLLER_ERROR configDecoderCallback (ARCONTROLLER_Stream_Codec_t codec, void *customData){
 	    // configure your decoder
 	    // return ARCONTROLLER_OK if configuration went well
 	    // otherwise, return ARCONTROLLER_ERROR. In that case,
@@ -120,7 +130,7 @@ class pb2hal: public Hal {
 	    // return ARCONTROLLER_OK if display went well
 	    // otherwise, return ARCONTROLLER_ERROR. In that case,
 	    // configDecoderCallback will be called again
-	}*/
+	}
 
 	// This function will wait until the device controller is stopped
 	void deleteDeviceController(ARCONTROLLER_Device_t *deviceController)
@@ -136,11 +146,11 @@ class pb2hal: public Hal {
 	    if ((error == ARCONTROLLER_OK) && (state != ARCONTROLLER_DEVICE_STATE_STOPPED))
 	    {
 	        // after that, stateChanged should be called soon
-	        error = ARCONTROLLER_Device_Stop (_deviceController);
+	        error = ARCONTROLLER_Device_Stop (deviceController);
 
 	        if (error == ARCONTROLLER_OK)
 	        {
-	            sem_wait(&someSemaphore);
+	            //sem_wait(&someSemaphore);
 	        }
 	        else
 	        {
@@ -153,8 +163,7 @@ class pb2hal: public Hal {
 	}
 
 	//Obtener estado de vuelo
-	eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE getFlyingState(ARCONTROLLER_Device_t *deviceController)
-	{
+	eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE getFlyingState(ARCONTROLLER_Device_t *deviceController){
 	    eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE flyingState = ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_MAX;
 	    eARCONTROLLER_ERROR error;
 	    ARCONTROLLER_DICTIONARY_ELEMENT_t *elementDictionary = ARCONTROLLER_ARDrone3_GetCommandElements(deviceController->aRDrone3, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED, &error);
@@ -170,41 +179,76 @@ class pb2hal: public Hal {
 	            if (arg != NULL)
 	            {
 	                // Enums are stored as I32
-	                flyingState = arg->value.I32;
+	                flyingState = (eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE)arg->value.I32;
 	            }
 	        }
 	    }
-	    return flyingState
+	    return flyingState;
 	}
 
 	public:
 
 	/************Constructor*************/ 
 
-	Vrephal(){
+	Pb2hal(){
+
+		//ARSAL_Sem_Init(&(statesem),0,0);
 
 		//Discovery
-		device = createDiscoveryDevice(ARDISCOVERY_PRODUCT_ARDRONE, "bebop2", HOST, PORT);
+		device = createDiscoveryDevice(ARDISCOVERY_PRODUCT_BEBOP_2, "bebop2", HOST, PORT);
 
 		//Crear device controller
 		eARCONTROLLER_ERROR error = ARCONTROLLER_OK;
-		ARCONTROLLER_Device_t *deviceController = ARCONTROLLER_Device_New (discoveryDevice, &error);
+		deviceController = ARCONTROLLER_Device_New (device, &error);
+
+		cout << "ARCONTROLLER_Device_New error code: " << ARCONTROLLER_Error_ToString(error) << endl;
 
 		//Funcion que escucha cambios de estados
-		error = ARCONTROLLER_Device_AddStateChangedCallback(deviceController, stateChanged, NULL);
+		error = ARCONTROLLER_Device_AddStateChangedCallback(deviceController, changedState, NULL);
+
+		cout << "ARCONTROLLER_Device_AddStateChangedCallback error code: " << ARCONTROLLER_Error_ToString(error) << endl;
 
 		//Funcion que recibe comandos del drone
-		error = ARCONTROLLER_Device_AddCommandReceivedCallback(deviceController, onCommandReceived, NULL);
+		error = ARCONTROLLER_Device_AddCommandReceivedCallback(deviceController, receivedOnCommand, NULL);
+
+		cout << "ARCONTROLLER_Device_AddCommandReceivedCallback error code: " << ARCONTROLLER_Error_ToString(error) << endl;
 
 		//Escuchar video Streming
-		//error = ARCONTROLLER_Device_SetVideoStreamCallbacks(_deviceController, configDecoderCallback, didReceiveFrameCallback, NULL , NULL);
+		error = ARCONTROLLER_Device_SetVideoStreamCallbacks(deviceController, configDecoderCallback, didReceiveFrameCallback, NULL , NULL);
 	
 		//Start device controller
-		error = ARCONTROLLER_Device_Start (deviceController);
+		error = ARCONTROLLER_Device_Start(deviceController);
+
+		cout << "ARCONTROLLER_Device_Start error code: " << ARCONTROLLER_Error_ToString(error) << endl;
+
+		while (ARCONTROLLER_Device_GetState(deviceController, &error) != ARCONTROLLER_DEVICE_STATE_RUNNING){
+			cout << "Esperando estado running" << endl;
+		}
+
+		cout << "Estado: " << ARCONTROLLER_Device_GetState(deviceController, &error) << endl;
+		cout << "Estado vuelo: " << getFlyingState(deviceController) << endl;
+
+		//ARSAL_Sem_Wait(&(statesem));
+	}
+
+	void Pb2halBeforeDelete(){
+
+		deleteDeviceController(deviceController);
+
+		while (ARCONTROLLER_Device_GetState(deviceController, &error) != ARCONTROLLER_DEVICE_STATE_STOPPED){
+			cout << "Esperando estado stopped" << endl;
+		}
+
+		//ARSAL_Sem_Wait(&(statesem));
 	}
 
 
 	/************Movimiento*************/ 
+
+	 void move(int roll, int pitch, int yaw, int gaz){
+
+	 	//TODO
+	 }
 
 
 	// --> Rotación horizontal
@@ -229,44 +273,52 @@ class pb2hal: public Hal {
 	void land(){
 
 		if (deviceController == NULL){
+			cout << "Device controller es null" << endl;
 	        return;
 	    }
 
 	    eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE flyingState = getFlyingState(deviceController);
 	    if (flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_FLYING 
 	    		|| flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_HOVERING){
+	    	cout << "Landeando" << endl;
 	        deviceController->aRDrone3->sendPilotingLanding(deviceController->aRDrone3);
 	    }
 
 	    //Esperar que termine
-	    sleep(1);
+	    //sleep(1);
 	    while(1){
 	    	eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE flyingState = getFlyingState(deviceController);
 	    	if(flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_LANDED){
+	    		cout << "Esperando bajar" << endl;
 	    		break;
 	    	}
 	    }
+	    cout << "Bajó" << endl;
 	}
 
 	void takeoff(){
 		
 	    if (deviceController == NULL){
+	    	cout << "Device controller es null" << endl;
 	        return;
 	    }
 
 	    if (getFlyingState(deviceController) == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_LANDED){
+	    	cout << "Takeingofiando" << endl;
 	        deviceController->aRDrone3->sendPilotingTakeOff(deviceController->aRDrone3);
 	    }
 
 	    //Esperar que termine
-	    sleep(1);
+	    //sleep(1);
 	    while(1){
+	    	cout << "Esperando subir" << endl;
 	    	eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE flyingState = getFlyingState(deviceController);
 	    	if(flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_HOVERING 
 	    			|| flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_FLYING){
 	    		break;
 	    	}
 	    }
+	    cout << "Subió" << endl;
 	}
 
 	// --> Altura objetivo

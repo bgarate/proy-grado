@@ -11,13 +11,13 @@ cv::Scalar colors[] = {cv::Scalar(255,0,0), cv::Scalar(0,255,0), cv::Scalar(0,0,
 void trackFromVideo(){
 
     // set input video
-    std::string video = "/home/bruno/proy-grado/video01.mp4";
+    std::string video = "/home/santy/Escritorio/Proyecto/Git/proy-grado/out.ogv";
     cv::VideoCapture cap(video);
     cv::Mat frame;
 
     // get bounding box
-    for(int i = 0; i < 200; i++)
-      cap.grab();
+    /*for(int i = 0; i < 200; i++)
+      cap.grab();*/
 
     DetectionAlgorithm* detector = new HogDetector();
     TrackingAlgorithm* tracker = new MultiTracker(MultiTracker::Algorithm::KCF);

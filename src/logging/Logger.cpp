@@ -2,8 +2,11 @@
 // Created by bruno on 02/04/17.
 //
 
+#include <iostream>
 #include "Logger.h"
 #include "spdlog/spdlog.h"
+#include "stdio.h"
+
 
 Logger &Logger::getInstance() {
     static Logger logger;
@@ -42,12 +45,12 @@ void Logger::Log(std::string msg, Logger::LogType severity) {
             console->info(msg);
             break;
         case LogType::DEBUG:
-            //std::cout << str << std::endl;
-            console->debug(msg);
+            std::cout << msg << std::endl;
+            //console->debug(msg);
             break;
     }
 
-    console->flush();
+    //console->flush();
 }
 
 Logger::~Logger() {
