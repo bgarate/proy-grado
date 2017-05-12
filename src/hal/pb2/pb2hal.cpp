@@ -123,6 +123,7 @@ class Pb2hal: public Hal {
 	    // return ARCONTROLLER_OK if configuration went well
 	    // otherwise, return ARCONTROLLER_ERROR. In that case,
 	    // configDecoderCallback will be called again
+	    return ARCONTROLLER_OK;
 	}
 
 	static eARCONTROLLER_ERROR didReceiveFrameCallback (ARCONTROLLER_Frame_t *frame, void *customData){
@@ -130,6 +131,7 @@ class Pb2hal: public Hal {
 	    // return ARCONTROLLER_OK if display went well
 	    // otherwise, return ARCONTROLLER_ERROR. In that case,
 	    // configDecoderCallback will be called again
+	    return ARCONTROLLER_OK;
 	}
 
 	// This function will wait until the device controller is stopped
@@ -247,7 +249,18 @@ class Pb2hal: public Hal {
 
 	 void move(int roll, int pitch, int yaw, int gaz){
 
-	 	//TODO
+    	//normalize
+        if(roll<-100){roll=0;}else if(roll>100){roll=0;}
+        if(pitch<-100){pitch=0;}else if(pitch>100){pitch=0;}
+        if(yaw<-100){yaw=-0;}else if(yaw>100){yaw=0;}
+        if(gaz<-100){gaz=-0;}else if(gaz>100){gaz=0;}
+
+	 	deviceController->aRDrone3->setPilotingPCMDFlag(deviceController->aRDrone3,0);
+		deviceController->aRDrone3->setPilotingPCMDRoll(deviceController->aRDrone3, roll);
+		deviceController->aRDrone3->setPilotingPCMDPitch(deviceController->aRDrone3, pitch);
+		deviceController->aRDrone3->setPilotingPCMDYaw(deviceController->aRDrone3, yaw);
+		deviceController->aRDrone3->setPilotingPCMDGaz(deviceController->aRDrone3, gaz);
+		deviceController->aRDrone3->setPilotingPCMDFlag(deviceController->aRDrone3,1);
 	 }
 
 

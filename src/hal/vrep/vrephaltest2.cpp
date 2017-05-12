@@ -20,14 +20,14 @@ int main(int argc, char** argv){
 	double vel = 100;
 
 	//despegar
-	//cout << "Despegar..." << endl;
-	//hal.takeoff();
+	cout << "Despegar..." << endl;
+	hal.takeoff();
 
-	//sleep(2);
+	sleep(2);
 
-	//cv::Mat* res = hal.getFrame(Camera::Front);
+	cv::Mat* res = hal.getFrame(Camera::Front);
 
-	//sleep(2);
+	sleep(2);
 
 	//girar en un sentido
 	hal.move(vel, 0, 0, 0);
@@ -58,10 +58,6 @@ int main(int argc, char** argv){
 	hal.move(0, 0, 0, 0);
 
 	sleep(2);
-
-	//cambio latura objetivo
-	//cout << "Cambio en altura objetivo..." << endl;
-	//hal.targetAltitude(0.5);
 
 	//a un lado
 	cout << "Para un lado..." << endl;
@@ -94,17 +90,17 @@ int main(int argc, char** argv){
 
 
 	//aterrizar
-	//cout << "Aterrizar..." << endl;
-	//hal.land();
+	cout << "Aterrizar..." << endl;
+	hal.land();
 
 	sleep(2);
 
 	/************** INFORMACION *****************/
 
 	//Imagen
-	//cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
-    //cv::imshow( "Display window", *res );                   // Show our image inside it.
-    //cv::waitKey(0);
+	cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
+    cv::imshow( "Display window", *res );                   // Show our image inside it.
+    cv::waitKey(0);
 
 	//Altura
 	cout << "Altura: " << hal.getAltitude() << endl;

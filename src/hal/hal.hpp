@@ -36,21 +36,21 @@ class Hal{
 	//gaz = arriba-abajo
 	virtual void move(int roll, int pitch, int yaw, int gaz) = 0;
 
-	// --> Rotación horizontal
+	/*// --> Rotación horizontal
 	virtual void hrotate(double vel) = 0;
 
 	// --> Movimiento horizontal
 	virtual void hmove(double angle, double vel) = 0;
 
 	// --> Movimiento vertical
-	virtual void vmove(double vel) = 0;
+	virtual void vmove(double vel) = 0;*/
 
 	// --> Despegue y aterrizaje
 	virtual void land() = 0;
 	virtual void takeoff() = 0;
 
 	// --> Altura objetivo
-	virtual void targetAltitude(double altitude) = 0;
+	//virtual void targetAltitude(double altitude) = 0;
 
 	/************Estado del drone*************/
 

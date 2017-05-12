@@ -42,10 +42,10 @@ class Vrephal: public Hal {
             if(this->moving==0 && this->moving1==1){
 
             	//normalize
-	            if(this->roll<-100){this->roll=-100;}else if(this->roll>100){this->roll=100;}
-	            if(this->pitch<-100){this->pitch=-100;}else if(this->pitch>100){this->pitch=100;}
-	            if(this->yaw<-100){this->yaw=-100;}else if(this->yaw>100){this->yaw=100;}
-	            if(this->gaz<-100){this->gaz=-100;}else if(this->gaz>100){this->gaz=100;}
+	            if(this->roll<-100){this->roll=0;}else if(this->roll>100){this->roll=0;}
+	            if(this->pitch<-100){this->pitch=0;}else if(this->pitch>100){this->pitch=0;}
+	            if(this->yaw<-100){this->yaw=-0;}else if(this->yaw>100){this->yaw=0;}
+	            if(this->gaz<-100){this->gaz=-0;}else if(this->gaz>100){this->gaz=0;}
 
 	            simxFloat * orientation = new simxFloat[3];
 	            simxFloat * position = new simxFloat[3];
@@ -148,7 +148,7 @@ class Vrephal: public Hal {
 	}
 
 
-	// --> Rotación horizontal
+	/*// --> Rotación horizontal
 	void hrotate(double vel){
 
 		simxFloat * orientation = new simxFloat[3];
@@ -200,7 +200,7 @@ class Vrephal: public Hal {
 	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
 	    simxSetObjectPosition(clientID, targetHandler, -1, newposition, simx_opmode_blocking);
 
-	}
+	}*/
 
 	// --> Despegue y aterrizaje
 	void land(){
@@ -242,7 +242,7 @@ class Vrephal: public Hal {
 	    }
 	}
 
-	// --> Altura objetivo
+	/*// --> Altura objetivo
 	void targetAltitude(double altitude){
 
 		simxFloat * position = new simxFloat[3];
@@ -252,7 +252,7 @@ class Vrephal: public Hal {
 	    position[2] = altitude;
 
 	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
-	}
+	}*/
 
 	/************Estado del drone*************/
 
