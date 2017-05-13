@@ -20,8 +20,6 @@ extern "C"{
 
 using namespace std;
 
-
-
 class Pb2hal: public Hal {
 
 	//Constantes
@@ -32,6 +30,9 @@ class Pb2hal: public Hal {
 	//static ARSAL_Sem_t statesem;
 	//ARSAL_Sem_t Pb2hal::statesem;
 	//ARSAL_Sem_t statesem;
+	//ARSAL_Sem_t statesem;
+	
+	
 	ARDISCOVERY_Device_t *device = NULL;
 	ARCONTROLLER_Device_t *deviceController = NULL;
 
@@ -67,18 +68,19 @@ class Pb2hal: public Hal {
 	}
 
 	// called when the state of the device controller has changed
-	static void changedState(eARCONTROLLER_DEVICE_STATE newState, eARCONTROLLER_ERROR error, void *customData)
-	{
+	static void changedState(eARCONTROLLER_DEVICE_STATE newState, eARCONTROLLER_ERROR error, void *customData){
+		Pb2hal * p2this = (Pb2hal*) customData;
+
 	    switch (newState)
 	    {
 	        case ARCONTROLLER_DEVICE_STATE_RUNNING:
 	            break;
 	        case ARCONTROLLER_DEVICE_STATE_STOPPED:
-	        		//ARSAL_Sem_Post(&(statesem));
+	        		ARSAL_Sem_Post(&(p2this->statesem));
 	        		
 	            break;
 	        case ARCONTROLLER_DEVICE_STATE_STARTING:
-	            	//ARSAL_Sem_Post(&(statesem));
+	            	ARSAL_Sem_Post(&(p2this->statesem));
 	            break;
 	        case ARCONTROLLER_DEVICE_STATE_STOPPING:
 	            break;
@@ -189,12 +191,13 @@ class Pb2hal: public Hal {
 	}
 
 	public:
+	ARSAL_Sem_t statesem;
 
 	/************Constructor*************/ 
 
 	Pb2hal(){
 
-		//ARSAL_Sem_Init(&(statesem),0,0);
+		ARSAL_Sem_Init(&(statesem),0,0);
 
 		//Discovery
 		device = createDiscoveryDevice(ARDISCOVERY_PRODUCT_BEBOP_2, "bebop2", HOST, PORT);
@@ -206,12 +209,12 @@ class Pb2hal: public Hal {
 		cout << "ARCONTROLLER_Device_New error code: " << ARCONTROLLER_Error_ToString(error) << endl;
 
 		//Funcion que escucha cambios de estados
-		error = ARCONTROLLER_Device_AddStateChangedCallback(deviceController, changedState, NULL);
+		error = ARCONTROLLER_Device_AddStateChangedCallback(deviceController, changedState, this);
 
 		cout << "ARCONTROLLER_Device_AddStateChangedCallback error code: " << ARCONTROLLER_Error_ToString(error) << endl;
 
 		//Funcion que recibe comandos del drone
-		error = ARCONTROLLER_Device_AddCommandReceivedCallback(deviceController, receivedOnCommand, NULL);
+		error = ARCONTROLLER_Device_AddCommandReceivedCallback(deviceController, receivedOnCommand, this);
 
 		cout << "ARCONTROLLER_Device_AddCommandReceivedCallback error code: " << ARCONTROLLER_Error_ToString(error) << endl;
 
@@ -230,18 +233,19 @@ class Pb2hal: public Hal {
 		cout << "Estado: " << ARCONTROLLER_Device_GetState(deviceController, &error) << endl;
 		cout << "Estado vuelo: " << getFlyingState(deviceController) << endl;
 
-		//ARSAL_Sem_Wait(&(statesem));
+		ARSAL_Sem_Wait(&(statesem));
 	}
 
 	void Pb2halBeforeDelete(){
 
 		deleteDeviceController(deviceController);
 
+		eARCONTROLLER_ERROR error = ARCONTROLLER_OK;
 		while (ARCONTROLLER_Device_GetState(deviceController, &error) != ARCONTROLLER_DEVICE_STATE_STOPPED){
 			cout << "Esperando estado stopped" << endl;
 		}
 
-		//ARSAL_Sem_Wait(&(statesem));
+		ARSAL_Sem_Wait(&(statesem));
 	}
 
 
@@ -264,7 +268,7 @@ class Pb2hal: public Hal {
 	 }
 
 
-	// --> Rotación horizontal
+	/*// --> Rotación horizontal
 	void hrotate(double vel){
 
 		//TODO
@@ -280,7 +284,7 @@ class Pb2hal: public Hal {
 	void vmove(double vel){
 
 		//TODO
-	}
+	}*/
 
 	// --> Despegue y aterrizaje
 	void land(){
