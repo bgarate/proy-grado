@@ -18,6 +18,8 @@ extern "C"{
 	#include <libARDiscovery/ARDiscovery.h>	
 }
 
+#include <atomic>
+
 using namespace std;
 
 class Pb2hal: public Hal {
@@ -27,14 +29,22 @@ class Pb2hal: public Hal {
 	const char * HOST = "192.168.42.1"; 
 
 	//Variables aux 
-	//static ARSAL_Sem_t statesem;
-	//ARSAL_Sem_t Pb2hal::statesem;
-	//ARSAL_Sem_t statesem;
-	//ARSAL_Sem_t statesem;
-	
-	
 	ARDISCOVERY_Device_t *device = NULL;
 	ARCONTROLLER_Device_t *deviceController = NULL;
+
+	atomic<int> batteryLevel;
+	
+	atomic<double> gpslatitude;
+	atomic<double> gpslongitude;
+	atomic<double> gpsaltitude;
+	
+	atomic<double> altitude;
+
+	atomic<double> orientationx;
+	atomic<double> orientationy;
+	atomic<double> orientationz;
+
+	cv::Mat* lastframe;
 
 	/******Funciones auxiliares******/
 	//Discovery
@@ -92,35 +102,109 @@ class Pb2hal: public Hal {
 	// called when a command has been received from the drone
 	static void receivedOnCommand (eARCONTROLLER_DICTIONARY_KEY commandKey, ARCONTROLLER_DICTIONARY_ELEMENT_t *elementDictionary, void *customData)
 	{
-	    if (elementDictionary != NULL)
-	    {
-	        // if the command received is a battery state changed
-	        /*if (commandKey == ARCONTROLLER_DICTIONARY_KEY_COMMON_COMMONSTATE_BATTERYSTATECHANGED)
-	        {
+	    if (elementDictionary != NULL){
+
+	    	Pb2hal * p2this = (Pb2hal*) customData;
+
+	    //BATTERY STATE changed
+	        if (commandKey == ARCONTROLLER_DICTIONARY_KEY_COMMON_COMMONSTATE_BATTERYSTATECHANGED){
+
 	            ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
 	            ARCONTROLLER_DICTIONARY_ELEMENT_t *element = NULL;
-
-	            // get the command received in the device controller
 	            HASH_FIND_STR (elementDictionary, ARCONTROLLER_DICTIONARY_SINGLE_KEY, element);
-	            if (element != NULL)
-	            {
-	                // get the value
-	                HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_COMMON_COMMONSTATE_BATTERYSTATECHANGED_PERCENT, arg);
 
-	                if (arg != NULL)
-	                {
-	                    uint8_t batteryLevel = arg->value.U8;
-	                    // do what you want with the battery level
+	            if (element != NULL){
+
+	                HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_COMMON_COMMONSTATE_BATTERYSTATECHANGED_PERCENT, arg);
+	                if (arg != NULL){
+	                    p2this->batteryLevel = (int) arg->value.U8;
 	                }
 	            }
-	        }*/
-	        // else if (commandKey == THE COMMAND YOU ARE INTERESTED IN)
+	        }
+	    //GPS POSITION changed
+	        if (commandKey == ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_POSITIONCHANGED){
+		        
+		        ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
+		        ARCONTROLLER_DICTIONARY_ELEMENT_t *element = NULL;
+		        HASH_FIND_STR (elementDictionary, ARCONTROLLER_DICTIONARY_SINGLE_KEY, element);
+		        
+		        if (element != NULL){
+		            
+		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_POSITIONCHANGED_LATITUDE, arg);
+		            if (arg != NULL){
+
+		                p2this->gpslatitude = arg->value.Double;
+		            }
+
+		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_POSITIONCHANGED_LONGITUDE, arg);
+		            if (arg != NULL){
+
+		                p2this->gpslongitude = arg->value.Double;
+		            }
+
+		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_POSITIONCHANGED_ALTITUDE, arg);
+		            if (arg != NULL){
+
+		                p2this->gpsaltitude = arg->value.Double;
+		            }
+		        }
+		    }
+		//ALTITUDE changed
+		    if (commandKey == ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ALTITUDECHANGED){
+		        
+		        ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
+		        ARCONTROLLER_DICTIONARY_ELEMENT_t *element = NULL;
+		        HASH_FIND_STR (elementDictionary, ARCONTROLLER_DICTIONARY_SINGLE_KEY, element);
+		        
+		        if (element != NULL){
+		            
+		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ALTITUDECHANGED_ALTITUDE, arg);
+		            if (arg != NULL){
+		                
+		                p2this->altitude = arg->value.Double;
+		            }
+		        }
+		    }
+		//ORIENTATION changed
+		    if (commandKey == ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGEVENT_MOVEBYEND){
+
+		        ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
+		        ARCONTROLLER_DICTIONARY_ELEMENT_t *element = NULL;
+		        HASH_FIND_STR (elementDictionary, ARCONTROLLER_DICTIONARY_SINGLE_KEY, element);
+		        
+		        if (element != NULL){
+
+
+		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGEVENT_MOVEBYEND_DX, arg);
+		            if (arg != NULL){
+		                
+		                p2this->orientationx = arg->value.Float;
+		            }
+
+		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGEVENT_MOVEBYEND_DY, arg);
+		            if (arg != NULL){
+
+		                p2this->orientationy = arg->value.Float;
+		            }
+
+		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGEVENT_MOVEBYEND_DZ, arg);
+		            if (arg != NULL){
+
+		                p2this->orientationz = arg->value.Float;
+		            }
+
+
+		        }
+		    }
 	    }
 	}
 
 
 	//VideoStreming auxs
 	static eARCONTROLLER_ERROR configDecoderCallback (ARCONTROLLER_Stream_Codec_t codec, void *customData){
+
+		Pb2hal * p2this = (Pb2hal*) customData;
+
 	    // configure your decoder
 	    // return ARCONTROLLER_OK if configuration went well
 	    // otherwise, return ARCONTROLLER_ERROR. In that case,
@@ -129,10 +213,30 @@ class Pb2hal: public Hal {
 	}
 
 	static eARCONTROLLER_ERROR didReceiveFrameCallback (ARCONTROLLER_Frame_t *frame, void *customData){
-	    // display the frame
+
+		// display the frame
 	    // return ARCONTROLLER_OK if display went well
 	    // otherwise, return ARCONTROLLER_ERROR. In that case,
 	    // configDecoderCallback will be called again
+
+		if (frame != NULL){
+
+			Pb2hal * p2this = (Pb2hal*) customData;
+
+			//convertir imagen
+			ARSAL_Sem_Wait(&(p2this->framesem));
+			
+			delete p2this->lastframe;
+			p2this->lastframe = new cv::Mat(frame->height,frame->width,CV_8UC3,frame->data);
+
+	        //cv::cvtColor(*lastframe,*lastframe,cv::COLOR_BGR2RGB);
+	        //cv::flip(*lastframe,*lastframe,0);
+
+			ARSAL_Sem_Post(&(p2this->framesem));
+		} else {
+
+		}
+
 	    return ARCONTROLLER_OK;
 	}
 
@@ -192,12 +296,14 @@ class Pb2hal: public Hal {
 
 	public:
 	ARSAL_Sem_t statesem;
+	ARSAL_Sem_t framesem;
 
 	/************Constructor*************/ 
 
 	Pb2hal(){
 
 		ARSAL_Sem_Init(&(statesem),0,0);
+		ARSAL_Sem_Init(&(framesem),0,1);
 
 		//Discovery
 		device = createDiscoveryDevice(ARDISCOVERY_PRODUCT_BEBOP_2, "bebop2", HOST, PORT);
@@ -219,7 +325,7 @@ class Pb2hal: public Hal {
 		cout << "ARCONTROLLER_Device_AddCommandReceivedCallback error code: " << ARCONTROLLER_Error_ToString(error) << endl;
 
 		//Escuchar video Streming
-		error = ARCONTROLLER_Device_SetVideoStreamCallbacks(deviceController, configDecoderCallback, didReceiveFrameCallback, NULL , NULL);
+		error = ARCONTROLLER_Device_SetVideoStreamCallbacks(deviceController, configDecoderCallback, didReceiveFrameCallback, NULL , this);
 	
 		//Start device controller
 		error = ARCONTROLLER_Device_Start(deviceController);
@@ -338,17 +444,18 @@ class Pb2hal: public Hal {
 	    cout << "Subió" << endl;
 	}
 
-	// --> Altura objetivo
-	void targetAltitude(double altitude){
+	/*// --> Altura objetivo
+	void targetgpsaltitude(double gpsaltitude){
 
 		//TODO
-	}
+	}*/
 
 	/************Estado del drone*************/
 
 	// --> Batería 
 	int bateryLevel(){
-		//TODO
+
+		return batteryLevel;
 	}
 
 	// --> Intensidad de la conexión
@@ -359,7 +466,10 @@ class Pb2hal: public Hal {
 	// --> Obtener captura de imagen (ambas cámaras)
 	cv::Mat* getFrame(Camera cam){
 
-		//TODO
+		ARSAL_Sem_Init(&(framesem),0,1);
+		cv::Mat* aux = new cv::Mat(*lastframe);
+		ARSAL_Sem_Init(&(framesem),0,1);
+		return aux;
 	}
 
 	/************Posición*************/
@@ -367,19 +477,30 @@ class Pb2hal: public Hal {
 	// --> Altura
 	double getAltitude(){
 
-		//TODO
+		return altitude;
 	}
 
 	// --> Orientación 
 	Point getOrientation(){
 
-		//TODO
+	  	Point ori;
+	  	ori.x = orientationx;
+	  	ori.y = orientationy;
+	  	ori.z = orientationz;
+
+		return ori;
 	}	
 
 	// --> Coordenadas
 	Point getGPSPosition(){
 
-		//TODO
+		Point pos;
+
+		pos.x = gpslatitude;
+	  	pos.y = gpslongitude;
+	  	pos.z = gpsaltitude;
+
+		return pos;
 	}
 
 
