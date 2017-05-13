@@ -305,6 +305,18 @@ class Pb2hal: public Hal {
 		ARSAL_Sem_Init(&(statesem),0,0);
 		ARSAL_Sem_Init(&(framesem),0,1);
 
+		batteryLevel = 100;
+	
+		gpslatitude = 0;
+		gpslongitude = 0;
+		gpsaltitude = 0;
+		
+		altitude = 0;
+
+		orientationx = 0;
+		orientationy = 0;
+		orientationz = 0;
+
 		//Discovery
 		device = createDiscoveryDevice(ARDISCOVERY_PRODUCT_BEBOP_2, "bebop2", HOST, PORT);
 
