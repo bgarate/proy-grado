@@ -7,6 +7,7 @@ find_package(OpenCV REQUIRED)
 find_package(Threads REQUIRED)
 find_package(Boost REQUIRED system program_options)
 find_package(Protobuf REQUIRED)
+find_package (Threads)
 
 set(CMAKE_CXX_STANDARD 11)
 
@@ -19,6 +20,7 @@ set(SOURCE_FILES ${SOURCE_FILES} src/tracking/Track.cpp src/tracking/Track.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/SocketChannel.cpp src/messages/SocketChannel.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/Brain.cpp src/Brain.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/Body.cpp src/Body.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/BodyTest.h src/bodytests/BodyTest1.cpp src/bodytests/BodyTest2.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/communication/Communication.cpp src/communication/Communication.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/Connection.cpp src/messages/Connection.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/AsyncSocketChannel.cpp src/messages/AsyncSocketChannel.h)
@@ -44,5 +46,6 @@ target_link_libraries(proy_grado ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(proy_grado ${Boost_LIBRARIES})
 target_link_libraries(proy_grado ${Protobuf_LIBRARIES})
 target_link_libraries(proy_grado proto)
+target_link_libraries(proy_grado ${CMAKE_THREAD_LIBS_INIT})
 
 

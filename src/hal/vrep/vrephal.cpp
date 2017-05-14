@@ -13,6 +13,10 @@ extern "C" {
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
+#include <thread>
+#include <unistd.h>
+#include <atomic>
+
 using namespace std;
 
 class Vrephal: public Hal {
@@ -24,6 +28,83 @@ class Vrephal: public Hal {
 	//Variables aux 
 	int clientID;
 	simxInt targetHandler, quadricopterHandler, quadricopterFloorCamHandler, quadricopterFrontCamHandler;
+    thread* t;
+    atomic<int> moving, moving1,roll,pitch,yaw,gaz;
+
+	//Funcion auxiliar
+
+	void deamon(){
+		while(1){
+            usleep(25000);
+
+            simxFloat factor = 0.001;
+
+            if(this->moving==0 && this->moving1==1){
+
+            	//normalize
+	            if(this->roll<-100){this->roll=0;}else if(this->roll>100){this->roll=0;}
+	            if(this->pitch<-100){this->pitch=0;}else if(this->pitch>100){this->pitch=0;}
+	            if(this->yaw<-100){this->yaw=-0;}else if(this->yaw>100){this->yaw=0;}
+	            if(this->gaz<-100){this->gaz=-0;}else if(this->gaz>100){this->gaz=0;}
+
+	            simxFloat * orientation = new simxFloat[3];
+	            simxFloat * position = new simxFloat[3];
+	            simxFloat rfactor = 4;
+
+	            position[0] = -rfactor*this->pitch*factor;//pitch
+	            position[1] = -rfactor*this->yaw*factor;//yaw
+	            position[2] = -rfactor*this->gaz*factor;//gaz
+	            orientation[0]= 0;
+	            orientation[1]= 0;
+	            orientation[2]= -rfactor*(this->roll*factor);//roll
+
+	            simxSetObjectOrientation(clientID, targetHandler, targetHandler, orientation, simx_opmode_blocking);
+            	simxSetObjectPosition(clientID, targetHandler, targetHandler, position, simx_opmode_blocking);
+
+            	usleep(25000);
+
+            	position[0] = -position[0]/2;//pitch
+	            position[1] = -position[1]/2;//yaw
+	            position[2] = 0;//gaz
+	            orientation[0]= 0;
+	            orientation[1]= 0;
+	            orientation[2]= -orientation[2]/2;//roll
+
+            	simxSetObjectPosition(clientID, targetHandler, targetHandler, position, simx_opmode_blocking);
+
+				this->roll=0;
+			    this->pitch=0;
+			    this->yaw=0;
+			    this->gaz=0;
+			    moving1 = 0;
+
+            } else if(this->moving==1){
+
+            	//normalize
+	            if(this->roll<-100){this->roll=-100;}else if(this->roll>100){this->roll=100;}
+	            if(this->pitch<-100){this->pitch=-100;}else if(this->pitch>100){this->pitch=100;}
+	            if(this->yaw<-100){this->yaw=-100;}else if(this->yaw>100){this->yaw=100;}
+	            if(this->gaz<-100){this->gaz=-100;}else if(this->gaz>100){this->gaz=100;}
+
+	            simxFloat * orientation = new simxFloat[3];
+	            simxFloat * position = new simxFloat[3];
+
+	            position[0] = this->pitch*factor;//pitch
+	            position[1] = this->yaw*factor;//yaw
+	            position[2] = this->gaz*factor;//gaz
+	            orientation[0]= 0;
+	            orientation[1]= 0;
+	            orientation[2]= (this->roll*factor);//roll
+
+            	simxSetObjectOrientation(clientID, targetHandler, targetHandler, orientation, simx_opmode_blocking);
+            	simxSetObjectPosition(clientID, targetHandler, targetHandler, position, simx_opmode_blocking);
+
+            	moving1 = 1;
+            }
+
+            
+		}
+	}
 
 
 	public:
@@ -39,29 +120,47 @@ class Vrephal: public Hal {
 	    simxInt res2 = simxGetObjectHandle(clientID, "Quadricopter",&quadricopterHandler,simx_opmode_blocking);
 	    simxInt res3 = simxGetObjectHandle(clientID, "Vision_sensorFloor",&quadricopterFloorCamHandler,simx_opmode_blocking);
 	    simxInt res4 = simxGetObjectHandle(clientID, "Vision_sensorFront",&quadricopterFrontCamHandler,simx_opmode_blocking);
+
+		//Iniciar deamon
+		this->moving=0;
+		this->roll=0;
+	    this->pitch=0;
+	    this->yaw=0;
+	    this->gaz=0;
+		this->t = new thread(&Vrephal::deamon, this);
 	}
 
 
-	/************Movimiento*************/ 
+	/************Movimiento*************/
+
+	//Set movimientos
+	void move(int roll, int pitch, int yaw, int gaz){
+
+		if(roll!=0 || pitch!=0 || yaw!=0 || gaz!=0){
+			this->moving=1;
+			this->roll=roll;
+		    this->pitch=pitch;
+		    this->yaw=yaw;
+		    this->gaz=gaz;
+		} else {
+			this->moving=0;
+		}
+	}
 
 
-	// --> Rotación horizontal
+	/*// --> Rotación horizontal
 	void hrotate(double vel){
 
 		simxFloat * orientation = new simxFloat[3];
-		simxFloat * neworientation = new simxFloat[3];
 	  	simxGetObjectOrientation(clientID, targetHandler, -1, orientation, simx_opmode_blocking);
 
 	  	//Calcular orientacion	  	
-	  	neworientation[0]= orientation[0];
-	  	neworientation[1]= orientation[1]; 
-		neworientation[2]= orientation[2] + (vel*0.1);
+        orientation[0]= orientation[0];
+        orientation[1]= orientation[1];
+        orientation[2]= orientation[2] + (vel*0.1);
 
-
-		simxSetObjectOrientation(clientID, targetHandler, -1, neworientation, simx_opmode_blocking);
 		simxSetObjectOrientation(clientID, targetHandler, -1, orientation, simx_opmode_blocking);
-		simxSetObjectOrientation(clientID, targetHandler, -1, neworientation, simx_opmode_blocking);
-		
+
 	}
 
 	// --> Movimiento horizontal
@@ -101,7 +200,7 @@ class Vrephal: public Hal {
 	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
 	    simxSetObjectPosition(clientID, targetHandler, -1, newposition, simx_opmode_blocking);
 
-	}
+	}*/
 
 	// --> Despegue y aterrizaje
 	void land(){
@@ -143,7 +242,7 @@ class Vrephal: public Hal {
 	    }
 	}
 
-	// --> Altura objetivo
+	/*// --> Altura objetivo
 	void targetAltitude(double altitude){
 
 		simxFloat * position = new simxFloat[3];
@@ -153,7 +252,7 @@ class Vrephal: public Hal {
 	    position[2] = altitude;
 
 	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
-	}
+	}*/
 
 	/************Estado del drone*************/
 
@@ -168,7 +267,7 @@ class Vrephal: public Hal {
 	/************Cámara*************/
 
 	// --> Obtener captura de imagen (ambas cámaras)
-	cv::Mat getFrame(Camera cam){
+	cv::Mat* getFrame(Camera cam){
 
 		simxInt cameraHandler;
 		if (cam == Camera::Front){
@@ -186,7 +285,10 @@ class Vrephal: public Hal {
 		simxInt aux = simxGetVisionSensorImage(clientID, cameraHandler,resolution,&image,0,simx_opmode_blocking);
 
 		//convertir imagen
-		cv::Mat res = cv::Mat(resolution[1],resolution[0],CV_8UC3,image);
+		cv::Mat* res = new cv::Mat(resolution[1],resolution[0],CV_8UC3,image);
+
+        cv::cvtColor(*res,*res,cv::COLOR_BGR2RGB);
+        cv::flip(*res,*res,0);
 
 		return res;
 	}
