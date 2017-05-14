@@ -1,0 +1,89 @@
+\hypertarget{printbuf_8h}{}\section{src/hal/pb2/include/json/printbuf.h File Reference}
+\label{printbuf_8h}\index{src/hal/pb2/include/json/printbuf.\+h@{src/hal/pb2/include/json/printbuf.\+h}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structprintbuf}{printbuf}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{printbuf\+\_\+memappend\+\_\+fast}(p,  bufptr,  bufsize)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structprintbuf}{printbuf} $\ast$ \hyperlink{printbuf_8h_a3e390ebc7660a18335edd89f640fd415}{printbuf\+\_\+new} (void)
+\item 
+int \hyperlink{printbuf_8h_a22f09779a19db59a83e7cb8c2ce4c75f}{printbuf\+\_\+memappend} (struct \hyperlink{structprintbuf}{printbuf} $\ast$p, const char $\ast$buf, int size)
+\item 
+int \hyperlink{printbuf_8h_adf6214db6c8ce994c7f7f1180863c8a4}{sprintbuf} (struct \hyperlink{structprintbuf}{printbuf} $\ast$p, const char $\ast$msg,...)
+\item 
+void \hyperlink{printbuf_8h_a4393ee3dedb376af11c96fe97532292e}{printbuf\+\_\+reset} (struct \hyperlink{structprintbuf}{printbuf} $\ast$p)
+\item 
+void \hyperlink{printbuf_8h_ab525221c767ac65c58ddeea8a655a4e8}{printbuf\+\_\+free} (struct \hyperlink{structprintbuf}{printbuf} $\ast$p)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{printbuf.\+h@{printbuf.\+h}!printbuf\+\_\+memappend\+\_\+fast@{printbuf\+\_\+memappend\+\_\+fast}}
+\index{printbuf\+\_\+memappend\+\_\+fast@{printbuf\+\_\+memappend\+\_\+fast}!printbuf.\+h@{printbuf.\+h}}
+\subsubsection[{\texorpdfstring{printbuf\+\_\+memappend\+\_\+fast}{printbuf_memappend_fast}}]{\setlength{\rightskip}{0pt plus 5cm}\#define printbuf\+\_\+memappend\+\_\+fast(
+\begin{DoxyParamCaption}
+\item[{}]{p, }
+\item[{}]{bufptr, }
+\item[{}]{bufsize}
+\end{DoxyParamCaption}
+)}\hypertarget{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}{}\label{printbuf_8h_a6f3a4dc87fab41c37e3eff42f40dc346}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                         \(\backslash\)
+  if ((p->size - p->bpos) > bufsize) \{                       \(\backslash\)
+    memcpy(p->buf + p->bpos, (bufptr), bufsize);             \(\backslash\)
+    p->bpos += bufsize;                                      \(\backslash\)
+    p->buf[p->bpos]= \textcolor{charliteral}{'\(\backslash\)0'};                                   \(\backslash\)
+  \} \textcolor{keywordflow}{else} \{  \hyperlink{printbuf_8h_a22f09779a19db59a83e7cb8c2ce4c75f}{printbuf\_memappend}(p, (bufptr), bufsize); \}      \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\index{printbuf.\+h@{printbuf.\+h}!printbuf\+\_\+free@{printbuf\+\_\+free}}
+\index{printbuf\+\_\+free@{printbuf\+\_\+free}!printbuf.\+h@{printbuf.\+h}}
+\subsubsection[{\texorpdfstring{printbuf\+\_\+free(struct printbuf $\ast$p)}{printbuf_free(struct printbuf *p)}}]{\setlength{\rightskip}{0pt plus 5cm}void printbuf\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf printbuf} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{printbuf_8h_ab525221c767ac65c58ddeea8a655a4e8}{}\label{printbuf_8h_ab525221c767ac65c58ddeea8a655a4e8}
+\index{printbuf.\+h@{printbuf.\+h}!printbuf\+\_\+memappend@{printbuf\+\_\+memappend}}
+\index{printbuf\+\_\+memappend@{printbuf\+\_\+memappend}!printbuf.\+h@{printbuf.\+h}}
+\subsubsection[{\texorpdfstring{printbuf\+\_\+memappend(struct printbuf $\ast$p, const char $\ast$buf, int size)}{printbuf_memappend(struct printbuf *p, const char *buf, int size)}}]{\setlength{\rightskip}{0pt plus 5cm}int printbuf\+\_\+memappend (
+\begin{DoxyParamCaption}
+\item[{struct {\bf printbuf} $\ast$}]{p, }
+\item[{const char $\ast$}]{buf, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{printbuf_8h_a22f09779a19db59a83e7cb8c2ce4c75f}{}\label{printbuf_8h_a22f09779a19db59a83e7cb8c2ce4c75f}
+\index{printbuf.\+h@{printbuf.\+h}!printbuf\+\_\+new@{printbuf\+\_\+new}}
+\index{printbuf\+\_\+new@{printbuf\+\_\+new}!printbuf.\+h@{printbuf.\+h}}
+\subsubsection[{\texorpdfstring{printbuf\+\_\+new(void)}{printbuf_new(void)}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf printbuf}$\ast$ printbuf\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{printbuf_8h_a3e390ebc7660a18335edd89f640fd415}{}\label{printbuf_8h_a3e390ebc7660a18335edd89f640fd415}
+\index{printbuf.\+h@{printbuf.\+h}!printbuf\+\_\+reset@{printbuf\+\_\+reset}}
+\index{printbuf\+\_\+reset@{printbuf\+\_\+reset}!printbuf.\+h@{printbuf.\+h}}
+\subsubsection[{\texorpdfstring{printbuf\+\_\+reset(struct printbuf $\ast$p)}{printbuf_reset(struct printbuf *p)}}]{\setlength{\rightskip}{0pt plus 5cm}void printbuf\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{struct {\bf printbuf} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{printbuf_8h_a4393ee3dedb376af11c96fe97532292e}{}\label{printbuf_8h_a4393ee3dedb376af11c96fe97532292e}
+\index{printbuf.\+h@{printbuf.\+h}!sprintbuf@{sprintbuf}}
+\index{sprintbuf@{sprintbuf}!printbuf.\+h@{printbuf.\+h}}
+\subsubsection[{\texorpdfstring{sprintbuf(struct printbuf $\ast$p, const char $\ast$msg,...)}{sprintbuf(struct printbuf *p, const char *msg,...)}}]{\setlength{\rightskip}{0pt plus 5cm}int sprintbuf (
+\begin{DoxyParamCaption}
+\item[{struct {\bf printbuf} $\ast$}]{p, }
+\item[{const char $\ast$}]{msg, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{printbuf_8h_adf6214db6c8ce994c7f7f1180863c8a4}{}\label{printbuf_8h_adf6214db6c8ce994c7f7f1180863c8a4}

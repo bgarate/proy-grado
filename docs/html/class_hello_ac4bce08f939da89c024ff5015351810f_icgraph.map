@@ -1,0 +1,7 @@
+<map id="Hello::id" name="Hello::id">
+<area shape="rect" id="node2" href="$class_brain.html#a23d921369c5ec1218d7dc26d0f8270c2" title="Brain::loop" alt="" coords="343,6,427,33"/>
+<area shape="rect" id="node4" href="$class_communication.html#a303009b7e1a4f714d02fb8729ea98f0b" title="Communication::asociate" alt="" coords="124,31,295,58"/>
+<area shape="rect" id="node5" href="$class_hello.html#af01676342b30ab0ea8c04893df6ea19d" title="Hello::MergeFrom" alt="" coords="146,82,273,109"/>
+<area shape="rect" id="node6" href="$class_hello.html#af317fbebedc25e52461c38d70433814b" title="Hello::GetMetadata" alt="" coords="142,133,277,159"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a523d51f6d06fce5bbed3e074818569fb" title="main" alt="" coords="475,6,525,33"/>
+</map>

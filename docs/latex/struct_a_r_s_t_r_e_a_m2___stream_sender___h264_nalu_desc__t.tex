@@ -1,0 +1,80 @@
+\hypertarget{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t}{}\section{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t Struct Reference}
+\label{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t}\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}}
+
+
+Stream\+Sender N\+AL unit descriptor.  
+
+
+
+
+{\ttfamily \#include $<$arstream2\+\_\+stream\+\_\+sender.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a62cf4542fca0551bdfba92bf8ea5766c}{nalu\+Buffer}
+\item 
+uint32\+\_\+t \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a79727a50e1b6e2960e12a1a7018dafb0}{nalu\+Size}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_af8035ecf0b4f87279c6ce7751c7fb75b}{au\+Metadata}
+\item 
+uint32\+\_\+t \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a49c450afe16068d0a7bb01c7811ec4eb}{au\+Metadata\+Size}
+\item 
+uint64\+\_\+t \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a37bcb9ea4961e06e84080eb5558bd7d2}{au\+Timestamp}
+\item 
+uint32\+\_\+t \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a3e6fc372456253eaa5e992135e5e516d}{is\+Last\+Nalu\+In\+Au}
+\item 
+uint32\+\_\+t \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a5eb58d803a57d57ac7a38b40f2cd590e}{seq\+Num\+Forced\+Discontinuity}
+\item 
+uint32\+\_\+t \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a7b59e4dee14c0d06622c6b1e7dd39b77}{importance}
+\item 
+uint32\+\_\+t \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a0a0e585271efa213f8c3641531edcd54}{priority}
+\item 
+void $\ast$ \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a5528fa014c61360c0abd01775f23ec9d}{au\+User\+Ptr}
+\item 
+void $\ast$ \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_add69d20cc84476ff31baeabfe43c672d}{nalu\+User\+Ptr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stream\+Sender N\+AL unit descriptor. 
+
+\subsection{Member Data Documentation}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}!au\+Metadata@{au\+Metadata}}
+\index{au\+Metadata@{au\+Metadata}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}}
+\subsubsection[{\texorpdfstring{au\+Metadata}{auMetadata}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t\+::au\+Metadata}\hypertarget{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_af8035ecf0b4f87279c6ce7751c7fb75b}{}\label{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_af8035ecf0b4f87279c6ce7751c7fb75b}
+Pointer to the optional access unit metadata buffer \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}!au\+Metadata\+Size@{au\+Metadata\+Size}}
+\index{au\+Metadata\+Size@{au\+Metadata\+Size}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}}
+\subsubsection[{\texorpdfstring{au\+Metadata\+Size}{auMetadataSize}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t\+::au\+Metadata\+Size}\hypertarget{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a49c450afe16068d0a7bb01c7811ec4eb}{}\label{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a49c450afe16068d0a7bb01c7811ec4eb}
+Size of the optional access unit metadata in bytes \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}!au\+Timestamp@{au\+Timestamp}}
+\index{au\+Timestamp@{au\+Timestamp}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}}
+\subsubsection[{\texorpdfstring{au\+Timestamp}{auTimestamp}}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t\+::au\+Timestamp}\hypertarget{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a37bcb9ea4961e06e84080eb5558bd7d2}{}\label{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a37bcb9ea4961e06e84080eb5558bd7d2}
+Access unit timastamp in microseconds. All N\+AL units of an access unit must share the same timestamp \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}!au\+User\+Ptr@{au\+User\+Ptr}}
+\index{au\+User\+Ptr@{au\+User\+Ptr}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}}
+\subsubsection[{\texorpdfstring{au\+User\+Ptr}{auUserPtr}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t\+::au\+User\+Ptr}\hypertarget{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a5528fa014c61360c0abd01775f23ec9d}{}\label{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a5528fa014c61360c0abd01775f23ec9d}
+Access unit user pointer that will be passed to the access unit callback function (optional, can be N\+U\+LL) \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}!importance@{importance}}
+\index{importance@{importance}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}}
+\subsubsection[{\texorpdfstring{importance}{importance}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t\+::importance}\hypertarget{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a7b59e4dee14c0d06622c6b1e7dd39b77}{}\label{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a7b59e4dee14c0d06622c6b1e7dd39b77}
+Importance indication (low numbers are more important, valid range\+: 0..A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+I\+M\+P\+O\+R\+T\+A\+N\+C\+E\+\_\+\+L\+E\+V\+E\+L\+S-\/1) \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}!is\+Last\+Nalu\+In\+Au@{is\+Last\+Nalu\+In\+Au}}
+\index{is\+Last\+Nalu\+In\+Au@{is\+Last\+Nalu\+In\+Au}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}}
+\subsubsection[{\texorpdfstring{is\+Last\+Nalu\+In\+Au}{isLastNaluInAu}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t\+::is\+Last\+Nalu\+In\+Au}\hypertarget{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a3e6fc372456253eaa5e992135e5e516d}{}\label{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a3e6fc372456253eaa5e992135e5e516d}
+Boolean-\/like flag (0/1). If active, tells the sender that the N\+AL unit is the last of the access unit \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}!nalu\+Buffer@{nalu\+Buffer}}
+\index{nalu\+Buffer@{nalu\+Buffer}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}}
+\subsubsection[{\texorpdfstring{nalu\+Buffer}{naluBuffer}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t\+::nalu\+Buffer}\hypertarget{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a62cf4542fca0551bdfba92bf8ea5766c}{}\label{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a62cf4542fca0551bdfba92bf8ea5766c}
+Pointer to the N\+AL unit buffer \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}!nalu\+Size@{nalu\+Size}}
+\index{nalu\+Size@{nalu\+Size}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}}
+\subsubsection[{\texorpdfstring{nalu\+Size}{naluSize}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t\+::nalu\+Size}\hypertarget{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a79727a50e1b6e2960e12a1a7018dafb0}{}\label{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a79727a50e1b6e2960e12a1a7018dafb0}
+Size of the N\+AL unit in bytes \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}!nalu\+User\+Ptr@{nalu\+User\+Ptr}}
+\index{nalu\+User\+Ptr@{nalu\+User\+Ptr}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}}
+\subsubsection[{\texorpdfstring{nalu\+User\+Ptr}{naluUserPtr}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t\+::nalu\+User\+Ptr}\hypertarget{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_add69d20cc84476ff31baeabfe43c672d}{}\label{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_add69d20cc84476ff31baeabfe43c672d}
+N\+AL unit user pointer that will be passed to the N\+AL unit callback function (optional, can be N\+U\+LL) \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}!priority@{priority}}
+\index{priority@{priority}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}}
+\subsubsection[{\texorpdfstring{priority}{priority}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t\+::priority}\hypertarget{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a0a0e585271efa213f8c3641531edcd54}{}\label{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a0a0e585271efa213f8c3641531edcd54}
+Priority indication (low numbers are more important, valid range\+: 0..A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+L\+E\+V\+E\+L\+S-\/1) \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}!seq\+Num\+Forced\+Discontinuity@{seq\+Num\+Forced\+Discontinuity}}
+\index{seq\+Num\+Forced\+Discontinuity@{seq\+Num\+Forced\+Discontinuity}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}}
+\subsubsection[{\texorpdfstring{seq\+Num\+Forced\+Discontinuity}{seqNumForcedDiscontinuity}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t\+::seq\+Num\+Forced\+Discontinuity}\hypertarget{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a5eb58d803a57d57ac7a38b40f2cd590e}{}\label{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t_a5eb58d803a57d57ac7a38b40f2cd590e}
+Force an added discontinuity in R\+TP sequence number before the N\+AL unit 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/lib\+A\+R\+Stream2/\hyperlink{arstream2__stream__sender_8h}{arstream2\+\_\+stream\+\_\+sender.\+h}\end{DoxyCompactItemize}

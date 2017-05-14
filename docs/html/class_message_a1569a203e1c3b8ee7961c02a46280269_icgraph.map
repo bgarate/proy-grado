@@ -1,0 +1,7 @@
+<map id="Message::mutable_advertisement" name="Message::mutable_advertisement">
+<area shape="rect" id="node2" href="$class_brain.html#a23d921369c5ec1218d7dc26d0f8270c2" title="Brain::loop" alt="" coords="323,5,407,32"/>
+<area shape="rect" id="node4" href="$class_message.html#a04b6b278c333ee73af59b1b2623e1289" title="Message::MergePartialFrom\lCodedStream" alt="" coords="272,57,459,98"/>
+<area shape="rect" id="node5" href="$class_message.html#aeec4936f78a3ed399295e3f72840166f" title="Message::MergeFrom" alt="" coords="291,123,440,149"/>
+<area shape="rect" id="node6" href="$class_message.html#a1656eb682ce1b354645b8f0204d4d716" title="Message::GetMetadata" alt="" coords="286,173,445,200"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a523d51f6d06fce5bbed3e074818569fb" title="main" alt="" coords="507,5,557,32"/>
+</map>

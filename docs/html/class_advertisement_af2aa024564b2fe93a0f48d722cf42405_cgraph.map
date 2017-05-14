@@ -1,0 +1,8 @@
+<map id="Advertisement::GetMetadata" name="Advertisement::GetMetadata">
+<area shape="rect" id="node2" href="$class_advertisement.html#a40ff84af1ed3e8149b930caf3516eb24" title="Advertisement::clear_ip" alt="" coords="249,5,407,32"/>
+<area shape="rect" id="node3" href="$class_advertisement.html#a79b1546cdf56513b9e585f27795f3f8f" title="Advertisement::ip" alt="" coords="266,56,390,83"/>
+<area shape="rect" id="node4" href="$class_advertisement.html#a90f53e0ba30957936fdbee7170355ce9" title="Advertisement::set_ip" alt="" coords="253,107,403,133"/>
+<area shape="rect" id="node5" href="$class_advertisement.html#aa0b75409373ab4db98a171bcc3de48dd" title="Advertisement::clear_port" alt="" coords="243,157,413,184"/>
+<area shape="rect" id="node6" href="$class_advertisement.html#afad4c1b646818833a8bebb7efad53afe" title="Advertisement::port" alt="" coords="260,208,396,235"/>
+<area shape="rect" id="node7" href="$class_advertisement.html#af3442ebfa92d77664e92a92f61d6a1db" title="Advertisement::set_port" alt="" coords="247,259,409,285"/>
+</map>

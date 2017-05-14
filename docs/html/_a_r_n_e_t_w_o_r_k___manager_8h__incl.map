@@ -1,0 +1,8 @@
+<map id="src/hal/pb2/include/libARNetwork/ARNETWORK_Manager.h" name="src/hal/pb2/include/libARNetwork/ARNETWORK_Manager.h">
+<area shape="rect" id="node2" href="$_a_r_n_e_t_w_o_r_k___error_8h.html" title="libARNetwork errors known. " alt="" coords="5,199,200,240"/>
+<area shape="rect" id="node3" href="$_a_r_n_e_t_w_o_r_k___i_o_buffer_param_8h.html" title="prameters used to set the parameters of a new IOBuffer " alt="" coords="203,109,397,151"/>
+<area shape="rect" id="node6" href="$_a_r_n_e_t_w_o_r_k_a_l___manager_8h.html" title="network manager allow to send over network. " alt="" coords="429,109,656,151"/>
+<area shape="rect" id="node4" href="$_a_r_n_e_t_w_o_r_k_a_l___frame_8h.html" title="define the network frame protocol " alt="" coords="224,199,451,240"/>
+<area shape="rect" id="node9" href="$_a_r_n_e_t_w_o_r_k_a_l___error_8h.html" title="libARNetworkAL errors known. " alt="" coords="643,199,869,240"/>
+<area shape="rect" id="node10" href="$_a_r_s_a_l___socket_8h.html" title="This file contains headers about socket abstraction layer. " alt="" coords="893,206,1080,233"/>
+</map>

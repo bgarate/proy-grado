@@ -1,0 +1,117 @@
+\hypertarget{cmac_8h}{}\section{src/hal/pb2/include/openssl/cmac.h File Reference}
+\label{cmac_8h}\index{src/hal/pb2/include/openssl/cmac.\+h@{src/hal/pb2/include/openssl/cmac.\+h}}
+{\ttfamily \#include $<$openssl/evp.\+h$>$}\\*
+Include dependency graph for cmac.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cmac_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+st \hyperlink{cmac_8h_a512efe03625909396316f873e3984c6a}{C\+M\+A\+C\+\_\+\+C\+TX}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{cmac_8h_a512efe03625909396316f873e3984c6a}{C\+M\+A\+C\+\_\+\+C\+TX} $\ast$ \hyperlink{cmac_8h_ab237bc5004e677ac1bc33f1f7d32f879}{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+new} (void)
+\item 
+void \hyperlink{cmac_8h_afd282cac01ea4f1acbd271f90780ff36}{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+cleanup} (\hyperlink{cmac_8h_a512efe03625909396316f873e3984c6a}{C\+M\+A\+C\+\_\+\+C\+TX} $\ast$ctx)
+\item 
+void \hyperlink{cmac_8h_ac314d54282e94d98bafc57272ffba6d4}{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+free} (\hyperlink{cmac_8h_a512efe03625909396316f873e3984c6a}{C\+M\+A\+C\+\_\+\+C\+TX} $\ast$ctx)
+\item 
+\hyperlink{ossl__typ_8h_aab2bd6a044e1d31ebc2fe82b3b0b3d9a}{E\+V\+P\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+C\+TX} $\ast$ \hyperlink{cmac_8h_a9ed2c3c5682a163bcf0a6f3a6a748495}{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+get0\+\_\+cipher\+\_\+ctx} (\hyperlink{cmac_8h_a512efe03625909396316f873e3984c6a}{C\+M\+A\+C\+\_\+\+C\+TX} $\ast$ctx)
+\item 
+int \hyperlink{cmac_8h_a6e83684e8e5b740c8b2e624593ad3557}{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+copy} (\hyperlink{cmac_8h_a512efe03625909396316f873e3984c6a}{C\+M\+A\+C\+\_\+\+C\+TX} $\ast$out, const \hyperlink{cmac_8h_a512efe03625909396316f873e3984c6a}{C\+M\+A\+C\+\_\+\+C\+TX} $\ast$in)
+\item 
+int \hyperlink{cmac_8h_addfa4946cb5cd674e15da1becd175caa}{C\+M\+A\+C\+\_\+\+Init} (\hyperlink{cmac_8h_a512efe03625909396316f873e3984c6a}{C\+M\+A\+C\+\_\+\+C\+TX} $\ast$ctx, const void $\ast$key, size\+\_\+t keylen, const \hyperlink{ossl__typ_8h_a54a8663a8084d45c31f2786156b55405}{E\+V\+P\+\_\+\+C\+I\+P\+H\+ER} $\ast$cipher, \hyperlink{ossl__typ_8h_abac45b251498719318e60ab8d6192510}{E\+N\+G\+I\+NE} $\ast$impl)
+\item 
+int \hyperlink{cmac_8h_aa8b26e9bee73b247b2817c9932ec3528}{C\+M\+A\+C\+\_\+\+Update} (\hyperlink{cmac_8h_a512efe03625909396316f873e3984c6a}{C\+M\+A\+C\+\_\+\+C\+TX} $\ast$ctx, const void $\ast$data, size\+\_\+t dlen)
+\item 
+int \hyperlink{cmac_8h_ad8d632ac7cdc925ffa76743eadd098d4}{C\+M\+A\+C\+\_\+\+Final} (\hyperlink{cmac_8h_a512efe03625909396316f873e3984c6a}{C\+M\+A\+C\+\_\+\+C\+TX} $\ast$ctx, unsigned char $\ast$out, size\+\_\+t $\ast$poutlen)
+\item 
+int \hyperlink{cmac_8h_ad07481a443891fa880fd25d0843ed014}{C\+M\+A\+C\+\_\+resume} (\hyperlink{cmac_8h_a512efe03625909396316f873e3984c6a}{C\+M\+A\+C\+\_\+\+C\+TX} $\ast$ctx)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{cmac.\+h@{cmac.\+h}!C\+M\+A\+C\+\_\+\+C\+TX@{C\+M\+A\+C\+\_\+\+C\+TX}}
+\index{C\+M\+A\+C\+\_\+\+C\+TX@{C\+M\+A\+C\+\_\+\+C\+TX}!cmac.\+h@{cmac.\+h}}
+\subsubsection[{\texorpdfstring{C\+M\+A\+C\+\_\+\+C\+TX}{CMAC_CTX}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+st {\bf C\+M\+A\+C\+\_\+\+C\+TX}}\hypertarget{cmac_8h_a512efe03625909396316f873e3984c6a}{}\label{cmac_8h_a512efe03625909396316f873e3984c6a}
+
+
+\subsection{Function Documentation}
+\index{cmac.\+h@{cmac.\+h}!C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+cleanup@{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+cleanup}}
+\index{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+cleanup@{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+cleanup}!cmac.\+h@{cmac.\+h}}
+\subsubsection[{\texorpdfstring{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+cleanup(\+C\+M\+A\+C\+\_\+\+C\+T\+X $\ast$ctx)}{CMAC_CTX_cleanup(CMAC_CTX *ctx)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+cleanup (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\hypertarget{cmac_8h_afd282cac01ea4f1acbd271f90780ff36}{}\label{cmac_8h_afd282cac01ea4f1acbd271f90780ff36}
+\index{cmac.\+h@{cmac.\+h}!C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+copy@{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+copy}}
+\index{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+copy@{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+copy}!cmac.\+h@{cmac.\+h}}
+\subsubsection[{\texorpdfstring{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+copy(\+C\+M\+A\+C\+\_\+\+C\+T\+X $\ast$out, const C\+M\+A\+C\+\_\+\+C\+T\+X $\ast$in)}{CMAC_CTX_copy(CMAC_CTX *out, const CMAC_CTX *in)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+copy (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{out, }
+\item[{const {\bf C\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{in}
+\end{DoxyParamCaption}
+)}\hypertarget{cmac_8h_a6e83684e8e5b740c8b2e624593ad3557}{}\label{cmac_8h_a6e83684e8e5b740c8b2e624593ad3557}
+\index{cmac.\+h@{cmac.\+h}!C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+free@{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+free}}
+\index{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+free@{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+free}!cmac.\+h@{cmac.\+h}}
+\subsubsection[{\texorpdfstring{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+free(\+C\+M\+A\+C\+\_\+\+C\+T\+X $\ast$ctx)}{CMAC_CTX_free(CMAC_CTX *ctx)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\hypertarget{cmac_8h_ac314d54282e94d98bafc57272ffba6d4}{}\label{cmac_8h_ac314d54282e94d98bafc57272ffba6d4}
+\index{cmac.\+h@{cmac.\+h}!C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+get0\+\_\+cipher\+\_\+ctx@{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+get0\+\_\+cipher\+\_\+ctx}}
+\index{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+get0\+\_\+cipher\+\_\+ctx@{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+get0\+\_\+cipher\+\_\+ctx}!cmac.\+h@{cmac.\+h}}
+\subsubsection[{\texorpdfstring{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+get0\+\_\+cipher\+\_\+ctx(\+C\+M\+A\+C\+\_\+\+C\+T\+X $\ast$ctx)}{CMAC_CTX_get0_cipher_ctx(CMAC_CTX *ctx)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+V\+P\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+C\+TX}$\ast$ C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+get0\+\_\+cipher\+\_\+ctx (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\hypertarget{cmac_8h_a9ed2c3c5682a163bcf0a6f3a6a748495}{}\label{cmac_8h_a9ed2c3c5682a163bcf0a6f3a6a748495}
+\index{cmac.\+h@{cmac.\+h}!C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+new@{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+new}}
+\index{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+new@{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+new}!cmac.\+h@{cmac.\+h}}
+\subsubsection[{\texorpdfstring{C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+new(void)}{CMAC_CTX_new(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+M\+A\+C\+\_\+\+C\+TX}$\ast$ C\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{cmac_8h_ab237bc5004e677ac1bc33f1f7d32f879}{}\label{cmac_8h_ab237bc5004e677ac1bc33f1f7d32f879}
+\index{cmac.\+h@{cmac.\+h}!C\+M\+A\+C\+\_\+\+Final@{C\+M\+A\+C\+\_\+\+Final}}
+\index{C\+M\+A\+C\+\_\+\+Final@{C\+M\+A\+C\+\_\+\+Final}!cmac.\+h@{cmac.\+h}}
+\subsubsection[{\texorpdfstring{C\+M\+A\+C\+\_\+\+Final(\+C\+M\+A\+C\+\_\+\+C\+T\+X $\ast$ctx, unsigned char $\ast$out, size\+\_\+t $\ast$poutlen)}{CMAC_Final(CMAC_CTX *ctx, unsigned char *out, size_t *poutlen)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+M\+A\+C\+\_\+\+Final (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{ctx, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t $\ast$}]{poutlen}
+\end{DoxyParamCaption}
+)}\hypertarget{cmac_8h_ad8d632ac7cdc925ffa76743eadd098d4}{}\label{cmac_8h_ad8d632ac7cdc925ffa76743eadd098d4}
+\index{cmac.\+h@{cmac.\+h}!C\+M\+A\+C\+\_\+\+Init@{C\+M\+A\+C\+\_\+\+Init}}
+\index{C\+M\+A\+C\+\_\+\+Init@{C\+M\+A\+C\+\_\+\+Init}!cmac.\+h@{cmac.\+h}}
+\subsubsection[{\texorpdfstring{C\+M\+A\+C\+\_\+\+Init(\+C\+M\+A\+C\+\_\+\+C\+T\+X $\ast$ctx, const void $\ast$key, size\+\_\+t keylen, const E\+V\+P\+\_\+\+C\+I\+P\+H\+E\+R $\ast$cipher, E\+N\+G\+I\+N\+E $\ast$impl)}{CMAC_Init(CMAC_CTX *ctx, const void *key, size_t keylen, const EVP_CIPHER *cipher, ENGINE *impl)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+M\+A\+C\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{ctx, }
+\item[{const void $\ast$}]{key, }
+\item[{size\+\_\+t}]{keylen, }
+\item[{const {\bf E\+V\+P\+\_\+\+C\+I\+P\+H\+ER} $\ast$}]{cipher, }
+\item[{{\bf E\+N\+G\+I\+NE} $\ast$}]{impl}
+\end{DoxyParamCaption}
+)}\hypertarget{cmac_8h_addfa4946cb5cd674e15da1becd175caa}{}\label{cmac_8h_addfa4946cb5cd674e15da1becd175caa}
+\index{cmac.\+h@{cmac.\+h}!C\+M\+A\+C\+\_\+resume@{C\+M\+A\+C\+\_\+resume}}
+\index{C\+M\+A\+C\+\_\+resume@{C\+M\+A\+C\+\_\+resume}!cmac.\+h@{cmac.\+h}}
+\subsubsection[{\texorpdfstring{C\+M\+A\+C\+\_\+resume(\+C\+M\+A\+C\+\_\+\+C\+T\+X $\ast$ctx)}{CMAC_resume(CMAC_CTX *ctx)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+M\+A\+C\+\_\+resume (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\hypertarget{cmac_8h_ad07481a443891fa880fd25d0843ed014}{}\label{cmac_8h_ad07481a443891fa880fd25d0843ed014}
+\index{cmac.\+h@{cmac.\+h}!C\+M\+A\+C\+\_\+\+Update@{C\+M\+A\+C\+\_\+\+Update}}
+\index{C\+M\+A\+C\+\_\+\+Update@{C\+M\+A\+C\+\_\+\+Update}!cmac.\+h@{cmac.\+h}}
+\subsubsection[{\texorpdfstring{C\+M\+A\+C\+\_\+\+Update(\+C\+M\+A\+C\+\_\+\+C\+T\+X $\ast$ctx, const void $\ast$data, size\+\_\+t dlen)}{CMAC_Update(CMAC_CTX *ctx, const void *data, size_t dlen)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+M\+A\+C\+\_\+\+Update (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{ctx, }
+\item[{const void $\ast$}]{data, }
+\item[{size\+\_\+t}]{dlen}
+\end{DoxyParamCaption}
+)}\hypertarget{cmac_8h_aa8b26e9bee73b247b2817c9932ec3528}{}\label{cmac_8h_aa8b26e9bee73b247b2817c9932ec3528}

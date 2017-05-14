@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -125,22 +126,16 @@ Inheritance diagram for Hal:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a38abd3a6254650b4c28035521e3efa40"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hal.html#a38abd3a6254650b4c28035521e3efa40">hrotate</a> (double vel)=0</td></tr>
-<tr class="separator:a38abd3a6254650b4c28035521e3efa40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15c5ef8f3009634d0bf6262b826235b0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hal.html#a15c5ef8f3009634d0bf6262b826235b0">hmove</a> (double angle, double vel)=0</td></tr>
-<tr class="separator:a15c5ef8f3009634d0bf6262b826235b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac50577557c4e55ad643175f95ac2f584"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hal.html#ac50577557c4e55ad643175f95ac2f584">vmove</a> (double vel)=0</td></tr>
-<tr class="separator:ac50577557c4e55ad643175f95ac2f584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91118650b6df6790f56bb8c10230fa0a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hal.html#a91118650b6df6790f56bb8c10230fa0a">move</a> (int roll, int pitch, int yaw, int gaz)=0</td></tr>
+<tr class="separator:a91118650b6df6790f56bb8c10230fa0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8376a2668ed62e4d4d70f7b6336e84c4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hal.html#a8376a2668ed62e4d4d70f7b6336e84c4">land</a> ()=0</td></tr>
 <tr class="separator:a8376a2668ed62e4d4d70f7b6336e84c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1968d088d9b905eb99fbe3f77d76757"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hal.html#ac1968d088d9b905eb99fbe3f77d76757">takeoff</a> ()=0</td></tr>
 <tr class="separator:ac1968d088d9b905eb99fbe3f77d76757"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11055efac17ca7bd23b8b6df4ce7938c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hal.html#a11055efac17ca7bd23b8b6df4ce7938c">targetAltitude</a> (double altitude)=0</td></tr>
-<tr class="separator:a11055efac17ca7bd23b8b6df4ce7938c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a709862946eb7bc952156384187a17c82"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hal.html#a709862946eb7bc952156384187a17c82">bateryLevel</a> ()=0</td></tr>
 <tr class="separator:a709862946eb7bc952156384187a17c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0ae734602805980b9c6777db73058e9"><td class="memItemLeft" align="right" valign="top">virtual cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hal.html#ab0ae734602805980b9c6777db73058e9">getFrame</a> (<a class="el" href="hal_8hpp.html#adc0591c2c6aa3aa864336ece4978ab62">Camera</a> cam)=0</td></tr>
-<tr class="separator:ab0ae734602805980b9c6777db73058e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94dbc6927d08b2edc23772a5a0992b76"><td class="memItemLeft" align="right" valign="top">virtual cv::Mat *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hal.html#a94dbc6927d08b2edc23772a5a0992b76">getFrame</a> (<a class="el" href="hal_8hpp.html#adc0591c2c6aa3aa864336ece4978ab62">Camera</a> cam)=0</td></tr>
+<tr class="separator:a94dbc6927d08b2edc23772a5a0992b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9740bffd75eab1959fefea03545d5785"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hal.html#a9740bffd75eab1959fefea03545d5785">getAltitude</a> ()=0</td></tr>
 <tr class="separator:a9740bffd75eab1959fefea03545d5785"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5356f99ad5599b471b819972d4fde86"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hal.html#ad5356f99ad5599b471b819972d4fde86">getOrientation</a> ()=0</td></tr>
@@ -170,7 +165,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_vrephal.html#a119e0a2bda6232b7ad7e314c58692086">Vrephal</a>.</p>
+<p>Implemented in <a class="el" href="class_pb2hal.html#a9504b93ebff1164367949aecbfd9c2ef">Pb2hal</a>, and <a class="el" href="class_vrephal.html#a119e0a2bda6232b7ad7e314c58692086">Vrephal</a>.</p>
 
 </div>
 </div>
@@ -195,11 +190,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_vrephal.html#a561080b3af7b9a53790a7e4c00b1925e">Vrephal</a>.</p>
+<p>Implemented in <a class="el" href="class_pb2hal.html#a212b719d8a394edfd9d92020ede194ec">Pb2hal</a>, and <a class="el" href="class_vrephal.html#a561080b3af7b9a53790a7e4c00b1925e">Vrephal</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab0ae734602805980b9c6777db73058e9"></a>
+<a class="anchor" id="a94dbc6927d08b2edc23772a5a0992b76"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -207,7 +202,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual cv::Mat Hal::getFrame </td>
+          <td class="memname">virtual cv::Mat* Hal::getFrame </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="hal_8hpp.html#adc0591c2c6aa3aa864336ece4978ab62">Camera</a>&#160;</td>
           <td class="paramname"><em>cam</em></td><td>)</td>
@@ -221,7 +216,18 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_vrephal.html#a86bcc3267f400f8df62c1f13a3447d0e">Vrephal</a>.</p>
+<p>Implemented in <a class="el" href="class_pb2hal.html#afd9dcf01b317140ca3fc58d2d3907ab9">Pb2hal</a>, and <a class="el" href="class_vrephal.html#adcd4ee6ebcf44b0bc3dd3cab5846f258">Vrephal</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_hal_a94dbc6927d08b2edc23772a5a0992b76_icgraph.png" border="0" usemap="#class_hal_a94dbc6927d08b2edc23772a5a0992b76_icgraph" alt=""/></div>
+<map name="class_hal_a94dbc6927d08b2edc23772a5a0992b76_icgraph" id="class_hal_a94dbc6927d08b2edc23772a5a0992b76_icgraph">
+<area shape="rect" id="node2" href="class_body_test1.html#a589d4e15dcc32ed3cee7146361d7e413" title="BodyTest1::BodyTestStep" alt="" coords="159,5,335,32"/>
+<area shape="rect" id="node3" href="class_body_test2.html#a4a126925f033e1147f404c7281715bb1" title="BodyTest2::BodyTestStep" alt="" coords="159,56,335,83"/>
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -246,7 +252,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_vrephal.html#a7dcae4f99c03042a708b3fe420df4aeb">Vrephal</a>.</p>
+<p>Implemented in <a class="el" href="class_pb2hal.html#a010064c234eddf22ebcdb25d2c9864e7">Pb2hal</a>, and <a class="el" href="class_vrephal.html#a7dcae4f99c03042a708b3fe420df4aeb">Vrephal</a>.</p>
 
 </div>
 </div>
@@ -271,69 +277,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_vrephal.html#a8189d1b9b4c2bd35910110f503615c35">Vrephal</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a15c5ef8f3009634d0bf6262b826235b0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void Hal::hmove </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>angle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>vel</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_vrephal.html#a3f6e29717b83d61585e98c256fde9d52">Vrephal</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a38abd3a6254650b4c28035521e3efa40"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void Hal::hrotate </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>vel</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_vrephal.html#a8a6deee4a51c6d94827f1a4a443dd192">Vrephal</a>.</p>
+<p>Implemented in <a class="el" href="class_pb2hal.html#a3dc0b2dc30a97f396d8a8525442a52e3">Pb2hal</a>, and <a class="el" href="class_vrephal.html#a8189d1b9b4c2bd35910110f503615c35">Vrephal</a>.</p>
 
 </div>
 </div>
@@ -358,7 +302,66 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_vrephal.html#ab3475a8fa59a6b22fe8624194339b346">Vrephal</a>.</p>
+<p>Implemented in <a class="el" href="class_pb2hal.html#a139f305d3ba6d3a8736914420128895c">Pb2hal</a>, and <a class="el" href="class_vrephal.html#ab3475a8fa59a6b22fe8624194339b346">Vrephal</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a91118650b6df6790f56bb8c10230fa0a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Hal::move </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>roll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pitch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>yaw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>gaz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_pb2hal.html#a0caa1d537df7054f823a092c208de12e">Pb2hal</a>, and <a class="el" href="class_vrephal.html#a04b642caa265c1c051c06d13dbf30995">Vrephal</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_hal_a91118650b6df6790f56bb8c10230fa0a_icgraph.png" border="0" usemap="#class_hal_a91118650b6df6790f56bb8c10230fa0a_icgraph" alt=""/></div>
+<map name="class_hal_a91118650b6df6790f56bb8c10230fa0a_icgraph" id="class_hal_a91118650b6df6790f56bb8c10230fa0a_icgraph">
+<area shape="rect" id="node2" href="class_body_test1.html#afdeb31fd17979edfc8719a25100458d3" title="BodyTest1::deamon" alt="" coords="136,5,275,32"/>
+<area shape="rect" id="node3" href="class_body_test1.html#ae86e4f3f8d140b4673e422a57770755e" title="BodyTest1::InitBodyTest" alt="" coords="323,5,489,32"/>
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -383,59 +386,18 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_vrephal.html#aeae911ac4d0f00bb8acc22b89e858d1c">Vrephal</a>.</p>
+<p>Implemented in <a class="el" href="class_pb2hal.html#a87834a3d1b4142c6d98e2dd93f4c3ffb">Pb2hal</a>, and <a class="el" href="class_vrephal.html#aeae911ac4d0f00bb8acc22b89e858d1c">Vrephal</a>.</p>
 
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_hal_ac1968d088d9b905eb99fbe3f77d76757_icgraph.png" border="0" usemap="#class_hal_ac1968d088d9b905eb99fbe3f77d76757_icgraph" alt=""/></div>
+<map name="class_hal_ac1968d088d9b905eb99fbe3f77d76757_icgraph" id="class_hal_ac1968d088d9b905eb99fbe3f77d76757_icgraph">
+<area shape="rect" id="node2" href="class_body_test1.html#ae86e4f3f8d140b4673e422a57770755e" title="BodyTest1::InitBodyTest" alt="" coords="144,5,311,32"/>
+<area shape="rect" id="node3" href="class_body_test2.html#ab496f4a4caecc90776893cb2729b8ef4" title="BodyTest2::InitBodyTest" alt="" coords="144,56,311,83"/>
+</map>
 </div>
-</div>
-<a class="anchor" id="a11055efac17ca7bd23b8b6df4ce7938c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void Hal::targetAltitude </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>altitude</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_vrephal.html#a4fe7665b2348c74314f819bddd3f3bd4">Vrephal</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac50577557c4e55ad643175f95ac2f584"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void Hal::vmove </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>vel</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_vrephal.html#a2be0357052fba0e962f2c16552a6dc58">Vrephal</a>.</p>
+</p>
 
 </div>
 </div>

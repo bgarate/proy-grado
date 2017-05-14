@@ -1,0 +1,62 @@
+\hypertarget{structv3__ext__ctx}{}\section{v3\+\_\+ext\+\_\+ctx Struct Reference}
+\label{structv3__ext__ctx}\index{v3\+\_\+ext\+\_\+ctx@{v3\+\_\+ext\+\_\+ctx}}
+
+
+{\ttfamily \#include $<$x509v3.\+h$>$}
+
+
+
+Collaboration diagram for v3\+\_\+ext\+\_\+ctx\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structv3__ext__ctx__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structv3__ext__ctx_aef13996482523a866443b3160db73291}{flags}
+\item 
+\hyperlink{ossl__typ_8h_a4f666bde6518f95deb3050c54b408416}{X509} $\ast$ \hyperlink{structv3__ext__ctx_a727f0302b59312053fdcbd09a195cf85}{issuer\+\_\+cert}
+\item 
+\hyperlink{ossl__typ_8h_a4f666bde6518f95deb3050c54b408416}{X509} $\ast$ \hyperlink{structv3__ext__ctx_ab93937a6f72e09c41303ebe54c6aa6be}{subject\+\_\+cert}
+\item 
+\hyperlink{x509_8h_afcb1c737fc5aee6c012c238794ef2d66}{X509\+\_\+\+R\+EQ} $\ast$ \hyperlink{structv3__ext__ctx_a2c538c77545078ac3834d7ec19baa2e1}{subject\+\_\+req}
+\item 
+\hyperlink{ossl__typ_8h_ac8661d2485c2c8da5fd7dd26b846f4bf}{X509\+\_\+\+C\+RL} $\ast$ \hyperlink{structv3__ext__ctx_a01c6e9a776b48effe171dccb3f5ba653}{crl}
+\item 
+\hyperlink{x509v3_8h_aa95cb7d1c2231f28f49bc9e7ba63e5a0}{X509\+V3\+\_\+\+C\+O\+N\+F\+\_\+\+M\+E\+T\+H\+OD} $\ast$ \hyperlink{structv3__ext__ctx_a7e8b728812e1ae2216de8991faeae558}{db\+\_\+meth}
+\item 
+void $\ast$ \hyperlink{structv3__ext__ctx_ab9c02945f7b4566735f6184baf63b765}{db}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{v3\+\_\+ext\+\_\+ctx@{v3\+\_\+ext\+\_\+ctx}!crl@{crl}}
+\index{crl@{crl}!v3\+\_\+ext\+\_\+ctx@{v3\+\_\+ext\+\_\+ctx}}
+\subsubsection[{\texorpdfstring{crl}{crl}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X509\+\_\+\+C\+RL}$\ast$ v3\+\_\+ext\+\_\+ctx\+::crl}\hypertarget{structv3__ext__ctx_a01c6e9a776b48effe171dccb3f5ba653}{}\label{structv3__ext__ctx_a01c6e9a776b48effe171dccb3f5ba653}
+\index{v3\+\_\+ext\+\_\+ctx@{v3\+\_\+ext\+\_\+ctx}!db@{db}}
+\index{db@{db}!v3\+\_\+ext\+\_\+ctx@{v3\+\_\+ext\+\_\+ctx}}
+\subsubsection[{\texorpdfstring{db}{db}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ v3\+\_\+ext\+\_\+ctx\+::db}\hypertarget{structv3__ext__ctx_ab9c02945f7b4566735f6184baf63b765}{}\label{structv3__ext__ctx_ab9c02945f7b4566735f6184baf63b765}
+\index{v3\+\_\+ext\+\_\+ctx@{v3\+\_\+ext\+\_\+ctx}!db\+\_\+meth@{db\+\_\+meth}}
+\index{db\+\_\+meth@{db\+\_\+meth}!v3\+\_\+ext\+\_\+ctx@{v3\+\_\+ext\+\_\+ctx}}
+\subsubsection[{\texorpdfstring{db\+\_\+meth}{db_meth}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X509\+V3\+\_\+\+C\+O\+N\+F\+\_\+\+M\+E\+T\+H\+OD}$\ast$ v3\+\_\+ext\+\_\+ctx\+::db\+\_\+meth}\hypertarget{structv3__ext__ctx_a7e8b728812e1ae2216de8991faeae558}{}\label{structv3__ext__ctx_a7e8b728812e1ae2216de8991faeae558}
+\index{v3\+\_\+ext\+\_\+ctx@{v3\+\_\+ext\+\_\+ctx}!flags@{flags}}
+\index{flags@{flags}!v3\+\_\+ext\+\_\+ctx@{v3\+\_\+ext\+\_\+ctx}}
+\subsubsection[{\texorpdfstring{flags}{flags}}]{\setlength{\rightskip}{0pt plus 5cm}int v3\+\_\+ext\+\_\+ctx\+::flags}\hypertarget{structv3__ext__ctx_aef13996482523a866443b3160db73291}{}\label{structv3__ext__ctx_aef13996482523a866443b3160db73291}
+\index{v3\+\_\+ext\+\_\+ctx@{v3\+\_\+ext\+\_\+ctx}!issuer\+\_\+cert@{issuer\+\_\+cert}}
+\index{issuer\+\_\+cert@{issuer\+\_\+cert}!v3\+\_\+ext\+\_\+ctx@{v3\+\_\+ext\+\_\+ctx}}
+\subsubsection[{\texorpdfstring{issuer\+\_\+cert}{issuer_cert}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X509}$\ast$ v3\+\_\+ext\+\_\+ctx\+::issuer\+\_\+cert}\hypertarget{structv3__ext__ctx_a727f0302b59312053fdcbd09a195cf85}{}\label{structv3__ext__ctx_a727f0302b59312053fdcbd09a195cf85}
+\index{v3\+\_\+ext\+\_\+ctx@{v3\+\_\+ext\+\_\+ctx}!subject\+\_\+cert@{subject\+\_\+cert}}
+\index{subject\+\_\+cert@{subject\+\_\+cert}!v3\+\_\+ext\+\_\+ctx@{v3\+\_\+ext\+\_\+ctx}}
+\subsubsection[{\texorpdfstring{subject\+\_\+cert}{subject_cert}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X509}$\ast$ v3\+\_\+ext\+\_\+ctx\+::subject\+\_\+cert}\hypertarget{structv3__ext__ctx_ab93937a6f72e09c41303ebe54c6aa6be}{}\label{structv3__ext__ctx_ab93937a6f72e09c41303ebe54c6aa6be}
+\index{v3\+\_\+ext\+\_\+ctx@{v3\+\_\+ext\+\_\+ctx}!subject\+\_\+req@{subject\+\_\+req}}
+\index{subject\+\_\+req@{subject\+\_\+req}!v3\+\_\+ext\+\_\+ctx@{v3\+\_\+ext\+\_\+ctx}}
+\subsubsection[{\texorpdfstring{subject\+\_\+req}{subject_req}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X509\+\_\+\+R\+EQ}$\ast$ v3\+\_\+ext\+\_\+ctx\+::subject\+\_\+req}\hypertarget{structv3__ext__ctx_a2c538c77545078ac3834d7ec19baa2e1}{}\label{structv3__ext__ctx_a2c538c77545078ac3834d7ec19baa2e1}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/openssl/\hyperlink{x509v3_8h}{x509v3.\+h}\end{DoxyCompactItemize}

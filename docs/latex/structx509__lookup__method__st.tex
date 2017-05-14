@@ -1,0 +1,67 @@
+\hypertarget{structx509__lookup__method__st}{}\section{x509\+\_\+lookup\+\_\+method\+\_\+st Struct Reference}
+\label{structx509__lookup__method__st}\index{x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}}
+
+
+{\ttfamily \#include $<$x509\+\_\+vfy.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{structx509__lookup__method__st_a57a76d2d34d7749b3874c7809337390c}{name}
+\item 
+int($\ast$ \hyperlink{structx509__lookup__method__st_a308b007d8cb1b10bc525d9a8a794926e}{new\+\_\+item} )(\hyperlink{x509__vfy_8h_afcefc7fb9c7573debf6c1d28b28ff618}{X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx)
+\item 
+void($\ast$ \hyperlink{structx509__lookup__method__st_a0ef0e21d7fe023bc976d002e1dd5a810}{free} )(\hyperlink{x509__vfy_8h_afcefc7fb9c7573debf6c1d28b28ff618}{X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx)
+\item 
+int($\ast$ \hyperlink{structx509__lookup__method__st_a04ca0ebad723cae3fa9cb487c56e09a0}{init} )(\hyperlink{x509__vfy_8h_afcefc7fb9c7573debf6c1d28b28ff618}{X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx)
+\item 
+int($\ast$ \hyperlink{structx509__lookup__method__st_aa201108d16466a85c87dd0b86288087a}{shutdown} )(\hyperlink{x509__vfy_8h_afcefc7fb9c7573debf6c1d28b28ff618}{X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx)
+\item 
+int($\ast$ \hyperlink{structx509__lookup__method__st_a87357ddd14742495a20e4e7be7cdfab2}{ctrl} )(\hyperlink{x509__vfy_8h_afcefc7fb9c7573debf6c1d28b28ff618}{X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx, int cmd, const char $\ast$argc, long argl, char $\ast$$\ast$ret)
+\item 
+int($\ast$ \hyperlink{structx509__lookup__method__st_a2d6e3c3cc73f583d6d970abe12b65df2}{get\+\_\+by\+\_\+subject} )(\hyperlink{x509__vfy_8h_afcefc7fb9c7573debf6c1d28b28ff618}{X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx, int \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type}, \hyperlink{ossl__typ_8h_a5c5fc036757e87b9bd163d0221696533}{X509\+\_\+\+N\+A\+ME} $\ast$\hyperlink{structx509__lookup__method__st_a57a76d2d34d7749b3874c7809337390c}{name}, \hyperlink{x509__vfy_8h_a49c000712efcfeff1e403cb1242052e9}{X509\+\_\+\+O\+B\+J\+E\+CT} $\ast$ret)
+\item 
+int($\ast$ \hyperlink{structx509__lookup__method__st_af97ec1a34b72c8892d9b16e90e99b9f2}{get\+\_\+by\+\_\+issuer\+\_\+serial} )(\hyperlink{x509__vfy_8h_afcefc7fb9c7573debf6c1d28b28ff618}{X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx, int \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type}, \hyperlink{ossl__typ_8h_a5c5fc036757e87b9bd163d0221696533}{X509\+\_\+\+N\+A\+ME} $\ast$\hyperlink{structx509__lookup__method__st_a57a76d2d34d7749b3874c7809337390c}{name}, \hyperlink{ossl__typ_8h_af4335399bf9774cb410a5e93de65998b}{A\+S\+N1\+\_\+\+I\+N\+T\+E\+G\+ER} $\ast$serial, \hyperlink{x509__vfy_8h_a49c000712efcfeff1e403cb1242052e9}{X509\+\_\+\+O\+B\+J\+E\+CT} $\ast$ret)
+\item 
+int($\ast$ \hyperlink{structx509__lookup__method__st_ae5331725f3feb7f560e670cc529b4475}{get\+\_\+by\+\_\+fingerprint} )(\hyperlink{x509__vfy_8h_afcefc7fb9c7573debf6c1d28b28ff618}{X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx, int \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type}, unsigned char $\ast$\hyperlink{x509_8h_a3fb78b1e1dea1301c549fdcb5a6ddc11}{bytes}, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, \hyperlink{x509__vfy_8h_a49c000712efcfeff1e403cb1242052e9}{X509\+\_\+\+O\+B\+J\+E\+CT} $\ast$ret)
+\item 
+int($\ast$ \hyperlink{structx509__lookup__method__st_a2db768d3cfbb0bfd076e5e8c17590d80}{get\+\_\+by\+\_\+alias} )(\hyperlink{x509__vfy_8h_afcefc7fb9c7573debf6c1d28b28ff618}{X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx, int \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type}, char $\ast$str, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, \hyperlink{x509__vfy_8h_a49c000712efcfeff1e403cb1242052e9}{X509\+\_\+\+O\+B\+J\+E\+CT} $\ast$ret)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}!ctrl@{ctrl}}
+\index{ctrl@{ctrl}!x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ctrl}{ctrl}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ x509\+\_\+lookup\+\_\+method\+\_\+st\+::ctrl) ({\bf X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx, int cmd, const char $\ast$argc, long argl, char $\ast$$\ast$ret)}\hypertarget{structx509__lookup__method__st_a87357ddd14742495a20e4e7be7cdfab2}{}\label{structx509__lookup__method__st_a87357ddd14742495a20e4e7be7cdfab2}
+\index{x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}!free@{free}}
+\index{free@{free}!x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{free}{free}}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ x509\+\_\+lookup\+\_\+method\+\_\+st\+::free) ({\bf X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx)}\hypertarget{structx509__lookup__method__st_a0ef0e21d7fe023bc976d002e1dd5a810}{}\label{structx509__lookup__method__st_a0ef0e21d7fe023bc976d002e1dd5a810}
+\index{x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}!get\+\_\+by\+\_\+alias@{get\+\_\+by\+\_\+alias}}
+\index{get\+\_\+by\+\_\+alias@{get\+\_\+by\+\_\+alias}!x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{get\+\_\+by\+\_\+alias}{get_by_alias}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ x509\+\_\+lookup\+\_\+method\+\_\+st\+::get\+\_\+by\+\_\+alias) ({\bf X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx, int {\bf type}, char $\ast$str, int {\bf len}, {\bf X509\+\_\+\+O\+B\+J\+E\+CT} $\ast$ret)}\hypertarget{structx509__lookup__method__st_a2db768d3cfbb0bfd076e5e8c17590d80}{}\label{structx509__lookup__method__st_a2db768d3cfbb0bfd076e5e8c17590d80}
+\index{x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}!get\+\_\+by\+\_\+fingerprint@{get\+\_\+by\+\_\+fingerprint}}
+\index{get\+\_\+by\+\_\+fingerprint@{get\+\_\+by\+\_\+fingerprint}!x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{get\+\_\+by\+\_\+fingerprint}{get_by_fingerprint}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ x509\+\_\+lookup\+\_\+method\+\_\+st\+::get\+\_\+by\+\_\+fingerprint) ({\bf X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx, int {\bf type}, unsigned char $\ast${\bf bytes}, int {\bf len}, {\bf X509\+\_\+\+O\+B\+J\+E\+CT} $\ast$ret)}\hypertarget{structx509__lookup__method__st_ae5331725f3feb7f560e670cc529b4475}{}\label{structx509__lookup__method__st_ae5331725f3feb7f560e670cc529b4475}
+\index{x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}!get\+\_\+by\+\_\+issuer\+\_\+serial@{get\+\_\+by\+\_\+issuer\+\_\+serial}}
+\index{get\+\_\+by\+\_\+issuer\+\_\+serial@{get\+\_\+by\+\_\+issuer\+\_\+serial}!x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{get\+\_\+by\+\_\+issuer\+\_\+serial}{get_by_issuer_serial}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ x509\+\_\+lookup\+\_\+method\+\_\+st\+::get\+\_\+by\+\_\+issuer\+\_\+serial) ({\bf X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx, int {\bf type}, {\bf X509\+\_\+\+N\+A\+ME} $\ast${\bf name}, {\bf A\+S\+N1\+\_\+\+I\+N\+T\+E\+G\+ER} $\ast$serial, {\bf X509\+\_\+\+O\+B\+J\+E\+CT} $\ast$ret)}\hypertarget{structx509__lookup__method__st_af97ec1a34b72c8892d9b16e90e99b9f2}{}\label{structx509__lookup__method__st_af97ec1a34b72c8892d9b16e90e99b9f2}
+\index{x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}!get\+\_\+by\+\_\+subject@{get\+\_\+by\+\_\+subject}}
+\index{get\+\_\+by\+\_\+subject@{get\+\_\+by\+\_\+subject}!x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{get\+\_\+by\+\_\+subject}{get_by_subject}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ x509\+\_\+lookup\+\_\+method\+\_\+st\+::get\+\_\+by\+\_\+subject) ({\bf X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx, int {\bf type}, {\bf X509\+\_\+\+N\+A\+ME} $\ast${\bf name}, {\bf X509\+\_\+\+O\+B\+J\+E\+CT} $\ast$ret)}\hypertarget{structx509__lookup__method__st_a2d6e3c3cc73f583d6d970abe12b65df2}{}\label{structx509__lookup__method__st_a2d6e3c3cc73f583d6d970abe12b65df2}
+\index{x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}!init@{init}}
+\index{init@{init}!x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{init}{init}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ x509\+\_\+lookup\+\_\+method\+\_\+st\+::init) ({\bf X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx)}\hypertarget{structx509__lookup__method__st_a04ca0ebad723cae3fa9cb487c56e09a0}{}\label{structx509__lookup__method__st_a04ca0ebad723cae3fa9cb487c56e09a0}
+\index{x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}!name@{name}}
+\index{name@{name}!x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ x509\+\_\+lookup\+\_\+method\+\_\+st\+::name}\hypertarget{structx509__lookup__method__st_a57a76d2d34d7749b3874c7809337390c}{}\label{structx509__lookup__method__st_a57a76d2d34d7749b3874c7809337390c}
+\index{x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}!new\+\_\+item@{new\+\_\+item}}
+\index{new\+\_\+item@{new\+\_\+item}!x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{new\+\_\+item}{new_item}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ x509\+\_\+lookup\+\_\+method\+\_\+st\+::new\+\_\+item) ({\bf X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx)}\hypertarget{structx509__lookup__method__st_a308b007d8cb1b10bc525d9a8a794926e}{}\label{structx509__lookup__method__st_a308b007d8cb1b10bc525d9a8a794926e}
+\index{x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!x509\+\_\+lookup\+\_\+method\+\_\+st@{x509\+\_\+lookup\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{shutdown}{shutdown}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ x509\+\_\+lookup\+\_\+method\+\_\+st\+::shutdown) ({\bf X509\+\_\+\+L\+O\+O\+K\+UP} $\ast$ctx)}\hypertarget{structx509__lookup__method__st_aa201108d16466a85c87dd0b86288087a}{}\label{structx509__lookup__method__st_aa201108d16466a85c87dd0b86288087a}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/openssl/\hyperlink{x509__vfy_8h}{x509\+\_\+vfy.\+h}\end{DoxyCompactItemize}

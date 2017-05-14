@@ -1,0 +1,1237 @@
+\hypertarget{_a_r_u_t_i_l_s___manager_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Utils/\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.h File Reference}
+\label{_a_r_u_t_i_l_s___manager_8h}\index{src/hal/pb2/include/lib\+A\+R\+Utils/\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{src/hal/pb2/include/lib\+A\+R\+Utils/\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+
+
+lib\+A\+R\+Utils Manager header file.  
+
+
+{\ttfamily \#include $<$lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Discovery.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}lib\+A\+R\+Utils/\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h\char`\"{}}\\*
+Include dependency graph for A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_u_t_i_l_s___manager_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_u_t_i_l_s___manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Ftp Manager structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} \hyperlink{_a_r_u_t_i_l_s___manager_8h_aac3d97dda3801d4c8f105f54563482e4}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Ftp M\+A\+N\+A\+G\+ER structure. \end{DoxyCompactList}\item 
+typedef void $\ast$ \hyperlink{_a_r_u_t_i_l_s___manager_8h_a63e9dd3184681cd0fe2ea7242f8d2462}{A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Device\+\_\+t}
+\begin{DoxyCompactList}\small\item\em B\+LE Manager (used to send/read data) \end{DoxyCompactList}\item 
+typedef void $\ast$ \hyperlink{_a_r_u_t_i_l_s___manager_8h_a8fdcad3ab61ed0bee95782ff50e3749e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Manager\+\_\+t}
+\item 
+typedef \hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_u_t_i_l_s___manager_8h_a8b748d98b39d617c344b4640cc9e67ee}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Disconnect\+\_\+t}) (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Disconnect an remote Ftp server connection. \end{DoxyCompactList}\item 
+typedef \hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_u_t_i_l_s___manager_8h_aa324672bcf09b155ed3fe4519a458488}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reconnect\+\_\+t}) (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Reconnect an remote Ftp server connection. \end{DoxyCompactList}\item 
+typedef \hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_u_t_i_l_s___manager_8h_a4d406634a683a3b060e74d9bf1197f03}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Cancel\+\_\+t}) (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Cancel an Ftp \hyperlink{class_connection}{Connection} command in progress (get, put, list etc) \end{DoxyCompactList}\item 
+typedef \hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_u_t_i_l_s___manager_8h_a4a5a69fc8a61bcf7cfff32a8a5efe16e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Is\+Canceled\+\_\+t}) (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Cancel an Ftp \hyperlink{class_connection}{Connection} command in progress (get, put, list etc) \end{DoxyCompactList}\item 
+typedef \hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_u_t_i_l_s___manager_8h_a27aed4da66885ae9a1b24eed84cafd1a}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reset\+\_\+t}) (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Reset an Ftp \hyperlink{class_connection}{Connection} command in progress (get, put, list etc) \end{DoxyCompactList}\item 
+typedef \hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_u_t_i_l_s___manager_8h_a06214eee396ff3912eddcd3b8562b0a3}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+List\+\_\+t}) (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path, char $\ast$$\ast$result\+List, uint32\+\_\+t $\ast$result\+List\+Len)
+\begin{DoxyCompactList}\small\item\em Execute Ftp List command to retrieve directory content. \end{DoxyCompactList}\item 
+typedef \hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_u_t_i_l_s___manager_8h_af0e797fd8279b23438dd284863ee7cc3}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Size\+\_\+t}) (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path, double $\ast$file\+Size)
+\begin{DoxyCompactList}\small\item\em Execute Ftp Size command to retrieve file size. \end{DoxyCompactList}\item 
+typedef \hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_u_t_i_l_s___manager_8h_ae2a8928b8ec5838667dbfa90755ea5f6}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Get\+\_\+\+With\+Buffer\+\_\+t}) (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path, uint8\+\_\+t $\ast$$\ast$data, uint32\+\_\+t $\ast$data\+Len, \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a8c85c151dff52b4ff5ee82c27f95e661}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t} progress\+Callback, void $\ast$progress\+Arg)
+\begin{DoxyCompactList}\small\item\em Get an remote Ftp server file. \end{DoxyCompactList}\item 
+typedef \hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_u_t_i_l_s___manager_8h_a0cd9bcfb0152e3f6a26d2f1cf746d3c8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get\+\_\+t}) (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path, const char $\ast$dst\+File, \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a8c85c151dff52b4ff5ee82c27f95e661}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t} progress\+Callback, void $\ast$progress\+Arg, \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME} resume)
+\begin{DoxyCompactList}\small\item\em Get an remote Ftp server file. \end{DoxyCompactList}\item 
+typedef \hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_u_t_i_l_s___manager_8h_a9eb3f3439392f3579c2e1fe491df3ac2}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Put\+\_\+t}) (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path, const char $\ast$src\+File, \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a8c85c151dff52b4ff5ee82c27f95e661}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t} progress\+Callback, void $\ast$progress\+Arg, \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME} resume)
+\begin{DoxyCompactList}\small\item\em Put an remote Ftp server file. \end{DoxyCompactList}\item 
+typedef \hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_u_t_i_l_s___manager_8h_a7c405367888e2dc4a42e005fc7d42d32}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Delete\+\_\+t}) (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path)
+\begin{DoxyCompactList}\small\item\em Delete an remote Ftp server file. \end{DoxyCompactList}\item 
+typedef \hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_u_t_i_l_s___manager_8h_a59c502c9df97a319e578e1947fa18ea7}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Remove\+Dir\+\_\+t}) (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path)
+\begin{DoxyCompactList}\small\item\em Delete an remote Ftp server directory. \end{DoxyCompactList}\item 
+typedef \hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_u_t_i_l_s___manager_8h_a47979a9e00eb21ecaef64933bfd1cdc3}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Rename\+\_\+t}) (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$old\+Name\+Path, const char $\ast$new\+Name\+Path)
+\begin{DoxyCompactList}\small\item\em Rename an remote Ftp server file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_a_r_u_t_i_l_s___manager_8h_a63aac238109a9d8b7e887ee9d66b33ff}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+ON} \{ \hyperlink{_a_r_u_t_i_l_s___manager_8h_a63aac238109a9d8b7e887ee9d66b33ffa8c8c0c4b02fb8c128fcac535d912aef1}{A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+D\+R\+O\+NE} = 0, 
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a63aac238109a9d8b7e887ee9d66b33ffa9fd977b3ec3d6673a84baf535318214f}{A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+S\+K\+Y\+C\+O\+N\+T\+R\+O\+L\+L\+ER}, 
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a63aac238109a9d8b7e887ee9d66b33ffa95a9af8e618078129389fde0f6cea06b}{A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+M\+AX}
+ \}
+\item 
+enum \hyperlink{_a_r_u_t_i_l_s___manager_8h_a689b18139b0bc3519149c4672bb5199a}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+PE} \{ \hyperlink{_a_r_u_t_i_l_s___manager_8h_a689b18139b0bc3519149c4672bb5199aa0ea248909072eb9dc544fb1d3a5eec08}{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+G\+E\+N\+E\+R\+IC} = 0, 
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a689b18139b0bc3519149c4672bb5199aa432c00c6d7ca72bcc3e5e52f593f6762}{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+P\+D\+A\+TE}, 
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a689b18139b0bc3519149c4672bb5199aa00dc317f9655dca4d00bab26d1bbd726}{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+L\+I\+G\+H\+T\+P\+L\+AN}, 
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a689b18139b0bc3519149c4672bb5199aab31b9bfe6331e4c3b395c7156c8f805a}{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$ \hyperlink{_a_r_u_t_i_l_s___manager_8h_aef5c8e84706f84d5125d3c662e7af6b3}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New} (\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Create a new Ftp Manager. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_u_t_i_l_s___manager_8h_a8d60e8edbfb95936c02f009d098648ad}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Delete} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$$\ast$manager\+Addr)
+\begin{DoxyCompactList}\small\item\em Delete an Ftp Manager. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_ac666a7112b0f04192a0e5b7a206173b6}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Ftp} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, \hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, \hyperlink{_a_r_u_t_i_l_s___manager_8h_a63aac238109a9d8b7e887ee9d66b33ff}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+ON} destination, \hyperlink{_a_r_u_t_i_l_s___manager_8h_a689b18139b0bc3519149c4672bb5199a}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+PE} \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type})
+\begin{DoxyCompactList}\small\item\em Create a new Ftp connection for the given device. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_u_t_i_l_s___manager_8h_a1b82453f786a890a6ad2afa4e060b6d8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Ftp} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, \hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Delete an Ftp \hyperlink{class_connection}{Connection}. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$server, int port, const char $\ast$username, const char $\ast$password)
+\begin{DoxyCompactList}\small\item\em Create a new Wifi\+Ftp \hyperlink{class_connection}{Connection}. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_a801f6ce282a767b5be0d17c2ffbe28ae}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp\+Over\+Mux} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$server, int port, struct mux\+\_\+ctx $\ast$mux, const char $\ast$username, const char $\ast$password)
+\begin{DoxyCompactList}\small\item\em Create a new Wifi\+Ftp \hyperlink{class_connection}{Connection}. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_u_t_i_l_s___manager_8h_a308fdd713ecc8d307f8a2b135ae960d8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Wifi\+Ftp} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Delete an Wifi\+Ftp \hyperlink{class_connection}{Connection}. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_a99d3f556cef6b60721a2917fa1b53ad8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, \hyperlink{_a_r_u_t_i_l_s___manager_8h_a63e9dd3184681cd0fe2ea7242f8d2462}{A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Device\+\_\+t} device, int port)
+\begin{DoxyCompactList}\small\item\em Create a new B\+L\+E\+Ftp \hyperlink{class_connection}{Connection}. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_u_t_i_l_s___manager_8h_af52d037de211e5c0083d6eead31fedcb}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+B\+L\+E\+Ftp} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Delete an Wifi\+Ftp \hyperlink{class_connection}{Connection}. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_ade743ed3a99e3f86064cdec4e460538e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+R\+F\+Comm\+Ftp} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Create a new R\+F\+Comm F\+TP \hyperlink{class_connection}{Connection}. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_u_t_i_l_s___manager_8h_ad016f7d126dea6cc952ebc1f6d92b06a}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+R\+F\+Comm\+Ftp} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Delete an R\+F\+Comm Ftp \hyperlink{class_connection}{Connection}. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_afb3b1bddb5ea2736f919c4ec83aeba6a}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Disconnect} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Disconnect an remote Ftp server connection. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_abd77f046142147b89c790d98313ab0ed}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reconnect} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Reconnect an remote Ftp server connection. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_a0ee81fd4425742ad9f04c41a31ff1975}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Cancel} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Cancel an Ftp \hyperlink{class_connection}{Connection} command in progress (get, put, list etc) \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_a562dee1e2d8ea79d2057e2ac27171497}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Is\+Canceled} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Cancel an Ftp \hyperlink{class_connection}{Connection} command in progress (get, put, list etc) \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_a422331c1e6e6edf3f51e1fd228831bbe}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reset} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Reset an Ftp \hyperlink{class_connection}{Connection} command in progress (get, put, list etc) \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_ab15bfa464e48f33a1b7e33f651646f83}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+List} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path, char $\ast$$\ast$result\+List, uint32\+\_\+t $\ast$result\+List\+Len)
+\begin{DoxyCompactList}\small\item\em Execute Ftp List command to retrieve directory content. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_a13afe223bb5d1f4d69f0a36ffa819c59}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Size} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path, double $\ast$file\+Size)
+\begin{DoxyCompactList}\small\item\em Execute Ftp Size command to retrieve file size. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_a4c87f891a98a5a7ac2758fc8fab7c767}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get\+\_\+\+With\+Buffer} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path, uint8\+\_\+t $\ast$$\ast$data, uint32\+\_\+t $\ast$data\+Len, \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a8c85c151dff52b4ff5ee82c27f95e661}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t} progress\+Callback, void $\ast$progress\+Arg)
+\begin{DoxyCompactList}\small\item\em Get an remote Ftp server file. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_af565113bed908863382dae50f4ed939f}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path, const char $\ast$dst\+File, \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a8c85c151dff52b4ff5ee82c27f95e661}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t} progress\+Callback, void $\ast$progress\+Arg, \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME} resume)
+\begin{DoxyCompactList}\small\item\em Get an remote Ftp server file. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_a4e2c741ebd967d85cfbd0461dab3a7bf}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Put} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path, const char $\ast$src\+File, \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a8c85c151dff52b4ff5ee82c27f95e661}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t} progress\+Callback, void $\ast$progress\+Arg, \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME} resume)
+\begin{DoxyCompactList}\small\item\em Put an remote Ftp server file. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_a716ffcc957a3b25d853f7cb2bd532c41}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Delete} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path)
+\begin{DoxyCompactList}\small\item\em Delete an remote Ftp server file. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_aed7dcf57ae2e0b94abf70fa96a645a5a}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Remove\+Dir} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path)
+\begin{DoxyCompactList}\small\item\em Delete an remote Ftp server directory. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___manager_8h_a6f1f54e0c17df85c55ff158003b977b5}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Rename} (\hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$old\+Name\+Path, const char $\ast$new\+Name\+Path)
+\begin{DoxyCompactList}\small\item\em Rename an remote Ftp server file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+lib\+A\+R\+Utils Manager header file. 
+
+\begin{DoxyDate}{Date}
+21/05/2014 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:david.flattin.ext@parrot.com}{\tt david.\+flattin.\+ext@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Device\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Device\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Device\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Device\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Device\+\_\+t}{ARUTILS_BLEDevice_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Device\+\_\+t}}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a63e9dd3184681cd0fe2ea7242f8d2462}{}\label{_a_r_u_t_i_l_s___manager_8h_a63e9dd3184681cd0fe2ea7242f8d2462}
+
+
+B\+LE Manager (used to send/read data) 
+
+\begin{DoxyNote}{Note}
+This is an application-\/provided object, OS Dependant B\+LE Device reference for the \hyperlink{_a_r_u_t_i_l_s___manager_8h_a63e9dd3184681cd0fe2ea7242f8d2462}{A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Device\+\_\+t} 
+
+This is an application-\/provided object, OS Dependant 
+\end{DoxyNote}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Manager\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Manager\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Manager\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Manager\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Manager\+\_\+t}{ARUTILS_BLEManager_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Manager\+\_\+t}}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a8fdcad3ab61ed0bee95782ff50e3749e}{}\label{_a_r_u_t_i_l_s___manager_8h_a8fdcad3ab61ed0bee95782ff50e3749e}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Cancel\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Cancel\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Cancel\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Cancel\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Cancel\+\_\+t}{ARUTILS_Manager_Ftp_Connection_Cancel_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Cancel\+\_\+t) ({\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a4d406634a683a3b060e74d9bf1197f03}{}\label{_a_r_u_t_i_l_s___manager_8h_a4d406634a683a3b060e74d9bf1197f03}
+
+
+Cancel an Ftp \hyperlink{class_connection}{Connection} command in progress (get, put, list etc) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_aef5c8e84706f84d5125d3c662e7af6b3}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Disconnect\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Disconnect\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Disconnect\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Disconnect\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Disconnect\+\_\+t}{ARUTILS_Manager_Ftp_Connection_Disconnect_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Disconnect\+\_\+t) ({\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a8b748d98b39d617c344b4640cc9e67ee}{}\label{_a_r_u_t_i_l_s___manager_8h_a8b748d98b39d617c344b4640cc9e67ee}
+
+
+Disconnect an remote Ftp server connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The address of the pointer on the Ftp Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp} (), \hyperlink{_a_r_u_t_i_l_s___manager_8h_a308fdd713ecc8d307f8a2b135ae960d8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Wifi\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Is\+Canceled\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Is\+Canceled\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Is\+Canceled\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Is\+Canceled\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Is\+Canceled\+\_\+t}{ARUTILS_Manager_Ftp_Connection_IsCanceled_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Is\+Canceled\+\_\+t) ({\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a4a5a69fc8a61bcf7cfff32a8a5efe16e}{}\label{_a_r_u_t_i_l_s___manager_8h_a4a5a69fc8a61bcf7cfff32a8a5efe16e}
+
+
+Cancel an Ftp \hyperlink{class_connection}{Connection} command in progress (get, put, list etc) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_aef5c8e84706f84d5125d3c662e7af6b3}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reconnect\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reconnect\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reconnect\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reconnect\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reconnect\+\_\+t}{ARUTILS_Manager_Ftp_Connection_Reconnect_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reconnect\+\_\+t) ({\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_aa324672bcf09b155ed3fe4519a458488}{}\label{_a_r_u_t_i_l_s___manager_8h_aa324672bcf09b155ed3fe4519a458488}
+
+
+Reconnect an remote Ftp server connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The address of the pointer on the Ftp Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp} (), \hyperlink{_a_r_u_t_i_l_s___manager_8h_a308fdd713ecc8d307f8a2b135ae960d8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Wifi\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reset\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reset\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reset\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reset\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reset\+\_\+t}{ARUTILS_Manager_Ftp_Connection_Reset_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reset\+\_\+t) ({\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a27aed4da66885ae9a1b24eed84cafd1a}{}\label{_a_r_u_t_i_l_s___manager_8h_a27aed4da66885ae9a1b24eed84cafd1a}
+
+
+Reset an Ftp \hyperlink{class_connection}{Connection} command in progress (get, put, list etc) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_aef5c8e84706f84d5125d3c662e7af6b3}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Delete\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Delete\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Delete\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Delete\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Delete\+\_\+t}{ARUTILS_Manager_Ftp_Delete_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Delete\+\_\+t) ({\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a7c405367888e2dc4a42e005fc7d42d32}{}\label{_a_r_u_t_i_l_s___manager_8h_a7c405367888e2dc4a42e005fc7d42d32}
+
+
+Delete an remote Ftp server file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+{\em name\+Path} & The string of the file name path on the remote Ftp server \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_aef5c8e84706f84d5125d3c662e7af6b3}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get\+\_\+t}{ARUTILS_Manager_Ftp_Get_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get\+\_\+t) ({\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path, const char $\ast$dst\+File, {\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t} progress\+Callback, void $\ast$progress\+Arg, {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME} resume)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a0cd9bcfb0152e3f6a26d2f1cf746d3c8}{}\label{_a_r_u_t_i_l_s___manager_8h_a0cd9bcfb0152e3f6a26d2f1cf746d3c8}
+
+
+Get an remote Ftp server file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+{\em name\+Path} & The string of the file name path on the remote Ftp server \\
+\hline
+{\em dst\+File} & The string of the local file name path to be get \\
+\hline
+{\em progress\+Callback} & The progress callback function \\
+\hline
+{\em progress\+Arg} & The progress callback function arg \\
+\hline
+{\em resume} & The resume capability requested \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_aef5c8e84706f84d5125d3c662e7af6b3}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New} (), \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a8c85c151dff52b4ff5ee82c27f95e661}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t}, \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME} 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+List\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+List\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+List\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+List\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+List\+\_\+t}{ARUTILS_Manager_Ftp_List_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+List\+\_\+t) ({\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path, char $\ast$$\ast$result\+List, uint32\+\_\+t $\ast$result\+List\+Len)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a06214eee396ff3912eddcd3b8562b0a3}{}\label{_a_r_u_t_i_l_s___manager_8h_a06214eee396ff3912eddcd3b8562b0a3}
+
+
+Execute Ftp List command to retrieve directory content. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+{\em name\+Path} & The string of the directory path on the remote Ftp server \\
+\hline
+{\em result\+List} & The pointer of the string of the directory content null terminated \\
+\hline
+{\em result\+List\+Len} & The pointer of the lenght of the result\+List string including null terminated \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_aef5c8e84706f84d5125d3c662e7af6b3}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Put\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Put\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Put\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Put\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Put\+\_\+t}{ARUTILS_Manager_Ftp_Put_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Put\+\_\+t) ({\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path, const char $\ast$src\+File, {\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t} progress\+Callback, void $\ast$progress\+Arg, {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME} resume)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a9eb3f3439392f3579c2e1fe491df3ac2}{}\label{_a_r_u_t_i_l_s___manager_8h_a9eb3f3439392f3579c2e1fe491df3ac2}
+
+
+Put an remote Ftp server file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+{\em name\+Path} & The string of the file name path on the remote Ftp server \\
+\hline
+{\em src\+File} & The string of the local file name path to be put \\
+\hline
+{\em progress\+Callback} & The progress callback function \\
+\hline
+{\em progress\+Arg} & The progress callback function arg \\
+\hline
+{\em resume} & The resume capability requested \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_aef5c8e84706f84d5125d3c662e7af6b3}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New} (), \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a8c85c151dff52b4ff5ee82c27f95e661}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t}, \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME} 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Remove\+Dir\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Remove\+Dir\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Remove\+Dir\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Remove\+Dir\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Remove\+Dir\+\_\+t}{ARUTILS_Manager_Ftp_RemoveDir_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Remove\+Dir\+\_\+t) ({\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a59c502c9df97a319e578e1947fa18ea7}{}\label{_a_r_u_t_i_l_s___manager_8h_a59c502c9df97a319e578e1947fa18ea7}
+
+
+Delete an remote Ftp server directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+{\em name\+Path} & The string of the file directory path on the remote Ftp server \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_aef5c8e84706f84d5125d3c662e7af6b3}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Rename\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Rename\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Rename\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Rename\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Rename\+\_\+t}{ARUTILS_Manager_Ftp_Rename_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Rename\+\_\+t) ({\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$old\+Name\+Path, const char $\ast$new\+Name\+Path)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a47979a9e00eb21ecaef64933bfd1cdc3}{}\label{_a_r_u_t_i_l_s___manager_8h_a47979a9e00eb21ecaef64933bfd1cdc3}
+
+
+Rename an remote Ftp server file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+{\em old\+Name\+Path} & The string of the old file name path on the remote Ftp server \\
+\hline
+{\em new\+Name\+Path} & The string of the new file name path on the remote Ftp server \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+A\+R\+U\+T\+I\+L\+S\+\_\+\+Wifi\+Ftp\+\_\+\+New\+Connection () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Size\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Size\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Size\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Size\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Size\+\_\+t}{ARUTILS_Manager_Ftp_Size_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Size\+\_\+t) ({\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path, double $\ast$file\+Size)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_af0e797fd8279b23438dd284863ee7cc3}{}\label{_a_r_u_t_i_l_s___manager_8h_af0e797fd8279b23438dd284863ee7cc3}
+
+
+Execute Ftp Size command to retrieve file size. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+{\em name\+Path} & The string of the directory path on the remote Ftp server \\
+\hline
+{\em file\+Size} & The returned file size \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp} (), \hyperlink{_a_r_u_t_i_l_s___manager_8h_a99d3f556cef6b60721a2917fa1b53ad8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Get\+\_\+\+With\+Buffer\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Get\+\_\+\+With\+Buffer\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Get\+\_\+\+With\+Buffer\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Get\+\_\+\+With\+Buffer\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Get\+\_\+\+With\+Buffer\+\_\+t}{ARUTILS_Manager_Get_WithBuffer_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Get\+\_\+\+With\+Buffer\+\_\+t) ({\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$name\+Path, uint8\+\_\+t $\ast$$\ast$data, uint32\+\_\+t $\ast$data\+Len, {\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t} progress\+Callback, void $\ast$progress\+Arg)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_ae2a8928b8ec5838667dbfa90755ea5f6}{}\label{_a_r_u_t_i_l_s___manager_8h_ae2a8928b8ec5838667dbfa90755ea5f6}
+
+
+Get an remote Ftp server file. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+{\em name\+Path} & The string of the file name path on the remote Ftp server \\
+\hline
+{\em data} & The pointer of the data buffer of the file data \\
+\hline
+{\em data\+Len} & The pointer of the length of the data buffer \\
+\hline
+{\em progress\+Callback} & The progress callback function \\
+\hline
+{\em progress\+Arg} & The progress callback function arg \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_aef5c8e84706f84d5125d3c662e7af6b3}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New} (), \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a8c85c151dff52b4ff5ee82c27f95e661}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t}, \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME} 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t}{ARUTILS_Manager_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} {\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t}}\hypertarget{_a_r_u_t_i_l_s___manager_8h_aac3d97dda3801d4c8f105f54563482e4}{}\label{_a_r_u_t_i_l_s___manager_8h_aac3d97dda3801d4c8f105f54563482e4}
+
+
+Ftp M\+A\+N\+A\+G\+ER structure. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_aef5c8e84706f84d5125d3c662e7af6b3}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New} 
+\end{DoxySeeAlso}
+
+
+\subsection{Enumeration Type Documentation}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+ON@{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+ON}}
+\index{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+ON@{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+ON}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+ON}{eARUTILS_DESTINATION}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+ON}}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a63aac238109a9d8b7e887ee9d66b33ff}{}\label{_a_r_u_t_i_l_s___manager_8h_a63aac238109a9d8b7e887ee9d66b33ff}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+D\+R\+O\+NE@{A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+D\+R\+O\+NE}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+D\+R\+O\+NE@{A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+D\+R\+O\+NE}}\item[{\em 
+A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+D\+R\+O\+NE\hypertarget{_a_r_u_t_i_l_s___manager_8h_a63aac238109a9d8b7e887ee9d66b33ffa8c8c0c4b02fb8c128fcac535d912aef1}{}\label{_a_r_u_t_i_l_s___manager_8h_a63aac238109a9d8b7e887ee9d66b33ffa8c8c0c4b02fb8c128fcac535d912aef1}
+}]\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+S\+K\+Y\+C\+O\+N\+T\+R\+O\+L\+L\+ER@{A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+S\+K\+Y\+C\+O\+N\+T\+R\+O\+L\+L\+ER}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+S\+K\+Y\+C\+O\+N\+T\+R\+O\+L\+L\+ER@{A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+S\+K\+Y\+C\+O\+N\+T\+R\+O\+L\+L\+ER}}\item[{\em 
+A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+S\+K\+Y\+C\+O\+N\+T\+R\+O\+L\+L\+ER\hypertarget{_a_r_u_t_i_l_s___manager_8h_a63aac238109a9d8b7e887ee9d66b33ffa9fd977b3ec3d6673a84baf535318214f}{}\label{_a_r_u_t_i_l_s___manager_8h_a63aac238109a9d8b7e887ee9d66b33ffa9fd977b3ec3d6673a84baf535318214f}
+}]\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+M\+AX@{A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+M\+AX}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+M\+AX@{A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+M\+AX}}\item[{\em 
+A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\+\_\+\+M\+AX\hypertarget{_a_r_u_t_i_l_s___manager_8h_a63aac238109a9d8b7e887ee9d66b33ffa95a9af8e618078129389fde0f6cea06b}{}\label{_a_r_u_t_i_l_s___manager_8h_a63aac238109a9d8b7e887ee9d66b33ffa95a9af8e618078129389fde0f6cea06b}
+}]\end{description}
+\end{Desc}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+PE@{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+PE}}
+\index{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+PE@{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+PE}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+PE}{eARUTILS_FTP_TYPE}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+PE}}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a689b18139b0bc3519149c4672bb5199a}{}\label{_a_r_u_t_i_l_s___manager_8h_a689b18139b0bc3519149c4672bb5199a}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+G\+E\+N\+E\+R\+IC@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+G\+E\+N\+E\+R\+IC}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+G\+E\+N\+E\+R\+IC@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+G\+E\+N\+E\+R\+IC}}\item[{\em 
+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+G\+E\+N\+E\+R\+IC\hypertarget{_a_r_u_t_i_l_s___manager_8h_a689b18139b0bc3519149c4672bb5199aa0ea248909072eb9dc544fb1d3a5eec08}{}\label{_a_r_u_t_i_l_s___manager_8h_a689b18139b0bc3519149c4672bb5199aa0ea248909072eb9dc544fb1d3a5eec08}
+}]\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+P\+D\+A\+TE@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+P\+D\+A\+TE}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+P\+D\+A\+TE@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+P\+D\+A\+TE}}\item[{\em 
+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+P\+D\+A\+TE\hypertarget{_a_r_u_t_i_l_s___manager_8h_a689b18139b0bc3519149c4672bb5199aa432c00c6d7ca72bcc3e5e52f593f6762}{}\label{_a_r_u_t_i_l_s___manager_8h_a689b18139b0bc3519149c4672bb5199aa432c00c6d7ca72bcc3e5e52f593f6762}
+}]\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+L\+I\+G\+H\+T\+P\+L\+AN@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+L\+I\+G\+H\+T\+P\+L\+AN}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+L\+I\+G\+H\+T\+P\+L\+AN@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+L\+I\+G\+H\+T\+P\+L\+AN}}\item[{\em 
+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+L\+I\+G\+H\+T\+P\+L\+AN\hypertarget{_a_r_u_t_i_l_s___manager_8h_a689b18139b0bc3519149c4672bb5199aa00dc317f9655dca4d00bab26d1bbd726}{}\label{_a_r_u_t_i_l_s___manager_8h_a689b18139b0bc3519149c4672bb5199aa00dc317f9655dca4d00bab26d1bbd726}
+}]\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX}}\item[{\em 
+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX\hypertarget{_a_r_u_t_i_l_s___manager_8h_a689b18139b0bc3519149c4672bb5199aab31b9bfe6331e4c3b395c7156c8f805a}{}\label{_a_r_u_t_i_l_s___manager_8h_a689b18139b0bc3519149c4672bb5199aab31b9bfe6331e4c3b395c7156c8f805a}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+B\+L\+E\+Ftp@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+B\+L\+E\+Ftp}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+B\+L\+E\+Ftp@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+B\+L\+E\+Ftp}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+B\+L\+E\+Ftp(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARUTILS_Manager_CloseBLEFtp(ARUTILS_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+B\+L\+E\+Ftp (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_af52d037de211e5c0083d6eead31fedcb}{}\label{_a_r_u_t_i_l_s___manager_8h_af52d037de211e5c0083d6eead31fedcb}
+
+
+Delete an Wifi\+Ftp \hyperlink{class_connection}{Connection}. 
+
+\begin{DoxyWarning}{Warning}
+This function frees memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp \hyperlink{class_connection}{Connection} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a99d3f556cef6b60721a2917fa1b53ad8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Ftp@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Ftp}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Ftp@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Ftp}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Ftp(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager, A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$device)}{ARUTILS_Manager_CloseFtp(ARUTILS_Manager_t *manager, ARDISCOVERY_Device_t *device)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Ftp (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{device}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a1b82453f786a890a6ad2afa4e060b6d8}{}\label{_a_r_u_t_i_l_s___manager_8h_a1b82453f786a890a6ad2afa4e060b6d8}
+
+
+Delete an Ftp \hyperlink{class_connection}{Connection}. 
+
+\begin{DoxyWarning}{Warning}
+This function frees memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp \hyperlink{class_connection}{Connection} \\
+\hline
+{\em device} & The device which did handle the connection \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_ac666a7112b0f04192a0e5b7a206173b6}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+R\+F\+Comm\+Ftp@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+R\+F\+Comm\+Ftp}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+R\+F\+Comm\+Ftp@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+R\+F\+Comm\+Ftp}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+R\+F\+Comm\+Ftp(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARUTILS_Manager_CloseRFCommFtp(ARUTILS_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+R\+F\+Comm\+Ftp (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_ad016f7d126dea6cc952ebc1f6d92b06a}{}\label{_a_r_u_t_i_l_s___manager_8h_ad016f7d126dea6cc952ebc1f6d92b06a}
+
+
+Delete an R\+F\+Comm Ftp \hyperlink{class_connection}{Connection}. 
+
+\begin{DoxyWarning}{Warning}
+This function frees memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp \hyperlink{class_connection}{Connection} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Wifi\+Ftp@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Wifi\+Ftp}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Wifi\+Ftp@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Wifi\+Ftp}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Wifi\+Ftp(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARUTILS_Manager_CloseWifiFtp(ARUTILS_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Wifi\+Ftp (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a308fdd713ecc8d307f8a2b135ae960d8}{}\label{_a_r_u_t_i_l_s___manager_8h_a308fdd713ecc8d307f8a2b135ae960d8}
+
+
+Delete an Wifi\+Ftp \hyperlink{class_connection}{Connection}. 
+
+\begin{DoxyWarning}{Warning}
+This function frees memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp \hyperlink{class_connection}{Connection} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Delete@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Delete}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Delete@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Delete}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Delete(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$$\ast$manager\+Addr)}{ARUTILS_Manager_Delete(ARUTILS_Manager_t **managerAddr)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$$\ast$}]{manager\+Addr}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a8d60e8edbfb95936c02f009d098648ad}{}\label{_a_r_u_t_i_l_s___manager_8h_a8d60e8edbfb95936c02f009d098648ad}
+
+
+Delete an Ftp Manager. 
+
+\begin{DoxyWarning}{Warning}
+This function frees memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager\+Addr} & The address of the pointer on the Ftp Manager \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_aef5c8e84706f84d5125d3c662e7af6b3}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Cancel@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Cancel}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Cancel@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Cancel}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Cancel(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARUTILS_Manager_Ftp_Connection_Cancel(ARUTILS_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Cancel (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a0ee81fd4425742ad9f04c41a31ff1975}{}\label{_a_r_u_t_i_l_s___manager_8h_a0ee81fd4425742ad9f04c41a31ff1975}
+
+
+Cancel an Ftp \hyperlink{class_connection}{Connection} command in progress (get, put, list etc) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The address of the pointer on the Ftp Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New\+Wifi\+Ftp (), A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New\+B\+L\+E\+Ftp 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Disconnect@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Disconnect}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Disconnect@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Disconnect}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Disconnect(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARUTILS_Manager_Ftp_Connection_Disconnect(ARUTILS_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Disconnect (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_afb3b1bddb5ea2736f919c4ec83aeba6a}{}\label{_a_r_u_t_i_l_s___manager_8h_afb3b1bddb5ea2736f919c4ec83aeba6a}
+
+
+Disconnect an remote Ftp server connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The address of the pointer on the Ftp Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp} (), \hyperlink{_a_r_u_t_i_l_s___manager_8h_a99d3f556cef6b60721a2917fa1b53ad8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Is\+Canceled@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Is\+Canceled}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Is\+Canceled@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Is\+Canceled}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Is\+Canceled(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARUTILS_Manager_Ftp_Connection_IsCanceled(ARUTILS_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Is\+Canceled (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a562dee1e2d8ea79d2057e2ac27171497}{}\label{_a_r_u_t_i_l_s___manager_8h_a562dee1e2d8ea79d2057e2ac27171497}
+
+
+Cancel an Ftp \hyperlink{class_connection}{Connection} command in progress (get, put, list etc) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The address of the pointer on the Ftp Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New\+Wifi\+Ftp (), A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New\+B\+L\+E\+Ftp 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reconnect@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reconnect}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reconnect@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reconnect}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reconnect(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARUTILS_Manager_Ftp_Connection_Reconnect(ARUTILS_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reconnect (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_abd77f046142147b89c790d98313ab0ed}{}\label{_a_r_u_t_i_l_s___manager_8h_abd77f046142147b89c790d98313ab0ed}
+
+
+Reconnect an remote Ftp server connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The address of the pointer on the Ftp Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp} (), \hyperlink{_a_r_u_t_i_l_s___manager_8h_a99d3f556cef6b60721a2917fa1b53ad8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reset@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reset}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reset@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reset}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reset(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARUTILS_Manager_Ftp_Connection_Reset(ARUTILS_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Connection\+\_\+\+Reset (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a422331c1e6e6edf3f51e1fd228831bbe}{}\label{_a_r_u_t_i_l_s___manager_8h_a422331c1e6e6edf3f51e1fd228831bbe}
+
+
+Reset an Ftp \hyperlink{class_connection}{Connection} command in progress (get, put, list etc) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The address of the pointer on the Ftp Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New\+Wifi\+Ftp (), A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New\+B\+L\+E\+Ftp 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Delete@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Delete}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Delete@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Delete}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Delete(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager, const char $\ast$name\+Path)}{ARUTILS_Manager_Ftp_Delete(ARUTILS_Manager_t *manager, const char *namePath)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{const char $\ast$}]{name\+Path}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a716ffcc957a3b25d853f7cb2bd532c41}{}\label{_a_r_u_t_i_l_s___manager_8h_a716ffcc957a3b25d853f7cb2bd532c41}
+
+
+Delete an remote Ftp server file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+{\em name\+Path} & The string of the file name path on the remote Ftp server \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp} (), \hyperlink{_a_r_u_t_i_l_s___manager_8h_a99d3f556cef6b60721a2917fa1b53ad8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager, const char $\ast$name\+Path, const char $\ast$dst\+File, A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t progress\+Callback, void $\ast$progress\+Arg, e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+M\+E resume)}{ARUTILS_Manager_Ftp_Get(ARUTILS_Manager_t *manager, const char *namePath, const char *dstFile, ARUTILS_Ftp_ProgressCallback_t progressCallback, void *progressArg, eARUTILS_FTP_RESUME resume)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{const char $\ast$}]{name\+Path, }
+\item[{const char $\ast$}]{dst\+File, }
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t}}]{progress\+Callback, }
+\item[{void $\ast$}]{progress\+Arg, }
+\item[{{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME}}]{resume}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_af565113bed908863382dae50f4ed939f}{}\label{_a_r_u_t_i_l_s___manager_8h_af565113bed908863382dae50f4ed939f}
+
+
+Get an remote Ftp server file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+{\em name\+Path} & The string of the file name path on the remote Ftp server \\
+\hline
+{\em dst\+File} & The string of the local file name path to be get \\
+\hline
+{\em progress\+Callback} & The progress callback function \\
+\hline
+{\em progress\+Arg} & The progress callback function arg \\
+\hline
+{\em resume} & The resume capability requested \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp} (), \hyperlink{_a_r_u_t_i_l_s___manager_8h_a99d3f556cef6b60721a2917fa1b53ad8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp} (), \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a8c85c151dff52b4ff5ee82c27f95e661}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t}, \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME} 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get\+\_\+\+With\+Buffer@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get\+\_\+\+With\+Buffer}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get\+\_\+\+With\+Buffer@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get\+\_\+\+With\+Buffer}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get\+\_\+\+With\+Buffer(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager, const char $\ast$name\+Path, uint8\+\_\+t $\ast$$\ast$data, uint32\+\_\+t $\ast$data\+Len, A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t progress\+Callback, void $\ast$progress\+Arg)}{ARUTILS_Manager_Ftp_Get_WithBuffer(ARUTILS_Manager_t *manager, const char *namePath, uint8_t **data, uint32_t *dataLen, ARUTILS_Ftp_ProgressCallback_t progressCallback, void *progressArg)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Get\+\_\+\+With\+Buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{const char $\ast$}]{name\+Path, }
+\item[{uint8\+\_\+t $\ast$$\ast$}]{data, }
+\item[{uint32\+\_\+t $\ast$}]{data\+Len, }
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t}}]{progress\+Callback, }
+\item[{void $\ast$}]{progress\+Arg}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a4c87f891a98a5a7ac2758fc8fab7c767}{}\label{_a_r_u_t_i_l_s___manager_8h_a4c87f891a98a5a7ac2758fc8fab7c767}
+
+
+Get an remote Ftp server file. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+{\em name\+Path} & The string of the file name path on the remote Ftp server \\
+\hline
+{\em data} & The pointer of the data buffer of the file data \\
+\hline
+{\em data\+Len} & The pointer of the length of the data buffer \\
+\hline
+{\em progress\+Callback} & The progress callback function \\
+\hline
+{\em progress\+Arg} & The progress callback function arg \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp} (), \hyperlink{_a_r_u_t_i_l_s___manager_8h_a99d3f556cef6b60721a2917fa1b53ad8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp} (), \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a8c85c151dff52b4ff5ee82c27f95e661}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t}, \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME} 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+List@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+List}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+List@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+List}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+List(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager, const char $\ast$name\+Path, char $\ast$$\ast$result\+List, uint32\+\_\+t $\ast$result\+List\+Len)}{ARUTILS_Manager_Ftp_List(ARUTILS_Manager_t *manager, const char *namePath, char **resultList, uint32_t *resultListLen)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{const char $\ast$}]{name\+Path, }
+\item[{char $\ast$$\ast$}]{result\+List, }
+\item[{uint32\+\_\+t $\ast$}]{result\+List\+Len}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_ab15bfa464e48f33a1b7e33f651646f83}{}\label{_a_r_u_t_i_l_s___manager_8h_ab15bfa464e48f33a1b7e33f651646f83}
+
+
+Execute Ftp List command to retrieve directory content. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+{\em name\+Path} & The string of the directory path on the remote Ftp server \\
+\hline
+{\em result\+List} & The pointer of the string of the directory content null terminated \\
+\hline
+{\em result\+List\+Len} & The pointer of the lenght of the result\+List string including null terminated \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp} (), \hyperlink{_a_r_u_t_i_l_s___manager_8h_a99d3f556cef6b60721a2917fa1b53ad8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Put@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Put}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Put@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Put}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Put(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager, const char $\ast$name\+Path, const char $\ast$src\+File, A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t progress\+Callback, void $\ast$progress\+Arg, e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+M\+E resume)}{ARUTILS_Manager_Ftp_Put(ARUTILS_Manager_t *manager, const char *namePath, const char *srcFile, ARUTILS_Ftp_ProgressCallback_t progressCallback, void *progressArg, eARUTILS_FTP_RESUME resume)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Put (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{const char $\ast$}]{name\+Path, }
+\item[{const char $\ast$}]{src\+File, }
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t}}]{progress\+Callback, }
+\item[{void $\ast$}]{progress\+Arg, }
+\item[{{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME}}]{resume}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a4e2c741ebd967d85cfbd0461dab3a7bf}{}\label{_a_r_u_t_i_l_s___manager_8h_a4e2c741ebd967d85cfbd0461dab3a7bf}
+
+
+Put an remote Ftp server file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+{\em name\+Path} & The string of the file name path on the remote Ftp server \\
+\hline
+{\em src\+File} & The string of the local file name path to be put \\
+\hline
+{\em progress\+Callback} & The progress callback function \\
+\hline
+{\em progress\+Arg} & The progress callback function arg \\
+\hline
+{\em resume} & The resume capability requested \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp} (), \hyperlink{_a_r_u_t_i_l_s___manager_8h_a99d3f556cef6b60721a2917fa1b53ad8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp} (), \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a8c85c151dff52b4ff5ee82c27f95e661}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t}, \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME} 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Remove\+Dir@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Remove\+Dir}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Remove\+Dir@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Remove\+Dir}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Remove\+Dir(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager, const char $\ast$name\+Path)}{ARUTILS_Manager_Ftp_RemoveDir(ARUTILS_Manager_t *manager, const char *namePath)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Remove\+Dir (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{const char $\ast$}]{name\+Path}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_aed7dcf57ae2e0b94abf70fa96a645a5a}{}\label{_a_r_u_t_i_l_s___manager_8h_aed7dcf57ae2e0b94abf70fa96a645a5a}
+
+
+Delete an remote Ftp server directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+{\em name\+Path} & The string of the directory name path on the remote Ftp server \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp} (), \hyperlink{_a_r_u_t_i_l_s___manager_8h_a99d3f556cef6b60721a2917fa1b53ad8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Rename@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Rename}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Rename@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Rename}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Rename(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager, const char $\ast$old\+Name\+Path, const char $\ast$new\+Name\+Path)}{ARUTILS_Manager_Ftp_Rename(ARUTILS_Manager_t *manager, const char *oldNamePath, const char *newNamePath)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Rename (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{const char $\ast$}]{old\+Name\+Path, }
+\item[{const char $\ast$}]{new\+Name\+Path}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a6f1f54e0c17df85c55ff158003b977b5}{}\label{_a_r_u_t_i_l_s___manager_8h_a6f1f54e0c17df85c55ff158003b977b5}
+
+
+Rename an remote Ftp server file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+{\em old\+Name\+Path} & The string of the old file name path on the remote Ftp server \\
+\hline
+{\em new\+Name\+Path} & The string of the new file name path on the remote Ftp server \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+A\+R\+U\+T\+I\+L\+S\+\_\+\+Wifi\+Ftp\+\_\+\+New\+Connection () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Size@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Size}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Size@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Size}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Size(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager, const char $\ast$name\+Path, double $\ast$file\+Size)}{ARUTILS_Manager_Ftp_Size(ARUTILS_Manager_t *manager, const char *namePath, double *fileSize)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Ftp\+\_\+\+Size (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{const char $\ast$}]{name\+Path, }
+\item[{double $\ast$}]{file\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a13afe223bb5d1f4d69f0a36ffa819c59}{}\label{_a_r_u_t_i_l_s___manager_8h_a13afe223bb5d1f4d69f0a36ffa819c59}
+
+
+Execute Ftp Size command to retrieve file size. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the Ftp Manager \\
+\hline
+{\em name\+Path} & The string of the directory path on the remote Ftp server \\
+\hline
+{\em file\+Size} & The returned file size \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp} (), \hyperlink{_a_r_u_t_i_l_s___manager_8h_a99d3f556cef6b60721a2917fa1b53ad8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager, A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Device\+\_\+t device, int port)}{ARUTILS_Manager_InitBLEFtp(ARUTILS_Manager_t *manager, ARUTILS_BLEDevice_t device, int port)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+B\+L\+E\+Ftp (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+B\+L\+E\+Device\+\_\+t}}]{device, }
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a99d3f556cef6b60721a2917fa1b53ad8}{}\label{_a_r_u_t_i_l_s___manager_8h_a99d3f556cef6b60721a2917fa1b53ad8}
+
+
+Create a new B\+L\+E\+Ftp \hyperlink{class_connection}{Connection}. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The Manager \\
+\hline
+{\em cancel\+Sem} & The pointer of the Ftp get/put cancel semaphore or null \\
+\hline
+{\em server} & The Ftp server IP address \\
+\hline
+{\em port} & The Ftp server port \\
+\hline
+{\em username} & The Ftp server account name \\
+\hline
+{\em password} & The Ftp server account password \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns an A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_af52d037de211e5c0083d6eead31fedcb}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+B\+L\+E\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Ftp@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Ftp}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Ftp@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Ftp}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Ftp(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager, A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$device, e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N destination, e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+P\+E type)}{ARUTILS_Manager_InitFtp(ARUTILS_Manager_t *manager, ARDISCOVERY_Device_t *device, eARUTILS_DESTINATION destination, eARUTILS_FTP_TYPE type)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Ftp (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{device, }
+\item[{{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+D\+E\+S\+T\+I\+N\+A\+T\+I\+ON}}]{destination, }
+\item[{{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+T\+Y\+PE}}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_ac666a7112b0f04192a0e5b7a206173b6}{}\label{_a_r_u_t_i_l_s___manager_8h_ac666a7112b0f04192a0e5b7a206173b6}
+
+
+Create a new Ftp connection for the given device. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The manager \\
+\hline
+{\em device} & The device which will handle the connection \\
+\hline
+{\em destination} & The ftp connection destination \\
+\hline
+{\em type} & The type of ftp connection \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns an A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a1b82453f786a890a6ad2afa4e060b6d8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+R\+F\+Comm\+Ftp@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+R\+F\+Comm\+Ftp}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+R\+F\+Comm\+Ftp@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+R\+F\+Comm\+Ftp}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+R\+F\+Comm\+Ftp(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARUTILS_Manager_InitRFCommFtp(ARUTILS_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+R\+F\+Comm\+Ftp (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_ade743ed3a99e3f86064cdec4e460538e}{}\label{_a_r_u_t_i_l_s___manager_8h_ade743ed3a99e3f86064cdec4e460538e}
+
+
+Create a new R\+F\+Comm F\+TP \hyperlink{class_connection}{Connection}. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns an A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_ad016f7d126dea6cc952ebc1f6d92b06a}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+R\+F\+Comm\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager, const char $\ast$server, int port, const char $\ast$username, const char $\ast$password)}{ARUTILS_Manager_InitWifiFtp(ARUTILS_Manager_t *manager, const char *server, int port, const char *username, const char *password)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{const char $\ast$}]{server, }
+\item[{int}]{port, }
+\item[{const char $\ast$}]{username, }
+\item[{const char $\ast$}]{password}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}{}\label{_a_r_u_t_i_l_s___manager_8h_a4f361d99521edad8a519d5f2231d378e}
+
+
+Create a new Wifi\+Ftp \hyperlink{class_connection}{Connection}. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The Manager \\
+\hline
+{\em server} & The Ftp server IP address \\
+\hline
+{\em port} & The Ftp server port \\
+\hline
+{\em username} & The Ftp server account name \\
+\hline
+{\em password} & The Ftp server account password \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns an A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a308fdd713ecc8d307f8a2b135ae960d8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Wifi\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp\+Over\+Mux@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp\+Over\+Mux}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp\+Over\+Mux@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp\+Over\+Mux}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp\+Over\+Mux(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$manager, const char $\ast$server, int port, struct mux\+\_\+ctx $\ast$mux, const char $\ast$username, const char $\ast$password)}{ARUTILS_Manager_InitWifiFtpOverMux(ARUTILS_Manager_t *manager, const char *server, int port, struct mux_ctx *mux, const char *username, const char *password)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Init\+Wifi\+Ftp\+Over\+Mux (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{const char $\ast$}]{server, }
+\item[{int}]{port, }
+\item[{struct mux\+\_\+ctx $\ast$}]{mux, }
+\item[{const char $\ast$}]{username, }
+\item[{const char $\ast$}]{password}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_a801f6ce282a767b5be0d17c2ffbe28ae}{}\label{_a_r_u_t_i_l_s___manager_8h_a801f6ce282a767b5be0d17c2ffbe28ae}
+
+
+Create a new Wifi\+Ftp \hyperlink{class_connection}{Connection}. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The Manager \\
+\hline
+{\em server} & The Ftp server IP address \\
+\hline
+{\em port} & The Ftp server port \\
+\hline
+{\em mux} & The Mux instance to use \\
+\hline
+{\em username} & The Ftp server account name \\
+\hline
+{\em password} & The Ftp server account password \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns an A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a308fdd713ecc8d307f8a2b135ae960d8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Close\+Wifi\+Ftp} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New(e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARUTILS_Manager_New(eARUTILS_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t}$\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___manager_8h_aef5c8e84706f84d5125d3c662e7af6b3}{}\label{_a_r_u_t_i_l_s___manager_8h_aef5c8e84706f84d5125d3c662e7af6b3}
+
+
+Create a new Ftp Manager. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em error} & The pointer of the error code\+: if success A\+R\+U\+T\+I\+L\+S\+\_\+\+OK, otherwise an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns an A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Connection\+\_\+t. Otherwise, it returns null. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___manager_8h_a8d60e8edbfb95936c02f009d098648ad}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+\+Delete} () 
+\end{DoxySeeAlso}

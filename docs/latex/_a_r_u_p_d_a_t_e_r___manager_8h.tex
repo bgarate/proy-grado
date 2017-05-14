@@ -1,0 +1,176 @@
+\hypertarget{_a_r_u_p_d_a_t_e_r___manager_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Updater/\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.h File Reference}
+\label{_a_r_u_p_d_a_t_e_r___manager_8h}\index{src/hal/pb2/include/lib\+A\+R\+Updater/\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{src/hal/pb2/include/lib\+A\+R\+Updater/\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}}
+
+
+lib\+A\+R\+Updater Manager header file.  
+
+
+{\ttfamily \#include $<$lib\+A\+R\+Updater/\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Error.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Data\+Transfer/\+A\+R\+Data\+Transfer.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Data\+Transfer/\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Uploader.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Discovery.\+h$>$}\\*
+Include dependency graph for A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_u_p_d_a_t_e_r___manager_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_u_p_d_a_t_e_r___manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_a44e7f671f1c215779e4f477feab7f319}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+ZE}~10
+\item 
+\#define \hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aff10dd1cd73da81dd0018e079f13512b}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}~\char`\"{}/\char`\"{}
+\item 
+\#define \hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_a53683c9680032e1d111c73ffd1378671}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+L\+F\+\_\+\+F\+O\+L\+D\+ER}~\char`\"{}plf\+Folder/\char`\"{}
+\item 
+\#define \hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_a44ec17d3a7bd6c4334d341b339b5276e}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+L\+F\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}~\char`\"{}.plf\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} \hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Manager structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$ \hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_a17b279922c127a9fc8452ab1ab849670}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+New} (\hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Create a new A\+R\+Updater Manager. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_ae6dccc627b9025d1472e976badf48c41}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Delete} (\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$$\ast$manager\+Ptr\+Addr)
+\begin{DoxyCompactList}\small\item\em Delete an A\+R\+Updater Manager. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_a14ea2d25dc559634b11b4cea44abc670}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Plf\+Version\+Is\+Up\+To\+Date} (\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___discovery_8h_a908972407587656a48194c58ccd65813}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} product, const char $\ast$remote\+Version, const char $\ast$root\+Folder, char $\ast$local\+Version\+Buffer, size\+\_\+t buffer\+Size, \hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em get the version of a given plf file \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+lib\+A\+R\+Updater Manager header file. 
+
+\begin{DoxyDate}{Date}
+07/01/2014 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:david.flattin.ext@parrot.com}{\tt david.\+flattin.\+ext@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+ZE@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+ZE@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+ZE}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+ZE}{ARUPDATER_MANAGER_DEVICE_STRING_MAX_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+S\+I\+ZE~10}\hypertarget{_a_r_u_p_d_a_t_e_r___manager_8h_a44e7f671f1c215779e4f477feab7f319}{}\label{_a_r_u_p_d_a_t_e_r___manager_8h_a44e7f671f1c215779e4f477feab7f319}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}{ARUPDATER_MANAGER_FOLDER_SEPARATOR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR~\char`\"{}/\char`\"{}}\hypertarget{_a_r_u_p_d_a_t_e_r___manager_8h_aff10dd1cd73da81dd0018e079f13512b}{}\label{_a_r_u_p_d_a_t_e_r___manager_8h_aff10dd1cd73da81dd0018e079f13512b}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+L\+F\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+L\+F\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+L\+F\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+L\+F\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+L\+F\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}{ARUPDATER_MANAGER_PLF_EXTENSION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+L\+F\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON~\char`\"{}.plf\char`\"{}}\hypertarget{_a_r_u_p_d_a_t_e_r___manager_8h_a44ec17d3a7bd6c4334d341b339b5276e}{}\label{_a_r_u_p_d_a_t_e_r___manager_8h_a44ec17d3a7bd6c4334d341b339b5276e}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+L\+F\+\_\+\+F\+O\+L\+D\+ER@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+L\+F\+\_\+\+F\+O\+L\+D\+ER}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+L\+F\+\_\+\+F\+O\+L\+D\+ER@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+L\+F\+\_\+\+F\+O\+L\+D\+ER}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+L\+F\+\_\+\+F\+O\+L\+D\+ER}{ARUPDATER_MANAGER_PLF_FOLDER}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+L\+F\+\_\+\+F\+O\+L\+D\+ER~\char`\"{}plf\+Folder/\char`\"{}}\hypertarget{_a_r_u_p_d_a_t_e_r___manager_8h_a53683c9680032e1d111c73ffd1378671}{}\label{_a_r_u_p_d_a_t_e_r___manager_8h_a53683c9680032e1d111c73ffd1378671}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t}{ARUPDATER_Manager_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} {\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t}}\hypertarget{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{}\label{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}
+
+
+Manager structure. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_a17b279922c127a9fc8452ab1ab849670}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+New} () 
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Delete@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Delete}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Delete@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Delete}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Delete(\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t $\ast$$\ast$manager\+Ptr\+Addr)}{ARUPDATER_Manager_Delete(ARUPDATER_Manager_t **managerPtrAddr)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$$\ast$}]{manager\+Ptr\+Addr}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___manager_8h_ae6dccc627b9025d1472e976badf48c41}{}\label{_a_r_u_p_d_a_t_e_r___manager_8h_ae6dccc627b9025d1472e976badf48c41}
+
+
+Delete an A\+R\+Updater Manager. 
+
+\begin{DoxyWarning}{Warning}
+This function frees memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the A\+R\+Updater Manager \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_a17b279922c127a9fc8452ab1ab849670}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+New@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+New}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+New@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+New}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+New(e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARUPDATER_Manager_New(eARUPDATER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t}$\ast$ A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___manager_8h_a17b279922c127a9fc8452ab1ab849670}{}\label{_a_r_u_p_d_a_t_e_r___manager_8h_a17b279922c127a9fc8452ab1ab849670}
+
+
+Create a new A\+R\+Updater Manager. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em error} & A pointer on the error output. Can be null \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer on the new A\+R\+Updater Manager 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_ae6dccc627b9025d1472e976badf48c41}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Delete} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Plf\+Version\+Is\+Up\+To\+Date@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Plf\+Version\+Is\+Up\+To\+Date}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Plf\+Version\+Is\+Up\+To\+Date@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Plf\+Version\+Is\+Up\+To\+Date}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Plf\+Version\+Is\+Up\+To\+Date(\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+C\+T product, const char $\ast$remote\+Version, const char $\ast$root\+Folder, char $\ast$local\+Version\+Buffer, size\+\_\+t buffer\+Size, e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARUPDATER_Manager_PlfVersionIsUpToDate(ARUPDATER_Manager_t *manager, eARDISCOVERY_PRODUCT product, const char *remoteVersion, const char *rootFolder, char *localVersionBuffer, size_t bufferSize, eARUPDATER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Plf\+Version\+Is\+Up\+To\+Date (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT}}]{product, }
+\item[{const char $\ast$}]{remote\+Version, }
+\item[{const char $\ast$}]{root\+Folder, }
+\item[{char $\ast$}]{local\+Version\+Buffer, }
+\item[{size\+\_\+t}]{buffer\+Size, }
+\item[{{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___manager_8h_a14ea2d25dc559634b11b4cea44abc670}{}\label{_a_r_u_p_d_a_t_e_r___manager_8h_a14ea2d25dc559634b11b4cea44abc670}
+
+
+get the version of a given plf file 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager} & \+: pointer on the manager \\
+\hline
+\mbox{\tt in}  & {\em product} & \+: product type to be tested \\
+\hline
+\mbox{\tt in}  & {\em remote\+Version} & \+: the remote version to be compared with local one \\
+\hline
+\mbox{\tt in}  & {\em root\+Folder} & \+: root folder of the local plf. \\
+\hline
+\mbox{\tt out}  & {\em local\+Version\+Buffer} & \+: out buffer that will contain the version of the local plf \\
+\hline
+\mbox{\tt in}  & {\em buffer\+Size} & \+: The size of the local\+Version\+Buffer \\
+\hline
+\mbox{\tt out}  & {\em error} & \+: A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+OK if operation went well, the description of the error otherwise. Can be null \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the product plf is at the same version (or more recent) as the local plf 
+\end{DoxyReturn}

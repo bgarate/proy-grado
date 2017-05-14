@@ -1,0 +1,222 @@
+\hypertarget{utstring_8h}{}\section{src/hal/pb2/include/uthash/utstring.h File Reference}
+\label{utstring_8h}\index{src/hal/pb2/include/uthash/utstring.\+h@{src/hal/pb2/include/uthash/utstring.\+h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdarg.\+h$>$}\\*
+Include dependency graph for utstring.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{utstring_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_u_t__string}{U\+T\+\_\+string}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{utstring_8h_a33794de47944825a69f1ac56f057696e}{U\+T\+S\+T\+R\+I\+N\+G\+\_\+\+V\+E\+R\+S\+I\+ON}~1.\+9.\+9
+\item 
+\#define \hyperlink{utstring_8h_a1570f75df0b645775e8ddc86cd2f3a7a}{\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+}
+\item 
+\#define \hyperlink{utstring_8h_ab012ce14774deb45e0f0a576e216f41d}{oom}()~exit(-\/1)
+\item 
+\#define \hyperlink{utstring_8h_a5448b6675f3e1eb9d0f8fce6f9b3987c}{utstring\+\_\+reserve}(s,  amt)
+\item 
+\#define \hyperlink{utstring_8h_a369f0718a91e2fc2875e39a7be899924}{utstring\+\_\+init}(s)
+\item 
+\#define \hyperlink{utstring_8h_ac796a2c9f84554f35117760bf689b7eb}{utstring\+\_\+done}(s)
+\item 
+\#define \hyperlink{utstring_8h_ace95d9ac8dc11995174a3b1749d86e24}{utstring\+\_\+free}(s)
+\item 
+\#define \hyperlink{utstring_8h_ae8289502e4b16c91b216b9b09c26fed9}{utstring\+\_\+new}(s)
+\item 
+\#define \hyperlink{utstring_8h_aa3c808b1867b495ac05929f03c58c165}{utstring\+\_\+renew}(s)
+\item 
+\#define \hyperlink{utstring_8h_ad0479fadb60602cc6b84386b917844dd}{utstring\+\_\+clear}(s)
+\item 
+\#define \hyperlink{utstring_8h_a83b587c85c57e55fbe0424848f55e9e8}{utstring\+\_\+bincpy}(s,  b,  l)
+\item 
+\#define \hyperlink{utstring_8h_ade5e5874e6f2c38e76209b0357cccbfb}{utstring\+\_\+concat}(dst,  src)
+\item 
+\#define \hyperlink{utstring_8h_a937ede98ddd1d4c49b49925e7a52be25}{utstring\+\_\+len}(s)~((unsigned)((s)-\/$>$i))
+\item 
+\#define \hyperlink{utstring_8h_a78a3d5dad58a3fa1782bbaa4f9e79abb}{utstring\+\_\+body}(s)~((s)-\/$>$d)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{utstring.\+h@{utstring.\+h}!\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+@{\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+}}
+\index{\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+@{\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+}!utstring.\+h@{utstring.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+}{_UNUSED_}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+U\+N\+U\+S\+E\+D\+\_\+}\hypertarget{utstring_8h_a1570f75df0b645775e8ddc86cd2f3a7a}{}\label{utstring_8h_a1570f75df0b645775e8ddc86cd2f3a7a}
+\index{utstring.\+h@{utstring.\+h}!oom@{oom}}
+\index{oom@{oom}!utstring.\+h@{utstring.\+h}}
+\subsubsection[{\texorpdfstring{oom}{oom}}]{\setlength{\rightskip}{0pt plus 5cm}\#define oom(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~exit(-\/1)}\hypertarget{utstring_8h_ab012ce14774deb45e0f0a576e216f41d}{}\label{utstring_8h_ab012ce14774deb45e0f0a576e216f41d}
+\index{utstring.\+h@{utstring.\+h}!utstring\+\_\+bincpy@{utstring\+\_\+bincpy}}
+\index{utstring\+\_\+bincpy@{utstring\+\_\+bincpy}!utstring.\+h@{utstring.\+h}}
+\subsubsection[{\texorpdfstring{utstring\+\_\+bincpy}{utstring_bincpy}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utstring\+\_\+bincpy(
+\begin{DoxyParamCaption}
+\item[{}]{s, }
+\item[{}]{b, }
+\item[{}]{l}
+\end{DoxyParamCaption}
+)}\hypertarget{utstring_8h_a83b587c85c57e55fbe0424848f55e9e8}{}\label{utstring_8h_a83b587c85c57e55fbe0424848f55e9e8}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                       \hyperlink{utstring_8h_a5448b6675f3e1eb9d0f8fce6f9b3987c}{\(\backslash\)}
+\hyperlink{utstring_8h_a5448b6675f3e1eb9d0f8fce6f9b3987c}{  utstring\_reserve}((s),(l)+1);                               \(\backslash\)
+  if (l) memcpy(&(s)->d[(s)->i], b, l);                    \(\backslash\)
+  (s)->i += l;                                               \(\backslash\)
+  (s)->d[(s)->i]='\(\backslash\)0';                                         \(\backslash\)
+\} while(0)
+\end{DoxyCode}
+\index{utstring.\+h@{utstring.\+h}!utstring\+\_\+body@{utstring\+\_\+body}}
+\index{utstring\+\_\+body@{utstring\+\_\+body}!utstring.\+h@{utstring.\+h}}
+\subsubsection[{\texorpdfstring{utstring\+\_\+body}{utstring_body}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utstring\+\_\+body(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)~((s)-\/$>$d)}\hypertarget{utstring_8h_a78a3d5dad58a3fa1782bbaa4f9e79abb}{}\label{utstring_8h_a78a3d5dad58a3fa1782bbaa4f9e79abb}
+\index{utstring.\+h@{utstring.\+h}!utstring\+\_\+clear@{utstring\+\_\+clear}}
+\index{utstring\+\_\+clear@{utstring\+\_\+clear}!utstring.\+h@{utstring.\+h}}
+\subsubsection[{\texorpdfstring{utstring\+\_\+clear}{utstring_clear}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utstring\+\_\+clear(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{utstring_8h_ad0479fadb60602cc6b84386b917844dd}{}\label{utstring_8h_ad0479fadb60602cc6b84386b917844dd}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                       \(\backslash\)
+  (s)->i = 0;                                              \(\backslash\)
+  (s)->d[0] = \textcolor{charliteral}{'\(\backslash\)0'};                                        \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utstring.\+h@{utstring.\+h}!utstring\+\_\+concat@{utstring\+\_\+concat}}
+\index{utstring\+\_\+concat@{utstring\+\_\+concat}!utstring.\+h@{utstring.\+h}}
+\subsubsection[{\texorpdfstring{utstring\+\_\+concat}{utstring_concat}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utstring\+\_\+concat(
+\begin{DoxyParamCaption}
+\item[{}]{dst, }
+\item[{}]{src}
+\end{DoxyParamCaption}
+)}\hypertarget{utstring_8h_ade5e5874e6f2c38e76209b0357cccbfb}{}\label{utstring_8h_ade5e5874e6f2c38e76209b0357cccbfb}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                             \hyperlink{utstring_8h_a5448b6675f3e1eb9d0f8fce6f9b3987c}{\(\backslash\)}
+\hyperlink{utstring_8h_a5448b6675f3e1eb9d0f8fce6f9b3987c}{  utstring\_reserve}((dst),((src)->i)+1);                          \(\backslash\)
+  if ((src)->i) memcpy(&(dst)->d[(dst)->i], (src)->d, (src)->i); \(\backslash\)
+  (dst)->i += (src)->i;                                          \(\backslash\)
+  (dst)->d[(dst)->i]='\(\backslash\)0';                                       \(\backslash\)
+\} while(0)
+\end{DoxyCode}
+\index{utstring.\+h@{utstring.\+h}!utstring\+\_\+done@{utstring\+\_\+done}}
+\index{utstring\+\_\+done@{utstring\+\_\+done}!utstring.\+h@{utstring.\+h}}
+\subsubsection[{\texorpdfstring{utstring\+\_\+done}{utstring_done}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utstring\+\_\+done(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{utstring_8h_ac796a2c9f84554f35117760bf689b7eb}{}\label{utstring_8h_ac796a2c9f84554f35117760bf689b7eb}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                       \(\backslash\)
+  if ((s)->d != NULL) free((s)->d);                        \(\backslash\)
+  (s)->n = 0;                                              \(\backslash\)
+\} while(0)
+\end{DoxyCode}
+\index{utstring.\+h@{utstring.\+h}!utstring\+\_\+free@{utstring\+\_\+free}}
+\index{utstring\+\_\+free@{utstring\+\_\+free}!utstring.\+h@{utstring.\+h}}
+\subsubsection[{\texorpdfstring{utstring\+\_\+free}{utstring_free}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utstring\+\_\+free(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{utstring_8h_ace95d9ac8dc11995174a3b1749d86e24}{}\label{utstring_8h_ace95d9ac8dc11995174a3b1749d86e24}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                       \hyperlink{utstring_8h_ac796a2c9f84554f35117760bf689b7eb}{\(\backslash\)}
+\hyperlink{utstring_8h_ac796a2c9f84554f35117760bf689b7eb}{  utstring\_done}(s);                                        \(\backslash\)
+  free(s);                                                 \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utstring.\+h@{utstring.\+h}!utstring\+\_\+init@{utstring\+\_\+init}}
+\index{utstring\+\_\+init@{utstring\+\_\+init}!utstring.\+h@{utstring.\+h}}
+\subsubsection[{\texorpdfstring{utstring\+\_\+init}{utstring_init}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utstring\+\_\+init(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{utstring_8h_a369f0718a91e2fc2875e39a7be899924}{}\label{utstring_8h_a369f0718a91e2fc2875e39a7be899924}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                       \(\backslash\)
+  (s)->n = 0; (s)->i = 0; (s)->d = NULL;                   \hyperlink{utstring_8h_a5448b6675f3e1eb9d0f8fce6f9b3987c}{\(\backslash\)}
+\hyperlink{utstring_8h_a5448b6675f3e1eb9d0f8fce6f9b3987c}{  utstring\_reserve}(s,100);                                 \(\backslash\)
+  (s)->d[0] = \textcolor{charliteral}{'\(\backslash\)0'}; \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utstring.\+h@{utstring.\+h}!utstring\+\_\+len@{utstring\+\_\+len}}
+\index{utstring\+\_\+len@{utstring\+\_\+len}!utstring.\+h@{utstring.\+h}}
+\subsubsection[{\texorpdfstring{utstring\+\_\+len}{utstring_len}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utstring\+\_\+len(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)~((unsigned)((s)-\/$>$i))}\hypertarget{utstring_8h_a937ede98ddd1d4c49b49925e7a52be25}{}\label{utstring_8h_a937ede98ddd1d4c49b49925e7a52be25}
+\index{utstring.\+h@{utstring.\+h}!utstring\+\_\+new@{utstring\+\_\+new}}
+\index{utstring\+\_\+new@{utstring\+\_\+new}!utstring.\+h@{utstring.\+h}}
+\subsubsection[{\texorpdfstring{utstring\+\_\+new}{utstring_new}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utstring\+\_\+new(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{utstring_8h_ae8289502e4b16c91b216b9b09c26fed9}{}\label{utstring_8h_ae8289502e4b16c91b216b9b09c26fed9}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                       \(\backslash\)
+   s = (\hyperlink{struct_u_t__string}{UT\_string}*)calloc(\textcolor{keyword}{sizeof}(\hyperlink{struct_u_t__string}{UT\_string}),1);            \(\backslash\)
+   if (!s) \hyperlink{utstring_8h_ab012ce14774deb45e0f0a576e216f41d}{oom}();                                          \(\backslash\)
+   \hyperlink{utstring_8h_a369f0718a91e2fc2875e39a7be899924}{utstring\_init}(s);                                       \(\backslash\)
+\} while(0)
+\end{DoxyCode}
+\index{utstring.\+h@{utstring.\+h}!utstring\+\_\+renew@{utstring\+\_\+renew}}
+\index{utstring\+\_\+renew@{utstring\+\_\+renew}!utstring.\+h@{utstring.\+h}}
+\subsubsection[{\texorpdfstring{utstring\+\_\+renew}{utstring_renew}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utstring\+\_\+renew(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{utstring_8h_aa3c808b1867b495ac05929f03c58c165}{}\label{utstring_8h_aa3c808b1867b495ac05929f03c58c165}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                       \(\backslash\)
+   if (s) \{                                                \hyperlink{utstring_8h_ad0479fadb60602cc6b84386b917844dd}{\(\backslash\)}
+\hyperlink{utstring_8h_ad0479fadb60602cc6b84386b917844dd}{     utstring\_clear}(s);                                    \(\backslash\)
+   \} \textcolor{keywordflow}{else} \{                                                \hyperlink{utstring_8h_ae8289502e4b16c91b216b9b09c26fed9}{\(\backslash\)}
+\hyperlink{utstring_8h_ae8289502e4b16c91b216b9b09c26fed9}{     utstring\_new}(s);                                      \(\backslash\)
+   \}                                                       \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utstring.\+h@{utstring.\+h}!utstring\+\_\+reserve@{utstring\+\_\+reserve}}
+\index{utstring\+\_\+reserve@{utstring\+\_\+reserve}!utstring.\+h@{utstring.\+h}}
+\subsubsection[{\texorpdfstring{utstring\+\_\+reserve}{utstring_reserve}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utstring\+\_\+reserve(
+\begin{DoxyParamCaption}
+\item[{}]{s, }
+\item[{}]{amt}
+\end{DoxyParamCaption}
+)}\hypertarget{utstring_8h_a5448b6675f3e1eb9d0f8fce6f9b3987c}{}\label{utstring_8h_a5448b6675f3e1eb9d0f8fce6f9b3987c}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                       \(\backslash\)
+  if (((s)->n - (s)->i) < (\textcolor{keywordtype}{size\_t})(amt)) \{                 \(\backslash\)
+     (s)->d = (\textcolor{keywordtype}{char}*)realloc((s)->d, (s)->n + amt);        \(\backslash\)
+     if ((s)->d == NULL) \hyperlink{utstring_8h_ab012ce14774deb45e0f0a576e216f41d}{oom}();                            \(\backslash\)
+     (s)->n += amt;                                        \(\backslash\)
+  \}                                                        \(\backslash\)
+\} while(0)
+\end{DoxyCode}
+\index{utstring.\+h@{utstring.\+h}!U\+T\+S\+T\+R\+I\+N\+G\+\_\+\+V\+E\+R\+S\+I\+ON@{U\+T\+S\+T\+R\+I\+N\+G\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\index{U\+T\+S\+T\+R\+I\+N\+G\+\_\+\+V\+E\+R\+S\+I\+ON@{U\+T\+S\+T\+R\+I\+N\+G\+\_\+\+V\+E\+R\+S\+I\+ON}!utstring.\+h@{utstring.\+h}}
+\subsubsection[{\texorpdfstring{U\+T\+S\+T\+R\+I\+N\+G\+\_\+\+V\+E\+R\+S\+I\+ON}{UTSTRING_VERSION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+T\+S\+T\+R\+I\+N\+G\+\_\+\+V\+E\+R\+S\+I\+ON~1.\+9.\+9}\hypertarget{utstring_8h_a33794de47944825a69f1ac56f057696e}{}\label{utstring_8h_a33794de47944825a69f1ac56f057696e}

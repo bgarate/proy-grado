@@ -1,0 +1,122 @@
+\hypertarget{_a_r_c_o_m_m_a_n_d_s___version_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Commands/\+A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.h File Reference}
+\label{_a_r_c_o_m_m_a_n_d_s___version_8h}\index{src/hal/pb2/include/lib\+A\+R\+Commands/\+A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h@{src/hal/pb2/include/lib\+A\+R\+Commands/\+A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h}}
+
+
+lib\+A\+R\+Commands versionning header. This file contains all versionning informations for lib\+A\+R\+Commands  
+
+
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{_a_r_c_o_m_m_a_n_d_s___version_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_a_r_c_o_m_m_a_n_d_s___version_8h_a2822a9bec9aa2b1e07f4efc721e3b919}{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR}~(3)
+\item 
+\#define \hyperlink{_a_r_c_o_m_m_a_n_d_s___version_8h_a554fd93888744638af0ccbdd4749048d}{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR}~(1)
+\item 
+\#define \hyperlink{_a_r_c_o_m_m_a_n_d_s___version_8h_a9c39332ccae7e39587e11c8becddc852}{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+V\+I\+S\+I\+ON}~(0)
+\item 
+\#define \hyperlink{_a_r_c_o_m_m_a_n_d_s___version_8h_aa6fd87db9ba9fb7c149085e400d7585c}{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+C\+O\+M\+M\+IT}~(13)
+\item 
+\#define \hyperlink{_a_r_c_o_m_m_a_n_d_s___version_8h_a3a8922b365c2276a83f261ee6bb69324}{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+NG}~\char`\"{}3.\+1.\+0.\+13\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_a_r_c_o_m_m_a_n_d_s___version_8h_a54f5ef250fc605071b133a4ca4cadf41}{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version\+\_\+\+Compare\+Versions} (int v1M, int v1m, int v1r, int v1c, int v2M, int v2m, int v2r, int v2c)
+\begin{DoxyCompactList}\small\item\em Checks whether the first version is newer than the second. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_c_o_m_m_a_n_d_s___version_8h_a6104761c8c44de67f77058adc39f3d7d}{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version\+\_\+\+Compare\+Version\+Codes} (const char $\ast$v1, const char $\ast$v2)
+\begin{DoxyCompactList}\small\item\em Compare two version code by String representation. If a version code is incomplete, the remaining part is considered to be all zeros. i.\+e. \char`\"{}3\char`\"{} is the same as \char`\"{}3.\+0.\+0.\+0\char`\"{} and \char`\"{}3.\+1.\+2\char`\"{} is the same as \char`\"{}3.\+1.\+2.\+0\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+lib\+A\+R\+Commands versionning header. This file contains all versionning informations for lib\+A\+R\+Commands 
+
+
+
+\subsection{Macro Definition Documentation}
+\index{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h}!A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+C\+O\+M\+M\+IT@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+C\+O\+M\+M\+IT}}
+\index{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+C\+O\+M\+M\+IT@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+C\+O\+M\+M\+IT}!A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+C\+O\+M\+M\+IT}{ARCOMMANDS_VERSION_COMMIT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+C\+O\+M\+M\+IT~(13)}\hypertarget{_a_r_c_o_m_m_a_n_d_s___version_8h_aa6fd87db9ba9fb7c149085e400d7585c}{}\label{_a_r_c_o_m_m_a_n_d_s___version_8h_aa6fd87db9ba9fb7c149085e400d7585c}
+\index{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h}!A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR}}
+\index{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR}!A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR}{ARCOMMANDS_VERSION_MAJOR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR~(3)}\hypertarget{_a_r_c_o_m_m_a_n_d_s___version_8h_a2822a9bec9aa2b1e07f4efc721e3b919}{}\label{_a_r_c_o_m_m_a_n_d_s___version_8h_a2822a9bec9aa2b1e07f4efc721e3b919}
+\index{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h}!A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR}}
+\index{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR}!A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR}{ARCOMMANDS_VERSION_MINOR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR~(1)}\hypertarget{_a_r_c_o_m_m_a_n_d_s___version_8h_a554fd93888744638af0ccbdd4749048d}{}\label{_a_r_c_o_m_m_a_n_d_s___version_8h_a554fd93888744638af0ccbdd4749048d}
+\index{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h}!A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+V\+I\+S\+I\+ON@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+V\+I\+S\+I\+ON}}
+\index{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+V\+I\+S\+I\+ON@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+V\+I\+S\+I\+ON}!A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+V\+I\+S\+I\+ON}{ARCOMMANDS_VERSION_REVISION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+V\+I\+S\+I\+ON~(0)}\hypertarget{_a_r_c_o_m_m_a_n_d_s___version_8h_a9c39332ccae7e39587e11c8becddc852}{}\label{_a_r_c_o_m_m_a_n_d_s___version_8h_a9c39332ccae7e39587e11c8becddc852}
+\index{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h}!A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+NG@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+NG}}
+\index{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+NG@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+NG}!A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+NG}{ARCOMMANDS_VERSION_STRING}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+NG~\char`\"{}3.\+1.\+0.\+13\char`\"{}}\hypertarget{_a_r_c_o_m_m_a_n_d_s___version_8h_a3a8922b365c2276a83f261ee6bb69324}{}\label{_a_r_c_o_m_m_a_n_d_s___version_8h_a3a8922b365c2276a83f261ee6bb69324}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h}!A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version\+\_\+\+Compare\+Version\+Codes@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version\+\_\+\+Compare\+Version\+Codes}}
+\index{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version\+\_\+\+Compare\+Version\+Codes@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version\+\_\+\+Compare\+Version\+Codes}!A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version\+\_\+\+Compare\+Version\+Codes(const char $\ast$v1, const char $\ast$v2)}{ARCOMMANDS_Version_CompareVersionCodes(const char *v1, const char *v2)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version\+\_\+\+Compare\+Version\+Codes (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{v1, }
+\item[{const char $\ast$}]{v2}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_m_m_a_n_d_s___version_8h_a6104761c8c44de67f77058adc39f3d7d}{}\label{_a_r_c_o_m_m_a_n_d_s___version_8h_a6104761c8c44de67f77058adc39f3d7d}
+
+
+Compare two version code by String representation. If a version code is incomplete, the remaining part is considered to be all zeros. i.\+e. \char`\"{}3\char`\"{} is the same as \char`\"{}3.\+0.\+0.\+0\char`\"{} and \char`\"{}3.\+1.\+2\char`\"{} is the same as \char`\"{}3.\+1.\+2.\+0\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & The first version code. \\
+\hline
+{\em v2} & The second version code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a negative integer if v1 is newer than v2, 0 if v1 and v2 are the same, or a positive integer if v2 is newer than v1. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h}!A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version\+\_\+\+Compare\+Versions@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version\+\_\+\+Compare\+Versions}}
+\index{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version\+\_\+\+Compare\+Versions@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version\+\_\+\+Compare\+Versions}!A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h@{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version\+\_\+\+Compare\+Versions(int v1\+M, int v1m, int v1r, int v1c, int v2\+M, int v2m, int v2r, int v2c)}{ARCOMMANDS_Version_CompareVersions(int v1M, int v1m, int v1r, int v1c, int v2M, int v2m, int v2r, int v2c)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+Version\+\_\+\+Compare\+Versions (
+\begin{DoxyParamCaption}
+\item[{int}]{v1M, }
+\item[{int}]{v1m, }
+\item[{int}]{v1r, }
+\item[{int}]{v1c, }
+\item[{int}]{v2M, }
+\item[{int}]{v2m, }
+\item[{int}]{v2r, }
+\item[{int}]{v2c}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_m_m_a_n_d_s___version_8h_a54f5ef250fc605071b133a4ca4cadf41}{}\label{_a_r_c_o_m_m_a_n_d_s___version_8h_a54f5ef250fc605071b133a4ca4cadf41}
+
+
+Checks whether the first version is newer than the second. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1M} & Major version of the first version. \\
+\hline
+{\em v1m} & Minor version of the first version. \\
+\hline
+{\em v1r} & Revision version of the first version. \\
+\hline
+{\em v1c} & Commit version of the first version. \\
+\hline
+{\em v2M} & Major version of the first version. \\
+\hline
+{\em v2m} & Minor version of the first version. \\
+\hline
+{\em v2r} & Revision version of the first version. \\
+\hline
+{\em v2c} & Commit version of the first version. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a negative integer if v1 is newer than v2, 0 if v1 and v2 are the same, or a positive integer if v2 is newer than v1. 
+\end{DoxyReturn}

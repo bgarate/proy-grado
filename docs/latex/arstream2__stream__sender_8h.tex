@@ -1,0 +1,648 @@
+\hypertarget{arstream2__stream__sender_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Stream2/arstream2\+\_\+stream\+\_\+sender.h File Reference}
+\label{arstream2__stream__sender_8h}\index{src/hal/pb2/include/lib\+A\+R\+Stream2/arstream2\+\_\+stream\+\_\+sender.\+h@{src/hal/pb2/include/lib\+A\+R\+Stream2/arstream2\+\_\+stream\+\_\+sender.\+h}}
+
+
+Parrot Streaming Library -\/ Stream Sender.  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Stream2/arstream2\+\_\+error.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Stream2/arstream2\+\_\+stream\+\_\+stats.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+S\+A\+L/\+A\+R\+S\+A\+L\+\_\+\+Socket.\+h$>$}\\*
+Include dependency graph for arstream2\+\_\+stream\+\_\+sender.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arstream2__stream__sender_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___monitoring_data__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Monitoring\+Data\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Sender monitoring data. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Config\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Stream\+Sender configuration parameters. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___dynamic_config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Dynamic\+Config\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Stream\+Sender dynamic configuration parameters. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Stream\+Sender N\+AL unit descriptor. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___untimed_metadata__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t}
+\begin{DoxyCompactList}\small\item\em A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Sender untimed metadata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{arstream2__stream__sender_8h_a2aa04e91d84ffd1941861c1e698bb2f6}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT}~(5004)
+\begin{DoxyCompactList}\small\item\em Default server-\/side stream port. \end{DoxyCompactList}\item 
+\#define \hyperlink{arstream2__stream__sender_8h_ac9aa7341ddea21d77c88b23f1c88ee91}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT}~(5005)
+\begin{DoxyCompactList}\small\item\em Default server-\/side control port. \end{DoxyCompactList}\item 
+\#define \hyperlink{arstream2__stream__sender_8h_a6c6170420a48511dbee692ead219ba80}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+A\+L\+U\+\_\+\+F\+I\+F\+O\+\_\+\+S\+I\+ZE}~(1024)
+\begin{DoxyCompactList}\small\item\em Default H.\+264 N\+AL unit F\+I\+FO size. \end{DoxyCompactList}\item 
+\#define \hyperlink{arstream2__stream__sender_8h_ab4197b48e3f5b7133448bee1bae350e7}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+I\+M\+P\+O\+R\+T\+A\+N\+C\+E\+\_\+\+L\+E\+V\+E\+LS}~(4)
+\begin{DoxyCompactList}\small\item\em Maximum number of N\+AL units importance levels. \end{DoxyCompactList}\item 
+\#define \hyperlink{arstream2__stream__sender_8h_ac949a4b89e4b506d4117fa219d4ba6ee}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+L\+E\+V\+E\+LS}~(5)
+\begin{DoxyCompactList}\small\item\em Maximum number of N\+AL units priority levels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+s $\ast$ \hyperlink{arstream2__stream__sender_8h_a806c99f11a0a8849f3468cb979798eb9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle}
+\begin{DoxyCompactList}\small\item\em A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Sender instance handle. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___monitoring_data__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Monitoring\+Data\+\_\+t} \hyperlink{arstream2__stream__sender_8h_a4ff1aad6ea1bb123d335f3aa07d27abf}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Monitoring\+Data\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Sender monitoring data. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{arstream2__stream__sender_8h_a5d1862b0b8e1a4fa199887582cf04809}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Au\+Callback\+\_\+t}) (\hyperlink{arstream2__stream__sender_8h_a9b51d4f066b94623b12af090d74bfe7a}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US} status, void $\ast$au\+User\+Ptr, void $\ast$user\+Ptr)
+\begin{DoxyCompactList}\small\item\em Callback function for access units This callback function is called when buffers associated with an access unit are no longer used by the sender. This occurs when packets corresponding to an access unit have all been sent or dropped. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{arstream2__stream__sender_8h_a10b715a92761c305ce7c41013f5c92dc}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Nalu\+Callback\+\_\+t}) (\hyperlink{arstream2__stream__sender_8h_a9b51d4f066b94623b12af090d74bfe7a}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US} status, void $\ast$nalu\+User\+Ptr, void $\ast$user\+Ptr)
+\begin{DoxyCompactList}\small\item\em Callback function for N\+AL units This callback function is called when a buffer associated with a N\+AL unit is no longer used by the sender. This occurs when packets corresponding to a N\+AL unit have all been sent or dropped. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{arstream2__stream__sender_8h_a6f76d40043fc66e76936425512128f9c}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Rtp\+Stats\+Callback\+\_\+t}) (const \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_stats___rtp_stats__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Stats\+\_\+\+Rtp\+Stats\+\_\+t} $\ast$rtp\+Stats, void $\ast$user\+Ptr)
+\begin{DoxyCompactList}\small\item\em Callback function for R\+TP stats This callback function is called when an R\+T\+CP receiver report has been received. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{arstream2__stream__sender_8h_a96cc0f5bd4b3768679e4aeb7e250c652}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Video\+Stats\+Callback\+\_\+t}) (const \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_stats___video_stats__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Stats\+\_\+\+Video\+Stats\+\_\+t} $\ast$video\+Stats, void $\ast$user\+Ptr)
+\begin{DoxyCompactList}\small\item\em Callback function for video stats This callback function is called when video stats have been received. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{arstream2__stream__sender_8h_ae0052a3484db5cba9b9f54f74983e743}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Disconnection\+Callback\+\_\+t}) (void $\ast$user\+Ptr)
+\begin{DoxyCompactList}\small\item\em Callback function for disconnection This callback function is called when the stream socket is no longer connected. The sender thread continues running and the callback function may be called multiple times. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Config\+\_\+t} \hyperlink{arstream2__stream__sender_8h_a4007923ec480f66f285489cc0cc1577c}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Config\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Stream\+Sender configuration parameters. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___dynamic_config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Dynamic\+Config\+\_\+t} \hyperlink{arstream2__stream__sender_8h_a6505cb237c2bb2fd24d4eeea5d443f5e}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Dynamic\+Config\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Stream\+Sender dynamic configuration parameters. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t} \hyperlink{arstream2__stream__sender_8h_aaea4df33a3b872c1f567e1ec84cd7fed}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Stream\+Sender N\+AL unit descriptor. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___untimed_metadata__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t} \hyperlink{arstream2__stream__sender_8h_a0079ea4aa43cb96561a50a53b507e1bc}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t}
+\begin{DoxyCompactList}\small\item\em A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Sender untimed metadata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{arstream2__stream__sender_8h_a9b51d4f066b94623b12af090d74bfe7a}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US} \{ \hyperlink{arstream2__stream__sender_8h_a9b51d4f066b94623b12af090d74bfe7aaa5fae3c1dc0040c3ab90ebd9b94c9c8f}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+E\+NT} = 0, 
+\hyperlink{arstream2__stream__sender_8h_a9b51d4f066b94623b12af090d74bfe7aab1c56cfa30e710a1b2eefcd5eecb7f65}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+C\+E\+L\+L\+ED}, 
+\hyperlink{arstream2__stream__sender_8h_a9b51d4f066b94623b12af090d74bfe7aabae464f6335bee738e8f9ca58d6d5ee6}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+AX}
+ \}\begin{DoxyCompactList}\small\item\em Callback status values. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__sender_8h_a3beb1943d179021211641cf6827c96fb}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Init} (\hyperlink{arstream2__stream__sender_8h_a806c99f11a0a8849f3468cb979798eb9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle} $\ast$stream\+Sender\+Handle, const \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Config\+\_\+t} $\ast$config)
+\begin{DoxyCompactList}\small\item\em Creates a new Stream\+Sender. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__sender_8h_a93ac21a023d280e3db533e38c16685df}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Stop} (\hyperlink{arstream2__stream__sender_8h_a806c99f11a0a8849f3468cb979798eb9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle} stream\+Sender\+Handle)
+\begin{DoxyCompactList}\small\item\em Stops a running Stream\+Sender. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__sender_8h_adb0309f8ff38a8733f94f96dbd0faa74}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Free} (\hyperlink{arstream2__stream__sender_8h_a806c99f11a0a8849f3468cb979798eb9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle} $\ast$stream\+Sender\+Handle)
+\begin{DoxyCompactList}\small\item\em Deletes an Stream\+Sender. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__sender_8h_a6a71f4499578f20510578087c34207d4}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Send\+New\+Nalu} (\hyperlink{arstream2__stream__sender_8h_a806c99f11a0a8849f3468cb979798eb9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle} stream\+Sender\+Handle, const \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t} $\ast$nalu, uint64\+\_\+t input\+Time)
+\begin{DoxyCompactList}\small\item\em Sends a new N\+AL unit. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__sender_8h_a4fb4c9f5c6db04e58be0bdea477fa289}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Send\+N\+New\+Nalu} (\hyperlink{arstream2__stream__sender_8h_a806c99f11a0a8849f3468cb979798eb9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle} stream\+Sender\+Handle, const \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___h264_nalu_desc__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t} $\ast$nalu, int nalu\+Count, uint64\+\_\+t input\+Time)
+\begin{DoxyCompactList}\small\item\em Sends multiple new N\+AL units. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__sender_8h_adb1ef7bcb51dae3da81f5b7eb1d9d12c}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Flush\+Nalu\+Queue} (\hyperlink{arstream2__stream__sender_8h_a806c99f11a0a8849f3468cb979798eb9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle} stream\+Sender\+Handle)
+\begin{DoxyCompactList}\small\item\em Flush all currently queued N\+AL units. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{arstream2__stream__sender_8h_ab4a3b0cb17746d2494d88fde8d421775}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Run\+Thread} (void $\ast$stream\+Sender\+Handle)
+\begin{DoxyCompactList}\small\item\em Runs the main loop of the Stream\+Sender. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__sender_8h_a8320a1e7b5616cee0bc42accdeb3dd43}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Dynamic\+Config} (\hyperlink{arstream2__stream__sender_8h_a806c99f11a0a8849f3468cb979798eb9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle} stream\+Sender\+Handle, \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___dynamic_config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Dynamic\+Config\+\_\+t} $\ast$config)
+\begin{DoxyCompactList}\small\item\em Get the current dynamic configuration parameters. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__sender_8h_a158160dae94bd7a4459625369bba9ea0}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Set\+Dynamic\+Config} (\hyperlink{arstream2__stream__sender_8h_a806c99f11a0a8849f3468cb979798eb9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle} stream\+Sender\+Handle, const \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___dynamic_config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Dynamic\+Config\+\_\+t} $\ast$config)
+\begin{DoxyCompactList}\small\item\em Set the current dynamic configuration parameters. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__sender_8h_aaf3d71794d8f7dea0e2a067d91f62993}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Untimed\+Metadata} (\hyperlink{arstream2__stream__sender_8h_a806c99f11a0a8849f3468cb979798eb9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle} stream\+Sender\+Handle, \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___untimed_metadata__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t} $\ast$metadata, uint32\+\_\+t $\ast$send\+Interval)
+\begin{DoxyCompactList}\small\item\em Get the untimed metadata. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__sender_8h_a6e5101e904645010d159d772d8574bd5}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Set\+Untimed\+Metadata} (\hyperlink{arstream2__stream__sender_8h_a806c99f11a0a8849f3468cb979798eb9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle} stream\+Sender\+Handle, const \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___untimed_metadata__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t} $\ast$metadata, uint32\+\_\+t send\+Interval)
+\begin{DoxyCompactList}\small\item\em Set the untimed metadata. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__sender_8h_a4ddeb9ce4a8aee137a3803dc104b63c5}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Peer\+Untimed\+Metadata} (\hyperlink{arstream2__stream__sender_8h_a806c99f11a0a8849f3468cb979798eb9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle} stream\+Sender\+Handle, \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___untimed_metadata__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t} $\ast$metadata)
+\begin{DoxyCompactList}\small\item\em Get the peer untimed metadata. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__sender_8h_aef4027ad714805c59be66886bbfc26b9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Monitoring} (\hyperlink{arstream2__stream__sender_8h_a806c99f11a0a8849f3468cb979798eb9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle} stream\+Sender\+Handle, uint64\+\_\+t start\+Time, uint32\+\_\+t time\+Interval\+Us, \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_sender___monitoring_data__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Monitoring\+Data\+\_\+t} $\ast$monitoring\+Data)
+\begin{DoxyCompactList}\small\item\em Get the stream monitoring The monitoring data is computed form the time start\+Time and back time\+Interval\+Us microseconds at most. If start\+Time is 0 the start time is the current time. If monitoring data is not available up to time\+Interval\+Us, the monitoring is computed on less time and the real interval is output to monitoring\+Data-\/$>$time\+Interval. Pointers to monitoring parameters that are not required can be left N\+U\+LL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parrot Streaming Library -\/ Stream Sender. 
+
+\begin{DoxyDate}{Date}
+08/03/2016 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:aurelien.barre@parrot.com}{\tt aurelien.\+barre@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+A\+L\+U\+\_\+\+F\+I\+F\+O\+\_\+\+S\+I\+ZE@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+A\+L\+U\+\_\+\+F\+I\+F\+O\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+A\+L\+U\+\_\+\+F\+I\+F\+O\+\_\+\+S\+I\+ZE@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+A\+L\+U\+\_\+\+F\+I\+F\+O\+\_\+\+S\+I\+ZE}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+A\+L\+U\+\_\+\+F\+I\+F\+O\+\_\+\+S\+I\+ZE}{ARSTREAM2_STREAM_SENDER_DEFAULT_NALU_FIFO_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+A\+L\+U\+\_\+\+F\+I\+F\+O\+\_\+\+S\+I\+ZE~(1024)}\hypertarget{arstream2__stream__sender_8h_a6c6170420a48511dbee692ead219ba80}{}\label{arstream2__stream__sender_8h_a6c6170420a48511dbee692ead219ba80}
+
+
+Default H.\+264 N\+AL unit F\+I\+FO size. 
+
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT}{ARSTREAM2_STREAM_SENDER_DEFAULT_SERVER_CONTROL_PORT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT~(5005)}\hypertarget{arstream2__stream__sender_8h_ac9aa7341ddea21d77c88b23f1c88ee91}{}\label{arstream2__stream__sender_8h_ac9aa7341ddea21d77c88b23f1c88ee91}
+
+
+Default server-\/side control port. 
+
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT}{ARSTREAM2_STREAM_SENDER_DEFAULT_SERVER_STREAM_PORT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT~(5004)}\hypertarget{arstream2__stream__sender_8h_a2aa04e91d84ffd1941861c1e698bb2f6}{}\label{arstream2__stream__sender_8h_a2aa04e91d84ffd1941861c1e698bb2f6}
+
+
+Default server-\/side stream port. 
+
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+I\+M\+P\+O\+R\+T\+A\+N\+C\+E\+\_\+\+L\+E\+V\+E\+LS@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+I\+M\+P\+O\+R\+T\+A\+N\+C\+E\+\_\+\+L\+E\+V\+E\+LS}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+I\+M\+P\+O\+R\+T\+A\+N\+C\+E\+\_\+\+L\+E\+V\+E\+LS@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+I\+M\+P\+O\+R\+T\+A\+N\+C\+E\+\_\+\+L\+E\+V\+E\+LS}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+I\+M\+P\+O\+R\+T\+A\+N\+C\+E\+\_\+\+L\+E\+V\+E\+LS}{ARSTREAM2_STREAM_SENDER_MAX_IMPORTANCE_LEVELS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+I\+M\+P\+O\+R\+T\+A\+N\+C\+E\+\_\+\+L\+E\+V\+E\+LS~(4)}\hypertarget{arstream2__stream__sender_8h_ab4197b48e3f5b7133448bee1bae350e7}{}\label{arstream2__stream__sender_8h_ab4197b48e3f5b7133448bee1bae350e7}
+
+
+Maximum number of N\+AL units importance levels. 
+
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+L\+E\+V\+E\+LS@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+L\+E\+V\+E\+LS}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+L\+E\+V\+E\+LS@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+L\+E\+V\+E\+LS}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+L\+E\+V\+E\+LS}{ARSTREAM2_STREAM_SENDER_MAX_PRIORITY_LEVELS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+L\+E\+V\+E\+LS~(5)}\hypertarget{arstream2__stream__sender_8h_ac949a4b89e4b506d4117fa219d4ba6ee}{}\label{arstream2__stream__sender_8h_ac949a4b89e4b506d4117fa219d4ba6ee}
+
+
+Maximum number of N\+AL units priority levels. 
+
+
+
+\subsection{Typedef Documentation}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Au\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Au\+Callback\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Au\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Au\+Callback\+\_\+t}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Au\+Callback\+\_\+t}{ARSTREAM2_StreamSender_AuCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Au\+Callback\+\_\+t) ({\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US} status, void $\ast$au\+User\+Ptr, void $\ast$user\+Ptr)}\hypertarget{arstream2__stream__sender_8h_a5d1862b0b8e1a4fa199887582cf04809}{}\label{arstream2__stream__sender_8h_a5d1862b0b8e1a4fa199887582cf04809}
+
+
+Callback function for access units This callback function is called when buffers associated with an access unit are no longer used by the sender. This occurs when packets corresponding to an access unit have all been sent or dropped. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em status} & Why the call is made \\
+\hline
+\mbox{\tt in}  & {\em au\+User\+Ptr} & Access unit user pointer associated with the N\+AL units submitted to the sender \\
+\hline
+\mbox{\tt in}  & {\em user\+Ptr} & Global access unit callback user pointer \\
+\hline
+\end{DoxyParams}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Config\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Config\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Config\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Config\+\_\+t}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Config\+\_\+t}{ARSTREAM2_StreamSender_Config_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Config\+\_\+t}  {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Config\+\_\+t}}\hypertarget{arstream2__stream__sender_8h_a4007923ec480f66f285489cc0cc1577c}{}\label{arstream2__stream__sender_8h_a4007923ec480f66f285489cc0cc1577c}
+
+
+Stream\+Sender configuration parameters. 
+
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Disconnection\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Disconnection\+Callback\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Disconnection\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Disconnection\+Callback\+\_\+t}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Disconnection\+Callback\+\_\+t}{ARSTREAM2_StreamSender_DisconnectionCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Disconnection\+Callback\+\_\+t) (void $\ast$user\+Ptr)}\hypertarget{arstream2__stream__sender_8h_ae0052a3484db5cba9b9f54f74983e743}{}\label{arstream2__stream__sender_8h_ae0052a3484db5cba9b9f54f74983e743}
+
+
+Callback function for disconnection This callback function is called when the stream socket is no longer connected. The sender thread continues running and the callback function may be called multiple times. 
+
+\begin{DoxyNote}{Note}
+It is the application\textquotesingle{}s responsibility to stop a sender using \hyperlink{arstream2__stream__sender_8h_a93ac21a023d280e3db533e38c16685df}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Stop()} and A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Delete()
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em user\+Ptr} & Global receiver report callback user pointer \\
+\hline
+\end{DoxyParams}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Dynamic\+Config\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Dynamic\+Config\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Dynamic\+Config\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Dynamic\+Config\+\_\+t}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Dynamic\+Config\+\_\+t}{ARSTREAM2_StreamSender_DynamicConfig_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Dynamic\+Config\+\_\+t}  {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Dynamic\+Config\+\_\+t}}\hypertarget{arstream2__stream__sender_8h_a6505cb237c2bb2fd24d4eeea5d443f5e}{}\label{arstream2__stream__sender_8h_a6505cb237c2bb2fd24d4eeea5d443f5e}
+
+
+Stream\+Sender dynamic configuration parameters. 
+
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}{ARSTREAM2_StreamSender_H264NaluDesc_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}  {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t}}\hypertarget{arstream2__stream__sender_8h_aaea4df33a3b872c1f567e1ec84cd7fed}{}\label{arstream2__stream__sender_8h_aaea4df33a3b872c1f567e1ec84cd7fed}
+
+
+Stream\+Sender N\+AL unit descriptor. 
+
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle}{ARSTREAM2_StreamSender_Handle}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+s$\ast$ {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle}}\hypertarget{arstream2__stream__sender_8h_a806c99f11a0a8849f3468cb979798eb9}{}\label{arstream2__stream__sender_8h_a806c99f11a0a8849f3468cb979798eb9}
+
+
+A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Sender instance handle. 
+
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Monitoring\+Data\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Monitoring\+Data\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Monitoring\+Data\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Monitoring\+Data\+\_\+t}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Monitoring\+Data\+\_\+t}{ARSTREAM2_StreamSender_MonitoringData_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Monitoring\+Data\+\_\+t}  {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Monitoring\+Data\+\_\+t}}\hypertarget{arstream2__stream__sender_8h_a4ff1aad6ea1bb123d335f3aa07d27abf}{}\label{arstream2__stream__sender_8h_a4ff1aad6ea1bb123d335f3aa07d27abf}
+
+
+Sender monitoring data. 
+
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Nalu\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Nalu\+Callback\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Nalu\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Nalu\+Callback\+\_\+t}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Nalu\+Callback\+\_\+t}{ARSTREAM2_StreamSender_NaluCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Nalu\+Callback\+\_\+t) ({\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US} status, void $\ast$nalu\+User\+Ptr, void $\ast$user\+Ptr)}\hypertarget{arstream2__stream__sender_8h_a10b715a92761c305ce7c41013f5c92dc}{}\label{arstream2__stream__sender_8h_a10b715a92761c305ce7c41013f5c92dc}
+
+
+Callback function for N\+AL units This callback function is called when a buffer associated with a N\+AL unit is no longer used by the sender. This occurs when packets corresponding to a N\+AL unit have all been sent or dropped. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em status} & Why the call is made \\
+\hline
+\mbox{\tt in}  & {\em nalu\+User\+Ptr} & N\+AL unit user pointer associated with the N\+AL unit submitted to the sender \\
+\hline
+\mbox{\tt in}  & {\em user\+Ptr} & Global N\+AL unit callback user pointer \\
+\hline
+\end{DoxyParams}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Rtp\+Stats\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Rtp\+Stats\+Callback\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Rtp\+Stats\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Rtp\+Stats\+Callback\+\_\+t}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Rtp\+Stats\+Callback\+\_\+t}{ARSTREAM2_StreamSender_RtpStatsCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Rtp\+Stats\+Callback\+\_\+t) (const {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Stats\+\_\+\+Rtp\+Stats\+\_\+t} $\ast$rtp\+Stats, void $\ast$user\+Ptr)}\hypertarget{arstream2__stream__sender_8h_a6f76d40043fc66e76936425512128f9c}{}\label{arstream2__stream__sender_8h_a6f76d40043fc66e76936425512128f9c}
+
+
+Callback function for R\+TP stats This callback function is called when an R\+T\+CP receiver report has been received. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rtp\+Stats} & Pointer to the R\+TP stats data \\
+\hline
+\mbox{\tt in}  & {\em user\+Ptr} & Global receiver report callback user pointer \\
+\hline
+\end{DoxyParams}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t}{ARSTREAM2_StreamSender_UntimedMetadata_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t}  {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t}}\hypertarget{arstream2__stream__sender_8h_a0079ea4aa43cb96561a50a53b507e1bc}{}\label{arstream2__stream__sender_8h_a0079ea4aa43cb96561a50a53b507e1bc}
+
+
+A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Sender untimed metadata. 
+
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Video\+Stats\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Video\+Stats\+Callback\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Video\+Stats\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Video\+Stats\+Callback\+\_\+t}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Video\+Stats\+Callback\+\_\+t}{ARSTREAM2_StreamSender_VideoStatsCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Video\+Stats\+Callback\+\_\+t) (const {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Stats\+\_\+\+Video\+Stats\+\_\+t} $\ast$video\+Stats, void $\ast$user\+Ptr)}\hypertarget{arstream2__stream__sender_8h_a96cc0f5bd4b3768679e4aeb7e250c652}{}\label{arstream2__stream__sender_8h_a96cc0f5bd4b3768679e4aeb7e250c652}
+
+
+Callback function for video stats This callback function is called when video stats have been received. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em video\+Stats} & Pointer to the video stats data \\
+\hline
+\mbox{\tt in}  & {\em user\+Ptr} & Global receiver report callback user pointer \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Enumeration Type Documentation}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US@{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US}}
+\index{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US@{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US}{eARSTREAM2_STREAM_SENDER_STATUS}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US}}\hypertarget{arstream2__stream__sender_8h_a9b51d4f066b94623b12af090d74bfe7a}{}\label{arstream2__stream__sender_8h_a9b51d4f066b94623b12af090d74bfe7a}
+
+
+Callback status values. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+E\+NT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+E\+NT}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+E\+NT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+E\+NT}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+E\+NT\hypertarget{arstream2__stream__sender_8h_a9b51d4f066b94623b12af090d74bfe7aaa5fae3c1dc0040c3ab90ebd9b94c9c8f}{}\label{arstream2__stream__sender_8h_a9b51d4f066b94623b12af090d74bfe7aaa5fae3c1dc0040c3ab90ebd9b94c9c8f}
+}]Access unit or N\+AL unit was sent \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+C\+E\+L\+L\+ED@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+C\+E\+L\+L\+ED}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+C\+E\+L\+L\+ED@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+C\+E\+L\+L\+ED}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+C\+E\+L\+L\+ED\hypertarget{arstream2__stream__sender_8h_a9b51d4f066b94623b12af090d74bfe7aab1c56cfa30e710a1b2eefcd5eecb7f65}{}\label{arstream2__stream__sender_8h_a9b51d4f066b94623b12af090d74bfe7aab1c56cfa30e710a1b2eefcd5eecb7f65}
+}]Access unit or N\+AL unit was cancelled (not sent or partly sent) \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+AX@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+AX}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+AX@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+AX}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+AX\hypertarget{arstream2__stream__sender_8h_a9b51d4f066b94623b12af090d74bfe7aabae464f6335bee738e8f9ca58d6d5ee6}{}\label{arstream2__stream__sender_8h_a9b51d4f066b94623b12af090d74bfe7aabae464f6335bee738e8f9ca58d6d5ee6}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Flush\+Nalu\+Queue@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Flush\+Nalu\+Queue}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Flush\+Nalu\+Queue@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Flush\+Nalu\+Queue}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Flush\+Nalu\+Queue(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle stream\+Sender\+Handle)}{ARSTREAM2_StreamSender_FlushNaluQueue(ARSTREAM2_StreamSender_Handle streamSenderHandle)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Flush\+Nalu\+Queue (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle}}]{stream\+Sender\+Handle}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__sender_8h_adb1ef7bcb51dae3da81f5b7eb1d9d12c}{}\label{arstream2__stream__sender_8h_adb1ef7bcb51dae3da81f5b7eb1d9d12c}
+
+
+Flush all currently queued N\+AL units. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sender} & The sender instance\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occured. 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if the sender is invalid. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Free@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Free}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Free@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Free}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Free(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle $\ast$stream\+Sender\+Handle)}{ARSTREAM2_StreamSender_Free(ARSTREAM2_StreamSender_Handle *streamSenderHandle)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Free (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle} $\ast$}]{stream\+Sender\+Handle}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__sender_8h_adb0309f8ff38a8733f94f96dbd0faa74}{}\label{arstream2__stream__sender_8h_adb0309f8ff38a8733f94f96dbd0faa74}
+
+
+Deletes an Stream\+Sender. 
+
+\begin{DoxyWarning}{Warning}
+This function should N\+OT be called on a running sender
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Pointer to the A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+t$\ast$ to delete\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if the sender was deleted 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+U\+SY if the sender is still busy and can not be stopped now (probably because \hyperlink{arstream2__stream__sender_8h_a93ac21a023d280e3db533e38c16685df}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Stop()} has not been called yet) 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if sender does not point to a valid A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+t
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The function uses a double pointer, so it can set $\ast$sender to N\+U\+LL after freeing it 
+\end{DoxyNote}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Dynamic\+Config@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Dynamic\+Config}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Dynamic\+Config@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Dynamic\+Config}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Dynamic\+Config(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle stream\+Sender\+Handle, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Dynamic\+Config\+\_\+t $\ast$config)}{ARSTREAM2_StreamSender_GetDynamicConfig(ARSTREAM2_StreamSender_Handle streamSenderHandle, ARSTREAM2_StreamSender_DynamicConfig_t *config)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Dynamic\+Config (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle}}]{stream\+Sender\+Handle, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Dynamic\+Config\+\_\+t} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__sender_8h_a8320a1e7b5616cee0bc42accdeb3dd43}{}\label{arstream2__stream__sender_8h_a8320a1e7b5616cee0bc42accdeb3dd43}
+
+
+Get the current dynamic configuration parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sender} & The sender instance \\
+\hline
+\mbox{\tt out}  & {\em config} & Pointer to a dynamic config structure to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error happened 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if the sender or config pointers are invalid 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Monitoring@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Monitoring}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Monitoring@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Monitoring}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Monitoring(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle stream\+Sender\+Handle, uint64\+\_\+t start\+Time, uint32\+\_\+t time\+Interval\+Us, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Monitoring\+Data\+\_\+t $\ast$monitoring\+Data)}{ARSTREAM2_StreamSender_GetMonitoring(ARSTREAM2_StreamSender_Handle streamSenderHandle, uint64_t startTime, uint32_t timeIntervalUs, ARSTREAM2_StreamSender_MonitoringData_t *monitoringData)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Monitoring (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle}}]{stream\+Sender\+Handle, }
+\item[{uint64\+\_\+t}]{start\+Time, }
+\item[{uint32\+\_\+t}]{time\+Interval\+Us, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Monitoring\+Data\+\_\+t} $\ast$}]{monitoring\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__sender_8h_aef4027ad714805c59be66886bbfc26b9}{}\label{arstream2__stream__sender_8h_aef4027ad714805c59be66886bbfc26b9}
+
+
+Get the stream monitoring The monitoring data is computed form the time start\+Time and back time\+Interval\+Us microseconds at most. If start\+Time is 0 the start time is the current time. If monitoring data is not available up to time\+Interval\+Us, the monitoring is computed on less time and the real interval is output to monitoring\+Data-\/$>$time\+Interval. Pointers to monitoring parameters that are not required can be left N\+U\+LL. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sender} & The sender instance \\
+\hline
+\mbox{\tt in}  & {\em start\+Time} & Monitoring start time in microseconds (0 means current time) \\
+\hline
+\mbox{\tt in}  & {\em time\+Interval\+Us} & Monitoring time interval (back from start\+Time) in microseconds \\
+\hline
+\mbox{\tt out}  & {\em monitoring\+Data} & Pointer to a monitoring data structure to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occured. 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if the sender is invalid or if time\+Interval\+Us is 0. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Peer\+Untimed\+Metadata@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Peer\+Untimed\+Metadata}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Peer\+Untimed\+Metadata@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Peer\+Untimed\+Metadata}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Peer\+Untimed\+Metadata(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle stream\+Sender\+Handle, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t $\ast$metadata)}{ARSTREAM2_StreamSender_GetPeerUntimedMetadata(ARSTREAM2_StreamSender_Handle streamSenderHandle, ARSTREAM2_StreamSender_UntimedMetadata_t *metadata)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Peer\+Untimed\+Metadata (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle}}]{stream\+Sender\+Handle, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t} $\ast$}]{metadata}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__sender_8h_a4ddeb9ce4a8aee137a3803dc104b63c5}{}\label{arstream2__stream__sender_8h_a4ddeb9ce4a8aee137a3803dc104b63c5}
+
+
+Get the peer untimed metadata. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em stream\+Sender\+Handle} & Instance handle. \\
+\hline
+\mbox{\tt out}  & {\em metadata} & Current peer untimed metadata structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error happened 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if the stream\+Sender\+Handle or metadata pointer are invalid 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Untimed\+Metadata@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Untimed\+Metadata}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Untimed\+Metadata@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Untimed\+Metadata}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Untimed\+Metadata(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle stream\+Sender\+Handle, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t $\ast$metadata, uint32\+\_\+t $\ast$send\+Interval)}{ARSTREAM2_StreamSender_GetUntimedMetadata(ARSTREAM2_StreamSender_Handle streamSenderHandle, ARSTREAM2_StreamSender_UntimedMetadata_t *metadata, uint32_t *sendInterval)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Get\+Untimed\+Metadata (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle}}]{stream\+Sender\+Handle, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t} $\ast$}]{metadata, }
+\item[{uint32\+\_\+t $\ast$}]{send\+Interval}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__sender_8h_aaf3d71794d8f7dea0e2a067d91f62993}{}\label{arstream2__stream__sender_8h_aaf3d71794d8f7dea0e2a067d91f62993}
+
+
+Get the untimed metadata. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em stream\+Sender\+Handle} & Instance handle. \\
+\hline
+\mbox{\tt out}  & {\em metadata} & Current untimed metadata structure \\
+\hline
+\mbox{\tt out}  & {\em send\+Interval} & Pointer to the minimum send interval in microseconds (optional, can be N\+U\+LL)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error happened 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if the stream\+Sender\+Handle or metadata pointer are invalid 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND it the item has not been found 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Init@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Init}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Init@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Init}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Init(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle $\ast$stream\+Sender\+Handle, const A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Config\+\_\+t $\ast$config)}{ARSTREAM2_StreamSender_Init(ARSTREAM2_StreamSender_Handle *streamSenderHandle, const ARSTREAM2_StreamSender_Config_t *config)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle} $\ast$}]{stream\+Sender\+Handle, }
+\item[{const {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Config\+\_\+t} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__sender_8h_a3beb1943d179021211641cf6827c96fb}{}\label{arstream2__stream__sender_8h_a3beb1943d179021211641cf6827c96fb}
+
+
+Creates a new Stream\+Sender. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory. The sender must be deleted by a call to A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Delete()
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & Pointer to a configuration parameters structure \\
+\hline
+\mbox{\tt out}  & {\em error} & Optionnal pointer to an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR to hold any error information\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the new A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+t, or N\+U\+LL if an error occured
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{arstream2__stream__sender_8h_a93ac21a023d280e3db533e38c16685df}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Stop()} 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Delete() 
+\end{DoxySeeAlso}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Run\+Thread@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Run\+Thread}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Run\+Thread@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Run\+Thread}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Run\+Thread(void $\ast$stream\+Sender\+Handle)}{ARSTREAM2_StreamSender_RunThread(void *streamSenderHandle)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Run\+Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{stream\+Sender\+Handle}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__sender_8h_ab4a3b0cb17746d2494d88fde8d421775}{}\label{arstream2__stream__sender_8h_ab4a3b0cb17746d2494d88fde8d421775}
+
+
+Runs the main loop of the Stream\+Sender. 
+
+\begin{DoxyWarning}{Warning}
+This function never returns until \hyperlink{arstream2__stream__sender_8h_a93ac21a023d280e3db533e38c16685df}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Stop()} is called. Thus, it should be called on its own thread. 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+Stop the Sender by calling \hyperlink{arstream2__stream__sender_8h_a93ac21a023d280e3db533e38c16685df}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Stop()} before joining the thread calling this function.
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+t\+\_\+\+Param} & A valid (A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+t $\ast$) casted as a (void $\ast$) \\
+\hline
+\end{DoxyParams}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Send\+New\+Nalu@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Send\+New\+Nalu}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Send\+New\+Nalu@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Send\+New\+Nalu}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Send\+New\+Nalu(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle stream\+Sender\+Handle, const A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t $\ast$nalu, uint64\+\_\+t input\+Time)}{ARSTREAM2_StreamSender_SendNewNalu(ARSTREAM2_StreamSender_Handle streamSenderHandle, const ARSTREAM2_StreamSender_H264NaluDesc_t *nalu, uint64_t inputTime)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Send\+New\+Nalu (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle}}]{stream\+Sender\+Handle, }
+\item[{const {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t} $\ast$}]{nalu, }
+\item[{uint64\+\_\+t}]{input\+Time}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__sender_8h_a6a71f4499578f20510578087c34207d4}{}\label{arstream2__stream__sender_8h_a6a71f4499578f20510578087c34207d4}
+
+
+Sends a new N\+AL unit. 
+
+\begin{DoxyWarning}{Warning}
+The N\+AL unit buffer must remain available for the sender until the N\+AL unit or access unit callback functions are called.
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sender} & The sender instance \\
+\hline
+\mbox{\tt in}  & {\em nalu} & Pointer to a N\+AL unit descriptor \\
+\hline
+\mbox{\tt in}  & {\em input\+Time} & Optional input timestamp in microseconds\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error happened 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if the sender, nalu or nalu\+Buffer pointers are invalid, or if nalu\+Size or au\+Timestamp is zero 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+F\+U\+LL if the N\+AL unit F\+I\+FO is full 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Send\+N\+New\+Nalu@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Send\+N\+New\+Nalu}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Send\+N\+New\+Nalu@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Send\+N\+New\+Nalu}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Send\+N\+New\+Nalu(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle stream\+Sender\+Handle, const A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t $\ast$nalu, int nalu\+Count, uint64\+\_\+t input\+Time)}{ARSTREAM2_StreamSender_SendNNewNalu(ARSTREAM2_StreamSender_Handle streamSenderHandle, const ARSTREAM2_StreamSender_H264NaluDesc_t *nalu, int naluCount, uint64_t inputTime)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Send\+N\+New\+Nalu (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle}}]{stream\+Sender\+Handle, }
+\item[{const {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+H264\+Nalu\+Desc\+\_\+t} $\ast$}]{nalu, }
+\item[{int}]{nalu\+Count, }
+\item[{uint64\+\_\+t}]{input\+Time}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__sender_8h_a4fb4c9f5c6db04e58be0bdea477fa289}{}\label{arstream2__stream__sender_8h_a4fb4c9f5c6db04e58be0bdea477fa289}
+
+
+Sends multiple new N\+AL units. 
+
+\begin{DoxyWarning}{Warning}
+The N\+AL unit buffers must remain available for the sender until the N\+AL unit or access unit callback functions are called.
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sender} & The sender instance \\
+\hline
+\mbox{\tt in}  & {\em nalu} & Pointer to a N\+AL unit descriptor array \\
+\hline
+\mbox{\tt in}  & {\em nalu\+Count} & Number of N\+AL units in the array \\
+\hline
+\mbox{\tt in}  & {\em input\+Time} & Optional input timestamp in microseconds\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error happened 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if the sender, nalu or nalu\+Buffer pointers are invalid, or if a nalu\+Size or au\+Timestamp is zero 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+F\+U\+LL if the N\+AL unit F\+I\+FO is full 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Set\+Dynamic\+Config@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Set\+Dynamic\+Config}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Set\+Dynamic\+Config@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Set\+Dynamic\+Config}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Set\+Dynamic\+Config(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle stream\+Sender\+Handle, const A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Dynamic\+Config\+\_\+t $\ast$config)}{ARSTREAM2_StreamSender_SetDynamicConfig(ARSTREAM2_StreamSender_Handle streamSenderHandle, const ARSTREAM2_StreamSender_DynamicConfig_t *config)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Set\+Dynamic\+Config (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle}}]{stream\+Sender\+Handle, }
+\item[{const {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Dynamic\+Config\+\_\+t} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__sender_8h_a158160dae94bd7a4459625369bba9ea0}{}\label{arstream2__stream__sender_8h_a158160dae94bd7a4459625369bba9ea0}
+
+
+Set the current dynamic configuration parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sender} & The sender instance \\
+\hline
+\mbox{\tt in}  & {\em config} & Pointer to a dynamic config structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error happened 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if the sender or config pointers are invalid 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Set\+Untimed\+Metadata@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Set\+Untimed\+Metadata}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Set\+Untimed\+Metadata@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Set\+Untimed\+Metadata}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Set\+Untimed\+Metadata(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle stream\+Sender\+Handle, const A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t $\ast$metadata, uint32\+\_\+t send\+Interval)}{ARSTREAM2_StreamSender_SetUntimedMetadata(ARSTREAM2_StreamSender_Handle streamSenderHandle, const ARSTREAM2_StreamSender_UntimedMetadata_t *metadata, uint32_t sendInterval)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Set\+Untimed\+Metadata (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle}}]{stream\+Sender\+Handle, }
+\item[{const {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Untimed\+Metadata\+\_\+t} $\ast$}]{metadata, }
+\item[{uint32\+\_\+t}]{send\+Interval}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__sender_8h_a6e5101e904645010d159d772d8574bd5}{}\label{arstream2__stream__sender_8h_a6e5101e904645010d159d772d8574bd5}
+
+
+Set the untimed metadata. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em stream\+Sender\+Handle} & Instance handle. \\
+\hline
+\mbox{\tt in}  & {\em metadata} & Current untimed metadata structure \\
+\hline
+\mbox{\tt in}  & {\em send\+Interval} & Minimum send interval in microseconds (0 means default)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error happened 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if the stream\+Sender\+Handle or metadata pointer are invalid 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Stop@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Stop}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Stop@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Stop}!arstream2\+\_\+stream\+\_\+sender.\+h@{arstream2\+\_\+stream\+\_\+sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Stop(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle stream\+Sender\+Handle)}{ARSTREAM2_StreamSender_Stop(ARSTREAM2_StreamSender_Handle streamSenderHandle)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Stop (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Sender\+\_\+\+Handle}}]{stream\+Sender\+Handle}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__sender_8h_a93ac21a023d280e3db533e38c16685df}{}\label{arstream2__stream__sender_8h_a93ac21a023d280e3db533e38c16685df}
+
+
+Stops a running Stream\+Sender. 
+
+\begin{DoxyWarning}{Warning}
+Once stopped, a sender cannot be restarted
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sender} & The sender instance\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Calling this function multiple times has no effect 
+\end{DoxyNote}

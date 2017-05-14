@@ -1,0 +1,9 @@
+<map id="_receiveReplyMessage_socketOrSharedMem" name="_receiveReplyMessage_socketOrSharedMem">
+<area shape="rect" id="node2" href="$ext_api_8c.html#aa800d1c3a34d0d94705026fb66744179" title="_receiveSimplePacket\l_socket" alt="" coords="212,120,364,161"/>
+<area shape="rect" id="node6" href="$ext_api_platform_8c.html#a01476683f124c90fd8955898a63752da" title="extApi_allocateBuffer" alt="" coords="669,51,816,78"/>
+<area shape="rect" id="node8" href="$ext_api_platform_8c.html#ada561dfab99bba410fb79f824c89e8d4" title="extApi_releaseBuffer" alt="" coords="441,254,584,280"/>
+<area shape="rect" id="node3" href="$ext_api_platform_8c.html#a915a300a3aac8128d8451c26c8eacf1e" title="extApi_getTimeInMs" alt="" coords="872,102,1015,128"/>
+<area shape="rect" id="node4" href="$ext_api_platform_8c.html#a32ef869d0262f9c8866c076461b0b0fc" title="extApi_recv_socket" alt="" coords="444,102,581,128"/>
+<area shape="rect" id="node5" href="$ext_api_platform_8c.html#a61e044d8e6d5fea90947540ebe55b92c" title="extApi_getTimeDiffInMs" alt="" coords="661,152,824,179"/>
+<area shape="rect" id="node7" href="$ext_api_platform_8c.html#a53372d80e2437d241d3831bbf09551a1" title="extApi_endianConversionShort" alt="" coords="412,152,613,179"/>
+</map>

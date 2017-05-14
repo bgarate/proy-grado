@@ -1,0 +1,4 @@
+<map id="mavlink_frame_char_buffer" name="mavlink_frame_char_buffer">
+<area shape="rect" id="node2" href="$mavlink__helpers_8h.html#ae7cbde569213151151d20c3766edd244" title="mavlink_start_checksum" alt="" coords="199,5,365,32"/>
+<area shape="rect" id="node3" href="$mavlink__helpers_8h.html#a3293deb7b51f9a9f0b30bf56c8739593" title="mavlink_update_checksum" alt="" coords="192,56,372,83"/>
+</map>

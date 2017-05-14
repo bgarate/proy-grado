@@ -1,0 +1,260 @@
+\hypertarget{stack_8h}{}\section{src/hal/pb2/include/openssl/stack.h File Reference}
+\label{stack_8h}\index{src/hal/pb2/include/openssl/stack.\+h@{src/hal/pb2/include/openssl/stack.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stack_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structstack__st}{stack\+\_\+st}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{stack_8h_aefb72413520398ef3cf5cdbada71d492}{M\+\_\+sk\+\_\+num}(sk)~((sk) ? (sk)-\/$>$num\+:-\/1)
+\item 
+\#define \hyperlink{stack_8h_a744a682bcfe4ae8ee8c8f8693958d331}{M\+\_\+sk\+\_\+value}(sk,  n)~((sk) ? (sk)-\/$>$data\mbox{[}n\mbox{]} \+: N\+U\+LL)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structstack__st}{stack\+\_\+st} \hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{stack_8h_a969dd221b689fb521952e2ee67cb5c42}{sk\+\_\+num} (const \hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$)
+\item 
+void $\ast$ \hyperlink{stack_8h_a017376298dd088cdb19c30d76a0e3f88}{sk\+\_\+value} (const \hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$, int)
+\item 
+void $\ast$ \hyperlink{stack_8h_adcecdc7eb24f68a94e3a3684effb71cd}{sk\+\_\+set} (\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$, int, void $\ast$)
+\item 
+\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$ \hyperlink{stack_8h_aaa07fa4338f10a3c9d76ee4dfa8a3c22}{sk\+\_\+new} (int($\ast$cmp)(const void $\ast$, const void $\ast$))
+\item 
+\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$ \hyperlink{stack_8h_af2a18b52c143b1cfdc5b879e2c7e39d5}{sk\+\_\+new\+\_\+null} (void)
+\item 
+void \hyperlink{stack_8h_a36aa60efc9f75a989798fa889b44f68f}{sk\+\_\+free} (\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$)
+\item 
+void \hyperlink{stack_8h_ac7ce2189039a0f7b0f878558d2eb78e2}{sk\+\_\+pop\+\_\+free} (\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$st, void($\ast$func)(void $\ast$))
+\item 
+int \hyperlink{stack_8h_a55569f8e961e5e798977219c9d95f747}{sk\+\_\+insert} (\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$sk, void $\ast$data, int where)
+\item 
+void $\ast$ \hyperlink{stack_8h_a5beb31b05b65b36ad7c52cd893993387}{sk\+\_\+delete} (\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$st, int \hyperlink{x509_8h_aebdbf0bfc23402adcaa55cb1fb6f2dd7}{loc})
+\item 
+void $\ast$ \hyperlink{stack_8h_a307e16d97463e5c00509b9cf2a373aff}{sk\+\_\+delete\+\_\+ptr} (\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$st, void $\ast$p)
+\item 
+int \hyperlink{stack_8h_ab3e51e9047677221f71302ed04bee18a}{sk\+\_\+find} (\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$st, void $\ast$data)
+\item 
+int \hyperlink{stack_8h_a23c9f6e06cd70c3cf0c4b37bbe864ba4}{sk\+\_\+find\+\_\+ex} (\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$st, void $\ast$data)
+\item 
+int \hyperlink{stack_8h_a85b8541e074e3ce81cff481742d2c014}{sk\+\_\+push} (\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$st, void $\ast$data)
+\item 
+int \hyperlink{stack_8h_a351f136ee68c5f1192f5bc910b517fb4}{sk\+\_\+unshift} (\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$st, void $\ast$data)
+\item 
+void $\ast$ \hyperlink{stack_8h_a0e42e8f0b7dc34ebeabfe7b5c39f7fd5}{sk\+\_\+shift} (\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$st)
+\item 
+void $\ast$ \hyperlink{stack_8h_a309c8f6b089f456a56ed9b50a06ff4a8}{sk\+\_\+pop} (\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$st)
+\item 
+void \hyperlink{stack_8h_aa17f2ea0be1abe5d8a8f9d56ed43ed06}{sk\+\_\+zero} (\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$st)
+\item 
+\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$ \hyperlink{stack_8h_aa397c063c7385b1a76dbed078ff5f7d5}{sk\+\_\+dup} (\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$st)
+\item 
+void \hyperlink{stack_8h_a2621d172e66debb3a08f63d044d929b3}{sk\+\_\+sort} (\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$st)
+\item 
+int \hyperlink{stack_8h_a7127f172e68021d7902549de44701d8b}{sk\+\_\+is\+\_\+sorted} (const \hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$st)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int($\ast$)(const void $\ast$, const void $\ast$) \hyperlink{stack_8h_a8ae778f25eba0ad883f991c40a56a05b}{sk\+\_\+set\+\_\+cmp\+\_\+func} (\hyperlink{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{\+\_\+\+S\+T\+A\+CK} $\ast$sk, int($\ast$c)(const void $\ast$, const void $\ast$))
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{stack.\+h@{stack.\+h}!M\+\_\+sk\+\_\+num@{M\+\_\+sk\+\_\+num}}
+\index{M\+\_\+sk\+\_\+num@{M\+\_\+sk\+\_\+num}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{M\+\_\+sk\+\_\+num}{M_sk_num}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+sk\+\_\+num(
+\begin{DoxyParamCaption}
+\item[{}]{sk}
+\end{DoxyParamCaption}
+)~((sk) ? (sk)-\/$>$num\+:-\/1)}\hypertarget{stack_8h_aefb72413520398ef3cf5cdbada71d492}{}\label{stack_8h_aefb72413520398ef3cf5cdbada71d492}
+\index{stack.\+h@{stack.\+h}!M\+\_\+sk\+\_\+value@{M\+\_\+sk\+\_\+value}}
+\index{M\+\_\+sk\+\_\+value@{M\+\_\+sk\+\_\+value}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{M\+\_\+sk\+\_\+value}{M_sk_value}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+sk\+\_\+value(
+\begin{DoxyParamCaption}
+\item[{}]{sk, }
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~((sk) ? (sk)-\/$>$data\mbox{[}n\mbox{]} \+: N\+U\+LL)}\hypertarget{stack_8h_a744a682bcfe4ae8ee8c8f8693958d331}{}\label{stack_8h_a744a682bcfe4ae8ee8c8f8693958d331}
+
+
+\subsection{Typedef Documentation}
+\index{stack.\+h@{stack.\+h}!\+\_\+\+S\+T\+A\+CK@{\+\_\+\+S\+T\+A\+CK}}
+\index{\+\_\+\+S\+T\+A\+CK@{\+\_\+\+S\+T\+A\+CK}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+S\+T\+A\+CK}{_STACK}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf stack\+\_\+st}  {\bf \+\_\+\+S\+T\+A\+CK}}\hypertarget{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}{}\label{stack_8h_a2e12a6afc1cc21ee637cd150875c6b36}
+
+
+\subsection{Function Documentation}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+delete@{sk\+\_\+delete}}
+\index{sk\+\_\+delete@{sk\+\_\+delete}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+delete(\+\_\+\+S\+T\+A\+C\+K $\ast$st, int loc)}{sk_delete(_STACK *st, int loc)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ sk\+\_\+delete (
+\begin{DoxyParamCaption}
+\item[{{\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{st, }
+\item[{int}]{loc}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_a5beb31b05b65b36ad7c52cd893993387}{}\label{stack_8h_a5beb31b05b65b36ad7c52cd893993387}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+delete\+\_\+ptr@{sk\+\_\+delete\+\_\+ptr}}
+\index{sk\+\_\+delete\+\_\+ptr@{sk\+\_\+delete\+\_\+ptr}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+delete\+\_\+ptr(\+\_\+\+S\+T\+A\+C\+K $\ast$st, void $\ast$p)}{sk_delete_ptr(_STACK *st, void *p)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ sk\+\_\+delete\+\_\+ptr (
+\begin{DoxyParamCaption}
+\item[{{\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{st, }
+\item[{void $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_a307e16d97463e5c00509b9cf2a373aff}{}\label{stack_8h_a307e16d97463e5c00509b9cf2a373aff}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+dup@{sk\+\_\+dup}}
+\index{sk\+\_\+dup@{sk\+\_\+dup}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+dup(\+\_\+\+S\+T\+A\+C\+K $\ast$st)}{sk_dup(_STACK *st)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+S\+T\+A\+CK}$\ast$ sk\+\_\+dup (
+\begin{DoxyParamCaption}
+\item[{{\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{st}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_aa397c063c7385b1a76dbed078ff5f7d5}{}\label{stack_8h_aa397c063c7385b1a76dbed078ff5f7d5}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+find@{sk\+\_\+find}}
+\index{sk\+\_\+find@{sk\+\_\+find}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+find(\+\_\+\+S\+T\+A\+C\+K $\ast$st, void $\ast$data)}{sk_find(_STACK *st, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}int sk\+\_\+find (
+\begin{DoxyParamCaption}
+\item[{{\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{st, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_ab3e51e9047677221f71302ed04bee18a}{}\label{stack_8h_ab3e51e9047677221f71302ed04bee18a}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+find\+\_\+ex@{sk\+\_\+find\+\_\+ex}}
+\index{sk\+\_\+find\+\_\+ex@{sk\+\_\+find\+\_\+ex}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+find\+\_\+ex(\+\_\+\+S\+T\+A\+C\+K $\ast$st, void $\ast$data)}{sk_find_ex(_STACK *st, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}int sk\+\_\+find\+\_\+ex (
+\begin{DoxyParamCaption}
+\item[{{\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{st, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_a23c9f6e06cd70c3cf0c4b37bbe864ba4}{}\label{stack_8h_a23c9f6e06cd70c3cf0c4b37bbe864ba4}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+free@{sk\+\_\+free}}
+\index{sk\+\_\+free@{sk\+\_\+free}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+free(\+\_\+\+S\+T\+A\+C\+K $\ast$)}{sk_free(_STACK *)}}]{\setlength{\rightskip}{0pt plus 5cm}void sk\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_a36aa60efc9f75a989798fa889b44f68f}{}\label{stack_8h_a36aa60efc9f75a989798fa889b44f68f}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+insert@{sk\+\_\+insert}}
+\index{sk\+\_\+insert@{sk\+\_\+insert}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+insert(\+\_\+\+S\+T\+A\+C\+K $\ast$sk, void $\ast$data, int where)}{sk_insert(_STACK *sk, void *data, int where)}}]{\setlength{\rightskip}{0pt plus 5cm}int sk\+\_\+insert (
+\begin{DoxyParamCaption}
+\item[{{\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{sk, }
+\item[{void $\ast$}]{data, }
+\item[{int}]{where}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_a55569f8e961e5e798977219c9d95f747}{}\label{stack_8h_a55569f8e961e5e798977219c9d95f747}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+is\+\_\+sorted@{sk\+\_\+is\+\_\+sorted}}
+\index{sk\+\_\+is\+\_\+sorted@{sk\+\_\+is\+\_\+sorted}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+is\+\_\+sorted(const \+\_\+\+S\+T\+A\+C\+K $\ast$st)}{sk_is_sorted(const _STACK *st)}}]{\setlength{\rightskip}{0pt plus 5cm}int sk\+\_\+is\+\_\+sorted (
+\begin{DoxyParamCaption}
+\item[{const {\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{st}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_a7127f172e68021d7902549de44701d8b}{}\label{stack_8h_a7127f172e68021d7902549de44701d8b}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+new@{sk\+\_\+new}}
+\index{sk\+\_\+new@{sk\+\_\+new}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+new(int($\ast$cmp)(const void $\ast$, const void $\ast$))}{sk_new(int(*cmp)(const void *, const void *))}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+S\+T\+A\+CK}$\ast$ sk\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{int($\ast$)(const void $\ast$, const void $\ast$)}]{cmp}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_aaa07fa4338f10a3c9d76ee4dfa8a3c22}{}\label{stack_8h_aaa07fa4338f10a3c9d76ee4dfa8a3c22}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+new\+\_\+null@{sk\+\_\+new\+\_\+null}}
+\index{sk\+\_\+new\+\_\+null@{sk\+\_\+new\+\_\+null}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+new\+\_\+null(void)}{sk_new_null(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+S\+T\+A\+CK}$\ast$ sk\+\_\+new\+\_\+null (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_af2a18b52c143b1cfdc5b879e2c7e39d5}{}\label{stack_8h_af2a18b52c143b1cfdc5b879e2c7e39d5}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+num@{sk\+\_\+num}}
+\index{sk\+\_\+num@{sk\+\_\+num}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+num(const \+\_\+\+S\+T\+A\+C\+K $\ast$)}{sk_num(const _STACK *)}}]{\setlength{\rightskip}{0pt plus 5cm}int sk\+\_\+num (
+\begin{DoxyParamCaption}
+\item[{const {\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_a969dd221b689fb521952e2ee67cb5c42}{}\label{stack_8h_a969dd221b689fb521952e2ee67cb5c42}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+pop@{sk\+\_\+pop}}
+\index{sk\+\_\+pop@{sk\+\_\+pop}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+pop(\+\_\+\+S\+T\+A\+C\+K $\ast$st)}{sk_pop(_STACK *st)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ sk\+\_\+pop (
+\begin{DoxyParamCaption}
+\item[{{\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{st}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_a309c8f6b089f456a56ed9b50a06ff4a8}{}\label{stack_8h_a309c8f6b089f456a56ed9b50a06ff4a8}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+pop\+\_\+free@{sk\+\_\+pop\+\_\+free}}
+\index{sk\+\_\+pop\+\_\+free@{sk\+\_\+pop\+\_\+free}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+pop\+\_\+free(\+\_\+\+S\+T\+A\+C\+K $\ast$st, void($\ast$func)(void $\ast$))}{sk_pop_free(_STACK *st, void(*func)(void *))}}]{\setlength{\rightskip}{0pt plus 5cm}void sk\+\_\+pop\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{st, }
+\item[{void($\ast$)(void $\ast$)}]{func}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_ac7ce2189039a0f7b0f878558d2eb78e2}{}\label{stack_8h_ac7ce2189039a0f7b0f878558d2eb78e2}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+push@{sk\+\_\+push}}
+\index{sk\+\_\+push@{sk\+\_\+push}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+push(\+\_\+\+S\+T\+A\+C\+K $\ast$st, void $\ast$data)}{sk_push(_STACK *st, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}int sk\+\_\+push (
+\begin{DoxyParamCaption}
+\item[{{\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{st, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_a85b8541e074e3ce81cff481742d2c014}{}\label{stack_8h_a85b8541e074e3ce81cff481742d2c014}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+set@{sk\+\_\+set}}
+\index{sk\+\_\+set@{sk\+\_\+set}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+set(\+\_\+\+S\+T\+A\+C\+K $\ast$, int, void $\ast$)}{sk_set(_STACK *, int, void *)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ sk\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{{\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{, }
+\item[{int}]{, }
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_adcecdc7eb24f68a94e3a3684effb71cd}{}\label{stack_8h_adcecdc7eb24f68a94e3a3684effb71cd}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+shift@{sk\+\_\+shift}}
+\index{sk\+\_\+shift@{sk\+\_\+shift}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+shift(\+\_\+\+S\+T\+A\+C\+K $\ast$st)}{sk_shift(_STACK *st)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ sk\+\_\+shift (
+\begin{DoxyParamCaption}
+\item[{{\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{st}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_a0e42e8f0b7dc34ebeabfe7b5c39f7fd5}{}\label{stack_8h_a0e42e8f0b7dc34ebeabfe7b5c39f7fd5}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+sort@{sk\+\_\+sort}}
+\index{sk\+\_\+sort@{sk\+\_\+sort}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+sort(\+\_\+\+S\+T\+A\+C\+K $\ast$st)}{sk_sort(_STACK *st)}}]{\setlength{\rightskip}{0pt plus 5cm}void sk\+\_\+sort (
+\begin{DoxyParamCaption}
+\item[{{\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{st}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_a2621d172e66debb3a08f63d044d929b3}{}\label{stack_8h_a2621d172e66debb3a08f63d044d929b3}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+unshift@{sk\+\_\+unshift}}
+\index{sk\+\_\+unshift@{sk\+\_\+unshift}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+unshift(\+\_\+\+S\+T\+A\+C\+K $\ast$st, void $\ast$data)}{sk_unshift(_STACK *st, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}int sk\+\_\+unshift (
+\begin{DoxyParamCaption}
+\item[{{\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{st, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_a351f136ee68c5f1192f5bc910b517fb4}{}\label{stack_8h_a351f136ee68c5f1192f5bc910b517fb4}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+value@{sk\+\_\+value}}
+\index{sk\+\_\+value@{sk\+\_\+value}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+value(const \+\_\+\+S\+T\+A\+C\+K $\ast$, int)}{sk_value(const _STACK *, int)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ sk\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{const {\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_a017376298dd088cdb19c30d76a0e3f88}{}\label{stack_8h_a017376298dd088cdb19c30d76a0e3f88}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+zero@{sk\+\_\+zero}}
+\index{sk\+\_\+zero@{sk\+\_\+zero}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+zero(\+\_\+\+S\+T\+A\+C\+K $\ast$st)}{sk_zero(_STACK *st)}}]{\setlength{\rightskip}{0pt plus 5cm}void sk\+\_\+zero (
+\begin{DoxyParamCaption}
+\item[{{\bf \+\_\+\+S\+T\+A\+CK} $\ast$}]{st}
+\end{DoxyParamCaption}
+)}\hypertarget{stack_8h_aa17f2ea0be1abe5d8a8f9d56ed43ed06}{}\label{stack_8h_aa17f2ea0be1abe5d8a8f9d56ed43ed06}
+
+
+\subsection{Variable Documentation}
+\index{stack.\+h@{stack.\+h}!sk\+\_\+set\+\_\+cmp\+\_\+func@{sk\+\_\+set\+\_\+cmp\+\_\+func}}
+\index{sk\+\_\+set\+\_\+cmp\+\_\+func@{sk\+\_\+set\+\_\+cmp\+\_\+func}!stack.\+h@{stack.\+h}}
+\subsubsection[{\texorpdfstring{sk\+\_\+set\+\_\+cmp\+\_\+func}{sk_set_cmp_func}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$)( const void $\ast$, const void $\ast$) sk\+\_\+set\+\_\+cmp\+\_\+func({\bf \+\_\+\+S\+T\+A\+CK} $\ast$sk, int($\ast$c)(const void $\ast$, const void $\ast$))}\hypertarget{stack_8h_a8ae778f25eba0ad883f991c40a56a05b}{}\label{stack_8h_a8ae778f25eba0ad883f991c40a56a05b}

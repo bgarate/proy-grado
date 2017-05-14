@@ -1,0 +1,1607 @@
+var _a_r_c_o_m_m_a_n_d_s___types_8h =
+[
+    [ "ARCOMMANDS_Generic_DroneSettings_t", "struct_a_r_c_o_m_m_a_n_d_s___generic___drone_settings__t.html", "struct_a_r_c_o_m_m_a_n_d_s___generic___drone_settings__t" ],
+    [ "ARCOMMANDS_Generic_DroneSettingsChanged_t", "struct_a_r_c_o_m_m_a_n_d_s___generic___drone_settings_changed__t.html", "struct_a_r_c_o_m_m_a_n_d_s___generic___drone_settings_changed__t" ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_BOOMERANG", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a41585a8fe499bc8581606ff86a0a853b", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_CANDLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae75a041418e4f3f9e600d76978e4e259", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_DOLLY_SLIDE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a13e1eb044a9a9c2ee32a977e0e172d8e", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_HELICOID", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3a12513e0d87e8db4ba05864deb8ee72", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a20059f70d69b5df960758d32b54d2e3c", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_SWING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a634376fc0fbbdd565636c3431c4a58db", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_BOOMERANG_CONFIGURE_PARAM_DISTANCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a132d4570805f1f9307e689c5ff120fc5", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_BOOMERANG_CONFIGURE_PARAM_SPEED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9dd04e502a1623721dee1d3ef901f30c", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_CANDLE_CONFIGURE_PARAM_SPEED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af95de8446dc60b5b3fba0f59c33b872a", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_CANDLE_CONFIGURE_PARAM_VERTICAL_DISTANCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d166f9885c3563e1ec1fc7653d06d35", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_ANGLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5a7d06855c541046fa473f6332067ac4", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_HORIZONTAL_DISTANCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af13bd65532950f2f9c53b5d9509e0ba5", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_SPEED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa07c5fe26e3e7c6619ec8b87cf7d2861", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_AZIMUTH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2424287e7140193b2955fee8a9011c0c", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_DISTANCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7eea65231b1f6acd7be95e3b6d0402e6", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_ELEVATION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af6db65d54116e0a848d9abb0327c2b37", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_REVOLUTION_NB", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a296137803afe8ca677d6a38c21b2ae6d", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_SPEED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#abfb043d82b120083005237380ed7206c", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_VERTICAL_DISTANCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a753bf4cbf5f5dbb5abad5b2e28288e5b", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_DRONE_CALIBRATED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a70ca1c948a67629fdb5241f74a41404f", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_DRONE_FAR_ENOUGH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ada5ba2aedd9172b09fbfb9d114f6241d", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_DRONE_GPS_GOOD_ACCURACY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3e21296b733f05247fadcfc4c10f91c6", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_DRONE_HIGH_ENOUGH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aecaff07094f96c4726bfdc46239e2595", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_IMAGE_DETECTION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a64649ad44bd0c8fcbfdbe0428526aeac", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_TARGET_BAROMETER_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a94dead91b7de576832b08d63620a5c4a", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_TARGET_GPS_GOOD_ACCURACY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a691db81afaed3d9b75aef4c59e719586", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_SWING_CONFIGURE_PARAM_SPEED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac414df85c3095e50d2500ff2d0cb485e", null ],
+    [ "ARCOMMANDS_FLAG_FOLLOW_ME_SWING_CONFIGURE_PARAM_VERTICAL_DISTANCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a44fe2b8c6fcbca0ed5e0048620bee617", null ],
+    [ "ARCOMMANDS_FLAG_GENERIC_LIST_FLAGS_EMPTY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a888f9cea170aaa75d7a46b4d3eb3b963", null ],
+    [ "ARCOMMANDS_FLAG_GENERIC_LIST_FLAGS_FIRST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a05c6f12bd324f770b4a84c492fea3563", null ],
+    [ "ARCOMMANDS_FLAG_GENERIC_LIST_FLAGS_LAST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a68df1b426d00d0a0dc18ea5aa678451f", null ],
+    [ "ARCOMMANDS_FLAG_GENERIC_LIST_FLAGS_REMOVE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4b2c06c50f971bf7117af1bb7c87d911", null ],
+    [ "ARCOMMANDS_FLAG_MAPPER_MINI_MODE_PLANE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5a820bd23eca66b29cb9ab34e9b23d5b", null ],
+    [ "ARCOMMANDS_FLAG_MAPPER_MINI_MODE_QUAD", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#afbeb49e7f62be7b96aa01202c659637e", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_EMERGENCY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aebea95a6e12ecc4c728538135374125d", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_GAZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac5f7a189e7dcd8e4b541d41aad253420", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_INVALID", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adf7e15c7993f439f055fe212c1e062da", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_PILOTING_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6bb40d4344c64f739831e56270118551", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_PITCH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1ba186e26c05985877f1c606f843e2a4", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_RETURN_HOME", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a041acaca436a4ee968bb07e2a741d89a", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_ROLL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa7e8632934f06b042ae760669292bf50", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_TAKE_CONTROL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a88bfdac75ce6e254775759a2e3dc761c", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_TAKEOFF_LAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a01fede431cc8b6c999be4bd729516012", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_YAW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4dbfed9459e71c24839e3b23a8050178", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_BISTABLE_BUTTON", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a22bda852dc8876ab179013262533d0d7", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_INVALID", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aec3e8688684abf7d20b661c8470d32d8", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_MONOSTABLE_BUTTON", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a73075f88af72a1dc8c11b7bc9b966913", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_ROTARY_BUTTON", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adbf2cbcb09d509cabc1de562802ffa48", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_SIGNED_AXIS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a83e457915cfef18fe3a84cb0cc9b70a8", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_TRISTATE_BUTTON", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8721b2a0feaeb849b9cfdbcec53e4fd9", null ],
+    [ "ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_UNSIGNED_AXIS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a00b553a31b4dcdf95144634decc6005c", null ],
+    [ "ARCOMMANDS_FLAG_WIFI_BAND_2_4_GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae8e45c73db81fcfa3fa122aa0bbd743f", null ],
+    [ "ARCOMMANDS_FLAG_WIFI_BAND_5_GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a137fa9c7ec8acef059ed681b367c63f2", null ],
+    [ "ARCOMMANDS_FLAG_WIFI_ENVIRONMENT_INDOOR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9242d8a5942e2855d64176fa4985b345", null ],
+    [ "ARCOMMANDS_FLAG_WIFI_ENVIRONMENT_OUTDOOR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab8049bce95274bcaeedd2b5712326beb", null ],
+    [ "ARCOMMANDS_HAS_DEBUG_COMMANDS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9723332d0fb73e2aa196e1c49bf4b873", null ],
+    [ "ARCOMMANDS_HEADER_SIZE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a404bc2814ee6b19e9d9c8e0e1dce7f1d", null ],
+    [ "eARCOMMANDS_ARDRONE3_ANIMATIONS_FLIP_DIRECTION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad9440ab8eb152e84a604ff7271ce3322", [
+      [ "ARCOMMANDS_ARDRONE3_ANIMATIONS_FLIP_DIRECTION_FRONT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad9440ab8eb152e84a604ff7271ce3322a6c684ffe6e80017dc77fbaed047fd3f6", null ],
+      [ "ARCOMMANDS_ARDRONE3_ANIMATIONS_FLIP_DIRECTION_BACK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad9440ab8eb152e84a604ff7271ce3322ae1e917361fa74ce50c083d45bdbb0354", null ],
+      [ "ARCOMMANDS_ARDRONE3_ANIMATIONS_FLIP_DIRECTION_RIGHT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad9440ab8eb152e84a604ff7271ce3322a941fc16d916ed8dccef604053fa6bb6a", null ],
+      [ "ARCOMMANDS_ARDRONE3_ANIMATIONS_FLIP_DIRECTION_LEFT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad9440ab8eb152e84a604ff7271ce3322a53456df2f8fb32d8dea3f3151511f5ed", null ],
+      [ "ARCOMMANDS_ARDRONE3_ANIMATIONS_FLIP_DIRECTION_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad9440ab8eb152e84a604ff7271ce3322af113b95d58f5de96f8f860a5833c5c39", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_ANTIFLICKERING_ELECTRICFREQUENCY_FREQUENCY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac1bc11c2b344f675eadb7f09e3afe012", [
+      [ "ARCOMMANDS_ARDRONE3_ANTIFLICKERING_ELECTRICFREQUENCY_FREQUENCY_FIFTYHERTZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac1bc11c2b344f675eadb7f09e3afe012af0482ba883cb1ae2168a61aefc9109e1", null ],
+      [ "ARCOMMANDS_ARDRONE3_ANTIFLICKERING_ELECTRICFREQUENCY_FREQUENCY_SIXTYHERTZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac1bc11c2b344f675eadb7f09e3afe012aaa432421552442bea0b20b489715cc89", null ],
+      [ "ARCOMMANDS_ARDRONE3_ANTIFLICKERING_ELECTRICFREQUENCY_FREQUENCY_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac1bc11c2b344f675eadb7f09e3afe012a50a58e79380e70463726824783ed1382", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_ANTIFLICKERING_SETMODE_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0e6d699a147ff990dea154446ee3b7f0", [
+      [ "ARCOMMANDS_ARDRONE3_ANTIFLICKERING_SETMODE_MODE_AUTO", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0e6d699a147ff990dea154446ee3b7f0a49616c853363aaaf923fd219e06a1bfd", null ],
+      [ "ARCOMMANDS_ARDRONE3_ANTIFLICKERING_SETMODE_MODE_FIXEDFIFTYHERTZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0e6d699a147ff990dea154446ee3b7f0a318bf002241d0404576f3a2bf152885f", null ],
+      [ "ARCOMMANDS_ARDRONE3_ANTIFLICKERING_SETMODE_MODE_FIXEDSIXTYHERTZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0e6d699a147ff990dea154446ee3b7f0a8a41260ea953c361467a41639806d73b", null ],
+      [ "ARCOMMANDS_ARDRONE3_ANTIFLICKERING_SETMODE_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0e6d699a147ff990dea154446ee3b7f0a7bb09dc5d46a580e6f5b9000d554a20c", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_ANTIFLICKERINGSTATE_ELECTRICFREQUENCYCHANGED_FREQUENCY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82b461be0af37be785584f24bcc1b50b", [
+      [ "ARCOMMANDS_ARDRONE3_ANTIFLICKERINGSTATE_ELECTRICFREQUENCYCHANGED_FREQUENCY_FIFTYHERTZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82b461be0af37be785584f24bcc1b50baa44873df92382c22eb655e11e419a843", null ],
+      [ "ARCOMMANDS_ARDRONE3_ANTIFLICKERINGSTATE_ELECTRICFREQUENCYCHANGED_FREQUENCY_SIXTYHERTZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82b461be0af37be785584f24bcc1b50bae8c033a7fd099c731ff4fb55363bba26", null ],
+      [ "ARCOMMANDS_ARDRONE3_ANTIFLICKERINGSTATE_ELECTRICFREQUENCYCHANGED_FREQUENCY_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82b461be0af37be785584f24bcc1b50ba066bfe97ba2d998720e4413588c992a9", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_ANTIFLICKERINGSTATE_MODECHANGED_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a53234f1a95770930dba1b10732df1afb", [
+      [ "ARCOMMANDS_ARDRONE3_ANTIFLICKERINGSTATE_MODECHANGED_MODE_AUTO", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a53234f1a95770930dba1b10732df1afba4f787e27f371e2824edcde391bde27ad", null ],
+      [ "ARCOMMANDS_ARDRONE3_ANTIFLICKERINGSTATE_MODECHANGED_MODE_FIXEDFIFTYHERTZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a53234f1a95770930dba1b10732df1afbaf8a8dac1c63c2dc0731d6e613a522077", null ],
+      [ "ARCOMMANDS_ARDRONE3_ANTIFLICKERINGSTATE_MODECHANGED_MODE_FIXEDSIXTYHERTZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a53234f1a95770930dba1b10732df1afba7532224b3f6f88ee40eb3c7050bd25ea", null ],
+      [ "ARCOMMANDS_ARDRONE3_ANTIFLICKERINGSTATE_MODECHANGED_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a53234f1a95770930dba1b10732df1afbabdc064787ef99b67c141daaea15401a6", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_GPSSETTINGS_HOMETYPE_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3a5e8521f5021194a32328f7a5dd53dd", [
+      [ "ARCOMMANDS_ARDRONE3_GPSSETTINGS_HOMETYPE_TYPE_TAKEOFF", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3a5e8521f5021194a32328f7a5dd53dda9cb6a6b129b9068b53cee2d6039f0c15", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSETTINGS_HOMETYPE_TYPE_PILOT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3a5e8521f5021194a32328f7a5dd53ddacc25b184cb45045682e00f281aacf51e", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSETTINGS_HOMETYPE_TYPE_FOLLOWEE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3a5e8521f5021194a32328f7a5dd53dda5d091598b6d36835ce01a1996bf4f63c", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSETTINGS_HOMETYPE_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3a5e8521f5021194a32328f7a5dd53dda28122e056cd26dea8e739cfa3f10782a", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_GPSSETTINGSSTATE_GPSUPDATESTATECHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad50cba143fc9e4752ce657afee2dd131", [
+      [ "ARCOMMANDS_ARDRONE3_GPSSETTINGSSTATE_GPSUPDATESTATECHANGED_STATE_UPDATED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad50cba143fc9e4752ce657afee2dd131a286b3549eeabc5e52ae2178fddf2915e", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSETTINGSSTATE_GPSUPDATESTATECHANGED_STATE_INPROGRESS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad50cba143fc9e4752ce657afee2dd131a923d11753fcb5855fb56b283d6d0ad54", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSETTINGSSTATE_GPSUPDATESTATECHANGED_STATE_FAILED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad50cba143fc9e4752ce657afee2dd131a06d0084b1d971fa3add3329deaacdb20", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSETTINGSSTATE_GPSUPDATESTATECHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad50cba143fc9e4752ce657afee2dd131a9b93bb6628ff2f7a2e393890e7b1e2b6", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_GPSSETTINGSSTATE_HOMETYPECHANGED_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad5eea5b322bc27d2e93ba44866d1c4c9", [
+      [ "ARCOMMANDS_ARDRONE3_GPSSETTINGSSTATE_HOMETYPECHANGED_TYPE_TAKEOFF", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad5eea5b322bc27d2e93ba44866d1c4c9a1b70fe3c9ee24db37c160d8056a227f9", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSETTINGSSTATE_HOMETYPECHANGED_TYPE_PILOT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad5eea5b322bc27d2e93ba44866d1c4c9ad0e05b4a5e8952ff1127c4c05f23b7ce", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSETTINGSSTATE_HOMETYPECHANGED_TYPE_FOLLOWEE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad5eea5b322bc27d2e93ba44866d1c4c9aa5cb2848df4b8fbccd6218f67c33f395", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSETTINGSSTATE_HOMETYPECHANGED_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad5eea5b322bc27d2e93ba44866d1c4c9a0b92619d49d9db989267b1455b742fa0", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_GPSSTATE_HOMETYPEAVAILABILITYCHANGED_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af3d16144544411a7c2d8bf57b7bae08a", [
+      [ "ARCOMMANDS_ARDRONE3_GPSSTATE_HOMETYPEAVAILABILITYCHANGED_TYPE_TAKEOFF", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af3d16144544411a7c2d8bf57b7bae08aa13b51d1d787bab483730a2fcceef3a00", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSTATE_HOMETYPEAVAILABILITYCHANGED_TYPE_PILOT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af3d16144544411a7c2d8bf57b7bae08aaaeab088ceb8d1219699eedf9a603fa10", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSTATE_HOMETYPEAVAILABILITYCHANGED_TYPE_FIRST_FIX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af3d16144544411a7c2d8bf57b7bae08aae030caf109a9d62b6e46e0fa0e154caa", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSTATE_HOMETYPEAVAILABILITYCHANGED_TYPE_FOLLOWEE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af3d16144544411a7c2d8bf57b7bae08aa490860ebda7b555af4666f214dc7dbfa", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSTATE_HOMETYPEAVAILABILITYCHANGED_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af3d16144544411a7c2d8bf57b7bae08aa62c753355738c7e981719325b05391c4", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_GPSSTATE_HOMETYPECHOSENCHANGED_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9d9f50b5de4b586182ea61cddeda776", [
+      [ "ARCOMMANDS_ARDRONE3_GPSSTATE_HOMETYPECHOSENCHANGED_TYPE_TAKEOFF", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9d9f50b5de4b586182ea61cddeda776aca1d38ec6c3962c3bef8c8d407e320a1", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSTATE_HOMETYPECHOSENCHANGED_TYPE_PILOT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9d9f50b5de4b586182ea61cddeda776ad10ead40b510fe3b5d11fb4705b3977b", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSTATE_HOMETYPECHOSENCHANGED_TYPE_FIRST_FIX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9d9f50b5de4b586182ea61cddeda776a58545278cac55976fc553c577644f3d0", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSTATE_HOMETYPECHOSENCHANGED_TYPE_FOLLOWEE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9d9f50b5de4b586182ea61cddeda776a75fc6480bc04590c98bec6e7356c4190", null ],
+      [ "ARCOMMANDS_ARDRONE3_GPSSTATE_HOMETYPECHOSENCHANGED_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9d9f50b5de4b586182ea61cddeda776a0b32c45be58cefc5632d6fbe7e8ce2df", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_MEDIARECORD_VIDEO_RECORD", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a571d0da500f22e53e87bccee77477500", [
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORD_VIDEO_RECORD_STOP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a571d0da500f22e53e87bccee77477500ae0d1aab77e965fe3093e2aed3b0db656", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORD_VIDEO_RECORD_START", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a571d0da500f22e53e87bccee77477500a6f8078e2114f0661bc63b9b97b59e643", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORD_VIDEO_RECORD_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a571d0da500f22e53e87bccee77477500aaa79fd2e7f8b2144fda8d9464487f9d9", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_MEDIARECORD_VIDEOV2_RECORD", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a823f6c011a412d09e03397a005385773", [
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORD_VIDEOV2_RECORD_STOP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a823f6c011a412d09e03397a005385773a53cdc845646229301a7d88e6adbe14fe", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORD_VIDEOV2_RECORD_START", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a823f6c011a412d09e03397a005385773a951a672231897bb39b34569b54f2433d", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORD_VIDEOV2_RECORD_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a823f6c011a412d09e03397a005385773ab2bae898bc31e06e549ba1c96c1130d5", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aca7474dac87ed7250004c222a37df6b7", [
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aca7474dac87ed7250004c222a37df6b7a594bd1c8752dd675ce60639928f14a71", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aca7474dac87ed7250004c222a37df6b7aef0f207a5c6bb129859ff56e0cb63b88", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_BUSY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aca7474dac87ed7250004c222a37df6b7aed40309b1a3c1718bc5a9def1d655ee7", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_NOTAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aca7474dac87ed7250004c222a37df6b7a121b845be356ebe275b50e9037c40e26", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_MEMORYFULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aca7474dac87ed7250004c222a37df6b7a843a856c1afc62cdf747e7fa14079e58", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_LOWBATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aca7474dac87ed7250004c222a37df6b7a2ecd938a2f8ce362ffb5a3efe3c13124", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aca7474dac87ed7250004c222a37df6b7a744876a34a7298e389354c68b547b4bb", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_PICTUREEVENTCHANGED_EVENT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae0974c4467b05e6de70804d4b119e78d", [
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_PICTUREEVENTCHANGED_EVENT_TAKEN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae0974c4467b05e6de70804d4b119e78da4228b68b19c4ffd5eab86d5087d21558", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_PICTUREEVENTCHANGED_EVENT_FAILED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae0974c4467b05e6de70804d4b119e78da6164849d515a333edffee97429994ff6", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_PICTUREEVENTCHANGED_EVENT_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae0974c4467b05e6de70804d4b119e78daa50791075b6abc7a089d0549fdae7dac", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8a40961706237f68b52acaf7754281f8", [
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8a40961706237f68b52acaf7754281f8a2c9178e42fca9003f0df91608061d22d", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8a40961706237f68b52acaf7754281f8afd55f2209b9ecb01af61409f3eff671e", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_BUSY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8a40961706237f68b52acaf7754281f8a6525bf8bffc6bed5a07793a55b944d5f", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_NOTAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8a40961706237f68b52acaf7754281f8ad2370377231d92411a16a1f7553149d3", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_MEMORYFULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8a40961706237f68b52acaf7754281f8acea1afe4462e1909299f705f49f82e01", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_LOWBATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8a40961706237f68b52acaf7754281f8a59e5f7805ecd8f6d78c0b44240aa4bbb", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_AUTOSTOPPED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8a40961706237f68b52acaf7754281f8ab73652bfcefea735285ecf9f3a195b37", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8a40961706237f68b52acaf7754281f8a10739d7fb8fc0dc93b1e0b28b6cbdbbb", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_VIDEOEVENTCHANGED_EVENT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aed01359db641f818ac8d46edd0cce7d2", [
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_VIDEOEVENTCHANGED_EVENT_START", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aed01359db641f818ac8d46edd0cce7d2a43e1bfd532397b8cfeb172782627f1c7", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_VIDEOEVENTCHANGED_EVENT_STOP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aed01359db641f818ac8d46edd0cce7d2a10ef3f3871db0839fb9d07f571efb933", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_VIDEOEVENTCHANGED_EVENT_FAILED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aed01359db641f818ac8d46edd0cce7d2aa724b9e737e88ed1052f6c4702452139", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDEVENT_VIDEOEVENTCHANGED_EVENT_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aed01359db641f818ac8d46edd0cce7d2ac78b3be1b5f992358083e239422af3aa", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae20578833e9d834f9d5b08387f003c06", [
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae20578833e9d834f9d5b08387f003c06a61011b92ed4725142a5ace4f67dce52d", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae20578833e9d834f9d5b08387f003c06a584ac616e7aa02ac12474a42ee9df3d0", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_CAMERA_KO", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae20578833e9d834f9d5b08387f003c06a457af6f0808a6cf1ef9713c455c7e31b", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_MEMORYFULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae20578833e9d834f9d5b08387f003c06a862926dd2a1073bbc5d911619a3e12d4", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_LOWBATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae20578833e9d834f9d5b08387f003c06a0e338048c4ddd27237ca4244cc4375ab", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae20578833e9d834f9d5b08387f003c06a5f8f82a6ad80304c64bd0650eaff0659", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209aa076c194f03e4270aae046126781", [
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE_READY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209aa076c194f03e4270aae046126781abd1e429c92bfe08a7b39e8958108df2b", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE_BUSY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209aa076c194f03e4270aae046126781aa2246fd866862dc32bb1e1e0ba59fd7b", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE_NOTAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209aa076c194f03e4270aae046126781aada275a6c00668b45ff3dfb1dcdf015a", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209aa076c194f03e4270aae046126781af91af24cb523f3d4d3a5503b2b971c7e", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEORESOLUTIONSTATE_RECORDING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a515ca13ab13c64a7be8a1ea7dc890e73", [
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEORESOLUTIONSTATE_RECORDING_RES360P", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a515ca13ab13c64a7be8a1ea7dc890e73a06bd3bd75a73032cd3abf255eb689cde", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEORESOLUTIONSTATE_RECORDING_RES480P", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a515ca13ab13c64a7be8a1ea7dc890e73a5706e3108b0e91702c461364cd340b44", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEORESOLUTIONSTATE_RECORDING_RES720P", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a515ca13ab13c64a7be8a1ea7dc890e73a4a775a75cd88c1e6f3c5c6b6a83f4a3f", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEORESOLUTIONSTATE_RECORDING_RES1080P", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a515ca13ab13c64a7be8a1ea7dc890e73af6bbb72ab696122d3258a3fc70b0a6ff", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEORESOLUTIONSTATE_RECORDING_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a515ca13ab13c64a7be8a1ea7dc890e73ae73dd76d5c60217c38e0dfdcb81b20e6", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEORESOLUTIONSTATE_STREAMING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a00aee8d30a3e8a1ef64fe9618b5d8911", [
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEORESOLUTIONSTATE_STREAMING_RES360P", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a00aee8d30a3e8a1ef64fe9618b5d8911ade3062c3c8a84c7f51bbde54dad1b4b3", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEORESOLUTIONSTATE_STREAMING_RES480P", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a00aee8d30a3e8a1ef64fe9618b5d8911aea6ab9fd8468f69828eba5266965261e", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEORESOLUTIONSTATE_STREAMING_RES720P", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a00aee8d30a3e8a1ef64fe9618b5d8911a599ce080aba87873b3d36f2abdcf7811", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEORESOLUTIONSTATE_STREAMING_RES1080P", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a00aee8d30a3e8a1ef64fe9618b5d8911a95a334222c1ecb1e007579a2209d0188", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEORESOLUTIONSTATE_STREAMING_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a00aee8d30a3e8a1ef64fe9618b5d8911ab50c1ac6aa933dd1d64e09159014321f", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a52cd206f31008226648a41db19f80c96", [
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGED_STATE_STOPPED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a52cd206f31008226648a41db19f80c96ac6a24e75bcbe12cc0fd83bb091fd093d", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGED_STATE_STARTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a52cd206f31008226648a41db19f80c96ae409e58c29bd9f28ef9b3fef6e749f56", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGED_STATE_FAILED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a52cd206f31008226648a41db19f80c96af98510a39f3e0de16cc8dec2442e97c4", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGED_STATE_AUTOSTOPPED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a52cd206f31008226648a41db19f80c96a055968e91c648da8b03264c49bb157cb", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a52cd206f31008226648a41db19f80c96acbb89f109c6d7b83eef2614157cf712b", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae13d39713cb7948d11fee226b9c31492", [
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae13d39713cb7948d11fee226b9c31492a9e8c4548a6d8383f4bb1b79a5a9ba866", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae13d39713cb7948d11fee226b9c31492a94294f0c6b4f3f3bee683cc6f1e35392", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_CAMERA_KO", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae13d39713cb7948d11fee226b9c31492ae65868a7738a72ef1e5856da9f8da6a1", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_MEMORYFULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae13d39713cb7948d11fee226b9c31492a90271d64a1fccff79bfaa2f8f5ad7362", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_LOWBATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae13d39713cb7948d11fee226b9c31492ac70af37088a15f8423d80fb5094c2750", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae13d39713cb7948d11fee226b9c31492a1806e81b98b2fabc8e39c7a83132d9f4", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6d2861707416d2a805b46827a99f05ee", [
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_STATE_STOPPED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6d2861707416d2a805b46827a99f05eea8c263b570201b74b1e630aa7bcf72396", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_STATE_STARTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6d2861707416d2a805b46827a99f05eea179e7f57aa9463f5492494bd18e17afc", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_STATE_NOTAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6d2861707416d2a805b46827a99f05eeacc0f9a566e665e45e4957e9db34d2e38", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6d2861707416d2a805b46827a99f05eea2937b6d458a087b77832b29c3372335a", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_MEDIASTREAMING_VIDEOSTREAMMODE_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aefa5c570031ff4af8d1732ec4486297f", [
+      [ "ARCOMMANDS_ARDRONE3_MEDIASTREAMING_VIDEOSTREAMMODE_MODE_LOW_LATENCY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aefa5c570031ff4af8d1732ec4486297fae1c67e61ff1c1e9365b37e4156fa35ee", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIASTREAMING_VIDEOSTREAMMODE_MODE_HIGH_RELIABILITY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aefa5c570031ff4af8d1732ec4486297fa06052f4c94b762229a1d7daebf2b3173", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIASTREAMING_VIDEOSTREAMMODE_MODE_HIGH_RELIABILITY_LOW_FRAMERATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aefa5c570031ff4af8d1732ec4486297fa7f082c375bd4d0e2a45235945978e0e0", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIASTREAMING_VIDEOSTREAMMODE_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aefa5c570031ff4af8d1732ec4486297faff76604bf8a4fe6056c9593be9654295", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_MEDIASTREAMINGSTATE_VIDEOENABLECHANGED_ENABLED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a421659f58f9eac8d4c537454ea466cfd", [
+      [ "ARCOMMANDS_ARDRONE3_MEDIASTREAMINGSTATE_VIDEOENABLECHANGED_ENABLED_ENABLED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a421659f58f9eac8d4c537454ea466cfda4e744fba822716edc7efc1914234eb40", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIASTREAMINGSTATE_VIDEOENABLECHANGED_ENABLED_DISABLED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a421659f58f9eac8d4c537454ea466cfda449392e73305b425d3aae5d964650c70", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIASTREAMINGSTATE_VIDEOENABLECHANGED_ENABLED_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a421659f58f9eac8d4c537454ea466cfdadcce11a5fbed798208b68b1f218523a5", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIASTREAMINGSTATE_VIDEOENABLECHANGED_ENABLED_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a421659f58f9eac8d4c537454ea466cfdadbed6aa26f9425176398421c2ce2debe", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_MEDIASTREAMINGSTATE_VIDEOSTREAMMODECHANGED_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa5b3a875ea09bf4cdb0c0dc192a91a00", [
+      [ "ARCOMMANDS_ARDRONE3_MEDIASTREAMINGSTATE_VIDEOSTREAMMODECHANGED_MODE_LOW_LATENCY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa5b3a875ea09bf4cdb0c0dc192a91a00a490ee552d0d59c54e0228c54e0c3006a", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIASTREAMINGSTATE_VIDEOSTREAMMODECHANGED_MODE_HIGH_RELIABILITY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa5b3a875ea09bf4cdb0c0dc192a91a00acd44ee9e1e770c00087a00d151de2ce6", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIASTREAMINGSTATE_VIDEOSTREAMMODECHANGED_MODE_HIGH_RELIABILITY_LOW_FRAMERATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa5b3a875ea09bf4cdb0c0dc192a91a00a6eb24bcbce11cc702adcc18e2d5a8c1f", null ],
+      [ "ARCOMMANDS_ARDRONE3_MEDIASTREAMINGSTATE_VIDEOSTREAMMODECHANGED_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa5b3a875ea09bf4cdb0c0dc192a91a00a28d605aab5884ce3febb6c1c4d9aae79", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_NETWORK_WIFISCAN_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab7f9a07ad835f731acf8d2bdd83af0db", [
+      [ "ARCOMMANDS_ARDRONE3_NETWORK_WIFISCAN_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab7f9a07ad835f731acf8d2bdd83af0dbac2f0d08d3a0d0d9ac96c2542838d1214", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORK_WIFISCAN_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab7f9a07ad835f731acf8d2bdd83af0dba475a3b2073b0a1ea1c097f955c694ce8", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORK_WIFISCAN_BAND_ALL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab7f9a07ad835f731acf8d2bdd83af0dba1ff6195537587a4c12c8aafa1fada83d", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORK_WIFISCAN_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab7f9a07ad835f731acf8d2bdd83af0dba18d328514cfeab1a1e8299ec42f100dc", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_NETWORKSETTINGS_WIFISECURITY_KEYTYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a09cafcc3d8aa4e3d5862e8d561d5c4bb", [
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGS_WIFISECURITY_KEYTYPE_PLAIN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a09cafcc3d8aa4e3d5862e8d561d5c4bba408de6c322babb21ecf2ac5bd9730540", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGS_WIFISECURITY_KEYTYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a09cafcc3d8aa4e3d5862e8d561d5c4bba9a1d3b305fce04613e1e74a4062f401f", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_NETWORKSETTINGS_WIFISECURITY_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3f7173b51cf2d94b7f4959b05d27c0a0", [
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGS_WIFISECURITY_TYPE_OPEN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3f7173b51cf2d94b7f4959b05d27c0a0ab72f9973eff4a8aeef0732bc6ef78b4c", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGS_WIFISECURITY_TYPE_WPA2", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3f7173b51cf2d94b7f4959b05d27c0a0a666587a1160a393b0069be8646109392", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGS_WIFISECURITY_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3f7173b51cf2d94b7f4959b05d27c0a0abb7f060898b38e983d09a351c463a6ca", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_NETWORKSETTINGS_WIFISELECTION_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab006b87c3f8be0087f34f0a108a84810", [
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGS_WIFISELECTION_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab006b87c3f8be0087f34f0a108a84810a95dae508fcbfcba7a44175c4cec49eeb", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGS_WIFISELECTION_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab006b87c3f8be0087f34f0a108a84810a1669a7106789ac2ce7cffb1f7d2a6253", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGS_WIFISELECTION_BAND_ALL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab006b87c3f8be0087f34f0a108a84810a83c11b73c38bd454e20d17fa8b517198", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGS_WIFISELECTION_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab006b87c3f8be0087f34f0a108a84810a82c86a98fa4fca43ee9550fc7f0cf853", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_NETWORKSETTINGS_WIFISELECTION_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3993892304e99c55c1cbd3ba6caeca78", [
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGS_WIFISELECTION_TYPE_AUTO", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3993892304e99c55c1cbd3ba6caeca78ab0bef12d7aa0f5cbdb539a9b0f15fe2a", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGS_WIFISELECTION_TYPE_MANUAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3993892304e99c55c1cbd3ba6caeca78a280bab4e3095eed81254072829187b2e", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGS_WIFISELECTION_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3993892304e99c55c1cbd3ba6caeca78acbc83e0473d5b9965e28acb6f59f12f4", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISECURITY_KEYTYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#afa0b6cf4aa76f63293a3537edd48c7fa", [
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISECURITY_KEYTYPE_PLAIN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#afa0b6cf4aa76f63293a3537edd48c7faa55b5bb1f11795b1e7f6ec7038488fc3f", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISECURITY_KEYTYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#afa0b6cf4aa76f63293a3537edd48c7faab0501fcf275fffb9cc7cc99b12964b99", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISECURITY_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adffdeef86f3250f32b0cbaeef3f9385c", [
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISECURITY_TYPE_OPEN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adffdeef86f3250f32b0cbaeef3f9385ca1302056517b5303131506d64140b2a79", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISECURITY_TYPE_WPA2", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adffdeef86f3250f32b0cbaeef3f9385ca508faacda6c07fa12fee3eba20a724f2", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISECURITY_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adffdeef86f3250f32b0cbaeef3f9385ca525a64e72771fca4d7f078486ec84a68", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISECURITYCHANGED_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#abd2243bbde8de1cc973d4c240c25df1e", [
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISECURITYCHANGED_TYPE_OPEN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#abd2243bbde8de1cc973d4c240c25df1ea9a1f3f0a4e00092189881896f1c9b8d3", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISECURITYCHANGED_TYPE_WPA2", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#abd2243bbde8de1cc973d4c240c25df1eabbf81ad80de09a8bde9abd7f766ecbdf", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISECURITYCHANGED_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#abd2243bbde8de1cc973d4c240c25df1ea9f4c256b1d57b46fb45a77eb1ffdf5ea", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a35b9379d4f6f814de177bcb6411a58ea", [
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a35b9379d4f6f814de177bcb6411a58eaad0aedad595c977ca33f6c9b09d9ca3cc", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a35b9379d4f6f814de177bcb6411a58eaa284ea840f56dc19ffaf3dd2a9795e799", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_BAND_ALL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a35b9379d4f6f814de177bcb6411a58eaaf2479b7d0531e592b5a79c60484c1555", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a35b9379d4f6f814de177bcb6411a58eaa515cbf331b60e276129605367e80e236", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad0272eb31dd6356f12ebc9afb6133be2", [
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_AUTO_ALL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad0272eb31dd6356f12ebc9afb6133be2accbc8df618ac38142edb69224a6f5b5f", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_AUTO_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad0272eb31dd6356f12ebc9afb6133be2ab500f48b568262a8743ab555666aa907", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_AUTO_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad0272eb31dd6356f12ebc9afb6133be2ab59122013226783c9ca0df0e9106514e", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_MANUAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad0272eb31dd6356f12ebc9afb6133be2abfa480086d254d8d107c51cc5a30c9f6", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad0272eb31dd6356f12ebc9afb6133be2a91193f778b53bea5ea91128edc32153d", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_NETWORKSTATE_WIFIAUTHCHANNELLISTCHANGED_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad4294d41340a9108fe5935046bd0f98d", [
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSTATE_WIFIAUTHCHANNELLISTCHANGED_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad4294d41340a9108fe5935046bd0f98daa7ae674088ed418f2b608a4f1c7c21b1", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSTATE_WIFIAUTHCHANNELLISTCHANGED_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad4294d41340a9108fe5935046bd0f98da56da94ec0c7888c4b9eead867a44244d", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSTATE_WIFIAUTHCHANNELLISTCHANGED_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad4294d41340a9108fe5935046bd0f98dac4a390e4b2b81caa9904ede4cff66533", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_NETWORKSTATE_WIFISCANLISTCHANGED_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5c68364b30a6d8152e3a4cd7dc2ec011", [
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSTATE_WIFISCANLISTCHANGED_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5c68364b30a6d8152e3a4cd7dc2ec011a3f736d0c989c12e21d73e4ccc6d2aca9", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSTATE_WIFISCANLISTCHANGED_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5c68364b30a6d8152e3a4cd7dc2ec011aa701848279ac3a83bee68c057a71c02a", null ],
+      [ "ARCOMMANDS_ARDRONE3_NETWORKSTATE_WIFISCANLISTCHANGED_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5c68364b30a6d8152e3a4cd7dc2ec011af4f322af07b89afc787c01e4763e8b20", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PICTURESETTINGS_AUTOWHITEBALANCESELECTION_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d9a20981a846dcf3280d00a65b98403", [
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_AUTOWHITEBALANCESELECTION_TYPE_AUTO", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d9a20981a846dcf3280d00a65b98403a69c1f0933afe99fa3b9be98bde7e8a83", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_AUTOWHITEBALANCESELECTION_TYPE_TUNGSTEN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d9a20981a846dcf3280d00a65b98403a798b4c2eb0cc7e5e12b58127d963b139", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_AUTOWHITEBALANCESELECTION_TYPE_DAYLIGHT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d9a20981a846dcf3280d00a65b98403af6d475e0a29a8c580f8a951fb8c07e1b", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_AUTOWHITEBALANCESELECTION_TYPE_CLOUDY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d9a20981a846dcf3280d00a65b98403aec9006e7438d5127d2bcd3c5bda9dbef", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_AUTOWHITEBALANCESELECTION_TYPE_COOL_WHITE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d9a20981a846dcf3280d00a65b98403a12570181bb7ce6db37d1a3e39446e63d", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_AUTOWHITEBALANCESELECTION_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d9a20981a846dcf3280d00a65b98403a33bddd08b44c2ffe2803a3fc4142b5d0", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PICTURESETTINGS_PICTUREFORMATSELECTION_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a23d03464ee6e3523ed67e0de1794ff6c", [
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_PICTUREFORMATSELECTION_TYPE_RAW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a23d03464ee6e3523ed67e0de1794ff6cab234bfc6a3526cb5371c09ea5f947f20", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_PICTUREFORMATSELECTION_TYPE_JPEG", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a23d03464ee6e3523ed67e0de1794ff6caa4d0dd24fc84ad953ee0bde6f49c19cf", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_PICTUREFORMATSELECTION_TYPE_SNAPSHOT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a23d03464ee6e3523ed67e0de1794ff6ca33333b8897ed8caa3c6380c88085b5b9", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_PICTUREFORMATSELECTION_TYPE_JPEG_FISHEYE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a23d03464ee6e3523ed67e0de1794ff6cae9c46914d8076ab3c411add3fc6c388a", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_PICTUREFORMATSELECTION_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a23d03464ee6e3523ed67e0de1794ff6ca3088e0b8ff1a71651e131a412735d0a5", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEOFRAMERATE_FRAMERATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a316ea5da2e33ea999295e4e643e4b691", [
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEOFRAMERATE_FRAMERATE_24_FPS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a316ea5da2e33ea999295e4e643e4b691a04323a4effb982c424bd56c117318577", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEOFRAMERATE_FRAMERATE_25_FPS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a316ea5da2e33ea999295e4e643e4b691ad89194fbf013b15c65e40a0a43b6e909", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEOFRAMERATE_FRAMERATE_30_FPS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a316ea5da2e33ea999295e4e643e4b691aca10d6b3a1a4ba02176a5f2a37d80c97", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEOFRAMERATE_FRAMERATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a316ea5da2e33ea999295e4e643e4b691a077daced96d276c6502c525966796e29", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEORECORDINGMODE_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a19e0a2d1479a3e4ec3045794a82a30ef", [
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEORECORDINGMODE_MODE_QUALITY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a19e0a2d1479a3e4ec3045794a82a30eface08ae41eebeee080869b63492b043cd", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEORECORDINGMODE_MODE_TIME", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a19e0a2d1479a3e4ec3045794a82a30efaf033fa72a1e2205c88c18900290eaaee", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEORECORDINGMODE_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a19e0a2d1479a3e4ec3045794a82a30efa2d165db2bce045b62a1c3eb29bc00d83", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEORESOLUTIONS_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1aa0a20cbe3c04dd3d3fd47ad777f403", [
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEORESOLUTIONS_TYPE_REC1080_STREAM480", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1aa0a20cbe3c04dd3d3fd47ad777f403a2f604a8505685b45347a993601d8ff5c", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEORESOLUTIONS_TYPE_REC720_STREAM720", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1aa0a20cbe3c04dd3d3fd47ad777f403a92a1393f220f5ac34c69e43b9ca5d819", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEORESOLUTIONS_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1aa0a20cbe3c04dd3d3fd47ad777f403a0ddbcfeff8b196d1ecade76a0ec15c80", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEOSTABILIZATIONMODE_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5f86cf2ea9e9b131601057faad9a017d", [
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEOSTABILIZATIONMODE_MODE_ROLL_PITCH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5f86cf2ea9e9b131601057faad9a017da31a700f89c7271e1dfa1971e44637439", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEOSTABILIZATIONMODE_MODE_PITCH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5f86cf2ea9e9b131601057faad9a017daedc96eae655eb0dcb9d0e743dc6a1be2", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEOSTABILIZATIONMODE_MODE_ROLL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5f86cf2ea9e9b131601057faad9a017da8833610b4d90bca852e4967ee9d8dff0", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEOSTABILIZATIONMODE_MODE_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5f86cf2ea9e9b131601057faad9a017da92b9eb639034111a9311538c67a9b198", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGS_VIDEOSTABILIZATIONMODE_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5f86cf2ea9e9b131601057faad9a017da62fd33f84b5a7f52f262e113f842f3ca", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_AUTOWHITEBALANCECHANGED_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2bb5f79c68ef22fcfca89216be86566a", [
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_AUTOWHITEBALANCECHANGED_TYPE_AUTO", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2bb5f79c68ef22fcfca89216be86566aafeba9bffc66e92b9ea63fb031467893b", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_AUTOWHITEBALANCECHANGED_TYPE_TUNGSTEN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2bb5f79c68ef22fcfca89216be86566aac9e53dfc6de05c24eca5a2d6c2da3a9f", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_AUTOWHITEBALANCECHANGED_TYPE_DAYLIGHT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2bb5f79c68ef22fcfca89216be86566aadfd2d64ac44654c6d4fbe3f50736364c", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_AUTOWHITEBALANCECHANGED_TYPE_CLOUDY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2bb5f79c68ef22fcfca89216be86566aa391c806212ce73bac62c4d1d4b319d29", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_AUTOWHITEBALANCECHANGED_TYPE_COOL_WHITE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2bb5f79c68ef22fcfca89216be86566aacf83c16f393e85ab730f4de6f3a3720d", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_AUTOWHITEBALANCECHANGED_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2bb5f79c68ef22fcfca89216be86566aa609d0aec964f0818f3c8d93a117d246f", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_PICTUREFORMATCHANGED_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad3cd7d09fafd7ce257c060fc6d319bfc", [
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_PICTUREFORMATCHANGED_TYPE_RAW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad3cd7d09fafd7ce257c060fc6d319bfca3a9101b57b5885d35149deded03e5b05", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_PICTUREFORMATCHANGED_TYPE_JPEG", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad3cd7d09fafd7ce257c060fc6d319bfca6c7052674b01a0e8c62c12c3af2ad47e", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_PICTUREFORMATCHANGED_TYPE_SNAPSHOT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad3cd7d09fafd7ce257c060fc6d319bfcacf8cabe3cc937fa9f86d3fc928e74912", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_PICTUREFORMATCHANGED_TYPE_JPEG_FISHEYE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad3cd7d09fafd7ce257c060fc6d319bfca32a4fa4c8cb8fb5ab74184778bd26e37", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_PICTUREFORMATCHANGED_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad3cd7d09fafd7ce257c060fc6d319bfcab3c3c8526b46647d56954d2ec7c88a7d", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEOFRAMERATECHANGED_FRAMERATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab7cf1e080e99b7cc2b84ddc7c913a837", [
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEOFRAMERATECHANGED_FRAMERATE_24_FPS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab7cf1e080e99b7cc2b84ddc7c913a837a040fa2d7279d1a6be3b3a6301d22acad", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEOFRAMERATECHANGED_FRAMERATE_25_FPS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab7cf1e080e99b7cc2b84ddc7c913a837adb24f37f55894de16718c64903d4359b", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEOFRAMERATECHANGED_FRAMERATE_30_FPS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab7cf1e080e99b7cc2b84ddc7c913a837ab34edca84e91b3ef2947861e822272b1", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEOFRAMERATECHANGED_FRAMERATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab7cf1e080e99b7cc2b84ddc7c913a837a55125c435df68705e5fc5f0c3158b446", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEORECORDINGMODECHANGED_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0f56e1a6f59ffcc9fbc9d2163b0a83c6", [
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEORECORDINGMODECHANGED_MODE_QUALITY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0f56e1a6f59ffcc9fbc9d2163b0a83c6a6ecd6c406ca72853cb069a4fa544f58b", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEORECORDINGMODECHANGED_MODE_TIME", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0f56e1a6f59ffcc9fbc9d2163b0a83c6a90af543b6f9765ba2b2c80b64e1018e3", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEORECORDINGMODECHANGED_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0f56e1a6f59ffcc9fbc9d2163b0a83c6ace4fb88019aeb017b00f66eb609342ad", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEORESOLUTIONSCHANGED_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5190adc312c760f05af2a29c6edd3126", [
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEORESOLUTIONSCHANGED_TYPE_REC1080_STREAM480", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5190adc312c760f05af2a29c6edd3126ae3a014dcc741545d9015b1aed2bf2420", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEORESOLUTIONSCHANGED_TYPE_REC720_STREAM720", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5190adc312c760f05af2a29c6edd3126a21dc9feb815f1835561e67e4a69bdd44", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEORESOLUTIONSCHANGED_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5190adc312c760f05af2a29c6edd3126a450168a75e497df945b51c993e7587c1", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEOSTABILIZATIONMODECHANGED_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aafb5890f438f50ab71d4814e1a2e8512", [
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEOSTABILIZATIONMODECHANGED_MODE_ROLL_PITCH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aafb5890f438f50ab71d4814e1a2e8512a6c71b0ac5761f8a18b7dba3606cddc97", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEOSTABILIZATIONMODECHANGED_MODE_PITCH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aafb5890f438f50ab71d4814e1a2e8512a4e61968c5c6b19da1016a073b9b790cf", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEOSTABILIZATIONMODECHANGED_MODE_ROLL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aafb5890f438f50ab71d4814e1a2e8512a45c2a7f2aa94a6d5a817c6d637b2d84b", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEOSTABILIZATIONMODECHANGED_MODE_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aafb5890f438f50ab71d4814e1a2e8512a69639141c0e94e80cafcb297a80c9bf3", null ],
+      [ "ARCOMMANDS_ARDRONE3_PICTURESETTINGSSTATE_VIDEOSTABILIZATIONMODECHANGED_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aafb5890f438f50ab71d4814e1a2e8512a473488524378666b51113b34a1b8d288", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PILOTING_CIRCLE_DIRECTION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac1f3c006e0f8b86d7999b22e3ef5c396", [
+      [ "ARCOMMANDS_ARDRONE3_PILOTING_CIRCLE_DIRECTION_CW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac1f3c006e0f8b86d7999b22e3ef5c396a1b3dec044fd1f6d98db76d4dfa375491", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTING_CIRCLE_DIRECTION_CCW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac1f3c006e0f8b86d7999b22e3ef5c396ac178fcd01e5bb149ec58a83c058de4fa", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTING_CIRCLE_DIRECTION_DEFAULT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac1f3c006e0f8b86d7999b22e3ef5c396a7248ae8b923312dae34b17f4bdfea3b1", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTING_CIRCLE_DIRECTION_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac1f3c006e0f8b86d7999b22e3ef5c396aa1b95152676c2812723f3dac94e59514", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PILOTING_MOVETO_ORIENTATION_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a802faab55f447762ab1e0d01212d3452", [
+      [ "ARCOMMANDS_ARDRONE3_PILOTING_MOVETO_ORIENTATION_MODE_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a802faab55f447762ab1e0d01212d3452ad98471c21a09e69754fbfe3a3655d9c1", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTING_MOVETO_ORIENTATION_MODE_TO_TARGET", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a802faab55f447762ab1e0d01212d3452ab746741284f5a34e4d7aa32f08427d1a", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTING_MOVETO_ORIENTATION_MODE_HEADING_START", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a802faab55f447762ab1e0d01212d3452aeff0f72eb930a2c5c6882244cb5a8982", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTING_MOVETO_ORIENTATION_MODE_HEADING_DURING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a802faab55f447762ab1e0d01212d3452aea1f79a53016449da859d1313b57feea", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTING_MOVETO_ORIENTATION_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a802faab55f447762ab1e0d01212d3452a511d94c0846e761a2f8d51552a6e06d9", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PILOTINGEVENT_MOVEBYEND_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aaafd54bb7a0224e551b6fd51036b44fa", [
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGEVENT_MOVEBYEND_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aaafd54bb7a0224e551b6fd51036b44faa19b6514839998a0516f188bdb16c0a2c", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGEVENT_MOVEBYEND_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aaafd54bb7a0224e551b6fd51036b44faae062d5e0fc9d1d69a8b6056027b609c3", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGEVENT_MOVEBYEND_ERROR_BUSY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aaafd54bb7a0224e551b6fd51036b44faac28514a09a076ad2d2dbc3e88dadc8b7", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGEVENT_MOVEBYEND_ERROR_NOTAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aaafd54bb7a0224e551b6fd51036b44faacd8144543faca63291871b135f55c4c8", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGEVENT_MOVEBYEND_ERROR_INTERRUPTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aaafd54bb7a0224e551b6fd51036b44faa66ae282035e6d96c8dc3908606bf577e", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGEVENT_MOVEBYEND_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aaafd54bb7a0224e551b6fd51036b44faa9ab13dc8763f64b99ff587e336869971", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PILOTINGSETTINGS_CIRCLINGDIRECTION_VALUE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a73cc75f4bdc3302d33e96253678629ed", [
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSETTINGS_CIRCLINGDIRECTION_VALUE_CW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a73cc75f4bdc3302d33e96253678629edabcad4699f1b9157a0f794b1ed4e127fa", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSETTINGS_CIRCLINGDIRECTION_VALUE_CCW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a73cc75f4bdc3302d33e96253678629eda45d8f7976a53aed9ed0fd41d6068720f", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSETTINGS_CIRCLINGDIRECTION_VALUE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a73cc75f4bdc3302d33e96253678629eda71a47852c23521252755cb8587bcd8d6", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PILOTINGSETTINGS_PITCHMODE_VALUE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad462e6f2b33c86ab74c5c1b2cc3154c4", [
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSETTINGS_PITCHMODE_VALUE_NORMAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad462e6f2b33c86ab74c5c1b2cc3154c4a618e7db62e35231c1f2eec15b97b82e5", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSETTINGS_PITCHMODE_VALUE_INVERTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad462e6f2b33c86ab74c5c1b2cc3154c4a3109a9652c55a4ccb0e95bb605de08de", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSETTINGS_PITCHMODE_VALUE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad462e6f2b33c86ab74c5c1b2cc3154c4a79b3fde394d7864313c778ad31900c0a", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PILOTINGSETTINGSSTATE_CIRCLINGDIRECTIONCHANGED_VALUE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af2bd9fb8e6cf6c6759a7b2966b45bf49", [
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSETTINGSSTATE_CIRCLINGDIRECTIONCHANGED_VALUE_CW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af2bd9fb8e6cf6c6759a7b2966b45bf49a58d9d76a276d2ab720093d10fa354301", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSETTINGSSTATE_CIRCLINGDIRECTIONCHANGED_VALUE_CCW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af2bd9fb8e6cf6c6759a7b2966b45bf49a2491863eecbe0ff35069768c53e20395", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSETTINGSSTATE_CIRCLINGDIRECTIONCHANGED_VALUE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af2bd9fb8e6cf6c6759a7b2966b45bf49a7ae07d5b403406536c2ce9d2bfbdac6a", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PILOTINGSETTINGSSTATE_PITCHMODECHANGED_VALUE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a86614fc75728802c16c3369e781723c4", [
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSETTINGSSTATE_PITCHMODECHANGED_VALUE_NORMAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a86614fc75728802c16c3369e781723c4a8d5e75a3f4e0203af94d42a3ce90ddab", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSETTINGSSTATE_PITCHMODECHANGED_VALUE_INVERTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a86614fc75728802c16c3369e781723c4aa2b41e8b3d9302860c9fa423f3953c28", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSETTINGSSTATE_PITCHMODECHANGED_VALUE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a86614fc75728802c16c3369e781723c4a194ab9d42ee23d4df24c54ce022b68f8", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PILOTINGSTATE_ALERTSTATECHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a076026a60876638d866ab5ee7e2a41e9", [
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_ALERTSTATECHANGED_STATE_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a076026a60876638d866ab5ee7e2a41e9a642ac192dc5930b2f5c4fc4c0b1cb069", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_ALERTSTATECHANGED_STATE_USER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a076026a60876638d866ab5ee7e2a41e9abd95ffd99cd48bb8fb6f262ea68b4417", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_ALERTSTATECHANGED_STATE_CUT_OUT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a076026a60876638d866ab5ee7e2a41e9a87166f6fbfba4035458de1306a98409b", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_ALERTSTATECHANGED_STATE_CRITICAL_BATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a076026a60876638d866ab5ee7e2a41e9a012fd32ba5546d7dd60a93580b67b973", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_ALERTSTATECHANGED_STATE_LOW_BATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a076026a60876638d866ab5ee7e2a41e9aa8dec064ff75569780a0ca9d506a583d", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_ALERTSTATECHANGED_STATE_TOO_MUCH_ANGLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a076026a60876638d866ab5ee7e2a41e9a96f1fdc7201e369504f26afb46183eed", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_ALERTSTATECHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a076026a60876638d866ab5ee7e2a41e9ab624623ce5399a86164938a014628594", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a72e55af7ba332de8fcd2ad34bd238567", [
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_LANDED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a72e55af7ba332de8fcd2ad34bd238567a94259137dc6ec6d41962757b577f9bca", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_TAKINGOFF", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a72e55af7ba332de8fcd2ad34bd238567a756b1dcbf70b5854824d9d062be55271", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_HOVERING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a72e55af7ba332de8fcd2ad34bd238567a5f19ff4c6af14782337f7b2039a11090", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_FLYING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a72e55af7ba332de8fcd2ad34bd238567a5cce1de3bf64ab3497d3b9b10dd8685b", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_LANDING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a72e55af7ba332de8fcd2ad34bd238567a6b934a77a68d6a44c13133751b92c545", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_EMERGENCY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a72e55af7ba332de8fcd2ad34bd238567aa53f04567a31218923e28a87f968b16e", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_USERTAKEOFF", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a72e55af7ba332de8fcd2ad34bd238567a91e53bec74397180795cdcc48ec24421", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_MOTOR_RAMPING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a72e55af7ba332de8fcd2ad34bd238567a7b4a0cbec8965ab5f168d7fe090a1eee", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_EMERGENCY_LANDING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a72e55af7ba332de8fcd2ad34bd238567aa8759a96b31ef96abc922aca977bc3f0", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a72e55af7ba332de8fcd2ad34bd238567a0d0c351f5ed455d0f6db460736a30bef", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PILOTINGSTATE_LANDINGSTATECHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1b1fc6b9610cbf8ece50e54af13d3faf", [
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_LANDINGSTATECHANGED_STATE_LINEAR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1b1fc6b9610cbf8ece50e54af13d3fafa355d246404c760338a86f9ffbca6cc0d", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_LANDINGSTATECHANGED_STATE_SPIRAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1b1fc6b9610cbf8ece50e54af13d3fafae8fa9efb27ab8b17aa9e61ea3a3015e1", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_LANDINGSTATECHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1b1fc6b9610cbf8ece50e54af13d3fafaa3fae45cbaa4eee976243ba13c100488", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_ORIENTATION_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a263c9bd1a2dba84393248959cc2b08ff", [
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_ORIENTATION_MODE_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a263c9bd1a2dba84393248959cc2b08ffadea341e995723b39e7dd8cbff759d259", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_ORIENTATION_MODE_TO_TARGET", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a263c9bd1a2dba84393248959cc2b08ffa0bf8f641c22bb4c58d9c6f8d5985658f", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_ORIENTATION_MODE_HEADING_START", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a263c9bd1a2dba84393248959cc2b08ffadef73e65465fa6b7e80ddd0f28895623", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_ORIENTATION_MODE_HEADING_DURING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a263c9bd1a2dba84393248959cc2b08ffad348d4d2006fb5de8fd7352ba39eb639", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_ORIENTATION_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a263c9bd1a2dba84393248959cc2b08ffae853de8473d924e66ad06d41e73fdd50", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_STATUS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6406352cdffe780acd420033d3e50674", [
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_STATUS_RUNNING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6406352cdffe780acd420033d3e50674a6477a6923228856ed1b84cd9230383e1", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_STATUS_DONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6406352cdffe780acd420033d3e50674ae855327bb01042537c0b7df7864ee375", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_STATUS_CANCELED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6406352cdffe780acd420033d3e50674a4f5e24505d030182343215d7c5bec8c9", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_STATUS_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6406352cdffe780acd420033d3e50674a49ed8c1e9fb819a5ea9c20f26413484a", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_STATUS_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6406352cdffe780acd420033d3e50674a3e066fd193d2c8d8fae2b48e54ff9d36", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PILOTINGSTATE_NAVIGATEHOMESTATECHANGED_REASON", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a916f55ff308f9a693d5c3ab31ad36393", [
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_NAVIGATEHOMESTATECHANGED_REASON_USERREQUEST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a916f55ff308f9a693d5c3ab31ad36393a3d5651f3696123d56dd25804b22859c6", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_NAVIGATEHOMESTATECHANGED_REASON_CONNECTIONLOST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a916f55ff308f9a693d5c3ab31ad36393ade1c3360328daf02a8bdeeb0fc603502", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_NAVIGATEHOMESTATECHANGED_REASON_LOWBATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a916f55ff308f9a693d5c3ab31ad36393ade95e4a0b510d40b501dd17faadd3ab8", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_NAVIGATEHOMESTATECHANGED_REASON_FINISHED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a916f55ff308f9a693d5c3ab31ad36393a196667751c76edd6d33d7364322baa1f", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_NAVIGATEHOMESTATECHANGED_REASON_STOPPED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a916f55ff308f9a693d5c3ab31ad36393a6f6ebcc9a5d0cca8939e1655bf0a4386", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_NAVIGATEHOMESTATECHANGED_REASON_DISABLED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a916f55ff308f9a693d5c3ab31ad36393aef61faa4e43298e566405d44e5605f29", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_NAVIGATEHOMESTATECHANGED_REASON_ENABLED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a916f55ff308f9a693d5c3ab31ad36393af914a2fcbe9169c6838a90a39ae7a198", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_NAVIGATEHOMESTATECHANGED_REASON_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a916f55ff308f9a693d5c3ab31ad36393abdd29beb320fc8582d3374bdda7bf248", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_PILOTINGSTATE_NAVIGATEHOMESTATECHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67ec7607e6a1f4f05c6e067414783910", [
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_NAVIGATEHOMESTATECHANGED_STATE_AVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67ec7607e6a1f4f05c6e067414783910a20d5dc63331b38288e82f4fdda5ff89f", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_NAVIGATEHOMESTATECHANGED_STATE_INPROGRESS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67ec7607e6a1f4f05c6e067414783910a517071f6561ac2c4fee555ba0196ba6f", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_NAVIGATEHOMESTATECHANGED_STATE_UNAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67ec7607e6a1f4f05c6e067414783910aa4c50d4edbb502797dfe803bfc87f68b", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_NAVIGATEHOMESTATECHANGED_STATE_PENDING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67ec7607e6a1f4f05c6e067414783910ae0fb3b22e3dbd18db6d14590661340a2", null ],
+      [ "ARCOMMANDS_ARDRONE3_PILOTINGSTATE_NAVIGATEHOMESTATECHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67ec7607e6a1f4f05c6e067414783910a2dbd78862b7dd107cf5cc2654525fd8d", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORLASTERRORCHANGED_MOTORERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aeaef97aa27ab6786e4eb2ddddcb80f27", [
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORLASTERRORCHANGED_MOTORERROR_NOERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aeaef97aa27ab6786e4eb2ddddcb80f27aa6502822909d29a8c8b963c607d95e4b", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORLASTERRORCHANGED_MOTORERROR_ERROREEPROM", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aeaef97aa27ab6786e4eb2ddddcb80f27aa818abafe60247baf755f11bbf76713e", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORLASTERRORCHANGED_MOTORERROR_ERRORMOTORSTALLED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aeaef97aa27ab6786e4eb2ddddcb80f27a4b3d63e1aff974c868cf253175570c0f", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORLASTERRORCHANGED_MOTORERROR_ERRORPROPELLERSECURITY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aeaef97aa27ab6786e4eb2ddddcb80f27a04902f5dcf7d4dcc8d4336f75ef73afd", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORLASTERRORCHANGED_MOTORERROR_ERRORCOMMLOST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aeaef97aa27ab6786e4eb2ddddcb80f27a0ec980b96b4a835ab256e68e0275a0fc", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORLASTERRORCHANGED_MOTORERROR_ERRORRCEMERGENCYSTOP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aeaef97aa27ab6786e4eb2ddddcb80f27a0d879c3cff9ee7f3870dac20aa6a82d4", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORLASTERRORCHANGED_MOTORERROR_ERRORREALTIME", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aeaef97aa27ab6786e4eb2ddddcb80f27a07a5134344b2c24d40538763f73cabe0", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORLASTERRORCHANGED_MOTORERROR_ERRORMOTORSETTING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aeaef97aa27ab6786e4eb2ddddcb80f27adbda0ed358bbb947e9ab92e39ec9d61a", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORLASTERRORCHANGED_MOTORERROR_ERRORBATTERYVOLTAGE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aeaef97aa27ab6786e4eb2ddddcb80f27a657479f1ea0272ec89c4c8d9cdc00ba9", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORLASTERRORCHANGED_MOTORERROR_ERRORLIPOCELLS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aeaef97aa27ab6786e4eb2ddddcb80f27ab3d21bac0f4ef2059baf62c3edd3cae5", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORLASTERRORCHANGED_MOTORERROR_ERRORMOSFET", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aeaef97aa27ab6786e4eb2ddddcb80f27a59ca36a98728f5d49e0bc4c897d2675d", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORLASTERRORCHANGED_MOTORERROR_ERRORTEMPERATURE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aeaef97aa27ab6786e4eb2ddddcb80f27ad0f2b4ea003f44cd38d8352668d0db68", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORLASTERRORCHANGED_MOTORERROR_ERRORBOOTLOADER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aeaef97aa27ab6786e4eb2ddddcb80f27a28c05a76d74bc53ad5018e3f8b0ea069", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORLASTERRORCHANGED_MOTORERROR_ERRORASSERT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aeaef97aa27ab6786e4eb2ddddcb80f27af3b0cdd188cab010a8e6872a6d76dfc2", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORLASTERRORCHANGED_MOTORERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aeaef97aa27ab6786e4eb2ddddcb80f27a25f08b3a5f58cb0210f55abbc7b30529", null ]
+    ] ],
+    [ "eARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORSTATECHANGED_MOTORERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ee23a080cc2f9fc17eb4794266d568e", [
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORSTATECHANGED_MOTORERROR_NOERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ee23a080cc2f9fc17eb4794266d568ea03a0e083e44975eff06001d2202886b9", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORSTATECHANGED_MOTORERROR_ERROREEPROM", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ee23a080cc2f9fc17eb4794266d568ea26618c8d2fd0b71f9e5985a02e50862b", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORSTATECHANGED_MOTORERROR_ERRORMOTORSTALLED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ee23a080cc2f9fc17eb4794266d568ea7e05c2e4c0c8d94f2181c20a1201a560", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORSTATECHANGED_MOTORERROR_ERRORPROPELLERSECURITY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ee23a080cc2f9fc17eb4794266d568ea2c195fa56516a52612d36e510dadfc16", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORSTATECHANGED_MOTORERROR_ERRORCOMMLOST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ee23a080cc2f9fc17eb4794266d568ea94572302f457569619d0df8c27b4f2c2", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORSTATECHANGED_MOTORERROR_ERRORRCEMERGENCYSTOP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ee23a080cc2f9fc17eb4794266d568ea78452b4a9ea59b12b02ff05f2f2728a0", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORSTATECHANGED_MOTORERROR_ERRORREALTIME", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ee23a080cc2f9fc17eb4794266d568ea9443c41f2e2aaac4693997c244e8d5d8", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORSTATECHANGED_MOTORERROR_ERRORMOTORSETTING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ee23a080cc2f9fc17eb4794266d568ea5e043051ebecbe8ba377bc42e066b9b3", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORSTATECHANGED_MOTORERROR_ERRORTEMPERATURE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ee23a080cc2f9fc17eb4794266d568ea1cf23e66656262eaed480713bdbef089", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORSTATECHANGED_MOTORERROR_ERRORBATTERYVOLTAGE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ee23a080cc2f9fc17eb4794266d568eaf706be00f1e89e74a2148056e0f36b76", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORSTATECHANGED_MOTORERROR_ERRORLIPOCELLS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ee23a080cc2f9fc17eb4794266d568ea95cd3f7d40fbfee664eca69f3ab19386", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORSTATECHANGED_MOTORERROR_ERRORMOSFET", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ee23a080cc2f9fc17eb4794266d568ea37fd9c3cafc228b826b1537df682b11b", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORSTATECHANGED_MOTORERROR_ERRORBOOTLOADER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ee23a080cc2f9fc17eb4794266d568ea54422c74a4e3278dfc6507839ee61c30", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORSTATECHANGED_MOTORERROR_ERRORASSERT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ee23a080cc2f9fc17eb4794266d568eae0283245a7675aff200c1679276683ac", null ],
+      [ "ARCOMMANDS_ARDRONE3_SETTINGSSTATE_MOTORERRORSTATECHANGED_MOTORERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ee23a080cc2f9fc17eb4794266d568ea0f11f3d4a27e2056d6e349e725abac13", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_ACCESSORY_CONFIG_ACCESSORY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2a3c6cdb98aa6f739aa0409c4d4c87af", [
+      [ "ARCOMMANDS_COMMON_ACCESSORY_CONFIG_ACCESSORY_NO_ACCESSORY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2a3c6cdb98aa6f739aa0409c4d4c87afa83baca2561f13c06d62400c04841323c", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORY_CONFIG_ACCESSORY_STD_WHEELS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2a3c6cdb98aa6f739aa0409c4d4c87afaaf0d8024e0ebc1322cfd6b0333ddcf04", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORY_CONFIG_ACCESSORY_TRUCK_WHEELS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2a3c6cdb98aa6f739aa0409c4d4c87afabe73526a2f29094528900ef4d4c04a80", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORY_CONFIG_ACCESSORY_HULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2a3c6cdb98aa6f739aa0409c4d4c87afa79141c0231092a014adbd2ec89a0eaac", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORY_CONFIG_ACCESSORY_HYDROFOIL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2a3c6cdb98aa6f739aa0409c4d4c87afa25bb8d57036d1396c59bc9f3223ffe71", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORY_CONFIG_ACCESSORY_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2a3c6cdb98aa6f739aa0409c4d4c87afac02974de2be104ece624eb80d8615d06", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_ACCESSORYSTATE_ACCESSORYCONFIGCHANGED_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a015837bf96675749d2ec71fefc37de0c", [
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_ACCESSORYCONFIGCHANGED_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a015837bf96675749d2ec71fefc37de0ca982d8a9c2b121c73e0db4a0785ed1727", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_ACCESSORYCONFIGCHANGED_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a015837bf96675749d2ec71fefc37de0cadda10255bb237aa6e1b5d9ffa10b8252", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_ACCESSORYCONFIGCHANGED_ERROR_FLYING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a015837bf96675749d2ec71fefc37de0cab2672dfde44e8454931ac5445a8aae76", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_ACCESSORYCONFIGCHANGED_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a015837bf96675749d2ec71fefc37de0cae35462b38c4b53e41a42707c82ae18fe", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_ACCESSORYSTATE_ACCESSORYCONFIGCHANGED_NEWACCESSORY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5220c25a2db43d50aeb0abea847d7ecf", [
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_ACCESSORYCONFIGCHANGED_NEWACCESSORY_UNCONFIGURED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5220c25a2db43d50aeb0abea847d7ecfae20c18f79b787c2f10513027333248aa", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_ACCESSORYCONFIGCHANGED_NEWACCESSORY_NO_ACCESSORY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5220c25a2db43d50aeb0abea847d7ecfa6662ed0fa983809c42f462df4e706eac", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_ACCESSORYCONFIGCHANGED_NEWACCESSORY_STD_WHEELS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5220c25a2db43d50aeb0abea847d7ecfa03fbe6518e52e2a4193982b5f34e8014", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_ACCESSORYCONFIGCHANGED_NEWACCESSORY_TRUCK_WHEELS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5220c25a2db43d50aeb0abea847d7ecfad9cda3a2f85726e366f38956d5651416", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_ACCESSORYCONFIGCHANGED_NEWACCESSORY_HULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5220c25a2db43d50aeb0abea847d7ecfa628f69562a6fc6865f42cf856c497dbb", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_ACCESSORYCONFIGCHANGED_NEWACCESSORY_HYDROFOIL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5220c25a2db43d50aeb0abea847d7ecfa540e7f7b82a65cdb825b23f60e3b6571", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_ACCESSORYCONFIGCHANGED_NEWACCESSORY_IN_PROGRESS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5220c25a2db43d50aeb0abea847d7ecfa3193de962227d00126d948593610641c", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_ACCESSORYCONFIGCHANGED_NEWACCESSORY_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5220c25a2db43d50aeb0abea847d7ecfa68c93935ec3a9fa4307572fde585153f", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_ACCESSORYSTATE_SUPPORTEDACCESSORIESLISTCHANGED_ACCESSORY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae359f8f63ce2e1c7abf5e870bbf58253", [
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_SUPPORTEDACCESSORIESLISTCHANGED_ACCESSORY_NO_ACCESSORY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae359f8f63ce2e1c7abf5e870bbf58253a4947cca40708412a8e50286d4bd67ef7", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_SUPPORTEDACCESSORIESLISTCHANGED_ACCESSORY_STD_WHEELS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae359f8f63ce2e1c7abf5e870bbf58253acfe5bcba359b9df94cf914020eed01c3", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_SUPPORTEDACCESSORIESLISTCHANGED_ACCESSORY_TRUCK_WHEELS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae359f8f63ce2e1c7abf5e870bbf58253aac88b49c5d2604b7f5b19af2aa1f622a", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_SUPPORTEDACCESSORIESLISTCHANGED_ACCESSORY_HULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae359f8f63ce2e1c7abf5e870bbf58253ae5506155c696622d6e0289a3a811c448", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_SUPPORTEDACCESSORIESLISTCHANGED_ACCESSORY_HYDROFOIL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae359f8f63ce2e1c7abf5e870bbf58253a26138b5bc403f7c51fc10478c127bbe3", null ],
+      [ "ARCOMMANDS_COMMON_ACCESSORYSTATE_SUPPORTEDACCESSORIESLISTCHANGED_ACCESSORY_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae359f8f63ce2e1c7abf5e870bbf58253a4269bb7ee8b1ef1f06998f31d900302c", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7", [
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_HEADLIGHTS_FLASH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7a56995ac93ba456aa8dba1c89afbb3ab2", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_HEADLIGHTS_BLINK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7a17c739fe5a7b18724979d720cdc2e310", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_HEADLIGHTS_OSCILLATION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7ae45768cd0770d2a1572656ee49006177", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_SPIN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7a9c7604ceb7ce2b6a8b71d32e726938c2", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_TAP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7aac1a95ed44929fdb6b6d8b5b1a50abf8", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_SLOW_SHAKE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7a50c191ba454ec78af5c93627a21a1d1f", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_METRONOME", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7a2c365ce47c2473d7083db20a8d50d27b", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_ONDULATION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7abda2c7a064732df2b92f12260751fa9d", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_SPIN_JUMP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7aa4ace814597c208a49dba668dbb146fb", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_SPIN_TO_POSTURE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7ab213492b31546280173bf434cdf2d170", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_SPIRAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7a32a211b3cc3988a22866370a2121ef84", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_SLALOM", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7a8dea8ec2bb6d2fecc8e95b13397df76a", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_BOOST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7a2b1cb642d43879c65e0d4f3e052f4700", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_LOOPING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7a2a25f0aca5fb9d95dc97bc01be789505", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_BARREL_ROLL_180_RIGHT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7a409fd5d5146a48030e8cc279b8bcb2c5", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_BARREL_ROLL_180_LEFT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7af91a3fe11fe301ba880fce89659db705", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_BACKSWAP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7a3aec81bf6d10daf50453e51dba69eaa3", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STARTANIMATION_ANIM_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a07de74716ddcae7597e4812914c51df7ac2a243b12b7000efa9bdc625e17ea602", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993", [
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_HEADLIGHTS_FLASH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993a7bc6fb30e30fa27987fc3002cc59e662", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_HEADLIGHTS_BLINK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993a10d54925df482db6627763638d52b16e", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_HEADLIGHTS_OSCILLATION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993ab5dda924af9cca7688c422bf13b8a19c", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_SPIN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993a1c439e3037e64f8f2a8b4e92541876ab", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_TAP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993a46079cbcbc0e36491d1feca2138f9e8f", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_SLOW_SHAKE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993ae34b8faf3e29f1cca84a1d2ce6f23798", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_METRONOME", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993a82ce9e01114fb66a38094ebd437c7e9a", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_ONDULATION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993a88fcc8051aa6c48572c172a32e83e8dd", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_SPIN_JUMP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993aac909a1b5d629b65a8cd3f63d1e3b3a0", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_SPIN_TO_POSTURE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993a866250540707e33f4197d4a02e2151c1", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_SPIRAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993a6e5f83ff6e7eff572f0f06a8aa1c2b8f", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_SLALOM", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993a72413af8fd51a9dab5c7237e08ebfd1f", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_BOOST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993a73a5a1f5296b146e711dc16b01eadb0f", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_LOOPING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993a724c6d8da7e93e67bffe37209f360108", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_BARREL_ROLL_180_RIGHT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993a1e38100dd4f29a628365976641b2f661", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_BARREL_ROLL_180_LEFT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993adbaf26fff59aabc15495735d624c4278", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_BACKSWAP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993a2480d0e9541207c44229d56ee23226e7", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONS_STOPANIMATION_ANIM_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a67afc3def2a012184a10b79eab1a0993abe572682ce2c873a11d16642ecc15be9", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6", [
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_HEADLIGHTS_FLASH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6a085b21f6b3f74288d14d07868636ae7b", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_HEADLIGHTS_BLINK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6ad21a242a036e53439cc69ea8ee4fbdbf", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_HEADLIGHTS_OSCILLATION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6a9ee540b6e623d05dcb003a75b4293ff7", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_SPIN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6ad83d8712b90f0fe11463c4ab65815203", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_TAP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6a4bcb9bf3c6dd25bf2b196b0d8025222f", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_SLOW_SHAKE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6afa75546fb5678ad39795ca9444f7fec5", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_METRONOME", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6ac9478f98cd0e9d520a110ea42349edc9", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_ONDULATION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6ae79d52a813f6594d82947a54d5abf71b", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_SPIN_JUMP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6ac74175ac114d813697a503b574426a9e", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_SPIN_TO_POSTURE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6a5e100a56d11b7cf24276f900f8a2ba48", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_SPIRAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6a86d8c8de8410dca3cac4c90d4d2efe49", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_SLALOM", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6a3e0b5fff45e2d3cad5031893a76820bb", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_BOOST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6a7b6c6db1594960dde9267bc90d0ab926", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_LOOPING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6a53f8ff61c5318571ac96c48bc90624d3", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_BARREL_ROLL_180_RIGHT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6a79e93d8dc276963894ab33609d64a481", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_BARREL_ROLL_180_LEFT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6af19ffab30a009e273146e0334b9326da", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_BACKSWAP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6aad2f02e76888dba70b984dbb78b6b66a", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ANIM_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a209119d4f4e11a932a2d0a8789808aa6a21df4a4367139edb0bf5aa4ff43386d1", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9b1a1bfb4b6ba5364d298e47b7a6ea67", [
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9b1a1bfb4b6ba5364d298e47b7a6ea67a16f7c8673ddc9cd6c7ad4d2ca00136f0", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9b1a1bfb4b6ba5364d298e47b7a6ea67aec216e8d8c073b92f220a98ad03e23d8", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9b1a1bfb4b6ba5364d298e47b7a6ea67a21288fd13e9127ca59c3a8aa6865d69c", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7aecf2765326bde9ba78b3fc9cf35001", [
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_STATE_STOPPED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7aecf2765326bde9ba78b3fc9cf35001a4453e2dd86bc67dc1c16287c5cbdd96a", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_STATE_STARTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7aecf2765326bde9ba78b3fc9cf35001a369136aa3e9aaa22d49f9a5947a954e5", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_STATE_NOTAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7aecf2765326bde9ba78b3fc9cf35001ac5a0f8cf627158092618ccfb54c296ac", null ],
+      [ "ARCOMMANDS_COMMON_ANIMATIONSSTATE_LIST_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7aecf2765326bde9ba78b3fc9cf35001a5e61b0d04cf5279c8c103f00399688a4", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_CALIBRATIONSTATE_MAGNETOCALIBRATIONAXISTOCALIBRATECHANGED_AXIS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a91dee6a7caddbb6fd7ad02d04052d239", [
+      [ "ARCOMMANDS_COMMON_CALIBRATIONSTATE_MAGNETOCALIBRATIONAXISTOCALIBRATECHANGED_AXIS_XAXIS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a91dee6a7caddbb6fd7ad02d04052d239a0d5999326a2c19b313099987c6f2add6", null ],
+      [ "ARCOMMANDS_COMMON_CALIBRATIONSTATE_MAGNETOCALIBRATIONAXISTOCALIBRATECHANGED_AXIS_YAXIS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a91dee6a7caddbb6fd7ad02d04052d239a9cfda4fcad8fe8e51e6fd098160fac45", null ],
+      [ "ARCOMMANDS_COMMON_CALIBRATIONSTATE_MAGNETOCALIBRATIONAXISTOCALIBRATECHANGED_AXIS_ZAXIS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a91dee6a7caddbb6fd7ad02d04052d239ad8fb974d86d6db0e6d11e65d83d069d4", null ],
+      [ "ARCOMMANDS_COMMON_CALIBRATIONSTATE_MAGNETOCALIBRATIONAXISTOCALIBRATECHANGED_AXIS_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a91dee6a7caddbb6fd7ad02d04052d239ac60e44ffae0a6d25e96199fd879e69fc", null ],
+      [ "ARCOMMANDS_COMMON_CALIBRATIONSTATE_MAGNETOCALIBRATIONAXISTOCALIBRATECHANGED_AXIS_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a91dee6a7caddbb6fd7ad02d04052d239ad343713f946362808f0796de0df511d2", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_CALIBRATIONSTATE_PITOTCALIBRATIONSTATECHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7b77ca1e33eb0d042a3c4b307710c883", [
+      [ "ARCOMMANDS_COMMON_CALIBRATIONSTATE_PITOTCALIBRATIONSTATECHANGED_STATE_DONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7b77ca1e33eb0d042a3c4b307710c883a33c6ca3f2835856d9bfe5fa40a95e251", null ],
+      [ "ARCOMMANDS_COMMON_CALIBRATIONSTATE_PITOTCALIBRATIONSTATECHANGED_STATE_READY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7b77ca1e33eb0d042a3c4b307710c883a255a08e6c64190f6f23a5817f15aa5e5", null ],
+      [ "ARCOMMANDS_COMMON_CALIBRATIONSTATE_PITOTCALIBRATIONSTATECHANGED_STATE_IN_PROGRESS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7b77ca1e33eb0d042a3c4b307710c883a7dac217378100990810b887651b4c0e5", null ],
+      [ "ARCOMMANDS_COMMON_CALIBRATIONSTATE_PITOTCALIBRATIONSTATECHANGED_STATE_REQUIRED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7b77ca1e33eb0d042a3c4b307710c883ad997a537ddac1e8697d0c492a06a2c7a", null ],
+      [ "ARCOMMANDS_COMMON_CALIBRATIONSTATE_PITOTCALIBRATIONSTATECHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7b77ca1e33eb0d042a3c4b307710c883adaacd796993fa17dbfd78673d4b4a0ce", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_CHARGER_SETMAXCHARGERATE_RATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa5e7bc60d1933a78dd096eb96cc6c8e3", [
+      [ "ARCOMMANDS_COMMON_CHARGER_SETMAXCHARGERATE_RATE_SLOW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa5e7bc60d1933a78dd096eb96cc6c8e3a31a425c3c6aa22b24a18a8a2b7b26aa4", null ],
+      [ "ARCOMMANDS_COMMON_CHARGER_SETMAXCHARGERATE_RATE_MODERATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa5e7bc60d1933a78dd096eb96cc6c8e3abc86ffe5d88a9d0b0bd7a03eaeb43ed3", null ],
+      [ "ARCOMMANDS_COMMON_CHARGER_SETMAXCHARGERATE_RATE_FAST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa5e7bc60d1933a78dd096eb96cc6c8e3a0fd83c9dc9166f851e53ceee078a040f", null ],
+      [ "ARCOMMANDS_COMMON_CHARGER_SETMAXCHARGERATE_RATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa5e7bc60d1933a78dd096eb96cc6c8e3a87fb215a601600d85a6b3c8709ae031f", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_CHARGERSTATE_CHARGINGINFO_PHASE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acf3e2883396ce39023a3eb502d072987", [
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CHARGINGINFO_PHASE_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acf3e2883396ce39023a3eb502d072987a6b57726ab26e1141a95bd00b6ee3ff41", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CHARGINGINFO_PHASE_CONSTANT_CURRENT_1", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acf3e2883396ce39023a3eb502d072987ac24f2ce9efe8addd564e7d47be8e2b98", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CHARGINGINFO_PHASE_CONSTANT_CURRENT_2", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acf3e2883396ce39023a3eb502d072987a2b5a925304687441450bad31b28f347e", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CHARGINGINFO_PHASE_CONSTANT_VOLTAGE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acf3e2883396ce39023a3eb502d072987a53ebd0d37057d2d1588cc284c70746e6", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CHARGINGINFO_PHASE_CHARGED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acf3e2883396ce39023a3eb502d072987aedc999356252aab6884c3d68a001f3b4", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CHARGINGINFO_PHASE_DISCHARGING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acf3e2883396ce39023a3eb502d072987a55f474eb36ceb8b445f508fb0ce41bd5", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CHARGINGINFO_PHASE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acf3e2883396ce39023a3eb502d072987ad9e3f80115b91a23d4d0b63eb3490072", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_CHARGERSTATE_CHARGINGINFO_RATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a56ae886827f8dba19895f9b4763a8a81", [
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CHARGINGINFO_RATE_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a56ae886827f8dba19895f9b4763a8a81a799c1d27e11b16ddbf5d7669de2ce56e", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CHARGINGINFO_RATE_SLOW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a56ae886827f8dba19895f9b4763a8a81a03e37706e1d302747acfe32ddb127000", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CHARGINGINFO_RATE_MODERATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a56ae886827f8dba19895f9b4763a8a81a4766cf8ec1fa1445fe46abbf6b43299b", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CHARGINGINFO_RATE_FAST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a56ae886827f8dba19895f9b4763a8a81a4a1318c2f6d9dfc6801b364067b36b8b", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CHARGINGINFO_RATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a56ae886827f8dba19895f9b4763a8a81ac69e0c13f9a18ed9ec6a5efa5a529d4c", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_CHARGERSTATE_CURRENTCHARGESTATECHANGED_PHASE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#afdf0201cb4aa416c9b8ca07109c1d05c", [
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CURRENTCHARGESTATECHANGED_PHASE_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#afdf0201cb4aa416c9b8ca07109c1d05ca033f34e8f14fe4dbdde39211b1b769b0", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CURRENTCHARGESTATECHANGED_PHASE_CONSTANT_CURRENT_1", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#afdf0201cb4aa416c9b8ca07109c1d05caa6ce5928e1a85d24d0747bb6ae2966b5", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CURRENTCHARGESTATECHANGED_PHASE_CONSTANT_CURRENT_2", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#afdf0201cb4aa416c9b8ca07109c1d05ca5a8c11249467774452af3679015860ac", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CURRENTCHARGESTATECHANGED_PHASE_CONSTANT_VOLTAGE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#afdf0201cb4aa416c9b8ca07109c1d05cabf07355610dce75cdc8fad07214683e5", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CURRENTCHARGESTATECHANGED_PHASE_CHARGED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#afdf0201cb4aa416c9b8ca07109c1d05ca83fe2f637c5bbc3439cdea039edcfe1d", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CURRENTCHARGESTATECHANGED_PHASE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#afdf0201cb4aa416c9b8ca07109c1d05ca546ba1ee6e9deae04cc4e20ae75e8313", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_CHARGERSTATE_CURRENTCHARGESTATECHANGED_STATUS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7bbf64ba1cd614912f0ca9d8acb8a446", [
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CURRENTCHARGESTATECHANGED_STATUS_DISCHARGING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7bbf64ba1cd614912f0ca9d8acb8a446ad4168bb1fb7be915d92e3f96abbaa3fc", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CURRENTCHARGESTATECHANGED_STATUS_CHARGING_SLOW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7bbf64ba1cd614912f0ca9d8acb8a446a040017313370d46fbe5760fd3cdf1625", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CURRENTCHARGESTATECHANGED_STATUS_CHARGING_MODERATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7bbf64ba1cd614912f0ca9d8acb8a446ae3ad992e2f06fdd271b64557c7e7064a", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CURRENTCHARGESTATECHANGED_STATUS_CHARGING_FAST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7bbf64ba1cd614912f0ca9d8acb8a446a93d7c2a7f366f62b20eae778b9bf2167", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CURRENTCHARGESTATECHANGED_STATUS_BATTERY_FULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7bbf64ba1cd614912f0ca9d8acb8a446aed9036646b10c0138a703dd0dc742358", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_CURRENTCHARGESTATECHANGED_STATUS_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7bbf64ba1cd614912f0ca9d8acb8a446acbd4806d1aa7a5036ab04b1cb9a928f3", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_CHARGERSTATE_LASTCHARGERATECHANGED_RATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7610fc5adc5dcdfc0eeed449e4022faf", [
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_LASTCHARGERATECHANGED_RATE_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7610fc5adc5dcdfc0eeed449e4022fafa0ca6e8c8ee7ec3df7a239e0453fcc12e", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_LASTCHARGERATECHANGED_RATE_SLOW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7610fc5adc5dcdfc0eeed449e4022fafa490af01d092b82cb848ee31667977d69", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_LASTCHARGERATECHANGED_RATE_MODERATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7610fc5adc5dcdfc0eeed449e4022fafab93f16ef0da6ce318d376880a2390671", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_LASTCHARGERATECHANGED_RATE_FAST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7610fc5adc5dcdfc0eeed449e4022fafa08ce6de7001847450bb4da7d8905d340", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_LASTCHARGERATECHANGED_RATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7610fc5adc5dcdfc0eeed449e4022fafa1a1eee7895b11012ed89400ee49a88b7", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_CHARGERSTATE_MAXCHARGERATECHANGED_RATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af578b35b22077d1b0c6ea09f1aba8f23", [
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_MAXCHARGERATECHANGED_RATE_SLOW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af578b35b22077d1b0c6ea09f1aba8f23aa27a9159669810e1f510aecace185d28", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_MAXCHARGERATECHANGED_RATE_MODERATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af578b35b22077d1b0c6ea09f1aba8f23a3eb2d04e62bc4c956df172676a949c83", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_MAXCHARGERATECHANGED_RATE_FAST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af578b35b22077d1b0c6ea09f1aba8f23a00a68256e29839de831cecd97a1caa7f", null ],
+      [ "ARCOMMANDS_COMMON_CHARGERSTATE_MAXCHARGERATECHANGED_RATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af578b35b22077d1b0c6ea09f1aba8f23a0a70405488756cdbf634be212bb23379", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769", [
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL_RS_TRAVIS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769a928c5d74f84c917f2eee732d56ca96c9", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL_RS_MARS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769acdf0fba2f03128eba51856bc7d6176d3", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL_RS_SWAT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769afc1017e3620a897eea998e2940abf237", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL_RS_MCLANE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769acca689b5e0028a326ab9ff6938af9c5b", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL_RS_BLAZE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769ac8b85b0f94c8e79c3c57c73934ef9454", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL_RS_ORAK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769a515957d5a80be285d04ed735dafa9806", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL_RS_NEWZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769ad43f34caba3f670632ded2f3294d651e", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL_JS_MARSHALL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769a1b9a835781dfa2b6046f279073585088", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL_JS_DIESEL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769a2393e5f0c2e7101c782d5d0c8c6c2739", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL_JS_BUZZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769a6d40d13c833dce815c17cc26db690daa", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL_JS_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769af8b8d5707b9d8a5e784a85a69bfb9f16", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL_JS_JETT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769a1bc355bf62804ef40c6d935157ab9c41", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL_JS_TUKTUK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769af0fbfa19e7c290dc6ccac7ad103d5b48", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL_SW_BLACK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769a7dac35066835b2aefbf05a588f7afca0", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL_SW_WHITE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769a874be9811b0eef7f332e1b5902d6a296", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_PRODUCTMODEL_MODEL_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a82bcdfb20a85bc5163a994ce5b19a769a47fd2aa96fd5bd13d52d8753ffee19f3", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_COMMONSTATE_SENSORSSTATESLISTCHANGED_SENSORNAME", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa54d50fd87f82708765f8ba271d740c9", [
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_SENSORSSTATESLISTCHANGED_SENSORNAME_IMU", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa54d50fd87f82708765f8ba271d740c9aa552a48ceec30799373f50056513527d", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_SENSORSSTATESLISTCHANGED_SENSORNAME_BAROMETER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa54d50fd87f82708765f8ba271d740c9a8edfdb27a3634da7717e069ba34c8583", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_SENSORSSTATESLISTCHANGED_SENSORNAME_ULTRASOUND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa54d50fd87f82708765f8ba271d740c9a4fbfce059db2c3c52a23f94e5858eecd", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_SENSORSSTATESLISTCHANGED_SENSORNAME_GPS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa54d50fd87f82708765f8ba271d740c9a87524dbff8886345dea873993cd161e4", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_SENSORSSTATESLISTCHANGED_SENSORNAME_MAGNETOMETER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa54d50fd87f82708765f8ba271d740c9afc7def0d52fe6fb27a690e9e4380cd6d", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_SENSORSSTATESLISTCHANGED_SENSORNAME_VERTICAL_CAMERA", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa54d50fd87f82708765f8ba271d740c9ae97df580b91cb38d7868ccc2702e8a00", null ],
+      [ "ARCOMMANDS_COMMON_COMMONSTATE_SENSORSSTATESLISTCHANGED_SENSORNAME_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa54d50fd87f82708765f8ba271d740c9ab7f2b0b63607c27926415b3aad6979ba", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_FLIGHTPLANSTATE_COMPONENTSTATELISTCHANGED_COMPONENT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae8f531bf5d018c8b7d6fb6739a90a87f", [
+      [ "ARCOMMANDS_COMMON_FLIGHTPLANSTATE_COMPONENTSTATELISTCHANGED_COMPONENT_GPS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae8f531bf5d018c8b7d6fb6739a90a87fa0bcf5de5df24116bc7d180de6c144566", null ],
+      [ "ARCOMMANDS_COMMON_FLIGHTPLANSTATE_COMPONENTSTATELISTCHANGED_COMPONENT_CALIBRATION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae8f531bf5d018c8b7d6fb6739a90a87fa9aab48c40164b8a90764890adc83c1a2", null ],
+      [ "ARCOMMANDS_COMMON_FLIGHTPLANSTATE_COMPONENTSTATELISTCHANGED_COMPONENT_MAVLINK_FILE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae8f531bf5d018c8b7d6fb6739a90a87fa7b5a889400cdfdd58afd412d646ec31b", null ],
+      [ "ARCOMMANDS_COMMON_FLIGHTPLANSTATE_COMPONENTSTATELISTCHANGED_COMPONENT_TAKEOFF", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae8f531bf5d018c8b7d6fb6739a90a87fa1dd3ec5f76db5b1d6df1425436b71910", null ],
+      [ "ARCOMMANDS_COMMON_FLIGHTPLANSTATE_COMPONENTSTATELISTCHANGED_COMPONENT_WAYPOINTSBEYONDGEOFENCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae8f531bf5d018c8b7d6fb6739a90a87fa4b19c7537bc69ddf8023b86148f8e523", null ],
+      [ "ARCOMMANDS_COMMON_FLIGHTPLANSTATE_COMPONENTSTATELISTCHANGED_COMPONENT_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae8f531bf5d018c8b7d6fb6739a90a87facdf88a9ffd3f24dd3cd135505be4c95e", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_MAVLINK_START_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1a4f6eb2784540a3ee15779e88ddc9fb", [
+      [ "ARCOMMANDS_COMMON_MAVLINK_START_TYPE_FLIGHTPLAN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1a4f6eb2784540a3ee15779e88ddc9fbacb06ee770c59fb39c24a3440b10720cd", null ],
+      [ "ARCOMMANDS_COMMON_MAVLINK_START_TYPE_MAPMYHOUSE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1a4f6eb2784540a3ee15779e88ddc9fbafa367b3a352c77458585a678a9a8735f", null ],
+      [ "ARCOMMANDS_COMMON_MAVLINK_START_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1a4f6eb2784540a3ee15779e88ddc9fbafb75a561bbd5a591948dad20b0d477ff", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_MAVLINKSTATE_MAVLINKFILEPLAYINGSTATECHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a23f48cebb5cdc74c0958b27cde15e43d", [
+      [ "ARCOMMANDS_COMMON_MAVLINKSTATE_MAVLINKFILEPLAYINGSTATECHANGED_STATE_PLAYING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a23f48cebb5cdc74c0958b27cde15e43da58c364778536d2ad2de1433aba014eeb", null ],
+      [ "ARCOMMANDS_COMMON_MAVLINKSTATE_MAVLINKFILEPLAYINGSTATECHANGED_STATE_STOPPED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a23f48cebb5cdc74c0958b27cde15e43dad9bf54d4aaf2cad9ddb288366da71321", null ],
+      [ "ARCOMMANDS_COMMON_MAVLINKSTATE_MAVLINKFILEPLAYINGSTATECHANGED_STATE_PAUSED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a23f48cebb5cdc74c0958b27cde15e43da05416d30c35fc8e09bb06215ba8fb05b", null ],
+      [ "ARCOMMANDS_COMMON_MAVLINKSTATE_MAVLINKFILEPLAYINGSTATECHANGED_STATE_LOADED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a23f48cebb5cdc74c0958b27cde15e43da734f02ba2182929be32a8e92b603704e", null ],
+      [ "ARCOMMANDS_COMMON_MAVLINKSTATE_MAVLINKFILEPLAYINGSTATECHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a23f48cebb5cdc74c0958b27cde15e43da6a6d3425c8e4284856191a4a57f1d6e9", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_MAVLINKSTATE_MAVLINKFILEPLAYINGSTATECHANGED_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a15e3631ed7240eb2e3cd413005be3b31", [
+      [ "ARCOMMANDS_COMMON_MAVLINKSTATE_MAVLINKFILEPLAYINGSTATECHANGED_TYPE_FLIGHTPLAN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a15e3631ed7240eb2e3cd413005be3b31a85147014deec720a032beed3f6b28ae3", null ],
+      [ "ARCOMMANDS_COMMON_MAVLINKSTATE_MAVLINKFILEPLAYINGSTATECHANGED_TYPE_MAPMYHOUSE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a15e3631ed7240eb2e3cd413005be3b31ab4d84ed6dceeeb357bebf681740fb8c2", null ],
+      [ "ARCOMMANDS_COMMON_MAVLINKSTATE_MAVLINKFILEPLAYINGSTATECHANGED_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a15e3631ed7240eb2e3cd413005be3b31a5f0ed4b7a65db9714a0a8e7945aefbff", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_MAVLINKSTATE_MAVLINKPLAYERRORSTATECHANGED_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8d1527809fe0b5cb445c4a7dae87601", [
+      [ "ARCOMMANDS_COMMON_MAVLINKSTATE_MAVLINKPLAYERRORSTATECHANGED_ERROR_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8d1527809fe0b5cb445c4a7dae87601a19006252841d503d2b3d24a01432cbab", null ],
+      [ "ARCOMMANDS_COMMON_MAVLINKSTATE_MAVLINKPLAYERRORSTATECHANGED_ERROR_NOTINOUTDOORMODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8d1527809fe0b5cb445c4a7dae87601a7885e04e553d22328b43067c7c86f12f", null ],
+      [ "ARCOMMANDS_COMMON_MAVLINKSTATE_MAVLINKPLAYERRORSTATECHANGED_ERROR_GPSNOTFIXED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8d1527809fe0b5cb445c4a7dae87601ac962df8da0bfb43e5f4117b618568e1d", null ],
+      [ "ARCOMMANDS_COMMON_MAVLINKSTATE_MAVLINKPLAYERRORSTATECHANGED_ERROR_NOTCALIBRATED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8d1527809fe0b5cb445c4a7dae87601a3d4e43c55375dd40b3f60977bb9f7eaf", null ],
+      [ "ARCOMMANDS_COMMON_MAVLINKSTATE_MAVLINKPLAYERRORSTATECHANGED_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8d1527809fe0b5cb445c4a7dae87601aa8cf52a5c06a23b80326a907b7facc4c", null ]
+    ] ],
+    [ "eARCOMMANDS_COMMON_NETWORKEVENT_DISCONNECTION_CAUSE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1ffdda7197e58b928894df5ce80cebeb", [
+      [ "ARCOMMANDS_COMMON_NETWORKEVENT_DISCONNECTION_CAUSE_OFF_BUTTON", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1ffdda7197e58b928894df5ce80cebeba1be6b1ef9846e3d63009603206623495", null ],
+      [ "ARCOMMANDS_COMMON_NETWORKEVENT_DISCONNECTION_CAUSE_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1ffdda7197e58b928894df5ce80cebebaa685f66357a7d0756aa1320fbc42ab61", null ],
+      [ "ARCOMMANDS_COMMON_NETWORKEVENT_DISCONNECTION_CAUSE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1ffdda7197e58b928894df5ce80cebebaa4d59f6646941a440cb87fc6537bfb72", null ]
+    ] ],
+    [ "eARCOMMANDS_DEBUG_SETTING_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0525c98b5ae4a1b229c33bb6c7d72b48", [
+      [ "ARCOMMANDS_DEBUG_SETTING_MODE_READ_ONLY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0525c98b5ae4a1b229c33bb6c7d72b48a0b12c5e4f5f2b5c93300124c4fce870c", null ],
+      [ "ARCOMMANDS_DEBUG_SETTING_MODE_READ_WRITE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0525c98b5ae4a1b229c33bb6c7d72b48a6d8d8a1885d34e58a92df35cc148e2a0", null ],
+      [ "ARCOMMANDS_DEBUG_SETTING_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0525c98b5ae4a1b229c33bb6c7d72b48af2b01dfd072e50c00f5a4a3c43f7cd10", null ]
+    ] ],
+    [ "eARCOMMANDS_DEBUG_SETTING_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af049a7f02a7d963afb29c98cfd87a94d", [
+      [ "ARCOMMANDS_DEBUG_SETTING_TYPE_BOOL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af049a7f02a7d963afb29c98cfd87a94daef2d5bd3e9f78ff7110517095c036c55", null ],
+      [ "ARCOMMANDS_DEBUG_SETTING_TYPE_DECIMAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af049a7f02a7d963afb29c98cfd87a94da2a781b8427f6261a3029cf0907b33529", null ],
+      [ "ARCOMMANDS_DEBUG_SETTING_TYPE_TEXT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af049a7f02a7d963afb29c98cfd87a94da4ce86c03ad12deed080bde8b0af71645", null ],
+      [ "ARCOMMANDS_DEBUG_SETTING_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af049a7f02a7d963afb29c98cfd87a94da427efc1a1112bcadc6f7f5b99dba1991", null ]
+    ] ],
+    [ "eARCOMMANDS_DRONE_MANAGER_CONNECTION_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac6eb76f3454ae36e1c03a7217d0c9680", [
+      [ "ARCOMMANDS_DRONE_MANAGER_CONNECTION_STATE_IDLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac6eb76f3454ae36e1c03a7217d0c9680a90017fd6a8bbc826c7ca2b2404c1f2d8", null ],
+      [ "ARCOMMANDS_DRONE_MANAGER_CONNECTION_STATE_SEARCHING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac6eb76f3454ae36e1c03a7217d0c9680ac3b90e79bd05a88cbe65bafd930abba9", null ],
+      [ "ARCOMMANDS_DRONE_MANAGER_CONNECTION_STATE_CONNECTING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac6eb76f3454ae36e1c03a7217d0c9680a023e7b26acd6c9aad130db1df246d19d", null ],
+      [ "ARCOMMANDS_DRONE_MANAGER_CONNECTION_STATE_CONNECTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac6eb76f3454ae36e1c03a7217d0c9680a3ced7564d06ff191b80b12ee65b24c00", null ],
+      [ "ARCOMMANDS_DRONE_MANAGER_CONNECTION_STATE_DISCONNECTING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac6eb76f3454ae36e1c03a7217d0c9680a388a1152574c68ca7204f19cdd22d6f6", null ],
+      [ "ARCOMMANDS_DRONE_MANAGER_CONNECTION_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac6eb76f3454ae36e1c03a7217d0c9680a55db8a516fa4707c3196580423fc31d7", null ]
+    ] ],
+    [ "eARCOMMANDS_DRONE_MANAGER_SECURITY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aed136440fc04ebaa016a394b3cc4e170", [
+      [ "ARCOMMANDS_DRONE_MANAGER_SECURITY_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aed136440fc04ebaa016a394b3cc4e170a2e3125739be444c17a3dc9069e5bf395", null ],
+      [ "ARCOMMANDS_DRONE_MANAGER_SECURITY_WPA2", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aed136440fc04ebaa016a394b3cc4e170a24648e9ad78a75c32037f0b3bf48157c", null ],
+      [ "ARCOMMANDS_DRONE_MANAGER_SECURITY_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aed136440fc04ebaa016a394b3cc4e170a37d88e0ebaaef3b25c5e1307ba503771", null ]
+    ] ],
+    [ "eARCOMMANDS_FOLLOW_ME_ANIMATION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a123bb3ae1266caaf3ee31aeec3de74dd", [
+      [ "ARCOMMANDS_FOLLOW_ME_ANIMATION_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a123bb3ae1266caaf3ee31aeec3de74dda8ce0cf31b6f95d5b9b90d851b07e8bf3", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_ANIMATION_HELICOID", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a123bb3ae1266caaf3ee31aeec3de74ddab0e9f2d5ebc326089f79c2f1ef023eb8", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_ANIMATION_SWING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a123bb3ae1266caaf3ee31aeec3de74ddaf04d8d3e51f8d747ea0514427d98c65d", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_ANIMATION_BOOMERANG", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a123bb3ae1266caaf3ee31aeec3de74dda782059e83393352d919f91fabf616d8e", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_ANIMATION_CANDLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a123bb3ae1266caaf3ee31aeec3de74ddad79c4452c7e7963e1b20c03e9bf224fe", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_ANIMATION_DOLLY_SLIDE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a123bb3ae1266caaf3ee31aeec3de74ddaa07351db0c455653964894d2f5fb5e4f", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_ANIMATION_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a123bb3ae1266caaf3ee31aeec3de74ddae18025de8f846b58edc2a51f8daec016", null ]
+    ] ],
+    [ "eARCOMMANDS_FOLLOW_ME_BEHAVIOR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a224172635db6639d109b5e45987c27a1", [
+      [ "ARCOMMANDS_FOLLOW_ME_BEHAVIOR_IDLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a224172635db6639d109b5e45987c27a1ad15f9e974e5afe3f1f56a74bcc318cb1", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_BEHAVIOR_FOLLOW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a224172635db6639d109b5e45987c27a1aa76145a1afd593e03bee347c87830b10", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_BEHAVIOR_LOOK_AT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a224172635db6639d109b5e45987c27a1a9cb6df527041da24a49a9333fe7f3e77", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_BEHAVIOR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a224172635db6639d109b5e45987c27a1ab67d3135394435e341d9967db953c81c", null ]
+    ] ],
+    [ "eARCOMMANDS_FOLLOW_ME_BOOMERANG_CONFIGURE_PARAM", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad5d63076235b8b76e9738e1e5185a4f8", [
+      [ "ARCOMMANDS_FOLLOW_ME_BOOMERANG_CONFIGURE_PARAM_SPEED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad5d63076235b8b76e9738e1e5185a4f8a138d82d6e20d5b1ca8657b7aab56d7fb", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_BOOMERANG_CONFIGURE_PARAM_DISTANCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad5d63076235b8b76e9738e1e5185a4f8ac0e75368b9db3e3d7f315a60b2349a66", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_BOOMERANG_CONFIGURE_PARAM_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad5d63076235b8b76e9738e1e5185a4f8a6637df7e48a639bcbec28fc5eba9f9f5", null ]
+    ] ],
+    [ "eARCOMMANDS_FOLLOW_ME_CANDLE_CONFIGURE_PARAM", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad89a2782bd6e0f705a91e2ab5a243658", [
+      [ "ARCOMMANDS_FOLLOW_ME_CANDLE_CONFIGURE_PARAM_SPEED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad89a2782bd6e0f705a91e2ab5a243658a41d8d4961e4ec721aa61ded04cff083b", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_CANDLE_CONFIGURE_PARAM_VERTICAL_DISTANCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad89a2782bd6e0f705a91e2ab5a243658a004edbbd80630438f61c99a01d398766", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_CANDLE_CONFIGURE_PARAM_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad89a2782bd6e0f705a91e2ab5a243658a6605fe173cfa349cf3c195e83a301393", null ]
+    ] ],
+    [ "eARCOMMANDS_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a303d8b1f2ebcbcfc96656f97e1f8d414", [
+      [ "ARCOMMANDS_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_SPEED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a303d8b1f2ebcbcfc96656f97e1f8d414a31a36f57acc7f0314d9c9742ff3897f6", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_ANGLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a303d8b1f2ebcbcfc96656f97e1f8d414ab4613fbd4725de62fd7a383b6980a75a", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_HORIZONTAL_DISTANCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a303d8b1f2ebcbcfc96656f97e1f8d414aab5743286edd824b8538c3ce58687b3b", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a303d8b1f2ebcbcfc96656f97e1f8d414a88bdc8417e02f935e29108fdf40bc895", null ]
+    ] ],
+    [ "eARCOMMANDS_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8ea6b8f09af8b304411cfa3a2988a9d3", [
+      [ "ARCOMMANDS_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_DISTANCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8ea6b8f09af8b304411cfa3a2988a9d3af9ae1b61f087796bfccd62787847997a", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_ELEVATION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8ea6b8f09af8b304411cfa3a2988a9d3a40ee30799e7ef5015a11ba1d4afceaf6", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_AZIMUTH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8ea6b8f09af8b304411cfa3a2988a9d3ae602cd7278439d8106e9c87f4efc9d12", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8ea6b8f09af8b304411cfa3a2988a9d3ad87595694043c4a09e0b5db29c316be5", null ]
+    ] ],
+    [ "eARCOMMANDS_FOLLOW_ME_HELICOID_CONFIGURE_PARAM", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9fd23451d15c4ef505a4ddbbe39f2a5", [
+      [ "ARCOMMANDS_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_SPEED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9fd23451d15c4ef505a4ddbbe39f2a5ae615514b8b663c3e8e5ddb0b1d5fd16c", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_REVOLUTION_NB", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9fd23451d15c4ef505a4ddbbe39f2a5a6217e40503ba42a2e2c15dd0872133c3", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_VERTICAL_DISTANCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9fd23451d15c4ef505a4ddbbe39f2a5ab3b47fbb5003be04f05c18ddaad05042", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9fd23451d15c4ef505a4ddbbe39f2a5a3810e97f85ecef8246a9b2dbe6c9b444", null ]
+    ] ],
+    [ "eARCOMMANDS_FOLLOW_ME_IMAGE_DETECTION_STATUS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa55098c3115a525d4888942386a9abf5", [
+      [ "ARCOMMANDS_FOLLOW_ME_IMAGE_DETECTION_STATUS_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa55098c3115a525d4888942386a9abf5a4545fbcffa95632e721f8bddcb0c65e7", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_IMAGE_DETECTION_STATUS_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa55098c3115a525d4888942386a9abf5a44e3ed4ec41515636a346252fc9feb2d", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_IMAGE_DETECTION_STATUS_LOST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa55098c3115a525d4888942386a9abf5a4c37c239ada6e472ca8778cfc9fd51b8", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_IMAGE_DETECTION_STATUS_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa55098c3115a525d4888942386a9abf5ad7eafc8479f0156be571964316cad704", null ]
+    ] ],
+    [ "eARCOMMANDS_FOLLOW_ME_INPUT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4ab4c737fc7d24e345e26e165b9eae68", [
+      [ "ARCOMMANDS_FOLLOW_ME_INPUT_DRONE_CALIBRATED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4ab4c737fc7d24e345e26e165b9eae68aca0d0ceb7e4a5570a6d22afba7617d00", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_INPUT_DRONE_GPS_GOOD_ACCURACY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4ab4c737fc7d24e345e26e165b9eae68aa71835e80695bb16a69fefadcd525b66", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_INPUT_TARGET_GPS_GOOD_ACCURACY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4ab4c737fc7d24e345e26e165b9eae68ab4c589466f3bb21c1e3a9fec3a684650", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_INPUT_TARGET_BAROMETER_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4ab4c737fc7d24e345e26e165b9eae68ac33967216817ae39f7185b24b8c6f1b7", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_INPUT_DRONE_FAR_ENOUGH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4ab4c737fc7d24e345e26e165b9eae68a99c45569a3e779a397b27460e7b5c691", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_INPUT_DRONE_HIGH_ENOUGH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4ab4c737fc7d24e345e26e165b9eae68a8985e908251c810b87d2821c91f9d797", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_INPUT_IMAGE_DETECTION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4ab4c737fc7d24e345e26e165b9eae68ab6204e706c74aa9558c64938db8e67b0", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_INPUT_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4ab4c737fc7d24e345e26e165b9eae68ab10716e13c069978c773819411fc98c6", null ]
+    ] ],
+    [ "eARCOMMANDS_FOLLOW_ME_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab1ef37eeba8c689d5d70cbd79f7f52ea", [
+      [ "ARCOMMANDS_FOLLOW_ME_MODE_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab1ef37eeba8c689d5d70cbd79f7f52eaa5734b2996e8fc0fed3c3a126847d88ed", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_MODE_LOOK_AT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab1ef37eeba8c689d5d70cbd79f7f52eaa6e8c600439c9c414046351b32604d738", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_MODE_GEOGRAPHIC", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab1ef37eeba8c689d5d70cbd79f7f52eaa1be31270219766d114d50b73037fa744", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_MODE_RELATIVE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab1ef37eeba8c689d5d70cbd79f7f52eaad34956de7b50686ea2df2782fa8f1974", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab1ef37eeba8c689d5d70cbd79f7f52eaa5469f0eb9c5bf9c44b63d3692506a16a", null ]
+    ] ],
+    [ "eARCOMMANDS_FOLLOW_ME_SWING_CONFIGURE_PARAM", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac54bb83ab47035819388213a99d06e5b", [
+      [ "ARCOMMANDS_FOLLOW_ME_SWING_CONFIGURE_PARAM_SPEED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac54bb83ab47035819388213a99d06e5ba318b44b49fda79d64d10f2baba074bec", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_SWING_CONFIGURE_PARAM_VERTICAL_DISTANCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac54bb83ab47035819388213a99d06e5ba970581ba5c216c15e2fb63a37d54fed7", null ],
+      [ "ARCOMMANDS_FOLLOW_ME_SWING_CONFIGURE_PARAM_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac54bb83ab47035819388213a99d06e5ba816a5153ccc8f69f42371d1ef5b7f2b7", null ]
+    ] ],
+    [ "eARCOMMANDS_GENERIC_LIST_FLAGS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab0a776a0057d0b8cedb124202f4d5e79", [
+      [ "ARCOMMANDS_GENERIC_LIST_FLAGS_FIRST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab0a776a0057d0b8cedb124202f4d5e79a8b021b59dac1be9bf9a438cf4f24effb", null ],
+      [ "ARCOMMANDS_GENERIC_LIST_FLAGS_LAST", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab0a776a0057d0b8cedb124202f4d5e79a71bddc62002faa37190d6d1c147d1662", null ],
+      [ "ARCOMMANDS_GENERIC_LIST_FLAGS_EMPTY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab0a776a0057d0b8cedb124202f4d5e79a142c7f2fa3839696133ff96c39645c0d", null ],
+      [ "ARCOMMANDS_GENERIC_LIST_FLAGS_REMOVE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab0a776a0057d0b8cedb124202f4d5e79ac70eb023e01248fae4f61eb2c82678f4", null ],
+      [ "ARCOMMANDS_GENERIC_LIST_FLAGS_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab0a776a0057d0b8cedb124202f4d5e79accc7402e2e7bc6941b5afc388536524a", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_ANIMATIONS_JUMP_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa774b91b7c2acc8ad75b6e16e57e3556", [
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_JUMP_TYPE_LONG", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa774b91b7c2acc8ad75b6e16e57e3556a08f994da94e3147c9e91e949dec3887d", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_JUMP_TYPE_HIGH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa774b91b7c2acc8ad75b6e16e57e3556a55d54623be14e08eac6b04ac59e17fb1", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_JUMP_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa774b91b7c2acc8ad75b6e16e57e3556a16bacf35856690cc8b1abceb22da7024", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8c5799ecc6475f882303da92bd8f865", [
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_STOP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8c5799ecc6475f882303da92bd8f865abedc386d3900b9373392b8234a6a1aa8", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_SPIN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8c5799ecc6475f882303da92bd8f865aedd76aa65baa5f297b5e40cf90a97ec1", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_TAP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8c5799ecc6475f882303da92bd8f865ae894df669456e5ac298c830ef390c35d", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_SLOWSHAKE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8c5799ecc6475f882303da92bd8f865a8ff46daa05d43f87c40acbb67316f7d0", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_METRONOME", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8c5799ecc6475f882303da92bd8f865a88880a2c2a6da03410e4050e450ea622", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_ONDULATION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8c5799ecc6475f882303da92bd8f865add2281bb4b194a8c6d915e6295fb21e3", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_SPINJUMP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8c5799ecc6475f882303da92bd8f865a5010098cd0172e3419a62e4b90aa4877", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_SPINTOPOSTURE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8c5799ecc6475f882303da92bd8f865adc06b1cc19f209f654b40f032b081f30", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_SPIRAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8c5799ecc6475f882303da92bd8f865a59fb2838f85d175d859e4a0ca52cbf13", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_SLALOM", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8c5799ecc6475f882303da92bd8f865a4c9ca77729ec371dcf64aba56b8f9691", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa8c5799ecc6475f882303da92bd8f865ab9de94e3f303b7b599336007bc65c201", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPLOADCHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a217df574ea3609ce180f8d99efa47621", [
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPLOADCHANGED_STATE_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a217df574ea3609ce180f8d99efa47621aa4e8f3940502bb0b8b1ee18ffecb989b", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPLOADCHANGED_STATE_UNLOADED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a217df574ea3609ce180f8d99efa47621ae08a465a4ef3e106ec4b4abe17857b86", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPLOADCHANGED_STATE_LOADED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a217df574ea3609ce180f8d99efa47621a079e5122656872ef501f70421547e3e2", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPLOADCHANGED_STATE_BUSY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a217df574ea3609ce180f8d99efa47621a52b4eaafe45ea1ee757437ddf28fe56b", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPLOADCHANGED_STATE_LOW_BATTERY_UNLOADED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a217df574ea3609ce180f8d99efa47621a2f20e068bb1306485780e506f9b2f61d", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPLOADCHANGED_STATE_LOW_BATTERY_LOADED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a217df574ea3609ce180f8d99efa47621a51707c3830b5c66955ec8f95a1f01aee", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPLOADCHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a217df574ea3609ce180f8d99efa47621adc6f36ec0f958c2784a4ea355dee2647", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPMOTORPROBLEMCHANGED_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4bf4130617fe91f35ff489693edce125", [
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPMOTORPROBLEMCHANGED_ERROR_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4bf4130617fe91f35ff489693edce125af9d954e02bbb60698350ee19f0076927", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPMOTORPROBLEMCHANGED_ERROR_BLOCKED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4bf4130617fe91f35ff489693edce125acd4739bc31c347f0f2432a5b330c7508", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPMOTORPROBLEMCHANGED_ERROR_OVER_HEATED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4bf4130617fe91f35ff489693edce125aa420be75ab5121f569efedfa509cdf0a", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPMOTORPROBLEMCHANGED_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4bf4130617fe91f35ff489693edce125a2b84f02658296374d41187a4634eb965", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPTYPECHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ab2a02a0f745b871577c7b4817003d8", [
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPTYPECHANGED_STATE_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ab2a02a0f745b871577c7b4817003d8adb4917d49141f179295d38d19dc45676", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPTYPECHANGED_STATE_LONG", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ab2a02a0f745b871577c7b4817003d8a4eea174ae4b1daf252b235baa565e15f", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPTYPECHANGED_STATE_HIGH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ab2a02a0f745b871577c7b4817003d8a76a5da88ff9057e8706ea5faa1cf4043", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ANIMATIONSSTATE_JUMPTYPECHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7ab2a02a0f745b871577c7b4817003d8a6fd581b3617f30121387ebbc90e2709c", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_AUDIOSETTINGS_THEME_THEME", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adebaf64f3569e0f8583e455940ad0795", [
+      [ "ARCOMMANDS_JUMPINGSUMO_AUDIOSETTINGS_THEME_THEME_DEFAULT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adebaf64f3569e0f8583e455940ad0795a17941a51cba132e375e18da38c776294", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_AUDIOSETTINGS_THEME_THEME_ROBOT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adebaf64f3569e0f8583e455940ad0795a5d7d3eb0aaf78111d4eb5d9136f1f5f4", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_AUDIOSETTINGS_THEME_THEME_INSECT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adebaf64f3569e0f8583e455940ad0795a023e2fa64e5aa85606e3dd6864b0e8bf", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_AUDIOSETTINGS_THEME_THEME_MONSTER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adebaf64f3569e0f8583e455940ad0795af1a41d431899179297cd8c0116c6b609", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_AUDIOSETTINGS_THEME_THEME_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adebaf64f3569e0f8583e455940ad0795a237af022a55896cf11688df18b9e7c6f", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_AUDIOSETTINGSSTATE_THEMECHANGED_THEME", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8de83bd865854768f37348ed5eab384c", [
+      [ "ARCOMMANDS_JUMPINGSUMO_AUDIOSETTINGSSTATE_THEMECHANGED_THEME_DEFAULT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8de83bd865854768f37348ed5eab384ca6cf64f8d1506d04dab08917a265c7679", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_AUDIOSETTINGSSTATE_THEMECHANGED_THEME_ROBOT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8de83bd865854768f37348ed5eab384ca595b1d94590579f8d424906400252626", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_AUDIOSETTINGSSTATE_THEMECHANGED_THEME_INSECT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8de83bd865854768f37348ed5eab384caf5f8e7cd4aed744bb81315d646c1fb75", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_AUDIOSETTINGSSTATE_THEMECHANGED_THEME_MONSTER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8de83bd865854768f37348ed5eab384ca557cf3308b364632bcc5ac9459af3202", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_AUDIOSETTINGSSTATE_THEMECHANGED_THEME_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8de83bd865854768f37348ed5eab384ca346597eb88188def586f0571176e6a26", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_MEDIARECORD_VIDEO_RECORD", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a672ae92fb76a53a5c803a81886e3058c", [
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORD_VIDEO_RECORD_STOP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a672ae92fb76a53a5c803a81886e3058ca0a5207a25fc277763418d256c34726a6", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORD_VIDEO_RECORD_START", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a672ae92fb76a53a5c803a81886e3058ca0ab55878498eb522c05b8423b7fd86e4", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORD_VIDEO_RECORD_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a672ae92fb76a53a5c803a81886e3058cabbcbf3ecfea91f16f2a8162c3ccdd503", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_MEDIARECORD_VIDEOV2_RECORD", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aae18b42ae1b8c665c3716caa8e5e2520", [
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORD_VIDEOV2_RECORD_STOP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aae18b42ae1b8c665c3716caa8e5e2520a9e4482dd29853ab50c37c11530b01bec", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORD_VIDEOV2_RECORD_START", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aae18b42ae1b8c665c3716caa8e5e2520ac2f74934cca89d5c743eead03a463761", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORD_VIDEOV2_RECORD_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aae18b42ae1b8c665c3716caa8e5e2520a640610ddd862a973d0fc5e0a4085ee82", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aab49f3c99be9e10b186c8f82879052b5", [
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aab49f3c99be9e10b186c8f82879052b5acbbe6ee6c7a32e420adfad83bfbd6c0c", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aab49f3c99be9e10b186c8f82879052b5aa55f399b22cc0993356364993f7fa579", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_BUSY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aab49f3c99be9e10b186c8f82879052b5a41e33207034e8a85174f3e48cd63ace8", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_NOTAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aab49f3c99be9e10b186c8f82879052b5a5c0abdce516456f32c914f17085464fc", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_MEMORYFULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aab49f3c99be9e10b186c8f82879052b5af811b810cb6d972d1495c2b27130b1e9", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_LOWBATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aab49f3c99be9e10b186c8f82879052b5a145a5f19afddd50c6a296c5748317222", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aab49f3c99be9e10b186c8f82879052b5a4d66a97c58f5a981844d4ff25548f3f0", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_PICTUREEVENTCHANGED_EVENT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a14f43df3bf33515f9bed7d8716680b08", [
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_PICTUREEVENTCHANGED_EVENT_TAKEN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a14f43df3bf33515f9bed7d8716680b08aff3fd6d5af912cfe3e75ab2598e7afc7", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_PICTUREEVENTCHANGED_EVENT_FAILED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a14f43df3bf33515f9bed7d8716680b08a32d6a9a2844d767225772047b1097c01", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_PICTUREEVENTCHANGED_EVENT_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a14f43df3bf33515f9bed7d8716680b08af175f1596702c1e509bc3a8dd800b6f5", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af021677ee258f48d50e560e53c5fc62e", [
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af021677ee258f48d50e560e53c5fc62ea37ad6e6d42470b52f5e6d22b85ce32bb", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af021677ee258f48d50e560e53c5fc62ead95dbf35f246e179fa562dce7a820747", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_BUSY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af021677ee258f48d50e560e53c5fc62ea9ff0a1deb30d6816ad6c11c0a4627b26", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_NOTAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af021677ee258f48d50e560e53c5fc62eabb3fb7d78d58158c931eaa1adc2879e2", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_MEMORYFULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af021677ee258f48d50e560e53c5fc62eaf0e040bc659c905b44ea3aa78696d473", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_LOWBATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af021677ee258f48d50e560e53c5fc62eaab224ef1f68d387042544b4a074023ca", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_AUTOSTOPPED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af021677ee258f48d50e560e53c5fc62ea88c16ddbf18e86fc24c47516142ec765", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af021677ee258f48d50e560e53c5fc62eadcb82c13ff7aef08b2dfee4beff26354", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_VIDEOEVENTCHANGED_EVENT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa112c35e694fff28ccf1d8e2f5499168", [
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_VIDEOEVENTCHANGED_EVENT_START", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa112c35e694fff28ccf1d8e2f5499168aaf32fbf1172fb0732e272c5e5700c20c", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_VIDEOEVENTCHANGED_EVENT_STOP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa112c35e694fff28ccf1d8e2f5499168ad541a2f74b5d357a61aaf4fbf7cc093f", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_VIDEOEVENTCHANGED_EVENT_FAILED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa112c35e694fff28ccf1d8e2f5499168ad1ed93efd0f89a1febb43c914e3e6fae", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDEVENT_VIDEOEVENTCHANGED_EVENT_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa112c35e694fff28ccf1d8e2f5499168ac7e0043cc7725d3a49a46e5d0345d3f0", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a937a6c261b0533b2c0c32eeff5297034", [
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a937a6c261b0533b2c0c32eeff5297034a3e85fbb9a13bff5c928cfec2e84065b0", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a937a6c261b0533b2c0c32eeff5297034ab9f8e157dda5f1a7b583b7d83f651351", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_CAMERA_KO", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a937a6c261b0533b2c0c32eeff5297034aa8177154f713057ddf01dd24654e6ba8", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_MEMORYFULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a937a6c261b0533b2c0c32eeff5297034ae3e6a2e4762c677e126753b8b380aad7", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_LOWBATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a937a6c261b0533b2c0c32eeff5297034a61d74d0f5c9e8b598c20c45cf1705077", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a937a6c261b0533b2c0c32eeff5297034a12afcfc6cb3451bd9e42cdbf42d59703", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a871d103c8a8c8741dad06e1543c6a9b5", [
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE_READY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a871d103c8a8c8741dad06e1543c6a9b5a4d5c9e78edea6f9de3add11726410732", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE_BUSY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a871d103c8a8c8741dad06e1543c6a9b5a690f6f6d9127bf09ddcc4adfae82ce7d", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE_NOTAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a871d103c8a8c8741dad06e1543c6a9b5af0b55df3445e2a7b62d8e4c02fc10e3c", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a871d103c8a8c8741dad06e1543c6a9b5a23616017929542a4172d8a2a9dda2728", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a749261990a65f256f521424edb3e2773", [
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGED_STATE_STOPPED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a749261990a65f256f521424edb3e2773a3ca2a1f43bb39cbcc1d5c16ef0fd9129", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGED_STATE_STARTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a749261990a65f256f521424edb3e2773ada615ac666a0c8180e0e089533d0877c", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGED_STATE_FAILED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a749261990a65f256f521424edb3e2773afe27e05a6749196509093df60624a1ce", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a749261990a65f256f521424edb3e2773ad2183addea900ff4c35bc8111aab960e", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a537243aea418f44b96a5d908f38d5bbb", [
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a537243aea418f44b96a5d908f38d5bbbabb8aae775b305af61f204a5939678050", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a537243aea418f44b96a5d908f38d5bbba2b71da75dab19da166cb42b3c0eeb3f4", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_CAMERA_KO", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a537243aea418f44b96a5d908f38d5bbba0ff519a5f6722afb75712f16e536a7db", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_MEMORYFULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a537243aea418f44b96a5d908f38d5bbbab8bd0675b5479e437e32d0307fb3b725", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_LOWBATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a537243aea418f44b96a5d908f38d5bbba1e135bd6c05066e9ea41c2030552cad9", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a537243aea418f44b96a5d908f38d5bbbace4e8a82aae23d0a202c7070e96b69d6", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5e2ffaca0dcdaf19c4b3db2d6af78460", [
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_STATE_STOPPED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5e2ffaca0dcdaf19c4b3db2d6af78460a4f47faf59e1283a068e6f14f256b080d", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_STATE_STARTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5e2ffaca0dcdaf19c4b3db2d6af78460a6f61c8d4c6561ffce8aeaafb9ce135f8", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_STATE_NOTAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5e2ffaca0dcdaf19c4b3db2d6af78460a9a261dabb8c1e6ae303e96932af386fb", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5e2ffaca0dcdaf19c4b3db2d6af78460aa2ab354d1feaab999dc7f27b4d0f62dc", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_MEDIASTREAMINGSTATE_VIDEOENABLECHANGED_ENABLED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4e811328ea95a578b01b3b8777ad8f4a", [
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIASTREAMINGSTATE_VIDEOENABLECHANGED_ENABLED_ENABLED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4e811328ea95a578b01b3b8777ad8f4aac5cb86a5270a580d94e7abbb18d56bc7", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIASTREAMINGSTATE_VIDEOENABLECHANGED_ENABLED_DISABLED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4e811328ea95a578b01b3b8777ad8f4aa772afa9c505adb0bd4876adac42ca682", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIASTREAMINGSTATE_VIDEOENABLECHANGED_ENABLED_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4e811328ea95a578b01b3b8777ad8f4aad683d8182c6d098f6c8e0d168ab1a2cb", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_MEDIASTREAMINGSTATE_VIDEOENABLECHANGED_ENABLED_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4e811328ea95a578b01b3b8777ad8f4aa327ffc2bac5895f3a09ac6e19e56cd43", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_NETWORK_WIFISCAN_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#afa4877cade808cb9ccece7508510c7c4", [
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORK_WIFISCAN_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#afa4877cade808cb9ccece7508510c7c4abd15ab2900990833e67a0bbc563bf5c1", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORK_WIFISCAN_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#afa4877cade808cb9ccece7508510c7c4ae5e0d934a139bd0a1e3789b36c106dcb", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORK_WIFISCAN_BAND_ALL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#afa4877cade808cb9ccece7508510c7c4aeeb80cda70713a2f2ecc3f61b68342a5", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORK_WIFISCAN_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#afa4877cade808cb9ccece7508510c7c4a734ad13c1989477833635b910933ba4d", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGS_WIFISELECTION_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8d10ae1d8d36ee6bbb777d0b51c483a4", [
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGS_WIFISELECTION_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8d10ae1d8d36ee6bbb777d0b51c483a4a50accbbf104a6641179a45e925eafede", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGS_WIFISELECTION_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8d10ae1d8d36ee6bbb777d0b51c483a4a662aa7de51ee9cc4f2f25ce604c85641", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGS_WIFISELECTION_BAND_ALL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8d10ae1d8d36ee6bbb777d0b51c483a4afdd4859f7b9fba494206ef08c48eeab5", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGS_WIFISELECTION_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8d10ae1d8d36ee6bbb777d0b51c483a4a0d9944832ed2aedbd02f73aa7a61ffff", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGS_WIFISELECTION_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae1f948d88656834198a49d27dac9cfb5", [
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGS_WIFISELECTION_TYPE_AUTO", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae1f948d88656834198a49d27dac9cfb5a726f4c544d0cbd04f868ed7877308eb6", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGS_WIFISELECTION_TYPE_MANUAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae1f948d88656834198a49d27dac9cfb5a8c56b852eec2c823f9d0237f82806f66", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGS_WIFISELECTION_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae1f948d88656834198a49d27dac9cfb5a7b34fa6b000c231cbf58f64ba621a181", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6b518a4dc83fa471dafbe49c41c7c36b", [
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6b518a4dc83fa471dafbe49c41c7c36baa4aa21dce87fbbcccc0c0fd3e78099cb", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6b518a4dc83fa471dafbe49c41c7c36ba21ba2a9d14cb2a59152915d379c6dc45", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_BAND_ALL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6b518a4dc83fa471dafbe49c41c7c36bac9b3d26527a5bc1b9e60ba96cf8af25e", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6b518a4dc83fa471dafbe49c41c7c36baeed171e9ec97afb74a91f28454f7b571", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a843247cfa6e995cbab513e94c8edc0ef", [
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_AUTO_ALL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a843247cfa6e995cbab513e94c8edc0efae0beea8fd9220b3951c32058fb963751", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_AUTO_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a843247cfa6e995cbab513e94c8edc0efa88c2710fe4ce0700f513d909f96e2ad1", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_AUTO_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a843247cfa6e995cbab513e94c8edc0efac2c075c040924c31301f4b68ee2a2a2d", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_MANUAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a843247cfa6e995cbab513e94c8edc0efa54c6ec41a6b6ba2e7fbc119467fba92b", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a843247cfa6e995cbab513e94c8edc0efa43c9b15ee2caf78c9cb6552fa2a8b278", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_NETWORKSTATE_WIFIAUTHCHANNELLISTCHANGED_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8a6bd36ddf2e0ca01938ea4617450a78", [
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSTATE_WIFIAUTHCHANNELLISTCHANGED_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8a6bd36ddf2e0ca01938ea4617450a78a7b412f9185a91f73b6f7a9cc525b4668", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSTATE_WIFIAUTHCHANNELLISTCHANGED_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8a6bd36ddf2e0ca01938ea4617450a78adb7565583ec4158aff6e405649823a90", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSTATE_WIFIAUTHCHANNELLISTCHANGED_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8a6bd36ddf2e0ca01938ea4617450a78a3e14c31c295e1439a24b7c7ff3d072ef", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_NETWORKSTATE_WIFISCANLISTCHANGED_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a36c28470db956a50029d6a1204e41d9c", [
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSTATE_WIFISCANLISTCHANGED_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a36c28470db956a50029d6a1204e41d9ca570f79bf9aa7b700261442795311a060", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSTATE_WIFISCANLISTCHANGED_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a36c28470db956a50029d6a1204e41d9caee387c6717070c2019c600d666e67ec7", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_NETWORKSTATE_WIFISCANLISTCHANGED_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a36c28470db956a50029d6a1204e41d9ca1cb7bd8461eed5a60b44e2ea400446cb", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_PILOTING_POSTURE_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adb9a72e9fe2889b215bb691384a11583", [
+      [ "ARCOMMANDS_JUMPINGSUMO_PILOTING_POSTURE_TYPE_STANDING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adb9a72e9fe2889b215bb691384a11583a40bf050f2a0eb3b2bd326fccf70c9e51", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_PILOTING_POSTURE_TYPE_JUMPER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adb9a72e9fe2889b215bb691384a11583a187d6992878e3d2b4f2fe2d62cb4e454", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_PILOTING_POSTURE_TYPE_KICKER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adb9a72e9fe2889b215bb691384a11583a2f338dc095073dd7ca64f2b5e7c468d7", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_PILOTING_POSTURE_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adb9a72e9fe2889b215bb691384a11583ab5c99f98105ecf1ffa5fd60da716b155", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_PILOTINGSTATE_ALERTSTATECHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a890972e816d10497c83ff3efe2aff60f", [
+      [ "ARCOMMANDS_JUMPINGSUMO_PILOTINGSTATE_ALERTSTATECHANGED_STATE_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a890972e816d10497c83ff3efe2aff60fa9a8ca564aecbbe6bc3a08b84a37fa31a", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_PILOTINGSTATE_ALERTSTATECHANGED_STATE_CRITICAL_BATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a890972e816d10497c83ff3efe2aff60fa02c2d5553d07a4b43a66f505e4ba708a", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_PILOTINGSTATE_ALERTSTATECHANGED_STATE_LOW_BATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a890972e816d10497c83ff3efe2aff60fa65fcd3352b1cfd3c6b27fd9065db8749", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_PILOTINGSTATE_ALERTSTATECHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a890972e816d10497c83ff3efe2aff60facd4c323361fd8dae72840c84301ed6c0", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_PILOTINGSTATE_POSTURECHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a761487fb539512f8c60cb8cc6fdf1d19", [
+      [ "ARCOMMANDS_JUMPINGSUMO_PILOTINGSTATE_POSTURECHANGED_STATE_STANDING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a761487fb539512f8c60cb8cc6fdf1d19a25f02277e521dad0845efb1d2df95a81", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_PILOTINGSTATE_POSTURECHANGED_STATE_JUMPER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a761487fb539512f8c60cb8cc6fdf1d19ade2d9b3f729c11ca9f62bcbcab0ded01", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_PILOTINGSTATE_POSTURECHANGED_STATE_KICKER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a761487fb539512f8c60cb8cc6fdf1d19a3df8c2fe9bba0aa4c01f524b0d85aa23", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_PILOTINGSTATE_POSTURECHANGED_STATE_STUCK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a761487fb539512f8c60cb8cc6fdf1d19a9f6165b0eef4119cfca9ec5dd9670687", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_PILOTINGSTATE_POSTURECHANGED_STATE_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a761487fb539512f8c60cb8cc6fdf1d19aeae859336b8eb3966e355d11aa7c3401", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_PILOTINGSTATE_POSTURECHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a761487fb539512f8c60cb8cc6fdf1d19a4ac34688b1a3049f0f67ee42a7de8d93", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_PLAYSCRIPTCHANGED_RESULTCODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4170b76db1bd844330c6f0638cb21a25", [
+      [ "ARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_PLAYSCRIPTCHANGED_RESULTCODE_SCRIPT_STARTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4170b76db1bd844330c6f0638cb21a25ab14c97f10eed3dfee69079bdf60fd94b", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_PLAYSCRIPTCHANGED_RESULTCODE_SCRIPT_FINISHED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4170b76db1bd844330c6f0638cb21a25a91383f8a7008986b29b031778e0ce9e7", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_PLAYSCRIPTCHANGED_RESULTCODE_SCRIPT_NO_SUCH_SCRIPT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4170b76db1bd844330c6f0638cb21a25af82afdf30649a695cb67d05a90f6bb20", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_PLAYSCRIPTCHANGED_RESULTCODE_SCRIPT_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4170b76db1bd844330c6f0638cb21a25abb4f0cfe095b273f5c2c355b776f20bb", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_PLAYSCRIPTCHANGED_RESULTCODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4170b76db1bd844330c6f0638cb21a25a2c8b27896496757478cca10d1681284c", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_SCRIPTDELETECHANGED_RESULTCODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aac158f5d957acebc39655c3e94e51c57", [
+      [ "ARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_SCRIPTDELETECHANGED_RESULTCODE_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aac158f5d957acebc39655c3e94e51c57a9c1198488ac73dd493a4a5e4fcb70576", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_SCRIPTDELETECHANGED_RESULTCODE_ERROR_NO_SUCH_SCRIPT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aac158f5d957acebc39655c3e94e51c57abb5c10b1ef12c16fceecd525e41b74da", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_SCRIPTDELETECHANGED_RESULTCODE_ERROR_INTERNAL_FAILURE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aac158f5d957acebc39655c3e94e51c57ae6f49198a0c5194312b585c1d8e3aecd", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_SCRIPTDELETECHANGED_RESULTCODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aac158f5d957acebc39655c3e94e51c57a4f460909fd3888ecb291c009c84bef44", null ]
+    ] ],
+    [ "eARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_SCRIPTUPLOADCHANGED_RESULTCODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a62327b8ea7b15a5b13fd0920a18cf39a", [
+      [ "ARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_SCRIPTUPLOADCHANGED_RESULTCODE_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a62327b8ea7b15a5b13fd0920a18cf39aab7315d43e682e95eede01babc26328e3", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_SCRIPTUPLOADCHANGED_RESULTCODE_ERROR_FILE_CORRUPTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a62327b8ea7b15a5b13fd0920a18cf39aa7d88fe666fb1ed1a3c7fd1c5437f43db", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_SCRIPTUPLOADCHANGED_RESULTCODE_ERROR_INVALID_FORMAT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a62327b8ea7b15a5b13fd0920a18cf39aaceff6fd0bf7098b344e58c7fb0c471ec", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_SCRIPTUPLOADCHANGED_RESULTCODE_ERROR_FILE_TOO_LARGE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a62327b8ea7b15a5b13fd0920a18cf39aab35bba5c1462974b54c1d8d679f93922", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_SCRIPTUPLOADCHANGED_RESULTCODE_ERROR_UNSUPPORTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a62327b8ea7b15a5b13fd0920a18cf39aa66a21d638f93981eb8b8f4b958202029", null ],
+      [ "ARCOMMANDS_JUMPINGSUMO_ROADPLANSTATE_SCRIPTUPLOADCHANGED_RESULTCODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a62327b8ea7b15a5b13fd0920a18cf39aabf4846c5b46b138ec40162c375ef4938", null ]
+    ] ],
+    [ "eARCOMMANDS_MAPPER_AXIS_ACTION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5", [
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_APP_0", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a815fc528f6ffcc85787f707315f426b9", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_APP_1", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a7b476bde21e8fc5909d2818251986bcb", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_APP_2", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a308c6f9a3b078d01c7e383e2e4e6f275", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_APP_3", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a90ea0e830b02a19e649cfde3076ed363", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_APP_4", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a722242ae7909b1ea49f053d7753a4cfe", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_APP_5", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a2e2167bed36806d99df40bafda95ba94", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_APP_6", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5ad5677ee13620faa20efceea483d7a678", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_APP_7", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5aa92a2efb5fc7612b53d2f6c689990065", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_APP_8", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a43af0cb36d03989e73e948f84f94941b", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_APP_9", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a184c986d277d92890a4d622c5167bb83", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_APP_10", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a2d664d707ae6e9c4cf41948a6e7cb69b", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_APP_11", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a4f53c249181459d9c6591ceb860c496f", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_APP_12", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a195782f7ed74639097a05d1fa34ecf55", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_APP_13", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5ad6f6626f7595a67bbc4410db5af2d276", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_APP_14", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a5cfced421324fd7ae0db300c403d506e", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_APP_15", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a80050a6c83679776fff101f1499cb053", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_ROLL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5ac24d02825fd8f33ffcf02f4b90fe6491", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_PITCH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a4d0b337e9853387524236d4888b95ab2", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_YAW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a167521bba94b32d3b0591f4245d343d4", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_GAZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a3890402b11c5ae9e9c693b2837a68951", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_CAMERA_PAN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a76c6ca40320c9a23a928d851af13fa56", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_CAMERA_TILT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5a29df653fdb37d1a4be706105b017f3e6", null ],
+      [ "ARCOMMANDS_MAPPER_AXIS_ACTION_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a562432863f68f5a49c2f235ee55fe8f5af7fc1cbe92bc04411b932a2b9e69e20e", null ]
+    ] ],
+    [ "eARCOMMANDS_MAPPER_BUTTON_ACTION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686", [
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_APP_0", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a16ee9dbd453696eae524b4fef2a3cfcb", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_APP_1", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a6c98d383c36f42fcaa17cb0f23ad02bc", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_APP_2", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686ad88268b556212a38f05f79c04096d180", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_APP_3", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686ad25e72829927df34d3f9a73ff136db70", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_APP_4", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686ac9e6397f7ee8ffd7305dedad50b2e75c", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_APP_5", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a2c78730132344e24ab6398d0254b0b6f", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_APP_6", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a58453a20b0f2c72b758af63d30563664", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_APP_7", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686aad0c3e01cfba5727a05ccb9fb0330c3f", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_APP_8", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686ac75c7799bbb6eb18c3e4eb9a0c602e49", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_APP_9", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686abc1652e6c7a5559ecb0ea842225994aa", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_APP_10", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a8a9536f7385ad109bd40eba7a68af0c1", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_APP_11", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a9b280704afef84488a3811037aa554a5", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_APP_12", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a7d2c620334c48b654e528cd87534f039", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_APP_13", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a963d92226abfbe9501ea66146410e140", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_APP_14", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a0fc42fbdebe05d8479c5758a4c918851", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_APP_15", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686ab92c44f80c2780cc6294b99e3b261cab", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_RETURN_HOME", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a9647c82f0351a656f2c72fe949c56d08", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_TAKEOFF_LAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a4a929e1a5aa32887c21da61598784644", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_VIDEO_RECORD", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686ae564b4dd2e03f365fefc18e06413d641", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_TAKE_PICTURE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a762f1ee63fd221753b7b68ead4de17b6", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_CAMERA_EXPOSITION_INC", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a0d33f9a5017df04a319261e600d51df4", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_CAMERA_EXPOSITION_DEC", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686ae0c81930f0842f97fa00ae8fb83849e9", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_FLIP_LEFT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686affcd550709537590e91f04958473f980", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_FLIP_RIGHT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a3e1098e863a557fa96c7eee0744157e6", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_FLIP_FRONT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a10ec03f5283bf0fe134b3d0621f53691", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_FLIP_BACK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a19076473a9a21c7c8e85f1e49c51e53d", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_EMERGENCY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a12446252b3bbdce4959be56d50894900", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_CENTER_CAMERA", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686a1c5306c024ac83b986d36500cf58b802", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_CYCLE_HUD", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686ac9fa35c575ba2d7ec406360537a00752", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_ACTION_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a32fb5cf17316c284eeb60801b5869686afaa27f5a9000a910b794dad223c84be2", null ]
+    ] ],
+    [ "eARCOMMANDS_MAPPER_BUTTON_EVENT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5b5385de938c86d3df5f0cbd07a9a96b", [
+      [ "ARCOMMANDS_MAPPER_BUTTON_EVENT_RELEASE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5b5385de938c86d3df5f0cbd07a9a96ba7571709bb47f9360fb0fc18c2827418b", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_EVENT_PRESS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5b5385de938c86d3df5f0cbd07a9a96ba1712646c9723d30552b010510ee202cd", null ],
+      [ "ARCOMMANDS_MAPPER_BUTTON_EVENT_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5b5385de938c86d3df5f0cbd07a9a96ba64d3b2160311b98aa66975308ea5ce91", null ]
+    ] ],
+    [ "eARCOMMANDS_MAPPER_EXPO_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a456dcaf54c6a9398b372c58a875ea638", [
+      [ "ARCOMMANDS_MAPPER_EXPO_TYPE_LINEAR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a456dcaf54c6a9398b372c58a875ea638a85970b5a38402bd327fff489228cecbd", null ],
+      [ "ARCOMMANDS_MAPPER_EXPO_TYPE_EXPO_0", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a456dcaf54c6a9398b372c58a875ea638ae3c59b3117cf2ab7b320766e9e6dfdf2", null ],
+      [ "ARCOMMANDS_MAPPER_EXPO_TYPE_EXPO_1", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a456dcaf54c6a9398b372c58a875ea638ab3223dd839a2a54dbf21b4713a127de2", null ],
+      [ "ARCOMMANDS_MAPPER_EXPO_TYPE_EXPO_2", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a456dcaf54c6a9398b372c58a875ea638a766af47caaf73e80e2acf0c8e46cd3a0", null ],
+      [ "ARCOMMANDS_MAPPER_EXPO_TYPE_EXPO_4", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a456dcaf54c6a9398b372c58a875ea638a8041eab8d57772fdf70e58df9c603092", null ],
+      [ "ARCOMMANDS_MAPPER_EXPO_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a456dcaf54c6a9398b372c58a875ea638a33be62ca957adcaedaf56fe42baa9ee0", null ]
+    ] ],
+    [ "eARCOMMANDS_MAPPER_MINI_AXIS_ACTION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac97d2fd495b5826ed011cff0afaf9b44", [
+      [ "ARCOMMANDS_MAPPER_MINI_AXIS_ACTION_ROLL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac97d2fd495b5826ed011cff0afaf9b44a983a195064dc1bb46234d6988892f4cc", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_AXIS_ACTION_PITCH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac97d2fd495b5826ed011cff0afaf9b44a08a48e1b0e4d36b73f61a9a4b07b1888", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_AXIS_ACTION_YAW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac97d2fd495b5826ed011cff0afaf9b44a5346fb5680cca01a75bd5a2cae619e12", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_AXIS_ACTION_GAZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac97d2fd495b5826ed011cff0afaf9b44a49c44e75548698bb62d7b10fa0d63b63", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_AXIS_ACTION_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac97d2fd495b5826ed011cff0afaf9b44a421b9b258a99b7ec33e91d5f4406351e", null ]
+    ] ],
+    [ "eARCOMMANDS_MAPPER_MINI_BUTTON_ACTION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01f", [
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_TAKEOFF_LAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fa3a123d69278079608fe755977bc97f50", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_TAKE_PICTURE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fa078d34ddc3e9c00056d0aecf24a26a0c", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_FLIP_LEFT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fad10fec973d6f19b53dff57eedd78ba3d", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_FLIP_RIGHT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fa1bec043124a938a4885beba1fb8c8b67", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_FLIP_FRONT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01faff88260f4f32767776c525bf0d83a597", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_FLIP_BACK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fab6d65a7c40f7bb63241fb0f86fd43e65", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_EMERGENCY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fa2788ec4eafa40a2196653e53a985bea5", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_ACCESSORY_GUN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fa497c80d9de9fd4e460688842c5e5a6c0", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_THROWN_TAKEOFF", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01faadb4d78ab794c904e7446e6eea464a03", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_CW_90_SWIPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fa43b2ef65bab1cc630bfd81ed40f5eb97", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_CCW_90_SWIPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01faefbdebb338d39689564a8b0a97603678", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_CW_180_SWIPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fac401cc2df74007c93361da6b508e9e92", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_CCW_180_SWIPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fa8c5513096a293d45c94b80450b3259d6", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_GEAR_UP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01faa689032983f2971cfb1d272b0096db98", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_GEAR_DOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fae677dabf0bbccc2355f9abe0e5667254", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_PLANE_MODE_HALF_BAREL_ROLL_RIGHT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01faca18a33a3a1763f498f2eda95e1f36c6", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_PLANE_MODE_HALF_BAREL_ROLL_LEFT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01faa9a7fb386d0e89a4f291cdc3b5082134", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_PLANE_MODE_BACKSWAP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01faa852e0ac8995a36f406f64f397e86c42", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_PLANE_MODE_LOOPING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fabebe19f32f770ea7f1f26df6b213c095", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_PLANE_MODE_TOGGLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fa7c3c89fce54f51c7a9afd56e9edbbefe", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_ACCESSORY_CLAW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fa1339c098f1ae598069b8e433948e8eb3", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_LIGHT_CONTINUOUS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fae42250adf2c53dfb8b48328d6b4b0413", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_LIGHT_BLINK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fab32af480719c0ca936ffd3e91a971772", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_LIGHT_SINUS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fa2897cf1352a09509fd9f6fc812e8cb5d", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_LIGHT_TOGGLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fac91d3a13899c7ef835718d5745a971bb", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6983d3c58452c1a41e5a512a388fa01fa5367b49858f3564df8da6fd5a0f1002c", null ]
+    ] ],
+    [ "eARCOMMANDS_MAPPER_MINI_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a09cc14afb6e34608bc1b0349566da555", [
+      [ "ARCOMMANDS_MAPPER_MINI_MODE_QUAD", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a09cc14afb6e34608bc1b0349566da555ac133ec8eecb3e0f6bc87092afff6d18b", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_MODE_PLANE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a09cc14afb6e34608bc1b0349566da555ab791b9b28ef1f748b118d4e035be6246", null ],
+      [ "ARCOMMANDS_MAPPER_MINI_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a09cc14afb6e34608bc1b0349566da555a81085ebc9c0a278130c83b58a8f2f3f6", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_ANIMATIONS_FLIP_DIRECTION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4c9138cfb815ffccb25bf3d222b40ae5", [
+      [ "ARCOMMANDS_MINIDRONE_ANIMATIONS_FLIP_DIRECTION_FRONT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4c9138cfb815ffccb25bf3d222b40ae5a8548b308ba23b423c623913743bc3e9e", null ],
+      [ "ARCOMMANDS_MINIDRONE_ANIMATIONS_FLIP_DIRECTION_BACK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4c9138cfb815ffccb25bf3d222b40ae5a1e0d3218b5bc4c67ffdab3264a1b79fa", null ],
+      [ "ARCOMMANDS_MINIDRONE_ANIMATIONS_FLIP_DIRECTION_RIGHT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4c9138cfb815ffccb25bf3d222b40ae5a7a5693755c230e10155857d40c52968c", null ],
+      [ "ARCOMMANDS_MINIDRONE_ANIMATIONS_FLIP_DIRECTION_LEFT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4c9138cfb815ffccb25bf3d222b40ae5ac7a7eb7245feaca1d2747e02811fe254", null ],
+      [ "ARCOMMANDS_MINIDRONE_ANIMATIONS_FLIP_DIRECTION_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4c9138cfb815ffccb25bf3d222b40ae5ada54716e7ead69139cfc4a2e1edeb980", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3ab501fb6426dae58bfc15e212ff1c31", [
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3ab501fb6426dae58bfc15e212ff1c31a7e6969ac834ade4764b1c37006cbaaa2", null ],
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3ab501fb6426dae58bfc15e212ff1c31a09fae1bbc6b3dda0c73dd6b044b26e92", null ],
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_BUSY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3ab501fb6426dae58bfc15e212ff1c31ac68536603634fd5128ea73c4c3fec509", null ],
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_NOTAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3ab501fb6426dae58bfc15e212ff1c31a1c8b6c7fba0aa5bf85a22494c68af6a1", null ],
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_MEMORYFULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3ab501fb6426dae58bfc15e212ff1c31a06c69017efc71bdab8c86e27ad5c9090", null ],
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_LOWBATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3ab501fb6426dae58bfc15e212ff1c31aee4c6eb3f3a49646cc8e14de8fee0c73", null ],
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3ab501fb6426dae58bfc15e212ff1c31a6e4b87c47d2bda74b4244523de78c8d7", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_MEDIARECORDEVENT_PICTUREEVENTCHANGED_EVENT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a350f7f75499eb63e063925a469f1d976", [
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDEVENT_PICTUREEVENTCHANGED_EVENT_TAKEN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a350f7f75499eb63e063925a469f1d976af2d22fc197b3a3be04d010088d899356", null ],
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDEVENT_PICTUREEVENTCHANGED_EVENT_FAILED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a350f7f75499eb63e063925a469f1d976a2c668ccef709d22d5968e507d2fb95ab", null ],
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDEVENT_PICTUREEVENTCHANGED_EVENT_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a350f7f75499eb63e063925a469f1d976a0f3c5dc35df18e78232ec1feccfd9b91", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab4258fd499ca33849e96fb9a6ab4c493", [
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab4258fd499ca33849e96fb9a6ab4c493afdfec38a76acc85e6359f6fbc1b969c9", null ],
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab4258fd499ca33849e96fb9a6ab4c493a5ddf00c6f538e58b0e01520e0fb770d3", null ],
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_CAMERA_KO", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab4258fd499ca33849e96fb9a6ab4c493a43caff1e1a5061c8e23c35afe9010aa8", null ],
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_MEMORYFULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab4258fd499ca33849e96fb9a6ab4c493abe986813a76b779891f28889580cf4ff", null ],
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_LOWBATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab4258fd499ca33849e96fb9a6ab4c493a53860d3953304b2c734989469a48a477", null ],
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ab4258fd499ca33849e96fb9a6ab4c493a251bd8997d8921c51f59da174151ee6a", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7fe8829b34e1aa0d54fd6915861b3f97", [
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE_READY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7fe8829b34e1aa0d54fd6915861b3f97afca47322174b478edd20a2baea4f19ea", null ],
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE_BUSY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7fe8829b34e1aa0d54fd6915861b3f97a5637fd078d371d6f0c92db4c61c45c36", null ],
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE_NOTAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7fe8829b34e1aa0d54fd6915861b3f97abbd131d5b333597369a043bb3c9ee546", null ],
+      [ "ARCOMMANDS_MINIDRONE_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7fe8829b34e1aa0d54fd6915861b3f97a29a8c28b363280627285895becb8ced8", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_PILOTING_FLYINGMODE_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad4ce1a705d467761ccee4e333309222d", [
+      [ "ARCOMMANDS_MINIDRONE_PILOTING_FLYINGMODE_MODE_QUADRICOPTER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad4ce1a705d467761ccee4e333309222dafe763b79f5debc4529584efb640a8c26", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTING_FLYINGMODE_MODE_PLANE_FORWARD", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad4ce1a705d467761ccee4e333309222da68eff813dfe5fd2ce556700b6904f1d1", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTING_FLYINGMODE_MODE_PLANE_BACKWARD", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad4ce1a705d467761ccee4e333309222daf9fe128d7dd133db0d5fd2bf509f18b1", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTING_FLYINGMODE_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad4ce1a705d467761ccee4e333309222da91d35783d56c6cad98af9861eb762a95", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_PILOTING_PLANEGEARBOX_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4638c977b6f2661cd548c9b35cc9ed5f", [
+      [ "ARCOMMANDS_MINIDRONE_PILOTING_PLANEGEARBOX_STATE_GEAR_1", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4638c977b6f2661cd548c9b35cc9ed5fa94c3aa1960b1f7e50ce09bade15bcb15", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTING_PLANEGEARBOX_STATE_GEAR_2", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4638c977b6f2661cd548c9b35cc9ed5fa55af2d0ee9c7cb22ba61806d7a8cf14e", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTING_PLANEGEARBOX_STATE_GEAR_3", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4638c977b6f2661cd548c9b35cc9ed5faf79df76981b1f8727ab0b03c4d2ade6e", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTING_PLANEGEARBOX_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4638c977b6f2661cd548c9b35cc9ed5fa30026d7f140fb2bd3b7028f18da473ce", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_PILOTINGSTATE_ALERTSTATECHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae673d12730aa406c8a48e95e8a71129d", [
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_ALERTSTATECHANGED_STATE_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae673d12730aa406c8a48e95e8a71129da6790705622f24db276ce4aef36560b11", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_ALERTSTATECHANGED_STATE_USER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae673d12730aa406c8a48e95e8a71129dae54eefbad3a9608812ad947ce433b83d", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_ALERTSTATECHANGED_STATE_CUT_OUT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae673d12730aa406c8a48e95e8a71129da252ff24438745c706395e945c48f6bd8", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_ALERTSTATECHANGED_STATE_CRITICAL_BATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae673d12730aa406c8a48e95e8a71129daac3f377458bd60b82e0a15b76b960848", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_ALERTSTATECHANGED_STATE_LOW_BATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae673d12730aa406c8a48e95e8a71129da57223af6004e2c895b3ce009a33b7832", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_ALERTSTATECHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae673d12730aa406c8a48e95e8a71129da233dfcc1b807558480c47ce1307e2e7b", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_PILOTINGSTATE_FLYINGMODECHANGED_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a36d07bf41b99f3c5183f0bd59051f307", [
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_FLYINGMODECHANGED_MODE_QUADRICOPTER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a36d07bf41b99f3c5183f0bd59051f307a486638a1749af22128f36e3081e5b2d4", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_FLYINGMODECHANGED_MODE_PLANE_FORWARD", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a36d07bf41b99f3c5183f0bd59051f307a62ec8837e2480b7aa2d1be41b89bed8b", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_FLYINGMODECHANGED_MODE_PLANE_BACKWARD", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a36d07bf41b99f3c5183f0bd59051f307aed3d2aa11fd56db6a8f8a10475a70de6", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_FLYINGMODECHANGED_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a36d07bf41b99f3c5183f0bd59051f307a76985d829d2eb79e8cc4e9cc17ea3b86", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_PILOTINGSTATE_FLYINGSTATECHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac0adda8d373735e748d42a5e61b84077", [
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_LANDED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac0adda8d373735e748d42a5e61b84077a5f25e049e553ef3087be500afb57d261", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_TAKINGOFF", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac0adda8d373735e748d42a5e61b84077adc93c2dd43100ba0e9e84204409db6f6", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_HOVERING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac0adda8d373735e748d42a5e61b84077a124af7719a4573e9460e66cba4233d21", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_FLYING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac0adda8d373735e748d42a5e61b84077abcdadf160f76d0505a8b0bf53ea777e7", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_LANDING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac0adda8d373735e748d42a5e61b84077ad6c818deffb6ea5be296da044cc2d4b2", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_EMERGENCY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac0adda8d373735e748d42a5e61b84077a0ffb3e226a02d6b7d9b2b1c58b52c8f6", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_ROLLING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac0adda8d373735e748d42a5e61b84077a47176edf5d5f7540a858ec73338d6ed7", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_INIT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac0adda8d373735e748d42a5e61b84077a26f7e533d456c9587ff702dfaf6f1ee0", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac0adda8d373735e748d42a5e61b84077af3c6bab607c79fc56adf13517e71797c", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_PILOTINGSTATE_PLANEGEARBOXCHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a34ea0045de9d56018693043e41fb9f7c", [
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_PLANEGEARBOXCHANGED_STATE_GEAR_1", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a34ea0045de9d56018693043e41fb9f7cafe49a6673ff00fc5184f1cab4aa0a085", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_PLANEGEARBOXCHANGED_STATE_GEAR_2", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a34ea0045de9d56018693043e41fb9f7cae165ddc7eae4336a861420658d3b47fe", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_PLANEGEARBOXCHANGED_STATE_GEAR_3", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a34ea0045de9d56018693043e41fb9f7caa19671ed5fae21c78dc4c875260a7ba9", null ],
+      [ "ARCOMMANDS_MINIDRONE_PILOTINGSTATE_PLANEGEARBOXCHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a34ea0045de9d56018693043e41fb9f7ca85cb6dd9b3b600821321a482e1215119", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_USBACCESSORY_CLAWCONTROL_ACTION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5bf869823aa374b5d7feb6bb64e38ec9", [
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORY_CLAWCONTROL_ACTION_OPEN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5bf869823aa374b5d7feb6bb64e38ec9a57296193e60b8d3e5511c9299f1a3512", null ],
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORY_CLAWCONTROL_ACTION_CLOSE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5bf869823aa374b5d7feb6bb64e38ec9a43111dcc3dba2488c29d151b1bd5d7c3", null ],
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORY_CLAWCONTROL_ACTION_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5bf869823aa374b5d7feb6bb64e38ec9ae93e81431a3815c0ab6b458dd54f5965", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_USBACCESSORY_GUNCONTROL_ACTION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af4e321767493a225d28a058a04f92e7b", [
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORY_GUNCONTROL_ACTION_FIRE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af4e321767493a225d28a058a04f92e7ba10fd0e616325a2efc703897e1cbc99f7", null ],
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORY_GUNCONTROL_ACTION_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af4e321767493a225d28a058a04f92e7bab591e8ffeabea16f1c49424ccc53d76e", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_USBACCESSORY_LIGHTCONTROL_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac5648411a5c79d970f4805432decdc12", [
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORY_LIGHTCONTROL_MODE_FIXED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac5648411a5c79d970f4805432decdc12a4c1cc54623f3c24d213c0a98720b3e0c", null ],
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORY_LIGHTCONTROL_MODE_BLINKED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac5648411a5c79d970f4805432decdc12a5c22f17b4f9e873583391637857d9086", null ],
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORY_LIGHTCONTROL_MODE_OSCILLATED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac5648411a5c79d970f4805432decdc12a45f541badb1049d6390bd178da9dfb8d", null ],
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORY_LIGHTCONTROL_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac5648411a5c79d970f4805432decdc12ac16087c25a034e0d5176bcea058a8e44", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_USBACCESSORYSTATE_CLAWSTATE_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a645d5d24c183b7fd825f59baee04650c", [
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORYSTATE_CLAWSTATE_STATE_OPENED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a645d5d24c183b7fd825f59baee04650ca521066515cda788aa566e3cb11a4f776", null ],
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORYSTATE_CLAWSTATE_STATE_OPENING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a645d5d24c183b7fd825f59baee04650ca7c024697a233c9d1f8f62bf7b50dfedc", null ],
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORYSTATE_CLAWSTATE_STATE_CLOSED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a645d5d24c183b7fd825f59baee04650caffbd6715a3cb6b1b5ed86a6b6f1ff78c", null ],
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORYSTATE_CLAWSTATE_STATE_CLOSING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a645d5d24c183b7fd825f59baee04650cacec35503a3058432dcbcf8f50887d5ab", null ],
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORYSTATE_CLAWSTATE_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a645d5d24c183b7fd825f59baee04650ca2682fbdff22d8c797c2e6365bc1fcf83", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_USBACCESSORYSTATE_GUNSTATE_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acb556d001f187b7636266fb8607b1f30", [
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORYSTATE_GUNSTATE_STATE_READY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acb556d001f187b7636266fb8607b1f30ab739991ff04226e9891f00c9e1761dca", null ],
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORYSTATE_GUNSTATE_STATE_BUSY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acb556d001f187b7636266fb8607b1f30ab0dfd80b1afa681588dd3b9f684a6fc3", null ],
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORYSTATE_GUNSTATE_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acb556d001f187b7636266fb8607b1f30acb6c2dbf45cfd9f6cf7d9ebf5ad086f6", null ]
+    ] ],
+    [ "eARCOMMANDS_MINIDRONE_USBACCESSORYSTATE_LIGHTSTATE_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aba215dd78e6f6617c13a3f2be1740317", [
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORYSTATE_LIGHTSTATE_STATE_FIXED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aba215dd78e6f6617c13a3f2be1740317ac2bad336bf40cbb80a1dd57fc209ce7d", null ],
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORYSTATE_LIGHTSTATE_STATE_BLINKED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aba215dd78e6f6617c13a3f2be1740317affb5a6bbf9172e887c9cfff12a423b27", null ],
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORYSTATE_LIGHTSTATE_STATE_OSCILLATED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aba215dd78e6f6617c13a3f2be1740317adee335ef66fc96dd256f3539774ecf8f", null ],
+      [ "ARCOMMANDS_MINIDRONE_USBACCESSORYSTATE_LIGHTSTATE_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aba215dd78e6f6617c13a3f2be1740317ab84683e1fe20cbbf3fc93d73a66370a9", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_MEDIARECORD_VIDEOV2_RECORD", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7b0e32b2934da58c1505d4663958172a", [
+      [ "ARCOMMANDS_POWERUP_MEDIARECORD_VIDEOV2_RECORD_STOP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7b0e32b2934da58c1505d4663958172aa5dcb99f1ff19b44638a6a15b4fcf162c", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORD_VIDEOV2_RECORD_START", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7b0e32b2934da58c1505d4663958172aa383134f9be602eb0804e4289c4ff8430", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORD_VIDEOV2_RECORD_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7b0e32b2934da58c1505d4663958172aa8785681f80463d83dfa4ab8accd47701", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a244361faffd5fd90c11f29512fa46e8a", [
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a244361faffd5fd90c11f29512fa46e8aafacd8d010dbfb9f77c69d40ac92b1bbe", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a244361faffd5fd90c11f29512fa46e8aa08015a61685900587d97c50d3051d008", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_BUSY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a244361faffd5fd90c11f29512fa46e8aaf21e8276b4df69f2a0509dde36a4898f", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_NOTAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a244361faffd5fd90c11f29512fa46e8aac4449da57eca79fbaaf551bba9a07568", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_MEMORYFULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a244361faffd5fd90c11f29512fa46e8aa7e75510ed86b7b011f6f3f6804af921d", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_LOWBATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a244361faffd5fd90c11f29512fa46e8aab25c6b8a75688cc9460ceaf743ffc4ac", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a244361faffd5fd90c11f29512fa46e8aa285cb8928ef90996149143bb4107af80", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_MEDIARECORDEVENT_PICTUREEVENTCHANGED_EVENT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9331a63a6888062125fad11275f29537", [
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_PICTUREEVENTCHANGED_EVENT_TAKEN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9331a63a6888062125fad11275f29537ac33ae7fe227c08483857fe4786c05f8e", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_PICTUREEVENTCHANGED_EVENT_FAILED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9331a63a6888062125fad11275f29537a3e84e92a1bdcb52b7234520b41a67bb7", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_PICTUREEVENTCHANGED_EVENT_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9331a63a6888062125fad11275f29537a4e967bb241f2658fc652c4903884b1a6", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adcdf6bffd0a3617f4b96ccabdb028a82", [
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adcdf6bffd0a3617f4b96ccabdb028a82ac92e0f0f05e83f8115628392d99285d6", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adcdf6bffd0a3617f4b96ccabdb028a82adce054cb666a5995eb7bda7db951256d", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_BUSY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adcdf6bffd0a3617f4b96ccabdb028a82a0d1ed0b120e48baa7472e192ede60868", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_NOTAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adcdf6bffd0a3617f4b96ccabdb028a82a6c44dd145e6424643718ce244802c959", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_MEMORYFULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adcdf6bffd0a3617f4b96ccabdb028a82a101ee24190cc2931db1852b47d099acf", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_LOWBATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adcdf6bffd0a3617f4b96ccabdb028a82af3938d7c8a0a4104d97a9e05d7e6fad8", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_AUTOSTOPPED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adcdf6bffd0a3617f4b96ccabdb028a82acd655efcaaff97370e127fe2c7ca00e4", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_VIDEOEVENTCHANGED_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#adcdf6bffd0a3617f4b96ccabdb028a82a7d41f8311cd66ce52bee852c908997c7", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_MEDIARECORDEVENT_VIDEOEVENTCHANGED_EVENT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac4a6a0231b44f3af43c5c565a1673ed4", [
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_VIDEOEVENTCHANGED_EVENT_START", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac4a6a0231b44f3af43c5c565a1673ed4a4f63ccd79e9ac152bc52d4242d6b20dc", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_VIDEOEVENTCHANGED_EVENT_STOP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac4a6a0231b44f3af43c5c565a1673ed4a8bdd7434a726a7d0e7eb80bd2751caaa", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_VIDEOEVENTCHANGED_EVENT_FAILED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac4a6a0231b44f3af43c5c565a1673ed4a11076ec2009c53ea54307c5605338419", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDEVENT_VIDEOEVENTCHANGED_EVENT_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ac4a6a0231b44f3af43c5c565a1673ed4a84ff7f350cb4ac2aecd32c0c1fd4c8d3", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0107ab99611afa89ec6f66c1ba251fe3", [
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0107ab99611afa89ec6f66c1ba251fe3a8ab56e3dad164f21cd1160fc3076e8d0", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0107ab99611afa89ec6f66c1ba251fe3a8f4ed82401d6f64d3a7ec3694b11174e", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_CAMERA_KO", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0107ab99611afa89ec6f66c1ba251fe3ad0b2fc0260c9f8bbe16d6b1cd49645b3", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_MEMORYFULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0107ab99611afa89ec6f66c1ba251fe3a0a55a899ec6a9d76fa594c2af78288ed", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_LOWBATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0107ab99611afa89ec6f66c1ba251fe3ab64d0a5ff3386b341f0db16a200b6e06", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0107ab99611afa89ec6f66c1ba251fe3a7f1c983d3661419a7a7b42ab103d2bc7", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5cf3b5135cab21071e50bd14f8c56103", [
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE_READY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5cf3b5135cab21071e50bd14f8c56103ad5c5dd3a9aaf03ad0b98ac056e01ae38", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE_BUSY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5cf3b5135cab21071e50bd14f8c56103a3dd9aa61fe21c84c93035b80e21af099", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE_NOTAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5cf3b5135cab21071e50bd14f8c56103ae4c2a4c84ed41d1fc7cfae9caf643762", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_PICTURESTATECHANGEDV2_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5cf3b5135cab21071e50bd14f8c56103ac8102579020daadcdbf5612c39d072a6", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3c97f7e0c641cbd55aaf2c3b46fb4f27", [
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_OK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3c97f7e0c641cbd55aaf2c3b46fb4f27a4658725a3222cc53dbf24171fd836cd3", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_UNKNOWN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3c97f7e0c641cbd55aaf2c3b46fb4f27acede85179183cc1a7c5022e190728c17", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_CAMERA_KO", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3c97f7e0c641cbd55aaf2c3b46fb4f27a1f72696b61b6c33b7c6919840d581194", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_MEMORYFULL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3c97f7e0c641cbd55aaf2c3b46fb4f27ada57ef5a0de7994f48976926ffd16fbd", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_LOWBATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3c97f7e0c641cbd55aaf2c3b46fb4f27a086bf97467a496a363e47a06e143acd9", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_ERROR_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a3c97f7e0c641cbd55aaf2c3b46fb4f27a4ffa84e3dd0c03e38a9739b2311e4dcc", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1a42f60d0870b3cfbdae98d4c8b6e09d", [
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_STATE_STOPPED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1a42f60d0870b3cfbdae98d4c8b6e09dacf02acc7586fdb67f9344a67af8bee06", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_STATE_STARTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1a42f60d0870b3cfbdae98d4c8b6e09da8c3114a05573711e3a7fa2917879fd0c", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_STATE_NOTAVAILABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1a42f60d0870b3cfbdae98d4c8b6e09da2e6bfe7d13ac5d73ca27f8ecf9b51f68", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIARECORDSTATE_VIDEOSTATECHANGEDV2_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1a42f60d0870b3cfbdae98d4c8b6e09daef0a4ef6424f82a2bea6982ce3aaa18d", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_MEDIASTREAMINGSTATE_VIDEOENABLECHANGED_ENABLED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a57819ecd56fb394410be34bf25e1d1a2", [
+      [ "ARCOMMANDS_POWERUP_MEDIASTREAMINGSTATE_VIDEOENABLECHANGED_ENABLED_ENABLED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a57819ecd56fb394410be34bf25e1d1a2a2ff0de2a5cc5cb74fe1c2775723a4424", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIASTREAMINGSTATE_VIDEOENABLECHANGED_ENABLED_DISABLED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a57819ecd56fb394410be34bf25e1d1a2acbe822dddde93be488b38ce33e41da7d", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIASTREAMINGSTATE_VIDEOENABLECHANGED_ENABLED_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a57819ecd56fb394410be34bf25e1d1a2a1cb133edc100962cbdf792f1a4875ced", null ],
+      [ "ARCOMMANDS_POWERUP_MEDIASTREAMINGSTATE_VIDEOENABLECHANGED_ENABLED_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a57819ecd56fb394410be34bf25e1d1a2aa4a489a31fcfa9108ce1522987d68d75", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_NETWORK_WIFISCAN_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9919c14c9deb809986f95c0a54fe1eb6", [
+      [ "ARCOMMANDS_POWERUP_NETWORK_WIFISCAN_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9919c14c9deb809986f95c0a54fe1eb6abe40f77d6c13e4ff097a96932d5c3130", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORK_WIFISCAN_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9919c14c9deb809986f95c0a54fe1eb6a1dfc5f70eb0c9dcadde1a525b68f3ed9", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORK_WIFISCAN_BAND_ALL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9919c14c9deb809986f95c0a54fe1eb6aa767c51883e01a3fd8c4d2c6d356938a", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORK_WIFISCAN_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9919c14c9deb809986f95c0a54fe1eb6aadc4894300d1e9d2e55a7c92a3881546", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_NETWORKSETTINGS_WIFISELECTION_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a453b2decd3e2181b7487b69415a49aee", [
+      [ "ARCOMMANDS_POWERUP_NETWORKSETTINGS_WIFISELECTION_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a453b2decd3e2181b7487b69415a49aeeac473f04d6cccf7505225f6734ab85552", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORKSETTINGS_WIFISELECTION_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a453b2decd3e2181b7487b69415a49aeea9f333eb7ce73d1b0e6c5850114d07241", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORKSETTINGS_WIFISELECTION_BAND_ALL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a453b2decd3e2181b7487b69415a49aeeaea9108f7c7a800a0dbd10ac4438c2332", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORKSETTINGS_WIFISELECTION_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a453b2decd3e2181b7487b69415a49aeeade8a2ca918b7a18ba9dd08dad7f128c6", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_NETWORKSETTINGS_WIFISELECTION_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a87dee6cba231f10da3854638e4ce13ad", [
+      [ "ARCOMMANDS_POWERUP_NETWORKSETTINGS_WIFISELECTION_TYPE_AUTO", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a87dee6cba231f10da3854638e4ce13ada94331d65264a3872d281e33d1cc6ef66", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORKSETTINGS_WIFISELECTION_TYPE_MANUAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a87dee6cba231f10da3854638e4ce13ada221cbf4f2a76ee3c69b7f7dbb415caf8", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORKSETTINGS_WIFISELECTION_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a87dee6cba231f10da3854638e4ce13ada60573e82c3272aa871346c1c7bc18b9c", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad56257292983135972ecd5d9ae072ecd", [
+      [ "ARCOMMANDS_POWERUP_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad56257292983135972ecd5d9ae072ecda34d40bc702ce83456555b44c36c85341", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad56257292983135972ecd5d9ae072ecda33ab52148089795740556c36bcb3edb8", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_BAND_ALL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad56257292983135972ecd5d9ae072ecda7c45b9b9004c7ff4c005397ce9f56bfc", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad56257292983135972ecd5d9ae072ecda2bdb3908b94d6e9d9762d16cb3b1e5d9", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ade2b37b3620e04440281d00dc1d9e623", [
+      [ "ARCOMMANDS_POWERUP_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_AUTO_ALL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ade2b37b3620e04440281d00dc1d9e623a22f032aab946d941cad17069c05b04b4", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_AUTO_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ade2b37b3620e04440281d00dc1d9e623a12136f6bd3105f491cbf0be784a68997", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_AUTO_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ade2b37b3620e04440281d00dc1d9e623a47c436449ccde3798748f6f1d6a403fc", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_MANUAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ade2b37b3620e04440281d00dc1d9e623a8128b424525c4e7e93328c77cfa90a0a", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORKSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ade2b37b3620e04440281d00dc1d9e623abc9e047c38d96d228785319d6a6294cf", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_NETWORKSTATE_WIFIAUTHCHANNELLISTCHANGED_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a47a04ca1a0a9a81fcb5ecd30d181a6f0", [
+      [ "ARCOMMANDS_POWERUP_NETWORKSTATE_WIFIAUTHCHANNELLISTCHANGED_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a47a04ca1a0a9a81fcb5ecd30d181a6f0ab1dc401ddd6ad10d23ffb8d785b70c1e", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORKSTATE_WIFIAUTHCHANNELLISTCHANGED_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a47a04ca1a0a9a81fcb5ecd30d181a6f0adda69814a0d35624411e8244d8716ec0", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORKSTATE_WIFIAUTHCHANNELLISTCHANGED_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a47a04ca1a0a9a81fcb5ecd30d181a6f0ad2c4494cfd8a9517d293bc308363fd4f", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_NETWORKSTATE_WIFISCANLISTCHANGED_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a57bf4ff82bd12a35539b7e65b14d08cd", [
+      [ "ARCOMMANDS_POWERUP_NETWORKSTATE_WIFISCANLISTCHANGED_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a57bf4ff82bd12a35539b7e65b14d08cda4e4613939130a7586b0e9044593ce1ca", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORKSTATE_WIFISCANLISTCHANGED_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a57bf4ff82bd12a35539b7e65b14d08cda74f7605e5f0217a143c593764c8574a6", null ],
+      [ "ARCOMMANDS_POWERUP_NETWORKSTATE_WIFISCANLISTCHANGED_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a57bf4ff82bd12a35539b7e65b14d08cda157270b80c0e5f6f1f7d91aa8c4f02ca", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_PILOTING_MOTORMODE_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a357c162f9f32a8908419ec38aa8494dd", [
+      [ "ARCOMMANDS_POWERUP_PILOTING_MOTORMODE_MODE_NORMAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a357c162f9f32a8908419ec38aa8494dda4b52d5244d80e4429154e55fa8e27eab", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTING_MOTORMODE_MODE_FORCED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a357c162f9f32a8908419ec38aa8494ddaa537584290be0c604beda18b436e95f3", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTING_MOTORMODE_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a357c162f9f32a8908419ec38aa8494dda21f459ab00e45381a40e1658c93bb48b", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0f", [
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_MAX_ROLL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0faa91819bcbf2fc9720390f199a76d1e5b", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_ROLL_KP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0fa491ec8c9801c9631cddd9016c185d3c1", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_ROLL_RATE_KP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0fa2605f8be1b00d9c7f6f81f2bbd208208", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_MAX_PITCH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0fa42294545012e8a8aac8154acbf3543be", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_MIN_PITCH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0fa11f23f2111c4db8456dd148518dcfe52", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_PITCH_KP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0fab541854a41868db3b47b9c06dcb232d9", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_PITCH_RATE_KP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0fa366e091a31158c70ed15d07e0a54b751", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_YAW_KP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0fa39864b094c7e022edd7217708e6858e4", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_YAW_RATE_KP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0fa15b91d78cee71ef2e67dd8e7ab5df0a3", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_ROLL_TO_THROTTLE_RATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0fa5c1cb9b755c6ba3741c79016aed6c690", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_ANGLE_OF_ATTACK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0faf495afd9b5a9e33a3819daebb79728c0", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_ALT_HOLD", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0fabbfb2f79fdec2636d56c32104ff18add", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_ALT_HOLD_THROTTLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0fae40bc44da887f96ebfe5fde8cae2ce34", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_DR_RSSI_EDGE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0faa668303336615059ca249b29ecfdc33c", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_RECOVERY_DURATION_LIMIT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0fa314e28768236bb44bcc9523906be12b4", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_WIND_SPEED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0fa002487b4c85b9e933fa8cf1279dc5ada", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_PLANE_SPEED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0fa47c33389b66c9a522c6c55426111a442", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGS_SET_SETTING_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4d5c37de6040d4705cd26b95dd53be0fa6d0b84c3cec9dc70913d3ce1426cd2ad", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076f", [
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_MAX_ROLL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076fa7787de821185499787a59c9acd35cea5", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_ROLL_KP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076faa76601b9d203464a7017412549877e43", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_ROLL_RATE_KP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076fab76d1622b9c0e8998ce9140ba1cdc9a2", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_MAX_PITCH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076faf28df45021699806af1ab10b87c08362", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_MIN_PITCH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076faefb0699dee892c5aebd71f26687a3518", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_PITCH_KP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076fad3fe7358251a02e77228d1bde80156d3", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_PITCH_RATE_KP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076fad9728edab02cbb1ceffb94decb2f2bde", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_YAW_KP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076fa16926c89ea146dd62d692ee01609ab23", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_YAW_RATE_KP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076fab935006114532016e1f73893d951b372", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_ROLL_TO_THROTTLE_RATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076fa9eb60a3608990e16e67ed5f5bd94f0ff", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_ANGLE_OF_ATTACK", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076fa061cdb51ca94b523e16eabf0f110f29d", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_ALT_HOLD", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076fa6a07eb32ee51bb80e7b22a5ff572907d", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_ALT_HOLD_THROTTLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076fa671d9ce275e38ea787af3a247fcaf67b", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_DR_RSSI_EDGE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076fa96624fb809f11607fdd0130586164ce4", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_RECOVERY_DURATION_LIMIT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076fae7ba4a4e7751088dba00e125fd2823b0", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_WIND_SPEED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076fa375d6d592b1b59c1da2c5a03a4548bca", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_PLANE_SPEED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076fa337b58d9e447fcaaaf8852f1f75c61b7", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSETTINGSSTATE_SETTINGCHANGED_SETTING_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a1fb4e4aba0db4ce8446b5889b2b6076fa7025e47391e295263f5b9e1a7d5a4431", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_PILOTINGSTATE_ALERTSTATECHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5ce84ab43d20b32f4d87b4255fbfa2eb", [
+      [ "ARCOMMANDS_POWERUP_PILOTINGSTATE_ALERTSTATECHANGED_STATE_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5ce84ab43d20b32f4d87b4255fbfa2ebabbb9d329fef3fa216c8c7a95556ef313", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSTATE_ALERTSTATECHANGED_STATE_CRITICAL_BATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5ce84ab43d20b32f4d87b4255fbfa2eba8c68532681e4b5732e855cba02953761", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSTATE_ALERTSTATECHANGED_STATE_LOW_BATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5ce84ab43d20b32f4d87b4255fbfa2ebaa3b50e17bba03c8d1b0c65a010db3206", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSTATE_ALERTSTATECHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5ce84ab43d20b32f4d87b4255fbfa2eba9fa088a0e38cdab87491369584d07500", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_PILOTINGSTATE_FLYINGSTATECHANGED_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2a2dd0f53a4381534e784eef2f2ad5b0", [
+      [ "ARCOMMANDS_POWERUP_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_LANDED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2a2dd0f53a4381534e784eef2f2ad5b0a06f85f4278bdbc3f45f4686e4078cd26", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_TAKINGOFF", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2a2dd0f53a4381534e784eef2f2ad5b0a87cac3b5da17464b0d34268c7c125c28", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_FLYING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2a2dd0f53a4381534e784eef2f2ad5b0a74a7cce952642a35b3dd5839f04ccb58", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_RECOVERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2a2dd0f53a4381534e784eef2f2ad5b0a4916b793929091866bded9d86ea514e8", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_EMERGENCY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2a2dd0f53a4381534e784eef2f2ad5b0a740b0e99c11f6c07d0fc43378f6c6696", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_USERTAKEOFF", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2a2dd0f53a4381534e784eef2f2ad5b0a5c5ca0a12c49cb01350300dbe1cb20a5", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_INIT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2a2dd0f53a4381534e784eef2f2ad5b0a9d8cc47c14ee84dcefceec320a1e6dbf", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2a2dd0f53a4381534e784eef2f2ad5b0ad4b5aecc9a6420ddcf56dc5a550abdf7", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_PILOTINGSTATE_MOTORMODECHANGED_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a93b17cfce7cd05b4e68e5fbd416511de", [
+      [ "ARCOMMANDS_POWERUP_PILOTINGSTATE_MOTORMODECHANGED_MODE_NORMAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a93b17cfce7cd05b4e68e5fbd416511dea740d9e34d19f50a1d51d45afebf7fe84", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSTATE_MOTORMODECHANGED_MODE_FORCED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a93b17cfce7cd05b4e68e5fbd416511deaa0b5bb94a670d98d0d19449132f7973e", null ],
+      [ "ARCOMMANDS_POWERUP_PILOTINGSTATE_MOTORMODECHANGED_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a93b17cfce7cd05b4e68e5fbd416511deab25681f796e4ed7e9039d8804b4bf653", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_VIDEOSETTINGS_VIDEOMODE_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9cc186223095923a9ea81fe1fbae277e", [
+      [ "ARCOMMANDS_POWERUP_VIDEOSETTINGS_VIDEOMODE_MODE_QUALITY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9cc186223095923a9ea81fe1fbae277ea8907bbd4502682944eba1a90e08ef9c0", null ],
+      [ "ARCOMMANDS_POWERUP_VIDEOSETTINGS_VIDEOMODE_MODE_PERFORMANCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9cc186223095923a9ea81fe1fbae277ead4b46ec82174504c807f78db8d51ba6e", null ],
+      [ "ARCOMMANDS_POWERUP_VIDEOSETTINGS_VIDEOMODE_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9cc186223095923a9ea81fe1fbae277ea037c93700841d3b880753792e29bde84", null ]
+    ] ],
+    [ "eARCOMMANDS_POWERUP_VIDEOSETTINGSSTATE_VIDEOMODECHANGED_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a422cea48ed1cfcae5a7a845d32e41929", [
+      [ "ARCOMMANDS_POWERUP_VIDEOSETTINGSSTATE_VIDEOMODECHANGED_MODE_QUALITY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a422cea48ed1cfcae5a7a845d32e41929ab26c9a3be783fadf9e1038c733211a89", null ],
+      [ "ARCOMMANDS_POWERUP_VIDEOSETTINGSSTATE_VIDEOMODECHANGED_MODE_PERFORMANCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a422cea48ed1cfcae5a7a845d32e41929a1088378086297f4bace18ac18b6c0d99", null ],
+      [ "ARCOMMANDS_POWERUP_VIDEOSETTINGSSTATE_VIDEOMODECHANGED_MODE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a422cea48ed1cfcae5a7a845d32e41929aff70c62adf482aed9268d5c2fe569aa4", null ]
+    ] ],
+    [ "eARCOMMANDS_RC_CALIBRATION_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0fa9d3a16e78f7d2f2581f2935957e2b", [
+      [ "ARCOMMANDS_RC_CALIBRATION_TYPE_NONE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0fa9d3a16e78f7d2f2581f2935957e2ba54e7f464fcfd9dda1bfb91ed1321e78f", null ],
+      [ "ARCOMMANDS_RC_CALIBRATION_TYPE_NEUTRAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0fa9d3a16e78f7d2f2581f2935957e2ba864fa51594421be40c66da67e804de8e", null ],
+      [ "ARCOMMANDS_RC_CALIBRATION_TYPE_MIN_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0fa9d3a16e78f7d2f2581f2935957e2baf2a3feffc3e6a8dc4a2932264b14282b", null ],
+      [ "ARCOMMANDS_RC_CALIBRATION_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a0fa9d3a16e78f7d2f2581f2935957e2bae075e4352c1a312b791d2c15254bd81c", null ]
+    ] ],
+    [ "eARCOMMANDS_RC_CHANNEL_ACTION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6e4f35a7a2d9386ea4c6ba91c5bb73bc", [
+      [ "ARCOMMANDS_RC_CHANNEL_ACTION_INVALID", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6e4f35a7a2d9386ea4c6ba91c5bb73bcaa027d50fc5865619b9c41d6c6ca3fe27", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_ACTION_ROLL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6e4f35a7a2d9386ea4c6ba91c5bb73bca9348624a0bfd0d56d172b7f944c223a5", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_ACTION_PITCH", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6e4f35a7a2d9386ea4c6ba91c5bb73bcabec9e243f7a5a2c681fc5303d24109b8", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_ACTION_YAW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6e4f35a7a2d9386ea4c6ba91c5bb73bca12412e2caaee109ee4ef0c9e0bfe4aa9", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_ACTION_GAZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6e4f35a7a2d9386ea4c6ba91c5bb73bca4a71165082c915e422f018e0c27c9c80", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_ACTION_TAKEOFF_LAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6e4f35a7a2d9386ea4c6ba91c5bb73bcabaa473d54ab8d916a6518c698b163e83", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_ACTION_EMERGENCY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6e4f35a7a2d9386ea4c6ba91c5bb73bca9de3241904f130ceee67bf8617269997", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_ACTION_RETURN_HOME", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6e4f35a7a2d9386ea4c6ba91c5bb73bca0e796907f7e03ebef9fc01092e5430f8", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_ACTION_PILOTING_MODE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6e4f35a7a2d9386ea4c6ba91c5bb73bca813f511135bb2c48a6cfd01f8ad2214f", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_ACTION_TAKE_CONTROL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6e4f35a7a2d9386ea4c6ba91c5bb73bcabf27c242a71112a89bbabfc31f0c1fa0", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_ACTION_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6e4f35a7a2d9386ea4c6ba91c5bb73bca92bde37c4d283486769c6d4b2eda57cc", null ]
+    ] ],
+    [ "eARCOMMANDS_RC_CHANNEL_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9b1f6e15e11ef68842b9503850bbdd3", [
+      [ "ARCOMMANDS_RC_CHANNEL_TYPE_INVALID", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9b1f6e15e11ef68842b9503850bbdd3ab43578cd277ae4f889268d2d4cec5545", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_TYPE_SIGNED_AXIS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9b1f6e15e11ef68842b9503850bbdd3ad03325c244929c90f2116b5a5d4c5e6b", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_TYPE_UNSIGNED_AXIS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9b1f6e15e11ef68842b9503850bbdd3a571724235ee33953f00943bb702dee2a", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_TYPE_MONOSTABLE_BUTTON", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9b1f6e15e11ef68842b9503850bbdd3a39dbdc81323d108f19a4d053e729db03", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_TYPE_BISTABLE_BUTTON", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9b1f6e15e11ef68842b9503850bbdd3a1211fa4784d53cea7453591468280fbc", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_TYPE_TRISTATE_BUTTON", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9b1f6e15e11ef68842b9503850bbdd3adb8ab276e28340047e80a25efa1189fe", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_TYPE_ROTARY_BUTTON", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9b1f6e15e11ef68842b9503850bbdd3a5dabbe7698e9e6a938f8ed4666683460", null ],
+      [ "ARCOMMANDS_RC_CHANNEL_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af9b1f6e15e11ef68842b9503850bbdd3ade70cea18a14b943a606e9bdb2a72cb5", null ]
+    ] ],
+    [ "eARCOMMANDS_RC_RECEIVER_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a68aee4c6608d5488044e59badc92eae8", [
+      [ "ARCOMMANDS_RC_RECEIVER_STATE_CONNECTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a68aee4c6608d5488044e59badc92eae8a54bd4bf971e27ed1eb1fb48203793dca", null ],
+      [ "ARCOMMANDS_RC_RECEIVER_STATE_DISCONNECTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a68aee4c6608d5488044e59badc92eae8a1dba5c95f25128e59b1bd8f3655a8fb5", null ],
+      [ "ARCOMMANDS_RC_RECEIVER_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a68aee4c6608d5488044e59badc92eae8a93c6053fd041f11ebff5e14587b359a7", null ]
+    ] ],
+    [ "eARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGS_WIFISECURITY_SECURITY_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5e27823c1ca45ba18ca216f3d994fba2", [
+      [ "ARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGS_WIFISECURITY_SECURITY_TYPE_OPEN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5e27823c1ca45ba18ca216f3d994fba2a8e7c9b3619b68e033846af9931247ca1", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGS_WIFISECURITY_SECURITY_TYPE_WPA2", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5e27823c1ca45ba18ca216f3d994fba2a503f10a4aac0cef7305f9a22a88933e8", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGS_WIFISECURITY_SECURITY_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a5e27823c1ca45ba18ca216f3d994fba2aeaccccd650b834bbca4e889a1216544b", null ]
+    ] ],
+    [ "eARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGS_WIFISELECTION_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2d59cc63cb7d2fa7a9331d468ac69392", [
+      [ "ARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGS_WIFISELECTION_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2d59cc63cb7d2fa7a9331d468ac69392a97fa98d962335f65b6a64508312bb9b6", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGS_WIFISELECTION_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2d59cc63cb7d2fa7a9331d468ac69392a00e9b6572627ea493b4264a55dad4874", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGS_WIFISELECTION_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a2d59cc63cb7d2fa7a9331d468ac69392a3d9511d80f8c03d02011191563b81b7d", null ]
+    ] ],
+    [ "eARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGS_WIFISELECTION_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad39beb237d107fc105671f20e8e6b78f", [
+      [ "ARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGS_WIFISELECTION_TYPE_MANUAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad39beb237d107fc105671f20e8e6b78fa1a218489ef990f0e66e5239ff9eff5d1", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGS_WIFISELECTION_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad39beb237d107fc105671f20e8e6b78fa349e7b23f89247fa117bdbd8a98d89b9", null ]
+    ] ],
+    [ "eARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGSSTATE_WIFISECURITYCHANGED_SECURITY_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad581c7296a68a5edcd5c770b7548010c", [
+      [ "ARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGSSTATE_WIFISECURITYCHANGED_SECURITY_TYPE_OPEN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad581c7296a68a5edcd5c770b7548010ca8d6a2f846a48b5c534ecc47ab37c013a", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGSSTATE_WIFISECURITYCHANGED_SECURITY_TYPE_WPA2", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad581c7296a68a5edcd5c770b7548010ca5960aeb8ce6157c619267ba549d8cf38", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGSSTATE_WIFISECURITYCHANGED_SECURITY_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ad581c7296a68a5edcd5c770b7548010ca31ac3a3bdbf3927045a88a9d11b4f4ae", null ]
+    ] ],
+    [ "eARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGSSTATE_WIFISELECTIONCHANGED_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a162e26c9e928d5526488697965b60a4c", [
+      [ "ARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGSSTATE_WIFISELECTIONCHANGED_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a162e26c9e928d5526488697965b60a4ca240569cae0d21ca6ef030a51b4f4a54a", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGSSTATE_WIFISELECTIONCHANGED_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a162e26c9e928d5526488697965b60a4ca901860581672b76c52def60170e492cd", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGSSTATE_WIFISELECTIONCHANGED_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a162e26c9e928d5526488697965b60a4cae9767fb12ac18b7ccd3bb4c045a6b17d", null ]
+    ] ],
+    [ "eARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a69732f4f2ff77b68aa82cc5a7013a454", [
+      [ "ARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_MANUAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a69732f4f2ff77b68aa82cc5a7013a454ab10dfc706733590c05feafc976cc3917", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_ACCESSPOINTSETTINGSSTATE_WIFISELECTIONCHANGED_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a69732f4f2ff77b68aa82cc5a7013a454a6e0232c3ec851992f072d0da9f683aa0", null ]
+    ] ],
+    [ "eARCOMMANDS_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATE_STATUS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8f9eba8f7117ae29a22441e24c3eca6f", [
+      [ "ARCOMMANDS_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATE_STATUS_UNRELIABLE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8f9eba8f7117ae29a22441e24c3eca6face155e1cc69e6479adf5c4a9c13f57d6", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATE_STATUS_ASSESSING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8f9eba8f7117ae29a22441e24c3eca6fad89ba5f32b615962bca823aee29273f5", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATE_STATUS_CALIBRATED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8f9eba8f7117ae29a22441e24c3eca6faf588623c21a8ef8ef181c147697e5321", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATE_STATUS_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8f9eba8f7117ae29a22441e24c3eca6fad8aa91c6ceecb9c2dbf7882a5d47e60a", null ]
+    ] ],
+    [ "eARCOMMANDS_SKYCONTROLLER_COMMONEVENTSTATE_SHUTDOWN_REASON", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6f14d59bf6cff50193e2da6d46eb4378", [
+      [ "ARCOMMANDS_SKYCONTROLLER_COMMONEVENTSTATE_SHUTDOWN_REASON_POWEROFF_BUTTON", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6f14d59bf6cff50193e2da6d46eb4378a23535303cff945aeb0ac82a2f0d30531", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_COMMONEVENTSTATE_SHUTDOWN_REASON_UPDATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6f14d59bf6cff50193e2da6d46eb4378ad2b1019aa3627def4d4b7d1900461101", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_COMMONEVENTSTATE_SHUTDOWN_REASON_LOW_BATTERY", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6f14d59bf6cff50193e2da6d46eb4378adce552b39cdf494641662e239cf45e24", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_COMMONEVENTSTATE_SHUTDOWN_REASON_FACTORY_RESET", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6f14d59bf6cff50193e2da6d46eb4378a091afd4ade1acce3948830892f5ad66d", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_COMMONEVENTSTATE_SHUTDOWN_REASON_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a6f14d59bf6cff50193e2da6d46eb4378a9e71f4f2e494e14d94615856d796babf", null ]
+    ] ],
+    [ "eARCOMMANDS_SKYCONTROLLER_COPILOTING_SETPILOTINGSOURCE_SOURCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8cbfa9169d1d2937fc9dc7c7e8f03649", [
+      [ "ARCOMMANDS_SKYCONTROLLER_COPILOTING_SETPILOTINGSOURCE_SOURCE_SKYCONTROLLER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8cbfa9169d1d2937fc9dc7c7e8f03649a69cd94808d1ab8e9f1d2c244651444c7", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_COPILOTING_SETPILOTINGSOURCE_SOURCE_CONTROLLER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8cbfa9169d1d2937fc9dc7c7e8f03649aaeb5a381a0e92f2dab9714a897ff444c", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_COPILOTING_SETPILOTINGSOURCE_SOURCE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a8cbfa9169d1d2937fc9dc7c7e8f03649aa7784b732a98f8645e8cc2cb2c735855", null ]
+    ] ],
+    [ "eARCOMMANDS_SKYCONTROLLER_COPILOTINGSTATE_PILOTINGSOURCE_SOURCE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aee8dec45fe609ec431fce1f5fc5810c4", [
+      [ "ARCOMMANDS_SKYCONTROLLER_COPILOTINGSTATE_PILOTINGSOURCE_SOURCE_SKYCONTROLLER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aee8dec45fe609ec431fce1f5fc5810c4a0b7344ece6187f0fd5a51f08e177543b", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_COPILOTINGSTATE_PILOTINGSOURCE_SOURCE_CONTROLLER", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aee8dec45fe609ec431fce1f5fc5810c4af330bdaa25a7c616cdafd0bcac022562", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_COPILOTINGSTATE_PILOTINGSOURCE_SOURCE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aee8dec45fe609ec431fce1f5fc5810c4aacb017212d60a9732bbca7da4f760e11", null ]
+    ] ],
+    [ "eARCOMMANDS_SKYCONTROLLER_DEVICESTATE_CONNEXIONCHANGED_STATUS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a46ac5b58f151e5522991608a2dff1cf6", [
+      [ "ARCOMMANDS_SKYCONTROLLER_DEVICESTATE_CONNEXIONCHANGED_STATUS_NOTCONNECTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a46ac5b58f151e5522991608a2dff1cf6a00c47fa63cbc802fb44382468a20b380", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_DEVICESTATE_CONNEXIONCHANGED_STATUS_CONNECTING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a46ac5b58f151e5522991608a2dff1cf6a67a8da643e07fd685ff6e268c39bde7b", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_DEVICESTATE_CONNEXIONCHANGED_STATUS_CONNECTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a46ac5b58f151e5522991608a2dff1cf6a37031e45367e8f6c8664fed83a3dab08", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_DEVICESTATE_CONNEXIONCHANGED_STATUS_DISCONNECTING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a46ac5b58f151e5522991608a2dff1cf6af560374b21deea4bbd491a2ab6ec6029", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_DEVICESTATE_CONNEXIONCHANGED_STATUS_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a46ac5b58f151e5522991608a2dff1cf6a8113a78782b3d890e2501fd2b28bf862", null ]
+    ] ],
+    [ "eARCOMMANDS_SKYCONTROLLER_GAMEPADINFOSSTATE_GAMEPADCONTROL_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af14942d3f31c5d8a4e5a41a30778f207", [
+      [ "ARCOMMANDS_SKYCONTROLLER_GAMEPADINFOSSTATE_GAMEPADCONTROL_TYPE_AXIS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af14942d3f31c5d8a4e5a41a30778f207a33ff855cdeac9bc5387b60dbdb0afc78", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_GAMEPADINFOSSTATE_GAMEPADCONTROL_TYPE_BUTTON", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af14942d3f31c5d8a4e5a41a30778f207adf53ab4a051bfc1bb3b83214c864bb05", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_GAMEPADINFOSSTATE_GAMEPADCONTROL_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#af14942d3f31c5d8a4e5a41a30778f207af03573d8bf3d64675a007c645b809430", null ]
+    ] ],
+    [ "eARCOMMANDS_SKYCONTROLLER_SETTINGSSTATE_PRODUCTVARIANTCHANGED_VARIANT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9bb7d7eeab95e61ddd5552ddca310139", [
+      [ "ARCOMMANDS_SKYCONTROLLER_SETTINGSSTATE_PRODUCTVARIANTCHANGED_VARIANT_BEBOP", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9bb7d7eeab95e61ddd5552ddca310139acc9815fcfba7056d8adc80bbe144c823", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_SETTINGSSTATE_PRODUCTVARIANTCHANGED_VARIANT_BEBOP2", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9bb7d7eeab95e61ddd5552ddca310139abffa92d929c3050d4bf5e9eb51319e32", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_SETTINGSSTATE_PRODUCTVARIANTCHANGED_VARIANT_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a9bb7d7eeab95e61ddd5552ddca310139ab323bd67c5dd7a9a9cd47ea12d892fb7", null ]
+    ] ],
+    [ "eARCOMMANDS_SKYCONTROLLER_SKYCONTROLLERSTATE_BATTERYSTATE_STATE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae335363f553d25d0711949fe939f33aa", [
+      [ "ARCOMMANDS_SKYCONTROLLER_SKYCONTROLLERSTATE_BATTERYSTATE_STATE_CHARGING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae335363f553d25d0711949fe939f33aaa653dcd04cc14d7192b9b791b6e03b183", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_SKYCONTROLLERSTATE_BATTERYSTATE_STATE_CHARGED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae335363f553d25d0711949fe939f33aaa4af67767f2a51ea493811d9ff9de7dd4", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_SKYCONTROLLERSTATE_BATTERYSTATE_STATE_DISCHARGING", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae335363f553d25d0711949fe939f33aaa82de93a0c0732163ff97e02c8e37cec1", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_SKYCONTROLLERSTATE_BATTERYSTATE_STATE_DISCHARGING_LOW", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae335363f553d25d0711949fe939f33aaa9509bf67d1db43f4df137920e84ed316", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_SKYCONTROLLERSTATE_BATTERYSTATE_STATE_DISCHARGING_CRITICAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae335363f553d25d0711949fe939f33aaa3b122fc9b76c3e33717d45f393b7ebb7", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_SKYCONTROLLERSTATE_BATTERYSTATE_STATE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#ae335363f553d25d0711949fe939f33aaa7d2af298db8c3be7ee0a1012560d8a30", null ]
+    ] ],
+    [ "eARCOMMANDS_SKYCONTROLLER_WIFISTATE_CONNEXIONCHANGED_STATUS", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa91870c436752e0fce42afc0ea30c5a2", [
+      [ "ARCOMMANDS_SKYCONTROLLER_WIFISTATE_CONNEXIONCHANGED_STATUS_CONNECTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa91870c436752e0fce42afc0ea30c5a2ad6523f6eb2055b90873249f4237d3caa", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_WIFISTATE_CONNEXIONCHANGED_STATUS_ERROR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa91870c436752e0fce42afc0ea30c5a2a37bb81ae4ada02b16d237a59f64c08c6", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_WIFISTATE_CONNEXIONCHANGED_STATUS_DISCONNECTED", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa91870c436752e0fce42afc0ea30c5a2a301040d136fb626a20f4f6e3ebf099bd", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_WIFISTATE_CONNEXIONCHANGED_STATUS_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa91870c436752e0fce42afc0ea30c5a2af8cc1943d1dde1ea26b6827d02f19a18", null ]
+    ] ],
+    [ "eARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGED_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acf6717f3849c08dd13ad966917497442", [
+      [ "ARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGED_BAND_2_4GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acf6717f3849c08dd13ad966917497442aa37a9e487332159cfa25d85f7c237ddb", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGED_BAND_5GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acf6717f3849c08dd13ad966917497442a81579287bec0fe414534bb7897ddb1a1", null ],
+      [ "ARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGED_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acf6717f3849c08dd13ad966917497442a93893a745994ce0a0b914fdb56334404", null ]
+    ] ],
+    [ "eARCOMMANDS_WIFI_BAND", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7c0c78267108ed2f77518e91afb3649b", [
+      [ "ARCOMMANDS_WIFI_BAND_2_4_GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7c0c78267108ed2f77518e91afb3649ba79ee2294c1950734624d963fe4a1c164", null ],
+      [ "ARCOMMANDS_WIFI_BAND_5_GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7c0c78267108ed2f77518e91afb3649badc6f986b6743adc93d3f565b59019698", null ],
+      [ "ARCOMMANDS_WIFI_BAND_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a7c0c78267108ed2f77518e91afb3649bae77bc4e850760740c3267c1c5da62a2c", null ]
+    ] ],
+    [ "eARCOMMANDS_WIFI_COUNTRY_SELECTION", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa0ed37f5a71015a0999b310d7847a925", [
+      [ "ARCOMMANDS_WIFI_COUNTRY_SELECTION_MANUAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa0ed37f5a71015a0999b310d7847a925a998963ed363dc5bf0512f770cc9bbce2", null ],
+      [ "ARCOMMANDS_WIFI_COUNTRY_SELECTION_AUTO", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa0ed37f5a71015a0999b310d7847a925a9827fb90fa73de0b138cc317042bdacb", null ],
+      [ "ARCOMMANDS_WIFI_COUNTRY_SELECTION_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#aa0ed37f5a71015a0999b310d7847a925a7365e07643ff6fe557515b11e6b04ec4", null ]
+    ] ],
+    [ "eARCOMMANDS_WIFI_ENVIRONMENT", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a573f174d861a3ce207cfbd3335b9c1e1", [
+      [ "ARCOMMANDS_WIFI_ENVIRONMENT_INDOOR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a573f174d861a3ce207cfbd3335b9c1e1a833984544404e022eacc02d5eee01497", null ],
+      [ "ARCOMMANDS_WIFI_ENVIRONMENT_OUTDOOR", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a573f174d861a3ce207cfbd3335b9c1e1a22fc00ab6c8acddaacf4dac61b9f9a56", null ],
+      [ "ARCOMMANDS_WIFI_ENVIRONMENT_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a573f174d861a3ce207cfbd3335b9c1e1a10d4557b664e04030ebfd96420468253", null ]
+    ] ],
+    [ "eARCOMMANDS_WIFI_SECURITY_KEY_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a082534da3e918c7c413b7737a0538ee5", [
+      [ "ARCOMMANDS_WIFI_SECURITY_KEY_TYPE_PLAIN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a082534da3e918c7c413b7737a0538ee5a6ab62f355e49b2a6674bb1b9ba1f0e03", null ],
+      [ "ARCOMMANDS_WIFI_SECURITY_KEY_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a082534da3e918c7c413b7737a0538ee5a717ac05eba15453376c5c57c3d9b8772", null ]
+    ] ],
+    [ "eARCOMMANDS_WIFI_SECURITY_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acc2288522df669f2ce7d6fbecb520005", [
+      [ "ARCOMMANDS_WIFI_SECURITY_TYPE_OPEN", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acc2288522df669f2ce7d6fbecb520005aad64313c186555d27f394346eb24ad81", null ],
+      [ "ARCOMMANDS_WIFI_SECURITY_TYPE_WPA2", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acc2288522df669f2ce7d6fbecb520005a6c5113c6bb515c75fa9014319082944d", null ],
+      [ "ARCOMMANDS_WIFI_SECURITY_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#acc2288522df669f2ce7d6fbecb520005a33ee33ef3fb751acd9563b2f7731c86a", null ]
+    ] ],
+    [ "eARCOMMANDS_WIFI_SELECTION_TYPE", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4e0c4143b9f77e4877ee25242b05009a", [
+      [ "ARCOMMANDS_WIFI_SELECTION_TYPE_AUTO_ALL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4e0c4143b9f77e4877ee25242b05009aaa015f079f12239b738a5fb77d384a697", null ],
+      [ "ARCOMMANDS_WIFI_SELECTION_TYPE_AUTO_2_4_GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4e0c4143b9f77e4877ee25242b05009aa83a971e6c5b6f708cf22f5495e71922f", null ],
+      [ "ARCOMMANDS_WIFI_SELECTION_TYPE_AUTO_5_GHZ", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4e0c4143b9f77e4877ee25242b05009aa1bf047eb274c30d75af966898a6385a3", null ],
+      [ "ARCOMMANDS_WIFI_SELECTION_TYPE_MANUAL", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4e0c4143b9f77e4877ee25242b05009aa922364cae06c1bfab3eec51d6beb4631", null ],
+      [ "ARCOMMANDS_WIFI_SELECTION_TYPE_MAX", "_a_r_c_o_m_m_a_n_d_s___types_8h.html#a4e0c4143b9f77e4877ee25242b05009aa20f521fad9f6c499c751a683569674dc", null ]
+    ] ]
+];

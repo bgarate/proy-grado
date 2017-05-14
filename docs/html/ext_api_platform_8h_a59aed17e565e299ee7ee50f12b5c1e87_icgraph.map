@@ -1,0 +1,7 @@
+<map id="extApi_readFile" name="extApi_readFile">
+<area shape="rect" id="node2" href="$ext_api_8h.html#ab3b832d46c5823b6928d5d007778c1ab" title="simxTransferFile" alt="" coords="165,81,284,108"/>
+<area shape="rect" id="node3" href="$ext_api_8h.html#aba004fe8c4230080573cf6a84609cc4c" title="simxLoadModel" alt="" coords="333,5,446,32"/>
+<area shape="rect" id="node4" href="$ext_api_8h.html#a0e7431db44935b74cf49ac5aa3edb6ec" title="mtlb_simxCallScriptFunction_b" alt="" coords="495,81,697,108"/>
+<area shape="rect" id="node5" href="$ext_api_8h.html#a0c14eaf2751f64cb99cc09ca40f690d1" title="simxLoadUI" alt="" coords="343,107,435,133"/>
+<area shape="rect" id="node6" href="$ext_api_8h.html#a334778d7372013cf32278c35cfb1e401" title="simxLoadScene" alt="" coords="332,157,447,184"/>
+</map>

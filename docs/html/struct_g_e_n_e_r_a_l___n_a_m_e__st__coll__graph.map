@@ -1,0 +1,9 @@
+<map id="GENERAL_NAME_st" name="GENERAL_NAME_st">
+<area shape="rect" id="node2" href="$structasn1__string__st.html" title="asn1_string_st" alt="" coords="174,5,280,32"/>
+<area shape="rect" id="node5" href="$structasn1__type__st.html" title="asn1_type_st" alt="" coords="342,241,442,268"/>
+<area shape="rect" id="node6" href="$struct_e_d_i_party_name__st.html" title="EDIPartyName_st" alt="" coords="188,323,317,349"/>
+<area shape="rect" id="node3" href="$structother_name__st.html" title="otherName_st" alt="" coords="467,405,571,432"/>
+<area shape="rect" id="node4" href="$structasn1__object__st.html" title="asn1_object_st" alt="" coords="466,5,577,32"/>
+<area shape="rect" id="node7" href="$struct_x509__name__st.html" title="X509_name_st" alt="" coords="651,405,760,432"/>
+<area shape="rect" id="node8" href="$structbuf__mem__st.html" title="buf_mem_st" alt="" coords="664,241,758,268"/>
+</map>

@@ -1,0 +1,100 @@
+\hypertarget{arraylist_8h}{}\section{src/hal/pb2/include/json/arraylist.h File Reference}
+\label{arraylist_8h}\index{src/hal/pb2/include/json/arraylist.\+h@{src/hal/pb2/include/json/arraylist.\+h}}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arraylist_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structarray__list}{array\+\_\+list}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{arraylist_8h_acd30d910b398421574eb1f59e78617f5}{A\+R\+R\+A\+Y\+\_\+\+L\+I\+S\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE}~32
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void( \hyperlink{arraylist_8h_a41e5f51b1befa448b861e61a2c352bd6}{array\+\_\+list\+\_\+free\+\_\+fn}) (void $\ast$data)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$ \hyperlink{arraylist_8h_a0d4bfac055dfd98e17296142abf4d894}{array\+\_\+list\+\_\+new} (\hyperlink{arraylist_8h_a41e5f51b1befa448b861e61a2c352bd6}{array\+\_\+list\+\_\+free\+\_\+fn} $\ast$free\+\_\+fn)
+\item 
+void \hyperlink{arraylist_8h_acd00fb70f7ca82f23b48b812c3498f67}{array\+\_\+list\+\_\+free} (struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$al)
+\item 
+void $\ast$ \hyperlink{arraylist_8h_aa16207e545b6c1265299abcfa418dc2b}{array\+\_\+list\+\_\+get\+\_\+idx} (struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$al, int i)
+\item 
+int \hyperlink{arraylist_8h_a21b8e4c59e52fbc5a9a5a098e3f96e76}{array\+\_\+list\+\_\+put\+\_\+idx} (struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$al, int i, void $\ast$data)
+\item 
+int \hyperlink{arraylist_8h_a6e995608aa464244ff3184fb43574dc8}{array\+\_\+list\+\_\+add} (struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$al, void $\ast$data)
+\item 
+int \hyperlink{arraylist_8h_aa8393b4aa3dc447660371530439ab70f}{array\+\_\+list\+\_\+length} (struct \hyperlink{structarray__list}{array\+\_\+list} $\ast$al)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{arraylist.\+h@{arraylist.\+h}!A\+R\+R\+A\+Y\+\_\+\+L\+I\+S\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE@{A\+R\+R\+A\+Y\+\_\+\+L\+I\+S\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+R\+A\+Y\+\_\+\+L\+I\+S\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE@{A\+R\+R\+A\+Y\+\_\+\+L\+I\+S\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE}!arraylist.\+h@{arraylist.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+R\+A\+Y\+\_\+\+L\+I\+S\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE}{ARRAY_LIST_DEFAULT_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+R\+A\+Y\+\_\+\+L\+I\+S\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE~32}\hypertarget{arraylist_8h_acd30d910b398421574eb1f59e78617f5}{}\label{arraylist_8h_acd30d910b398421574eb1f59e78617f5}
+
+
+\subsection{Typedef Documentation}
+\index{arraylist.\+h@{arraylist.\+h}!array\+\_\+list\+\_\+free\+\_\+fn@{array\+\_\+list\+\_\+free\+\_\+fn}}
+\index{array\+\_\+list\+\_\+free\+\_\+fn@{array\+\_\+list\+\_\+free\+\_\+fn}!arraylist.\+h@{arraylist.\+h}}
+\subsubsection[{\texorpdfstring{array\+\_\+list\+\_\+free\+\_\+fn}{array_list_free_fn}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( array\+\_\+list\+\_\+free\+\_\+fn) (void $\ast$data)}\hypertarget{arraylist_8h_a41e5f51b1befa448b861e61a2c352bd6}{}\label{arraylist_8h_a41e5f51b1befa448b861e61a2c352bd6}
+
+
+\subsection{Function Documentation}
+\index{arraylist.\+h@{arraylist.\+h}!array\+\_\+list\+\_\+add@{array\+\_\+list\+\_\+add}}
+\index{array\+\_\+list\+\_\+add@{array\+\_\+list\+\_\+add}!arraylist.\+h@{arraylist.\+h}}
+\subsubsection[{\texorpdfstring{array\+\_\+list\+\_\+add(struct array\+\_\+list $\ast$al, void $\ast$data)}{array_list_add(struct array_list *al, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}int array\+\_\+list\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{struct {\bf array\+\_\+list} $\ast$}]{al, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{arraylist_8h_a6e995608aa464244ff3184fb43574dc8}{}\label{arraylist_8h_a6e995608aa464244ff3184fb43574dc8}
+\index{arraylist.\+h@{arraylist.\+h}!array\+\_\+list\+\_\+free@{array\+\_\+list\+\_\+free}}
+\index{array\+\_\+list\+\_\+free@{array\+\_\+list\+\_\+free}!arraylist.\+h@{arraylist.\+h}}
+\subsubsection[{\texorpdfstring{array\+\_\+list\+\_\+free(struct array\+\_\+list $\ast$al)}{array_list_free(struct array_list *al)}}]{\setlength{\rightskip}{0pt plus 5cm}void array\+\_\+list\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf array\+\_\+list} $\ast$}]{al}
+\end{DoxyParamCaption}
+)}\hypertarget{arraylist_8h_acd00fb70f7ca82f23b48b812c3498f67}{}\label{arraylist_8h_acd00fb70f7ca82f23b48b812c3498f67}
+\index{arraylist.\+h@{arraylist.\+h}!array\+\_\+list\+\_\+get\+\_\+idx@{array\+\_\+list\+\_\+get\+\_\+idx}}
+\index{array\+\_\+list\+\_\+get\+\_\+idx@{array\+\_\+list\+\_\+get\+\_\+idx}!arraylist.\+h@{arraylist.\+h}}
+\subsubsection[{\texorpdfstring{array\+\_\+list\+\_\+get\+\_\+idx(struct array\+\_\+list $\ast$al, int i)}{array_list_get_idx(struct array_list *al, int i)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ array\+\_\+list\+\_\+get\+\_\+idx (
+\begin{DoxyParamCaption}
+\item[{struct {\bf array\+\_\+list} $\ast$}]{al, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{arraylist_8h_aa16207e545b6c1265299abcfa418dc2b}{}\label{arraylist_8h_aa16207e545b6c1265299abcfa418dc2b}
+\index{arraylist.\+h@{arraylist.\+h}!array\+\_\+list\+\_\+length@{array\+\_\+list\+\_\+length}}
+\index{array\+\_\+list\+\_\+length@{array\+\_\+list\+\_\+length}!arraylist.\+h@{arraylist.\+h}}
+\subsubsection[{\texorpdfstring{array\+\_\+list\+\_\+length(struct array\+\_\+list $\ast$al)}{array_list_length(struct array_list *al)}}]{\setlength{\rightskip}{0pt plus 5cm}int array\+\_\+list\+\_\+length (
+\begin{DoxyParamCaption}
+\item[{struct {\bf array\+\_\+list} $\ast$}]{al}
+\end{DoxyParamCaption}
+)}\hypertarget{arraylist_8h_aa8393b4aa3dc447660371530439ab70f}{}\label{arraylist_8h_aa8393b4aa3dc447660371530439ab70f}
+\index{arraylist.\+h@{arraylist.\+h}!array\+\_\+list\+\_\+new@{array\+\_\+list\+\_\+new}}
+\index{array\+\_\+list\+\_\+new@{array\+\_\+list\+\_\+new}!arraylist.\+h@{arraylist.\+h}}
+\subsubsection[{\texorpdfstring{array\+\_\+list\+\_\+new(array\+\_\+list\+\_\+free\+\_\+fn $\ast$free\+\_\+fn)}{array_list_new(array_list_free_fn *free_fn)}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf array\+\_\+list}$\ast$ array\+\_\+list\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{{\bf array\+\_\+list\+\_\+free\+\_\+fn} $\ast$}]{free\+\_\+fn}
+\end{DoxyParamCaption}
+)}\hypertarget{arraylist_8h_a0d4bfac055dfd98e17296142abf4d894}{}\label{arraylist_8h_a0d4bfac055dfd98e17296142abf4d894}
+\index{arraylist.\+h@{arraylist.\+h}!array\+\_\+list\+\_\+put\+\_\+idx@{array\+\_\+list\+\_\+put\+\_\+idx}}
+\index{array\+\_\+list\+\_\+put\+\_\+idx@{array\+\_\+list\+\_\+put\+\_\+idx}!arraylist.\+h@{arraylist.\+h}}
+\subsubsection[{\texorpdfstring{array\+\_\+list\+\_\+put\+\_\+idx(struct array\+\_\+list $\ast$al, int i, void $\ast$data)}{array_list_put_idx(struct array_list *al, int i, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}int array\+\_\+list\+\_\+put\+\_\+idx (
+\begin{DoxyParamCaption}
+\item[{struct {\bf array\+\_\+list} $\ast$}]{al, }
+\item[{int}]{i, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{arraylist_8h_a21b8e4c59e52fbc5a9a5a098e3f96e76}{}\label{arraylist_8h_a21b8e4c59e52fbc5a9a5a098e3f96e76}

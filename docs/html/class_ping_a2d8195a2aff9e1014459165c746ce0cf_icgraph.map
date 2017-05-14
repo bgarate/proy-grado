@@ -1,0 +1,9 @@
+<map id="Ping::internal_default_instance" name="Ping::internal_default_instance">
+<area shape="rect" id="node2" href="$structprotobuf__message__2eproto_1_1_table_struct.html#a931144a94610d8291bdc069fc26e7ab8" title="protobuf_message_2eproto\l::TableStruct::InitDefaultsImpl" alt="" coords="197,5,395,47"/>
+<area shape="rect" id="node3" href="$class_message.html#a1656eb682ce1b354645b8f0204d4d716" title="Message::GetMetadata" alt="" coords="443,71,601,98"/>
+<area shape="rect" id="node4" href="$class_message.html#ac6583c594c172467063c0e3f2b30e82a" title="Message::ping" alt="" coords="243,122,349,149"/>
+<area shape="rect" id="node6" href="$class_ping.html#af5927f79e7c2503e999e7a5b936ebc0e" title="Ping::Ping" alt="" coords="255,173,337,199"/>
+<area shape="rect" id="node8" href="$class_ping.html#a13fd7ef9ce8b0a95ecb2a90cbe39588d" title="Ping::default_instance" alt="" coords="221,223,371,250"/>
+<area shape="rect" id="node5" href="$class_message.html#aeec4936f78a3ed399295e3f72840166f" title="Message::MergeFrom" alt="" coords="447,122,597,149"/>
+<area shape="rect" id="node7" href="$class_ping.html#ab68530014f62d78280ecc9760882e610" title="Ping::New" alt="" coords="481,173,563,199"/>
+</map>

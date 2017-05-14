@@ -1,0 +1,5 @@
+<map id="_sendMessage_socketOrSharedMem" name="_sendMessage_socketOrSharedMem">
+<area shape="rect" id="node2" href="$ext_api_8c.html#a37c21b37d213632ecf00a4013fc58dea" title="_sendSimplePacket_socket" alt="" coords="293,31,477,57"/>
+<area shape="rect" id="node3" href="$ext_api_platform_8c.html#a53372d80e2437d241d3831bbf09551a1" title="extApi_endianConversionShort" alt="" coords="525,5,727,32"/>
+<area shape="rect" id="node4" href="$ext_api_platform_8c.html#aac199802575731257d42f698f2c68255" title="extApi_send_socket" alt="" coords="556,56,696,83"/>
+</map>

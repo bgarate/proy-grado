@@ -1,0 +1,212 @@
+\hypertarget{rand_8h}{}\section{src/hal/pb2/include/openssl/rand.h File Reference}
+\label{rand_8h}\index{src/hal/pb2/include/openssl/rand.\+h@{src/hal/pb2/include/openssl/rand.\+h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/ossl\+\_\+typ.\+h$>$}\\*
+Include dependency graph for rand.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{rand_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrand__meth__st}{rand\+\_\+meth\+\_\+st}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rand_8h_a395dc0b0556fe3ac527c661389b96fa2}{R\+A\+N\+D\+\_\+\+F\+\_\+\+R\+A\+N\+D\+\_\+\+G\+E\+T\+\_\+\+R\+A\+N\+D\+\_\+\+M\+E\+T\+H\+OD}~101
+\item 
+\#define \hyperlink{rand_8h_aa422945af7a4136bef3b4b491cb04f19}{R\+A\+N\+D\+\_\+\+F\+\_\+\+R\+A\+N\+D\+\_\+\+I\+N\+I\+T\+\_\+\+F\+I\+PS}~102
+\item 
+\#define \hyperlink{rand_8h_adde2d709dc4d9674aa17a0ec964f6dff}{R\+A\+N\+D\+\_\+\+F\+\_\+\+S\+S\+L\+E\+A\+Y\+\_\+\+R\+A\+N\+D\+\_\+\+B\+Y\+T\+ES}~100
+\item 
+\#define \hyperlink{rand_8h_a17171185b8c7796212e1a35238e046db}{R\+A\+N\+D\+\_\+\+R\+\_\+\+D\+U\+A\+L\+\_\+\+E\+C\+\_\+\+D\+R\+B\+G\+\_\+\+D\+I\+S\+A\+B\+L\+ED}~104
+\item 
+\#define \hyperlink{rand_8h_a90febce1a74f068ddf51f235f2a88cd7}{R\+A\+N\+D\+\_\+\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+S\+I\+N\+G\+\_\+\+D\+R\+BG}~102
+\item 
+\#define \hyperlink{rand_8h_a56b7c9d8351509a2bc9b9e840737d91d}{R\+A\+N\+D\+\_\+\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+I\+N\+G\+\_\+\+D\+R\+BG}~103
+\item 
+\#define \hyperlink{rand_8h_a699f67a9033aabf0b64c07bf3e49f954}{R\+A\+N\+D\+\_\+\+R\+\_\+\+N\+O\+\_\+\+F\+I\+P\+S\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+S\+ET}~101
+\item 
+\#define \hyperlink{rand_8h_afa9fab5133ad70b374552f1fb1276ff9}{R\+A\+N\+D\+\_\+\+R\+\_\+\+P\+R\+N\+G\+\_\+\+N\+O\+T\+\_\+\+S\+E\+E\+D\+ED}~100
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{rand_8h_a292ae50ca725d0c529dc077467b40254}{R\+A\+N\+D\+\_\+set\+\_\+rand\+\_\+method} (const \hyperlink{ossl__typ_8h_aec8248984ce6fa1856c2c53f82ba44e2}{R\+A\+N\+D\+\_\+\+M\+E\+T\+H\+OD} $\ast$meth)
+\item 
+const \hyperlink{ossl__typ_8h_aec8248984ce6fa1856c2c53f82ba44e2}{R\+A\+N\+D\+\_\+\+M\+E\+T\+H\+OD} $\ast$ \hyperlink{rand_8h_a8a8cac7a3262c4527e08f57f07c4c586}{R\+A\+N\+D\+\_\+get\+\_\+rand\+\_\+method} (void)
+\item 
+int \hyperlink{rand_8h_a6a4f2c2cf723ef63522d4b33c79d5f0f}{R\+A\+N\+D\+\_\+set\+\_\+rand\+\_\+engine} (\hyperlink{ossl__typ_8h_abac45b251498719318e60ab8d6192510}{E\+N\+G\+I\+NE} $\ast$engine)
+\item 
+\hyperlink{ossl__typ_8h_aec8248984ce6fa1856c2c53f82ba44e2}{R\+A\+N\+D\+\_\+\+M\+E\+T\+H\+OD} $\ast$ \hyperlink{rand_8h_abcadee1bb56b931ab33644a711a8b77a}{R\+A\+N\+D\+\_\+\+S\+S\+Leay} (void)
+\item 
+void \hyperlink{rand_8h_ad797e371751dedbcce4e975c3cad1947}{R\+A\+N\+D\+\_\+cleanup} (void)
+\item 
+int \hyperlink{rand_8h_a66d27b98b0edadbed6594350d5c023e4}{R\+A\+N\+D\+\_\+bytes} (unsigned char $\ast$buf, int num)
+\item 
+int \hyperlink{rand_8h_a8a4e911a9be281eb797faa8590637ac3}{R\+A\+N\+D\+\_\+pseudo\+\_\+bytes} (unsigned char $\ast$buf, int num)
+\item 
+void \hyperlink{rand_8h_af0cae512f02d66a76b34935a82fa44c7}{R\+A\+N\+D\+\_\+seed} (const void $\ast$buf, int num)
+\item 
+void \hyperlink{rand_8h_a634ae9af5bff27c9537f9a0b6d4fb97a}{R\+A\+N\+D\+\_\+add} (const void $\ast$buf, int num, double entropy)
+\item 
+int \hyperlink{rand_8h_a3d409b325a5661e8137d19085869fc49}{R\+A\+N\+D\+\_\+load\+\_\+file} (const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, long max\+\_\+bytes)
+\item 
+int \hyperlink{rand_8h_a06116146cf32025cc287c834a4698b01}{R\+A\+N\+D\+\_\+write\+\_\+file} (const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file})
+\item 
+const char $\ast$ \hyperlink{rand_8h_a4026b0278086f254f5eb945c82a77ceb}{R\+A\+N\+D\+\_\+file\+\_\+name} (char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, size\+\_\+t num)
+\item 
+int \hyperlink{rand_8h_a38d21605e6e777451769a8ee7087933b}{R\+A\+N\+D\+\_\+status} (void)
+\item 
+int \hyperlink{rand_8h_a65725968aeab49d0bb6b68700b5967c0}{R\+A\+N\+D\+\_\+poll} (void)
+\item 
+void \hyperlink{rand_8h_a008a5eac750446500270d8f1043dab75}{E\+R\+R\+\_\+load\+\_\+\+R\+A\+N\+D\+\_\+strings} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+\+F\+\_\+\+R\+A\+N\+D\+\_\+\+G\+E\+T\+\_\+\+R\+A\+N\+D\+\_\+\+M\+E\+T\+H\+OD@{R\+A\+N\+D\+\_\+\+F\+\_\+\+R\+A\+N\+D\+\_\+\+G\+E\+T\+\_\+\+R\+A\+N\+D\+\_\+\+M\+E\+T\+H\+OD}}
+\index{R\+A\+N\+D\+\_\+\+F\+\_\+\+R\+A\+N\+D\+\_\+\+G\+E\+T\+\_\+\+R\+A\+N\+D\+\_\+\+M\+E\+T\+H\+OD@{R\+A\+N\+D\+\_\+\+F\+\_\+\+R\+A\+N\+D\+\_\+\+G\+E\+T\+\_\+\+R\+A\+N\+D\+\_\+\+M\+E\+T\+H\+OD}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+\+F\+\_\+\+R\+A\+N\+D\+\_\+\+G\+E\+T\+\_\+\+R\+A\+N\+D\+\_\+\+M\+E\+T\+H\+OD}{RAND_F_RAND_GET_RAND_METHOD}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+A\+N\+D\+\_\+\+F\+\_\+\+R\+A\+N\+D\+\_\+\+G\+E\+T\+\_\+\+R\+A\+N\+D\+\_\+\+M\+E\+T\+H\+OD~101}\hypertarget{rand_8h_a395dc0b0556fe3ac527c661389b96fa2}{}\label{rand_8h_a395dc0b0556fe3ac527c661389b96fa2}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+\+F\+\_\+\+R\+A\+N\+D\+\_\+\+I\+N\+I\+T\+\_\+\+F\+I\+PS@{R\+A\+N\+D\+\_\+\+F\+\_\+\+R\+A\+N\+D\+\_\+\+I\+N\+I\+T\+\_\+\+F\+I\+PS}}
+\index{R\+A\+N\+D\+\_\+\+F\+\_\+\+R\+A\+N\+D\+\_\+\+I\+N\+I\+T\+\_\+\+F\+I\+PS@{R\+A\+N\+D\+\_\+\+F\+\_\+\+R\+A\+N\+D\+\_\+\+I\+N\+I\+T\+\_\+\+F\+I\+PS}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+\+F\+\_\+\+R\+A\+N\+D\+\_\+\+I\+N\+I\+T\+\_\+\+F\+I\+PS}{RAND_F_RAND_INIT_FIPS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+A\+N\+D\+\_\+\+F\+\_\+\+R\+A\+N\+D\+\_\+\+I\+N\+I\+T\+\_\+\+F\+I\+PS~102}\hypertarget{rand_8h_aa422945af7a4136bef3b4b491cb04f19}{}\label{rand_8h_aa422945af7a4136bef3b4b491cb04f19}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+\+F\+\_\+\+S\+S\+L\+E\+A\+Y\+\_\+\+R\+A\+N\+D\+\_\+\+B\+Y\+T\+ES@{R\+A\+N\+D\+\_\+\+F\+\_\+\+S\+S\+L\+E\+A\+Y\+\_\+\+R\+A\+N\+D\+\_\+\+B\+Y\+T\+ES}}
+\index{R\+A\+N\+D\+\_\+\+F\+\_\+\+S\+S\+L\+E\+A\+Y\+\_\+\+R\+A\+N\+D\+\_\+\+B\+Y\+T\+ES@{R\+A\+N\+D\+\_\+\+F\+\_\+\+S\+S\+L\+E\+A\+Y\+\_\+\+R\+A\+N\+D\+\_\+\+B\+Y\+T\+ES}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+\+F\+\_\+\+S\+S\+L\+E\+A\+Y\+\_\+\+R\+A\+N\+D\+\_\+\+B\+Y\+T\+ES}{RAND_F_SSLEAY_RAND_BYTES}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+A\+N\+D\+\_\+\+F\+\_\+\+S\+S\+L\+E\+A\+Y\+\_\+\+R\+A\+N\+D\+\_\+\+B\+Y\+T\+ES~100}\hypertarget{rand_8h_adde2d709dc4d9674aa17a0ec964f6dff}{}\label{rand_8h_adde2d709dc4d9674aa17a0ec964f6dff}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+\+R\+\_\+\+D\+U\+A\+L\+\_\+\+E\+C\+\_\+\+D\+R\+B\+G\+\_\+\+D\+I\+S\+A\+B\+L\+ED@{R\+A\+N\+D\+\_\+\+R\+\_\+\+D\+U\+A\+L\+\_\+\+E\+C\+\_\+\+D\+R\+B\+G\+\_\+\+D\+I\+S\+A\+B\+L\+ED}}
+\index{R\+A\+N\+D\+\_\+\+R\+\_\+\+D\+U\+A\+L\+\_\+\+E\+C\+\_\+\+D\+R\+B\+G\+\_\+\+D\+I\+S\+A\+B\+L\+ED@{R\+A\+N\+D\+\_\+\+R\+\_\+\+D\+U\+A\+L\+\_\+\+E\+C\+\_\+\+D\+R\+B\+G\+\_\+\+D\+I\+S\+A\+B\+L\+ED}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+\+R\+\_\+\+D\+U\+A\+L\+\_\+\+E\+C\+\_\+\+D\+R\+B\+G\+\_\+\+D\+I\+S\+A\+B\+L\+ED}{RAND_R_DUAL_EC_DRBG_DISABLED}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+A\+N\+D\+\_\+\+R\+\_\+\+D\+U\+A\+L\+\_\+\+E\+C\+\_\+\+D\+R\+B\+G\+\_\+\+D\+I\+S\+A\+B\+L\+ED~104}\hypertarget{rand_8h_a17171185b8c7796212e1a35238e046db}{}\label{rand_8h_a17171185b8c7796212e1a35238e046db}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+S\+I\+N\+G\+\_\+\+D\+R\+BG@{R\+A\+N\+D\+\_\+\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+S\+I\+N\+G\+\_\+\+D\+R\+BG}}
+\index{R\+A\+N\+D\+\_\+\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+S\+I\+N\+G\+\_\+\+D\+R\+BG@{R\+A\+N\+D\+\_\+\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+S\+I\+N\+G\+\_\+\+D\+R\+BG}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+S\+I\+N\+G\+\_\+\+D\+R\+BG}{RAND_R_ERROR_INITIALISING_DRBG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+A\+N\+D\+\_\+\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+S\+I\+N\+G\+\_\+\+D\+R\+BG~102}\hypertarget{rand_8h_a90febce1a74f068ddf51f235f2a88cd7}{}\label{rand_8h_a90febce1a74f068ddf51f235f2a88cd7}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+I\+N\+G\+\_\+\+D\+R\+BG@{R\+A\+N\+D\+\_\+\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+I\+N\+G\+\_\+\+D\+R\+BG}}
+\index{R\+A\+N\+D\+\_\+\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+I\+N\+G\+\_\+\+D\+R\+BG@{R\+A\+N\+D\+\_\+\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+I\+N\+G\+\_\+\+D\+R\+BG}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+I\+N\+G\+\_\+\+D\+R\+BG}{RAND_R_ERROR_INSTANTIATING_DRBG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+A\+N\+D\+\_\+\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+I\+N\+G\+\_\+\+D\+R\+BG~103}\hypertarget{rand_8h_a56b7c9d8351509a2bc9b9e840737d91d}{}\label{rand_8h_a56b7c9d8351509a2bc9b9e840737d91d}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+\+R\+\_\+\+N\+O\+\_\+\+F\+I\+P\+S\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+S\+ET@{R\+A\+N\+D\+\_\+\+R\+\_\+\+N\+O\+\_\+\+F\+I\+P\+S\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+S\+ET}}
+\index{R\+A\+N\+D\+\_\+\+R\+\_\+\+N\+O\+\_\+\+F\+I\+P\+S\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+S\+ET@{R\+A\+N\+D\+\_\+\+R\+\_\+\+N\+O\+\_\+\+F\+I\+P\+S\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+S\+ET}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+\+R\+\_\+\+N\+O\+\_\+\+F\+I\+P\+S\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+S\+ET}{RAND_R_NO_FIPS_RANDOM_METHOD_SET}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+A\+N\+D\+\_\+\+R\+\_\+\+N\+O\+\_\+\+F\+I\+P\+S\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+S\+ET~101}\hypertarget{rand_8h_a699f67a9033aabf0b64c07bf3e49f954}{}\label{rand_8h_a699f67a9033aabf0b64c07bf3e49f954}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+\+R\+\_\+\+P\+R\+N\+G\+\_\+\+N\+O\+T\+\_\+\+S\+E\+E\+D\+ED@{R\+A\+N\+D\+\_\+\+R\+\_\+\+P\+R\+N\+G\+\_\+\+N\+O\+T\+\_\+\+S\+E\+E\+D\+ED}}
+\index{R\+A\+N\+D\+\_\+\+R\+\_\+\+P\+R\+N\+G\+\_\+\+N\+O\+T\+\_\+\+S\+E\+E\+D\+ED@{R\+A\+N\+D\+\_\+\+R\+\_\+\+P\+R\+N\+G\+\_\+\+N\+O\+T\+\_\+\+S\+E\+E\+D\+ED}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+\+R\+\_\+\+P\+R\+N\+G\+\_\+\+N\+O\+T\+\_\+\+S\+E\+E\+D\+ED}{RAND_R_PRNG_NOT_SEEDED}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+A\+N\+D\+\_\+\+R\+\_\+\+P\+R\+N\+G\+\_\+\+N\+O\+T\+\_\+\+S\+E\+E\+D\+ED~100}\hypertarget{rand_8h_afa9fab5133ad70b374552f1fb1276ff9}{}\label{rand_8h_afa9fab5133ad70b374552f1fb1276ff9}
+
+
+\subsection{Function Documentation}
+\index{rand.\+h@{rand.\+h}!E\+R\+R\+\_\+load\+\_\+\+R\+A\+N\+D\+\_\+strings@{E\+R\+R\+\_\+load\+\_\+\+R\+A\+N\+D\+\_\+strings}}
+\index{E\+R\+R\+\_\+load\+\_\+\+R\+A\+N\+D\+\_\+strings@{E\+R\+R\+\_\+load\+\_\+\+R\+A\+N\+D\+\_\+strings}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+load\+\_\+\+R\+A\+N\+D\+\_\+strings(void)}{ERR_load_RAND_strings(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void E\+R\+R\+\_\+load\+\_\+\+R\+A\+N\+D\+\_\+strings (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{rand_8h_a008a5eac750446500270d8f1043dab75}{}\label{rand_8h_a008a5eac750446500270d8f1043dab75}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+add@{R\+A\+N\+D\+\_\+add}}
+\index{R\+A\+N\+D\+\_\+add@{R\+A\+N\+D\+\_\+add}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+add(const void $\ast$buf, int num, double entropy)}{RAND_add(const void *buf, int num, double entropy)}}]{\setlength{\rightskip}{0pt plus 5cm}void R\+A\+N\+D\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{buf, }
+\item[{int}]{num, }
+\item[{double}]{entropy}
+\end{DoxyParamCaption}
+)}\hypertarget{rand_8h_a634ae9af5bff27c9537f9a0b6d4fb97a}{}\label{rand_8h_a634ae9af5bff27c9537f9a0b6d4fb97a}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+bytes@{R\+A\+N\+D\+\_\+bytes}}
+\index{R\+A\+N\+D\+\_\+bytes@{R\+A\+N\+D\+\_\+bytes}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+bytes(unsigned char $\ast$buf, int num)}{RAND_bytes(unsigned char *buf, int num)}}]{\setlength{\rightskip}{0pt plus 5cm}int R\+A\+N\+D\+\_\+bytes (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{buf, }
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{rand_8h_a66d27b98b0edadbed6594350d5c023e4}{}\label{rand_8h_a66d27b98b0edadbed6594350d5c023e4}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+cleanup@{R\+A\+N\+D\+\_\+cleanup}}
+\index{R\+A\+N\+D\+\_\+cleanup@{R\+A\+N\+D\+\_\+cleanup}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+cleanup(void)}{RAND_cleanup(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void R\+A\+N\+D\+\_\+cleanup (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{rand_8h_ad797e371751dedbcce4e975c3cad1947}{}\label{rand_8h_ad797e371751dedbcce4e975c3cad1947}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+file\+\_\+name@{R\+A\+N\+D\+\_\+file\+\_\+name}}
+\index{R\+A\+N\+D\+\_\+file\+\_\+name@{R\+A\+N\+D\+\_\+file\+\_\+name}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+file\+\_\+name(char $\ast$file, size\+\_\+t num)}{RAND_file_name(char *file, size_t num)}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ R\+A\+N\+D\+\_\+file\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{file, }
+\item[{size\+\_\+t}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{rand_8h_a4026b0278086f254f5eb945c82a77ceb}{}\label{rand_8h_a4026b0278086f254f5eb945c82a77ceb}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+get\+\_\+rand\+\_\+method@{R\+A\+N\+D\+\_\+get\+\_\+rand\+\_\+method}}
+\index{R\+A\+N\+D\+\_\+get\+\_\+rand\+\_\+method@{R\+A\+N\+D\+\_\+get\+\_\+rand\+\_\+method}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+get\+\_\+rand\+\_\+method(void)}{RAND_get_rand_method(void)}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf R\+A\+N\+D\+\_\+\+M\+E\+T\+H\+OD}$\ast$ R\+A\+N\+D\+\_\+get\+\_\+rand\+\_\+method (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{rand_8h_a8a8cac7a3262c4527e08f57f07c4c586}{}\label{rand_8h_a8a8cac7a3262c4527e08f57f07c4c586}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+load\+\_\+file@{R\+A\+N\+D\+\_\+load\+\_\+file}}
+\index{R\+A\+N\+D\+\_\+load\+\_\+file@{R\+A\+N\+D\+\_\+load\+\_\+file}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+load\+\_\+file(const char $\ast$file, long max\+\_\+bytes)}{RAND_load_file(const char *file, long max_bytes)}}]{\setlength{\rightskip}{0pt plus 5cm}int R\+A\+N\+D\+\_\+load\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file, }
+\item[{long}]{max\+\_\+bytes}
+\end{DoxyParamCaption}
+)}\hypertarget{rand_8h_a3d409b325a5661e8137d19085869fc49}{}\label{rand_8h_a3d409b325a5661e8137d19085869fc49}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+poll@{R\+A\+N\+D\+\_\+poll}}
+\index{R\+A\+N\+D\+\_\+poll@{R\+A\+N\+D\+\_\+poll}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+poll(void)}{RAND_poll(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int R\+A\+N\+D\+\_\+poll (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{rand_8h_a65725968aeab49d0bb6b68700b5967c0}{}\label{rand_8h_a65725968aeab49d0bb6b68700b5967c0}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+pseudo\+\_\+bytes@{R\+A\+N\+D\+\_\+pseudo\+\_\+bytes}}
+\index{R\+A\+N\+D\+\_\+pseudo\+\_\+bytes@{R\+A\+N\+D\+\_\+pseudo\+\_\+bytes}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+pseudo\+\_\+bytes(unsigned char $\ast$buf, int num)}{RAND_pseudo_bytes(unsigned char *buf, int num)}}]{\setlength{\rightskip}{0pt plus 5cm}int R\+A\+N\+D\+\_\+pseudo\+\_\+bytes (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{buf, }
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{rand_8h_a8a4e911a9be281eb797faa8590637ac3}{}\label{rand_8h_a8a4e911a9be281eb797faa8590637ac3}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+seed@{R\+A\+N\+D\+\_\+seed}}
+\index{R\+A\+N\+D\+\_\+seed@{R\+A\+N\+D\+\_\+seed}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+seed(const void $\ast$buf, int num)}{RAND_seed(const void *buf, int num)}}]{\setlength{\rightskip}{0pt plus 5cm}void R\+A\+N\+D\+\_\+seed (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{buf, }
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{rand_8h_af0cae512f02d66a76b34935a82fa44c7}{}\label{rand_8h_af0cae512f02d66a76b34935a82fa44c7}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+set\+\_\+rand\+\_\+engine@{R\+A\+N\+D\+\_\+set\+\_\+rand\+\_\+engine}}
+\index{R\+A\+N\+D\+\_\+set\+\_\+rand\+\_\+engine@{R\+A\+N\+D\+\_\+set\+\_\+rand\+\_\+engine}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+set\+\_\+rand\+\_\+engine(\+E\+N\+G\+I\+N\+E $\ast$engine)}{RAND_set_rand_engine(ENGINE *engine)}}]{\setlength{\rightskip}{0pt plus 5cm}int R\+A\+N\+D\+\_\+set\+\_\+rand\+\_\+engine (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+N\+G\+I\+NE} $\ast$}]{engine}
+\end{DoxyParamCaption}
+)}\hypertarget{rand_8h_a6a4f2c2cf723ef63522d4b33c79d5f0f}{}\label{rand_8h_a6a4f2c2cf723ef63522d4b33c79d5f0f}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+set\+\_\+rand\+\_\+method@{R\+A\+N\+D\+\_\+set\+\_\+rand\+\_\+method}}
+\index{R\+A\+N\+D\+\_\+set\+\_\+rand\+\_\+method@{R\+A\+N\+D\+\_\+set\+\_\+rand\+\_\+method}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+set\+\_\+rand\+\_\+method(const R\+A\+N\+D\+\_\+\+M\+E\+T\+H\+O\+D $\ast$meth)}{RAND_set_rand_method(const RAND_METHOD *meth)}}]{\setlength{\rightskip}{0pt plus 5cm}int R\+A\+N\+D\+\_\+set\+\_\+rand\+\_\+method (
+\begin{DoxyParamCaption}
+\item[{const {\bf R\+A\+N\+D\+\_\+\+M\+E\+T\+H\+OD} $\ast$}]{meth}
+\end{DoxyParamCaption}
+)}\hypertarget{rand_8h_a292ae50ca725d0c529dc077467b40254}{}\label{rand_8h_a292ae50ca725d0c529dc077467b40254}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+\+S\+S\+Leay@{R\+A\+N\+D\+\_\+\+S\+S\+Leay}}
+\index{R\+A\+N\+D\+\_\+\+S\+S\+Leay@{R\+A\+N\+D\+\_\+\+S\+S\+Leay}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+\+S\+S\+Leay(void)}{RAND_SSLeay(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+A\+N\+D\+\_\+\+M\+E\+T\+H\+OD}$\ast$ R\+A\+N\+D\+\_\+\+S\+S\+Leay (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{rand_8h_abcadee1bb56b931ab33644a711a8b77a}{}\label{rand_8h_abcadee1bb56b931ab33644a711a8b77a}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+status@{R\+A\+N\+D\+\_\+status}}
+\index{R\+A\+N\+D\+\_\+status@{R\+A\+N\+D\+\_\+status}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+status(void)}{RAND_status(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int R\+A\+N\+D\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{rand_8h_a38d21605e6e777451769a8ee7087933b}{}\label{rand_8h_a38d21605e6e777451769a8ee7087933b}
+\index{rand.\+h@{rand.\+h}!R\+A\+N\+D\+\_\+write\+\_\+file@{R\+A\+N\+D\+\_\+write\+\_\+file}}
+\index{R\+A\+N\+D\+\_\+write\+\_\+file@{R\+A\+N\+D\+\_\+write\+\_\+file}!rand.\+h@{rand.\+h}}
+\subsubsection[{\texorpdfstring{R\+A\+N\+D\+\_\+write\+\_\+file(const char $\ast$file)}{RAND_write_file(const char *file)}}]{\setlength{\rightskip}{0pt plus 5cm}int R\+A\+N\+D\+\_\+write\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file}
+\end{DoxyParamCaption}
+)}\hypertarget{rand_8h_a06116146cf32025cc287c834a4698b01}{}\label{rand_8h_a06116146cf32025cc287c834a4698b01}

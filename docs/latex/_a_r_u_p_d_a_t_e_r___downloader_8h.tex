@@ -1,0 +1,444 @@
+\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Updater/\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.h File Reference}
+\label{_a_r_u_p_d_a_t_e_r___downloader_8h}\index{src/hal/pb2/include/lib\+A\+R\+Updater/\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{src/hal/pb2/include/lib\+A\+R\+Updater/\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+
+
+lib\+A\+R\+Updater Downloader header file.  
+
+
+{\ttfamily \#include $<$lib\+A\+R\+Updater/\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+S\+A\+L/\+A\+R\+S\+A\+L\+\_\+\+M\+D5\+\_\+\+Manager.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Discovery.\+h$>$}\\*
+Include dependency graph for A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_u_p_d_a_t_e_r___downloader_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{_a_r_u_p_d_a_t_e_r___downloader_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_r_u_p_d_a_t_e_r___download_information__t}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Download\+Information\+\_\+t}
+\item 
+struct \hyperlink{struct_a_r_u_p_d_a_t_e_r___manager___blacklisted_firmware__t}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Blacklisted\+Firmware\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct_a_r_u_p_d_a_t_e_r___download_information__t}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Download\+Information\+\_\+t} \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_ac87db82ba1f63522e549ce8b67d10e6d}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Download\+Information\+\_\+t}
+\item 
+typedef struct \hyperlink{struct_a_r_u_p_d_a_t_e_r___manager___blacklisted_firmware__t}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Blacklisted\+Firmware\+\_\+t} \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a2d47d5fd522bd72c090ecf177cdd122f}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Blacklisted\+Firmware\+\_\+t}
+\item 
+typedef struct \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a57b9b70b9a92909cf0c0b52ef29825bc}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+t} \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a57b9b70b9a92909cf0c0b52ef29825bc}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+t}
+\item 
+typedef void($\ast$ \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a505ac1d44f6f49b52133c81d44ec55b9}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Should\+Download\+Plf\+Callback\+\_\+t}) (void $\ast$arg, int nb\+Plf\+To\+Be\+Uploaded, \hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} error)
+\begin{DoxyCompactList}\small\item\em Whether the plf file should be updated or not. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_ae0f4d918ee3ea2abf8b12c7465274952}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Will\+Download\+Plf\+Callback\+\_\+t}) (void $\ast$arg, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___discovery_8h_a908972407587656a48194c58ccd65813}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} product, const char $\ast$const remote\+Plf\+Version)
+\begin{DoxyCompactList}\small\item\em Fired just before the uploading of a plf file. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a967ec5dcb24f546cfd828632abf82265}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Progress\+Callback\+\_\+t}) (void $\ast$arg, float percent)
+\begin{DoxyCompactList}\small\item\em Progress callback of the plf download. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a52f0143515721536ea72108aafb607d5}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Completion\+Callback\+\_\+t}) (void $\ast$arg, \hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} error)
+\begin{DoxyCompactList}\small\item\em Completion callback of the Media download. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a658cf47df9eec89426c0cccb26c65c47}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Platforms} \{ \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a658cf47df9eec89426c0cccb26c65c47a353c623addb4c5552639961134f00000}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+E\+R\+\_\+\+A\+N\+D\+R\+O\+I\+D\+\_\+\+P\+L\+A\+T\+F\+O\+RM}, 
+\hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a658cf47df9eec89426c0cccb26c65c47a4c87cb7a94677e538890636836dc4590}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+E\+R\+\_\+\+I\+O\+S\+\_\+\+P\+L\+A\+T\+F\+O\+RM}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a6c65d8222b8c88259334efc3bc89b404}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+New} (\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$const root\+Folder, \hyperlink{_a_r_s_a_l___m_d5___manager_8h_a016766b406c58d2b7f2d6eff4bbeb65c}{A\+R\+S\+A\+L\+\_\+\+M\+D5\+\_\+\+Manager\+\_\+t} $\ast$md5\+Manager, \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a658cf47df9eec89426c0cccb26c65c47}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Platforms} app\+Platform, const char $\ast$const app\+Version, \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a505ac1d44f6f49b52133c81d44ec55b9}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Should\+Download\+Plf\+Callback\+\_\+t} should\+Download\+Callback, void $\ast$download\+Arg, \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_ae0f4d918ee3ea2abf8b12c7465274952}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Will\+Download\+Plf\+Callback\+\_\+t} will\+Download\+Callback, void $\ast$will\+Download\+Arg, \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a967ec5dcb24f546cfd828632abf82265}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Progress\+Callback\+\_\+t} progress\+Callback, void $\ast$progress\+Arg, \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a52f0143515721536ea72108aafb607d5}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Completion\+Callback\+\_\+t} completion\+Callback, void $\ast$completion\+Arg)
+\begin{DoxyCompactList}\small\item\em Create an object to download all plf files. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a09e5fafbc52ceed2e2f1c69069c8ef75}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Delete} (\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Delete the Downloader of the Manager. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_ad2312c5fc461cf5f68ea925c6a58d739}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Set\+Updates\+Product\+List} (\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___discovery_8h_a908972407587656a48194c58ccd65813}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} $\ast$product\+List, int product\+Count)
+\begin{DoxyCompactList}\small\item\em Set products list to updates process. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a9dce86fe0a36ae42db6610f962b7be77}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Check\+Updates\+Async} (void $\ast$manager\+Arg)
+\begin{DoxyCompactList}\small\item\em Check if updates are available asynchrounously. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_acab27c4d9740ffae9d35f5225d8fa42a}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Check\+Updates\+Sync} (\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, \hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$err)
+\begin{DoxyCompactList}\small\item\em Check if updates are available synchrounously. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_af9e332fb62dbf66396739e77f4850a26}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Get\+Updates\+Info\+Sync} (\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, \hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$err, \hyperlink{struct_a_r_u_p_d_a_t_e_r___download_information__t}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Download\+Information\+\_\+t} $\ast$$\ast$$\ast$informations)
+\begin{DoxyCompactList}\small\item\em Get update information from server synchrounously. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a9022dffab014692ddccbefa5980e509d}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Thread\+Run} (void $\ast$manager\+Arg)
+\begin{DoxyCompactList}\small\item\em Download all plf if needed. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a881f59b9a33e3f5ce50b85a8f91c5129}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Cancel\+Thread} (\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em cancel the update \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_ae22605ad0686fc8a9098e3ccd5a6a490}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Thread\+Is\+Running} (\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, \hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Get if the thread is still running. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_adb9d5f37716c910b978b96079179c746}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Get\+Blacklisted\+Firmware\+Versions\+Sync} (\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, int also\+Check\+Remote, \hyperlink{struct_a_r_u_p_d_a_t_e_r___manager___blacklisted_firmware__t}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Blacklisted\+Firmware\+\_\+t} $\ast$$\ast$$\ast$blacklisted\+Firmwares)
+\begin{DoxyCompactList}\small\item\em get all blacklisted firmware versions \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+lib\+A\+R\+Updater Downloader header file. 
+
+\begin{DoxyDate}{Date}
+23/05/2014 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:djavan.bertrand@parrot.com}{\tt djavan.\+bertrand@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Completion\+Callback\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Completion\+Callback\+\_\+t}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Completion\+Callback\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Completion\+Callback\+\_\+t}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Completion\+Callback\+\_\+t}{ARUPDATER_Downloader_PlfDownloadCompletionCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Completion\+Callback\+\_\+t) (void $\ast$arg, {\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} error)}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_a52f0143515721536ea72108aafb607d5}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_a52f0143515721536ea72108aafb607d5}
+
+
+Completion callback of the Media download. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The pointer of the user custom argument \\
+\hline
+{\em media} & The media to be downloaded \\
+\hline
+{\em error} & The error status to indicate the plf downloaded status \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Check\+Locale\+Version\+Thread\+Run () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Progress\+Callback\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Progress\+Callback\+\_\+t}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Progress\+Callback\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Progress\+Callback\+\_\+t}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Progress\+Callback\+\_\+t}{ARUPDATER_Downloader_PlfDownloadProgressCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Progress\+Callback\+\_\+t) (void $\ast$arg, float percent)}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_a967ec5dcb24f546cfd828632abf82265}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_a967ec5dcb24f546cfd828632abf82265}
+
+
+Progress callback of the plf download. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The pointer of the user custom argument \\
+\hline
+{\em percent} & The percent size of the plf file already downloaded \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Check\+Locale\+Version\+Thread\+Run () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Should\+Download\+Plf\+Callback\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Should\+Download\+Plf\+Callback\+\_\+t}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Should\+Download\+Plf\+Callback\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Should\+Download\+Plf\+Callback\+\_\+t}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Should\+Download\+Plf\+Callback\+\_\+t}{ARUPDATER_Downloader_ShouldDownloadPlfCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Should\+Download\+Plf\+Callback\+\_\+t) (void $\ast$arg, int nb\+Plf\+To\+Be\+Uploaded, {\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} error)}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_a505ac1d44f6f49b52133c81d44ec55b9}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_a505ac1d44f6f49b52133c81d44ec55b9}
+
+
+Whether the plf file should be updated or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The pointer of the user custom argument \\
+\hline
+{\em nb\+Plf\+To\+Be\+Uploaded} & \+: number of plf which are out to date \\
+\hline
+{\em error} & The error status to indicate the plf check status \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+t}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+t}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+t}{ARUPDATER_Downloader_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+t} {\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+t}}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_a57b9b70b9a92909cf0c0b52ef29825bc}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_a57b9b70b9a92909cf0c0b52ef29825bc}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Will\+Download\+Plf\+Callback\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Will\+Download\+Plf\+Callback\+\_\+t}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Will\+Download\+Plf\+Callback\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Will\+Download\+Plf\+Callback\+\_\+t}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Will\+Download\+Plf\+Callback\+\_\+t}{ARUPDATER_Downloader_WillDownloadPlfCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Will\+Download\+Plf\+Callback\+\_\+t) (void $\ast$arg, {\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} product, const char $\ast$const remote\+Plf\+Version)}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_ae0f4d918ee3ea2abf8b12c7465274952}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_ae0f4d918ee3ea2abf8b12c7465274952}
+
+
+Fired just before the uploading of a plf file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The pointer of the user custom argument \\
+\hline
+{\em product} & \+: Description of the product targeted by the plf downloaded \\
+\hline
+{\em remote\+Plf\+Version} & \+: The version of the plf file that will be downloaded \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Download\+Information\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Download\+Information\+\_\+t}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Download\+Information\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Download\+Information\+\_\+t}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Download\+Information\+\_\+t}{ARUPDATER_DownloadInformation_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Download\+Information\+\_\+t} {\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Download\+Information\+\_\+t}}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_ac87db82ba1f63522e549ce8b67d10e6d}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_ac87db82ba1f63522e549ce8b67d10e6d}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Blacklisted\+Firmware\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Blacklisted\+Firmware\+\_\+t}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Blacklisted\+Firmware\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Blacklisted\+Firmware\+\_\+t}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Blacklisted\+Firmware\+\_\+t}{ARUPDATER_Manager_BlacklistedFirmware_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Blacklisted\+Firmware\+\_\+t}  {\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Blacklisted\+Firmware\+\_\+t}}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_a2d47d5fd522bd72c090ecf177cdd122f}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_a2d47d5fd522bd72c090ecf177cdd122f}
+
+
+\subsection{Enumeration Type Documentation}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Platforms@{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Platforms}}
+\index{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Platforms@{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Platforms}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Platforms}{eARUPDATER_Downloader_Platforms}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Platforms}}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_a658cf47df9eec89426c0cccb26c65c47}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_a658cf47df9eec89426c0cccb26c65c47}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+E\+R\+\_\+\+A\+N\+D\+R\+O\+I\+D\+\_\+\+P\+L\+A\+T\+F\+O\+RM@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+E\+R\+\_\+\+A\+N\+D\+R\+O\+I\+D\+\_\+\+P\+L\+A\+T\+F\+O\+RM}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+E\+R\+\_\+\+A\+N\+D\+R\+O\+I\+D\+\_\+\+P\+L\+A\+T\+F\+O\+RM@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+E\+R\+\_\+\+A\+N\+D\+R\+O\+I\+D\+\_\+\+P\+L\+A\+T\+F\+O\+RM}}\item[{\em 
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+E\+R\+\_\+\+A\+N\+D\+R\+O\+I\+D\+\_\+\+P\+L\+A\+T\+F\+O\+RM\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_a658cf47df9eec89426c0cccb26c65c47a353c623addb4c5552639961134f00000}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_a658cf47df9eec89426c0cccb26c65c47a353c623addb4c5552639961134f00000}
+}]\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+E\+R\+\_\+\+I\+O\+S\+\_\+\+P\+L\+A\+T\+F\+O\+RM@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+E\+R\+\_\+\+I\+O\+S\+\_\+\+P\+L\+A\+T\+F\+O\+RM}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+E\+R\+\_\+\+I\+O\+S\+\_\+\+P\+L\+A\+T\+F\+O\+RM@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+E\+R\+\_\+\+I\+O\+S\+\_\+\+P\+L\+A\+T\+F\+O\+RM}}\item[{\em 
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+E\+R\+\_\+\+I\+O\+S\+\_\+\+P\+L\+A\+T\+F\+O\+RM\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_a658cf47df9eec89426c0cccb26c65c47a4c87cb7a94677e538890636836dc4590}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_a658cf47df9eec89426c0cccb26c65c47a4c87cb7a94677e538890636836dc4590}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Cancel\+Thread@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Cancel\+Thread}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Cancel\+Thread@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Cancel\+Thread}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Cancel\+Thread(\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARUPDATER_Downloader_CancelThread(ARUPDATER_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Cancel\+Thread (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_a881f59b9a33e3f5ce50b85a8f91c5129}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_a881f59b9a33e3f5ce50b85a8f91c5129}
+
+
+cancel the update 
+
+Used to kill the thread calling A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Download\+Thread\+Run(). 
+\begin{DoxyParams}{Parameters}
+{\em manager} & \+: pointer on the manager \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Download\+Thread\+Run() 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Check\+Updates\+Async@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Check\+Updates\+Async}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Check\+Updates\+Async@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Check\+Updates\+Async}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Check\+Updates\+Async(void $\ast$manager\+Arg)}{ARUPDATER_Downloader_CheckUpdatesAsync(void *managerArg)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Check\+Updates\+Async (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{manager\+Arg}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_a9dce86fe0a36ae42db6610f962b7be77}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_a9dce86fe0a36ae42db6610f962b7be77}
+
+
+Check if updates are available asynchrounously. 
+
+\begin{DoxyPostcond}{Postcondition}
+call A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Should\+Download\+Plf\+Callback\+\_\+t at the end of the execution 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em manager\+Arg} & \+: thread data of type A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t$\ast$ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+OK if operation went well, a description of the error otherwise. Casted into a void$\ast$ 
+\end{DoxyReturn}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Check\+Updates\+Sync@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Check\+Updates\+Sync}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Check\+Updates\+Sync@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Check\+Updates\+Sync}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Check\+Updates\+Sync(\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$err)}{ARUPDATER_Downloader_CheckUpdatesSync(ARUPDATER_Manager_t *manager, eARUPDATER_ERROR *err)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Check\+Updates\+Sync (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{err}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_acab27c4d9740ffae9d35f5225d8fa42a}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_acab27c4d9740ffae9d35f5225d8fa42a}
+
+
+Check if updates are available synchrounously. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager} & \+: pointer on the manager \\
+\hline
+\mbox{\tt out}  & {\em err} & \+: The error status. Can be null. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of plf file which need to be updated 
+\end{DoxyReturn}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Delete@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Delete}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Delete@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Delete}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Delete(\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARUPDATER_Downloader_Delete(ARUPDATER_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_a09e5fafbc52ceed2e2f1c69069c8ef75}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_a09e5fafbc52ceed2e2f1c69069c8ef75}
+
+
+Delete the Downloader of the Manager. 
+
+\begin{DoxyWarning}{Warning}
+This function frees memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & a pointer on the A\+R\+Updater Manager \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_p_d_a_t_e_r___downloader_8h_a6c65d8222b8c88259334efc3bc89b404}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Get\+Blacklisted\+Firmware\+Versions\+Sync@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Get\+Blacklisted\+Firmware\+Versions\+Sync}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Get\+Blacklisted\+Firmware\+Versions\+Sync@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Get\+Blacklisted\+Firmware\+Versions\+Sync}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Get\+Blacklisted\+Firmware\+Versions\+Sync(\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, int also\+Check\+Remote, A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Blacklisted\+Firmware\+\_\+t $\ast$$\ast$$\ast$blacklisted\+Firmwares)}{ARUPDATER_Downloader_GetBlacklistedFirmwareVersionsSync(ARUPDATER_Manager_t *manager, int alsoCheckRemote, ARUPDATER_Manager_BlacklistedFirmware_t ***blacklistedFirmwares)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Get\+Blacklisted\+Firmware\+Versions\+Sync (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{int}]{also\+Check\+Remote, }
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Blacklisted\+Firmware\+\_\+t} $\ast$$\ast$$\ast$}]{blacklisted\+Firmwares}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_adb9d5f37716c910b978b96079179c746}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_adb9d5f37716c910b978b96079179c746}
+
+
+get all blacklisted firmware versions 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager} & \+: pointer on the manager \\
+\hline
+\mbox{\tt in}  & {\em also\+Check\+Remote} & \+: 1 if we should check on the internet for balcklisted version \\
+\hline
+\mbox{\tt out}  & {\em blacklisted\+Firmwares} & \+: the list of blacklisted versions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+OK if operation went well, a description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Get\+Updates\+Info\+Sync@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Get\+Updates\+Info\+Sync}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Get\+Updates\+Info\+Sync@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Get\+Updates\+Info\+Sync}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Get\+Updates\+Info\+Sync(\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$err, A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Download\+Information\+\_\+t $\ast$$\ast$$\ast$informations)}{ARUPDATER_Downloader_GetUpdatesInfoSync(ARUPDATER_Manager_t *manager, eARUPDATER_ERROR *err, ARUPDATER_DownloadInformation_t ***informations)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Get\+Updates\+Info\+Sync (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{err, }
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Download\+Information\+\_\+t} $\ast$$\ast$$\ast$}]{informations}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_af9e332fb62dbf66396739e77f4850a26}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_af9e332fb62dbf66396739e77f4850a26}
+
+
+Get update information from server synchrounously. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager} & \+: pointer on the manager \\
+\hline
+\mbox{\tt out}  & {\em err} & \+: The error status. Can be null. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An array filled with updates info 
+\end{DoxyReturn}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+New@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+New}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+New@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+New}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+New(\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, const char $\ast$const root\+Folder, A\+R\+S\+A\+L\+\_\+\+M\+D5\+\_\+\+Manager\+\_\+t $\ast$md5\+Manager, e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Platforms app\+Platform, const char $\ast$const app\+Version, A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Should\+Download\+Plf\+Callback\+\_\+t should\+Download\+Callback, void $\ast$download\+Arg, A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Will\+Download\+Plf\+Callback\+\_\+t will\+Download\+Callback, void $\ast$will\+Download\+Arg, A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Progress\+Callback\+\_\+t progress\+Callback, void $\ast$progress\+Arg, A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Completion\+Callback\+\_\+t completion\+Callback, void $\ast$completion\+Arg)}{ARUPDATER_Downloader_New(ARUPDATER_Manager_t *manager, const char *const rootFolder, ARSAL_MD5_Manager_t *md5Manager, eARUPDATER_Downloader_Platforms appPlatform, const char *const appVersion, ARUPDATER_Downloader_ShouldDownloadPlfCallback_t shouldDownloadCallback, void *downloadArg, ARUPDATER_Downloader_WillDownloadPlfCallback_t willDownloadCallback, void *willDownloadArg, ARUPDATER_Downloader_PlfDownloadProgressCallback_t progressCallback, void *progressArg, ARUPDATER_Downloader_PlfDownloadCompletionCallback_t completionCallback, void *completionArg)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{const char $\ast$const}]{root\+Folder, }
+\item[{{\bf A\+R\+S\+A\+L\+\_\+\+M\+D5\+\_\+\+Manager\+\_\+t} $\ast$}]{md5\+Manager, }
+\item[{{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Platforms}}]{app\+Platform, }
+\item[{const char $\ast$const}]{app\+Version, }
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Should\+Download\+Plf\+Callback\+\_\+t}}]{should\+Download\+Callback, }
+\item[{void $\ast$}]{download\+Arg, }
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Will\+Download\+Plf\+Callback\+\_\+t}}]{will\+Download\+Callback, }
+\item[{void $\ast$}]{will\+Download\+Arg, }
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Progress\+Callback\+\_\+t}}]{progress\+Callback, }
+\item[{void $\ast$}]{progress\+Arg, }
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Plf\+Download\+Completion\+Callback\+\_\+t}}]{completion\+Callback, }
+\item[{void $\ast$}]{completion\+Arg}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_a6c65d8222b8c88259334efc3bc89b404}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_a6c65d8222b8c88259334efc3bc89b404}
+
+
+Create an object to download all plf files. 
+
+\begin{DoxyWarning}{Warning}
+this function allocates memory 
+\end{DoxyWarning}
+\begin{DoxyPrecond}{Precondition}
+root\+Folder should already exist 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Delete should be called 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager} & \+: pointer on the manager \\
+\hline
+\mbox{\tt in}  & {\em root\+Folder} & \+: root folder \\
+\hline
+\mbox{\tt in}  & {\em md5\+Manager} & \+: md5 manager \\
+\hline
+\mbox{\tt in}  & {\em app\+Platform} & \+: enum on the application platform \\
+\hline
+\mbox{\tt in}  & {\em app\+Version} & \+: Version of the app (pattern \+: X.\+Y.\+Z where X, Y, Z are integers) \\
+\hline
+\mbox{\tt in}  & {\em should\+Download\+Callback} & \+: callback which tells if the plf will be downloaded or not \\
+\hline
+ & {\em } & \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Set\+Updates\+Product\+List@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Set\+Updates\+Product\+List}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Set\+Updates\+Product\+List@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Set\+Updates\+Product\+List}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Set\+Updates\+Product\+List(\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+C\+T $\ast$product\+List, int product\+Count)}{ARUPDATER_Downloader_SetUpdatesProductList(ARUPDATER_Manager_t *manager, eARDISCOVERY_PRODUCT *productList, int productCount)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Set\+Updates\+Product\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} $\ast$}]{product\+List, }
+\item[{int}]{product\+Count}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_ad2312c5fc461cf5f68ea925c6a58d739}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_ad2312c5fc461cf5f68ea925c6a58d739}
+
+
+Set products list to updates process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager\+Arg} & \+: thread data of type A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t$\ast$ \\
+\hline
+{\em product\+List} & \+: addresse of hte list of product enums \\
+\hline
+{\em product\+Count} & \+: count of product enums given by the list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+OK if operation went well, a description of the error otherwise. Casted into a void$\ast$ 
+\end{DoxyReturn}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Thread\+Is\+Running@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Thread\+Is\+Running}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Thread\+Is\+Running@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Thread\+Is\+Running}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Thread\+Is\+Running(\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARUPDATER_Downloader_ThreadIsRunning(ARUPDATER_Manager_t *manager, eARUPDATER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Thread\+Is\+Running (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_ae22605ad0686fc8a9098e3ccd5a6a490}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_ae22605ad0686fc8a9098e3ccd5a6a490}
+
+
+Get if the thread is still running. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager} & \+: pointer on the manager \\
+\hline
+\mbox{\tt out}  & {\em error} & \+: pointer on an error. This can be null \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the download thread is running, 0 otherwise 
+\end{DoxyReturn}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Thread\+Run@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Thread\+Run}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Thread\+Run@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Thread\+Run}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Thread\+Run(void $\ast$manager\+Arg)}{ARUPDATER_Downloader_ThreadRun(void *managerArg)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Thread\+Run (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{manager\+Arg}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___downloader_8h_a9022dffab014692ddccbefa5980e509d}{}\label{_a_r_u_p_d_a_t_e_r___downloader_8h_a9022dffab014692ddccbefa5980e509d}
+
+
+Download all plf if needed. 
+
+\begin{DoxyWarning}{Warning}
+This function must be called in its own thread. 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Cancel\+Download\+Thread() must be called after. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em manager\+Arg} & \+: thread data of type A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t$\ast$ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+OK if operation went well, a description of the error otherwise 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Downloader\+\_\+\+Cancel\+Download\+Thread() 
+\end{DoxySeeAlso}

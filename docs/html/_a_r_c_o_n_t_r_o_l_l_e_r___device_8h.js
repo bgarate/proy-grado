@@ -1,0 +1,36 @@
+var _a_r_c_o_n_t_r_o_l_l_e_r___device_8h =
+[
+    [ "ARCONTROLLER_Device_t", "struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t.html", "struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t" ],
+    [ "ARCONTROLLER_Device_ExtensionStateChangedCallback_t", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a673a556dbf814a483a0fcad9d5a69213", null ],
+    [ "ARCONTROLLER_Device_Private_t", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a25af8c4f157cb94b6d908a91d5ff046b", null ],
+    [ "ARCONTROLLER_Device_StateChangedCallback_t", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a0be554e53326ebdd69a4739b9413dabe", null ],
+    [ "eARCONTROLLER_DEVICE_STATE", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a4b1233e7fb6da0d30db95d059e510a8b", [
+      [ "ARCONTROLLER_DEVICE_STATE_STOPPED", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a4b1233e7fb6da0d30db95d059e510a8ba8514e3229b0c2abbb1db5cecaa23c82d", null ],
+      [ "ARCONTROLLER_DEVICE_STATE_STARTING", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a4b1233e7fb6da0d30db95d059e510a8baf1918f770dc1c791226f9edb4ae2a079", null ],
+      [ "ARCONTROLLER_DEVICE_STATE_RUNNING", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a4b1233e7fb6da0d30db95d059e510a8bae5a7836e2aaae52ac779861b6bb67f07", null ],
+      [ "ARCONTROLLER_DEVICE_STATE_PAUSED", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a4b1233e7fb6da0d30db95d059e510a8ba6d285d3c1aa085be2088fc4d4d24189a", null ],
+      [ "ARCONTROLLER_DEVICE_STATE_STOPPING", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a4b1233e7fb6da0d30db95d059e510a8ba633607ac634b2fcbab4fa28d5270f945", null ],
+      [ "ARCONTROLLER_DEVICE_STATE_MAX", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a4b1233e7fb6da0d30db95d059e510a8ba4d7765011c2bc9c7ba3df0970947a0bb", null ]
+    ] ],
+    [ "ARCONTROLLER_Device_AddCommandReceivedCallback", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a89dccacdc7c409107e63f0d0198488ff", null ],
+    [ "ARCONTROLLER_Device_AddExtensionStateChangedCallback", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a7bc70f5970275602866d88a7005533d6", null ],
+    [ "ARCONTROLLER_Device_AddStateChangedCallback", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a640bde25ac0ece9d84bec471d92aa1da", null ],
+    [ "ARCONTROLLER_Device_Delete", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a05346048f02799c8164d4ade0a21ec48", null ],
+    [ "ARCONTROLLER_Device_GetCommandElements", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a4871355b7d7b2808454045c0cae35789", null ],
+    [ "ARCONTROLLER_Device_GetExtensionName", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#aede2e3a4920c515683381846837872e6", null ],
+    [ "ARCONTROLLER_Device_GetExtensionProduct", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a0d7e1ee41ae286608b083be63cae9d9c", null ],
+    [ "ARCONTROLLER_Device_GetExtensionState", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a6e4d28e91ab4d2b452e602da84c8aaa4", null ],
+    [ "ARCONTROLLER_Device_GetState", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a38364a7d0f7ae99f5afd7049d0f2e84c", null ],
+    [ "ARCONTROLLER_Device_HasInputAudioStream", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a28dc79998afee1100b0c6fa9522d0bbf", null ],
+    [ "ARCONTROLLER_Device_HasOutputAudioStream", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a95a4633117c3412fe87edb2a45cba734", null ],
+    [ "ARCONTROLLER_Device_HasOutputVideoStream", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#af52a79521693503fb9a6c8785c784105", null ],
+    [ "ARCONTROLLER_Device_New", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#ac66fc49f8948a922ae6e64102eb1b249", null ],
+    [ "ARCONTROLLER_Device_RemoveCommandReceivedCallback", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a8ec88f88ebad3b731ca739cc12eec41a", null ],
+    [ "ARCONTROLLER_Device_RemoveStateChangedCallback", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a47a9e7ccb23fb8e1f70e7c7afdfdb6e0", null ],
+    [ "ARCONTROLLER_Device_SendStreamFrame", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#adc65f099f3fa03557b416fee942212b6", null ],
+    [ "ARCONTROLLER_Device_SetAudioStreamCallbacks", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#ab1da1ee2ae447edc079803c4407867ac", null ],
+    [ "ARCONTROLLER_Device_SetVideoStreamCallbacks", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a89ea07ae108e9aabfb0aa09798b4384d", null ],
+    [ "ARCONTROLLER_Device_SetVideoStreamMP4Compliant", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a1b8a52e1b2187bc42fcb7fa90b7a9578", null ],
+    [ "ARCONTROLLER_Device_Start", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#aa0cd70040aacba3f31354f483fe82b10", null ],
+    [ "ARCONTROLLER_Device_Stop", "_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a829520cccda124a1ae1bb4c2f10209fc", null ]
+];

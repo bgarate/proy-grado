@@ -1,0 +1,77 @@
+\hypertarget{rc4_8h}{}\section{src/hal/pb2/include/openssl/rc4.h File Reference}
+\label{rc4_8h}\index{src/hal/pb2/include/openssl/rc4.\+h@{src/hal/pb2/include/openssl/rc4.\+h}}
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+Include dependency graph for rc4.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{rc4_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrc4__key__st}{rc4\+\_\+key\+\_\+st}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structrc4__key__st}{rc4\+\_\+key\+\_\+st} \hyperlink{rc4_8h_a3a4dc0099b3145020be0227ebf1ef71a}{R\+C4\+\_\+\+K\+EY}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{rc4_8h_ad217e34328aa0347f96c46c8d69be14c}{R\+C4\+\_\+options} (void)
+\item 
+void \hyperlink{rc4_8h_a92585c51106943d71ca586c60ace3052}{R\+C4\+\_\+set\+\_\+key} (\hyperlink{rc4_8h_a3a4dc0099b3145020be0227ebf1ef71a}{R\+C4\+\_\+\+K\+EY} $\ast$key, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const unsigned char $\ast$data)
+\item 
+void \hyperlink{rc4_8h_abd8027a3639c42345e6ebc1aeb1b7e87}{private\+\_\+\+R\+C4\+\_\+set\+\_\+key} (\hyperlink{rc4_8h_a3a4dc0099b3145020be0227ebf1ef71a}{R\+C4\+\_\+\+K\+EY} $\ast$key, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const unsigned char $\ast$data)
+\item 
+void \hyperlink{rc4_8h_a44045c1dfa0694a55f08a99556d8ab14}{R\+C4} (\hyperlink{rc4_8h_a3a4dc0099b3145020be0227ebf1ef71a}{R\+C4\+\_\+\+K\+EY} $\ast$key, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const unsigned char $\ast$indata, unsigned char $\ast$outdata)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{rc4.\+h@{rc4.\+h}!R\+C4\+\_\+\+K\+EY@{R\+C4\+\_\+\+K\+EY}}
+\index{R\+C4\+\_\+\+K\+EY@{R\+C4\+\_\+\+K\+EY}!rc4.\+h@{rc4.\+h}}
+\subsubsection[{\texorpdfstring{R\+C4\+\_\+\+K\+EY}{RC4_KEY}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf rc4\+\_\+key\+\_\+st}  {\bf R\+C4\+\_\+\+K\+EY}}\hypertarget{rc4_8h_a3a4dc0099b3145020be0227ebf1ef71a}{}\label{rc4_8h_a3a4dc0099b3145020be0227ebf1ef71a}
+
+
+\subsection{Function Documentation}
+\index{rc4.\+h@{rc4.\+h}!private\+\_\+\+R\+C4\+\_\+set\+\_\+key@{private\+\_\+\+R\+C4\+\_\+set\+\_\+key}}
+\index{private\+\_\+\+R\+C4\+\_\+set\+\_\+key@{private\+\_\+\+R\+C4\+\_\+set\+\_\+key}!rc4.\+h@{rc4.\+h}}
+\subsubsection[{\texorpdfstring{private\+\_\+\+R\+C4\+\_\+set\+\_\+key(\+R\+C4\+\_\+\+K\+E\+Y $\ast$key, int len, const unsigned char $\ast$data)}{private_RC4_set_key(RC4_KEY *key, int len, const unsigned char *data)}}]{\setlength{\rightskip}{0pt plus 5cm}void private\+\_\+\+R\+C4\+\_\+set\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+C4\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{int}]{len, }
+\item[{const unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{rc4_8h_abd8027a3639c42345e6ebc1aeb1b7e87}{}\label{rc4_8h_abd8027a3639c42345e6ebc1aeb1b7e87}
+\index{rc4.\+h@{rc4.\+h}!R\+C4@{R\+C4}}
+\index{R\+C4@{R\+C4}!rc4.\+h@{rc4.\+h}}
+\subsubsection[{\texorpdfstring{R\+C4(\+R\+C4\+\_\+\+K\+E\+Y $\ast$key, size\+\_\+t len, const unsigned char $\ast$indata, unsigned char $\ast$outdata)}{RC4(RC4_KEY *key, size_t len, const unsigned char *indata, unsigned char *outdata)}}]{\setlength{\rightskip}{0pt plus 5cm}void R\+C4 (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+C4\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{size\+\_\+t}]{len, }
+\item[{const unsigned char $\ast$}]{indata, }
+\item[{unsigned char $\ast$}]{outdata}
+\end{DoxyParamCaption}
+)}\hypertarget{rc4_8h_a44045c1dfa0694a55f08a99556d8ab14}{}\label{rc4_8h_a44045c1dfa0694a55f08a99556d8ab14}
+\index{rc4.\+h@{rc4.\+h}!R\+C4\+\_\+options@{R\+C4\+\_\+options}}
+\index{R\+C4\+\_\+options@{R\+C4\+\_\+options}!rc4.\+h@{rc4.\+h}}
+\subsubsection[{\texorpdfstring{R\+C4\+\_\+options(void)}{RC4_options(void)}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ R\+C4\+\_\+options (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{rc4_8h_ad217e34328aa0347f96c46c8d69be14c}{}\label{rc4_8h_ad217e34328aa0347f96c46c8d69be14c}
+\index{rc4.\+h@{rc4.\+h}!R\+C4\+\_\+set\+\_\+key@{R\+C4\+\_\+set\+\_\+key}}
+\index{R\+C4\+\_\+set\+\_\+key@{R\+C4\+\_\+set\+\_\+key}!rc4.\+h@{rc4.\+h}}
+\subsubsection[{\texorpdfstring{R\+C4\+\_\+set\+\_\+key(\+R\+C4\+\_\+\+K\+E\+Y $\ast$key, int len, const unsigned char $\ast$data)}{RC4_set_key(RC4_KEY *key, int len, const unsigned char *data)}}]{\setlength{\rightskip}{0pt plus 5cm}void R\+C4\+\_\+set\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+C4\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{int}]{len, }
+\item[{const unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{rc4_8h_a92585c51106943d71ca586c60ace3052}{}\label{rc4_8h_a92585c51106943d71ca586c60ace3052}

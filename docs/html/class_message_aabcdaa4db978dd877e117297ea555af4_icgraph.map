@@ -1,0 +1,10 @@
+<map id="Message::set_allocated_shutdown" name="Message::set_allocated_shutdown">
+<area shape="rect" id="node2" href="$class_message_builder.html#a43d19ca77072e177d5bc494b7aced750" title="MessageBuilder::build" alt="" coords="217,81,368,108"/>
+<area shape="rect" id="node9" href="$class_message.html#a1656eb682ce1b354645b8f0204d4d716" title="Message::GetMetadata" alt="" coords="213,132,372,159"/>
+<area shape="rect" id="node3" href="$class_brain.html#afa2f689c8360c9c9ad323bac5be4b42d" title="Brain::setup" alt="" coords="833,5,925,32"/>
+<area shape="rect" id="node5" href="$class_brain.html#a23d921369c5ec1218d7dc26d0f8270c2" title="Brain::loop" alt="" coords="837,56,921,83"/>
+<area shape="rect" id="node6" href="$class_message_builder.html#a6e9bc743a54f5880a006229d0e5f0765" title="MessageBuilder::hello" alt="" coords="420,107,571,133"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a523d51f6d06fce5bbed3e074818569fb" title="main" alt="" coords="973,31,1024,57"/>
+<area shape="rect" id="node7" href="$class_communication.html#aed16e511327c62b6b5f418523f707a77" title="Communication::serve" alt="" coords="625,107,779,133"/>
+<area shape="rect" id="node8" href="$class_communication.html#ab64912f9a4137b930d717d8a3140d693" title="Communication::connect" alt="" coords="619,157,785,184"/>
+</map>

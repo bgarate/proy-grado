@@ -1,0 +1,293 @@
+\hypertarget{arstream2__h264__sei_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Stream2/arstream2\+\_\+h264\+\_\+sei.h File Reference}
+\label{arstream2__h264__sei_8h}\index{src/hal/pb2/include/lib\+A\+R\+Stream2/arstream2\+\_\+h264\+\_\+sei.\+h@{src/hal/pb2/include/lib\+A\+R\+Stream2/arstream2\+\_\+h264\+\_\+sei.\+h}}
+
+
+Parrot Streaming Library -\/ H.\+264 User Data S\+EI.  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Stream2/arstream2\+\_\+error.\+h$>$}\\*
+Include dependency graph for arstream2\+\_\+h264\+\_\+sei.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{arstream2__h264__sei_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_sei___parrot_streaming_v1__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Parrot\+Streaming\+V1\+\_\+t}
+\begin{DoxyCompactList}\small\item\em \char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI payload definition. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_sei___user_data_parrot_streaming_v1__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+User\+Data\+Parrot\+Streaming\+V1\+\_\+t}
+\begin{DoxyCompactList}\small\item\em \char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI definition. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_sei___parrot_streaming_v2__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Parrot\+Streaming\+V2\+\_\+t}
+\begin{DoxyCompactList}\small\item\em \char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI payload definition. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_sei___user_data_parrot_streaming_v2__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+User\+Data\+Parrot\+Streaming\+V2\+\_\+t}
+\begin{DoxyCompactList}\small\item\em \char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{arstream2__h264__sei_8h_aaaab73eaa196f240e0e33b9ac4c8c9aa}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+C\+O\+U\+NT}~128
+\item 
+\#define \hyperlink{arstream2__h264__sei_8h_a013e48ecd1438d61caa96f4af9302b02}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+0}~0x13dbccc7
+\item 
+\#define \hyperlink{arstream2__h264__sei_8h_a3ea9a924a4b1b15dcfd5695babba65fe}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+1}~0xc72042f5
+\item 
+\#define \hyperlink{arstream2__h264__sei_8h_a8d90bb8a88874615b8f73c064f902302}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+2}~0xa0b7aafa
+\item 
+\#define \hyperlink{arstream2__h264__sei_8h_a3711017ca1423c274df62bf7cb931020}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+3}~0xa2b3af97
+\item 
+\#define \hyperlink{arstream2__h264__sei_8h_ada0497beb54e207d728a98a3d393ad35}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+0}~0xe5cedca1
+\item 
+\#define \hyperlink{arstream2__h264__sei_8h_ae0ba27345331ebefa885662c7736aef8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+1}~0x86b74254
+\item 
+\#define \hyperlink{arstream2__h264__sei_8h_a4a44f24f824260ce30b0a56f12f8e3e1}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+2}~0x9601434f
+\item 
+\#define \hyperlink{arstream2__h264__sei_8h_a99ef6bffa5b9ede5459217ad5e75c2fa}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+3}~0xffcd1f56
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__sei_8h_ad31109e182599d19daff0f270be9e28c}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Serialize\+User\+Data\+Parrot\+Streaming\+V1} (const \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_sei___parrot_streaming_v1__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Parrot\+Streaming\+V1\+\_\+t} $\ast$streaming, const uint16\+\_\+t $\ast$slice\+Mb\+Count, void $\ast$p\+Buf, unsigned int buf\+Size, unsigned int $\ast$size)
+\begin{DoxyCompactList}\small\item\em Serialize a \char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__sei_8h_abaa2c83faaf3fe5741f0e983cf28bf0f}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Deserialize\+User\+Data\+Parrot\+Streaming\+V1} (const void $\ast$p\+Buf, unsigned int buf\+Size, \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_sei___parrot_streaming_v1__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Parrot\+Streaming\+V1\+\_\+t} $\ast$streaming, uint16\+\_\+t $\ast$slice\+Mb\+Count)
+\begin{DoxyCompactList}\small\item\em Deserialize a \char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI. \end{DoxyCompactList}\item 
+int \hyperlink{arstream2__h264__sei_8h_ae27fc10fa6303adaa1ab656d3f71434a}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Is\+User\+Data\+Parrot\+Streaming\+V1} (const void $\ast$p\+Buf, unsigned int buf\+Size)
+\begin{DoxyCompactList}\small\item\em Checks if the data provided is a \char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__sei_8h_a05a30b0fcde22075ed924a1bb538a174}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Serialize\+User\+Data\+Parrot\+Streaming\+V2} (const \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_sei___parrot_streaming_v2__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Parrot\+Streaming\+V2\+\_\+t} $\ast$streaming, void $\ast$p\+Buf, unsigned int buf\+Size, unsigned int $\ast$size)
+\begin{DoxyCompactList}\small\item\em Serialize a \char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__sei_8h_a675fc4d8f1bfa181aafb96f83b780c05}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Deserialize\+User\+Data\+Parrot\+Streaming\+V2} (const void $\ast$p\+Buf, unsigned int buf\+Size, \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_sei___parrot_streaming_v2__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Parrot\+Streaming\+V2\+\_\+t} $\ast$streaming)
+\begin{DoxyCompactList}\small\item\em Deserialize a \char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI. \end{DoxyCompactList}\item 
+int \hyperlink{arstream2__h264__sei_8h_a88ffc5d458247a2ca4cfb4ce46ad8075}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Is\+User\+Data\+Parrot\+Streaming\+V2} (const void $\ast$p\+Buf, unsigned int buf\+Size)
+\begin{DoxyCompactList}\small\item\em Checks if the data provided is a \char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parrot Streaming Library -\/ H.\+264 User Data S\+EI. 
+
+\begin{DoxyDate}{Date}
+08/04/2015 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:aurelien.barre@parrot.com}{\tt aurelien.\+barre@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+C\+O\+U\+NT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+C\+O\+U\+NT}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+C\+O\+U\+NT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+C\+O\+U\+NT}!arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+C\+O\+U\+NT}{ARSTREAM2_H264_SEI_PARROT_STREAMING_MAX_SLICE_COUNT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+C\+O\+U\+NT~128}\hypertarget{arstream2__h264__sei_8h_aaaab73eaa196f240e0e33b9ac4c8c9aa}{}\label{arstream2__h264__sei_8h_aaaab73eaa196f240e0e33b9ac4c8c9aa}
+Maximum number of slices per frame \index{arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+0@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+0}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+0@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+0}!arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+0}{ARSTREAM2_H264_SEI_PARROT_STREAMING_V1_UUID_0}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+0~0x13dbccc7}\hypertarget{arstream2__h264__sei_8h_a013e48ecd1438d61caa96f4af9302b02}{}\label{arstream2__h264__sei_8h_a013e48ecd1438d61caa96f4af9302b02}
+\char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI U\+U\+ID. U\+U\+ID\+: 13dbccc7-\/c720-\/42f5-\/a0b7-\/aafaa2b3af97\char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI U\+U\+ID part 1 (bit 0..31) \index{arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+1@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+1}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+1@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+1}!arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+1}{ARSTREAM2_H264_SEI_PARROT_STREAMING_V1_UUID_1}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+1~0xc72042f5}\hypertarget{arstream2__h264__sei_8h_a3ea9a924a4b1b15dcfd5695babba65fe}{}\label{arstream2__h264__sei_8h_a3ea9a924a4b1b15dcfd5695babba65fe}
+\char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI U\+U\+ID part 2 (bit 32..63) \index{arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+2@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+2}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+2@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+2}!arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+2}{ARSTREAM2_H264_SEI_PARROT_STREAMING_V1_UUID_2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+2~0xa0b7aafa}\hypertarget{arstream2__h264__sei_8h_a8d90bb8a88874615b8f73c064f902302}{}\label{arstream2__h264__sei_8h_a8d90bb8a88874615b8f73c064f902302}
+\char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI U\+U\+ID part 3 (bit 64..95) \index{arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+3@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+3}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+3@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+3}!arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+3}{ARSTREAM2_H264_SEI_PARROT_STREAMING_V1_UUID_3}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V1\+\_\+\+U\+U\+I\+D\+\_\+3~0xa2b3af97}\hypertarget{arstream2__h264__sei_8h_a3711017ca1423c274df62bf7cb931020}{}\label{arstream2__h264__sei_8h_a3711017ca1423c274df62bf7cb931020}
+\char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI U\+U\+ID part 4 (bit 96..127) \index{arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+0@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+0}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+0@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+0}!arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+0}{ARSTREAM2_H264_SEI_PARROT_STREAMING_V2_UUID_0}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+0~0xe5cedca1}\hypertarget{arstream2__h264__sei_8h_ada0497beb54e207d728a98a3d393ad35}{}\label{arstream2__h264__sei_8h_ada0497beb54e207d728a98a3d393ad35}
+\char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI U\+U\+ID. U\+U\+ID\+: e5cedca1-\/86b7-\/4254-\/9601-\/434fffcd1f56\char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI U\+U\+ID part 1 (bit 0..31) \index{arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+1@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+1}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+1@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+1}!arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+1}{ARSTREAM2_H264_SEI_PARROT_STREAMING_V2_UUID_1}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+1~0x86b74254}\hypertarget{arstream2__h264__sei_8h_ae0ba27345331ebefa885662c7736aef8}{}\label{arstream2__h264__sei_8h_ae0ba27345331ebefa885662c7736aef8}
+\char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI U\+U\+ID part 2 (bit 32..63) \index{arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+2@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+2}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+2@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+2}!arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+2}{ARSTREAM2_H264_SEI_PARROT_STREAMING_V2_UUID_2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+2~0x9601434f}\hypertarget{arstream2__h264__sei_8h_a4a44f24f824260ce30b0a56f12f8e3e1}{}\label{arstream2__h264__sei_8h_a4a44f24f824260ce30b0a56f12f8e3e1}
+\char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI U\+U\+ID part 3 (bit 64..95) \index{arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+3@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+3}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+3@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+3}!arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+3}{ARSTREAM2_H264_SEI_PARROT_STREAMING_V2_UUID_3}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+V2\+\_\+\+U\+U\+I\+D\+\_\+3~0xffcd1f56}\hypertarget{arstream2__h264__sei_8h_a99ef6bffa5b9ede5459217ad5e75c2fa}{}\label{arstream2__h264__sei_8h_a99ef6bffa5b9ede5459217ad5e75c2fa}
+\char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI U\+U\+ID part 4 (bit 96..127) 
+
+\subsection{Function Documentation}
+\index{arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Deserialize\+User\+Data\+Parrot\+Streaming\+V1@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Deserialize\+User\+Data\+Parrot\+Streaming\+V1}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Deserialize\+User\+Data\+Parrot\+Streaming\+V1@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Deserialize\+User\+Data\+Parrot\+Streaming\+V1}!arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Deserialize\+User\+Data\+Parrot\+Streaming\+V1(const void $\ast$p\+Buf, unsigned int buf\+Size, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Parrot\+Streaming\+V1\+\_\+t $\ast$streaming, uint16\+\_\+t $\ast$slice\+Mb\+Count)}{ARSTREAM2_H264Sei_DeserializeUserDataParrotStreamingV1(const void *pBuf, unsigned int bufSize, ARSTREAM2_H264Sei_ParrotStreamingV1_t *streaming, uint16_t *sliceMbCount)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Deserialize\+User\+Data\+Parrot\+Streaming\+V1 (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{p\+Buf, }
+\item[{unsigned int}]{buf\+Size, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Parrot\+Streaming\+V1\+\_\+t} $\ast$}]{streaming, }
+\item[{uint16\+\_\+t $\ast$}]{slice\+Mb\+Count}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__sei_8h_abaa2c83faaf3fe5741f0e983cf28bf0f}{}\label{arstream2__h264__sei_8h_abaa2c83faaf3fe5741f0e983cf28bf0f}
+
+
+Deserialize a \char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI. 
+
+The function parses a \char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI and fills the streaming structure and slice\+Mb\+Count array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Buf} & Pointer to the user data S\+EI buffer. \\
+\hline
+{\em buf\+Size} & Size of the user data S\+EI. \\
+\hline
+{\em streaming} & Pointer to the \char`\"{}\+Parrot Streaming\char`\"{} v1 payload structure to fill. \\
+\hline
+{\em slice\+Mb\+Count} & Pointer to the slice\+Mb\+Count array to fill (array size must be A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+C\+O\+U\+NT).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Deserialize\+User\+Data\+Parrot\+Streaming\+V2@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Deserialize\+User\+Data\+Parrot\+Streaming\+V2}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Deserialize\+User\+Data\+Parrot\+Streaming\+V2@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Deserialize\+User\+Data\+Parrot\+Streaming\+V2}!arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Deserialize\+User\+Data\+Parrot\+Streaming\+V2(const void $\ast$p\+Buf, unsigned int buf\+Size, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Parrot\+Streaming\+V2\+\_\+t $\ast$streaming)}{ARSTREAM2_H264Sei_DeserializeUserDataParrotStreamingV2(const void *pBuf, unsigned int bufSize, ARSTREAM2_H264Sei_ParrotStreamingV2_t *streaming)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Deserialize\+User\+Data\+Parrot\+Streaming\+V2 (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{p\+Buf, }
+\item[{unsigned int}]{buf\+Size, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Parrot\+Streaming\+V2\+\_\+t} $\ast$}]{streaming}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__sei_8h_a675fc4d8f1bfa181aafb96f83b780c05}{}\label{arstream2__h264__sei_8h_a675fc4d8f1bfa181aafb96f83b780c05}
+
+
+Deserialize a \char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI. 
+
+The function parses a \char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI and fills the streaming structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Buf} & Pointer to the user data S\+EI buffer. \\
+\hline
+{\em buf\+Size} & Size of the user data S\+EI. \\
+\hline
+{\em streaming} & Pointer to the \char`\"{}\+Parrot Streaming\char`\"{} v2 payload structure to fill. \\
+\hline
+{\em slice\+Mb\+Count} & Pointer to the slice\+Mb\+Count array to fill (array size must be A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+\_\+\+S\+E\+I\+\_\+\+P\+A\+R\+R\+O\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+S\+L\+I\+C\+E\+\_\+\+C\+O\+U\+NT).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Is\+User\+Data\+Parrot\+Streaming\+V1@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Is\+User\+Data\+Parrot\+Streaming\+V1}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Is\+User\+Data\+Parrot\+Streaming\+V1@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Is\+User\+Data\+Parrot\+Streaming\+V1}!arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Is\+User\+Data\+Parrot\+Streaming\+V1(const void $\ast$p\+Buf, unsigned int buf\+Size)}{ARSTREAM2_H264Sei_IsUserDataParrotStreamingV1(const void *pBuf, unsigned int bufSize)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Is\+User\+Data\+Parrot\+Streaming\+V1 (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{p\+Buf, }
+\item[{unsigned int}]{buf\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__sei_8h_ae27fc10fa6303adaa1ab656d3f71434a}{}\label{arstream2__h264__sei_8h_ae27fc10fa6303adaa1ab656d3f71434a}
+
+
+Checks if the data provided is a \char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI. 
+
+The function checks if the data provided in the p\+Buf buffer corresponds to a \char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI using the user data S\+EI U\+U\+ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Buf} & Pointer to the user data S\+EI buffer. \\
+\hline
+{\em buf\+Size} & Size of the user data S\+EI.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the data is a \char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI. 
+
+0 if the data is not a \char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Is\+User\+Data\+Parrot\+Streaming\+V2@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Is\+User\+Data\+Parrot\+Streaming\+V2}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Is\+User\+Data\+Parrot\+Streaming\+V2@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Is\+User\+Data\+Parrot\+Streaming\+V2}!arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Is\+User\+Data\+Parrot\+Streaming\+V2(const void $\ast$p\+Buf, unsigned int buf\+Size)}{ARSTREAM2_H264Sei_IsUserDataParrotStreamingV2(const void *pBuf, unsigned int bufSize)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Is\+User\+Data\+Parrot\+Streaming\+V2 (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{p\+Buf, }
+\item[{unsigned int}]{buf\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__sei_8h_a88ffc5d458247a2ca4cfb4ce46ad8075}{}\label{arstream2__h264__sei_8h_a88ffc5d458247a2ca4cfb4ce46ad8075}
+
+
+Checks if the data provided is a \char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI. 
+
+The function checks if the data provided in the p\+Buf buffer corresponds to a \char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI using the user data S\+EI U\+U\+ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Buf} & Pointer to the user data S\+EI buffer. \\
+\hline
+{\em buf\+Size} & Size of the user data S\+EI.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the data is a \char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI. 
+
+0 if the data is not a \char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Serialize\+User\+Data\+Parrot\+Streaming\+V1@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Serialize\+User\+Data\+Parrot\+Streaming\+V1}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Serialize\+User\+Data\+Parrot\+Streaming\+V1@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Serialize\+User\+Data\+Parrot\+Streaming\+V1}!arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Serialize\+User\+Data\+Parrot\+Streaming\+V1(const A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Parrot\+Streaming\+V1\+\_\+t $\ast$streaming, const uint16\+\_\+t $\ast$slice\+Mb\+Count, void $\ast$p\+Buf, unsigned int buf\+Size, unsigned int $\ast$size)}{ARSTREAM2_H264Sei_SerializeUserDataParrotStreamingV1(const ARSTREAM2_H264Sei_ParrotStreamingV1_t *streaming, const uint16_t *sliceMbCount, void *pBuf, unsigned int bufSize, unsigned int *size)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Serialize\+User\+Data\+Parrot\+Streaming\+V1 (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Parrot\+Streaming\+V1\+\_\+t} $\ast$}]{streaming, }
+\item[{const uint16\+\_\+t $\ast$}]{slice\+Mb\+Count, }
+\item[{void $\ast$}]{p\+Buf, }
+\item[{unsigned int}]{buf\+Size, }
+\item[{unsigned int $\ast$}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__sei_8h_ad31109e182599d19daff0f270be9e28c}{}\label{arstream2__h264__sei_8h_ad31109e182599d19daff0f270be9e28c}
+
+
+Serialize a \char`\"{}\+Parrot Streaming\char`\"{} v1 user data S\+EI. 
+
+The function parses a \char`\"{}\+Parrot Streaming\char`\"{} v1 structure and fills the user data S\+EI buffer. buf\+Size must be at least (sizeof(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+User\+Data\+Parrot\+Streaming\+V1\+\_\+t) + streaming-\/$>$slice\+Count $\ast$ sizeof(uint16\+\_\+t)).
+
+
+\begin{DoxyParams}{Parameters}
+{\em streaming} & Pointer to the \char`\"{}\+Parrot Streaming\char`\"{} v1 payload structure. \\
+\hline
+{\em slice\+Mb\+Count} & Pointer to the slice\+Mb\+Count array. \\
+\hline
+{\em p\+Buf} & Pointer to the user data S\+EI buffer to fill. \\
+\hline
+{\em buf\+Size} & Size of the user data S\+EI buffer. \\
+\hline
+{\em size} & Pointer to the final user data S\+EI buffer size.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Serialize\+User\+Data\+Parrot\+Streaming\+V2@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Serialize\+User\+Data\+Parrot\+Streaming\+V2}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Serialize\+User\+Data\+Parrot\+Streaming\+V2@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Serialize\+User\+Data\+Parrot\+Streaming\+V2}!arstream2\+\_\+h264\+\_\+sei.\+h@{arstream2\+\_\+h264\+\_\+sei.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Serialize\+User\+Data\+Parrot\+Streaming\+V2(const A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Parrot\+Streaming\+V2\+\_\+t $\ast$streaming, void $\ast$p\+Buf, unsigned int buf\+Size, unsigned int $\ast$size)}{ARSTREAM2_H264Sei_SerializeUserDataParrotStreamingV2(const ARSTREAM2_H264Sei_ParrotStreamingV2_t *streaming, void *pBuf, unsigned int bufSize, unsigned int *size)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Serialize\+User\+Data\+Parrot\+Streaming\+V2 (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+Parrot\+Streaming\+V2\+\_\+t} $\ast$}]{streaming, }
+\item[{void $\ast$}]{p\+Buf, }
+\item[{unsigned int}]{buf\+Size, }
+\item[{unsigned int $\ast$}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__sei_8h_a05a30b0fcde22075ed924a1bb538a174}{}\label{arstream2__h264__sei_8h_a05a30b0fcde22075ed924a1bb538a174}
+
+
+Serialize a \char`\"{}\+Parrot Streaming\char`\"{} v2 user data S\+EI. 
+
+The function parses a \char`\"{}\+Parrot Streaming\char`\"{} v2 structure and fills the user data S\+EI buffer. buf\+Size must be at least sizeof(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Sei\+\_\+\+User\+Data\+Parrot\+Streaming\+V2\+\_\+t).
+
+
+\begin{DoxyParams}{Parameters}
+{\em streaming} & Pointer to the \char`\"{}\+Parrot Streaming\char`\"{} v2 payload structure. \\
+\hline
+{\em p\+Buf} & Pointer to the user data S\+EI buffer to fill. \\
+\hline
+{\em buf\+Size} & Size of the user data S\+EI buffer. \\
+\hline
+{\em size} & Pointer to the final user data S\+EI buffer size.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}

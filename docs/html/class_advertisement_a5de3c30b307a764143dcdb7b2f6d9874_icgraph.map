@@ -1,0 +1,9 @@
+<map id="Advertisement::internal_default_instance" name="Advertisement::internal_default_instance">
+<area shape="rect" id="node2" href="$class_advertisement.html#a2932354dce25b3f6b6a4af82a0e35db9" title="Advertisement::Advertisement" alt="" coords="209,5,408,32"/>
+<area shape="rect" id="node4" href="$class_advertisement.html#a70dc579979d32a7659c7f4aaf849543e" title="Advertisement::default\l_instance" alt="" coords="232,57,385,98"/>
+<area shape="rect" id="node5" href="$structprotobuf__message__2eproto_1_1_table_struct.html#a931144a94610d8291bdc069fc26e7ab8" title="protobuf_message_2eproto\l::TableStruct::InitDefaultsImpl" alt="" coords="210,122,407,163"/>
+<area shape="rect" id="node6" href="$class_message.html#a1656eb682ce1b354645b8f0204d4d716" title="Message::GetMetadata" alt="" coords="456,188,615,215"/>
+<area shape="rect" id="node7" href="$class_message.html#ad837be1ca50959f5e3a46abb0283a9d0" title="Message::advertisement" alt="" coords="226,239,391,265"/>
+<area shape="rect" id="node3" href="$class_advertisement.html#a940cfe1ea161f8bc9a8c18efa5d9cde8" title="Advertisement::New" alt="" coords="465,5,606,32"/>
+<area shape="rect" id="node8" href="$class_message.html#aeec4936f78a3ed399295e3f72840166f" title="Message::MergeFrom" alt="" coords="461,239,610,265"/>
+</map>

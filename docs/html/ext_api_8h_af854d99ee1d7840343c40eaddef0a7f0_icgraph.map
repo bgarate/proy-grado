@@ -1,0 +1,8 @@
+<map id="simxGetObjectPosition" name="simxGetObjectPosition">
+<area shape="rect" id="node2" href="$ext_api_8h.html#a0e7431db44935b74cf49ac5aa3edb6ec" title="mtlb_simxCallScriptFunction_b" alt="" coords="209,5,412,32"/>
+<area shape="rect" id="node3" href="$class_vrephal.html#ab3475a8fa59a6b22fe8624194339b346" title="Vrephal::land" alt="" coords="261,56,360,83"/>
+<area shape="rect" id="node5" href="$class_vrephal.html#aeae911ac4d0f00bb8acc22b89e858d1c" title="Vrephal::takeoff" alt="" coords="253,107,368,133"/>
+<area shape="rect" id="node6" href="$class_vrephal.html#a561080b3af7b9a53790a7e4c00b1925e" title="Vrephal::getAltitude" alt="" coords="243,157,379,184"/>
+<area shape="rect" id="node7" href="$class_vrephal.html#a7dcae4f99c03042a708b3fe420df4aeb" title="Vrephal::getGPSPosition" alt="" coords="227,208,394,235"/>
+<area shape="rect" id="node4" href="$vrephaltest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="460,107,511,133"/>
+</map>

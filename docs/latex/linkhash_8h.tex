@@ -1,0 +1,336 @@
+\hypertarget{linkhash_8h}{}\section{src/hal/pb2/include/json/linkhash.h File Reference}
+\label{linkhash_8h}\index{src/hal/pb2/include/json/linkhash.\+h@{src/hal/pb2/include/json/linkhash.\+h}}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{linkhash_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structlh__entry}{lh\+\_\+entry}
+\item 
+struct \hyperlink{structlh__table}{lh\+\_\+table}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{linkhash_8h_a032f1bd115df254dda325437203ce5fb}{L\+H\+\_\+\+P\+R\+I\+ME}~0x9e370001\+UL
+\item 
+\#define \hyperlink{linkhash_8h_a93fad7f8ae44575dc89c9567859972d2}{L\+H\+\_\+\+E\+M\+P\+TY}~(void$\ast$)-\/1
+\item 
+\#define \hyperlink{linkhash_8h_ac69428f2de0a6fb080b6fb373d506aa7}{L\+H\+\_\+\+F\+R\+E\+ED}~(void$\ast$)-\/2
+\item 
+\#define \hyperlink{linkhash_8h_ad7dd67da915065dce2c6f44cb03e2d82}{lh\+\_\+foreach}(table,  entry)~for(entry = table-\/$>$head; entry; entry = entry-\/$>$next)
+\item 
+\#define \hyperlink{linkhash_8h_abcbb0df08b4976d0649b826b6bacfca1}{lh\+\_\+foreach\+\_\+safe}(table,  entry,  tmp)~for(entry = table-\/$>$head; entry \&\& ((tmp = entry-\/$>$next) $\vert$$\vert$ 1); entry = tmp)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void( \hyperlink{linkhash_8h_a0c6811f660b93857aafdbfdf80d9696b}{lh\+\_\+entry\+\_\+free\+\_\+fn}) (struct \hyperlink{structlh__entry}{lh\+\_\+entry} $\ast$e)
+\item 
+typedef unsigned long( \hyperlink{linkhash_8h_a1780449146b716ad5e6ed0a0207d0417}{lh\+\_\+hash\+\_\+fn}) (const void $\ast$k)
+\item 
+typedef int( \hyperlink{linkhash_8h_abcbf0e4849fb0c6279827ac3b66d15c3}{lh\+\_\+equal\+\_\+fn}) (const void $\ast$k1, const void $\ast$k2)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \hyperlink{linkhash_8h_a2e560f0d3e5a20f6b0bfa4049737db23}{lh\+\_\+ptr\+\_\+hash} (const void $\ast$k)
+\item 
+int \hyperlink{linkhash_8h_a6ce3cb97560072c40f5caeaba85f756a}{lh\+\_\+ptr\+\_\+equal} (const void $\ast$k1, const void $\ast$k2)
+\item 
+unsigned long \hyperlink{linkhash_8h_a1fcf495b9c4ce169630cb31f638b8435}{lh\+\_\+char\+\_\+hash} (const void $\ast$k)
+\item 
+int \hyperlink{linkhash_8h_ae4e9f21fb1a556c7a50c6b7ea61f2079}{lh\+\_\+char\+\_\+equal} (const void $\ast$k1, const void $\ast$k2)
+\item 
+struct \hyperlink{structlh__table}{lh\+\_\+table} $\ast$ \hyperlink{linkhash_8h_ac3ba464ac43c083397b1f1d34f2ddf55}{lh\+\_\+table\+\_\+new} (int size, const char $\ast$name, \hyperlink{linkhash_8h_a0c6811f660b93857aafdbfdf80d9696b}{lh\+\_\+entry\+\_\+free\+\_\+fn} $\ast$free\+\_\+fn, \hyperlink{linkhash_8h_a1780449146b716ad5e6ed0a0207d0417}{lh\+\_\+hash\+\_\+fn} $\ast$hash\+\_\+fn, \hyperlink{linkhash_8h_abcbf0e4849fb0c6279827ac3b66d15c3}{lh\+\_\+equal\+\_\+fn} $\ast$equal\+\_\+fn)
+\item 
+struct \hyperlink{structlh__table}{lh\+\_\+table} $\ast$ \hyperlink{linkhash_8h_a0aaf11e11ee5b0925279a52eab04bc38}{lh\+\_\+kchar\+\_\+table\+\_\+new} (int size, const char $\ast$name, \hyperlink{linkhash_8h_a0c6811f660b93857aafdbfdf80d9696b}{lh\+\_\+entry\+\_\+free\+\_\+fn} $\ast$free\+\_\+fn)
+\item 
+struct \hyperlink{structlh__table}{lh\+\_\+table} $\ast$ \hyperlink{linkhash_8h_a705513954267a16cc1d40a284a7c441e}{lh\+\_\+kptr\+\_\+table\+\_\+new} (int size, const char $\ast$name, \hyperlink{linkhash_8h_a0c6811f660b93857aafdbfdf80d9696b}{lh\+\_\+entry\+\_\+free\+\_\+fn} $\ast$free\+\_\+fn)
+\item 
+void \hyperlink{linkhash_8h_a81653acf740cf8c9fe672e6cd16df0cf}{lh\+\_\+table\+\_\+free} (struct \hyperlink{structlh__table}{lh\+\_\+table} $\ast$\hyperlink{asn1_8h_a3d54702d866c88bc4b3a88e68fb986d9}{t})
+\item 
+int \hyperlink{linkhash_8h_a22b897763cc34a98c21c7fe82d151004}{lh\+\_\+table\+\_\+insert} (struct \hyperlink{structlh__table}{lh\+\_\+table} $\ast$\hyperlink{asn1_8h_a3d54702d866c88bc4b3a88e68fb986d9}{t}, void $\ast$k, const void $\ast$v)
+\item 
+struct \hyperlink{structlh__entry}{lh\+\_\+entry} $\ast$ \hyperlink{linkhash_8h_ad3b6ca2d967a6c3021ee6c39e014a918}{lh\+\_\+table\+\_\+lookup\+\_\+entry} (struct \hyperlink{structlh__table}{lh\+\_\+table} $\ast$\hyperlink{asn1_8h_a3d54702d866c88bc4b3a88e68fb986d9}{t}, const void $\ast$k)
+\item 
+const void $\ast$ \hyperlink{linkhash_8h_a49c27f18a174eaf126d1b7953df13cb1}{lh\+\_\+table\+\_\+lookup} (struct \hyperlink{structlh__table}{lh\+\_\+table} $\ast$\hyperlink{asn1_8h_a3d54702d866c88bc4b3a88e68fb986d9}{t}, const void $\ast$k)
+\item 
+int \hyperlink{linkhash_8h_ae5885a71c3457190fb1dc2d6e20dde3b}{lh\+\_\+table\+\_\+delete\+\_\+entry} (struct \hyperlink{structlh__table}{lh\+\_\+table} $\ast$\hyperlink{asn1_8h_a3d54702d866c88bc4b3a88e68fb986d9}{t}, struct \hyperlink{structlh__entry}{lh\+\_\+entry} $\ast$e)
+\item 
+int \hyperlink{linkhash_8h_a2fed2c78f70d229edb2d00775ffe593c}{lh\+\_\+table\+\_\+delete} (struct \hyperlink{structlh__table}{lh\+\_\+table} $\ast$\hyperlink{asn1_8h_a3d54702d866c88bc4b3a88e68fb986d9}{t}, const void $\ast$k)
+\item 
+void \hyperlink{linkhash_8h_a1294160fa0e80cee04cd745a401f43a4}{lh\+\_\+abort} (const char $\ast$msg,...)
+\item 
+void \hyperlink{linkhash_8h_a5322eccf3394af7dc1ebb22af8f8c562}{lh\+\_\+table\+\_\+resize} (struct \hyperlink{structlh__table}{lh\+\_\+table} $\ast$\hyperlink{asn1_8h_a3d54702d866c88bc4b3a88e68fb986d9}{t}, int new\+\_\+size)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{linkhash.\+h@{linkhash.\+h}!L\+H\+\_\+\+E\+M\+P\+TY@{L\+H\+\_\+\+E\+M\+P\+TY}}
+\index{L\+H\+\_\+\+E\+M\+P\+TY@{L\+H\+\_\+\+E\+M\+P\+TY}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{L\+H\+\_\+\+E\+M\+P\+TY}{LH_EMPTY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+H\+\_\+\+E\+M\+P\+TY~(void$\ast$)-\/1}\hypertarget{linkhash_8h_a93fad7f8ae44575dc89c9567859972d2}{}\label{linkhash_8h_a93fad7f8ae44575dc89c9567859972d2}
+sentinel pointer value for empty slots \index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+foreach@{lh\+\_\+foreach}}
+\index{lh\+\_\+foreach@{lh\+\_\+foreach}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+foreach}{lh_foreach}}]{\setlength{\rightskip}{0pt plus 5cm}\#define lh\+\_\+foreach(
+\begin{DoxyParamCaption}
+\item[{}]{table, }
+\item[{}]{entry}
+\end{DoxyParamCaption}
+)~for(entry = table-\/$>$head; entry; entry = entry-\/$>$next)}\hypertarget{linkhash_8h_ad7dd67da915065dce2c6f44cb03e2d82}{}\label{linkhash_8h_ad7dd67da915065dce2c6f44cb03e2d82}
+Convenience list iterator. \index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+foreach\+\_\+safe@{lh\+\_\+foreach\+\_\+safe}}
+\index{lh\+\_\+foreach\+\_\+safe@{lh\+\_\+foreach\+\_\+safe}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+foreach\+\_\+safe}{lh_foreach_safe}}]{\setlength{\rightskip}{0pt plus 5cm}\#define lh\+\_\+foreach\+\_\+safe(
+\begin{DoxyParamCaption}
+\item[{}]{table, }
+\item[{}]{entry, }
+\item[{}]{tmp}
+\end{DoxyParamCaption}
+)~for(entry = table-\/$>$head; entry \&\& ((tmp = entry-\/$>$next) $\vert$$\vert$ 1); entry = tmp)}\hypertarget{linkhash_8h_abcbb0df08b4976d0649b826b6bacfca1}{}\label{linkhash_8h_abcbb0df08b4976d0649b826b6bacfca1}
+lh\+\_\+foreach\+\_\+safe allows calling of deletion routine while iterating. \index{linkhash.\+h@{linkhash.\+h}!L\+H\+\_\+\+F\+R\+E\+ED@{L\+H\+\_\+\+F\+R\+E\+ED}}
+\index{L\+H\+\_\+\+F\+R\+E\+ED@{L\+H\+\_\+\+F\+R\+E\+ED}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{L\+H\+\_\+\+F\+R\+E\+ED}{LH_FREED}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+H\+\_\+\+F\+R\+E\+ED~(void$\ast$)-\/2}\hypertarget{linkhash_8h_ac69428f2de0a6fb080b6fb373d506aa7}{}\label{linkhash_8h_ac69428f2de0a6fb080b6fb373d506aa7}
+sentinel pointer value for freed slots \index{linkhash.\+h@{linkhash.\+h}!L\+H\+\_\+\+P\+R\+I\+ME@{L\+H\+\_\+\+P\+R\+I\+ME}}
+\index{L\+H\+\_\+\+P\+R\+I\+ME@{L\+H\+\_\+\+P\+R\+I\+ME}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{L\+H\+\_\+\+P\+R\+I\+ME}{LH_PRIME}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+H\+\_\+\+P\+R\+I\+ME~0x9e370001\+UL}\hypertarget{linkhash_8h_a032f1bd115df254dda325437203ce5fb}{}\label{linkhash_8h_a032f1bd115df254dda325437203ce5fb}
+golden prime used in hash functions 
+
+\subsection{Typedef Documentation}
+\index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+entry\+\_\+free\+\_\+fn@{lh\+\_\+entry\+\_\+free\+\_\+fn}}
+\index{lh\+\_\+entry\+\_\+free\+\_\+fn@{lh\+\_\+entry\+\_\+free\+\_\+fn}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+entry\+\_\+free\+\_\+fn}{lh_entry_free_fn}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( lh\+\_\+entry\+\_\+free\+\_\+fn) (struct {\bf lh\+\_\+entry} $\ast$e)}\hypertarget{linkhash_8h_a0c6811f660b93857aafdbfdf80d9696b}{}\label{linkhash_8h_a0c6811f660b93857aafdbfdf80d9696b}
+callback function prototypes \index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+equal\+\_\+fn@{lh\+\_\+equal\+\_\+fn}}
+\index{lh\+\_\+equal\+\_\+fn@{lh\+\_\+equal\+\_\+fn}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+equal\+\_\+fn}{lh_equal_fn}}]{\setlength{\rightskip}{0pt plus 5cm}typedef int( lh\+\_\+equal\+\_\+fn) (const void $\ast$k1, const void $\ast$k2)}\hypertarget{linkhash_8h_abcbf0e4849fb0c6279827ac3b66d15c3}{}\label{linkhash_8h_abcbf0e4849fb0c6279827ac3b66d15c3}
+callback function prototypes \index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+hash\+\_\+fn@{lh\+\_\+hash\+\_\+fn}}
+\index{lh\+\_\+hash\+\_\+fn@{lh\+\_\+hash\+\_\+fn}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+hash\+\_\+fn}{lh_hash_fn}}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned long( lh\+\_\+hash\+\_\+fn) (const void $\ast$k)}\hypertarget{linkhash_8h_a1780449146b716ad5e6ed0a0207d0417}{}\label{linkhash_8h_a1780449146b716ad5e6ed0a0207d0417}
+callback function prototypes 
+
+\subsection{Function Documentation}
+\index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+abort@{lh\+\_\+abort}}
+\index{lh\+\_\+abort@{lh\+\_\+abort}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+abort(const char $\ast$msg,...)}{lh_abort(const char *msg,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void lh\+\_\+abort (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{msg, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{linkhash_8h_a1294160fa0e80cee04cd745a401f43a4}{}\label{linkhash_8h_a1294160fa0e80cee04cd745a401f43a4}
+\index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+char\+\_\+equal@{lh\+\_\+char\+\_\+equal}}
+\index{lh\+\_\+char\+\_\+equal@{lh\+\_\+char\+\_\+equal}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+char\+\_\+equal(const void $\ast$k1, const void $\ast$k2)}{lh_char_equal(const void *k1, const void *k2)}}]{\setlength{\rightskip}{0pt plus 5cm}int lh\+\_\+char\+\_\+equal (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{k1, }
+\item[{const void $\ast$}]{k2}
+\end{DoxyParamCaption}
+)}\hypertarget{linkhash_8h_ae4e9f21fb1a556c7a50c6b7ea61f2079}{}\label{linkhash_8h_ae4e9f21fb1a556c7a50c6b7ea61f2079}
+\index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+char\+\_\+hash@{lh\+\_\+char\+\_\+hash}}
+\index{lh\+\_\+char\+\_\+hash@{lh\+\_\+char\+\_\+hash}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+char\+\_\+hash(const void $\ast$k)}{lh_char_hash(const void *k)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long lh\+\_\+char\+\_\+hash (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{k}
+\end{DoxyParamCaption}
+)}\hypertarget{linkhash_8h_a1fcf495b9c4ce169630cb31f638b8435}{}\label{linkhash_8h_a1fcf495b9c4ce169630cb31f638b8435}
+\index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+kchar\+\_\+table\+\_\+new@{lh\+\_\+kchar\+\_\+table\+\_\+new}}
+\index{lh\+\_\+kchar\+\_\+table\+\_\+new@{lh\+\_\+kchar\+\_\+table\+\_\+new}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+kchar\+\_\+table\+\_\+new(int size, const char $\ast$name, lh\+\_\+entry\+\_\+free\+\_\+fn $\ast$free\+\_\+fn)}{lh_kchar_table_new(int size, const char *name, lh_entry_free_fn *free_fn)}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf lh\+\_\+table}$\ast$ lh\+\_\+kchar\+\_\+table\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{int}]{size, }
+\item[{const char $\ast$}]{name, }
+\item[{{\bf lh\+\_\+entry\+\_\+free\+\_\+fn} $\ast$}]{free\+\_\+fn}
+\end{DoxyParamCaption}
+)}\hypertarget{linkhash_8h_a0aaf11e11ee5b0925279a52eab04bc38}{}\label{linkhash_8h_a0aaf11e11ee5b0925279a52eab04bc38}
+Convenience function to create a new linkhash table with char keys. 
+\begin{DoxyParams}{Parameters}
+{\em size} & initial table size. \\
+\hline
+{\em name} & table name. \\
+\hline
+{\em free\+\_\+fn} & callback function used to free memory for entries. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer onto the linkhash table. 
+\end{DoxyReturn}
+\index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+kptr\+\_\+table\+\_\+new@{lh\+\_\+kptr\+\_\+table\+\_\+new}}
+\index{lh\+\_\+kptr\+\_\+table\+\_\+new@{lh\+\_\+kptr\+\_\+table\+\_\+new}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+kptr\+\_\+table\+\_\+new(int size, const char $\ast$name, lh\+\_\+entry\+\_\+free\+\_\+fn $\ast$free\+\_\+fn)}{lh_kptr_table_new(int size, const char *name, lh_entry_free_fn *free_fn)}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf lh\+\_\+table}$\ast$ lh\+\_\+kptr\+\_\+table\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{int}]{size, }
+\item[{const char $\ast$}]{name, }
+\item[{{\bf lh\+\_\+entry\+\_\+free\+\_\+fn} $\ast$}]{free\+\_\+fn}
+\end{DoxyParamCaption}
+)}\hypertarget{linkhash_8h_a705513954267a16cc1d40a284a7c441e}{}\label{linkhash_8h_a705513954267a16cc1d40a284a7c441e}
+Convenience function to create a new linkhash table with ptr keys. 
+\begin{DoxyParams}{Parameters}
+{\em size} & initial table size. \\
+\hline
+{\em name} & table name. \\
+\hline
+{\em free\+\_\+fn} & callback function used to free memory for entries. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer onto the linkhash table. 
+\end{DoxyReturn}
+\index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+ptr\+\_\+equal@{lh\+\_\+ptr\+\_\+equal}}
+\index{lh\+\_\+ptr\+\_\+equal@{lh\+\_\+ptr\+\_\+equal}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+ptr\+\_\+equal(const void $\ast$k1, const void $\ast$k2)}{lh_ptr_equal(const void *k1, const void *k2)}}]{\setlength{\rightskip}{0pt plus 5cm}int lh\+\_\+ptr\+\_\+equal (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{k1, }
+\item[{const void $\ast$}]{k2}
+\end{DoxyParamCaption}
+)}\hypertarget{linkhash_8h_a6ce3cb97560072c40f5caeaba85f756a}{}\label{linkhash_8h_a6ce3cb97560072c40f5caeaba85f756a}
+\index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+ptr\+\_\+hash@{lh\+\_\+ptr\+\_\+hash}}
+\index{lh\+\_\+ptr\+\_\+hash@{lh\+\_\+ptr\+\_\+hash}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+ptr\+\_\+hash(const void $\ast$k)}{lh_ptr_hash(const void *k)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long lh\+\_\+ptr\+\_\+hash (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{k}
+\end{DoxyParamCaption}
+)}\hypertarget{linkhash_8h_a2e560f0d3e5a20f6b0bfa4049737db23}{}\label{linkhash_8h_a2e560f0d3e5a20f6b0bfa4049737db23}
+Pre-\/defined hash and equality functions \index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+table\+\_\+delete@{lh\+\_\+table\+\_\+delete}}
+\index{lh\+\_\+table\+\_\+delete@{lh\+\_\+table\+\_\+delete}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+table\+\_\+delete(struct lh\+\_\+table $\ast$t, const void $\ast$k)}{lh_table_delete(struct lh_table *t, const void *k)}}]{\setlength{\rightskip}{0pt plus 5cm}int lh\+\_\+table\+\_\+delete (
+\begin{DoxyParamCaption}
+\item[{struct {\bf lh\+\_\+table} $\ast$}]{t, }
+\item[{const void $\ast$}]{k}
+\end{DoxyParamCaption}
+)}\hypertarget{linkhash_8h_a2fed2c78f70d229edb2d00775ffe593c}{}\label{linkhash_8h_a2fed2c78f70d229edb2d00775ffe593c}
+Delete a record from the table. If a callback free function is provided then it is called for the for the item being deleted. 
+\begin{DoxyParams}{Parameters}
+{\em t} & the table to delete from. \\
+\hline
+{\em k} & a pointer to the key to delete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the item was deleted. 
+
+-\/1 if it was not found. 
+\end{DoxyReturn}
+\index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+table\+\_\+delete\+\_\+entry@{lh\+\_\+table\+\_\+delete\+\_\+entry}}
+\index{lh\+\_\+table\+\_\+delete\+\_\+entry@{lh\+\_\+table\+\_\+delete\+\_\+entry}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+table\+\_\+delete\+\_\+entry(struct lh\+\_\+table $\ast$t, struct lh\+\_\+entry $\ast$e)}{lh_table_delete_entry(struct lh_table *t, struct lh_entry *e)}}]{\setlength{\rightskip}{0pt plus 5cm}int lh\+\_\+table\+\_\+delete\+\_\+entry (
+\begin{DoxyParamCaption}
+\item[{struct {\bf lh\+\_\+table} $\ast$}]{t, }
+\item[{struct {\bf lh\+\_\+entry} $\ast$}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{linkhash_8h_ae5885a71c3457190fb1dc2d6e20dde3b}{}\label{linkhash_8h_ae5885a71c3457190fb1dc2d6e20dde3b}
+Delete a record from the table. If a callback free function is provided then it is called for the for the item being deleted. 
+\begin{DoxyParams}{Parameters}
+{\em t} & the table to delete from. \\
+\hline
+{\em e} & a pointer to the entry to delete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the item was deleted. 
+
+-\/1 if it was not found. 
+\end{DoxyReturn}
+\index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+table\+\_\+free@{lh\+\_\+table\+\_\+free}}
+\index{lh\+\_\+table\+\_\+free@{lh\+\_\+table\+\_\+free}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+table\+\_\+free(struct lh\+\_\+table $\ast$t)}{lh_table_free(struct lh_table *t)}}]{\setlength{\rightskip}{0pt plus 5cm}void lh\+\_\+table\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf lh\+\_\+table} $\ast$}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{linkhash_8h_a81653acf740cf8c9fe672e6cd16df0cf}{}\label{linkhash_8h_a81653acf740cf8c9fe672e6cd16df0cf}
+Free a linkhash table. If a callback free function is provided then it is called for all entries in the table. 
+\begin{DoxyParams}{Parameters}
+{\em t} & table to free. \\
+\hline
+\end{DoxyParams}
+\index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+table\+\_\+insert@{lh\+\_\+table\+\_\+insert}}
+\index{lh\+\_\+table\+\_\+insert@{lh\+\_\+table\+\_\+insert}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+table\+\_\+insert(struct lh\+\_\+table $\ast$t, void $\ast$k, const void $\ast$v)}{lh_table_insert(struct lh_table *t, void *k, const void *v)}}]{\setlength{\rightskip}{0pt plus 5cm}int lh\+\_\+table\+\_\+insert (
+\begin{DoxyParamCaption}
+\item[{struct {\bf lh\+\_\+table} $\ast$}]{t, }
+\item[{void $\ast$}]{k, }
+\item[{const void $\ast$}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{linkhash_8h_a22b897763cc34a98c21c7fe82d151004}{}\label{linkhash_8h_a22b897763cc34a98c21c7fe82d151004}
+Insert a record into the table. 
+\begin{DoxyParams}{Parameters}
+{\em t} & the table to insert into. \\
+\hline
+{\em k} & a pointer to the key to insert. \\
+\hline
+{\em v} & a pointer to the value to insert. \\
+\hline
+\end{DoxyParams}
+\index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+table\+\_\+lookup@{lh\+\_\+table\+\_\+lookup}}
+\index{lh\+\_\+table\+\_\+lookup@{lh\+\_\+table\+\_\+lookup}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+table\+\_\+lookup(struct lh\+\_\+table $\ast$t, const void $\ast$k)}{lh_table_lookup(struct lh_table *t, const void *k)}}]{\setlength{\rightskip}{0pt plus 5cm}const void$\ast$ lh\+\_\+table\+\_\+lookup (
+\begin{DoxyParamCaption}
+\item[{struct {\bf lh\+\_\+table} $\ast$}]{t, }
+\item[{const void $\ast$}]{k}
+\end{DoxyParamCaption}
+)}\hypertarget{linkhash_8h_a49c27f18a174eaf126d1b7953df13cb1}{}\label{linkhash_8h_a49c27f18a174eaf126d1b7953df13cb1}
+Lookup a record into the table 
+\begin{DoxyParams}{Parameters}
+{\em t} & the table to lookup \\
+\hline
+{\em k} & a pointer to the key to lookup \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the found value or N\+U\+LL if it does not exist. 
+\end{DoxyReturn}
+\index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+table\+\_\+lookup\+\_\+entry@{lh\+\_\+table\+\_\+lookup\+\_\+entry}}
+\index{lh\+\_\+table\+\_\+lookup\+\_\+entry@{lh\+\_\+table\+\_\+lookup\+\_\+entry}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+table\+\_\+lookup\+\_\+entry(struct lh\+\_\+table $\ast$t, const void $\ast$k)}{lh_table_lookup_entry(struct lh_table *t, const void *k)}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf lh\+\_\+entry}$\ast$ lh\+\_\+table\+\_\+lookup\+\_\+entry (
+\begin{DoxyParamCaption}
+\item[{struct {\bf lh\+\_\+table} $\ast$}]{t, }
+\item[{const void $\ast$}]{k}
+\end{DoxyParamCaption}
+)}\hypertarget{linkhash_8h_ad3b6ca2d967a6c3021ee6c39e014a918}{}\label{linkhash_8h_ad3b6ca2d967a6c3021ee6c39e014a918}
+Lookup a record into the table. 
+\begin{DoxyParams}{Parameters}
+{\em t} & the table to lookup \\
+\hline
+{\em k} & a pointer to the key to lookup \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the record structure of the value or N\+U\+LL if it does not exist. 
+\end{DoxyReturn}
+\index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+table\+\_\+new@{lh\+\_\+table\+\_\+new}}
+\index{lh\+\_\+table\+\_\+new@{lh\+\_\+table\+\_\+new}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+table\+\_\+new(int size, const char $\ast$name, lh\+\_\+entry\+\_\+free\+\_\+fn $\ast$free\+\_\+fn, lh\+\_\+hash\+\_\+fn $\ast$hash\+\_\+fn, lh\+\_\+equal\+\_\+fn $\ast$equal\+\_\+fn)}{lh_table_new(int size, const char *name, lh_entry_free_fn *free_fn, lh_hash_fn *hash_fn, lh_equal_fn *equal_fn)}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf lh\+\_\+table}$\ast$ lh\+\_\+table\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{int}]{size, }
+\item[{const char $\ast$}]{name, }
+\item[{{\bf lh\+\_\+entry\+\_\+free\+\_\+fn} $\ast$}]{free\+\_\+fn, }
+\item[{{\bf lh\+\_\+hash\+\_\+fn} $\ast$}]{hash\+\_\+fn, }
+\item[{{\bf lh\+\_\+equal\+\_\+fn} $\ast$}]{equal\+\_\+fn}
+\end{DoxyParamCaption}
+)}\hypertarget{linkhash_8h_ac3ba464ac43c083397b1f1d34f2ddf55}{}\label{linkhash_8h_ac3ba464ac43c083397b1f1d34f2ddf55}
+Create a new linkhash table. 
+\begin{DoxyParams}{Parameters}
+{\em size} & initial table size. The table is automatically resized although this incurs a performance penalty. \\
+\hline
+{\em name} & the table name. \\
+\hline
+{\em free\+\_\+fn} & callback function used to free memory for entries when lh\+\_\+table\+\_\+free or lh\+\_\+table\+\_\+delete is called. If N\+U\+LL is provided, then memory for keys and values must be freed by the caller. \\
+\hline
+{\em hash\+\_\+fn} & function used to hash keys. 2 standard ones are defined\+: lh\+\_\+ptr\+\_\+hash and lh\+\_\+char\+\_\+hash for hashing pointer values and C strings respectively. \\
+\hline
+{\em equal\+\_\+fn} & comparison function to compare keys. 2 standard ones defined\+: lh\+\_\+ptr\+\_\+hash and lh\+\_\+char\+\_\+hash for comparing pointer values and C strings respectively. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer onto the linkhash table. 
+\end{DoxyReturn}
+\index{linkhash.\+h@{linkhash.\+h}!lh\+\_\+table\+\_\+resize@{lh\+\_\+table\+\_\+resize}}
+\index{lh\+\_\+table\+\_\+resize@{lh\+\_\+table\+\_\+resize}!linkhash.\+h@{linkhash.\+h}}
+\subsubsection[{\texorpdfstring{lh\+\_\+table\+\_\+resize(struct lh\+\_\+table $\ast$t, int new\+\_\+size)}{lh_table_resize(struct lh_table *t, int new_size)}}]{\setlength{\rightskip}{0pt plus 5cm}void lh\+\_\+table\+\_\+resize (
+\begin{DoxyParamCaption}
+\item[{struct {\bf lh\+\_\+table} $\ast$}]{t, }
+\item[{int}]{new\+\_\+size}
+\end{DoxyParamCaption}
+)}\hypertarget{linkhash_8h_a5322eccf3394af7dc1ebb22af8f8c562}{}\label{linkhash_8h_a5322eccf3394af7dc1ebb22af8f8c562}

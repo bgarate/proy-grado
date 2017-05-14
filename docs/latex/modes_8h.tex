@@ -1,0 +1,527 @@
+\hypertarget{modes_8h}{}\section{src/hal/pb2/include/openssl/modes.h File Reference}
+\label{modes_8h}\index{src/hal/pb2/include/openssl/modes.\+h@{src/hal/pb2/include/openssl/modes.\+h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+Include dependency graph for modes.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{modes_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}{block128\+\_\+f}) (const unsigned char in\mbox{[}16\mbox{]}, unsigned char out\mbox{[}16\mbox{]}, const void $\ast$key)
+\item 
+typedef void($\ast$ \hyperlink{modes_8h_acae07e5a2c2fd898cbda01ecf6a0f589}{cbc128\+\_\+f}) (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, int enc)
+\item 
+typedef void($\ast$ \hyperlink{modes_8h_a2fe1d37de79113967f330f00c8c6f990}{ctr128\+\_\+f}) (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t blocks, const void $\ast$key, const unsigned char ivec\mbox{[}16\mbox{]})
+\item 
+typedef void($\ast$ \hyperlink{modes_8h_a4c2b437b988a131e76fb6d1e9ce652ee}{ccm128\+\_\+f}) (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t blocks, const void $\ast$key, const unsigned char ivec\mbox{[}16\mbox{]}, unsigned char cmac\mbox{[}16\mbox{]})
+\item 
+typedef struct gcm128\+\_\+context \hyperlink{modes_8h_a2a7f451298d420760e290671f2235c61}{G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT}
+\item 
+typedef struct ccm128\+\_\+context \hyperlink{modes_8h_a95fba40cd3d7febce85290bf899662e1}{C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT}
+\item 
+typedef struct xts128\+\_\+context \hyperlink{modes_8h_ad233eb07e4ab07fd32a8cf18e477dd71}{X\+T\+S128\+\_\+\+C\+O\+N\+T\+E\+XT}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{modes_8h_a5cbe79f5b3a935a6e49ac72e3f3e4fb2}{C\+R\+Y\+P\+T\+O\+\_\+cbc128\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, \hyperlink{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}{block128\+\_\+f} block)
+\item 
+void \hyperlink{modes_8h_a009400dbb93db1cb23550cdb66eac5ad}{C\+R\+Y\+P\+T\+O\+\_\+cbc128\+\_\+decrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, \hyperlink{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}{block128\+\_\+f} block)
+\item 
+void \hyperlink{modes_8h_af30a43dd23d0d25cc94a01f1a41f0746}{C\+R\+Y\+P\+T\+O\+\_\+ctr128\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, unsigned char ecount\+\_\+buf\mbox{[}16\mbox{]}, unsigned int $\ast$num, \hyperlink{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}{block128\+\_\+f} block)
+\item 
+void \hyperlink{modes_8h_a52c2dc3d1a797a15ad1a33be01e010ab}{C\+R\+Y\+P\+T\+O\+\_\+ctr128\+\_\+encrypt\+\_\+ctr32} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, unsigned char ecount\+\_\+buf\mbox{[}16\mbox{]}, unsigned int $\ast$num, \hyperlink{modes_8h_a2fe1d37de79113967f330f00c8c6f990}{ctr128\+\_\+f} ctr)
+\item 
+void \hyperlink{modes_8h_ab90b380cc595d52baa19a00926dc8841}{C\+R\+Y\+P\+T\+O\+\_\+ofb128\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, int $\ast$num, \hyperlink{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}{block128\+\_\+f} block)
+\item 
+void \hyperlink{modes_8h_a5c982e56a8f27559f7e64364ef36c868}{C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, int $\ast$num, int enc, \hyperlink{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}{block128\+\_\+f} block)
+\item 
+void \hyperlink{modes_8h_a355e4bb29e1947a73449857b4a126f1d}{C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+8\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, int $\ast$num, int enc, \hyperlink{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}{block128\+\_\+f} block)
+\item 
+void \hyperlink{modes_8h_aca08c600331f017ca56a250bf9f5d2ee}{C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+1\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509v3_8h_ab3c186980893d6836a68407d221ae9c9}{bits}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, int $\ast$num, int enc, \hyperlink{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}{block128\+\_\+f} block)
+\item 
+size\+\_\+t \hyperlink{modes_8h_a3e32a5c536863c9590e9225a918d364b}{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+encrypt\+\_\+block} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, \hyperlink{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}{block128\+\_\+f} block)
+\item 
+size\+\_\+t \hyperlink{modes_8h_ae6348ad0b524fd00afff759c2a3c52cc}{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, \hyperlink{modes_8h_acae07e5a2c2fd898cbda01ecf6a0f589}{cbc128\+\_\+f} cbc)
+\item 
+size\+\_\+t \hyperlink{modes_8h_a1002021ed22fe1dd0f7d78fa7907a525}{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+decrypt\+\_\+block} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, \hyperlink{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}{block128\+\_\+f} block)
+\item 
+size\+\_\+t \hyperlink{modes_8h_aee42bf2d060845035b7eff0f884fd6a8}{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+decrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, \hyperlink{modes_8h_acae07e5a2c2fd898cbda01ecf6a0f589}{cbc128\+\_\+f} cbc)
+\item 
+size\+\_\+t \hyperlink{modes_8h_a060f48b9d4bfa421c2eae7c31144bede}{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+encrypt\+\_\+block} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, \hyperlink{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}{block128\+\_\+f} block)
+\item 
+size\+\_\+t \hyperlink{modes_8h_a3dbdc940a0b01185acd3ad3a95bef5c8}{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, \hyperlink{modes_8h_acae07e5a2c2fd898cbda01ecf6a0f589}{cbc128\+\_\+f} cbc)
+\item 
+size\+\_\+t \hyperlink{modes_8h_aa8122dbed2b240fea20843ab391aee29}{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+decrypt\+\_\+block} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, \hyperlink{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}{block128\+\_\+f} block)
+\item 
+size\+\_\+t \hyperlink{modes_8h_a541156458b0b57b6f3ec115180b7a348}{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+decrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, \hyperlink{modes_8h_acae07e5a2c2fd898cbda01ecf6a0f589}{cbc128\+\_\+f} cbc)
+\item 
+\hyperlink{modes_8h_a2a7f451298d420760e290671f2235c61}{G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ \hyperlink{modes_8h_a48f9d5df65f104833881965e6dbe03d9}{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+new} (void $\ast$key, \hyperlink{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}{block128\+\_\+f} block)
+\item 
+void \hyperlink{modes_8h_a2119af4cceb3e52127662ff851df4f9f}{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+init} (\hyperlink{modes_8h_a2a7f451298d420760e290671f2235c61}{G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, void $\ast$key, \hyperlink{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}{block128\+\_\+f} block)
+\item 
+void \hyperlink{modes_8h_a0ebf35e4119a3d747eaae4ab5624be17}{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+setiv} (\hyperlink{modes_8h_a2a7f451298d420760e290671f2235c61}{G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, const unsigned char $\ast$iv, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+int \hyperlink{modes_8h_a3a3e9723bbfebd1d36b278815e226460}{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+aad} (\hyperlink{modes_8h_a2a7f451298d420760e290671f2235c61}{G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, const unsigned char $\ast$aad, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+int \hyperlink{modes_8h_a9779f2d0133e20bf5d6a2ff9833bd698}{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+encrypt} (\hyperlink{modes_8h_a2a7f451298d420760e290671f2235c61}{G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+int \hyperlink{modes_8h_ac29699ec140758465503d86f7d1460cf}{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+decrypt} (\hyperlink{modes_8h_a2a7f451298d420760e290671f2235c61}{G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+int \hyperlink{modes_8h_a81916efacf50d25fbffb8c36afc8de11}{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+encrypt\+\_\+ctr32} (\hyperlink{modes_8h_a2a7f451298d420760e290671f2235c61}{G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, \hyperlink{modes_8h_a2fe1d37de79113967f330f00c8c6f990}{ctr128\+\_\+f} stream)
+\item 
+int \hyperlink{modes_8h_a3abd2326aa2402ca5afaeac5dba2df8e}{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+decrypt\+\_\+ctr32} (\hyperlink{modes_8h_a2a7f451298d420760e290671f2235c61}{G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, \hyperlink{modes_8h_a2fe1d37de79113967f330f00c8c6f990}{ctr128\+\_\+f} stream)
+\item 
+int \hyperlink{modes_8h_a8d5bac0494d173f96c5cb73790f1353d}{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+finish} (\hyperlink{modes_8h_a2a7f451298d420760e290671f2235c61}{G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, const unsigned char $\ast$tag, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+void \hyperlink{modes_8h_a995a320240beba7ff1cffb97567f15a2}{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+tag} (\hyperlink{modes_8h_a2a7f451298d420760e290671f2235c61}{G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, unsigned char $\ast$tag, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+void \hyperlink{modes_8h_a811fe4518c95944c68547b6cf5c32f07}{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+release} (\hyperlink{modes_8h_a2a7f451298d420760e290671f2235c61}{G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx)
+\item 
+void \hyperlink{modes_8h_a3ddbc4bdd19aae3401864491151aa540}{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+init} (\hyperlink{modes_8h_a95fba40cd3d7febce85290bf899662e1}{C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, unsigned int M, unsigned int L, void $\ast$key, \hyperlink{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}{block128\+\_\+f} block)
+\item 
+int \hyperlink{modes_8h_ad3346f6edb53cb6830375d6fdd6d52f7}{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+setiv} (\hyperlink{modes_8h_a95fba40cd3d7febce85290bf899662e1}{C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, const unsigned char $\ast$nonce, size\+\_\+t nlen, size\+\_\+t mlen)
+\item 
+void \hyperlink{modes_8h_a63223bfff050bf85cf1f2170369321b0}{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+aad} (\hyperlink{modes_8h_a95fba40cd3d7febce85290bf899662e1}{C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, const unsigned char $\ast$aad, size\+\_\+t alen)
+\item 
+int \hyperlink{modes_8h_a8f33d493c1a71fb89ba125fab5e5d2ea}{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+encrypt} (\hyperlink{modes_8h_a95fba40cd3d7febce85290bf899662e1}{C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, const unsigned char $\ast$inp, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+int \hyperlink{modes_8h_ace9974c12c5fe3514a5fedd0d5368c91}{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+decrypt} (\hyperlink{modes_8h_a95fba40cd3d7febce85290bf899662e1}{C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, const unsigned char $\ast$inp, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+int \hyperlink{modes_8h_a7d0d967f2e7e647114e368b9aefa8ee8}{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+encrypt\+\_\+ccm64} (\hyperlink{modes_8h_a95fba40cd3d7febce85290bf899662e1}{C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, const unsigned char $\ast$inp, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, \hyperlink{modes_8h_a4c2b437b988a131e76fb6d1e9ce652ee}{ccm128\+\_\+f} stream)
+\item 
+int \hyperlink{modes_8h_a2c9a2ccd17de9383a4b6d66a7d682d32}{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+decrypt\+\_\+ccm64} (\hyperlink{modes_8h_a95fba40cd3d7febce85290bf899662e1}{C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, const unsigned char $\ast$inp, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, \hyperlink{modes_8h_a4c2b437b988a131e76fb6d1e9ce652ee}{ccm128\+\_\+f} stream)
+\item 
+size\+\_\+t \hyperlink{modes_8h_ae2a130dc00b30de17ea9e550864d8d54}{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+tag} (\hyperlink{modes_8h_a95fba40cd3d7febce85290bf899662e1}{C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, unsigned char $\ast$tag, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+int \hyperlink{modes_8h_aadd968198321806f284908b57c1fc133}{C\+R\+Y\+P\+T\+O\+\_\+xts128\+\_\+encrypt} (const \hyperlink{modes_8h_ad233eb07e4ab07fd32a8cf18e477dd71}{X\+T\+S128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$ctx, const unsigned char iv\mbox{[}16\mbox{]}, const unsigned char $\ast$inp, unsigned char $\ast$out, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, int enc)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{modes.\+h@{modes.\+h}!block128\+\_\+f@{block128\+\_\+f}}
+\index{block128\+\_\+f@{block128\+\_\+f}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{block128\+\_\+f}{block128_f}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ block128\+\_\+f) (const unsigned char in\mbox{[}16\mbox{]}, unsigned char out\mbox{[}16\mbox{]}, const void $\ast$key)}\hypertarget{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}{}\label{modes_8h_a3be4f2f2fbba3b92b026d8072dd6c3ad}
+\index{modes.\+h@{modes.\+h}!cbc128\+\_\+f@{cbc128\+\_\+f}}
+\index{cbc128\+\_\+f@{cbc128\+\_\+f}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{cbc128\+\_\+f}{cbc128_f}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ cbc128\+\_\+f) (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t {\bf len}, const void $\ast$key, unsigned char ivec\mbox{[}16\mbox{]}, int enc)}\hypertarget{modes_8h_acae07e5a2c2fd898cbda01ecf6a0f589}{}\label{modes_8h_acae07e5a2c2fd898cbda01ecf6a0f589}
+\index{modes.\+h@{modes.\+h}!C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT@{C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT}}
+\index{C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT@{C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT}{CCM128_CONTEXT}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct ccm128\+\_\+context {\bf C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT}}\hypertarget{modes_8h_a95fba40cd3d7febce85290bf899662e1}{}\label{modes_8h_a95fba40cd3d7febce85290bf899662e1}
+\index{modes.\+h@{modes.\+h}!ccm128\+\_\+f@{ccm128\+\_\+f}}
+\index{ccm128\+\_\+f@{ccm128\+\_\+f}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{ccm128\+\_\+f}{ccm128_f}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ ccm128\+\_\+f) (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t blocks, const void $\ast$key, const unsigned char ivec\mbox{[}16\mbox{]}, unsigned char cmac\mbox{[}16\mbox{]})}\hypertarget{modes_8h_a4c2b437b988a131e76fb6d1e9ce652ee}{}\label{modes_8h_a4c2b437b988a131e76fb6d1e9ce652ee}
+\index{modes.\+h@{modes.\+h}!ctr128\+\_\+f@{ctr128\+\_\+f}}
+\index{ctr128\+\_\+f@{ctr128\+\_\+f}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{ctr128\+\_\+f}{ctr128_f}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ ctr128\+\_\+f) (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t blocks, const void $\ast$key, const unsigned char ivec\mbox{[}16\mbox{]})}\hypertarget{modes_8h_a2fe1d37de79113967f330f00c8c6f990}{}\label{modes_8h_a2fe1d37de79113967f330f00c8c6f990}
+\index{modes.\+h@{modes.\+h}!G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT@{G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT}}
+\index{G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT@{G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT}{GCM128_CONTEXT}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct gcm128\+\_\+context {\bf G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT}}\hypertarget{modes_8h_a2a7f451298d420760e290671f2235c61}{}\label{modes_8h_a2a7f451298d420760e290671f2235c61}
+\index{modes.\+h@{modes.\+h}!X\+T\+S128\+\_\+\+C\+O\+N\+T\+E\+XT@{X\+T\+S128\+\_\+\+C\+O\+N\+T\+E\+XT}}
+\index{X\+T\+S128\+\_\+\+C\+O\+N\+T\+E\+XT@{X\+T\+S128\+\_\+\+C\+O\+N\+T\+E\+XT}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{X\+T\+S128\+\_\+\+C\+O\+N\+T\+E\+XT}{XTS128_CONTEXT}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct xts128\+\_\+context {\bf X\+T\+S128\+\_\+\+C\+O\+N\+T\+E\+XT}}\hypertarget{modes_8h_ad233eb07e4ab07fd32a8cf18e477dd71}{}\label{modes_8h_ad233eb07e4ab07fd32a8cf18e477dd71}
+
+
+\subsection{Function Documentation}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+cbc128\+\_\+decrypt@{C\+R\+Y\+P\+T\+O\+\_\+cbc128\+\_\+decrypt}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+cbc128\+\_\+decrypt@{C\+R\+Y\+P\+T\+O\+\_\+cbc128\+\_\+decrypt}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+cbc128\+\_\+decrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len, const void $\ast$key, unsigned char ivec[16], block128\+\_\+f block)}{CRYPTO_cbc128_decrypt(const unsigned char *in, unsigned char *out, size_t len, const void *key, unsigned char ivec[16], block128_f block)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+cbc128\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{const void $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}16\mbox{]}, }
+\item[{{\bf block128\+\_\+f}}]{block}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a009400dbb93db1cb23550cdb66eac5ad}{}\label{modes_8h_a009400dbb93db1cb23550cdb66eac5ad}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+cbc128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+cbc128\+\_\+encrypt}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+cbc128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+cbc128\+\_\+encrypt}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+cbc128\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len, const void $\ast$key, unsigned char ivec[16], block128\+\_\+f block)}{CRYPTO_cbc128_encrypt(const unsigned char *in, unsigned char *out, size_t len, const void *key, unsigned char ivec[16], block128_f block)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+cbc128\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{const void $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}16\mbox{]}, }
+\item[{{\bf block128\+\_\+f}}]{block}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a5cbe79f5b3a935a6e49ac72e3f3e4fb2}{}\label{modes_8h_a5cbe79f5b3a935a6e49ac72e3f3e4fb2}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+aad@{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+aad}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+aad@{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+aad}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+aad(\+C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, const unsigned char $\ast$aad, size\+\_\+t alen)}{CRYPTO_ccm128_aad(CCM128_CONTEXT *ctx, const unsigned char *aad, size_t alen)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+aad (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{aad, }
+\item[{size\+\_\+t}]{alen}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a63223bfff050bf85cf1f2170369321b0}{}\label{modes_8h_a63223bfff050bf85cf1f2170369321b0}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+decrypt@{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+decrypt}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+decrypt@{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+decrypt}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+decrypt(\+C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, const unsigned char $\ast$inp, unsigned char $\ast$out, size\+\_\+t len)}{CRYPTO_ccm128_decrypt(CCM128_CONTEXT *ctx, const unsigned char *inp, unsigned char *out, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{inp, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_ace9974c12c5fe3514a5fedd0d5368c91}{}\label{modes_8h_ace9974c12c5fe3514a5fedd0d5368c91}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+decrypt\+\_\+ccm64@{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+decrypt\+\_\+ccm64}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+decrypt\+\_\+ccm64@{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+decrypt\+\_\+ccm64}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+decrypt\+\_\+ccm64(\+C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, const unsigned char $\ast$inp, unsigned char $\ast$out, size\+\_\+t len, ccm128\+\_\+f stream)}{CRYPTO_ccm128_decrypt_ccm64(CCM128_CONTEXT *ctx, const unsigned char *inp, unsigned char *out, size_t len, ccm128_f stream)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+decrypt\+\_\+ccm64 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{inp, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{{\bf ccm128\+\_\+f}}]{stream}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a2c9a2ccd17de9383a4b6d66a7d682d32}{}\label{modes_8h_a2c9a2ccd17de9383a4b6d66a7d682d32}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+encrypt}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+encrypt}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+encrypt(\+C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, const unsigned char $\ast$inp, unsigned char $\ast$out, size\+\_\+t len)}{CRYPTO_ccm128_encrypt(CCM128_CONTEXT *ctx, const unsigned char *inp, unsigned char *out, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{inp, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a8f33d493c1a71fb89ba125fab5e5d2ea}{}\label{modes_8h_a8f33d493c1a71fb89ba125fab5e5d2ea}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+encrypt\+\_\+ccm64@{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+encrypt\+\_\+ccm64}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+encrypt\+\_\+ccm64@{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+encrypt\+\_\+ccm64}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+encrypt\+\_\+ccm64(\+C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, const unsigned char $\ast$inp, unsigned char $\ast$out, size\+\_\+t len, ccm128\+\_\+f stream)}{CRYPTO_ccm128_encrypt_ccm64(CCM128_CONTEXT *ctx, const unsigned char *inp, unsigned char *out, size_t len, ccm128_f stream)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+encrypt\+\_\+ccm64 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{inp, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{{\bf ccm128\+\_\+f}}]{stream}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a7d0d967f2e7e647114e368b9aefa8ee8}{}\label{modes_8h_a7d0d967f2e7e647114e368b9aefa8ee8}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+init@{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+init}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+init@{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+init}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+init(\+C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, unsigned int M, unsigned int L, void $\ast$key, block128\+\_\+f block)}{CRYPTO_ccm128_init(CCM128_CONTEXT *ctx, unsigned int M, unsigned int L, void *key, block128_f block)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{unsigned int}]{M, }
+\item[{unsigned int}]{L, }
+\item[{void $\ast$}]{key, }
+\item[{{\bf block128\+\_\+f}}]{block}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a3ddbc4bdd19aae3401864491151aa540}{}\label{modes_8h_a3ddbc4bdd19aae3401864491151aa540}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+setiv@{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+setiv}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+setiv@{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+setiv}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+setiv(\+C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, const unsigned char $\ast$nonce, size\+\_\+t nlen, size\+\_\+t mlen)}{CRYPTO_ccm128_setiv(CCM128_CONTEXT *ctx, const unsigned char *nonce, size_t nlen, size_t mlen)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+setiv (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{nonce, }
+\item[{size\+\_\+t}]{nlen, }
+\item[{size\+\_\+t}]{mlen}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_ad3346f6edb53cb6830375d6fdd6d52f7}{}\label{modes_8h_ad3346f6edb53cb6830375d6fdd6d52f7}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+tag@{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+tag}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+tag@{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+tag}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+tag(\+C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, unsigned char $\ast$tag, size\+\_\+t len)}{CRYPTO_ccm128_tag(CCM128_CONTEXT *ctx, unsigned char *tag, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t C\+R\+Y\+P\+T\+O\+\_\+ccm128\+\_\+tag (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{unsigned char $\ast$}]{tag, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_ae2a130dc00b30de17ea9e550864d8d54}{}\label{modes_8h_ae2a130dc00b30de17ea9e550864d8d54}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+1\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+1\+\_\+encrypt}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+1\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+1\+\_\+encrypt}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+1\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t bits, const void $\ast$key, unsigned char ivec[16], int $\ast$num, int enc, block128\+\_\+f block)}{CRYPTO_cfb128_1_encrypt(const unsigned char *in, unsigned char *out, size_t bits, const void *key, unsigned char ivec[16], int *num, int enc, block128_f block)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+1\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{bits, }
+\item[{const void $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}16\mbox{]}, }
+\item[{int $\ast$}]{num, }
+\item[{int}]{enc, }
+\item[{{\bf block128\+\_\+f}}]{block}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_aca08c600331f017ca56a250bf9f5d2ee}{}\label{modes_8h_aca08c600331f017ca56a250bf9f5d2ee}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+8\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+8\+\_\+encrypt}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+8\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+8\+\_\+encrypt}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+8\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t length, const void $\ast$key, unsigned char ivec[16], int $\ast$num, int enc, block128\+\_\+f block)}{CRYPTO_cfb128_8_encrypt(const unsigned char *in, unsigned char *out, size_t length, const void *key, unsigned char ivec[16], int *num, int enc, block128_f block)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+8\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{length, }
+\item[{const void $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}16\mbox{]}, }
+\item[{int $\ast$}]{num, }
+\item[{int}]{enc, }
+\item[{{\bf block128\+\_\+f}}]{block}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a355e4bb29e1947a73449857b4a126f1d}{}\label{modes_8h_a355e4bb29e1947a73449857b4a126f1d}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+encrypt}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+encrypt}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len, const void $\ast$key, unsigned char ivec[16], int $\ast$num, int enc, block128\+\_\+f block)}{CRYPTO_cfb128_encrypt(const unsigned char *in, unsigned char *out, size_t len, const void *key, unsigned char ivec[16], int *num, int enc, block128_f block)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+cfb128\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{const void $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}16\mbox{]}, }
+\item[{int $\ast$}]{num, }
+\item[{int}]{enc, }
+\item[{{\bf block128\+\_\+f}}]{block}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a5c982e56a8f27559f7e64364ef36c868}{}\label{modes_8h_a5c982e56a8f27559f7e64364ef36c868}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+ctr128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+ctr128\+\_\+encrypt}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+ctr128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+ctr128\+\_\+encrypt}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+ctr128\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len, const void $\ast$key, unsigned char ivec[16], unsigned char ecount\+\_\+buf[16], unsigned int $\ast$num, block128\+\_\+f block)}{CRYPTO_ctr128_encrypt(const unsigned char *in, unsigned char *out, size_t len, const void *key, unsigned char ivec[16], unsigned char ecount_buf[16], unsigned int *num, block128_f block)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+ctr128\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{const void $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}16\mbox{]}, }
+\item[{unsigned char}]{ecount\+\_\+buf\mbox{[}16\mbox{]}, }
+\item[{unsigned int $\ast$}]{num, }
+\item[{{\bf block128\+\_\+f}}]{block}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_af30a43dd23d0d25cc94a01f1a41f0746}{}\label{modes_8h_af30a43dd23d0d25cc94a01f1a41f0746}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+ctr128\+\_\+encrypt\+\_\+ctr32@{C\+R\+Y\+P\+T\+O\+\_\+ctr128\+\_\+encrypt\+\_\+ctr32}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+ctr128\+\_\+encrypt\+\_\+ctr32@{C\+R\+Y\+P\+T\+O\+\_\+ctr128\+\_\+encrypt\+\_\+ctr32}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+ctr128\+\_\+encrypt\+\_\+ctr32(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len, const void $\ast$key, unsigned char ivec[16], unsigned char ecount\+\_\+buf[16], unsigned int $\ast$num, ctr128\+\_\+f ctr)}{CRYPTO_ctr128_encrypt_ctr32(const unsigned char *in, unsigned char *out, size_t len, const void *key, unsigned char ivec[16], unsigned char ecount_buf[16], unsigned int *num, ctr128_f ctr)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+ctr128\+\_\+encrypt\+\_\+ctr32 (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{const void $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}16\mbox{]}, }
+\item[{unsigned char}]{ecount\+\_\+buf\mbox{[}16\mbox{]}, }
+\item[{unsigned int $\ast$}]{num, }
+\item[{{\bf ctr128\+\_\+f}}]{ctr}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a52c2dc3d1a797a15ad1a33be01e010ab}{}\label{modes_8h_a52c2dc3d1a797a15ad1a33be01e010ab}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+decrypt@{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+decrypt}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+decrypt@{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+decrypt}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+decrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len, const void $\ast$key, unsigned char ivec[16], cbc128\+\_\+f cbc)}{CRYPTO_cts128_decrypt(const unsigned char *in, unsigned char *out, size_t len, const void *key, unsigned char ivec[16], cbc128_f cbc)}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{const void $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}16\mbox{]}, }
+\item[{{\bf cbc128\+\_\+f}}]{cbc}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_aee42bf2d060845035b7eff0f884fd6a8}{}\label{modes_8h_aee42bf2d060845035b7eff0f884fd6a8}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+decrypt\+\_\+block@{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+decrypt\+\_\+block}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+decrypt\+\_\+block@{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+decrypt\+\_\+block}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+decrypt\+\_\+block(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len, const void $\ast$key, unsigned char ivec[16], block128\+\_\+f block)}{CRYPTO_cts128_decrypt_block(const unsigned char *in, unsigned char *out, size_t len, const void *key, unsigned char ivec[16], block128_f block)}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+decrypt\+\_\+block (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{const void $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}16\mbox{]}, }
+\item[{{\bf block128\+\_\+f}}]{block}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a1002021ed22fe1dd0f7d78fa7907a525}{}\label{modes_8h_a1002021ed22fe1dd0f7d78fa7907a525}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+encrypt}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+encrypt}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len, const void $\ast$key, unsigned char ivec[16], cbc128\+\_\+f cbc)}{CRYPTO_cts128_encrypt(const unsigned char *in, unsigned char *out, size_t len, const void *key, unsigned char ivec[16], cbc128_f cbc)}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{const void $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}16\mbox{]}, }
+\item[{{\bf cbc128\+\_\+f}}]{cbc}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_ae6348ad0b524fd00afff759c2a3c52cc}{}\label{modes_8h_ae6348ad0b524fd00afff759c2a3c52cc}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+encrypt\+\_\+block@{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+encrypt\+\_\+block}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+encrypt\+\_\+block@{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+encrypt\+\_\+block}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+encrypt\+\_\+block(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len, const void $\ast$key, unsigned char ivec[16], block128\+\_\+f block)}{CRYPTO_cts128_encrypt_block(const unsigned char *in, unsigned char *out, size_t len, const void *key, unsigned char ivec[16], block128_f block)}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t C\+R\+Y\+P\+T\+O\+\_\+cts128\+\_\+encrypt\+\_\+block (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{const void $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}16\mbox{]}, }
+\item[{{\bf block128\+\_\+f}}]{block}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a3e32a5c536863c9590e9225a918d364b}{}\label{modes_8h_a3e32a5c536863c9590e9225a918d364b}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+aad@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+aad}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+aad@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+aad}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+aad(\+G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, const unsigned char $\ast$aad, size\+\_\+t len)}{CRYPTO_gcm128_aad(GCM128_CONTEXT *ctx, const unsigned char *aad, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+aad (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{aad, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a3a3e9723bbfebd1d36b278815e226460}{}\label{modes_8h_a3a3e9723bbfebd1d36b278815e226460}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+decrypt@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+decrypt}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+decrypt@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+decrypt}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+decrypt(\+G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len)}{CRYPTO_gcm128_decrypt(GCM128_CONTEXT *ctx, const unsigned char *in, unsigned char *out, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_ac29699ec140758465503d86f7d1460cf}{}\label{modes_8h_ac29699ec140758465503d86f7d1460cf}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+decrypt\+\_\+ctr32@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+decrypt\+\_\+ctr32}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+decrypt\+\_\+ctr32@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+decrypt\+\_\+ctr32}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+decrypt\+\_\+ctr32(\+G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len, ctr128\+\_\+f stream)}{CRYPTO_gcm128_decrypt_ctr32(GCM128_CONTEXT *ctx, const unsigned char *in, unsigned char *out, size_t len, ctr128_f stream)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+decrypt\+\_\+ctr32 (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{{\bf ctr128\+\_\+f}}]{stream}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a3abd2326aa2402ca5afaeac5dba2df8e}{}\label{modes_8h_a3abd2326aa2402ca5afaeac5dba2df8e}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+encrypt}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+encrypt}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+encrypt(\+G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len)}{CRYPTO_gcm128_encrypt(GCM128_CONTEXT *ctx, const unsigned char *in, unsigned char *out, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a9779f2d0133e20bf5d6a2ff9833bd698}{}\label{modes_8h_a9779f2d0133e20bf5d6a2ff9833bd698}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+encrypt\+\_\+ctr32@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+encrypt\+\_\+ctr32}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+encrypt\+\_\+ctr32@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+encrypt\+\_\+ctr32}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+encrypt\+\_\+ctr32(\+G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len, ctr128\+\_\+f stream)}{CRYPTO_gcm128_encrypt_ctr32(GCM128_CONTEXT *ctx, const unsigned char *in, unsigned char *out, size_t len, ctr128_f stream)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+encrypt\+\_\+ctr32 (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{{\bf ctr128\+\_\+f}}]{stream}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a81916efacf50d25fbffb8c36afc8de11}{}\label{modes_8h_a81916efacf50d25fbffb8c36afc8de11}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+finish@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+finish}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+finish@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+finish}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+finish(\+G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, const unsigned char $\ast$tag, size\+\_\+t len)}{CRYPTO_gcm128_finish(GCM128_CONTEXT *ctx, const unsigned char *tag, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+finish (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{tag, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a8d5bac0494d173f96c5cb73790f1353d}{}\label{modes_8h_a8d5bac0494d173f96c5cb73790f1353d}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+init@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+init}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+init@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+init}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+init(\+G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, void $\ast$key, block128\+\_\+f block)}{CRYPTO_gcm128_init(GCM128_CONTEXT *ctx, void *key, block128_f block)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{void $\ast$}]{key, }
+\item[{{\bf block128\+\_\+f}}]{block}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a2119af4cceb3e52127662ff851df4f9f}{}\label{modes_8h_a2119af4cceb3e52127662ff851df4f9f}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+new@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+new}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+new@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+new}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+new(void $\ast$key, block128\+\_\+f block)}{CRYPTO_gcm128_new(void *key, block128_f block)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT}$\ast$ C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{key, }
+\item[{{\bf block128\+\_\+f}}]{block}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a48f9d5df65f104833881965e6dbe03d9}{}\label{modes_8h_a48f9d5df65f104833881965e6dbe03d9}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+release@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+release}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+release@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+release}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+release(\+G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx)}{CRYPTO_gcm128_release(GCM128_CONTEXT *ctx)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+release (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a811fe4518c95944c68547b6cf5c32f07}{}\label{modes_8h_a811fe4518c95944c68547b6cf5c32f07}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+setiv@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+setiv}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+setiv@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+setiv}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+setiv(\+G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, const unsigned char $\ast$iv, size\+\_\+t len)}{CRYPTO_gcm128_setiv(GCM128_CONTEXT *ctx, const unsigned char *iv, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+setiv (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{iv, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a0ebf35e4119a3d747eaae4ab5624be17}{}\label{modes_8h_a0ebf35e4119a3d747eaae4ab5624be17}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+tag@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+tag}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+tag@{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+tag}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+tag(\+G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, unsigned char $\ast$tag, size\+\_\+t len)}{CRYPTO_gcm128_tag(GCM128_CONTEXT *ctx, unsigned char *tag, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+gcm128\+\_\+tag (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+C\+M128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{unsigned char $\ast$}]{tag, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a995a320240beba7ff1cffb97567f15a2}{}\label{modes_8h_a995a320240beba7ff1cffb97567f15a2}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+decrypt@{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+decrypt}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+decrypt@{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+decrypt}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+decrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len, const void $\ast$key, unsigned char ivec[16], cbc128\+\_\+f cbc)}{CRYPTO_nistcts128_decrypt(const unsigned char *in, unsigned char *out, size_t len, const void *key, unsigned char ivec[16], cbc128_f cbc)}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{const void $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}16\mbox{]}, }
+\item[{{\bf cbc128\+\_\+f}}]{cbc}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a541156458b0b57b6f3ec115180b7a348}{}\label{modes_8h_a541156458b0b57b6f3ec115180b7a348}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+decrypt\+\_\+block@{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+decrypt\+\_\+block}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+decrypt\+\_\+block@{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+decrypt\+\_\+block}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+decrypt\+\_\+block(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len, const void $\ast$key, unsigned char ivec[16], block128\+\_\+f block)}{CRYPTO_nistcts128_decrypt_block(const unsigned char *in, unsigned char *out, size_t len, const void *key, unsigned char ivec[16], block128_f block)}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+decrypt\+\_\+block (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{const void $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}16\mbox{]}, }
+\item[{{\bf block128\+\_\+f}}]{block}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_aa8122dbed2b240fea20843ab391aee29}{}\label{modes_8h_aa8122dbed2b240fea20843ab391aee29}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+encrypt}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+encrypt}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len, const void $\ast$key, unsigned char ivec[16], cbc128\+\_\+f cbc)}{CRYPTO_nistcts128_encrypt(const unsigned char *in, unsigned char *out, size_t len, const void *key, unsigned char ivec[16], cbc128_f cbc)}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{const void $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}16\mbox{]}, }
+\item[{{\bf cbc128\+\_\+f}}]{cbc}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a3dbdc940a0b01185acd3ad3a95bef5c8}{}\label{modes_8h_a3dbdc940a0b01185acd3ad3a95bef5c8}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+encrypt\+\_\+block@{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+encrypt\+\_\+block}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+encrypt\+\_\+block@{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+encrypt\+\_\+block}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+encrypt\+\_\+block(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len, const void $\ast$key, unsigned char ivec[16], block128\+\_\+f block)}{CRYPTO_nistcts128_encrypt_block(const unsigned char *in, unsigned char *out, size_t len, const void *key, unsigned char ivec[16], block128_f block)}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t C\+R\+Y\+P\+T\+O\+\_\+nistcts128\+\_\+encrypt\+\_\+block (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{const void $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}16\mbox{]}, }
+\item[{{\bf block128\+\_\+f}}]{block}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_a060f48b9d4bfa421c2eae7c31144bede}{}\label{modes_8h_a060f48b9d4bfa421c2eae7c31144bede}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+ofb128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+ofb128\+\_\+encrypt}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+ofb128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+ofb128\+\_\+encrypt}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+ofb128\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t len, const void $\ast$key, unsigned char ivec[16], int $\ast$num, block128\+\_\+f block)}{CRYPTO_ofb128_encrypt(const unsigned char *in, unsigned char *out, size_t len, const void *key, unsigned char ivec[16], int *num, block128_f block)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+ofb128\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{const void $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}16\mbox{]}, }
+\item[{int $\ast$}]{num, }
+\item[{{\bf block128\+\_\+f}}]{block}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_ab90b380cc595d52baa19a00926dc8841}{}\label{modes_8h_ab90b380cc595d52baa19a00926dc8841}
+\index{modes.\+h@{modes.\+h}!C\+R\+Y\+P\+T\+O\+\_\+xts128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+xts128\+\_\+encrypt}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+xts128\+\_\+encrypt@{C\+R\+Y\+P\+T\+O\+\_\+xts128\+\_\+encrypt}!modes.\+h@{modes.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+xts128\+\_\+encrypt(const X\+T\+S128\+\_\+\+C\+O\+N\+T\+E\+X\+T $\ast$ctx, const unsigned char iv[16], const unsigned char $\ast$inp, unsigned char $\ast$out, size\+\_\+t len, int enc)}{CRYPTO_xts128_encrypt(const XTS128_CONTEXT *ctx, const unsigned char iv[16], const unsigned char *inp, unsigned char *out, size_t len, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+xts128\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const {\bf X\+T\+S128\+\_\+\+C\+O\+N\+T\+E\+XT} $\ast$}]{ctx, }
+\item[{const unsigned char}]{iv\mbox{[}16\mbox{]}, }
+\item[{const unsigned char $\ast$}]{inp, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{len, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{modes_8h_aadd968198321806f284908b57c1fc133}{}\label{modes_8h_aadd968198321806f284908b57c1fc133}

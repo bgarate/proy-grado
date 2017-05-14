@@ -1,0 +1,495 @@
+\hypertarget{utarray_8h}{}\section{src/hal/pb2/include/uthash/utarray.h File Reference}
+\label{utarray_8h}\index{src/hal/pb2/include/uthash/utarray.\+h@{src/hal/pb2/include/uthash/utarray.\+h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+Include dependency graph for utarray.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{utarray_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_u_t__icd}{U\+T\+\_\+icd}
+\item 
+struct \hyperlink{struct_u_t__array}{U\+T\+\_\+array}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{utarray_8h_a7442b085b33c91368adc20b36602bfc5}{U\+T\+A\+R\+R\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+ON}~1.\+9.\+9
+\item 
+\#define \hyperlink{utarray_8h_aba676506c7d380e55c095e6ee9d830fb}{\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+}~= \{sizeof(int),N\+U\+LL,N\+U\+LL,N\+U\+LL\}
+\item 
+\#define \hyperlink{utarray_8h_ab012ce14774deb45e0f0a576e216f41d}{oom}()~exit(-\/1)
+\item 
+\#define \hyperlink{utarray_8h_a876a07aa86d42369209660089779b3f1}{utarray\+\_\+init}(a,  \+\_\+icd)
+\item 
+\#define \hyperlink{utarray_8h_aebaf1379bb55304646512b6204e36d2f}{utarray\+\_\+done}(a)
+\item 
+\#define \hyperlink{utarray_8h_ae77eaae3983dd3489a48c3f64d8629e1}{utarray\+\_\+new}(a,  \+\_\+icd)
+\item 
+\#define \hyperlink{utarray_8h_a7e164b0f422d10addff80ea79005366a}{utarray\+\_\+free}(a)
+\item 
+\#define \hyperlink{utarray_8h_af768b94d8ef77ffec7c7ad008203198c}{utarray\+\_\+reserve}(a,  by)
+\item 
+\#define \hyperlink{utarray_8h_a1caf314c033f7bf7947144b97a8ce644}{utarray\+\_\+push\+\_\+back}(a,  p)
+\item 
+\#define \hyperlink{utarray_8h_ac78b30e680847649ecae5a35fa88ec0a}{utarray\+\_\+pop\+\_\+back}(a)
+\item 
+\#define \hyperlink{utarray_8h_a72878f0a60f8c4f8c124eefa0f22f9e0}{utarray\+\_\+extend\+\_\+back}(a)
+\item 
+\#define \hyperlink{utarray_8h_a6835764436d25a0010366f77134184df}{utarray\+\_\+len}(a)~((a)-\/$>$i)
+\item 
+\#define \hyperlink{utarray_8h_a407f1fb4f0a12596e30b5f3003bed5d0}{utarray\+\_\+eltptr}(a,  j)~(((j) $<$ (a)-\/$>$i) ? \hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\+\_\+utarray\+\_\+eltptr}(a,j) \+: N\+U\+LL)
+\item 
+\#define \hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\+\_\+utarray\+\_\+eltptr}(a,  j)~((char$\ast$)((a)-\/$>$d + ((a)-\/$>$icd.\+sz$\ast$(j) )))
+\item 
+\#define \hyperlink{utarray_8h_a8a52307523696a4902069e96af18a307}{utarray\+\_\+insert}(a,  p,  j)
+\item 
+\#define \hyperlink{utarray_8h_a0e9a9ff0b74876bae1f156fe105b9d40}{utarray\+\_\+inserta}(a,  w,  j)
+\item 
+\#define \hyperlink{utarray_8h_a99dc9103176f98abd0216bfe3034a77f}{utarray\+\_\+resize}(dst,  num)
+\item 
+\#define \hyperlink{utarray_8h_af7c2e07fcf8b550deb67c4b052700576}{utarray\+\_\+concat}(dst,  src)
+\item 
+\#define \hyperlink{utarray_8h_a68330a98218d6e59a0907fe69191d247}{utarray\+\_\+erase}(a,  pos,  \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+\#define \hyperlink{utarray_8h_a9377e4db75742fa2cec167ee180da76f}{utarray\+\_\+renew}(a,  \hyperlink{pem_8h_aae315ef0aa014d60426f50686217d264}{u})
+\item 
+\#define \hyperlink{utarray_8h_acdd108cb975da5f59839b98f9a26d417}{utarray\+\_\+clear}(a)
+\item 
+\#define \hyperlink{utarray_8h_abc68be76f03d375a20e883f343b510d7}{utarray\+\_\+sort}(a,  cmp)
+\item 
+\#define \hyperlink{utarray_8h_a032dd46022cad25668e1b256c9972eb9}{utarray\+\_\+find}(a,  v,  cmp)~bsearch((v),(a)-\/$>$d,(a)-\/$>$i,(a)-\/$>$icd.\+sz,cmp)
+\item 
+\#define \hyperlink{utarray_8h_af37fa0110f7e6af3a903d13273a09f4c}{utarray\+\_\+front}(a)~(((a)-\/$>$i) ? (\hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\+\_\+utarray\+\_\+eltptr}(a,0)) \+: N\+U\+LL)
+\item 
+\#define \hyperlink{utarray_8h_a0868b1bd40410cfc6964e2912325e64e}{utarray\+\_\+next}(a,  e)~(((e)==N\+U\+LL) ? \hyperlink{utarray_8h_af37fa0110f7e6af3a903d13273a09f4c}{utarray\+\_\+front}(a) \+: ((((a)-\/$>$i) $>$ (\hyperlink{utarray_8h_af29c01aad687e8674c0f3ca93fa74bff}{utarray\+\_\+eltidx}(a,e)+1)) ? \hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\+\_\+utarray\+\_\+eltptr}(a,\hyperlink{utarray_8h_af29c01aad687e8674c0f3ca93fa74bff}{utarray\+\_\+eltidx}(a,e)+1) \+: N\+U\+LL))
+\item 
+\#define \hyperlink{utarray_8h_af2f290ec356df31c649d99e6aa54587f}{utarray\+\_\+prev}(a,  e)~(((e)==N\+U\+LL) ? \hyperlink{utarray_8h_a3e39b1ab884d8275f1446a00935bc2e5}{utarray\+\_\+back}(a) \+: ((\hyperlink{utarray_8h_af29c01aad687e8674c0f3ca93fa74bff}{utarray\+\_\+eltidx}(a,e) $>$ 0) ? \hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\+\_\+utarray\+\_\+eltptr}(a,\hyperlink{utarray_8h_af29c01aad687e8674c0f3ca93fa74bff}{utarray\+\_\+eltidx}(a,e)-\/1) \+: N\+U\+LL))
+\item 
+\#define \hyperlink{utarray_8h_a3e39b1ab884d8275f1446a00935bc2e5}{utarray\+\_\+back}(a)~(((a)-\/$>$i) ? (\hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\+\_\+utarray\+\_\+eltptr}(a,(a)-\/$>$i-\/1)) \+: N\+U\+LL)
+\item 
+\#define \hyperlink{utarray_8h_af29c01aad687e8674c0f3ca93fa74bff}{utarray\+\_\+eltidx}(a,  e)~(((char$\ast$)(e) $>$= (char$\ast$)((a)-\/$>$d)) ? (((char$\ast$)(e) -\/ (char$\ast$)((a)-\/$>$d))/(size\+\_\+t)(a)-\/$>$icd.\+sz) \+: -\/1)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void( \hyperlink{utarray_8h_a39f9285348c36c106a8407584519727a}{ctor\+\_\+f}) (void $\ast$dst, const void $\ast$src)
+\item 
+typedef void( \hyperlink{utarray_8h_aba771aa4943a8d7f336e733cf105bfb4}{dtor\+\_\+f}) (void $\ast$elt)
+\item 
+typedef void( \hyperlink{utarray_8h_a4e45ad944e4b090436906f9e4650113c}{init\+\_\+f}) (void $\ast$elt)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{utarray.\+h@{utarray.\+h}!\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+@{\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+}}
+\index{\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+@{\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+}{_UNUSED_}}]{\setlength{\rightskip}{0pt plus 5cm}static const {\bf U\+T\+\_\+icd} ut\+\_\+ptr\+\_\+icd \+\_\+\+U\+N\+U\+S\+E\+D\+\_\+~= \{sizeof(int),N\+U\+LL,N\+U\+LL,N\+U\+LL\}}\hypertarget{utarray_8h_aba676506c7d380e55c095e6ee9d830fb}{}\label{utarray_8h_aba676506c7d380e55c095e6ee9d830fb}
+\index{utarray.\+h@{utarray.\+h}!\+\_\+utarray\+\_\+eltptr@{\+\_\+utarray\+\_\+eltptr}}
+\index{\+\_\+utarray\+\_\+eltptr@{\+\_\+utarray\+\_\+eltptr}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+utarray\+\_\+eltptr}{_utarray_eltptr}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+utarray\+\_\+eltptr(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{j}
+\end{DoxyParamCaption}
+)~((char$\ast$)((a)-\/$>$d + ((a)-\/$>$icd.\+sz$\ast$(j) )))}\hypertarget{utarray_8h_ab51376440f7face8aa2640db39347da8}{}\label{utarray_8h_ab51376440f7face8aa2640db39347da8}
+\index{utarray.\+h@{utarray.\+h}!oom@{oom}}
+\index{oom@{oom}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{oom}{oom}}]{\setlength{\rightskip}{0pt plus 5cm}\#define oom(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~exit(-\/1)}\hypertarget{utarray_8h_ab012ce14774deb45e0f0a576e216f41d}{}\label{utarray_8h_ab012ce14774deb45e0f0a576e216f41d}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+back@{utarray\+\_\+back}}
+\index{utarray\+\_\+back@{utarray\+\_\+back}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+back}{utarray_back}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+back(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~(((a)-\/$>$i) ? ({\bf \+\_\+utarray\+\_\+eltptr}(a,(a)-\/$>$i-\/1)) \+: N\+U\+LL)}\hypertarget{utarray_8h_a3e39b1ab884d8275f1446a00935bc2e5}{}\label{utarray_8h_a3e39b1ab884d8275f1446a00935bc2e5}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+clear@{utarray\+\_\+clear}}
+\index{utarray\+\_\+clear@{utarray\+\_\+clear}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+clear}{utarray_clear}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+clear(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{utarray_8h_acdd108cb975da5f59839b98f9a26d417}{}\label{utarray_8h_acdd108cb975da5f59839b98f9a26d417}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                 \(\backslash\)
+  if ((a)->i > 0) \{                                                           \(\backslash\)
+    if ((a)->icd.dtor) \{                                                      \(\backslash\)
+      size\_t \_ut\_i;                                                           \(\backslash\)
+      for(\_ut\_i=0; \_ut\_i < (a)->i; \_ut\_i++) \{                                 \(\backslash\)
+        (a)->icd.dtor(\hyperlink{utarray_8h_a407f1fb4f0a12596e30b5f3003bed5d0}{utarray\_eltptr}(a,\_ut\_i));                               \(\backslash\)
+      \}                                                                       \(\backslash\)
+    \}                                                                         \(\backslash\)
+    (a)->i = 0;                                                               \(\backslash\)
+  \}                                                                           \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+concat@{utarray\+\_\+concat}}
+\index{utarray\+\_\+concat@{utarray\+\_\+concat}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+concat}{utarray_concat}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+concat(
+\begin{DoxyParamCaption}
+\item[{}]{dst, }
+\item[{}]{src}
+\end{DoxyParamCaption}
+)}\hypertarget{utarray_8h_af7c2e07fcf8b550deb67c4b052700576}{}\label{utarray_8h_af7c2e07fcf8b550deb67c4b052700576}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                          \hyperlink{utarray_8h_a0e9a9ff0b74876bae1f156fe105b9d40}{\(\backslash\)}
+\hyperlink{utarray_8h_a0e9a9ff0b74876bae1f156fe105b9d40}{  utarray\_inserta}((dst),(src),\hyperlink{utarray_8h_a6835764436d25a0010366f77134184df}{utarray\_len}(dst));                              \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+done@{utarray\+\_\+done}}
+\index{utarray\+\_\+done@{utarray\+\_\+done}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+done}{utarray_done}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+done(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{utarray_8h_aebaf1379bb55304646512b6204e36d2f}{}\label{utarray_8h_aebaf1379bb55304646512b6204e36d2f}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                  \(\backslash\)
+  if ((a)->n) \{                                                               \(\backslash\)
+    if ((a)->icd.dtor) \{                                                      \(\backslash\)
+      size\_t \_ut\_i;                                                           \(\backslash\)
+      for(\_ut\_i=0; \_ut\_i < (a)->i; \_ut\_i++) \{                                 \(\backslash\)
+        (a)->icd.dtor(\hyperlink{utarray_8h_a407f1fb4f0a12596e30b5f3003bed5d0}{utarray\_eltptr}(a,\_ut\_i));                               \(\backslash\)
+      \}                                                                       \(\backslash\)
+    \}                                                                         \(\backslash\)
+    free((a)->d);                                                             \(\backslash\)
+  \}                                                                           \(\backslash\)
+  (a)->n=0;                                                                   \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+eltidx@{utarray\+\_\+eltidx}}
+\index{utarray\+\_\+eltidx@{utarray\+\_\+eltidx}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+eltidx}{utarray_eltidx}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+eltidx(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{e}
+\end{DoxyParamCaption}
+)~(((char$\ast$)(e) $>$= (char$\ast$)((a)-\/$>$d)) ? (((char$\ast$)(e) -\/ (char$\ast$)((a)-\/$>$d))/(size\+\_\+t)(a)-\/$>$icd.\+sz) \+: -\/1)}\hypertarget{utarray_8h_af29c01aad687e8674c0f3ca93fa74bff}{}\label{utarray_8h_af29c01aad687e8674c0f3ca93fa74bff}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+eltptr@{utarray\+\_\+eltptr}}
+\index{utarray\+\_\+eltptr@{utarray\+\_\+eltptr}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+eltptr}{utarray_eltptr}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+eltptr(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{j}
+\end{DoxyParamCaption}
+)~(((j) $<$ (a)-\/$>$i) ? {\bf \+\_\+utarray\+\_\+eltptr}(a,j) \+: N\+U\+LL)}\hypertarget{utarray_8h_a407f1fb4f0a12596e30b5f3003bed5d0}{}\label{utarray_8h_a407f1fb4f0a12596e30b5f3003bed5d0}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+erase@{utarray\+\_\+erase}}
+\index{utarray\+\_\+erase@{utarray\+\_\+erase}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+erase}{utarray_erase}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+erase(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{pos, }
+\item[{}]{{\bf len}}
+\end{DoxyParamCaption}
+)}\hypertarget{utarray_8h_a68330a98218d6e59a0907fe69191d247}{}\label{utarray_8h_a68330a98218d6e59a0907fe69191d247}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                         \(\backslash\)
+  if ((a)->icd.dtor) \{                                                        \(\backslash\)
+    size\_t \_ut\_i;                                                             \(\backslash\)
+    for(\_ut\_i=0; \_ut\_i < \hyperlink{asn1_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}; \_ut\_i++) \{                                      \(\backslash\)
+      (a)->icd.dtor(\hyperlink{utarray_8h_a407f1fb4f0a12596e30b5f3003bed5d0}{utarray\_eltptr}((a),pos+\_ut\_i));                           \(\backslash\)
+    \}                                                                         \(\backslash\)
+  \}                                                                           \(\backslash\)
+  if ((a)->i > (pos+len)) \{                                                   \(\backslash\)
+    memmove( \hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}((a),pos), \hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}((a),pos+len),         
+       \(\backslash\)
+            (((a)->i)-(pos+len))*((a)->icd.sz));                              \(\backslash\)
+  \}                                                                           \(\backslash\)
+  (a)->i -= (len);                                                            \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+extend\+\_\+back@{utarray\+\_\+extend\+\_\+back}}
+\index{utarray\+\_\+extend\+\_\+back@{utarray\+\_\+extend\+\_\+back}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+extend\+\_\+back}{utarray_extend_back}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+extend\+\_\+back(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{utarray_8h_a72878f0a60f8c4f8c124eefa0f22f9e0}{}\label{utarray_8h_a72878f0a60f8c4f8c124eefa0f22f9e0}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                           \hyperlink{utarray_8h_af768b94d8ef77ffec7c7ad008203198c}{\(\backslash\)}
+\hyperlink{utarray_8h_af768b94d8ef77ffec7c7ad008203198c}{  utarray\_reserve}(a,1);                                                       \(\backslash\)
+  if ((a)->icd.init) \{ (a)->icd.init(\hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}(a,(a)->i)); \}            \(\backslash\)
+  else \{ memset(\hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}(a,(a)->i),0,(a)->icd.sz); \}                   \(\backslash\)
+  (a)->i++;                                                                   \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+find@{utarray\+\_\+find}}
+\index{utarray\+\_\+find@{utarray\+\_\+find}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+find}{utarray_find}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+find(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{v, }
+\item[{}]{cmp}
+\end{DoxyParamCaption}
+)~bsearch((v),(a)-\/$>$d,(a)-\/$>$i,(a)-\/$>$icd.\+sz,cmp)}\hypertarget{utarray_8h_a032dd46022cad25668e1b256c9972eb9}{}\label{utarray_8h_a032dd46022cad25668e1b256c9972eb9}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+free@{utarray\+\_\+free}}
+\index{utarray\+\_\+free@{utarray\+\_\+free}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+free}{utarray_free}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+free(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{utarray_8h_a7e164b0f422d10addff80ea79005366a}{}\label{utarray_8h_a7e164b0f422d10addff80ea79005366a}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                  \hyperlink{utarray_8h_aebaf1379bb55304646512b6204e36d2f}{\(\backslash\)}
+\hyperlink{utarray_8h_aebaf1379bb55304646512b6204e36d2f}{  utarray\_done}(a);                                                            \(\backslash\)
+  free(a);                                                                    \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+front@{utarray\+\_\+front}}
+\index{utarray\+\_\+front@{utarray\+\_\+front}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+front}{utarray_front}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+front(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~(((a)-\/$>$i) ? ({\bf \+\_\+utarray\+\_\+eltptr}(a,0)) \+: N\+U\+LL)}\hypertarget{utarray_8h_af37fa0110f7e6af3a903d13273a09f4c}{}\label{utarray_8h_af37fa0110f7e6af3a903d13273a09f4c}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+init@{utarray\+\_\+init}}
+\index{utarray\+\_\+init@{utarray\+\_\+init}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+init}{utarray_init}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+init(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{\+\_\+icd}
+\end{DoxyParamCaption}
+)}\hypertarget{utarray_8h_a876a07aa86d42369209660089779b3f1}{}\label{utarray_8h_a876a07aa86d42369209660089779b3f1}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                             \(\backslash\)
+  memset(a,0,\textcolor{keyword}{sizeof}(\hyperlink{struct_u_t__array}{UT\_array}));                                               \(\backslash\)
+  (a)->icd=*\_icd;                                                             \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+insert@{utarray\+\_\+insert}}
+\index{utarray\+\_\+insert@{utarray\+\_\+insert}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+insert}{utarray_insert}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+insert(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{p, }
+\item[{}]{j}
+\end{DoxyParamCaption}
+)}\hypertarget{utarray_8h_a8a52307523696a4902069e96af18a307}{}\label{utarray_8h_a8a52307523696a4902069e96af18a307}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                            \(\backslash\)
+  if (j > (a)->i) \hyperlink{utarray_8h_a99dc9103176f98abd0216bfe3034a77f}{utarray\_resize}(a,j);                                        \(\backslash\)
+  \hyperlink{utarray_8h_af768b94d8ef77ffec7c7ad008203198c}{utarray\_reserve}(a,1);                                                       \(\backslash\)
+  if ((j) < (a)->i) \{                                                         \(\backslash\)
+    memmove( \hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}(a,(j)+1), \hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}(a,j),                 
+       \(\backslash\)
+             ((a)->i - (j))*((a)->icd.sz));                                   \(\backslash\)
+  \}                                                                           \(\backslash\)
+  if ((a)->icd.copy) \{ (a)->icd.copy( \hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}(a,j), p); \}             \(\backslash\)
+  else \{ memcpy(\hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}(a,j), p, (a)->icd.sz); \};                     \(\backslash\)
+  (a)->i++;                                                                   \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+inserta@{utarray\+\_\+inserta}}
+\index{utarray\+\_\+inserta@{utarray\+\_\+inserta}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+inserta}{utarray_inserta}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+inserta(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{w, }
+\item[{}]{j}
+\end{DoxyParamCaption}
+)}\hypertarget{utarray_8h_a0e9a9ff0b74876bae1f156fe105b9d40}{}\label{utarray_8h_a0e9a9ff0b74876bae1f156fe105b9d40}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                           \(\backslash\)
+  if (\hyperlink{utarray_8h_a6835764436d25a0010366f77134184df}{utarray\_len}(w) == 0) break;                                             \(\backslash\)
+  if (j > (a)->i) \hyperlink{utarray_8h_a99dc9103176f98abd0216bfe3034a77f}{utarray\_resize}(a,j);                                        \(\backslash\)
+  \hyperlink{utarray_8h_af768b94d8ef77ffec7c7ad008203198c}{utarray\_reserve}(a,\hyperlink{utarray_8h_a6835764436d25a0010366f77134184df}{utarray\_len}(w));                                          \(\backslash\)
+  if ((j) < (a)->i) \{                                                         \(\backslash\)
+    memmove(\hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}(a,(j)+\hyperlink{utarray_8h_a6835764436d25a0010366f77134184df}{utarray\_len}(w)),                            \(\backslash\)
+            \hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}(a,j),                                             \(\backslash\)
+            ((a)->i - (j))*((a)->icd.sz));                                    \(\backslash\)
+  \}                                                                           \(\backslash\)
+  if ((a)->icd.copy) \{                                                        \(\backslash\)
+    size\_t \_ut\_i;                                                             \(\backslash\)
+    for(\_ut\_i=0;\_ut\_i<(w)->i;\_ut\_i++) \{                                       \(\backslash\)
+      (a)->icd.copy(\hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}(a,j+\_ut\_i), \hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}(w,\_ut\_i));   
+       \(\backslash\)
+    \}                                                                         \(\backslash\)
+  \} \textcolor{keywordflow}{else} \{                                                                    \(\backslash\)
+    memcpy(\hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}(a,j), \hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}(w,0),                       
+       \(\backslash\)
+           \hyperlink{utarray_8h_a6835764436d25a0010366f77134184df}{utarray\_len}(w)*((a)->icd.sz));                                     \(\backslash\)
+  \}                                                                           \(\backslash\)
+  (a)->i += \hyperlink{utarray_8h_a6835764436d25a0010366f77134184df}{utarray\_len}(w);                                                   \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+len@{utarray\+\_\+len}}
+\index{utarray\+\_\+len@{utarray\+\_\+len}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+len}{utarray_len}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+len(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~((a)-\/$>$i)}\hypertarget{utarray_8h_a6835764436d25a0010366f77134184df}{}\label{utarray_8h_a6835764436d25a0010366f77134184df}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+new@{utarray\+\_\+new}}
+\index{utarray\+\_\+new@{utarray\+\_\+new}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+new}{utarray_new}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+new(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{\+\_\+icd}
+\end{DoxyParamCaption}
+)}\hypertarget{utarray_8h_ae77eaae3983dd3489a48c3f64d8629e1}{}\label{utarray_8h_ae77eaae3983dd3489a48c3f64d8629e1}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                              \(\backslash\)
+  a=(\hyperlink{struct_u_t__array}{UT\_array}*)malloc(\textcolor{keyword}{sizeof}(\hyperlink{struct_u_t__array}{UT\_array}));                                      
+      \hyperlink{utarray_8h_a876a07aa86d42369209660089779b3f1}{\(\backslash\)}
+\hyperlink{utarray_8h_a876a07aa86d42369209660089779b3f1}{  utarray\_init}(a,\_icd);                                                       \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+next@{utarray\+\_\+next}}
+\index{utarray\+\_\+next@{utarray\+\_\+next}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+next}{utarray_next}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+next(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{e}
+\end{DoxyParamCaption}
+)~(((e)==N\+U\+LL) ? {\bf utarray\+\_\+front}(a) \+: ((((a)-\/$>$i) $>$ ({\bf utarray\+\_\+eltidx}(a,e)+1)) ? {\bf \+\_\+utarray\+\_\+eltptr}(a,{\bf utarray\+\_\+eltidx}(a,e)+1) \+: N\+U\+LL))}\hypertarget{utarray_8h_a0868b1bd40410cfc6964e2912325e64e}{}\label{utarray_8h_a0868b1bd40410cfc6964e2912325e64e}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+pop\+\_\+back@{utarray\+\_\+pop\+\_\+back}}
+\index{utarray\+\_\+pop\+\_\+back@{utarray\+\_\+pop\+\_\+back}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+pop\+\_\+back}{utarray_pop_back}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+pop\+\_\+back(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{utarray_8h_ac78b30e680847649ecae5a35fa88ec0a}{}\label{utarray_8h_ac78b30e680847649ecae5a35fa88ec0a}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                              \(\backslash\)
+  if ((a)->icd.dtor) \{ (a)->icd.dtor( \hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}(a,--((a)->i))); \}       \(\backslash\)
+  else \{ (a)->i--; \}                                                          \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+prev@{utarray\+\_\+prev}}
+\index{utarray\+\_\+prev@{utarray\+\_\+prev}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+prev}{utarray_prev}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+prev(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{e}
+\end{DoxyParamCaption}
+)~(((e)==N\+U\+LL) ? {\bf utarray\+\_\+back}(a) \+: (({\bf utarray\+\_\+eltidx}(a,e) $>$ 0) ? {\bf \+\_\+utarray\+\_\+eltptr}(a,{\bf utarray\+\_\+eltidx}(a,e)-\/1) \+: N\+U\+LL))}\hypertarget{utarray_8h_af2f290ec356df31c649d99e6aa54587f}{}\label{utarray_8h_af2f290ec356df31c649d99e6aa54587f}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+push\+\_\+back@{utarray\+\_\+push\+\_\+back}}
+\index{utarray\+\_\+push\+\_\+back@{utarray\+\_\+push\+\_\+back}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+push\+\_\+back}{utarray_push_back}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+push\+\_\+back(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{utarray_8h_a1caf314c033f7bf7947144b97a8ce644}{}\label{utarray_8h_a1caf314c033f7bf7947144b97a8ce644}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                           \hyperlink{utarray_8h_af768b94d8ef77ffec7c7ad008203198c}{\(\backslash\)}
+\hyperlink{utarray_8h_af768b94d8ef77ffec7c7ad008203198c}{  utarray\_reserve}(a,1);                                                       \(\backslash\)
+  if ((a)->icd.copy) \{ (a)->icd.copy( \hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}(a,(a)->i++), p); \}      \(\backslash\)
+  else \{ memcpy(\hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}(a,(a)->i++), p, (a)->icd.sz); \};              \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+renew@{utarray\+\_\+renew}}
+\index{utarray\+\_\+renew@{utarray\+\_\+renew}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+renew}{utarray_renew}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+renew(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{{\bf u}}
+\end{DoxyParamCaption}
+)}\hypertarget{utarray_8h_a9377e4db75742fa2cec167ee180da76f}{}\label{utarray_8h_a9377e4db75742fa2cec167ee180da76f}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                               \(\backslash\)
+  if (a) \hyperlink{utarray_8h_acdd108cb975da5f59839b98f9a26d417}{utarray\_clear}(a); \(\backslash\)
+  else \hyperlink{utarray_8h_ae77eaae3983dd3489a48c3f64d8629e1}{utarray\_new}((a),(\hyperlink{pem_8h_aae315ef0aa014d60426f50686217d264}{u}));   \(\backslash\)
+\} while(0)
+\end{DoxyCode}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+reserve@{utarray\+\_\+reserve}}
+\index{utarray\+\_\+reserve@{utarray\+\_\+reserve}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+reserve}{utarray_reserve}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+reserve(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{by}
+\end{DoxyParamCaption}
+)}\hypertarget{utarray_8h_af768b94d8ef77ffec7c7ad008203198c}{}\label{utarray_8h_af768b94d8ef77ffec7c7ad008203198c}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                            \(\backslash\)
+  if (((a)->i+by) > ((a)->n)) \{                                               \(\backslash\)
+    while(((a)->i+by) > ((a)->n)) \{ (a)->n = ((a)->n ? (2*(a)->n) : 8); \}     \(\backslash\)
+    if ( ((a)->d=(\textcolor{keywordtype}{char}*)realloc((a)->d, (a)->n*(a)->icd.sz)) == NULL) \hyperlink{utarray_8h_ab012ce14774deb45e0f0a576e216f41d}{oom}();  \(\backslash\)
+  \}                                                                           \(\backslash\)
+\} while(0)
+\end{DoxyCode}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+resize@{utarray\+\_\+resize}}
+\index{utarray\+\_\+resize@{utarray\+\_\+resize}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+resize}{utarray_resize}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+resize(
+\begin{DoxyParamCaption}
+\item[{}]{dst, }
+\item[{}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{utarray_8h_a99dc9103176f98abd0216bfe3034a77f}{}\label{utarray_8h_a99dc9103176f98abd0216bfe3034a77f}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                          \(\backslash\)
+  size\_t \_ut\_i;                                                               \(\backslash\)
+  if (dst->i > (\textcolor{keywordtype}{size\_t})(num)) \{                                               \(\backslash\)
+    if ((dst)->icd.dtor) \{                                                    \(\backslash\)
+      for(\_ut\_i=num; \_ut\_i < dst->i; \_ut\_i++) \{                               \(\backslash\)
+        (dst)->icd.dtor(\hyperlink{utarray_8h_a407f1fb4f0a12596e30b5f3003bed5d0}{utarray\_eltptr}(dst,\_ut\_i));                           \(\backslash\)
+      \}                                                                       \(\backslash\)
+    \}                                                                         \(\backslash\)
+  \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dst->i < (\textcolor{keywordtype}{size\_t})(num)) \{                                        \hyperlink{utarray_8h_af768b94d8ef77ffec7c7ad008203198c}{\(\backslash\)}
+\hyperlink{utarray_8h_af768b94d8ef77ffec7c7ad008203198c}{    utarray\_reserve}(dst,num-dst->i);                                          \(\backslash\)
+    if ((dst)->icd.init) \{                                                    \(\backslash\)
+      for(\_ut\_i=dst->i; \_ut\_i < num; \_ut\_i++) \{                               \(\backslash\)
+        (dst)->icd.init(\hyperlink{utarray_8h_a407f1fb4f0a12596e30b5f3003bed5d0}{utarray\_eltptr}(dst,\_ut\_i));                           \(\backslash\)
+      \}                                                                       \(\backslash\)
+    \} \textcolor{keywordflow}{else} \{                                                                  \(\backslash\)
+      memset(\hyperlink{utarray_8h_ab51376440f7face8aa2640db39347da8}{\_utarray\_eltptr}(dst,dst->i),0,(dst)->icd.sz*(num-dst->i));       \(\backslash\)
+    \}                                                                         \(\backslash\)
+  \}                                                                           \(\backslash\)
+  dst->i = num;                                                               \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utarray.\+h@{utarray.\+h}!utarray\+\_\+sort@{utarray\+\_\+sort}}
+\index{utarray\+\_\+sort@{utarray\+\_\+sort}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{utarray\+\_\+sort}{utarray_sort}}]{\setlength{\rightskip}{0pt plus 5cm}\#define utarray\+\_\+sort(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{cmp}
+\end{DoxyParamCaption}
+)}\hypertarget{utarray_8h_abc68be76f03d375a20e883f343b510d7}{}\label{utarray_8h_abc68be76f03d375a20e883f343b510d7}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                              \(\backslash\)
+  qsort((a)->d, (a)->i, (a)->icd.sz, cmp);                                    \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{utarray.\+h@{utarray.\+h}!U\+T\+A\+R\+R\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+ON@{U\+T\+A\+R\+R\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\index{U\+T\+A\+R\+R\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+ON@{U\+T\+A\+R\+R\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+ON}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{U\+T\+A\+R\+R\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+ON}{UTARRAY_VERSION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+T\+A\+R\+R\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+ON~1.\+9.\+9}\hypertarget{utarray_8h_a7442b085b33c91368adc20b36602bfc5}{}\label{utarray_8h_a7442b085b33c91368adc20b36602bfc5}
+
+
+\subsection{Typedef Documentation}
+\index{utarray.\+h@{utarray.\+h}!ctor\+\_\+f@{ctor\+\_\+f}}
+\index{ctor\+\_\+f@{ctor\+\_\+f}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{ctor\+\_\+f}{ctor_f}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( ctor\+\_\+f) (void $\ast$dst, const void $\ast$src)}\hypertarget{utarray_8h_a39f9285348c36c106a8407584519727a}{}\label{utarray_8h_a39f9285348c36c106a8407584519727a}
+\index{utarray.\+h@{utarray.\+h}!dtor\+\_\+f@{dtor\+\_\+f}}
+\index{dtor\+\_\+f@{dtor\+\_\+f}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{dtor\+\_\+f}{dtor_f}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( dtor\+\_\+f) (void $\ast$elt)}\hypertarget{utarray_8h_aba771aa4943a8d7f336e733cf105bfb4}{}\label{utarray_8h_aba771aa4943a8d7f336e733cf105bfb4}
+\index{utarray.\+h@{utarray.\+h}!init\+\_\+f@{init\+\_\+f}}
+\index{init\+\_\+f@{init\+\_\+f}!utarray.\+h@{utarray.\+h}}
+\subsubsection[{\texorpdfstring{init\+\_\+f}{init_f}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( init\+\_\+f) (void $\ast$elt)}\hypertarget{utarray_8h_a4e45ad944e4b090436906f9e4650113c}{}\label{utarray_8h_a4e45ad944e4b090436906f9e4650113c}

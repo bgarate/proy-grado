@@ -1,0 +1,237 @@
+\hypertarget{_a_r_u_p_d_a_t_e_r___uploader_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Updater/\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.h File Reference}
+\label{_a_r_u_p_d_a_t_e_r___uploader_8h}\index{src/hal/pb2/include/lib\+A\+R\+Updater/\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{src/hal/pb2/include/lib\+A\+R\+Updater/\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}}
+
+
+lib\+A\+R\+Updater Uploader header file.  
+
+
+{\ttfamily \#include $<$lib\+A\+R\+Updater/\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Discovery.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+S\+A\+L/\+A\+R\+S\+A\+L\+\_\+\+M\+D5\+\_\+\+Manager.\+h$>$}\\*
+Include dependency graph for A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_u_p_d_a_t_e_r___uploader_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{_a_r_u_p_d_a_t_e_r___uploader_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{_a_r_u_p_d_a_t_e_r___uploader_8h_afa302a2e22a3a7962bf49721954c4cc1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+t} \hyperlink{_a_r_u_p_d_a_t_e_r___uploader_8h_afa302a2e22a3a7962bf49721954c4cc1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+t}
+\item 
+typedef void($\ast$ \hyperlink{_a_r_u_p_d_a_t_e_r___uploader_8h_a77daf2831cfc7db2cb32628ab4516fbf}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Progress\+Callback\+\_\+t}) (void $\ast$arg, float percent)
+\begin{DoxyCompactList}\small\item\em Progress callback of the upload. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{_a_r_u_p_d_a_t_e_r___uploader_8h_ac705293a0a2aa91bc696776f54884521}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Completion\+Callback\+\_\+t}) (void $\ast$arg, \hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} error)
+\begin{DoxyCompactList}\small\item\em Completion callback of the Plf upload. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_p_d_a_t_e_r___uploader_8h_ada50b51cbbdebca1013c31af1a029761}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+New} (\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, const char $\ast$const root\+Folder, struct mux\+\_\+ctx $\ast$mux, \hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$ftp\+Manager, \hyperlink{_a_r_s_a_l___m_d5___manager_8h_a016766b406c58d2b7f2d6eff4bbeb65c}{A\+R\+S\+A\+L\+\_\+\+M\+D5\+\_\+\+Manager\+\_\+t} $\ast$md5\+Manager, int is\+Android\+App, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___discovery_8h_a908972407587656a48194c58ccd65813}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} product, \hyperlink{_a_r_u_p_d_a_t_e_r___uploader_8h_a77daf2831cfc7db2cb32628ab4516fbf}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Progress\+Callback\+\_\+t} progress\+Callback, void $\ast$progress\+Arg, \hyperlink{_a_r_u_p_d_a_t_e_r___uploader_8h_ac705293a0a2aa91bc696776f54884521}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Completion\+Callback\+\_\+t} completion\+Callback, void $\ast$completion\+Arg)
+\begin{DoxyCompactList}\small\item\em Create an object to upload a plf file. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_p_d_a_t_e_r___uploader_8h_a38ed70475f933863b8b3eb3a64980c74}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Delete} (\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Delete the Uploader of the Manager. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_a_r_u_p_d_a_t_e_r___uploader_8h_a90e685de5b8f2e236ab733fcd7504247}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Thread\+Run} (void $\ast$manager\+Arg)
+\begin{DoxyCompactList}\small\item\em Upload a plf. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_p_d_a_t_e_r___uploader_8h_ab1e2e428deb7c0ceedf870adcbdb656b}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Cancel\+Thread} (\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em cancel the upload \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_u_p_d_a_t_e_r___uploader_8h_a11f9cdf1e0dea957c9b29886f3e1d117}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Thread\+Is\+Running} (\hyperlink{_a_r_u_p_d_a_t_e_r___manager_8h_aaf7225af9b1c1c8dea4ca048ff9d43f1}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, \hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Get if the thread is still running. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+lib\+A\+R\+Updater Uploader header file. 
+
+\begin{DoxyDate}{Date}
+23/05/2014 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:djavan.bertrand@parrot.com}{\tt djavan.\+bertrand@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Completion\+Callback\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Completion\+Callback\+\_\+t}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Completion\+Callback\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Completion\+Callback\+\_\+t}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Completion\+Callback\+\_\+t}{ARUPDATER_Uploader_PlfUploadCompletionCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Completion\+Callback\+\_\+t) (void $\ast$arg, {\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} error)}\hypertarget{_a_r_u_p_d_a_t_e_r___uploader_8h_ac705293a0a2aa91bc696776f54884521}{}\label{_a_r_u_p_d_a_t_e_r___uploader_8h_ac705293a0a2aa91bc696776f54884521}
+
+
+Completion callback of the Plf upload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The pointer of the user custom argument \\
+\hline
+{\em error} & The error status to indicate the plf upload status \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Check\+Locale\+Version\+Thread\+Run () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Progress\+Callback\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Progress\+Callback\+\_\+t}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Progress\+Callback\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Progress\+Callback\+\_\+t}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Progress\+Callback\+\_\+t}{ARUPDATER_Uploader_PlfUploadProgressCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Progress\+Callback\+\_\+t) (void $\ast$arg, float percent)}\hypertarget{_a_r_u_p_d_a_t_e_r___uploader_8h_a77daf2831cfc7db2cb32628ab4516fbf}{}\label{_a_r_u_p_d_a_t_e_r___uploader_8h_a77daf2831cfc7db2cb32628ab4516fbf}
+
+
+Progress callback of the upload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The pointer of the user custom argument \\
+\hline
+{\em percent} & The percent size of the plf file already uploaded \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+\+Check\+Locale\+Version\+Thread\+Run () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+t}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+t@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+t}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+t}{ARUPDATER_Uploader_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+t} {\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+t}}\hypertarget{_a_r_u_p_d_a_t_e_r___uploader_8h_afa302a2e22a3a7962bf49721954c4cc1}{}\label{_a_r_u_p_d_a_t_e_r___uploader_8h_afa302a2e22a3a7962bf49721954c4cc1}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Cancel\+Thread@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Cancel\+Thread}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Cancel\+Thread@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Cancel\+Thread}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Cancel\+Thread(\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARUPDATER_Uploader_CancelThread(ARUPDATER_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Cancel\+Thread (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___uploader_8h_ab1e2e428deb7c0ceedf870adcbdb656b}{}\label{_a_r_u_p_d_a_t_e_r___uploader_8h_ab1e2e428deb7c0ceedf870adcbdb656b}
+
+
+cancel the upload 
+
+Used to kill the thread calling \hyperlink{_a_r_u_p_d_a_t_e_r___uploader_8h_a90e685de5b8f2e236ab733fcd7504247}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Thread\+Run()}. 
+\begin{DoxyParams}{Parameters}
+{\em manager} & \+: pointer on the manager \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_p_d_a_t_e_r___uploader_8h_a90e685de5b8f2e236ab733fcd7504247}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Thread\+Run()} 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Delete@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Delete}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Delete@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Delete}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Delete(\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARUPDATER_Uploader_Delete(ARUPDATER_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___uploader_8h_a38ed70475f933863b8b3eb3a64980c74}{}\label{_a_r_u_p_d_a_t_e_r___uploader_8h_a38ed70475f933863b8b3eb3a64980c74}
+
+
+Delete the Uploader of the Manager. 
+
+\begin{DoxyWarning}{Warning}
+This function frees memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & a pointer on the A\+R\+Updater Manager \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_p_d_a_t_e_r___uploader_8h_ada50b51cbbdebca1013c31af1a029761}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+New@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+New}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+New@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+New}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+New(\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, const char $\ast$const root\+Folder, struct mux\+\_\+ctx $\ast$mux, A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$ftp\+Manager, A\+R\+S\+A\+L\+\_\+\+M\+D5\+\_\+\+Manager\+\_\+t $\ast$md5\+Manager, int is\+Android\+App, e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+C\+T product, A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Progress\+Callback\+\_\+t progress\+Callback, void $\ast$progress\+Arg, A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Completion\+Callback\+\_\+t completion\+Callback, void $\ast$completion\+Arg)}{ARUPDATER_Uploader_New(ARUPDATER_Manager_t *manager, const char *const rootFolder, struct mux_ctx *mux, ARUTILS_Manager_t *ftpManager, ARSAL_MD5_Manager_t *md5Manager, int isAndroidApp, eARDISCOVERY_PRODUCT product, ARUPDATER_Uploader_PlfUploadProgressCallback_t progressCallback, void *progressArg, ARUPDATER_Uploader_PlfUploadCompletionCallback_t completionCallback, void *completionArg)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{const char $\ast$const}]{root\+Folder, }
+\item[{struct mux\+\_\+ctx $\ast$}]{mux, }
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{ftp\+Manager, }
+\item[{{\bf A\+R\+S\+A\+L\+\_\+\+M\+D5\+\_\+\+Manager\+\_\+t} $\ast$}]{md5\+Manager, }
+\item[{int}]{is\+Android\+App, }
+\item[{{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT}}]{product, }
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Progress\+Callback\+\_\+t}}]{progress\+Callback, }
+\item[{void $\ast$}]{progress\+Arg, }
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Plf\+Upload\+Completion\+Callback\+\_\+t}}]{completion\+Callback, }
+\item[{void $\ast$}]{completion\+Arg}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___uploader_8h_ada50b51cbbdebca1013c31af1a029761}{}\label{_a_r_u_p_d_a_t_e_r___uploader_8h_ada50b51cbbdebca1013c31af1a029761}
+
+
+Create an object to upload a plf file. 
+
+\begin{DoxyWarning}{Warning}
+this function allocates memory 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Delete should be called 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager} & \+: pointer on the manager \\
+\hline
+\mbox{\tt in}  & {\em root\+Folder} & \+: root folder \\
+\hline
+\mbox{\tt in}  & {\em ftp\+Manager} & \+: ftp manager initialized with the correct network (wifi or ble) \\
+\hline
+\mbox{\tt in}  & {\em mux} & \+: optional mux context for usb network \\
+\hline
+\mbox{\tt in}  & {\em md5\+Manager} & \+: md5 manager \\
+\hline
+\mbox{\tt in}  & {\em product} & \+: enumerator on the enum \\
+\hline
+\mbox{\tt in}  & {\em progress\+Callback} & \+: callback which tells the progress of the download \\
+\hline
+ & {\em } & \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Thread\+Is\+Running@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Thread\+Is\+Running}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Thread\+Is\+Running@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Thread\+Is\+Running}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Thread\+Is\+Running(\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARUPDATER_Uploader_ThreadIsRunning(ARUPDATER_Manager_t *manager, eARUPDATER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Thread\+Is\+Running (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___uploader_8h_a11f9cdf1e0dea957c9b29886f3e1d117}{}\label{_a_r_u_p_d_a_t_e_r___uploader_8h_a11f9cdf1e0dea957c9b29886f3e1d117}
+
+
+Get if the thread is still running. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager} & \+: pointer on the manager \\
+\hline
+\mbox{\tt out}  & {\em error} & \+: pointer on an error. This can be null \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the upload thread is running, 0 otherwise 
+\end{DoxyReturn}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Thread\+Run@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Thread\+Run}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Thread\+Run@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Thread\+Run}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Thread\+Run(void $\ast$manager\+Arg)}{ARUPDATER_Uploader_ThreadRun(void *managerArg)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Thread\+Run (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{manager\+Arg}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___uploader_8h_a90e685de5b8f2e236ab733fcd7504247}{}\label{_a_r_u_p_d_a_t_e_r___uploader_8h_a90e685de5b8f2e236ab733fcd7504247}
+
+
+Upload a plf. 
+
+\begin{DoxyWarning}{Warning}
+This function must be called in its own thread. 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{_a_r_u_p_d_a_t_e_r___uploader_8h_ab1e2e428deb7c0ceedf870adcbdb656b}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Cancel\+Thread()} must be called after. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em manager\+Arg} & \+: thread data of type A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Manager\+\_\+t$\ast$ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+OK if operation went well, a description of the error otherwise 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_p_d_a_t_e_r___uploader_8h_ab1e2e428deb7c0ceedf870adcbdb656b}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Uploader\+\_\+\+Cancel\+Thread()} 
+\end{DoxySeeAlso}

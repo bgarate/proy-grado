@@ -1,0 +1,102 @@
+\hypertarget{structevp__cipher__ctx__st}{}\section{evp\+\_\+cipher\+\_\+ctx\+\_\+st Struct Reference}
+\label{structevp__cipher__ctx__st}\index{evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}}
+
+
+{\ttfamily \#include $<$evp.\+h$>$}
+
+
+
+Collaboration diagram for evp\+\_\+cipher\+\_\+ctx\+\_\+st\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{structevp__cipher__ctx__st__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{ossl__typ_8h_a54a8663a8084d45c31f2786156b55405}{E\+V\+P\+\_\+\+C\+I\+P\+H\+ER} $\ast$ \hyperlink{structevp__cipher__ctx__st_a54860c2aa28ae69bff3ada58996b4bc3}{cipher}
+\item 
+\hyperlink{ossl__typ_8h_abac45b251498719318e60ab8d6192510}{E\+N\+G\+I\+NE} $\ast$ \hyperlink{structevp__cipher__ctx__st_a1ab6fb61a2574c641f9498c8731715d3}{engine}
+\item 
+int \hyperlink{structevp__cipher__ctx__st_ad6b7abc39f975d0d324be0fef7665cc6}{encrypt}
+\item 
+int \hyperlink{structevp__cipher__ctx__st_abf70e5abfb9df24c74ad2297c7d53ae0}{buf\+\_\+len}
+\item 
+unsigned char \hyperlink{structevp__cipher__ctx__st_a9b3a75184a5f5d29fbccf925503fe302}{oiv} \mbox{[}\hyperlink{evp_8h_a80893bc2dbae769441bf6a042cf4069e}{E\+V\+P\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}
+\item 
+unsigned char \hyperlink{structevp__cipher__ctx__st_a1b3aa9f85ae704113077fb77b5c9db8b}{iv} \mbox{[}\hyperlink{evp_8h_a80893bc2dbae769441bf6a042cf4069e}{E\+V\+P\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}
+\item 
+unsigned char \hyperlink{structevp__cipher__ctx__st_a433caab60fc2419a460e4006b0734352}{buf} \mbox{[}\hyperlink{evp_8h_a64ccdeff3fee6041507240b227ef3646}{E\+V\+P\+\_\+\+M\+A\+X\+\_\+\+B\+L\+O\+C\+K\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}
+\item 
+int \hyperlink{structevp__cipher__ctx__st_ae09b6c40179528583d8d7b3cc623bd87}{num}
+\item 
+void $\ast$ \hyperlink{structevp__cipher__ctx__st_a00e9113f48a52bc9b1b95cc01a2560fa}{app\+\_\+data}
+\item 
+int \hyperlink{structevp__cipher__ctx__st_a61064bef0c7565f3509f8d48f253637d}{key\+\_\+len}
+\item 
+unsigned long \hyperlink{structevp__cipher__ctx__st_acc3a9b3a3e5a7ca498e3f5817ffc533f}{flags}
+\item 
+void $\ast$ \hyperlink{structevp__cipher__ctx__st_a9f5ecc2a2fb070546367e44efc1d2ce8}{cipher\+\_\+data}
+\item 
+int \hyperlink{structevp__cipher__ctx__st_a3cc687900b93b8cc130b52b0d5d9a836}{final\+\_\+used}
+\item 
+int \hyperlink{structevp__cipher__ctx__st_aaa51b6dbde049f6b51227aab31a9c21d}{block\+\_\+mask}
+\item 
+unsigned char \hyperlink{structevp__cipher__ctx__st_afe49879d0b4707382a3477ebb4eda55b}{final} \mbox{[}\hyperlink{evp_8h_a64ccdeff3fee6041507240b227ef3646}{E\+V\+P\+\_\+\+M\+A\+X\+\_\+\+B\+L\+O\+C\+K\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}!app\+\_\+data@{app\+\_\+data}}
+\index{app\+\_\+data@{app\+\_\+data}!evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{app\+\_\+data}{app_data}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ evp\+\_\+cipher\+\_\+ctx\+\_\+st\+::app\+\_\+data}\hypertarget{structevp__cipher__ctx__st_a00e9113f48a52bc9b1b95cc01a2560fa}{}\label{structevp__cipher__ctx__st_a00e9113f48a52bc9b1b95cc01a2560fa}
+\index{evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}!block\+\_\+mask@{block\+\_\+mask}}
+\index{block\+\_\+mask@{block\+\_\+mask}!evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{block\+\_\+mask}{block_mask}}]{\setlength{\rightskip}{0pt plus 5cm}int evp\+\_\+cipher\+\_\+ctx\+\_\+st\+::block\+\_\+mask}\hypertarget{structevp__cipher__ctx__st_aaa51b6dbde049f6b51227aab31a9c21d}{}\label{structevp__cipher__ctx__st_aaa51b6dbde049f6b51227aab31a9c21d}
+\index{evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}!buf@{buf}}
+\index{buf@{buf}!evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{buf}{buf}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char evp\+\_\+cipher\+\_\+ctx\+\_\+st\+::buf\mbox{[}{\bf E\+V\+P\+\_\+\+M\+A\+X\+\_\+\+B\+L\+O\+C\+K\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}}\hypertarget{structevp__cipher__ctx__st_a433caab60fc2419a460e4006b0734352}{}\label{structevp__cipher__ctx__st_a433caab60fc2419a460e4006b0734352}
+\index{evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}!buf\+\_\+len@{buf\+\_\+len}}
+\index{buf\+\_\+len@{buf\+\_\+len}!evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{buf\+\_\+len}{buf_len}}]{\setlength{\rightskip}{0pt plus 5cm}int evp\+\_\+cipher\+\_\+ctx\+\_\+st\+::buf\+\_\+len}\hypertarget{structevp__cipher__ctx__st_abf70e5abfb9df24c74ad2297c7d53ae0}{}\label{structevp__cipher__ctx__st_abf70e5abfb9df24c74ad2297c7d53ae0}
+\index{evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}!cipher@{cipher}}
+\index{cipher@{cipher}!evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{cipher}{cipher}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf E\+V\+P\+\_\+\+C\+I\+P\+H\+ER}$\ast$ evp\+\_\+cipher\+\_\+ctx\+\_\+st\+::cipher}\hypertarget{structevp__cipher__ctx__st_a54860c2aa28ae69bff3ada58996b4bc3}{}\label{structevp__cipher__ctx__st_a54860c2aa28ae69bff3ada58996b4bc3}
+\index{evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}!cipher\+\_\+data@{cipher\+\_\+data}}
+\index{cipher\+\_\+data@{cipher\+\_\+data}!evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{cipher\+\_\+data}{cipher_data}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ evp\+\_\+cipher\+\_\+ctx\+\_\+st\+::cipher\+\_\+data}\hypertarget{structevp__cipher__ctx__st_a9f5ecc2a2fb070546367e44efc1d2ce8}{}\label{structevp__cipher__ctx__st_a9f5ecc2a2fb070546367e44efc1d2ce8}
+\index{evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{encrypt}{encrypt}}]{\setlength{\rightskip}{0pt plus 5cm}int evp\+\_\+cipher\+\_\+ctx\+\_\+st\+::encrypt}\hypertarget{structevp__cipher__ctx__st_ad6b7abc39f975d0d324be0fef7665cc6}{}\label{structevp__cipher__ctx__st_ad6b7abc39f975d0d324be0fef7665cc6}
+\index{evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}!engine@{engine}}
+\index{engine@{engine}!evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{engine}{engine}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+N\+G\+I\+NE}$\ast$ evp\+\_\+cipher\+\_\+ctx\+\_\+st\+::engine}\hypertarget{structevp__cipher__ctx__st_a1ab6fb61a2574c641f9498c8731715d3}{}\label{structevp__cipher__ctx__st_a1ab6fb61a2574c641f9498c8731715d3}
+\index{evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}!final@{final}}
+\index{final@{final}!evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{final}{final}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char evp\+\_\+cipher\+\_\+ctx\+\_\+st\+::final\mbox{[}{\bf E\+V\+P\+\_\+\+M\+A\+X\+\_\+\+B\+L\+O\+C\+K\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}}\hypertarget{structevp__cipher__ctx__st_afe49879d0b4707382a3477ebb4eda55b}{}\label{structevp__cipher__ctx__st_afe49879d0b4707382a3477ebb4eda55b}
+\index{evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}!final\+\_\+used@{final\+\_\+used}}
+\index{final\+\_\+used@{final\+\_\+used}!evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{final\+\_\+used}{final_used}}]{\setlength{\rightskip}{0pt plus 5cm}int evp\+\_\+cipher\+\_\+ctx\+\_\+st\+::final\+\_\+used}\hypertarget{structevp__cipher__ctx__st_a3cc687900b93b8cc130b52b0d5d9a836}{}\label{structevp__cipher__ctx__st_a3cc687900b93b8cc130b52b0d5d9a836}
+\index{evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}!flags@{flags}}
+\index{flags@{flags}!evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{flags}{flags}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long evp\+\_\+cipher\+\_\+ctx\+\_\+st\+::flags}\hypertarget{structevp__cipher__ctx__st_acc3a9b3a3e5a7ca498e3f5817ffc533f}{}\label{structevp__cipher__ctx__st_acc3a9b3a3e5a7ca498e3f5817ffc533f}
+\index{evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}!iv@{iv}}
+\index{iv@{iv}!evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{iv}{iv}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char evp\+\_\+cipher\+\_\+ctx\+\_\+st\+::iv\mbox{[}{\bf E\+V\+P\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}}\hypertarget{structevp__cipher__ctx__st_a1b3aa9f85ae704113077fb77b5c9db8b}{}\label{structevp__cipher__ctx__st_a1b3aa9f85ae704113077fb77b5c9db8b}
+\index{evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}!key\+\_\+len@{key\+\_\+len}}
+\index{key\+\_\+len@{key\+\_\+len}!evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{key\+\_\+len}{key_len}}]{\setlength{\rightskip}{0pt plus 5cm}int evp\+\_\+cipher\+\_\+ctx\+\_\+st\+::key\+\_\+len}\hypertarget{structevp__cipher__ctx__st_a61064bef0c7565f3509f8d48f253637d}{}\label{structevp__cipher__ctx__st_a61064bef0c7565f3509f8d48f253637d}
+\index{evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}!num@{num}}
+\index{num@{num}!evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{num}{num}}]{\setlength{\rightskip}{0pt plus 5cm}int evp\+\_\+cipher\+\_\+ctx\+\_\+st\+::num}\hypertarget{structevp__cipher__ctx__st_ae09b6c40179528583d8d7b3cc623bd87}{}\label{structevp__cipher__ctx__st_ae09b6c40179528583d8d7b3cc623bd87}
+\index{evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}!oiv@{oiv}}
+\index{oiv@{oiv}!evp\+\_\+cipher\+\_\+ctx\+\_\+st@{evp\+\_\+cipher\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{oiv}{oiv}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char evp\+\_\+cipher\+\_\+ctx\+\_\+st\+::oiv\mbox{[}{\bf E\+V\+P\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}}\hypertarget{structevp__cipher__ctx__st_a9b3a75184a5f5d29fbccf925503fe302}{}\label{structevp__cipher__ctx__st_a9b3a75184a5f5d29fbccf925503fe302}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/openssl/\hyperlink{evp_8h}{evp.\+h}\end{DoxyCompactItemize}

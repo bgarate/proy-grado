@@ -1,0 +1,52 @@
+\hypertarget{structpkcs7__recip__info__st}{}\section{pkcs7\+\_\+recip\+\_\+info\+\_\+st Struct Reference}
+\label{structpkcs7__recip__info__st}\index{pkcs7\+\_\+recip\+\_\+info\+\_\+st@{pkcs7\+\_\+recip\+\_\+info\+\_\+st}}
+
+
+{\ttfamily \#include $<$pkcs7.\+h$>$}
+
+
+
+Collaboration diagram for pkcs7\+\_\+recip\+\_\+info\+\_\+st\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structpkcs7__recip__info__st__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ossl__typ_8h_af4335399bf9774cb410a5e93de65998b}{A\+S\+N1\+\_\+\+I\+N\+T\+E\+G\+ER} $\ast$ \hyperlink{structpkcs7__recip__info__st_a2dab371fc11bb2b2a31c8d6ae805b7d4}{version}
+\item 
+\hyperlink{pkcs7_8h_a3f5400dcd95708494b81eaae75743fcf}{P\+K\+C\+S7\+\_\+\+I\+S\+S\+U\+E\+R\+\_\+\+A\+N\+D\+\_\+\+S\+E\+R\+I\+AL} $\ast$ \hyperlink{structpkcs7__recip__info__st_a518df74b0610022385c23e30d659c003}{issuer\+\_\+and\+\_\+serial}
+\item 
+\hyperlink{ossl__typ_8h_aa2b6185e6254f36f709cd6577fb5022e}{X509\+\_\+\+A\+L\+G\+OR} $\ast$ \hyperlink{structpkcs7__recip__info__st_ad337ba9cf15d47888dfff734116dbed5}{key\+\_\+enc\+\_\+algor}
+\item 
+\hyperlink{ossl__typ_8h_afbd05e94e0f0430a2b729473efec88c1}{A\+S\+N1\+\_\+\+O\+C\+T\+E\+T\+\_\+\+S\+T\+R\+I\+NG} $\ast$ \hyperlink{structpkcs7__recip__info__st_a1dd5082129a2141e6a6ea4accc3ec700}{enc\+\_\+key}
+\item 
+\hyperlink{ossl__typ_8h_a4f666bde6518f95deb3050c54b408416}{X509} $\ast$ \hyperlink{structpkcs7__recip__info__st_a6be787ca74a954b3bb37d84d46aa9418}{cert}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{pkcs7\+\_\+recip\+\_\+info\+\_\+st@{pkcs7\+\_\+recip\+\_\+info\+\_\+st}!cert@{cert}}
+\index{cert@{cert}!pkcs7\+\_\+recip\+\_\+info\+\_\+st@{pkcs7\+\_\+recip\+\_\+info\+\_\+st}}
+\subsubsection[{\texorpdfstring{cert}{cert}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X509}$\ast$ pkcs7\+\_\+recip\+\_\+info\+\_\+st\+::cert}\hypertarget{structpkcs7__recip__info__st_a6be787ca74a954b3bb37d84d46aa9418}{}\label{structpkcs7__recip__info__st_a6be787ca74a954b3bb37d84d46aa9418}
+\index{pkcs7\+\_\+recip\+\_\+info\+\_\+st@{pkcs7\+\_\+recip\+\_\+info\+\_\+st}!enc\+\_\+key@{enc\+\_\+key}}
+\index{enc\+\_\+key@{enc\+\_\+key}!pkcs7\+\_\+recip\+\_\+info\+\_\+st@{pkcs7\+\_\+recip\+\_\+info\+\_\+st}}
+\subsubsection[{\texorpdfstring{enc\+\_\+key}{enc_key}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+S\+N1\+\_\+\+O\+C\+T\+E\+T\+\_\+\+S\+T\+R\+I\+NG}$\ast$ pkcs7\+\_\+recip\+\_\+info\+\_\+st\+::enc\+\_\+key}\hypertarget{structpkcs7__recip__info__st_a1dd5082129a2141e6a6ea4accc3ec700}{}\label{structpkcs7__recip__info__st_a1dd5082129a2141e6a6ea4accc3ec700}
+\index{pkcs7\+\_\+recip\+\_\+info\+\_\+st@{pkcs7\+\_\+recip\+\_\+info\+\_\+st}!issuer\+\_\+and\+\_\+serial@{issuer\+\_\+and\+\_\+serial}}
+\index{issuer\+\_\+and\+\_\+serial@{issuer\+\_\+and\+\_\+serial}!pkcs7\+\_\+recip\+\_\+info\+\_\+st@{pkcs7\+\_\+recip\+\_\+info\+\_\+st}}
+\subsubsection[{\texorpdfstring{issuer\+\_\+and\+\_\+serial}{issuer_and_serial}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+K\+C\+S7\+\_\+\+I\+S\+S\+U\+E\+R\+\_\+\+A\+N\+D\+\_\+\+S\+E\+R\+I\+AL}$\ast$ pkcs7\+\_\+recip\+\_\+info\+\_\+st\+::issuer\+\_\+and\+\_\+serial}\hypertarget{structpkcs7__recip__info__st_a518df74b0610022385c23e30d659c003}{}\label{structpkcs7__recip__info__st_a518df74b0610022385c23e30d659c003}
+\index{pkcs7\+\_\+recip\+\_\+info\+\_\+st@{pkcs7\+\_\+recip\+\_\+info\+\_\+st}!key\+\_\+enc\+\_\+algor@{key\+\_\+enc\+\_\+algor}}
+\index{key\+\_\+enc\+\_\+algor@{key\+\_\+enc\+\_\+algor}!pkcs7\+\_\+recip\+\_\+info\+\_\+st@{pkcs7\+\_\+recip\+\_\+info\+\_\+st}}
+\subsubsection[{\texorpdfstring{key\+\_\+enc\+\_\+algor}{key_enc_algor}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X509\+\_\+\+A\+L\+G\+OR}$\ast$ pkcs7\+\_\+recip\+\_\+info\+\_\+st\+::key\+\_\+enc\+\_\+algor}\hypertarget{structpkcs7__recip__info__st_ad337ba9cf15d47888dfff734116dbed5}{}\label{structpkcs7__recip__info__st_ad337ba9cf15d47888dfff734116dbed5}
+\index{pkcs7\+\_\+recip\+\_\+info\+\_\+st@{pkcs7\+\_\+recip\+\_\+info\+\_\+st}!version@{version}}
+\index{version@{version}!pkcs7\+\_\+recip\+\_\+info\+\_\+st@{pkcs7\+\_\+recip\+\_\+info\+\_\+st}}
+\subsubsection[{\texorpdfstring{version}{version}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+S\+N1\+\_\+\+I\+N\+T\+E\+G\+ER}$\ast$ pkcs7\+\_\+recip\+\_\+info\+\_\+st\+::version}\hypertarget{structpkcs7__recip__info__st_a2dab371fc11bb2b2a31c8d6ae805b7d4}{}\label{structpkcs7__recip__info__st_a2dab371fc11bb2b2a31c8d6ae805b7d4}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/openssl/\hyperlink{pkcs7_8h}{pkcs7.\+h}\end{DoxyCompactItemize}

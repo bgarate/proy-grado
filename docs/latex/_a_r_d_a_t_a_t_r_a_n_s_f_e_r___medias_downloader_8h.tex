@@ -1,0 +1,570 @@
+\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Data\+Transfer/\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.h File Reference}
+\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h}\index{src/hal/pb2/include/lib\+A\+R\+Data\+Transfer/\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{src/hal/pb2/include/lib\+A\+R\+Data\+Transfer/\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+
+
+lib\+A\+R\+Data\+Transfer Medias\+Downloader header file.  
+
+
+{\ttfamily \#include $<$lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Discovery.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Utils/\+A\+R\+Utils.\+h$>$}\\*
+Include dependency graph for A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_r_d_a_t_a_t_r_a_n_s_f_e_r___media__t}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Media structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_ade36aec8d3ded63b850e106cb3dc8276}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}~128
+\begin{DoxyCompactList}\small\item\em Defines the media name size in characters. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a7a748c32e1f9345c856d5a6f9ecf7313}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE}~256
+\begin{DoxyCompactList}\small\item\em Defines the media path size in characters. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_ae8933462260ae9d0e7e2717602e246e5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE}~32
+\begin{DoxyCompactList}\small\item\em Defines the media date size in characters. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_adb99398df2fc72007ddd78a1a2f9f8ed}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE}~33
+\begin{DoxyCompactList}\small\item\em Defines the media U\+U\+ID size in characters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_abc76d7aaac2a8818328682a7483e6d40}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Available\+Media\+Callback\+\_\+t}) (void $\ast$arg, \hyperlink{struct_a_r_d_a_t_a_t_r_a_n_s_f_e_r___media__t}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} $\ast$media, int index)
+\begin{DoxyCompactList}\small\item\em Available media callback called for each media found. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a9a3801508e1e9824bc2a0cadded6fb6e}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Progress\+Callback\+\_\+t}) (void $\ast$arg, \hyperlink{struct_a_r_d_a_t_a_t_r_a_n_s_f_e_r___media__t}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} $\ast$media, float percent)
+\begin{DoxyCompactList}\small\item\em Progress callback of the Media download. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a3f98e4c4c8b4d06fba8ebc982344343e}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Completion\+Callback\+\_\+t}) (void $\ast$arg, \hyperlink{struct_a_r_d_a_t_a_t_r_a_n_s_f_e_r___media__t}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} $\ast$media, \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} error)
+\begin{DoxyCompactList}\small\item\em Completion callback of the Media download. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a5326fb34fcdc159dad2f44f6470157b5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media\+Callback\+\_\+t}) (void $\ast$arg, \hyperlink{struct_a_r_d_a_t_a_t_r_a_n_s_f_e_r___media__t}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} $\ast$media, \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} error)
+\begin{DoxyCompactList}\small\item\em Completion callback of the Media delete. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a24ab91c8b9862a2b44da535ad864f0b7}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+New} (\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___manager_8h_a9f306b0ac4427eaa316cabfa653cc6f5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, \hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$ftp\+List\+Manager, \hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$ftp\+Queue\+Manager, const char $\ast$remote\+Directory, const char $\ast$local\+Directory)
+\begin{DoxyCompactList}\small\item\em Create a new A\+R\+Data\+Transfer Medias\+Downloader. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_aa36e7a3c3c0c9a255b503f9fcc971bc1}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete} (\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___manager_8h_a9f306b0ac4427eaa316cabfa653cc6f5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Delete an A\+R\+Data\+Transfer Medias\+Downloader. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a12af6af2f9028edfc2d8aef7ec2c69d1}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Sync} (\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___manager_8h_a9f306b0ac4427eaa316cabfa653cc6f5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, int with\+Thumbnail, \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$result)
+\begin{DoxyCompactList}\small\item\em Get the medias count available form the Device. \end{DoxyCompactList}\item 
+\hyperlink{struct_a_r_d_a_t_a_t_r_a_n_s_f_e_r___media__t}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} $\ast$ \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_af7532aee2b4345c93b5dcccd6c46871b}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Media\+At\+Index} (\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___manager_8h_a9f306b0ac4427eaa316cabfa653cc6f5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, int index, \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$result)
+\begin{DoxyCompactList}\small\item\em Get the media form the the medias list at the given index. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_aedb4024f4c3cb6c099f3f9e78992f160}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Async} (\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___manager_8h_a9f306b0ac4427eaa316cabfa653cc6f5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_abc76d7aaac2a8818328682a7483e6d40}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Available\+Media\+Callback\+\_\+t} available\+Media\+Callback, void $\ast$available\+Media\+Arg)
+\begin{DoxyCompactList}\small\item\em Get the medias list available form the Device. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_aef6de6bdad0a0926347c0539180bf7bb}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Cancel\+Get\+Available\+Medias} (\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___manager_8h_a9f306b0ac4427eaa316cabfa653cc6f5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Send a cancel to the get media list function. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a5a44aca054c024f2af2f5f72b6790429}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Reset\+Get\+Available\+Medias} (\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___manager_8h_a9f306b0ac4427eaa316cabfa653cc6f5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Send a reset to the get media list function. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a6ef0a9ff5f1adced0d991eed7f3fd82c}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media} (\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___manager_8h_a9f306b0ac4427eaa316cabfa653cc6f5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, \hyperlink{struct_a_r_d_a_t_a_t_r_a_n_s_f_e_r___media__t}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} $\ast$media, \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a5326fb34fcdc159dad2f44f6470157b5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media\+Callback\+\_\+t} delete\+Media\+Call\+Back, void $\ast$delete\+Media\+Arg)
+\begin{DoxyCompactList}\small\item\em Delete the media form the Device. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a4ed7b6d909be0863794c807ddbee909c}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Add\+Media\+To\+Queue} (\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___manager_8h_a9f306b0ac4427eaa316cabfa653cc6f5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, \hyperlink{struct_a_r_d_a_t_a_t_r_a_n_s_f_e_r___media__t}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} $\ast$media, \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a9a3801508e1e9824bc2a0cadded6fb6e}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Progress\+Callback\+\_\+t} progress\+Callback, void $\ast$progress\+Arg, \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a3f98e4c4c8b4d06fba8ebc982344343e}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Completion\+Callback\+\_\+t} completion\+Callback, void $\ast$completion\+Arg)
+\begin{DoxyCompactList}\small\item\em Add a media to the download process queue. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_ab4515903c2a96144008c9bc17aabb138}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Queue\+Thread\+Run} (void $\ast$manager\+Arg)
+\begin{DoxyCompactList}\small\item\em Process of the media download queue. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_ae8af3f8ad1b3bf25d522157c942901de}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Cancel\+Queue\+Thread} (\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___manager_8h_a9f306b0ac4427eaa316cabfa653cc6f5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Send a cancel to the medias downloader process queue. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a45abb5f5d99921ad7458d37a59391077}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Thumbnail} (\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___manager_8h_a9f306b0ac4427eaa316cabfa653cc6f5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, \hyperlink{struct_a_r_d_a_t_a_t_r_a_n_s_f_e_r___media__t}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} $\ast$media)
+\begin{DoxyCompactList}\small\item\em Get the media thumbnail from the device F\+TP server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+lib\+A\+R\+Data\+Transfer Medias\+Downloader header file. 
+
+\begin{DoxyDate}{Date}
+19/12/2013 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:david.flattin.ext@parrot.com}{\tt david.\+flattin.\+ext@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE}{ARDATATRANSFER_MEDIA_DATE_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE~32}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_ae8933462260ae9d0e7e2717602e246e5}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_ae8933462260ae9d0e7e2717602e246e5}
+
+
+Defines the media date size in characters. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{struct_a_r_d_a_t_a_t_r_a_n_s_f_e_r___media__t}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}{ARDATATRANSFER_MEDIA_NAME_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE~128}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_ade36aec8d3ded63b850e106cb3dc8276}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_ade36aec8d3ded63b850e106cb3dc8276}
+
+
+Defines the media name size in characters. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{struct_a_r_d_a_t_a_t_r_a_n_s_f_e_r___media__t}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE}{ARDATATRANSFER_MEDIA_PATH_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE~256}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a7a748c32e1f9345c856d5a6f9ecf7313}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a7a748c32e1f9345c856d5a6f9ecf7313}
+
+
+Defines the media path size in characters. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{struct_a_r_d_a_t_a_t_r_a_n_s_f_e_r___media__t}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE}{ARDATATRANSFER_MEDIA_UUID_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+E\+D\+I\+A\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE~33}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_adb99398df2fc72007ddd78a1a2f9f8ed}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_adb99398df2fc72007ddd78a1a2f9f8ed}
+
+
+Defines the media U\+U\+ID size in characters. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{struct_a_r_d_a_t_a_t_r_a_n_s_f_e_r___media__t}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} 
+\end{DoxySeeAlso}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Available\+Media\+Callback\+\_\+t@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Available\+Media\+Callback\+\_\+t}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Available\+Media\+Callback\+\_\+t@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Available\+Media\+Callback\+\_\+t}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Available\+Media\+Callback\+\_\+t}{ARDATATRANSFER_MediasDownloader_AvailableMediaCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Available\+Media\+Callback\+\_\+t) (void $\ast$arg, {\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} $\ast$media, int index)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_abc76d7aaac2a8818328682a7483e6d40}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_abc76d7aaac2a8818328682a7483e6d40}
+
+
+Available media callback called for each media found. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The pointer of the user custom argument \\
+\hline
+{\em media} & The availble media found \\
+\hline
+{\em index} & The index of the media in the internal list \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media\+Callback\+\_\+t@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media\+Callback\+\_\+t}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media\+Callback\+\_\+t@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media\+Callback\+\_\+t}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media\+Callback\+\_\+t}{ARDATATRANSFER_MediasDownloader_DeleteMediaCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media\+Callback\+\_\+t) (void $\ast$arg, {\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} $\ast$media, {\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} error)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a5326fb34fcdc159dad2f44f6470157b5}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a5326fb34fcdc159dad2f44f6470157b5}
+
+
+Completion callback of the Media delete. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The pointer of the user custom argument \\
+\hline
+{\em media} & The media to be deleted \\
+\hline
+{\em error} & The error status to indicate the media deleted status \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Thread\+Run () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Completion\+Callback\+\_\+t@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Completion\+Callback\+\_\+t}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Completion\+Callback\+\_\+t@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Completion\+Callback\+\_\+t}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Completion\+Callback\+\_\+t}{ARDATATRANSFER_MediasDownloader_MediaDownloadCompletionCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Completion\+Callback\+\_\+t) (void $\ast$arg, {\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} $\ast$media, {\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} error)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a3f98e4c4c8b4d06fba8ebc982344343e}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a3f98e4c4c8b4d06fba8ebc982344343e}
+
+
+Completion callback of the Media download. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The pointer of the user custom argument \\
+\hline
+{\em media} & The media to be downloaded \\
+\hline
+{\em error} & The error status to indicate the media downloaded status \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Thread\+Run () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Progress\+Callback\+\_\+t@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Progress\+Callback\+\_\+t}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Progress\+Callback\+\_\+t@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Progress\+Callback\+\_\+t}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Progress\+Callback\+\_\+t}{ARDATATRANSFER_MediasDownloader_MediaDownloadProgressCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Progress\+Callback\+\_\+t) (void $\ast$arg, {\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} $\ast$media, float percent)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a9a3801508e1e9824bc2a0cadded6fb6e}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a9a3801508e1e9824bc2a0cadded6fb6e}
+
+
+Progress callback of the Media download. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The pointer of the user custom argument \\
+\hline
+{\em media} & The media in progress \\
+\hline
+{\em percent} & The percent size of the media file already downloaded \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Thread\+Run () 
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Add\+Media\+To\+Queue@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Add\+Media\+To\+Queue}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Add\+Media\+To\+Queue@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Add\+Media\+To\+Queue}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Add\+Media\+To\+Queue(\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t $\ast$media, A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Progress\+Callback\+\_\+t progress\+Callback, void $\ast$progress\+Arg, A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Completion\+Callback\+\_\+t completion\+Callback, void $\ast$completion\+Arg)}{ARDATATRANSFER_MediasDownloader_AddMediaToQueue(ARDATATRANSFER_Manager_t *manager, ARDATATRANSFER_Media_t *media, ARDATATRANSFER_MediasDownloader_MediaDownloadProgressCallback_t progressCallback, void *progressArg, ARDATATRANSFER_MediasDownloader_MediaDownloadCompletionCallback_t completionCallback, void *completionArg)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Add\+Media\+To\+Queue (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} $\ast$}]{media, }
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Progress\+Callback\+\_\+t}}]{progress\+Callback, }
+\item[{void $\ast$}]{progress\+Arg, }
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Media\+Download\+Completion\+Callback\+\_\+t}}]{completion\+Callback, }
+\item[{void $\ast$}]{completion\+Arg}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a4ed7b6d909be0863794c807ddbee909c}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a4ed7b6d909be0863794c807ddbee909c}
+
+
+Add a media to the download process queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The pointer of the A\+R\+Data\+Transfer Manager \\
+\hline
+{\em media} & The media to add \\
+\hline
+{\em progress\+Callback} & The progress callback for this media download \\
+\hline
+{\em progress\+Arg} & The progress callback user argument for this media download \\
+\hline
+{\em completion\+Callback} & The completion callback for this media download \\
+\hline
+{\em completion\+Arg} & The completion callback user argument for this media download \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Thread\+Run () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Cancel\+Get\+Available\+Medias@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Cancel\+Get\+Available\+Medias}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Cancel\+Get\+Available\+Medias@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Cancel\+Get\+Available\+Medias}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Cancel\+Get\+Available\+Medias(\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARDATATRANSFER_MediasDownloader_CancelGetAvailableMedias(ARDATATRANSFER_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Cancel\+Get\+Available\+Medias (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_aef6de6bdad0a0926347c0539180bf7bb}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_aef6de6bdad0a0926347c0539180bf7bb}
+
+
+Send a cancel to the get media list function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The pointer of the A\+R\+Data\+Transfer Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a12af6af2f9028edfc2d8aef7ec2c69d1}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Sync} (), \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_aedb4024f4c3cb6c099f3f9e78992f160}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Async} () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Cancel\+Queue\+Thread@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Cancel\+Queue\+Thread}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Cancel\+Queue\+Thread@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Cancel\+Queue\+Thread}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Cancel\+Queue\+Thread(\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARDATATRANSFER_MediasDownloader_CancelQueueThread(ARDATATRANSFER_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Cancel\+Queue\+Thread (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_ae8af3f8ad1b3bf25d522157c942901de}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_ae8af3f8ad1b3bf25d522157c942901de}
+
+
+Send a cancel to the medias downloader process queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The pointer of the A\+R\+Data\+Transfer Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_ab4515903c2a96144008c9bc17aabb138}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Queue\+Thread\+Run} () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete(\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARDATATRANSFER_MediasDownloader_Delete(ARDATATRANSFER_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_aa36e7a3c3c0c9a255b503f9fcc971bc1}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_aa36e7a3c3c0c9a255b503f9fcc971bc1}
+
+
+Delete an A\+R\+Data\+Transfer Medias\+Downloader. 
+
+\begin{DoxyWarning}{Warning}
+This function frees memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the A\+R\+Data\+Transfer Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a24ab91c8b9862a2b44da535ad864f0b7}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media(\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t $\ast$media, A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media\+Callback\+\_\+t delete\+Media\+Call\+Back, void $\ast$delete\+Media\+Arg)}{ARDATATRANSFER_MediasDownloader_DeleteMedia(ARDATATRANSFER_Manager_t *manager, ARDATATRANSFER_Media_t *media, ARDATATRANSFER_MediasDownloader_DeleteMediaCallback_t deleteMediaCallBack, void *deleteMediaArg)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} $\ast$}]{media, }
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete\+Media\+Callback\+\_\+t}}]{delete\+Media\+Call\+Back, }
+\item[{void $\ast$}]{delete\+Media\+Arg}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a6ef0a9ff5f1adced0d991eed7f3fd82c}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a6ef0a9ff5f1adced0d991eed7f3fd82c}
+
+
+Delete the media form the Device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The pointer of the A\+R\+Data\+Transfer Manager \\
+\hline
+{\em media} & The media to delete \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Media\+At\+Index@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Media\+At\+Index}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Media\+At\+Index@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Media\+At\+Index}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Media\+At\+Index(\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, int index, e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$result)}{ARDATATRANSFER_MediasDownloader_GetAvailableMediaAtIndex(ARDATATRANSFER_Manager_t *manager, int index, eARDATATRANSFER_ERROR *result)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t}$\ast$ A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Media\+At\+Index (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{int}]{index, }
+\item[{{\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{result}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_af7532aee2b4345c93b5dcccd6c46871b}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_af7532aee2b4345c93b5dcccd6c46871b}
+
+
+Get the media form the the medias list at the given index. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager} & The pointer of the A\+R\+Data\+Transfer Manager \\
+\hline
+\mbox{\tt out}  & {\em result} & The On success, set A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+OK. Otherwise, it set an error number of e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, the adresse of the media found else null. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a12af6af2f9028edfc2d8aef7ec2c69d1}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Sync} () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Async@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Async}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Async@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Async}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Async(\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Available\+Media\+Callback\+\_\+t available\+Media\+Callback, void $\ast$available\+Media\+Arg)}{ARDATATRANSFER_MediasDownloader_GetAvailableMediasAsync(ARDATATRANSFER_Manager_t *manager, ARDATATRANSFER_MediasDownloader_AvailableMediaCallback_t availableMediaCallback, void *availableMediaArg)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Async (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Available\+Media\+Callback\+\_\+t}}]{available\+Media\+Callback, }
+\item[{void $\ast$}]{available\+Media\+Arg}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_aedb4024f4c3cb6c099f3f9e78992f160}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_aedb4024f4c3cb6c099f3f9e78992f160}
+
+
+Get the medias list available form the Device. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The pointer of the A\+R\+Data\+Transfer Manager \\
+\hline
+{\em available\+Media\+Callback} & The available media callback \\
+\hline
+{\em available\+Media\+Arg} & The pointer of the user custom argument \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_abc76d7aaac2a8818328682a7483e6d40}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Available\+Media\+Callback\+\_\+t} () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Sync@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Sync}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Sync@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Sync}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Sync(\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, int with\+Thumbnail, e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$result)}{ARDATATRANSFER_MediasDownloader_GetAvailableMediasSync(ARDATATRANSFER_Manager_t *manager, int withThumbnail, eARDATATRANSFER_ERROR *result)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Sync (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{int}]{with\+Thumbnail, }
+\item[{{\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{result}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a12af6af2f9028edfc2d8aef7ec2c69d1}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a12af6af2f9028edfc2d8aef7ec2c69d1}
+
+
+Get the medias count available form the Device. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager} & The pointer of the A\+R\+Data\+Transfer Manager \\
+\hline
+\mbox{\tt out}  & {\em result} & The On success, set A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+OK. Otherwise, it set an error number of e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR \\
+\hline
+ & {\em with\+Thumbnail} & The flag to return thumbnail, 0 no thumbnail is returned, 1 thumbnails are returned \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, the number of media found else 0. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a24ab91c8b9862a2b44da535ad864f0b7}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Thumbnail@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Thumbnail}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Thumbnail@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Thumbnail}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Thumbnail(\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t $\ast$media)}{ARDATATRANSFER_MediasDownloader_GetThumbnail(ARDATATRANSFER_Manager_t *manager, ARDATATRANSFER_Media_t *media)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Thumbnail (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Media\+\_\+t} $\ast$}]{media}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a45abb5f5d99921ad7458d37a59391077}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a45abb5f5d99921ad7458d37a59391077}
+
+
+Get the media thumbnail from the device F\+TP server. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the A\+R\+Data\+Transfer Manager \\
+\hline
+{\em media} & The media for which the thumbnail is requested \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+New@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+New}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+New@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+New}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+New(\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$ftp\+List\+Manager, A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$ftp\+Queue\+Manager, const char $\ast$remote\+Directory, const char $\ast$local\+Directory)}{ARDATATRANSFER_MediasDownloader_New(ARDATATRANSFER_Manager_t *manager, ARUTILS_Manager_t *ftpListManager, ARUTILS_Manager_t *ftpQueueManager, const char *remoteDirectory, const char *localDirectory)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{ftp\+List\+Manager, }
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{ftp\+Queue\+Manager, }
+\item[{const char $\ast$}]{remote\+Directory, }
+\item[{const char $\ast$}]{local\+Directory}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a24ab91c8b9862a2b44da535ad864f0b7}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a24ab91c8b9862a2b44da535ad864f0b7}
+
+
+Create a new A\+R\+Data\+Transfer Medias\+Downloader. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the A\+R\+Data\+Transfer Manager \\
+\hline
+{\em device\+IP} & The IP address of the Device \\
+\hline
+{\em device\+Port} & The F\+TP port of the Device \\
+\hline
+{\em remote\+Directory} & The F\+TP sub directory where to download media \\
+\hline
+{\em local\+Directory} & The path of the local directory where to store medias \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_aa36e7a3c3c0c9a255b503f9fcc971bc1}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Delete} () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Queue\+Thread\+Run@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Queue\+Thread\+Run}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Queue\+Thread\+Run@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Queue\+Thread\+Run}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Queue\+Thread\+Run(void $\ast$manager\+Arg)}{ARDATATRANSFER_MediasDownloader_QueueThreadRun(void *managerArg)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Queue\+Thread\+Run (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{manager\+Arg}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_ab4515903c2a96144008c9bc17aabb138}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_ab4515903c2a96144008c9bc17aabb138}
+
+
+Process of the media download queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The pointer of the A\+R\+Data\+Transfer Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em returns} & N\+U\+LL \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Init () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Reset\+Get\+Available\+Medias@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Reset\+Get\+Available\+Medias}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Reset\+Get\+Available\+Medias@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Reset\+Get\+Available\+Medias}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Reset\+Get\+Available\+Medias(\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARDATATRANSFER_MediasDownloader_ResetGetAvailableMedias(ARDATATRANSFER_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Reset\+Get\+Available\+Medias (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a5a44aca054c024f2af2f5f72b6790429}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a5a44aca054c024f2af2f5f72b6790429}
+
+
+Send a reset to the get media list function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The pointer of the A\+R\+Data\+Transfer Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_a12af6af2f9028edfc2d8aef7ec2c69d1}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Sync} (), \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h_aedb4024f4c3cb6c099f3f9e78992f160}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Get\+Available\+Medias\+Async} () 
+\end{DoxySeeAlso}

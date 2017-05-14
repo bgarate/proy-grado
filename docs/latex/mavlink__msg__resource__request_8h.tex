@@ -1,0 +1,98 @@
+\hypertarget{mavlink__msg__resource__request_8h}{}\section{src/hal/pb2/include/mavlink/common/mavlink\+\_\+msg\+\_\+resource\+\_\+request.h File Reference}
+\label{mavlink__msg__resource__request_8h}\index{src/hal/pb2/include/mavlink/common/mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{src/hal/pb2/include/mavlink/common/mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mavlink__msg__resource__request_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{mavlink__msg__resource__request_8h_adbc40e65e64d2bf0cd56ad79a904757e}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+ST}~142
+\item 
+\#define \hyperlink{mavlink__msg__resource__request_8h_a6f7ed93f13cd3941e857daa3e6642c87}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+L\+EN}~243
+\item 
+\#define \hyperlink{mavlink__msg__resource__request_8h_a9a5bf30e8d9789a34eee54afca0b1974}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+M\+I\+N\+\_\+\+L\+EN}~243
+\item 
+\#define \hyperlink{mavlink__msg__resource__request_8h_a06daf68f89acfb1ccb763028579e7535}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+L\+EN}~243
+\item 
+\#define \hyperlink{mavlink__msg__resource__request_8h_a3273b5ca748f28a76c3607b76452240a}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+M\+I\+N\+\_\+\+L\+EN}~243
+\item 
+\#define \hyperlink{mavlink__msg__resource__request_8h_a9edc0f45fc85901671b2bb09e19da63e}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+C\+RC}~72
+\item 
+\#define \hyperlink{mavlink__msg__resource__request_8h_a4eb6d34aa7446cdbfd7ec4c6eb37b137}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+C\+RC}~72
+\item 
+\#define \hyperlink{mavlink__msg__resource__request_8h_a93e84e656b6d50ff057f36736fc9f1c5}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+U\+R\+I\+\_\+\+L\+EN}~120
+\item 
+\#define \hyperlink{mavlink__msg__resource__request_8h_a6f0f2df1a0556e7cc8a65d0ff147da4f}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+T\+O\+R\+A\+G\+E\+\_\+\+L\+EN}~120
+\item 
+\#define \hyperlink{mavlink__msg__resource__request_8h_a6732451b5d42fba0da1a07d059b12d3e}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+ST}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{mavlink__msg__resource__request_8h_a5fba7aef60acbaf992a5236bd625bed9}{M\+A\+V\+P\+A\+C\+K\+ED} (typedef struct \+\_\+\+\_\+mavlink\+\_\+resource\+\_\+request\+\_\+t\{uint8\+\_\+t request\+\_\+id;uint8\+\_\+t uri\+\_\+type;uint8\+\_\+t uri\mbox{[}120\mbox{]};uint8\+\_\+t transfer\+\_\+type;uint8\+\_\+t storage\mbox{[}120\mbox{]};\}) mavlink\+\_\+resource\+\_\+request\+\_\+t
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+ST@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+ST}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+ST@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+ST}!mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+ST}{MAVLINK_MESSAGE_INFO_RESOURCE_REQUEST}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+ST}\hypertarget{mavlink__msg__resource__request_8h_a6732451b5d42fba0da1a07d059b12d3e}{}\label{mavlink__msg__resource__request_8h_a6732451b5d42fba0da1a07d059b12d3e}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{ \(\backslash\)
+    \textcolor{stringliteral}{"RESOURCE\_REQUEST"}, \(\backslash\)
+    5, \(\backslash\)
+    \{  \{ \textcolor{stringliteral}{"request\_id"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4a73bf311e4bfddf3a00632bb7553eaa84}{MAVLINK\_TYPE\_UINT8\_T}, 0, 0, offsetof(
+      mavlink\_resource\_request\_t, request\_id) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"uri\_type"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4a73bf311e4bfddf3a00632bb7553eaa84}{MAVLINK\_TYPE\_UINT8\_T}, 0, 1, offsetof(
+      mavlink\_resource\_request\_t, uri\_type) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"uri"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4a73bf311e4bfddf3a00632bb7553eaa84}{MAVLINK\_TYPE\_UINT8\_T}, 120, 2, offsetof(
+      mavlink\_resource\_request\_t, uri) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"transfer\_type"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4a73bf311e4bfddf3a00632bb7553eaa84}{MAVLINK\_TYPE\_UINT8\_T}, 0, 122, offsetof(
+      mavlink\_resource\_request\_t, transfer\_type) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"storage"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4a73bf311e4bfddf3a00632bb7553eaa84}{MAVLINK\_TYPE\_UINT8\_T}, 120, 123, offsetof(
+      mavlink\_resource\_request\_t, storage) \}, \(\backslash\)
+         \} \(\backslash\)
+\}
+\end{DoxyCode}
+\index{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+C\+RC@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+C\+RC}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+C\+RC@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+C\+RC}!mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+C\+RC}{MAVLINK_MSG_ID_142_CRC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+C\+RC~72}\hypertarget{mavlink__msg__resource__request_8h_a4eb6d34aa7446cdbfd7ec4c6eb37b137}{}\label{mavlink__msg__resource__request_8h_a4eb6d34aa7446cdbfd7ec4c6eb37b137}
+\index{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+L\+EN}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+L\+EN}!mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+L\+EN}{MAVLINK_MSG_ID_142_LEN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+L\+EN~243}\hypertarget{mavlink__msg__resource__request_8h_a06daf68f89acfb1ccb763028579e7535}{}\label{mavlink__msg__resource__request_8h_a06daf68f89acfb1ccb763028579e7535}
+\index{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+M\+I\+N\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+M\+I\+N\+\_\+\+L\+EN}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+M\+I\+N\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+M\+I\+N\+\_\+\+L\+EN}!mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+M\+I\+N\+\_\+\+L\+EN}{MAVLINK_MSG_ID_142_MIN_LEN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+142\+\_\+\+M\+I\+N\+\_\+\+L\+EN~243}\hypertarget{mavlink__msg__resource__request_8h_a3273b5ca748f28a76c3607b76452240a}{}\label{mavlink__msg__resource__request_8h_a3273b5ca748f28a76c3607b76452240a}
+\index{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+ST@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+ST}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+ST@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+ST}!mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+ST}{MAVLINK_MSG_ID_RESOURCE_REQUEST}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+ST~142}\hypertarget{mavlink__msg__resource__request_8h_adbc40e65e64d2bf0cd56ad79a904757e}{}\label{mavlink__msg__resource__request_8h_adbc40e65e64d2bf0cd56ad79a904757e}
+\index{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+C\+RC@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+C\+RC}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+C\+RC@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+C\+RC}!mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+C\+RC}{MAVLINK_MSG_ID_RESOURCE_REQUEST_CRC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+C\+RC~72}\hypertarget{mavlink__msg__resource__request_8h_a9edc0f45fc85901671b2bb09e19da63e}{}\label{mavlink__msg__resource__request_8h_a9edc0f45fc85901671b2bb09e19da63e}
+\index{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+L\+EN}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+L\+EN}!mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+L\+EN}{MAVLINK_MSG_ID_RESOURCE_REQUEST_LEN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+L\+EN~243}\hypertarget{mavlink__msg__resource__request_8h_a6f7ed93f13cd3941e857daa3e6642c87}{}\label{mavlink__msg__resource__request_8h_a6f7ed93f13cd3941e857daa3e6642c87}
+\index{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+M\+I\+N\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+M\+I\+N\+\_\+\+L\+EN}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+M\+I\+N\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+M\+I\+N\+\_\+\+L\+EN}!mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+M\+I\+N\+\_\+\+L\+EN}{MAVLINK_MSG_ID_RESOURCE_REQUEST_MIN_LEN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+M\+I\+N\+\_\+\+L\+EN~243}\hypertarget{mavlink__msg__resource__request_8h_a9a5bf30e8d9789a34eee54afca0b1974}{}\label{mavlink__msg__resource__request_8h_a9a5bf30e8d9789a34eee54afca0b1974}
+\index{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+T\+O\+R\+A\+G\+E\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+T\+O\+R\+A\+G\+E\+\_\+\+L\+EN}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+T\+O\+R\+A\+G\+E\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+T\+O\+R\+A\+G\+E\+\_\+\+L\+EN}!mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+T\+O\+R\+A\+G\+E\+\_\+\+L\+EN}{MAVLINK_MSG_RESOURCE_REQUEST_FIELD_STORAGE_LEN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+T\+O\+R\+A\+G\+E\+\_\+\+L\+EN~120}\hypertarget{mavlink__msg__resource__request_8h_a6f0f2df1a0556e7cc8a65d0ff147da4f}{}\label{mavlink__msg__resource__request_8h_a6f0f2df1a0556e7cc8a65d0ff147da4f}
+\index{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+U\+R\+I\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+U\+R\+I\+\_\+\+L\+EN}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+U\+R\+I\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+U\+R\+I\+\_\+\+L\+EN}!mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+U\+R\+I\+\_\+\+L\+EN}{MAVLINK_MSG_RESOURCE_REQUEST_FIELD_URI_LEN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+U\+R\+I\+\_\+\+L\+EN~120}\hypertarget{mavlink__msg__resource__request_8h_a93e84e656b6d50ff057f36736fc9f1c5}{}\label{mavlink__msg__resource__request_8h_a93e84e656b6d50ff057f36736fc9f1c5}
+
+
+\subsection{Function Documentation}
+\index{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}!M\+A\+V\+P\+A\+C\+K\+ED@{M\+A\+V\+P\+A\+C\+K\+ED}}
+\index{M\+A\+V\+P\+A\+C\+K\+ED@{M\+A\+V\+P\+A\+C\+K\+ED}!mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h@{mavlink\+\_\+msg\+\_\+resource\+\_\+request.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+P\+A\+C\+K\+E\+D(typedef struct \+\_\+\+\_\+mavlink\+\_\+resource\+\_\+request\+\_\+t\lcurly{}uint8\+\_\+t request\+\_\+id;uint8\+\_\+t uri\+\_\+type;uint8\+\_\+t uri[120];uint8\+\_\+t transfer\+\_\+type;uint8\+\_\+t storage[120];\rcurly{}) mavlink\+\_\+resource\+\_\+request\+\_\+t}{MAVPACKED(typedef struct __mavlink_resource_request_t\{uint8_t request_id;uint8_t uri_type;uint8_t uri[120];uint8_t transfer_type;uint8_t storage[120];\}) mavlink_resource_request_t}}]{\setlength{\rightskip}{0pt plus 5cm}M\+A\+V\+P\+A\+C\+K\+ED (
+\begin{DoxyParamCaption}
+\item[{typedef struct \+\_\+\+\_\+mavlink\+\_\+resource\+\_\+request\+\_\+t\{uint8\+\_\+t request\+\_\+id;uint8\+\_\+t uri\+\_\+type;uint8\+\_\+t uri\mbox{[}120\mbox{]};uint8\+\_\+t transfer\+\_\+type;uint8\+\_\+t storage\mbox{[}120\mbox{]};\}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{mavlink__msg__resource__request_8h_a5fba7aef60acbaf992a5236bd625bed9}{}\label{mavlink__msg__resource__request_8h_a5fba7aef60acbaf992a5236bd625bed9}

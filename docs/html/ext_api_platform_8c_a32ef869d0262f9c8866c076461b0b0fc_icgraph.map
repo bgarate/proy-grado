@@ -1,0 +1,8 @@
+<map id="extApi_recv_socket" name="extApi_recv_socket">
+<area shape="rect" id="node2" href="$ext_api_8c.html#aa800d1c3a34d0d94705026fb66744179" title="_receiveSimplePacket\l_socket" alt="" coords="191,23,343,65"/>
+<area shape="rect" id="node3" href="$ext_api_8c.html#a84b291b12797333ed50550ed20c699f8" title="_receiveReplyMessage\l_socketOrSharedMem" alt="" coords="391,23,549,65"/>
+<area shape="rect" id="node4" href="$ext_api_8c.html#a59c9b2c70208a3484ea718c8a57773af" title="_communicationThread" alt="" coords="597,31,755,57"/>
+<area shape="rect" id="node5" href="$ext_api_8h.html#af8e78f3b4698eb09fe31f59c46a4848f" title="simxStart" alt="" coords="803,31,881,57"/>
+<area shape="rect" id="node6" href="$ext_api_8h.html#a0e7431db44935b74cf49ac5aa3edb6ec" title="mtlb_simxCallScriptFunction_b" alt="" coords="929,5,1132,32"/>
+<area shape="rect" id="node7" href="$class_vrephal.html#ad9377410a966919d65911ed9dac227b7" title="Vrephal::Vrephal" alt="" coords="971,56,1090,83"/>
+</map>

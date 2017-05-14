@@ -1,0 +1,6 @@
+<map id="Connection::getPort" name="Connection::getPort">
+<area shape="rect" id="node2" href="$class_packed_message.html#abb912f0c1590bab05b8dd20b74dc9116" title="PackedMessage::decode\l_header" alt="" coords="192,5,361,47"/>
+<area shape="rect" id="node3" href="$class_logger.html#ada4ef25d16123b5367a70c9fa0ef0fd7" title="Logger::logError" alt="" coords="219,71,334,98"/>
+<area shape="rect" id="node4" href="$class_logger.html#acebb37f5538780e6c14f13de6ec497bc" title="Logger::getInstance" alt="" coords="409,46,547,73"/>
+<area shape="rect" id="node5" href="$class_logger.html#a053de045cd00393f4def7d5b6c5cab38" title="Logger::Log" alt="" coords="433,97,523,123"/>
+</map>

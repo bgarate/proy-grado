@@ -1,0 +1,560 @@
+\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Media/\+A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.h File Reference}
+\label{_a_r_m_e_d_i_a___video_encapsuler_8h}\index{src/hal/pb2/include/lib\+A\+R\+Media/\+A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{src/hal/pb2/include/lib\+A\+R\+Media/\+A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$dirent.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Discovery/\+A\+R\+Discovery.\+h$>$}\\*
+Include dependency graph for A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_m_e_d_i_a___video_encapsuler_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{_a_r_m_e_d_i_a___video_encapsuler_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_r_m_e_d_i_a___frame___header__t}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Frame\+\_\+\+Header\+\_\+t}
+\item 
+struct \hyperlink{struct_a_r_m_e_d_i_a___sample___header__t}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Sample\+\_\+\+Header\+\_\+t}
+\item 
+struct \hyperlink{struct_a_r_m_e_d_i_a___untimed___metadata__t}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Untimed\+\_\+\+Metadata\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a0611198d0adbcb2c09ad9d83cb33987e}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+T\+S\+D\+\_\+\+I\+N\+F\+O\+\_\+\+S\+I\+ZE}~(100)
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a291cf9f9af344476372c69dfaab1b532}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE}~(256)
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a9aabc0d973199ec0f4d9cc865457cb1d}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+S\+\_\+\+C\+O\+U\+N\+T\+\_\+\+L\+I\+M\+IT}~(131072)
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a91e76d9d0f563ff8bee0d2e90b2131e1}{C\+O\+U\+N\+T\+\_\+\+W\+A\+I\+T\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+I\+F\+R\+A\+M\+E\+\_\+\+A\+S\+\_\+\+A\+N\+\_\+\+E\+R\+R\+OR}~(0)
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_ab2460351907528dae3f5b6878a0b5e02}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER}~(5)
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a660745d97aabcea5b8579bb8b5eb24f1}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+I\+N\+F\+O\+\_\+\+P\+A\+T\+T\+E\+RN}~\char`\"{}\%c\+:\%lld\+:\%c\+:\%\hyperlink{pem_8h_aae315ef0aa014d60426f50686217d264}{u}$\vert$\char`\"{}
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a685cac3399b9fd977769023c88db71e0}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG}~\textquotesingle{}a\textquotesingle{}
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a9ddd858620cd14d366400a2c0bd88b1e}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG}~\textquotesingle{}v\textquotesingle{}
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a8c990cace6fc158a8ae6534f8d392757}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG}~\textquotesingle{}m\textquotesingle{}
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a0343033ec61b559b1300885ef6aba437}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+N\+U\+M\+\_\+\+M\+A\+T\+C\+H\+\_\+\+P\+A\+T\+T\+E\+RN}~(4)
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a6459506e9e8f0d872c445757f7509af4}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+V\+C\+\_\+\+N\+A\+L\+U\+\_\+\+C\+O\+U\+N\+T\+\_\+\+M\+AX}~(128)
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_acf648410cf862b48daba4e43edbb5462}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+M\+A\+K\+E\+R\+\_\+\+S\+I\+ZE}~(50)
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a0ad265d65790b31157d3db003c86a764}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+N\+U\+M\+\_\+\+S\+I\+ZE}~(19)
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_ac3f3d8b8503def3d9dedff25860e2a96}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+O\+F\+T\+\_\+\+V\+E\+R\+\_\+\+S\+I\+ZE}~(50)
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_ab8d3a3711562abf39c698407579deffb}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+M\+E\+D\+I\+A\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE}~(23)
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_afc3389b360505d47088f8eef086e0861}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+R\+U\+N\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE}~(23)
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a870f21f2dab14aafcfe652112d53369d}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+R\+U\+N\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE}~(33)
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_af7c4fbcd37c15439d08db52a55afdd55}{M\+E\+T\+A\+F\+I\+L\+E\+\_\+\+E\+XT}~\char`\"{}-\/encaps.\+dat\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aadee30957df6a72314f624084c725b9a}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aadee30957df6a72314f624084c725b9a}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t}
+\item 
+typedef void($\ast$ \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a803bd4121730787714e35c00cd3b3d37}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Callback}) (const char $\ast$path, int unused)
+\begin{DoxyCompactList}\small\item\em Callback called when remove\+\_\+all fixes a media file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071d}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+C\+O\+D\+EC} \{ \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071da1f2984b3d45f32d1d31b0423e56125a3}{C\+O\+D\+E\+C\+\_\+\+U\+N\+K\+N\+N\+O\+WN} = 0, 
+\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071da05e7d1e2df32207679b69e1e34e6e643}{C\+O\+D\+E\+C\+\_\+\+M\+P\+E\+G4\+\_\+\+V\+I\+S\+U\+AL}, 
+\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071da6cb63bf445f4eb4911733872bf38b220}{C\+O\+D\+E\+C\+\_\+\+M\+P\+E\+G4\+\_\+\+A\+VC}, 
+\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071da989323ff3128238538281d833ccadfbd}{C\+O\+D\+E\+C\+\_\+\+M\+O\+T\+I\+O\+N\+\_\+\+J\+P\+EG}
+ \}
+\item 
+enum \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+PE} \{ \\*
+\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705ae50bf8bfd29bf3bca11a52919ddf6c5f}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+N\+O\+WN} = 0, 
+\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705ab16f31cbee9ed94fea9e8ae46676b9fb}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+\_\+\+F\+R\+A\+ME}, 
+\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705adff44c2a05d617657f5a78862b21b3cb}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+\_\+\+F\+R\+A\+ME}, 
+\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705af559b33859d09bf0a702fbf1ed77c379}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+J\+P\+EG}, 
+\\*
+\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705ae7ed388154c4a79df97b029e856a2f0b}{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX}
+ \}
+\item 
+enum \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aa466ae187faa82f79103c4dad64d80e1}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+D\+EC} \{ \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aa466ae187faa82f79103c4dad64d80e1a85387747975cfbbd8f2406d2a9d060e1}{A\+C\+O\+D\+E\+C\+\_\+\+P\+CM}
+ \}
+\item 
+enum \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a5a6d90018be954b43e503ed732a657e8}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+AT} \{ \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a5a6d90018be954b43e503ed732a657e8acd1ac25e57951965c1ddb99e194af834}{A\+F\+O\+R\+M\+A\+T\+\_\+32\+B\+I\+TS} = 32, 
+\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a5a6d90018be954b43e503ed732a657e8a5c06b2c78b8f1a473c6b76c387385f6b}{A\+F\+O\+R\+M\+A\+T\+\_\+16\+B\+I\+TS} = 16, 
+\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a5a6d90018be954b43e503ed732a657e8a0e673c93a6740942bf2a4aaa189aa234}{A\+F\+O\+R\+M\+A\+T\+\_\+8\+B\+I\+TS} = 8
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aadee30957df6a72314f624084c725b9a}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aaae22a49acc64e5c89d36d8efbbfe190}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+New} (const char $\ast$media\+Path, int fps, char $\ast$uuid, char $\ast$run\+Date, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___discovery_8h_a908972407587656a48194c58ccd65813}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} product, \hyperlink{_a_r_m_e_d_i_a___error_8h_ae6298e2b26c2f7a8abac6b84b48b36fd}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Create a new A\+R\+Media encapsuler. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a3a201e1d56790554739277fc256d3b57}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Delete} (\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aadee30957df6a72314f624084c725b9a}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$$\ast$encapsuler)
+\begin{DoxyCompactList}\small\item\em Delete the Manager. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_e_d_i_a___error_8h_ae6298e2b26c2f7a8abac6b84b48b36fd}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a22106074bb5aca0293bbe88758223e7d}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Avc\+Parameter\+Sets} (\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aadee30957df6a72314f624084c725b9a}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$encapsuler, const uint8\+\_\+t $\ast$sps, uint32\+\_\+t sps\+Size, const uint8\+\_\+t $\ast$pps, uint32\+\_\+t pps\+Size)
+\begin{DoxyCompactList}\small\item\em Set H.\+264/\+A\+VC parameter sets (S\+PS and P\+PS) \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_e_d_i_a___error_8h_ae6298e2b26c2f7a8abac6b84b48b36fd}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_ab0ae4f5f5caafcafa26eb934bedc687c}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Metadata\+Info} (\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aadee30957df6a72314f624084c725b9a}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$encapsuler, const char $\ast$content\+\_\+encoding, const char $\ast$mime\+\_\+format, uint32\+\_\+t metadata\+\_\+block\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Set encoding content, mime type and block size of Metadata. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_e_d_i_a___error_8h_ae6298e2b26c2f7a8abac6b84b48b36fd}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a2dc4c9e3e13bc08ed8aa2fd74bf0337c}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Untimed\+Metadata} (\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aadee30957df6a72314f624084c725b9a}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$encapsuler, const \hyperlink{struct_a_r_m_e_d_i_a___untimed___metadata__t}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Untimed\+\_\+\+Metadata\+\_\+t} $\ast$metadata)
+\begin{DoxyCompactList}\small\item\em Set the video untimed metadata. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_e_d_i_a___error_8h_ae6298e2b26c2f7a8abac6b84b48b36fd}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_ae3b3c153c7f6ddce57614765f5d42a5d}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Video\+Thumbnail} (\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aadee30957df6a72314f624084c725b9a}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$encapsuler, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file})
+\begin{DoxyCompactList}\small\item\em Set the video thumbnail to include in metadata. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_e_d_i_a___error_8h_ae6298e2b26c2f7a8abac6b84b48b36fd}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a89bb21b4254c96c7d2aabac6409f343f}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Add\+Frame} (\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aadee30957df6a72314f624084c725b9a}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$encapsuler, \hyperlink{struct_a_r_m_e_d_i_a___frame___header__t}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Frame\+\_\+\+Header\+\_\+t} $\ast$frame\+Header, const void $\ast$metadata\+Buffer)
+\begin{DoxyCompactList}\small\item\em Add a new video frame to the encapsulated media. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_e_d_i_a___error_8h_ae6298e2b26c2f7a8abac6b84b48b36fd}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aeeccbff80900ae03b751cb3982f86f45}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Add\+Sample} (\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aadee30957df6a72314f624084c725b9a}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$encapsuler, \hyperlink{struct_a_r_m_e_d_i_a___sample___header__t}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Sample\+\_\+\+Header\+\_\+t} $\ast$sample\+Header)
+\begin{DoxyCompactList}\small\item\em Add a new audio sample to the encapsulated media. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_e_d_i_a___error_8h_ae6298e2b26c2f7a8abac6b84b48b36fd}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a82886e872f2b684f209aa6205ef68966}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Finish} (\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aadee30957df6a72314f624084c725b9a}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$$\ast$encapsuler)
+\item 
+void \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aabda73c13e4097305dad800d5e87d6ff}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+G\+P\+S\+Infos} (\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aadee30957df6a72314f624084c725b9a}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$encapsuler, double latitude, double longitude, double altitude)
+\item 
+int \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aa0b1f7b25b5b14d200e5f2b38f2fa2a9}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Try\+Fix\+Media\+File} (const char $\ast$info\+File\+Path)
+\item 
+int \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aa7f867429aed82b475a282faaf57cadb}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+add\+P\+V\+A\+T\+Atom} (F\+I\+LE $\ast$video\+File, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___discovery_8h_a908972407587656a48194c58ccd65813}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} product, const char $\ast$video\+Date)
+\item 
+int \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a94ead421a5f053cbe594ee1600f00f47}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+change\+P\+V\+A\+T\+Atom\+Date} (F\+I\+LE $\ast$video\+File, const char $\ast$video\+Date)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG}{ARMEDIA_ENCAPSULER_AUDIO_INFO_TAG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG~\textquotesingle{}a\textquotesingle{}}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a685cac3399b9fd977769023c88db71e0}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a685cac3399b9fd977769023c88db71e0}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+V\+C\+\_\+\+N\+A\+L\+U\+\_\+\+C\+O\+U\+N\+T\+\_\+\+M\+AX@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+V\+C\+\_\+\+N\+A\+L\+U\+\_\+\+C\+O\+U\+N\+T\+\_\+\+M\+AX}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+V\+C\+\_\+\+N\+A\+L\+U\+\_\+\+C\+O\+U\+N\+T\+\_\+\+M\+AX@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+V\+C\+\_\+\+N\+A\+L\+U\+\_\+\+C\+O\+U\+N\+T\+\_\+\+M\+AX}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+V\+C\+\_\+\+N\+A\+L\+U\+\_\+\+C\+O\+U\+N\+T\+\_\+\+M\+AX}{ARMEDIA_ENCAPSULER_AVC_NALU_COUNT_MAX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+V\+C\+\_\+\+N\+A\+L\+U\+\_\+\+C\+O\+U\+N\+T\+\_\+\+M\+AX~(128)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a6459506e9e8f0d872c445757f7509af4}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a6459506e9e8f0d872c445757f7509af4}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+S\+\_\+\+C\+O\+U\+N\+T\+\_\+\+L\+I\+M\+IT@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+S\+\_\+\+C\+O\+U\+N\+T\+\_\+\+L\+I\+M\+IT}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+S\+\_\+\+C\+O\+U\+N\+T\+\_\+\+L\+I\+M\+IT@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+S\+\_\+\+C\+O\+U\+N\+T\+\_\+\+L\+I\+M\+IT}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+S\+\_\+\+C\+O\+U\+N\+T\+\_\+\+L\+I\+M\+IT}{ARMEDIA_ENCAPSULER_FRAMES_COUNT_LIMIT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+S\+\_\+\+C\+O\+U\+N\+T\+\_\+\+L\+I\+M\+IT~(131072)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a9aabc0d973199ec0f4d9cc865457cb1d}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a9aabc0d973199ec0f4d9cc865457cb1d}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+I\+N\+F\+O\+\_\+\+P\+A\+T\+T\+E\+RN@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+I\+N\+F\+O\+\_\+\+P\+A\+T\+T\+E\+RN}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+I\+N\+F\+O\+\_\+\+P\+A\+T\+T\+E\+RN@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+I\+N\+F\+O\+\_\+\+P\+A\+T\+T\+E\+RN}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+I\+N\+F\+O\+\_\+\+P\+A\+T\+T\+E\+RN}{ARMEDIA_ENCAPSULER_INFO_PATTERN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+I\+N\+F\+O\+\_\+\+P\+A\+T\+T\+E\+RN~\char`\"{}\%c\+:\%lld\+:\%c\+:\%{\bf u}$\vert$\char`\"{}}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a660745d97aabcea5b8579bb8b5eb24f1}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a660745d97aabcea5b8579bb8b5eb24f1}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG}{ARMEDIA_ENCAPSULER_METADATA_INFO_TAG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG~\textquotesingle{}m\textquotesingle{}}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a8c990cace6fc158a8ae6534f8d392757}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a8c990cace6fc158a8ae6534f8d392757}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+T\+S\+D\+\_\+\+I\+N\+F\+O\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+T\+S\+D\+\_\+\+I\+N\+F\+O\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+T\+S\+D\+\_\+\+I\+N\+F\+O\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+T\+S\+D\+\_\+\+I\+N\+F\+O\+\_\+\+S\+I\+ZE}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+T\+S\+D\+\_\+\+I\+N\+F\+O\+\_\+\+S\+I\+ZE}{ARMEDIA_ENCAPSULER_METADATA_STSD_INFO_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+T\+S\+D\+\_\+\+I\+N\+F\+O\+\_\+\+S\+I\+ZE~(100)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a0611198d0adbcb2c09ad9d83cb33987e}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a0611198d0adbcb2c09ad9d83cb33987e}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+N\+U\+M\+\_\+\+M\+A\+T\+C\+H\+\_\+\+P\+A\+T\+T\+E\+RN@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+N\+U\+M\+\_\+\+M\+A\+T\+C\+H\+\_\+\+P\+A\+T\+T\+E\+RN}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+N\+U\+M\+\_\+\+M\+A\+T\+C\+H\+\_\+\+P\+A\+T\+T\+E\+RN@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+N\+U\+M\+\_\+\+M\+A\+T\+C\+H\+\_\+\+P\+A\+T\+T\+E\+RN}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+N\+U\+M\+\_\+\+M\+A\+T\+C\+H\+\_\+\+P\+A\+T\+T\+E\+RN}{ARMEDIA_ENCAPSULER_NUM_MATCH_PATTERN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+N\+U\+M\+\_\+\+M\+A\+T\+C\+H\+\_\+\+P\+A\+T\+T\+E\+RN~(4)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a0343033ec61b559b1300885ef6aba437}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a0343033ec61b559b1300885ef6aba437}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+M\+A\+K\+E\+R\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+M\+A\+K\+E\+R\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+M\+A\+K\+E\+R\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+M\+A\+K\+E\+R\+\_\+\+S\+I\+ZE}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+M\+A\+K\+E\+R\+\_\+\+S\+I\+ZE}{ARMEDIA_ENCAPSULER_UNTIMED_METADATA_MAKER_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+M\+A\+K\+E\+R\+\_\+\+S\+I\+ZE~(50)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_acf648410cf862b48daba4e43edbb5462}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_acf648410cf862b48daba4e43edbb5462}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+M\+E\+D\+I\+A\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+M\+E\+D\+I\+A\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+M\+E\+D\+I\+A\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+M\+E\+D\+I\+A\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+M\+E\+D\+I\+A\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE}{ARMEDIA_ENCAPSULER_UNTIMED_METADATA_MEDIA_DATE_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+M\+E\+D\+I\+A\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE~(23)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_ab8d3a3711562abf39c698407579deffb}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_ab8d3a3711562abf39c698407579deffb}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+R\+U\+N\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+R\+U\+N\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+R\+U\+N\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+R\+U\+N\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+R\+U\+N\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE}{ARMEDIA_ENCAPSULER_UNTIMED_METADATA_RUN_DATE_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+R\+U\+N\+\_\+\+D\+A\+T\+E\+\_\+\+S\+I\+ZE~(23)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_afc3389b360505d47088f8eef086e0861}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_afc3389b360505d47088f8eef086e0861}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+R\+U\+N\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+R\+U\+N\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+R\+U\+N\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+R\+U\+N\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+R\+U\+N\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE}{ARMEDIA_ENCAPSULER_UNTIMED_METADATA_RUN_UUID_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+R\+U\+N\+\_\+\+U\+U\+I\+D\+\_\+\+S\+I\+ZE~(33)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a870f21f2dab14aafcfe652112d53369d}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a870f21f2dab14aafcfe652112d53369d}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+N\+U\+M\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+N\+U\+M\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+N\+U\+M\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+N\+U\+M\+\_\+\+S\+I\+ZE}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+N\+U\+M\+\_\+\+S\+I\+ZE}{ARMEDIA_ENCAPSULER_UNTIMED_METADATA_SERIAL_NUM_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+N\+U\+M\+\_\+\+S\+I\+ZE~(19)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a0ad265d65790b31157d3db003c86a764}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a0ad265d65790b31157d3db003c86a764}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+O\+F\+T\+\_\+\+V\+E\+R\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+O\+F\+T\+\_\+\+V\+E\+R\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+O\+F\+T\+\_\+\+V\+E\+R\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+O\+F\+T\+\_\+\+V\+E\+R\+\_\+\+S\+I\+ZE}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+O\+F\+T\+\_\+\+V\+E\+R\+\_\+\+S\+I\+ZE}{ARMEDIA_ENCAPSULER_UNTIMED_METADATA_SOFT_VER_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+U\+N\+T\+I\+M\+E\+D\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+S\+O\+F\+T\+\_\+\+V\+E\+R\+\_\+\+S\+I\+ZE~(50)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_ac3f3d8b8503def3d9dedff25860e2a96}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_ac3f3d8b8503def3d9dedff25860e2a96}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER}{ARMEDIA_ENCAPSULER_VERSION_NUMBER}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER~(5)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_ab2460351907528dae3f5b6878a0b5e02}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_ab2460351907528dae3f5b6878a0b5e02}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG}{ARMEDIA_ENCAPSULER_VIDEO_INFO_TAG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+I\+N\+F\+O\+\_\+\+T\+AG~\textquotesingle{}v\textquotesingle{}}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a9ddd858620cd14d366400a2c0bd88b1e}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a9ddd858620cd14d366400a2c0bd88b1e}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE}{ARMEDIA_ENCAPSULER_VIDEO_PATH_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE~(256)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a291cf9f9af344476372c69dfaab1b532}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a291cf9f9af344476372c69dfaab1b532}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!C\+O\+U\+N\+T\+\_\+\+W\+A\+I\+T\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+I\+F\+R\+A\+M\+E\+\_\+\+A\+S\+\_\+\+A\+N\+\_\+\+E\+R\+R\+OR@{C\+O\+U\+N\+T\+\_\+\+W\+A\+I\+T\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+I\+F\+R\+A\+M\+E\+\_\+\+A\+S\+\_\+\+A\+N\+\_\+\+E\+R\+R\+OR}}
+\index{C\+O\+U\+N\+T\+\_\+\+W\+A\+I\+T\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+I\+F\+R\+A\+M\+E\+\_\+\+A\+S\+\_\+\+A\+N\+\_\+\+E\+R\+R\+OR@{C\+O\+U\+N\+T\+\_\+\+W\+A\+I\+T\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+I\+F\+R\+A\+M\+E\+\_\+\+A\+S\+\_\+\+A\+N\+\_\+\+E\+R\+R\+OR}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{C\+O\+U\+N\+T\+\_\+\+W\+A\+I\+T\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+I\+F\+R\+A\+M\+E\+\_\+\+A\+S\+\_\+\+A\+N\+\_\+\+E\+R\+R\+OR}{COUNT_WAITING_FOR_IFRAME_AS_AN_ERROR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+U\+N\+T\+\_\+\+W\+A\+I\+T\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+I\+F\+R\+A\+M\+E\+\_\+\+A\+S\+\_\+\+A\+N\+\_\+\+E\+R\+R\+OR~(0)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a91e76d9d0f563ff8bee0d2e90b2131e1}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a91e76d9d0f563ff8bee0d2e90b2131e1}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!M\+E\+T\+A\+F\+I\+L\+E\+\_\+\+E\+XT@{M\+E\+T\+A\+F\+I\+L\+E\+\_\+\+E\+XT}}
+\index{M\+E\+T\+A\+F\+I\+L\+E\+\_\+\+E\+XT@{M\+E\+T\+A\+F\+I\+L\+E\+\_\+\+E\+XT}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{M\+E\+T\+A\+F\+I\+L\+E\+\_\+\+E\+XT}{METAFILE_EXT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+E\+T\+A\+F\+I\+L\+E\+\_\+\+E\+XT~\char`\"{}-\/encaps.\+dat\char`\"{}}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_af7c4fbcd37c15439d08db52a55afdd55}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_af7c4fbcd37c15439d08db52a55afdd55}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Callback@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Callback}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Callback@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Callback}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Callback}{ARMEDIA_VideoEncapsuler_Callback}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Callback) (const char $\ast$path, int unused)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a803bd4121730787714e35c00cd3b3d37}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a803bd4121730787714e35c00cd3b3d37}
+
+
+Callback called when remove\+\_\+all fixes a media file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & path of the fixed media \\
+\hline
+{\em unused} & compatibility with academy callbacks \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t}{ARMEDIA_VideoEncapsuler_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} {\bf A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t}}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_aadee30957df6a72314f624084c725b9a}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_aadee30957df6a72314f624084c725b9a}
+
+
+\subsection{Enumeration Type Documentation}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+D\+EC@{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+D\+EC}}
+\index{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+D\+EC@{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+D\+EC}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+D\+EC}{eARMEDIA_ENCAPSULER_AUDIO_CODEC}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+D\+EC}}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_aa466ae187faa82f79103c4dad64d80e1}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_aa466ae187faa82f79103c4dad64d80e1}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+C\+O\+D\+E\+C\+\_\+\+P\+CM@{A\+C\+O\+D\+E\+C\+\_\+\+P\+CM}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+C\+O\+D\+E\+C\+\_\+\+P\+CM@{A\+C\+O\+D\+E\+C\+\_\+\+P\+CM}}\item[{\em 
+A\+C\+O\+D\+E\+C\+\_\+\+P\+CM\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_aa466ae187faa82f79103c4dad64d80e1a85387747975cfbbd8f2406d2a9d060e1}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_aa466ae187faa82f79103c4dad64d80e1a85387747975cfbbd8f2406d2a9d060e1}
+}]\end{description}
+\end{Desc}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+AT@{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+AT}}
+\index{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+AT@{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+AT}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+AT}{eARMEDIA_ENCAPSULER_AUDIO_FORMAT}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+AT}}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a5a6d90018be954b43e503ed732a657e8}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a5a6d90018be954b43e503ed732a657e8}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+F\+O\+R\+M\+A\+T\+\_\+32\+B\+I\+TS@{A\+F\+O\+R\+M\+A\+T\+\_\+32\+B\+I\+TS}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+F\+O\+R\+M\+A\+T\+\_\+32\+B\+I\+TS@{A\+F\+O\+R\+M\+A\+T\+\_\+32\+B\+I\+TS}}\item[{\em 
+A\+F\+O\+R\+M\+A\+T\+\_\+32\+B\+I\+TS\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a5a6d90018be954b43e503ed732a657e8acd1ac25e57951965c1ddb99e194af834}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a5a6d90018be954b43e503ed732a657e8acd1ac25e57951965c1ddb99e194af834}
+}]\index{A\+F\+O\+R\+M\+A\+T\+\_\+16\+B\+I\+TS@{A\+F\+O\+R\+M\+A\+T\+\_\+16\+B\+I\+TS}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+F\+O\+R\+M\+A\+T\+\_\+16\+B\+I\+TS@{A\+F\+O\+R\+M\+A\+T\+\_\+16\+B\+I\+TS}}\item[{\em 
+A\+F\+O\+R\+M\+A\+T\+\_\+16\+B\+I\+TS\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a5a6d90018be954b43e503ed732a657e8a5c06b2c78b8f1a473c6b76c387385f6b}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a5a6d90018be954b43e503ed732a657e8a5c06b2c78b8f1a473c6b76c387385f6b}
+}]\index{A\+F\+O\+R\+M\+A\+T\+\_\+8\+B\+I\+TS@{A\+F\+O\+R\+M\+A\+T\+\_\+8\+B\+I\+TS}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+F\+O\+R\+M\+A\+T\+\_\+8\+B\+I\+TS@{A\+F\+O\+R\+M\+A\+T\+\_\+8\+B\+I\+TS}}\item[{\em 
+A\+F\+O\+R\+M\+A\+T\+\_\+8\+B\+I\+TS\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a5a6d90018be954b43e503ed732a657e8a0e673c93a6740942bf2a4aaa189aa234}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a5a6d90018be954b43e503ed732a657e8a0e673c93a6740942bf2a4aaa189aa234}
+}]\end{description}
+\end{Desc}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+PE@{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+PE}}
+\index{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+PE@{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+PE}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+PE}{eARMEDIA_ENCAPSULER_FRAME_TYPE}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+PE}}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+N\+O\+WN@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+N\+O\+WN}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+N\+O\+WN@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+N\+O\+WN}}\item[{\em 
+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+N\+O\+WN\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705ae50bf8bfd29bf3bca11a52919ddf6c5f}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705ae50bf8bfd29bf3bca11a52919ddf6c5f}
+}]\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+\_\+\+F\+R\+A\+ME@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+\_\+\+F\+R\+A\+ME}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+\_\+\+F\+R\+A\+ME@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+\_\+\+F\+R\+A\+ME}}\item[{\em 
+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+\_\+\+F\+R\+A\+ME\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705ab16f31cbee9ed94fea9e8ae46676b9fb}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705ab16f31cbee9ed94fea9e8ae46676b9fb}
+}]\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+\_\+\+F\+R\+A\+ME@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+\_\+\+F\+R\+A\+ME}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+\_\+\+F\+R\+A\+ME@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+\_\+\+F\+R\+A\+ME}}\item[{\em 
+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+\_\+\+F\+R\+A\+ME\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705adff44c2a05d617657f5a78862b21b3cb}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705adff44c2a05d617657f5a78862b21b3cb}
+}]\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+J\+P\+EG@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+J\+P\+EG}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+J\+P\+EG@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+J\+P\+EG}}\item[{\em 
+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+J\+P\+EG\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705af559b33859d09bf0a702fbf1ed77c379}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705af559b33859d09bf0a702fbf1ed77c379}
+}]\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX@{A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX}}\item[{\em 
+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705ae7ed388154c4a79df97b029e856a2f0b}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_ae81a42fad69cee3ac6052492195ec705ae7ed388154c4a79df97b029e856a2f0b}
+}]\end{description}
+\end{Desc}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+C\+O\+D\+EC@{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+C\+O\+D\+EC}}
+\index{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+C\+O\+D\+EC@{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+C\+O\+D\+EC}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+C\+O\+D\+EC}{eARMEDIA_ENCAPSULER_VIDEO_CODEC}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+C\+O\+D\+EC}}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071d}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071d}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\+O\+D\+E\+C\+\_\+\+U\+N\+K\+N\+N\+O\+WN@{C\+O\+D\+E\+C\+\_\+\+U\+N\+K\+N\+N\+O\+WN}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!C\+O\+D\+E\+C\+\_\+\+U\+N\+K\+N\+N\+O\+WN@{C\+O\+D\+E\+C\+\_\+\+U\+N\+K\+N\+N\+O\+WN}}\item[{\em 
+C\+O\+D\+E\+C\+\_\+\+U\+N\+K\+N\+N\+O\+WN\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071da1f2984b3d45f32d1d31b0423e56125a3}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071da1f2984b3d45f32d1d31b0423e56125a3}
+}]\index{C\+O\+D\+E\+C\+\_\+\+M\+P\+E\+G4\+\_\+\+V\+I\+S\+U\+AL@{C\+O\+D\+E\+C\+\_\+\+M\+P\+E\+G4\+\_\+\+V\+I\+S\+U\+AL}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!C\+O\+D\+E\+C\+\_\+\+M\+P\+E\+G4\+\_\+\+V\+I\+S\+U\+AL@{C\+O\+D\+E\+C\+\_\+\+M\+P\+E\+G4\+\_\+\+V\+I\+S\+U\+AL}}\item[{\em 
+C\+O\+D\+E\+C\+\_\+\+M\+P\+E\+G4\+\_\+\+V\+I\+S\+U\+AL\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071da05e7d1e2df32207679b69e1e34e6e643}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071da05e7d1e2df32207679b69e1e34e6e643}
+}]\index{C\+O\+D\+E\+C\+\_\+\+M\+P\+E\+G4\+\_\+\+A\+VC@{C\+O\+D\+E\+C\+\_\+\+M\+P\+E\+G4\+\_\+\+A\+VC}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!C\+O\+D\+E\+C\+\_\+\+M\+P\+E\+G4\+\_\+\+A\+VC@{C\+O\+D\+E\+C\+\_\+\+M\+P\+E\+G4\+\_\+\+A\+VC}}\item[{\em 
+C\+O\+D\+E\+C\+\_\+\+M\+P\+E\+G4\+\_\+\+A\+VC\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071da6cb63bf445f4eb4911733872bf38b220}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071da6cb63bf445f4eb4911733872bf38b220}
+}]\index{C\+O\+D\+E\+C\+\_\+\+M\+O\+T\+I\+O\+N\+\_\+\+J\+P\+EG@{C\+O\+D\+E\+C\+\_\+\+M\+O\+T\+I\+O\+N\+\_\+\+J\+P\+EG}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!C\+O\+D\+E\+C\+\_\+\+M\+O\+T\+I\+O\+N\+\_\+\+J\+P\+EG@{C\+O\+D\+E\+C\+\_\+\+M\+O\+T\+I\+O\+N\+\_\+\+J\+P\+EG}}\item[{\em 
+C\+O\+D\+E\+C\+\_\+\+M\+O\+T\+I\+O\+N\+\_\+\+J\+P\+EG\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071da989323ff3128238538281d833ccadfbd}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071da989323ff3128238538281d833ccadfbd}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Add\+Frame@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Add\+Frame}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Add\+Frame@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Add\+Frame}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Add\+Frame(\+A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t $\ast$encapsuler, A\+R\+M\+E\+D\+I\+A\+\_\+\+Frame\+\_\+\+Header\+\_\+t $\ast$frame\+Header, const void $\ast$metadata\+Buffer)}{ARMEDIA_VideoEncapsuler_AddFrame(ARMEDIA_VideoEncapsuler_t *encapsuler, ARMEDIA_Frame_Header_t *frameHeader, const void *metadataBuffer)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR} A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Add\+Frame (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$}]{encapsuler, }
+\item[{{\bf A\+R\+M\+E\+D\+I\+A\+\_\+\+Frame\+\_\+\+Header\+\_\+t} $\ast$}]{frame\+Header, }
+\item[{const void $\ast$}]{metadata\+Buffer}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a89bb21b4254c96c7d2aabac6409f343f}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a89bb21b4254c96c7d2aabac6409f343f}
+
+
+Add a new video frame to the encapsulated media. 
+
+Add a video frame to an encapsulated video The actual writing of the video will start on the first given I-\/\+Frame slice. (after that, each frame will be written) The first I-\/\+Frame slice will be used to get the video codec, height and width of the video 
+\begin{DoxyParams}{Parameters}
+{\em encapsuler} & A\+R\+Media video encapsuler created by A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+new() \\
+\hline
+{\em frame\+Header} & Pointer to the video frame header to add \\
+\hline
+{\em metadata\+Buffer} & Pointer to metadata to add to video file, N\+U\+LL if not supported on product \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Possible return values are in e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR 
+\end{DoxyReturn}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+add\+P\+V\+A\+T\+Atom@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+add\+P\+V\+A\+T\+Atom}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+add\+P\+V\+A\+T\+Atom@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+add\+P\+V\+A\+T\+Atom}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+add\+P\+V\+A\+T\+Atom(\+F\+I\+L\+E $\ast$video\+File, e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+C\+T product, const char $\ast$video\+Date)}{ARMEDIA_VideoEncapsuler_addPVATAtom(FILE *videoFile, eARDISCOVERY_PRODUCT product, const char *videoDate)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+add\+P\+V\+A\+T\+Atom (
+\begin{DoxyParamCaption}
+\item[{F\+I\+LE $\ast$}]{video\+File, }
+\item[{{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT}}]{product, }
+\item[{const char $\ast$}]{video\+Date}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_aa7f867429aed82b475a282faaf57cadb}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_aa7f867429aed82b475a282faaf57cadb}
+Add atom in file. 
+\begin{DoxyParams}{Parameters}
+{\em F\+I\+LE} & video file descriptor. The file descriptor M\+U\+ST BE O\+P\+E\+N\+ED W\+I\+TH A\+P\+P\+E\+ND O\+P\+T\+I\+ON \\
+\hline
+{\em e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} & for the product to add in Atom \\
+\hline
+{\em const} & char for the video date to add in Atom \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 on success, 0 on failure 
+\end{DoxyReturn}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Add\+Sample@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Add\+Sample}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Add\+Sample@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Add\+Sample}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Add\+Sample(\+A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t $\ast$encapsuler, A\+R\+M\+E\+D\+I\+A\+\_\+\+Sample\+\_\+\+Header\+\_\+t $\ast$sample\+Header)}{ARMEDIA_VideoEncapsuler_AddSample(ARMEDIA_VideoEncapsuler_t *encapsuler, ARMEDIA_Sample_Header_t *sampleHeader)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR} A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Add\+Sample (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$}]{encapsuler, }
+\item[{{\bf A\+R\+M\+E\+D\+I\+A\+\_\+\+Sample\+\_\+\+Header\+\_\+t} $\ast$}]{sample\+Header}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_aeeccbff80900ae03b751cb3982f86f45}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_aeeccbff80900ae03b751cb3982f86f45}
+
+
+Add a new audio sample to the encapsulated media. 
+
+Add an audio sample to the encapsulated data 
+\begin{DoxyParams}{Parameters}
+{\em encapsuler} & A\+R\+Media video encapsuler created by A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+new() \\
+\hline
+{\em sample\+Header} & Pointer to the audio sample header to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Possible return values are in e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR 
+\end{DoxyReturn}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+change\+P\+V\+A\+T\+Atom\+Date@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+change\+P\+V\+A\+T\+Atom\+Date}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+change\+P\+V\+A\+T\+Atom\+Date@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+change\+P\+V\+A\+T\+Atom\+Date}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+change\+P\+V\+A\+T\+Atom\+Date(\+F\+I\+L\+E $\ast$video\+File, const char $\ast$video\+Date)}{ARMEDIA_VideoEncapsuler_changePVATAtomDate(FILE *videoFile, const char *videoDate)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+change\+P\+V\+A\+T\+Atom\+Date (
+\begin{DoxyParamCaption}
+\item[{F\+I\+LE $\ast$}]{video\+File, }
+\item[{const char $\ast$}]{video\+Date}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a94ead421a5f053cbe594ee1600f00f47}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a94ead421a5f053cbe594ee1600f00f47}
+Change run\+\_\+date and media\+\_\+date atom in file. 
+\begin{DoxyParams}{Parameters}
+{\em F\+I\+LE} & video file descriptor. The file descriptor M\+U\+ST BE O\+P\+E\+N\+ED W\+I\+TH R\+E\+A\+D\+I\+NG A\+ND W\+R\+I\+T\+I\+NG O\+P\+T\+I\+ON \\
+\hline
+{\em const} & char for the date set on run\+\_\+date and media\+\_\+date in Atom \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 on success, 0 on failure 
+\end{DoxyReturn}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Delete@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Delete}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Delete@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Delete}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Delete(\+A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t $\ast$$\ast$encapsuler)}{ARMEDIA_VideoEncapsuler_Delete(ARMEDIA_VideoEncapsuler_t **encapsuler)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$$\ast$}]{encapsuler}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a3a201e1d56790554739277fc256d3b57}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a3a201e1d56790554739277fc256d3b57}
+
+
+Delete the Manager. 
+
+\begin{DoxyWarning}{Warning}
+This function free memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & address of the pointer on the Manager \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aaae22a49acc64e5c89d36d8efbbfe190}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+New()} 
+\end{DoxySeeAlso}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Finish@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Finish}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Finish@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Finish}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Finish(\+A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t $\ast$$\ast$encapsuler)}{ARMEDIA_VideoEncapsuler_Finish(ARMEDIA_VideoEncapsuler_t **encapsuler)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR} A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Finish (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$$\ast$}]{encapsuler}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a82886e872f2b684f209aa6205ef68966}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a82886e872f2b684f209aa6205ef68966}
+Compute, write and close the video This can take some time to complete 
+\begin{DoxyParams}{Parameters}
+{\em encapsuler} & A\+R\+Media video encapsuler created by A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+new() \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+New@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+New}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+New@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+New}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+New(const char $\ast$media\+Path, int fps, char $\ast$uuid, char $\ast$run\+Date, e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+C\+T product, e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARMEDIA_VideoEncapsuler_New(const char *mediaPath, int fps, char *uuid, char *runDate, eARDISCOVERY_PRODUCT product, eARMEDIA_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t}$\ast$ A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{media\+Path, }
+\item[{int}]{fps, }
+\item[{char $\ast$}]{uuid, }
+\item[{char $\ast$}]{run\+Date, }
+\item[{{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT}}]{product, }
+\item[{{\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_aaae22a49acc64e5c89d36d8efbbfe190}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_aaae22a49acc64e5c89d36d8efbbfe190}
+
+
+Create a new A\+R\+Media encapsuler. 
+
+\begin{DoxyWarning}{Warning}
+This function allocate memory 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a3a201e1d56790554739277fc256d3b57}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Delete()} must be called to delete the codecs manager and free the memory allocated. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em error} & pointer on the error output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer on the new Manager 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a3a201e1d56790554739277fc256d3b57}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Delete()} 
+\end{DoxySeeAlso}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Avc\+Parameter\+Sets@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Avc\+Parameter\+Sets}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Avc\+Parameter\+Sets@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Avc\+Parameter\+Sets}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Avc\+Parameter\+Sets(\+A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t $\ast$encapsuler, const uint8\+\_\+t $\ast$sps, uint32\+\_\+t sps\+Size, const uint8\+\_\+t $\ast$pps, uint32\+\_\+t pps\+Size)}{ARMEDIA_VideoEncapsuler_SetAvcParameterSets(ARMEDIA_VideoEncapsuler_t *encapsuler, const uint8_t *sps, uint32_t spsSize, const uint8_t *pps, uint32_t ppsSize)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR} A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Avc\+Parameter\+Sets (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$}]{encapsuler, }
+\item[{const uint8\+\_\+t $\ast$}]{sps, }
+\item[{uint32\+\_\+t}]{sps\+Size, }
+\item[{const uint8\+\_\+t $\ast$}]{pps, }
+\item[{uint32\+\_\+t}]{pps\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a22106074bb5aca0293bbe88758223e7d}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a22106074bb5aca0293bbe88758223e7d}
+
+
+Set H.\+264/\+A\+VC parameter sets (S\+PS and P\+PS) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encapsuler} & A\+R\+Media video encapsuler created by A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+new() \\
+\hline
+{\em sps} & S\+PS buffer \\
+\hline
+{\em sps\+Size} & S\+PS size in bytes \\
+\hline
+{\em pps} & P\+PS buffer \\
+\hline
+{\em pps\+Size} & P\+PS size in bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Possible return values are in e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR 
+\end{DoxyReturn}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+G\+P\+S\+Infos@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+G\+P\+S\+Infos}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+G\+P\+S\+Infos@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+G\+P\+S\+Infos}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+G\+P\+S\+Infos(\+A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t $\ast$encapsuler, double latitude, double longitude, double altitude)}{ARMEDIA_VideoEncapsuler_SetGPSInfos(ARMEDIA_VideoEncapsuler_t *encapsuler, double latitude, double longitude, double altitude)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+G\+P\+S\+Infos (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$}]{encapsuler, }
+\item[{double}]{latitude, }
+\item[{double}]{longitude, }
+\item[{double}]{altitude}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_aabda73c13e4097305dad800d5e87d6ff}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_aabda73c13e4097305dad800d5e87d6ff}
+Set the current G\+PS position for further recordings 
+\begin{DoxyParams}{Parameters}
+{\em latitude} & current latitude \\
+\hline
+{\em longitude} & current longitude \\
+\hline
+{\em altitude} & current altitude \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Metadata\+Info@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Metadata\+Info}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Metadata\+Info@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Metadata\+Info}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Metadata\+Info(\+A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t $\ast$encapsuler, const char $\ast$content\+\_\+encoding, const char $\ast$mime\+\_\+format, uint32\+\_\+t metadata\+\_\+block\+\_\+size)}{ARMEDIA_VideoEncapsuler_SetMetadataInfo(ARMEDIA_VideoEncapsuler_t *encapsuler, const char *content_encoding, const char *mime_format, uint32_t metadata_block_size)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR} A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Metadata\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$}]{encapsuler, }
+\item[{const char $\ast$}]{content\+\_\+encoding, }
+\item[{const char $\ast$}]{mime\+\_\+format, }
+\item[{uint32\+\_\+t}]{metadata\+\_\+block\+\_\+size}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_ab0ae4f5f5caafcafa26eb934bedc687c}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_ab0ae4f5f5caafcafa26eb934bedc687c}
+
+
+Set encoding content, mime type and block size of Metadata. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encapsuler} & A\+R\+Media video encapsuler created by A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+new() \\
+\hline
+{\em content\+\_\+encoding} & Metadata content encoding \\
+\hline
+{\em mime\+\_\+format} & Metadata mime format \\
+\hline
+{\em block\+\_\+size} & Metadata block size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Possible return values are in e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR 
+\end{DoxyReturn}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Untimed\+Metadata@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Untimed\+Metadata}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Untimed\+Metadata@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Untimed\+Metadata}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Untimed\+Metadata(\+A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t $\ast$encapsuler, const A\+R\+M\+E\+D\+I\+A\+\_\+\+Untimed\+\_\+\+Metadata\+\_\+t $\ast$metadata)}{ARMEDIA_VideoEncapsuler_SetUntimedMetadata(ARMEDIA_VideoEncapsuler_t *encapsuler, const ARMEDIA_Untimed_Metadata_t *metadata)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR} A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Untimed\+Metadata (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$}]{encapsuler, }
+\item[{const {\bf A\+R\+M\+E\+D\+I\+A\+\_\+\+Untimed\+\_\+\+Metadata\+\_\+t} $\ast$}]{metadata}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_a2dc4c9e3e13bc08ed8aa2fd74bf0337c}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_a2dc4c9e3e13bc08ed8aa2fd74bf0337c}
+
+
+Set the video untimed metadata. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encapsuler} & A\+R\+Media video encapsuler created by A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+new() \\
+\hline
+{\em metadata} & Untimed metadata \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Possible return values are in e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR 
+\end{DoxyReturn}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Video\+Thumbnail@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Video\+Thumbnail}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Video\+Thumbnail@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Video\+Thumbnail}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Video\+Thumbnail(\+A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t $\ast$encapsuler, const char $\ast$file)}{ARMEDIA_VideoEncapsuler_SetVideoThumbnail(ARMEDIA_VideoEncapsuler_t *encapsuler, const char *file)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR} A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Set\+Video\+Thumbnail (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+t} $\ast$}]{encapsuler, }
+\item[{const char $\ast$}]{file}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_ae3b3c153c7f6ddce57614765f5d42a5d}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_ae3b3c153c7f6ddce57614765f5d42a5d}
+
+
+Set the video thumbnail to include in metadata. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encapsuler} & A\+R\+Media video encapsuler created by A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+new() \\
+\hline
+{\em file} & File path (J\+P\+EG format only) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Possible return values are in e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+OR 
+\end{DoxyReturn}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Try\+Fix\+Media\+File@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Try\+Fix\+Media\+File}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Try\+Fix\+Media\+File@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Try\+Fix\+Media\+File}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Try\+Fix\+Media\+File(const char $\ast$info\+File\+Path)}{ARMEDIA_VideoEncapsuler_TryFixMediaFile(const char *infoFilePath)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler\+\_\+\+Try\+Fix\+Media\+File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{info\+File\+Path}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_encapsuler_8h_aa0b1f7b25b5b14d200e5f2b38f2fa2a9}{}\label{_a_r_m_e_d_i_a___video_encapsuler_8h_aa0b1f7b25b5b14d200e5f2b38f2fa2a9}
+Try fo fix an M\+P4 infovid file. 
+\begin{DoxyParams}{Parameters}
+{\em info\+File\+Path} & Full path to the .infovid file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 on success, 0 on failure 
+\end{DoxyReturn}

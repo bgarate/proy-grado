@@ -1,0 +1,23 @@
+<map id="simxSetObjectParent" name="simxSetObjectParent">
+<area shape="rect" id="node2" href="$ext_api_8c.html#a51441ce82ffdbca72699e159ead28822" title="_removeCommandReply_int" alt="" coords="367,111,553,138"/>
+<area shape="rect" id="node9" href="$ext_api_platform_8c.html#a31eede90e2a9d23574e09a92ec626d9b" title="extApi_endianConversionInt" alt="" coords="860,162,1045,189"/>
+<area shape="rect" id="node13" href="$ext_api_8c.html#aa45d3ce06ddc5671219e14edde3e8c1a" title="_exec_int_buffer" alt="" coords="200,238,319,265"/>
+<area shape="rect" id="node3" href="$ext_api_platform_8c.html#ad8acf16580444bfcd40c07e5fb342f85" title="extApi_lockResources" alt="" coords="630,314,783,341"/>
+<area shape="rect" id="node8" href="$ext_api_8c.html#a0d2d3655f774e52433af447535b63f31" title="_getCommandPointer_i" alt="" coords="627,61,786,87"/>
+<area shape="rect" id="node11" href="$ext_api_8c.html#adaa820baed86efb2af6912461dd0759f" title="_removeChunkFromBuffer" alt="" coords="619,162,794,189"/>
+<area shape="rect" id="node12" href="$ext_api_platform_8c.html#a858ff89e6f07ac05bf4a9ab9828cca8e" title="extApi_unlockResources" alt="" coords="623,263,790,290"/>
+<area shape="rect" id="node4" href="$ext_api_platform_8c.html#af55c00f32f997391a5ac17db423df304" title="_simpleLock" alt="" coords="905,263,1000,290"/>
+<area shape="rect" id="node7" href="$ext_api_platform_8c.html#a9930a20c9af1b0df18f220200ed8ac54" title="_simpleUnlock" alt="" coords="899,314,1007,341"/>
+<area shape="rect" id="node5" href="$ext_api_platform_8c.html#a385771ea61682609251bc86beb69449f" title="extApi_switchThread" alt="" coords="1093,314,1237,341"/>
+<area shape="rect" id="node6" href="$ext_api_platform_8c.html#ab48366fe799ea73fc2650c65f463c7d3" title="extApi_sleepMs" alt="" coords="1285,314,1400,341"/>
+<area shape="rect" id="node10" href="$ext_api_platform_8c.html#ac7c8697b4686622ef5d969c9a3d7ff87" title="extApi_getIntFromPtr" alt="" coords="879,61,1026,87"/>
+<area shape="rect" id="node14" href="$ext_api_8c.html#abf00e1f860c6ba2ac144b16fcd8d04d8" title="_appendCommand_i_buff" alt="" coords="375,643,545,670"/>
+<area shape="rect" id="node19" href="$ext_api_8c.html#a093b1d162341967b50d615045c748958" title="_waitUntilMessageArrived" alt="" coords="373,365,547,391"/>
+<area shape="rect" id="node22" href="$ext_api_8c.html#ad4cc41d2856011509d396a51f1d43666" title="_setLastFetchedCmd" alt="" coords="633,567,780,594"/>
+<area shape="rect" id="node15" href="$ext_api_platform_8c.html#a01476683f124c90fd8955898a63752da" title="extApi_allocateBuffer" alt="" coords="879,618,1026,645"/>
+<area shape="rect" id="node16" href="$ext_api_platform_8c.html#aa3a4960cdcb852a68ce6d55b1182ff54" title="extApi_endianConversionUShort" alt="" coords="601,669,812,695"/>
+<area shape="rect" id="node17" href="$ext_api_8c.html#a25b0daa282c12a21bb950a00c6fb8f98" title="_appendChunkToBuffer" alt="" coords="627,719,786,746"/>
+<area shape="rect" id="node18" href="$ext_api_platform_8c.html#ada561dfab99bba410fb79f824c89e8d4" title="extApi_releaseBuffer" alt="" coords="881,719,1024,746"/>
+<area shape="rect" id="node20" href="$ext_api_platform_8c.html#a915a300a3aac8128d8451c26c8eacf1e" title="extApi_getTimeInMs" alt="" coords="881,466,1024,493"/>
+<area shape="rect" id="node21" href="$ext_api_platform_8c.html#a61e044d8e6d5fea90947540ebe55b92c" title="extApi_getTimeDiffInMs" alt="" coords="625,415,788,442"/>
+</map>

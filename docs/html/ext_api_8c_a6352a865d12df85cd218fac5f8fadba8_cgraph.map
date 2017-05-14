@@ -1,0 +1,10 @@
+<map id="simxGetInMessageInfo" name="simxGetInMessageInfo">
+<area shape="rect" id="node2" href="$ext_api_platform_8c.html#ad8acf16580444bfcd40c07e5fb342f85" title="extApi_lockResources" alt="" coords="239,5,393,32"/>
+<area shape="rect" id="node7" href="$ext_api_platform_8c.html#a31eede90e2a9d23574e09a92ec626d9b" title="extApi_endianConversionInt" alt="" coords="223,107,409,133"/>
+<area shape="rect" id="node8" href="$ext_api_platform_8c.html#aa3a4960cdcb852a68ce6d55b1182ff54" title="extApi_endianConversionUShort" alt="" coords="211,157,421,184"/>
+<area shape="rect" id="node9" href="$ext_api_platform_8c.html#a858ff89e6f07ac05bf4a9ab9828cca8e" title="extApi_unlockResources" alt="" coords="233,56,399,83"/>
+<area shape="rect" id="node3" href="$ext_api_platform_8c.html#af55c00f32f997391a5ac17db423df304" title="_simpleLock" alt="" coords="476,5,571,32"/>
+<area shape="rect" id="node6" href="$ext_api_platform_8c.html#a9930a20c9af1b0df18f220200ed8ac54" title="_simpleUnlock" alt="" coords="469,56,577,83"/>
+<area shape="rect" id="node4" href="$ext_api_platform_8c.html#a385771ea61682609251bc86beb69449f" title="extApi_switchThread" alt="" coords="625,5,769,32"/>
+<area shape="rect" id="node5" href="$ext_api_platform_8c.html#ab48366fe799ea73fc2650c65f463c7d3" title="extApi_sleepMs" alt="" coords="817,5,932,32"/>
+</map>

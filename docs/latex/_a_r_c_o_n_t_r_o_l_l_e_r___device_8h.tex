@@ -1,0 +1,758 @@
+\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.h File Reference}
+\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h}\index{src/hal/pb2/include/lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{src/hal/pb2/include/lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+
+
+Device controller allow to drive a device.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+S\+A\+L/\+A\+R\+S\+A\+L\+\_\+\+Print.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+S\+A\+L/\+A\+R\+S\+A\+L\+\_\+\+Mutex.\+h$>$}\\*
+{\ttfamily \#include $<$uthash/uthash.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Error.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Dictionary.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Feature.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream.\+h$>$}\\*
+Include dependency graph for A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Device controller allow to drive a device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a0be554e53326ebdd69a4739b9413dabe}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+State\+Changed\+Callback\+\_\+t}) (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8b}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+TE} new\+State, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} error, void $\ast$custom\+Data)
+\begin{DoxyCompactList}\small\item\em Callback used when the state of the device Controller is changed. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a673a556dbf814a483a0fcad9d5a69213}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Extension\+State\+Changed\+Callback\+\_\+t}) (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8b}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+TE} new\+State, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___discovery_8h_a908972407587656a48194c58ccd65813}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} product, const char $\ast$name, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} error, void $\ast$custom\+Data)
+\begin{DoxyCompactList}\small\item\em Callback used when the extension state of the device Controller is changed. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a25af8c4f157cb94b6d908a91d5ff046b}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Private\+\_\+t} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a25af8c4f157cb94b6d908a91d5ff046b}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Private\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Private part of the Device controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8b}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+TE} \{ \\*
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8ba8514e3229b0c2abbb1db5cecaa23c82d}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+ED} = 0, 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8baf1918f770dc1c791226f9edb4ae2a079}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+A\+R\+T\+I\+NG}, 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8bae5a7836e2aaae52ac779861b6bb67f07}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+U\+N\+N\+I\+NG}, 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8ba6d285d3c1aa085be2088fc4d4d24189a}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED}, 
+\\*
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8ba633607ac634b2fcbab4fa28d5270f945}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+I\+NG}, 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8ba4d7765011c2bc9c7ba3df0970947a0bb}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+AX}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$ \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_ac66fc49f8948a922ae6e64102eb1b249}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+New} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$discovery\+Device, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Create a new Device Controller. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a05346048f02799c8164d4ade0a21ec48}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Delete} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$$\ast$device\+Controller)
+\begin{DoxyCompactList}\small\item\em Delete the Device Controller. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_aa0cd70040aacba3f31354f483fe82b10}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Start} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller)
+\begin{DoxyCompactList}\small\item\em Start the Device Controller. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a829520cccda124a1ae1bb4c2f10209fc}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Stop} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller)
+\begin{DoxyCompactList}\small\item\em Stop the Device Controller. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a89ea07ae108e9aabfb0aa09798b4384d}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Video\+Stream\+Callbacks} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_8h_ab6a9fb7e7c3662325953d1ae61cd9670}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Decoder\+Config\+Callback\+\_\+t} decoder\+Config\+Callback, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_8h_af6993a7f0bbe0f78bfe65e5f32b0a219}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Did\+Receive\+Frame\+Callback\+\_\+t} receive\+Frame\+Callback, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_8h_a83e4dca241c7a801f3c0475207b5abf2}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Timeout\+Frame\+Callback\+\_\+t} timeout\+Frame\+Callback, void $\ast$custom\+Data)
+\begin{DoxyCompactList}\small\item\em Set callback to receive the video stream. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a1b8a52e1b2187bc42fcb7fa90b7a9578}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Video\+Stream\+M\+P4\+Compliant} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, int is\+M\+P4\+Compliant)
+\begin{DoxyCompactList}\small\item\em Set video stream compliant with the mp4 format. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_ab1da1ee2ae447edc079803c4407867ac}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Audio\+Stream\+Callbacks} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_8h_ab6a9fb7e7c3662325953d1ae61cd9670}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Decoder\+Config\+Callback\+\_\+t} decoder\+Config\+Callback, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_8h_af6993a7f0bbe0f78bfe65e5f32b0a219}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Did\+Receive\+Frame\+Callback\+\_\+t} receive\+Frame\+Callback, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_8h_a83e4dca241c7a801f3c0475207b5abf2}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Timeout\+Frame\+Callback\+\_\+t} timeout\+Frame\+Callback, void $\ast$custom\+Data)
+\begin{DoxyCompactList}\small\item\em Set callback to receive the audio stream. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a89dccacdc7c409107e63f0d0198488ff}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+Command\+Received\+Callback} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___dictionary_8h_ac08d033ce7ecb001951cd9fe88ed4378}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+I\+C\+T\+I\+O\+N\+A\+R\+Y\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+t} command\+Received\+Callback, void $\ast$custom\+Data)
+\begin{DoxyCompactList}\small\item\em Add callback to be informed when a commands is received. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a8ec88f88ebad3b731ca739cc12eec41a}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Remove\+Command\+Received\+Callback} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___dictionary_8h_ac08d033ce7ecb001951cd9fe88ed4378}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+I\+C\+T\+I\+O\+N\+A\+R\+Y\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+t} command\+Received\+Callback, void $\ast$custom\+Data)
+\begin{DoxyCompactList}\small\item\em Remove callback of command received information. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a640bde25ac0ece9d84bec471d92aa1da}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+State\+Changed\+Callback} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a0be554e53326ebdd69a4739b9413dabe}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+State\+Changed\+Callback\+\_\+t} state\+Changed\+Callback, void $\ast$custom\+Data)
+\begin{DoxyCompactList}\small\item\em Add callback of Device Controller state changed information. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a7bc70f5970275602866d88a7005533d6}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+Extension\+State\+Changed\+Callback} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a673a556dbf814a483a0fcad9d5a69213}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Extension\+State\+Changed\+Callback\+\_\+t} extension\+State\+Changed\+Callback, void $\ast$custom\+Data)
+\begin{DoxyCompactList}\small\item\em Add callback of Device Controller extension state changed information. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a47a9e7ccb23fb8e1f70e7c7afdfdb6e0}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Remove\+State\+Changed\+Callback} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a0be554e53326ebdd69a4739b9413dabe}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+State\+Changed\+Callback\+\_\+t} state\+Changed\+Callback, void $\ast$custom\+Data)
+\begin{DoxyCompactList}\small\item\em Remove callback of Device Controller state changed information. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_adc65f099f3fa03557b416fee942212b6}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Send\+Stream\+Frame} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, uint8\+\_\+t $\ast$data, int data\+Size)
+\begin{DoxyCompactList}\small\item\em Send audio stream frame through the network. \end{DoxyCompactList}\item 
+\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___d_i_c_t_i_o_n_a_r_y___e_l_e_m_e_n_t__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+I\+C\+T\+I\+O\+N\+A\+R\+Y\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+t} $\ast$ \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4871355b7d7b2808454045c0cae35789}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Command\+Elements} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___d_i_c_t_i_o_n_a_r_y___key_8h_ae92cbeea4c7fd5c692922dc950fd2004}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+I\+C\+T\+I\+O\+N\+A\+R\+Y\+\_\+\+K\+EY} command\+Key, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Get Element of a command received. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8b}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+TE} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a38364a7d0f7ae99f5afd7049d0f2e84c}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+State} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Get the Device Controller state. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8b}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+TE} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a6e4d28e91ab4d2b452e602da84c8aaa4}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+State} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Get the Device Controller extension state. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_aede2e3a4920c515683381846837872e6}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+Name} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, char $\ast$buffer, int buffer\+Size, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Get the Device Controller extension name. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___discovery_8h_a908972407587656a48194c58ccd65813}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a0d7e1ee41ae286608b083be63cae9d9c}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+Product} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Get the Device Controller extension product type. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_af52a79521693503fb9a6c8785c784105}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Output\+Video\+Stream} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Check if the device controller has outupt video stream. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a95a4633117c3412fe87edb2a45cba734}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Output\+Audio\+Stream} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Check if the device controller has output audio stream. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a28dc79998afee1100b0c6fa9522d0bbf}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Input\+Audio\+Stream} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___device__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$device\+Controller, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Check if the device controller has input audio stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Device controller allow to drive a device. 
+
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Extension\+State\+Changed\+Callback\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Extension\+State\+Changed\+Callback\+\_\+t}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Extension\+State\+Changed\+Callback\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Extension\+State\+Changed\+Callback\+\_\+t}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Extension\+State\+Changed\+Callback\+\_\+t}{ARCONTROLLER_Device_ExtensionStateChangedCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Extension\+State\+Changed\+Callback\+\_\+t) ({\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+TE} new\+State, {\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} product, const char $\ast$name, {\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} error, void $\ast$custom\+Data)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a673a556dbf814a483a0fcad9d5a69213}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a673a556dbf814a483a0fcad9d5a69213}
+
+
+Callback used when the extension state of the device Controller is changed. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em new\+State} & The new state of the extension of the Device Contoller \\
+\hline
+\mbox{\tt in}  & {\em product} & the type of the extension. \\
+\hline
+\mbox{\tt in}  & {\em name} & the name of the extension. \\
+\hline
+\mbox{\tt in}  & {\em error} & Error causing this new state. \\
+\hline
+\mbox{\tt in}  & {\em custom\+Data} & Custom Data set by the register \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Private\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Private\+\_\+t}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Private\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Private\+\_\+t}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Private\+\_\+t}{ARCONTROLLER_Device_Private_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Private\+\_\+t} {\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Private\+\_\+t}}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a25af8c4f157cb94b6d908a91d5ff046b}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a25af8c4f157cb94b6d908a91d5ff046b}
+
+
+Private part of the Device controller. 
+
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+State\+Changed\+Callback\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+State\+Changed\+Callback\+\_\+t}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+State\+Changed\+Callback\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+State\+Changed\+Callback\+\_\+t}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+State\+Changed\+Callback\+\_\+t}{ARCONTROLLER_Device_StateChangedCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+State\+Changed\+Callback\+\_\+t) ({\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+TE} new\+State, {\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} error, void $\ast$custom\+Data)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a0be554e53326ebdd69a4739b9413dabe}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a0be554e53326ebdd69a4739b9413dabe}
+
+
+Callback used when the state of the device Controller is changed. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em new\+State} & The new state of the Device Contoller \\
+\hline
+\mbox{\tt in}  & {\em error} & Error causing this new state. \\
+\hline
+\mbox{\tt in}  & {\em custom\+Data} & Custom Data set by the register \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Enumeration Type Documentation}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+TE@{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+TE}}
+\index{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+TE@{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+TE}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+TE}{eARCONTROLLER_DEVICE_STATE}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+TE}}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8b}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8b}
+Enum characterizing the states of the device controller \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+ED@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+ED}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+ED@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+ED}}\item[{\em 
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+ED\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8ba8514e3229b0c2abbb1db5cecaa23c82d}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8ba8514e3229b0c2abbb1db5cecaa23c82d}
+}]device controller is stopped \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+A\+R\+T\+I\+NG@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+A\+R\+T\+I\+NG}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+A\+R\+T\+I\+NG@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+A\+R\+T\+I\+NG}}\item[{\em 
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+A\+R\+T\+I\+NG\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8baf1918f770dc1c791226f9edb4ae2a079}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8baf1918f770dc1c791226f9edb4ae2a079}
+}]device controller is starting \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+U\+N\+N\+I\+NG@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+U\+N\+N\+I\+NG}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+U\+N\+N\+I\+NG@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+U\+N\+N\+I\+NG}}\item[{\em 
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+U\+N\+N\+I\+NG\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8bae5a7836e2aaae52ac779861b6bb67f07}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8bae5a7836e2aaae52ac779861b6bb67f07}
+}]device controller is running \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED}}\item[{\em 
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8ba6d285d3c1aa085be2088fc4d4d24189a}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8ba6d285d3c1aa085be2088fc4d4d24189a}
+}]device controller is paused \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+I\+NG@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+I\+NG}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+I\+NG@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+I\+NG}}\item[{\em 
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+I\+NG\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8ba633607ac634b2fcbab4fa28d5270f945}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8ba633607ac634b2fcbab4fa28d5270f945}
+}]device controller is stopping \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+AX@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+AX}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+AX@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+AX}}\item[{\em 
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+AX\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8ba4d7765011c2bc9c7ba3df0970947a0bb}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4b1233e7fb6da0d30db95d059e510a8ba4d7765011c2bc9c7ba3df0970947a0bb}
+}]Max of the enumeration \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+Command\+Received\+Callback@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+Command\+Received\+Callback}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+Command\+Received\+Callback@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+Command\+Received\+Callback}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+Command\+Received\+Callback(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+I\+C\+T\+I\+O\+N\+A\+R\+Y\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+t command\+Received\+Callback, void $\ast$custom\+Data)}{ARCONTROLLER_Device_AddCommandReceivedCallback(ARCONTROLLER_Device_t *deviceController, ARCONTROLLER_DICTIONARY_CALLBACK_t commandReceivedCallback, void *customData)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+Command\+Received\+Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+I\+C\+T\+I\+O\+N\+A\+R\+Y\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+t}}]{command\+Received\+Callback, }
+\item[{void $\ast$}]{custom\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a89dccacdc7c409107e63f0d0198488ff}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a89dccacdc7c409107e63f0d0198488ff}
+
+
+Add callback to be informed when a commands is received. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device\+Controller} & The device controller. \\
+\hline
+ & {\em command\+Received\+Callback} & The callback when a commands is received. \\
+\hline
+\mbox{\tt in}  & {\em custom\+Data} & custom data given as parameter to the callback. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a89dccacdc7c409107e63f0d0198488ff_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+Extension\+State\+Changed\+Callback@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+Extension\+State\+Changed\+Callback}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+Extension\+State\+Changed\+Callback@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+Extension\+State\+Changed\+Callback}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+Extension\+State\+Changed\+Callback(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Extension\+State\+Changed\+Callback\+\_\+t extension\+State\+Changed\+Callback, void $\ast$custom\+Data)}{ARCONTROLLER_Device_AddExtensionStateChangedCallback(ARCONTROLLER_Device_t *deviceController, ARCONTROLLER_Device_ExtensionStateChangedCallback_t extensionStateChangedCallback, void *customData)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+Extension\+State\+Changed\+Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Extension\+State\+Changed\+Callback\+\_\+t}}]{extension\+State\+Changed\+Callback, }
+\item[{void $\ast$}]{custom\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a7bc70f5970275602866d88a7005533d6}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a7bc70f5970275602866d88a7005533d6}
+
+
+Add callback of Device Controller extension state changed information. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device\+Controller} & The device controller. \\
+\hline
+ & {\em extension\+State\+Changed\+Callback} & The callback to add. \\
+\hline
+\mbox{\tt in}  & {\em custom\+Data} & custom data given as parameter to the callback. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+State\+Changed\+Callback@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+State\+Changed\+Callback}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+State\+Changed\+Callback@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+State\+Changed\+Callback}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+State\+Changed\+Callback(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+State\+Changed\+Callback\+\_\+t state\+Changed\+Callback, void $\ast$custom\+Data)}{ARCONTROLLER_Device_AddStateChangedCallback(ARCONTROLLER_Device_t *deviceController, ARCONTROLLER_Device_StateChangedCallback_t stateChangedCallback, void *customData)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Add\+State\+Changed\+Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+State\+Changed\+Callback\+\_\+t}}]{state\+Changed\+Callback, }
+\item[{void $\ast$}]{custom\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a640bde25ac0ece9d84bec471d92aa1da}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a640bde25ac0ece9d84bec471d92aa1da}
+
+
+Add callback of Device Controller state changed information. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device\+Controller} & The device controller. \\
+\hline
+ & {\em State\+Changed\+Callback} & The callback to add. \\
+\hline
+\mbox{\tt in}  & {\em custom\+Data} & custom data given as parameter to the callback. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a640bde25ac0ece9d84bec471d92aa1da_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Delete@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Delete}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Delete@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Delete}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Delete(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$$\ast$device\+Controller)}{ARCONTROLLER_Device_Delete(ARCONTROLLER_Device_t **deviceController)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$$\ast$}]{device\+Controller}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a05346048f02799c8164d4ade0a21ec48}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a05346048f02799c8164d4ade0a21ec48}
+
+
+Delete the Device Controller. 
+
+\begin{DoxyWarning}{Warning}
+This function free memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em device} & The device controller to delete \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_ac66fc49f8948a922ae6e64102eb1b249}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+New} 
+\end{DoxySeeAlso}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Command\+Elements@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Command\+Elements}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Command\+Elements@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Command\+Elements}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Command\+Elements(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+I\+C\+T\+I\+O\+N\+A\+R\+Y\+\_\+\+K\+E\+Y command\+Key, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_Device_GetCommandElements(ARCONTROLLER_Device_t *deviceController, eARCONTROLLER_DICTIONARY_KEY commandKey, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+I\+C\+T\+I\+O\+N\+A\+R\+Y\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+t}$\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Command\+Elements (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+I\+C\+T\+I\+O\+N\+A\+R\+Y\+\_\+\+K\+EY}}]{command\+Key, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4871355b7d7b2808454045c0cae35789}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a4871355b7d7b2808454045c0cae35789}
+
+
+Get Element of a command received. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device\+Controller} & The device controller. \\
+\hline
+\mbox{\tt in}  & {\em command\+Key} & The key of the command. \\
+\hline
+\mbox{\tt out}  & {\em error} & Executing error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Element dictionary of the command 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+Name@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+Name}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+Name@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+Name}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+Name(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, char $\ast$buffer, int buffer\+Size, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_Device_GetExtensionName(ARCONTROLLER_Device_t *deviceController, char *buffer, int bufferSize, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{char $\ast$}]{buffer, }
+\item[{int}]{buffer\+Size, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_aede2e3a4920c515683381846837872e6}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_aede2e3a4920c515683381846837872e6}
+
+
+Get the Device Controller extension name. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device\+Controller} & The device controller. \\
+\hline
+\mbox{\tt out}  & {\em buffer} & The buffer to receive the name. \\
+\hline
+\mbox{\tt in}  & {\em buffer\+Size} & The allocated size of the given buffer. \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+Product@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+Product}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+Product@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+Product}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+Product(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_Device_GetExtensionProduct(ARCONTROLLER_Device_t *deviceController, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+Product (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a0d7e1ee41ae286608b083be63cae9d9c}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a0d7e1ee41ae286608b083be63cae9d9c}
+
+
+Get the Device Controller extension product type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Controller} & The device controller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The product of the extension of the Device Controller. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+State@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+State}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+State@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+State}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+State(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_Device_GetExtensionState(ARCONTROLLER_Device_t *deviceController, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+TE} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+Extension\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a6e4d28e91ab4d2b452e602da84c8aaa4}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a6e4d28e91ab4d2b452e602da84c8aaa4}
+
+
+Get the Device Controller extension state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Controller} & The device controller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The extension state of the Device Controller. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+State@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+State}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+State@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+State}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+State(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_Device_GetState(ARCONTROLLER_Device_t *deviceController, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+TE} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Get\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a38364a7d0f7ae99f5afd7049d0f2e84c}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a38364a7d0f7ae99f5afd7049d0f2e84c}
+
+
+Get the Device Controller state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Controller} & The device controller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The state of the Device Controller. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a38364a7d0f7ae99f5afd7049d0f2e84c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Input\+Audio\+Stream@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Input\+Audio\+Stream}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Input\+Audio\+Stream@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Input\+Audio\+Stream}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Input\+Audio\+Stream(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_Device_HasInputAudioStream(ARCONTROLLER_Device_t *deviceController, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Input\+Audio\+Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a28dc79998afee1100b0c6fa9522d0bbf}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a28dc79998afee1100b0c6fa9522d0bbf}
+
+
+Check if the device controller has input audio stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Controller} & The device controller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the device controller can send audio stream, otherwide 0. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Output\+Audio\+Stream@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Output\+Audio\+Stream}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Output\+Audio\+Stream@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Output\+Audio\+Stream}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Output\+Audio\+Stream(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_Device_HasOutputAudioStream(ARCONTROLLER_Device_t *deviceController, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Output\+Audio\+Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a95a4633117c3412fe87edb2a45cba734}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a95a4633117c3412fe87edb2a45cba734}
+
+
+Check if the device controller has output audio stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Controller} & The device controller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the device controller can recieved audio stream, otherwide 0. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Output\+Video\+Stream@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Output\+Video\+Stream}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Output\+Video\+Stream@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Output\+Video\+Stream}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Output\+Video\+Stream(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_Device_HasOutputVideoStream(ARCONTROLLER_Device_t *deviceController, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Has\+Output\+Video\+Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_af52a79521693503fb9a6c8785c784105}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_af52a79521693503fb9a6c8785c784105}
+
+
+Check if the device controller has outupt video stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Controller} & The device controller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the device controller can recieved video stream, otherwide 0. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+New@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+New}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+New@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+New}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+New(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$discovery\+Device, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_Device_New(ARDISCOVERY_Device_t *discoveryDevice, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t}$\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{discovery\+Device, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_ac66fc49f8948a922ae6e64102eb1b249}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_ac66fc49f8948a922ae6e64102eb1b249}
+
+
+Create a new Device Controller. 
+
+\begin{DoxyWarning}{Warning}
+This function allocate memory 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a05346048f02799c8164d4ade0a21ec48}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Delete()} must be called to delete the Device Controller and free the memory allocated. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em discovery\+Device} & The device to drive ; must be not N\+U\+LL. \\
+\hline
+\mbox{\tt out}  & {\em error} & executing error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new Device Controller 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a05346048f02799c8164d4ade0a21ec48}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Delete} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_ac66fc49f8948a922ae6e64102eb1b249_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Remove\+Command\+Received\+Callback@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Remove\+Command\+Received\+Callback}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Remove\+Command\+Received\+Callback@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Remove\+Command\+Received\+Callback}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Remove\+Command\+Received\+Callback(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+I\+C\+T\+I\+O\+N\+A\+R\+Y\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+t command\+Received\+Callback, void $\ast$custom\+Data)}{ARCONTROLLER_Device_RemoveCommandReceivedCallback(ARCONTROLLER_Device_t *deviceController, ARCONTROLLER_DICTIONARY_CALLBACK_t commandReceivedCallback, void *customData)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Remove\+Command\+Received\+Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+D\+I\+C\+T\+I\+O\+N\+A\+R\+Y\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+t}}]{command\+Received\+Callback, }
+\item[{void $\ast$}]{custom\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a8ec88f88ebad3b731ca739cc12eec41a}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a8ec88f88ebad3b731ca739cc12eec41a}
+
+
+Remove callback of command received information. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device\+Controller} & The device controller. \\
+\hline
+ & {\em command\+Received\+Callback} & The callback to remove. \\
+\hline
+\mbox{\tt in}  & {\em custom\+Data} & custom data associated to the callback. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Remove\+State\+Changed\+Callback@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Remove\+State\+Changed\+Callback}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Remove\+State\+Changed\+Callback@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Remove\+State\+Changed\+Callback}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Remove\+State\+Changed\+Callback(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+State\+Changed\+Callback\+\_\+t state\+Changed\+Callback, void $\ast$custom\+Data)}{ARCONTROLLER_Device_RemoveStateChangedCallback(ARCONTROLLER_Device_t *deviceController, ARCONTROLLER_Device_StateChangedCallback_t stateChangedCallback, void *customData)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Remove\+State\+Changed\+Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+State\+Changed\+Callback\+\_\+t}}]{state\+Changed\+Callback, }
+\item[{void $\ast$}]{custom\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a47a9e7ccb23fb8e1f70e7c7afdfdb6e0}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a47a9e7ccb23fb8e1f70e7c7afdfdb6e0}
+
+
+Remove callback of Device Controller state changed information. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device\+Controller} & The device controller. \\
+\hline
+ & {\em State\+Changed\+Callback} & The callback to remove. \\
+\hline
+\mbox{\tt in}  & {\em custom\+Data} & custom data associated to the callback. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Send\+Stream\+Frame@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Send\+Stream\+Frame}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Send\+Stream\+Frame@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Send\+Stream\+Frame}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Send\+Stream\+Frame(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, uint8\+\_\+t $\ast$data, int data\+Size)}{ARCONTROLLER_Device_SendStreamFrame(ARCONTROLLER_Device_t *deviceController, uint8_t *data, int dataSize)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Send\+Stream\+Frame (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{uint8\+\_\+t $\ast$}]{data, }
+\item[{int}]{data\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_adc65f099f3fa03557b416fee942212b6}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_adc65f099f3fa03557b416fee942212b6}
+
+
+Send audio stream frame through the network. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device\+Controller} & The device controller. \\
+\hline
+\mbox{\tt in}  & {\em data} & The data to send. \\
+\hline
+\mbox{\tt in}  & {\em data\+Size} & The data size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Data format expected is P\+C\+M16\+LE with sample rate at 8000 hz; mono channel. 
+\end{DoxyNote}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Audio\+Stream\+Callbacks@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Audio\+Stream\+Callbacks}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Audio\+Stream\+Callbacks@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Audio\+Stream\+Callbacks}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Audio\+Stream\+Callbacks(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Decoder\+Config\+Callback\+\_\+t decoder\+Config\+Callback, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Did\+Receive\+Frame\+Callback\+\_\+t receive\+Frame\+Callback, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Timeout\+Frame\+Callback\+\_\+t timeout\+Frame\+Callback, void $\ast$custom\+Data)}{ARCONTROLLER_Device_SetAudioStreamCallbacks(ARCONTROLLER_Device_t *deviceController, ARCONTROLLER_Stream_DecoderConfigCallback_t decoderConfigCallback, ARCONTROLLER_Stream_DidReceiveFrameCallback_t receiveFrameCallback, ARCONTROLLER_Stream_TimeoutFrameCallback_t timeoutFrameCallback, void *customData)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Audio\+Stream\+Callbacks (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Decoder\+Config\+Callback\+\_\+t}}]{decoder\+Config\+Callback, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Did\+Receive\+Frame\+Callback\+\_\+t}}]{receive\+Frame\+Callback, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Timeout\+Frame\+Callback\+\_\+t}}]{timeout\+Frame\+Callback, }
+\item[{void $\ast$}]{custom\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_ab1da1ee2ae447edc079803c4407867ac}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_ab1da1ee2ae447edc079803c4407867ac}
+
+
+Set callback to receive the audio stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device\+Controller} & The device controller. \\
+\hline
+ & {\em decoder\+Config\+Callback} & callback to configure the stream decoder. \\
+\hline
+ & {\em receive\+Frame\+Callback} & The callback when a frame is received. \\
+\hline
+ & {\em timeout\+Frame\+Callback} & The callback when timeout on receive. \\
+\hline
+\mbox{\tt in}  & {\em custom\+Data} & custom data given as parameter to the callback. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Video\+Stream\+Callbacks@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Video\+Stream\+Callbacks}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Video\+Stream\+Callbacks@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Video\+Stream\+Callbacks}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Video\+Stream\+Callbacks(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Decoder\+Config\+Callback\+\_\+t decoder\+Config\+Callback, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Did\+Receive\+Frame\+Callback\+\_\+t receive\+Frame\+Callback, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Timeout\+Frame\+Callback\+\_\+t timeout\+Frame\+Callback, void $\ast$custom\+Data)}{ARCONTROLLER_Device_SetVideoStreamCallbacks(ARCONTROLLER_Device_t *deviceController, ARCONTROLLER_Stream_DecoderConfigCallback_t decoderConfigCallback, ARCONTROLLER_Stream_DidReceiveFrameCallback_t receiveFrameCallback, ARCONTROLLER_Stream_TimeoutFrameCallback_t timeoutFrameCallback, void *customData)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Video\+Stream\+Callbacks (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Decoder\+Config\+Callback\+\_\+t}}]{decoder\+Config\+Callback, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Did\+Receive\+Frame\+Callback\+\_\+t}}]{receive\+Frame\+Callback, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Timeout\+Frame\+Callback\+\_\+t}}]{timeout\+Frame\+Callback, }
+\item[{void $\ast$}]{custom\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a89ea07ae108e9aabfb0aa09798b4384d}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a89ea07ae108e9aabfb0aa09798b4384d}
+
+
+Set callback to receive the video stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device\+Controller} & The device controller. \\
+\hline
+ & {\em decoder\+Config\+Callback} & callback to configure the stream decoder. \\
+\hline
+ & {\em receive\+Frame\+Callback} & The callback when a frame is received. \\
+\hline
+ & {\em timeout\+Frame\+Callback} & The callback when timeout on receive. \\
+\hline
+\mbox{\tt in}  & {\em custom\+Data} & custom data given as parameter to the callback. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a89ea07ae108e9aabfb0aa09798b4384d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Video\+Stream\+M\+P4\+Compliant@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Video\+Stream\+M\+P4\+Compliant}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Video\+Stream\+M\+P4\+Compliant@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Video\+Stream\+M\+P4\+Compliant}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Video\+Stream\+M\+P4\+Compliant(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller, int is\+M\+P4\+Compliant)}{ARCONTROLLER_Device_SetVideoStreamMP4Compliant(ARCONTROLLER_Device_t *deviceController, int isMP4Compliant)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Set\+Video\+Stream\+M\+P4\+Compliant (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller, }
+\item[{int}]{is\+M\+P4\+Compliant}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a1b8a52e1b2187bc42fcb7fa90b7a9578}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a1b8a52e1b2187bc42fcb7fa90b7a9578}
+
+
+Set video stream compliant with the mp4 format. 
+
+\begin{DoxyNote}{Note}
+Must be set for decoding H264 stream by the i\+OS hardware decoder. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Controller} & The device controller. \\
+\hline
+{\em is\+M\+P4\+Compliant} & 1 if the video stream must be compliant with mp4 format ; otherwide 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Executing error. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Start@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Start}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Start@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Start}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Start(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller)}{ARCONTROLLER_Device_Start(ARCONTROLLER_Device_t *deviceController)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Start (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_aa0cd70040aacba3f31354f483fe82b10}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_aa0cd70040aacba3f31354f483fe82b10}
+
+
+Start the Device Controller. 
+
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a829520cccda124a1ae1bb4c2f10209fc}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Stop()} must be called to stop the Device Controller. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Controller} & The device controller to start. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a829520cccda124a1ae1bb4c2f10209fc}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Stop} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_aa0cd70040aacba3f31354f483fe82b10_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Stop@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Stop}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Stop@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Stop}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Stop(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t $\ast$device\+Controller)}{ARCONTROLLER_Device_Stop(ARCONTROLLER_Device_t *deviceController)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Stop (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+t} $\ast$}]{device\+Controller}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a829520cccda124a1ae1bb4c2f10209fc}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a829520cccda124a1ae1bb4c2f10209fc}
+
+
+Stop the Device Controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Controller} & The device controller to Stop. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_aa0cd70040aacba3f31354f483fe82b10}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Start} 
+\end{DoxySeeAlso}

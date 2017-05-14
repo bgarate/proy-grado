@@ -1,0 +1,451 @@
+\hypertarget{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.h File Reference}
+\label{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h}\index{src/hal/pb2/include/lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{src/hal/pb2/include/lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}}
+
+
+Mavlink Mission item utils.  
+
+
+{\ttfamily \#include $<$lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Error.\+h$>$}\\*
+{\ttfamily \#include $<$mavlink/parrot/mavlink.\+h$>$}\\*
+Include dependency graph for A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a484cbc62fc3cc7fbe046c1edc3b542e2}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Mission\+Item\+With\+All\+Params} (mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, float param1, float param2, float param3, float param4, float latitude, float longitude, float altitude, int command, int seq, int frame, int current, int autocontinue)
+\begin{DoxyCompactList}\small\item\em Fill a mission item with the given params and the default params. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a58e96d1d4de60dbd82e45a0f909a97e1}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Nav\+Waypoint\+Mission\+Item} (mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, float latitude, float longitude, float altitude, float yaw)
+\begin{DoxyCompactList}\small\item\em Fill a nav mission item with the given params and the default params. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_aae977222002ee04ebb964f324f732dab}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Land\+Mission\+Item} (mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, float latitude, float longitude, float altitude, float yaw)
+\begin{DoxyCompactList}\small\item\em Fill a land mission item with the given params and the default params. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a2f17de07da24bf7412fa359a705327f7}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Takeoff\+Mission\+Item} (mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, float latitude, float longitude, float altitude, float yaw, float pitch)
+\begin{DoxyCompactList}\small\item\em Fill a takeoff mission item with the given params and the default params. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_ae25070c6446aef3fd191c5dfd06fe2a5}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Change\+Speed\+Mission\+Item} (mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, int ground\+Speed, float speed, float throttle)
+\begin{DoxyCompactList}\small\item\em Fill a change speed mission item with the given params and the default params. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a74085ec1c8c4d219d785736c96484073}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Video\+Start\+Capture} (mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, int camera\+Id, float frames\+Per\+Seconds, float resolution)
+\begin{DoxyCompactList}\small\item\em Fill a start video capture mission item with the given params and the default params. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a5e30888bf0582482673b42fb2de3a2da}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Video\+Stop\+Capture} (mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item)
+\begin{DoxyCompactList}\small\item\em Fill a stop video capture mission item with the given params and the default params. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a5eb6afc30b88e4df0d4fb7b00df4a3b3}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Image\+Start\+Capture} (mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, float period, float images\+Count, float resolution)
+\begin{DoxyCompactList}\small\item\em Fill a start image capture mission item with the given params and the default params. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_aa2ceba5949f68170bc4831aac16526eb}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Image\+Stop\+Capture} (mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item)
+\begin{DoxyCompactList}\small\item\em Stop a started image capture. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_ac5c6a3eb360038aad347cae312c6c68f}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Create\+Panorama} (mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, float horizontal\+Angle, float vertical\+Angle, float horizontal\+Rotation\+Speed, float vertical\+Rotation\+Speed)
+\begin{DoxyCompactList}\small\item\em Fill a panorama mission item with the given params and the default params. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a022f29f07ee6ce3424d1f03d735fd211}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Delay} (mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, float duration)
+\begin{DoxyCompactList}\small\item\em Fill a delay mission item with the given params and the default params. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a2c3c69e27a888b686afd724db9f9cea9}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Set\+R\+OI} (mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, \hyperlink{common_8h_a60f63210bfb1f36ca81ae1d508401070}{M\+A\+V\+\_\+\+R\+OI} mode, int mission\+Index, int roi\+Index, float latitude, float longitude, float altitude)
+\begin{DoxyCompactList}\small\item\em Fill a set view mode mission item with the given params and the default params. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_acf1bb1a67a778b277f6301a478c5255e}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Set\+View\+Mode} (mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, \hyperlink{parrot_8h_a42b1d639dfa995ed688c2539969f421d}{M\+A\+V\+\_\+\+V\+I\+E\+W\+\_\+\+M\+O\+D\+E\+\_\+\+T\+Y\+PE} \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type}, int roi\+Index)
+\begin{DoxyCompactList}\small\item\em Fill a set view mode mission item with the given params and the default params. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Mavlink Mission item utils. 
+
+\begin{DoxyDate}{Date}
+14/05/2014 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:djavan.bertrand@parrot.com}{\tt djavan.\+bertrand@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Change\+Speed\+Mission\+Item@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Change\+Speed\+Mission\+Item}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Change\+Speed\+Mission\+Item@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Change\+Speed\+Mission\+Item}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Change\+Speed\+Mission\+Item(mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, int ground\+Speed, float speed, float throttle)}{ARMAVLINK_MissionItemUtils_CreateMavlinkChangeSpeedMissionItem(mavlink_mission_item_t *missionItem, int groundSpeed, float speed, float throttle)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Change\+Speed\+Mission\+Item (
+\begin{DoxyParamCaption}
+\item[{mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$}]{mission\+Item, }
+\item[{int}]{ground\+Speed, }
+\item[{float}]{speed, }
+\item[{float}]{throttle}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_ae25070c6446aef3fd191c5dfd06fe2a5}{}\label{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_ae25070c6446aef3fd191c5dfd06fe2a5}
+
+
+Fill a change speed mission item with the given params and the default params. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em mission\+Item} & \+: pointer on the mission item to fill \\
+\hline
+\mbox{\tt in}  & {\em ground\+Speed} & \+: 1 if ground speed, 0 if airspeed \\
+\hline
+\mbox{\tt in}  & {\em speed} & \+: the speed of the mission item \\
+\hline
+\mbox{\tt in}  & {\em throttle} & \+: throttle in percent, -\/1 indicates no changes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if operation went well, the enum description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Create\+Panorama@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Create\+Panorama}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Create\+Panorama@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Create\+Panorama}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Create\+Panorama(mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, float horizontal\+Angle, float vertical\+Angle, float horizontal\+Rotation\+Speed, float vertical\+Rotation\+Speed)}{ARMAVLINK_MissionItemUtils_CreateMavlinkCreatePanorama(mavlink_mission_item_t *missionItem, float horizontalAngle, float verticalAngle, float horizontalRotationSpeed, float verticalRotationSpeed)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Create\+Panorama (
+\begin{DoxyParamCaption}
+\item[{mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$}]{mission\+Item, }
+\item[{float}]{horizontal\+Angle, }
+\item[{float}]{vertical\+Angle, }
+\item[{float}]{horizontal\+Rotation\+Speed, }
+\item[{float}]{vertical\+Rotation\+Speed}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_ac5c6a3eb360038aad347cae312c6c68f}{}\label{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_ac5c6a3eb360038aad347cae312c6c68f}
+
+
+Fill a panorama mission item with the given params and the default params. 
+
+This item will start a move by the drone or its camera on the yaw/pan axis and on the tilt when it will be read by the drone Note that, the first vertical angle will be applied relatively to the physical center of the camera. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em mission\+Item} & \+: pointer on the mission item to fill \\
+\hline
+\mbox{\tt in}  & {\em horizontal\+Angle} & \+: the horizontal relative angle (deg) \\
+\hline
+\mbox{\tt in}  & {\em vertical\+Angle} & \+: the vertical relative angle (deg) (negative angle moves the camera down). \\
+\hline
+\mbox{\tt in}  & {\em horizontal\+Rotation\+Speed} & \+: the desired horizontal rotation speed (m/s) \\
+\hline
+\mbox{\tt in}  & {\em vertical\+Rotation\+Speed} & \+: the desired vertical rotation speed (m/s) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if operation went well, the enum description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Delay@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Delay}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Delay@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Delay}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Delay(mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, float duration)}{ARMAVLINK_MissionItemUtils_CreateMavlinkDelay(mavlink_mission_item_t *missionItem, float duration)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Delay (
+\begin{DoxyParamCaption}
+\item[{mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$}]{mission\+Item, }
+\item[{float}]{duration}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a022f29f07ee6ce3424d1f03d735fd211}{}\label{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a022f29f07ee6ce3424d1f03d735fd211}
+
+
+Fill a delay mission item with the given params and the default params. 
+
+This item will pause the flight plan when it will be read by the drone 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em mission\+Item} & \+: pointer on the mission item to fill \\
+\hline
+\mbox{\tt in}  & {\em duration} & \+: duration of the delay (s) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if operation went well, the enum description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Image\+Start\+Capture@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Image\+Start\+Capture}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Image\+Start\+Capture@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Image\+Start\+Capture}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Image\+Start\+Capture(mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, float period, float images\+Count, float resolution)}{ARMAVLINK_MissionItemUtils_CreateMavlinkImageStartCapture(mavlink_mission_item_t *missionItem, float period, float imagesCount, float resolution)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Image\+Start\+Capture (
+\begin{DoxyParamCaption}
+\item[{mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$}]{mission\+Item, }
+\item[{float}]{period, }
+\item[{float}]{images\+Count, }
+\item[{float}]{resolution}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a5eb6afc30b88e4df0d4fb7b00df4a3b3}{}\label{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a5eb6afc30b88e4df0d4fb7b00df4a3b3}
+
+
+Fill a start image capture mission item with the given params and the default params. 
+
+This item will start a timelapse when it will be read by the drone 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em mission\+Item} & \+: pointer on the mission item to fill \\
+\hline
+\mbox{\tt in}  & {\em period} & \+: the length of the capture in seconds (a minimum period which depends on the resolution is filtered by the drone) \\
+\hline
+\mbox{\tt in}  & {\em images\+Count} & \+: Number of image to take. 0 for unlimited capture (not used) \\
+\hline
+\mbox{\tt in}  & {\em resolution} & \+: resolution in megapixels (0.\+3 for 640x480, 1.\+3 for 1280x720...) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if operation went well, the enum description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Image\+Stop\+Capture@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Image\+Stop\+Capture}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Image\+Stop\+Capture@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Image\+Stop\+Capture}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Image\+Stop\+Capture(mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item)}{ARMAVLINK_MissionItemUtils_CreateMavlinkImageStopCapture(mavlink_mission_item_t *missionItem)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Image\+Stop\+Capture (
+\begin{DoxyParamCaption}
+\item[{mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$}]{mission\+Item}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_aa2ceba5949f68170bc4831aac16526eb}{}\label{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_aa2ceba5949f68170bc4831aac16526eb}
+
+
+Stop a started image capture. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em mission\+Item} & \+: pointer on the mission item to fill \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if operation went well, the enum description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Land\+Mission\+Item@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Land\+Mission\+Item}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Land\+Mission\+Item@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Land\+Mission\+Item}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Land\+Mission\+Item(mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, float latitude, float longitude, float altitude, float yaw)}{ARMAVLINK_MissionItemUtils_CreateMavlinkLandMissionItem(mavlink_mission_item_t *missionItem, float latitude, float longitude, float altitude, float yaw)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Land\+Mission\+Item (
+\begin{DoxyParamCaption}
+\item[{mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$}]{mission\+Item, }
+\item[{float}]{latitude, }
+\item[{float}]{longitude, }
+\item[{float}]{altitude, }
+\item[{float}]{yaw}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_aae977222002ee04ebb964f324f732dab}{}\label{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_aae977222002ee04ebb964f324f732dab}
+
+
+Fill a land mission item with the given params and the default params. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em mission\+Item} & \+: pointer on the mission item to fill \\
+\hline
+\mbox{\tt in}  & {\em latitude} & \+: the latitude of the mission item \\
+\hline
+\mbox{\tt in}  & {\em longitude} & \+: the longitude of the mission item \\
+\hline
+\mbox{\tt in}  & {\em altitude} & \+: the altitude of the mission item \\
+\hline
+\mbox{\tt in}  & {\em yaw} & \+: the yaw of the mission item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if operation went well, the enum description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Mission\+Item\+With\+All\+Params@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Mission\+Item\+With\+All\+Params}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Mission\+Item\+With\+All\+Params@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Mission\+Item\+With\+All\+Params}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Mission\+Item\+With\+All\+Params(mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, float param1, float param2, float param3, float param4, float latitude, float longitude, float altitude, int command, int seq, int frame, int current, int autocontinue)}{ARMAVLINK_MissionItemUtils_CreateMavlinkMissionItemWithAllParams(mavlink_mission_item_t *missionItem, float param1, float param2, float param3, float param4, float latitude, float longitude, float altitude, int command, int seq, int frame, int current, int autocontinue)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Mission\+Item\+With\+All\+Params (
+\begin{DoxyParamCaption}
+\item[{mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$}]{mission\+Item, }
+\item[{float}]{param1, }
+\item[{float}]{param2, }
+\item[{float}]{param3, }
+\item[{float}]{param4, }
+\item[{float}]{latitude, }
+\item[{float}]{longitude, }
+\item[{float}]{altitude, }
+\item[{int}]{command, }
+\item[{int}]{seq, }
+\item[{int}]{frame, }
+\item[{int}]{current, }
+\item[{int}]{autocontinue}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a484cbc62fc3cc7fbe046c1edc3b542e2}{}\label{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a484cbc62fc3cc7fbe046c1edc3b542e2}
+
+
+Fill a mission item with the given params and the default params. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em mission\+Item} & \+: pointer on the mission item to fill \\
+\hline
+\mbox{\tt in}  & {\em param1} & \+: Radius in which the M\+I\+S\+S\+I\+ON is accepted as reached, in meters \\
+\hline
+\mbox{\tt in}  & {\em param2} & \+: Time that the M\+AV should stay inside the P\+A\+R\+A\+M1 radius before advancing, in milliseconds \\
+\hline
+\mbox{\tt in}  & {\em param3} & \+: For L\+O\+I\+T\+ER command M\+I\+S\+S\+I\+O\+Ns\+: Orbit to circle around the M\+I\+S\+S\+I\+ON, in meters. If positive the orbit direction should be clockwise, if negative the orbit direction should be counter-\/clockwise. \mbox{[}in\mbox{]} \+: For N\+AV and L\+O\+I\+T\+ER command M\+I\+S\+S\+I\+O\+Ns\+: Yaw orientation in degrees, \mbox{[}0..360\mbox{]} 0 = N\+O\+R\+TH \\
+\hline
+\mbox{\tt in}  & {\em latitude} & \+: the latitude of the mission item \\
+\hline
+\mbox{\tt in}  & {\em latitude} & \+: the latitude of the mission item \\
+\hline
+\mbox{\tt in}  & {\em longitude} & \+: the longitude of the mission item \\
+\hline
+\mbox{\tt in}  & {\em altitude} & \+: the altitude of the mission item \\
+\hline
+\mbox{\tt in}  & {\em command} & \+: the command of the mission item \\
+\hline
+\mbox{\tt in}  & {\em seq} & \+: the seq of the mission item \\
+\hline
+\mbox{\tt in}  & {\em frame} & \+: The coordinate system of the M\+I\+S\+S\+I\+ON. see M\+A\+V\+\_\+\+F\+R\+A\+ME in \hyperlink{mavlink__types_8h}{mavlink\+\_\+types.\+h} \\
+\hline
+\mbox{\tt in}  & {\em current} & \+: false\+:0, true\+:1 \\
+\hline
+\mbox{\tt in}  & {\em autocontinue} & \+: autocontinue to next wp \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if operation went well, the enum description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Nav\+Waypoint\+Mission\+Item@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Nav\+Waypoint\+Mission\+Item}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Nav\+Waypoint\+Mission\+Item@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Nav\+Waypoint\+Mission\+Item}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Nav\+Waypoint\+Mission\+Item(mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, float latitude, float longitude, float altitude, float yaw)}{ARMAVLINK_MissionItemUtils_CreateMavlinkNavWaypointMissionItem(mavlink_mission_item_t *missionItem, float latitude, float longitude, float altitude, float yaw)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Nav\+Waypoint\+Mission\+Item (
+\begin{DoxyParamCaption}
+\item[{mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$}]{mission\+Item, }
+\item[{float}]{latitude, }
+\item[{float}]{longitude, }
+\item[{float}]{altitude, }
+\item[{float}]{yaw}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a58e96d1d4de60dbd82e45a0f909a97e1}{}\label{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a58e96d1d4de60dbd82e45a0f909a97e1}
+
+
+Fill a nav mission item with the given params and the default params. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em mission\+Item} & \+: pointer on the mission item to fill \\
+\hline
+\mbox{\tt in}  & {\em latitude} & \+: the latitude of the mission item \\
+\hline
+\mbox{\tt in}  & {\em longitude} & \+: the longitude of the mission item \\
+\hline
+\mbox{\tt in}  & {\em altitude} & \+: the altitude of the mission item \\
+\hline
+\mbox{\tt in}  & {\em yaw} & \+: the yaw of the mission item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if operation went well, the enum description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Set\+R\+OI@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Set\+R\+OI}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Set\+R\+OI@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Set\+R\+OI}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Set\+R\+O\+I(mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, M\+A\+V\+\_\+\+R\+O\+I mode, int mission\+Index, int roi\+Index, float latitude, float longitude, float altitude)}{ARMAVLINK_MissionItemUtils_CreateMavlinkSetROI(mavlink_mission_item_t *missionItem, MAV_ROI mode, int missionIndex, int roiIndex, float latitude, float longitude, float altitude)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Set\+R\+OI (
+\begin{DoxyParamCaption}
+\item[{mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$}]{mission\+Item, }
+\item[{{\bf M\+A\+V\+\_\+\+R\+OI}}]{mode, }
+\item[{int}]{mission\+Index, }
+\item[{int}]{roi\+Index, }
+\item[{float}]{latitude, }
+\item[{float}]{longitude, }
+\item[{float}]{altitude}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a2c3c69e27a888b686afd724db9f9cea9}{}\label{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a2c3c69e27a888b686afd724db9f9cea9}
+
+
+Fill a set view mode mission item with the given params and the default params. 
+
+This item will set the way the drone should behave regarding its orientation between two waypoints 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em mission\+Item} & \+: pointer on the mission item to fill \\
+\hline
+\mbox{\tt in}  & {\em mode} & \+: The mode of the R\+OI (see M\+A\+V\+\_\+\+R\+OI) \\
+\hline
+\mbox{\tt in}  & {\em mission\+Index} & \+: The index of the mission or the target id (used if mode is M\+A\+V\+\_\+\+R\+O\+I\+\_\+\+T\+A\+R\+G\+ET or M\+A\+V\+\_\+\+R\+O\+I\+\_\+\+W\+P\+I\+N\+D\+EX) \\
+\hline
+\mbox{\tt in}  & {\em roi\+Index} & \+: The index of roi. This is used to make a reference to this R\+OI in others mission items \\
+\hline
+\mbox{\tt in}  & {\em latitude} & \+: the latitude of the R\+OI (used if mode is M\+A\+V\+\_\+\+R\+O\+I\+\_\+\+L\+O\+C\+A\+T\+I\+ON) \\
+\hline
+\mbox{\tt in}  & {\em longitude} & \+: the longitude of the R\+OI (used if mode is M\+A\+V\+\_\+\+R\+O\+I\+\_\+\+L\+O\+C\+A\+T\+I\+ON) \\
+\hline
+\mbox{\tt in}  & {\em altitude} & \+: the altitude of the R\+OI (used if mode is M\+A\+V\+\_\+\+R\+O\+I\+\_\+\+L\+O\+C\+A\+T\+I\+ON) \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Set\+View\+Mode@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Set\+View\+Mode}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Set\+View\+Mode@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Set\+View\+Mode}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Set\+View\+Mode(mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, M\+A\+V\+\_\+\+V\+I\+E\+W\+\_\+\+M\+O\+D\+E\+\_\+\+T\+Y\+P\+E type, int roi\+Index)}{ARMAVLINK_MissionItemUtils_CreateMavlinkSetViewMode(mavlink_mission_item_t *missionItem, MAV_VIEW_MODE_TYPE type, int roiIndex)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Set\+View\+Mode (
+\begin{DoxyParamCaption}
+\item[{mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$}]{mission\+Item, }
+\item[{{\bf M\+A\+V\+\_\+\+V\+I\+E\+W\+\_\+\+M\+O\+D\+E\+\_\+\+T\+Y\+PE}}]{type, }
+\item[{int}]{roi\+Index}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_acf1bb1a67a778b277f6301a478c5255e}{}\label{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_acf1bb1a67a778b277f6301a478c5255e}
+
+
+Fill a set view mode mission item with the given params and the default params. 
+
+This item will set the way the drone should behave regarding its orientation between two waypoints 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em mission\+Item} & \+: pointer on the mission item to fill \\
+\hline
+\mbox{\tt in}  & {\em type} & \+: The type of the view mode (see M\+A\+V\+\_\+\+V\+I\+E\+W\+\_\+\+M\+O\+D\+E\+\_\+\+T\+Y\+PE) \\
+\hline
+\mbox{\tt in}  & {\em roi\+Index} & \+: The index of the R\+OI to follow if type is V\+I\+E\+W\+\_\+\+M\+O\+D\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+R\+OI. Ignored otherwise. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if operation went well, the enum description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Takeoff\+Mission\+Item@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Takeoff\+Mission\+Item}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Takeoff\+Mission\+Item@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Takeoff\+Mission\+Item}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Takeoff\+Mission\+Item(mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, float latitude, float longitude, float altitude, float yaw, float pitch)}{ARMAVLINK_MissionItemUtils_CreateMavlinkTakeoffMissionItem(mavlink_mission_item_t *missionItem, float latitude, float longitude, float altitude, float yaw, float pitch)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Takeoff\+Mission\+Item (
+\begin{DoxyParamCaption}
+\item[{mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$}]{mission\+Item, }
+\item[{float}]{latitude, }
+\item[{float}]{longitude, }
+\item[{float}]{altitude, }
+\item[{float}]{yaw, }
+\item[{float}]{pitch}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a2f17de07da24bf7412fa359a705327f7}{}\label{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a2f17de07da24bf7412fa359a705327f7}
+
+
+Fill a takeoff mission item with the given params and the default params. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em mission\+Item} & \+: pointer on the mission item to fill \\
+\hline
+\mbox{\tt in}  & {\em latitude} & \+: the latitude of the mission item \\
+\hline
+\mbox{\tt in}  & {\em longitude} & \+: the longitude of the mission item \\
+\hline
+\mbox{\tt in}  & {\em altitude} & \+: the altitude of the mission item \\
+\hline
+\mbox{\tt in}  & {\em yaw} & \+: the yaw of the mission item \\
+\hline
+\mbox{\tt in}  & {\em pitch} & \+: desired pitch \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if operation went well, the enum description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Video\+Start\+Capture@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Video\+Start\+Capture}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Video\+Start\+Capture@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Video\+Start\+Capture}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Video\+Start\+Capture(mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, int camera\+Id, float frames\+Per\+Seconds, float resolution)}{ARMAVLINK_MissionItemUtils_CreateMavlinkVideoStartCapture(mavlink_mission_item_t *missionItem, int cameraId, float framesPerSeconds, float resolution)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Video\+Start\+Capture (
+\begin{DoxyParamCaption}
+\item[{mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$}]{mission\+Item, }
+\item[{int}]{camera\+Id, }
+\item[{float}]{frames\+Per\+Seconds, }
+\item[{float}]{resolution}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a74085ec1c8c4d219d785736c96484073}{}\label{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a74085ec1c8c4d219d785736c96484073}
+
+
+Fill a start video capture mission item with the given params and the default params. 
+
+This item will start the video capture when it will be read by the drone 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em mission\+Item} & \+: pointer on the mission item to fill \\
+\hline
+\mbox{\tt in}  & {\em camera\+Id} & \+: id of the camera to start the capture (not used) \\
+\hline
+\mbox{\tt in}  & {\em frames\+Per\+Seconds} & \+: \hyperlink{struct_frame}{Frame} per seconds of the video capture (not used) \\
+\hline
+\mbox{\tt in}  & {\em resolution} & \+: resolution in megapixels (0.\+3 for 640x480, 1.\+3 for 1280x720...) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if operation went well, the enum description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Video\+Stop\+Capture@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Video\+Stop\+Capture}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Video\+Stop\+Capture@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Video\+Stop\+Capture}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Video\+Stop\+Capture(mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item)}{ARMAVLINK_MissionItemUtils_CreateMavlinkVideoStopCapture(mavlink_mission_item_t *missionItem)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Mission\+Item\+Utils\+\_\+\+Create\+Mavlink\+Video\+Stop\+Capture (
+\begin{DoxyParamCaption}
+\item[{mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$}]{mission\+Item}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a5e30888bf0582482673b42fb2de3a2da}{}\label{_a_r_m_a_v_l_i_n_k___mission_item_utils_8h_a5e30888bf0582482673b42fb2de3a2da}
+
+
+Fill a stop video capture mission item with the given params and the default params. 
+
+This item will stop a started video capture when it will be read by the drone 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em mission\+Item} & \+: pointer on the mission item to fill \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if operation went well, the enum description of the error otherwise 
+\end{DoxyReturn}

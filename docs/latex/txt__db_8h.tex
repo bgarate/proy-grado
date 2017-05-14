@@ -1,0 +1,140 @@
+\hypertarget{txt__db_8h}{}\section{src/hal/pb2/include/openssl/txt\+\_\+db.h File Reference}
+\label{txt__db_8h}\index{src/hal/pb2/include/openssl/txt\+\_\+db.\+h@{src/hal/pb2/include/openssl/txt\+\_\+db.\+h}}
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/bio.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/stack.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/lhash.\+h$>$}\\*
+Include dependency graph for txt\+\_\+db.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{txt__db_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtxt__db__st}{txt\+\_\+db\+\_\+st}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{txt__db_8h_a56670ac7c225d47fb925cab8cb57bf40}{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+OK}~0
+\item 
+\#define \hyperlink{txt__db_8h_a31d7900304a5217f0863d260e48a6660}{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+A\+L\+L\+OC}~1
+\item 
+\#define \hyperlink{txt__db_8h_abb973cdd9311b774651a0279a0955036}{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+L\+A\+SH}~2
+\item 
+\#define \hyperlink{txt__db_8h_a80049fd077a6d41b0a2ad9d557a810cf}{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+D\+E\+X\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+GE}~3
+\item 
+\#define \hyperlink{txt__db_8h_a237d9d086f4c42de30263c01396472af}{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX}~4
+\item 
+\#define \hyperlink{txt__db_8h_a0c08cebcf302d8d230468c5e89d73b1f}{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+L\+A\+SH}~5
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{safestack_8h_a0c7cad03962a61035f753d64e05503e3}{O\+P\+E\+N\+S\+S\+L\+\_\+\+S\+T\+R\+I\+NG} $\ast$ \hyperlink{txt__db_8h_a6a35660313db49640015c0c4fc06676a}{O\+P\+E\+N\+S\+S\+L\+\_\+\+P\+S\+T\+R\+I\+NG}
+\item 
+typedef struct \hyperlink{structtxt__db__st}{txt\+\_\+db\+\_\+st} \hyperlink{txt__db_8h_af0894eb5e9381054125dc0850993c1a1}{T\+X\+T\+\_\+\+DB}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{txt__db_8h_af0894eb5e9381054125dc0850993c1a1}{T\+X\+T\+\_\+\+DB} $\ast$ \hyperlink{txt__db_8h_a35025118342fc7bf5453032b2ba21b5e}{T\+X\+T\+\_\+\+D\+B\+\_\+read} (\hyperlink{bio_8h_af3fabae1c9af50b9312cdff41e11d1dd}{B\+IO} $\ast$in, int num)
+\item 
+long \hyperlink{txt__db_8h_a41960b9b635eb32bdb1168c74d85d323}{T\+X\+T\+\_\+\+D\+B\+\_\+write} (\hyperlink{bio_8h_af3fabae1c9af50b9312cdff41e11d1dd}{B\+IO} $\ast$out, \hyperlink{txt__db_8h_af0894eb5e9381054125dc0850993c1a1}{T\+X\+T\+\_\+\+DB} $\ast$db)
+\item 
+int \hyperlink{txt__db_8h_a04f1562e4b3b0f32fce30e695b883b08}{T\+X\+T\+\_\+\+D\+B\+\_\+create\+\_\+index} (\hyperlink{txt__db_8h_af0894eb5e9381054125dc0850993c1a1}{T\+X\+T\+\_\+\+DB} $\ast$db, int field, int($\ast$qual)(\hyperlink{safestack_8h_a0c7cad03962a61035f753d64e05503e3}{O\+P\+E\+N\+S\+S\+L\+\_\+\+S\+T\+R\+I\+NG} $\ast$), \hyperlink{lhash_8h_a114ffb53d72638b28333462feb63226e}{L\+H\+A\+S\+H\+\_\+\+H\+A\+S\+H\+\_\+\+F\+N\+\_\+\+T\+Y\+PE} hash, \hyperlink{lhash_8h_ac07b8095350f4c1c977c5d9ef576c409}{L\+H\+A\+S\+H\+\_\+\+C\+O\+M\+P\+\_\+\+F\+N\+\_\+\+T\+Y\+PE} cmp)
+\item 
+void \hyperlink{txt__db_8h_a3c40829cc4ad54164db561615b9b751a}{T\+X\+T\+\_\+\+D\+B\+\_\+free} (\hyperlink{txt__db_8h_af0894eb5e9381054125dc0850993c1a1}{T\+X\+T\+\_\+\+DB} $\ast$db)
+\item 
+\hyperlink{safestack_8h_a0c7cad03962a61035f753d64e05503e3}{O\+P\+E\+N\+S\+S\+L\+\_\+\+S\+T\+R\+I\+NG} $\ast$ \hyperlink{txt__db_8h_a4e955364c3fe2090029f1469636eb6b5}{T\+X\+T\+\_\+\+D\+B\+\_\+get\+\_\+by\+\_\+index} (\hyperlink{txt__db_8h_af0894eb5e9381054125dc0850993c1a1}{T\+X\+T\+\_\+\+DB} $\ast$db, int idx, \hyperlink{safestack_8h_a0c7cad03962a61035f753d64e05503e3}{O\+P\+E\+N\+S\+S\+L\+\_\+\+S\+T\+R\+I\+NG} $\ast$value)
+\item 
+int \hyperlink{txt__db_8h_aae90cd2ff702f09059f45598fe3870b3}{T\+X\+T\+\_\+\+D\+B\+\_\+insert} (\hyperlink{txt__db_8h_af0894eb5e9381054125dc0850993c1a1}{T\+X\+T\+\_\+\+DB} $\ast$db, \hyperlink{safestack_8h_a0c7cad03962a61035f753d64e05503e3}{O\+P\+E\+N\+S\+S\+L\+\_\+\+S\+T\+R\+I\+NG} $\ast$value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{txt\+\_\+db.\+h@{txt\+\_\+db.\+h}!D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+L\+A\+SH@{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+L\+A\+SH}}
+\index{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+L\+A\+SH@{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+L\+A\+SH}!txt\+\_\+db.\+h@{txt\+\_\+db.\+h}}
+\subsubsection[{\texorpdfstring{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+L\+A\+SH}{DB_ERROR_INDEX_CLASH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+L\+A\+SH~2}\hypertarget{txt__db_8h_abb973cdd9311b774651a0279a0955036}{}\label{txt__db_8h_abb973cdd9311b774651a0279a0955036}
+\index{txt\+\_\+db.\+h@{txt\+\_\+db.\+h}!D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+D\+E\+X\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+GE@{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+D\+E\+X\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+GE}}
+\index{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+D\+E\+X\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+GE@{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+D\+E\+X\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+GE}!txt\+\_\+db.\+h@{txt\+\_\+db.\+h}}
+\subsubsection[{\texorpdfstring{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+D\+E\+X\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+GE}{DB_ERROR_INDEX_OUT_OF_RANGE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+D\+E\+X\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+GE~3}\hypertarget{txt__db_8h_a80049fd077a6d41b0a2ad9d557a810cf}{}\label{txt__db_8h_a80049fd077a6d41b0a2ad9d557a810cf}
+\index{txt\+\_\+db.\+h@{txt\+\_\+db.\+h}!D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+L\+A\+SH@{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+L\+A\+SH}}
+\index{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+L\+A\+SH@{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+L\+A\+SH}!txt\+\_\+db.\+h@{txt\+\_\+db.\+h}}
+\subsubsection[{\texorpdfstring{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+L\+A\+SH}{DB_ERROR_INSERT_INDEX_CLASH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+L\+A\+SH~5}\hypertarget{txt__db_8h_a0c08cebcf302d8d230468c5e89d73b1f}{}\label{txt__db_8h_a0c08cebcf302d8d230468c5e89d73b1f}
+\index{txt\+\_\+db.\+h@{txt\+\_\+db.\+h}!D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+A\+L\+L\+OC@{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+A\+L\+L\+OC}}
+\index{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+A\+L\+L\+OC@{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+A\+L\+L\+OC}!txt\+\_\+db.\+h@{txt\+\_\+db.\+h}}
+\subsubsection[{\texorpdfstring{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+A\+L\+L\+OC}{DB_ERROR_MALLOC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+A\+L\+L\+OC~1}\hypertarget{txt__db_8h_a31d7900304a5217f0863d260e48a6660}{}\label{txt__db_8h_a31d7900304a5217f0863d260e48a6660}
+\index{txt\+\_\+db.\+h@{txt\+\_\+db.\+h}!D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX@{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX}}
+\index{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX@{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX}!txt\+\_\+db.\+h@{txt\+\_\+db.\+h}}
+\subsubsection[{\texorpdfstring{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX}{DB_ERROR_NO_INDEX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX~4}\hypertarget{txt__db_8h_a237d9d086f4c42de30263c01396472af}{}\label{txt__db_8h_a237d9d086f4c42de30263c01396472af}
+\index{txt\+\_\+db.\+h@{txt\+\_\+db.\+h}!D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+OK@{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+OK}}
+\index{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+OK@{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+OK}!txt\+\_\+db.\+h@{txt\+\_\+db.\+h}}
+\subsubsection[{\texorpdfstring{D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+OK}{DB_ERROR_OK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+OK~0}\hypertarget{txt__db_8h_a56670ac7c225d47fb925cab8cb57bf40}{}\label{txt__db_8h_a56670ac7c225d47fb925cab8cb57bf40}
+
+
+\subsection{Typedef Documentation}
+\index{txt\+\_\+db.\+h@{txt\+\_\+db.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+\+P\+S\+T\+R\+I\+NG@{O\+P\+E\+N\+S\+S\+L\+\_\+\+P\+S\+T\+R\+I\+NG}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+\+P\+S\+T\+R\+I\+NG@{O\+P\+E\+N\+S\+S\+L\+\_\+\+P\+S\+T\+R\+I\+NG}!txt\+\_\+db.\+h@{txt\+\_\+db.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+\+P\+S\+T\+R\+I\+NG}{OPENSSL_PSTRING}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf O\+P\+E\+N\+S\+S\+L\+\_\+\+S\+T\+R\+I\+NG}$\ast$ {\bf O\+P\+E\+N\+S\+S\+L\+\_\+\+P\+S\+T\+R\+I\+NG}}\hypertarget{txt__db_8h_a6a35660313db49640015c0c4fc06676a}{}\label{txt__db_8h_a6a35660313db49640015c0c4fc06676a}
+\index{txt\+\_\+db.\+h@{txt\+\_\+db.\+h}!T\+X\+T\+\_\+\+DB@{T\+X\+T\+\_\+\+DB}}
+\index{T\+X\+T\+\_\+\+DB@{T\+X\+T\+\_\+\+DB}!txt\+\_\+db.\+h@{txt\+\_\+db.\+h}}
+\subsubsection[{\texorpdfstring{T\+X\+T\+\_\+\+DB}{TXT_DB}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf txt\+\_\+db\+\_\+st}  {\bf T\+X\+T\+\_\+\+DB}}\hypertarget{txt__db_8h_af0894eb5e9381054125dc0850993c1a1}{}\label{txt__db_8h_af0894eb5e9381054125dc0850993c1a1}
+
+
+\subsection{Function Documentation}
+\index{txt\+\_\+db.\+h@{txt\+\_\+db.\+h}!T\+X\+T\+\_\+\+D\+B\+\_\+create\+\_\+index@{T\+X\+T\+\_\+\+D\+B\+\_\+create\+\_\+index}}
+\index{T\+X\+T\+\_\+\+D\+B\+\_\+create\+\_\+index@{T\+X\+T\+\_\+\+D\+B\+\_\+create\+\_\+index}!txt\+\_\+db.\+h@{txt\+\_\+db.\+h}}
+\subsubsection[{\texorpdfstring{T\+X\+T\+\_\+\+D\+B\+\_\+create\+\_\+index(\+T\+X\+T\+\_\+\+D\+B $\ast$db, int field, int($\ast$qual)(\+O\+P\+E\+N\+S\+S\+L\+\_\+\+S\+T\+R\+I\+N\+G $\ast$), L\+H\+A\+S\+H\+\_\+\+H\+A\+S\+H\+\_\+\+F\+N\+\_\+\+T\+Y\+P\+E hash, L\+H\+A\+S\+H\+\_\+\+C\+O\+M\+P\+\_\+\+F\+N\+\_\+\+T\+Y\+P\+E cmp)}{TXT_DB_create_index(TXT_DB *db, int field, int(*qual)(OPENSSL_STRING *), LHASH_HASH_FN_TYPE hash, LHASH_COMP_FN_TYPE cmp)}}]{\setlength{\rightskip}{0pt plus 5cm}int T\+X\+T\+\_\+\+D\+B\+\_\+create\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+X\+T\+\_\+\+DB} $\ast$}]{db, }
+\item[{int}]{field, }
+\item[{int($\ast$)({\bf O\+P\+E\+N\+S\+S\+L\+\_\+\+S\+T\+R\+I\+NG} $\ast$)}]{qual, }
+\item[{{\bf L\+H\+A\+S\+H\+\_\+\+H\+A\+S\+H\+\_\+\+F\+N\+\_\+\+T\+Y\+PE}}]{hash, }
+\item[{{\bf L\+H\+A\+S\+H\+\_\+\+C\+O\+M\+P\+\_\+\+F\+N\+\_\+\+T\+Y\+PE}}]{cmp}
+\end{DoxyParamCaption}
+)}\hypertarget{txt__db_8h_a04f1562e4b3b0f32fce30e695b883b08}{}\label{txt__db_8h_a04f1562e4b3b0f32fce30e695b883b08}
+\index{txt\+\_\+db.\+h@{txt\+\_\+db.\+h}!T\+X\+T\+\_\+\+D\+B\+\_\+free@{T\+X\+T\+\_\+\+D\+B\+\_\+free}}
+\index{T\+X\+T\+\_\+\+D\+B\+\_\+free@{T\+X\+T\+\_\+\+D\+B\+\_\+free}!txt\+\_\+db.\+h@{txt\+\_\+db.\+h}}
+\subsubsection[{\texorpdfstring{T\+X\+T\+\_\+\+D\+B\+\_\+free(\+T\+X\+T\+\_\+\+D\+B $\ast$db)}{TXT_DB_free(TXT_DB *db)}}]{\setlength{\rightskip}{0pt plus 5cm}void T\+X\+T\+\_\+\+D\+B\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+X\+T\+\_\+\+DB} $\ast$}]{db}
+\end{DoxyParamCaption}
+)}\hypertarget{txt__db_8h_a3c40829cc4ad54164db561615b9b751a}{}\label{txt__db_8h_a3c40829cc4ad54164db561615b9b751a}
+\index{txt\+\_\+db.\+h@{txt\+\_\+db.\+h}!T\+X\+T\+\_\+\+D\+B\+\_\+get\+\_\+by\+\_\+index@{T\+X\+T\+\_\+\+D\+B\+\_\+get\+\_\+by\+\_\+index}}
+\index{T\+X\+T\+\_\+\+D\+B\+\_\+get\+\_\+by\+\_\+index@{T\+X\+T\+\_\+\+D\+B\+\_\+get\+\_\+by\+\_\+index}!txt\+\_\+db.\+h@{txt\+\_\+db.\+h}}
+\subsubsection[{\texorpdfstring{T\+X\+T\+\_\+\+D\+B\+\_\+get\+\_\+by\+\_\+index(\+T\+X\+T\+\_\+\+D\+B $\ast$db, int idx, O\+P\+E\+N\+S\+S\+L\+\_\+\+S\+T\+R\+I\+N\+G $\ast$value)}{TXT_DB_get_by_index(TXT_DB *db, int idx, OPENSSL_STRING *value)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\+P\+E\+N\+S\+S\+L\+\_\+\+S\+T\+R\+I\+NG}$\ast$ T\+X\+T\+\_\+\+D\+B\+\_\+get\+\_\+by\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+X\+T\+\_\+\+DB} $\ast$}]{db, }
+\item[{int}]{idx, }
+\item[{{\bf O\+P\+E\+N\+S\+S\+L\+\_\+\+S\+T\+R\+I\+NG} $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{txt__db_8h_a4e955364c3fe2090029f1469636eb6b5}{}\label{txt__db_8h_a4e955364c3fe2090029f1469636eb6b5}
+\index{txt\+\_\+db.\+h@{txt\+\_\+db.\+h}!T\+X\+T\+\_\+\+D\+B\+\_\+insert@{T\+X\+T\+\_\+\+D\+B\+\_\+insert}}
+\index{T\+X\+T\+\_\+\+D\+B\+\_\+insert@{T\+X\+T\+\_\+\+D\+B\+\_\+insert}!txt\+\_\+db.\+h@{txt\+\_\+db.\+h}}
+\subsubsection[{\texorpdfstring{T\+X\+T\+\_\+\+D\+B\+\_\+insert(\+T\+X\+T\+\_\+\+D\+B $\ast$db, O\+P\+E\+N\+S\+S\+L\+\_\+\+S\+T\+R\+I\+N\+G $\ast$value)}{TXT_DB_insert(TXT_DB *db, OPENSSL_STRING *value)}}]{\setlength{\rightskip}{0pt plus 5cm}int T\+X\+T\+\_\+\+D\+B\+\_\+insert (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+X\+T\+\_\+\+DB} $\ast$}]{db, }
+\item[{{\bf O\+P\+E\+N\+S\+S\+L\+\_\+\+S\+T\+R\+I\+NG} $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{txt__db_8h_aae90cd2ff702f09059f45598fe3870b3}{}\label{txt__db_8h_aae90cd2ff702f09059f45598fe3870b3}
+\index{txt\+\_\+db.\+h@{txt\+\_\+db.\+h}!T\+X\+T\+\_\+\+D\+B\+\_\+read@{T\+X\+T\+\_\+\+D\+B\+\_\+read}}
+\index{T\+X\+T\+\_\+\+D\+B\+\_\+read@{T\+X\+T\+\_\+\+D\+B\+\_\+read}!txt\+\_\+db.\+h@{txt\+\_\+db.\+h}}
+\subsubsection[{\texorpdfstring{T\+X\+T\+\_\+\+D\+B\+\_\+read(\+B\+I\+O $\ast$in, int num)}{TXT_DB_read(BIO *in, int num)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+X\+T\+\_\+\+DB}$\ast$ T\+X\+T\+\_\+\+D\+B\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+IO} $\ast$}]{in, }
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{txt__db_8h_a35025118342fc7bf5453032b2ba21b5e}{}\label{txt__db_8h_a35025118342fc7bf5453032b2ba21b5e}
+\index{txt\+\_\+db.\+h@{txt\+\_\+db.\+h}!T\+X\+T\+\_\+\+D\+B\+\_\+write@{T\+X\+T\+\_\+\+D\+B\+\_\+write}}
+\index{T\+X\+T\+\_\+\+D\+B\+\_\+write@{T\+X\+T\+\_\+\+D\+B\+\_\+write}!txt\+\_\+db.\+h@{txt\+\_\+db.\+h}}
+\subsubsection[{\texorpdfstring{T\+X\+T\+\_\+\+D\+B\+\_\+write(\+B\+I\+O $\ast$out, T\+X\+T\+\_\+\+D\+B $\ast$db)}{TXT_DB_write(BIO *out, TXT_DB *db)}}]{\setlength{\rightskip}{0pt plus 5cm}long T\+X\+T\+\_\+\+D\+B\+\_\+write (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+IO} $\ast$}]{out, }
+\item[{{\bf T\+X\+T\+\_\+\+DB} $\ast$}]{db}
+\end{DoxyParamCaption}
+)}\hypertarget{txt__db_8h_a41960b9b635eb32bdb1168c74d85d323}{}\label{txt__db_8h_a41960b9b635eb32bdb1168c74d85d323}

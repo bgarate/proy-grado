@@ -1,0 +1,202 @@
+\hypertarget{camellia_8h}{}\section{src/hal/pb2/include/openssl/camellia.h File Reference}
+\label{camellia_8h}\index{src/hal/pb2/include/openssl/camellia.\+h@{src/hal/pb2/include/openssl/camellia.\+h}}
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+Include dependency graph for camellia.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{camellia_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcamellia__key__st}{camellia\+\_\+key\+\_\+st}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{camellia_8h_aeac0ba1b8a0caa424d8c33b7d616a758}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+E\+N\+C\+R\+Y\+PT}~1
+\item 
+\#define \hyperlink{camellia_8h_a1f0130ae5c96dd542e1d1d9e87d7f529}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+D\+E\+C\+R\+Y\+PT}~0
+\item 
+\#define \hyperlink{camellia_8h_a75e646fb8543fc3279c2c3435fea75ed}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}~16
+\item 
+\#define \hyperlink{camellia_8h_a33fd1741d97c512c8b998f14657a6868}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+B\+Y\+T\+E\+\_\+\+L\+EN}~272
+\item 
+\#define \hyperlink{camellia_8h_ac0cbf489603e52c533cb5519d47421a6}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+W\+O\+R\+D\+\_\+\+L\+EN}~(\hyperlink{camellia_8h_a33fd1741d97c512c8b998f14657a6868}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+B\+Y\+T\+E\+\_\+\+L\+EN} / 4)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int \hyperlink{camellia_8h_a7fdfdeb07c85db8ec9c0edd180888805}{K\+E\+Y\+\_\+\+T\+A\+B\+L\+E\+\_\+\+T\+Y\+PE}\mbox{[}\hyperlink{camellia_8h_ac0cbf489603e52c533cb5519d47421a6}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+W\+O\+R\+D\+\_\+\+L\+EN}\mbox{]}
+\item 
+typedef struct \hyperlink{structcamellia__key__st}{camellia\+\_\+key\+\_\+st} \hyperlink{camellia_8h_a38db8f10277c1cf4b434b5df02558165}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{camellia_8h_a1bf9559dc71bf32c39e5d7eb7f23557b}{Camellia\+\_\+set\+\_\+key} (const unsigned char $\ast$user\+Key, const int \hyperlink{x509v3_8h_ab3c186980893d6836a68407d221ae9c9}{bits}, \hyperlink{camellia_8h_a38db8f10277c1cf4b434b5df02558165}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$key)
+\item 
+void \hyperlink{camellia_8h_a038a8868b81b62ff844589c713331351}{Camellia\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, const \hyperlink{camellia_8h_a38db8f10277c1cf4b434b5df02558165}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$key)
+\item 
+void \hyperlink{camellia_8h_a66a2f6249c41748a98d3edf8ed0caa04}{Camellia\+\_\+decrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, const \hyperlink{camellia_8h_a38db8f10277c1cf4b434b5df02558165}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$key)
+\item 
+void \hyperlink{camellia_8h_a14ec55ddfa7d974b440f5856013a269d}{Camellia\+\_\+ecb\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, const \hyperlink{camellia_8h_a38db8f10277c1cf4b434b5df02558165}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$key, const int enc)
+\item 
+void \hyperlink{camellia_8h_a37748fb1600c409f8903eb37c57b8543}{Camellia\+\_\+cbc\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{camellia_8h_a38db8f10277c1cf4b434b5df02558165}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$key, unsigned char $\ast$ivec, const int enc)
+\item 
+void \hyperlink{camellia_8h_a2a28f003f566807a6e613be83e92dd12}{Camellia\+\_\+cfb128\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{camellia_8h_a38db8f10277c1cf4b434b5df02558165}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$key, unsigned char $\ast$ivec, int $\ast$num, const int enc)
+\item 
+void \hyperlink{camellia_8h_aa2b90165ef17d89d6f08b6480a74e1b2}{Camellia\+\_\+cfb1\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{camellia_8h_a38db8f10277c1cf4b434b5df02558165}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$key, unsigned char $\ast$ivec, int $\ast$num, const int enc)
+\item 
+void \hyperlink{camellia_8h_a05e07154a3c9bb28af1f74d52aee3673}{Camellia\+\_\+cfb8\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{camellia_8h_a38db8f10277c1cf4b434b5df02558165}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$key, unsigned char $\ast$ivec, int $\ast$num, const int enc)
+\item 
+void \hyperlink{camellia_8h_a1e8c77cbc1687115e45b539d4d03c128}{Camellia\+\_\+ofb128\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{camellia_8h_a38db8f10277c1cf4b434b5df02558165}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$key, unsigned char $\ast$ivec, int $\ast$num)
+\item 
+void \hyperlink{camellia_8h_adc3d0113eff1904b4fea3fd2fda85019}{Camellia\+\_\+ctr128\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{camellia_8h_a38db8f10277c1cf4b434b5df02558165}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$key, unsigned char ivec\mbox{[}\hyperlink{camellia_8h_a75e646fb8543fc3279c2c3435fea75ed}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}\mbox{]}, unsigned char ecount\+\_\+buf\mbox{[}\hyperlink{camellia_8h_a75e646fb8543fc3279c2c3435fea75ed}{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}\mbox{]}, unsigned int $\ast$num)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{camellia.\+h@{camellia.\+h}!C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE@{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}}
+\index{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE@{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}{CAMELLIA_BLOCK_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE~16}\hypertarget{camellia_8h_a75e646fb8543fc3279c2c3435fea75ed}{}\label{camellia_8h_a75e646fb8543fc3279c2c3435fea75ed}
+\index{camellia.\+h@{camellia.\+h}!C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+D\+E\+C\+R\+Y\+PT@{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+D\+E\+C\+R\+Y\+PT}}
+\index{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+D\+E\+C\+R\+Y\+PT@{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+D\+E\+C\+R\+Y\+PT}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+D\+E\+C\+R\+Y\+PT}{CAMELLIA_DECRYPT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+D\+E\+C\+R\+Y\+PT~0}\hypertarget{camellia_8h_a1f0130ae5c96dd542e1d1d9e87d7f529}{}\label{camellia_8h_a1f0130ae5c96dd542e1d1d9e87d7f529}
+\index{camellia.\+h@{camellia.\+h}!C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+E\+N\+C\+R\+Y\+PT@{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+E\+N\+C\+R\+Y\+PT}}
+\index{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+E\+N\+C\+R\+Y\+PT@{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+E\+N\+C\+R\+Y\+PT}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+E\+N\+C\+R\+Y\+PT}{CAMELLIA_ENCRYPT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+E\+N\+C\+R\+Y\+PT~1}\hypertarget{camellia_8h_aeac0ba1b8a0caa424d8c33b7d616a758}{}\label{camellia_8h_aeac0ba1b8a0caa424d8c33b7d616a758}
+\index{camellia.\+h@{camellia.\+h}!C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+B\+Y\+T\+E\+\_\+\+L\+EN@{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+B\+Y\+T\+E\+\_\+\+L\+EN}}
+\index{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+B\+Y\+T\+E\+\_\+\+L\+EN@{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+B\+Y\+T\+E\+\_\+\+L\+EN}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+B\+Y\+T\+E\+\_\+\+L\+EN}{CAMELLIA_TABLE_BYTE_LEN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+B\+Y\+T\+E\+\_\+\+L\+EN~272}\hypertarget{camellia_8h_a33fd1741d97c512c8b998f14657a6868}{}\label{camellia_8h_a33fd1741d97c512c8b998f14657a6868}
+\index{camellia.\+h@{camellia.\+h}!C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+W\+O\+R\+D\+\_\+\+L\+EN@{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+W\+O\+R\+D\+\_\+\+L\+EN}}
+\index{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+W\+O\+R\+D\+\_\+\+L\+EN@{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+W\+O\+R\+D\+\_\+\+L\+EN}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+W\+O\+R\+D\+\_\+\+L\+EN}{CAMELLIA_TABLE_WORD_LEN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+W\+O\+R\+D\+\_\+\+L\+EN~({\bf C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+B\+Y\+T\+E\+\_\+\+L\+EN} / 4)}\hypertarget{camellia_8h_ac0cbf489603e52c533cb5519d47421a6}{}\label{camellia_8h_ac0cbf489603e52c533cb5519d47421a6}
+
+
+\subsection{Typedef Documentation}
+\index{camellia.\+h@{camellia.\+h}!C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY@{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY}}
+\index{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY@{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY}{CAMELLIA_KEY}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf camellia\+\_\+key\+\_\+st} {\bf C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY}}\hypertarget{camellia_8h_a38db8f10277c1cf4b434b5df02558165}{}\label{camellia_8h_a38db8f10277c1cf4b434b5df02558165}
+\index{camellia.\+h@{camellia.\+h}!K\+E\+Y\+\_\+\+T\+A\+B\+L\+E\+\_\+\+T\+Y\+PE@{K\+E\+Y\+\_\+\+T\+A\+B\+L\+E\+\_\+\+T\+Y\+PE}}
+\index{K\+E\+Y\+\_\+\+T\+A\+B\+L\+E\+\_\+\+T\+Y\+PE@{K\+E\+Y\+\_\+\+T\+A\+B\+L\+E\+\_\+\+T\+Y\+PE}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{K\+E\+Y\+\_\+\+T\+A\+B\+L\+E\+\_\+\+T\+Y\+PE}{KEY_TABLE_TYPE}}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned int K\+E\+Y\+\_\+\+T\+A\+B\+L\+E\+\_\+\+T\+Y\+PE\mbox{[}{\bf C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+T\+A\+B\+L\+E\+\_\+\+W\+O\+R\+D\+\_\+\+L\+EN}\mbox{]}}\hypertarget{camellia_8h_a7fdfdeb07c85db8ec9c0edd180888805}{}\label{camellia_8h_a7fdfdeb07c85db8ec9c0edd180888805}
+
+
+\subsection{Function Documentation}
+\index{camellia.\+h@{camellia.\+h}!Camellia\+\_\+cbc\+\_\+encrypt@{Camellia\+\_\+cbc\+\_\+encrypt}}
+\index{Camellia\+\_\+cbc\+\_\+encrypt@{Camellia\+\_\+cbc\+\_\+encrypt}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{Camellia\+\_\+cbc\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t length, const C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+E\+Y $\ast$key, unsigned char $\ast$ivec, const int enc)}{Camellia_cbc_encrypt(const unsigned char *in, unsigned char *out, size_t length, const CAMELLIA_KEY *key, unsigned char *ivec, const int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void Camellia\+\_\+cbc\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{length, }
+\item[{const {\bf C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{unsigned char $\ast$}]{ivec, }
+\item[{const int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{camellia_8h_a37748fb1600c409f8903eb37c57b8543}{}\label{camellia_8h_a37748fb1600c409f8903eb37c57b8543}
+\index{camellia.\+h@{camellia.\+h}!Camellia\+\_\+cfb128\+\_\+encrypt@{Camellia\+\_\+cfb128\+\_\+encrypt}}
+\index{Camellia\+\_\+cfb128\+\_\+encrypt@{Camellia\+\_\+cfb128\+\_\+encrypt}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{Camellia\+\_\+cfb128\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t length, const C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+E\+Y $\ast$key, unsigned char $\ast$ivec, int $\ast$num, const int enc)}{Camellia_cfb128_encrypt(const unsigned char *in, unsigned char *out, size_t length, const CAMELLIA_KEY *key, unsigned char *ivec, int *num, const int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void Camellia\+\_\+cfb128\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{length, }
+\item[{const {\bf C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{unsigned char $\ast$}]{ivec, }
+\item[{int $\ast$}]{num, }
+\item[{const int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{camellia_8h_a2a28f003f566807a6e613be83e92dd12}{}\label{camellia_8h_a2a28f003f566807a6e613be83e92dd12}
+\index{camellia.\+h@{camellia.\+h}!Camellia\+\_\+cfb1\+\_\+encrypt@{Camellia\+\_\+cfb1\+\_\+encrypt}}
+\index{Camellia\+\_\+cfb1\+\_\+encrypt@{Camellia\+\_\+cfb1\+\_\+encrypt}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{Camellia\+\_\+cfb1\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t length, const C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+E\+Y $\ast$key, unsigned char $\ast$ivec, int $\ast$num, const int enc)}{Camellia_cfb1_encrypt(const unsigned char *in, unsigned char *out, size_t length, const CAMELLIA_KEY *key, unsigned char *ivec, int *num, const int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void Camellia\+\_\+cfb1\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{length, }
+\item[{const {\bf C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{unsigned char $\ast$}]{ivec, }
+\item[{int $\ast$}]{num, }
+\item[{const int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{camellia_8h_aa2b90165ef17d89d6f08b6480a74e1b2}{}\label{camellia_8h_aa2b90165ef17d89d6f08b6480a74e1b2}
+\index{camellia.\+h@{camellia.\+h}!Camellia\+\_\+cfb8\+\_\+encrypt@{Camellia\+\_\+cfb8\+\_\+encrypt}}
+\index{Camellia\+\_\+cfb8\+\_\+encrypt@{Camellia\+\_\+cfb8\+\_\+encrypt}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{Camellia\+\_\+cfb8\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t length, const C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+E\+Y $\ast$key, unsigned char $\ast$ivec, int $\ast$num, const int enc)}{Camellia_cfb8_encrypt(const unsigned char *in, unsigned char *out, size_t length, const CAMELLIA_KEY *key, unsigned char *ivec, int *num, const int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void Camellia\+\_\+cfb8\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{length, }
+\item[{const {\bf C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{unsigned char $\ast$}]{ivec, }
+\item[{int $\ast$}]{num, }
+\item[{const int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{camellia_8h_a05e07154a3c9bb28af1f74d52aee3673}{}\label{camellia_8h_a05e07154a3c9bb28af1f74d52aee3673}
+\index{camellia.\+h@{camellia.\+h}!Camellia\+\_\+ctr128\+\_\+encrypt@{Camellia\+\_\+ctr128\+\_\+encrypt}}
+\index{Camellia\+\_\+ctr128\+\_\+encrypt@{Camellia\+\_\+ctr128\+\_\+encrypt}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{Camellia\+\_\+ctr128\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t length, const C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+E\+Y $\ast$key, unsigned char ivec[C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE], unsigned char ecount\+\_\+buf[C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE], unsigned int $\ast$num)}{Camellia_ctr128_encrypt(const unsigned char *in, unsigned char *out, size_t length, const CAMELLIA_KEY *key, unsigned char ivec[CAMELLIA_BLOCK_SIZE], unsigned char ecount_buf[CAMELLIA_BLOCK_SIZE], unsigned int *num)}}]{\setlength{\rightskip}{0pt plus 5cm}void Camellia\+\_\+ctr128\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{length, }
+\item[{const {\bf C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}\+C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E\mbox{]}, }
+\item[{unsigned char}]{ecount\+\_\+buf\mbox{[}\+C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E\mbox{]}, }
+\item[{unsigned int $\ast$}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{camellia_8h_adc3d0113eff1904b4fea3fd2fda85019}{}\label{camellia_8h_adc3d0113eff1904b4fea3fd2fda85019}
+\index{camellia.\+h@{camellia.\+h}!Camellia\+\_\+decrypt@{Camellia\+\_\+decrypt}}
+\index{Camellia\+\_\+decrypt@{Camellia\+\_\+decrypt}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{Camellia\+\_\+decrypt(const unsigned char $\ast$in, unsigned char $\ast$out, const C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+E\+Y $\ast$key)}{Camellia_decrypt(const unsigned char *in, unsigned char *out, const CAMELLIA_KEY *key)}}]{\setlength{\rightskip}{0pt plus 5cm}void Camellia\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{const {\bf C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{camellia_8h_a66a2f6249c41748a98d3edf8ed0caa04}{}\label{camellia_8h_a66a2f6249c41748a98d3edf8ed0caa04}
+\index{camellia.\+h@{camellia.\+h}!Camellia\+\_\+ecb\+\_\+encrypt@{Camellia\+\_\+ecb\+\_\+encrypt}}
+\index{Camellia\+\_\+ecb\+\_\+encrypt@{Camellia\+\_\+ecb\+\_\+encrypt}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{Camellia\+\_\+ecb\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, const C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+E\+Y $\ast$key, const int enc)}{Camellia_ecb_encrypt(const unsigned char *in, unsigned char *out, const CAMELLIA_KEY *key, const int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void Camellia\+\_\+ecb\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{const {\bf C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{const int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{camellia_8h_a14ec55ddfa7d974b440f5856013a269d}{}\label{camellia_8h_a14ec55ddfa7d974b440f5856013a269d}
+\index{camellia.\+h@{camellia.\+h}!Camellia\+\_\+encrypt@{Camellia\+\_\+encrypt}}
+\index{Camellia\+\_\+encrypt@{Camellia\+\_\+encrypt}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{Camellia\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, const C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+E\+Y $\ast$key)}{Camellia_encrypt(const unsigned char *in, unsigned char *out, const CAMELLIA_KEY *key)}}]{\setlength{\rightskip}{0pt plus 5cm}void Camellia\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{const {\bf C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{camellia_8h_a038a8868b81b62ff844589c713331351}{}\label{camellia_8h_a038a8868b81b62ff844589c713331351}
+\index{camellia.\+h@{camellia.\+h}!Camellia\+\_\+ofb128\+\_\+encrypt@{Camellia\+\_\+ofb128\+\_\+encrypt}}
+\index{Camellia\+\_\+ofb128\+\_\+encrypt@{Camellia\+\_\+ofb128\+\_\+encrypt}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{Camellia\+\_\+ofb128\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t length, const C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+E\+Y $\ast$key, unsigned char $\ast$ivec, int $\ast$num)}{Camellia_ofb128_encrypt(const unsigned char *in, unsigned char *out, size_t length, const CAMELLIA_KEY *key, unsigned char *ivec, int *num)}}]{\setlength{\rightskip}{0pt plus 5cm}void Camellia\+\_\+ofb128\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{length, }
+\item[{const {\bf C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{unsigned char $\ast$}]{ivec, }
+\item[{int $\ast$}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{camellia_8h_a1e8c77cbc1687115e45b539d4d03c128}{}\label{camellia_8h_a1e8c77cbc1687115e45b539d4d03c128}
+\index{camellia.\+h@{camellia.\+h}!Camellia\+\_\+set\+\_\+key@{Camellia\+\_\+set\+\_\+key}}
+\index{Camellia\+\_\+set\+\_\+key@{Camellia\+\_\+set\+\_\+key}!camellia.\+h@{camellia.\+h}}
+\subsubsection[{\texorpdfstring{Camellia\+\_\+set\+\_\+key(const unsigned char $\ast$user\+Key, const int bits, C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+E\+Y $\ast$key)}{Camellia_set_key(const unsigned char *userKey, const int bits, CAMELLIA_KEY *key)}}]{\setlength{\rightskip}{0pt plus 5cm}int Camellia\+\_\+set\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{user\+Key, }
+\item[{const int}]{bits, }
+\item[{{\bf C\+A\+M\+E\+L\+L\+I\+A\+\_\+\+K\+EY} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{camellia_8h_a1bf9559dc71bf32c39e5d7eb7f23557b}{}\label{camellia_8h_a1bf9559dc71bf32c39e5d7eb7f23557b}

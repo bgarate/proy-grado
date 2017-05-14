@@ -1,0 +1,74 @@
+\hypertarget{ui__compat_8h}{}\section{src/hal/pb2/include/openssl/ui\+\_\+compat.h File Reference}
+\label{ui__compat_8h}\index{src/hal/pb2/include/openssl/ui\+\_\+compat.\+h@{src/hal/pb2/include/openssl/ui\+\_\+compat.\+h}}
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/ui.\+h$>$}\\*
+Include dependency graph for ui\+\_\+compat.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ui__compat_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ui__compat_8h_a71ceb580c771454fdb4dc0282f7f30d1}{des\+\_\+read\+\_\+pw\+\_\+string}(b,  l,  p,  v)~\hyperlink{ui__compat_8h_a1a3d6be230257496d38c5469ef7d9e28}{\+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw\+\_\+string}((b),(l),(p),(v))
+\item 
+\#define \hyperlink{ui__compat_8h_a800341b0fb7effa4e65ab5084ab16b1b}{des\+\_\+read\+\_\+pw}(b,  bf,  s,  p,  v)~\hyperlink{ui__compat_8h_ac1b8154f973fc897ad11b30e9397cbfc}{\+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw}((b),(bf),(s),(p),(v))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ui__compat_8h_a1a3d6be230257496d38c5469ef7d9e28}{\+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw\+\_\+string} (char $\ast$buf, int \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const char $\ast$prompt, int verify)
+\item 
+int \hyperlink{ui__compat_8h_ac1b8154f973fc897ad11b30e9397cbfc}{\+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw} (char $\ast$buf, char $\ast$buff, int size, const char $\ast$prompt, int verify)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{ui\+\_\+compat.\+h@{ui\+\_\+compat.\+h}!des\+\_\+read\+\_\+pw@{des\+\_\+read\+\_\+pw}}
+\index{des\+\_\+read\+\_\+pw@{des\+\_\+read\+\_\+pw}!ui\+\_\+compat.\+h@{ui\+\_\+compat.\+h}}
+\subsubsection[{\texorpdfstring{des\+\_\+read\+\_\+pw}{des_read_pw}}]{\setlength{\rightskip}{0pt plus 5cm}\#define des\+\_\+read\+\_\+pw(
+\begin{DoxyParamCaption}
+\item[{}]{b, }
+\item[{}]{bf, }
+\item[{}]{s, }
+\item[{}]{p, }
+\item[{}]{v}
+\end{DoxyParamCaption}
+)~{\bf \+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw}((b),(bf),(s),(p),(v))}\hypertarget{ui__compat_8h_a800341b0fb7effa4e65ab5084ab16b1b}{}\label{ui__compat_8h_a800341b0fb7effa4e65ab5084ab16b1b}
+\index{ui\+\_\+compat.\+h@{ui\+\_\+compat.\+h}!des\+\_\+read\+\_\+pw\+\_\+string@{des\+\_\+read\+\_\+pw\+\_\+string}}
+\index{des\+\_\+read\+\_\+pw\+\_\+string@{des\+\_\+read\+\_\+pw\+\_\+string}!ui\+\_\+compat.\+h@{ui\+\_\+compat.\+h}}
+\subsubsection[{\texorpdfstring{des\+\_\+read\+\_\+pw\+\_\+string}{des_read_pw_string}}]{\setlength{\rightskip}{0pt plus 5cm}\#define des\+\_\+read\+\_\+pw\+\_\+string(
+\begin{DoxyParamCaption}
+\item[{}]{b, }
+\item[{}]{l, }
+\item[{}]{p, }
+\item[{}]{v}
+\end{DoxyParamCaption}
+)~{\bf \+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw\+\_\+string}((b),(l),(p),(v))}\hypertarget{ui__compat_8h_a71ceb580c771454fdb4dc0282f7f30d1}{}\label{ui__compat_8h_a71ceb580c771454fdb4dc0282f7f30d1}
+
+
+\subsection{Function Documentation}
+\index{ui\+\_\+compat.\+h@{ui\+\_\+compat.\+h}!\+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw@{\+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw}}
+\index{\+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw@{\+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw}!ui\+\_\+compat.\+h@{ui\+\_\+compat.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw(char $\ast$buf, char $\ast$buff, int size, const char $\ast$prompt, int verify)}{_ossl_old_des_read_pw(char *buf, char *buff, int size, const char *prompt, int verify)}}]{\setlength{\rightskip}{0pt plus 5cm}int \+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buf, }
+\item[{char $\ast$}]{buff, }
+\item[{int}]{size, }
+\item[{const char $\ast$}]{prompt, }
+\item[{int}]{verify}
+\end{DoxyParamCaption}
+)}\hypertarget{ui__compat_8h_ac1b8154f973fc897ad11b30e9397cbfc}{}\label{ui__compat_8h_ac1b8154f973fc897ad11b30e9397cbfc}
+\index{ui\+\_\+compat.\+h@{ui\+\_\+compat.\+h}!\+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw\+\_\+string@{\+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw\+\_\+string}}
+\index{\+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw\+\_\+string@{\+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw\+\_\+string}!ui\+\_\+compat.\+h@{ui\+\_\+compat.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw\+\_\+string(char $\ast$buf, int length, const char $\ast$prompt, int verify)}{_ossl_old_des_read_pw_string(char *buf, int length, const char *prompt, int verify)}}]{\setlength{\rightskip}{0pt plus 5cm}int \+\_\+ossl\+\_\+old\+\_\+des\+\_\+read\+\_\+pw\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buf, }
+\item[{int}]{length, }
+\item[{const char $\ast$}]{prompt, }
+\item[{int}]{verify}
+\end{DoxyParamCaption}
+)}\hypertarget{ui__compat_8h_a1a3d6be230257496d38c5469ef7d9e28}{}\label{ui__compat_8h_a1a3d6be230257496d38c5469ef7d9e28}

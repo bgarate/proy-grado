@@ -1,0 +1,132 @@
+\hypertarget{structpem__ctx__st}{}\section{pem\+\_\+ctx\+\_\+st Struct Reference}
+\label{structpem__ctx__st}\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+
+
+{\ttfamily \#include $<$pem.\+h$>$}
+
+
+
+Collaboration diagram for pem\+\_\+ctx\+\_\+st\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{structpem__ctx__st__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structpem__ctx__st_aa68441b2d1bdccccc8b598a582b42793}{type}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int \hyperlink{structpem__ctx__st_a027e55d6e36ad9a227aad7ad45400fab}{version}\\
+\>int \hyperlink{structpem__ctx__st_afc2981103ba640bcac6f525a16f38a7d}{mode}\\
+\} \hyperlink{structpem__ctx__st_a627eff176622d5ac0cb213a17ae3ce57}{proc\_type}\\
+
+\end{tabbing}\item 
+char $\ast$ \hyperlink{structpem__ctx__st_a626b9c364cf296248d6106e728923e45}{domain}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int \hyperlink{structpem__ctx__st_a759a129c105dd59ab18162b07e81bbe1}{cipher}\\
+\} \hyperlink{structpem__ctx__st_a0908736327c2fc226ffe1651a72d0ed8}{DEK\_info}\\
+
+\end{tabbing}\item 
+\hyperlink{pem_8h_af4a17a304b13fbfbf4af1bcb2a3a22b4}{P\+E\+M\+\_\+\+U\+S\+ER} $\ast$ \hyperlink{structpem__ctx__st_af7c7d2c215c91227ee7f1480af2d33df}{originator}
+\item 
+int \hyperlink{structpem__ctx__st_a0efb31608f13a8faf991385d6bd9d788}{num\+\_\+recipient}
+\item 
+\hyperlink{pem_8h_af4a17a304b13fbfbf4af1bcb2a3a22b4}{P\+E\+M\+\_\+\+U\+S\+ER} $\ast$$\ast$ \hyperlink{structpem__ctx__st_afa0b3aa999aedfd5e6feb3033a818cca}{recipient}
+\item 
+\hyperlink{ossl__typ_8h_aac66cf010326fa9a927c2a34888f45d3}{E\+V\+P\+\_\+\+MD} $\ast$ \hyperlink{structpem__ctx__st_ab27fcbc00038a731e6a73846db8eb9a1}{md}
+\item 
+int \hyperlink{structpem__ctx__st_a84e1ec0487b7a71cd941858d667c91ec}{md\+\_\+enc}
+\item 
+int \hyperlink{structpem__ctx__st_ab6ce4983829da473db829d6a620e663d}{md\+\_\+len}
+\item 
+char $\ast$ \hyperlink{structpem__ctx__st_a9cfdebfaf0e986b87cfe5b8ac80376da}{md\+\_\+data}
+\item 
+\hyperlink{ossl__typ_8h_a54a8663a8084d45c31f2786156b55405}{E\+V\+P\+\_\+\+C\+I\+P\+H\+ER} $\ast$ \hyperlink{structpem__ctx__st_a72c11edeac11bde0c3de61b6d2547d75}{dec}
+\item 
+int \hyperlink{structpem__ctx__st_a96d2bba210ec4b53db3917f08ef8da64}{key\+\_\+len}
+\item 
+unsigned char $\ast$ \hyperlink{structpem__ctx__st_a04828e1e74f1ef05345ed12d75933fd7}{key}
+\item 
+int \hyperlink{structpem__ctx__st_a24116aab3153216d3d3692db34bb1d6d}{data\+\_\+enc}
+\item 
+int \hyperlink{structpem__ctx__st_a52bb16434d30404e5678b162b7a3e75b}{data\+\_\+len}
+\item 
+unsigned char $\ast$ \hyperlink{structpem__ctx__st_a15db0e222afb61994640814a0a5555cb}{data}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!cipher@{cipher}}
+\index{cipher@{cipher}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{cipher}{cipher}}]{\setlength{\rightskip}{0pt plus 5cm}int pem\+\_\+ctx\+\_\+st\+::cipher}\hypertarget{structpem__ctx__st_a759a129c105dd59ab18162b07e81bbe1}{}\label{structpem__ctx__st_a759a129c105dd59ab18162b07e81bbe1}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!data@{data}}
+\index{data@{data}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{data}{data}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ pem\+\_\+ctx\+\_\+st\+::data}\hypertarget{structpem__ctx__st_a15db0e222afb61994640814a0a5555cb}{}\label{structpem__ctx__st_a15db0e222afb61994640814a0a5555cb}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!data\+\_\+enc@{data\+\_\+enc}}
+\index{data\+\_\+enc@{data\+\_\+enc}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{data\+\_\+enc}{data_enc}}]{\setlength{\rightskip}{0pt plus 5cm}int pem\+\_\+ctx\+\_\+st\+::data\+\_\+enc}\hypertarget{structpem__ctx__st_a24116aab3153216d3d3692db34bb1d6d}{}\label{structpem__ctx__st_a24116aab3153216d3d3692db34bb1d6d}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!data\+\_\+len@{data\+\_\+len}}
+\index{data\+\_\+len@{data\+\_\+len}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{data\+\_\+len}{data_len}}]{\setlength{\rightskip}{0pt plus 5cm}int pem\+\_\+ctx\+\_\+st\+::data\+\_\+len}\hypertarget{structpem__ctx__st_a52bb16434d30404e5678b162b7a3e75b}{}\label{structpem__ctx__st_a52bb16434d30404e5678b162b7a3e75b}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!dec@{dec}}
+\index{dec@{dec}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{dec}{dec}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+V\+P\+\_\+\+C\+I\+P\+H\+ER}$\ast$ pem\+\_\+ctx\+\_\+st\+::dec}\hypertarget{structpem__ctx__st_a72c11edeac11bde0c3de61b6d2547d75}{}\label{structpem__ctx__st_a72c11edeac11bde0c3de61b6d2547d75}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!D\+E\+K\+\_\+info@{D\+E\+K\+\_\+info}}
+\index{D\+E\+K\+\_\+info@{D\+E\+K\+\_\+info}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{D\+E\+K\+\_\+info}{DEK_info}}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   pem\+\_\+ctx\+\_\+st\+::\+D\+E\+K\+\_\+info}\hypertarget{structpem__ctx__st_a0908736327c2fc226ffe1651a72d0ed8}{}\label{structpem__ctx__st_a0908736327c2fc226ffe1651a72d0ed8}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!domain@{domain}}
+\index{domain@{domain}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{domain}{domain}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ pem\+\_\+ctx\+\_\+st\+::domain}\hypertarget{structpem__ctx__st_a626b9c364cf296248d6106e728923e45}{}\label{structpem__ctx__st_a626b9c364cf296248d6106e728923e45}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!key@{key}}
+\index{key@{key}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{key}{key}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ pem\+\_\+ctx\+\_\+st\+::key}\hypertarget{structpem__ctx__st_a04828e1e74f1ef05345ed12d75933fd7}{}\label{structpem__ctx__st_a04828e1e74f1ef05345ed12d75933fd7}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!key\+\_\+len@{key\+\_\+len}}
+\index{key\+\_\+len@{key\+\_\+len}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{key\+\_\+len}{key_len}}]{\setlength{\rightskip}{0pt plus 5cm}int pem\+\_\+ctx\+\_\+st\+::key\+\_\+len}\hypertarget{structpem__ctx__st_a96d2bba210ec4b53db3917f08ef8da64}{}\label{structpem__ctx__st_a96d2bba210ec4b53db3917f08ef8da64}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!md@{md}}
+\index{md@{md}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{md}{md}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+V\+P\+\_\+\+MD}$\ast$ pem\+\_\+ctx\+\_\+st\+::md}\hypertarget{structpem__ctx__st_ab27fcbc00038a731e6a73846db8eb9a1}{}\label{structpem__ctx__st_ab27fcbc00038a731e6a73846db8eb9a1}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!md\+\_\+data@{md\+\_\+data}}
+\index{md\+\_\+data@{md\+\_\+data}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{md\+\_\+data}{md_data}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ pem\+\_\+ctx\+\_\+st\+::md\+\_\+data}\hypertarget{structpem__ctx__st_a9cfdebfaf0e986b87cfe5b8ac80376da}{}\label{structpem__ctx__st_a9cfdebfaf0e986b87cfe5b8ac80376da}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!md\+\_\+enc@{md\+\_\+enc}}
+\index{md\+\_\+enc@{md\+\_\+enc}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{md\+\_\+enc}{md_enc}}]{\setlength{\rightskip}{0pt plus 5cm}int pem\+\_\+ctx\+\_\+st\+::md\+\_\+enc}\hypertarget{structpem__ctx__st_a84e1ec0487b7a71cd941858d667c91ec}{}\label{structpem__ctx__st_a84e1ec0487b7a71cd941858d667c91ec}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!md\+\_\+len@{md\+\_\+len}}
+\index{md\+\_\+len@{md\+\_\+len}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{md\+\_\+len}{md_len}}]{\setlength{\rightskip}{0pt plus 5cm}int pem\+\_\+ctx\+\_\+st\+::md\+\_\+len}\hypertarget{structpem__ctx__st_ab6ce4983829da473db829d6a620e663d}{}\label{structpem__ctx__st_ab6ce4983829da473db829d6a620e663d}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!mode@{mode}}
+\index{mode@{mode}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{mode}{mode}}]{\setlength{\rightskip}{0pt plus 5cm}int pem\+\_\+ctx\+\_\+st\+::mode}\hypertarget{structpem__ctx__st_afc2981103ba640bcac6f525a16f38a7d}{}\label{structpem__ctx__st_afc2981103ba640bcac6f525a16f38a7d}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!num\+\_\+recipient@{num\+\_\+recipient}}
+\index{num\+\_\+recipient@{num\+\_\+recipient}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{num\+\_\+recipient}{num_recipient}}]{\setlength{\rightskip}{0pt plus 5cm}int pem\+\_\+ctx\+\_\+st\+::num\+\_\+recipient}\hypertarget{structpem__ctx__st_a0efb31608f13a8faf991385d6bd9d788}{}\label{structpem__ctx__st_a0efb31608f13a8faf991385d6bd9d788}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!originator@{originator}}
+\index{originator@{originator}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{originator}{originator}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+E\+M\+\_\+\+U\+S\+ER}$\ast$ pem\+\_\+ctx\+\_\+st\+::originator}\hypertarget{structpem__ctx__st_af7c7d2c215c91227ee7f1480af2d33df}{}\label{structpem__ctx__st_af7c7d2c215c91227ee7f1480af2d33df}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!proc\+\_\+type@{proc\+\_\+type}}
+\index{proc\+\_\+type@{proc\+\_\+type}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{proc\+\_\+type}{proc_type}}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   pem\+\_\+ctx\+\_\+st\+::proc\+\_\+type}\hypertarget{structpem__ctx__st_a627eff176622d5ac0cb213a17ae3ce57}{}\label{structpem__ctx__st_a627eff176622d5ac0cb213a17ae3ce57}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!recipient@{recipient}}
+\index{recipient@{recipient}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{recipient}{recipient}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+E\+M\+\_\+\+U\+S\+ER}$\ast$$\ast$ pem\+\_\+ctx\+\_\+st\+::recipient}\hypertarget{structpem__ctx__st_afa0b3aa999aedfd5e6feb3033a818cca}{}\label{structpem__ctx__st_afa0b3aa999aedfd5e6feb3033a818cca}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!type@{type}}
+\index{type@{type}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{type}{type}}]{\setlength{\rightskip}{0pt plus 5cm}int pem\+\_\+ctx\+\_\+st\+::type}\hypertarget{structpem__ctx__st_aa68441b2d1bdccccc8b598a582b42793}{}\label{structpem__ctx__st_aa68441b2d1bdccccc8b598a582b42793}
+\index{pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}!version@{version}}
+\index{version@{version}!pem\+\_\+ctx\+\_\+st@{pem\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{version}{version}}]{\setlength{\rightskip}{0pt plus 5cm}int pem\+\_\+ctx\+\_\+st\+::version}\hypertarget{structpem__ctx__st_a027e55d6e36ad9a227aad7ad45400fab}{}\label{structpem__ctx__st_a027e55d6e36ad9a227aad7ad45400fab}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/openssl/\hyperlink{pem_8h}{pem.\+h}\end{DoxyCompactItemize}

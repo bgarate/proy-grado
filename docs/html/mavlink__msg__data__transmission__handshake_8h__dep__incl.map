@@ -1,0 +1,11 @@
+<map id="src/hal/pb2/include/mavlink/common/mavlink_msg_data_transmission_handshake.h" name="src/hal/pb2/include/mavlink/common/mavlink_msg_data_transmission_handshake.h">
+<area shape="rect" id="node2" href="$common_8h.html" title="MAVLink comm protocol generated from common.xml. " alt="" coords="100,124,291,165"/>
+<area shape="rect" id="node3" href="$common_2mavlink_8h.html" title="MAVLink comm protocol built from common.xml. " alt="" coords="5,213,191,255"/>
+<area shape="rect" id="node4" href="$parrot_8h.html" title="MAVLink comm protocol generated from parrot.xml. " alt="" coords="215,213,371,255"/>
+<area shape="rect" id="node5" href="$parrot_2mavlink_8h.html" title="MAVLink comm protocol built from parrot.xml. " alt="" coords="209,303,377,344"/>
+<area shape="rect" id="node6" href="$_a_r_m_a_v_l_i_n_k___file_generator_8h.html" title="Mavlink File Generator. " alt="" coords="69,496,255,552"/>
+<area shape="rect" id="node7" href="$lib_a_r_mavlink_8h.html" title="libARMavlink headers. " alt="" coords="195,600,390,641"/>
+<area shape="rect" id="node8" href="$_a_r_m_a_v_l_i_n_k___file_parser_8h.html" title="Mavlink File Parser. " alt="" coords="331,496,516,552"/>
+<area shape="rect" id="node9" href="$_a_r_m_a_v_l_i_n_k___list_utils_8h.html" title="ARMavlink library List Utils. " alt="" coords="200,392,385,448"/>
+<area shape="rect" id="node10" href="$_a_r_m_a_v_l_i_n_k___mission_item_utils_8h.html" title="Mavlink Mission item utils. " alt="" coords="461,392,647,448"/>
+</map>

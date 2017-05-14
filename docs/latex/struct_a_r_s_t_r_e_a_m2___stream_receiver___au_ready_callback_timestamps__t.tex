@@ -1,0 +1,40 @@
+\hypertarget{struct_a_r_s_t_r_e_a_m2___stream_receiver___au_ready_callback_timestamps__t}{}\section{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t Struct Reference}
+\label{struct_a_r_s_t_r_e_a_m2___stream_receiver___au_ready_callback_timestamps__t}\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t}}
+
+
+A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver Au\+Ready\+Callback function timestamps.  
+
+
+
+
+{\ttfamily \#include $<$arstream2\+\_\+stream\+\_\+receiver.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___au_ready_callback_timestamps__t_a76dda4142e3f6b87d7c804d16e485815}{au\+Ntp\+Timestamp}
+\item 
+uint64\+\_\+t \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___au_ready_callback_timestamps__t_a0f72682edcdbcc964930d2a9c0e7e85c}{au\+Ntp\+Timestamp\+Raw}
+\item 
+uint64\+\_\+t \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___au_ready_callback_timestamps__t_a652da48ccaccde30e34d0cade10d7105}{au\+Ntp\+Timestamp\+Local}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver Au\+Ready\+Callback function timestamps. 
+
+\subsection{Member Data Documentation}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t}!au\+Ntp\+Timestamp@{au\+Ntp\+Timestamp}}
+\index{au\+Ntp\+Timestamp@{au\+Ntp\+Timestamp}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t}}
+\subsubsection[{\texorpdfstring{au\+Ntp\+Timestamp}{auNtpTimestamp}}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t\+::au\+Ntp\+Timestamp}\hypertarget{struct_a_r_s_t_r_e_a_m2___stream_receiver___au_ready_callback_timestamps__t_a76dda4142e3f6b87d7c804d16e485815}{}\label{struct_a_r_s_t_r_e_a_m2___stream_receiver___au_ready_callback_timestamps__t_a76dda4142e3f6b87d7c804d16e485815}
+Unskewed N\+TP timestamp from the source N\+TP wallclock (in microseconds). This TS can be null and must be considered invalid when null. It should be used for presentation when not null. \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t}!au\+Ntp\+Timestamp\+Local@{au\+Ntp\+Timestamp\+Local}}
+\index{au\+Ntp\+Timestamp\+Local@{au\+Ntp\+Timestamp\+Local}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t}}
+\subsubsection[{\texorpdfstring{au\+Ntp\+Timestamp\+Local}{auNtpTimestampLocal}}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t\+::au\+Ntp\+Timestamp\+Local}\hypertarget{struct_a_r_s_t_r_e_a_m2___stream_receiver___au_ready_callback_timestamps__t_a652da48ccaccde30e34d0cade10d7105}{}\label{struct_a_r_s_t_r_e_a_m2___stream_receiver___au_ready_callback_timestamps__t_a652da48ccaccde30e34d0cade10d7105}
+Unskewed N\+TP timestamp in the local clock reference (in microseconds). This TS can be null and must be considered invalid when null. It should only be used for end-\/to-\/end software latency computation when not null. \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t}!au\+Ntp\+Timestamp\+Raw@{au\+Ntp\+Timestamp\+Raw}}
+\index{au\+Ntp\+Timestamp\+Raw@{au\+Ntp\+Timestamp\+Raw}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t}}
+\subsubsection[{\texorpdfstring{au\+Ntp\+Timestamp\+Raw}{auNtpTimestampRaw}}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t\+::au\+Ntp\+Timestamp\+Raw}\hypertarget{struct_a_r_s_t_r_e_a_m2___stream_receiver___au_ready_callback_timestamps__t_a0f72682edcdbcc964930d2a9c0e7e85c}{}\label{struct_a_r_s_t_r_e_a_m2___stream_receiver___au_ready_callback_timestamps__t_a0f72682edcdbcc964930d2a9c0e7e85c}
+Raw N\+TP timestamp from extended R\+TP timestamp (in microseconds). This TS is nonotonic and never null. It should only be used for presentation when au\+Ntp\+Timestamp is null. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/lib\+A\+R\+Stream2/\hyperlink{arstream2__stream__receiver_8h}{arstream2\+\_\+stream\+\_\+receiver.\+h}\end{DoxyCompactItemize}

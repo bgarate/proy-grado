@@ -1,0 +1,449 @@
+\hypertarget{arstream2__h264__parser_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Stream2/arstream2\+\_\+h264\+\_\+parser.h File Reference}
+\label{arstream2__h264__parser_8h}\index{src/hal/pb2/include/lib\+A\+R\+Stream2/arstream2\+\_\+h264\+\_\+parser.\+h@{src/hal/pb2/include/lib\+A\+R\+Stream2/arstream2\+\_\+h264\+\_\+parser.\+h}}
+
+
+Parrot Streaming Library -\/ H.\+264 Parser.  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Stream2/arstream2\+\_\+error.\+h$>$}\\*
+Include dependency graph for arstream2\+\_\+h264\+\_\+parser.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{arstream2__h264__parser_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_parser___config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Config\+\_\+t}
+\begin{DoxyCompactList}\small\item\em H.\+264 Parser configuration for initialization. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_parser___slice_info__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Slice\+Info\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Output slice information. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_parser___recovery_point_sei__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Recovery\+Point\+Sei\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Recovery point S\+EI syntax elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void $\ast$ \hyperlink{arstream2__h264__parser_8h_aed0526cfbb2fca533990a438082664b8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}
+\begin{DoxyCompactList}\small\item\em H.\+264 Parser instance handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__parser_8h_aba1e6ab5143e30aeb9412ea5dcca8424}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Init} (\hyperlink{arstream2__h264__parser_8h_aed0526cfbb2fca533990a438082664b8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle} $\ast$parser\+Handle, \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_parser___config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Config\+\_\+t} $\ast$config)
+\begin{DoxyCompactList}\small\item\em Initialize an H.\+264 parser instance. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__parser_8h_a681ce51995115d9274bbc0bea9aa3ca1}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Free} (\hyperlink{arstream2__h264__parser_8h_aed0526cfbb2fca533990a438082664b8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle} parser\+Handle)
+\begin{DoxyCompactList}\small\item\em Free a H.\+264 parser instance. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__parser_8h_afcec0519cd9030ae362abb531b86aad9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Read\+Next\+Nalu\+\_\+file} (\hyperlink{arstream2__h264__parser_8h_aed0526cfbb2fca533990a438082664b8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle} parser\+Handle, F\+I\+LE $\ast$\hyperlink{conf_8h_aa065f30aa9f5f9a42132c82c787ee70b}{fp}, unsigned long long file\+Size, unsigned int $\ast$nalu\+Size)
+\begin{DoxyCompactList}\small\item\em Read the next N\+AL unit from a file. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__parser_8h_af332263ce8ffd402dbe865f0e6974584}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Read\+Next\+Nalu\+\_\+buffer} (\hyperlink{arstream2__h264__parser_8h_aed0526cfbb2fca533990a438082664b8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle} parser\+Handle, void $\ast$p\+Buf, unsigned int buf\+Size, unsigned int $\ast$nalu\+Start\+Pos, unsigned int $\ast$next\+Start\+Code\+Pos)
+\begin{DoxyCompactList}\small\item\em Read the next N\+AL unit from a buffer. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__parser_8h_a6c1835cbdd1d29c13750c87c216aae77}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Setup\+Nalu\+\_\+buffer} (\hyperlink{arstream2__h264__parser_8h_aed0526cfbb2fca533990a438082664b8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle} parser\+Handle, void $\ast$p\+Nalu\+Buf, unsigned int nalu\+Size)
+\begin{DoxyCompactList}\small\item\em Setup a N\+AL unit from a buffer before parsing. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__parser_8h_a04d5157c3bd9ccc302d6d0dcb07efcf9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Parse\+Nalu} (\hyperlink{arstream2__h264__parser_8h_aed0526cfbb2fca533990a438082664b8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle} parser\+Handle, unsigned int $\ast$read\+Bytes)
+\begin{DoxyCompactList}\small\item\em Parse the N\+AL unit. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{arstream2__h264__parser_8h_a281000faea141f08c67e9cfe7140abe2}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Last\+Nalu\+Type} (\hyperlink{arstream2__h264__parser_8h_aed0526cfbb2fca533990a438082664b8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle} parser\+Handle)
+\begin{DoxyCompactList}\small\item\em Get the N\+AL unit type. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__parser_8h_a515d8126cc2d605c8886f169ef47ed3d}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Slice\+Info} (\hyperlink{arstream2__h264__parser_8h_aed0526cfbb2fca533990a438082664b8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle} parser\+Handle, \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_parser___slice_info__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Slice\+Info\+\_\+t} $\ast$slice\+Info)
+\begin{DoxyCompactList}\small\item\em Get the slice info. \end{DoxyCompactList}\item 
+int \hyperlink{arstream2__h264__parser_8h_a3377c58758737168c98cd3dde4bb42f2}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+User\+Data\+Sei\+Count} (\hyperlink{arstream2__h264__parser_8h_aed0526cfbb2fca533990a438082664b8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle} parser\+Handle)
+\begin{DoxyCompactList}\small\item\em Get the user data S\+EI count. \end{DoxyCompactList}\item 
+int \hyperlink{arstream2__h264__parser_8h_a947c52ee9f9c187e5c7801249866ca94}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Recovery\+Point\+Sei} (\hyperlink{arstream2__h264__parser_8h_aed0526cfbb2fca533990a438082664b8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle} parser\+Handle, \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_parser___recovery_point_sei__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Recovery\+Point\+Sei\+\_\+t} $\ast$recovery\+Point)
+\begin{DoxyCompactList}\small\item\em Get the recovery point S\+EI. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__parser_8h_ae0da74913dd04cf2f341300e67ece0cd}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+User\+Data\+Sei} (\hyperlink{arstream2__h264__parser_8h_aed0526cfbb2fca533990a438082664b8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle} parser\+Handle, unsigned int index, void $\ast$$\ast$p\+Buf, unsigned int $\ast$buf\+Size)
+\begin{DoxyCompactList}\small\item\em Get a user data S\+EI. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__parser_8h_a0fe9bca55deabc1764ea584179eb456c}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Sps\+Pps\+Context} (\hyperlink{arstream2__h264__parser_8h_aed0526cfbb2fca533990a438082664b8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle} parser\+Handle, void $\ast$$\ast$sps\+Context, void $\ast$$\ast$pps\+Context)
+\begin{DoxyCompactList}\small\item\em Gets the Parser S\+PS and P\+PS context. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__parser_8h_a9ef43cd2ef4328a72e48585d154fdc8f}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Slice\+Context} (\hyperlink{arstream2__h264__parser_8h_aed0526cfbb2fca533990a438082664b8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle} parser\+Handle, void $\ast$$\ast$slice\+Context)
+\begin{DoxyCompactList}\small\item\em Gets the Parser slice context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parrot Streaming Library -\/ H.\+264 Parser. 
+
+\begin{DoxyDate}{Date}
+08/04/2015 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:aurelien.barre@parrot.com}{\tt aurelien.\+barre@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\index{arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}!arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}{ARSTREAM2_H264Parser_Handle}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}}\hypertarget{arstream2__h264__parser_8h_aed0526cfbb2fca533990a438082664b8}{}\label{arstream2__h264__parser_8h_aed0526cfbb2fca533990a438082664b8}
+
+
+H.\+264 Parser instance handle. 
+
+
+
+\subsection{Function Documentation}
+\index{arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Free@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Free}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Free@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Free}!arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Free(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle parser\+Handle)}{ARSTREAM2_H264Parser_Free(ARSTREAM2_H264Parser_Handle parserHandle)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Free (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}}]{parser\+Handle}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__parser_8h_a681ce51995115d9274bbc0bea9aa3ca1}{}\label{arstream2__h264__parser_8h_a681ce51995115d9274bbc0bea9aa3ca1}
+
+
+Free a H.\+264 parser instance. 
+
+The library frees the allocated resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parser\+Handle} & Instance handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Last\+Nalu\+Type@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Last\+Nalu\+Type}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Last\+Nalu\+Type@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Last\+Nalu\+Type}!arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Last\+Nalu\+Type(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle parser\+Handle)}{ARSTREAM2_H264Parser_GetLastNaluType(ARSTREAM2_H264Parser_Handle parserHandle)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Last\+Nalu\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}}]{parser\+Handle}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__parser_8h_a281000faea141f08c67e9cfe7140abe2}{}\label{arstream2__h264__parser_8h_a281000faea141f08c67e9cfe7140abe2}
+
+
+Get the N\+AL unit type. 
+
+The function returns the N\+A\+LU type of the last parsed N\+A\+LU. A call to \hyperlink{arstream2__h264__parser_8h_a04d5157c3bd9ccc302d6d0dcb07efcf9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Parse\+Nalu()} must have been made prior to calling this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parser\+Handle} & Instance handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the last N\+AL unit type. 
+
+0 if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Recovery\+Point\+Sei@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Recovery\+Point\+Sei}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Recovery\+Point\+Sei@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Recovery\+Point\+Sei}!arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Recovery\+Point\+Sei(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle parser\+Handle, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Recovery\+Point\+Sei\+\_\+t $\ast$recovery\+Point)}{ARSTREAM2_H264Parser_GetRecoveryPointSei(ARSTREAM2_H264Parser_Handle parserHandle, ARSTREAM2_H264Parser_RecoveryPointSei_t *recoveryPoint)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Recovery\+Point\+Sei (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}}]{parser\+Handle, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Recovery\+Point\+Sei\+\_\+t} $\ast$}]{recovery\+Point}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__parser_8h_a947c52ee9f9c187e5c7801249866ca94}{}\label{arstream2__h264__parser_8h_a947c52ee9f9c187e5c7801249866ca94}
+
+
+Get the recovery point S\+EI. 
+
+The function fills the recovery\+Point structure with the recovery point info. A call to \hyperlink{arstream2__h264__parser_8h_a04d5157c3bd9ccc302d6d0dcb07efcf9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Parse\+Nalu()} must have been made prior to calling this function. This function should only be called if the last N\+A\+LU type is 6. If no recovery point S\+EI has been found the function returns 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parser\+Handle} & Instance handle. \\
+\hline
+{\em recovery\+Point} & Pointer to the recovery point structure to fill.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if a recovery point S\+EI has been found. 
+
+0 if no recovery point S\+EI has been found. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Slice\+Context@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Slice\+Context}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Slice\+Context@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Slice\+Context}!arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Slice\+Context(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle parser\+Handle, void $\ast$$\ast$slice\+Context)}{ARSTREAM2_H264Parser_GetSliceContext(ARSTREAM2_H264Parser_Handle parserHandle, void **sliceContext)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Slice\+Context (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}}]{parser\+Handle, }
+\item[{void $\ast$$\ast$}]{slice\+Context}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__parser_8h_a9ef43cd2ef4328a72e48585d154fdc8f}{}\label{arstream2__h264__parser_8h_a9ef43cd2ef4328a72e48585d154fdc8f}
+
+
+Gets the Parser slice context. 
+
+The function exports the last processed slice context from an H.\+264 parser. This function must only be called if the last N\+A\+LU type is either 1 or 5 (coded slice).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em parser\+Handle} & Instance handle. \\
+\hline
+\mbox{\tt out}  & {\em slice\+Context} & Pointer to the slice context\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Slice\+Info@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Slice\+Info}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Slice\+Info@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Slice\+Info}!arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Slice\+Info(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle parser\+Handle, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Slice\+Info\+\_\+t $\ast$slice\+Info)}{ARSTREAM2_H264Parser_GetSliceInfo(ARSTREAM2_H264Parser_Handle parserHandle, ARSTREAM2_H264Parser_SliceInfo_t *sliceInfo)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Slice\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}}]{parser\+Handle, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Slice\+Info\+\_\+t} $\ast$}]{slice\+Info}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__parser_8h_a515d8126cc2d605c8886f169ef47ed3d}{}\label{arstream2__h264__parser_8h_a515d8126cc2d605c8886f169ef47ed3d}
+
+
+Get the slice info. 
+
+The function returns the slice info of the last parsed slice. A call to \hyperlink{arstream2__h264__parser_8h_a04d5157c3bd9ccc302d6d0dcb07efcf9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Parse\+Nalu()} must have been made prior to calling this function. This function must only be called if the last N\+A\+LU type is either 1 or 5 (coded slice).
+
+
+\begin{DoxyParams}{Parameters}
+{\em parser\+Handle} & Instance handle. \\
+\hline
+{\em slice\+Info} & Pointer to the slice info structure to fill.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Sps\+Pps\+Context@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Sps\+Pps\+Context}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Sps\+Pps\+Context@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Sps\+Pps\+Context}!arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Sps\+Pps\+Context(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle parser\+Handle, void $\ast$$\ast$sps\+Context, void $\ast$$\ast$pps\+Context)}{ARSTREAM2_H264Parser_GetSpsPpsContext(ARSTREAM2_H264Parser_Handle parserHandle, void **spsContext, void **ppsContext)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+Sps\+Pps\+Context (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}}]{parser\+Handle, }
+\item[{void $\ast$$\ast$}]{sps\+Context, }
+\item[{void $\ast$$\ast$}]{pps\+Context}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__parser_8h_a0fe9bca55deabc1764ea584179eb456c}{}\label{arstream2__h264__parser_8h_a0fe9bca55deabc1764ea584179eb456c}
+
+
+Gets the Parser S\+PS and P\+PS context. 
+
+The function exports S\+PS and P\+PS context from an H.\+264 parser.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em parser\+Handle} & Instance handle. \\
+\hline
+\mbox{\tt out}  & {\em sps\+Context} & Pointer to the S\+PS context \\
+\hline
+\mbox{\tt out}  & {\em pps\+Context} & Pointer to the P\+PS context\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+User\+Data\+Sei@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+User\+Data\+Sei}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+User\+Data\+Sei@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+User\+Data\+Sei}!arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+User\+Data\+Sei(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle parser\+Handle, unsigned int index, void $\ast$$\ast$p\+Buf, unsigned int $\ast$buf\+Size)}{ARSTREAM2_H264Parser_GetUserDataSei(ARSTREAM2_H264Parser_Handle parserHandle, unsigned int index, void **pBuf, unsigned int *bufSize)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+User\+Data\+Sei (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}}]{parser\+Handle, }
+\item[{unsigned int}]{index, }
+\item[{void $\ast$$\ast$}]{p\+Buf, }
+\item[{unsigned int $\ast$}]{buf\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__parser_8h_ae0da74913dd04cf2f341300e67ece0cd}{}\label{arstream2__h264__parser_8h_ae0da74913dd04cf2f341300e67ece0cd}
+
+
+Get a user data S\+EI. 
+
+The function gets a pointer to the user data S\+EI of the last frame parsed. A call to \hyperlink{arstream2__h264__parser_8h_a04d5157c3bd9ccc302d6d0dcb07efcf9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Parse\+Nalu()} must have been made prior to calling this function. User data S\+EI are identified by an index in case multiple user data S\+EI payloads are present for the same frame. This function should only be called if the last N\+A\+LU type is 6 and the library instance has been initialized with extract\+User\+Data\+Sei = 1 in the config. If no user data S\+EI has been found or if extract\+User\+Data\+Sei == 0 the function fills p\+Buf with a N\+U\+LL pointer.
+
+\begin{DoxyWarning}{Warning}
+The returned pointer is managed by the library and must not be freed.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em parser\+Handle} & Instance handle. \\
+\hline
+{\em index} & Index of the user data S\+EI. \\
+\hline
+{\em p\+Buf} & Pointer to the user data S\+EI buffer pointer (filled with N\+U\+LL if no user data S\+EI is available). \\
+\hline
+{\em buf\+Size} & Pointer to the user data S\+EI buffer size (filled with 0 if no user data S\+EI is available).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+User\+Data\+Sei\+Count@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+User\+Data\+Sei\+Count}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+User\+Data\+Sei\+Count@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+User\+Data\+Sei\+Count}!arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+User\+Data\+Sei\+Count(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle parser\+Handle)}{ARSTREAM2_H264Parser_GetUserDataSeiCount(ARSTREAM2_H264Parser_Handle parserHandle)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Get\+User\+Data\+Sei\+Count (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}}]{parser\+Handle}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__parser_8h_a3377c58758737168c98cd3dde4bb42f2}{}\label{arstream2__h264__parser_8h_a3377c58758737168c98cd3dde4bb42f2}
+
+
+Get the user data S\+EI count. 
+
+The function returns the number of user data S\+EI of the last frame parsed. A call to \hyperlink{arstream2__h264__parser_8h_a04d5157c3bd9ccc302d6d0dcb07efcf9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Parse\+Nalu()} must have been made prior to calling this function. Multiple user data S\+EI payloads can be present for the same frame. This function should only be called if the last N\+A\+LU type is 6 and the library instance has been initialized with extract\+User\+Data\+Sei = 1 in the config. If no user data S\+EI has been found or if extract\+User\+Data\+Sei == 0 the function returns 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parser\+Handle} & Instance handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the user data S\+EI count if no error occurred. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Init@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Init}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Init@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Init}!arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Init(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle $\ast$parser\+Handle, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Config\+\_\+t $\ast$config)}{ARSTREAM2_H264Parser_Init(ARSTREAM2_H264Parser_Handle *parserHandle, ARSTREAM2_H264Parser_Config_t *config)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle} $\ast$}]{parser\+Handle, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Config\+\_\+t} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__parser_8h_aba1e6ab5143e30aeb9412ea5dcca8424}{}\label{arstream2__h264__parser_8h_aba1e6ab5143e30aeb9412ea5dcca8424}
+
+
+Initialize an H.\+264 parser instance. 
+
+The library allocates the required resources. The user must call \hyperlink{arstream2__h264__parser_8h_a681ce51995115d9274bbc0bea9aa3ca1}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Free()} to free the resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parser\+Handle} & Pointer to the handle used in future calls to the library. \\
+\hline
+{\em config} & The instance configuration.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Parse\+Nalu@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Parse\+Nalu}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Parse\+Nalu@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Parse\+Nalu}!arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Parse\+Nalu(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle parser\+Handle, unsigned int $\ast$read\+Bytes)}{ARSTREAM2_H264Parser_ParseNalu(ARSTREAM2_H264Parser_Handle parserHandle, unsigned int *readBytes)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Parse\+Nalu (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}}]{parser\+Handle, }
+\item[{unsigned int $\ast$}]{read\+Bytes}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__parser_8h_a04d5157c3bd9ccc302d6d0dcb07efcf9}{}\label{arstream2__h264__parser_8h_a04d5157c3bd9ccc302d6d0dcb07efcf9}
+
+
+Parse the N\+AL unit. 
+
+The function parses the current N\+AL unit. A call either to \hyperlink{arstream2__h264__parser_8h_afcec0519cd9030ae362abb531b86aad9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Read\+Next\+Nalu\+\_\+file()} or \hyperlink{arstream2__h264__parser_8h_af332263ce8ffd402dbe865f0e6974584}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Read\+Next\+Nalu\+\_\+buffer()} must have been made prior to calling this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parser\+Handle} & Instance handle. \\
+\hline
+{\em read\+Bytes} & Optional pointer to the number of bytes read.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Read\+Next\+Nalu\+\_\+buffer@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Read\+Next\+Nalu\+\_\+buffer}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Read\+Next\+Nalu\+\_\+buffer@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Read\+Next\+Nalu\+\_\+buffer}!arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Read\+Next\+Nalu\+\_\+buffer(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle parser\+Handle, void $\ast$p\+Buf, unsigned int buf\+Size, unsigned int $\ast$nalu\+Start\+Pos, unsigned int $\ast$next\+Start\+Code\+Pos)}{ARSTREAM2_H264Parser_ReadNextNalu_buffer(ARSTREAM2_H264Parser_Handle parserHandle, void *pBuf, unsigned int bufSize, unsigned int *naluStartPos, unsigned int *nextStartCodePos)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Read\+Next\+Nalu\+\_\+buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}}]{parser\+Handle, }
+\item[{void $\ast$}]{p\+Buf, }
+\item[{unsigned int}]{buf\+Size, }
+\item[{unsigned int $\ast$}]{nalu\+Start\+Pos, }
+\item[{unsigned int $\ast$}]{next\+Start\+Code\+Pos}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__parser_8h_af332263ce8ffd402dbe865f0e6974584}{}\label{arstream2__h264__parser_8h_af332263ce8ffd402dbe865f0e6974584}
+
+
+Read the next N\+AL unit from a buffer. 
+
+The function finds the next N\+A\+LU start and end in the buffer. The N\+A\+LU shall then be parsed using the \hyperlink{arstream2__h264__parser_8h_a04d5157c3bd9ccc302d6d0dcb07efcf9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Parse\+Nalu()} function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parser\+Handle} & Instance handle. \\
+\hline
+{\em p\+Buf} & Buffer to parse. \\
+\hline
+{\em buf\+Size} & Buffer size. \\
+\hline
+{\em nalu\+Start\+Pos} & Optional pointer to the N\+A\+LU start position. \\
+\hline
+{\em next\+Start\+Code\+Pos} & Optional pointer to the following N\+A\+LU start code filled if one has been found (i.\+e. if more N\+A\+L\+Us are present in the buffer).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND if no start code has been found. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if another error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Read\+Next\+Nalu\+\_\+file@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Read\+Next\+Nalu\+\_\+file}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Read\+Next\+Nalu\+\_\+file@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Read\+Next\+Nalu\+\_\+file}!arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Read\+Next\+Nalu\+\_\+file(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle parser\+Handle, F\+I\+L\+E $\ast$fp, unsigned long long file\+Size, unsigned int $\ast$nalu\+Size)}{ARSTREAM2_H264Parser_ReadNextNalu_file(ARSTREAM2_H264Parser_Handle parserHandle, FILE *fp, unsigned long long fileSize, unsigned int *naluSize)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Read\+Next\+Nalu\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}}]{parser\+Handle, }
+\item[{F\+I\+LE $\ast$}]{fp, }
+\item[{unsigned long long}]{file\+Size, }
+\item[{unsigned int $\ast$}]{nalu\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__parser_8h_afcec0519cd9030ae362abb531b86aad9}{}\label{arstream2__h264__parser_8h_afcec0519cd9030ae362abb531b86aad9}
+
+
+Read the next N\+AL unit from a file. 
+
+The function finds the next N\+A\+LU start and end in the file. The N\+A\+LU shall then be parsed using the \hyperlink{arstream2__h264__parser_8h_a04d5157c3bd9ccc302d6d0dcb07efcf9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Parse\+Nalu()} function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parser\+Handle} & Instance handle. \\
+\hline
+{\em fp} & Opened file to parse. \\
+\hline
+{\em file\+Size} & Total file size. \\
+\hline
+{\em nalu\+Size} & Optional pointer to the N\+AL unit size.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND if no start code has been found. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if another error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Setup\+Nalu\+\_\+buffer@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Setup\+Nalu\+\_\+buffer}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Setup\+Nalu\+\_\+buffer@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Setup\+Nalu\+\_\+buffer}!arstream2\+\_\+h264\+\_\+parser.\+h@{arstream2\+\_\+h264\+\_\+parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Setup\+Nalu\+\_\+buffer(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle parser\+Handle, void $\ast$p\+Nalu\+Buf, unsigned int nalu\+Size)}{ARSTREAM2_H264Parser_SetupNalu_buffer(ARSTREAM2_H264Parser_Handle parserHandle, void *pNaluBuf, unsigned int naluSize)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Setup\+Nalu\+\_\+buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Handle}}]{parser\+Handle, }
+\item[{void $\ast$}]{p\+Nalu\+Buf, }
+\item[{unsigned int}]{nalu\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__parser_8h_a6c1835cbdd1d29c13750c87c216aae77}{}\label{arstream2__h264__parser_8h_a6c1835cbdd1d29c13750c87c216aae77}
+
+
+Setup a N\+AL unit from a buffer before parsing. 
+
+The function configures the parser for a N\+A\+LU. The N\+A\+LU shall then be parsed using the \hyperlink{arstream2__h264__parser_8h_a04d5157c3bd9ccc302d6d0dcb07efcf9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Parser\+\_\+\+Parse\+Nalu()} function. The buffer must contain only one N\+AL unit without start code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parser\+Handle} & Instance handle. \\
+\hline
+{\em p\+Nalu\+Buf} & N\+AL unit buffer to parse. \\
+\hline
+{\em nalu\+Size} & N\+AL unit size.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}

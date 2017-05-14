@@ -1,0 +1,5 @@
+<map id="ARCONTROLLER_Stream_Codec_t" name="ARCONTROLLER_Stream_Codec_t">
+<area shape="rect" id="node2" href="$union_a_r_c_o_n_t_r_o_l_l_e_r___stream___codec_parameters__t.html" title="Codec parameters. " alt="" coords="108,109,289,151"/>
+<area shape="rect" id="node3" href="$struct_a_r_c_o_n_t_r_o_l_l_e_r___stream___codec_p_c_m16_l_e__t.html" title="PCM16LE Parameters. " alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node4" href="$struct_a_r_c_o_n_t_r_o_l_l_e_r___stream___codec_h264__t.html" title="H264 Parameters. " alt="" coords="211,5,392,47"/>
+</map>

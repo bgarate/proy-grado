@@ -1,0 +1,478 @@
+\hypertarget{_a_r_u_t_i_l_s___http_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Utils/\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.h File Reference}
+\label{_a_r_u_t_i_l_s___http_8h}\index{src/hal/pb2/include/lib\+A\+R\+Utils/\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{src/hal/pb2/include/lib\+A\+R\+Utils/\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+
+
+lib\+A\+R\+Utils Http header file.  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+S\+A\+L/\+A\+R\+S\+A\+L\+\_\+\+Sem.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}lib\+A\+R\+Utils/\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Error.\+h\char`\"{}}\\*
+Include dependency graph for A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_u_t_i_l_s___http_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_u_t_i_l_s___http_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct___a_r_u_t_i_l_s___http___file__t}{\+\_\+\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+File\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Http File structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_a_r_u_t_i_l_s___http_8h_a615d79a50ba9ad7bb9eaaa52d941cceb}{A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}~64
+\begin{DoxyCompactList}\small\item\em Htpp max file name string size. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_u_t_i_l_s___http_8h_acdf8714741ae215591178f247f4e8fc6}{A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE}~256
+\begin{DoxyCompactList}\small\item\em Htpp max file name path string size. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_u_t_i_l_s___http_8h_a59125b62d8441dba7eb2f3a0d09c6bbf}{A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+U\+R\+L\+\_\+\+S\+I\+ZE}~512
+\begin{DoxyCompactList}\small\item\em Http max url string size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{_a_r_u_t_i_l_s___http_8h_afedacf1e558d9ef610c58f57c91c1d63}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} \hyperlink{_a_r_u_t_i_l_s___http_8h_afedacf1e558d9ef610c58f57c91c1d63}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Http \hyperlink{class_connection}{Connection} structure. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{struct___a_r_u_t_i_l_s___http___file__t}{\+\_\+\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+File\+\_\+t} \hyperlink{_a_r_u_t_i_l_s___http_8h_a9766ad83edb6d848630d0fd4a996d8f8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+File\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Http File structure. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{_a_r_u_t_i_l_s___http_8h_a080260b5ec0e5ce48616010e85b49ca9}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t}) (void $\ast$arg, float percent)
+\begin{DoxyCompactList}\small\item\em Progress callback of the Http download. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_a_r_u_t_i_l_s___http_8h_a37b880960025638b5f57226b82d95315}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+OL} \{ \hyperlink{_a_r_u_t_i_l_s___http_8h_a37b880960025638b5f57226b82d95315a2261c9bdb0a17ef4e2c58c103edb4def}{H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+F\+A\+L\+SE} = 0, 
+\hyperlink{_a_r_u_t_i_l_s___http_8h_a37b880960025638b5f57226b82d95315a712f0780ff61d17e694194b67deef1ae}{H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+R\+UE}
+ \}\begin{DoxyCompactList}\small\item\em Http secured enum. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_u_t_i_l_s___http_8h_afedacf1e558d9ef610c58f57c91c1d63}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$ \hyperlink{_a_r_u_t_i_l_s___http_8h_a05ab27271fc539d4bca0474bc5901b2d}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+New} (\hyperlink{_a_r_s_a_l___sem_8h_a74eaf25f9acaab7ff185cb3c30ffda1c}{A\+R\+S\+A\+L\+\_\+\+Sem\+\_\+t} $\ast$cancel\+Sem, const char $\ast$server, int port, \hyperlink{_a_r_u_t_i_l_s___http_8h_a37b880960025638b5f57226b82d95315}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+OL} security, const char $\ast$username, const char $\ast$password, \hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Create a new Http \hyperlink{class_connection}{Connection}. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_u_t_i_l_s___http_8h_af91e6d352b08aa6fc513dd149e25a46d}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+Delete} (\hyperlink{_a_r_u_t_i_l_s___http_8h_afedacf1e558d9ef610c58f57c91c1d63}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$$\ast$connection)
+\begin{DoxyCompactList}\small\item\em Delete an Http \hyperlink{class_connection}{Connection}. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___http_8h_a740e855c25aa9c819940aaae28672f3d}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+Cancel} (\hyperlink{_a_r_u_t_i_l_s___http_8h_afedacf1e558d9ef610c58f57c91c1d63}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$connection)
+\begin{DoxyCompactList}\small\item\em Cancel an Http \hyperlink{class_connection}{Connection} command in progress (get, post, etc) \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___http_8h_acab69f3ea650523fdf0a858113ec5e96}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Is\+Canceled} (\hyperlink{_a_r_u_t_i_l_s___http_8h_afedacf1e558d9ef610c58f57c91c1d63}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$connection)
+\begin{DoxyCompactList}\small\item\em Check if the connection has received a cancel to it\textquotesingle{}s semaphore. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___http_8h_ad7b51f3c9b88fb525ca537dfce993cfe}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Set\+Sever\+Certificate} (\hyperlink{_a_r_u_t_i_l_s___http_8h_afedacf1e558d9ef610c58f57c91c1d63}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$connection, const char $\ast$cert\+Path)
+\begin{DoxyCompactList}\small\item\em Set a Https \hyperlink{class_connection}{Connection} Server Certificate. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___http_8h_a1dddc8e2d9be8ea9bbb243461643aad8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Get} (\hyperlink{_a_r_u_t_i_l_s___http_8h_afedacf1e558d9ef610c58f57c91c1d63}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$connection, const char $\ast$name\+Path, const char $\ast$dst\+File, \hyperlink{_a_r_u_t_i_l_s___http_8h_a080260b5ec0e5ce48616010e85b49ca9}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t} progress\+Callback, void $\ast$progress\+Arg)
+\begin{DoxyCompactList}\small\item\em Get an remote Http server file. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___http_8h_a18f15fdd161391f150a13902c4332cd1}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Get\+\_\+\+With\+Buffer} (\hyperlink{_a_r_u_t_i_l_s___http_8h_afedacf1e558d9ef610c58f57c91c1d63}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$connection, const char $\ast$name\+Path, uint8\+\_\+t $\ast$$\ast$data, uint32\+\_\+t $\ast$data\+Len, \hyperlink{_a_r_u_t_i_l_s___http_8h_a080260b5ec0e5ce48616010e85b49ca9}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t} progress\+Callback, void $\ast$progress\+Arg)
+\begin{DoxyCompactList}\small\item\em Get an remote Http server file. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___http_8h_ab27a3f8fab7379a7f65b17659491e89b}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Post\+\_\+\+With\+Range} (\hyperlink{_a_r_u_t_i_l_s___http_8h_afedacf1e558d9ef610c58f57c91c1d63}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$connection, const char $\ast$name\+Path, const char $\ast$src\+File, const char $\ast$md5\+Txt, uint32\+\_\+t start\+Range, uint32\+\_\+t end\+Range, uint8\+\_\+t $\ast$$\ast$out\+Data, uint32\+\_\+t $\ast$out\+Data\+Len, \hyperlink{_a_r_u_t_i_l_s___http_8h_a080260b5ec0e5ce48616010e85b49ca9}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t} progress\+Callback, void $\ast$progress\+Arg)
+\begin{DoxyCompactList}\small\item\em Post a file to a remote Http server. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___http_8h_a9256c37f739848eb3398a762dee618c9}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Post\+\_\+\+With\+Files} (\hyperlink{_a_r_u_t_i_l_s___http_8h_afedacf1e558d9ef610c58f57c91c1d63}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$connection, const char $\ast$name\+Path, \hyperlink{_a_r_u_t_i_l_s___http_8h_a9766ad83edb6d848630d0fd4a996d8f8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+File\+\_\+t} $\ast$file\+List, int file\+List\+Count, \hyperlink{_a_r_u_t_i_l_s___http_8h_a080260b5ec0e5ce48616010e85b49ca9}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t} progress\+Callback, void $\ast$progress\+Arg)
+\begin{DoxyCompactList}\small\item\em Post a file to a remote Http server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+lib\+A\+R\+Utils Http header file. 
+
+\begin{DoxyDate}{Date}
+26/12/2013 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:david.flattin.ext@parrot.com}{\tt david.\+flattin.\+ext@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE@{A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE@{A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}{ARUTILS_HTTP_MAX_NAME_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE~64}\hypertarget{_a_r_u_t_i_l_s___http_8h_a615d79a50ba9ad7bb9eaaa52d941cceb}{}\label{_a_r_u_t_i_l_s___http_8h_a615d79a50ba9ad7bb9eaaa52d941cceb}
+
+
+Htpp max file name string size. 
+
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE@{A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE@{A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE}{ARUTILS_HTTP_MAX_PATH_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE~256}\hypertarget{_a_r_u_t_i_l_s___http_8h_acdf8714741ae215591178f247f4e8fc6}{}\label{_a_r_u_t_i_l_s___http_8h_acdf8714741ae215591178f247f4e8fc6}
+
+
+Htpp max file name path string size. 
+
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+U\+R\+L\+\_\+\+S\+I\+ZE@{A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+U\+R\+L\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+U\+R\+L\+\_\+\+S\+I\+ZE@{A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+U\+R\+L\+\_\+\+S\+I\+ZE}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+U\+R\+L\+\_\+\+S\+I\+ZE}{ARUTILS_HTTP_MAX_URL_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+\_\+\+M\+A\+X\+\_\+\+U\+R\+L\+\_\+\+S\+I\+ZE~512}\hypertarget{_a_r_u_t_i_l_s___http_8h_a59125b62d8441dba7eb2f3a0d09c6bbf}{}\label{_a_r_u_t_i_l_s___http_8h_a59125b62d8441dba7eb2f3a0d09c6bbf}
+
+
+Http max url string size. 
+
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t}{ARUTILS_Http_Connection_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} {\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t}}\hypertarget{_a_r_u_t_i_l_s___http_8h_afedacf1e558d9ef610c58f57c91c1d63}{}\label{_a_r_u_t_i_l_s___http_8h_afedacf1e558d9ef610c58f57c91c1d63}
+
+
+Http \hyperlink{class_connection}{Connection} structure. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___http_8h_a05ab27271fc539d4bca0474bc5901b2d}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+File\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+File\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+File\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+File\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+File\+\_\+t}{ARUTILS_Http_File_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+File\+\_\+t}  {\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+File\+\_\+t}}\hypertarget{_a_r_u_t_i_l_s___http_8h_a9766ad83edb6d848630d0fd4a996d8f8}{}\label{_a_r_u_t_i_l_s___http_8h_a9766ad83edb6d848630d0fd4a996d8f8}
+
+
+Http File structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the file \\
+\hline
+{\em path} & The the path of the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___http_8h_a9256c37f739848eb3398a762dee618c9}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Post\+\_\+\+With\+Files} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t}{ARUTILS_Http_ProgressCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t) (void $\ast$arg, float percent)}\hypertarget{_a_r_u_t_i_l_s___http_8h_a080260b5ec0e5ce48616010e85b49ca9}{}\label{_a_r_u_t_i_l_s___http_8h_a080260b5ec0e5ce48616010e85b49ca9}
+
+
+Progress callback of the Http download. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The pointer of the user custom argument \\
+\hline
+{\em percent} & The percent size of the media file already downloaded \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___http_8h_a1dddc8e2d9be8ea9bbb243461643aad8}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Get} () 
+\end{DoxySeeAlso}
+
+
+\subsection{Enumeration Type Documentation}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+OL@{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+OL}}
+\index{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+OL@{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+OL}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+OL}{eARUTILS_HTTPS_PROTOCOL}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+OL}}\hypertarget{_a_r_u_t_i_l_s___http_8h_a37b880960025638b5f57226b82d95315}{}\label{_a_r_u_t_i_l_s___http_8h_a37b880960025638b5f57226b82d95315}
+
+
+Http secured enum. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___http_8h_a05ab27271fc539d4bca0474bc5901b2d}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+New} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+F\+A\+L\+SE@{H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+F\+A\+L\+SE}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+F\+A\+L\+SE@{H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+F\+A\+L\+SE}}\item[{\em 
+H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+F\+A\+L\+SE\hypertarget{_a_r_u_t_i_l_s___http_8h_a37b880960025638b5f57226b82d95315a2261c9bdb0a17ef4e2c58c103edb4def}{}\label{_a_r_u_t_i_l_s___http_8h_a37b880960025638b5f57226b82d95315a2261c9bdb0a17ef4e2c58c103edb4def}
+}]\index{H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+R\+UE@{H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+R\+UE}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+R\+UE@{H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+R\+UE}}\item[{\em 
+H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+R\+UE\hypertarget{_a_r_u_t_i_l_s___http_8h_a37b880960025638b5f57226b82d95315a712f0780ff61d17e694194b67deef1ae}{}\label{_a_r_u_t_i_l_s___http_8h_a37b880960025638b5f57226b82d95315a712f0780ff61d17e694194b67deef1ae}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+Cancel@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+Cancel}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+Cancel@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+Cancel}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+Cancel(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t $\ast$connection)}{ARUTILS_Http_Connection_Cancel(ARUTILS_Http_Connection_t *connection)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+Cancel (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$}]{connection}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___http_8h_a740e855c25aa9c819940aaae28672f3d}{}\label{_a_r_u_t_i_l_s___http_8h_a740e855c25aa9c819940aaae28672f3d}
+
+
+Cancel an Http \hyperlink{class_connection}{Connection} command in progress (get, post, etc) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The address of the pointer on the Http \hyperlink{class_connection}{Connection} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___http_8h_a05ab27271fc539d4bca0474bc5901b2d}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+Delete@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+Delete}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+Delete@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+Delete}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+Delete(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t $\ast$$\ast$connection)}{ARUTILS_Http_Connection_Delete(ARUTILS_Http_Connection_t **connection)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$$\ast$}]{connection}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___http_8h_af91e6d352b08aa6fc513dd149e25a46d}{}\label{_a_r_u_t_i_l_s___http_8h_af91e6d352b08aa6fc513dd149e25a46d}
+
+
+Delete an Http \hyperlink{class_connection}{Connection}. 
+
+\begin{DoxyWarning}{Warning}
+This function frees memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The address of the pointer on the Http \hyperlink{class_connection}{Connection} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___http_8h_a05ab27271fc539d4bca0474bc5901b2d}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+New@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+New}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+New@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+New}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+New(\+A\+R\+S\+A\+L\+\_\+\+Sem\+\_\+t $\ast$cancel\+Sem, const char $\ast$server, int port, e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L security, const char $\ast$username, const char $\ast$password, e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARUTILS_Http_Connection_New(ARSAL_Sem_t *cancelSem, const char *server, int port, eARUTILS_HTTPS_PROTOCOL security, const char *username, const char *password, eARUTILS_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t}$\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+A\+L\+\_\+\+Sem\+\_\+t} $\ast$}]{cancel\+Sem, }
+\item[{const char $\ast$}]{server, }
+\item[{int}]{port, }
+\item[{{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+H\+T\+T\+P\+S\+\_\+\+P\+R\+O\+T\+O\+C\+OL}}]{security, }
+\item[{const char $\ast$}]{username, }
+\item[{const char $\ast$}]{password, }
+\item[{{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___http_8h_a05ab27271fc539d4bca0474bc5901b2d}{}\label{_a_r_u_t_i_l_s___http_8h_a05ab27271fc539d4bca0474bc5901b2d}
+
+
+Create a new Http \hyperlink{class_connection}{Connection}. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em cancel\+Sem} & The pointer of the Http get/post cancel semaphore or null \\
+\hline
+ & {\em server} & The Http server IP address \\
+\hline
+ & {\em port} & The Http server port \\
+\hline
+ & {\em security} & The security flag\+: to indicate H\+T\+TP or H\+T\+T\+PS connection \\
+\hline
+ & {\em username} & The Http server account name \\
+\hline
+ & {\em password} & The Http server account password \\
+\hline
+\mbox{\tt out}  & {\em error} & The pointer of the error code\+: if success A\+R\+U\+T\+I\+L\+S\+\_\+\+OK, otherwise an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns an A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t. Otherwise, it returns null. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Delete\+Connection () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Get@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Get}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Get@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Get}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Get(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t $\ast$connection, const char $\ast$name\+Path, const char $\ast$dst\+File, A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t progress\+Callback, void $\ast$progress\+Arg)}{ARUTILS_Http_Get(ARUTILS_Http_Connection_t *connection, const char *namePath, const char *dstFile, ARUTILS_Http_ProgressCallback_t progressCallback, void *progressArg)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Get (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$}]{connection, }
+\item[{const char $\ast$}]{name\+Path, }
+\item[{const char $\ast$}]{dst\+File, }
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t}}]{progress\+Callback, }
+\item[{void $\ast$}]{progress\+Arg}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___http_8h_a1dddc8e2d9be8ea9bbb243461643aad8}{}\label{_a_r_u_t_i_l_s___http_8h_a1dddc8e2d9be8ea9bbb243461643aad8}
+
+
+Get an remote Http server file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The address of the pointer on the Http \hyperlink{class_connection}{Connection} \\
+\hline
+{\em name\+Path} & The string of the file name path on the remote Http server \\
+\hline
+{\em dst\+File} & The string of the local file name path to be get \\
+\hline
+{\em progress\+Callback} & The progress callback function \\
+\hline
+{\em progress\+Arg} & The progress callback function arg \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___http_8h_a05ab27271fc539d4bca0474bc5901b2d}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+New} (), \hyperlink{_a_r_u_t_i_l_s___http_8h_a080260b5ec0e5ce48616010e85b49ca9}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t} 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Get\+\_\+\+With\+Buffer@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Get\+\_\+\+With\+Buffer}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Get\+\_\+\+With\+Buffer@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Get\+\_\+\+With\+Buffer}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Get\+\_\+\+With\+Buffer(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t $\ast$connection, const char $\ast$name\+Path, uint8\+\_\+t $\ast$$\ast$data, uint32\+\_\+t $\ast$data\+Len, A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t progress\+Callback, void $\ast$progress\+Arg)}{ARUTILS_Http_Get_WithBuffer(ARUTILS_Http_Connection_t *connection, const char *namePath, uint8_t **data, uint32_t *dataLen, ARUTILS_Http_ProgressCallback_t progressCallback, void *progressArg)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Get\+\_\+\+With\+Buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$}]{connection, }
+\item[{const char $\ast$}]{name\+Path, }
+\item[{uint8\+\_\+t $\ast$$\ast$}]{data, }
+\item[{uint32\+\_\+t $\ast$}]{data\+Len, }
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t}}]{progress\+Callback, }
+\item[{void $\ast$}]{progress\+Arg}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___http_8h_a18f15fdd161391f150a13902c4332cd1}{}\label{_a_r_u_t_i_l_s___http_8h_a18f15fdd161391f150a13902c4332cd1}
+
+
+Get an remote Http server file. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em connection} & The address of the pointer on the Http \hyperlink{class_connection}{Connection} \\
+\hline
+ & {\em name\+Path} & The string of the file name path on the remote Http server \\
+\hline
+\mbox{\tt out}  & {\em data} & Returns byte buffer data address if data mode else give null pointer \\
+\hline
+\mbox{\tt out}  & {\em data\+Len} & Returns byte buffer data length else give null pointer \\
+\hline
+ & {\em progress\+Callback} & The progress callback function \\
+\hline
+ & {\em progress\+Arg} & The progress callback function arg \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___http_8h_a05ab27271fc539d4bca0474bc5901b2d}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+New} (), \hyperlink{_a_r_u_t_i_l_s___http_8h_a080260b5ec0e5ce48616010e85b49ca9}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t} 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Is\+Canceled@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Is\+Canceled}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Is\+Canceled@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Is\+Canceled}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Is\+Canceled(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t $\ast$connection)}{ARUTILS_Http_IsCanceled(ARUTILS_Http_Connection_t *connection)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Is\+Canceled (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$}]{connection}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___http_8h_acab69f3ea650523fdf0a858113ec5e96}{}\label{_a_r_u_t_i_l_s___http_8h_acab69f3ea650523fdf0a858113ec5e96}
+
+
+Check if the connection has received a cancel to it\textquotesingle{}s semaphore. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The address of the pointer on the Http \hyperlink{class_connection}{Connection} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+c\+U\+RL 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Post\+\_\+\+With\+Files@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Post\+\_\+\+With\+Files}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Post\+\_\+\+With\+Files@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Post\+\_\+\+With\+Files}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Post\+\_\+\+With\+Files(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t $\ast$connection, const char $\ast$name\+Path, A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+File\+\_\+t $\ast$file\+List, int file\+List\+Count, A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t progress\+Callback, void $\ast$progress\+Arg)}{ARUTILS_Http_Post_WithFiles(ARUTILS_Http_Connection_t *connection, const char *namePath, ARUTILS_Http_File_t *fileList, int fileListCount, ARUTILS_Http_ProgressCallback_t progressCallback, void *progressArg)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Post\+\_\+\+With\+Files (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$}]{connection, }
+\item[{const char $\ast$}]{name\+Path, }
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+File\+\_\+t} $\ast$}]{file\+List, }
+\item[{int}]{file\+List\+Count, }
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t}}]{progress\+Callback, }
+\item[{void $\ast$}]{progress\+Arg}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___http_8h_a9256c37f739848eb3398a762dee618c9}{}\label{_a_r_u_t_i_l_s___http_8h_a9256c37f739848eb3398a762dee618c9}
+
+
+Post a file to a remote Http server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The address of the pointer on the Http \hyperlink{class_connection}{Connection} \\
+\hline
+{\em name\+Path} & The string of the file name path on the remote Http server \\
+\hline
+{\em file\+List} & The address of the file list \\
+\hline
+{\em file\+List\+Count} & The file count in the file list \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___http_8h_a05ab27271fc539d4bca0474bc5901b2d}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+New} (), \hyperlink{_a_r_u_t_i_l_s___http_8h_a080260b5ec0e5ce48616010e85b49ca9}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t} 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Post\+\_\+\+With\+Range@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Post\+\_\+\+With\+Range}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Post\+\_\+\+With\+Range@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Post\+\_\+\+With\+Range}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Post\+\_\+\+With\+Range(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t $\ast$connection, const char $\ast$name\+Path, const char $\ast$src\+File, const char $\ast$md5\+Txt, uint32\+\_\+t start\+Range, uint32\+\_\+t end\+Range, uint8\+\_\+t $\ast$$\ast$out\+Data, uint32\+\_\+t $\ast$out\+Data\+Len, A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t progress\+Callback, void $\ast$progress\+Arg)}{ARUTILS_Http_Post_WithRange(ARUTILS_Http_Connection_t *connection, const char *namePath, const char *srcFile, const char *md5Txt, uint32_t startRange, uint32_t endRange, uint8_t **outData, uint32_t *outDataLen, ARUTILS_Http_ProgressCallback_t progressCallback, void *progressArg)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Post\+\_\+\+With\+Range (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$}]{connection, }
+\item[{const char $\ast$}]{name\+Path, }
+\item[{const char $\ast$}]{src\+File, }
+\item[{const char $\ast$}]{md5\+Txt, }
+\item[{uint32\+\_\+t}]{start\+Range, }
+\item[{uint32\+\_\+t}]{end\+Range, }
+\item[{uint8\+\_\+t $\ast$$\ast$}]{out\+Data, }
+\item[{uint32\+\_\+t $\ast$}]{out\+Data\+Len, }
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t}}]{progress\+Callback, }
+\item[{void $\ast$}]{progress\+Arg}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___http_8h_ab27a3f8fab7379a7f65b17659491e89b}{}\label{_a_r_u_t_i_l_s___http_8h_ab27a3f8fab7379a7f65b17659491e89b}
+
+
+Post a file to a remote Http server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The address of the pointer on the Http \hyperlink{class_connection}{Connection} \\
+\hline
+{\em name\+Path} & The string of the file name path on the remote Http server \\
+\hline
+{\em src\+File} & The string of the local file name path to be post \\
+\hline
+{\em progress\+Callback} & The progress callback function \\
+\hline
+{\em progress\+Arg} & The progress callback function arg \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___http_8h_a05ab27271fc539d4bca0474bc5901b2d}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+New} (), \hyperlink{_a_r_u_t_i_l_s___http_8h_a080260b5ec0e5ce48616010e85b49ca9}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Progress\+Callback\+\_\+t} 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Set\+Sever\+Certificate@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Set\+Sever\+Certificate}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Set\+Sever\+Certificate@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Set\+Sever\+Certificate}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Set\+Sever\+Certificate(\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t $\ast$connection, const char $\ast$cert\+Path)}{ARUTILS_Http_SetSeverCertificate(ARUTILS_Http_Connection_t *connection, const char *certPath)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Set\+Sever\+Certificate (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+t} $\ast$}]{connection, }
+\item[{const char $\ast$}]{cert\+Path}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___http_8h_ad7b51f3c9b88fb525ca537dfce993cfe}{}\label{_a_r_u_t_i_l_s___http_8h_ad7b51f3c9b88fb525ca537dfce993cfe}
+
+
+Set a Https \hyperlink{class_connection}{Connection} Server Certificate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The address of the pointer on the Http \hyperlink{class_connection}{Connection} \\
+\hline
+{\em cert\+Path} & The certificate file path \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___http_8h_a05ab27271fc539d4bca0474bc5901b2d}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Http\+\_\+\+Connection\+\_\+\+New} () 
+\end{DoxySeeAlso}

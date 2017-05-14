@@ -1,0 +1,546 @@
+\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Media/\+A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.h File Reference}
+\label{_a_r_m_e_d_i_a___video_atoms_8h}\index{src/hal/pb2/include/lib\+A\+R\+Media/\+A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{src/hal/pb2/include/lib\+A\+R\+Media/\+A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Media/\+A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Encapsuler.\+h$>$}\\*
+Include dependency graph for A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_m_e_d_i_a___video_atoms_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{_a_r_m_e_d_i_a___video_atoms_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t}
+\item 
+struct \hyperlink{structatom__check__return}{atom\+\_\+check\+\_\+return}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a44d01ba0a136b8e27ad362f5a823d14e}{\+\_\+\+F\+I\+L\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+B\+I\+TS}~64
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a612babb9a269d99eae00f3a629430707}{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+S\+\_\+\+P\+V\+AT}~\char`\"{}pvat\char`\"{}
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a019ad4e90f45008eeb6c96e64ceb2cd8}{A\+R\+M\+E\+D\+I\+A\+\_\+\+A\+T\+O\+M\+\_\+\+T\+A\+G\+\_\+\+S\+I\+ZE}~4
+\item 
+\#define \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a501ba66d5fe14b14731051b476f5f81e}{atom\+\_\+ntohll}(x)~\hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_adbdcab93d6ff0f1ce8de855d565da7c9}{swap\+\_\+uint64}(x)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a91eb51730e1be4a46c64c7ff87885da3}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+PE} \{ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a91eb51730e1be4a46c64c7ff87885da3a2e78da1cc20bf963f3ad6958699b01ca}{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+V\+I\+D\+EO} = 0, 
+\hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a91eb51730e1be4a46c64c7ff87885da3a1a9cf1f607c19acdf2d853ca8ed180ee}{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+S\+O\+U\+ND}, 
+\hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a91eb51730e1be4a46c64c7ff87885da3aca7262e10a434dd8513398719eb5ed92}{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+D\+A\+TA}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_aab5e21729307be87ea788956cb7305fd}{atom\+From\+Data} (uint32\+\_\+t data\+\_\+size, const char $\ast$tag, const uint8\+\_\+t $\ast$data)
+\item 
+void \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a8f162e73a23785403051f4eca9690694}{insert\+Atom\+Into\+Atom} (\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$container, \hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$$\ast$leaf)
+\item 
+int \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a8d6033cbc740c16444827e2c472f0996}{write\+Atom\+To\+File} (\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$$\ast$atom, F\+I\+LE $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file})
+\item 
+void \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_acb87412be8723244ca66a65fd18d0cb5}{free\+Atom} (\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$$\ast$atom)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a26d38958a5aae0d1e07b356aac4a267e}{ftyp\+Atom\+For\+Format\+And\+Codec\+With\+Offset} (\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071d}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+C\+O\+D\+EC} codec, off\+\_\+t $\ast$offset)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_ac0485b24fd7987fc5b60401f65aa183f}{mdat\+Atom\+For\+Format\+With\+Video\+Size} (uint64\+\_\+t video\+Size)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a3fe1fc56b640d940de3f42797f67ad54}{mvhd\+Atom\+From\+Fps\+Num\+Frames\+And\+Date} (uint32\+\_\+t timescale, uint32\+\_\+t duration, time\+\_\+t date)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a2fd61ade9bf18cd9d1c1de42268ea8ef}{tkhd\+Atom\+With\+Resolution\+Num\+Frames\+Fps\+And\+Date} (uint32\+\_\+t w, uint32\+\_\+t h, uint32\+\_\+t timescale, uint32\+\_\+t duration, time\+\_\+t date, \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a91eb51730e1be4a46c64c7ff87885da3}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+PE} \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type})
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a73dd89ad6f66d98352d508afe6dbe2ed}{cdsc\+Atom\+Gen} (uint32\+\_\+t $\ast$target\+\_\+track\+\_\+id, uint32\+\_\+t target\+\_\+track\+\_\+id\+\_\+count)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a84e3ee198c8d78303522553196fed304}{mdhd\+Atom\+From\+Fps\+Num\+Frames\+And\+Date} (uint32\+\_\+t timescale, uint32\+\_\+t duration, time\+\_\+t date)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_ac7fac1637b98daeb2f74c4dcb6732001}{hdlr\+Atom\+For\+Mdia} (\hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a91eb51730e1be4a46c64c7ff87885da3}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+PE} \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type})
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a14d982b746537e72739e2a20bb36724f}{vmhd\+Atom\+Gen} (void)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_aee202d6658b2fdd9d95e00c8a1609376}{smhd\+Atom\+Gen} (void)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a09ed8290d3b188dc848366d870fa4aa6}{nmhd\+Atom\+Gen} (void)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_aba4961c956d564ec3e6875754f279a16}{hdlr\+Atom\+For\+Minf} (void)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a3824467dbb745b54031c29ede96850b8}{hdlr\+Atom\+For\+Metadata} (void)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_ab31324032dcc5851def8220630d6b63b}{dref\+Atom\+Gen} (void)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a7f97d1e85f055a50b7e8b2e444d33c02}{stsd\+Atom\+With\+Resolution\+And\+Codec} (uint32\+\_\+t w, uint32\+\_\+t h, \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071d}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+C\+O\+D\+EC} codec)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_af64779e7300eabf413697a6d6f5bc835}{stsd\+Atom\+With\+Resolution\+Codec\+Sps\+And\+Pps} (uint32\+\_\+t w, uint32\+\_\+t h, \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aea3038113e24f11f9c807b4e2acb071d}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+C\+O\+D\+EC} codec, uint8\+\_\+t $\ast$sps, uint32\+\_\+t sps\+Size, uint8\+\_\+t $\ast$pps, uint32\+\_\+t pps\+Size)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a1bb883367111bb243f905de36e823013}{stsd\+Atom\+With\+Audio\+Codec} (\hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_aa466ae187faa82f79103c4dad64d80e1}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+D\+EC} codec, \hyperlink{_a_r_m_e_d_i_a___video_encapsuler_8h_a5a6d90018be954b43e503ed732a657e8}{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+AT} format, uint16\+\_\+t nchannel, uint16\+\_\+t freq)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_acfd3541541d93be2bb4735d728b2dce3}{stsd\+Atom\+For\+Metadata} (const char $\ast$content\+\_\+encoding, const char $\ast$mime\+\_\+format)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_afb3793a6b98ef4d121721eff151154a1}{stsc\+Atom\+Gen} (uint32\+\_\+t unique\+Count, uint32\+\_\+t $\ast$stsc\+Table, uint32\+\_\+t n\+Entries)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a14f200242c3742579b0725db335c5ea8}{stsz\+Atom\+Gen} (uint32\+\_\+t unique\+Size, uint32\+\_\+t $\ast$size\+Table, uint32\+\_\+t n\+Samples)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_ae9c29812fa9e9460a584ba6bf40de301}{metadata\+Atom\+From\+Tag\+And\+Value} (const char $\ast$tag, const char $\ast$value, uint8\+\_\+t class\+Id)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a611018e6f11913e0c5aaa2862a4664bf}{metadata\+Atom\+From\+Tag\+And\+File} (const char $\ast$tag, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, uint8\+\_\+t class\+Id)
+\item 
+\hyperlink{structmovie__atom__t}{movie\+\_\+atom\+\_\+t} $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a3f2828930c5c85ef6ed43ef9abebf329}{pvat\+Atom\+Gen} (const char $\ast$json\+String)
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a747b5f6f4b9bbed7a518cb7258a1921d}{create\+Data\+From\+File} (F\+I\+LE $\ast$video\+File, const char $\ast$atom, uint32\+\_\+t $\ast$data\+Size)
+\begin{DoxyCompactList}\small\item\em Read atom data from a video file into a self alloced array Thid function get the atom data from a video file and convert it to the latest version This function alloc (using vp\+\_\+os\+\_\+calloc) the return pointer. Application M\+U\+ST handle the free of the pointer. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_ae3947735d4118abdacfa275106b03591}{create\+Data\+From\+Atom} (uint8\+\_\+t $\ast$atom\+Buffer, const int atom\+Size)
+\begin{DoxyCompactList}\small\item\em Read atom data from atom into a self alloced array This function get the atom data from a video and convert it to the latest version This function alloc (using vp\+\_\+os\+\_\+calloc) the return pointer. Application M\+U\+ST handle the free of the pointer. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a968c047a33b754a6868be39c65f5db06}{get\+Video\+Fps\+From\+File} (F\+I\+LE $\ast$video\+File)
+\begin{DoxyCompactList}\small\item\em Read F\+PS from a given video file This function get the F\+PS of a given video file. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a3a98cfcef1c8aab49b8599a6bf21923f}{get\+Video\+Fps\+From\+Atom} (uint8\+\_\+t $\ast$mdhd\+Atom, const int atom\+Size)
+\begin{DoxyCompactList}\small\item\em Read F\+PS from a given video mdhd atom This function get the F\+PS of a given video mdhd atom. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a9e000ae745abfa91903f72be6ecb19e0}{seek\+Media\+Buffer\+To\+Atom} (uint8\+\_\+t $\ast$buff, long long $\ast$offset, long long size, const char $\ast$tag)
+\begin{DoxyCompactList}\small\item\em Read size and atom\+Name from a given buffer of atom This function get the size and the name of a given buffer atom. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_ac95202b533f72e075b209427d458b96e}{seek\+Media\+File\+To\+Atom} (F\+I\+LE $\ast$video\+File, const char $\ast$atom\+Name, uint64\+\_\+t $\ast$ret\+Atom\+Size, uint32\+\_\+t atom\+Index)
+\begin{DoxyCompactList}\small\item\em Read size and atom\+Name from a given video file This function seek a file to a given Atom. \end{DoxyCompactList}\item 
+uint64\+\_\+t \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_adbdcab93d6ff0f1ce8de855d565da7c9}{swap\+\_\+uint64} (uint64\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em This function reversed the byte order of a uint64\+\_\+t. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{_a_r_m_e_d_i_a___video_atoms_8h_a519915f33d90ad2e886ba51ded3cd07a}{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atom\+\_\+\+Get\+P\+V\+A\+T\+String} (const \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___discovery_8h_a908972407587656a48194c58ccd65813}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} id, const char $\ast$uuid, const char $\ast$run\+Date, const char $\ast$filepath, const struct tm $\ast$media\+Date)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!\+\_\+\+F\+I\+L\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+B\+I\+TS@{\+\_\+\+F\+I\+L\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+B\+I\+TS}}
+\index{\+\_\+\+F\+I\+L\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+B\+I\+TS@{\+\_\+\+F\+I\+L\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+B\+I\+TS}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+F\+I\+L\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+B\+I\+TS}{_FILE_OFFSET_BITS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+F\+I\+L\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+B\+I\+TS~64}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a44d01ba0a136b8e27ad362f5a823d14e}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a44d01ba0a136b8e27ad362f5a823d14e}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+A\+T\+O\+M\+\_\+\+T\+A\+G\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+A\+T\+O\+M\+\_\+\+T\+A\+G\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+A\+T\+O\+M\+\_\+\+T\+A\+G\+\_\+\+S\+I\+ZE@{A\+R\+M\+E\+D\+I\+A\+\_\+\+A\+T\+O\+M\+\_\+\+T\+A\+G\+\_\+\+S\+I\+ZE}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+A\+T\+O\+M\+\_\+\+T\+A\+G\+\_\+\+S\+I\+ZE}{ARMEDIA_ATOM_TAG_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+A\+T\+O\+M\+\_\+\+T\+A\+G\+\_\+\+S\+I\+ZE~4}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a019ad4e90f45008eeb6c96e64ceb2cd8}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a019ad4e90f45008eeb6c96e64ceb2cd8}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+S\+\_\+\+P\+V\+AT@{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+S\+\_\+\+P\+V\+AT}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+S\+\_\+\+P\+V\+AT@{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+S\+\_\+\+P\+V\+AT}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+S\+\_\+\+P\+V\+AT}{ARMEDIA_VIDEOATOMS_PVAT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+S\+\_\+\+P\+V\+AT~\char`\"{}pvat\char`\"{}}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a612babb9a269d99eae00f3a629430707}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a612babb9a269d99eae00f3a629430707}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!atom\+\_\+ntohll@{atom\+\_\+ntohll}}
+\index{atom\+\_\+ntohll@{atom\+\_\+ntohll}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{atom\+\_\+ntohll}{atom_ntohll}}]{\setlength{\rightskip}{0pt plus 5cm}\#define atom\+\_\+ntohll(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf swap\+\_\+uint64}(x)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a501ba66d5fe14b14731051b476f5f81e}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a501ba66d5fe14b14731051b476f5f81e}
+
+
+\subsection{Enumeration Type Documentation}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+PE@{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+PE}}
+\index{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+PE@{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+PE}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+PE}{eARMEDIA_VIDEOATOM_MEDIATYPE}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+PE}}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a91eb51730e1be4a46c64c7ff87885da3}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a91eb51730e1be4a46c64c7ff87885da3}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+V\+I\+D\+EO@{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+V\+I\+D\+EO}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+V\+I\+D\+EO@{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+V\+I\+D\+EO}}\item[{\em 
+A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+V\+I\+D\+EO\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a91eb51730e1be4a46c64c7ff87885da3a2e78da1cc20bf963f3ad6958699b01ca}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a91eb51730e1be4a46c64c7ff87885da3a2e78da1cc20bf963f3ad6958699b01ca}
+}]\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+S\+O\+U\+ND@{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+S\+O\+U\+ND}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+S\+O\+U\+ND@{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+S\+O\+U\+ND}}\item[{\em 
+A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+S\+O\+U\+ND\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a91eb51730e1be4a46c64c7ff87885da3a1a9cf1f607c19acdf2d853ca8ed180ee}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a91eb51730e1be4a46c64c7ff87885da3a1a9cf1f607c19acdf2d853ca8ed180ee}
+}]\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+D\+A\+TA@{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+D\+A\+TA}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+D\+A\+TA@{A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+D\+A\+TA}}\item[{\em 
+A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+D\+A\+TA\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a91eb51730e1be4a46c64c7ff87885da3aca7262e10a434dd8513398719eb5ed92}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a91eb51730e1be4a46c64c7ff87885da3aca7262e10a434dd8513398719eb5ed92}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atom\+\_\+\+Get\+P\+V\+A\+T\+String@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atom\+\_\+\+Get\+P\+V\+A\+T\+String}}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atom\+\_\+\+Get\+P\+V\+A\+T\+String@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atom\+\_\+\+Get\+P\+V\+A\+T\+String}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atom\+\_\+\+Get\+P\+V\+A\+T\+String(const e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+C\+T id, const char $\ast$uuid, const char $\ast$run\+Date, const char $\ast$filepath, const struct tm $\ast$media\+Date)}{ARMEDIA_VideoAtom_GetPVATString(const eARDISCOVERY_PRODUCT id, const char *uuid, const char *runDate, const char *filepath, const struct tm *mediaDate)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atom\+\_\+\+Get\+P\+V\+A\+T\+String (
+\begin{DoxyParamCaption}
+\item[{const {\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT}}]{id, }
+\item[{const char $\ast$}]{uuid, }
+\item[{const char $\ast$}]{run\+Date, }
+\item[{const char $\ast$}]{filepath, }
+\item[{const struct tm $\ast$}]{media\+Date}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a519915f33d90ad2e886ba51ded3cd07a}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a519915f33d90ad2e886ba51ded3cd07a}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!atom\+From\+Data@{atom\+From\+Data}}
+\index{atom\+From\+Data@{atom\+From\+Data}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{atom\+From\+Data(uint32\+\_\+t data\+\_\+size, const char $\ast$tag, const uint8\+\_\+t $\ast$data)}{atomFromData(uint32_t data_size, const char *tag, const uint8_t *data)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ atom\+From\+Data (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{data\+\_\+size, }
+\item[{const char $\ast$}]{tag, }
+\item[{const uint8\+\_\+t $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_aab5e21729307be87ea788956cb7305fd}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_aab5e21729307be87ea788956cb7305fd}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!cdsc\+Atom\+Gen@{cdsc\+Atom\+Gen}}
+\index{cdsc\+Atom\+Gen@{cdsc\+Atom\+Gen}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{cdsc\+Atom\+Gen(uint32\+\_\+t $\ast$target\+\_\+track\+\_\+id, uint32\+\_\+t target\+\_\+track\+\_\+id\+\_\+count)}{cdscAtomGen(uint32_t *target_track_id, uint32_t target_track_id_count)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ cdsc\+Atom\+Gen (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{target\+\_\+track\+\_\+id, }
+\item[{uint32\+\_\+t}]{target\+\_\+track\+\_\+id\+\_\+count}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a73dd89ad6f66d98352d508afe6dbe2ed}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a73dd89ad6f66d98352d508afe6dbe2ed}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!create\+Data\+From\+Atom@{create\+Data\+From\+Atom}}
+\index{create\+Data\+From\+Atom@{create\+Data\+From\+Atom}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{create\+Data\+From\+Atom(uint8\+\_\+t $\ast$atom\+Buffer, const int atom\+Size)}{createDataFromAtom(uint8_t *atomBuffer, const int atomSize)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ create\+Data\+From\+Atom (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{atom\+Buffer, }
+\item[{const int}]{atom\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_ae3947735d4118abdacfa275106b03591}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_ae3947735d4118abdacfa275106b03591}
+
+
+Read atom data from atom into a self alloced array This function get the atom data from a video and convert it to the latest version This function alloc (using vp\+\_\+os\+\_\+calloc) the return pointer. Application M\+U\+ST handle the free of the pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em atom\+Buffer} & Pointer to the atom data (not including the leading size and atom tag) \\
+\hline
+{\em atom\+Size} & Size of the atom. This is used to avoid overflow, or if the atom size was set to zero \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new, malloc\textquotesingle{}d, pointer of atom data filled with data. In case of failure, returns N\+U\+LL 
+\end{DoxyReturn}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!create\+Data\+From\+File@{create\+Data\+From\+File}}
+\index{create\+Data\+From\+File@{create\+Data\+From\+File}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{create\+Data\+From\+File(\+F\+I\+L\+E $\ast$video\+File, const char $\ast$atom, uint32\+\_\+t $\ast$data\+Size)}{createDataFromFile(FILE *videoFile, const char *atom, uint32_t *dataSize)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ create\+Data\+From\+File (
+\begin{DoxyParamCaption}
+\item[{F\+I\+LE $\ast$}]{video\+File, }
+\item[{const char $\ast$}]{atom, }
+\item[{uint32\+\_\+t $\ast$}]{data\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a747b5f6f4b9bbed7a518cb7258a1921d}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a747b5f6f4b9bbed7a518cb7258a1921d}
+
+
+Read atom data from a video file into a self alloced array Thid function get the atom data from a video file and convert it to the latest version This function alloc (using vp\+\_\+os\+\_\+calloc) the return pointer. Application M\+U\+ST handle the free of the pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em video\+File} & Pointer to the video file. \\
+\hline
+{\em atom} & The name of the atom to extract. If an inner atom is required, use / to separate levels. \\
+\hline
+{\em data\+Size} & Pointer which will hold the size of the returned data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new, malloc\textquotesingle{}d, pointer of pvat data filled with data buffer. In case of failure, returns N\+U\+LL. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The video F\+I\+L\+E$\ast$ pointer position will be modified by this call. 
+\end{DoxyNote}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!dref\+Atom\+Gen@{dref\+Atom\+Gen}}
+\index{dref\+Atom\+Gen@{dref\+Atom\+Gen}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{dref\+Atom\+Gen(void)}{drefAtomGen(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ dref\+Atom\+Gen (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_ab31324032dcc5851def8220630d6b63b}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_ab31324032dcc5851def8220630d6b63b}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!free\+Atom@{free\+Atom}}
+\index{free\+Atom@{free\+Atom}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{free\+Atom(movie\+\_\+atom\+\_\+t $\ast$$\ast$atom)}{freeAtom(movie_atom_t **atom)}}]{\setlength{\rightskip}{0pt plus 5cm}void free\+Atom (
+\begin{DoxyParamCaption}
+\item[{{\bf movie\+\_\+atom\+\_\+t} $\ast$$\ast$}]{atom}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_acb87412be8723244ca66a65fd18d0cb5}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_acb87412be8723244ca66a65fd18d0cb5}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!ftyp\+Atom\+For\+Format\+And\+Codec\+With\+Offset@{ftyp\+Atom\+For\+Format\+And\+Codec\+With\+Offset}}
+\index{ftyp\+Atom\+For\+Format\+And\+Codec\+With\+Offset@{ftyp\+Atom\+For\+Format\+And\+Codec\+With\+Offset}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{ftyp\+Atom\+For\+Format\+And\+Codec\+With\+Offset(e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+C\+O\+D\+E\+C codec, off\+\_\+t $\ast$offset)}{ftypAtomForFormatAndCodecWithOffset(eARMEDIA_ENCAPSULER_VIDEO_CODEC codec, off_t *offset)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ ftyp\+Atom\+For\+Format\+And\+Codec\+With\+Offset (
+\begin{DoxyParamCaption}
+\item[{{\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+C\+O\+D\+EC}}]{codec, }
+\item[{off\+\_\+t $\ast$}]{offset}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a26d38958a5aae0d1e07b356aac4a267e}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a26d38958a5aae0d1e07b356aac4a267e}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!get\+Video\+Fps\+From\+Atom@{get\+Video\+Fps\+From\+Atom}}
+\index{get\+Video\+Fps\+From\+Atom@{get\+Video\+Fps\+From\+Atom}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{get\+Video\+Fps\+From\+Atom(uint8\+\_\+t $\ast$mdhd\+Atom, const int atom\+Size)}{getVideoFpsFromAtom(uint8_t *mdhdAtom, const int atomSize)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t get\+Video\+Fps\+From\+Atom (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{mdhd\+Atom, }
+\item[{const int}]{atom\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a3a98cfcef1c8aab49b8599a6bf21923f}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a3a98cfcef1c8aab49b8599a6bf21923f}
+
+
+Read F\+PS from a given video mdhd atom This function get the F\+PS of a given video mdhd atom. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mdhd\+Atom} & Pointer to the video atom \\
+\hline
+{\em atom\+Size} & Size of the video atom pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of frames per second of the video. Returns zero if we were unable to read the actual value. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This call may fail on non-\/\+A\+R.\+Drone generated videos 
+\end{DoxyNote}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!get\+Video\+Fps\+From\+File@{get\+Video\+Fps\+From\+File}}
+\index{get\+Video\+Fps\+From\+File@{get\+Video\+Fps\+From\+File}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{get\+Video\+Fps\+From\+File(\+F\+I\+L\+E $\ast$video\+File)}{getVideoFpsFromFile(FILE *videoFile)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t get\+Video\+Fps\+From\+File (
+\begin{DoxyParamCaption}
+\item[{F\+I\+LE $\ast$}]{video\+File}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a968c047a33b754a6868be39c65f5db06}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a968c047a33b754a6868be39c65f5db06}
+
+
+Read F\+PS from a given video file This function get the F\+PS of a given video file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em video\+File} & Pointer to the video file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of frames per second of the video. Returns zero if we were unable to read the actual value. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The video F\+I\+L\+E$\ast$ pointer position will be modified by this call 
+
+This call may fail on non-\/\+A\+R.\+Drone generated videos 
+\end{DoxyNote}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!hdlr\+Atom\+For\+Mdia@{hdlr\+Atom\+For\+Mdia}}
+\index{hdlr\+Atom\+For\+Mdia@{hdlr\+Atom\+For\+Mdia}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{hdlr\+Atom\+For\+Mdia(e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E type)}{hdlrAtomForMdia(eARMEDIA_VIDEOATOM_MEDIATYPE type)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ hdlr\+Atom\+For\+Mdia (
+\begin{DoxyParamCaption}
+\item[{{\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+PE}}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_ac7fac1637b98daeb2f74c4dcb6732001}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_ac7fac1637b98daeb2f74c4dcb6732001}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!hdlr\+Atom\+For\+Metadata@{hdlr\+Atom\+For\+Metadata}}
+\index{hdlr\+Atom\+For\+Metadata@{hdlr\+Atom\+For\+Metadata}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{hdlr\+Atom\+For\+Metadata(void)}{hdlrAtomForMetadata(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ hdlr\+Atom\+For\+Metadata (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a3824467dbb745b54031c29ede96850b8}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a3824467dbb745b54031c29ede96850b8}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!hdlr\+Atom\+For\+Minf@{hdlr\+Atom\+For\+Minf}}
+\index{hdlr\+Atom\+For\+Minf@{hdlr\+Atom\+For\+Minf}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{hdlr\+Atom\+For\+Minf(void)}{hdlrAtomForMinf(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ hdlr\+Atom\+For\+Minf (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_aba4961c956d564ec3e6875754f279a16}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_aba4961c956d564ec3e6875754f279a16}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!insert\+Atom\+Into\+Atom@{insert\+Atom\+Into\+Atom}}
+\index{insert\+Atom\+Into\+Atom@{insert\+Atom\+Into\+Atom}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{insert\+Atom\+Into\+Atom(movie\+\_\+atom\+\_\+t $\ast$container, movie\+\_\+atom\+\_\+t $\ast$$\ast$leaf)}{insertAtomIntoAtom(movie_atom_t *container, movie_atom_t **leaf)}}]{\setlength{\rightskip}{0pt plus 5cm}void insert\+Atom\+Into\+Atom (
+\begin{DoxyParamCaption}
+\item[{{\bf movie\+\_\+atom\+\_\+t} $\ast$}]{container, }
+\item[{{\bf movie\+\_\+atom\+\_\+t} $\ast$$\ast$}]{leaf}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a8f162e73a23785403051f4eca9690694}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a8f162e73a23785403051f4eca9690694}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!mdat\+Atom\+For\+Format\+With\+Video\+Size@{mdat\+Atom\+For\+Format\+With\+Video\+Size}}
+\index{mdat\+Atom\+For\+Format\+With\+Video\+Size@{mdat\+Atom\+For\+Format\+With\+Video\+Size}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{mdat\+Atom\+For\+Format\+With\+Video\+Size(uint64\+\_\+t video\+Size)}{mdatAtomForFormatWithVideoSize(uint64_t videoSize)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ mdat\+Atom\+For\+Format\+With\+Video\+Size (
+\begin{DoxyParamCaption}
+\item[{uint64\+\_\+t}]{video\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_ac0485b24fd7987fc5b60401f65aa183f}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_ac0485b24fd7987fc5b60401f65aa183f}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!mdhd\+Atom\+From\+Fps\+Num\+Frames\+And\+Date@{mdhd\+Atom\+From\+Fps\+Num\+Frames\+And\+Date}}
+\index{mdhd\+Atom\+From\+Fps\+Num\+Frames\+And\+Date@{mdhd\+Atom\+From\+Fps\+Num\+Frames\+And\+Date}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{mdhd\+Atom\+From\+Fps\+Num\+Frames\+And\+Date(uint32\+\_\+t timescale, uint32\+\_\+t duration, time\+\_\+t date)}{mdhdAtomFromFpsNumFramesAndDate(uint32_t timescale, uint32_t duration, time_t date)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ mdhd\+Atom\+From\+Fps\+Num\+Frames\+And\+Date (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{timescale, }
+\item[{uint32\+\_\+t}]{duration, }
+\item[{time\+\_\+t}]{date}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a84e3ee198c8d78303522553196fed304}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a84e3ee198c8d78303522553196fed304}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!metadata\+Atom\+From\+Tag\+And\+File@{metadata\+Atom\+From\+Tag\+And\+File}}
+\index{metadata\+Atom\+From\+Tag\+And\+File@{metadata\+Atom\+From\+Tag\+And\+File}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{metadata\+Atom\+From\+Tag\+And\+File(const char $\ast$tag, const char $\ast$file, uint8\+\_\+t class\+Id)}{metadataAtomFromTagAndFile(const char *tag, const char *file, uint8_t classId)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ metadata\+Atom\+From\+Tag\+And\+File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{tag, }
+\item[{const char $\ast$}]{file, }
+\item[{uint8\+\_\+t}]{class\+Id}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a611018e6f11913e0c5aaa2862a4664bf}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a611018e6f11913e0c5aaa2862a4664bf}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!metadata\+Atom\+From\+Tag\+And\+Value@{metadata\+Atom\+From\+Tag\+And\+Value}}
+\index{metadata\+Atom\+From\+Tag\+And\+Value@{metadata\+Atom\+From\+Tag\+And\+Value}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{metadata\+Atom\+From\+Tag\+And\+Value(const char $\ast$tag, const char $\ast$value, uint8\+\_\+t class\+Id)}{metadataAtomFromTagAndValue(const char *tag, const char *value, uint8_t classId)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ metadata\+Atom\+From\+Tag\+And\+Value (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{tag, }
+\item[{const char $\ast$}]{value, }
+\item[{uint8\+\_\+t}]{class\+Id}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_ae9c29812fa9e9460a584ba6bf40de301}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_ae9c29812fa9e9460a584ba6bf40de301}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!mvhd\+Atom\+From\+Fps\+Num\+Frames\+And\+Date@{mvhd\+Atom\+From\+Fps\+Num\+Frames\+And\+Date}}
+\index{mvhd\+Atom\+From\+Fps\+Num\+Frames\+And\+Date@{mvhd\+Atom\+From\+Fps\+Num\+Frames\+And\+Date}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{mvhd\+Atom\+From\+Fps\+Num\+Frames\+And\+Date(uint32\+\_\+t timescale, uint32\+\_\+t duration, time\+\_\+t date)}{mvhdAtomFromFpsNumFramesAndDate(uint32_t timescale, uint32_t duration, time_t date)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ mvhd\+Atom\+From\+Fps\+Num\+Frames\+And\+Date (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{timescale, }
+\item[{uint32\+\_\+t}]{duration, }
+\item[{time\+\_\+t}]{date}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a3fe1fc56b640d940de3f42797f67ad54}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a3fe1fc56b640d940de3f42797f67ad54}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!nmhd\+Atom\+Gen@{nmhd\+Atom\+Gen}}
+\index{nmhd\+Atom\+Gen@{nmhd\+Atom\+Gen}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{nmhd\+Atom\+Gen(void)}{nmhdAtomGen(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ nmhd\+Atom\+Gen (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a09ed8290d3b188dc848366d870fa4aa6}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a09ed8290d3b188dc848366d870fa4aa6}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!pvat\+Atom\+Gen@{pvat\+Atom\+Gen}}
+\index{pvat\+Atom\+Gen@{pvat\+Atom\+Gen}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{pvat\+Atom\+Gen(const char $\ast$json\+String)}{pvatAtomGen(const char *jsonString)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ pvat\+Atom\+Gen (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{json\+String}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a3f2828930c5c85ef6ed43ef9abebf329}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a3f2828930c5c85ef6ed43ef9abebf329}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!seek\+Media\+Buffer\+To\+Atom@{seek\+Media\+Buffer\+To\+Atom}}
+\index{seek\+Media\+Buffer\+To\+Atom@{seek\+Media\+Buffer\+To\+Atom}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{seek\+Media\+Buffer\+To\+Atom(uint8\+\_\+t $\ast$buff, long long $\ast$offset, long long size, const char $\ast$tag)}{seekMediaBufferToAtom(uint8_t *buff, long long *offset, long long size, const char *tag)}}]{\setlength{\rightskip}{0pt plus 5cm}int seek\+Media\+Buffer\+To\+Atom (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{buff, }
+\item[{long long $\ast$}]{offset, }
+\item[{long long}]{size, }
+\item[{const char $\ast$}]{tag}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a9e000ae745abfa91903f72be6ecb19e0}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a9e000ae745abfa91903f72be6ecb19e0}
+
+
+Read size and atom\+Name from a given buffer of atom This function get the size and the name of a given buffer atom. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em buffer} & Pointer to the buffer atom \\
+\hline
+ & {\em } & \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!seek\+Media\+File\+To\+Atom@{seek\+Media\+File\+To\+Atom}}
+\index{seek\+Media\+File\+To\+Atom@{seek\+Media\+File\+To\+Atom}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{seek\+Media\+File\+To\+Atom(\+F\+I\+L\+E $\ast$video\+File, const char $\ast$atom\+Name, uint64\+\_\+t $\ast$ret\+Atom\+Size, uint32\+\_\+t atom\+Index)}{seekMediaFileToAtom(FILE *videoFile, const char *atomName, uint64_t *retAtomSize, uint32_t atomIndex)}}]{\setlength{\rightskip}{0pt plus 5cm}int seek\+Media\+File\+To\+Atom (
+\begin{DoxyParamCaption}
+\item[{F\+I\+LE $\ast$}]{video\+File, }
+\item[{const char $\ast$}]{atom\+Name, }
+\item[{uint64\+\_\+t $\ast$}]{ret\+Atom\+Size, }
+\item[{uint32\+\_\+t}]{atom\+Index}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_ac95202b533f72e075b209427d458b96e}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_ac95202b533f72e075b209427d458b96e}
+
+
+Read size and atom\+Name from a given video file This function seek a file to a given Atom. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em video\+File} & Pointer to the video file \\
+\hline
+\mbox{\tt in}  & {\em tag} & char Pointer of the wanted atom Name \\
+\hline
+ & {\em } & \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!smhd\+Atom\+Gen@{smhd\+Atom\+Gen}}
+\index{smhd\+Atom\+Gen@{smhd\+Atom\+Gen}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{smhd\+Atom\+Gen(void)}{smhdAtomGen(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ smhd\+Atom\+Gen (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_aee202d6658b2fdd9d95e00c8a1609376}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_aee202d6658b2fdd9d95e00c8a1609376}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!stsc\+Atom\+Gen@{stsc\+Atom\+Gen}}
+\index{stsc\+Atom\+Gen@{stsc\+Atom\+Gen}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{stsc\+Atom\+Gen(uint32\+\_\+t unique\+Count, uint32\+\_\+t $\ast$stsc\+Table, uint32\+\_\+t n\+Entries)}{stscAtomGen(uint32_t uniqueCount, uint32_t *stscTable, uint32_t nEntries)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ stsc\+Atom\+Gen (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{unique\+Count, }
+\item[{uint32\+\_\+t $\ast$}]{stsc\+Table, }
+\item[{uint32\+\_\+t}]{n\+Entries}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_afb3793a6b98ef4d121721eff151154a1}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_afb3793a6b98ef4d121721eff151154a1}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!stsd\+Atom\+For\+Metadata@{stsd\+Atom\+For\+Metadata}}
+\index{stsd\+Atom\+For\+Metadata@{stsd\+Atom\+For\+Metadata}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{stsd\+Atom\+For\+Metadata(const char $\ast$content\+\_\+encoding, const char $\ast$mime\+\_\+format)}{stsdAtomForMetadata(const char *content_encoding, const char *mime_format)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ stsd\+Atom\+For\+Metadata (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{content\+\_\+encoding, }
+\item[{const char $\ast$}]{mime\+\_\+format}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_acfd3541541d93be2bb4735d728b2dce3}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_acfd3541541d93be2bb4735d728b2dce3}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!stsd\+Atom\+With\+Audio\+Codec@{stsd\+Atom\+With\+Audio\+Codec}}
+\index{stsd\+Atom\+With\+Audio\+Codec@{stsd\+Atom\+With\+Audio\+Codec}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{stsd\+Atom\+With\+Audio\+Codec(e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+D\+E\+C codec, e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+A\+T format, uint16\+\_\+t nchannel, uint16\+\_\+t freq)}{stsdAtomWithAudioCodec(eARMEDIA_ENCAPSULER_AUDIO_CODEC codec, eARMEDIA_ENCAPSULER_AUDIO_FORMAT format, uint16_t nchannel, uint16_t freq)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ stsd\+Atom\+With\+Audio\+Codec (
+\begin{DoxyParamCaption}
+\item[{{\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+D\+EC}}]{codec, }
+\item[{{\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+AT}}]{format, }
+\item[{uint16\+\_\+t}]{nchannel, }
+\item[{uint16\+\_\+t}]{freq}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a1bb883367111bb243f905de36e823013}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a1bb883367111bb243f905de36e823013}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!stsd\+Atom\+With\+Resolution\+And\+Codec@{stsd\+Atom\+With\+Resolution\+And\+Codec}}
+\index{stsd\+Atom\+With\+Resolution\+And\+Codec@{stsd\+Atom\+With\+Resolution\+And\+Codec}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{stsd\+Atom\+With\+Resolution\+And\+Codec(uint32\+\_\+t w, uint32\+\_\+t h, e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+C\+O\+D\+E\+C codec)}{stsdAtomWithResolutionAndCodec(uint32_t w, uint32_t h, eARMEDIA_ENCAPSULER_VIDEO_CODEC codec)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ stsd\+Atom\+With\+Resolution\+And\+Codec (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{w, }
+\item[{uint32\+\_\+t}]{h, }
+\item[{{\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+C\+O\+D\+EC}}]{codec}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a7f97d1e85f055a50b7e8b2e444d33c02}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a7f97d1e85f055a50b7e8b2e444d33c02}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!stsd\+Atom\+With\+Resolution\+Codec\+Sps\+And\+Pps@{stsd\+Atom\+With\+Resolution\+Codec\+Sps\+And\+Pps}}
+\index{stsd\+Atom\+With\+Resolution\+Codec\+Sps\+And\+Pps@{stsd\+Atom\+With\+Resolution\+Codec\+Sps\+And\+Pps}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{stsd\+Atom\+With\+Resolution\+Codec\+Sps\+And\+Pps(uint32\+\_\+t w, uint32\+\_\+t h, e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+C\+O\+D\+E\+C codec, uint8\+\_\+t $\ast$sps, uint32\+\_\+t sps\+Size, uint8\+\_\+t $\ast$pps, uint32\+\_\+t pps\+Size)}{stsdAtomWithResolutionCodecSpsAndPps(uint32_t w, uint32_t h, eARMEDIA_ENCAPSULER_VIDEO_CODEC codec, uint8_t *sps, uint32_t spsSize, uint8_t *pps, uint32_t ppsSize)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ stsd\+Atom\+With\+Resolution\+Codec\+Sps\+And\+Pps (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{w, }
+\item[{uint32\+\_\+t}]{h, }
+\item[{{\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+E\+N\+C\+A\+P\+S\+U\+L\+E\+R\+\_\+\+V\+I\+D\+E\+O\+\_\+\+C\+O\+D\+EC}}]{codec, }
+\item[{uint8\+\_\+t $\ast$}]{sps, }
+\item[{uint32\+\_\+t}]{sps\+Size, }
+\item[{uint8\+\_\+t $\ast$}]{pps, }
+\item[{uint32\+\_\+t}]{pps\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_af64779e7300eabf413697a6d6f5bc835}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_af64779e7300eabf413697a6d6f5bc835}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!stsz\+Atom\+Gen@{stsz\+Atom\+Gen}}
+\index{stsz\+Atom\+Gen@{stsz\+Atom\+Gen}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{stsz\+Atom\+Gen(uint32\+\_\+t unique\+Size, uint32\+\_\+t $\ast$size\+Table, uint32\+\_\+t n\+Samples)}{stszAtomGen(uint32_t uniqueSize, uint32_t *sizeTable, uint32_t nSamples)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ stsz\+Atom\+Gen (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{unique\+Size, }
+\item[{uint32\+\_\+t $\ast$}]{size\+Table, }
+\item[{uint32\+\_\+t}]{n\+Samples}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a14f200242c3742579b0725db335c5ea8}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a14f200242c3742579b0725db335c5ea8}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!swap\+\_\+uint64@{swap\+\_\+uint64}}
+\index{swap\+\_\+uint64@{swap\+\_\+uint64}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{swap\+\_\+uint64(uint64\+\_\+t value)}{swap_uint64(uint64_t value)}}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t swap\+\_\+uint64 (
+\begin{DoxyParamCaption}
+\item[{uint64\+\_\+t}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_adbdcab93d6ff0f1ce8de855d565da7c9}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_adbdcab93d6ff0f1ce8de855d565da7c9}
+
+
+This function reversed the byte order of a uint64\+\_\+t. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & in uint64\+\_\+t \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint64\+\_\+t reversed 
+\end{DoxyReturn}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!tkhd\+Atom\+With\+Resolution\+Num\+Frames\+Fps\+And\+Date@{tkhd\+Atom\+With\+Resolution\+Num\+Frames\+Fps\+And\+Date}}
+\index{tkhd\+Atom\+With\+Resolution\+Num\+Frames\+Fps\+And\+Date@{tkhd\+Atom\+With\+Resolution\+Num\+Frames\+Fps\+And\+Date}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{tkhd\+Atom\+With\+Resolution\+Num\+Frames\+Fps\+And\+Date(uint32\+\_\+t w, uint32\+\_\+t h, uint32\+\_\+t timescale, uint32\+\_\+t duration, time\+\_\+t date, e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+P\+E type)}{tkhdAtomWithResolutionNumFramesFpsAndDate(uint32_t w, uint32_t h, uint32_t timescale, uint32_t duration, time_t date, eARMEDIA_VIDEOATOM_MEDIATYPE type)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ tkhd\+Atom\+With\+Resolution\+Num\+Frames\+Fps\+And\+Date (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{w, }
+\item[{uint32\+\_\+t}]{h, }
+\item[{uint32\+\_\+t}]{timescale, }
+\item[{uint32\+\_\+t}]{duration, }
+\item[{time\+\_\+t}]{date, }
+\item[{{\bf e\+A\+R\+M\+E\+D\+I\+A\+\_\+\+V\+I\+D\+E\+O\+A\+T\+O\+M\+\_\+\+M\+E\+D\+I\+A\+T\+Y\+PE}}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a2fd61ade9bf18cd9d1c1de42268ea8ef}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a2fd61ade9bf18cd9d1c1de42268ea8ef}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!vmhd\+Atom\+Gen@{vmhd\+Atom\+Gen}}
+\index{vmhd\+Atom\+Gen@{vmhd\+Atom\+Gen}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{vmhd\+Atom\+Gen(void)}{vmhdAtomGen(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf movie\+\_\+atom\+\_\+t}$\ast$ vmhd\+Atom\+Gen (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a14d982b746537e72739e2a20bb36724f}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a14d982b746537e72739e2a20bb36724f}
+\index{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}!write\+Atom\+To\+File@{write\+Atom\+To\+File}}
+\index{write\+Atom\+To\+File@{write\+Atom\+To\+File}!A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h@{A\+R\+M\+E\+D\+I\+A\+\_\+\+Video\+Atoms.\+h}}
+\subsubsection[{\texorpdfstring{write\+Atom\+To\+File(movie\+\_\+atom\+\_\+t $\ast$$\ast$atom, F\+I\+L\+E $\ast$file)}{writeAtomToFile(movie_atom_t **atom, FILE *file)}}]{\setlength{\rightskip}{0pt plus 5cm}int write\+Atom\+To\+File (
+\begin{DoxyParamCaption}
+\item[{{\bf movie\+\_\+atom\+\_\+t} $\ast$$\ast$}]{atom, }
+\item[{F\+I\+LE $\ast$}]{file}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_e_d_i_a___video_atoms_8h_a8d6033cbc740c16444827e2c472f0996}{}\label{_a_r_m_e_d_i_a___video_atoms_8h_a8d6033cbc740c16444827e2c472f0996}

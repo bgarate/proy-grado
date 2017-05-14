@@ -1,0 +1,11 @@
+<map id="Body::setup" name="Body::setup">
+<area shape="rect" id="node2" href="$class_logger.html#acebb37f5538780e6c14f13de6ec497bc" title="Logger::getInstance" alt="" coords="541,32,679,59"/>
+<area shape="rect" id="node3" href="$class_logger.html#a5adf33889fdf061aa0dc756d38eb5e90" title="Logger::setSource" alt="" coords="164,134,292,160"/>
+<area shape="rect" id="node4" href="$class_config.html#a1611555d61b524b6a2562643a59085eb" title="Config::getBodyHost" alt="" coords="156,184,300,211"/>
+<area shape="rect" id="node5" href="$class_config.html#aea3a5f84be3a9cdf280fff77fdcb51f0" title="Config::getBodyPort" alt="" coords="158,235,298,262"/>
+<area shape="rect" id="node6" href="$class_socket_channel.html#a6b864640d80bf30b9f994d651ebebfdf" title="SocketChannel::connect" alt="" coords="145,83,311,110"/>
+<area shape="rect" id="node10" href="$class_logger.html#a4fe03aa253188ef739b5dec5e036f640" title="Logger::logInfo" alt="" coords="372,32,480,59"/>
+<area shape="rect" id="node7" href="$class_logger.html#ada4ef25d16123b5367a70c9fa0ef0fd7" title="Logger::logError" alt="" coords="369,83,483,110"/>
+<area shape="rect" id="node9" href="$class_logger.html#a0835527c3b67be24326a8447856d84a6" title="Logger::logWarning" alt="" coords="359,134,493,160"/>
+<area shape="rect" id="node8" href="$class_logger.html#a053de045cd00393f4def7d5b6c5cab38" title="Logger::Log" alt="" coords="565,83,655,110"/>
+</map>

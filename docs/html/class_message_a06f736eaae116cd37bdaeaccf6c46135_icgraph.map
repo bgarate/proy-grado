@@ -1,0 +1,9 @@
+<map id="Message::mutable_ping" name="Message::mutable_ping">
+<area shape="rect" id="node2" href="$class_body.html#a898135b92fa8abf09d435f671f62cf29" title="Body::loop" alt="" coords="265,5,349,32"/>
+<area shape="rect" id="node4" href="$class_brain.html#afa2f689c8360c9c9ad323bac5be4b42d" title="Brain::setup" alt="" coords="261,56,353,83"/>
+<area shape="rect" id="node5" href="$class_brain.html#a23d921369c5ec1218d7dc26d0f8270c2" title="Brain::loop" alt="" coords="265,107,349,133"/>
+<area shape="rect" id="node6" href="$class_message.html#a04b6b278c333ee73af59b1b2623e1289" title="Message::MergePartialFrom\lCodedStream" alt="" coords="213,158,400,199"/>
+<area shape="rect" id="node7" href="$class_message.html#aeec4936f78a3ed399295e3f72840166f" title="Message::MergeFrom" alt="" coords="232,224,381,251"/>
+<area shape="rect" id="node8" href="$class_message.html#a1656eb682ce1b354645b8f0204d4d716" title="Message::GetMetadata" alt="" coords="227,275,386,301"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a523d51f6d06fce5bbed3e074818569fb" title="main" alt="" coords="448,56,499,83"/>
+</map>

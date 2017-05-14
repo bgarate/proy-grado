@@ -1,0 +1,72 @@
+\hypertarget{struct_p_k_c_s12___s_a_f_e_b_a_g}{}\section{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG Struct Reference}
+\label{struct_p_k_c_s12___s_a_f_e_b_a_g}\index{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG@{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG}}
+
+
+{\ttfamily \#include $<$pkcs12.\+h$>$}
+
+
+
+Collaboration diagram for P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_p_k_c_s12___s_a_f_e_b_a_g__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_p_k_c_s12___s_a_f_e_b_a_g_a36b65bc2ddacef551ca40bff5bc21d96}{S\+T\+A\+C\+K\+\_\+\+OF} (\hyperlink{x509_8h_aa4f1a62a9d2dd8cb6780fe2713737c0f}{X509\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE})$\ast$attrib
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{asn1_8h_ae10c08e4e6b23f67a39b2add932ec48f}{A\+S\+N1\+\_\+\+O\+B\+J\+E\+CT} $\ast$ \hyperlink{struct_p_k_c_s12___s_a_f_e_b_a_g_a7e25098bf7d75c05613960d6c9a0e554}{type}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \hyperlink{structpkcs12__bag__st}{pkcs12\_bag\_st} $\ast$ \hyperlink{struct_p_k_c_s12___s_a_f_e_b_a_g_af118b01967ba41dcb3cc228874970721}{bag}\\
+\>struct \hyperlink{structpkcs8__priv__key__info__st}{pkcs8\_priv\_key\_info\_st} $\ast$ \hyperlink{struct_p_k_c_s12___s_a_f_e_b_a_g_ad86021b72bc1b4beeb6e34a51abb45bf}{keybag}\\
+\>\hyperlink{x509_8h_a84b39cf74cc1ae6512f7d4481f5f4404}{X509\_SIG} $\ast$ \hyperlink{struct_p_k_c_s12___s_a_f_e_b_a_g_a5d2760c754b3ed80f6a17ded1d69e486}{shkeybag}\\
+\>\hyperlink{asn1_8h_a7895e03d9fee2bc4963faf2a31a9439e}{ASN1\_TYPE} $\ast$ \hyperlink{struct_p_k_c_s12___s_a_f_e_b_a_g_adbac4d54c7186179ae086c7608159ca7}{other}\\
+\} \hyperlink{struct_p_k_c_s12___s_a_f_e_b_a_g_a3d102dc7be12ece2025b2ea69d36482d}{value}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG@{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG}!S\+T\+A\+C\+K\+\_\+\+OF@{S\+T\+A\+C\+K\+\_\+\+OF}}
+\index{S\+T\+A\+C\+K\+\_\+\+OF@{S\+T\+A\+C\+K\+\_\+\+OF}!P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG@{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG}}
+\subsubsection[{\texorpdfstring{S\+T\+A\+C\+K\+\_\+\+O\+F(\+X509\+\_\+\+A\+T\+T\+R\+I\+B\+U\+T\+E)$\ast$attrib}{STACK_OF(X509_ATTRIBUTE)*attrib}}]{\setlength{\rightskip}{0pt plus 5cm}P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+A\+G\+::\+S\+T\+A\+C\+K\+\_\+\+OF (
+\begin{DoxyParamCaption}
+\item[{{\bf X509\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{struct_p_k_c_s12___s_a_f_e_b_a_g_a36b65bc2ddacef551ca40bff5bc21d96}{}\label{struct_p_k_c_s12___s_a_f_e_b_a_g_a36b65bc2ddacef551ca40bff5bc21d96}
+
+
+\subsection{Member Data Documentation}
+\index{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG@{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG}!bag@{bag}}
+\index{bag@{bag}!P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG@{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG}}
+\subsubsection[{\texorpdfstring{bag}{bag}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf pkcs12\+\_\+bag\+\_\+st}$\ast$ P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+A\+G\+::bag}\hypertarget{struct_p_k_c_s12___s_a_f_e_b_a_g_af118b01967ba41dcb3cc228874970721}{}\label{struct_p_k_c_s12___s_a_f_e_b_a_g_af118b01967ba41dcb3cc228874970721}
+\index{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG@{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG}!keybag@{keybag}}
+\index{keybag@{keybag}!P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG@{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG}}
+\subsubsection[{\texorpdfstring{keybag}{keybag}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf pkcs8\+\_\+priv\+\_\+key\+\_\+info\+\_\+st}$\ast$ P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+A\+G\+::keybag}\hypertarget{struct_p_k_c_s12___s_a_f_e_b_a_g_ad86021b72bc1b4beeb6e34a51abb45bf}{}\label{struct_p_k_c_s12___s_a_f_e_b_a_g_ad86021b72bc1b4beeb6e34a51abb45bf}
+\index{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG@{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG}!other@{other}}
+\index{other@{other}!P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG@{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG}}
+\subsubsection[{\texorpdfstring{other}{other}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+S\+N1\+\_\+\+T\+Y\+PE}$\ast$ P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+A\+G\+::other}\hypertarget{struct_p_k_c_s12___s_a_f_e_b_a_g_adbac4d54c7186179ae086c7608159ca7}{}\label{struct_p_k_c_s12___s_a_f_e_b_a_g_adbac4d54c7186179ae086c7608159ca7}
+\index{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG@{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG}!shkeybag@{shkeybag}}
+\index{shkeybag@{shkeybag}!P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG@{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG}}
+\subsubsection[{\texorpdfstring{shkeybag}{shkeybag}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X509\+\_\+\+S\+IG}$\ast$ P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+A\+G\+::shkeybag}\hypertarget{struct_p_k_c_s12___s_a_f_e_b_a_g_a5d2760c754b3ed80f6a17ded1d69e486}{}\label{struct_p_k_c_s12___s_a_f_e_b_a_g_a5d2760c754b3ed80f6a17ded1d69e486}
+\index{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG@{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG}!type@{type}}
+\index{type@{type}!P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG@{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG}}
+\subsubsection[{\texorpdfstring{type}{type}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+S\+N1\+\_\+\+O\+B\+J\+E\+CT}$\ast$ P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+A\+G\+::type}\hypertarget{struct_p_k_c_s12___s_a_f_e_b_a_g_a7e25098bf7d75c05613960d6c9a0e554}{}\label{struct_p_k_c_s12___s_a_f_e_b_a_g_a7e25098bf7d75c05613960d6c9a0e554}
+\index{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG@{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG}!value@{value}}
+\index{value@{value}!P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG@{P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+AG}}
+\subsubsection[{\texorpdfstring{value}{value}}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \}   P\+K\+C\+S12\+\_\+\+S\+A\+F\+E\+B\+A\+G\+::value}\hypertarget{struct_p_k_c_s12___s_a_f_e_b_a_g_a3d102dc7be12ece2025b2ea69d36482d}{}\label{struct_p_k_c_s12___s_a_f_e_b_a_g_a3d102dc7be12ece2025b2ea69d36482d}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/openssl/\hyperlink{pkcs12_8h}{pkcs12.\+h}\end{DoxyCompactItemize}

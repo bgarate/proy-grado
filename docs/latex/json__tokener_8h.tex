@@ -1,0 +1,244 @@
+\hypertarget{json__tokener_8h}{}\section{src/hal/pb2/include/json/json\+\_\+tokener.h File Reference}
+\label{json__tokener_8h}\index{src/hal/pb2/include/json/json\+\_\+tokener.\+h@{src/hal/pb2/include/json/json\+\_\+tokener.\+h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}json\+\_\+object.\+h\char`\"{}}\\*
+Include dependency graph for json\+\_\+tokener.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{json__tokener_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{json__tokener_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structjson__tokener__srec}{json\+\_\+tokener\+\_\+srec}
+\item 
+struct \hyperlink{structjson__tokener}{json\+\_\+tokener}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{json__tokener_8h_ac4299cf4ed799b028e61cf7b2b0d5f1f}{J\+S\+O\+N\+\_\+\+T\+O\+K\+E\+N\+E\+R\+\_\+\+M\+A\+X\+\_\+\+D\+E\+P\+TH}~32
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59}{json\+\_\+tokener\+\_\+error} \{ \\*
+\hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59afe2fa9bde03155019b2df30f66a5fcd0}{json\+\_\+tokener\+\_\+success}, 
+\hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a9b26e920ca765df91c84e999561d8fb0}{json\+\_\+tokener\+\_\+continue}, 
+\hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a59b2c36d9cc30c3038e09b9ddee6c86c}{json\+\_\+tokener\+\_\+error\+\_\+depth}, 
+\hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a8f774f4c7869afdd9b92295fca3a9ded}{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+eof}, 
+\\*
+\hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a3309fa8ea4ab3ee0a81c55b69d223710}{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+unexpected}, 
+\hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a641bbb8d881fdd1e463f20a1a203b77c}{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+null}, 
+\hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59addbdfe084e20709da3d20c8ae8ca278c}{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+boolean}, 
+\hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59ab1b3ad685eb97235d269cc5b9eb7ab81}{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+number}, 
+\\*
+\hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a574846740b785146f164a209dc89574e}{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+array}, 
+\hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a2003bd8e96c6680cd22419c5ceafd4c0}{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+key\+\_\+name}, 
+\hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59af91a2a819b0d6344d6d4e1d2579f28fd}{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+key\+\_\+sep}, 
+\hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a9ddb98741aebf7ac44735b4a43717013}{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+value\+\_\+sep}, 
+\\*
+\hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a033ce89ce7b8f9e591e4bea92121c4c7}{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+string}, 
+\hyperlink{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a3588c05b1da8b909a8cbdef66b0a1a28}{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+comment}
+ \}
+\item 
+enum \hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2}{json\+\_\+tokener\+\_\+state} \{ \\*
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{json\+\_\+tokener\+\_\+state\+\_\+eatws}, 
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a7c4c0bed1ebde45f5a99de4278792d72}{json\+\_\+tokener\+\_\+state\+\_\+start}, 
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2}{json\+\_\+tokener\+\_\+state\+\_\+finish}, 
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a668fb2654c59608945370003403a5792}{json\+\_\+tokener\+\_\+state\+\_\+null}, 
+\\*
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a0ff1d1935d49188aa1e6b998d43e655c}{json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+start}, 
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a8c2680b8873a8dce85f0b1ac25882dc9}{json\+\_\+tokener\+\_\+state\+\_\+comment}, 
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad8151350b1ef50298bafbab244ac1162}{json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+eol}, 
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a62cef297a37a98b1239ea4bbd39723e1}{json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+end}, 
+\\*
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2aa90ea4c327a285bfbbce49d42d491d65}{json\+\_\+tokener\+\_\+state\+\_\+string}, 
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a1cf793d73587f68c4f2b3b4f65ff728e}{json\+\_\+tokener\+\_\+state\+\_\+string\+\_\+escape}, 
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a6c852da2e694be56799c58c201d6dca0}{json\+\_\+tokener\+\_\+state\+\_\+escape\+\_\+unicode}, 
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a3525b15ecd0a698281b3914115b6bd3e}{json\+\_\+tokener\+\_\+state\+\_\+boolean}, 
+\\*
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a7ce18d281d322af690b45f3b8b599e81}{json\+\_\+tokener\+\_\+state\+\_\+number}, 
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ab3d763300f1914865be09d603ddc11f4}{json\+\_\+tokener\+\_\+state\+\_\+array}, 
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2aa2a01798ebe318ea91c38a886418f771}{json\+\_\+tokener\+\_\+state\+\_\+array\+\_\+add}, 
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a4ec7762aeab3424cbb14354c94025865}{json\+\_\+tokener\+\_\+state\+\_\+array\+\_\+sep}, 
+\\*
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a8c7dbda177a5d83a36a64f7cb99b9a29}{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field\+\_\+start}, 
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a77375940a10806e81d99876d13be67fc}{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field}, 
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a0220aea1d9204aadfffde92c7f73f5f7}{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field\+\_\+end}, 
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a4c7b7deac37355491572f6da84f208aa}{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+value}, 
+\\*
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ade6bee72f2147e634b19eb84e58eb162}{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+value\+\_\+add}, 
+\hyperlink{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2adaf3e06c5fc04fd4f04040cd67698215}{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+sep}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structjson__tokener}{json\+\_\+tokener} $\ast$ \hyperlink{json__tokener_8h_a55d6e8a6f6d90992c063a39e21769c52}{json\+\_\+tokener\+\_\+new} (void)
+\item 
+void \hyperlink{json__tokener_8h_af6645ff27c0ca82c6e314390814fcbeb}{json\+\_\+tokener\+\_\+free} (struct \hyperlink{structjson__tokener}{json\+\_\+tokener} $\ast$tok)
+\item 
+void \hyperlink{json__tokener_8h_ae23dd7ad4737bfc18409af6173ab2b09}{json\+\_\+tokener\+\_\+reset} (struct \hyperlink{structjson__tokener}{json\+\_\+tokener} $\ast$tok)
+\item 
+struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$ \hyperlink{json__tokener_8h_abf031fdf1e5caab71e2225a99588c6bb}{json\+\_\+tokener\+\_\+parse} (const char $\ast$str)
+\item 
+struct \hyperlink{structjson__object}{json\+\_\+object} $\ast$ \hyperlink{json__tokener_8h_a0d9a666c21879647e8831f9cfa691673}{json\+\_\+tokener\+\_\+parse\+\_\+ex} (struct \hyperlink{structjson__tokener}{json\+\_\+tokener} $\ast$tok, const char $\ast$str, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{json__tokener_8h_a6ede8ee7a4ec1fed68d10ea77294c966}{json\+\_\+tokener\+\_\+errors} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!J\+S\+O\+N\+\_\+\+T\+O\+K\+E\+N\+E\+R\+\_\+\+M\+A\+X\+\_\+\+D\+E\+P\+TH@{J\+S\+O\+N\+\_\+\+T\+O\+K\+E\+N\+E\+R\+\_\+\+M\+A\+X\+\_\+\+D\+E\+P\+TH}}
+\index{J\+S\+O\+N\+\_\+\+T\+O\+K\+E\+N\+E\+R\+\_\+\+M\+A\+X\+\_\+\+D\+E\+P\+TH@{J\+S\+O\+N\+\_\+\+T\+O\+K\+E\+N\+E\+R\+\_\+\+M\+A\+X\+\_\+\+D\+E\+P\+TH}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}
+\subsubsection[{\texorpdfstring{J\+S\+O\+N\+\_\+\+T\+O\+K\+E\+N\+E\+R\+\_\+\+M\+A\+X\+\_\+\+D\+E\+P\+TH}{JSON_TOKENER_MAX_DEPTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define J\+S\+O\+N\+\_\+\+T\+O\+K\+E\+N\+E\+R\+\_\+\+M\+A\+X\+\_\+\+D\+E\+P\+TH~32}\hypertarget{json__tokener_8h_ac4299cf4ed799b028e61cf7b2b0d5f1f}{}\label{json__tokener_8h_ac4299cf4ed799b028e61cf7b2b0d5f1f}
+
+
+\subsection{Enumeration Type Documentation}
+\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+error@{json\+\_\+tokener\+\_\+error}}
+\index{json\+\_\+tokener\+\_\+error@{json\+\_\+tokener\+\_\+error}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}
+\subsubsection[{\texorpdfstring{json\+\_\+tokener\+\_\+error}{json_tokener_error}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf json\+\_\+tokener\+\_\+error}}\hypertarget{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59}{}\label{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{json\+\_\+tokener\+\_\+success@{json\+\_\+tokener\+\_\+success}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+success@{json\+\_\+tokener\+\_\+success}}\item[{\em 
+json\+\_\+tokener\+\_\+success\hypertarget{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59afe2fa9bde03155019b2df30f66a5fcd0}{}\label{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59afe2fa9bde03155019b2df30f66a5fcd0}
+}]\index{json\+\_\+tokener\+\_\+continue@{json\+\_\+tokener\+\_\+continue}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+continue@{json\+\_\+tokener\+\_\+continue}}\item[{\em 
+json\+\_\+tokener\+\_\+continue\hypertarget{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a9b26e920ca765df91c84e999561d8fb0}{}\label{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a9b26e920ca765df91c84e999561d8fb0}
+}]\index{json\+\_\+tokener\+\_\+error\+\_\+depth@{json\+\_\+tokener\+\_\+error\+\_\+depth}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+error\+\_\+depth@{json\+\_\+tokener\+\_\+error\+\_\+depth}}\item[{\em 
+json\+\_\+tokener\+\_\+error\+\_\+depth\hypertarget{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a59b2c36d9cc30c3038e09b9ddee6c86c}{}\label{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a59b2c36d9cc30c3038e09b9ddee6c86c}
+}]\index{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+eof@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+eof}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+eof@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+eof}}\item[{\em 
+json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+eof\hypertarget{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a8f774f4c7869afdd9b92295fca3a9ded}{}\label{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a8f774f4c7869afdd9b92295fca3a9ded}
+}]\index{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+unexpected@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+unexpected}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+unexpected@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+unexpected}}\item[{\em 
+json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+unexpected\hypertarget{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a3309fa8ea4ab3ee0a81c55b69d223710}{}\label{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a3309fa8ea4ab3ee0a81c55b69d223710}
+}]\index{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+null@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+null}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+null@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+null}}\item[{\em 
+json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+null\hypertarget{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a641bbb8d881fdd1e463f20a1a203b77c}{}\label{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a641bbb8d881fdd1e463f20a1a203b77c}
+}]\index{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+boolean@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+boolean}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+boolean@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+boolean}}\item[{\em 
+json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+boolean\hypertarget{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59addbdfe084e20709da3d20c8ae8ca278c}{}\label{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59addbdfe084e20709da3d20c8ae8ca278c}
+}]\index{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+number@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+number}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+number@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+number}}\item[{\em 
+json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+number\hypertarget{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59ab1b3ad685eb97235d269cc5b9eb7ab81}{}\label{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59ab1b3ad685eb97235d269cc5b9eb7ab81}
+}]\index{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+array@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+array}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+array@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+array}}\item[{\em 
+json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+array\hypertarget{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a574846740b785146f164a209dc89574e}{}\label{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a574846740b785146f164a209dc89574e}
+}]\index{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+key\+\_\+name@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+key\+\_\+name}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+key\+\_\+name@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+key\+\_\+name}}\item[{\em 
+json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+key\+\_\+name\hypertarget{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a2003bd8e96c6680cd22419c5ceafd4c0}{}\label{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a2003bd8e96c6680cd22419c5ceafd4c0}
+}]\index{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+key\+\_\+sep@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+key\+\_\+sep}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+key\+\_\+sep@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+key\+\_\+sep}}\item[{\em 
+json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+key\+\_\+sep\hypertarget{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59af91a2a819b0d6344d6d4e1d2579f28fd}{}\label{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59af91a2a819b0d6344d6d4e1d2579f28fd}
+}]\index{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+value\+\_\+sep@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+value\+\_\+sep}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+value\+\_\+sep@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+value\+\_\+sep}}\item[{\em 
+json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+object\+\_\+value\+\_\+sep\hypertarget{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a9ddb98741aebf7ac44735b4a43717013}{}\label{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a9ddb98741aebf7ac44735b4a43717013}
+}]\index{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+string@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+string}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+string@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+string}}\item[{\em 
+json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+string\hypertarget{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a033ce89ce7b8f9e591e4bea92121c4c7}{}\label{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a033ce89ce7b8f9e591e4bea92121c4c7}
+}]\index{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+comment@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+comment}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+comment@{json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+comment}}\item[{\em 
+json\+\_\+tokener\+\_\+error\+\_\+parse\+\_\+comment\hypertarget{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a3588c05b1da8b909a8cbdef66b0a1a28}{}\label{json__tokener_8h_a0a31f0df8a532ef8be5c09ba40eacb59a3588c05b1da8b909a8cbdef66b0a1a28}
+}]\end{description}
+\end{Desc}
+\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state@{json\+\_\+tokener\+\_\+state}}
+\index{json\+\_\+tokener\+\_\+state@{json\+\_\+tokener\+\_\+state}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}
+\subsubsection[{\texorpdfstring{json\+\_\+tokener\+\_\+state}{json_tokener_state}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf json\+\_\+tokener\+\_\+state}}\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{json\+\_\+tokener\+\_\+state\+\_\+eatws@{json\+\_\+tokener\+\_\+state\+\_\+eatws}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+eatws@{json\+\_\+tokener\+\_\+state\+\_\+eatws}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+eatws\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a9db152607ec1872a000f1fcd8757297d}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+start@{json\+\_\+tokener\+\_\+state\+\_\+start}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+start@{json\+\_\+tokener\+\_\+state\+\_\+start}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+start\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a7c4c0bed1ebde45f5a99de4278792d72}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a7c4c0bed1ebde45f5a99de4278792d72}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+finish@{json\+\_\+tokener\+\_\+state\+\_\+finish}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+finish@{json\+\_\+tokener\+\_\+state\+\_\+finish}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+finish\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad80b689cb709967b67a348de3d8601d2}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+null@{json\+\_\+tokener\+\_\+state\+\_\+null}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+null@{json\+\_\+tokener\+\_\+state\+\_\+null}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+null\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a668fb2654c59608945370003403a5792}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a668fb2654c59608945370003403a5792}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+start@{json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+start}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+start@{json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+start}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+start\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a0ff1d1935d49188aa1e6b998d43e655c}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a0ff1d1935d49188aa1e6b998d43e655c}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+comment@{json\+\_\+tokener\+\_\+state\+\_\+comment}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+comment@{json\+\_\+tokener\+\_\+state\+\_\+comment}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+comment\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a8c2680b8873a8dce85f0b1ac25882dc9}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a8c2680b8873a8dce85f0b1ac25882dc9}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+eol@{json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+eol}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+eol@{json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+eol}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+eol\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad8151350b1ef50298bafbab244ac1162}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ad8151350b1ef50298bafbab244ac1162}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+end@{json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+end}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+end@{json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+end}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+comment\+\_\+end\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a62cef297a37a98b1239ea4bbd39723e1}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a62cef297a37a98b1239ea4bbd39723e1}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+string@{json\+\_\+tokener\+\_\+state\+\_\+string}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+string@{json\+\_\+tokener\+\_\+state\+\_\+string}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+string\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2aa90ea4c327a285bfbbce49d42d491d65}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2aa90ea4c327a285bfbbce49d42d491d65}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+string\+\_\+escape@{json\+\_\+tokener\+\_\+state\+\_\+string\+\_\+escape}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+string\+\_\+escape@{json\+\_\+tokener\+\_\+state\+\_\+string\+\_\+escape}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+string\+\_\+escape\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a1cf793d73587f68c4f2b3b4f65ff728e}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a1cf793d73587f68c4f2b3b4f65ff728e}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+escape\+\_\+unicode@{json\+\_\+tokener\+\_\+state\+\_\+escape\+\_\+unicode}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+escape\+\_\+unicode@{json\+\_\+tokener\+\_\+state\+\_\+escape\+\_\+unicode}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+escape\+\_\+unicode\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a6c852da2e694be56799c58c201d6dca0}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a6c852da2e694be56799c58c201d6dca0}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+boolean@{json\+\_\+tokener\+\_\+state\+\_\+boolean}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+boolean@{json\+\_\+tokener\+\_\+state\+\_\+boolean}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+boolean\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a3525b15ecd0a698281b3914115b6bd3e}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a3525b15ecd0a698281b3914115b6bd3e}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+number@{json\+\_\+tokener\+\_\+state\+\_\+number}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+number@{json\+\_\+tokener\+\_\+state\+\_\+number}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+number\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a7ce18d281d322af690b45f3b8b599e81}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a7ce18d281d322af690b45f3b8b599e81}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+array@{json\+\_\+tokener\+\_\+state\+\_\+array}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+array@{json\+\_\+tokener\+\_\+state\+\_\+array}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+array\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ab3d763300f1914865be09d603ddc11f4}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ab3d763300f1914865be09d603ddc11f4}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+array\+\_\+add@{json\+\_\+tokener\+\_\+state\+\_\+array\+\_\+add}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+array\+\_\+add@{json\+\_\+tokener\+\_\+state\+\_\+array\+\_\+add}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+array\+\_\+add\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2aa2a01798ebe318ea91c38a886418f771}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2aa2a01798ebe318ea91c38a886418f771}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+array\+\_\+sep@{json\+\_\+tokener\+\_\+state\+\_\+array\+\_\+sep}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+array\+\_\+sep@{json\+\_\+tokener\+\_\+state\+\_\+array\+\_\+sep}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+array\+\_\+sep\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a4ec7762aeab3424cbb14354c94025865}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a4ec7762aeab3424cbb14354c94025865}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field\+\_\+start@{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field\+\_\+start}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field\+\_\+start@{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field\+\_\+start}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field\+\_\+start\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a8c7dbda177a5d83a36a64f7cb99b9a29}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a8c7dbda177a5d83a36a64f7cb99b9a29}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field@{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field@{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a77375940a10806e81d99876d13be67fc}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a77375940a10806e81d99876d13be67fc}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field\+\_\+end@{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field\+\_\+end}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field\+\_\+end@{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field\+\_\+end}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+field\+\_\+end\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a0220aea1d9204aadfffde92c7f73f5f7}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a0220aea1d9204aadfffde92c7f73f5f7}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+value@{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+value}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+value@{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+value}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+value\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a4c7b7deac37355491572f6da84f208aa}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2a4c7b7deac37355491572f6da84f208aa}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+value\+\_\+add@{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+value\+\_\+add}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+value\+\_\+add@{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+value\+\_\+add}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+value\+\_\+add\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ade6bee72f2147e634b19eb84e58eb162}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2ade6bee72f2147e634b19eb84e58eb162}
+}]\index{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+sep@{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+sep}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+sep@{json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+sep}}\item[{\em 
+json\+\_\+tokener\+\_\+state\+\_\+object\+\_\+sep\hypertarget{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2adaf3e06c5fc04fd4f04040cd67698215}{}\label{json__tokener_8h_af026dec71e4548e6200eb2f902f1c4e2adaf3e06c5fc04fd4f04040cd67698215}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+free@{json\+\_\+tokener\+\_\+free}}
+\index{json\+\_\+tokener\+\_\+free@{json\+\_\+tokener\+\_\+free}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}
+\subsubsection[{\texorpdfstring{json\+\_\+tokener\+\_\+free(struct json\+\_\+tokener $\ast$tok)}{json_tokener_free(struct json_tokener *tok)}}]{\setlength{\rightskip}{0pt plus 5cm}void json\+\_\+tokener\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf json\+\_\+tokener} $\ast$}]{tok}
+\end{DoxyParamCaption}
+)}\hypertarget{json__tokener_8h_af6645ff27c0ca82c6e314390814fcbeb}{}\label{json__tokener_8h_af6645ff27c0ca82c6e314390814fcbeb}
+\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+new@{json\+\_\+tokener\+\_\+new}}
+\index{json\+\_\+tokener\+\_\+new@{json\+\_\+tokener\+\_\+new}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}
+\subsubsection[{\texorpdfstring{json\+\_\+tokener\+\_\+new(void)}{json_tokener_new(void)}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf json\+\_\+tokener}$\ast$ json\+\_\+tokener\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{json__tokener_8h_a55d6e8a6f6d90992c063a39e21769c52}{}\label{json__tokener_8h_a55d6e8a6f6d90992c063a39e21769c52}
+\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+parse@{json\+\_\+tokener\+\_\+parse}}
+\index{json\+\_\+tokener\+\_\+parse@{json\+\_\+tokener\+\_\+parse}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}
+\subsubsection[{\texorpdfstring{json\+\_\+tokener\+\_\+parse(const char $\ast$str)}{json_tokener_parse(const char *str)}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf json\+\_\+object}$\ast$ json\+\_\+tokener\+\_\+parse (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\hypertarget{json__tokener_8h_abf031fdf1e5caab71e2225a99588c6bb}{}\label{json__tokener_8h_abf031fdf1e5caab71e2225a99588c6bb}
+\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+parse\+\_\+ex@{json\+\_\+tokener\+\_\+parse\+\_\+ex}}
+\index{json\+\_\+tokener\+\_\+parse\+\_\+ex@{json\+\_\+tokener\+\_\+parse\+\_\+ex}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}
+\subsubsection[{\texorpdfstring{json\+\_\+tokener\+\_\+parse\+\_\+ex(struct json\+\_\+tokener $\ast$tok, const char $\ast$str, int len)}{json_tokener_parse_ex(struct json_tokener *tok, const char *str, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf json\+\_\+object}$\ast$ json\+\_\+tokener\+\_\+parse\+\_\+ex (
+\begin{DoxyParamCaption}
+\item[{struct {\bf json\+\_\+tokener} $\ast$}]{tok, }
+\item[{const char $\ast$}]{str, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{json__tokener_8h_a0d9a666c21879647e8831f9cfa691673}{}\label{json__tokener_8h_a0d9a666c21879647e8831f9cfa691673}
+\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+reset@{json\+\_\+tokener\+\_\+reset}}
+\index{json\+\_\+tokener\+\_\+reset@{json\+\_\+tokener\+\_\+reset}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}
+\subsubsection[{\texorpdfstring{json\+\_\+tokener\+\_\+reset(struct json\+\_\+tokener $\ast$tok)}{json_tokener_reset(struct json_tokener *tok)}}]{\setlength{\rightskip}{0pt plus 5cm}void json\+\_\+tokener\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{struct {\bf json\+\_\+tokener} $\ast$}]{tok}
+\end{DoxyParamCaption}
+)}\hypertarget{json__tokener_8h_ae23dd7ad4737bfc18409af6173ab2b09}{}\label{json__tokener_8h_ae23dd7ad4737bfc18409af6173ab2b09}
+
+
+\subsection{Variable Documentation}
+\index{json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}!json\+\_\+tokener\+\_\+errors@{json\+\_\+tokener\+\_\+errors}}
+\index{json\+\_\+tokener\+\_\+errors@{json\+\_\+tokener\+\_\+errors}!json\+\_\+tokener.\+h@{json\+\_\+tokener.\+h}}
+\subsubsection[{\texorpdfstring{json\+\_\+tokener\+\_\+errors}{json_tokener_errors}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ json\+\_\+tokener\+\_\+errors\mbox{[}$\,$\mbox{]}}\hypertarget{json__tokener_8h_a6ede8ee7a4ec1fed68d10ea77294c966}{}\label{json__tokener_8h_a6ede8ee7a4ec1fed68d10ea77294c966}

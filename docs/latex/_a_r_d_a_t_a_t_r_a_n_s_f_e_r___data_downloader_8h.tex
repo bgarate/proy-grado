@@ -1,0 +1,245 @@
+\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Data\+Transfer/\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.h File Reference}
+\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h}\index{src/hal/pb2/include/lib\+A\+R\+Data\+Transfer/\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h@{src/hal/pb2/include/lib\+A\+R\+Data\+Transfer/\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h}}
+
+
+lib\+A\+R\+Data\+Transfer Data\+Downloader header file..  
+
+
+{\ttfamily \#include $<$lib\+A\+R\+Utils/\+A\+R\+Utils.\+h$>$}\\*
+Include dependency graph for A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_a7bf5c8f924526d6874a62d4172dbd3ad}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+File\+Completion\+Callback\+\_\+t}) (void $\ast$arg, const char $\ast$file\+Name, \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} error)
+\begin{DoxyCompactList}\small\item\em Completion callback of the Media download. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_aa89461ddaa8b64e736663f079f9f8c74}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+New} (\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___manager_8h_a9f306b0ac4427eaa316cabfa653cc6f5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, \hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$ftp\+List\+Manager, \hyperlink{struct_a_r_u_t_i_l_s___manager__t}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$ftp\+Data\+Manager, const char $\ast$remote\+Directory, const char $\ast$local\+Directory, \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_a7bf5c8f924526d6874a62d4172dbd3ad}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+File\+Completion\+Callback\+\_\+t} file\+Completion\+Callback, void $\ast$file\+Completion\+Arg)
+\begin{DoxyCompactList}\small\item\em Create a new A\+R\+Data\+Transfer Data\+Downloader. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_a77a5770439a5ec5ea6f9966185b79727}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Delete} (\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___manager_8h_a9f306b0ac4427eaa316cabfa653cc6f5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Delete an A\+R\+Data\+Transfer Data\+Downloader. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_ad879377f6a22c272d07de6f38e4ab4e0}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Get\+Available\+Files} (\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___manager_8h_a9f306b0ac4427eaa316cabfa653cc6f5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager, long $\ast$files\+Number)
+\begin{DoxyCompactList}\small\item\em Get Available Files of A\+R\+Data\+Transfer Data\+Downloader. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_a5e3c6365f4a1ba81572e8c585cc9f458}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Cancel\+Available\+Files} (\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___manager_8h_a9f306b0ac4427eaa316cabfa653cc6f5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Send a cancel to the device data downloader get available files. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_af600f925f2199147c36c6697d7ec061c}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Thread\+Run} (void $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Process of the device data download (flights data or ride data) \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___error_8h_a86f86cf7a76ba02c98207b3c32dd55b2}{e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_a7ca8f3a744d1fdfb5cef783db9749c5a}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Cancel\+Thread} (\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___manager_8h_a9f306b0ac4427eaa316cabfa653cc6f5}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Send a cancel to the device data downloader thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+lib\+A\+R\+Data\+Transfer Data\+Downloader header file.. 
+
+\begin{DoxyDate}{Date}
+19/12/2013 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:david.flattin.ext@parrot.com}{\tt david.\+flattin.\+ext@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+File\+Completion\+Callback\+\_\+t@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+File\+Completion\+Callback\+\_\+t}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+File\+Completion\+Callback\+\_\+t@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+File\+Completion\+Callback\+\_\+t}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+File\+Completion\+Callback\+\_\+t}{ARDATATRANSFER_DataDownloader_FileCompletionCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+File\+Completion\+Callback\+\_\+t) (void $\ast$arg, const char $\ast$file\+Name, {\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} error)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_a7bf5c8f924526d6874a62d4172dbd3ad}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_a7bf5c8f924526d6874a62d4172dbd3ad}
+
+
+Completion callback of the Media download. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The pointer of the user custom argument \\
+\hline
+{\em media} & The media to be downloaded \\
+\hline
+{\em error} & The error status to indicate the media downloaded status \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Medias\+Downloader\+\_\+\+Thread\+Run () 
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Cancel\+Available\+Files@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Cancel\+Available\+Files}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Cancel\+Available\+Files@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Cancel\+Available\+Files}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Cancel\+Available\+Files(\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARDATATRANSFER_DataDownloader_CancelAvailableFiles(ARDATATRANSFER_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Cancel\+Available\+Files (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_a5e3c6365f4a1ba81572e8c585cc9f458}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_a5e3c6365f4a1ba81572e8c585cc9f458}
+
+
+Send a cancel to the device data downloader get available files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The pointer of the A\+R\+Data\+Transfer Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_ad879377f6a22c272d07de6f38e4ab4e0}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Get\+Available\+Files} () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Cancel\+Thread@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Cancel\+Thread}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Cancel\+Thread@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Cancel\+Thread}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Cancel\+Thread(\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARDATATRANSFER_DataDownloader_CancelThread(ARDATATRANSFER_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Cancel\+Thread (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_a7ca8f3a744d1fdfb5cef783db9749c5a}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_a7ca8f3a744d1fdfb5cef783db9749c5a}
+
+
+Send a cancel to the device data downloader thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The pointer of the A\+R\+Data\+Transfer Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_af600f925f2199147c36c6697d7ec061c}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Thread\+Run} () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Delete@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Delete}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Delete@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Delete}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Delete(\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager)}{ARDATATRANSFER_DataDownloader_Delete(ARDATATRANSFER_Manager_t *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_a77a5770439a5ec5ea6f9966185b79727}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_a77a5770439a5ec5ea6f9966185b79727}
+
+
+Delete an A\+R\+Data\+Transfer Data\+Downloader. 
+
+\begin{DoxyWarning}{Warning}
+This function frees memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the A\+R\+Data\+Transfer Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_aa89461ddaa8b64e736663f079f9f8c74}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Get\+Available\+Files@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Get\+Available\+Files}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Get\+Available\+Files@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Get\+Available\+Files}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Get\+Available\+Files(\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, long $\ast$files\+Number)}{ARDATATRANSFER_DataDownloader_GetAvailableFiles(ARDATATRANSFER_Manager_t *manager, long *filesNumber)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Get\+Available\+Files (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{long $\ast$}]{files\+Number}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_ad879377f6a22c272d07de6f38e4ab4e0}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_ad879377f6a22c272d07de6f38e4ab4e0}
+
+
+Get Available Files of A\+R\+Data\+Transfer Data\+Downloader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the A\+R\+Data\+Transfer Manager \\
+\hline
+{\em files\+Number} & The address of the pointer that will received the available files number \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_aa89461ddaa8b64e736663f079f9f8c74}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+New} () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+New@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+New}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+New@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+New}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+New(\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t $\ast$manager, A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$ftp\+List\+Manager, A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t $\ast$ftp\+Data\+Manager, const char $\ast$remote\+Directory, const char $\ast$local\+Directory, A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+File\+Completion\+Callback\+\_\+t file\+Completion\+Callback, void $\ast$file\+Completion\+Arg)}{ARDATATRANSFER_DataDownloader_New(ARDATATRANSFER_Manager_t *manager, ARUTILS_Manager_t *ftpListManager, ARUTILS_Manager_t *ftpDataManager, const char *remoteDirectory, const char *localDirectory, ARDATATRANSFER_DataDownloader_FileCompletionCallback_t fileCompletionCallback, void *fileCompletionArg)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{ftp\+List\+Manager, }
+\item[{{\bf A\+R\+U\+T\+I\+L\+S\+\_\+\+Manager\+\_\+t} $\ast$}]{ftp\+Data\+Manager, }
+\item[{const char $\ast$}]{remote\+Directory, }
+\item[{const char $\ast$}]{local\+Directory, }
+\item[{{\bf A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+File\+Completion\+Callback\+\_\+t}}]{file\+Completion\+Callback, }
+\item[{void $\ast$}]{file\+Completion\+Arg}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_aa89461ddaa8b64e736663f079f9f8c74}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_aa89461ddaa8b64e736663f079f9f8c74}
+
+
+Create a new A\+R\+Data\+Transfer Data\+Downloader. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The address of the pointer on the A\+R\+Data\+Transfer Manager \\
+\hline
+{\em ftp\+List\+Manager} & The ftp list manager \\
+\hline
+{\em ftp\+Data\+Manager} & The ftp data manager \\
+\hline
+{\em remote\+Directory} & The remote directory \\
+\hline
+{\em local\+Directory} & The local directory \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_a77a5770439a5ec5ea6f9966185b79727}{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Delete} () 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Thread\+Run@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Thread\+Run}}
+\index{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Thread\+Run@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Thread\+Run}!A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h@{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Thread\+Run(void $\ast$manager)}{ARDATATRANSFER_DataDownloader_ThreadRun(void *manager)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Thread\+Run (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_af600f925f2199147c36c6697d7ec061c}{}\label{_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h_af600f925f2199147c36c6697d7ec061c}
+
+
+Process of the device data download (flights data or ride data) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The pointer of the A\+R\+Data\+Transfer Manager \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em returns} & N\+U\+LL \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+A\+R\+D\+A\+T\+A\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+Data\+Downloader\+\_\+\+Init () 
+\end{DoxySeeAlso}

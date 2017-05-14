@@ -1,0 +1,733 @@
+\hypertarget{arstream2__stream__receiver_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Stream2/arstream2\+\_\+stream\+\_\+receiver.h File Reference}
+\label{arstream2__stream__receiver_8h}\index{src/hal/pb2/include/lib\+A\+R\+Stream2/arstream2\+\_\+stream\+\_\+receiver.\+h@{src/hal/pb2/include/lib\+A\+R\+Stream2/arstream2\+\_\+stream\+\_\+receiver.\+h}}
+
+
+Parrot Streaming Library -\/ Stream Receiver.  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Stream2/arstream2\+\_\+error.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Stream2/arstream2\+\_\+stream\+\_\+stats.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+S\+A\+L/\+A\+R\+S\+A\+L\+\_\+\+Socket.\+h$>$}\\*
+Include dependency graph for arstream2\+\_\+stream\+\_\+receiver.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arstream2__stream__receiver_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___au_ready_callback_timestamps__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t}
+\begin{DoxyCompactList}\small\item\em A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver Au\+Ready\+Callback function timestamps. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___au_ready_callback_metadata__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Metadata\+\_\+t}
+\begin{DoxyCompactList}\small\item\em A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver Au\+Ready\+Callback function metadata. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___net_config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Net\+Config\+\_\+t}
+\begin{DoxyCompactList}\small\item\em A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver net configuration for initialization. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___mux_config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Mux\+Config\+\_\+t}
+\begin{DoxyCompactList}\small\item\em A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver mux configuration for initialization. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Config\+\_\+t}
+\begin{DoxyCompactList}\small\item\em A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver configuration for initialization. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___resender_config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Config\+\_\+t}
+\begin{DoxyCompactList}\small\item\em A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver resender configuration parameters. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___untimed_metadata__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t}
+\begin{DoxyCompactList}\small\item\em A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver untimed metadata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{arstream2__stream__receiver_8h_a9d531a5704f329e46a60e91170cce4b4}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT}~(55004)
+\begin{DoxyCompactList}\small\item\em Default client-\/side stream port. \end{DoxyCompactList}\item 
+\#define \hyperlink{arstream2__stream__receiver_8h_a83f798f5a0bbe9c8013bc27a95b4c2e1}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT}~(55005)
+\begin{DoxyCompactList}\small\item\em Default client-\/side control port. \end{DoxyCompactList}\item 
+\#define \hyperlink{arstream2__stream__receiver_8h_a3bcd37725ffac66f1aa7a20af4972399}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+R\+E\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT}~(5004)
+\begin{DoxyCompactList}\small\item\em Default server-\/side resender stream port. \end{DoxyCompactList}\item 
+\#define \hyperlink{arstream2__stream__receiver_8h_a2460b7c436cf15494c34202ccea2bc6a}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+R\+E\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT}~(5005)
+\begin{DoxyCompactList}\small\item\em Default server-\/side resender control port. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+s $\ast$ \hyperlink{arstream2__stream__receiver_8h_aafadedd4d961fa435edee75ed02071d8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle}
+\begin{DoxyCompactList}\small\item\em A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver instance handle. \end{DoxyCompactList}\item 
+typedef struct A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Rtp\+Resender\+\_\+s $\ast$ \hyperlink{arstream2__stream__receiver_8h_aa7be0759ab78ee0a1cf9a7321d4edac2}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Handle}
+\begin{DoxyCompactList}\small\item\em A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver resender handle. \end{DoxyCompactList}\item 
+typedef \hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{arstream2__stream__receiver_8h_adecd23487d9baffc0c29ddd4fc3bb6f2}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Sps\+Pps\+Callback\+\_\+t}) (uint8\+\_\+t $\ast$sps\+Buffer, int sps\+Size, uint8\+\_\+t $\ast$pps\+Buffer, int pps\+Size, void $\ast$user\+Ptr)
+\begin{DoxyCompactList}\small\item\em S\+P\+S/\+P\+PS N\+AL units callback function. \end{DoxyCompactList}\item 
+typedef \hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{arstream2__stream__receiver_8h_a1f98b5d985a9b64e0acbc0e0cb6bd91b}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Au\+Buffer\+Callback\+\_\+t}) (uint8\+\_\+t $\ast$$\ast$au\+Buffer, int $\ast$au\+Buffer\+Size, void $\ast$$\ast$au\+Buffer\+User\+Ptr, void $\ast$user\+Ptr)
+\begin{DoxyCompactList}\small\item\em Get access unit buffer callback function. \end{DoxyCompactList}\item 
+typedef \hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{arstream2__stream__receiver_8h_ab28e167b3d3cd9716da7e9788617aa92}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+\_\+t}) (uint8\+\_\+t $\ast$au\+Buffer, int au\+Size, \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___au_ready_callback_timestamps__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t} $\ast$au\+Timestamps, \hyperlink{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+PE} au\+Sync\+Type, \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___au_ready_callback_metadata__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Metadata\+\_\+t} $\ast$au\+Metadata, void $\ast$au\+Buffer\+User\+Ptr, void $\ast$user\+Ptr)
+\begin{DoxyCompactList}\small\item\em Access unit ready callback function. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___resender_config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Config\+\_\+t} \hyperlink{arstream2__stream__receiver_8h_adbccec0328dc011e63103fd59f1feca4}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Config\+\_\+t}
+\begin{DoxyCompactList}\small\item\em A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver resender configuration parameters. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___untimed_metadata__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t} \hyperlink{arstream2__stream__receiver_8h_aa04981b91ef0b616009bcadd3950250b}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t}
+\begin{DoxyCompactList}\small\item\em A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver untimed metadata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+PE} \{ \\*
+\hyperlink{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435a1193312e0b89899949e2503689d55d94}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+NE} = 0, 
+\hyperlink{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435afe4552229117b47203484299071504c5}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+DR}, 
+\hyperlink{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435a17636a003e7ca2dc9392a9dafdd5c8b3}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+F\+R\+A\+ME}, 
+\hyperlink{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435a09baa4af8fd75bc9695c99cd722d8b73}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+I\+R\+\_\+\+S\+T\+A\+RT}, 
+\\*
+\hyperlink{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435a84b907494d511c52764c721e301ac60e}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX}
+ \}\begin{DoxyCompactList}\small\item\em AU synchronization type. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__receiver_8h_adc87f0008a1c408f852b05408b9ff49e}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Init} (\hyperlink{arstream2__stream__receiver_8h_aafadedd4d961fa435edee75ed02071d8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle} $\ast$stream\+Receiver\+Handle, const \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Config\+\_\+t} $\ast$config, const \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___net_config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Net\+Config\+\_\+t} $\ast$net\+\_\+config, const \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___mux_config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Mux\+Config\+\_\+t} $\ast$mux\+\_\+config)
+\begin{DoxyCompactList}\small\item\em Initialize a Stream\+Receiver instance. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__receiver_8h_ad11228de1b96c0950938026ed1d51246}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop} (\hyperlink{arstream2__stream__receiver_8h_aafadedd4d961fa435edee75ed02071d8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle} stream\+Receiver\+Handle)
+\begin{DoxyCompactList}\small\item\em Stop a Stream\+Receiver instance. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__receiver_8h_af552ab16883a721590f4d6788f9670f3}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Free} (\hyperlink{arstream2__stream__receiver_8h_aafadedd4d961fa435edee75ed02071d8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle} $\ast$stream\+Receiver\+Handle)
+\begin{DoxyCompactList}\small\item\em Free a Stream\+Receiver instance. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{arstream2__stream__receiver_8h_a751bde675b2e207c9ce82b34f0851e15}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Run\+Network\+Thread} (void $\ast$stream\+Receiver\+Handle)
+\begin{DoxyCompactList}\small\item\em Run a Stream\+Receiver stream thread. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__receiver_8h_a6c0ddaf1a87bebb1e53192fd2304c080}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+App\+Output} (\hyperlink{arstream2__stream__receiver_8h_aafadedd4d961fa435edee75ed02071d8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle} stream\+Receiver\+Handle, \hyperlink{arstream2__stream__receiver_8h_adecd23487d9baffc0c29ddd4fc3bb6f2}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Sps\+Pps\+Callback\+\_\+t} sps\+Pps\+Callback, void $\ast$sps\+Pps\+Callback\+User\+Ptr, \hyperlink{arstream2__stream__receiver_8h_a1f98b5d985a9b64e0acbc0e0cb6bd91b}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Au\+Buffer\+Callback\+\_\+t} get\+Au\+Buffer\+Callback, void $\ast$get\+Au\+Buffer\+Callback\+User\+Ptr, \hyperlink{arstream2__stream__receiver_8h_ab28e167b3d3cd9716da7e9788617aa92}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+\_\+t} au\+Ready\+Callback, void $\ast$au\+Ready\+Callback\+User\+Ptr)
+\begin{DoxyCompactList}\small\item\em Start the application output. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__receiver_8h_a5ddaa56dba4296d47bc71e4f328c73a8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+App\+Output} (\hyperlink{arstream2__stream__receiver_8h_aafadedd4d961fa435edee75ed02071d8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle} stream\+Receiver\+Handle)
+\begin{DoxyCompactList}\small\item\em Stop the applicaiton output. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{arstream2__stream__receiver_8h_af6152eff2b20a883442285503e22afa7}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Run\+App\+Output\+Thread} (void $\ast$stream\+Receiver\+Handle)
+\begin{DoxyCompactList}\small\item\em Run a Stream\+Receiver application output thread. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__receiver_8h_aafc30644ddc1eb51255b3f10d393aec2}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+Recorder} (\hyperlink{arstream2__stream__receiver_8h_aafadedd4d961fa435edee75ed02071d8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle} stream\+Receiver\+Handle, const char $\ast$record\+File\+Name)
+\begin{DoxyCompactList}\small\item\em Start a stream recorder. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__receiver_8h_a34b41bfa6d4501a32c0744b9dbb3d51c}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Recorder} (\hyperlink{arstream2__stream__receiver_8h_aafadedd4d961fa435edee75ed02071d8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle} stream\+Receiver\+Handle)
+\begin{DoxyCompactList}\small\item\em Stop a stream recorder. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__receiver_8h_ace4ae7f34a97db20776622acf63c491c}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+Resender} (\hyperlink{arstream2__stream__receiver_8h_aafadedd4d961fa435edee75ed02071d8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle} stream\+Receiver\+Handle, \hyperlink{arstream2__stream__receiver_8h_aa7be0759ab78ee0a1cf9a7321d4edac2}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Handle} $\ast$stream\+Resender\+Handle, const \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___resender_config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Config\+\_\+t} $\ast$config)
+\begin{DoxyCompactList}\small\item\em Initialize a new resender. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__receiver_8h_a6a96789f49fea7556777b7b2915e1e1a}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Resender} (\hyperlink{arstream2__stream__receiver_8h_aafadedd4d961fa435edee75ed02071d8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle} stream\+Receiver\+Handle, \hyperlink{arstream2__stream__receiver_8h_aa7be0759ab78ee0a1cf9a7321d4edac2}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Handle} $\ast$stream\+Resender\+Handle)
+\begin{DoxyCompactList}\small\item\em Stop a resender. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__receiver_8h_ac8a28b386ecd8230cfaaf10f29dc0e66}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Sps\+Pps} (\hyperlink{arstream2__stream__receiver_8h_aafadedd4d961fa435edee75ed02071d8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle} stream\+Receiver\+Handle, uint8\+\_\+t $\ast$sps\+Buffer, int $\ast$sps\+Size, uint8\+\_\+t $\ast$pps\+Buffer, int $\ast$pps\+Size)
+\begin{DoxyCompactList}\small\item\em Get the S\+PS and P\+PS buffers. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__receiver_8h_ac0e6f32de021aba00453c018a193e01e}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Untimed\+Metadata} (\hyperlink{arstream2__stream__receiver_8h_aafadedd4d961fa435edee75ed02071d8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle} stream\+Receiver\+Handle, \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___untimed_metadata__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t} $\ast$metadata, uint32\+\_\+t $\ast$send\+Interval)
+\begin{DoxyCompactList}\small\item\em Get the untimed metadata. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__receiver_8h_a10e0fff668b096c5d2d5c3a1bb181850}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Set\+Untimed\+Metadata} (\hyperlink{arstream2__stream__receiver_8h_aafadedd4d961fa435edee75ed02071d8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle} stream\+Receiver\+Handle, const \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___untimed_metadata__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t} $\ast$metadata, uint32\+\_\+t send\+Interval)
+\begin{DoxyCompactList}\small\item\em Set the untimed metadata. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__stream__receiver_8h_a3604de91d0c4a1fdcce15738db6f509f}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Peer\+Untimed\+Metadata} (\hyperlink{arstream2__stream__receiver_8h_aafadedd4d961fa435edee75ed02071d8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle} stream\+Receiver\+Handle, \hyperlink{struct_a_r_s_t_r_e_a_m2___stream_receiver___untimed_metadata__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t} $\ast$metadata)
+\begin{DoxyCompactList}\small\item\em Get the peer untimed metadata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parrot Streaming Library -\/ Stream Receiver. 
+
+\begin{DoxyDate}{Date}
+08/04/2015 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:aurelien.barre@parrot.com}{\tt aurelien.\+barre@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT}{ARSTREAM2_STREAM_RECEIVER_DEFAULT_CLIENT_CONTROL_PORT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT~(55005)}\hypertarget{arstream2__stream__receiver_8h_a83f798f5a0bbe9c8013bc27a95b4c2e1}{}\label{arstream2__stream__receiver_8h_a83f798f5a0bbe9c8013bc27a95b4c2e1}
+
+
+Default client-\/side control port. 
+
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT}{ARSTREAM2_STREAM_RECEIVER_DEFAULT_CLIENT_STREAM_PORT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT~(55004)}\hypertarget{arstream2__stream__receiver_8h_a9d531a5704f329e46a60e91170cce4b4}{}\label{arstream2__stream__receiver_8h_a9d531a5704f329e46a60e91170cce4b4}
+
+
+Default client-\/side stream port. 
+
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+R\+E\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+R\+E\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+R\+E\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+R\+E\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+R\+E\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT}{ARSTREAM2_STREAM_RECEIVER_RESENDER_DEFAULT_SERVER_CONTROL_PORT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+R\+E\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+RT~(5005)}\hypertarget{arstream2__stream__receiver_8h_a2460b7c436cf15494c34202ccea2bc6a}{}\label{arstream2__stream__receiver_8h_a2460b7c436cf15494c34202ccea2bc6a}
+
+
+Default server-\/side resender control port. 
+
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+R\+E\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+R\+E\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+R\+E\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+R\+E\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+R\+E\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT}{ARSTREAM2_STREAM_RECEIVER_RESENDER_DEFAULT_SERVER_STREAM_PORT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+R\+E\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+P\+O\+RT~(5004)}\hypertarget{arstream2__stream__receiver_8h_a3bcd37725ffac66f1aa7a20af4972399}{}\label{arstream2__stream__receiver_8h_a3bcd37725ffac66f1aa7a20af4972399}
+
+
+Default server-\/side resender stream port. 
+
+
+
+\subsection{Typedef Documentation}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+\_\+t}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+\_\+t}{ARSTREAM2_StreamReceiver_AuReadyCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+\_\+t) (uint8\+\_\+t $\ast$au\+Buffer, int au\+Size, {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Timestamps\+\_\+t} $\ast$au\+Timestamps, {\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+PE} au\+Sync\+Type, {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+Metadata\+\_\+t} $\ast$au\+Metadata, void $\ast$au\+Buffer\+User\+Ptr, void $\ast$user\+Ptr)}\hypertarget{arstream2__stream__receiver_8h_ab28e167b3d3cd9716da7e9788617aa92}{}\label{arstream2__stream__receiver_8h_ab28e167b3d3cd9716da7e9788617aa92}
+
+
+Access unit ready callback function. 
+
+To be used with the application output feature. The mandatory AU ready callback function is called to output an access unit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em au\+Buffer} & Pointer to the AU buffer \\
+\hline
+{\em au\+Size} & AU size in bytes \\
+\hline
+{\em au\+Ext\+Rtp\+Timestamp} & Access unit extended R\+TP timestamp (90000 Hz clock) \\
+\hline
+{\em au\+Ntp\+Timestamp} & Access unit N\+TP timestamp (microseconds) in the sender\textquotesingle{}s clock reference (0 if R\+T\+CP is not available) \\
+\hline
+{\em au\+Ntp\+Timestamp\+Local} & Access unit N\+TP timestamp (microseconds) in the local clock reference (0 if clock sync or R\+T\+CP is not available) \\
+\hline
+{\em au\+Sync\+Type} & AU synchronization type \\
+\hline
+{\em au\+Metadata} & AU metadata buffer \\
+\hline
+{\em au\+Metadata\+Size} & AU metadata size in bytes \\
+\hline
+{\em au\+User\+Data} & AU user data S\+EI buffer \\
+\hline
+{\em au\+User\+Data\+Size} & AU user data S\+EI size in bytes \\
+\hline
+{\em au\+Buffer\+User\+Ptr} & AU buffer user pointer \\
+\hline
+{\em user\+Ptr} & AU readey callback user pointer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+R\+E\+Q\+U\+I\+R\+ED if a decoding error occurred and re-\/sync is needed. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if another error occurred.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This callback function is mandatory. 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+$\ast$ functions must not be called within the callback function except the A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Frame\+Macroblock\+Status() function. 
+\end{DoxyWarning}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Au\+Buffer\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Au\+Buffer\+Callback\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Au\+Buffer\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Au\+Buffer\+Callback\+\_\+t}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Au\+Buffer\+Callback\+\_\+t}{ARSTREAM2_StreamReceiver_GetAuBufferCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Au\+Buffer\+Callback\+\_\+t) (uint8\+\_\+t $\ast$$\ast$au\+Buffer, int $\ast$au\+Buffer\+Size, void $\ast$$\ast$au\+Buffer\+User\+Ptr, void $\ast$user\+Ptr)}\hypertarget{arstream2__stream__receiver_8h_a1f98b5d985a9b64e0acbc0e0cb6bd91b}{}\label{arstream2__stream__receiver_8h_a1f98b5d985a9b64e0acbc0e0cb6bd91b}
+
+
+Get access unit buffer callback function. 
+
+To be used with the application output feature. The mandatory get AU buffer callback function is called to retreive a buffer to fill with an access unit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em au\+Buffer} & Pointer to the AU buffer pointer \\
+\hline
+{\em au\+Buffer\+Size} & Pointer to the AU buffer size in bytes \\
+\hline
+{\em au\+Buffer\+User\+Ptr} & Pointer to the AU buffer user pointer \\
+\hline
+{\em user\+Ptr} & Get AU buffer callback user pointer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+U\+N\+A\+V\+A\+I\+L\+A\+B\+LE if no buffers are available. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if another error occurred.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This callback function is mandatory. 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+$\ast$ functions must not be called within the callback function. 
+\end{DoxyWarning}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle}{ARSTREAM2_StreamReceiver_Handle}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+s$\ast$ {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle}}\hypertarget{arstream2__stream__receiver_8h_aafadedd4d961fa435edee75ed02071d8}{}\label{arstream2__stream__receiver_8h_aafadedd4d961fa435edee75ed02071d8}
+
+
+A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver instance handle. 
+
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Config\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Config\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Config\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Config\+\_\+t}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Config\+\_\+t}{ARSTREAM2_StreamReceiver_ResenderConfig_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Config\+\_\+t}  {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Config\+\_\+t}}\hypertarget{arstream2__stream__receiver_8h_adbccec0328dc011e63103fd59f1feca4}{}\label{arstream2__stream__receiver_8h_adbccec0328dc011e63103fd59f1feca4}
+
+
+A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver resender configuration parameters. 
+
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Handle@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Handle}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Handle@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Handle}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Handle}{ARSTREAM2_StreamReceiver_ResenderHandle}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Rtp\+Resender\+\_\+s$\ast$ {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Handle}}\hypertarget{arstream2__stream__receiver_8h_aa7be0759ab78ee0a1cf9a7321d4edac2}{}\label{arstream2__stream__receiver_8h_aa7be0759ab78ee0a1cf9a7321d4edac2}
+
+
+A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver resender handle. 
+
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Sps\+Pps\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Sps\+Pps\+Callback\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Sps\+Pps\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Sps\+Pps\+Callback\+\_\+t}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Sps\+Pps\+Callback\+\_\+t}{ARSTREAM2_StreamReceiver_SpsPpsCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Sps\+Pps\+Callback\+\_\+t) (uint8\+\_\+t $\ast$sps\+Buffer, int sps\+Size, uint8\+\_\+t $\ast$pps\+Buffer, int pps\+Size, void $\ast$user\+Ptr)}\hypertarget{arstream2__stream__receiver_8h_adecd23487d9baffc0c29ddd4fc3bb6f2}{}\label{arstream2__stream__receiver_8h_adecd23487d9baffc0c29ddd4fc3bb6f2}
+
+
+S\+P\+S/\+P\+PS N\+AL units callback function. 
+
+To be used with the application output feature. The optional S\+P\+S/\+P\+PS callback function is called when S\+P\+S/\+P\+PS are found in the stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sps\+Buffer} & Pointer to the S\+PS N\+AL unit buffer \\
+\hline
+{\em sps\+Size} & Size in bytes of the S\+PS N\+AL unit \\
+\hline
+{\em pps\+Buffer} & Pointer to the P\+PS N\+AL unit buffer \\
+\hline
+{\em pps\+Size} & Size in bytes of the P\+PS N\+AL unit \\
+\hline
+{\em user\+Ptr} & S\+P\+S/\+P\+PS callback user pointer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This callback function is optional.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+$\ast$ functions must not be called within the callback function. 
+\end{DoxyWarning}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t}{ARSTREAM2_StreamReceiver_UntimedMetadata_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t}  {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t}}\hypertarget{arstream2__stream__receiver_8h_aa04981b91ef0b616009bcadd3950250b}{}\label{arstream2__stream__receiver_8h_aa04981b91ef0b616009bcadd3950250b}
+
+
+A\+R\+S\+T\+R\+E\+A\+M2 Stream\+Receiver untimed metadata. 
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+PE@{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+PE}}
+\index{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+PE@{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+PE}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+PE}{eARSTREAM2_STREAM_RECEIVER_AU_SYNC_TYPE}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+PE}}\hypertarget{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435}{}\label{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435}
+
+
+AU synchronization type. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+NE@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+NE}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+NE@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+NE}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+NE\hypertarget{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435a1193312e0b89899949e2503689d55d94}{}\label{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435a1193312e0b89899949e2503689d55d94}
+}]The Access Unit is not a synchronization point \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+DR@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+DR}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+DR@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+DR}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+DR\hypertarget{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435afe4552229117b47203484299071504c5}{}\label{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435afe4552229117b47203484299071504c5}
+}]The Access Unit is an I\+DR picture \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+F\+R\+A\+ME@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+F\+R\+A\+ME}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+F\+R\+A\+ME@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+F\+R\+A\+ME}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+F\+R\+A\+ME\hypertarget{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435a17636a003e7ca2dc9392a9dafdd5c8b3}{}\label{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435a17636a003e7ca2dc9392a9dafdd5c8b3}
+}]The Access Unit is an I-\/frame \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+I\+R\+\_\+\+S\+T\+A\+RT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+I\+R\+\_\+\+S\+T\+A\+RT}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+I\+R\+\_\+\+S\+T\+A\+RT@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+I\+R\+\_\+\+S\+T\+A\+RT}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+I\+R\+\_\+\+S\+T\+A\+RT\hypertarget{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435a09baa4af8fd75bc9695c99cd722d8b73}{}\label{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435a09baa4af8fd75bc9695c99cd722d8b73}
+}]The Access Unit is a Periodic Intra Refresh start \index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+A\+U\+\_\+\+S\+Y\+N\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX\hypertarget{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435a84b907494d511c52764c721e301ac60e}{}\label{arstream2__stream__receiver_8h_a97de7582112273cb9985779a52e0a435a84b907494d511c52764c721e301ac60e}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Free@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Free}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Free@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Free}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Free(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle $\ast$stream\+Receiver\+Handle)}{ARSTREAM2_StreamReceiver_Free(ARSTREAM2_StreamReceiver_Handle *streamReceiverHandle)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Free (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle} $\ast$}]{stream\+Receiver\+Handle}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__receiver_8h_af552ab16883a721590f4d6788f9670f3}{}\label{arstream2__stream__receiver_8h_af552ab16883a721590f4d6788f9670f3}
+
+
+Free a Stream\+Receiver instance. 
+
+The library frees the allocated resources. On success the stream\+Receiver\+Handle is set to N\+U\+LL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Receiver\+Handle} & Pointer to the instance handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Peer\+Untimed\+Metadata@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Peer\+Untimed\+Metadata}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Peer\+Untimed\+Metadata@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Peer\+Untimed\+Metadata}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Peer\+Untimed\+Metadata(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle stream\+Receiver\+Handle, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t $\ast$metadata)}{ARSTREAM2_StreamReceiver_GetPeerUntimedMetadata(ARSTREAM2_StreamReceiver_Handle streamReceiverHandle, ARSTREAM2_StreamReceiver_UntimedMetadata_t *metadata)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Peer\+Untimed\+Metadata (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle}}]{stream\+Receiver\+Handle, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t} $\ast$}]{metadata}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__receiver_8h_a3604de91d0c4a1fdcce15738db6f509f}{}\label{arstream2__stream__receiver_8h_a3604de91d0c4a1fdcce15738db6f509f}
+
+
+Get the peer untimed metadata. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em stream\+Receiver\+Handle} & Instance handle. \\
+\hline
+\mbox{\tt out}  & {\em metadata} & Current peer untimed metadata structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error happened 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if the stream\+Receiver\+Handle or metadata pointer are invalid 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Sps\+Pps@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Sps\+Pps}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Sps\+Pps@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Sps\+Pps}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Sps\+Pps(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle stream\+Receiver\+Handle, uint8\+\_\+t $\ast$sps\+Buffer, int $\ast$sps\+Size, uint8\+\_\+t $\ast$pps\+Buffer, int $\ast$pps\+Size)}{ARSTREAM2_StreamReceiver_GetSpsPps(ARSTREAM2_StreamReceiver_Handle streamReceiverHandle, uint8_t *spsBuffer, int *spsSize, uint8_t *ppsBuffer, int *ppsSize)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Sps\+Pps (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle}}]{stream\+Receiver\+Handle, }
+\item[{uint8\+\_\+t $\ast$}]{sps\+Buffer, }
+\item[{int $\ast$}]{sps\+Size, }
+\item[{uint8\+\_\+t $\ast$}]{pps\+Buffer, }
+\item[{int $\ast$}]{pps\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__receiver_8h_ac8a28b386ecd8230cfaaf10f29dc0e66}{}\label{arstream2__stream__receiver_8h_ac8a28b386ecd8230cfaaf10f29dc0e66}
+
+
+Get the S\+PS and P\+PS buffers. 
+
+The buffers are filled by the function and must be provided by the user. The size of the buffers are given by a first call to the function with both buffer pointers null. When the buffer pointers are not null the size pointers must point to the values of the user-\/allocated buffer sizes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Receiver\+Handle} & Instance handle. \\
+\hline
+{\em sps\+Buffer} & S\+PS buffer pointer. \\
+\hline
+{\em sps\+Size} & pointer to the S\+PS size. \\
+\hline
+{\em pps\+Buffer} & P\+PS buffer pointer. \\
+\hline
+{\em pps\+Size} & pointer to the P\+PS size.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if arguments are invalid. 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+W\+A\+I\+T\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+S\+Y\+NC if S\+P\+S/\+P\+PS are not available (no sync). 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Untimed\+Metadata@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Untimed\+Metadata}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Untimed\+Metadata@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Untimed\+Metadata}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Untimed\+Metadata(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle stream\+Receiver\+Handle, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t $\ast$metadata, uint32\+\_\+t $\ast$send\+Interval)}{ARSTREAM2_StreamReceiver_GetUntimedMetadata(ARSTREAM2_StreamReceiver_Handle streamReceiverHandle, ARSTREAM2_StreamReceiver_UntimedMetadata_t *metadata, uint32_t *sendInterval)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Untimed\+Metadata (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle}}]{stream\+Receiver\+Handle, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t} $\ast$}]{metadata, }
+\item[{uint32\+\_\+t $\ast$}]{send\+Interval}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__receiver_8h_ac0e6f32de021aba00453c018a193e01e}{}\label{arstream2__stream__receiver_8h_ac0e6f32de021aba00453c018a193e01e}
+
+
+Get the untimed metadata. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em stream\+Receiver\+Handle} & Instance handle. \\
+\hline
+\mbox{\tt out}  & {\em metadata} & Current untimed metadata structure \\
+\hline
+\mbox{\tt out}  & {\em send\+Interval} & Pointer to the minimum send interval in microseconds (optional, can be N\+U\+LL)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error happened 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if the stream\+Receiver\+Handle or metadata pointer are invalid 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND it the item has not been found 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Init@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Init}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Init@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Init}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Init(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle $\ast$stream\+Receiver\+Handle, const A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Config\+\_\+t $\ast$config, const A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Net\+Config\+\_\+t $\ast$net\+\_\+config, const A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Mux\+Config\+\_\+t $\ast$mux\+\_\+config)}{ARSTREAM2_StreamReceiver_Init(ARSTREAM2_StreamReceiver_Handle *streamReceiverHandle, const ARSTREAM2_StreamReceiver_Config_t *config, const ARSTREAM2_StreamReceiver_NetConfig_t *net_config, const ARSTREAM2_StreamReceiver_MuxConfig_t *mux_config)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle} $\ast$}]{stream\+Receiver\+Handle, }
+\item[{const {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Config\+\_\+t} $\ast$}]{config, }
+\item[{const {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Net\+Config\+\_\+t} $\ast$}]{net\+\_\+config, }
+\item[{const {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Mux\+Config\+\_\+t} $\ast$}]{mux\+\_\+config}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__receiver_8h_adc87f0008a1c408f852b05408b9ff49e}{}\label{arstream2__stream__receiver_8h_adc87f0008a1c408f852b05408b9ff49e}
+
+
+Initialize a Stream\+Receiver instance. 
+
+The library allocates the required resources. The user must call \hyperlink{arstream2__stream__receiver_8h_af552ab16883a721590f4d6788f9670f3}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Free()} to free the resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Receiver\+Handle} & Pointer to the handle used in future calls to the library. \\
+\hline
+{\em config} & The instance configuration. \\
+\hline
+{\em net\+\_\+config} & The instance network configuration, or N\+U\+LL if libmux is used. \\
+\hline
+{\em mux\+\_\+config} & The instance libmux configuration, or N\+U\+LL if network is used.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Run\+App\+Output\+Thread@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Run\+App\+Output\+Thread}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Run\+App\+Output\+Thread@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Run\+App\+Output\+Thread}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Run\+App\+Output\+Thread(void $\ast$stream\+Receiver\+Handle)}{ARSTREAM2_StreamReceiver_RunAppOutputThread(void *streamReceiverHandle)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Run\+App\+Output\+Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{stream\+Receiver\+Handle}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__receiver_8h_af6152eff2b20a883442285503e22afa7}{}\label{arstream2__stream__receiver_8h_af6152eff2b20a883442285503e22afa7}
+
+
+Run a Stream\+Receiver application output thread. 
+
+The instance must be correctly allocated using \hyperlink{arstream2__stream__receiver_8h_adc87f0008a1c408f852b05408b9ff49e}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Init()}. \begin{DoxyWarning}{Warning}
+This function never returns until \hyperlink{arstream2__stream__receiver_8h_ad11228de1b96c0950938026ed1d51246}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop()} is called. The tread can then be joined.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Receiver\+Handle} & Instance handle casted as (void$\ast$).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\+U\+LL in all cases. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Run\+Network\+Thread@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Run\+Network\+Thread}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Run\+Network\+Thread@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Run\+Network\+Thread}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Run\+Network\+Thread(void $\ast$stream\+Receiver\+Handle)}{ARSTREAM2_StreamReceiver_RunNetworkThread(void *streamReceiverHandle)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Run\+Network\+Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{stream\+Receiver\+Handle}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__receiver_8h_a751bde675b2e207c9ce82b34f0851e15}{}\label{arstream2__stream__receiver_8h_a751bde675b2e207c9ce82b34f0851e15}
+
+
+Run a Stream\+Receiver stream thread. 
+
+The instance must be correctly allocated using \hyperlink{arstream2__stream__receiver_8h_adc87f0008a1c408f852b05408b9ff49e}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Init()}. \begin{DoxyWarning}{Warning}
+This function never returns until \hyperlink{arstream2__stream__receiver_8h_ad11228de1b96c0950938026ed1d51246}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop()} is called. The tread can then be joined.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Receiver\+Handle} & Instance handle casted as (void$\ast$).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\+U\+LL in all cases. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Set\+Untimed\+Metadata@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Set\+Untimed\+Metadata}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Set\+Untimed\+Metadata@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Set\+Untimed\+Metadata}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Set\+Untimed\+Metadata(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle stream\+Receiver\+Handle, const A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t $\ast$metadata, uint32\+\_\+t send\+Interval)}{ARSTREAM2_StreamReceiver_SetUntimedMetadata(ARSTREAM2_StreamReceiver_Handle streamReceiverHandle, const ARSTREAM2_StreamReceiver_UntimedMetadata_t *metadata, uint32_t sendInterval)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Set\+Untimed\+Metadata (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle}}]{stream\+Receiver\+Handle, }
+\item[{const {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Untimed\+Metadata\+\_\+t} $\ast$}]{metadata, }
+\item[{uint32\+\_\+t}]{send\+Interval}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__receiver_8h_a10e0fff668b096c5d2d5c3a1bb181850}{}\label{arstream2__stream__receiver_8h_a10e0fff668b096c5d2d5c3a1bb181850}
+
+
+Set the untimed metadata. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em stream\+Receiver\+Handle} & Instance handle. \\
+\hline
+\mbox{\tt in}  & {\em metadata} & Current untimed metadata structure \\
+\hline
+\mbox{\tt in}  & {\em send\+Interval} & Minimum send interval in microseconds (0 means default)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error happened 
+
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if the stream\+Receiver\+Handle or metadata pointer are invalid 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+App\+Output@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+App\+Output}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+App\+Output@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+App\+Output}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+App\+Output(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle stream\+Receiver\+Handle, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Sps\+Pps\+Callback\+\_\+t sps\+Pps\+Callback, void $\ast$sps\+Pps\+Callback\+User\+Ptr, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Au\+Buffer\+Callback\+\_\+t get\+Au\+Buffer\+Callback, void $\ast$get\+Au\+Buffer\+Callback\+User\+Ptr, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+\_\+t au\+Ready\+Callback, void $\ast$au\+Ready\+Callback\+User\+Ptr)}{ARSTREAM2_StreamReceiver_StartAppOutput(ARSTREAM2_StreamReceiver_Handle streamReceiverHandle, ARSTREAM2_StreamReceiver_SpsPpsCallback_t spsPpsCallback, void *spsPpsCallbackUserPtr, ARSTREAM2_StreamReceiver_GetAuBufferCallback_t getAuBufferCallback, void *getAuBufferCallbackUserPtr, ARSTREAM2_StreamReceiver_AuReadyCallback_t auReadyCallback, void *auReadyCallbackUserPtr)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+App\+Output (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle}}]{stream\+Receiver\+Handle, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Sps\+Pps\+Callback\+\_\+t}}]{sps\+Pps\+Callback, }
+\item[{void $\ast$}]{sps\+Pps\+Callback\+User\+Ptr, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Get\+Au\+Buffer\+Callback\+\_\+t}}]{get\+Au\+Buffer\+Callback, }
+\item[{void $\ast$}]{get\+Au\+Buffer\+Callback\+User\+Ptr, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Au\+Ready\+Callback\+\_\+t}}]{au\+Ready\+Callback, }
+\item[{void $\ast$}]{au\+Ready\+Callback\+User\+Ptr}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__receiver_8h_a6c0ddaf1a87bebb1e53192fd2304c080}{}\label{arstream2__stream__receiver_8h_a6c0ddaf1a87bebb1e53192fd2304c080}
+
+
+Start the application output. 
+
+The function starts the output to the application though callback functions. The processing can be stopped using \hyperlink{arstream2__stream__receiver_8h_a5ddaa56dba4296d47bc71e4f328c73a8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+App\+Output()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Receiver\+Handle} & Instance handle. \\
+\hline
+{\em sps\+Pps\+Callback} & S\+P\+S/\+P\+PS callback function. \\
+\hline
+{\em sps\+Pps\+Callback\+User\+Ptr} & S\+P\+S/\+P\+PS callback user pointer. \\
+\hline
+{\em get\+Au\+Buffer\+Callback} & Get access unit buffer callback function. \\
+\hline
+{\em get\+Au\+Buffer\+Callback\+User\+Ptr} & Get access unit buffer callback user pointer. \\
+\hline
+{\em au\+Ready\+Callback} & Access unit ready callback function. \\
+\hline
+{\em au\+Ready\+Callback\+User\+Ptr} & Access unit ready callback user pointer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+Recorder@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+Recorder}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+Recorder@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+Recorder}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+Recorder(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle stream\+Receiver\+Handle, const char $\ast$record\+File\+Name)}{ARSTREAM2_StreamReceiver_StartRecorder(ARSTREAM2_StreamReceiver_Handle streamReceiverHandle, const char *recordFileName)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+Recorder (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle}}]{stream\+Receiver\+Handle, }
+\item[{const char $\ast$}]{record\+File\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__receiver_8h_aafc30644ddc1eb51255b3f10d393aec2}{}\label{arstream2__stream__receiver_8h_aafc30644ddc1eb51255b3f10d393aec2}
+
+
+Start a stream recorder. 
+
+The function starts recording the received stream to a file. The recording can be stopped using A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Recording(). The filter must be previously started using \hyperlink{arstream2__stream__receiver_8h_a6c0ddaf1a87bebb1e53192fd2304c080}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+App\+Output()}. \begin{DoxyNote}{Note}
+Only one recording can be done at a time.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Receiver\+Handle} & Instance handle. \\
+\hline
+{\em record\+File\+Name} & Record file absolute path.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+Resender@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+Resender}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+Resender@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+Resender}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+Resender(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle stream\+Receiver\+Handle, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Handle $\ast$stream\+Resender\+Handle, const A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Config\+\_\+t $\ast$config)}{ARSTREAM2_StreamReceiver_StartResender(ARSTREAM2_StreamReceiver_Handle streamReceiverHandle, ARSTREAM2_StreamReceiver_ResenderHandle *streamResenderHandle, const ARSTREAM2_StreamReceiver_ResenderConfig_t *config)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+Resender (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle}}]{stream\+Receiver\+Handle, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Handle} $\ast$}]{stream\+Resender\+Handle, }
+\item[{const {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Config\+\_\+t} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__receiver_8h_ace4ae7f34a97db20776622acf63c491c}{}\label{arstream2__stream__receiver_8h_ace4ae7f34a97db20776622acf63c491c}
+
+
+Initialize a new resender. 
+
+The library allocates the required resources. The user must call \hyperlink{arstream2__stream__receiver_8h_a6a96789f49fea7556777b7b2915e1e1a}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Resender()} to free the resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Receiver\+Handle} & Stream\+Receiver instance handle. \\
+\hline
+{\em stream\+Resender\+Handle} & Pointer to the resender handle used in future calls to the library. \\
+\hline
+{\em config} & The resender configuration.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{arstream2__stream__receiver_8h_a6a96789f49fea7556777b7b2915e1e1a}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Resender()} 
+\end{DoxySeeAlso}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle stream\+Receiver\+Handle)}{ARSTREAM2_StreamReceiver_Stop(ARSTREAM2_StreamReceiver_Handle streamReceiverHandle)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle}}]{stream\+Receiver\+Handle}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__receiver_8h_ad11228de1b96c0950938026ed1d51246}{}\label{arstream2__stream__receiver_8h_ad11228de1b96c0950938026ed1d51246}
+
+
+Stop a Stream\+Receiver instance. 
+
+The function ends the threads before they can be joined.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Receiver\+Handle} & Instance handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+App\+Output@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+App\+Output}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+App\+Output@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+App\+Output}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+App\+Output(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle stream\+Receiver\+Handle)}{ARSTREAM2_StreamReceiver_StopAppOutput(ARSTREAM2_StreamReceiver_Handle streamReceiverHandle)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+App\+Output (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle}}]{stream\+Receiver\+Handle}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__receiver_8h_a5ddaa56dba4296d47bc71e4f328c73a8}{}\label{arstream2__stream__receiver_8h_a5ddaa56dba4296d47bc71e4f328c73a8}
+
+
+Stop the applicaiton output. 
+
+The function stops the output to the application. The callback functions provided to \hyperlink{arstream2__stream__receiver_8h_a6c0ddaf1a87bebb1e53192fd2304c080}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+App\+Output()} will not be called any more. The filter can be started again by a new call to \hyperlink{arstream2__stream__receiver_8h_a6c0ddaf1a87bebb1e53192fd2304c080}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Start\+App\+Output()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Receiver\+Handle} & Instance handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Recorder@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Recorder}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Recorder@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Recorder}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Recorder(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle stream\+Receiver\+Handle)}{ARSTREAM2_StreamReceiver_StopRecorder(ARSTREAM2_StreamReceiver_Handle streamReceiverHandle)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Recorder (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle}}]{stream\+Receiver\+Handle}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__receiver_8h_a34b41bfa6d4501a32c0744b9dbb3d51c}{}\label{arstream2__stream__receiver_8h_a34b41bfa6d4501a32c0744b9dbb3d51c}
+
+
+Stop a stream recorder. 
+
+The function stops the current recording. If no recording is in progress nothing happens.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Receiver\+Handle} & Instance handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Resender@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Resender}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Resender@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Resender}!arstream2\+\_\+stream\+\_\+receiver.\+h@{arstream2\+\_\+stream\+\_\+receiver.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Resender(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle stream\+Receiver\+Handle, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Handle $\ast$stream\+Resender\+Handle)}{ARSTREAM2_StreamReceiver_StopResender(ARSTREAM2_StreamReceiver_Handle streamReceiverHandle, ARSTREAM2_StreamReceiver_ResenderHandle *streamResenderHandle)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Stop\+Resender (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Handle}}]{stream\+Receiver\+Handle, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+Stream\+Receiver\+\_\+\+Resender\+Handle} $\ast$}]{stream\+Resender\+Handle}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__stream__receiver_8h_a6a96789f49fea7556777b7b2915e1e1a}{}\label{arstream2__stream__receiver_8h_a6a96789f49fea7556777b7b2915e1e1a}
+
+
+Stop a resender. 
+
+The library stops the resender and frees the allocated resources. On success the stream\+Resender\+Handle is set to N\+U\+LL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Receiver\+Handle} & Stream\+Receiver instance handle. \\
+\hline
+{\em stream\+Resender\+Handle} & Pointer to the resender handle used in future calls to the library.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}

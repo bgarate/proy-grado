@@ -1,0 +1,7 @@
+<map id="_appendCommand_i" name="_appendCommand_i">
+<area shape="rect" id="node2" href="$ext_api_platform_8c.html#a31eede90e2a9d23574e09a92ec626d9b" title="extApi_endianConversionInt" alt="" coords="207,5,393,32"/>
+<area shape="rect" id="node3" href="$ext_api_platform_8c.html#aa3a4960cdcb852a68ce6d55b1182ff54" title="extApi_endianConversionUShort" alt="" coords="195,56,405,83"/>
+<area shape="rect" id="node4" href="$ext_api_8c.html#a25b0daa282c12a21bb950a00c6fb8f98" title="_appendChunkToBuffer" alt="" coords="221,107,379,133"/>
+<area shape="rect" id="node5" href="$ext_api_platform_8c.html#a01476683f124c90fd8955898a63752da" title="extApi_allocateBuffer" alt="" coords="453,81,600,108"/>
+<area shape="rect" id="node6" href="$ext_api_platform_8c.html#ada561dfab99bba410fb79f824c89e8d4" title="extApi_releaseBuffer" alt="" coords="455,132,598,159"/>
+</map>

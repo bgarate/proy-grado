@@ -1,0 +1,6 @@
+<map id="AsyncSocketChannel::getConnection" name="AsyncSocketChannel::getConnection">
+<area shape="rect" id="node2" href="$class_communication.html#ab64912f9a4137b930d717d8a3140d693" title="Communication::connect" alt="" coords="203,5,370,32"/>
+<area shape="rect" id="node5" href="$class_communication.html#a303009b7e1a4f714d02fb8729ea98f0b" title="Communication::asociate" alt="" coords="201,56,372,83"/>
+<area shape="rect" id="node3" href="$class_brain.html#a23d921369c5ec1218d7dc26d0f8270c2" title="Brain::loop" alt="" coords="420,31,504,57"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a523d51f6d06fce5bbed3e074818569fb" title="main" alt="" coords="552,31,603,57"/>
+</map>

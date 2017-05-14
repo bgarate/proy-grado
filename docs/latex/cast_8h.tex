@@ -1,0 +1,149 @@
+\hypertarget{cast_8h}{}\section{src/hal/pb2/include/openssl/cast.h File Reference}
+\label{cast_8h}\index{src/hal/pb2/include/openssl/cast.\+h@{src/hal/pb2/include/openssl/cast.\+h}}
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+Include dependency graph for cast.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{cast_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcast__key__st}{cast\+\_\+key\+\_\+st}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cast_8h_a2dd9614369cb809df925f5142a17727b}{C\+A\+S\+T\+\_\+\+E\+N\+C\+R\+Y\+PT}~1
+\item 
+\#define \hyperlink{cast_8h_acf2e449d0236085311dd1fd2f5850ba4}{C\+A\+S\+T\+\_\+\+D\+E\+C\+R\+Y\+PT}~0
+\item 
+\#define \hyperlink{cast_8h_a5f536ad3c10c7a7a51cdb6c75e8ae165}{C\+A\+S\+T\+\_\+\+L\+O\+NG}~unsigned int
+\item 
+\#define \hyperlink{cast_8h_a0e22802b9cef903f92c677d56f91486c}{C\+A\+S\+T\+\_\+\+B\+L\+O\+CK}~8
+\item 
+\#define \hyperlink{cast_8h_acb9103ecebc1b3acfc79ca1638227657}{C\+A\+S\+T\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+TH}~16
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structcast__key__st}{cast\+\_\+key\+\_\+st} \hyperlink{cast_8h_abed083cf7e561975161970562f6b1841}{C\+A\+S\+T\+\_\+\+K\+EY}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{cast_8h_addd6812e08dd8a873fae8af245b22e89}{C\+A\+S\+T\+\_\+set\+\_\+key} (\hyperlink{cast_8h_abed083cf7e561975161970562f6b1841}{C\+A\+S\+T\+\_\+\+K\+EY} $\ast$key, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const unsigned char $\ast$data)
+\item 
+void \hyperlink{cast_8h_adacd984c35a8f5cd5aa3c10567370366}{C\+A\+S\+T\+\_\+ecb\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, const \hyperlink{cast_8h_abed083cf7e561975161970562f6b1841}{C\+A\+S\+T\+\_\+\+K\+EY} $\ast$key, int enc)
+\item 
+void \hyperlink{cast_8h_a78a7527954c054a5f3295531a150d2de}{C\+A\+S\+T\+\_\+encrypt} (\hyperlink{cast_8h_a5f536ad3c10c7a7a51cdb6c75e8ae165}{C\+A\+S\+T\+\_\+\+L\+O\+NG} $\ast$data, const \hyperlink{cast_8h_abed083cf7e561975161970562f6b1841}{C\+A\+S\+T\+\_\+\+K\+EY} $\ast$key)
+\item 
+void \hyperlink{cast_8h_a225eb7c3f198e9e7525b3cdf71280a2e}{C\+A\+S\+T\+\_\+decrypt} (\hyperlink{cast_8h_a5f536ad3c10c7a7a51cdb6c75e8ae165}{C\+A\+S\+T\+\_\+\+L\+O\+NG} $\ast$data, const \hyperlink{cast_8h_abed083cf7e561975161970562f6b1841}{C\+A\+S\+T\+\_\+\+K\+EY} $\ast$key)
+\item 
+void \hyperlink{cast_8h_a6cad8510dad6a65759009ca426366baa}{C\+A\+S\+T\+\_\+cbc\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{cast_8h_abed083cf7e561975161970562f6b1841}{C\+A\+S\+T\+\_\+\+K\+EY} $\ast$ks, unsigned char $\ast$iv, int enc)
+\item 
+void \hyperlink{cast_8h_a3d0423dd1edab98b1a72d7acc755b07b}{C\+A\+S\+T\+\_\+cfb64\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{cast_8h_abed083cf7e561975161970562f6b1841}{C\+A\+S\+T\+\_\+\+K\+EY} $\ast$schedule, unsigned char $\ast$ivec, int $\ast$num, int enc)
+\item 
+void \hyperlink{cast_8h_a8cd12593f2bc16e6eda6efb6a51116af}{C\+A\+S\+T\+\_\+ofb64\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{cast_8h_abed083cf7e561975161970562f6b1841}{C\+A\+S\+T\+\_\+\+K\+EY} $\ast$schedule, unsigned char $\ast$ivec, int $\ast$num)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{cast.\+h@{cast.\+h}!C\+A\+S\+T\+\_\+\+B\+L\+O\+CK@{C\+A\+S\+T\+\_\+\+B\+L\+O\+CK}}
+\index{C\+A\+S\+T\+\_\+\+B\+L\+O\+CK@{C\+A\+S\+T\+\_\+\+B\+L\+O\+CK}!cast.\+h@{cast.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+S\+T\+\_\+\+B\+L\+O\+CK}{CAST_BLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+S\+T\+\_\+\+B\+L\+O\+CK~8}\hypertarget{cast_8h_a0e22802b9cef903f92c677d56f91486c}{}\label{cast_8h_a0e22802b9cef903f92c677d56f91486c}
+\index{cast.\+h@{cast.\+h}!C\+A\+S\+T\+\_\+\+D\+E\+C\+R\+Y\+PT@{C\+A\+S\+T\+\_\+\+D\+E\+C\+R\+Y\+PT}}
+\index{C\+A\+S\+T\+\_\+\+D\+E\+C\+R\+Y\+PT@{C\+A\+S\+T\+\_\+\+D\+E\+C\+R\+Y\+PT}!cast.\+h@{cast.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+S\+T\+\_\+\+D\+E\+C\+R\+Y\+PT}{CAST_DECRYPT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+S\+T\+\_\+\+D\+E\+C\+R\+Y\+PT~0}\hypertarget{cast_8h_acf2e449d0236085311dd1fd2f5850ba4}{}\label{cast_8h_acf2e449d0236085311dd1fd2f5850ba4}
+\index{cast.\+h@{cast.\+h}!C\+A\+S\+T\+\_\+\+E\+N\+C\+R\+Y\+PT@{C\+A\+S\+T\+\_\+\+E\+N\+C\+R\+Y\+PT}}
+\index{C\+A\+S\+T\+\_\+\+E\+N\+C\+R\+Y\+PT@{C\+A\+S\+T\+\_\+\+E\+N\+C\+R\+Y\+PT}!cast.\+h@{cast.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+S\+T\+\_\+\+E\+N\+C\+R\+Y\+PT}{CAST_ENCRYPT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+S\+T\+\_\+\+E\+N\+C\+R\+Y\+PT~1}\hypertarget{cast_8h_a2dd9614369cb809df925f5142a17727b}{}\label{cast_8h_a2dd9614369cb809df925f5142a17727b}
+\index{cast.\+h@{cast.\+h}!C\+A\+S\+T\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+TH@{C\+A\+S\+T\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+TH}}
+\index{C\+A\+S\+T\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+TH@{C\+A\+S\+T\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+TH}!cast.\+h@{cast.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+S\+T\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+TH}{CAST_KEY_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+S\+T\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+TH~16}\hypertarget{cast_8h_acb9103ecebc1b3acfc79ca1638227657}{}\label{cast_8h_acb9103ecebc1b3acfc79ca1638227657}
+\index{cast.\+h@{cast.\+h}!C\+A\+S\+T\+\_\+\+L\+O\+NG@{C\+A\+S\+T\+\_\+\+L\+O\+NG}}
+\index{C\+A\+S\+T\+\_\+\+L\+O\+NG@{C\+A\+S\+T\+\_\+\+L\+O\+NG}!cast.\+h@{cast.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+S\+T\+\_\+\+L\+O\+NG}{CAST_LONG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+S\+T\+\_\+\+L\+O\+NG~unsigned int}\hypertarget{cast_8h_a5f536ad3c10c7a7a51cdb6c75e8ae165}{}\label{cast_8h_a5f536ad3c10c7a7a51cdb6c75e8ae165}
+
+
+\subsection{Typedef Documentation}
+\index{cast.\+h@{cast.\+h}!C\+A\+S\+T\+\_\+\+K\+EY@{C\+A\+S\+T\+\_\+\+K\+EY}}
+\index{C\+A\+S\+T\+\_\+\+K\+EY@{C\+A\+S\+T\+\_\+\+K\+EY}!cast.\+h@{cast.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+S\+T\+\_\+\+K\+EY}{CAST_KEY}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cast\+\_\+key\+\_\+st}  {\bf C\+A\+S\+T\+\_\+\+K\+EY}}\hypertarget{cast_8h_abed083cf7e561975161970562f6b1841}{}\label{cast_8h_abed083cf7e561975161970562f6b1841}
+
+
+\subsection{Function Documentation}
+\index{cast.\+h@{cast.\+h}!C\+A\+S\+T\+\_\+cbc\+\_\+encrypt@{C\+A\+S\+T\+\_\+cbc\+\_\+encrypt}}
+\index{C\+A\+S\+T\+\_\+cbc\+\_\+encrypt@{C\+A\+S\+T\+\_\+cbc\+\_\+encrypt}!cast.\+h@{cast.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+S\+T\+\_\+cbc\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, long length, const C\+A\+S\+T\+\_\+\+K\+E\+Y $\ast$ks, unsigned char $\ast$iv, int enc)}{CAST_cbc_encrypt(const unsigned char *in, unsigned char *out, long length, const CAST_KEY *ks, unsigned char *iv, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+A\+S\+T\+\_\+cbc\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{long}]{length, }
+\item[{const {\bf C\+A\+S\+T\+\_\+\+K\+EY} $\ast$}]{ks, }
+\item[{unsigned char $\ast$}]{iv, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{cast_8h_a6cad8510dad6a65759009ca426366baa}{}\label{cast_8h_a6cad8510dad6a65759009ca426366baa}
+\index{cast.\+h@{cast.\+h}!C\+A\+S\+T\+\_\+cfb64\+\_\+encrypt@{C\+A\+S\+T\+\_\+cfb64\+\_\+encrypt}}
+\index{C\+A\+S\+T\+\_\+cfb64\+\_\+encrypt@{C\+A\+S\+T\+\_\+cfb64\+\_\+encrypt}!cast.\+h@{cast.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+S\+T\+\_\+cfb64\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, long length, const C\+A\+S\+T\+\_\+\+K\+E\+Y $\ast$schedule, unsigned char $\ast$ivec, int $\ast$num, int enc)}{CAST_cfb64_encrypt(const unsigned char *in, unsigned char *out, long length, const CAST_KEY *schedule, unsigned char *ivec, int *num, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+A\+S\+T\+\_\+cfb64\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{long}]{length, }
+\item[{const {\bf C\+A\+S\+T\+\_\+\+K\+EY} $\ast$}]{schedule, }
+\item[{unsigned char $\ast$}]{ivec, }
+\item[{int $\ast$}]{num, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{cast_8h_a3d0423dd1edab98b1a72d7acc755b07b}{}\label{cast_8h_a3d0423dd1edab98b1a72d7acc755b07b}
+\index{cast.\+h@{cast.\+h}!C\+A\+S\+T\+\_\+decrypt@{C\+A\+S\+T\+\_\+decrypt}}
+\index{C\+A\+S\+T\+\_\+decrypt@{C\+A\+S\+T\+\_\+decrypt}!cast.\+h@{cast.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+S\+T\+\_\+decrypt(\+C\+A\+S\+T\+\_\+\+L\+O\+N\+G $\ast$data, const C\+A\+S\+T\+\_\+\+K\+E\+Y $\ast$key)}{CAST_decrypt(CAST_LONG *data, const CAST_KEY *key)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+A\+S\+T\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+A\+S\+T\+\_\+\+L\+O\+NG} $\ast$}]{data, }
+\item[{const {\bf C\+A\+S\+T\+\_\+\+K\+EY} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{cast_8h_a225eb7c3f198e9e7525b3cdf71280a2e}{}\label{cast_8h_a225eb7c3f198e9e7525b3cdf71280a2e}
+\index{cast.\+h@{cast.\+h}!C\+A\+S\+T\+\_\+ecb\+\_\+encrypt@{C\+A\+S\+T\+\_\+ecb\+\_\+encrypt}}
+\index{C\+A\+S\+T\+\_\+ecb\+\_\+encrypt@{C\+A\+S\+T\+\_\+ecb\+\_\+encrypt}!cast.\+h@{cast.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+S\+T\+\_\+ecb\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, const C\+A\+S\+T\+\_\+\+K\+E\+Y $\ast$key, int enc)}{CAST_ecb_encrypt(const unsigned char *in, unsigned char *out, const CAST_KEY *key, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+A\+S\+T\+\_\+ecb\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{const {\bf C\+A\+S\+T\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{cast_8h_adacd984c35a8f5cd5aa3c10567370366}{}\label{cast_8h_adacd984c35a8f5cd5aa3c10567370366}
+\index{cast.\+h@{cast.\+h}!C\+A\+S\+T\+\_\+encrypt@{C\+A\+S\+T\+\_\+encrypt}}
+\index{C\+A\+S\+T\+\_\+encrypt@{C\+A\+S\+T\+\_\+encrypt}!cast.\+h@{cast.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+S\+T\+\_\+encrypt(\+C\+A\+S\+T\+\_\+\+L\+O\+N\+G $\ast$data, const C\+A\+S\+T\+\_\+\+K\+E\+Y $\ast$key)}{CAST_encrypt(CAST_LONG *data, const CAST_KEY *key)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+A\+S\+T\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+A\+S\+T\+\_\+\+L\+O\+NG} $\ast$}]{data, }
+\item[{const {\bf C\+A\+S\+T\+\_\+\+K\+EY} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{cast_8h_a78a7527954c054a5f3295531a150d2de}{}\label{cast_8h_a78a7527954c054a5f3295531a150d2de}
+\index{cast.\+h@{cast.\+h}!C\+A\+S\+T\+\_\+ofb64\+\_\+encrypt@{C\+A\+S\+T\+\_\+ofb64\+\_\+encrypt}}
+\index{C\+A\+S\+T\+\_\+ofb64\+\_\+encrypt@{C\+A\+S\+T\+\_\+ofb64\+\_\+encrypt}!cast.\+h@{cast.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+S\+T\+\_\+ofb64\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, long length, const C\+A\+S\+T\+\_\+\+K\+E\+Y $\ast$schedule, unsigned char $\ast$ivec, int $\ast$num)}{CAST_ofb64_encrypt(const unsigned char *in, unsigned char *out, long length, const CAST_KEY *schedule, unsigned char *ivec, int *num)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+A\+S\+T\+\_\+ofb64\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{long}]{length, }
+\item[{const {\bf C\+A\+S\+T\+\_\+\+K\+EY} $\ast$}]{schedule, }
+\item[{unsigned char $\ast$}]{ivec, }
+\item[{int $\ast$}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{cast_8h_a8cd12593f2bc16e6eda6efb6a51116af}{}\label{cast_8h_a8cd12593f2bc16e6eda6efb6a51116af}
+\index{cast.\+h@{cast.\+h}!C\+A\+S\+T\+\_\+set\+\_\+key@{C\+A\+S\+T\+\_\+set\+\_\+key}}
+\index{C\+A\+S\+T\+\_\+set\+\_\+key@{C\+A\+S\+T\+\_\+set\+\_\+key}!cast.\+h@{cast.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+S\+T\+\_\+set\+\_\+key(\+C\+A\+S\+T\+\_\+\+K\+E\+Y $\ast$key, int len, const unsigned char $\ast$data)}{CAST_set_key(CAST_KEY *key, int len, const unsigned char *data)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+A\+S\+T\+\_\+set\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+A\+S\+T\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{int}]{len, }
+\item[{const unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{cast_8h_addd6812e08dd8a873fae8af245b22e89}{}\label{cast_8h_addd6812e08dd8a873fae8af245b22e89}

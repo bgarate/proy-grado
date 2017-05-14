@@ -1,0 +1,317 @@
+\hypertarget{_a_r_s_a_l___mutex_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+S\+A\+L/\+A\+R\+S\+A\+L\+\_\+\+Mutex.h File Reference}
+\label{_a_r_s_a_l___mutex_8h}\index{src/hal/pb2/include/lib\+A\+R\+S\+A\+L/\+A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{src/hal/pb2/include/lib\+A\+R\+S\+A\+L/\+A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}}
+
+
+This file contains headers about mutex abstraction layer.  
+
+
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_s_a_l___mutex_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void $\ast$ \hyperlink{_a_r_s_a_l___mutex_8h_a6ad002456ab5e96d6bd51a0df06f0f57}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Define a mutex type. \end{DoxyCompactList}\item 
+typedef void $\ast$ \hyperlink{_a_r_s_a_l___mutex_8h_a0d0f621bbb4e623b8e1467ff4607f734}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Define a condition type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_a_r_s_a_l___mutex_8h_a20102c2841bfd623ae82bfeff773aad8}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Init} (\hyperlink{_a_r_s_a_l___mutex_8h_a6ad002456ab5e96d6bd51a0df06f0f57}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t} $\ast$mutex)
+\begin{DoxyCompactList}\small\item\em Initializes a mutex. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_s_a_l___mutex_8h_a0ba14ee5d09fa1f94afb3cf2687054d3}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Destroy} (\hyperlink{_a_r_s_a_l___mutex_8h_a6ad002456ab5e96d6bd51a0df06f0f57}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t} $\ast$mutex)
+\begin{DoxyCompactList}\small\item\em Destroys a mutex. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_s_a_l___mutex_8h_a54f45e290c720122b8f03c031516331b}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Lock} (\hyperlink{_a_r_s_a_l___mutex_8h_a6ad002456ab5e96d6bd51a0df06f0f57}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t} $\ast$mutex)
+\begin{DoxyCompactList}\small\item\em Locks a mutex. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_s_a_l___mutex_8h_a18184a834c1c8ff35d0cfaea3fb73306}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Trylock} (\hyperlink{_a_r_s_a_l___mutex_8h_a6ad002456ab5e96d6bd51a0df06f0f57}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t} $\ast$mutex)
+\begin{DoxyCompactList}\small\item\em Tries to lock a mutex. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_s_a_l___mutex_8h_aa795b083cf278b074cb384aec40d7418}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Unlock} (\hyperlink{_a_r_s_a_l___mutex_8h_a6ad002456ab5e96d6bd51a0df06f0f57}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t} $\ast$mutex)
+\begin{DoxyCompactList}\small\item\em Unlocks a mutex. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_s_a_l___mutex_8h_ae3732c6f480579f909852cbca5ac9e24}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Init} (\hyperlink{_a_r_s_a_l___mutex_8h_a0d0f621bbb4e623b8e1467ff4607f734}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t} $\ast$cond)
+\begin{DoxyCompactList}\small\item\em Initializes a condition. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_s_a_l___mutex_8h_a5f82deeb44dfed9003084f005c7887d2}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Destroy} (\hyperlink{_a_r_s_a_l___mutex_8h_a0d0f621bbb4e623b8e1467ff4607f734}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t} $\ast$cond)
+\begin{DoxyCompactList}\small\item\em Destroy a condition. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_s_a_l___mutex_8h_a91528cdc3f4fe26e9964232ded2ad627}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Wait} (\hyperlink{_a_r_s_a_l___mutex_8h_a0d0f621bbb4e623b8e1467ff4607f734}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t} $\ast$cond, \hyperlink{_a_r_s_a_l___mutex_8h_a6ad002456ab5e96d6bd51a0df06f0f57}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t} $\ast$mutex)
+\begin{DoxyCompactList}\small\item\em Wait on a condition. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_s_a_l___mutex_8h_a36b5832f3fbd279d3f584f230dab8c49}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Timedwait} (\hyperlink{_a_r_s_a_l___mutex_8h_a0d0f621bbb4e623b8e1467ff4607f734}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t} $\ast$cond, \hyperlink{_a_r_s_a_l___mutex_8h_a6ad002456ab5e96d6bd51a0df06f0f57}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t} $\ast$mutex, int timeout)
+\begin{DoxyCompactList}\small\item\em Wait on a condition and returns error. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_s_a_l___mutex_8h_a2fdb9078301379ce852784db1e065025}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Signal} (\hyperlink{_a_r_s_a_l___mutex_8h_a0d0f621bbb4e623b8e1467ff4607f734}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t} $\ast$cond)
+\begin{DoxyCompactList}\small\item\em Signal a condition. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_s_a_l___mutex_8h_aabab4cabe677f1bcdbe19e1cc59130cc}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Broadcast} (\hyperlink{_a_r_s_a_l___mutex_8h_a0d0f621bbb4e623b8e1467ff4607f734}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t} $\ast$cond)
+\begin{DoxyCompactList}\small\item\em Broadcast a condition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains headers about mutex abstraction layer. 
+
+\begin{DoxyDate}{Date}
+05/18/2012 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:frederic.dhaeyer@parrot.com}{\tt frederic.\+dhaeyer@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}!A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t@{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t}}
+\index{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t@{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t}!A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t}{ARSAL_Cond_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t}}\hypertarget{_a_r_s_a_l___mutex_8h_a0d0f621bbb4e623b8e1467ff4607f734}{}\label{_a_r_s_a_l___mutex_8h_a0d0f621bbb4e623b8e1467ff4607f734}
+
+
+Define a condition type. 
+
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}!A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t@{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t}}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t@{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t}!A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t}{ARSAL_Mutex_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t}}\hypertarget{_a_r_s_a_l___mutex_8h_a6ad002456ab5e96d6bd51a0df06f0f57}{}\label{_a_r_s_a_l___mutex_8h_a6ad002456ab5e96d6bd51a0df06f0f57}
+
+
+Define a mutex type. 
+
+
+
+\subsection{Function Documentation}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}!A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Broadcast@{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Broadcast}}
+\index{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Broadcast@{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Broadcast}!A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Broadcast(\+A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t $\ast$cond)}{ARSAL_Cond_Broadcast(ARSAL_Cond_t *cond)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Broadcast (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t} $\ast$}]{cond}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___mutex_8h_aabab4cabe677f1bcdbe19e1cc59130cc}{}\label{_a_r_s_a_l___mutex_8h_aabab4cabe677f1bcdbe19e1cc59130cc}
+
+
+Broadcast a condition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cond} & The condition to broadcast \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, \hyperlink{_a_r_s_a_l___mutex_8h_aabab4cabe677f1bcdbe19e1cc59130cc}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Broadcast()} returns 0. Otherwise, it returns an error number (See errno.\+h) \\
+\hline
+\end{DoxyRetVals}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}!A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Destroy@{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Destroy}}
+\index{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Destroy@{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Destroy}!A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Destroy(\+A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t $\ast$cond)}{ARSAL_Cond_Destroy(ARSAL_Cond_t *cond)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Destroy (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t} $\ast$}]{cond}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___mutex_8h_a5f82deeb44dfed9003084f005c7887d2}{}\label{_a_r_s_a_l___mutex_8h_a5f82deeb44dfed9003084f005c7887d2}
+
+
+Destroy a condition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cond} & The condition to destroy \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, \hyperlink{_a_r_s_a_l___mutex_8h_a5f82deeb44dfed9003084f005c7887d2}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Destroy()} returns 0. Otherwise, it returns an error number (See errno.\+h) \\
+\hline
+\end{DoxyRetVals}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}!A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Init@{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Init}}
+\index{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Init@{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Init}!A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Init(\+A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t $\ast$cond)}{ARSAL_Cond_Init(ARSAL_Cond_t *cond)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t} $\ast$}]{cond}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___mutex_8h_ae3732c6f480579f909852cbca5ac9e24}{}\label{_a_r_s_a_l___mutex_8h_ae3732c6f480579f909852cbca5ac9e24}
+
+
+Initializes a condition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cond} & The condition to initialize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, \hyperlink{_a_r_s_a_l___mutex_8h_ae3732c6f480579f909852cbca5ac9e24}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Init()} returns 0. Otherwise, it returns an error number (See errno.\+h) \\
+\hline
+\end{DoxyRetVals}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}!A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Signal@{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Signal}}
+\index{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Signal@{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Signal}!A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Signal(\+A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t $\ast$cond)}{ARSAL_Cond_Signal(ARSAL_Cond_t *cond)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Signal (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t} $\ast$}]{cond}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___mutex_8h_a2fdb9078301379ce852784db1e065025}{}\label{_a_r_s_a_l___mutex_8h_a2fdb9078301379ce852784db1e065025}
+
+
+Signal a condition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cond} & The condition to signal \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, \hyperlink{_a_r_s_a_l___mutex_8h_a2fdb9078301379ce852784db1e065025}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Signal()} returns 0. Otherwise, it returns an error number (See errno.\+h) \\
+\hline
+\end{DoxyRetVals}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}!A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Timedwait@{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Timedwait}}
+\index{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Timedwait@{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Timedwait}!A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Timedwait(\+A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t $\ast$cond, A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t $\ast$mutex, int timeout)}{ARSAL_Cond_Timedwait(ARSAL_Cond_t *cond, ARSAL_Mutex_t *mutex, int timeout)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Timedwait (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t} $\ast$}]{cond, }
+\item[{{\bf A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t} $\ast$}]{mutex, }
+\item[{int}]{timeout}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___mutex_8h_a36b5832f3fbd279d3f584f230dab8c49}{}\label{_a_r_s_a_l___mutex_8h_a36b5832f3fbd279d3f584f230dab8c49}
+
+
+Wait on a condition and returns error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cond} & The condition to wait \\
+\hline
+{\em mutex} & The mutex linked to condition. \\
+\hline
+{\em timeout} & The time (ms) to wait before \hyperlink{_a_r_s_a_l___mutex_8h_a36b5832f3fbd279d3f584f230dab8c49}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Timedwait()} returns E\+T\+I\+M\+E\+D\+O\+UT. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, \hyperlink{_a_r_s_a_l___mutex_8h_a36b5832f3fbd279d3f584f230dab8c49}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Timedwait()} returns 0. If the time is specified by timeout has passed, \hyperlink{_a_r_s_a_l___mutex_8h_a36b5832f3fbd279d3f584f230dab8c49}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Timedwait()} returns E\+T\+I\+M\+E\+D\+O\+UT. Otherwise, it returns an error number (See errno.\+h) \\
+\hline
+\end{DoxyRetVals}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}!A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Wait@{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Wait}}
+\index{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Wait@{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Wait}!A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Wait(\+A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t $\ast$cond, A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t $\ast$mutex)}{ARSAL_Cond_Wait(ARSAL_Cond_t *cond, ARSAL_Mutex_t *mutex)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Wait (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+t} $\ast$}]{cond, }
+\item[{{\bf A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t} $\ast$}]{mutex}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___mutex_8h_a91528cdc3f4fe26e9964232ded2ad627}{}\label{_a_r_s_a_l___mutex_8h_a91528cdc3f4fe26e9964232ded2ad627}
+
+
+Wait on a condition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cond} & The condition to wait \\
+\hline
+{\em mutex} & The mutex link to condition. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, \hyperlink{_a_r_s_a_l___mutex_8h_a91528cdc3f4fe26e9964232ded2ad627}{A\+R\+S\+A\+L\+\_\+\+Cond\+\_\+\+Wait()} returns 0. Otherwise, it returns an error number (See errno.\+h) \\
+\hline
+\end{DoxyRetVals}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}!A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Destroy@{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Destroy}}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Destroy@{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Destroy}!A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Destroy(\+A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t $\ast$mutex)}{ARSAL_Mutex_Destroy(ARSAL_Mutex_t *mutex)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Destroy (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t} $\ast$}]{mutex}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___mutex_8h_a0ba14ee5d09fa1f94afb3cf2687054d3}{}\label{_a_r_s_a_l___mutex_8h_a0ba14ee5d09fa1f94afb3cf2687054d3}
+
+
+Destroys a mutex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mutex} & The mutex to destroy \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, \hyperlink{_a_r_s_a_l___mutex_8h_a0ba14ee5d09fa1f94afb3cf2687054d3}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Destroy()} returns 0. Otherwise, it returns an error number (See errno.\+h) \\
+\hline
+\end{DoxyRetVals}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}!A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Init@{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Init}}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Init@{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Init}!A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Init(\+A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t $\ast$mutex)}{ARSAL_Mutex_Init(ARSAL_Mutex_t *mutex)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t} $\ast$}]{mutex}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___mutex_8h_a20102c2841bfd623ae82bfeff773aad8}{}\label{_a_r_s_a_l___mutex_8h_a20102c2841bfd623ae82bfeff773aad8}
+
+
+Initializes a mutex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mutex} & The mutex to initialize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, \hyperlink{_a_r_s_a_l___mutex_8h_a20102c2841bfd623ae82bfeff773aad8}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Init()} returns 0. Otherwise, it returns an error number (See errno.\+h) \\
+\hline
+\end{DoxyRetVals}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}!A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Lock@{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Lock}}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Lock@{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Lock}!A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Lock(\+A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t $\ast$mutex)}{ARSAL_Mutex_Lock(ARSAL_Mutex_t *mutex)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Lock (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t} $\ast$}]{mutex}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___mutex_8h_a54f45e290c720122b8f03c031516331b}{}\label{_a_r_s_a_l___mutex_8h_a54f45e290c720122b8f03c031516331b}
+
+
+Locks a mutex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mutex} & The mutex to lock \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, \hyperlink{_a_r_s_a_l___mutex_8h_a54f45e290c720122b8f03c031516331b}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Lock()} returns 0. Otherwise, it returns an error number (See errno.\+h) \\
+\hline
+\end{DoxyRetVals}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}!A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Trylock@{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Trylock}}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Trylock@{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Trylock}!A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Trylock(\+A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t $\ast$mutex)}{ARSAL_Mutex_Trylock(ARSAL_Mutex_t *mutex)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Trylock (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t} $\ast$}]{mutex}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___mutex_8h_a18184a834c1c8ff35d0cfaea3fb73306}{}\label{_a_r_s_a_l___mutex_8h_a18184a834c1c8ff35d0cfaea3fb73306}
+
+
+Tries to lock a mutex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mutex} & The mutex to lock \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, \hyperlink{_a_r_s_a_l___mutex_8h_a18184a834c1c8ff35d0cfaea3fb73306}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Trylock()} returns 0. Otherwise, it returns an error number (See errno.\+h) \\
+\hline
+\end{DoxyRetVals}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}!A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Unlock@{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Unlock}}
+\index{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Unlock@{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Unlock}!A\+R\+S\+A\+L\+\_\+\+Mutex.\+h@{A\+R\+S\+A\+L\+\_\+\+Mutex.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Unlock(\+A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t $\ast$mutex)}{ARSAL_Mutex_Unlock(ARSAL_Mutex_t *mutex)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Unlock (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+t} $\ast$}]{mutex}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___mutex_8h_aa795b083cf278b074cb384aec40d7418}{}\label{_a_r_s_a_l___mutex_8h_aa795b083cf278b074cb384aec40d7418}
+
+
+Unlocks a mutex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mutex} & The mutex to unlock \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, \hyperlink{_a_r_s_a_l___mutex_8h_aa795b083cf278b074cb384aec40d7418}{A\+R\+S\+A\+L\+\_\+\+Mutex\+\_\+\+Unlock()} returns 0. Otherwise, it returns an error number (See errno.\+h) \\
+\hline
+\end{DoxyRetVals}

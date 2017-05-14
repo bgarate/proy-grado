@@ -1,0 +1,24 @@
+<map id="_exec_string" name="_exec_string">
+<area shape="rect" id="node2" href="$ext_api_8h.html#ae2c3b5ea5407956d88edabd80e39bc7d" title="simxGetObjectHandle" alt="" coords="171,152,322,179"/>
+<area shape="rect" id="node5" href="$ext_api_8h.html#a551340152d28595e77d32d0b9a5bb7ef" title="simxGetUIHandle" alt="" coords="420,203,547,230"/>
+<area shape="rect" id="node6" href="$ext_api_8h.html#ad55caface196cbf64f1ebdcd1954e1f9" title="simxEraseFile" alt="" coords="194,304,299,331"/>
+<area shape="rect" id="node7" href="$ext_api_8h.html#aba004fe8c4230080573cf6a84609cc4c" title="simxLoadModel" alt="" coords="427,254,540,280"/>
+<area shape="rect" id="node8" href="$ext_api_8h.html#a0c14eaf2751f64cb99cc09ca40f690d1" title="simxLoadUI" alt="" coords="437,355,529,382"/>
+<area shape="rect" id="node9" href="$ext_api_8h.html#a334778d7372013cf32278c35cfb1e401" title="simxLoadScene" alt="" coords="426,406,541,432"/>
+<area shape="rect" id="node10" href="$ext_api_8h.html#a76ab74e38042abbe5b2b0501956c39a4" title="simxAddStatusbarMessage" alt="" coords="392,456,575,483"/>
+<area shape="rect" id="node11" href="$ext_api_8h.html#a345bad87b5bf69f83140350561700fe0" title="simxGetCollisionHandle" alt="" coords="402,507,565,534"/>
+<area shape="rect" id="node12" href="$ext_api_8h.html#a05ae1d4d63bfd9617e393ddc23261477" title="simxGetDistanceHandle" alt="" coords="401,558,565,584"/>
+<area shape="rect" id="node13" href="$ext_api_8h.html#aa9598d78fada180b14f0770f976906ed" title="simxGetCollectionHandle" alt="" coords="398,608,569,635"/>
+<area shape="rect" id="node14" href="$ext_api_8h.html#a732427cc6d34284522b6ab1c313e4165" title="simxClearFloatSignal" alt="" coords="173,659,320,686"/>
+<area shape="rect" id="node15" href="$ext_api_8h.html#ae385e4a56317037e1b032f9361cf44be" title="simxClearIntegerSignal" alt="" coords="168,710,325,736"/>
+<area shape="rect" id="node16" href="$ext_api_8h.html#a04bdbf1718e8f077f3de9e6c43153751" title="simxClearStringSignal" alt="" coords="171,862,322,888"/>
+<area shape="rect" id="node19" href="$ext_api_8h.html#ab906636b88091a3eab24f30c40218050" title="simxGetFloatSignal" alt="" coords="179,760,315,787"/>
+<area shape="rect" id="node20" href="$ext_api_8h.html#aedb97e8c231fb265ed8b37bf40377d29" title="simxGetIntegerSignal" alt="" coords="173,811,320,838"/>
+<area shape="rect" id="node21" href="$ext_api_8h.html#afb0369ac6659537bc4d51f688c71ea76" title="simxGetStringSignal" alt="" coords="176,14,317,40"/>
+<area shape="rect" id="node22" href="$ext_api_8h.html#ac3f225130c93f73e6a4afed33fdd7089" title="simxGetAndClearStringSignal" alt="" coords="149,912,344,939"/>
+<area shape="rect" id="node23" href="$ext_api_8h.html#ab5b5b691c129977c493d487bd8cd48c2" title="simxReadStringStream" alt="" coords="168,90,325,116"/>
+<area shape="rect" id="node3" href="$ext_api_8h.html#a0e7431db44935b74cf49ac5aa3edb6ec" title="mtlb_simxCallScriptFunction_b" alt="" coords="623,507,825,534"/>
+<area shape="rect" id="node4" href="$class_vrephal.html#ad9377410a966919d65911ed9dac227b7" title="Vrephal::Vrephal" alt="" coords="424,102,543,128"/>
+<area shape="rect" id="node17" href="$ext_api_8h.html#a433f3a57228fb5b0416746febcbceca0" title="simxQuery" alt="" coords="441,912,526,939"/>
+<area shape="rect" id="node18" href="$ext_api_8h.html#accaba236d303073e172c5f2d41e66f4e" title="mtlb_simxQuery" alt="" coords="665,912,783,939"/>
+</map>

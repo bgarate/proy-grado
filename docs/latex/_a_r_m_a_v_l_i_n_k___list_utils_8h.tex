@@ -1,0 +1,158 @@
+\hypertarget{_a_r_m_a_v_l_i_n_k___list_utils_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.h File Reference}
+\label{_a_r_m_a_v_l_i_n_k___list_utils_8h}\index{src/hal/pb2/include/lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h@{src/hal/pb2/include/lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h}}
+
+
+A\+R\+Mavlink library List Utils.  
+
+
+{\ttfamily \#include $<$mavlink/parrot/mavlink.\+h$>$}\\*
+Include dependency graph for A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_m_a_v_l_i_n_k___list_utils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_m_a_v_l_i_n_k___list_utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{_a_r_m_a_v_l_i_n_k___list_utils_8h_a15f3b0988ac436ab109be894828d8aa7}{mission\+\_\+item\+\_\+list\+\_\+t} \hyperlink{_a_r_m_a_v_l_i_n_k___list_utils_8h_a15f3b0988ac436ab109be894828d8aa7}{mission\+\_\+item\+\_\+list\+\_\+t}
+\begin{DoxyCompactList}\small\item\em a list of mission item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___list_utils_8h_a15f3b0988ac436ab109be894828d8aa7}{mission\+\_\+item\+\_\+list\+\_\+t} $\ast$ \hyperlink{_a_r_m_a_v_l_i_n_k___list_utils_8h_ae61272ed06e574a06346a88a12f26035}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+New} (void)
+\begin{DoxyCompactList}\small\item\em Create a new mission item list. \end{DoxyCompactList}\item 
+mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$ \hyperlink{_a_r_m_a_v_l_i_n_k___list_utils_8h_af14a39496272c6e546f0ce9f5ee1fbb1}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Get} (const \hyperlink{_a_r_m_a_v_l_i_n_k___list_utils_8h_a15f3b0988ac436ab109be894828d8aa7}{mission\+\_\+item\+\_\+list\+\_\+t} $\ast$const list, const uint16\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Get a mission item in the list according to its index. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_m_a_v_l_i_n_k___list_utils_8h_acc92f1e9377694ac88b59e1fa5dd0f16}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Get\+Size} (const \hyperlink{_a_r_m_a_v_l_i_n_k___list_utils_8h_a15f3b0988ac436ab109be894828d8aa7}{mission\+\_\+item\+\_\+list\+\_\+t} $\ast$const list)
+\begin{DoxyCompactList}\small\item\em Get the current size of the list (the number of mission item which are actually in the list) \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_m_a_v_l_i_n_k___list_utils_8h_ac1fd7b26f8fcf5d66105b739c1ae1cf0}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Delete} (\hyperlink{_a_r_m_a_v_l_i_n_k___list_utils_8h_a15f3b0988ac436ab109be894828d8aa7}{mission\+\_\+item\+\_\+list\+\_\+t} $\ast$$\ast$list)
+\begin{DoxyCompactList}\small\item\em delete the list \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+R\+Mavlink library List Utils. 
+
+\begin{DoxyDate}{Date}
+14/05/2014 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:djavan.bertrand@parrot.com}{\tt djavan.\+bertrand@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h}!mission\+\_\+item\+\_\+list\+\_\+t@{mission\+\_\+item\+\_\+list\+\_\+t}}
+\index{mission\+\_\+item\+\_\+list\+\_\+t@{mission\+\_\+item\+\_\+list\+\_\+t}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{mission\+\_\+item\+\_\+list\+\_\+t}{mission_item_list_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf mission\+\_\+item\+\_\+list\+\_\+t} {\bf mission\+\_\+item\+\_\+list\+\_\+t}}\hypertarget{_a_r_m_a_v_l_i_n_k___list_utils_8h_a15f3b0988ac436ab109be894828d8aa7}{}\label{_a_r_m_a_v_l_i_n_k___list_utils_8h_a15f3b0988ac436ab109be894828d8aa7}
+
+
+a list of mission item. 
+
+\begin{DoxyWarning}{Warning}
+the list allocates first a small amount of memory. Then, when you add too much points, it will reallocate memory. 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+mavlink\+\_\+mission\+\_\+item\+\_\+t 
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Delete@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Delete}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Delete@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Delete}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Delete(mission\+\_\+item\+\_\+list\+\_\+t $\ast$$\ast$list)}{ARMAVLINK_ListUtils_MissionItemListDelete(mission_item_list_t **list)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf mission\+\_\+item\+\_\+list\+\_\+t} $\ast$$\ast$}]{list}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___list_utils_8h_ac1fd7b26f8fcf5d66105b739c1ae1cf0}{}\label{_a_r_m_a_v_l_i_n_k___list_utils_8h_ac1fd7b26f8fcf5d66105b739c1ae1cf0}
+
+
+delete the list 
+
+\begin{DoxyWarning}{Warning}
+This function free memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em list} & \+: address of the pointer on the list \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Get@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Get}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Get@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Get}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Get(const mission\+\_\+item\+\_\+list\+\_\+t $\ast$const list, const uint16\+\_\+t index)}{ARMAVLINK_ListUtils_MissionItemListGet(const mission_item_list_t *const list, const uint16_t index)}}]{\setlength{\rightskip}{0pt plus 5cm}mavlink\+\_\+mission\+\_\+item\+\_\+t$\ast$ A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Get (
+\begin{DoxyParamCaption}
+\item[{const {\bf mission\+\_\+item\+\_\+list\+\_\+t} $\ast$const}]{list, }
+\item[{const uint16\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___list_utils_8h_af14a39496272c6e546f0ce9f5ee1fbb1}{}\label{_a_r_m_a_v_l_i_n_k___list_utils_8h_af14a39496272c6e546f0ce9f5ee1fbb1}
+
+
+Get a mission item in the list according to its index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em list} & \+: a pointer on the list \\
+\hline
+\mbox{\tt in}  & {\em the} & index of the mission item to return \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em a} & pointer on the mission item if it exists, otherwise null \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+mavlink\+\_\+mission\+\_\+item\+\_\+t in \hyperlink{mavlink__msg__mission__item_8h}{mavlink\+\_\+msg\+\_\+mission\+\_\+item.\+h} 
+\end{DoxySeeAlso}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Get\+Size@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Get\+Size}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Get\+Size@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Get\+Size}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Get\+Size(const mission\+\_\+item\+\_\+list\+\_\+t $\ast$const list)}{ARMAVLINK_ListUtils_MissionItemListGetSize(const mission_item_list_t *const list)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Get\+Size (
+\begin{DoxyParamCaption}
+\item[{const {\bf mission\+\_\+item\+\_\+list\+\_\+t} $\ast$const}]{list}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___list_utils_8h_acc92f1e9377694ac88b59e1fa5dd0f16}{}\label{_a_r_m_a_v_l_i_n_k___list_utils_8h_acc92f1e9377694ac88b59e1fa5dd0f16}
+
+
+Get the current size of the list (the number of mission item which are actually in the list) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & \+: a pointer on the list \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em the} & size of the list \\
+\hline
+\end{DoxyRetVals}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+New@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+New}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+New@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+New}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+New(void)}{ARMAVLINK_ListUtils_MissionItemListNew(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mission\+\_\+item\+\_\+list\+\_\+t}$\ast$ A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+New (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___list_utils_8h_ae61272ed06e574a06346a88a12f26035}{}\label{_a_r_m_a_v_l_i_n_k___list_utils_8h_ae61272ed06e574a06346a88a12f26035}
+
+
+Create a new mission item list. 
+
+\begin{DoxyWarning}{Warning}
+This function allocate memory 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{_a_r_m_a_v_l_i_n_k___list_utils_8h_ac1fd7b26f8fcf5d66105b739c1ae1cf0}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Delete()} must be called to delete the list and free the memory allocated. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+Pointer on the new list 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_m_a_v_l_i_n_k___list_utils_8h_ac1fd7b26f8fcf5d66105b739c1ae1cf0}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils\+\_\+\+Mission\+Item\+List\+Delete()} 
+\end{DoxySeeAlso}

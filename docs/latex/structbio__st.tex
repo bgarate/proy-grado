@@ -1,0 +1,102 @@
+\hypertarget{structbio__st}{}\section{bio\+\_\+st Struct Reference}
+\label{structbio__st}\index{bio\+\_\+st@{bio\+\_\+st}}
+
+
+{\ttfamily \#include $<$bio.\+h$>$}
+
+
+
+Collaboration diagram for bio\+\_\+st\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{structbio__st__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{bio_8h_a2b58cec65ab7bb9eda7c86d707e687ca}{B\+I\+O\+\_\+\+M\+E\+T\+H\+OD} $\ast$ \hyperlink{structbio__st_ac4bef031359b51902ddfb2a7aeaa4dd7}{method}
+\item 
+long($\ast$ \hyperlink{structbio__st_a6449aab690198cbecb3bc45d9cbf59ac}{callback} )(struct \hyperlink{structbio__st}{bio\+\_\+st} $\ast$, int, const char $\ast$, int, long, long)
+\item 
+char $\ast$ \hyperlink{structbio__st_a50cdd0a5e46c7253bc6ab1cb37abeaca}{cb\+\_\+arg}
+\item 
+int \hyperlink{structbio__st_a365cca316f1daf354096eec7dbf98102}{init}
+\item 
+int \hyperlink{structbio__st_adafdb3d0f58c31b776525ddceec5068b}{shutdown}
+\item 
+int \hyperlink{structbio__st_aa815fc844603d4a3fcf7abebfeb3f546}{flags}
+\item 
+int \hyperlink{structbio__st_a4c3a2c24d7c41e8887762750b213e9f0}{retry\+\_\+reason}
+\item 
+int \hyperlink{structbio__st_a3b769c998195a0f139bc68e1a36aaf09}{num}
+\item 
+void $\ast$ \hyperlink{structbio__st_ad59e7884d7949dd931c76ac0d84c2ea5}{ptr}
+\item 
+struct \hyperlink{structbio__st}{bio\+\_\+st} $\ast$ \hyperlink{structbio__st_adf41b29002a5236e8112253dd9d8acbf}{next\+\_\+bio}
+\item 
+struct \hyperlink{structbio__st}{bio\+\_\+st} $\ast$ \hyperlink{structbio__st_a86fd505e8e4af7bb98312d707ee9d170}{prev\+\_\+bio}
+\item 
+int \hyperlink{structbio__st_a6b72d783529f2185bb1c452ab6845d5e}{references}
+\item 
+unsigned long \hyperlink{structbio__st_ab70dbdf7e557e771f49b12df73e6a91e}{num\+\_\+read}
+\item 
+unsigned long \hyperlink{structbio__st_a3b884313deeabd3eb35e693394937a0e}{num\+\_\+write}
+\item 
+\hyperlink{ossl__typ_8h_a7eaff1c18057495d8af18f22d1370b51}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} \hyperlink{structbio__st_a499ee1071ec22ec4da6086422785a0ca}{ex\+\_\+data}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{bio\+\_\+st@{bio\+\_\+st}!callback@{callback}}
+\index{callback@{callback}!bio\+\_\+st@{bio\+\_\+st}}
+\subsubsection[{\texorpdfstring{callback}{callback}}]{\setlength{\rightskip}{0pt plus 5cm}long($\ast$ bio\+\_\+st\+::callback) (struct {\bf bio\+\_\+st} $\ast$, int, const char $\ast$, int, long, long)}\hypertarget{structbio__st_a6449aab690198cbecb3bc45d9cbf59ac}{}\label{structbio__st_a6449aab690198cbecb3bc45d9cbf59ac}
+\index{bio\+\_\+st@{bio\+\_\+st}!cb\+\_\+arg@{cb\+\_\+arg}}
+\index{cb\+\_\+arg@{cb\+\_\+arg}!bio\+\_\+st@{bio\+\_\+st}}
+\subsubsection[{\texorpdfstring{cb\+\_\+arg}{cb_arg}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ bio\+\_\+st\+::cb\+\_\+arg}\hypertarget{structbio__st_a50cdd0a5e46c7253bc6ab1cb37abeaca}{}\label{structbio__st_a50cdd0a5e46c7253bc6ab1cb37abeaca}
+\index{bio\+\_\+st@{bio\+\_\+st}!ex\+\_\+data@{ex\+\_\+data}}
+\index{ex\+\_\+data@{ex\+\_\+data}!bio\+\_\+st@{bio\+\_\+st}}
+\subsubsection[{\texorpdfstring{ex\+\_\+data}{ex_data}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} bio\+\_\+st\+::ex\+\_\+data}\hypertarget{structbio__st_a499ee1071ec22ec4da6086422785a0ca}{}\label{structbio__st_a499ee1071ec22ec4da6086422785a0ca}
+\index{bio\+\_\+st@{bio\+\_\+st}!flags@{flags}}
+\index{flags@{flags}!bio\+\_\+st@{bio\+\_\+st}}
+\subsubsection[{\texorpdfstring{flags}{flags}}]{\setlength{\rightskip}{0pt plus 5cm}int bio\+\_\+st\+::flags}\hypertarget{structbio__st_aa815fc844603d4a3fcf7abebfeb3f546}{}\label{structbio__st_aa815fc844603d4a3fcf7abebfeb3f546}
+\index{bio\+\_\+st@{bio\+\_\+st}!init@{init}}
+\index{init@{init}!bio\+\_\+st@{bio\+\_\+st}}
+\subsubsection[{\texorpdfstring{init}{init}}]{\setlength{\rightskip}{0pt plus 5cm}int bio\+\_\+st\+::init}\hypertarget{structbio__st_a365cca316f1daf354096eec7dbf98102}{}\label{structbio__st_a365cca316f1daf354096eec7dbf98102}
+\index{bio\+\_\+st@{bio\+\_\+st}!method@{method}}
+\index{method@{method}!bio\+\_\+st@{bio\+\_\+st}}
+\subsubsection[{\texorpdfstring{method}{method}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\+I\+O\+\_\+\+M\+E\+T\+H\+OD}$\ast$ bio\+\_\+st\+::method}\hypertarget{structbio__st_ac4bef031359b51902ddfb2a7aeaa4dd7}{}\label{structbio__st_ac4bef031359b51902ddfb2a7aeaa4dd7}
+\index{bio\+\_\+st@{bio\+\_\+st}!next\+\_\+bio@{next\+\_\+bio}}
+\index{next\+\_\+bio@{next\+\_\+bio}!bio\+\_\+st@{bio\+\_\+st}}
+\subsubsection[{\texorpdfstring{next\+\_\+bio}{next_bio}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf bio\+\_\+st}$\ast$ bio\+\_\+st\+::next\+\_\+bio}\hypertarget{structbio__st_adf41b29002a5236e8112253dd9d8acbf}{}\label{structbio__st_adf41b29002a5236e8112253dd9d8acbf}
+\index{bio\+\_\+st@{bio\+\_\+st}!num@{num}}
+\index{num@{num}!bio\+\_\+st@{bio\+\_\+st}}
+\subsubsection[{\texorpdfstring{num}{num}}]{\setlength{\rightskip}{0pt plus 5cm}int bio\+\_\+st\+::num}\hypertarget{structbio__st_a3b769c998195a0f139bc68e1a36aaf09}{}\label{structbio__st_a3b769c998195a0f139bc68e1a36aaf09}
+\index{bio\+\_\+st@{bio\+\_\+st}!num\+\_\+read@{num\+\_\+read}}
+\index{num\+\_\+read@{num\+\_\+read}!bio\+\_\+st@{bio\+\_\+st}}
+\subsubsection[{\texorpdfstring{num\+\_\+read}{num_read}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long bio\+\_\+st\+::num\+\_\+read}\hypertarget{structbio__st_ab70dbdf7e557e771f49b12df73e6a91e}{}\label{structbio__st_ab70dbdf7e557e771f49b12df73e6a91e}
+\index{bio\+\_\+st@{bio\+\_\+st}!num\+\_\+write@{num\+\_\+write}}
+\index{num\+\_\+write@{num\+\_\+write}!bio\+\_\+st@{bio\+\_\+st}}
+\subsubsection[{\texorpdfstring{num\+\_\+write}{num_write}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long bio\+\_\+st\+::num\+\_\+write}\hypertarget{structbio__st_a3b884313deeabd3eb35e693394937a0e}{}\label{structbio__st_a3b884313deeabd3eb35e693394937a0e}
+\index{bio\+\_\+st@{bio\+\_\+st}!prev\+\_\+bio@{prev\+\_\+bio}}
+\index{prev\+\_\+bio@{prev\+\_\+bio}!bio\+\_\+st@{bio\+\_\+st}}
+\subsubsection[{\texorpdfstring{prev\+\_\+bio}{prev_bio}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf bio\+\_\+st}$\ast$ bio\+\_\+st\+::prev\+\_\+bio}\hypertarget{structbio__st_a86fd505e8e4af7bb98312d707ee9d170}{}\label{structbio__st_a86fd505e8e4af7bb98312d707ee9d170}
+\index{bio\+\_\+st@{bio\+\_\+st}!ptr@{ptr}}
+\index{ptr@{ptr}!bio\+\_\+st@{bio\+\_\+st}}
+\subsubsection[{\texorpdfstring{ptr}{ptr}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ bio\+\_\+st\+::ptr}\hypertarget{structbio__st_ad59e7884d7949dd931c76ac0d84c2ea5}{}\label{structbio__st_ad59e7884d7949dd931c76ac0d84c2ea5}
+\index{bio\+\_\+st@{bio\+\_\+st}!references@{references}}
+\index{references@{references}!bio\+\_\+st@{bio\+\_\+st}}
+\subsubsection[{\texorpdfstring{references}{references}}]{\setlength{\rightskip}{0pt plus 5cm}int bio\+\_\+st\+::references}\hypertarget{structbio__st_a6b72d783529f2185bb1c452ab6845d5e}{}\label{structbio__st_a6b72d783529f2185bb1c452ab6845d5e}
+\index{bio\+\_\+st@{bio\+\_\+st}!retry\+\_\+reason@{retry\+\_\+reason}}
+\index{retry\+\_\+reason@{retry\+\_\+reason}!bio\+\_\+st@{bio\+\_\+st}}
+\subsubsection[{\texorpdfstring{retry\+\_\+reason}{retry_reason}}]{\setlength{\rightskip}{0pt plus 5cm}int bio\+\_\+st\+::retry\+\_\+reason}\hypertarget{structbio__st_a4c3a2c24d7c41e8887762750b213e9f0}{}\label{structbio__st_a4c3a2c24d7c41e8887762750b213e9f0}
+\index{bio\+\_\+st@{bio\+\_\+st}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!bio\+\_\+st@{bio\+\_\+st}}
+\subsubsection[{\texorpdfstring{shutdown}{shutdown}}]{\setlength{\rightskip}{0pt plus 5cm}int bio\+\_\+st\+::shutdown}\hypertarget{structbio__st_adafdb3d0f58c31b776525ddceec5068b}{}\label{structbio__st_adafdb3d0f58c31b776525ddceec5068b}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/openssl/\hyperlink{bio_8h}{bio.\+h}\end{DoxyCompactItemize}

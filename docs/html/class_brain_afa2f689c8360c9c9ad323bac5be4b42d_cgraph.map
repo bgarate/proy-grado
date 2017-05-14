@@ -1,0 +1,29 @@
+<map id="Brain::setup" name="Brain::setup">
+<area shape="rect" id="node2" href="$class_logger.html#acebb37f5538780e6c14f13de6ec497bc" title="Logger::getInstance" alt="" coords="614,75,751,101"/>
+<area shape="rect" id="node3" href="$class_logger.html#a5adf33889fdf061aa0dc756d38eb5e90" title="Logger::setSource" alt="" coords="166,176,294,203"/>
+<area shape="rect" id="node4" href="$class_config.html#aea3a5f84be3a9cdf280fff77fdcb51f0" title="Config::getBodyPort" alt="" coords="160,227,300,253"/>
+<area shape="rect" id="node5" href="$class_broadcaster.html#a52e7aac07f5ef3528a3f0e9bb4dd69e2" title="Broadcaster::setup" alt="" coords="164,277,296,304"/>
+<area shape="rect" id="node6" href="$class_config.html#a4362d19cea622b5438a70380aa965b69" title="Config::getBroadcastPort" alt="" coords="145,328,315,355"/>
+<area shape="rect" id="node7" href="$class_communication.html#aa837877847fe4b439f1b7137d4480157" title="Communication::setup" alt="" coords="153,379,307,405"/>
+<area shape="rect" id="node8" href="$class_config.html#a13187ce8db88e4cc61b5137a0da34b12" title="Config::getName" alt="" coords="169,429,291,456"/>
+<area shape="rect" id="node9" href="$class_config.html#aa43aba31686b3c364b629e42cd492416" title="Config::getId" alt="" coords="181,480,279,507"/>
+<area shape="rect" id="node10" href="$class_socket_channel.html#a9a251fc36970a2fab2a49f063a73c8aa" title="SocketChannel::serve" alt="" coords="155,75,305,101"/>
+<area shape="rect" id="node13" href="$class_logger.html#a4fe03aa253188ef739b5dec5e036f640" title="Logger::logInfo" alt="" coords="404,125,512,152"/>
+<area shape="rect" id="node14" href="$class_message_builder.html#a43d19ca77072e177d5bc494b7aced750" title="MessageBuilder::build" alt="" coords="155,531,305,557"/>
+<area shape="rect" id="node25" href="$class_message.html#a06f736eaae116cd37bdaeaccf6c46135" title="Message::mutable_ping" alt="" coords="150,581,310,608"/>
+<area shape="rect" id="node26" href="$class_ping.html#a958fe39d58bc6d1a32ce718f6d43f67d" title="Ping::set_type" alt="" coords="177,632,283,659"/>
+<area shape="rect" id="node27" href="$class_socket_channel.html#ac8b29f83f74e74a4f421b6cae74680d4" title="SocketChannel::send" alt="" coords="157,688,303,715"/>
+<area shape="rect" id="node11" href="$class_logger.html#ad8278460637697892593e6ef633d54a4" title="Logger::logDebug" alt="" coords="396,75,520,101"/>
+<area shape="rect" id="node12" href="$class_logger.html#a053de045cd00393f4def7d5b6c5cab38" title="Logger::Log" alt="" coords="637,125,728,152"/>
+<area shape="rect" id="node15" href="$class_message.html#a8118c1b12f068dacbf3535c9879b2a25" title="Message::set_type" alt="" coords="391,349,525,376"/>
+<area shape="rect" id="node16" href="$class_message.html#aaeb94d5348e4d13c7f5831950b19bcd3" title="Message::set_allocated_ping" alt="" coords="363,400,553,427"/>
+<area shape="rect" id="node17" href="$class_message.html#a73b5a21942f1206693d911ea6357f302" title="Message::set_allocated\l_advertisement" alt="" coords="378,451,538,493"/>
+<area shape="rect" id="node18" href="$class_message.html#aabcdaa4db978dd877e117297ea555af4" title="Message::set_allocated\l_shutdown" alt="" coords="378,517,538,558"/>
+<area shape="rect" id="node19" href="$class_message_builder.html#a6e9bc743a54f5880a006229d0e5f0765" title="MessageBuilder::hello" alt="" coords="383,583,533,609"/>
+<area shape="rect" id="node24" href="$class_message.html#a02b81f83621d5e66bc77e37a2ca954eb" title="Message::set_allocated\l_hello" alt="" coords="378,634,538,675"/>
+<area shape="rect" id="node20" href="$class_message.html#ab74acd4d120a7c3cbdc26a8d61eeec55" title="Message::mutable_hello" alt="" coords="601,608,764,635"/>
+<area shape="rect" id="node21" href="$class_hello.html#a97452e4a7b8bfcc4aaf625ec14d28885" title="Hello::set_ip" alt="" coords="635,659,730,685"/>
+<area shape="rect" id="node22" href="$class_hello.html#ad505980b5747b4afce9ef652f64e8f55" title="Hello::set_port" alt="" coords="629,507,736,533"/>
+<area shape="rect" id="node23" href="$class_hello.html#a3b00bde5bbe70e04b708d9fb9b90d3bb" title="Hello::set_name" alt="" coords="624,557,741,584"/>
+<area shape="rect" id="node28" href="$class_packed_message.html#a87f97f2ced02c3b9044dea707a5d3aac" title="PackedMessage::pack" alt="" coords="381,700,535,727"/>
+</map>

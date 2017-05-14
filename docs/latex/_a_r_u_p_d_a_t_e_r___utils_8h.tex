@@ -1,0 +1,188 @@
+\hypertarget{_a_r_u_p_d_a_t_e_r___utils_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Updater/\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.h File Reference}
+\label{_a_r_u_p_d_a_t_e_r___utils_8h}\index{src/hal/pb2/include/lib\+A\+R\+Updater/\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{src/hal/pb2/include/lib\+A\+R\+Updater/\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+Include dependency graph for A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{_a_r_u_p_d_a_t_e_r___utils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{_a_r_u_p_d_a_t_e_r___utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_r_u_p_d_a_t_e_r___plf_version}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Plf\+Version}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_a_r_u_p_d_a_t_e_r___utils_8h_a890af0861f945e8868b51f887db974bf}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+PE} \{ \hyperlink{_a_r_u_p_d_a_t_e_r___utils_8h_a890af0861f945e8868b51f887db974bfa8c3b315d558941a4fb439bac083959db}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+L\+P\+HA} = 0, 
+\hyperlink{_a_r_u_p_d_a_t_e_r___utils_8h_a890af0861f945e8868b51f887db974bfa66c0f8b62f713b08b6c365c6cd6d6d2e}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+B\+E\+TA}, 
+\hyperlink{_a_r_u_p_d_a_t_e_r___utils_8h_a890af0861f945e8868b51f887db974bfadddfe8891200c4175e2685a711032219}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+RC}, 
+\hyperlink{_a_r_u_p_d_a_t_e_r___utils_8h_a890af0861f945e8868b51f887db974bfa6b1c041448863d143728e79ec3778a8d}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+OD}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_p_d_a_t_e_r___utils_8h_adfb0b26e917b5ccd2a2d3e02fef05537}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Read\+Plf\+Version} (const char $\ast$plf\+File\+Path, \hyperlink{struct_a_r_u_p_d_a_t_e_r___plf_version}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Plf\+Version} $\ast$version)
+\begin{DoxyCompactList}\small\item\em read the version of a given plf file \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_p_d_a_t_e_r___utils_8h_a9362afa70db9974b7c8df76557347113}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+To\+String} (const \hyperlink{struct_a_r_u_p_d_a_t_e_r___plf_version}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Plf\+Version} $\ast$v, char $\ast$buf, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em convert Plf\+Version to representative string \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_p_d_a_t_e_r___utils_8h_a576db2111c68ab6de8d0eba14de003e8}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+From\+String} (const char $\ast$str, \hyperlink{struct_a_r_u_p_d_a_t_e_r___plf_version}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Plf\+Version} $\ast$v)
+\begin{DoxyCompactList}\small\item\em read the version of a given plf file \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_u_p_d_a_t_e_r___utils_8h_a7143f2fc5f21a6dfd8ddf8ecc33e5291}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+Compare} (const \hyperlink{struct_a_r_u_p_d_a_t_e_r___plf_version}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Plf\+Version} $\ast$v1, const \hyperlink{struct_a_r_u_p_d_a_t_e_r___plf_version}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Plf\+Version} $\ast$v2)
+\begin{DoxyCompactList}\small\item\em Compare 2 plf versions. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_p_d_a_t_e_r___error_8h_adc224c134b547cff3866150b025d117a}{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_p_d_a_t_e_r___utils_8h_a9c4ca39d85696c3fdb754a6e6815f67d}{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Extract\+Unix\+File\+From\+Plf} (const char $\ast$plf\+File\+Name, const char $\ast$out\+Folder, const char $\ast$unix\+File\+Name)
+\begin{DoxyCompactList}\small\item\em Extract a U\+\_\+\+U\+N\+I\+F\+X\+I\+LE regular file from a P\+LF file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}!e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+PE@{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+PE}}
+\index{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+PE@{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+PE}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+PE}{eARUPDATER_PLF_TYPE}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+PE}}\hypertarget{_a_r_u_p_d_a_t_e_r___utils_8h_a890af0861f945e8868b51f887db974bf}{}\label{_a_r_u_p_d_a_t_e_r___utils_8h_a890af0861f945e8868b51f887db974bf}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+L\+P\+HA@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+L\+P\+HA}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}}\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+L\+P\+HA@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+L\+P\+HA}}\item[{\em 
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+L\+P\+HA\hypertarget{_a_r_u_p_d_a_t_e_r___utils_8h_a890af0861f945e8868b51f887db974bfa8c3b315d558941a4fb439bac083959db}{}\label{_a_r_u_p_d_a_t_e_r___utils_8h_a890af0861f945e8868b51f887db974bfa8c3b315d558941a4fb439bac083959db}
+}]\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+B\+E\+TA@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+B\+E\+TA}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}}\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+B\+E\+TA@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+B\+E\+TA}}\item[{\em 
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+B\+E\+TA\hypertarget{_a_r_u_p_d_a_t_e_r___utils_8h_a890af0861f945e8868b51f887db974bfa66c0f8b62f713b08b6c365c6cd6d6d2e}{}\label{_a_r_u_p_d_a_t_e_r___utils_8h_a890af0861f945e8868b51f887db974bfa66c0f8b62f713b08b6c365c6cd6d6d2e}
+}]\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+RC@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+RC}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}}\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+RC@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+RC}}\item[{\em 
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+RC\hypertarget{_a_r_u_p_d_a_t_e_r___utils_8h_a890af0861f945e8868b51f887db974bfadddfe8891200c4175e2685a711032219}{}\label{_a_r_u_p_d_a_t_e_r___utils_8h_a890af0861f945e8868b51f887db974bfadddfe8891200c4175e2685a711032219}
+}]\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+OD@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+OD}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}}\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+OD@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+OD}}\item[{\em 
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+P\+L\+F\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+R\+OD\hypertarget{_a_r_u_p_d_a_t_e_r___utils_8h_a890af0861f945e8868b51f887db974bfa6b1c041448863d143728e79ec3778a8d}{}\label{_a_r_u_p_d_a_t_e_r___utils_8h_a890af0861f945e8868b51f887db974bfa6b1c041448863d143728e79ec3778a8d}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Extract\+Unix\+File\+From\+Plf@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Extract\+Unix\+File\+From\+Plf}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Extract\+Unix\+File\+From\+Plf@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Extract\+Unix\+File\+From\+Plf}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Extract\+Unix\+File\+From\+Plf(const char $\ast$plf\+File\+Name, const char $\ast$out\+Folder, const char $\ast$unix\+File\+Name)}{ARUPDATER_Utils_ExtractUnixFileFromPlf(const char *plfFileName, const char *outFolder, const char *unixFileName)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Extract\+Unix\+File\+From\+Plf (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{plf\+File\+Name, }
+\item[{const char $\ast$}]{out\+Folder, }
+\item[{const char $\ast$}]{unix\+File\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___utils_8h_a9c4ca39d85696c3fdb754a6e6815f67d}{}\label{_a_r_u_p_d_a_t_e_r___utils_8h_a9c4ca39d85696c3fdb754a6e6815f67d}
+
+
+Extract a U\+\_\+\+U\+N\+I\+F\+X\+I\+LE regular file from a P\+LF file. 
+
+Example\+: a U\+\_\+\+U\+N\+I\+X\+F\+I\+LE section (regular file) with path \char`\"{}data/foo/config.\+txt\char`\"{} should be extracted by providing the last path component (\char`\"{}config.\+txt\char`\"{}) as parameter .
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em plf\+File\+Name} & \+: P\+LF file path \\
+\hline
+\mbox{\tt in}  & {\em out\+Folder} & \+: Directory path in which the file will be extracted \\
+\hline
+\mbox{\tt in}  & {\em unix\+File\+Name} & \+: The name of the file we want to extract; also the name of the file written in out\+Folder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+OK if operation went well, the description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+Compare@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+Compare}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+Compare@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+Compare}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+Compare(const A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Plf\+Version $\ast$v1, const A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Plf\+Version $\ast$v2)}{ARUPDATER_Utils_PlfVersionCompare(const ARUPDATER_PlfVersion *v1, const ARUPDATER_PlfVersion *v2)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+Compare (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Plf\+Version} $\ast$}]{v1, }
+\item[{const {\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Plf\+Version} $\ast$}]{v2}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___utils_8h_a7143f2fc5f21a6dfd8ddf8ecc33e5291}{}\label{_a_r_u_p_d_a_t_e_r___utils_8h_a7143f2fc5f21a6dfd8ddf8ecc33e5291}
+
+
+Compare 2 plf versions. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em v1} & \+: plf version 1 \\
+\hline
+\mbox{\tt in}  & {\em v2} & \+: plf version 2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+It returns an integer less than 0 if v1 is lower than v2, 0 if versions are equal, greater than zero if ver1 is greater than v2 
+\end{DoxyReturn}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+From\+String@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+From\+String}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+From\+String@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+From\+String}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+From\+String(const char $\ast$str, A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Plf\+Version $\ast$v)}{ARUPDATER_Utils_PlfVersionFromString(const char *str, ARUPDATER_PlfVersion *v)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+From\+String (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Plf\+Version} $\ast$}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___utils_8h_a576db2111c68ab6de8d0eba14de003e8}{}\label{_a_r_u_p_d_a_t_e_r___utils_8h_a576db2111c68ab6de8d0eba14de003e8}
+
+
+read the version of a given plf file 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em str} & \+: string plf version \\
+\hline
+\mbox{\tt out}  & {\em version} & \+: pointer on the version structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+OK if operation went well, the description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+To\+String@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+To\+String}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+To\+String@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+To\+String}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+To\+String(const A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Plf\+Version $\ast$v, char $\ast$buf, size\+\_\+t size)}{ARUPDATER_Utils_PlfVersionToString(const ARUPDATER_PlfVersion *v, char *buf, size_t size)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Plf\+Version\+To\+String (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Plf\+Version} $\ast$}]{v, }
+\item[{char $\ast$}]{buf, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___utils_8h_a9362afa70db9974b7c8df76557347113}{}\label{_a_r_u_p_d_a_t_e_r___utils_8h_a9362afa70db9974b7c8df76557347113}
+
+
+convert Plf\+Version to representative string 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em v} & \+: plf version \\
+\hline
+\mbox{\tt out}  & {\em buf} & \+: pointer on the string \\
+\hline
+\mbox{\tt in}  & {\em size} & \+: string size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+OK if operation went well, the description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Read\+Plf\+Version@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Read\+Plf\+Version}}
+\index{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Read\+Plf\+Version@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Read\+Plf\+Version}!A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h@{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Read\+Plf\+Version(const char $\ast$plf\+File\+Path, A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Plf\+Version $\ast$version)}{ARUPDATER_Utils_ReadPlfVersion(const char *plfFilePath, ARUPDATER_PlfVersion *version)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Utils\+\_\+\+Read\+Plf\+Version (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{plf\+File\+Path, }
+\item[{{\bf A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+Plf\+Version} $\ast$}]{version}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_p_d_a_t_e_r___utils_8h_adfb0b26e917b5ccd2a2d3e02fef05537}{}\label{_a_r_u_p_d_a_t_e_r___utils_8h_adfb0b26e917b5ccd2a2d3e02fef05537}
+
+
+read the version of a given plf file 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em plf\+File\+Path} & \+: file path of the plf file \\
+\hline
+\mbox{\tt out}  & {\em version} & \+: pointer on the version structure \\
+\hline
+\mbox{\tt out}  & {\em str} & \+: string pointer of version filled by function \\
+\hline
+\mbox{\tt out}  & {\em size} & \+: string buffer size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+U\+P\+D\+A\+T\+E\+R\+\_\+\+OK if operation went well, the description of the error otherwise 
+\end{DoxyReturn}

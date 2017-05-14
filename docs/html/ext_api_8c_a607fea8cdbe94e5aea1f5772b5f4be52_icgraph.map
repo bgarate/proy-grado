@@ -1,0 +1,8 @@
+<map id="_softUnlock" name="_softUnlock">
+<area shape="rect" id="node2" href="$ext_api_8c.html#a98b72603594f5597b574935399bbc491" title="_increaseClientCount" alt="" coords="344,5,491,32"/>
+<area shape="rect" id="node6" href="$ext_api_8c.html#ad4bccb7d96f6831cdc4ee9a4c2daf245" title="_decreaseClientCount" alt="" coords="145,56,296,83"/>
+<area shape="rect" id="node7" href="$ext_api_8h.html#a1ef5e6857ae562f0e910d471ea683202" title="simxFinish" alt="" coords="375,107,460,133"/>
+<area shape="rect" id="node3" href="$ext_api_8h.html#af8e78f3b4698eb09fe31f59c46a4848f" title="simxStart" alt="" coords="539,56,617,83"/>
+<area shape="rect" id="node4" href="$ext_api_8h.html#a0e7431db44935b74cf49ac5aa3edb6ec" title="mtlb_simxCallScriptFunction_b" alt="" coords="665,107,868,133"/>
+<area shape="rect" id="node5" href="$class_vrephal.html#ad9377410a966919d65911ed9dac227b7" title="Vrephal::Vrephal" alt="" coords="707,56,826,83"/>
+</map>

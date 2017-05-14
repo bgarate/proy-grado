@@ -1,0 +1,12 @@
+<map id="_removeCommandReply_null" name="_removeCommandReply_null">
+<area shape="rect" id="node2" href="$ext_api_8c.html#aa4d6e3e9f9ac23ef988b261edd0f1e7f" title="_exec_null" alt="" coords="267,107,351,133"/>
+<area shape="rect" id="node6" href="$ext_api_8h.html#a265b9b6d5f02dc1ef8d3f456de6ba14f" title="simxGetLastErrors" alt="" coords="437,5,567,32"/>
+<area shape="rect" id="node7" href="$ext_api_8h.html#a5be48e4f55358dc8d590b4a5dbc5d40a" title="simxCloseScene" alt="" coords="441,56,563,83"/>
+<area shape="rect" id="node8" href="$ext_api_8h.html#a54a1782a88e76582bea326066d52ee36" title="simxGetObjectSelection" alt="" coords="421,208,583,235"/>
+<area shape="rect" id="node9" href="$ext_api_8c.html#a6e5bbe1e829dc2e96f74de0273e580fd" title="_exec_null_buffer" alt="" coords="247,259,371,285"/>
+<area shape="rect" id="node10" href="$ext_api_8h.html#a82649f82fdb3aeab83e5de1be27975a2" title="simxCreateDummy" alt="" coords="435,259,569,285"/>
+<area shape="rect" id="node3" href="$ext_api_8h.html#af09861c15a7b5017d37807def9529f12" title="simxSynchronousTrigger" alt="" coords="419,107,585,133"/>
+<area shape="rect" id="node5" href="$ext_api_8h.html#a0a80c37ef777948657a62b728d9431df" title="simxSynchronous" alt="" coords="439,157,565,184"/>
+<area shape="rect" id="node4" href="$ext_api_8h.html#a0e7431db44935b74cf49ac5aa3edb6ec" title="mtlb_simxCallScriptFunction_b" alt="" coords="633,132,836,159"/>
+<area shape="rect" id="node11" href="$ext_api_8h.html#adc92fb4bcf2faaf19790dca5c8150afe" title="mtlb_simxCreateDummy" alt="" coords="651,259,818,285"/>
+</map>

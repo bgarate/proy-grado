@@ -1,0 +1,4 @@
+<map id="Message::ping" name="Message::ping">
+<area shape="rect" id="node2" href="$class_message.html#aeec4936f78a3ed399295e3f72840166f" title="Message::MergeFrom" alt="" coords="165,5,314,32"/>
+<area shape="rect" id="node3" href="$class_message.html#a1656eb682ce1b354645b8f0204d4d716" title="Message::GetMetadata" alt="" coords="160,56,319,83"/>
+</map>

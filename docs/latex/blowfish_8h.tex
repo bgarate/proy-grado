@@ -1,0 +1,158 @@
+\hypertarget{blowfish_8h}{}\section{src/hal/pb2/include/openssl/blowfish.h File Reference}
+\label{blowfish_8h}\index{src/hal/pb2/include/openssl/blowfish.\+h@{src/hal/pb2/include/openssl/blowfish.\+h}}
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+Include dependency graph for blowfish.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{blowfish_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbf__key__st}{bf\+\_\+key\+\_\+st}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{blowfish_8h_a986684e72821b64345d0ddeedfd79cf6}{B\+F\+\_\+\+E\+N\+C\+R\+Y\+PT}~1
+\item 
+\#define \hyperlink{blowfish_8h_a64530f390d3db20395b15eca83a4375c}{B\+F\+\_\+\+D\+E\+C\+R\+Y\+PT}~0
+\item 
+\#define \hyperlink{blowfish_8h_a10d45274394a4cb51d39209f66754558}{B\+F\+\_\+\+L\+O\+NG}~unsigned int
+\item 
+\#define \hyperlink{blowfish_8h_aaf74c725458f1e04e450aac4456b01a5}{B\+F\+\_\+\+R\+O\+U\+N\+DS}~16
+\item 
+\#define \hyperlink{blowfish_8h_a3f499c6a80034ade02724345d8f28c6b}{B\+F\+\_\+\+B\+L\+O\+CK}~8
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structbf__key__st}{bf\+\_\+key\+\_\+st} \hyperlink{blowfish_8h_a81c99ec1cbf70fcdd2d1348c032b03fa}{B\+F\+\_\+\+K\+EY}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{blowfish_8h_a5b922ce40cbfbd92c0f557fc6b4c386e}{B\+F\+\_\+set\+\_\+key} (\hyperlink{blowfish_8h_a81c99ec1cbf70fcdd2d1348c032b03fa}{B\+F\+\_\+\+K\+EY} $\ast$key, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const unsigned char $\ast$data)
+\item 
+void \hyperlink{blowfish_8h_a6d65c0688ac8dd603b098111a2213a9b}{B\+F\+\_\+encrypt} (\hyperlink{blowfish_8h_a10d45274394a4cb51d39209f66754558}{B\+F\+\_\+\+L\+O\+NG} $\ast$data, const \hyperlink{blowfish_8h_a81c99ec1cbf70fcdd2d1348c032b03fa}{B\+F\+\_\+\+K\+EY} $\ast$key)
+\item 
+void \hyperlink{blowfish_8h_a307da0c2fe6506e93845f6b8f8cdc5b9}{B\+F\+\_\+decrypt} (\hyperlink{blowfish_8h_a10d45274394a4cb51d39209f66754558}{B\+F\+\_\+\+L\+O\+NG} $\ast$data, const \hyperlink{blowfish_8h_a81c99ec1cbf70fcdd2d1348c032b03fa}{B\+F\+\_\+\+K\+EY} $\ast$key)
+\item 
+void \hyperlink{blowfish_8h_a051f199bfebf9b11e5be8dc3c19d24dd}{B\+F\+\_\+ecb\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, const \hyperlink{blowfish_8h_a81c99ec1cbf70fcdd2d1348c032b03fa}{B\+F\+\_\+\+K\+EY} $\ast$key, int enc)
+\item 
+void \hyperlink{blowfish_8h_aded66494cc29d6fad4bb695a55b5b26b}{B\+F\+\_\+cbc\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{blowfish_8h_a81c99ec1cbf70fcdd2d1348c032b03fa}{B\+F\+\_\+\+K\+EY} $\ast$schedule, unsigned char $\ast$ivec, int enc)
+\item 
+void \hyperlink{blowfish_8h_a29bcde862c5ec830e382f2220a4591f0}{B\+F\+\_\+cfb64\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{blowfish_8h_a81c99ec1cbf70fcdd2d1348c032b03fa}{B\+F\+\_\+\+K\+EY} $\ast$schedule, unsigned char $\ast$ivec, int $\ast$num, int enc)
+\item 
+void \hyperlink{blowfish_8h_ac0d417bc5f354cdea76c3c628f3557b5}{B\+F\+\_\+ofb64\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{blowfish_8h_a81c99ec1cbf70fcdd2d1348c032b03fa}{B\+F\+\_\+\+K\+EY} $\ast$schedule, unsigned char $\ast$ivec, int $\ast$num)
+\item 
+const char $\ast$ \hyperlink{blowfish_8h_a93227fcc212b482c1dc898e11ef3dc75}{B\+F\+\_\+options} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{blowfish.\+h@{blowfish.\+h}!B\+F\+\_\+\+B\+L\+O\+CK@{B\+F\+\_\+\+B\+L\+O\+CK}}
+\index{B\+F\+\_\+\+B\+L\+O\+CK@{B\+F\+\_\+\+B\+L\+O\+CK}!blowfish.\+h@{blowfish.\+h}}
+\subsubsection[{\texorpdfstring{B\+F\+\_\+\+B\+L\+O\+CK}{BF_BLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+F\+\_\+\+B\+L\+O\+CK~8}\hypertarget{blowfish_8h_a3f499c6a80034ade02724345d8f28c6b}{}\label{blowfish_8h_a3f499c6a80034ade02724345d8f28c6b}
+\index{blowfish.\+h@{blowfish.\+h}!B\+F\+\_\+\+D\+E\+C\+R\+Y\+PT@{B\+F\+\_\+\+D\+E\+C\+R\+Y\+PT}}
+\index{B\+F\+\_\+\+D\+E\+C\+R\+Y\+PT@{B\+F\+\_\+\+D\+E\+C\+R\+Y\+PT}!blowfish.\+h@{blowfish.\+h}}
+\subsubsection[{\texorpdfstring{B\+F\+\_\+\+D\+E\+C\+R\+Y\+PT}{BF_DECRYPT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+F\+\_\+\+D\+E\+C\+R\+Y\+PT~0}\hypertarget{blowfish_8h_a64530f390d3db20395b15eca83a4375c}{}\label{blowfish_8h_a64530f390d3db20395b15eca83a4375c}
+\index{blowfish.\+h@{blowfish.\+h}!B\+F\+\_\+\+E\+N\+C\+R\+Y\+PT@{B\+F\+\_\+\+E\+N\+C\+R\+Y\+PT}}
+\index{B\+F\+\_\+\+E\+N\+C\+R\+Y\+PT@{B\+F\+\_\+\+E\+N\+C\+R\+Y\+PT}!blowfish.\+h@{blowfish.\+h}}
+\subsubsection[{\texorpdfstring{B\+F\+\_\+\+E\+N\+C\+R\+Y\+PT}{BF_ENCRYPT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+F\+\_\+\+E\+N\+C\+R\+Y\+PT~1}\hypertarget{blowfish_8h_a986684e72821b64345d0ddeedfd79cf6}{}\label{blowfish_8h_a986684e72821b64345d0ddeedfd79cf6}
+\index{blowfish.\+h@{blowfish.\+h}!B\+F\+\_\+\+L\+O\+NG@{B\+F\+\_\+\+L\+O\+NG}}
+\index{B\+F\+\_\+\+L\+O\+NG@{B\+F\+\_\+\+L\+O\+NG}!blowfish.\+h@{blowfish.\+h}}
+\subsubsection[{\texorpdfstring{B\+F\+\_\+\+L\+O\+NG}{BF_LONG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+F\+\_\+\+L\+O\+NG~unsigned int}\hypertarget{blowfish_8h_a10d45274394a4cb51d39209f66754558}{}\label{blowfish_8h_a10d45274394a4cb51d39209f66754558}
+\index{blowfish.\+h@{blowfish.\+h}!B\+F\+\_\+\+R\+O\+U\+N\+DS@{B\+F\+\_\+\+R\+O\+U\+N\+DS}}
+\index{B\+F\+\_\+\+R\+O\+U\+N\+DS@{B\+F\+\_\+\+R\+O\+U\+N\+DS}!blowfish.\+h@{blowfish.\+h}}
+\subsubsection[{\texorpdfstring{B\+F\+\_\+\+R\+O\+U\+N\+DS}{BF_ROUNDS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+F\+\_\+\+R\+O\+U\+N\+DS~16}\hypertarget{blowfish_8h_aaf74c725458f1e04e450aac4456b01a5}{}\label{blowfish_8h_aaf74c725458f1e04e450aac4456b01a5}
+
+
+\subsection{Typedef Documentation}
+\index{blowfish.\+h@{blowfish.\+h}!B\+F\+\_\+\+K\+EY@{B\+F\+\_\+\+K\+EY}}
+\index{B\+F\+\_\+\+K\+EY@{B\+F\+\_\+\+K\+EY}!blowfish.\+h@{blowfish.\+h}}
+\subsubsection[{\texorpdfstring{B\+F\+\_\+\+K\+EY}{BF_KEY}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf bf\+\_\+key\+\_\+st}  {\bf B\+F\+\_\+\+K\+EY}}\hypertarget{blowfish_8h_a81c99ec1cbf70fcdd2d1348c032b03fa}{}\label{blowfish_8h_a81c99ec1cbf70fcdd2d1348c032b03fa}
+
+
+\subsection{Function Documentation}
+\index{blowfish.\+h@{blowfish.\+h}!B\+F\+\_\+cbc\+\_\+encrypt@{B\+F\+\_\+cbc\+\_\+encrypt}}
+\index{B\+F\+\_\+cbc\+\_\+encrypt@{B\+F\+\_\+cbc\+\_\+encrypt}!blowfish.\+h@{blowfish.\+h}}
+\subsubsection[{\texorpdfstring{B\+F\+\_\+cbc\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, long length, const B\+F\+\_\+\+K\+E\+Y $\ast$schedule, unsigned char $\ast$ivec, int enc)}{BF_cbc_encrypt(const unsigned char *in, unsigned char *out, long length, const BF_KEY *schedule, unsigned char *ivec, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void B\+F\+\_\+cbc\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{long}]{length, }
+\item[{const {\bf B\+F\+\_\+\+K\+EY} $\ast$}]{schedule, }
+\item[{unsigned char $\ast$}]{ivec, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{blowfish_8h_aded66494cc29d6fad4bb695a55b5b26b}{}\label{blowfish_8h_aded66494cc29d6fad4bb695a55b5b26b}
+\index{blowfish.\+h@{blowfish.\+h}!B\+F\+\_\+cfb64\+\_\+encrypt@{B\+F\+\_\+cfb64\+\_\+encrypt}}
+\index{B\+F\+\_\+cfb64\+\_\+encrypt@{B\+F\+\_\+cfb64\+\_\+encrypt}!blowfish.\+h@{blowfish.\+h}}
+\subsubsection[{\texorpdfstring{B\+F\+\_\+cfb64\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, long length, const B\+F\+\_\+\+K\+E\+Y $\ast$schedule, unsigned char $\ast$ivec, int $\ast$num, int enc)}{BF_cfb64_encrypt(const unsigned char *in, unsigned char *out, long length, const BF_KEY *schedule, unsigned char *ivec, int *num, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void B\+F\+\_\+cfb64\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{long}]{length, }
+\item[{const {\bf B\+F\+\_\+\+K\+EY} $\ast$}]{schedule, }
+\item[{unsigned char $\ast$}]{ivec, }
+\item[{int $\ast$}]{num, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{blowfish_8h_a29bcde862c5ec830e382f2220a4591f0}{}\label{blowfish_8h_a29bcde862c5ec830e382f2220a4591f0}
+\index{blowfish.\+h@{blowfish.\+h}!B\+F\+\_\+decrypt@{B\+F\+\_\+decrypt}}
+\index{B\+F\+\_\+decrypt@{B\+F\+\_\+decrypt}!blowfish.\+h@{blowfish.\+h}}
+\subsubsection[{\texorpdfstring{B\+F\+\_\+decrypt(\+B\+F\+\_\+\+L\+O\+N\+G $\ast$data, const B\+F\+\_\+\+K\+E\+Y $\ast$key)}{BF_decrypt(BF_LONG *data, const BF_KEY *key)}}]{\setlength{\rightskip}{0pt plus 5cm}void B\+F\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+F\+\_\+\+L\+O\+NG} $\ast$}]{data, }
+\item[{const {\bf B\+F\+\_\+\+K\+EY} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{blowfish_8h_a307da0c2fe6506e93845f6b8f8cdc5b9}{}\label{blowfish_8h_a307da0c2fe6506e93845f6b8f8cdc5b9}
+\index{blowfish.\+h@{blowfish.\+h}!B\+F\+\_\+ecb\+\_\+encrypt@{B\+F\+\_\+ecb\+\_\+encrypt}}
+\index{B\+F\+\_\+ecb\+\_\+encrypt@{B\+F\+\_\+ecb\+\_\+encrypt}!blowfish.\+h@{blowfish.\+h}}
+\subsubsection[{\texorpdfstring{B\+F\+\_\+ecb\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, const B\+F\+\_\+\+K\+E\+Y $\ast$key, int enc)}{BF_ecb_encrypt(const unsigned char *in, unsigned char *out, const BF_KEY *key, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void B\+F\+\_\+ecb\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{const {\bf B\+F\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{blowfish_8h_a051f199bfebf9b11e5be8dc3c19d24dd}{}\label{blowfish_8h_a051f199bfebf9b11e5be8dc3c19d24dd}
+\index{blowfish.\+h@{blowfish.\+h}!B\+F\+\_\+encrypt@{B\+F\+\_\+encrypt}}
+\index{B\+F\+\_\+encrypt@{B\+F\+\_\+encrypt}!blowfish.\+h@{blowfish.\+h}}
+\subsubsection[{\texorpdfstring{B\+F\+\_\+encrypt(\+B\+F\+\_\+\+L\+O\+N\+G $\ast$data, const B\+F\+\_\+\+K\+E\+Y $\ast$key)}{BF_encrypt(BF_LONG *data, const BF_KEY *key)}}]{\setlength{\rightskip}{0pt plus 5cm}void B\+F\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+F\+\_\+\+L\+O\+NG} $\ast$}]{data, }
+\item[{const {\bf B\+F\+\_\+\+K\+EY} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{blowfish_8h_a6d65c0688ac8dd603b098111a2213a9b}{}\label{blowfish_8h_a6d65c0688ac8dd603b098111a2213a9b}
+\index{blowfish.\+h@{blowfish.\+h}!B\+F\+\_\+ofb64\+\_\+encrypt@{B\+F\+\_\+ofb64\+\_\+encrypt}}
+\index{B\+F\+\_\+ofb64\+\_\+encrypt@{B\+F\+\_\+ofb64\+\_\+encrypt}!blowfish.\+h@{blowfish.\+h}}
+\subsubsection[{\texorpdfstring{B\+F\+\_\+ofb64\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, long length, const B\+F\+\_\+\+K\+E\+Y $\ast$schedule, unsigned char $\ast$ivec, int $\ast$num)}{BF_ofb64_encrypt(const unsigned char *in, unsigned char *out, long length, const BF_KEY *schedule, unsigned char *ivec, int *num)}}]{\setlength{\rightskip}{0pt plus 5cm}void B\+F\+\_\+ofb64\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{long}]{length, }
+\item[{const {\bf B\+F\+\_\+\+K\+EY} $\ast$}]{schedule, }
+\item[{unsigned char $\ast$}]{ivec, }
+\item[{int $\ast$}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{blowfish_8h_ac0d417bc5f354cdea76c3c628f3557b5}{}\label{blowfish_8h_ac0d417bc5f354cdea76c3c628f3557b5}
+\index{blowfish.\+h@{blowfish.\+h}!B\+F\+\_\+options@{B\+F\+\_\+options}}
+\index{B\+F\+\_\+options@{B\+F\+\_\+options}!blowfish.\+h@{blowfish.\+h}}
+\subsubsection[{\texorpdfstring{B\+F\+\_\+options(void)}{BF_options(void)}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ B\+F\+\_\+options (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{blowfish_8h_a93227fcc212b482c1dc898e11ef3dc75}{}\label{blowfish_8h_a93227fcc212b482c1dc898e11ef3dc75}
+\index{blowfish.\+h@{blowfish.\+h}!B\+F\+\_\+set\+\_\+key@{B\+F\+\_\+set\+\_\+key}}
+\index{B\+F\+\_\+set\+\_\+key@{B\+F\+\_\+set\+\_\+key}!blowfish.\+h@{blowfish.\+h}}
+\subsubsection[{\texorpdfstring{B\+F\+\_\+set\+\_\+key(\+B\+F\+\_\+\+K\+E\+Y $\ast$key, int len, const unsigned char $\ast$data)}{BF_set_key(BF_KEY *key, int len, const unsigned char *data)}}]{\setlength{\rightskip}{0pt plus 5cm}void B\+F\+\_\+set\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+F\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{int}]{len, }
+\item[{const unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{blowfish_8h_a5b922ce40cbfbd92c0f557fc6b4c386e}{}\label{blowfish_8h_a5b922ce40cbfbd92c0f557fc6b4c386e}

@@ -1,0 +1,6 @@
+<map id="AsyncSocketChannel::connect" name="AsyncSocketChannel::connect">
+<area shape="rect" id="node2" href="$class_logger.html#ada4ef25d16123b5367a70c9fa0ef0fd7" title="Logger::logError" alt="" coords="211,5,326,32"/>
+<area shape="rect" id="node5" href="$class_logger.html#a0835527c3b67be24326a8447856d84a6" title="Logger::logWarning" alt="" coords="201,56,336,83"/>
+<area shape="rect" id="node3" href="$class_logger.html#acebb37f5538780e6c14f13de6ec497bc" title="Logger::getInstance" alt="" coords="384,5,521,32"/>
+<area shape="rect" id="node4" href="$class_logger.html#a053de045cd00393f4def7d5b6c5cab38" title="Logger::Log" alt="" coords="407,56,498,83"/>
+</map>

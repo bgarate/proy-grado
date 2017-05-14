@@ -1,0 +1,7 @@
+<map id="Logger::logInfo" name="Logger::logInfo">
+<area shape="rect" id="node2" href="$class_body.html#a74a678b9bdb90594271faded7fe2be36" title="Body::setup" alt="" coords="161,5,253,32"/>
+<area shape="rect" id="node4" href="$class_body.html#a898135b92fa8abf09d435f671f62cf29" title="Body::loop" alt="" coords="165,56,249,83"/>
+<area shape="rect" id="node5" href="$class_brain.html#afa2f689c8360c9c9ad323bac5be4b42d" title="Brain::setup" alt="" coords="161,107,253,133"/>
+<area shape="rect" id="node6" href="$class_brain.html#a23d921369c5ec1218d7dc26d0f8270c2" title="Brain::loop" alt="" coords="165,157,249,184"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a523d51f6d06fce5bbed3e074818569fb" title="main" alt="" coords="301,81,352,108"/>
+</map>

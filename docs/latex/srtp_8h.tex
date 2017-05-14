@@ -1,0 +1,90 @@
+\hypertarget{srtp_8h}{}\section{src/hal/pb2/include/openssl/srtp.h File Reference}
+\label{srtp_8h}\index{src/hal/pb2/include/openssl/srtp.\+h@{src/hal/pb2/include/openssl/srtp.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{srtp_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{srtp_8h_a4c62f9fcf0763e63dc7f704095960ce5}{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+C\+M\+\_\+\+S\+H\+A1\+\_\+80}~0x0001
+\item 
+\#define \hyperlink{srtp_8h_a6c0101e6439a7b56b02ca537df87c4a1}{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+C\+M\+\_\+\+S\+H\+A1\+\_\+32}~0x0002
+\item 
+\#define \hyperlink{srtp_8h_ac4608cc35a9efac73f6bd27cdb16905d}{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+F8\+\_\+\+S\+H\+A1\+\_\+80}~0x0003
+\item 
+\#define \hyperlink{srtp_8h_ae85fb13145da6fa4bcf1941510726a6b}{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+F8\+\_\+\+S\+H\+A1\+\_\+32}~0x0004
+\item 
+\#define \hyperlink{srtp_8h_a73e1a6e6d0607ab791743d142bbee4dc}{S\+R\+T\+P\+\_\+\+N\+U\+L\+L\+\_\+\+S\+H\+A1\+\_\+80}~0x0005
+\item 
+\#define \hyperlink{srtp_8h_acc77410312059ee39bf0f9c27ffe5499}{S\+R\+T\+P\+\_\+\+N\+U\+L\+L\+\_\+\+S\+H\+A1\+\_\+32}~0x0006
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{srtp_8h_a63579e6792f921df567531403921170b}{S\+S\+L\+\_\+\+C\+T\+X\+\_\+set\+\_\+tlsext\+\_\+use\+\_\+srtp} (\hyperlink{ossl__typ_8h_a1a21892c1193ee6eb572c2c72d3924ca}{S\+S\+L\+\_\+\+C\+TX} $\ast$ctx, const char $\ast$profiles)
+\item 
+int \hyperlink{srtp_8h_a8c3e975b09fab59fa055c9b701a8bbb6}{S\+S\+L\+\_\+set\+\_\+tlsext\+\_\+use\+\_\+srtp} (\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$ctx, const char $\ast$profiles)
+\item 
+\hyperlink{ssl_8h_ad71374b5a3df5292d0722b703841292e}{S\+R\+T\+P\+\_\+\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+F\+I\+LE} $\ast$ \hyperlink{srtp_8h_a2cb1a598f2b7e1e524446b880787a9d5}{S\+S\+L\+\_\+get\+\_\+selected\+\_\+srtp\+\_\+profile} (\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s)
+\item 
+\hyperlink{srtp_8h_a9f2fa8ba8709da0aff9eb1150d207353}{S\+T\+A\+C\+K\+\_\+\+OF} (\hyperlink{ssl_8h_ad71374b5a3df5292d0722b703841292e}{S\+R\+T\+P\+\_\+\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+F\+I\+LE})$\ast$S\+S\+L\+\_\+get\+\_\+srtp\+\_\+profiles(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$ssl)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{srtp.\+h@{srtp.\+h}!S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+C\+M\+\_\+\+S\+H\+A1\+\_\+32@{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+C\+M\+\_\+\+S\+H\+A1\+\_\+32}}
+\index{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+C\+M\+\_\+\+S\+H\+A1\+\_\+32@{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+C\+M\+\_\+\+S\+H\+A1\+\_\+32}!srtp.\+h@{srtp.\+h}}
+\subsubsection[{\texorpdfstring{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+C\+M\+\_\+\+S\+H\+A1\+\_\+32}{SRTP_AES128_CM_SHA1_32}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+C\+M\+\_\+\+S\+H\+A1\+\_\+32~0x0002}\hypertarget{srtp_8h_a6c0101e6439a7b56b02ca537df87c4a1}{}\label{srtp_8h_a6c0101e6439a7b56b02ca537df87c4a1}
+\index{srtp.\+h@{srtp.\+h}!S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+C\+M\+\_\+\+S\+H\+A1\+\_\+80@{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+C\+M\+\_\+\+S\+H\+A1\+\_\+80}}
+\index{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+C\+M\+\_\+\+S\+H\+A1\+\_\+80@{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+C\+M\+\_\+\+S\+H\+A1\+\_\+80}!srtp.\+h@{srtp.\+h}}
+\subsubsection[{\texorpdfstring{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+C\+M\+\_\+\+S\+H\+A1\+\_\+80}{SRTP_AES128_CM_SHA1_80}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+C\+M\+\_\+\+S\+H\+A1\+\_\+80~0x0001}\hypertarget{srtp_8h_a4c62f9fcf0763e63dc7f704095960ce5}{}\label{srtp_8h_a4c62f9fcf0763e63dc7f704095960ce5}
+\index{srtp.\+h@{srtp.\+h}!S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+F8\+\_\+\+S\+H\+A1\+\_\+32@{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+F8\+\_\+\+S\+H\+A1\+\_\+32}}
+\index{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+F8\+\_\+\+S\+H\+A1\+\_\+32@{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+F8\+\_\+\+S\+H\+A1\+\_\+32}!srtp.\+h@{srtp.\+h}}
+\subsubsection[{\texorpdfstring{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+F8\+\_\+\+S\+H\+A1\+\_\+32}{SRTP_AES128_F8_SHA1_32}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+F8\+\_\+\+S\+H\+A1\+\_\+32~0x0004}\hypertarget{srtp_8h_ae85fb13145da6fa4bcf1941510726a6b}{}\label{srtp_8h_ae85fb13145da6fa4bcf1941510726a6b}
+\index{srtp.\+h@{srtp.\+h}!S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+F8\+\_\+\+S\+H\+A1\+\_\+80@{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+F8\+\_\+\+S\+H\+A1\+\_\+80}}
+\index{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+F8\+\_\+\+S\+H\+A1\+\_\+80@{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+F8\+\_\+\+S\+H\+A1\+\_\+80}!srtp.\+h@{srtp.\+h}}
+\subsubsection[{\texorpdfstring{S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+F8\+\_\+\+S\+H\+A1\+\_\+80}{SRTP_AES128_F8_SHA1_80}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+R\+T\+P\+\_\+\+A\+E\+S128\+\_\+\+F8\+\_\+\+S\+H\+A1\+\_\+80~0x0003}\hypertarget{srtp_8h_ac4608cc35a9efac73f6bd27cdb16905d}{}\label{srtp_8h_ac4608cc35a9efac73f6bd27cdb16905d}
+\index{srtp.\+h@{srtp.\+h}!S\+R\+T\+P\+\_\+\+N\+U\+L\+L\+\_\+\+S\+H\+A1\+\_\+32@{S\+R\+T\+P\+\_\+\+N\+U\+L\+L\+\_\+\+S\+H\+A1\+\_\+32}}
+\index{S\+R\+T\+P\+\_\+\+N\+U\+L\+L\+\_\+\+S\+H\+A1\+\_\+32@{S\+R\+T\+P\+\_\+\+N\+U\+L\+L\+\_\+\+S\+H\+A1\+\_\+32}!srtp.\+h@{srtp.\+h}}
+\subsubsection[{\texorpdfstring{S\+R\+T\+P\+\_\+\+N\+U\+L\+L\+\_\+\+S\+H\+A1\+\_\+32}{SRTP_NULL_SHA1_32}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+R\+T\+P\+\_\+\+N\+U\+L\+L\+\_\+\+S\+H\+A1\+\_\+32~0x0006}\hypertarget{srtp_8h_acc77410312059ee39bf0f9c27ffe5499}{}\label{srtp_8h_acc77410312059ee39bf0f9c27ffe5499}
+\index{srtp.\+h@{srtp.\+h}!S\+R\+T\+P\+\_\+\+N\+U\+L\+L\+\_\+\+S\+H\+A1\+\_\+80@{S\+R\+T\+P\+\_\+\+N\+U\+L\+L\+\_\+\+S\+H\+A1\+\_\+80}}
+\index{S\+R\+T\+P\+\_\+\+N\+U\+L\+L\+\_\+\+S\+H\+A1\+\_\+80@{S\+R\+T\+P\+\_\+\+N\+U\+L\+L\+\_\+\+S\+H\+A1\+\_\+80}!srtp.\+h@{srtp.\+h}}
+\subsubsection[{\texorpdfstring{S\+R\+T\+P\+\_\+\+N\+U\+L\+L\+\_\+\+S\+H\+A1\+\_\+80}{SRTP_NULL_SHA1_80}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+R\+T\+P\+\_\+\+N\+U\+L\+L\+\_\+\+S\+H\+A1\+\_\+80~0x0005}\hypertarget{srtp_8h_a73e1a6e6d0607ab791743d142bbee4dc}{}\label{srtp_8h_a73e1a6e6d0607ab791743d142bbee4dc}
+
+
+\subsection{Function Documentation}
+\index{srtp.\+h@{srtp.\+h}!S\+S\+L\+\_\+\+C\+T\+X\+\_\+set\+\_\+tlsext\+\_\+use\+\_\+srtp@{S\+S\+L\+\_\+\+C\+T\+X\+\_\+set\+\_\+tlsext\+\_\+use\+\_\+srtp}}
+\index{S\+S\+L\+\_\+\+C\+T\+X\+\_\+set\+\_\+tlsext\+\_\+use\+\_\+srtp@{S\+S\+L\+\_\+\+C\+T\+X\+\_\+set\+\_\+tlsext\+\_\+use\+\_\+srtp}!srtp.\+h@{srtp.\+h}}
+\subsubsection[{\texorpdfstring{S\+S\+L\+\_\+\+C\+T\+X\+\_\+set\+\_\+tlsext\+\_\+use\+\_\+srtp(\+S\+S\+L\+\_\+\+C\+T\+X $\ast$ctx, const char $\ast$profiles)}{SSL_CTX_set_tlsext_use_srtp(SSL_CTX *ctx, const char *profiles)}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+S\+L\+\_\+\+C\+T\+X\+\_\+set\+\_\+tlsext\+\_\+use\+\_\+srtp (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+S\+L\+\_\+\+C\+TX} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{profiles}
+\end{DoxyParamCaption}
+)}\hypertarget{srtp_8h_a63579e6792f921df567531403921170b}{}\label{srtp_8h_a63579e6792f921df567531403921170b}
+\index{srtp.\+h@{srtp.\+h}!S\+S\+L\+\_\+get\+\_\+selected\+\_\+srtp\+\_\+profile@{S\+S\+L\+\_\+get\+\_\+selected\+\_\+srtp\+\_\+profile}}
+\index{S\+S\+L\+\_\+get\+\_\+selected\+\_\+srtp\+\_\+profile@{S\+S\+L\+\_\+get\+\_\+selected\+\_\+srtp\+\_\+profile}!srtp.\+h@{srtp.\+h}}
+\subsubsection[{\texorpdfstring{S\+S\+L\+\_\+get\+\_\+selected\+\_\+srtp\+\_\+profile(\+S\+S\+L $\ast$s)}{SSL_get_selected_srtp_profile(SSL *s)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+R\+T\+P\+\_\+\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+F\+I\+LE} $\ast$ S\+S\+L\+\_\+get\+\_\+selected\+\_\+srtp\+\_\+profile (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+SL} $\ast$}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{srtp_8h_a2cb1a598f2b7e1e524446b880787a9d5}{}\label{srtp_8h_a2cb1a598f2b7e1e524446b880787a9d5}
+\index{srtp.\+h@{srtp.\+h}!S\+S\+L\+\_\+set\+\_\+tlsext\+\_\+use\+\_\+srtp@{S\+S\+L\+\_\+set\+\_\+tlsext\+\_\+use\+\_\+srtp}}
+\index{S\+S\+L\+\_\+set\+\_\+tlsext\+\_\+use\+\_\+srtp@{S\+S\+L\+\_\+set\+\_\+tlsext\+\_\+use\+\_\+srtp}!srtp.\+h@{srtp.\+h}}
+\subsubsection[{\texorpdfstring{S\+S\+L\+\_\+set\+\_\+tlsext\+\_\+use\+\_\+srtp(\+S\+S\+L $\ast$ctx, const char $\ast$profiles)}{SSL_set_tlsext_use_srtp(SSL *ctx, const char *profiles)}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+S\+L\+\_\+set\+\_\+tlsext\+\_\+use\+\_\+srtp (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+SL} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{profiles}
+\end{DoxyParamCaption}
+)}\hypertarget{srtp_8h_a8c3e975b09fab59fa055c9b701a8bbb6}{}\label{srtp_8h_a8c3e975b09fab59fa055c9b701a8bbb6}
+\index{srtp.\+h@{srtp.\+h}!S\+T\+A\+C\+K\+\_\+\+OF@{S\+T\+A\+C\+K\+\_\+\+OF}}
+\index{S\+T\+A\+C\+K\+\_\+\+OF@{S\+T\+A\+C\+K\+\_\+\+OF}!srtp.\+h@{srtp.\+h}}
+\subsubsection[{\texorpdfstring{S\+T\+A\+C\+K\+\_\+\+O\+F(\+S\+R\+T\+P\+\_\+\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+F\+I\+L\+E)$\ast$\+S\+S\+L\+\_\+get\+\_\+srtp\+\_\+profiles(\+S\+S\+L $\ast$ssl)}{STACK_OF(SRTP_PROTECTION_PROFILE)*SSL_get_srtp_profiles(SSL *ssl)}}]{\setlength{\rightskip}{0pt plus 5cm}S\+T\+A\+C\+K\+\_\+\+OF (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+R\+T\+P\+\_\+\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+F\+I\+LE}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{srtp_8h_a9f2fa8ba8709da0aff9eb1150d207353}{}\label{srtp_8h_a9f2fa8ba8709da0aff9eb1150d207353}

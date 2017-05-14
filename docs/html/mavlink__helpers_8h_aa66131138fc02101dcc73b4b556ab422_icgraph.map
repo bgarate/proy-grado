@@ -1,0 +1,4 @@
+<map id="mavlink_finalize_message_chan" name="mavlink_finalize_message_chan">
+<area shape="rect" id="node2" href="$mavlink__helpers_8h.html#a7968a864b6526d84472c5bc5b78adce2" title="Reset the status of a channel. " alt="" coords="274,5,429,47"/>
+<area shape="rect" id="node3" href="$mavlink__helpers_8h.html#af3bea083c5ec83f5b6570b2bd4a817d0" title="Finalize a MAVLink message with MAVLINK_COMM_0 as default channel. " alt="" coords="264,71,439,98"/>
+</map>

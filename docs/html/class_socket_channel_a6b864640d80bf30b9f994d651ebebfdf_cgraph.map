@@ -1,0 +1,6 @@
+<map id="SocketChannel::connect" name="SocketChannel::connect">
+<area shape="rect" id="node2" href="$class_logger.html#ada4ef25d16123b5367a70c9fa0ef0fd7" title="Logger::logError" alt="" coords="229,5,343,32"/>
+<area shape="rect" id="node5" href="$class_logger.html#a0835527c3b67be24326a8447856d84a6" title="Logger::logWarning" alt="" coords="219,56,353,83"/>
+<area shape="rect" id="node3" href="$class_logger.html#acebb37f5538780e6c14f13de6ec497bc" title="Logger::getInstance" alt="" coords="401,5,539,32"/>
+<area shape="rect" id="node4" href="$class_logger.html#a053de045cd00393f4def7d5b6c5cab38" title="Logger::Log" alt="" coords="425,56,515,83"/>
+</map>

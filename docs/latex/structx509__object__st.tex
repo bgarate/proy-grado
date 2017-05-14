@@ -1,0 +1,57 @@
+\hypertarget{structx509__object__st}{}\section{x509\+\_\+object\+\_\+st Struct Reference}
+\label{structx509__object__st}\index{x509\+\_\+object\+\_\+st@{x509\+\_\+object\+\_\+st}}
+
+
+{\ttfamily \#include $<$x509\+\_\+vfy.\+h$>$}
+
+
+
+Collaboration diagram for x509\+\_\+object\+\_\+st\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structx509__object__st__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structx509__object__st_a9a1693800fb57bf3d3e2f47d2f57ea60}{type}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>char $\ast$ \hyperlink{structx509__object__st_ae278025994b9d79207dbf47169ea75fa}{ptr}\\
+\>\hyperlink{ossl__typ_8h_a4f666bde6518f95deb3050c54b408416}{X509} $\ast$ \hyperlink{structx509__object__st_ac849472db5581793b83d62c188ddd97d}{x509}\\
+\>\hyperlink{ossl__typ_8h_ac8661d2485c2c8da5fd7dd26b846f4bf}{X509\_CRL} $\ast$ \hyperlink{structx509__object__st_a6909128bd75b746a0b90aa1127f7b90a}{crl}\\
+\>\hyperlink{ossl__typ_8h_a2fca4fef9e4c7a2a739b1ea04acb56ce}{EVP\_PKEY} $\ast$ \hyperlink{structx509__object__st_a904056e374844ca9de82d4a9c3cb9ab6}{pkey}\\
+\} \hyperlink{structx509__object__st_a7001a2db752bae0e0fc16be4afb1d46e}{data}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{x509\+\_\+object\+\_\+st@{x509\+\_\+object\+\_\+st}!crl@{crl}}
+\index{crl@{crl}!x509\+\_\+object\+\_\+st@{x509\+\_\+object\+\_\+st}}
+\subsubsection[{\texorpdfstring{crl}{crl}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X509\+\_\+\+C\+RL}$\ast$ x509\+\_\+object\+\_\+st\+::crl}\hypertarget{structx509__object__st_a6909128bd75b746a0b90aa1127f7b90a}{}\label{structx509__object__st_a6909128bd75b746a0b90aa1127f7b90a}
+\index{x509\+\_\+object\+\_\+st@{x509\+\_\+object\+\_\+st}!data@{data}}
+\index{data@{data}!x509\+\_\+object\+\_\+st@{x509\+\_\+object\+\_\+st}}
+\subsubsection[{\texorpdfstring{data}{data}}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \}   x509\+\_\+object\+\_\+st\+::data}\hypertarget{structx509__object__st_a7001a2db752bae0e0fc16be4afb1d46e}{}\label{structx509__object__st_a7001a2db752bae0e0fc16be4afb1d46e}
+\index{x509\+\_\+object\+\_\+st@{x509\+\_\+object\+\_\+st}!pkey@{pkey}}
+\index{pkey@{pkey}!x509\+\_\+object\+\_\+st@{x509\+\_\+object\+\_\+st}}
+\subsubsection[{\texorpdfstring{pkey}{pkey}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+V\+P\+\_\+\+P\+K\+EY}$\ast$ x509\+\_\+object\+\_\+st\+::pkey}\hypertarget{structx509__object__st_a904056e374844ca9de82d4a9c3cb9ab6}{}\label{structx509__object__st_a904056e374844ca9de82d4a9c3cb9ab6}
+\index{x509\+\_\+object\+\_\+st@{x509\+\_\+object\+\_\+st}!ptr@{ptr}}
+\index{ptr@{ptr}!x509\+\_\+object\+\_\+st@{x509\+\_\+object\+\_\+st}}
+\subsubsection[{\texorpdfstring{ptr}{ptr}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ x509\+\_\+object\+\_\+st\+::ptr}\hypertarget{structx509__object__st_ae278025994b9d79207dbf47169ea75fa}{}\label{structx509__object__st_ae278025994b9d79207dbf47169ea75fa}
+\index{x509\+\_\+object\+\_\+st@{x509\+\_\+object\+\_\+st}!type@{type}}
+\index{type@{type}!x509\+\_\+object\+\_\+st@{x509\+\_\+object\+\_\+st}}
+\subsubsection[{\texorpdfstring{type}{type}}]{\setlength{\rightskip}{0pt plus 5cm}int x509\+\_\+object\+\_\+st\+::type}\hypertarget{structx509__object__st_a9a1693800fb57bf3d3e2f47d2f57ea60}{}\label{structx509__object__st_a9a1693800fb57bf3d3e2f47d2f57ea60}
+\index{x509\+\_\+object\+\_\+st@{x509\+\_\+object\+\_\+st}!x509@{x509}}
+\index{x509@{x509}!x509\+\_\+object\+\_\+st@{x509\+\_\+object\+\_\+st}}
+\subsubsection[{\texorpdfstring{x509}{x509}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X509}$\ast$ x509\+\_\+object\+\_\+st\+::x509}\hypertarget{structx509__object__st_ac849472db5581793b83d62c188ddd97d}{}\label{structx509__object__st_ac849472db5581793b83d62c188ddd97d}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/openssl/\hyperlink{x509__vfy_8h}{x509\+\_\+vfy.\+h}\end{DoxyCompactItemize}

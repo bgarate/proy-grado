@@ -1,0 +1,151 @@
+\hypertarget{idea_8h}{}\section{src/hal/pb2/include/openssl/idea.h File Reference}
+\label{idea_8h}\index{src/hal/pb2/include/openssl/idea.\+h@{src/hal/pb2/include/openssl/idea.\+h}}
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+Include dependency graph for idea.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{idea_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structidea__key__st}{idea\+\_\+key\+\_\+st}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{idea_8h_ad40a1d70472b7b6b9f1e7b41012f0dd5}{I\+D\+E\+A\+\_\+\+E\+N\+C\+R\+Y\+PT}~1
+\item 
+\#define \hyperlink{idea_8h_a5e872b68476903b0e1eb38ea371047a4}{I\+D\+E\+A\+\_\+\+D\+E\+C\+R\+Y\+PT}~0
+\item 
+\#define \hyperlink{idea_8h_a911caaeb0548304505b5a35aa48587dd}{I\+D\+E\+A\+\_\+\+B\+L\+O\+CK}~8
+\item 
+\#define \hyperlink{idea_8h_a9f8eea2a57d8fa1e7353e2cbc7e6ee7e}{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+TH}~16
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structidea__key__st}{idea\+\_\+key\+\_\+st} \hyperlink{idea_8h_a3d2081f552296b0f4fa820451ff0130e}{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{idea_8h_af110637c335432e7d5245f02748dfaa9}{idea\+\_\+options} (void)
+\item 
+void \hyperlink{idea_8h_af29bc6f1000844491bfdd6c99aacf33c}{idea\+\_\+ecb\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, \hyperlink{idea_8h_a3d2081f552296b0f4fa820451ff0130e}{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE} $\ast$ks)
+\item 
+void \hyperlink{idea_8h_a31244171f5d5f1bb7b4a3b9eb11dc8e4}{idea\+\_\+set\+\_\+encrypt\+\_\+key} (const unsigned char $\ast$key, \hyperlink{idea_8h_a3d2081f552296b0f4fa820451ff0130e}{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE} $\ast$ks)
+\item 
+void \hyperlink{idea_8h_a9e2e0b688cacfc278e3a7c2818d754bf}{idea\+\_\+set\+\_\+decrypt\+\_\+key} (\hyperlink{idea_8h_a3d2081f552296b0f4fa820451ff0130e}{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE} $\ast$ek, \hyperlink{idea_8h_a3d2081f552296b0f4fa820451ff0130e}{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE} $\ast$dk)
+\item 
+void \hyperlink{idea_8h_a83fbb0f844a1c58ec0cc50b95e2a6a29}{idea\+\_\+cbc\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{idea_8h_a3d2081f552296b0f4fa820451ff0130e}{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE} $\ast$ks, unsigned char $\ast$iv, int enc)
+\item 
+void \hyperlink{idea_8h_aa5055be23bd1cb6c977dcff7f89731ab}{idea\+\_\+cfb64\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{idea_8h_a3d2081f552296b0f4fa820451ff0130e}{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE} $\ast$ks, unsigned char $\ast$iv, int $\ast$num, int enc)
+\item 
+void \hyperlink{idea_8h_aff1e266f822729bc39b72153c11d9101}{idea\+\_\+ofb64\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{idea_8h_a3d2081f552296b0f4fa820451ff0130e}{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE} $\ast$ks, unsigned char $\ast$iv, int $\ast$num)
+\item 
+void \hyperlink{idea_8h_ad13f2231d1bc0a1b2dad5a92b5965a18}{idea\+\_\+encrypt} (unsigned long $\ast$in, \hyperlink{idea_8h_a3d2081f552296b0f4fa820451ff0130e}{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE} $\ast$ks)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{idea.\+h@{idea.\+h}!I\+D\+E\+A\+\_\+\+B\+L\+O\+CK@{I\+D\+E\+A\+\_\+\+B\+L\+O\+CK}}
+\index{I\+D\+E\+A\+\_\+\+B\+L\+O\+CK@{I\+D\+E\+A\+\_\+\+B\+L\+O\+CK}!idea.\+h@{idea.\+h}}
+\subsubsection[{\texorpdfstring{I\+D\+E\+A\+\_\+\+B\+L\+O\+CK}{IDEA_BLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+D\+E\+A\+\_\+\+B\+L\+O\+CK~8}\hypertarget{idea_8h_a911caaeb0548304505b5a35aa48587dd}{}\label{idea_8h_a911caaeb0548304505b5a35aa48587dd}
+\index{idea.\+h@{idea.\+h}!I\+D\+E\+A\+\_\+\+D\+E\+C\+R\+Y\+PT@{I\+D\+E\+A\+\_\+\+D\+E\+C\+R\+Y\+PT}}
+\index{I\+D\+E\+A\+\_\+\+D\+E\+C\+R\+Y\+PT@{I\+D\+E\+A\+\_\+\+D\+E\+C\+R\+Y\+PT}!idea.\+h@{idea.\+h}}
+\subsubsection[{\texorpdfstring{I\+D\+E\+A\+\_\+\+D\+E\+C\+R\+Y\+PT}{IDEA_DECRYPT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+D\+E\+A\+\_\+\+D\+E\+C\+R\+Y\+PT~0}\hypertarget{idea_8h_a5e872b68476903b0e1eb38ea371047a4}{}\label{idea_8h_a5e872b68476903b0e1eb38ea371047a4}
+\index{idea.\+h@{idea.\+h}!I\+D\+E\+A\+\_\+\+E\+N\+C\+R\+Y\+PT@{I\+D\+E\+A\+\_\+\+E\+N\+C\+R\+Y\+PT}}
+\index{I\+D\+E\+A\+\_\+\+E\+N\+C\+R\+Y\+PT@{I\+D\+E\+A\+\_\+\+E\+N\+C\+R\+Y\+PT}!idea.\+h@{idea.\+h}}
+\subsubsection[{\texorpdfstring{I\+D\+E\+A\+\_\+\+E\+N\+C\+R\+Y\+PT}{IDEA_ENCRYPT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+D\+E\+A\+\_\+\+E\+N\+C\+R\+Y\+PT~1}\hypertarget{idea_8h_ad40a1d70472b7b6b9f1e7b41012f0dd5}{}\label{idea_8h_ad40a1d70472b7b6b9f1e7b41012f0dd5}
+\index{idea.\+h@{idea.\+h}!I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+TH@{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+TH}}
+\index{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+TH@{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+TH}!idea.\+h@{idea.\+h}}
+\subsubsection[{\texorpdfstring{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+TH}{IDEA_KEY_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+TH~16}\hypertarget{idea_8h_a9f8eea2a57d8fa1e7353e2cbc7e6ee7e}{}\label{idea_8h_a9f8eea2a57d8fa1e7353e2cbc7e6ee7e}
+
+
+\subsection{Typedef Documentation}
+\index{idea.\+h@{idea.\+h}!I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE@{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE}}
+\index{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE@{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE}!idea.\+h@{idea.\+h}}
+\subsubsection[{\texorpdfstring{I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE}{IDEA_KEY_SCHEDULE}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf idea\+\_\+key\+\_\+st}  {\bf I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE}}\hypertarget{idea_8h_a3d2081f552296b0f4fa820451ff0130e}{}\label{idea_8h_a3d2081f552296b0f4fa820451ff0130e}
+
+
+\subsection{Function Documentation}
+\index{idea.\+h@{idea.\+h}!idea\+\_\+cbc\+\_\+encrypt@{idea\+\_\+cbc\+\_\+encrypt}}
+\index{idea\+\_\+cbc\+\_\+encrypt@{idea\+\_\+cbc\+\_\+encrypt}!idea.\+h@{idea.\+h}}
+\subsubsection[{\texorpdfstring{idea\+\_\+cbc\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, long length, I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E $\ast$ks, unsigned char $\ast$iv, int enc)}{idea_cbc_encrypt(const unsigned char *in, unsigned char *out, long length, IDEA_KEY_SCHEDULE *ks, unsigned char *iv, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void idea\+\_\+cbc\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{long}]{length, }
+\item[{{\bf I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE} $\ast$}]{ks, }
+\item[{unsigned char $\ast$}]{iv, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{idea_8h_a83fbb0f844a1c58ec0cc50b95e2a6a29}{}\label{idea_8h_a83fbb0f844a1c58ec0cc50b95e2a6a29}
+\index{idea.\+h@{idea.\+h}!idea\+\_\+cfb64\+\_\+encrypt@{idea\+\_\+cfb64\+\_\+encrypt}}
+\index{idea\+\_\+cfb64\+\_\+encrypt@{idea\+\_\+cfb64\+\_\+encrypt}!idea.\+h@{idea.\+h}}
+\subsubsection[{\texorpdfstring{idea\+\_\+cfb64\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, long length, I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E $\ast$ks, unsigned char $\ast$iv, int $\ast$num, int enc)}{idea_cfb64_encrypt(const unsigned char *in, unsigned char *out, long length, IDEA_KEY_SCHEDULE *ks, unsigned char *iv, int *num, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void idea\+\_\+cfb64\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{long}]{length, }
+\item[{{\bf I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE} $\ast$}]{ks, }
+\item[{unsigned char $\ast$}]{iv, }
+\item[{int $\ast$}]{num, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{idea_8h_aa5055be23bd1cb6c977dcff7f89731ab}{}\label{idea_8h_aa5055be23bd1cb6c977dcff7f89731ab}
+\index{idea.\+h@{idea.\+h}!idea\+\_\+ecb\+\_\+encrypt@{idea\+\_\+ecb\+\_\+encrypt}}
+\index{idea\+\_\+ecb\+\_\+encrypt@{idea\+\_\+ecb\+\_\+encrypt}!idea.\+h@{idea.\+h}}
+\subsubsection[{\texorpdfstring{idea\+\_\+ecb\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E $\ast$ks)}{idea_ecb_encrypt(const unsigned char *in, unsigned char *out, IDEA_KEY_SCHEDULE *ks)}}]{\setlength{\rightskip}{0pt plus 5cm}void idea\+\_\+ecb\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{{\bf I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE} $\ast$}]{ks}
+\end{DoxyParamCaption}
+)}\hypertarget{idea_8h_af29bc6f1000844491bfdd6c99aacf33c}{}\label{idea_8h_af29bc6f1000844491bfdd6c99aacf33c}
+\index{idea.\+h@{idea.\+h}!idea\+\_\+encrypt@{idea\+\_\+encrypt}}
+\index{idea\+\_\+encrypt@{idea\+\_\+encrypt}!idea.\+h@{idea.\+h}}
+\subsubsection[{\texorpdfstring{idea\+\_\+encrypt(unsigned long $\ast$in, I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E $\ast$ks)}{idea_encrypt(unsigned long *in, IDEA_KEY_SCHEDULE *ks)}}]{\setlength{\rightskip}{0pt plus 5cm}void idea\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{unsigned long $\ast$}]{in, }
+\item[{{\bf I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE} $\ast$}]{ks}
+\end{DoxyParamCaption}
+)}\hypertarget{idea_8h_ad13f2231d1bc0a1b2dad5a92b5965a18}{}\label{idea_8h_ad13f2231d1bc0a1b2dad5a92b5965a18}
+\index{idea.\+h@{idea.\+h}!idea\+\_\+ofb64\+\_\+encrypt@{idea\+\_\+ofb64\+\_\+encrypt}}
+\index{idea\+\_\+ofb64\+\_\+encrypt@{idea\+\_\+ofb64\+\_\+encrypt}!idea.\+h@{idea.\+h}}
+\subsubsection[{\texorpdfstring{idea\+\_\+ofb64\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, long length, I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E $\ast$ks, unsigned char $\ast$iv, int $\ast$num)}{idea_ofb64_encrypt(const unsigned char *in, unsigned char *out, long length, IDEA_KEY_SCHEDULE *ks, unsigned char *iv, int *num)}}]{\setlength{\rightskip}{0pt plus 5cm}void idea\+\_\+ofb64\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{long}]{length, }
+\item[{{\bf I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE} $\ast$}]{ks, }
+\item[{unsigned char $\ast$}]{iv, }
+\item[{int $\ast$}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{idea_8h_aff1e266f822729bc39b72153c11d9101}{}\label{idea_8h_aff1e266f822729bc39b72153c11d9101}
+\index{idea.\+h@{idea.\+h}!idea\+\_\+options@{idea\+\_\+options}}
+\index{idea\+\_\+options@{idea\+\_\+options}!idea.\+h@{idea.\+h}}
+\subsubsection[{\texorpdfstring{idea\+\_\+options(void)}{idea_options(void)}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ idea\+\_\+options (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{idea_8h_af110637c335432e7d5245f02748dfaa9}{}\label{idea_8h_af110637c335432e7d5245f02748dfaa9}
+\index{idea.\+h@{idea.\+h}!idea\+\_\+set\+\_\+decrypt\+\_\+key@{idea\+\_\+set\+\_\+decrypt\+\_\+key}}
+\index{idea\+\_\+set\+\_\+decrypt\+\_\+key@{idea\+\_\+set\+\_\+decrypt\+\_\+key}!idea.\+h@{idea.\+h}}
+\subsubsection[{\texorpdfstring{idea\+\_\+set\+\_\+decrypt\+\_\+key(\+I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E $\ast$ek, I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E $\ast$dk)}{idea_set_decrypt_key(IDEA_KEY_SCHEDULE *ek, IDEA_KEY_SCHEDULE *dk)}}]{\setlength{\rightskip}{0pt plus 5cm}void idea\+\_\+set\+\_\+decrypt\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE} $\ast$}]{ek, }
+\item[{{\bf I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE} $\ast$}]{dk}
+\end{DoxyParamCaption}
+)}\hypertarget{idea_8h_a9e2e0b688cacfc278e3a7c2818d754bf}{}\label{idea_8h_a9e2e0b688cacfc278e3a7c2818d754bf}
+\index{idea.\+h@{idea.\+h}!idea\+\_\+set\+\_\+encrypt\+\_\+key@{idea\+\_\+set\+\_\+encrypt\+\_\+key}}
+\index{idea\+\_\+set\+\_\+encrypt\+\_\+key@{idea\+\_\+set\+\_\+encrypt\+\_\+key}!idea.\+h@{idea.\+h}}
+\subsubsection[{\texorpdfstring{idea\+\_\+set\+\_\+encrypt\+\_\+key(const unsigned char $\ast$key, I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E $\ast$ks)}{idea_set_encrypt_key(const unsigned char *key, IDEA_KEY_SCHEDULE *ks)}}]{\setlength{\rightskip}{0pt plus 5cm}void idea\+\_\+set\+\_\+encrypt\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{key, }
+\item[{{\bf I\+D\+E\+A\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+LE} $\ast$}]{ks}
+\end{DoxyParamCaption}
+)}\hypertarget{idea_8h_a31244171f5d5f1bb7b4a3b9eb11dc8e4}{}\label{idea_8h_a31244171f5d5f1bb7b4a3b9eb11dc8e4}

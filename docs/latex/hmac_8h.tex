@@ -1,0 +1,169 @@
+\hypertarget{hmac_8h}{}\section{src/hal/pb2/include/openssl/hmac.h File Reference}
+\label{hmac_8h}\index{src/hal/pb2/include/openssl/hmac.\+h@{src/hal/pb2/include/openssl/hmac.\+h}}
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/evp.\+h$>$}\\*
+Include dependency graph for hmac.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hmac_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{hmac_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structhmac__ctx__st}{hmac\+\_\+ctx\+\_\+st}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{hmac_8h_a70c2f521a62974fcae381df08f89c7a7}{H\+M\+A\+C\+\_\+\+M\+A\+X\+\_\+\+M\+D\+\_\+\+C\+B\+L\+O\+CK}~128	/$\ast$ largest known is \hyperlink{sha_8h_acc58281ac81fdd9eb569011e7a379f89}{S\+H\+A512} $\ast$/
+\item 
+\#define \hyperlink{hmac_8h_a92d257f71a3c933be492d3c16a38ad47}{H\+M\+A\+C\+\_\+size}(e)~(\hyperlink{evp_8h_a90cd9b536d07403d5d14fde98299a6a7}{E\+V\+P\+\_\+\+M\+D\+\_\+size}((e)-\/$>$md))
+\item 
+\#define \hyperlink{hmac_8h_a321b14bdf5ffe7ceca1c854d1d19c8ef}{H\+M\+A\+C\+\_\+cleanup}(ctx)~\hyperlink{hmac_8h_ad3131144aba13d6dae9bbcb53666761a}{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+cleanup}(ctx) /$\ast$ deprecated $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structhmac__ctx__st}{hmac\+\_\+ctx\+\_\+st} \hyperlink{hmac_8h_aac042740b33d6ad59d219de07a6f8461}{H\+M\+A\+C\+\_\+\+C\+TX}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{hmac_8h_a978cd73c621384dc42a70d04bd264150}{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+init} (\hyperlink{hmac_8h_aac042740b33d6ad59d219de07a6f8461}{H\+M\+A\+C\+\_\+\+C\+TX} $\ast$ctx)
+\item 
+void \hyperlink{hmac_8h_ad3131144aba13d6dae9bbcb53666761a}{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+cleanup} (\hyperlink{hmac_8h_aac042740b33d6ad59d219de07a6f8461}{H\+M\+A\+C\+\_\+\+C\+TX} $\ast$ctx)
+\item 
+int \hyperlink{hmac_8h_ad6db50b7431101629c8349b4778b598a}{H\+M\+A\+C\+\_\+\+Init} (\hyperlink{hmac_8h_aac042740b33d6ad59d219de07a6f8461}{H\+M\+A\+C\+\_\+\+C\+TX} $\ast$ctx, const void $\ast$key, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const \hyperlink{ossl__typ_8h_aac66cf010326fa9a927c2a34888f45d3}{E\+V\+P\+\_\+\+MD} $\ast$md)
+\item 
+int \hyperlink{hmac_8h_ac3399d766f7dd7e46b6766b16962f8db}{H\+M\+A\+C\+\_\+\+Init\+\_\+ex} (\hyperlink{hmac_8h_aac042740b33d6ad59d219de07a6f8461}{H\+M\+A\+C\+\_\+\+C\+TX} $\ast$ctx, const void $\ast$key, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const \hyperlink{ossl__typ_8h_aac66cf010326fa9a927c2a34888f45d3}{E\+V\+P\+\_\+\+MD} $\ast$md, \hyperlink{ossl__typ_8h_abac45b251498719318e60ab8d6192510}{E\+N\+G\+I\+NE} $\ast$impl)
+\item 
+int \hyperlink{hmac_8h_afa7c2f0856ee825a8d1292b1db2ee6bf}{H\+M\+A\+C\+\_\+\+Update} (\hyperlink{hmac_8h_aac042740b33d6ad59d219de07a6f8461}{H\+M\+A\+C\+\_\+\+C\+TX} $\ast$ctx, const unsigned char $\ast$data, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+int \hyperlink{hmac_8h_af90028523c5de48499b8b44c231be195}{H\+M\+A\+C\+\_\+\+Final} (\hyperlink{hmac_8h_aac042740b33d6ad59d219de07a6f8461}{H\+M\+A\+C\+\_\+\+C\+TX} $\ast$ctx, unsigned char $\ast$md, unsigned int $\ast$\hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+unsigned char $\ast$ \hyperlink{hmac_8h_af8e23e6f0c107db2b1eb8b2bad23c5d1}{H\+M\+AC} (const \hyperlink{ossl__typ_8h_aac66cf010326fa9a927c2a34888f45d3}{E\+V\+P\+\_\+\+MD} $\ast$evp\+\_\+md, const void $\ast$key, int key\+\_\+len, const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md, unsigned int $\ast$md\+\_\+len)
+\item 
+int \hyperlink{hmac_8h_aa68d50676d4387bfb046b1a4d62b192d}{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+copy} (\hyperlink{hmac_8h_aac042740b33d6ad59d219de07a6f8461}{H\+M\+A\+C\+\_\+\+C\+TX} $\ast$dctx, \hyperlink{hmac_8h_aac042740b33d6ad59d219de07a6f8461}{H\+M\+A\+C\+\_\+\+C\+TX} $\ast$sctx)
+\item 
+void \hyperlink{hmac_8h_a29ffe6b3eb6a5bdaaf8d6c747bf6869d}{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+set\+\_\+flags} (\hyperlink{hmac_8h_aac042740b33d6ad59d219de07a6f8461}{H\+M\+A\+C\+\_\+\+C\+TX} $\ast$ctx, unsigned long \hyperlink{pkcs7_8h_ac8bf36fe0577cba66bccda3a6f7e80a4}{flags})
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{hmac.\+h@{hmac.\+h}!H\+M\+A\+C\+\_\+cleanup@{H\+M\+A\+C\+\_\+cleanup}}
+\index{H\+M\+A\+C\+\_\+cleanup@{H\+M\+A\+C\+\_\+cleanup}!hmac.\+h@{hmac.\+h}}
+\subsubsection[{\texorpdfstring{H\+M\+A\+C\+\_\+cleanup}{HMAC_cleanup}}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+M\+A\+C\+\_\+cleanup(
+\begin{DoxyParamCaption}
+\item[{}]{ctx}
+\end{DoxyParamCaption}
+)~{\bf H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+cleanup}(ctx) /$\ast$ deprecated $\ast$/}\hypertarget{hmac_8h_a321b14bdf5ffe7ceca1c854d1d19c8ef}{}\label{hmac_8h_a321b14bdf5ffe7ceca1c854d1d19c8ef}
+\index{hmac.\+h@{hmac.\+h}!H\+M\+A\+C\+\_\+\+M\+A\+X\+\_\+\+M\+D\+\_\+\+C\+B\+L\+O\+CK@{H\+M\+A\+C\+\_\+\+M\+A\+X\+\_\+\+M\+D\+\_\+\+C\+B\+L\+O\+CK}}
+\index{H\+M\+A\+C\+\_\+\+M\+A\+X\+\_\+\+M\+D\+\_\+\+C\+B\+L\+O\+CK@{H\+M\+A\+C\+\_\+\+M\+A\+X\+\_\+\+M\+D\+\_\+\+C\+B\+L\+O\+CK}!hmac.\+h@{hmac.\+h}}
+\subsubsection[{\texorpdfstring{H\+M\+A\+C\+\_\+\+M\+A\+X\+\_\+\+M\+D\+\_\+\+C\+B\+L\+O\+CK}{HMAC_MAX_MD_CBLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+M\+A\+C\+\_\+\+M\+A\+X\+\_\+\+M\+D\+\_\+\+C\+B\+L\+O\+CK~128	/$\ast$ largest known is {\bf S\+H\+A512} $\ast$/}\hypertarget{hmac_8h_a70c2f521a62974fcae381df08f89c7a7}{}\label{hmac_8h_a70c2f521a62974fcae381df08f89c7a7}
+\index{hmac.\+h@{hmac.\+h}!H\+M\+A\+C\+\_\+size@{H\+M\+A\+C\+\_\+size}}
+\index{H\+M\+A\+C\+\_\+size@{H\+M\+A\+C\+\_\+size}!hmac.\+h@{hmac.\+h}}
+\subsubsection[{\texorpdfstring{H\+M\+A\+C\+\_\+size}{HMAC_size}}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+M\+A\+C\+\_\+size(
+\begin{DoxyParamCaption}
+\item[{}]{e}
+\end{DoxyParamCaption}
+)~({\bf E\+V\+P\+\_\+\+M\+D\+\_\+size}((e)-\/$>$md))}\hypertarget{hmac_8h_a92d257f71a3c933be492d3c16a38ad47}{}\label{hmac_8h_a92d257f71a3c933be492d3c16a38ad47}
+
+
+\subsection{Typedef Documentation}
+\index{hmac.\+h@{hmac.\+h}!H\+M\+A\+C\+\_\+\+C\+TX@{H\+M\+A\+C\+\_\+\+C\+TX}}
+\index{H\+M\+A\+C\+\_\+\+C\+TX@{H\+M\+A\+C\+\_\+\+C\+TX}!hmac.\+h@{hmac.\+h}}
+\subsubsection[{\texorpdfstring{H\+M\+A\+C\+\_\+\+C\+TX}{HMAC_CTX}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf hmac\+\_\+ctx\+\_\+st}  {\bf H\+M\+A\+C\+\_\+\+C\+TX}}\hypertarget{hmac_8h_aac042740b33d6ad59d219de07a6f8461}{}\label{hmac_8h_aac042740b33d6ad59d219de07a6f8461}
+
+
+\subsection{Function Documentation}
+\index{hmac.\+h@{hmac.\+h}!H\+M\+AC@{H\+M\+AC}}
+\index{H\+M\+AC@{H\+M\+AC}!hmac.\+h@{hmac.\+h}}
+\subsubsection[{\texorpdfstring{H\+M\+A\+C(const E\+V\+P\+\_\+\+M\+D $\ast$evp\+\_\+md, const void $\ast$key, int key\+\_\+len, const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md, unsigned int $\ast$md\+\_\+len)}{HMAC(const EVP_MD *evp_md, const void *key, int key_len, const unsigned char *d, size_t n, unsigned char *md, unsigned int *md_len)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ H\+M\+AC (
+\begin{DoxyParamCaption}
+\item[{const {\bf E\+V\+P\+\_\+\+MD} $\ast$}]{evp\+\_\+md, }
+\item[{const void $\ast$}]{key, }
+\item[{int}]{key\+\_\+len, }
+\item[{const unsigned char $\ast$}]{d, }
+\item[{size\+\_\+t}]{n, }
+\item[{unsigned char $\ast$}]{md, }
+\item[{unsigned int $\ast$}]{md\+\_\+len}
+\end{DoxyParamCaption}
+)}\hypertarget{hmac_8h_af8e23e6f0c107db2b1eb8b2bad23c5d1}{}\label{hmac_8h_af8e23e6f0c107db2b1eb8b2bad23c5d1}
+\index{hmac.\+h@{hmac.\+h}!H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+cleanup@{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+cleanup}}
+\index{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+cleanup@{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+cleanup}!hmac.\+h@{hmac.\+h}}
+\subsubsection[{\texorpdfstring{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+cleanup(\+H\+M\+A\+C\+\_\+\+C\+T\+X $\ast$ctx)}{HMAC_CTX_cleanup(HMAC_CTX *ctx)}}]{\setlength{\rightskip}{0pt plus 5cm}void H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+cleanup (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\hypertarget{hmac_8h_ad3131144aba13d6dae9bbcb53666761a}{}\label{hmac_8h_ad3131144aba13d6dae9bbcb53666761a}
+\index{hmac.\+h@{hmac.\+h}!H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+copy@{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+copy}}
+\index{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+copy@{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+copy}!hmac.\+h@{hmac.\+h}}
+\subsubsection[{\texorpdfstring{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+copy(\+H\+M\+A\+C\+\_\+\+C\+T\+X $\ast$dctx, H\+M\+A\+C\+\_\+\+C\+T\+X $\ast$sctx)}{HMAC_CTX_copy(HMAC_CTX *dctx, HMAC_CTX *sctx)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+copy (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{dctx, }
+\item[{{\bf H\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{sctx}
+\end{DoxyParamCaption}
+)}\hypertarget{hmac_8h_aa68d50676d4387bfb046b1a4d62b192d}{}\label{hmac_8h_aa68d50676d4387bfb046b1a4d62b192d}
+\index{hmac.\+h@{hmac.\+h}!H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+init@{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+init}}
+\index{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+init@{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+init}!hmac.\+h@{hmac.\+h}}
+\subsubsection[{\texorpdfstring{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+init(\+H\+M\+A\+C\+\_\+\+C\+T\+X $\ast$ctx)}{HMAC_CTX_init(HMAC_CTX *ctx)}}]{\setlength{\rightskip}{0pt plus 5cm}void H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\hypertarget{hmac_8h_a978cd73c621384dc42a70d04bd264150}{}\label{hmac_8h_a978cd73c621384dc42a70d04bd264150}
+\index{hmac.\+h@{hmac.\+h}!H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+set\+\_\+flags@{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+set\+\_\+flags}}
+\index{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+set\+\_\+flags@{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+set\+\_\+flags}!hmac.\+h@{hmac.\+h}}
+\subsubsection[{\texorpdfstring{H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+set\+\_\+flags(\+H\+M\+A\+C\+\_\+\+C\+T\+X $\ast$ctx, unsigned long flags)}{HMAC_CTX_set_flags(HMAC_CTX *ctx, unsigned long flags)}}]{\setlength{\rightskip}{0pt plus 5cm}void H\+M\+A\+C\+\_\+\+C\+T\+X\+\_\+set\+\_\+flags (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{ctx, }
+\item[{unsigned long}]{flags}
+\end{DoxyParamCaption}
+)}\hypertarget{hmac_8h_a29ffe6b3eb6a5bdaaf8d6c747bf6869d}{}\label{hmac_8h_a29ffe6b3eb6a5bdaaf8d6c747bf6869d}
+\index{hmac.\+h@{hmac.\+h}!H\+M\+A\+C\+\_\+\+Final@{H\+M\+A\+C\+\_\+\+Final}}
+\index{H\+M\+A\+C\+\_\+\+Final@{H\+M\+A\+C\+\_\+\+Final}!hmac.\+h@{hmac.\+h}}
+\subsubsection[{\texorpdfstring{H\+M\+A\+C\+\_\+\+Final(\+H\+M\+A\+C\+\_\+\+C\+T\+X $\ast$ctx, unsigned char $\ast$md, unsigned int $\ast$len)}{HMAC_Final(HMAC_CTX *ctx, unsigned char *md, unsigned int *len)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+M\+A\+C\+\_\+\+Final (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{ctx, }
+\item[{unsigned char $\ast$}]{md, }
+\item[{unsigned int $\ast$}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{hmac_8h_af90028523c5de48499b8b44c231be195}{}\label{hmac_8h_af90028523c5de48499b8b44c231be195}
+\index{hmac.\+h@{hmac.\+h}!H\+M\+A\+C\+\_\+\+Init@{H\+M\+A\+C\+\_\+\+Init}}
+\index{H\+M\+A\+C\+\_\+\+Init@{H\+M\+A\+C\+\_\+\+Init}!hmac.\+h@{hmac.\+h}}
+\subsubsection[{\texorpdfstring{H\+M\+A\+C\+\_\+\+Init(\+H\+M\+A\+C\+\_\+\+C\+T\+X $\ast$ctx, const void $\ast$key, int len, const E\+V\+P\+\_\+\+M\+D $\ast$md)}{HMAC_Init(HMAC_CTX *ctx, const void *key, int len, const EVP_MD *md)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+M\+A\+C\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{ctx, }
+\item[{const void $\ast$}]{key, }
+\item[{int}]{len, }
+\item[{const {\bf E\+V\+P\+\_\+\+MD} $\ast$}]{md}
+\end{DoxyParamCaption}
+)}\hypertarget{hmac_8h_ad6db50b7431101629c8349b4778b598a}{}\label{hmac_8h_ad6db50b7431101629c8349b4778b598a}
+\index{hmac.\+h@{hmac.\+h}!H\+M\+A\+C\+\_\+\+Init\+\_\+ex@{H\+M\+A\+C\+\_\+\+Init\+\_\+ex}}
+\index{H\+M\+A\+C\+\_\+\+Init\+\_\+ex@{H\+M\+A\+C\+\_\+\+Init\+\_\+ex}!hmac.\+h@{hmac.\+h}}
+\subsubsection[{\texorpdfstring{H\+M\+A\+C\+\_\+\+Init\+\_\+ex(\+H\+M\+A\+C\+\_\+\+C\+T\+X $\ast$ctx, const void $\ast$key, int len, const E\+V\+P\+\_\+\+M\+D $\ast$md, E\+N\+G\+I\+N\+E $\ast$impl)}{HMAC_Init_ex(HMAC_CTX *ctx, const void *key, int len, const EVP_MD *md, ENGINE *impl)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+M\+A\+C\+\_\+\+Init\+\_\+ex (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{ctx, }
+\item[{const void $\ast$}]{key, }
+\item[{int}]{len, }
+\item[{const {\bf E\+V\+P\+\_\+\+MD} $\ast$}]{md, }
+\item[{{\bf E\+N\+G\+I\+NE} $\ast$}]{impl}
+\end{DoxyParamCaption}
+)}\hypertarget{hmac_8h_ac3399d766f7dd7e46b6766b16962f8db}{}\label{hmac_8h_ac3399d766f7dd7e46b6766b16962f8db}
+\index{hmac.\+h@{hmac.\+h}!H\+M\+A\+C\+\_\+\+Update@{H\+M\+A\+C\+\_\+\+Update}}
+\index{H\+M\+A\+C\+\_\+\+Update@{H\+M\+A\+C\+\_\+\+Update}!hmac.\+h@{hmac.\+h}}
+\subsubsection[{\texorpdfstring{H\+M\+A\+C\+\_\+\+Update(\+H\+M\+A\+C\+\_\+\+C\+T\+X $\ast$ctx, const unsigned char $\ast$data, size\+\_\+t len)}{HMAC_Update(HMAC_CTX *ctx, const unsigned char *data, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}int H\+M\+A\+C\+\_\+\+Update (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+M\+A\+C\+\_\+\+C\+TX} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{data, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{hmac_8h_afa7c2f0856ee825a8d1292b1db2ee6bf}{}\label{hmac_8h_afa7c2f0856ee825a8d1292b1db2ee6bf}

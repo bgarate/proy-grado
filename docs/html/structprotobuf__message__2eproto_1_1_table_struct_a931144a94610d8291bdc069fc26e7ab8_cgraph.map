@@ -1,0 +1,7 @@
+<map id="protobuf_message_2eproto::TableStruct::InitDefaultsImpl" name="protobuf_message_2eproto::TableStruct::InitDefaultsImpl">
+<area shape="rect" id="node2" href="$namespaceprotobuf__message__2eproto.html#a0904ee0f747524cc1986baf4a9e9b3af" title="protobuf_message_2eproto\l::InitDefaults" alt="" coords="251,5,429,47"/>
+<area shape="rect" id="node3" href="$class_ping.html#a2d8195a2aff9e1014459165c746ce0cf" title="Ping::internal_default\l_instance" alt="" coords="268,71,412,112"/>
+<area shape="rect" id="node4" href="$class_do_shutdown.html#ab0bbc935fc413a234f1db826b6e51f00" title="DoShutdown::internal\l_default_instance" alt="" coords="267,136,413,177"/>
+<area shape="rect" id="node5" href="$class_advertisement.html#a5de3c30b307a764143dcdb7b2f6d9874" title="Advertisement::internal\l_default_instance" alt="" coords="262,201,418,243"/>
+<area shape="rect" id="node6" href="$class_hello.html#a2e142108ca801c978442fa5a754f1e29" title="Hello::internal_default\l_instance" alt="" coords="266,267,414,308"/>
+</map>

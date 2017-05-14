@@ -1,0 +1,6 @@
+<map id="_readPureDataInt" name="_readPureDataInt">
+<area shape="rect" id="node2" href="$ext_api_8c.html#a9b2f84fc1ffa6431876abd839e8ade87" title="_getCmdDataSize" alt="" coords="186,31,315,57"/>
+<area shape="rect" id="node3" href="$ext_api_platform_8c.html#a31eede90e2a9d23574e09a92ec626d9b" title="extApi_endianConversionInt" alt="" coords="372,5,557,32"/>
+<area shape="rect" id="node4" href="$ext_api_platform_8c.html#ab6136b9c73ac12f692dfabe8e3fa0759" title="extApi_getStringLength" alt="" coords="386,68,543,95"/>
+<area shape="rect" id="node5" href="$ext_api_platform_8c.html#ac7c8697b4686622ef5d969c9a3d7ff87" title="extApi_getIntFromPtr" alt="" coords="177,132,324,159"/>
+</map>

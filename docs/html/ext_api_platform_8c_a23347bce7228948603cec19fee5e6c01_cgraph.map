@@ -1,0 +1,5 @@
+<map id="extApi_globalSimpleLock" name="extApi_globalSimpleLock">
+<area shape="rect" id="node2" href="$ext_api_platform_8c.html#af55c00f32f997391a5ac17db423df304" title="_simpleLock" alt="" coords="221,5,316,32"/>
+<area shape="rect" id="node3" href="$ext_api_platform_8c.html#a385771ea61682609251bc86beb69449f" title="extApi_switchThread" alt="" coords="364,5,508,32"/>
+<area shape="rect" id="node4" href="$ext_api_platform_8c.html#ab48366fe799ea73fc2650c65f463c7d3" title="extApi_sleepMs" alt="" coords="556,5,671,32"/>
+</map>

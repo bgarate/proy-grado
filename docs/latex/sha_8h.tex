@@ -1,0 +1,446 @@
+\hypertarget{sha_8h}{}\section{src/hal/pb2/include/openssl/sha.h File Reference}
+\label{sha_8h}\index{src/hal/pb2/include/openssl/sha.\+h@{src/hal/pb2/include/openssl/sha.\+h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+Include dependency graph for sha.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{sha_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_s_h_astate__st}{S\+H\+Astate\+\_\+st}
+\item 
+struct \hyperlink{struct_s_h_a256state__st}{S\+H\+A256state\+\_\+st}
+\item 
+struct \hyperlink{struct_s_h_a512state__st}{S\+H\+A512state\+\_\+st}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sha_8h_a4729ab2c371d584a924f599dd4af7016}{\+\_\+\+\_\+bounded\+\_\+\+\_\+}(x,  y,  z)
+\item 
+\#define \hyperlink{sha_8h_a1b2e699d6af9a09d35e23c231e415c6c}{S\+H\+A\+\_\+\+L\+O\+NG}~unsigned int
+\item 
+\#define \hyperlink{sha_8h_a8902af97bc4411166213b43c6d2057d2}{S\+H\+A\+\_\+\+L\+B\+L\+O\+CK}~16
+\item 
+\#define \hyperlink{sha_8h_a400b14e6b40b76415449c1222724d4f3}{S\+H\+A\+\_\+\+C\+B\+L\+O\+CK}
+\item 
+\#define \hyperlink{sha_8h_abcea0cc6b4056c52af42bf05ce6a5219}{S\+H\+A\+\_\+\+L\+A\+S\+T\+\_\+\+B\+L\+O\+CK}~(\hyperlink{sha_8h_a400b14e6b40b76415449c1222724d4f3}{S\+H\+A\+\_\+\+C\+B\+L\+O\+CK}-\/8)
+\item 
+\#define \hyperlink{sha_8h_a1a715db7b4403fe6c165e49a32f5fe3d}{S\+H\+A\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}~20
+\item 
+\#define \hyperlink{sha_8h_a5bddb7838267f5966f0428626265afcd}{S\+H\+A256\+\_\+\+C\+B\+L\+O\+CK}
+\item 
+\#define \hyperlink{sha_8h_aac41b7686fc19eaf23d716838478de35}{S\+H\+A224\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}~28
+\item 
+\#define \hyperlink{sha_8h_aa9cf0abf87b30c4c63e9c7e89c590579}{S\+H\+A256\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}~32
+\item 
+\#define \hyperlink{sha_8h_a5f90d25a54e963a3ae3d800fffddaa31}{S\+H\+A384\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}~48
+\item 
+\#define \hyperlink{sha_8h_a5a8416d0f8e1af6d7525114ef09be118}{S\+H\+A512\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}~64
+\item 
+\#define \hyperlink{sha_8h_a322ff23dfbf746e0864f4e81786141b6}{S\+H\+A512\+\_\+\+C\+B\+L\+O\+CK}
+\item 
+\#define \hyperlink{sha_8h_a26681fbb750476e9b7532b8744916024}{S\+H\+A\+\_\+\+L\+O\+N\+G64}~unsigned long long
+\item 
+\#define \hyperlink{sha_8h_ae5a6272795b1b8e0045aa7a4319dceb8}{U64}(C)~C\#\#U\+LL
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct_s_h_astate__st}{S\+H\+Astate\+\_\+st} \hyperlink{sha_8h_af97c715f0e9f6c4fc9c0ea04e19a269b}{S\+H\+A\+\_\+\+C\+TX}
+\item 
+typedef struct \hyperlink{struct_s_h_a256state__st}{S\+H\+A256state\+\_\+st} \hyperlink{sha_8h_a7e6db5f03ddb050ce9a44c5dfd60e5ac}{S\+H\+A256\+\_\+\+C\+TX}
+\item 
+typedef struct \hyperlink{struct_s_h_a512state__st}{S\+H\+A512state\+\_\+st} \hyperlink{sha_8h_afb4a992e8ef51b3f35e331029e3251bb}{S\+H\+A512\+\_\+\+C\+TX}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{sha_8h_a6845db2d73c6c070adea39129712f531}{S\+H\+A\+\_\+\+Init} (\hyperlink{sha_8h_af97c715f0e9f6c4fc9c0ea04e19a269b}{S\+H\+A\+\_\+\+C\+TX} $\ast$c)
+\item 
+int \hyperlink{sha_8h_a38757810722a93d269bdbb641680442b}{S\+H\+A\+\_\+\+Update} (\hyperlink{sha_8h_af97c715f0e9f6c4fc9c0ea04e19a269b}{S\+H\+A\+\_\+\+C\+TX} $\ast$c, const void $\ast$data, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((\hyperlink{sha_8h_a4729ab2c371d584a924f599dd4af7016}{\+\_\+\+\_\+bounded\+\_\+\+\_\+}(\+\_\+\+\_\+buffer\+\_\+\+\_\+
+\item 
+int int \hyperlink{sha_8h_a34fa509d8e3508e9f3953d92483f03a5}{S\+H\+A\+\_\+\+Final} (unsigned char $\ast$md, \hyperlink{sha_8h_af97c715f0e9f6c4fc9c0ea04e19a269b}{S\+H\+A\+\_\+\+C\+TX} $\ast$c)
+\item 
+unsigned char $\ast$ \hyperlink{sha_8h_ab1fe52926193864115aa7687672047be}{S\+HA} (const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((\hyperlink{sha_8h_a4729ab2c371d584a924f599dd4af7016}{\+\_\+\+\_\+bounded\+\_\+\+\_\+}(\+\_\+\+\_\+buffer\+\_\+\+\_\+
+\item 
+unsigned char void \hyperlink{sha_8h_abcb16728cae618ec0273af95afbde1f4}{S\+H\+A\+\_\+\+Transform} (\hyperlink{sha_8h_af97c715f0e9f6c4fc9c0ea04e19a269b}{S\+H\+A\+\_\+\+C\+TX} $\ast$c, const unsigned char $\ast$data)
+\item 
+int \hyperlink{sha_8h_ad954eeef9b6210b817502847aea169fa}{S\+H\+A1\+\_\+\+Init} (\hyperlink{sha_8h_af97c715f0e9f6c4fc9c0ea04e19a269b}{S\+H\+A\+\_\+\+C\+TX} $\ast$c)
+\item 
+int \hyperlink{sha_8h_afb17c4b817209ca3742c6a65d5e2e556}{S\+H\+A1\+\_\+\+Update} (\hyperlink{sha_8h_af97c715f0e9f6c4fc9c0ea04e19a269b}{S\+H\+A\+\_\+\+C\+TX} $\ast$c, const void $\ast$data, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((\hyperlink{sha_8h_a4729ab2c371d584a924f599dd4af7016}{\+\_\+\+\_\+bounded\+\_\+\+\_\+}(\+\_\+\+\_\+buffer\+\_\+\+\_\+
+\item 
+int int \hyperlink{sha_8h_a2f9d46d8d3ed174cac6206e6e98baf82}{S\+H\+A1\+\_\+\+Final} (unsigned char $\ast$md, \hyperlink{sha_8h_af97c715f0e9f6c4fc9c0ea04e19a269b}{S\+H\+A\+\_\+\+C\+TX} $\ast$c)
+\item 
+unsigned char $\ast$ \hyperlink{sha_8h_a51fc02b439f5a5312b61b031f7aa65b1}{S\+H\+A1} (const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((\hyperlink{sha_8h_a4729ab2c371d584a924f599dd4af7016}{\+\_\+\+\_\+bounded\+\_\+\+\_\+}(\+\_\+\+\_\+buffer\+\_\+\+\_\+
+\item 
+unsigned char void \hyperlink{sha_8h_a01c8143e9213304d5e9cf30c6d192772}{S\+H\+A1\+\_\+\+Transform} (\hyperlink{sha_8h_af97c715f0e9f6c4fc9c0ea04e19a269b}{S\+H\+A\+\_\+\+C\+TX} $\ast$c, const unsigned char $\ast$data)
+\item 
+int \hyperlink{sha_8h_ab3befdb5a3202fa6d2eda5f3a06eadfa}{S\+H\+A224\+\_\+\+Init} (\hyperlink{sha_8h_a7e6db5f03ddb050ce9a44c5dfd60e5ac}{S\+H\+A256\+\_\+\+C\+TX} $\ast$c)
+\item 
+int \hyperlink{sha_8h_a15801ad5a41db6dca49d583742479d7a}{S\+H\+A224\+\_\+\+Update} (\hyperlink{sha_8h_a7e6db5f03ddb050ce9a44c5dfd60e5ac}{S\+H\+A256\+\_\+\+C\+TX} $\ast$c, const void $\ast$data, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((\hyperlink{sha_8h_a4729ab2c371d584a924f599dd4af7016}{\+\_\+\+\_\+bounded\+\_\+\+\_\+}(\+\_\+\+\_\+buffer\+\_\+\+\_\+
+\item 
+int int \hyperlink{sha_8h_a03be7f36f2914460085e6a7831b0022b}{S\+H\+A224\+\_\+\+Final} (unsigned char $\ast$md, \hyperlink{sha_8h_a7e6db5f03ddb050ce9a44c5dfd60e5ac}{S\+H\+A256\+\_\+\+C\+TX} $\ast$c)
+\item 
+unsigned char $\ast$ \hyperlink{sha_8h_a29f3448b4de8f285d001baa72b759408}{S\+H\+A224} (const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((\hyperlink{sha_8h_a4729ab2c371d584a924f599dd4af7016}{\+\_\+\+\_\+bounded\+\_\+\+\_\+}(\+\_\+\+\_\+buffer\+\_\+\+\_\+
+\item 
+unsigned char int \hyperlink{sha_8h_abec10e7f8128a2c0adb5cd0e139a2d3b}{S\+H\+A256\+\_\+\+Init} (\hyperlink{sha_8h_a7e6db5f03ddb050ce9a44c5dfd60e5ac}{S\+H\+A256\+\_\+\+C\+TX} $\ast$c)
+\item 
+int \hyperlink{sha_8h_a10b6477164c37b57876ef4cdcf722412}{S\+H\+A256\+\_\+\+Update} (\hyperlink{sha_8h_a7e6db5f03ddb050ce9a44c5dfd60e5ac}{S\+H\+A256\+\_\+\+C\+TX} $\ast$c, const void $\ast$data, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((\hyperlink{sha_8h_a4729ab2c371d584a924f599dd4af7016}{\+\_\+\+\_\+bounded\+\_\+\+\_\+}(\+\_\+\+\_\+buffer\+\_\+\+\_\+
+\item 
+int int \hyperlink{sha_8h_a517f91b0390fcdecb782cd0a20f62eec}{S\+H\+A256\+\_\+\+Final} (unsigned char $\ast$md, \hyperlink{sha_8h_a7e6db5f03ddb050ce9a44c5dfd60e5ac}{S\+H\+A256\+\_\+\+C\+TX} $\ast$c)
+\item 
+unsigned char $\ast$ \hyperlink{sha_8h_af921d2c29a00614f31f3f59b165244f8}{S\+H\+A256} (const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((\hyperlink{sha_8h_a4729ab2c371d584a924f599dd4af7016}{\+\_\+\+\_\+bounded\+\_\+\+\_\+}(\+\_\+\+\_\+buffer\+\_\+\+\_\+
+\item 
+unsigned char void \hyperlink{sha_8h_abc304f6e8d22c84be4da64c4a5d40130}{S\+H\+A256\+\_\+\+Transform} (\hyperlink{sha_8h_a7e6db5f03ddb050ce9a44c5dfd60e5ac}{S\+H\+A256\+\_\+\+C\+TX} $\ast$c, const unsigned char $\ast$data)
+\item 
+int \hyperlink{sha_8h_ab7ca087b2f4896acc5a9e55a018fb99c}{S\+H\+A384\+\_\+\+Init} (\hyperlink{sha_8h_afb4a992e8ef51b3f35e331029e3251bb}{S\+H\+A512\+\_\+\+C\+TX} $\ast$c)
+\item 
+int \hyperlink{sha_8h_a0346ec1ac6fb0b865c93fe9b29d4d460}{S\+H\+A384\+\_\+\+Update} (\hyperlink{sha_8h_afb4a992e8ef51b3f35e331029e3251bb}{S\+H\+A512\+\_\+\+C\+TX} $\ast$c, const void $\ast$data, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((\hyperlink{sha_8h_a4729ab2c371d584a924f599dd4af7016}{\+\_\+\+\_\+bounded\+\_\+\+\_\+}(\+\_\+\+\_\+buffer\+\_\+\+\_\+
+\item 
+int int \hyperlink{sha_8h_a8f488b6f1327cc034bcce9d09307a9b7}{S\+H\+A384\+\_\+\+Final} (unsigned char $\ast$md, \hyperlink{sha_8h_afb4a992e8ef51b3f35e331029e3251bb}{S\+H\+A512\+\_\+\+C\+TX} $\ast$c)
+\item 
+unsigned char $\ast$ \hyperlink{sha_8h_a94699433d65db3c1e59407c6a441ea48}{S\+H\+A384} (const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((\hyperlink{sha_8h_a4729ab2c371d584a924f599dd4af7016}{\+\_\+\+\_\+bounded\+\_\+\+\_\+}(\+\_\+\+\_\+buffer\+\_\+\+\_\+
+\item 
+unsigned char int \hyperlink{sha_8h_a1f72ed43342dc212a213e96d2a4d594c}{S\+H\+A512\+\_\+\+Init} (\hyperlink{sha_8h_afb4a992e8ef51b3f35e331029e3251bb}{S\+H\+A512\+\_\+\+C\+TX} $\ast$c)
+\item 
+int \hyperlink{sha_8h_aa58ce64e42c3990d67f401abed9d4f23}{S\+H\+A512\+\_\+\+Update} (\hyperlink{sha_8h_afb4a992e8ef51b3f35e331029e3251bb}{S\+H\+A512\+\_\+\+C\+TX} $\ast$c, const void $\ast$data, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((\hyperlink{sha_8h_a4729ab2c371d584a924f599dd4af7016}{\+\_\+\+\_\+bounded\+\_\+\+\_\+}(\+\_\+\+\_\+buffer\+\_\+\+\_\+
+\item 
+int int \hyperlink{sha_8h_abe4812bdcc3e48fa77230162fcfc342a}{S\+H\+A512\+\_\+\+Final} (unsigned char $\ast$md, \hyperlink{sha_8h_afb4a992e8ef51b3f35e331029e3251bb}{S\+H\+A512\+\_\+\+C\+TX} $\ast$c)
+\item 
+unsigned char $\ast$ \hyperlink{sha_8h_acc58281ac81fdd9eb569011e7a379f89}{S\+H\+A512} (const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((\hyperlink{sha_8h_a4729ab2c371d584a924f599dd4af7016}{\+\_\+\+\_\+bounded\+\_\+\+\_\+}(\+\_\+\+\_\+buffer\+\_\+\+\_\+
+\item 
+unsigned char void \hyperlink{sha_8h_af11b017d220294d327407bc75586dcc7}{S\+H\+A512\+\_\+\+Transform} (\hyperlink{sha_8h_afb4a992e8ef51b3f35e331029e3251bb}{S\+H\+A512\+\_\+\+C\+TX} $\ast$c, const unsigned char $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{sha.\+h@{sha.\+h}!\+\_\+\+\_\+bounded\+\_\+\+\_\+@{\+\_\+\+\_\+bounded\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+bounded\+\_\+\+\_\+@{\+\_\+\+\_\+bounded\+\_\+\+\_\+}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+bounded\+\_\+\+\_\+}{__bounded__}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+bounded\+\_\+\+\_\+(
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{y, }
+\item[{}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_a4729ab2c371d584a924f599dd4af7016}{}\label{sha_8h_a4729ab2c371d584a924f599dd4af7016}
+\index{sha.\+h@{sha.\+h}!S\+H\+A224\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{S\+H\+A224\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}}
+\index{S\+H\+A224\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{S\+H\+A224\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A224\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}{SHA224_DIGEST_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+H\+A224\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH~28}\hypertarget{sha_8h_aac41b7686fc19eaf23d716838478de35}{}\label{sha_8h_aac41b7686fc19eaf23d716838478de35}
+\index{sha.\+h@{sha.\+h}!S\+H\+A256\+\_\+\+C\+B\+L\+O\+CK@{S\+H\+A256\+\_\+\+C\+B\+L\+O\+CK}}
+\index{S\+H\+A256\+\_\+\+C\+B\+L\+O\+CK@{S\+H\+A256\+\_\+\+C\+B\+L\+O\+CK}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A256\+\_\+\+C\+B\+L\+O\+CK}{SHA256_CBLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+H\+A256\+\_\+\+C\+B\+L\+O\+CK}\hypertarget{sha_8h_a5bddb7838267f5966f0428626265afcd}{}\label{sha_8h_a5bddb7838267f5966f0428626265afcd}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(\hyperlink{sha_8h_a8902af97bc4411166213b43c6d2057d2}{SHA\_LBLOCK}*4)    \textcolor{comment}{/* SHA-256 treats input data as a}
+\textcolor{comment}{                     * contiguous array of 32 bit}
+\textcolor{comment}{                     * wide big-endian values. */}
+\end{DoxyCode}
+\index{sha.\+h@{sha.\+h}!S\+H\+A256\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{S\+H\+A256\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}}
+\index{S\+H\+A256\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{S\+H\+A256\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A256\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}{SHA256_DIGEST_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+H\+A256\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH~32}\hypertarget{sha_8h_aa9cf0abf87b30c4c63e9c7e89c590579}{}\label{sha_8h_aa9cf0abf87b30c4c63e9c7e89c590579}
+\index{sha.\+h@{sha.\+h}!S\+H\+A384\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{S\+H\+A384\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}}
+\index{S\+H\+A384\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{S\+H\+A384\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A384\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}{SHA384_DIGEST_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+H\+A384\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH~48}\hypertarget{sha_8h_a5f90d25a54e963a3ae3d800fffddaa31}{}\label{sha_8h_a5f90d25a54e963a3ae3d800fffddaa31}
+\index{sha.\+h@{sha.\+h}!S\+H\+A512\+\_\+\+C\+B\+L\+O\+CK@{S\+H\+A512\+\_\+\+C\+B\+L\+O\+CK}}
+\index{S\+H\+A512\+\_\+\+C\+B\+L\+O\+CK@{S\+H\+A512\+\_\+\+C\+B\+L\+O\+CK}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A512\+\_\+\+C\+B\+L\+O\+CK}{SHA512_CBLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+H\+A512\+\_\+\+C\+B\+L\+O\+CK}\hypertarget{sha_8h_a322ff23dfbf746e0864f4e81786141b6}{}\label{sha_8h_a322ff23dfbf746e0864f4e81786141b6}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(\hyperlink{sha_8h_a8902af97bc4411166213b43c6d2057d2}{SHA\_LBLOCK}*8)    \textcolor{comment}{/* SHA-512 treats input data as a}
+\textcolor{comment}{                     * contiguous array of 64 bit}
+\textcolor{comment}{                     * wide big-endian values. */}
+\end{DoxyCode}
+\index{sha.\+h@{sha.\+h}!S\+H\+A512\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{S\+H\+A512\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}}
+\index{S\+H\+A512\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{S\+H\+A512\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A512\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}{SHA512_DIGEST_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+H\+A512\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH~64}\hypertarget{sha_8h_a5a8416d0f8e1af6d7525114ef09be118}{}\label{sha_8h_a5a8416d0f8e1af6d7525114ef09be118}
+\index{sha.\+h@{sha.\+h}!S\+H\+A\+\_\+\+C\+B\+L\+O\+CK@{S\+H\+A\+\_\+\+C\+B\+L\+O\+CK}}
+\index{S\+H\+A\+\_\+\+C\+B\+L\+O\+CK@{S\+H\+A\+\_\+\+C\+B\+L\+O\+CK}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A\+\_\+\+C\+B\+L\+O\+CK}{SHA_CBLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+H\+A\+\_\+\+C\+B\+L\+O\+CK}\hypertarget{sha_8h_a400b14e6b40b76415449c1222724d4f3}{}\label{sha_8h_a400b14e6b40b76415449c1222724d4f3}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(\hyperlink{sha_8h_a8902af97bc4411166213b43c6d2057d2}{SHA\_LBLOCK}*4)    \textcolor{comment}{/* SHA treats input data as a}
+\textcolor{comment}{                     * contiguous array of 32 bit}
+\textcolor{comment}{                     * wide big-endian values. */}
+\end{DoxyCode}
+\index{sha.\+h@{sha.\+h}!S\+H\+A\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{S\+H\+A\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}}
+\index{S\+H\+A\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{S\+H\+A\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}{SHA_DIGEST_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+H\+A\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH~20}\hypertarget{sha_8h_a1a715db7b4403fe6c165e49a32f5fe3d}{}\label{sha_8h_a1a715db7b4403fe6c165e49a32f5fe3d}
+\index{sha.\+h@{sha.\+h}!S\+H\+A\+\_\+\+L\+A\+S\+T\+\_\+\+B\+L\+O\+CK@{S\+H\+A\+\_\+\+L\+A\+S\+T\+\_\+\+B\+L\+O\+CK}}
+\index{S\+H\+A\+\_\+\+L\+A\+S\+T\+\_\+\+B\+L\+O\+CK@{S\+H\+A\+\_\+\+L\+A\+S\+T\+\_\+\+B\+L\+O\+CK}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A\+\_\+\+L\+A\+S\+T\+\_\+\+B\+L\+O\+CK}{SHA_LAST_BLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+H\+A\+\_\+\+L\+A\+S\+T\+\_\+\+B\+L\+O\+CK~({\bf S\+H\+A\+\_\+\+C\+B\+L\+O\+CK}-\/8)}\hypertarget{sha_8h_abcea0cc6b4056c52af42bf05ce6a5219}{}\label{sha_8h_abcea0cc6b4056c52af42bf05ce6a5219}
+\index{sha.\+h@{sha.\+h}!S\+H\+A\+\_\+\+L\+B\+L\+O\+CK@{S\+H\+A\+\_\+\+L\+B\+L\+O\+CK}}
+\index{S\+H\+A\+\_\+\+L\+B\+L\+O\+CK@{S\+H\+A\+\_\+\+L\+B\+L\+O\+CK}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A\+\_\+\+L\+B\+L\+O\+CK}{SHA_LBLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+H\+A\+\_\+\+L\+B\+L\+O\+CK~16}\hypertarget{sha_8h_a8902af97bc4411166213b43c6d2057d2}{}\label{sha_8h_a8902af97bc4411166213b43c6d2057d2}
+\index{sha.\+h@{sha.\+h}!S\+H\+A\+\_\+\+L\+O\+NG@{S\+H\+A\+\_\+\+L\+O\+NG}}
+\index{S\+H\+A\+\_\+\+L\+O\+NG@{S\+H\+A\+\_\+\+L\+O\+NG}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A\+\_\+\+L\+O\+NG}{SHA_LONG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+H\+A\+\_\+\+L\+O\+NG~unsigned int}\hypertarget{sha_8h_a1b2e699d6af9a09d35e23c231e415c6c}{}\label{sha_8h_a1b2e699d6af9a09d35e23c231e415c6c}
+\index{sha.\+h@{sha.\+h}!S\+H\+A\+\_\+\+L\+O\+N\+G64@{S\+H\+A\+\_\+\+L\+O\+N\+G64}}
+\index{S\+H\+A\+\_\+\+L\+O\+N\+G64@{S\+H\+A\+\_\+\+L\+O\+N\+G64}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A\+\_\+\+L\+O\+N\+G64}{SHA_LONG64}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+H\+A\+\_\+\+L\+O\+N\+G64~unsigned long long}\hypertarget{sha_8h_a26681fbb750476e9b7532b8744916024}{}\label{sha_8h_a26681fbb750476e9b7532b8744916024}
+\index{sha.\+h@{sha.\+h}!U64@{U64}}
+\index{U64@{U64}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{U64}{U64}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U64(
+\begin{DoxyParamCaption}
+\item[{}]{C}
+\end{DoxyParamCaption}
+)~C\#\#U\+LL}\hypertarget{sha_8h_ae5a6272795b1b8e0045aa7a4319dceb8}{}\label{sha_8h_ae5a6272795b1b8e0045aa7a4319dceb8}
+
+
+\subsection{Typedef Documentation}
+\index{sha.\+h@{sha.\+h}!S\+H\+A256\+\_\+\+C\+TX@{S\+H\+A256\+\_\+\+C\+TX}}
+\index{S\+H\+A256\+\_\+\+C\+TX@{S\+H\+A256\+\_\+\+C\+TX}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A256\+\_\+\+C\+TX}{SHA256_CTX}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf S\+H\+A256state\+\_\+st}  {\bf S\+H\+A256\+\_\+\+C\+TX}}\hypertarget{sha_8h_a7e6db5f03ddb050ce9a44c5dfd60e5ac}{}\label{sha_8h_a7e6db5f03ddb050ce9a44c5dfd60e5ac}
+\index{sha.\+h@{sha.\+h}!S\+H\+A512\+\_\+\+C\+TX@{S\+H\+A512\+\_\+\+C\+TX}}
+\index{S\+H\+A512\+\_\+\+C\+TX@{S\+H\+A512\+\_\+\+C\+TX}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A512\+\_\+\+C\+TX}{SHA512_CTX}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf S\+H\+A512state\+\_\+st}  {\bf S\+H\+A512\+\_\+\+C\+TX}}\hypertarget{sha_8h_afb4a992e8ef51b3f35e331029e3251bb}{}\label{sha_8h_afb4a992e8ef51b3f35e331029e3251bb}
+\index{sha.\+h@{sha.\+h}!S\+H\+A\+\_\+\+C\+TX@{S\+H\+A\+\_\+\+C\+TX}}
+\index{S\+H\+A\+\_\+\+C\+TX@{S\+H\+A\+\_\+\+C\+TX}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A\+\_\+\+C\+TX}{SHA_CTX}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf S\+H\+Astate\+\_\+st}  {\bf S\+H\+A\+\_\+\+C\+TX}}\hypertarget{sha_8h_af97c715f0e9f6c4fc9c0ea04e19a269b}{}\label{sha_8h_af97c715f0e9f6c4fc9c0ea04e19a269b}
+
+
+\subsection{Function Documentation}
+\index{sha.\+h@{sha.\+h}!S\+HA@{S\+HA}}
+\index{S\+HA@{S\+HA}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A(const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md) \+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+bounded\+\_\+\+\_\+(\+\_\+\+\_\+buffer\+\_\+\+\_\+}{SHA(const unsigned char *d, size_t n, unsigned char *md) __attribute__((__bounded__(__buffer__}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ S\+HA (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{d, }
+\item[{size\+\_\+t}]{n, }
+\item[{unsigned char $\ast$}]{md}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_ab1fe52926193864115aa7687672047be}{}\label{sha_8h_ab1fe52926193864115aa7687672047be}
+\index{sha.\+h@{sha.\+h}!S\+H\+A1@{S\+H\+A1}}
+\index{S\+H\+A1@{S\+H\+A1}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A1(const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md) \+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+bounded\+\_\+\+\_\+(\+\_\+\+\_\+buffer\+\_\+\+\_\+}{SHA1(const unsigned char *d, size_t n, unsigned char *md) __attribute__((__bounded__(__buffer__}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ S\+H\+A1 (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{d, }
+\item[{size\+\_\+t}]{n, }
+\item[{unsigned char $\ast$}]{md}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_a51fc02b439f5a5312b61b031f7aa65b1}{}\label{sha_8h_a51fc02b439f5a5312b61b031f7aa65b1}
+\index{sha.\+h@{sha.\+h}!S\+H\+A1\+\_\+\+Final@{S\+H\+A1\+\_\+\+Final}}
+\index{S\+H\+A1\+\_\+\+Final@{S\+H\+A1\+\_\+\+Final}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A1\+\_\+\+Final(unsigned char $\ast$md, S\+H\+A\+\_\+\+C\+T\+X $\ast$c)}{SHA1_Final(unsigned char *md, SHA_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int int S\+H\+A1\+\_\+\+Final (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{md, }
+\item[{{\bf S\+H\+A\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_a2f9d46d8d3ed174cac6206e6e98baf82}{}\label{sha_8h_a2f9d46d8d3ed174cac6206e6e98baf82}
+\index{sha.\+h@{sha.\+h}!S\+H\+A1\+\_\+\+Init@{S\+H\+A1\+\_\+\+Init}}
+\index{S\+H\+A1\+\_\+\+Init@{S\+H\+A1\+\_\+\+Init}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A1\+\_\+\+Init(\+S\+H\+A\+\_\+\+C\+T\+X $\ast$c)}{SHA1_Init(SHA_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+H\+A1\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+H\+A\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_ad954eeef9b6210b817502847aea169fa}{}\label{sha_8h_ad954eeef9b6210b817502847aea169fa}
+\index{sha.\+h@{sha.\+h}!S\+H\+A1\+\_\+\+Transform@{S\+H\+A1\+\_\+\+Transform}}
+\index{S\+H\+A1\+\_\+\+Transform@{S\+H\+A1\+\_\+\+Transform}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A1\+\_\+\+Transform(\+S\+H\+A\+\_\+\+C\+T\+X $\ast$c, const unsigned char $\ast$data)}{SHA1_Transform(SHA_CTX *c, const unsigned char *data)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char void S\+H\+A1\+\_\+\+Transform (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+H\+A\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_a01c8143e9213304d5e9cf30c6d192772}{}\label{sha_8h_a01c8143e9213304d5e9cf30c6d192772}
+\index{sha.\+h@{sha.\+h}!S\+H\+A1\+\_\+\+Update@{S\+H\+A1\+\_\+\+Update}}
+\index{S\+H\+A1\+\_\+\+Update@{S\+H\+A1\+\_\+\+Update}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A1\+\_\+\+Update(\+S\+H\+A\+\_\+\+C\+T\+X $\ast$c, const void $\ast$data, size\+\_\+t len) \+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+bounded\+\_\+\+\_\+(\+\_\+\+\_\+buffer\+\_\+\+\_\+}{SHA1_Update(SHA_CTX *c, const void *data, size_t len) __attribute__((__bounded__(__buffer__}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+H\+A1\+\_\+\+Update (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+H\+A\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const void $\ast$}]{data, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_afb17c4b817209ca3742c6a65d5e2e556}{}\label{sha_8h_afb17c4b817209ca3742c6a65d5e2e556}
+\index{sha.\+h@{sha.\+h}!S\+H\+A224@{S\+H\+A224}}
+\index{S\+H\+A224@{S\+H\+A224}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A224(const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md) \+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+bounded\+\_\+\+\_\+(\+\_\+\+\_\+buffer\+\_\+\+\_\+}{SHA224(const unsigned char *d, size_t n, unsigned char *md) __attribute__((__bounded__(__buffer__}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ S\+H\+A224 (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{d, }
+\item[{size\+\_\+t}]{n, }
+\item[{unsigned char $\ast$}]{md}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_a29f3448b4de8f285d001baa72b759408}{}\label{sha_8h_a29f3448b4de8f285d001baa72b759408}
+\index{sha.\+h@{sha.\+h}!S\+H\+A224\+\_\+\+Final@{S\+H\+A224\+\_\+\+Final}}
+\index{S\+H\+A224\+\_\+\+Final@{S\+H\+A224\+\_\+\+Final}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A224\+\_\+\+Final(unsigned char $\ast$md, S\+H\+A256\+\_\+\+C\+T\+X $\ast$c)}{SHA224_Final(unsigned char *md, SHA256_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int int S\+H\+A224\+\_\+\+Final (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{md, }
+\item[{{\bf S\+H\+A256\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_a03be7f36f2914460085e6a7831b0022b}{}\label{sha_8h_a03be7f36f2914460085e6a7831b0022b}
+\index{sha.\+h@{sha.\+h}!S\+H\+A224\+\_\+\+Init@{S\+H\+A224\+\_\+\+Init}}
+\index{S\+H\+A224\+\_\+\+Init@{S\+H\+A224\+\_\+\+Init}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A224\+\_\+\+Init(\+S\+H\+A256\+\_\+\+C\+T\+X $\ast$c)}{SHA224_Init(SHA256_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+H\+A224\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+H\+A256\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_ab3befdb5a3202fa6d2eda5f3a06eadfa}{}\label{sha_8h_ab3befdb5a3202fa6d2eda5f3a06eadfa}
+\index{sha.\+h@{sha.\+h}!S\+H\+A224\+\_\+\+Update@{S\+H\+A224\+\_\+\+Update}}
+\index{S\+H\+A224\+\_\+\+Update@{S\+H\+A224\+\_\+\+Update}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A224\+\_\+\+Update(\+S\+H\+A256\+\_\+\+C\+T\+X $\ast$c, const void $\ast$data, size\+\_\+t len) \+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+bounded\+\_\+\+\_\+(\+\_\+\+\_\+buffer\+\_\+\+\_\+}{SHA224_Update(SHA256_CTX *c, const void *data, size_t len) __attribute__((__bounded__(__buffer__}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+H\+A224\+\_\+\+Update (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+H\+A256\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const void $\ast$}]{data, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_a15801ad5a41db6dca49d583742479d7a}{}\label{sha_8h_a15801ad5a41db6dca49d583742479d7a}
+\index{sha.\+h@{sha.\+h}!S\+H\+A256@{S\+H\+A256}}
+\index{S\+H\+A256@{S\+H\+A256}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A256(const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md) \+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+bounded\+\_\+\+\_\+(\+\_\+\+\_\+buffer\+\_\+\+\_\+}{SHA256(const unsigned char *d, size_t n, unsigned char *md) __attribute__((__bounded__(__buffer__}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ S\+H\+A256 (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{d, }
+\item[{size\+\_\+t}]{n, }
+\item[{unsigned char $\ast$}]{md}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_af921d2c29a00614f31f3f59b165244f8}{}\label{sha_8h_af921d2c29a00614f31f3f59b165244f8}
+\index{sha.\+h@{sha.\+h}!S\+H\+A256\+\_\+\+Final@{S\+H\+A256\+\_\+\+Final}}
+\index{S\+H\+A256\+\_\+\+Final@{S\+H\+A256\+\_\+\+Final}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A256\+\_\+\+Final(unsigned char $\ast$md, S\+H\+A256\+\_\+\+C\+T\+X $\ast$c)}{SHA256_Final(unsigned char *md, SHA256_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int int S\+H\+A256\+\_\+\+Final (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{md, }
+\item[{{\bf S\+H\+A256\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_a517f91b0390fcdecb782cd0a20f62eec}{}\label{sha_8h_a517f91b0390fcdecb782cd0a20f62eec}
+\index{sha.\+h@{sha.\+h}!S\+H\+A256\+\_\+\+Init@{S\+H\+A256\+\_\+\+Init}}
+\index{S\+H\+A256\+\_\+\+Init@{S\+H\+A256\+\_\+\+Init}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A256\+\_\+\+Init(\+S\+H\+A256\+\_\+\+C\+T\+X $\ast$c)}{SHA256_Init(SHA256_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char int S\+H\+A256\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+H\+A256\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_abec10e7f8128a2c0adb5cd0e139a2d3b}{}\label{sha_8h_abec10e7f8128a2c0adb5cd0e139a2d3b}
+\index{sha.\+h@{sha.\+h}!S\+H\+A256\+\_\+\+Transform@{S\+H\+A256\+\_\+\+Transform}}
+\index{S\+H\+A256\+\_\+\+Transform@{S\+H\+A256\+\_\+\+Transform}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A256\+\_\+\+Transform(\+S\+H\+A256\+\_\+\+C\+T\+X $\ast$c, const unsigned char $\ast$data)}{SHA256_Transform(SHA256_CTX *c, const unsigned char *data)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char void S\+H\+A256\+\_\+\+Transform (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+H\+A256\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_abc304f6e8d22c84be4da64c4a5d40130}{}\label{sha_8h_abc304f6e8d22c84be4da64c4a5d40130}
+\index{sha.\+h@{sha.\+h}!S\+H\+A256\+\_\+\+Update@{S\+H\+A256\+\_\+\+Update}}
+\index{S\+H\+A256\+\_\+\+Update@{S\+H\+A256\+\_\+\+Update}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A256\+\_\+\+Update(\+S\+H\+A256\+\_\+\+C\+T\+X $\ast$c, const void $\ast$data, size\+\_\+t len) \+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+bounded\+\_\+\+\_\+(\+\_\+\+\_\+buffer\+\_\+\+\_\+}{SHA256_Update(SHA256_CTX *c, const void *data, size_t len) __attribute__((__bounded__(__buffer__}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+H\+A256\+\_\+\+Update (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+H\+A256\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const void $\ast$}]{data, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_a10b6477164c37b57876ef4cdcf722412}{}\label{sha_8h_a10b6477164c37b57876ef4cdcf722412}
+\index{sha.\+h@{sha.\+h}!S\+H\+A384@{S\+H\+A384}}
+\index{S\+H\+A384@{S\+H\+A384}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A384(const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md) \+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+bounded\+\_\+\+\_\+(\+\_\+\+\_\+buffer\+\_\+\+\_\+}{SHA384(const unsigned char *d, size_t n, unsigned char *md) __attribute__((__bounded__(__buffer__}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ S\+H\+A384 (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{d, }
+\item[{size\+\_\+t}]{n, }
+\item[{unsigned char $\ast$}]{md}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_a94699433d65db3c1e59407c6a441ea48}{}\label{sha_8h_a94699433d65db3c1e59407c6a441ea48}
+\index{sha.\+h@{sha.\+h}!S\+H\+A384\+\_\+\+Final@{S\+H\+A384\+\_\+\+Final}}
+\index{S\+H\+A384\+\_\+\+Final@{S\+H\+A384\+\_\+\+Final}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A384\+\_\+\+Final(unsigned char $\ast$md, S\+H\+A512\+\_\+\+C\+T\+X $\ast$c)}{SHA384_Final(unsigned char *md, SHA512_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int int S\+H\+A384\+\_\+\+Final (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{md, }
+\item[{{\bf S\+H\+A512\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_a8f488b6f1327cc034bcce9d09307a9b7}{}\label{sha_8h_a8f488b6f1327cc034bcce9d09307a9b7}
+\index{sha.\+h@{sha.\+h}!S\+H\+A384\+\_\+\+Init@{S\+H\+A384\+\_\+\+Init}}
+\index{S\+H\+A384\+\_\+\+Init@{S\+H\+A384\+\_\+\+Init}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A384\+\_\+\+Init(\+S\+H\+A512\+\_\+\+C\+T\+X $\ast$c)}{SHA384_Init(SHA512_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+H\+A384\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+H\+A512\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_ab7ca087b2f4896acc5a9e55a018fb99c}{}\label{sha_8h_ab7ca087b2f4896acc5a9e55a018fb99c}
+\index{sha.\+h@{sha.\+h}!S\+H\+A384\+\_\+\+Update@{S\+H\+A384\+\_\+\+Update}}
+\index{S\+H\+A384\+\_\+\+Update@{S\+H\+A384\+\_\+\+Update}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A384\+\_\+\+Update(\+S\+H\+A512\+\_\+\+C\+T\+X $\ast$c, const void $\ast$data, size\+\_\+t len) \+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+bounded\+\_\+\+\_\+(\+\_\+\+\_\+buffer\+\_\+\+\_\+}{SHA384_Update(SHA512_CTX *c, const void *data, size_t len) __attribute__((__bounded__(__buffer__}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+H\+A384\+\_\+\+Update (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+H\+A512\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const void $\ast$}]{data, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_a0346ec1ac6fb0b865c93fe9b29d4d460}{}\label{sha_8h_a0346ec1ac6fb0b865c93fe9b29d4d460}
+\index{sha.\+h@{sha.\+h}!S\+H\+A512@{S\+H\+A512}}
+\index{S\+H\+A512@{S\+H\+A512}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A512(const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md) \+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+bounded\+\_\+\+\_\+(\+\_\+\+\_\+buffer\+\_\+\+\_\+}{SHA512(const unsigned char *d, size_t n, unsigned char *md) __attribute__((__bounded__(__buffer__}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ S\+H\+A512 (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{d, }
+\item[{size\+\_\+t}]{n, }
+\item[{unsigned char $\ast$}]{md}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_acc58281ac81fdd9eb569011e7a379f89}{}\label{sha_8h_acc58281ac81fdd9eb569011e7a379f89}
+\index{sha.\+h@{sha.\+h}!S\+H\+A512\+\_\+\+Final@{S\+H\+A512\+\_\+\+Final}}
+\index{S\+H\+A512\+\_\+\+Final@{S\+H\+A512\+\_\+\+Final}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A512\+\_\+\+Final(unsigned char $\ast$md, S\+H\+A512\+\_\+\+C\+T\+X $\ast$c)}{SHA512_Final(unsigned char *md, SHA512_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int int S\+H\+A512\+\_\+\+Final (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{md, }
+\item[{{\bf S\+H\+A512\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_abe4812bdcc3e48fa77230162fcfc342a}{}\label{sha_8h_abe4812bdcc3e48fa77230162fcfc342a}
+\index{sha.\+h@{sha.\+h}!S\+H\+A512\+\_\+\+Init@{S\+H\+A512\+\_\+\+Init}}
+\index{S\+H\+A512\+\_\+\+Init@{S\+H\+A512\+\_\+\+Init}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A512\+\_\+\+Init(\+S\+H\+A512\+\_\+\+C\+T\+X $\ast$c)}{SHA512_Init(SHA512_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char int S\+H\+A512\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+H\+A512\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_a1f72ed43342dc212a213e96d2a4d594c}{}\label{sha_8h_a1f72ed43342dc212a213e96d2a4d594c}
+\index{sha.\+h@{sha.\+h}!S\+H\+A512\+\_\+\+Transform@{S\+H\+A512\+\_\+\+Transform}}
+\index{S\+H\+A512\+\_\+\+Transform@{S\+H\+A512\+\_\+\+Transform}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A512\+\_\+\+Transform(\+S\+H\+A512\+\_\+\+C\+T\+X $\ast$c, const unsigned char $\ast$data)}{SHA512_Transform(SHA512_CTX *c, const unsigned char *data)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char void S\+H\+A512\+\_\+\+Transform (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+H\+A512\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_af11b017d220294d327407bc75586dcc7}{}\label{sha_8h_af11b017d220294d327407bc75586dcc7}
+\index{sha.\+h@{sha.\+h}!S\+H\+A512\+\_\+\+Update@{S\+H\+A512\+\_\+\+Update}}
+\index{S\+H\+A512\+\_\+\+Update@{S\+H\+A512\+\_\+\+Update}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A512\+\_\+\+Update(\+S\+H\+A512\+\_\+\+C\+T\+X $\ast$c, const void $\ast$data, size\+\_\+t len) \+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+bounded\+\_\+\+\_\+(\+\_\+\+\_\+buffer\+\_\+\+\_\+}{SHA512_Update(SHA512_CTX *c, const void *data, size_t len) __attribute__((__bounded__(__buffer__}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+H\+A512\+\_\+\+Update (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+H\+A512\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const void $\ast$}]{data, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_aa58ce64e42c3990d67f401abed9d4f23}{}\label{sha_8h_aa58ce64e42c3990d67f401abed9d4f23}
+\index{sha.\+h@{sha.\+h}!S\+H\+A\+\_\+\+Final@{S\+H\+A\+\_\+\+Final}}
+\index{S\+H\+A\+\_\+\+Final@{S\+H\+A\+\_\+\+Final}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A\+\_\+\+Final(unsigned char $\ast$md, S\+H\+A\+\_\+\+C\+T\+X $\ast$c)}{SHA_Final(unsigned char *md, SHA_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int int S\+H\+A\+\_\+\+Final (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{md, }
+\item[{{\bf S\+H\+A\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_a34fa509d8e3508e9f3953d92483f03a5}{}\label{sha_8h_a34fa509d8e3508e9f3953d92483f03a5}
+\index{sha.\+h@{sha.\+h}!S\+H\+A\+\_\+\+Init@{S\+H\+A\+\_\+\+Init}}
+\index{S\+H\+A\+\_\+\+Init@{S\+H\+A\+\_\+\+Init}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A\+\_\+\+Init(\+S\+H\+A\+\_\+\+C\+T\+X $\ast$c)}{SHA_Init(SHA_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+H\+A\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+H\+A\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_a6845db2d73c6c070adea39129712f531}{}\label{sha_8h_a6845db2d73c6c070adea39129712f531}
+\index{sha.\+h@{sha.\+h}!S\+H\+A\+\_\+\+Transform@{S\+H\+A\+\_\+\+Transform}}
+\index{S\+H\+A\+\_\+\+Transform@{S\+H\+A\+\_\+\+Transform}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A\+\_\+\+Transform(\+S\+H\+A\+\_\+\+C\+T\+X $\ast$c, const unsigned char $\ast$data)}{SHA_Transform(SHA_CTX *c, const unsigned char *data)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char void S\+H\+A\+\_\+\+Transform (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+H\+A\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_abcb16728cae618ec0273af95afbde1f4}{}\label{sha_8h_abcb16728cae618ec0273af95afbde1f4}
+\index{sha.\+h@{sha.\+h}!S\+H\+A\+\_\+\+Update@{S\+H\+A\+\_\+\+Update}}
+\index{S\+H\+A\+\_\+\+Update@{S\+H\+A\+\_\+\+Update}!sha.\+h@{sha.\+h}}
+\subsubsection[{\texorpdfstring{S\+H\+A\+\_\+\+Update(\+S\+H\+A\+\_\+\+C\+T\+X $\ast$c, const void $\ast$data, size\+\_\+t len) \+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+bounded\+\_\+\+\_\+(\+\_\+\+\_\+buffer\+\_\+\+\_\+}{SHA_Update(SHA_CTX *c, const void *data, size_t len) __attribute__((__bounded__(__buffer__}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+H\+A\+\_\+\+Update (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+H\+A\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const void $\ast$}]{data, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{sha_8h_a38757810722a93d269bdbb641680442b}{}\label{sha_8h_a38757810722a93d269bdbb641680442b}

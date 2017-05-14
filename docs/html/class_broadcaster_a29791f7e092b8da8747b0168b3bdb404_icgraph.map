@@ -1,0 +1,8 @@
+<map id="Broadcaster::receive" name="Broadcaster::receive">
+<area shape="rect" id="node2" href="$class_brain.html#a23d921369c5ec1218d7dc26d0f8270c2" title="Brain::loop" alt="" coords="220,5,304,32"/>
+<area shape="rect" id="node4" href="$class_connection.html#a47c25a31352a71e2a6902d37fc5fa2ba" title="Connection::start" alt="" coords="201,56,323,83"/>
+<area shape="rect" id="node5" href="$class_connection.html#a55342f6aeedd34fc6a11dd79b59da69b" title="Connection::create" alt="" coords="196,107,328,133"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a523d51f6d06fce5bbed3e074818569fb" title="main" alt="" coords="425,5,475,32"/>
+<area shape="rect" id="node6" href="$class_async_socket_channel.html#ae0d0010ef42fecc249ae1542b226130c" title="AsyncSocketChannel\l::serve" alt="" coords="376,99,524,141"/>
+<area shape="rect" id="node7" href="$class_communication.html#aed16e511327c62b6b5f418523f707a77" title="Communication::serve" alt="" coords="572,107,725,133"/>
+</map>

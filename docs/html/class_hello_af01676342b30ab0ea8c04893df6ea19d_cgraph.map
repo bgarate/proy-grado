@@ -1,0 +1,9 @@
+<map id="Hello::MergeFrom" name="Hello::MergeFrom">
+<area shape="rect" id="node2" href="$class_hello.html#ae6a444f29e20e73dbbf2c4216afe12d7" title="Hello::name" alt="" coords="187,5,279,32"/>
+<area shape="rect" id="node3" href="$class_hello.html#ae1d6fea6f0359e1006a389e80d5c2cc8" title="Hello::ip" alt="" coords="198,56,269,83"/>
+<area shape="rect" id="node4" href="$class_hello.html#a97452e4a7b8bfcc4aaf625ec14d28885" title="Hello::set_ip" alt="" coords="186,107,281,133"/>
+<area shape="rect" id="node5" href="$class_hello.html#a3a6580d738360e427005cd9be561695c" title="Hello::port" alt="" coords="192,157,275,184"/>
+<area shape="rect" id="node6" href="$class_hello.html#ad505980b5747b4afce9ef652f64e8f55" title="Hello::set_port" alt="" coords="180,208,287,235"/>
+<area shape="rect" id="node7" href="$class_hello.html#ac4bce08f939da89c024ff5015351810f" title="Hello::id" alt="" coords="198,259,269,285"/>
+<area shape="rect" id="node8" href="$class_hello.html#ad27b1fa46dcd021283ca41607829cea8" title="Hello::set_id" alt="" coords="186,309,281,336"/>
+</map>

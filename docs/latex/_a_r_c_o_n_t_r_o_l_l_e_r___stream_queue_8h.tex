@@ -1,0 +1,237 @@
+\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.h File Reference}
+\label{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h}\index{src/hal/pb2/include/lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{src/hal/pb2/include/lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}}
+
+
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Error.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h$>$}\\*
+Include dependency graph for A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a7468b8ce3cf175c633e9ba3f1ab221df}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a7468b8ce3cf175c633e9ba3f1ab221df}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a7468b8ce3cf175c633e9ba3f1ab221df}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t} $\ast$ \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a1905cdadc218f1c6ca1211705f8d5a5e}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+New} (int flush\+On\+I\+Frame, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Create a new Stream Queue. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a48f1263d981035fbb0d3486103ee66ef}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Delete} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a7468b8ce3cf175c633e9ba3f1ab221df}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t} $\ast$$\ast$stream\+Queue)
+\begin{DoxyCompactList}\small\item\em Delete the Stream Queue. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_ab7f9c9f7012c8d86f40f4cc9705be735}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Push} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a7468b8ce3cf175c633e9ba3f1ab221df}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t} $\ast$stream\+Queue, \hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t} $\ast$frame)
+\begin{DoxyCompactList}\small\item\em Push a frame to the queue. \end{DoxyCompactList}\item 
+\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t} $\ast$ \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a5161579dbcc17e2a269d416f00cec4dc}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Pop} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a7468b8ce3cf175c633e9ba3f1ab221df}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t} $\ast$stream\+Queue, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Pop a frame from queue. \end{DoxyCompactList}\item 
+\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t} $\ast$ \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_acf1855b243926ab111357160b76fc85a}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Try\+Pop} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a7468b8ce3cf175c633e9ba3f1ab221df}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t} $\ast$stream\+Queue, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Try to pop a frame from queue. \end{DoxyCompactList}\item 
+\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t} $\ast$ \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a7de6ae038289b426eb65934355c3af8f}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Pop\+With\+Timeout} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a7468b8ce3cf175c633e9ba3f1ab221df}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t} $\ast$stream\+Queue, uint32\+\_\+t timeout\+Ms, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Pop a frame from queue, with timeout. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a58d1301cd723890fe84eeb6781d70869}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Flush} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a7468b8ce3cf175c633e9ba3f1ab221df}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t} $\ast$stream\+Queue)
+\begin{DoxyCompactList}\small\item\em Remove all frame of the queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue. 
+
+\begin{DoxyDate}{Date}
+02/03/2015 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:maxime.maitre@parrot.com}{\tt maxime.\+maitre@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t}{ARCONTROLLER_StreamQueue_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t} {\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t}}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a7468b8ce3cf175c633e9ba3f1ab221df}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a7468b8ce3cf175c633e9ba3f1ab221df}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Delete@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Delete}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Delete@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Delete}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Delete(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t $\ast$$\ast$stream\+Queue)}{ARCONTROLLER_StreamQueue_Delete(ARCONTROLLER_StreamQueue_t **streamQueue)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t} $\ast$$\ast$}]{stream\+Queue}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a48f1263d981035fbb0d3486103ee66ef}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a48f1263d981035fbb0d3486103ee66ef}
+
+
+Delete the Stream Queue. 
+
+\begin{DoxyWarning}{Warning}
+This function free memory. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Queue} & The Stream Queue to delete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a1905cdadc218f1c6ca1211705f8d5a5e}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+New()}. 
+\end{DoxySeeAlso}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Flush@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Flush}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Flush@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Flush}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Flush(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t $\ast$stream\+Queue)}{ARCONTROLLER_StreamQueue_Flush(ARCONTROLLER_StreamQueue_t *streamQueue)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Flush (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t} $\ast$}]{stream\+Queue}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a58d1301cd723890fe84eeb6781d70869}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a58d1301cd723890fe84eeb6781d70869}
+
+
+Remove all frame of the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Queue} & The Stream Queue. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Executing error. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+New@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+New}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+New@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+New}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+New(int flush\+On\+I\+Frame, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_StreamQueue_New(int flushOnIFrame, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t}$\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{int}]{flush\+On\+I\+Frame, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a1905cdadc218f1c6ca1211705f8d5a5e}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a1905cdadc218f1c6ca1211705f8d5a5e}
+
+
+Create a new Stream Queue. 
+
+\begin{DoxyWarning}{Warning}
+This function allocate memory. 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a48f1263d981035fbb0d3486103ee66ef}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Delete()} must be called to delete the Stream Queue and free the memory allocated. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em flush\+On\+I\+Frame} & Flag to activate the flush of the frame queue when a I\+Frame is pushed ; \textquotesingle{}1\textquotesingle{} the flush is activated ; \textquotesingle{}0\textquotesingle{} the flush is not activated. \\
+\hline
+\mbox{\tt out}  & {\em error} & Executing error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new Stream Queue. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a48f1263d981035fbb0d3486103ee66ef}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Delete}. 
+\end{DoxySeeAlso}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Pop@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Pop}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Pop@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Pop}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Pop(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t $\ast$stream\+Queue, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_StreamQueue_Pop(ARCONTROLLER_StreamQueue_t *streamQueue, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}$\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Pop (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t} $\ast$}]{stream\+Queue, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a5161579dbcc17e2a269d416f00cec4dc}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a5161579dbcc17e2a269d416f00cec4dc}
+
+
+Pop a frame from queue. 
+
+\begin{DoxyWarning}{Warning}
+This is a blocking function, waits a frame push if the queue is empty. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em stream\+Queue} & The Stream Queue. \\
+\hline
+\mbox{\tt out}  & {\em error} & Executing error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The frame pop ; Can be null if an error occurs. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Pop\+With\+Timeout@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Pop\+With\+Timeout}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Pop\+With\+Timeout@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Pop\+With\+Timeout}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Pop\+With\+Timeout(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t $\ast$stream\+Queue, uint32\+\_\+t timeout\+Ms, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_StreamQueue_PopWithTimeout(ARCONTROLLER_StreamQueue_t *streamQueue, uint32_t timeoutMs, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}$\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Pop\+With\+Timeout (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t} $\ast$}]{stream\+Queue, }
+\item[{uint32\+\_\+t}]{timeout\+Ms, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a7de6ae038289b426eb65934355c3af8f}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_a7de6ae038289b426eb65934355c3af8f}
+
+
+Pop a frame from queue, with timeout. 
+
+\begin{DoxyWarning}{Warning}
+This is a blocking function; If the queue is empty yet after the timeout, returns null, and error is equals to A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+R\+E\+A\+M\+Q\+U\+E\+U\+E\+\_\+\+E\+M\+P\+TY. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em stream\+Queue} & The Stream Queue. \\
+\hline
+\mbox{\tt out}  & {\em error} & Executing error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The frame pop ; Can be null if an error occurs. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Push@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Push}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Push@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Push}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Push(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t $\ast$stream\+Queue, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t $\ast$frame)}{ARCONTROLLER_StreamQueue_Push(ARCONTROLLER_StreamQueue_t *streamQueue, ARCONTROLLER_Frame_t *frame)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Push (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t} $\ast$}]{stream\+Queue, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t} $\ast$}]{frame}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_ab7f9c9f7012c8d86f40f4cc9705be735}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_ab7f9c9f7012c8d86f40f4cc9705be735}
+
+
+Push a frame to the queue. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em stream\+Queue} & The Stream Queue. \\
+\hline
+\mbox{\tt in}  & {\em frame} & The frame to push. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Executing error. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Try\+Pop@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Try\+Pop}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Try\+Pop@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Try\+Pop}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Try\+Pop(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t $\ast$stream\+Queue, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_StreamQueue_TryPop(ARCONTROLLER_StreamQueue_t *streamQueue, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}$\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+\+Try\+Pop (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Queue\+\_\+t} $\ast$}]{stream\+Queue, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_acf1855b243926ab111357160b76fc85a}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___stream_queue_8h_acf1855b243926ab111357160b76fc85a}
+
+
+Try to pop a frame from queue. 
+
+\begin{DoxyNote}{Note}
+If the queue is empty, returns null, and error is equals to A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+R\+E\+A\+M\+Q\+U\+E\+U\+E\+\_\+\+E\+M\+P\+TY. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em stream\+Queue} & The Stream Queue. \\
+\hline
+\mbox{\tt out}  & {\em error} & Executing error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The frame pop ; Can be null if an error occurs. 
+\end{DoxyReturn}

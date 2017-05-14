@@ -1,0 +1,7 @@
+<map id="_readPureDataChar" name="_readPureDataChar">
+<area shape="rect" id="node2" href="$ext_api_8h.html#a9b28fe7f6137f494fe70c99b9a921293" title="simxReadProximitySensor" alt="" coords="191,5,368,32"/>
+<area shape="rect" id="node5" href="$ext_api_8h.html#ace3ba1e1784863e91b612eedc8f68c6a" title="simxReadForceSensor" alt="" coords="202,56,357,83"/>
+<area shape="rect" id="node6" href="$ext_api_8h.html#a89f81d7d0d27a9c502458e4b310b414b" title="simxReadVisionSensor" alt="" coords="200,107,359,133"/>
+<area shape="rect" id="node3" href="$ext_api_8h.html#a80c015184969c735abe521f7fd499df0" title="mtlb_simxReadProximitySensor" alt="" coords="416,5,625,32"/>
+<area shape="rect" id="node4" href="$ext_api_8h.html#a0e7431db44935b74cf49ac5aa3edb6ec" title="mtlb_simxCallScriptFunction_b" alt="" coords="419,56,622,83"/>
+</map>

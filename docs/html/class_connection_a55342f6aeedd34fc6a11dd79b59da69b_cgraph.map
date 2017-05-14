@@ -1,0 +1,9 @@
+<map id="Connection::create" name="Connection::create">
+<area shape="rect" id="node2" href="$class_packed_message.html#a0822d18835d6340a74d7a9edbd53a6f1" title="PackedMessage::unpack" alt="" coords="377,5,546,32"/>
+<area shape="rect" id="node3" href="$class_packed_message.html#a5892ce717ad163486796a6648718b284" title="PackedMessage::getMsg" alt="" coords="376,123,547,149"/>
+<area shape="rect" id="node4" href="$class_broadcaster.html#a29791f7e092b8da8747b0168b3bdb404" title="Broadcaster::receive" alt="" coords="185,67,328,93"/>
+<area shape="rect" id="node6" href="$class_logger.html#ada4ef25d16123b5367a70c9fa0ef0fd7" title="Logger::logError" alt="" coords="199,173,314,200"/>
+<area shape="rect" id="node5" href="$class_packed_message.html#abb912f0c1590bab05b8dd20b74dc9116" title="PackedMessage::decode\l_header" alt="" coords="377,57,546,98"/>
+<area shape="rect" id="node7" href="$class_logger.html#acebb37f5538780e6c14f13de6ec497bc" title="Logger::getInstance" alt="" coords="393,224,530,251"/>
+<area shape="rect" id="node8" href="$class_logger.html#a053de045cd00393f4def7d5b6c5cab38" title="Logger::Log" alt="" coords="416,173,507,200"/>
+</map>

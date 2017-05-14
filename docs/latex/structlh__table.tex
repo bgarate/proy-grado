@@ -1,0 +1,100 @@
+\hypertarget{structlh__table}{}\section{lh\+\_\+table Struct Reference}
+\label{structlh__table}\index{lh\+\_\+table@{lh\+\_\+table}}
+
+
+{\ttfamily \#include $<$linkhash.\+h$>$}
+
+
+
+Collaboration diagram for lh\+\_\+table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{structlh__table__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structlh__table_ae251575ec2935bcb0e0589ca8e243839}{size}
+\item 
+int \hyperlink{structlh__table_aa172ed8fe205367b54e0e2cdf9ea8c6c}{count}
+\item 
+int \hyperlink{structlh__table_a9458e41d842ce40cd37dc13458ced133}{collisions}
+\item 
+int \hyperlink{structlh__table_ab4cde49bd9ce7a07daaf99af34ddb67e}{resizes}
+\item 
+int \hyperlink{structlh__table_afd0385c645413d26e682f725a6f52164}{lookups}
+\item 
+int \hyperlink{structlh__table_afd64becd0d2cfbc91a4c9c9a117498b9}{inserts}
+\item 
+int \hyperlink{structlh__table_a8348bdd7e61c8d72b402f6a152013fbf}{deletes}
+\item 
+const char $\ast$ \hyperlink{structlh__table_aebf4001cde3746ec8025c1d87d4e6279}{name}
+\item 
+struct \hyperlink{structlh__entry}{lh\+\_\+entry} $\ast$ \hyperlink{structlh__table_aa7d986a3b12a9fa47e349713794c30fb}{head}
+\item 
+struct \hyperlink{structlh__entry}{lh\+\_\+entry} $\ast$ \hyperlink{structlh__table_a479895e45db2bdf9bf5d173fa4b7e277}{tail}
+\item 
+struct \hyperlink{structlh__entry}{lh\+\_\+entry} $\ast$ \hyperlink{structlh__table_a4fd9c5aba38791b26ab0ec614a5caf8f}{table}
+\item 
+\hyperlink{linkhash_8h_a0c6811f660b93857aafdbfdf80d9696b}{lh\+\_\+entry\+\_\+free\+\_\+fn} $\ast$ \hyperlink{structlh__table_a30ea5903f4f8126abd6aa489ffe14737}{free\+\_\+fn}
+\item 
+\hyperlink{linkhash_8h_a1780449146b716ad5e6ed0a0207d0417}{lh\+\_\+hash\+\_\+fn} $\ast$ \hyperlink{structlh__table_a1488d1a4a320b1a9bb2f441859544be1}{hash\+\_\+fn}
+\item 
+\hyperlink{linkhash_8h_abcbf0e4849fb0c6279827ac3b66d15c3}{lh\+\_\+equal\+\_\+fn} $\ast$ \hyperlink{structlh__table_aa646c287a6a46e09da6c7457c981a359}{equal\+\_\+fn}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The hash table structure. 
+
+\subsection{Member Data Documentation}
+\index{lh\+\_\+table@{lh\+\_\+table}!collisions@{collisions}}
+\index{collisions@{collisions}!lh\+\_\+table@{lh\+\_\+table}}
+\subsubsection[{\texorpdfstring{collisions}{collisions}}]{\setlength{\rightskip}{0pt plus 5cm}int lh\+\_\+table\+::collisions}\hypertarget{structlh__table_a9458e41d842ce40cd37dc13458ced133}{}\label{structlh__table_a9458e41d842ce40cd37dc13458ced133}
+Number of collisions. \index{lh\+\_\+table@{lh\+\_\+table}!count@{count}}
+\index{count@{count}!lh\+\_\+table@{lh\+\_\+table}}
+\subsubsection[{\texorpdfstring{count}{count}}]{\setlength{\rightskip}{0pt plus 5cm}int lh\+\_\+table\+::count}\hypertarget{structlh__table_aa172ed8fe205367b54e0e2cdf9ea8c6c}{}\label{structlh__table_aa172ed8fe205367b54e0e2cdf9ea8c6c}
+Numbers of entries. \index{lh\+\_\+table@{lh\+\_\+table}!deletes@{deletes}}
+\index{deletes@{deletes}!lh\+\_\+table@{lh\+\_\+table}}
+\subsubsection[{\texorpdfstring{deletes}{deletes}}]{\setlength{\rightskip}{0pt plus 5cm}int lh\+\_\+table\+::deletes}\hypertarget{structlh__table_a8348bdd7e61c8d72b402f6a152013fbf}{}\label{structlh__table_a8348bdd7e61c8d72b402f6a152013fbf}
+Number of deletes. \index{lh\+\_\+table@{lh\+\_\+table}!equal\+\_\+fn@{equal\+\_\+fn}}
+\index{equal\+\_\+fn@{equal\+\_\+fn}!lh\+\_\+table@{lh\+\_\+table}}
+\subsubsection[{\texorpdfstring{equal\+\_\+fn}{equal_fn}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf lh\+\_\+equal\+\_\+fn}$\ast$ lh\+\_\+table\+::equal\+\_\+fn}\hypertarget{structlh__table_aa646c287a6a46e09da6c7457c981a359}{}\label{structlh__table_aa646c287a6a46e09da6c7457c981a359}
+\index{lh\+\_\+table@{lh\+\_\+table}!free\+\_\+fn@{free\+\_\+fn}}
+\index{free\+\_\+fn@{free\+\_\+fn}!lh\+\_\+table@{lh\+\_\+table}}
+\subsubsection[{\texorpdfstring{free\+\_\+fn}{free_fn}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf lh\+\_\+entry\+\_\+free\+\_\+fn}$\ast$ lh\+\_\+table\+::free\+\_\+fn}\hypertarget{structlh__table_a30ea5903f4f8126abd6aa489ffe14737}{}\label{structlh__table_a30ea5903f4f8126abd6aa489ffe14737}
+A pointer onto the function responsible for freeing an entry. \index{lh\+\_\+table@{lh\+\_\+table}!hash\+\_\+fn@{hash\+\_\+fn}}
+\index{hash\+\_\+fn@{hash\+\_\+fn}!lh\+\_\+table@{lh\+\_\+table}}
+\subsubsection[{\texorpdfstring{hash\+\_\+fn}{hash_fn}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf lh\+\_\+hash\+\_\+fn}$\ast$ lh\+\_\+table\+::hash\+\_\+fn}\hypertarget{structlh__table_a1488d1a4a320b1a9bb2f441859544be1}{}\label{structlh__table_a1488d1a4a320b1a9bb2f441859544be1}
+\index{lh\+\_\+table@{lh\+\_\+table}!head@{head}}
+\index{head@{head}!lh\+\_\+table@{lh\+\_\+table}}
+\subsubsection[{\texorpdfstring{head}{head}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf lh\+\_\+entry}$\ast$ lh\+\_\+table\+::head}\hypertarget{structlh__table_aa7d986a3b12a9fa47e349713794c30fb}{}\label{structlh__table_aa7d986a3b12a9fa47e349713794c30fb}
+The first entry. \index{lh\+\_\+table@{lh\+\_\+table}!inserts@{inserts}}
+\index{inserts@{inserts}!lh\+\_\+table@{lh\+\_\+table}}
+\subsubsection[{\texorpdfstring{inserts}{inserts}}]{\setlength{\rightskip}{0pt plus 5cm}int lh\+\_\+table\+::inserts}\hypertarget{structlh__table_afd64becd0d2cfbc91a4c9c9a117498b9}{}\label{structlh__table_afd64becd0d2cfbc91a4c9c9a117498b9}
+Number of inserts. \index{lh\+\_\+table@{lh\+\_\+table}!lookups@{lookups}}
+\index{lookups@{lookups}!lh\+\_\+table@{lh\+\_\+table}}
+\subsubsection[{\texorpdfstring{lookups}{lookups}}]{\setlength{\rightskip}{0pt plus 5cm}int lh\+\_\+table\+::lookups}\hypertarget{structlh__table_afd0385c645413d26e682f725a6f52164}{}\label{structlh__table_afd0385c645413d26e682f725a6f52164}
+Number of lookups. \index{lh\+\_\+table@{lh\+\_\+table}!name@{name}}
+\index{name@{name}!lh\+\_\+table@{lh\+\_\+table}}
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ lh\+\_\+table\+::name}\hypertarget{structlh__table_aebf4001cde3746ec8025c1d87d4e6279}{}\label{structlh__table_aebf4001cde3746ec8025c1d87d4e6279}
+Name of the hash table. \index{lh\+\_\+table@{lh\+\_\+table}!resizes@{resizes}}
+\index{resizes@{resizes}!lh\+\_\+table@{lh\+\_\+table}}
+\subsubsection[{\texorpdfstring{resizes}{resizes}}]{\setlength{\rightskip}{0pt plus 5cm}int lh\+\_\+table\+::resizes}\hypertarget{structlh__table_ab4cde49bd9ce7a07daaf99af34ddb67e}{}\label{structlh__table_ab4cde49bd9ce7a07daaf99af34ddb67e}
+Number of resizes. \index{lh\+\_\+table@{lh\+\_\+table}!size@{size}}
+\index{size@{size}!lh\+\_\+table@{lh\+\_\+table}}
+\subsubsection[{\texorpdfstring{size}{size}}]{\setlength{\rightskip}{0pt plus 5cm}int lh\+\_\+table\+::size}\hypertarget{structlh__table_ae251575ec2935bcb0e0589ca8e243839}{}\label{structlh__table_ae251575ec2935bcb0e0589ca8e243839}
+Size of our hash. \index{lh\+\_\+table@{lh\+\_\+table}!table@{table}}
+\index{table@{table}!lh\+\_\+table@{lh\+\_\+table}}
+\subsubsection[{\texorpdfstring{table}{table}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf lh\+\_\+entry}$\ast$ lh\+\_\+table\+::table}\hypertarget{structlh__table_a4fd9c5aba38791b26ab0ec614a5caf8f}{}\label{structlh__table_a4fd9c5aba38791b26ab0ec614a5caf8f}
+\index{lh\+\_\+table@{lh\+\_\+table}!tail@{tail}}
+\index{tail@{tail}!lh\+\_\+table@{lh\+\_\+table}}
+\subsubsection[{\texorpdfstring{tail}{tail}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf lh\+\_\+entry}$\ast$ lh\+\_\+table\+::tail}\hypertarget{structlh__table_a479895e45db2bdf9bf5d173fa4b7e277}{}\label{structlh__table_a479895e45db2bdf9bf5d173fa4b7e277}
+The last entry. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/json/\hyperlink{linkhash_8h}{linkhash.\+h}\end{DoxyCompactItemize}

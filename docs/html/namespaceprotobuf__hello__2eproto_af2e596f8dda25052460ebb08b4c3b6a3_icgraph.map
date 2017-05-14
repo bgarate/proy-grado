@@ -1,0 +1,8 @@
+<map id="protobuf_hello_2eproto::InitDefaults" name="protobuf_hello_2eproto::InitDefaults">
+<area shape="rect" id="node2" href="$namespaceprotobuf__hello__2eproto.html#aeaf72ccefda18075f3610b5fd82a17be" title="protobuf_hello_2eproto\l::AddDescriptorsImpl" alt="" coords="207,13,361,54"/>
+<area shape="rect" id="node5" href="$class_hello.html#aaa8dc2cd664f8a83b9119a06b2f2790c" title="Hello::Hello" alt="" coords="239,79,329,105"/>
+<area shape="rect" id="node7" href="$class_hello.html#ae740c0449132f0c6d407b278b541b845" title="Hello::default_instance" alt="" coords="207,129,361,156"/>
+<area shape="rect" id="node3" href="$namespaceprotobuf__hello__2eproto.html#aae9cbcf71d6ec9eb2e0eca18e9353d63" title="protobuf_hello_2eproto\l::AddDescriptors" alt="" coords="409,13,563,54"/>
+<area shape="rect" id="node4" href="$structprotobuf__hello__2eproto_1_1_static_descriptor_initializer.html#ab4ab71e6a39328f4e966168f656ee68b" title="protobuf_hello_2eproto\l::StaticDescriptorInitializer\l::StaticDescriptorInitializer" alt="" coords="611,5,787,61"/>
+<area shape="rect" id="node6" href="$class_hello.html#aa74408a5e02a6c1f210c60baa6943eb8" title="Hello::New" alt="" coords="443,79,529,105"/>
+</map>

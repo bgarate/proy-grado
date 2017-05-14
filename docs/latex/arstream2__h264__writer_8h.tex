@@ -1,0 +1,320 @@
+\hypertarget{arstream2__h264__writer_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Stream2/arstream2\+\_\+h264\+\_\+writer.h File Reference}
+\label{arstream2__h264__writer_8h}\index{src/hal/pb2/include/lib\+A\+R\+Stream2/arstream2\+\_\+h264\+\_\+writer.\+h@{src/hal/pb2/include/lib\+A\+R\+Stream2/arstream2\+\_\+h264\+\_\+writer.\+h}}
+
+
+Parrot Streaming Library -\/ H.\+264 Writer.  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Stream2/arstream2\+\_\+error.\+h$>$}\\*
+Include dependency graph for arstream2\+\_\+h264\+\_\+writer.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{arstream2__h264__writer_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_writer___config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Config\+\_\+t}
+\begin{DoxyCompactList}\small\item\em H.\+264 Writer configuration for initialization. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_writer___picture_timing_sei__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Picture\+Timing\+Sei\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Picture timing S\+EI syntax elements. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_writer___recovery_point_sei__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Recovery\+Point\+Sei\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Recovery point S\+EI syntax elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void $\ast$ \hyperlink{arstream2__h264__writer_8h_a01b50a258e9dcd259c5fac53e9eed4ee}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle}
+\begin{DoxyCompactList}\small\item\em H.\+264 Writer instance handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__writer_8h_a94045fea473e1389d0fd46c31cb06ca8}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Init} (\hyperlink{arstream2__h264__writer_8h_a01b50a258e9dcd259c5fac53e9eed4ee}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle} $\ast$writer\+Handle, \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_writer___config__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Config\+\_\+t} $\ast$config)
+\begin{DoxyCompactList}\small\item\em Initialize an H.\+264 writer instance. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__writer_8h_a8c6d63e421ed9f5ef8a4d422cfda2686}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Free} (\hyperlink{arstream2__h264__writer_8h_a01b50a258e9dcd259c5fac53e9eed4ee}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle} writer\+Handle)
+\begin{DoxyCompactList}\small\item\em Free an H.\+264 writer instance. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__writer_8h_a9e6a430296aacc3137f92e8aac9ed986}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Set\+Sps\+Pps\+Context} (\hyperlink{arstream2__h264__writer_8h_a01b50a258e9dcd259c5fac53e9eed4ee}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle} writer\+Handle, const void $\ast$sps\+Context, const void $\ast$pps\+Context)
+\begin{DoxyCompactList}\small\item\em Sets the Writer S\+PS and P\+PS context. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__writer_8h_aeb6ddac434e101392c8a44b9ac4dff1b}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Sei\+Nalu} (\hyperlink{arstream2__h264__writer_8h_a01b50a258e9dcd259c5fac53e9eed4ee}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle} writer\+Handle, \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_writer___picture_timing_sei__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Picture\+Timing\+Sei\+\_\+t} $\ast$picture\+Timing, \hyperlink{struct_a_r_s_t_r_e_a_m2___h264_writer___recovery_point_sei__t}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Recovery\+Point\+Sei\+\_\+t} $\ast$recovery\+Point, unsigned int user\+Data\+Unregistered\+Count, const uint8\+\_\+t $\ast$pb\+User\+Data\+Unregistered\mbox{[}$\,$\mbox{]}, unsigned int user\+Data\+Unregistered\+Size\mbox{[}$\,$\mbox{]}, uint8\+\_\+t $\ast$pb\+Output\+Buf, unsigned int output\+Buf\+Size, unsigned int $\ast$output\+Size)
+\begin{DoxyCompactList}\small\item\em Write a S\+EI N\+AL unit. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__writer_8h_a753e7e95b5030f76bd0a1d84717e620d}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Gray\+I\+Slice\+Nalu} (\hyperlink{arstream2__h264__writer_8h_a01b50a258e9dcd259c5fac53e9eed4ee}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle} writer\+Handle, unsigned int first\+Mb\+In\+Slice, unsigned int slice\+Mb\+Count, void $\ast$slice\+Context, uint8\+\_\+t $\ast$pb\+Output\+Buf, unsigned int output\+Buf\+Size, unsigned int $\ast$output\+Size)
+\begin{DoxyCompactList}\small\item\em Write a gray I-\/slice N\+AL unit. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__writer_8h_aeebca93e391b99cd93463b98f0b8c345}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Skipped\+P\+Slice\+Nalu} (\hyperlink{arstream2__h264__writer_8h_a01b50a258e9dcd259c5fac53e9eed4ee}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle} writer\+Handle, unsigned int first\+Mb\+In\+Slice, unsigned int slice\+Mb\+Count, void $\ast$slice\+Context, uint8\+\_\+t $\ast$pb\+Output\+Buf, unsigned int output\+Buf\+Size, unsigned int $\ast$output\+Size)
+\begin{DoxyCompactList}\small\item\em Write a skipped P-\/slice N\+AL unit. \end{DoxyCompactList}\item 
+\hyperlink{arstream2__error_8h_aa0c46d795fa177443bce1f9ec85b44b3}{e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} \hyperlink{arstream2__h264__writer_8h_ab96e0dca2b5de971e96130111f87d7e9}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Rewrite\+Non\+Ref\+P\+Slice\+Nalu} (\hyperlink{arstream2__h264__writer_8h_a01b50a258e9dcd259c5fac53e9eed4ee}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle} writer\+Handle, void $\ast$slice\+Context, const uint8\+\_\+t $\ast$pb\+Input\+Buf, unsigned int input\+Size, uint8\+\_\+t $\ast$pb\+Output\+Buf, unsigned int output\+Buf\+Size, unsigned int $\ast$output\+Size)
+\begin{DoxyCompactList}\small\item\em Rewrite a non-\/ref P-\/slice N\+AL unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parrot Streaming Library -\/ H.\+264 Writer. 
+
+\begin{DoxyDate}{Date}
+08/04/2015 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:aurelien.barre@parrot.com}{\tt aurelien.\+barre@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\index{arstream2\+\_\+h264\+\_\+writer.\+h@{arstream2\+\_\+h264\+\_\+writer.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle}!arstream2\+\_\+h264\+\_\+writer.\+h@{arstream2\+\_\+h264\+\_\+writer.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle}{ARSTREAM2_H264Writer_Handle}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle}}\hypertarget{arstream2__h264__writer_8h_a01b50a258e9dcd259c5fac53e9eed4ee}{}\label{arstream2__h264__writer_8h_a01b50a258e9dcd259c5fac53e9eed4ee}
+
+
+H.\+264 Writer instance handle. 
+
+
+
+\subsection{Function Documentation}
+\index{arstream2\+\_\+h264\+\_\+writer.\+h@{arstream2\+\_\+h264\+\_\+writer.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Free@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Free}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Free@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Free}!arstream2\+\_\+h264\+\_\+writer.\+h@{arstream2\+\_\+h264\+\_\+writer.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Free(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle writer\+Handle)}{ARSTREAM2_H264Writer_Free(ARSTREAM2_H264Writer_Handle writerHandle)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Free (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle}}]{writer\+Handle}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__writer_8h_a8c6d63e421ed9f5ef8a4d422cfda2686}{}\label{arstream2__h264__writer_8h_a8c6d63e421ed9f5ef8a4d422cfda2686}
+
+
+Free an H.\+264 writer instance. 
+
+The library frees the allocated resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em writer\+Handle} & Instance handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+writer.\+h@{arstream2\+\_\+h264\+\_\+writer.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Init@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Init}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Init@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Init}!arstream2\+\_\+h264\+\_\+writer.\+h@{arstream2\+\_\+h264\+\_\+writer.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Init(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle $\ast$writer\+Handle, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Config\+\_\+t $\ast$config)}{ARSTREAM2_H264Writer_Init(ARSTREAM2_H264Writer_Handle *writerHandle, ARSTREAM2_H264Writer_Config_t *config)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle} $\ast$}]{writer\+Handle, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Config\+\_\+t} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__writer_8h_a94045fea473e1389d0fd46c31cb06ca8}{}\label{arstream2__h264__writer_8h_a94045fea473e1389d0fd46c31cb06ca8}
+
+
+Initialize an H.\+264 writer instance. 
+
+The library allocates the required resources. The user must call \hyperlink{arstream2__h264__writer_8h_a8c6d63e421ed9f5ef8a4d422cfda2686}{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Free()} to free the resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em writer\+Handle} & Pointer to the handle used in future calls to the library. \\
+\hline
+{\em config} & The instance configuration.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+writer.\+h@{arstream2\+\_\+h264\+\_\+writer.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Rewrite\+Non\+Ref\+P\+Slice\+Nalu@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Rewrite\+Non\+Ref\+P\+Slice\+Nalu}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Rewrite\+Non\+Ref\+P\+Slice\+Nalu@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Rewrite\+Non\+Ref\+P\+Slice\+Nalu}!arstream2\+\_\+h264\+\_\+writer.\+h@{arstream2\+\_\+h264\+\_\+writer.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Rewrite\+Non\+Ref\+P\+Slice\+Nalu(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle writer\+Handle, void $\ast$slice\+Context, const uint8\+\_\+t $\ast$pb\+Input\+Buf, unsigned int input\+Size, uint8\+\_\+t $\ast$pb\+Output\+Buf, unsigned int output\+Buf\+Size, unsigned int $\ast$output\+Size)}{ARSTREAM2_H264Writer_RewriteNonRefPSliceNalu(ARSTREAM2_H264Writer_Handle writerHandle, void *sliceContext, const uint8_t *pbInputBuf, unsigned int inputSize, uint8_t *pbOutputBuf, unsigned int outputBufSize, unsigned int *outputSize)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Rewrite\+Non\+Ref\+P\+Slice\+Nalu (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle}}]{writer\+Handle, }
+\item[{void $\ast$}]{slice\+Context, }
+\item[{const uint8\+\_\+t $\ast$}]{pb\+Input\+Buf, }
+\item[{unsigned int}]{input\+Size, }
+\item[{uint8\+\_\+t $\ast$}]{pb\+Output\+Buf, }
+\item[{unsigned int}]{output\+Buf\+Size, }
+\item[{unsigned int $\ast$}]{output\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__writer_8h_ab96e0dca2b5de971e96130111f87d7e9}{}\label{arstream2__h264__writer_8h_ab96e0dca2b5de971e96130111f87d7e9}
+
+
+Rewrite a non-\/ref P-\/slice N\+AL unit. 
+
+The function rewrites a P-\/slice as a non reference P-\/slice N\+AL unit.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em writer\+Handle} & Instance handle. \\
+\hline
+\mbox{\tt in}  & {\em slice\+Context} & Slice context to use (from an H.\+264 parser) \\
+\hline
+\mbox{\tt in}  & {\em pb\+Input\+Buf} & Bitstream input buffer \\
+\hline
+\mbox{\tt in}  & {\em input\+Buf\+Size} & Bitstream input size \\
+\hline
+\mbox{\tt in}  & {\em pb\+Output\+Buf} & Bitstream output buffer \\
+\hline
+\mbox{\tt in}  & {\em output\+Buf\+Size} & Bitstream output buffer size \\
+\hline
+\mbox{\tt out}  & {\em output\+Size} & Bitstream output size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+writer.\+h@{arstream2\+\_\+h264\+\_\+writer.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Set\+Sps\+Pps\+Context@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Set\+Sps\+Pps\+Context}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Set\+Sps\+Pps\+Context@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Set\+Sps\+Pps\+Context}!arstream2\+\_\+h264\+\_\+writer.\+h@{arstream2\+\_\+h264\+\_\+writer.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Set\+Sps\+Pps\+Context(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle writer\+Handle, const void $\ast$sps\+Context, const void $\ast$pps\+Context)}{ARSTREAM2_H264Writer_SetSpsPpsContext(ARSTREAM2_H264Writer_Handle writerHandle, const void *spsContext, const void *ppsContext)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Set\+Sps\+Pps\+Context (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle}}]{writer\+Handle, }
+\item[{const void $\ast$}]{sps\+Context, }
+\item[{const void $\ast$}]{pps\+Context}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__writer_8h_a9e6a430296aacc3137f92e8aac9ed986}{}\label{arstream2__h264__writer_8h_a9e6a430296aacc3137f92e8aac9ed986}
+
+
+Sets the Writer S\+PS and P\+PS context. 
+
+The function imports S\+PS and P\+PS context from an H.\+264 parser.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em writer\+Handle} & Instance handle. \\
+\hline
+\mbox{\tt in}  & {\em sps\+Context} & S\+PS context to use (from an H.\+264 parser) \\
+\hline
+\mbox{\tt in}  & {\em pps\+Context} & P\+PS context to use (from an H.\+264 parser)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+writer.\+h@{arstream2\+\_\+h264\+\_\+writer.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Gray\+I\+Slice\+Nalu@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Gray\+I\+Slice\+Nalu}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Gray\+I\+Slice\+Nalu@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Gray\+I\+Slice\+Nalu}!arstream2\+\_\+h264\+\_\+writer.\+h@{arstream2\+\_\+h264\+\_\+writer.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Gray\+I\+Slice\+Nalu(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle writer\+Handle, unsigned int first\+Mb\+In\+Slice, unsigned int slice\+Mb\+Count, void $\ast$slice\+Context, uint8\+\_\+t $\ast$pb\+Output\+Buf, unsigned int output\+Buf\+Size, unsigned int $\ast$output\+Size)}{ARSTREAM2_H264Writer_WriteGrayISliceNalu(ARSTREAM2_H264Writer_Handle writerHandle, unsigned int firstMbInSlice, unsigned int sliceMbCount, void *sliceContext, uint8_t *pbOutputBuf, unsigned int outputBufSize, unsigned int *outputSize)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Gray\+I\+Slice\+Nalu (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle}}]{writer\+Handle, }
+\item[{unsigned int}]{first\+Mb\+In\+Slice, }
+\item[{unsigned int}]{slice\+Mb\+Count, }
+\item[{void $\ast$}]{slice\+Context, }
+\item[{uint8\+\_\+t $\ast$}]{pb\+Output\+Buf, }
+\item[{unsigned int}]{output\+Buf\+Size, }
+\item[{unsigned int $\ast$}]{output\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__writer_8h_a753e7e95b5030f76bd0a1d84717e620d}{}\label{arstream2__h264__writer_8h_a753e7e95b5030f76bd0a1d84717e620d}
+
+
+Write a gray I-\/slice N\+AL unit. 
+
+The function writes an entirely gray I-\/slice N\+AL unit.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em writer\+Handle} & Instance handle. \\
+\hline
+\mbox{\tt in}  & {\em first\+Mb\+In\+Slice} & Slice first macroblock index \\
+\hline
+\mbox{\tt in}  & {\em slice\+Mb\+Count} & Slice macroblock count \\
+\hline
+\mbox{\tt in}  & {\em slice\+Context} & Slice context to use (from an H.\+264 parser) \\
+\hline
+\mbox{\tt in}  & {\em pb\+Output\+Buf} & Bitstream output buffer \\
+\hline
+\mbox{\tt in}  & {\em output\+Buf\+Size} & Bitstream output buffer size \\
+\hline
+\mbox{\tt out}  & {\em output\+Size} & Bitstream output size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+writer.\+h@{arstream2\+\_\+h264\+\_\+writer.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Sei\+Nalu@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Sei\+Nalu}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Sei\+Nalu@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Sei\+Nalu}!arstream2\+\_\+h264\+\_\+writer.\+h@{arstream2\+\_\+h264\+\_\+writer.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Sei\+Nalu(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle writer\+Handle, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Picture\+Timing\+Sei\+\_\+t $\ast$picture\+Timing, A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Recovery\+Point\+Sei\+\_\+t $\ast$recovery\+Point, unsigned int user\+Data\+Unregistered\+Count, const uint8\+\_\+t $\ast$pb\+User\+Data\+Unregistered[], unsigned int user\+Data\+Unregistered\+Size[], uint8\+\_\+t $\ast$pb\+Output\+Buf, unsigned int output\+Buf\+Size, unsigned int $\ast$output\+Size)}{ARSTREAM2_H264Writer_WriteSeiNalu(ARSTREAM2_H264Writer_Handle writerHandle, ARSTREAM2_H264Writer_PictureTimingSei_t *pictureTiming, ARSTREAM2_H264Writer_RecoveryPointSei_t *recoveryPoint, unsigned int userDataUnregisteredCount, const uint8_t *pbUserDataUnregistered[], unsigned int userDataUnregisteredSize[], uint8_t *pbOutputBuf, unsigned int outputBufSize, unsigned int *outputSize)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Sei\+Nalu (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle}}]{writer\+Handle, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Picture\+Timing\+Sei\+\_\+t} $\ast$}]{picture\+Timing, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Recovery\+Point\+Sei\+\_\+t} $\ast$}]{recovery\+Point, }
+\item[{unsigned int}]{user\+Data\+Unregistered\+Count, }
+\item[{const uint8\+\_\+t $\ast$}]{pb\+User\+Data\+Unregistered\mbox{[}$\,$\mbox{]}, }
+\item[{unsigned int}]{user\+Data\+Unregistered\+Size\mbox{[}$\,$\mbox{]}, }
+\item[{uint8\+\_\+t $\ast$}]{pb\+Output\+Buf, }
+\item[{unsigned int}]{output\+Buf\+Size, }
+\item[{unsigned int $\ast$}]{output\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__writer_8h_aeb6ddac434e101392c8a44b9ac4dff1b}{}\label{arstream2__h264__writer_8h_aeb6ddac434e101392c8a44b9ac4dff1b}
+
+
+Write a S\+EI N\+AL unit. 
+
+The function writes a Supplemental Enhancement Information N\+AL unit. If recovery\+Point is not N\+U\+LL, a recovery point S\+EI message is generated. If user\+Data\+Unregistered\+Count is not null, one or more user data unregistered messages are generated.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em writer\+Handle} & Instance handle. \\
+\hline
+\mbox{\tt in}  & {\em picture\+Timing} & Optional picture timing syntax elements \\
+\hline
+\mbox{\tt in}  & {\em recovery\+Point} & Optional recovery point syntax elements \\
+\hline
+\mbox{\tt in}  & {\em user\+Data\+Unregistered\+Count} & User data count \\
+\hline
+\mbox{\tt in}  & {\em pb\+User\+Data\+Unregistered} & User data input buffer array \\
+\hline
+\mbox{\tt in}  & {\em user\+Data\+Unregistered\+Size} & User data input buffer size array \\
+\hline
+\mbox{\tt in}  & {\em pb\+Output\+Buf} & Bitstream output buffer \\
+\hline
+\mbox{\tt in}  & {\em output\+Buf\+Size} & Bitstream output buffer size \\
+\hline
+\mbox{\tt out}  & {\em output\+Size} & Bitstream output size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}
+\index{arstream2\+\_\+h264\+\_\+writer.\+h@{arstream2\+\_\+h264\+\_\+writer.\+h}!A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Skipped\+P\+Slice\+Nalu@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Skipped\+P\+Slice\+Nalu}}
+\index{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Skipped\+P\+Slice\+Nalu@{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Skipped\+P\+Slice\+Nalu}!arstream2\+\_\+h264\+\_\+writer.\+h@{arstream2\+\_\+h264\+\_\+writer.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Skipped\+P\+Slice\+Nalu(\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle writer\+Handle, unsigned int first\+Mb\+In\+Slice, unsigned int slice\+Mb\+Count, void $\ast$slice\+Context, uint8\+\_\+t $\ast$pb\+Output\+Buf, unsigned int output\+Buf\+Size, unsigned int $\ast$output\+Size)}{ARSTREAM2_H264Writer_WriteSkippedPSliceNalu(ARSTREAM2_H264Writer_Handle writerHandle, unsigned int firstMbInSlice, unsigned int sliceMbCount, void *sliceContext, uint8_t *pbOutputBuf, unsigned int outputBufSize, unsigned int *outputSize)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Write\+Skipped\+P\+Slice\+Nalu (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+H264\+Writer\+\_\+\+Handle}}]{writer\+Handle, }
+\item[{unsigned int}]{first\+Mb\+In\+Slice, }
+\item[{unsigned int}]{slice\+Mb\+Count, }
+\item[{void $\ast$}]{slice\+Context, }
+\item[{uint8\+\_\+t $\ast$}]{pb\+Output\+Buf, }
+\item[{unsigned int}]{output\+Buf\+Size, }
+\item[{unsigned int $\ast$}]{output\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{arstream2__h264__writer_8h_aeebca93e391b99cd93463b98f0b8c345}{}\label{arstream2__h264__writer_8h_aeebca93e391b99cd93463b98f0b8c345}
+
+
+Write a skipped P-\/slice N\+AL unit. 
+
+The function writes an entirely skipped P-\/slice N\+AL unit.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em writer\+Handle} & Instance handle. \\
+\hline
+\mbox{\tt in}  & {\em first\+Mb\+In\+Slice} & Slice first macroblock index \\
+\hline
+\mbox{\tt in}  & {\em slice\+Mb\+Count} & Slice macroblock count \\
+\hline
+\mbox{\tt in}  & {\em slice\+Context} & Slice context to use (from an H.\+264 parser) \\
+\hline
+\mbox{\tt in}  & {\em pb\+Output\+Buf} & Bitstream output buffer \\
+\hline
+\mbox{\tt in}  & {\em output\+Buf\+Size} & Bitstream output buffer size \\
+\hline
+\mbox{\tt out}  & {\em output\+Size} & Bitstream output size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+OK if no error occurred. 
+
+an e\+A\+R\+S\+T\+R\+E\+A\+M2\+\_\+\+E\+R\+R\+OR error code if an error occurred. 
+\end{DoxyReturn}

@@ -1,0 +1,257 @@
+\hypertarget{_a_r_m_a_v_l_i_n_k___file_generator_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.h File Reference}
+\label{_a_r_m_a_v_l_i_n_k___file_generator_8h}\index{src/hal/pb2/include/lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{src/hal/pb2/include/lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}}
+
+
+Mavlink File Generator.  
+
+
+{\ttfamily \#include $<$lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Error.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h$>$}\\*
+{\ttfamily \#include $<$mavlink/parrot/mavlink.\+h$>$}\\*
+Include dependency graph for A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_m_a_v_l_i_n_k___file_generator_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{_a_r_m_a_v_l_i_n_k___file_generator_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a744127cfe534aa8e1bda5ea74267d7bd}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} \hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a744127cfe534aa8e1bda5ea74267d7bd}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t}
+\begin{DoxyCompactList}\small\item\em A\+R\+Mavlink file generator structure allows to manage the process of creating Mavlink files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a744127cfe534aa8e1bda5ea74267d7bd}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} $\ast$ \hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_aadfed8b41718306c332cd2b82bfd17bf}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+New} (\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Create a new file generator. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a3804d54232674932755079842234d63d}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Delete} (\hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a744127cfe534aa8e1bda5ea74267d7bd}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} $\ast$$\ast$file\+Generator)
+\begin{DoxyCompactList}\small\item\em Delete the File generator. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a947fcaaa22defa1ef48948c42a4b9a20}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Add\+Mission\+Item} (\hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a744127cfe534aa8e1bda5ea74267d7bd}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} $\ast$file\+Generator, mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item)
+\begin{DoxyCompactList}\small\item\em Add a mission item to the File Generator list. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a516438ecbe64e06eb4ac96c31bc2a54c}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Replace\+Mission\+Item} (\hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a744127cfe534aa8e1bda5ea74267d7bd}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} $\ast$file\+Generator, mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, int index)
+\begin{DoxyCompactList}\small\item\em Replace a mission item in the File Generator list. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a4151ebcd901c9612fa60fd53ed9ad09f}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Insert\+Mission\+Item} (\hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a744127cfe534aa8e1bda5ea74267d7bd}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} $\ast$file\+Generator, mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, int index)
+\begin{DoxyCompactList}\small\item\em Insert a mission item in the File Generator list. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_aab169f29852125d4eb21c157a877c113}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Delete\+Mission\+Item} (\hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a744127cfe534aa8e1bda5ea74267d7bd}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} $\ast$file\+Generator, int index)
+\begin{DoxyCompactList}\small\item\em Delete a mission item in the File Generator list. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a350264c4dd18df9ce01da7ebb22e3e08}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Create\+Mavlink\+File} (\hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a744127cfe534aa8e1bda5ea74267d7bd}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} $\ast$file\+Generator, const char $\ast$const file\+Path)
+\begin{DoxyCompactList}\small\item\em Write a mavlink file with all the mission items in the list. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___list_utils_8h_a15f3b0988ac436ab109be894828d8aa7}{mission\+\_\+item\+\_\+list\+\_\+t} $\ast$ \hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a05a0603e6caec4998906820117b6c156}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Get\+Current\+Mission\+Item\+List} (\hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a744127cfe534aa8e1bda5ea74267d7bd}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} $\ast$file\+Generator, \hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} $\ast$err)
+\begin{DoxyCompactList}\small\item\em Get the current mission item list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Mavlink File Generator. 
+
+\begin{DoxyDate}{Date}
+14/05/2014 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:djavan.bertrand@parrot.com}{\tt djavan.\+bertrand@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t}{ARMAVLINK_FileGenerator_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} {\bf A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t}}\hypertarget{_a_r_m_a_v_l_i_n_k___file_generator_8h_a744127cfe534aa8e1bda5ea74267d7bd}{}\label{_a_r_m_a_v_l_i_n_k___file_generator_8h_a744127cfe534aa8e1bda5ea74267d7bd}
+
+
+A\+R\+Mavlink file generator structure allows to manage the process of creating Mavlink files. 
+
+
+
+\subsection{Function Documentation}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Add\+Mission\+Item@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Add\+Mission\+Item}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Add\+Mission\+Item@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Add\+Mission\+Item}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Add\+Mission\+Item(\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t $\ast$file\+Generator, mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item)}{ARMAVLINK_FileGenerator_AddMissionItem(ARMAVLINK_FileGenerator_t *fileGenerator, mavlink_mission_item_t *missionItem)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Add\+Mission\+Item (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} $\ast$}]{file\+Generator, }
+\item[{mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$}]{mission\+Item}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___file_generator_8h_a947fcaaa22defa1ef48948c42a4b9a20}{}\label{_a_r_m_a_v_l_i_n_k___file_generator_8h_a947fcaaa22defa1ef48948c42a4b9a20}
+
+
+Add a mission item to the File Generator list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em file\+Generator} & \+: pointer on the file generator \\
+\hline
+\mbox{\tt in}  & {\em mission\+Item} & \+: the mission item to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if operation went well, the enum description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Create\+Mavlink\+File@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Create\+Mavlink\+File}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Create\+Mavlink\+File@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Create\+Mavlink\+File}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Create\+Mavlink\+File(\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t $\ast$file\+Generator, const char $\ast$const file\+Path)}{ARMAVLINK_FileGenerator_CreateMavlinkFile(ARMAVLINK_FileGenerator_t *fileGenerator, const char *const filePath)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Create\+Mavlink\+File (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} $\ast$}]{file\+Generator, }
+\item[{const char $\ast$const}]{file\+Path}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___file_generator_8h_a350264c4dd18df9ce01da7ebb22e3e08}{}\label{_a_r_m_a_v_l_i_n_k___file_generator_8h_a350264c4dd18df9ce01da7ebb22e3e08}
+
+
+Write a mavlink file with all the mission items in the list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em file\+Generator} & \+: pointer on the file generator \\
+\hline
+\mbox{\tt in}  & {\em file\+Path} & \+: path to write the file \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Delete@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Delete}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Delete@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Delete}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Delete(\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t $\ast$$\ast$file\+Generator)}{ARMAVLINK_FileGenerator_Delete(ARMAVLINK_FileGenerator_t **fileGenerator)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} $\ast$$\ast$}]{file\+Generator}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___file_generator_8h_a3804d54232674932755079842234d63d}{}\label{_a_r_m_a_v_l_i_n_k___file_generator_8h_a3804d54232674932755079842234d63d}
+
+
+Delete the File generator. 
+
+\begin{DoxyWarning}{Warning}
+This function free memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Generator} & \+: address of the pointer on the file generator \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_aadfed8b41718306c332cd2b82bfd17bf}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+New()} 
+\end{DoxySeeAlso}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Delete\+Mission\+Item@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Delete\+Mission\+Item}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Delete\+Mission\+Item@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Delete\+Mission\+Item}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Delete\+Mission\+Item(\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t $\ast$file\+Generator, int index)}{ARMAVLINK_FileGenerator_DeleteMissionItem(ARMAVLINK_FileGenerator_t *fileGenerator, int index)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Delete\+Mission\+Item (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} $\ast$}]{file\+Generator, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___file_generator_8h_aab169f29852125d4eb21c157a877c113}{}\label{_a_r_m_a_v_l_i_n_k___file_generator_8h_aab169f29852125d4eb21c157a877c113}
+
+
+Delete a mission item in the File Generator list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em file\+Generator} & \+: pointer on the file generator \\
+\hline
+\mbox{\tt in}  & {\em index} & \+: the index of the mission item to delete \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if operation went well, the enum description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Get\+Current\+Mission\+Item\+List@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Get\+Current\+Mission\+Item\+List}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Get\+Current\+Mission\+Item\+List@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Get\+Current\+Mission\+Item\+List}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Get\+Current\+Mission\+Item\+List(\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t $\ast$file\+Generator, e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+O\+R $\ast$err)}{ARMAVLINK_FileGenerator_GetCurrentMissionItemList(ARMAVLINK_FileGenerator_t *fileGenerator, eARMAVLINK_ERROR *err)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mission\+\_\+item\+\_\+list\+\_\+t}$\ast$ A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Get\+Current\+Mission\+Item\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} $\ast$}]{file\+Generator, }
+\item[{{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} $\ast$}]{err}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___file_generator_8h_a05a0603e6caec4998906820117b6c156}{}\label{_a_r_m_a_v_l_i_n_k___file_generator_8h_a05a0603e6caec4998906820117b6c156}
+
+
+Get the current mission item list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em file\+Generator} & \+: pointer on the file generator \\
+\hline
+\mbox{\tt out}  & {\em err} & \+: pointer on the error output. Can be null \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the mission item list 
+\end{DoxyReturn}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Insert\+Mission\+Item@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Insert\+Mission\+Item}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Insert\+Mission\+Item@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Insert\+Mission\+Item}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Insert\+Mission\+Item(\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t $\ast$file\+Generator, mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, int index)}{ARMAVLINK_FileGenerator_InsertMissionItem(ARMAVLINK_FileGenerator_t *fileGenerator, mavlink_mission_item_t *missionItem, int index)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Insert\+Mission\+Item (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} $\ast$}]{file\+Generator, }
+\item[{mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$}]{mission\+Item, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___file_generator_8h_a4151ebcd901c9612fa60fd53ed9ad09f}{}\label{_a_r_m_a_v_l_i_n_k___file_generator_8h_a4151ebcd901c9612fa60fd53ed9ad09f}
+
+
+Insert a mission item in the File Generator list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em file\+Generator} & \+: pointer on the file generator \\
+\hline
+\mbox{\tt in}  & {\em mission\+Item} & \+: the mission item to insert. \\
+\hline
+\mbox{\tt in}  & {\em index} & \+: the index of the mission item to replace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if operation went well, the enum description of the error otherwise 
+\end{DoxyReturn}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+New@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+New}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+New@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+New}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+New(e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARMAVLINK_FileGenerator_New(eARMAVLINK_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t}$\ast$ A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___file_generator_8h_aadfed8b41718306c332cd2b82bfd17bf}{}\label{_a_r_m_a_v_l_i_n_k___file_generator_8h_aadfed8b41718306c332cd2b82bfd17bf}
+
+
+Create a new file generator. 
+
+\begin{DoxyWarning}{Warning}
+This function allocate memory 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a3804d54232674932755079842234d63d}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Delete()} must be called to delete the file generator and free the memory allocated. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em error} & \+: pointer on the error output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer on the new file generator 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_m_a_v_l_i_n_k___file_generator_8h_a3804d54232674932755079842234d63d}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Delete()} 
+\end{DoxySeeAlso}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Replace\+Mission\+Item@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Replace\+Mission\+Item}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Replace\+Mission\+Item@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Replace\+Mission\+Item}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Replace\+Mission\+Item(\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t $\ast$file\+Generator, mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$mission\+Item, int index)}{ARMAVLINK_FileGenerator_ReplaceMissionItem(ARMAVLINK_FileGenerator_t *fileGenerator, mavlink_mission_item_t *missionItem, int index)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+\+Replace\+Mission\+Item (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Generator\+\_\+t} $\ast$}]{file\+Generator, }
+\item[{mavlink\+\_\+mission\+\_\+item\+\_\+t $\ast$}]{mission\+Item, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___file_generator_8h_a516438ecbe64e06eb4ac96c31bc2a54c}{}\label{_a_r_m_a_v_l_i_n_k___file_generator_8h_a516438ecbe64e06eb4ac96c31bc2a54c}
+
+
+Replace a mission item in the File Generator list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em file\+Generator} & \+: pointer on the file generator \\
+\hline
+\mbox{\tt in}  & {\em mission\+Item} & \+: the mission item to replace with \\
+\hline
+\mbox{\tt in}  & {\em index} & \+: the index of the mission item to replace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if operation went well, the enum description of the error otherwise 
+\end{DoxyReturn}

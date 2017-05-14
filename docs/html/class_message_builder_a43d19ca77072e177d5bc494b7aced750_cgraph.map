@@ -1,0 +1,12 @@
+<map id="MessageBuilder::build" name="MessageBuilder::build">
+<area shape="rect" id="node2" href="$class_message.html#a8118c1b12f068dacbf3535c9879b2a25" title="Message::set_type" alt="" coords="233,5,366,32"/>
+<area shape="rect" id="node3" href="$class_message.html#aaeb94d5348e4d13c7f5831950b19bcd3" title="Message::set_allocated_ping" alt="" coords="204,56,395,83"/>
+<area shape="rect" id="node4" href="$class_message.html#a73b5a21942f1206693d911ea6357f302" title="Message::set_allocated\l_advertisement" alt="" coords="219,107,379,149"/>
+<area shape="rect" id="node5" href="$class_message.html#aabcdaa4db978dd877e117297ea555af4" title="Message::set_allocated\l_shutdown" alt="" coords="219,173,379,214"/>
+<area shape="rect" id="node6" href="$class_message_builder.html#a6e9bc743a54f5880a006229d0e5f0765" title="MessageBuilder::hello" alt="" coords="224,239,375,265"/>
+<area shape="rect" id="node11" href="$class_message.html#a02b81f83621d5e66bc77e37a2ca954eb" title="Message::set_allocated\l_hello" alt="" coords="219,290,379,331"/>
+<area shape="rect" id="node7" href="$class_message.html#ab74acd4d120a7c3cbdc26a8d61eeec55" title="Message::mutable_hello" alt="" coords="443,163,605,189"/>
+<area shape="rect" id="node8" href="$class_hello.html#a97452e4a7b8bfcc4aaf625ec14d28885" title="Hello::set_ip" alt="" coords="477,213,571,240"/>
+<area shape="rect" id="node9" href="$class_hello.html#ad505980b5747b4afce9ef652f64e8f55" title="Hello::set_port" alt="" coords="471,264,577,291"/>
+<area shape="rect" id="node10" href="$class_hello.html#a3b00bde5bbe70e04b708d9fb9b90d3bb" title="Hello::set_name" alt="" coords="465,315,583,341"/>
+</map>

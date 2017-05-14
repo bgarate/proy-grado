@@ -1,0 +1,10 @@
+<map id="ocsp_basic_response_st" name="ocsp_basic_response_st">
+<area shape="rect" id="node2" href="$structasn1__string__st.html" title="asn1_string_st" alt="" coords="28,95,135,121"/>
+<area shape="rect" id="node3" href="$structocsp__response__data__st.html" title="ocsp_response_data_st" alt="" coords="80,423,240,449"/>
+<area shape="rect" id="node4" href="$structocsp__responder__id__st.html" title="ocsp_responder_id_st" alt="" coords="155,332,304,359"/>
+<area shape="rect" id="node9" href="$structasn1__type__st.html" title="asn1_type_st" alt="" coords="328,332,428,359"/>
+<area shape="rect" id="node5" href="$struct_x509__name__st.html" title="X509_name_st" alt="" coords="238,95,347,121"/>
+<area shape="rect" id="node6" href="$structbuf__mem__st.html" title="buf_mem_st" alt="" coords="245,5,340,32"/>
+<area shape="rect" id="node7" href="$struct_x509__algor__st.html" title="X509_algor_st" alt="" coords="325,423,430,449"/>
+<area shape="rect" id="node8" href="$structasn1__object__st.html" title="asn1_object_st" alt="" coords="396,95,506,121"/>
+</map>

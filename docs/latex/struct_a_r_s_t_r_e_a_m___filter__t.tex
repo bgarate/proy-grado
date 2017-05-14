@@ -1,0 +1,63 @@
+\hypertarget{struct_a_r_s_t_r_e_a_m___filter__t}{}\section{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t Struct Reference}
+\label{struct_a_r_s_t_r_e_a_m___filter__t}\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t}}
+
+
+A\+R\+Stream filter interface. Filters can be passed to A\+R\+Stream Readers (to be applied on received frames, before being passed to the application) or A\+R\+Stream Senders (to be applied before sending the frame on the network)  
+
+
+
+
+{\ttfamily \#include $<$A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t $\ast$($\ast$ \hyperlink{struct_a_r_s_t_r_e_a_m___filter__t_aa291d468bba578e3074c5ea474146333}{get\+Buffer} )(void $\ast$\hyperlink{struct_a_r_s_t_r_e_a_m___filter__t_a8c0052e7db6a36a634489e20ed266c75}{context}, int size)
+\item 
+int($\ast$ \hyperlink{struct_a_r_s_t_r_e_a_m___filter__t_a24e4b1dac2aeb18d6b316700982d4c2d}{get\+Output\+Size} )(void $\ast$\hyperlink{struct_a_r_s_t_r_e_a_m___filter__t_a8c0052e7db6a36a634489e20ed266c75}{context}, int input\+Size)
+\item 
+int($\ast$ \hyperlink{struct_a_r_s_t_r_e_a_m___filter__t_afffa4052478ed0e26779d7a09dc8ea40}{filter\+Buffer} )(void $\ast$\hyperlink{struct_a_r_s_t_r_e_a_m___filter__t_a8c0052e7db6a36a634489e20ed266c75}{context}, uint8\+\_\+t $\ast$input, int in\+Size, uint8\+\_\+t $\ast$output, int out\+Size)
+\item 
+void($\ast$ \hyperlink{struct_a_r_s_t_r_e_a_m___filter__t_affb86c1dbfd31a66ef601c1b4e0fcbe4}{release\+Buffer} )(void $\ast$\hyperlink{struct_a_r_s_t_r_e_a_m___filter__t_a8c0052e7db6a36a634489e20ed266c75}{context}, uint8\+\_\+t $\ast$buffer)
+\item 
+void $\ast$ \hyperlink{struct_a_r_s_t_r_e_a_m___filter__t_a8c0052e7db6a36a634489e20ed266c75}{context}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+R\+Stream filter interface. Filters can be passed to A\+R\+Stream Readers (to be applied on received frames, before being passed to the application) or A\+R\+Stream Senders (to be applied before sending the frame on the network) 
+
+Members\+:
+\begin{DoxyItemize}
+\item uint8\+\_\+t$\ast$ get\+Buffer (void $\ast$context, int size) -\/$>$ returns the address of a free buffer of at least size bytes
+\item int get\+Output\+Size (void $\ast$context, int input\+Size) -\/$>$ returns the size of the output for an input of input\+Size bytes
+\item int filter\+Buffer (void $\ast$context, uint8\+\_\+t $\ast$input, int in\+Size, uint8\+\_\+t $\ast$output, int out\+Size) -\/$>$ filters the input buffer (filled by in\+Size bytes of data), and puts the result in output (max out\+Size bytes of data). returns the actual number of bytes written in output.
+\item void release\+Buffer(void $\ast$context, uint8\+\_\+t $\ast$buffer)
+\end{DoxyItemize}
+
+-\/$>$ called by A\+R\+Stream to release the buffer. this call means that A\+R\+Stream will never access this buffer again, and that it is safe to dispose it (or to return it from a subsequent call to get\+Buffer)
+\begin{DoxyItemize}
+\item void $\ast$context -\/$>$ Implementation private data, given as the first argument to all other functions. 
+\end{DoxyItemize}
+
+\subsection{Member Data Documentation}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t}!context@{context}}
+\index{context@{context}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t}}
+\subsubsection[{\texorpdfstring{context}{context}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t\+::context}\hypertarget{struct_a_r_s_t_r_e_a_m___filter__t_a8c0052e7db6a36a634489e20ed266c75}{}\label{struct_a_r_s_t_r_e_a_m___filter__t_a8c0052e7db6a36a634489e20ed266c75}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t}!filter\+Buffer@{filter\+Buffer}}
+\index{filter\+Buffer@{filter\+Buffer}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t}}
+\subsubsection[{\texorpdfstring{filter\+Buffer}{filterBuffer}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t\+::filter\+Buffer) (void $\ast${\bf context}, uint8\+\_\+t $\ast$input, int in\+Size, uint8\+\_\+t $\ast$output, int out\+Size)}\hypertarget{struct_a_r_s_t_r_e_a_m___filter__t_afffa4052478ed0e26779d7a09dc8ea40}{}\label{struct_a_r_s_t_r_e_a_m___filter__t_afffa4052478ed0e26779d7a09dc8ea40}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t}!get\+Buffer@{get\+Buffer}}
+\index{get\+Buffer@{get\+Buffer}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t}}
+\subsubsection[{\texorpdfstring{get\+Buffer}{getBuffer}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$($\ast$ A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t\+::get\+Buffer) (void $\ast${\bf context}, int size)}\hypertarget{struct_a_r_s_t_r_e_a_m___filter__t_aa291d468bba578e3074c5ea474146333}{}\label{struct_a_r_s_t_r_e_a_m___filter__t_aa291d468bba578e3074c5ea474146333}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t}!get\+Output\+Size@{get\+Output\+Size}}
+\index{get\+Output\+Size@{get\+Output\+Size}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t}}
+\subsubsection[{\texorpdfstring{get\+Output\+Size}{getOutputSize}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t\+::get\+Output\+Size) (void $\ast${\bf context}, int input\+Size)}\hypertarget{struct_a_r_s_t_r_e_a_m___filter__t_a24e4b1dac2aeb18d6b316700982d4c2d}{}\label{struct_a_r_s_t_r_e_a_m___filter__t_a24e4b1dac2aeb18d6b316700982d4c2d}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t}!release\+Buffer@{release\+Buffer}}
+\index{release\+Buffer@{release\+Buffer}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t}}
+\subsubsection[{\texorpdfstring{release\+Buffer}{releaseBuffer}}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t\+::release\+Buffer) (void $\ast${\bf context}, uint8\+\_\+t $\ast$buffer)}\hypertarget{struct_a_r_s_t_r_e_a_m___filter__t_affb86c1dbfd31a66ef601c1b4e0fcbe4}{}\label{struct_a_r_s_t_r_e_a_m___filter__t_affb86c1dbfd31a66ef601c1b4e0fcbe4}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/lib\+A\+R\+Stream/\hyperlink{_a_r_s_t_r_e_a_m___filter_8h}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter.\+h}\end{DoxyCompactItemize}

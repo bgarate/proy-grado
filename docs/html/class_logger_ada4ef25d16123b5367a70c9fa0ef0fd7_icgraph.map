@@ -1,0 +1,12 @@
+<map id="Logger::logError" name="Logger::logError">
+<area shape="rect" id="node2" href="$class_async_socket_channel.html#a7b32d91f71dbea006cd1f7e631abb5c8" title="AsyncSocketChannel\l::connect" alt="" coords="168,5,316,47"/>
+<area shape="rect" id="node6" href="$class_async_socket_channel.html#ae0d0010ef42fecc249ae1542b226130c" title="AsyncSocketChannel\l::serve" alt="" coords="373,89,521,131"/>
+<area shape="rect" id="node8" href="$class_connection.html#a55342f6aeedd34fc6a11dd79b59da69b" title="Connection::create" alt="" coords="176,122,308,149"/>
+<area shape="rect" id="node9" href="$class_connection.html#a898e60a2d6ec6b8b25e3299bb15972fc" title="Connection::getPort" alt="" coords="173,173,311,199"/>
+<area shape="rect" id="node10" href="$class_socket_channel.html#a6b864640d80bf30b9f994d651ebebfdf" title="SocketChannel::connect" alt="" coords="365,189,530,215"/>
+<area shape="rect" id="node3" href="$class_communication.html#ab64912f9a4137b930d717d8a3140d693" title="Communication::connect" alt="" coords="364,26,531,53"/>
+<area shape="rect" id="node4" href="$class_brain.html#a23d921369c5ec1218d7dc26d0f8270c2" title="Brain::loop" alt="" coords="613,37,697,63"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a523d51f6d06fce5bbed3e074818569fb" title="main" alt="" coords="780,102,831,129"/>
+<area shape="rect" id="node7" href="$class_communication.html#aed16e511327c62b6b5f418523f707a77" title="Communication::serve" alt="" coords="579,97,732,123"/>
+<area shape="rect" id="node11" href="$class_body.html#a74a678b9bdb90594271faded7fe2be36" title="Body::setup" alt="" coords="609,167,701,194"/>
+</map>

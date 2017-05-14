@@ -1,0 +1,546 @@
+\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.h File Reference}
+\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h}\index{src/hal/pb2/include/lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{src/hal/pb2/include/lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+
+
+Discovery Device contains the informations of a device discovered.  
+
+
+{\ttfamily \#include $<$json/json.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Network\+A\+L/\+A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Network\+A\+L/\+A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Error.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Network/\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Error.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Connection.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Discovery.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Network\+Configuration.\+h$>$}\\*
+Include dependency graph for A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_d_i_s_c_o_v_e_r_y___device_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_d_i_s_c_o_v_e_r_y___device_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Discovery\+Device contains the informations of a device discovered. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a327d2e622690a43883cb32af6102c6d2}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t}) (\hyperlink{structjson__object}{json\+\_\+object} $\ast$json\+Obj, void $\ast$custom\+Data)
+\item 
+typedef struct \hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a7d132ec20bbff0d48740db8c269cd52f}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Discovery\+Device contains the informations of a device discovered. \end{DoxyCompactList}\item 
+typedef \hyperlink{struct_a_r_n_e_t_w_o_r_k_a_l___manager__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager\+\_\+t} $\ast$($\ast$ \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a10a87da9230caea749a74bafa09753bf}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+New\+A\+R\+Network\+A\+L\+\_\+t}) (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} $\ast$error, \hyperlink{_a_r_n_e_t_w_o_r_k_a_l___error_8h_a42c656066e8f907213721cb590ae9e72}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+E\+R\+R\+OR} $\ast$error\+AL)
+\begin{DoxyCompactList}\small\item\em Callback to create a new A\+R\+Network\+AL. \end{DoxyCompactList}\item 
+typedef \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a107375158dde241b1807827f3f11e271}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Delete\+A\+R\+Network\+A\+L\+\_\+t}) (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, \hyperlink{struct_a_r_n_e_t_w_o_r_k_a_l___manager__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager\+\_\+t} $\ast$$\ast$network\+AL)
+\begin{DoxyCompactList}\small\item\em Callback to delete the A\+R\+Network\+AL. \end{DoxyCompactList}\item 
+typedef \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_abce6d2c07b5f1b853aaa83e4be5de70c}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Init\+Network\+Configuration\+\_\+t}) (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, \hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___network_configuration__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Network\+Configuration\+\_\+t} $\ast$network\+Configuration)
+\begin{DoxyCompactList}\small\item\em Callback to Initialize the Network\+Configuration to use with the device. \end{DoxyCompactList}\item 
+typedef void $\ast$($\ast$ \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_aceb1e3ea2d04ecef6866f8c1227b03a1}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Get\+Copy\+Of\+Specific\+Parameters\+\_\+t}) (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Callback to copy the specific\+Parameters. \end{DoxyCompactList}\item 
+typedef \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR}($\ast$ \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_aa895834b4158a3400f9a7f133d971bf3}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Delecte\+Specific\+Parameters\+\_\+t}) (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Callback to delecte the specific\+Parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$ \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a76019ac2af18c6d8b7afdfa33777230e}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New} (\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Create a new Discovery Device. \end{DoxyCompactList}\item 
+\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$ \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a02c6572a4aeb6ef310b6967aceb2aab6}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New\+By\+Copy} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device\+To\+Copy, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Copy a Discovery Device. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a71bca2d7305b0c4d489e15f1e5242116}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Delete} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$$\ast$device)
+\begin{DoxyCompactList}\small\item\em Delete the Discovery Device. \end{DoxyCompactList}\item 
+\hyperlink{struct_a_r_n_e_t_w_o_r_k_a_l___manager__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager\+\_\+t} $\ast$ \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_ab55e22376cdf1a16c676ceee94d49c89}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New\+A\+R\+Network\+AL} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$discovery\+Device, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} $\ast$error, \hyperlink{_a_r_n_e_t_w_o_r_k_a_l___error_8h_a42c656066e8f907213721cb590ae9e72}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+E\+R\+R\+OR} $\ast$error\+AL)
+\begin{DoxyCompactList}\small\item\em Create a new A\+R\+Network\+AL //\+T\+O\+DO add commentary !!!!!!!!!!!! \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a1931f078a4b58dc66efb629565a414d4}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Delete\+A\+R\+Network\+AL} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$discovery\+Device, \hyperlink{struct_a_r_n_e_t_w_o_r_k_a_l___manager__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager\+\_\+t} $\ast$$\ast$network\+A\+L\+Manager)
+\begin{DoxyCompactList}\small\item\em Delete a A\+R\+Network\+AL //\+T\+O\+DO add commentary !!!!!!!!!!!! \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a579a742c784c86ad2c3f288c1c93abd9}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+Network\+Configuration} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$discovery\+Device, \hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___network_configuration__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Network\+Configuration\+\_\+t} $\ast$network\+Configuration)
+\begin{DoxyCompactList}\small\item\em Initialize the Network\+Configuration to use with the device //\+T\+O\+DO add commentary !!!!!!!!!!!! \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_ae8bf02b4f0f86b379b6125f3490a36ec}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+Wifi} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___discovery_8h_a908972407587656a48194c58ccd65813}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} product, const char $\ast$name, const char $\ast$address, int discovery\+\_\+port)
+\begin{DoxyCompactList}\small\item\em Initialize the Discovery Device with a wifi device. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a3b4fd61ccf84adfd45363afb67a2cb84}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Wifi\+Set\+Device\+To\+Controller\+Port} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, int d2c\+\_\+port)
+\begin{DoxyCompactList}\small\item\em Set the device to controller port. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_abbfdc6835ec0b6c191166af6289ca1d0}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Wifi\+Add\+Connection\+Callbacks} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a327d2e622690a43883cb32af6102c6d2}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t} send\+Json\+Callback, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a327d2e622690a43883cb32af6102c6d2}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t} receive\+Json\+Callback, void $\ast$custom\+Data)
+\begin{DoxyCompactList}\small\item\em Add connection callbacks to a wifi device. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_acdf026038e40b09a52d1b91d05470c90}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Wifi\+Get\+Ip\+Address} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, char $\ast$ip\+Address, int \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length})
+\begin{DoxyCompactList}\small\item\em Get wifi IP address. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a8319e307af4eaef0babbbfcfe014b977}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Wifi\+Set\+Qo\+S\+Level} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, int level)
+\begin{DoxyCompactList}\small\item\em Set requested QoS level. 0\+: No QoS, 1\+: QoS enabled (default) \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_ace6278eacc78fd8208af2259bbea135c}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+B\+LE} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___discovery_8h_a908972407587656a48194c58ccd65813}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} product, \hyperlink{_a_r_n_e_t_w_o_r_k_a_l___manager_8h_ac8dfacc85e9ffe53ea4fadd82a594900}{A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+B\+L\+E\+Device\+Manager\+\_\+t} ble\+Device\+Manager, \hyperlink{_a_r_n_e_t_w_o_r_k_a_l___manager_8h_a61d45a9e49bfe1e8ff3b6aaa9156a417}{A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+B\+L\+E\+Device\+\_\+t} ble\+Device)
+\begin{DoxyCompactList}\small\item\em Initialize the Discovery Device with a B\+LE device. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a736d0535b45151862d75c5ed7625016c}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+B\+L\+E\+Get\+Manager} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, \hyperlink{_a_r_n_e_t_w_o_r_k_a_l___manager_8h_ac8dfacc85e9ffe53ea4fadd82a594900}{A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+B\+L\+E\+Device\+Manager\+\_\+t} $\ast$$\ast$manager)
+\begin{DoxyCompactList}\small\item\em Gets the B\+L\+E\+Device\+Manager associated with the given device. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a567975da9f54e5cdf1676cf5008538d3}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+B\+L\+E\+Get\+Device} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, \hyperlink{_a_r_n_e_t_w_o_r_k_a_l___manager_8h_a61d45a9e49bfe1e8ff3b6aaa9156a417}{A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+B\+L\+E\+Device\+\_\+t} $\ast$$\ast$ble\+Device)
+\begin{DoxyCompactList}\small\item\em Gets the B\+L\+E\+Device associated with the given device. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a8483926125314d6c8590793cd3bda2ea}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+U\+SB} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___discovery_8h_a908972407587656a48194c58ccd65813}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT} product, struct mux\+\_\+ctx $\ast$mux)
+\begin{DoxyCompactList}\small\item\em Initialize the Discovery Device with an usb device. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a6f07db549290fb7225b9f5f85699f2b5}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Usb\+Add\+Connection\+Callbacks} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a327d2e622690a43883cb32af6102c6d2}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t} send\+Json\+Callback, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a327d2e622690a43883cb32af6102c6d2}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t} receive\+Json\+Callback, void $\ast$custom\+Data)
+\begin{DoxyCompactList}\small\item\em Add connection callbacks to an usb device. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___error_8h_af25e2aace4dc78787dd35b66985d2787}{e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a2101ff7d7a923a9b6956de77c4311228}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Usb\+Get\+Mux} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, struct mux\+\_\+ctx $\ast$$\ast$mux)
+\begin{DoxyCompactList}\small\item\em Get the mux associated with an usb device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Discovery Device contains the informations of a device discovered. 
+
+\begin{DoxyDate}{Date}
+02/03/2015 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:maxime.maitre@parrot.com}{\tt maxime.\+maitre@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t}{ARDISCOVERY_Device_ConnectionJsonCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t) ({\bf json\+\_\+object} $\ast$json\+Obj, void $\ast$custom\+Data)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a327d2e622690a43883cb32af6102c6d2}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a327d2e622690a43883cb32af6102c6d2}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Delecte\+Specific\+Parameters\+\_\+t@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Delecte\+Specific\+Parameters\+\_\+t}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Delecte\+Specific\+Parameters\+\_\+t@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Delecte\+Specific\+Parameters\+\_\+t}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Delecte\+Specific\+Parameters\+\_\+t}{ARDISCOVERY_DEVICE_DelecteSpecificParameters_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Delecte\+Specific\+Parameters\+\_\+t) ({\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_aa895834b4158a3400f9a7f133d971bf3}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_aa895834b4158a3400f9a7f133d971bf3}
+
+
+Callback to delecte the specific\+Parameters. 
+
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Delete\+A\+R\+Network\+A\+L\+\_\+t@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Delete\+A\+R\+Network\+A\+L\+\_\+t}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Delete\+A\+R\+Network\+A\+L\+\_\+t@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Delete\+A\+R\+Network\+A\+L\+\_\+t}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Delete\+A\+R\+Network\+A\+L\+\_\+t}{ARDISCOVERY_DEVICE_DeleteARNetworkAL_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Delete\+A\+R\+Network\+A\+L\+\_\+t) ({\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, {\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager\+\_\+t} $\ast$$\ast$network\+AL)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a107375158dde241b1807827f3f11e271}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a107375158dde241b1807827f3f11e271}
+
+
+Callback to delete the A\+R\+Network\+AL. 
+
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Get\+Copy\+Of\+Specific\+Parameters\+\_\+t@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Get\+Copy\+Of\+Specific\+Parameters\+\_\+t}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Get\+Copy\+Of\+Specific\+Parameters\+\_\+t@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Get\+Copy\+Of\+Specific\+Parameters\+\_\+t}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Get\+Copy\+Of\+Specific\+Parameters\+\_\+t}{ARDISCOVERY_DEVICE_GetCopyOfSpecificParameters_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$($\ast$ A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Get\+Copy\+Of\+Specific\+Parameters\+\_\+t) ({\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, {\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} $\ast$error)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_aceb1e3ea2d04ecef6866f8c1227b03a1}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_aceb1e3ea2d04ecef6866f8c1227b03a1}
+
+
+Callback to copy the specific\+Parameters. 
+
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Init\+Network\+Configuration\+\_\+t@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Init\+Network\+Configuration\+\_\+t}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Init\+Network\+Configuration\+\_\+t@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Init\+Network\+Configuration\+\_\+t}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Init\+Network\+Configuration\+\_\+t}{ARDISCOVERY_DEVICE_InitNetworkConfiguration_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR}($\ast$ A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Init\+Network\+Configuration\+\_\+t) ({\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, {\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Network\+Configuration\+\_\+t} $\ast$network\+Configuration)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_abce6d2c07b5f1b853aaa83e4be5de70c}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_abce6d2c07b5f1b853aaa83e4be5de70c}
+
+
+Callback to Initialize the Network\+Configuration to use with the device. 
+
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+New\+A\+R\+Network\+A\+L\+\_\+t@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+New\+A\+R\+Network\+A\+L\+\_\+t}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+New\+A\+R\+Network\+A\+L\+\_\+t@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+New\+A\+R\+Network\+A\+L\+\_\+t}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+New\+A\+R\+Network\+A\+L\+\_\+t}{ARDISCOVERY_DEVICE_NewARNetworkAL_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager\+\_\+t}$\ast$($\ast$ A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+New\+A\+R\+Network\+A\+L\+\_\+t) ({\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$device, {\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} $\ast$error, {\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+E\+R\+R\+OR} $\ast$error\+AL)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a10a87da9230caea749a74bafa09753bf}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a10a87da9230caea749a74bafa09753bf}
+
+
+Callback to create a new A\+R\+Network\+AL. 
+
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t}{ARDISCOVERY_Device_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} {\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t}}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a7d132ec20bbff0d48740db8c269cd52f}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a7d132ec20bbff0d48740db8c269cd52f}
+
+
+Discovery\+Device contains the informations of a device discovered. 
+
+
+
+\subsection{Function Documentation}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+B\+L\+E\+Get\+Device@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+B\+L\+E\+Get\+Device}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+B\+L\+E\+Get\+Device@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+B\+L\+E\+Get\+Device}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+B\+L\+E\+Get\+Device(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$device, A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+B\+L\+E\+Device\+\_\+t $\ast$$\ast$ble\+Device)}{ARDISCOVERY_Device_BLEGetDevice(ARDISCOVERY_Device_t *device, ARNETWORKAL_BLEDevice_t **bleDevice)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+B\+L\+E\+Get\+Device (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{device, }
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+B\+L\+E\+Device\+\_\+t} $\ast$$\ast$}]{ble\+Device}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a567975da9f54e5cdf1676cf5008538d3}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a567975da9f54e5cdf1676cf5008538d3}
+
+
+Gets the B\+L\+E\+Device associated with the given device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device} & The Discovery Device. \\
+\hline
+\mbox{\tt out}  & {\em ble\+Device} & Pointer where the B\+L\+E\+Device will be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+B\+L\+E\+Get\+Manager@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+B\+L\+E\+Get\+Manager}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+B\+L\+E\+Get\+Manager@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+B\+L\+E\+Get\+Manager}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+B\+L\+E\+Get\+Manager(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$device, A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+B\+L\+E\+Device\+Manager\+\_\+t $\ast$$\ast$manager)}{ARDISCOVERY_Device_BLEGetManager(ARDISCOVERY_Device_t *device, ARNETWORKAL_BLEDeviceManager_t **manager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+B\+L\+E\+Get\+Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{device, }
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+B\+L\+E\+Device\+Manager\+\_\+t} $\ast$$\ast$}]{manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a736d0535b45151862d75c5ed7625016c}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a736d0535b45151862d75c5ed7625016c}
+
+
+Gets the B\+L\+E\+Device\+Manager associated with the given device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device} & The Discovery Device. \\
+\hline
+\mbox{\tt out}  & {\em manager} & Pointer where the B\+L\+E\+Device\+Manager will be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Delete@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Delete}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Delete@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Delete}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Delete(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$$\ast$device)}{ARDISCOVERY_Device_Delete(ARDISCOVERY_Device_t **device)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$$\ast$}]{device}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a71bca2d7305b0c4d489e15f1e5242116}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a71bca2d7305b0c4d489e15f1e5242116}
+
+
+Delete the Discovery Device. 
+
+\begin{DoxyWarning}{Warning}
+This function free memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em device} & The Discovery Device to delete \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a76019ac2af18c6d8b7afdfa33777230e}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New} 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Delete\+A\+R\+Network\+AL@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Delete\+A\+R\+Network\+AL}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Delete\+A\+R\+Network\+AL@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Delete\+A\+R\+Network\+AL}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Delete\+A\+R\+Network\+A\+L(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$discovery\+Device, A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager\+\_\+t $\ast$$\ast$network\+A\+L\+Manager)}{ARDISCOVERY_Device_DeleteARNetworkAL(ARDISCOVERY_Device_t *discoveryDevice, ARNETWORKAL_Manager_t **networkALManager)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Delete\+A\+R\+Network\+AL (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{discovery\+Device, }
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager\+\_\+t} $\ast$$\ast$}]{network\+A\+L\+Manager}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a1931f078a4b58dc66efb629565a414d4}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a1931f078a4b58dc66efb629565a414d4}
+
+
+Delete a A\+R\+Network\+AL //\+T\+O\+DO add commentary !!!!!!!!!!!! 
+
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+B\+LE@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+B\+LE}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+B\+LE@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+B\+LE}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+B\+L\+E(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$device, e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+C\+T product, A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+B\+L\+E\+Device\+Manager\+\_\+t ble\+Device\+Manager, A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+B\+L\+E\+Device\+\_\+t ble\+Device)}{ARDISCOVERY_Device_InitBLE(ARDISCOVERY_Device_t *device, eARDISCOVERY_PRODUCT product, ARNETWORKAL_BLEDeviceManager_t bleDeviceManager, ARNETWORKAL_BLEDevice_t bleDevice)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+B\+LE (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{device, }
+\item[{{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT}}]{product, }
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+B\+L\+E\+Device\+Manager\+\_\+t}}]{ble\+Device\+Manager, }
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+B\+L\+E\+Device\+\_\+t}}]{ble\+Device}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_ace6278eacc78fd8208af2259bbea135c}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_ace6278eacc78fd8208af2259bbea135c}
+
+
+Initialize the Discovery Device with a B\+LE device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device} & The Discovery Device to Initialize. \\
+\hline
+\mbox{\tt in}  & {\em product} & Parrot\textquotesingle{}s product to initialized \\
+\hline
+\mbox{\tt in}  & {\em device\+Manager} & the OS device manager which will be used for network functions \\
+\hline
+\mbox{\tt in}  & {\em device} & the selected OS specific B\+LE device to connect to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+Network\+Configuration@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+Network\+Configuration}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+Network\+Configuration@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+Network\+Configuration}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+Network\+Configuration(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$discovery\+Device, A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Network\+Configuration\+\_\+t $\ast$network\+Configuration)}{ARDISCOVERY_Device_InitNetworkConfiguration(ARDISCOVERY_Device_t *discoveryDevice, ARDISCOVERY_NetworkConfiguration_t *networkConfiguration)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+Network\+Configuration (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{discovery\+Device, }
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Network\+Configuration\+\_\+t} $\ast$}]{network\+Configuration}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a579a742c784c86ad2c3f288c1c93abd9}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a579a742c784c86ad2c3f288c1c93abd9}
+
+
+Initialize the Network\+Configuration to use with the device //\+T\+O\+DO add commentary !!!!!!!!!!!! 
+
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+U\+SB@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+U\+SB}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+U\+SB@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+U\+SB}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+U\+S\+B(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$device, e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+C\+T product, struct mux\+\_\+ctx $\ast$mux)}{ARDISCOVERY_Device_InitUSB(ARDISCOVERY_Device_t *device, eARDISCOVERY_PRODUCT product, struct mux_ctx *mux)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+U\+SB (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{device, }
+\item[{{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT}}]{product, }
+\item[{struct mux\+\_\+ctx $\ast$}]{mux}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a8483926125314d6c8590793cd3bda2ea}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a8483926125314d6c8590793cd3bda2ea}
+
+
+Initialize the Discovery Device with an usb device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device} & The Discovery Device to Initialize. \\
+\hline
+\mbox{\tt in}  & {\em product} & Parrot\textquotesingle{}s product to initialized \\
+\hline
+\mbox{\tt in}  & {\em mux} & The mux instance to use \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+Wifi@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+Wifi}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+Wifi@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+Wifi}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+Wifi(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$device, e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+C\+T product, const char $\ast$name, const char $\ast$address, int discovery\+\_\+port)}{ARDISCOVERY_Device_InitWifi(ARDISCOVERY_Device_t *device, eARDISCOVERY_PRODUCT product, const char *name, const char *address, int discovery_port)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Init\+Wifi (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{device, }
+\item[{{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+P\+R\+O\+D\+U\+CT}}]{product, }
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{address, }
+\item[{int}]{discovery\+\_\+port}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_ae8bf02b4f0f86b379b6125f3490a36ec}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_ae8bf02b4f0f86b379b6125f3490a36ec}
+
+
+Initialize the Discovery Device with a wifi device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device} & The Discovery Device to Initialize. \\
+\hline
+\mbox{\tt in}  & {\em product} & Parrot\textquotesingle{}s product to initialized \\
+\hline
+\mbox{\tt in}  & {\em name} & Device Name ; must be Null-\/terminated. \\
+\hline
+\mbox{\tt in}  & {\em address} & Device Address ; must be Null-\/terminated. \\
+\hline
+\mbox{\tt in}  & {\em discovery\+\_\+port} & Device discovery Port. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New(e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARDISCOVERY_Device_New(eARDISCOVERY_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t}$\ast$ A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a76019ac2af18c6d8b7afdfa33777230e}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a76019ac2af18c6d8b7afdfa33777230e}
+
+
+Create a new Discovery Device. 
+
+\begin{DoxyWarning}{Warning}
+This function allocate memory 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a71bca2d7305b0c4d489e15f1e5242116}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Delete()} must be called to delete the Discovery Device and free the memory allocated. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em error} & executing error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new Discovery Device 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a05346048f02799c8164d4ade0a21ec48}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Delete} 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New\+A\+R\+Network\+AL@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New\+A\+R\+Network\+AL}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New\+A\+R\+Network\+AL@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New\+A\+R\+Network\+AL}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New\+A\+R\+Network\+A\+L(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$discovery\+Device, e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+O\+R $\ast$error, e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+E\+R\+R\+O\+R $\ast$error\+A\+L)}{ARDISCOVERY_Device_NewARNetworkAL(ARDISCOVERY_Device_t *discoveryDevice, eARDISCOVERY_ERROR *error, eARNETWORKAL_ERROR *errorAL)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager\+\_\+t}$\ast$ A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New\+A\+R\+Network\+AL (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{discovery\+Device, }
+\item[{{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} $\ast$}]{error, }
+\item[{{\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+E\+R\+R\+OR} $\ast$}]{error\+AL}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_ab55e22376cdf1a16c676ceee94d49c89}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_ab55e22376cdf1a16c676ceee94d49c89}
+
+
+Create a new A\+R\+Network\+AL //\+T\+O\+DO add commentary !!!!!!!!!!!! 
+
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New\+By\+Copy@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New\+By\+Copy}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New\+By\+Copy@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New\+By\+Copy}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New\+By\+Copy(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$device\+To\+Copy, e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARDISCOVERY_Device_NewByCopy(ARDISCOVERY_Device_t *deviceToCopy, eARDISCOVERY_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t}$\ast$ A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+New\+By\+Copy (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{device\+To\+Copy, }
+\item[{{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a02c6572a4aeb6ef310b6967aceb2aab6}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a02c6572a4aeb6ef310b6967aceb2aab6}
+
+
+Copy a Discovery Device. 
+
+\begin{DoxyWarning}{Warning}
+This function allocate memory 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a71bca2d7305b0c4d489e15f1e5242116}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Delete()} must be called to delete the Discovery Device copied and free the memory allocated. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em device\+To\+Copy} & the device to copy. \\
+\hline
+\mbox{\tt out}  & {\em error} & executing error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new Discovery Device 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___device_8h_a05346048f02799c8164d4ade0a21ec48}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Device\+\_\+\+Delete} 
+\end{DoxySeeAlso}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Usb\+Add\+Connection\+Callbacks@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Usb\+Add\+Connection\+Callbacks}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Usb\+Add\+Connection\+Callbacks@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Usb\+Add\+Connection\+Callbacks}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Usb\+Add\+Connection\+Callbacks(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$device, A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t send\+Json\+Callback, A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t receive\+Json\+Callback, void $\ast$custom\+Data)}{ARDISCOVERY_Device_UsbAddConnectionCallbacks(ARDISCOVERY_Device_t *device, ARDISCOVERY_Device_ConnectionJsonCallback_t sendJsonCallback, ARDISCOVERY_Device_ConnectionJsonCallback_t receiveJsonCallback, void *customData)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Usb\+Add\+Connection\+Callbacks (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{device, }
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t}}]{send\+Json\+Callback, }
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t}}]{receive\+Json\+Callback, }
+\item[{void $\ast$}]{custom\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a6f07db549290fb7225b9f5f85699f2b5}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a6f07db549290fb7225b9f5f85699f2b5}
+
+
+Add connection callbacks to an usb device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device} & The Discovery Device to add callback. \\
+\hline
+\mbox{\tt in}  & {\em send\+Json\+Callback} & Callback to add a json part durring the connection. \\
+\hline
+\mbox{\tt in}  & {\em receive\+Json\+Callback} & Callback to read a json part durring the connection. \\
+\hline
+\mbox{\tt in}  & {\em custom\+Data} & custom data given as parameter to the callbacks. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Usb\+Get\+Mux@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Usb\+Get\+Mux}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Usb\+Get\+Mux@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Usb\+Get\+Mux}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Usb\+Get\+Mux(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$device, struct mux\+\_\+ctx $\ast$$\ast$mux)}{ARDISCOVERY_Device_UsbGetMux(ARDISCOVERY_Device_t *device, struct mux_ctx **mux)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Usb\+Get\+Mux (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{device, }
+\item[{struct mux\+\_\+ctx $\ast$$\ast$}]{mux}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a2101ff7d7a923a9b6956de77c4311228}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a2101ff7d7a923a9b6956de77c4311228}
+
+
+Get the mux associated with an usb device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device} & The Discovery Device. \\
+\hline
+\mbox{\tt out}  & {\em mux} & the mux pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Wifi\+Add\+Connection\+Callbacks@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Wifi\+Add\+Connection\+Callbacks}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Wifi\+Add\+Connection\+Callbacks@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Wifi\+Add\+Connection\+Callbacks}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Wifi\+Add\+Connection\+Callbacks(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$device, A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t send\+Json\+Callback, A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t receive\+Json\+Callback, void $\ast$custom\+Data)}{ARDISCOVERY_Device_WifiAddConnectionCallbacks(ARDISCOVERY_Device_t *device, ARDISCOVERY_Device_ConnectionJsonCallback_t sendJsonCallback, ARDISCOVERY_Device_ConnectionJsonCallback_t receiveJsonCallback, void *customData)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Wifi\+Add\+Connection\+Callbacks (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{device, }
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t}}]{send\+Json\+Callback, }
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t}}]{receive\+Json\+Callback, }
+\item[{void $\ast$}]{custom\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_abbfdc6835ec0b6c191166af6289ca1d0}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_abbfdc6835ec0b6c191166af6289ca1d0}
+
+
+Add connection callbacks to a wifi device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device} & The Discovery Device to add callback. \\
+\hline
+\mbox{\tt in}  & {\em send\+Json\+Callback} & Callback to add a json part durring the connection. \\
+\hline
+\mbox{\tt in}  & {\em receive\+Json\+Callback} & Callback to read a json part durring the connection. \\
+\hline
+\mbox{\tt in}  & {\em custom\+Data} & custom data given as parameter to the callbacks. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Wifi\+Get\+Ip\+Address@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Wifi\+Get\+Ip\+Address}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Wifi\+Get\+Ip\+Address@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Wifi\+Get\+Ip\+Address}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Wifi\+Get\+Ip\+Address(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$device, char $\ast$ip\+Address, int length)}{ARDISCOVERY_DEVICE_WifiGetIpAddress(ARDISCOVERY_Device_t *device, char *ipAddress, int length)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Wifi\+Get\+Ip\+Address (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{device, }
+\item[{char $\ast$}]{ip\+Address, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_acdf026038e40b09a52d1b91d05470c90}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_acdf026038e40b09a52d1b91d05470c90}
+
+
+Get wifi IP address. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device} & The Discovery Device. \\
+\hline
+\mbox{\tt out}  & {\em ip\+Address} & ip address of the device \\
+\hline
+\mbox{\tt in}  & {\em length} & maximum length of the ip\+Address output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Wifi\+Set\+Device\+To\+Controller\+Port@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Wifi\+Set\+Device\+To\+Controller\+Port}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Wifi\+Set\+Device\+To\+Controller\+Port@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Wifi\+Set\+Device\+To\+Controller\+Port}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Wifi\+Set\+Device\+To\+Controller\+Port(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$device, int d2c\+\_\+port)}{ARDISCOVERY_Device_WifiSetDeviceToControllerPort(ARDISCOVERY_Device_t *device, int d2c_port)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Wifi\+Set\+Device\+To\+Controller\+Port (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{device, }
+\item[{int}]{d2c\+\_\+port}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a3b4fd61ccf84adfd45363afb67a2cb84}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a3b4fd61ccf84adfd45363afb67a2cb84}
+
+
+Set the device to controller port. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device} & The Discovery Device to Initialize. \\
+\hline
+\mbox{\tt in}  & {\em d2c\+\_\+port} & local udp port number for the incoming data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Wifi\+Set\+Qo\+S\+Level@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Wifi\+Set\+Qo\+S\+Level}}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Wifi\+Set\+Qo\+S\+Level@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Wifi\+Set\+Qo\+S\+Level}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Wifi\+Set\+Qo\+S\+Level(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$device, int level)}{ARDISCOVERY_DEVICE_WifiSetQoSLevel(ARDISCOVERY_Device_t *device, int level)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+E\+R\+R\+OR} A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+Wifi\+Set\+Qo\+S\+Level (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{device, }
+\item[{int}]{level}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a8319e307af4eaef0babbbfcfe014b977}{}\label{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a8319e307af4eaef0babbbfcfe014b977}
+
+
+Set requested QoS level. 0\+: No QoS, 1\+: QoS enabled (default) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em device} & The Discovery Device. \\
+\hline
+\mbox{\tt in}  & {\em level} & The requested QoS level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Must be called before \char`\"{}\+New\+A\+R\+Network\+A\+L\char`\"{} to have any effect. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+executing error. 
+\end{DoxyReturn}

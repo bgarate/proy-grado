@@ -1,0 +1,216 @@
+\hypertarget{_a_r_u_t_i_l_s___ftp_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Utils/\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.h File Reference}
+\label{_a_r_u_t_i_l_s___ftp_8h}\index{src/hal/pb2/include/lib\+A\+R\+Utils/\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{src/hal/pb2/include/lib\+A\+R\+Utils/\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}}
+
+
+lib\+A\+R\+Utils Ftp header file.  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+S\+A\+L/\+A\+R\+S\+A\+L\+\_\+\+Sem.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}lib\+A\+R\+Utils/\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Error.\+h\char`\"{}}\\*
+Include dependency graph for A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_u_t_i_l_s___ftp_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_u_t_i_l_s___ftp_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a72aa2fe9b6fb41384e3d34ae772ec5ab}{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+A\+N\+O\+N\+Y\+M\+O\+US}~\char`\"{}anonymous\char`\"{}
+\begin{DoxyCompactList}\small\item\em Ftp anonymous user name. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a570441d6e4e47d91d8fbb25633129058}{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+U\+R\+L\+\_\+\+S\+I\+ZE}~512
+\begin{DoxyCompactList}\small\item\em Ftp max url string size. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a7e05d1c6e63689a6bea17607ed780644}{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE}~256
+\begin{DoxyCompactList}\small\item\em Ftp max file name path string size. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a941e98abe8c22c21b9dc2e5fd5a358c2}{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+L\+I\+S\+T\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+ZE}~512
+\begin{DoxyCompactList}\small\item\em Ftp max list line string size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a8c85c151dff52b4ff5ee82c27f95e661}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t}) (void $\ast$arg, float percent)
+\begin{DoxyCompactList}\small\item\em Progress callback of the Ftp download. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME} \{ \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404adee0aa42bfa5eb12510fa4f99161bff5}{F\+T\+P\+\_\+\+R\+E\+S\+U\+M\+E\+\_\+\+F\+A\+L\+SE} = 0, 
+\hyperlink{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404ae9e3da5c8d12bd21024b09bc56dd9c13}{F\+T\+P\+\_\+\+R\+E\+S\+U\+M\+E\+\_\+\+T\+R\+UE}
+ \}\begin{DoxyCompactList}\small\item\em Ftp Resume enum. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{_a_r_u_t_i_l_s___ftp_8h_aa0d7ec4cd5591c8215debaca159757c5}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+List\+\_\+\+Get\+Next\+Item} (const char $\ast$list, const char $\ast$$\ast$next\+Item, const char $\ast$prefix, int is\+Directory, const char $\ast$$\ast$index\+Item, int $\ast$item\+Len, char $\ast$line\+Data, size\+\_\+t line\+Data\+Len)
+\begin{DoxyCompactList}\small\item\em File list iterator function. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{_a_r_u_t_i_l_s___ftp_8h_a33afb6483e0dcf5d96eb7b4fd141e733}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+List\+\_\+\+Get\+Item\+Size} (const char $\ast$line, int line\+Size, double $\ast$size)
+\begin{DoxyCompactList}\small\item\em File size accessor function from a file of a File list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+lib\+A\+R\+Utils Ftp header file. 
+
+\begin{DoxyDate}{Date}
+19/12/2013 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:david.flattin.ext@parrot.com}{\tt david.\+flattin.\+ext@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+A\+N\+O\+N\+Y\+M\+O\+US@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+A\+N\+O\+N\+Y\+M\+O\+US}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+A\+N\+O\+N\+Y\+M\+O\+US@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+A\+N\+O\+N\+Y\+M\+O\+US}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+A\+N\+O\+N\+Y\+M\+O\+US}{ARUTILS_FTP_ANONYMOUS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+A\+N\+O\+N\+Y\+M\+O\+US~\char`\"{}anonymous\char`\"{}}\hypertarget{_a_r_u_t_i_l_s___ftp_8h_a72aa2fe9b6fb41384e3d34ae772ec5ab}{}\label{_a_r_u_t_i_l_s___ftp_8h_a72aa2fe9b6fb41384e3d34ae772ec5ab}
+
+
+Ftp anonymous user name. 
+
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+L\+I\+S\+T\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+ZE@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+L\+I\+S\+T\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+L\+I\+S\+T\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+ZE@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+L\+I\+S\+T\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+ZE}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+L\+I\+S\+T\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+ZE}{ARUTILS_FTP_MAX_LIST_LINE_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+L\+I\+S\+T\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+ZE~512}\hypertarget{_a_r_u_t_i_l_s___ftp_8h_a941e98abe8c22c21b9dc2e5fd5a358c2}{}\label{_a_r_u_t_i_l_s___ftp_8h_a941e98abe8c22c21b9dc2e5fd5a358c2}
+
+
+Ftp max list line string size. 
+
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE}{ARUTILS_FTP_MAX_PATH_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+P\+A\+T\+H\+\_\+\+S\+I\+ZE~256}\hypertarget{_a_r_u_t_i_l_s___ftp_8h_a7e05d1c6e63689a6bea17607ed780644}{}\label{_a_r_u_t_i_l_s___ftp_8h_a7e05d1c6e63689a6bea17607ed780644}
+
+
+Ftp max file name path string size. 
+
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+U\+R\+L\+\_\+\+S\+I\+ZE@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+U\+R\+L\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+U\+R\+L\+\_\+\+S\+I\+ZE@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+U\+R\+L\+\_\+\+S\+I\+ZE}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+U\+R\+L\+\_\+\+S\+I\+ZE}{ARUTILS_FTP_MAX_URL_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+M\+A\+X\+\_\+\+U\+R\+L\+\_\+\+S\+I\+ZE~512}\hypertarget{_a_r_u_t_i_l_s___ftp_8h_a570441d6e4e47d91d8fbb25633129058}{}\label{_a_r_u_t_i_l_s___ftp_8h_a570441d6e4e47d91d8fbb25633129058}
+
+
+Ftp max url string size. 
+
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t}{ARUTILS_Ftp_ProgressCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Progress\+Callback\+\_\+t) (void $\ast$arg, float percent)}\hypertarget{_a_r_u_t_i_l_s___ftp_8h_a8c85c151dff52b4ff5ee82c27f95e661}{}\label{_a_r_u_t_i_l_s___ftp_8h_a8c85c151dff52b4ff5ee82c27f95e661}
+
+
+Progress callback of the Ftp download. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The pointer of the user custom argument \\
+\hline
+{\em percent} & The percent size of the media file already downloaded \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Get () 
+\end{DoxySeeAlso}
+
+
+\subsection{Enumeration Type Documentation}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}!e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME@{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME}}
+\index{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME@{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME}{eARUTILS_FTP_RESUME}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+T\+P\+\_\+\+R\+E\+S\+U\+ME}}\hypertarget{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404}{}\label{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404}
+
+
+Ftp Resume enum. 
+
+\begin{DoxySeeAlso}{See also}
+A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+Get 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{F\+T\+P\+\_\+\+R\+E\+S\+U\+M\+E\+\_\+\+F\+A\+L\+SE@{F\+T\+P\+\_\+\+R\+E\+S\+U\+M\+E\+\_\+\+F\+A\+L\+SE}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}}\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}!F\+T\+P\+\_\+\+R\+E\+S\+U\+M\+E\+\_\+\+F\+A\+L\+SE@{F\+T\+P\+\_\+\+R\+E\+S\+U\+M\+E\+\_\+\+F\+A\+L\+SE}}\item[{\em 
+F\+T\+P\+\_\+\+R\+E\+S\+U\+M\+E\+\_\+\+F\+A\+L\+SE\hypertarget{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404adee0aa42bfa5eb12510fa4f99161bff5}{}\label{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404adee0aa42bfa5eb12510fa4f99161bff5}
+}]\index{F\+T\+P\+\_\+\+R\+E\+S\+U\+M\+E\+\_\+\+T\+R\+UE@{F\+T\+P\+\_\+\+R\+E\+S\+U\+M\+E\+\_\+\+T\+R\+UE}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}}\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}!F\+T\+P\+\_\+\+R\+E\+S\+U\+M\+E\+\_\+\+T\+R\+UE@{F\+T\+P\+\_\+\+R\+E\+S\+U\+M\+E\+\_\+\+T\+R\+UE}}\item[{\em 
+F\+T\+P\+\_\+\+R\+E\+S\+U\+M\+E\+\_\+\+T\+R\+UE\hypertarget{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404ae9e3da5c8d12bd21024b09bc56dd9c13}{}\label{_a_r_u_t_i_l_s___ftp_8h_a361fd5b465ba3a2102a18f191da3a404ae9e3da5c8d12bd21024b09bc56dd9c13}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+List\+\_\+\+Get\+Item\+Size@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+List\+\_\+\+Get\+Item\+Size}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+List\+\_\+\+Get\+Item\+Size@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+List\+\_\+\+Get\+Item\+Size}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+List\+\_\+\+Get\+Item\+Size(const char $\ast$line, int line\+Size, double $\ast$size)}{ARUTILS_Ftp_List_GetItemSize(const char *line, int lineSize, double *size)}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+List\+\_\+\+Get\+Item\+Size (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{line, }
+\item[{int}]{line\+Size, }
+\item[{double $\ast$}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___ftp_8h_a33afb6483e0dcf5d96eb7b4fd141e733}{}\label{_a_r_u_t_i_l_s___ftp_8h_a33afb6483e0dcf5d96eb7b4fd141e733}
+
+
+File size accessor function from a file of a File list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & The line of the File list where to search file size \\
+\hline
+{\em line\+Size} & The size of the given line \\
+\hline
+{\em size} & The addresse of the pointer to the file size to return \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns the addresse found size string, Otherwise, it returns null \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_u_t_i_l_s___ftp_8h_aa0d7ec4cd5591c8215debaca159757c5}{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+List\+\_\+\+Get\+Next\+Item} () 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+List\+\_\+\+Get\+Next\+Item@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+List\+\_\+\+Get\+Next\+Item}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+List\+\_\+\+Get\+Next\+Item@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+List\+\_\+\+Get\+Next\+Item}!A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+List\+\_\+\+Get\+Next\+Item(const char $\ast$list, const char $\ast$$\ast$next\+Item, const char $\ast$prefix, int is\+Directory, const char $\ast$$\ast$index\+Item, int $\ast$item\+Len, char $\ast$line\+Data, size\+\_\+t line\+Data\+Len)}{ARUTILS_Ftp_List_GetNextItem(const char *list, const char **nextItem, const char *prefix, int isDirectory, const char **indexItem, int *itemLen, char *lineData, size_t lineDataLen)}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+List\+\_\+\+Get\+Next\+Item (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{list, }
+\item[{const char $\ast$$\ast$}]{next\+Item, }
+\item[{const char $\ast$}]{prefix, }
+\item[{int}]{is\+Directory, }
+\item[{const char $\ast$$\ast$}]{index\+Item, }
+\item[{int $\ast$}]{item\+Len, }
+\item[{char $\ast$}]{line\+Data, }
+\item[{size\+\_\+t}]{line\+Data\+Len}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___ftp_8h_aa0d7ec4cd5591c8215debaca159757c5}{}\label{_a_r_u_t_i_l_s___ftp_8h_aa0d7ec4cd5591c8215debaca159757c5}
+
+
+File list iterator function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & The file list \\
+\hline
+{\em next\+Item} & The the next file \\
+\hline
+{\em prefix} & The file prefix to match \\
+\hline
+{\em is\+Directory} & The file type requested\+: 1 directory or 0 file \\
+\hline
+{\em index\+Item} & The beginning of the line item if address is not null \\
+\hline
+{\em item\+Len} & The length of the line item if address is not null \\
+\hline
+{\em line\+Data} & The buffer that will receive the result \\
+\hline
+{\em line\+Data\+Len} & The size of the buffer that will receive the result \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns the file name of the found item, Otherwise, it returns null \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+A\+R\+U\+T\+I\+L\+S\+\_\+\+Ftp\+\_\+\+List () 
+\end{DoxySeeAlso}

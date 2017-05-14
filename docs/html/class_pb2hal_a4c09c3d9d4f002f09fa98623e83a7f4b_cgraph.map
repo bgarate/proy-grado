@@ -1,0 +1,11 @@
+<map id="Pb2hal::Pb2hal" name="Pb2hal::Pb2hal">
+<area shape="rect" id="node2" href="$_a_r_s_a_l___sem_8h.html#a616218ffe9c315737e5c0208f0b3e4dc" title="Initializes a semaphore. " alt="" coords="211,5,336,32"/>
+<area shape="rect" id="node3" href="$_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#ac66fc49f8948a922ae6e64102eb1b249" title="Create a new Device Controller. " alt="" coords="166,56,381,83"/>
+<area shape="rect" id="node4" href="$_a_r_c_o_n_t_r_o_l_l_e_r___error_8h.html#acc30e5c4881bdc01117ca61d50986cac" title="Gets the error string associated with an eARCONTROLLER_ERROR. " alt="" coords="190,107,357,149"/>
+<area shape="rect" id="node5" href="$_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a640bde25ac0ece9d84bec471d92aa1da" title="Add callback of Device Controller state changed information. " alt="" coords="180,173,367,214"/>
+<area shape="rect" id="node6" href="$_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a89dccacdc7c409107e63f0d0198488ff" title="Add callback to be informed when a commands is received. " alt="" coords="164,238,383,279"/>
+<area shape="rect" id="node7" href="$_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a89ea07ae108e9aabfb0aa09798b4384d" title="Set callback to receive the video stream. " alt="" coords="182,303,365,345"/>
+<area shape="rect" id="node8" href="$_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#aa0cd70040aacba3f31354f483fe82b10" title="Start the Device Controller. " alt="" coords="183,369,363,410"/>
+<area shape="rect" id="node9" href="$_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html#a38364a7d0f7ae99f5afd7049d0f2e84c" title="Get the Device Controller state. " alt="" coords="183,434,363,475"/>
+<area shape="rect" id="node10" href="$_a_r_s_a_l___sem_8h.html#a3990e2d59ff17a6d5ad6ddcbdd1fe572" title="Wait for a semaphore. " alt="" coords="206,500,341,527"/>
+</map>

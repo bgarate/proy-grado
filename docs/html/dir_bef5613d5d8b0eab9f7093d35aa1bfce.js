@@ -9,5 +9,6 @@ var dir_bef5613d5d8b0eab9f7093d35aa1bfce =
     [ "vrephal.cpp", "vrephal_8cpp.html", [
       [ "Vrephal", "class_vrephal.html", "class_vrephal" ]
     ] ],
-    [ "vrephaltest.cpp", "vrephaltest_8cpp.html", "vrephaltest_8cpp" ]
+    [ "vrephaltest.cpp", "vrephaltest_8cpp.html", "vrephaltest_8cpp" ],
+    [ "vrephaltest2.cpp", "vrephaltest2_8cpp.html", "vrephaltest2_8cpp" ]
 ];

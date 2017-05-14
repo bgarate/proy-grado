@@ -1,0 +1,70 @@
+\hypertarget{poly1305_8h}{}\section{src/hal/pb2/include/openssl/poly1305.h File Reference}
+\label{poly1305_8h}\index{src/hal/pb2/include/openssl/poly1305.\+h@{src/hal/pb2/include/openssl/poly1305.\+h}}
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+Include dependency graph for poly1305.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{poly1305_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpoly1305__context}{poly1305\+\_\+context}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structpoly1305__context}{poly1305\+\_\+context} \hyperlink{poly1305_8h_ae9b685f9c2e1773dccfdf5e050a0aaa6}{poly1305\+\_\+context}
+\item 
+typedef struct \hyperlink{structpoly1305__context}{poly1305\+\_\+context} \hyperlink{poly1305_8h_ae373d69b7e9dbf8ef939b1db21150b0b}{poly1305\+\_\+state}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{poly1305_8h_ab9531a4d4546db449d36016526c36a3b}{C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+init} (\hyperlink{structpoly1305__context}{poly1305\+\_\+context} $\ast$ctx, const unsigned char key\mbox{[}32\mbox{]})
+\item 
+void \hyperlink{poly1305_8h_a3565e7e0acc745e9d062574283260041}{C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+update} (\hyperlink{structpoly1305__context}{poly1305\+\_\+context} $\ast$ctx, const unsigned char $\ast$in, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+void \hyperlink{poly1305_8h_aad7cd5b903641237066e68df9de9e72a}{C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+finish} (\hyperlink{structpoly1305__context}{poly1305\+\_\+context} $\ast$ctx, unsigned char mac\mbox{[}16\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{poly1305.\+h@{poly1305.\+h}!poly1305\+\_\+context@{poly1305\+\_\+context}}
+\index{poly1305\+\_\+context@{poly1305\+\_\+context}!poly1305.\+h@{poly1305.\+h}}
+\subsubsection[{\texorpdfstring{poly1305\+\_\+context}{poly1305_context}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf poly1305\+\_\+context}  {\bf poly1305\+\_\+context}}\hypertarget{poly1305_8h_ae9b685f9c2e1773dccfdf5e050a0aaa6}{}\label{poly1305_8h_ae9b685f9c2e1773dccfdf5e050a0aaa6}
+\index{poly1305.\+h@{poly1305.\+h}!poly1305\+\_\+state@{poly1305\+\_\+state}}
+\index{poly1305\+\_\+state@{poly1305\+\_\+state}!poly1305.\+h@{poly1305.\+h}}
+\subsubsection[{\texorpdfstring{poly1305\+\_\+state}{poly1305_state}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf poly1305\+\_\+context} {\bf poly1305\+\_\+state}}\hypertarget{poly1305_8h_ae373d69b7e9dbf8ef939b1db21150b0b}{}\label{poly1305_8h_ae373d69b7e9dbf8ef939b1db21150b0b}
+
+
+\subsection{Function Documentation}
+\index{poly1305.\+h@{poly1305.\+h}!C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+finish@{C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+finish}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+finish@{C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+finish}!poly1305.\+h@{poly1305.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+finish(poly1305\+\_\+context $\ast$ctx, unsigned char mac[16])}{CRYPTO_poly1305_finish(poly1305_context *ctx, unsigned char mac[16])}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+finish (
+\begin{DoxyParamCaption}
+\item[{{\bf poly1305\+\_\+context} $\ast$}]{ctx, }
+\item[{unsigned char}]{mac\mbox{[}16\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{poly1305_8h_aad7cd5b903641237066e68df9de9e72a}{}\label{poly1305_8h_aad7cd5b903641237066e68df9de9e72a}
+\index{poly1305.\+h@{poly1305.\+h}!C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+init@{C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+init}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+init@{C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+init}!poly1305.\+h@{poly1305.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+init(poly1305\+\_\+context $\ast$ctx, const unsigned char key[32])}{CRYPTO_poly1305_init(poly1305_context *ctx, const unsigned char key[32])}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf poly1305\+\_\+context} $\ast$}]{ctx, }
+\item[{const unsigned char}]{key\mbox{[}32\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{poly1305_8h_ab9531a4d4546db449d36016526c36a3b}{}\label{poly1305_8h_ab9531a4d4546db449d36016526c36a3b}
+\index{poly1305.\+h@{poly1305.\+h}!C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+update@{C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+update}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+update@{C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+update}!poly1305.\+h@{poly1305.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+update(poly1305\+\_\+context $\ast$ctx, const unsigned char $\ast$in, size\+\_\+t len)}{CRYPTO_poly1305_update(poly1305_context *ctx, const unsigned char *in, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+poly1305\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf poly1305\+\_\+context} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{in, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{poly1305_8h_a3565e7e0acc745e9d062574283260041}{}\label{poly1305_8h_a3565e7e0acc745e9d062574283260041}

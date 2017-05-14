@@ -1,0 +1,17 @@
+<map id="Hello::GetMetadata" name="Hello::GetMetadata">
+<area shape="rect" id="node2" href="$class_hello.html#a102a79ac418e554774c7e24e1be4c7e8" title="Hello::clear_ip" alt="" coords="223,5,329,32"/>
+<area shape="rect" id="node3" href="$class_hello.html#ae1d6fea6f0359e1006a389e80d5c2cc8" title="Hello::ip" alt="" coords="241,56,311,83"/>
+<area shape="rect" id="node4" href="$class_hello.html#a97452e4a7b8bfcc4aaf625ec14d28885" title="Hello::set_ip" alt="" coords="229,107,323,133"/>
+<area shape="rect" id="node5" href="$class_hello.html#a0e6b357e2ed2da7a85b3f921630777f7" title="Hello::clear_port" alt="" coords="217,157,335,184"/>
+<area shape="rect" id="node6" href="$class_hello.html#a3a6580d738360e427005cd9be561695c" title="Hello::port" alt="" coords="235,208,317,235"/>
+<area shape="rect" id="node7" href="$class_hello.html#ad505980b5747b4afce9ef652f64e8f55" title="Hello::set_port" alt="" coords="223,259,329,285"/>
+<area shape="rect" id="node8" href="$class_hello.html#a53f263abf6095e4c04f842459e68f58c" title="Hello::clear_id" alt="" coords="223,309,329,336"/>
+<area shape="rect" id="node9" href="$class_hello.html#ac4bce08f939da89c024ff5015351810f" title="Hello::id" alt="" coords="241,360,311,387"/>
+<area shape="rect" id="node10" href="$class_hello.html#ad27b1fa46dcd021283ca41607829cea8" title="Hello::set_id" alt="" coords="229,411,323,437"/>
+<area shape="rect" id="node11" href="$class_hello.html#a36384a292c19f4288029257f290c8d5f" title="Hello::clear_name" alt="" coords="213,461,339,488"/>
+<area shape="rect" id="node12" href="$class_hello.html#ae6a444f29e20e73dbbf2c4216afe12d7" title="Hello::name" alt="" coords="230,512,322,539"/>
+<area shape="rect" id="node13" href="$class_hello.html#a3b00bde5bbe70e04b708d9fb9b90d3bb" title="Hello::set_name" alt="" coords="217,563,335,589"/>
+<area shape="rect" id="node14" href="$class_hello.html#af7a7aa03f2905855c7d7e226f67cff07" title="Hello::mutable_name" alt="" coords="203,613,349,640"/>
+<area shape="rect" id="node15" href="$class_hello.html#a76214ca65d1a26c9291fdf1bc3fc55ec" title="Hello::release_name" alt="" coords="205,664,347,691"/>
+<area shape="rect" id="node16" href="$class_hello.html#a059d87ca3bc7da458d6b3e040cf2bb8c" title="Hello::set_allocated_name" alt="" coords="188,715,364,741"/>
+</map>

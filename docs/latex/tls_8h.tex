@@ -1,0 +1,433 @@
+\hypertarget{tls_8h}{}\section{src/hal/pb2/include/tls.h File Reference}
+\label{tls_8h}\index{src/hal/pb2/include/tls.\+h@{src/hal/pb2/include/tls.\+h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+Include dependency graph for tls.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{tls_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{tls_8h_a8367d825164fb6963dc277a0a84d7812}{T\+L\+S\+\_\+\+A\+PI}~20141031
+\item 
+\#define \hyperlink{tls_8h_a2242833e0d1538d343d3060921b0f2f0}{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+0}~(1 $<$$<$ 1)
+\item 
+\#define \hyperlink{tls_8h_a786cafa16981407561054551e49e6da2}{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+1}~(1 $<$$<$ 2)
+\item 
+\#define \hyperlink{tls_8h_afdba8f3177eee4e670f3f07429a1b358}{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+2}~(1 $<$$<$ 3)
+\item 
+\#define \hyperlink{tls_8h_a08b89fe9f441d53c6e952c2713f3a20e}{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1}~(\hyperlink{tls_8h_a2242833e0d1538d343d3060921b0f2f0}{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+0}$\vert$\hyperlink{tls_8h_a786cafa16981407561054551e49e6da2}{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+1}$\vert$\hyperlink{tls_8h_afdba8f3177eee4e670f3f07429a1b358}{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+2})
+\item 
+\#define \hyperlink{tls_8h_a8a984907955eecdc71759da68860869c}{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+S\+\_\+\+A\+LL}~\hyperlink{tls_8h_a08b89fe9f441d53c6e952c2713f3a20e}{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1}
+\item 
+\#define \hyperlink{tls_8h_a5efdf7cc8e0b5f6c0167c38b358e9500}{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+S\+\_\+\+D\+E\+F\+A\+U\+LT}~\hyperlink{tls_8h_afdba8f3177eee4e670f3f07429a1b358}{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+2}
+\item 
+\#define \hyperlink{tls_8h_abca71c0ddc568f8f45d639c909f99661}{T\+L\+S\+\_\+\+R\+E\+A\+D\+\_\+\+A\+G\+A\+IN}~-\/2
+\item 
+\#define \hyperlink{tls_8h_a804b7fb099d96ab692ee8cda32e4d160}{T\+L\+S\+\_\+\+W\+R\+I\+T\+E\+\_\+\+A\+G\+A\+IN}~-\/3
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{tls_8h_a35bcc298d938a0383d1f350897f5d903}{tls\+\_\+init} (void)
+\item 
+const char $\ast$ \hyperlink{tls_8h_a5652f4f10065dcb5b555f9f83195547c}{tls\+\_\+error} (struct tls $\ast$\+\_\+ctx)
+\item 
+struct tls\+\_\+config $\ast$ \hyperlink{tls_8h_a69f2446b4c4a381ac9cdfd428cb78cb4}{tls\+\_\+config\+\_\+new} (void)
+\item 
+void \hyperlink{tls_8h_a99bd870e8ec7d91070405cb6207edc79}{tls\+\_\+config\+\_\+free} (struct tls\+\_\+config $\ast$\+\_\+config)
+\item 
+int \hyperlink{tls_8h_ac47125e68371be5d8b8b23c7c229d769}{tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+file} (struct tls\+\_\+config $\ast$\+\_\+config, const char $\ast$\+\_\+ca\+\_\+file)
+\item 
+int \hyperlink{tls_8h_a65c2ba5bba9c32b1d87613d4948a41b3}{tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+path} (struct tls\+\_\+config $\ast$\+\_\+config, const char $\ast$\+\_\+ca\+\_\+path)
+\item 
+int \hyperlink{tls_8h_a86e48791c3357139c38c89aa4dc1e002}{tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+mem} (struct tls\+\_\+config $\ast$\+\_\+config, const uint8\+\_\+t $\ast$\+\_\+ca, size\+\_\+t \+\_\+len)
+\item 
+int \hyperlink{tls_8h_a01b8a72d125a68fb1a25458711ef6b36}{tls\+\_\+config\+\_\+set\+\_\+cert\+\_\+file} (struct tls\+\_\+config $\ast$\+\_\+config, const char $\ast$\+\_\+cert\+\_\+file)
+\item 
+int \hyperlink{tls_8h_ab4d1e91834343c07d27b1c0151e82ead}{tls\+\_\+config\+\_\+set\+\_\+cert\+\_\+mem} (struct tls\+\_\+config $\ast$\+\_\+config, const uint8\+\_\+t $\ast$\+\_\+cert, size\+\_\+t \+\_\+len)
+\item 
+int \hyperlink{tls_8h_aea1b5228b762779d35f3c9ecf3986cda}{tls\+\_\+config\+\_\+set\+\_\+ciphers} (struct tls\+\_\+config $\ast$\+\_\+config, const char $\ast$\+\_\+ciphers)
+\item 
+int \hyperlink{tls_8h_a3d758d72ff65390fff3ca8c8d292c830}{tls\+\_\+config\+\_\+set\+\_\+dheparams} (struct tls\+\_\+config $\ast$\+\_\+config, const char $\ast$\+\_\+params)
+\item 
+int \hyperlink{tls_8h_ad5a1ca32611e4c0146b9c2052ae98488}{tls\+\_\+config\+\_\+set\+\_\+ecdhecurve} (struct tls\+\_\+config $\ast$\+\_\+config, const char $\ast$\+\_\+name)
+\item 
+int \hyperlink{tls_8h_a7ac1d27a0ba966374fea8f435e2d60ba}{tls\+\_\+config\+\_\+set\+\_\+key\+\_\+file} (struct tls\+\_\+config $\ast$\+\_\+config, const char $\ast$\+\_\+key\+\_\+file)
+\item 
+int \hyperlink{tls_8h_ab939462f437d09d386486a78a5375e64}{tls\+\_\+config\+\_\+set\+\_\+key\+\_\+mem} (struct tls\+\_\+config $\ast$\+\_\+config, const uint8\+\_\+t $\ast$\+\_\+key, size\+\_\+t \+\_\+len)
+\item 
+void \hyperlink{tls_8h_a800e86c221780e984c0a8a3c5720c9a0}{tls\+\_\+config\+\_\+set\+\_\+protocols} (struct tls\+\_\+config $\ast$\+\_\+config, uint32\+\_\+t \+\_\+protocols)
+\item 
+void \hyperlink{tls_8h_a97d4fac748ab9a1e5f10656d5031c543}{tls\+\_\+config\+\_\+set\+\_\+verify\+\_\+depth} (struct tls\+\_\+config $\ast$\+\_\+config, int \+\_\+verify\+\_\+depth)
+\item 
+void \hyperlink{tls_8h_a325bed8d1f1b8c216a8420fe6d007f34}{tls\+\_\+config\+\_\+clear\+\_\+keys} (struct tls\+\_\+config $\ast$\+\_\+config)
+\item 
+int \hyperlink{tls_8h_ab6ae88e94519b3bfee1e9112a2cedcb8}{tls\+\_\+config\+\_\+parse\+\_\+protocols} (uint32\+\_\+t $\ast$\+\_\+protocols, const char $\ast$\+\_\+protostr)
+\item 
+void \hyperlink{tls_8h_a422ce4a02b6cbdf3df92921e9ecd6ac5}{tls\+\_\+config\+\_\+insecure\+\_\+noverifycert} (struct tls\+\_\+config $\ast$\+\_\+config)
+\item 
+void \hyperlink{tls_8h_acba356a58eb0f6a98d0b1d6a767bff3c}{tls\+\_\+config\+\_\+insecure\+\_\+noverifyname} (struct tls\+\_\+config $\ast$\+\_\+config)
+\item 
+void \hyperlink{tls_8h_ae082d2b077fd2492051b9579af3ea41c}{tls\+\_\+config\+\_\+verify} (struct tls\+\_\+config $\ast$\+\_\+config)
+\item 
+struct tls $\ast$ \hyperlink{tls_8h_a3bf06d90127e251037b228bb73f120d4}{tls\+\_\+client} (void)
+\item 
+struct tls $\ast$ \hyperlink{tls_8h_adf707c11db9518dfdeca5823655c50e9}{tls\+\_\+server} (void)
+\item 
+int \hyperlink{tls_8h_ad7cd73a722c27599a7b6cd0aace75a94}{tls\+\_\+configure} (struct tls $\ast$\+\_\+ctx, struct tls\+\_\+config $\ast$\+\_\+config)
+\item 
+void \hyperlink{tls_8h_a667373e5bfd948f8a0b083b7df5f2c43}{tls\+\_\+reset} (struct tls $\ast$\+\_\+ctx)
+\item 
+void \hyperlink{tls_8h_acfe71ecb15fac059f31161572c3bbc79}{tls\+\_\+free} (struct tls $\ast$\+\_\+ctx)
+\item 
+int \hyperlink{tls_8h_ac2e32be58f0c16ce8497d3825b9bf332}{tls\+\_\+accept\+\_\+fds} (struct tls $\ast$\+\_\+ctx, struct tls $\ast$$\ast$\+\_\+cctx, int \+\_\+fd\+\_\+read, int \+\_\+fd\+\_\+write)
+\item 
+int \hyperlink{tls_8h_a17716302ff7bda2cb2db067c16c460c2}{tls\+\_\+accept\+\_\+socket} (struct tls $\ast$\+\_\+ctx, struct tls $\ast$$\ast$\+\_\+cctx, int \+\_\+socket)
+\item 
+int \hyperlink{tls_8h_afd20757d0736fdd77b2d453cc7ee65f8}{tls\+\_\+connect} (struct tls $\ast$\+\_\+ctx, const char $\ast$\+\_\+host, const char $\ast$\+\_\+port)
+\item 
+int \hyperlink{tls_8h_ab0a039439fc7cab7e665725b2556f4c0}{tls\+\_\+connect\+\_\+fds} (struct tls $\ast$\+\_\+ctx, int \+\_\+fd\+\_\+read, int \+\_\+fd\+\_\+write, const char $\ast$\+\_\+servername)
+\item 
+int \hyperlink{tls_8h_aca75dde5c17dc8f7e7efa0f52853b3fd}{tls\+\_\+connect\+\_\+servername} (struct tls $\ast$\+\_\+ctx, const char $\ast$\+\_\+host, const char $\ast$\+\_\+port, const char $\ast$\+\_\+servername)
+\item 
+int \hyperlink{tls_8h_aa5a934ac40b5cd691b8a814b38462539}{tls\+\_\+connect\+\_\+socket} (struct tls $\ast$\+\_\+ctx, int \+\_\+s, const char $\ast$\+\_\+servername)
+\item 
+int \hyperlink{tls_8h_a72d79bbb76ffed8c73136f5b07064ff3}{tls\+\_\+read} (struct tls $\ast$\+\_\+ctx, void $\ast$\+\_\+buf, size\+\_\+t \+\_\+buflen, size\+\_\+t $\ast$\+\_\+outlen)
+\item 
+int \hyperlink{tls_8h_a5fc69751f0b28c94b5c63007326045a1}{tls\+\_\+write} (struct tls $\ast$\+\_\+ctx, const void $\ast$\+\_\+buf, size\+\_\+t \+\_\+buflen, size\+\_\+t $\ast$\+\_\+outlen)
+\item 
+int \hyperlink{tls_8h_aeef3eeccec41eed6d85c324c3311c98d}{tls\+\_\+close} (struct tls $\ast$\+\_\+ctx)
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{tls_8h_af9014e3e8f4ad2e8383a8f1974230b21}{tls\+\_\+load\+\_\+file} (const char $\ast$\+\_\+file, size\+\_\+t $\ast$\+\_\+len, char $\ast$\+\_\+password)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{tls.\+h@{tls.\+h}!T\+L\+S\+\_\+\+A\+PI@{T\+L\+S\+\_\+\+A\+PI}}
+\index{T\+L\+S\+\_\+\+A\+PI@{T\+L\+S\+\_\+\+A\+PI}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{T\+L\+S\+\_\+\+A\+PI}{TLS_API}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+A\+PI~20141031}\hypertarget{tls_8h_a8367d825164fb6963dc277a0a84d7812}{}\label{tls_8h_a8367d825164fb6963dc277a0a84d7812}
+\index{tls.\+h@{tls.\+h}!T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1@{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1}}
+\index{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1@{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1}{TLS_PROTOCOL_TLSv1}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1~({\bf T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+0}$\vert${\bf T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+1}$\vert${\bf T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+2})}\hypertarget{tls_8h_a08b89fe9f441d53c6e952c2713f3a20e}{}\label{tls_8h_a08b89fe9f441d53c6e952c2713f3a20e}
+\index{tls.\+h@{tls.\+h}!T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+0@{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+0}}
+\index{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+0@{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+0}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+0}{TLS_PROTOCOL_TLSv1_0}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+0~(1 $<$$<$ 1)}\hypertarget{tls_8h_a2242833e0d1538d343d3060921b0f2f0}{}\label{tls_8h_a2242833e0d1538d343d3060921b0f2f0}
+\index{tls.\+h@{tls.\+h}!T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+1@{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+1}}
+\index{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+1@{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+1}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+1}{TLS_PROTOCOL_TLSv1_1}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+1~(1 $<$$<$ 2)}\hypertarget{tls_8h_a786cafa16981407561054551e49e6da2}{}\label{tls_8h_a786cafa16981407561054551e49e6da2}
+\index{tls.\+h@{tls.\+h}!T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+2@{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+2}}
+\index{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+2@{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+2}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+2}{TLS_PROTOCOL_TLSv1_2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+2~(1 $<$$<$ 3)}\hypertarget{tls_8h_afdba8f3177eee4e670f3f07429a1b358}{}\label{tls_8h_afdba8f3177eee4e670f3f07429a1b358}
+\index{tls.\+h@{tls.\+h}!T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+S\+\_\+\+A\+LL@{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+S\+\_\+\+A\+LL}}
+\index{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+S\+\_\+\+A\+LL@{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+S\+\_\+\+A\+LL}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+S\+\_\+\+A\+LL}{TLS_PROTOCOLS_ALL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+S\+\_\+\+A\+LL~{\bf T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1}}\hypertarget{tls_8h_a8a984907955eecdc71759da68860869c}{}\label{tls_8h_a8a984907955eecdc71759da68860869c}
+\index{tls.\+h@{tls.\+h}!T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+S\+\_\+\+D\+E\+F\+A\+U\+LT@{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+S\+\_\+\+D\+E\+F\+A\+U\+LT}}
+\index{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+S\+\_\+\+D\+E\+F\+A\+U\+LT@{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+S\+\_\+\+D\+E\+F\+A\+U\+LT}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+S\+\_\+\+D\+E\+F\+A\+U\+LT}{TLS_PROTOCOLS_DEFAULT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+S\+\_\+\+D\+E\+F\+A\+U\+LT~{\bf T\+L\+S\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+T\+L\+Sv1\+\_\+2}}\hypertarget{tls_8h_a5efdf7cc8e0b5f6c0167c38b358e9500}{}\label{tls_8h_a5efdf7cc8e0b5f6c0167c38b358e9500}
+\index{tls.\+h@{tls.\+h}!T\+L\+S\+\_\+\+R\+E\+A\+D\+\_\+\+A\+G\+A\+IN@{T\+L\+S\+\_\+\+R\+E\+A\+D\+\_\+\+A\+G\+A\+IN}}
+\index{T\+L\+S\+\_\+\+R\+E\+A\+D\+\_\+\+A\+G\+A\+IN@{T\+L\+S\+\_\+\+R\+E\+A\+D\+\_\+\+A\+G\+A\+IN}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{T\+L\+S\+\_\+\+R\+E\+A\+D\+\_\+\+A\+G\+A\+IN}{TLS_READ_AGAIN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+R\+E\+A\+D\+\_\+\+A\+G\+A\+IN~-\/2}\hypertarget{tls_8h_abca71c0ddc568f8f45d639c909f99661}{}\label{tls_8h_abca71c0ddc568f8f45d639c909f99661}
+\index{tls.\+h@{tls.\+h}!T\+L\+S\+\_\+\+W\+R\+I\+T\+E\+\_\+\+A\+G\+A\+IN@{T\+L\+S\+\_\+\+W\+R\+I\+T\+E\+\_\+\+A\+G\+A\+IN}}
+\index{T\+L\+S\+\_\+\+W\+R\+I\+T\+E\+\_\+\+A\+G\+A\+IN@{T\+L\+S\+\_\+\+W\+R\+I\+T\+E\+\_\+\+A\+G\+A\+IN}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{T\+L\+S\+\_\+\+W\+R\+I\+T\+E\+\_\+\+A\+G\+A\+IN}{TLS_WRITE_AGAIN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+L\+S\+\_\+\+W\+R\+I\+T\+E\+\_\+\+A\+G\+A\+IN~-\/3}\hypertarget{tls_8h_a804b7fb099d96ab692ee8cda32e4d160}{}\label{tls_8h_a804b7fb099d96ab692ee8cda32e4d160}
+
+
+\subsection{Function Documentation}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+accept\+\_\+fds@{tls\+\_\+accept\+\_\+fds}}
+\index{tls\+\_\+accept\+\_\+fds@{tls\+\_\+accept\+\_\+fds}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+accept\+\_\+fds(struct tls $\ast$\+\_\+ctx, struct tls $\ast$$\ast$\+\_\+cctx, int \+\_\+fd\+\_\+read, int \+\_\+fd\+\_\+write)}{tls_accept_fds(struct tls *_ctx, struct tls **_cctx, int _fd_read, int _fd_write)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+accept\+\_\+fds (
+\begin{DoxyParamCaption}
+\item[{struct tls $\ast$}]{\+\_\+ctx, }
+\item[{struct tls $\ast$$\ast$}]{\+\_\+cctx, }
+\item[{int}]{\+\_\+fd\+\_\+read, }
+\item[{int}]{\+\_\+fd\+\_\+write}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_ac2e32be58f0c16ce8497d3825b9bf332}{}\label{tls_8h_ac2e32be58f0c16ce8497d3825b9bf332}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+accept\+\_\+socket@{tls\+\_\+accept\+\_\+socket}}
+\index{tls\+\_\+accept\+\_\+socket@{tls\+\_\+accept\+\_\+socket}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+accept\+\_\+socket(struct tls $\ast$\+\_\+ctx, struct tls $\ast$$\ast$\+\_\+cctx, int \+\_\+socket)}{tls_accept_socket(struct tls *_ctx, struct tls **_cctx, int _socket)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+accept\+\_\+socket (
+\begin{DoxyParamCaption}
+\item[{struct tls $\ast$}]{\+\_\+ctx, }
+\item[{struct tls $\ast$$\ast$}]{\+\_\+cctx, }
+\item[{int}]{\+\_\+socket}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a17716302ff7bda2cb2db067c16c460c2}{}\label{tls_8h_a17716302ff7bda2cb2db067c16c460c2}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+client@{tls\+\_\+client}}
+\index{tls\+\_\+client@{tls\+\_\+client}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+client(void)}{tls_client(void)}}]{\setlength{\rightskip}{0pt plus 5cm}struct tls$\ast$ tls\+\_\+client (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a3bf06d90127e251037b228bb73f120d4}{}\label{tls_8h_a3bf06d90127e251037b228bb73f120d4}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+close@{tls\+\_\+close}}
+\index{tls\+\_\+close@{tls\+\_\+close}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+close(struct tls $\ast$\+\_\+ctx)}{tls_close(struct tls *_ctx)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{struct tls $\ast$}]{\+\_\+ctx}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_aeef3eeccec41eed6d85c324c3311c98d}{}\label{tls_8h_aeef3eeccec41eed6d85c324c3311c98d}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+clear\+\_\+keys@{tls\+\_\+config\+\_\+clear\+\_\+keys}}
+\index{tls\+\_\+config\+\_\+clear\+\_\+keys@{tls\+\_\+config\+\_\+clear\+\_\+keys}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+clear\+\_\+keys(struct tls\+\_\+config $\ast$\+\_\+config)}{tls_config_clear_keys(struct tls_config *_config)}}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+config\+\_\+clear\+\_\+keys (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a325bed8d1f1b8c216a8420fe6d007f34}{}\label{tls_8h_a325bed8d1f1b8c216a8420fe6d007f34}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+free@{tls\+\_\+config\+\_\+free}}
+\index{tls\+\_\+config\+\_\+free@{tls\+\_\+config\+\_\+free}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+free(struct tls\+\_\+config $\ast$\+\_\+config)}{tls_config_free(struct tls_config *_config)}}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+config\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a99bd870e8ec7d91070405cb6207edc79}{}\label{tls_8h_a99bd870e8ec7d91070405cb6207edc79}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+insecure\+\_\+noverifycert@{tls\+\_\+config\+\_\+insecure\+\_\+noverifycert}}
+\index{tls\+\_\+config\+\_\+insecure\+\_\+noverifycert@{tls\+\_\+config\+\_\+insecure\+\_\+noverifycert}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+insecure\+\_\+noverifycert(struct tls\+\_\+config $\ast$\+\_\+config)}{tls_config_insecure_noverifycert(struct tls_config *_config)}}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+config\+\_\+insecure\+\_\+noverifycert (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a422ce4a02b6cbdf3df92921e9ecd6ac5}{}\label{tls_8h_a422ce4a02b6cbdf3df92921e9ecd6ac5}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+insecure\+\_\+noverifyname@{tls\+\_\+config\+\_\+insecure\+\_\+noverifyname}}
+\index{tls\+\_\+config\+\_\+insecure\+\_\+noverifyname@{tls\+\_\+config\+\_\+insecure\+\_\+noverifyname}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+insecure\+\_\+noverifyname(struct tls\+\_\+config $\ast$\+\_\+config)}{tls_config_insecure_noverifyname(struct tls_config *_config)}}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+config\+\_\+insecure\+\_\+noverifyname (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_acba356a58eb0f6a98d0b1d6a767bff3c}{}\label{tls_8h_acba356a58eb0f6a98d0b1d6a767bff3c}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+new@{tls\+\_\+config\+\_\+new}}
+\index{tls\+\_\+config\+\_\+new@{tls\+\_\+config\+\_\+new}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+new(void)}{tls_config_new(void)}}]{\setlength{\rightskip}{0pt plus 5cm}struct tls\+\_\+config$\ast$ tls\+\_\+config\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a69f2446b4c4a381ac9cdfd428cb78cb4}{}\label{tls_8h_a69f2446b4c4a381ac9cdfd428cb78cb4}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+parse\+\_\+protocols@{tls\+\_\+config\+\_\+parse\+\_\+protocols}}
+\index{tls\+\_\+config\+\_\+parse\+\_\+protocols@{tls\+\_\+config\+\_\+parse\+\_\+protocols}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+parse\+\_\+protocols(uint32\+\_\+t $\ast$\+\_\+protocols, const char $\ast$\+\_\+protostr)}{tls_config_parse_protocols(uint32_t *_protocols, const char *_protostr)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+config\+\_\+parse\+\_\+protocols (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{\+\_\+protocols, }
+\item[{const char $\ast$}]{\+\_\+protostr}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_ab6ae88e94519b3bfee1e9112a2cedcb8}{}\label{tls_8h_ab6ae88e94519b3bfee1e9112a2cedcb8}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+file@{tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+file}}
+\index{tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+file@{tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+file}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+file(struct tls\+\_\+config $\ast$\+\_\+config, const char $\ast$\+\_\+ca\+\_\+file)}{tls_config_set_ca_file(struct tls_config *_config, const char *_ca_file)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config, }
+\item[{const char $\ast$}]{\+\_\+ca\+\_\+file}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_ac47125e68371be5d8b8b23c7c229d769}{}\label{tls_8h_ac47125e68371be5d8b8b23c7c229d769}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+mem@{tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+mem}}
+\index{tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+mem@{tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+mem}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+mem(struct tls\+\_\+config $\ast$\+\_\+config, const uint8\+\_\+t $\ast$\+\_\+ca, size\+\_\+t \+\_\+len)}{tls_config_set_ca_mem(struct tls_config *_config, const uint8_t *_ca, size_t _len)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+mem (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config, }
+\item[{const uint8\+\_\+t $\ast$}]{\+\_\+ca, }
+\item[{size\+\_\+t}]{\+\_\+len}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a86e48791c3357139c38c89aa4dc1e002}{}\label{tls_8h_a86e48791c3357139c38c89aa4dc1e002}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+path@{tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+path}}
+\index{tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+path@{tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+path}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+path(struct tls\+\_\+config $\ast$\+\_\+config, const char $\ast$\+\_\+ca\+\_\+path)}{tls_config_set_ca_path(struct tls_config *_config, const char *_ca_path)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+config\+\_\+set\+\_\+ca\+\_\+path (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config, }
+\item[{const char $\ast$}]{\+\_\+ca\+\_\+path}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a65c2ba5bba9c32b1d87613d4948a41b3}{}\label{tls_8h_a65c2ba5bba9c32b1d87613d4948a41b3}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+set\+\_\+cert\+\_\+file@{tls\+\_\+config\+\_\+set\+\_\+cert\+\_\+file}}
+\index{tls\+\_\+config\+\_\+set\+\_\+cert\+\_\+file@{tls\+\_\+config\+\_\+set\+\_\+cert\+\_\+file}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+set\+\_\+cert\+\_\+file(struct tls\+\_\+config $\ast$\+\_\+config, const char $\ast$\+\_\+cert\+\_\+file)}{tls_config_set_cert_file(struct tls_config *_config, const char *_cert_file)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+config\+\_\+set\+\_\+cert\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config, }
+\item[{const char $\ast$}]{\+\_\+cert\+\_\+file}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a01b8a72d125a68fb1a25458711ef6b36}{}\label{tls_8h_a01b8a72d125a68fb1a25458711ef6b36}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+set\+\_\+cert\+\_\+mem@{tls\+\_\+config\+\_\+set\+\_\+cert\+\_\+mem}}
+\index{tls\+\_\+config\+\_\+set\+\_\+cert\+\_\+mem@{tls\+\_\+config\+\_\+set\+\_\+cert\+\_\+mem}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+set\+\_\+cert\+\_\+mem(struct tls\+\_\+config $\ast$\+\_\+config, const uint8\+\_\+t $\ast$\+\_\+cert, size\+\_\+t \+\_\+len)}{tls_config_set_cert_mem(struct tls_config *_config, const uint8_t *_cert, size_t _len)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+config\+\_\+set\+\_\+cert\+\_\+mem (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config, }
+\item[{const uint8\+\_\+t $\ast$}]{\+\_\+cert, }
+\item[{size\+\_\+t}]{\+\_\+len}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_ab4d1e91834343c07d27b1c0151e82ead}{}\label{tls_8h_ab4d1e91834343c07d27b1c0151e82ead}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+set\+\_\+ciphers@{tls\+\_\+config\+\_\+set\+\_\+ciphers}}
+\index{tls\+\_\+config\+\_\+set\+\_\+ciphers@{tls\+\_\+config\+\_\+set\+\_\+ciphers}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+set\+\_\+ciphers(struct tls\+\_\+config $\ast$\+\_\+config, const char $\ast$\+\_\+ciphers)}{tls_config_set_ciphers(struct tls_config *_config, const char *_ciphers)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+config\+\_\+set\+\_\+ciphers (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config, }
+\item[{const char $\ast$}]{\+\_\+ciphers}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_aea1b5228b762779d35f3c9ecf3986cda}{}\label{tls_8h_aea1b5228b762779d35f3c9ecf3986cda}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+set\+\_\+dheparams@{tls\+\_\+config\+\_\+set\+\_\+dheparams}}
+\index{tls\+\_\+config\+\_\+set\+\_\+dheparams@{tls\+\_\+config\+\_\+set\+\_\+dheparams}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+set\+\_\+dheparams(struct tls\+\_\+config $\ast$\+\_\+config, const char $\ast$\+\_\+params)}{tls_config_set_dheparams(struct tls_config *_config, const char *_params)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+config\+\_\+set\+\_\+dheparams (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config, }
+\item[{const char $\ast$}]{\+\_\+params}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a3d758d72ff65390fff3ca8c8d292c830}{}\label{tls_8h_a3d758d72ff65390fff3ca8c8d292c830}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+set\+\_\+ecdhecurve@{tls\+\_\+config\+\_\+set\+\_\+ecdhecurve}}
+\index{tls\+\_\+config\+\_\+set\+\_\+ecdhecurve@{tls\+\_\+config\+\_\+set\+\_\+ecdhecurve}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+set\+\_\+ecdhecurve(struct tls\+\_\+config $\ast$\+\_\+config, const char $\ast$\+\_\+name)}{tls_config_set_ecdhecurve(struct tls_config *_config, const char *_name)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+config\+\_\+set\+\_\+ecdhecurve (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config, }
+\item[{const char $\ast$}]{\+\_\+name}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_ad5a1ca32611e4c0146b9c2052ae98488}{}\label{tls_8h_ad5a1ca32611e4c0146b9c2052ae98488}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+set\+\_\+key\+\_\+file@{tls\+\_\+config\+\_\+set\+\_\+key\+\_\+file}}
+\index{tls\+\_\+config\+\_\+set\+\_\+key\+\_\+file@{tls\+\_\+config\+\_\+set\+\_\+key\+\_\+file}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+set\+\_\+key\+\_\+file(struct tls\+\_\+config $\ast$\+\_\+config, const char $\ast$\+\_\+key\+\_\+file)}{tls_config_set_key_file(struct tls_config *_config, const char *_key_file)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+config\+\_\+set\+\_\+key\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config, }
+\item[{const char $\ast$}]{\+\_\+key\+\_\+file}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a7ac1d27a0ba966374fea8f435e2d60ba}{}\label{tls_8h_a7ac1d27a0ba966374fea8f435e2d60ba}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+set\+\_\+key\+\_\+mem@{tls\+\_\+config\+\_\+set\+\_\+key\+\_\+mem}}
+\index{tls\+\_\+config\+\_\+set\+\_\+key\+\_\+mem@{tls\+\_\+config\+\_\+set\+\_\+key\+\_\+mem}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+set\+\_\+key\+\_\+mem(struct tls\+\_\+config $\ast$\+\_\+config, const uint8\+\_\+t $\ast$\+\_\+key, size\+\_\+t \+\_\+len)}{tls_config_set_key_mem(struct tls_config *_config, const uint8_t *_key, size_t _len)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+config\+\_\+set\+\_\+key\+\_\+mem (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config, }
+\item[{const uint8\+\_\+t $\ast$}]{\+\_\+key, }
+\item[{size\+\_\+t}]{\+\_\+len}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_ab939462f437d09d386486a78a5375e64}{}\label{tls_8h_ab939462f437d09d386486a78a5375e64}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+set\+\_\+protocols@{tls\+\_\+config\+\_\+set\+\_\+protocols}}
+\index{tls\+\_\+config\+\_\+set\+\_\+protocols@{tls\+\_\+config\+\_\+set\+\_\+protocols}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+set\+\_\+protocols(struct tls\+\_\+config $\ast$\+\_\+config, uint32\+\_\+t \+\_\+protocols)}{tls_config_set_protocols(struct tls_config *_config, uint32_t _protocols)}}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+config\+\_\+set\+\_\+protocols (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config, }
+\item[{uint32\+\_\+t}]{\+\_\+protocols}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a800e86c221780e984c0a8a3c5720c9a0}{}\label{tls_8h_a800e86c221780e984c0a8a3c5720c9a0}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+set\+\_\+verify\+\_\+depth@{tls\+\_\+config\+\_\+set\+\_\+verify\+\_\+depth}}
+\index{tls\+\_\+config\+\_\+set\+\_\+verify\+\_\+depth@{tls\+\_\+config\+\_\+set\+\_\+verify\+\_\+depth}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+set\+\_\+verify\+\_\+depth(struct tls\+\_\+config $\ast$\+\_\+config, int \+\_\+verify\+\_\+depth)}{tls_config_set_verify_depth(struct tls_config *_config, int _verify_depth)}}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+config\+\_\+set\+\_\+verify\+\_\+depth (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config, }
+\item[{int}]{\+\_\+verify\+\_\+depth}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a97d4fac748ab9a1e5f10656d5031c543}{}\label{tls_8h_a97d4fac748ab9a1e5f10656d5031c543}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+config\+\_\+verify@{tls\+\_\+config\+\_\+verify}}
+\index{tls\+\_\+config\+\_\+verify@{tls\+\_\+config\+\_\+verify}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+config\+\_\+verify(struct tls\+\_\+config $\ast$\+\_\+config)}{tls_config_verify(struct tls_config *_config)}}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+config\+\_\+verify (
+\begin{DoxyParamCaption}
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_ae082d2b077fd2492051b9579af3ea41c}{}\label{tls_8h_ae082d2b077fd2492051b9579af3ea41c}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+configure@{tls\+\_\+configure}}
+\index{tls\+\_\+configure@{tls\+\_\+configure}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+configure(struct tls $\ast$\+\_\+ctx, struct tls\+\_\+config $\ast$\+\_\+config)}{tls_configure(struct tls *_ctx, struct tls_config *_config)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+configure (
+\begin{DoxyParamCaption}
+\item[{struct tls $\ast$}]{\+\_\+ctx, }
+\item[{struct tls\+\_\+config $\ast$}]{\+\_\+config}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_ad7cd73a722c27599a7b6cd0aace75a94}{}\label{tls_8h_ad7cd73a722c27599a7b6cd0aace75a94}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+connect@{tls\+\_\+connect}}
+\index{tls\+\_\+connect@{tls\+\_\+connect}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+connect(struct tls $\ast$\+\_\+ctx, const char $\ast$\+\_\+host, const char $\ast$\+\_\+port)}{tls_connect(struct tls *_ctx, const char *_host, const char *_port)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+connect (
+\begin{DoxyParamCaption}
+\item[{struct tls $\ast$}]{\+\_\+ctx, }
+\item[{const char $\ast$}]{\+\_\+host, }
+\item[{const char $\ast$}]{\+\_\+port}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_afd20757d0736fdd77b2d453cc7ee65f8}{}\label{tls_8h_afd20757d0736fdd77b2d453cc7ee65f8}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+connect\+\_\+fds@{tls\+\_\+connect\+\_\+fds}}
+\index{tls\+\_\+connect\+\_\+fds@{tls\+\_\+connect\+\_\+fds}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+connect\+\_\+fds(struct tls $\ast$\+\_\+ctx, int \+\_\+fd\+\_\+read, int \+\_\+fd\+\_\+write, const char $\ast$\+\_\+servername)}{tls_connect_fds(struct tls *_ctx, int _fd_read, int _fd_write, const char *_servername)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+connect\+\_\+fds (
+\begin{DoxyParamCaption}
+\item[{struct tls $\ast$}]{\+\_\+ctx, }
+\item[{int}]{\+\_\+fd\+\_\+read, }
+\item[{int}]{\+\_\+fd\+\_\+write, }
+\item[{const char $\ast$}]{\+\_\+servername}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_ab0a039439fc7cab7e665725b2556f4c0}{}\label{tls_8h_ab0a039439fc7cab7e665725b2556f4c0}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+connect\+\_\+servername@{tls\+\_\+connect\+\_\+servername}}
+\index{tls\+\_\+connect\+\_\+servername@{tls\+\_\+connect\+\_\+servername}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+connect\+\_\+servername(struct tls $\ast$\+\_\+ctx, const char $\ast$\+\_\+host, const char $\ast$\+\_\+port, const char $\ast$\+\_\+servername)}{tls_connect_servername(struct tls *_ctx, const char *_host, const char *_port, const char *_servername)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+connect\+\_\+servername (
+\begin{DoxyParamCaption}
+\item[{struct tls $\ast$}]{\+\_\+ctx, }
+\item[{const char $\ast$}]{\+\_\+host, }
+\item[{const char $\ast$}]{\+\_\+port, }
+\item[{const char $\ast$}]{\+\_\+servername}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_aca75dde5c17dc8f7e7efa0f52853b3fd}{}\label{tls_8h_aca75dde5c17dc8f7e7efa0f52853b3fd}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+connect\+\_\+socket@{tls\+\_\+connect\+\_\+socket}}
+\index{tls\+\_\+connect\+\_\+socket@{tls\+\_\+connect\+\_\+socket}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+connect\+\_\+socket(struct tls $\ast$\+\_\+ctx, int \+\_\+s, const char $\ast$\+\_\+servername)}{tls_connect_socket(struct tls *_ctx, int _s, const char *_servername)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+connect\+\_\+socket (
+\begin{DoxyParamCaption}
+\item[{struct tls $\ast$}]{\+\_\+ctx, }
+\item[{int}]{\+\_\+s, }
+\item[{const char $\ast$}]{\+\_\+servername}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_aa5a934ac40b5cd691b8a814b38462539}{}\label{tls_8h_aa5a934ac40b5cd691b8a814b38462539}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+error@{tls\+\_\+error}}
+\index{tls\+\_\+error@{tls\+\_\+error}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+error(struct tls $\ast$\+\_\+ctx)}{tls_error(struct tls *_ctx)}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ tls\+\_\+error (
+\begin{DoxyParamCaption}
+\item[{struct tls $\ast$}]{\+\_\+ctx}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a5652f4f10065dcb5b555f9f83195547c}{}\label{tls_8h_a5652f4f10065dcb5b555f9f83195547c}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+free@{tls\+\_\+free}}
+\index{tls\+\_\+free@{tls\+\_\+free}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+free(struct tls $\ast$\+\_\+ctx)}{tls_free(struct tls *_ctx)}}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct tls $\ast$}]{\+\_\+ctx}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_acfe71ecb15fac059f31161572c3bbc79}{}\label{tls_8h_acfe71ecb15fac059f31161572c3bbc79}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+init@{tls\+\_\+init}}
+\index{tls\+\_\+init@{tls\+\_\+init}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+init(void)}{tls_init(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a35bcc298d938a0383d1f350897f5d903}{}\label{tls_8h_a35bcc298d938a0383d1f350897f5d903}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+load\+\_\+file@{tls\+\_\+load\+\_\+file}}
+\index{tls\+\_\+load\+\_\+file@{tls\+\_\+load\+\_\+file}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+load\+\_\+file(const char $\ast$\+\_\+file, size\+\_\+t $\ast$\+\_\+len, char $\ast$\+\_\+password)}{tls_load_file(const char *_file, size_t *_len, char *_password)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ tls\+\_\+load\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+file, }
+\item[{size\+\_\+t $\ast$}]{\+\_\+len, }
+\item[{char $\ast$}]{\+\_\+password}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_af9014e3e8f4ad2e8383a8f1974230b21}{}\label{tls_8h_af9014e3e8f4ad2e8383a8f1974230b21}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+read@{tls\+\_\+read}}
+\index{tls\+\_\+read@{tls\+\_\+read}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+read(struct tls $\ast$\+\_\+ctx, void $\ast$\+\_\+buf, size\+\_\+t \+\_\+buflen, size\+\_\+t $\ast$\+\_\+outlen)}{tls_read(struct tls *_ctx, void *_buf, size_t _buflen, size_t *_outlen)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{struct tls $\ast$}]{\+\_\+ctx, }
+\item[{void $\ast$}]{\+\_\+buf, }
+\item[{size\+\_\+t}]{\+\_\+buflen, }
+\item[{size\+\_\+t $\ast$}]{\+\_\+outlen}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a72d79bbb76ffed8c73136f5b07064ff3}{}\label{tls_8h_a72d79bbb76ffed8c73136f5b07064ff3}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+reset@{tls\+\_\+reset}}
+\index{tls\+\_\+reset@{tls\+\_\+reset}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+reset(struct tls $\ast$\+\_\+ctx)}{tls_reset(struct tls *_ctx)}}]{\setlength{\rightskip}{0pt plus 5cm}void tls\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{struct tls $\ast$}]{\+\_\+ctx}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a667373e5bfd948f8a0b083b7df5f2c43}{}\label{tls_8h_a667373e5bfd948f8a0b083b7df5f2c43}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+server@{tls\+\_\+server}}
+\index{tls\+\_\+server@{tls\+\_\+server}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+server(void)}{tls_server(void)}}]{\setlength{\rightskip}{0pt plus 5cm}struct tls$\ast$ tls\+\_\+server (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_adf707c11db9518dfdeca5823655c50e9}{}\label{tls_8h_adf707c11db9518dfdeca5823655c50e9}
+\index{tls.\+h@{tls.\+h}!tls\+\_\+write@{tls\+\_\+write}}
+\index{tls\+\_\+write@{tls\+\_\+write}!tls.\+h@{tls.\+h}}
+\subsubsection[{\texorpdfstring{tls\+\_\+write(struct tls $\ast$\+\_\+ctx, const void $\ast$\+\_\+buf, size\+\_\+t \+\_\+buflen, size\+\_\+t $\ast$\+\_\+outlen)}{tls_write(struct tls *_ctx, const void *_buf, size_t _buflen, size_t *_outlen)}}]{\setlength{\rightskip}{0pt plus 5cm}int tls\+\_\+write (
+\begin{DoxyParamCaption}
+\item[{struct tls $\ast$}]{\+\_\+ctx, }
+\item[{const void $\ast$}]{\+\_\+buf, }
+\item[{size\+\_\+t}]{\+\_\+buflen, }
+\item[{size\+\_\+t $\ast$}]{\+\_\+outlen}
+\end{DoxyParamCaption}
+)}\hypertarget{tls_8h_a5fc69751f0b28c94b5c63007326045a1}{}\label{tls_8h_a5fc69751f0b28c94b5c63007326045a1}

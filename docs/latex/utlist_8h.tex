@@ -1,0 +1,1196 @@
+\hypertarget{utlist_8h}{}\section{src/hal/pb2/include/uthash/utlist.h File Reference}
+\label{utlist_8h}\index{src/hal/pb2/include/uthash/utlist.\+h@{src/hal/pb2/include/uthash/utlist.\+h}}
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+Include dependency graph for utlist.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{utlist_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utlist_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{utlist_8h_a9f3779f3c49ddf609c97f1c3d1f29730}{U\+T\+L\+I\+S\+T\+\_\+\+V\+E\+R\+S\+I\+ON}~1.\+9.\+9
+\item 
+\#define \hyperlink{utlist_8h_ae8c9864192170d02fd996abaa1589611}{L\+D\+E\+C\+L\+T\+Y\+PE}(x)~\+\_\+\+\_\+typeof(x)
+\item 
+\#define \hyperlink{utlist_8h_a9eded80a8b98df631e889eb72b77c7a4}{\+\_\+\+SV}(elt,  list)
+\item 
+\#define \hyperlink{utlist_8h_ab79af156f04880b077b08b07711bd4e9}{\+\_\+\+N\+E\+XT}(elt,  list,  next)~((elt)-\/$>$next)
+\item 
+\#define \hyperlink{utlist_8h_ae45d8aa4fb2a827dda795c6f69723043}{\+\_\+\+N\+E\+X\+T\+A\+S\+GN}(elt,  list,  to,  next)~((elt)-\/$>$next)=(to)
+\item 
+\#define \hyperlink{utlist_8h_a9d84521388b0859794fa811d5709aa8e}{\+\_\+\+P\+R\+E\+V\+A\+S\+GN}(elt,  list,  to,  prev)~((elt)-\/$>$prev)=(to)
+\item 
+\#define \hyperlink{utlist_8h_a9916f2c26fd7f6f7edb1f6baf400f315}{\+\_\+\+RS}(list)
+\item 
+\#define \hyperlink{utlist_8h_a1eb4a3192390405087ef1bb6c57241e3}{\+\_\+\+C\+A\+S\+T\+A\+S\+GN}(a,  b)~(a)=(b)
+\item 
+\#define \hyperlink{utlist_8h_a0b2137d4a0c157cb7a1a30d9340ece31}{L\+L\+\_\+\+S\+O\+RT}(list,  cmp)~\hyperlink{utlist_8h_ab073dee297f8614db97aa576832a3af1}{L\+L\+\_\+\+S\+O\+R\+T2}(list, cmp, next)
+\item 
+\#define \hyperlink{utlist_8h_ab073dee297f8614db97aa576832a3af1}{L\+L\+\_\+\+S\+O\+R\+T2}(list,  cmp,  next)
+\item 
+\#define \hyperlink{utlist_8h_ad966f284f615a2ced4028258fa08f8f3}{D\+L\+\_\+\+S\+O\+RT}(list,  cmp)~\hyperlink{utlist_8h_a1a9781c3fa134c9d3c1d190291212e05}{D\+L\+\_\+\+S\+O\+R\+T2}(list, cmp, prev, next)
+\item 
+\#define \hyperlink{utlist_8h_a1a9781c3fa134c9d3c1d190291212e05}{D\+L\+\_\+\+S\+O\+R\+T2}(list,  cmp,  prev,  next)
+\item 
+\#define \hyperlink{utlist_8h_a13add78e5524efe1ae6bfb1631b2dc17}{C\+D\+L\+\_\+\+S\+O\+RT}(list,  cmp)~\hyperlink{utlist_8h_ac4c600b3d7ca043e54692ff4bc143dee}{C\+D\+L\+\_\+\+S\+O\+R\+T2}(list, cmp, prev, next)
+\item 
+\#define \hyperlink{utlist_8h_ac4c600b3d7ca043e54692ff4bc143dee}{C\+D\+L\+\_\+\+S\+O\+R\+T2}(list,  cmp,  prev,  next)
+\item 
+\#define \hyperlink{utlist_8h_a851fb4b583b0dc000097eeee6dd551d4}{L\+L\+\_\+\+P\+R\+E\+P\+E\+ND}(head,  add)~\hyperlink{utlist_8h_ab2de55837ec70d7e467caee1ebe33b9a}{L\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}(head,add,next)
+\item 
+\#define \hyperlink{utlist_8h_ab2de55837ec70d7e467caee1ebe33b9a}{L\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}(head,  add,  next)
+\item 
+\#define \hyperlink{utlist_8h_a404c4c80c250fc09c7a1a62b039efce7}{L\+L\+\_\+\+C\+O\+N\+C\+AT}(head1,  head2)~\hyperlink{utlist_8h_aee8b209eb2ba3131a09d3e28e873dbd7}{L\+L\+\_\+\+C\+O\+N\+C\+A\+T2}(head1,head2,next)
+\item 
+\#define \hyperlink{utlist_8h_aee8b209eb2ba3131a09d3e28e873dbd7}{L\+L\+\_\+\+C\+O\+N\+C\+A\+T2}(head1,  head2,  next)
+\item 
+\#define \hyperlink{utlist_8h_ace33c571c3df78e721a99a4494983855}{L\+L\+\_\+\+A\+P\+P\+E\+ND}(head,  add)~\hyperlink{utlist_8h_a7e96b16a0e2dd86c8529fd794bbdbbb4}{L\+L\+\_\+\+A\+P\+P\+E\+N\+D2}(head,add,next)
+\item 
+\#define \hyperlink{utlist_8h_a7e96b16a0e2dd86c8529fd794bbdbbb4}{L\+L\+\_\+\+A\+P\+P\+E\+N\+D2}(head,  add,  next)
+\item 
+\#define \hyperlink{utlist_8h_a34a4e54d488753465f6e87bb63b93c0e}{L\+L\+\_\+\+D\+E\+L\+E\+TE}(head,  del)~\hyperlink{utlist_8h_a2737a45962b8f6e79a7dda26f7ef50d8}{L\+L\+\_\+\+D\+E\+L\+E\+T\+E2}(head,del,next)
+\item 
+\#define \hyperlink{utlist_8h_a2737a45962b8f6e79a7dda26f7ef50d8}{L\+L\+\_\+\+D\+E\+L\+E\+T\+E2}(head,  del,  next)
+\item 
+\#define \hyperlink{utlist_8h_a3c301ddde2cfd8c32df4137c902b66f3}{L\+L\+\_\+\+A\+P\+P\+E\+N\+D\+\_\+\+V\+S2008}(head,  add)~\hyperlink{utlist_8h_acf275657ac7590615cd930f975b8472b}{L\+L\+\_\+\+A\+P\+P\+E\+N\+D2\+\_\+\+V\+S2008}(head,add,next)
+\item 
+\#define \hyperlink{utlist_8h_acf275657ac7590615cd930f975b8472b}{L\+L\+\_\+\+A\+P\+P\+E\+N\+D2\+\_\+\+V\+S2008}(head,  add,  next)
+\item 
+\#define \hyperlink{utlist_8h_a832d4d46464fb2dada9e198ad4f70cdf}{L\+L\+\_\+\+D\+E\+L\+E\+T\+E\+\_\+\+V\+S2008}(head,  del)~\hyperlink{utlist_8h_a0fbcaa0892d4e741467fe1c0ce08f8dc}{L\+L\+\_\+\+D\+E\+L\+E\+T\+E2\+\_\+\+V\+S2008}(head,del,next)
+\item 
+\#define \hyperlink{utlist_8h_a0fbcaa0892d4e741467fe1c0ce08f8dc}{L\+L\+\_\+\+D\+E\+L\+E\+T\+E2\+\_\+\+V\+S2008}(head,  del,  next)
+\item 
+\#define \hyperlink{utlist_8h_a48eab425b28abd2eef58a1e96ef2a145}{L\+L\+\_\+\+C\+O\+U\+NT}(head,  el,  counter)~\hyperlink{utlist_8h_aa26d31f3f3884088b0af0352b415844b}{L\+L\+\_\+\+C\+O\+U\+N\+T2}(head,el,counter,next)                                                            \textbackslash{}
+\item 
+\#define \hyperlink{utlist_8h_aa26d31f3f3884088b0af0352b415844b}{L\+L\+\_\+\+C\+O\+U\+N\+T2}(head,  el,  counter,  next)
+\item 
+\#define \hyperlink{utlist_8h_a487c0ce49f397e1743caae16a797e4bb}{L\+L\+\_\+\+F\+O\+R\+E\+A\+CH}(head,  el)~\hyperlink{utlist_8h_a02e4d427da9697e0c8200850972f9a17}{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}(head,el,next)
+\item 
+\#define \hyperlink{utlist_8h_a02e4d427da9697e0c8200850972f9a17}{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}(head,  el,  next)~for(el=head;el;el=(el)-\/$>$next)
+\item 
+\#define \hyperlink{utlist_8h_ad0a695664d31f0b929fd50b39ebcf0ef}{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE}(head,  el,  tmp)~\hyperlink{utlist_8h_adeb880a3409df5b041f6a9d4ef084dc1}{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}(head,el,tmp,next)
+\item 
+\#define \hyperlink{utlist_8h_adeb880a3409df5b041f6a9d4ef084dc1}{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}(head,  el,  tmp,  next)~for((el)=(head);(el) \&\& (tmp = (el)-\/$>$next, 1); (el) = tmp)
+\item 
+\#define \hyperlink{utlist_8h_a8c5c97079c5b259e4c0ff7c563b0f8ed}{L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR}(head,  out,  field,  val)~\hyperlink{utlist_8h_a845ca1c4ffd9aa5511a7de108685cf41}{L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}(head,out,field,val,next)
+\item 
+\#define \hyperlink{utlist_8h_a845ca1c4ffd9aa5511a7de108685cf41}{L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}(head,  out,  field,  val,  next)
+\item 
+\#define \hyperlink{utlist_8h_af7a5ae66c9386c4b89403d9ca038adcb}{L\+L\+\_\+\+S\+E\+A\+R\+CH}(head,  out,  elt,  cmp)~\hyperlink{utlist_8h_ac32e87bb9e7e7ee5c50ddd765fec2202}{L\+L\+\_\+\+S\+E\+A\+R\+C\+H2}(head,out,elt,cmp,next)
+\item 
+\#define \hyperlink{utlist_8h_ac32e87bb9e7e7ee5c50ddd765fec2202}{L\+L\+\_\+\+S\+E\+A\+R\+C\+H2}(head,  out,  elt,  cmp,  next)
+\item 
+\#define \hyperlink{utlist_8h_a13dd262d32d5c66a5cf044e03b849b95}{L\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM}(head,  el,  add)
+\item 
+\#define \hyperlink{utlist_8h_a77713cebaee4dc6bec6405e092854c60}{L\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM}(head,  el,  add)
+\item 
+\#define \hyperlink{utlist_8h_a78be4dea3344ba1b1c7fe1b893c0fdfa}{D\+L\+\_\+\+P\+R\+E\+P\+E\+ND}(head,  add)~\hyperlink{utlist_8h_afefdf797fe1e3e3a48a8ff9b4afc8b50}{D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}(head,add,prev,next)
+\item 
+\#define \hyperlink{utlist_8h_afefdf797fe1e3e3a48a8ff9b4afc8b50}{D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}(head,  add,  prev,  next)
+\item 
+\#define \hyperlink{utlist_8h_a17d40c945e1dc55490feb2fe160670c8}{D\+L\+\_\+\+A\+P\+P\+E\+ND}(head,  add)~\hyperlink{utlist_8h_af1aa0473f0cf2a976eb9c2ef18f29531}{D\+L\+\_\+\+A\+P\+P\+E\+N\+D2}(head,add,prev,next)
+\item 
+\#define \hyperlink{utlist_8h_af1aa0473f0cf2a976eb9c2ef18f29531}{D\+L\+\_\+\+A\+P\+P\+E\+N\+D2}(head,  add,  prev,  next)
+\item 
+\#define \hyperlink{utlist_8h_ae46c0b5fd5a59cd5f889db7a0e6989bb}{D\+L\+\_\+\+C\+O\+N\+C\+AT}(head1,  head2)~\hyperlink{utlist_8h_aa910e66e69c6d7a0738682c6d6d22764}{D\+L\+\_\+\+C\+O\+N\+C\+A\+T2}(head1,head2,prev,next)
+\item 
+\#define \hyperlink{utlist_8h_aa910e66e69c6d7a0738682c6d6d22764}{D\+L\+\_\+\+C\+O\+N\+C\+A\+T2}(head1,  head2,  prev,  next)
+\item 
+\#define \hyperlink{utlist_8h_aad429903354ffe8cdf4ca2e9d0ae89cc}{D\+L\+\_\+\+D\+E\+L\+E\+TE}(head,  del)~\hyperlink{utlist_8h_aba01e54c48a65b3774121fdd0029a6bc}{D\+L\+\_\+\+D\+E\+L\+E\+T\+E2}(head,del,prev,next)
+\item 
+\#define \hyperlink{utlist_8h_aba01e54c48a65b3774121fdd0029a6bc}{D\+L\+\_\+\+D\+E\+L\+E\+T\+E2}(head,  del,  prev,  next)
+\item 
+\#define \hyperlink{utlist_8h_a42b6fe6a8a8857d10ccccbade4c08a57}{D\+L\+\_\+\+C\+O\+U\+NT}(head,  el,  counter)~\hyperlink{utlist_8h_a695860c5f7a56893d91e30979de513b1}{D\+L\+\_\+\+C\+O\+U\+N\+T2}(head,el,counter,next)                                                            \textbackslash{}
+\item 
+\#define \hyperlink{utlist_8h_a695860c5f7a56893d91e30979de513b1}{D\+L\+\_\+\+C\+O\+U\+N\+T2}(head,  el,  counter,  next)
+\item 
+\#define \hyperlink{utlist_8h_abb0c2851c5f0567be7b8827ce5168ef7}{D\+L\+\_\+\+F\+O\+R\+E\+A\+CH}(head,  el)~\hyperlink{utlist_8h_afa552d80a0e24c462756e5c7d714b590}{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}(head,el,next)
+\item 
+\#define \hyperlink{utlist_8h_afa552d80a0e24c462756e5c7d714b590}{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}(head,  el,  next)~for(el=head;el;el=(el)-\/$>$next)
+\item 
+\#define \hyperlink{utlist_8h_a3bb0c84a69846d2f019a97ea0b4709aa}{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE}(head,  el,  tmp)~\hyperlink{utlist_8h_acd1252a17e56e7d158488456ed541993}{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}(head,el,tmp,next)
+\item 
+\#define \hyperlink{utlist_8h_acd1252a17e56e7d158488456ed541993}{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}(head,  el,  tmp,  next)~for((el)=(head);(el) \&\& (tmp = (el)-\/$>$next, 1); (el) = tmp)
+\item 
+\#define \hyperlink{utlist_8h_a172fce2d647fdedadf0f8080e0441c5b}{D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR}~\hyperlink{utlist_8h_a8c5c97079c5b259e4c0ff7c563b0f8ed}{L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR}
+\item 
+\#define \hyperlink{utlist_8h_a819373d14278b52c313b743acc292ba0}{D\+L\+\_\+\+S\+E\+A\+R\+CH}~\hyperlink{utlist_8h_af7a5ae66c9386c4b89403d9ca038adcb}{L\+L\+\_\+\+S\+E\+A\+R\+CH}
+\item 
+\#define \hyperlink{utlist_8h_a3d5f0ce5f79edb05478271dc9e20e6c5}{D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}~\hyperlink{utlist_8h_a845ca1c4ffd9aa5511a7de108685cf41}{L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}
+\item 
+\#define \hyperlink{utlist_8h_ae2197cbf3fb6d1f63eeb6992a137895a}{D\+L\+\_\+\+S\+E\+A\+R\+C\+H2}~\hyperlink{utlist_8h_ac32e87bb9e7e7ee5c50ddd765fec2202}{L\+L\+\_\+\+S\+E\+A\+R\+C\+H2}
+\item 
+\#define \hyperlink{utlist_8h_add9446d548ad3917bdaaf5615c592e19}{D\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM}(head,  el,  add)
+\item 
+\#define \hyperlink{utlist_8h_a4287408f7b0e04773245b8cb462db259}{D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM}(head,  el,  add)
+\item 
+\#define \hyperlink{utlist_8h_a6c6a7232d281eab4b18563b92e5653bd}{C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+ND}(head,  add)~\hyperlink{utlist_8h_aeb32a87bf2738eb64394e8d2eebfacab}{C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}(head,add,prev,next)
+\item 
+\#define \hyperlink{utlist_8h_aeb32a87bf2738eb64394e8d2eebfacab}{C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}(head,  add,  prev,  next)
+\item 
+\#define \hyperlink{utlist_8h_a60fd7696c4d0865f53a07579a7b08235}{C\+D\+L\+\_\+\+D\+E\+L\+E\+TE}(head,  del)~\hyperlink{utlist_8h_a3c74342dfb410c3b8847a0752609ab3a}{C\+D\+L\+\_\+\+D\+E\+L\+E\+T\+E2}(head,del,prev,next)
+\item 
+\#define \hyperlink{utlist_8h_a3c74342dfb410c3b8847a0752609ab3a}{C\+D\+L\+\_\+\+D\+E\+L\+E\+T\+E2}(head,  del,  prev,  next)
+\item 
+\#define \hyperlink{utlist_8h_a62aadb45076ea124d2ed269d6cbf39cb}{C\+D\+L\+\_\+\+C\+O\+U\+NT}(head,  el,  counter)~\hyperlink{utlist_8h_a49b193f300aacde49996035292a1933a}{C\+D\+L\+\_\+\+C\+O\+U\+N\+T2}(head,el,counter,next)                                                           \textbackslash{}
+\item 
+\#define \hyperlink{utlist_8h_a49b193f300aacde49996035292a1933a}{C\+D\+L\+\_\+\+C\+O\+U\+N\+T2}(head,  el,  counter,  next)
+\item 
+\#define \hyperlink{utlist_8h_a795df7857792d7e811709a060c911a36}{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+CH}(head,  el)~\hyperlink{utlist_8h_a1cb1a7ba8af85112bd9080f2e5bc3989}{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}(head,el,next)
+\item 
+\#define \hyperlink{utlist_8h_a1cb1a7ba8af85112bd9080f2e5bc3989}{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}(head,  el,  next)~for(el=head;el;el=((el)-\/$>$next==head ? 0\+L \+: (el)-\/$>$next))
+\item 
+\#define \hyperlink{utlist_8h_abdb80106f7733e37fbe4f62e9d97ccfd}{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE}(head,  el,  tmp1,  tmp2)~\hyperlink{utlist_8h_aaf70ec71fcb399dcef00f7b5a117e76b}{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}(head,el,tmp1,tmp2,prev,next)
+\item 
+\#define \hyperlink{utlist_8h_aaf70ec71fcb399dcef00f7b5a117e76b}{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}(head,  el,  tmp1,  tmp2,  prev,  next)
+\item 
+\#define \hyperlink{utlist_8h_ad064cddb894b478b3c3cd23719f58651}{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR}(head,  out,  field,  val)~\hyperlink{utlist_8h_a1e2a56abf454af235395317c6444f49f}{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}(head,out,field,val,next)
+\item 
+\#define \hyperlink{utlist_8h_a1e2a56abf454af235395317c6444f49f}{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}(head,  out,  field,  val,  next)
+\item 
+\#define \hyperlink{utlist_8h_afb329a0bdf1fa0b644317e9d84082e1e}{C\+D\+L\+\_\+\+S\+E\+A\+R\+CH}(head,  out,  elt,  cmp)~\hyperlink{utlist_8h_ae5716446b8f83a5cefd4d49f65fb30d1}{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H2}(head,out,elt,cmp,next)
+\item 
+\#define \hyperlink{utlist_8h_ae5716446b8f83a5cefd4d49f65fb30d1}{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H2}(head,  out,  elt,  cmp,  next)
+\item 
+\#define \hyperlink{utlist_8h_a5481f46b63414b5da0d49d0545b80476}{C\+D\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM}(head,  el,  add)
+\item 
+\#define \hyperlink{utlist_8h_a01cda67c0b827f7fafad4fb1253300f9}{C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM}(head,  el,  add)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{utlist.\+h@{utlist.\+h}!\+\_\+\+C\+A\+S\+T\+A\+S\+GN@{\+\_\+\+C\+A\+S\+T\+A\+S\+GN}}
+\index{\+\_\+\+C\+A\+S\+T\+A\+S\+GN@{\+\_\+\+C\+A\+S\+T\+A\+S\+GN}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+C\+A\+S\+T\+A\+S\+GN}{_CASTASGN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+C\+A\+S\+T\+A\+S\+GN(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~(a)=(b)}\hypertarget{utlist_8h_a1eb4a3192390405087ef1bb6c57241e3}{}\label{utlist_8h_a1eb4a3192390405087ef1bb6c57241e3}
+\index{utlist.\+h@{utlist.\+h}!\+\_\+\+N\+E\+XT@{\+\_\+\+N\+E\+XT}}
+\index{\+\_\+\+N\+E\+XT@{\+\_\+\+N\+E\+XT}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+E\+XT}{_NEXT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+N\+E\+XT(
+\begin{DoxyParamCaption}
+\item[{}]{elt, }
+\item[{}]{list, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)~((elt)-\/$>$next)}\hypertarget{utlist_8h_ab79af156f04880b077b08b07711bd4e9}{}\label{utlist_8h_ab79af156f04880b077b08b07711bd4e9}
+\index{utlist.\+h@{utlist.\+h}!\+\_\+\+N\+E\+X\+T\+A\+S\+GN@{\+\_\+\+N\+E\+X\+T\+A\+S\+GN}}
+\index{\+\_\+\+N\+E\+X\+T\+A\+S\+GN@{\+\_\+\+N\+E\+X\+T\+A\+S\+GN}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+N\+E\+X\+T\+A\+S\+GN}{_NEXTASGN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+N\+E\+X\+T\+A\+S\+GN(
+\begin{DoxyParamCaption}
+\item[{}]{elt, }
+\item[{}]{list, }
+\item[{}]{to, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)~((elt)-\/$>$next)=(to)}\hypertarget{utlist_8h_ae45d8aa4fb2a827dda795c6f69723043}{}\label{utlist_8h_ae45d8aa4fb2a827dda795c6f69723043}
+\index{utlist.\+h@{utlist.\+h}!\+\_\+\+P\+R\+E\+V\+A\+S\+GN@{\+\_\+\+P\+R\+E\+V\+A\+S\+GN}}
+\index{\+\_\+\+P\+R\+E\+V\+A\+S\+GN@{\+\_\+\+P\+R\+E\+V\+A\+S\+GN}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+R\+E\+V\+A\+S\+GN}{_PREVASGN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+P\+R\+E\+V\+A\+S\+GN(
+\begin{DoxyParamCaption}
+\item[{}]{elt, }
+\item[{}]{list, }
+\item[{}]{to, }
+\item[{}]{prev}
+\end{DoxyParamCaption}
+)~((elt)-\/$>$prev)=(to)}\hypertarget{utlist_8h_a9d84521388b0859794fa811d5709aa8e}{}\label{utlist_8h_a9d84521388b0859794fa811d5709aa8e}
+\index{utlist.\+h@{utlist.\+h}!\+\_\+\+RS@{\+\_\+\+RS}}
+\index{\+\_\+\+RS@{\+\_\+\+RS}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+RS}{_RS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+RS(
+\begin{DoxyParamCaption}
+\item[{}]{list}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_a9916f2c26fd7f6f7edb1f6baf400f315}{}\label{utlist_8h_a9916f2c26fd7f6f7edb1f6baf400f315}
+\index{utlist.\+h@{utlist.\+h}!\+\_\+\+SV@{\+\_\+\+SV}}
+\index{\+\_\+\+SV@{\+\_\+\+SV}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+SV}{_SV}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+SV(
+\begin{DoxyParamCaption}
+\item[{}]{elt, }
+\item[{}]{list}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_a9eded80a8b98df631e889eb72b77c7a4}{}\label{utlist_8h_a9eded80a8b98df631e889eb72b77c7a4}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+C\+O\+U\+NT@{C\+D\+L\+\_\+\+C\+O\+U\+NT}}
+\index{C\+D\+L\+\_\+\+C\+O\+U\+NT@{C\+D\+L\+\_\+\+C\+O\+U\+NT}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+C\+O\+U\+NT}{CDL_COUNT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+C\+O\+U\+NT(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{counter}
+\end{DoxyParamCaption}
+)~{\bf C\+D\+L\+\_\+\+C\+O\+U\+N\+T2}(head,el,counter,next)                                                           \textbackslash{}}\hypertarget{utlist_8h_a62aadb45076ea124d2ed269d6cbf39cb}{}\label{utlist_8h_a62aadb45076ea124d2ed269d6cbf39cb}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+C\+O\+U\+N\+T2@{C\+D\+L\+\_\+\+C\+O\+U\+N\+T2}}
+\index{C\+D\+L\+\_\+\+C\+O\+U\+N\+T2@{C\+D\+L\+\_\+\+C\+O\+U\+N\+T2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+C\+O\+U\+N\+T2}{CDL_COUNT2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+C\+O\+U\+N\+T2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{counter, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_a49b193f300aacde49996035292a1933a}{}\label{utlist_8h_a49b193f300aacde49996035292a1933a}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                                                                                              \(\backslash\)
+    counter = 0;                                                                               
+      \hyperlink{utlist_8h_a1cb1a7ba8af85112bd9080f2e5bc3989}{\(\backslash\)}
+\hyperlink{utlist_8h_a1cb1a7ba8af85112bd9080f2e5bc3989}{    CDL\_FOREACH2}(head,el,\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next})\{ ++counter; \}                                           
+              \(\backslash\)
+\}
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+D\+E\+L\+E\+TE@{C\+D\+L\+\_\+\+D\+E\+L\+E\+TE}}
+\index{C\+D\+L\+\_\+\+D\+E\+L\+E\+TE@{C\+D\+L\+\_\+\+D\+E\+L\+E\+TE}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+D\+E\+L\+E\+TE}{CDL_DELETE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+D\+E\+L\+E\+TE(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{del}
+\end{DoxyParamCaption}
+)~{\bf C\+D\+L\+\_\+\+D\+E\+L\+E\+T\+E2}(head,del,prev,next)}\hypertarget{utlist_8h_a60fd7696c4d0865f53a07579a7b08235}{}\label{utlist_8h_a60fd7696c4d0865f53a07579a7b08235}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+D\+E\+L\+E\+T\+E2@{C\+D\+L\+\_\+\+D\+E\+L\+E\+T\+E2}}
+\index{C\+D\+L\+\_\+\+D\+E\+L\+E\+T\+E2@{C\+D\+L\+\_\+\+D\+E\+L\+E\+T\+E2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+D\+E\+L\+E\+T\+E2}{CDL_DELETE2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+D\+E\+L\+E\+T\+E2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{del, }
+\item[{}]{prev, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_a3c74342dfb410c3b8847a0752609ab3a}{}\label{utlist_8h_a3c74342dfb410c3b8847a0752609ab3a}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           \(\backslash\)
+  if ( ((head)==(del)) && ((head)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} == (head))) \{                                          \(\backslash\)
+      (head) = 0L;                                                                             \(\backslash\)
+  \} \textcolor{keywordflow}{else} \{                                                                                     \(\backslash\)
+     (del)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (del)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev};                                                          
+      \(\backslash\)
+     (del)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev}->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (del)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next};                                                          
+      \(\backslash\)
+     if ((del) == (head)) (head)=(del)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next};                                                  \(\backslash\)
+  \}                                                                                            \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+CH@{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+CH}}
+\index{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+CH@{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+CH}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+CH}{CDL_FOREACH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+CH(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el}
+\end{DoxyParamCaption}
+)~{\bf C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}(head,el,next)}\hypertarget{utlist_8h_a795df7857792d7e811709a060c911a36}{}\label{utlist_8h_a795df7857792d7e811709a060c911a36}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2@{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}}
+\index{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2@{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}{CDL_FOREACH2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)~for(el=head;el;el=((el)-\/$>$next==head ? 0\+L \+: (el)-\/$>$next))}\hypertarget{utlist_8h_a1cb1a7ba8af85112bd9080f2e5bc3989}{}\label{utlist_8h_a1cb1a7ba8af85112bd9080f2e5bc3989}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE@{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE}}
+\index{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE@{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE}{CDL_FOREACH_SAFE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{tmp1, }
+\item[{}]{tmp2}
+\end{DoxyParamCaption}
+)~{\bf C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}(head,el,tmp1,tmp2,prev,next)}\hypertarget{utlist_8h_abdb80106f7733e37fbe4f62e9d97ccfd}{}\label{utlist_8h_abdb80106f7733e37fbe4f62e9d97ccfd}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2@{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}}
+\index{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2@{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}{CDL_FOREACH_SAFE2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{tmp1, }
+\item[{}]{tmp2, }
+\item[{}]{prev, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_aaf70ec71fcb399dcef00f7b5a117e76b}{}\label{utlist_8h_aaf70ec71fcb399dcef00f7b5a117e76b}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{for}((el)=(head), ((tmp1)=(head)?((head)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev}):NULL);                                        \(\backslash\)
+      (el) && ((tmp2)=(el)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}, 1);                                                          \(\backslash\)
+      ((el) = (((el)==(tmp1)) ? 0L : (tmp2))))
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+ND@{C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+ND}}
+\index{C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+ND@{C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+ND}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+ND}{CDL_PREPEND}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+ND(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{add}
+\end{DoxyParamCaption}
+)~{\bf C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}(head,add,prev,next)}\hypertarget{utlist_8h_a6c6a7232d281eab4b18563b92e5653bd}{}\label{utlist_8h_a6c6a7232d281eab4b18563b92e5653bd}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2@{C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}}
+\index{C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2@{C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}{CDL_PREPEND2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{add, }
+\item[{}]{prev, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_aeb32a87bf2738eb64394e8d2eebfacab}{}\label{utlist_8h_aeb32a87bf2738eb64394e8d2eebfacab}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           \(\backslash\)
+ if (head) \{                                                                                   \(\backslash\)
+   (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (head)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev};                                                                 \(\backslash\)
+   (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (head);                                                                       \(\backslash\)
+   (head)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (add);                                                                       \(\backslash\)
+   (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev}->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (add);                                                                  \(\backslash\)
+ \} \textcolor{keywordflow}{else} \{                                                                                      \(\backslash\)
+   (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (add);                                                                        \(\backslash\)
+   (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (add);                                                                        \(\backslash\)
+ \}                                                                                             \(\backslash\)
+(head)=(add);                                                                                  \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM@{C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM}}
+\index{C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM@{C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM}{CDL_PREPEND_ELEM}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{add}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_a01cda67c0b827f7fafad4fb1253300f9}{}\label{utlist_8h_a01cda67c0b827f7fafad4fb1253300f9}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           \(\backslash\)
+ assert(head != NULL);                                                                         \(\backslash\)
+ assert(el != NULL);                                                                           \(\backslash\)
+ assert(add != NULL);                                                                          \(\backslash\)
+ (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (el);                                                                           \(\backslash\)
+ (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (el)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev};                                                                     \(\backslash\)
+ (el)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (add);                                                                           \(\backslash\)
+ (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev}->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (add);                                                                    \(\backslash\)
+ if ((head) == (el)) \{                                                                         \(\backslash\)
+  (head) = (add);                                                                              \(\backslash\)
+ \}                                                                                             \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)                                                                                    \(\backslash\)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM@{C\+D\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM}}
+\index{C\+D\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM@{C\+D\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM}{CDL_REPLACE_ELEM}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{add}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_a5481f46b63414b5da0d49d0545b80476}{}\label{utlist_8h_a5481f46b63414b5da0d49d0545b80476}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           \(\backslash\)
+ assert(head != NULL);                                                                         \(\backslash\)
+ assert(el != NULL);                                                                           \(\backslash\)
+ assert(add != NULL);                                                                          \(\backslash\)
+ if ((el)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} == (el)) \{                                                                     \(\backslash\)
+  (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (add);                                                                         \(\backslash\)
+  (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (add);                                                                         \(\backslash\)
+  (head) = (add);                                                                              \(\backslash\)
+ \} \textcolor{keywordflow}{else} \{                                                                                      \(\backslash\)
+  (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (el)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next};                                                                    \(\backslash\)
+  (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (el)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev};                                                                    \(\backslash\)
+  (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (add);                                                                   \(\backslash\)
+  (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev}->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (add);                                                                   \(\backslash\)
+  if ((head) == (el)) \{                                                                        \(\backslash\)
+   (head) = (add);                                                                             \(\backslash\)
+  \}                                                                                            \(\backslash\)
+ \}                                                                                             \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+S\+E\+A\+R\+CH@{C\+D\+L\+\_\+\+S\+E\+A\+R\+CH}}
+\index{C\+D\+L\+\_\+\+S\+E\+A\+R\+CH@{C\+D\+L\+\_\+\+S\+E\+A\+R\+CH}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+S\+E\+A\+R\+CH}{CDL_SEARCH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+S\+E\+A\+R\+CH(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{out, }
+\item[{}]{elt, }
+\item[{}]{cmp}
+\end{DoxyParamCaption}
+)~{\bf C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H2}(head,out,elt,cmp,next)}\hypertarget{utlist_8h_afb329a0bdf1fa0b644317e9d84082e1e}{}\label{utlist_8h_afb329a0bdf1fa0b644317e9d84082e1e}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H2@{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H2}}
+\index{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H2@{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H2}{CDL_SEARCH2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{out, }
+\item[{}]{elt, }
+\item[{}]{cmp, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_ae5716446b8f83a5cefd4d49f65fb30d1}{}\label{utlist_8h_ae5716446b8f83a5cefd4d49f65fb30d1}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           
+      \hyperlink{utlist_8h_a1cb1a7ba8af85112bd9080f2e5bc3989}{\(\backslash\)}
+\hyperlink{utlist_8h_a1cb1a7ba8af85112bd9080f2e5bc3989}{    CDL\_FOREACH2}(head,out,\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}) \{                                                      
+              \(\backslash\)
+      if ((cmp(out,elt))==0) break;                                                            \(\backslash\)
+    \}                                                                                          \(\backslash\)
+\} while(0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR@{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR}}
+\index{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR@{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR}{CDL_SEARCH_SCALAR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{out, }
+\item[{}]{field, }
+\item[{}]{val}
+\end{DoxyParamCaption}
+)~{\bf C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}(head,out,field,val,next)}\hypertarget{utlist_8h_ad064cddb894b478b3c3cd23719f58651}{}\label{utlist_8h_ad064cddb894b478b3c3cd23719f58651}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2@{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}}
+\index{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2@{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}{CDL_SEARCH_SCALAR2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{out, }
+\item[{}]{field, }
+\item[{}]{val, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_a1e2a56abf454af235395317c6444f49f}{}\label{utlist_8h_a1e2a56abf454af235395317c6444f49f}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           
+      \hyperlink{utlist_8h_a1cb1a7ba8af85112bd9080f2e5bc3989}{\(\backslash\)}
+\hyperlink{utlist_8h_a1cb1a7ba8af85112bd9080f2e5bc3989}{    CDL\_FOREACH2}(head,out,\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}) \{                                                      
+              \(\backslash\)
+      if ((out)->field == (val)) break;                                                        \(\backslash\)
+    \}                                                                                          \(\backslash\)
+\} while(0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+S\+O\+RT@{C\+D\+L\+\_\+\+S\+O\+RT}}
+\index{C\+D\+L\+\_\+\+S\+O\+RT@{C\+D\+L\+\_\+\+S\+O\+RT}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+S\+O\+RT}{CDL_SORT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+S\+O\+RT(
+\begin{DoxyParamCaption}
+\item[{}]{list, }
+\item[{}]{cmp}
+\end{DoxyParamCaption}
+)~{\bf C\+D\+L\+\_\+\+S\+O\+R\+T2}(list, cmp, prev, next)}\hypertarget{utlist_8h_a13add78e5524efe1ae6bfb1631b2dc17}{}\label{utlist_8h_a13add78e5524efe1ae6bfb1631b2dc17}
+\index{utlist.\+h@{utlist.\+h}!C\+D\+L\+\_\+\+S\+O\+R\+T2@{C\+D\+L\+\_\+\+S\+O\+R\+T2}}
+\index{C\+D\+L\+\_\+\+S\+O\+R\+T2@{C\+D\+L\+\_\+\+S\+O\+R\+T2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{C\+D\+L\+\_\+\+S\+O\+R\+T2}{CDL_SORT2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+D\+L\+\_\+\+S\+O\+R\+T2(
+\begin{DoxyParamCaption}
+\item[{}]{list, }
+\item[{}]{cmp, }
+\item[{}]{prev, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_ac4c600b3d7ca043e54692ff4bc143dee}{}\label{utlist_8h_ac4c600b3d7ca043e54692ff4bc143dee}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+A\+P\+P\+E\+ND@{D\+L\+\_\+\+A\+P\+P\+E\+ND}}
+\index{D\+L\+\_\+\+A\+P\+P\+E\+ND@{D\+L\+\_\+\+A\+P\+P\+E\+ND}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+A\+P\+P\+E\+ND}{DL_APPEND}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+A\+P\+P\+E\+ND(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{add}
+\end{DoxyParamCaption}
+)~{\bf D\+L\+\_\+\+A\+P\+P\+E\+N\+D2}(head,add,prev,next)}\hypertarget{utlist_8h_a17d40c945e1dc55490feb2fe160670c8}{}\label{utlist_8h_a17d40c945e1dc55490feb2fe160670c8}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+A\+P\+P\+E\+N\+D2@{D\+L\+\_\+\+A\+P\+P\+E\+N\+D2}}
+\index{D\+L\+\_\+\+A\+P\+P\+E\+N\+D2@{D\+L\+\_\+\+A\+P\+P\+E\+N\+D2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+A\+P\+P\+E\+N\+D2}{DL_APPEND2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+A\+P\+P\+E\+N\+D2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{add, }
+\item[{}]{prev, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_af1aa0473f0cf2a976eb9c2ef18f29531}{}\label{utlist_8h_af1aa0473f0cf2a976eb9c2ef18f29531}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           \(\backslash\)
+  if (head) \{                                                                                  \(\backslash\)
+      (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (head)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev};                                                              \(\backslash\)
+      (head)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev}->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (add);                                                              \(\backslash\)
+      (head)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (add);                                                                    \(\backslash\)
+      (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = NULL;                                                                      \(\backslash\)
+  \} \textcolor{keywordflow}{else} \{                                                                                     \(\backslash\)
+      (head)=(add);                                                                            \(\backslash\)
+      (head)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (head);                                                                   \(\backslash\)
+      (head)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = NULL;                                                                     \(\backslash\)
+  \}                                                                                            \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+C\+O\+N\+C\+AT@{D\+L\+\_\+\+C\+O\+N\+C\+AT}}
+\index{D\+L\+\_\+\+C\+O\+N\+C\+AT@{D\+L\+\_\+\+C\+O\+N\+C\+AT}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+C\+O\+N\+C\+AT}{DL_CONCAT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+C\+O\+N\+C\+AT(
+\begin{DoxyParamCaption}
+\item[{}]{head1, }
+\item[{}]{head2}
+\end{DoxyParamCaption}
+)~{\bf D\+L\+\_\+\+C\+O\+N\+C\+A\+T2}(head1,head2,prev,next)}\hypertarget{utlist_8h_ae46c0b5fd5a59cd5f889db7a0e6989bb}{}\label{utlist_8h_ae46c0b5fd5a59cd5f889db7a0e6989bb}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+C\+O\+N\+C\+A\+T2@{D\+L\+\_\+\+C\+O\+N\+C\+A\+T2}}
+\index{D\+L\+\_\+\+C\+O\+N\+C\+A\+T2@{D\+L\+\_\+\+C\+O\+N\+C\+A\+T2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+C\+O\+N\+C\+A\+T2}{DL_CONCAT2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+C\+O\+N\+C\+A\+T2(
+\begin{DoxyParamCaption}
+\item[{}]{head1, }
+\item[{}]{head2, }
+\item[{}]{prev, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_aa910e66e69c6d7a0738682c6d6d22764}{}\label{utlist_8h_aa910e66e69c6d7a0738682c6d6d22764}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           
+      \hyperlink{utlist_8h_ae8c9864192170d02fd996abaa1589611}{\(\backslash\)}
+\hyperlink{utlist_8h_ae8c9864192170d02fd996abaa1589611}{  LDECLTYPE}(head1) \_tmp;                                                                       \(\backslash\)
+  if (head2) \{                                                                                 \(\backslash\)
+    if (head1) \{                                                                               \(\backslash\)
+        \_tmp = (head2)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev};                                                                  \(\backslash\)
+        (head2)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (head1)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev};                                                         \(\backslash\)
+        (head1)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev}->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (head2);                                                         \(\backslash\)
+        (head1)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = \_tmp;                                                                  \(\backslash\)
+    \} \textcolor{keywordflow}{else} \{                                                                                   \(\backslash\)
+        (head1)=(head2);                                                                       \(\backslash\)
+    \}                                                                                          \(\backslash\)
+  \}                                                                                            \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+C\+O\+U\+NT@{D\+L\+\_\+\+C\+O\+U\+NT}}
+\index{D\+L\+\_\+\+C\+O\+U\+NT@{D\+L\+\_\+\+C\+O\+U\+NT}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+C\+O\+U\+NT}{DL_COUNT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+C\+O\+U\+NT(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{counter}
+\end{DoxyParamCaption}
+)~{\bf D\+L\+\_\+\+C\+O\+U\+N\+T2}(head,el,counter,next)                                                            \textbackslash{}}\hypertarget{utlist_8h_a42b6fe6a8a8857d10ccccbade4c08a57}{}\label{utlist_8h_a42b6fe6a8a8857d10ccccbade4c08a57}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+C\+O\+U\+N\+T2@{D\+L\+\_\+\+C\+O\+U\+N\+T2}}
+\index{D\+L\+\_\+\+C\+O\+U\+N\+T2@{D\+L\+\_\+\+C\+O\+U\+N\+T2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+C\+O\+U\+N\+T2}{DL_COUNT2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+C\+O\+U\+N\+T2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{counter, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_a695860c5f7a56893d91e30979de513b1}{}\label{utlist_8h_a695860c5f7a56893d91e30979de513b1}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                                                                                              \(\backslash\)
+    counter = 0;                                                                               
+      \hyperlink{utlist_8h_afa552d80a0e24c462756e5c7d714b590}{\(\backslash\)}
+\hyperlink{utlist_8h_afa552d80a0e24c462756e5c7d714b590}{    DL\_FOREACH2}(head,el,\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next})\{ ++counter; \}                                             
+             \(\backslash\)
+\}
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+D\+E\+L\+E\+TE@{D\+L\+\_\+\+D\+E\+L\+E\+TE}}
+\index{D\+L\+\_\+\+D\+E\+L\+E\+TE@{D\+L\+\_\+\+D\+E\+L\+E\+TE}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+D\+E\+L\+E\+TE}{DL_DELETE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+D\+E\+L\+E\+TE(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{del}
+\end{DoxyParamCaption}
+)~{\bf D\+L\+\_\+\+D\+E\+L\+E\+T\+E2}(head,del,prev,next)}\hypertarget{utlist_8h_aad429903354ffe8cdf4ca2e9d0ae89cc}{}\label{utlist_8h_aad429903354ffe8cdf4ca2e9d0ae89cc}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+D\+E\+L\+E\+T\+E2@{D\+L\+\_\+\+D\+E\+L\+E\+T\+E2}}
+\index{D\+L\+\_\+\+D\+E\+L\+E\+T\+E2@{D\+L\+\_\+\+D\+E\+L\+E\+T\+E2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+D\+E\+L\+E\+T\+E2}{DL_DELETE2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+D\+E\+L\+E\+T\+E2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{del, }
+\item[{}]{prev, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_aba01e54c48a65b3774121fdd0029a6bc}{}\label{utlist_8h_aba01e54c48a65b3774121fdd0029a6bc}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           \(\backslash\)
+  assert((del)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} != NULL);                                                                 \(\backslash\)
+  if ((del)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} == (del)) \{                                                                  \(\backslash\)
+      (head)=NULL;                                                                             \(\backslash\)
+  \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((del)==(head)) \{                                                                  \(\backslash\)
+      (del)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (del)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev};                                                         
+      \(\backslash\)
+      (head) = (del)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next};                                                                    \(\backslash\)
+  \} \textcolor{keywordflow}{else} \{                                                                                     \(\backslash\)
+      (del)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev}->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (del)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next};                                                         
+      \(\backslash\)
+      if ((del)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}) \{                                                                       \(\backslash\)
+          (del)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (del)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev};                                                     
+      \(\backslash\)
+      \} \textcolor{keywordflow}{else} \{                                                                                 \(\backslash\)
+          (head)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (del)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev};                                                          \(\backslash\)
+      \}                                                                                        \(\backslash\)
+  \}                                                                                            \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+F\+O\+R\+E\+A\+CH@{D\+L\+\_\+\+F\+O\+R\+E\+A\+CH}}
+\index{D\+L\+\_\+\+F\+O\+R\+E\+A\+CH@{D\+L\+\_\+\+F\+O\+R\+E\+A\+CH}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+F\+O\+R\+E\+A\+CH}{DL_FOREACH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+F\+O\+R\+E\+A\+CH(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el}
+\end{DoxyParamCaption}
+)~{\bf D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}(head,el,next)}\hypertarget{utlist_8h_abb0c2851c5f0567be7b8827ce5168ef7}{}\label{utlist_8h_abb0c2851c5f0567be7b8827ce5168ef7}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2@{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}}
+\index{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2@{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}{DL_FOREACH2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)~for(el=head;el;el=(el)-\/$>$next)}\hypertarget{utlist_8h_afa552d80a0e24c462756e5c7d714b590}{}\label{utlist_8h_afa552d80a0e24c462756e5c7d714b590}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE@{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE}}
+\index{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE@{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE}{DL_FOREACH_SAFE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{tmp}
+\end{DoxyParamCaption}
+)~{\bf D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}(head,el,tmp,next)}\hypertarget{utlist_8h_a3bb0c84a69846d2f019a97ea0b4709aa}{}\label{utlist_8h_a3bb0c84a69846d2f019a97ea0b4709aa}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2@{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}}
+\index{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2@{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}{DL_FOREACH_SAFE2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{tmp, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)~for((el)=(head);(el) \&\& (tmp = (el)-\/$>$next, 1); (el) = tmp)}\hypertarget{utlist_8h_acd1252a17e56e7d158488456ed541993}{}\label{utlist_8h_acd1252a17e56e7d158488456ed541993}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+P\+R\+E\+P\+E\+ND@{D\+L\+\_\+\+P\+R\+E\+P\+E\+ND}}
+\index{D\+L\+\_\+\+P\+R\+E\+P\+E\+ND@{D\+L\+\_\+\+P\+R\+E\+P\+E\+ND}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+P\+R\+E\+P\+E\+ND}{DL_PREPEND}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+P\+R\+E\+P\+E\+ND(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{add}
+\end{DoxyParamCaption}
+)~{\bf D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}(head,add,prev,next)}\hypertarget{utlist_8h_a78be4dea3344ba1b1c7fe1b893c0fdfa}{}\label{utlist_8h_a78be4dea3344ba1b1c7fe1b893c0fdfa}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2@{D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}}
+\index{D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2@{D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}{DL_PREPEND2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{add, }
+\item[{}]{prev, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_afefdf797fe1e3e3a48a8ff9b4afc8b50}{}\label{utlist_8h_afefdf797fe1e3e3a48a8ff9b4afc8b50}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           \(\backslash\)
+ (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = head;                                                                           \(\backslash\)
+ if (head) \{                                                                                   \(\backslash\)
+   (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (head)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev};                                                                 \(\backslash\)
+   (head)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (add);                                                                       \(\backslash\)
+ \} \textcolor{keywordflow}{else} \{                                                                                      \(\backslash\)
+   (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (add);                                                                        \(\backslash\)
+ \}                                                                                             \(\backslash\)
+ (head) = (add);                                                                               \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM@{D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM}}
+\index{D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM@{D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM}{DL_PREPEND_ELEM}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{add}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_a4287408f7b0e04773245b8cb462db259}{}\label{utlist_8h_a4287408f7b0e04773245b8cb462db259}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           \(\backslash\)
+ assert(head != NULL);                                                                         \(\backslash\)
+ assert(el != NULL);                                                                           \(\backslash\)
+ assert(add != NULL);                                                                          \(\backslash\)
+ (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (el);                                                                           \(\backslash\)
+ (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (el)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev};                                                                     \(\backslash\)
+ (el)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (add);                                                                           \(\backslash\)
+ if ((head) == (el)) \{                                                                         \(\backslash\)
+  (head) = (add);                                                                              \(\backslash\)
+ \} \textcolor{keywordflow}{else} \{                                                                                      \(\backslash\)
+  (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev}->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (add);                                                                   \(\backslash\)
+ \}                                                                                             \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)                                                                                    \(\backslash\)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM@{D\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM}}
+\index{D\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM@{D\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM}{DL_REPLACE_ELEM}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{add}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_add9446d548ad3917bdaaf5615c592e19}{}\label{utlist_8h_add9446d548ad3917bdaaf5615c592e19}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           \(\backslash\)
+ assert(head != NULL);                                                                         \(\backslash\)
+ assert(el != NULL);                                                                           \(\backslash\)
+ assert(add != NULL);                                                                          \(\backslash\)
+ if ((head) == (el)) \{                                                                         \(\backslash\)
+  (head) = (add);                                                                              \(\backslash\)
+  (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (el)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next};                                                                    \(\backslash\)
+  if ((el)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} == NULL) \{                                                                    \(\backslash\)
+   (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (add);                                                                        \(\backslash\)
+  \} \textcolor{keywordflow}{else} \{                                                                                     \(\backslash\)
+   (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (el)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev};                                                                   \(\backslash\)
+   (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (add);                                                                  \(\backslash\)
+  \}                                                                                            \(\backslash\)
+ \} \textcolor{keywordflow}{else} \{                                                                                      \(\backslash\)
+  (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (el)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next};                                                                    \(\backslash\)
+  (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (el)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev};                                                                    \(\backslash\)
+  (add)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev}->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (add);                                                                   \(\backslash\)
+  if ((el)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} == NULL) \{                                                                    \(\backslash\)
+   (head)->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (add);                                                                       \(\backslash\)
+  \} \textcolor{keywordflow}{else} \{                                                                                     \(\backslash\)
+   (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}->\hyperlink{structlh__entry_a6fb9c3de01fb5af67d8d429921cc6a3b}{prev} = (add);                                                                  \(\backslash\)
+  \}                                                                                            \(\backslash\)
+ \}                                                                                             \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+S\+E\+A\+R\+CH@{D\+L\+\_\+\+S\+E\+A\+R\+CH}}
+\index{D\+L\+\_\+\+S\+E\+A\+R\+CH@{D\+L\+\_\+\+S\+E\+A\+R\+CH}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+S\+E\+A\+R\+CH}{DL_SEARCH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+S\+E\+A\+R\+CH~{\bf L\+L\+\_\+\+S\+E\+A\+R\+CH}}\hypertarget{utlist_8h_a819373d14278b52c313b743acc292ba0}{}\label{utlist_8h_a819373d14278b52c313b743acc292ba0}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+S\+E\+A\+R\+C\+H2@{D\+L\+\_\+\+S\+E\+A\+R\+C\+H2}}
+\index{D\+L\+\_\+\+S\+E\+A\+R\+C\+H2@{D\+L\+\_\+\+S\+E\+A\+R\+C\+H2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+S\+E\+A\+R\+C\+H2}{DL_SEARCH2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+S\+E\+A\+R\+C\+H2~{\bf L\+L\+\_\+\+S\+E\+A\+R\+C\+H2}}\hypertarget{utlist_8h_ae2197cbf3fb6d1f63eeb6992a137895a}{}\label{utlist_8h_ae2197cbf3fb6d1f63eeb6992a137895a}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR@{D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR}}
+\index{D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR@{D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR}{DL_SEARCH_SCALAR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR~{\bf L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR}}\hypertarget{utlist_8h_a172fce2d647fdedadf0f8080e0441c5b}{}\label{utlist_8h_a172fce2d647fdedadf0f8080e0441c5b}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2@{D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}}
+\index{D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2@{D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}{DL_SEARCH_SCALAR2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2~{\bf L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}}\hypertarget{utlist_8h_a3d5f0ce5f79edb05478271dc9e20e6c5}{}\label{utlist_8h_a3d5f0ce5f79edb05478271dc9e20e6c5}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+S\+O\+RT@{D\+L\+\_\+\+S\+O\+RT}}
+\index{D\+L\+\_\+\+S\+O\+RT@{D\+L\+\_\+\+S\+O\+RT}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+S\+O\+RT}{DL_SORT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+S\+O\+RT(
+\begin{DoxyParamCaption}
+\item[{}]{list, }
+\item[{}]{cmp}
+\end{DoxyParamCaption}
+)~{\bf D\+L\+\_\+\+S\+O\+R\+T2}(list, cmp, prev, next)}\hypertarget{utlist_8h_ad966f284f615a2ced4028258fa08f8f3}{}\label{utlist_8h_ad966f284f615a2ced4028258fa08f8f3}
+\index{utlist.\+h@{utlist.\+h}!D\+L\+\_\+\+S\+O\+R\+T2@{D\+L\+\_\+\+S\+O\+R\+T2}}
+\index{D\+L\+\_\+\+S\+O\+R\+T2@{D\+L\+\_\+\+S\+O\+R\+T2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{D\+L\+\_\+\+S\+O\+R\+T2}{DL_SORT2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+\_\+\+S\+O\+R\+T2(
+\begin{DoxyParamCaption}
+\item[{}]{list, }
+\item[{}]{cmp, }
+\item[{}]{prev, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_a1a9781c3fa134c9d3c1d190291212e05}{}\label{utlist_8h_a1a9781c3fa134c9d3c1d190291212e05}
+\index{utlist.\+h@{utlist.\+h}!L\+D\+E\+C\+L\+T\+Y\+PE@{L\+D\+E\+C\+L\+T\+Y\+PE}}
+\index{L\+D\+E\+C\+L\+T\+Y\+PE@{L\+D\+E\+C\+L\+T\+Y\+PE}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+D\+E\+C\+L\+T\+Y\+PE}{LDECLTYPE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+D\+E\+C\+L\+T\+Y\+PE(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\+\_\+\+\_\+typeof(x)}\hypertarget{utlist_8h_ae8c9864192170d02fd996abaa1589611}{}\label{utlist_8h_ae8c9864192170d02fd996abaa1589611}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+A\+P\+P\+E\+ND@{L\+L\+\_\+\+A\+P\+P\+E\+ND}}
+\index{L\+L\+\_\+\+A\+P\+P\+E\+ND@{L\+L\+\_\+\+A\+P\+P\+E\+ND}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+A\+P\+P\+E\+ND}{LL_APPEND}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+A\+P\+P\+E\+ND(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{add}
+\end{DoxyParamCaption}
+)~{\bf L\+L\+\_\+\+A\+P\+P\+E\+N\+D2}(head,add,next)}\hypertarget{utlist_8h_ace33c571c3df78e721a99a4494983855}{}\label{utlist_8h_ace33c571c3df78e721a99a4494983855}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+A\+P\+P\+E\+N\+D2@{L\+L\+\_\+\+A\+P\+P\+E\+N\+D2}}
+\index{L\+L\+\_\+\+A\+P\+P\+E\+N\+D2@{L\+L\+\_\+\+A\+P\+P\+E\+N\+D2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+A\+P\+P\+E\+N\+D2}{LL_APPEND2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+A\+P\+P\+E\+N\+D2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{add, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_a7e96b16a0e2dd86c8529fd794bbdbbb4}{}\label{utlist_8h_a7e96b16a0e2dd86c8529fd794bbdbbb4}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           
+      \hyperlink{utlist_8h_ae8c9864192170d02fd996abaa1589611}{\(\backslash\)}
+\hyperlink{utlist_8h_ae8c9864192170d02fd996abaa1589611}{  LDECLTYPE}(head) \_tmp;                                                                        \(\backslash\)
+  (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}=NULL;                                                                            \(\backslash\)
+  if (head) \{                                                                                  \(\backslash\)
+    \_tmp = head;                                                                               \(\backslash\)
+    while (\_tmp->next) \{ \_tmp = \_tmp->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}; \}                                                  \(\backslash\)
+    \_tmp->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}=(add);                                                                          \(\backslash\)
+  \} \textcolor{keywordflow}{else} \{                                                                                     \(\backslash\)
+    (head)=(add);                                                                              \(\backslash\)
+  \}                                                                                            \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+A\+P\+P\+E\+N\+D2\+\_\+\+V\+S2008@{L\+L\+\_\+\+A\+P\+P\+E\+N\+D2\+\_\+\+V\+S2008}}
+\index{L\+L\+\_\+\+A\+P\+P\+E\+N\+D2\+\_\+\+V\+S2008@{L\+L\+\_\+\+A\+P\+P\+E\+N\+D2\+\_\+\+V\+S2008}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+A\+P\+P\+E\+N\+D2\+\_\+\+V\+S2008}{LL_APPEND2_VS2008}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+A\+P\+P\+E\+N\+D2\+\_\+\+V\+S2008(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{add, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_acf275657ac7590615cd930f975b8472b}{}\label{utlist_8h_acf275657ac7590615cd930f975b8472b}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           \(\backslash\)
+  if (head) \{                                                                                  \(\backslash\)
+    (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = head;     \textcolor{comment}{/* use add->next as a temp variable */}                             \(\backslash\)
+    while ((add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}) \{ (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}; \}                     
+              \(\backslash\)
+    (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}=(add);                                                                   \(\backslash\)
+  \} \textcolor{keywordflow}{else} \{                                                                                     \(\backslash\)
+    (head)=(add);                                                                              \(\backslash\)
+  \}                                                                                            \(\backslash\)
+  (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}=NULL;                                                                            \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+A\+P\+P\+E\+N\+D\+\_\+\+V\+S2008@{L\+L\+\_\+\+A\+P\+P\+E\+N\+D\+\_\+\+V\+S2008}}
+\index{L\+L\+\_\+\+A\+P\+P\+E\+N\+D\+\_\+\+V\+S2008@{L\+L\+\_\+\+A\+P\+P\+E\+N\+D\+\_\+\+V\+S2008}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+A\+P\+P\+E\+N\+D\+\_\+\+V\+S2008}{LL_APPEND_VS2008}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+A\+P\+P\+E\+N\+D\+\_\+\+V\+S2008(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{add}
+\end{DoxyParamCaption}
+)~{\bf L\+L\+\_\+\+A\+P\+P\+E\+N\+D2\+\_\+\+V\+S2008}(head,add,next)}\hypertarget{utlist_8h_a3c301ddde2cfd8c32df4137c902b66f3}{}\label{utlist_8h_a3c301ddde2cfd8c32df4137c902b66f3}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+C\+O\+N\+C\+AT@{L\+L\+\_\+\+C\+O\+N\+C\+AT}}
+\index{L\+L\+\_\+\+C\+O\+N\+C\+AT@{L\+L\+\_\+\+C\+O\+N\+C\+AT}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+C\+O\+N\+C\+AT}{LL_CONCAT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+C\+O\+N\+C\+AT(
+\begin{DoxyParamCaption}
+\item[{}]{head1, }
+\item[{}]{head2}
+\end{DoxyParamCaption}
+)~{\bf L\+L\+\_\+\+C\+O\+N\+C\+A\+T2}(head1,head2,next)}\hypertarget{utlist_8h_a404c4c80c250fc09c7a1a62b039efce7}{}\label{utlist_8h_a404c4c80c250fc09c7a1a62b039efce7}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+C\+O\+N\+C\+A\+T2@{L\+L\+\_\+\+C\+O\+N\+C\+A\+T2}}
+\index{L\+L\+\_\+\+C\+O\+N\+C\+A\+T2@{L\+L\+\_\+\+C\+O\+N\+C\+A\+T2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+C\+O\+N\+C\+A\+T2}{LL_CONCAT2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+C\+O\+N\+C\+A\+T2(
+\begin{DoxyParamCaption}
+\item[{}]{head1, }
+\item[{}]{head2, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_aee8b209eb2ba3131a09d3e28e873dbd7}{}\label{utlist_8h_aee8b209eb2ba3131a09d3e28e873dbd7}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           
+      \hyperlink{utlist_8h_ae8c9864192170d02fd996abaa1589611}{\(\backslash\)}
+\hyperlink{utlist_8h_ae8c9864192170d02fd996abaa1589611}{  LDECLTYPE}(head1) \_tmp;                                                                       \(\backslash\)
+  if (head1) \{                                                                                 \(\backslash\)
+    \_tmp = head1;                                                                              \(\backslash\)
+    while (\_tmp->next) \{ \_tmp = \_tmp->next; \}                                                  \(\backslash\)
+    \_tmp->next=(head2);                                                                        \(\backslash\)
+  \} \textcolor{keywordflow}{else} \{                                                                                     \(\backslash\)
+    (head1)=(head2);                                                                           \(\backslash\)
+  \}                                                                                            \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+C\+O\+U\+NT@{L\+L\+\_\+\+C\+O\+U\+NT}}
+\index{L\+L\+\_\+\+C\+O\+U\+NT@{L\+L\+\_\+\+C\+O\+U\+NT}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+C\+O\+U\+NT}{LL_COUNT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+C\+O\+U\+NT(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{counter}
+\end{DoxyParamCaption}
+)~{\bf L\+L\+\_\+\+C\+O\+U\+N\+T2}(head,el,counter,next)                                                            \textbackslash{}}\hypertarget{utlist_8h_a48eab425b28abd2eef58a1e96ef2a145}{}\label{utlist_8h_a48eab425b28abd2eef58a1e96ef2a145}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+C\+O\+U\+N\+T2@{L\+L\+\_\+\+C\+O\+U\+N\+T2}}
+\index{L\+L\+\_\+\+C\+O\+U\+N\+T2@{L\+L\+\_\+\+C\+O\+U\+N\+T2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+C\+O\+U\+N\+T2}{LL_COUNT2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+C\+O\+U\+N\+T2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{counter, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_aa26d31f3f3884088b0af0352b415844b}{}\label{utlist_8h_aa26d31f3f3884088b0af0352b415844b}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                                                                                              \(\backslash\)
+    counter = 0;                                                                               
+      \hyperlink{utlist_8h_a02e4d427da9697e0c8200850972f9a17}{\(\backslash\)}
+\hyperlink{utlist_8h_a02e4d427da9697e0c8200850972f9a17}{    LL\_FOREACH2}(head,el,\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next})\{ ++counter; \}                                             
+             \(\backslash\)
+\}
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+D\+E\+L\+E\+TE@{L\+L\+\_\+\+D\+E\+L\+E\+TE}}
+\index{L\+L\+\_\+\+D\+E\+L\+E\+TE@{L\+L\+\_\+\+D\+E\+L\+E\+TE}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+D\+E\+L\+E\+TE}{LL_DELETE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+D\+E\+L\+E\+TE(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{del}
+\end{DoxyParamCaption}
+)~{\bf L\+L\+\_\+\+D\+E\+L\+E\+T\+E2}(head,del,next)}\hypertarget{utlist_8h_a34a4e54d488753465f6e87bb63b93c0e}{}\label{utlist_8h_a34a4e54d488753465f6e87bb63b93c0e}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+D\+E\+L\+E\+T\+E2@{L\+L\+\_\+\+D\+E\+L\+E\+T\+E2}}
+\index{L\+L\+\_\+\+D\+E\+L\+E\+T\+E2@{L\+L\+\_\+\+D\+E\+L\+E\+T\+E2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+D\+E\+L\+E\+T\+E2}{LL_DELETE2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+D\+E\+L\+E\+T\+E2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{del, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_a2737a45962b8f6e79a7dda26f7ef50d8}{}\label{utlist_8h_a2737a45962b8f6e79a7dda26f7ef50d8}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           
+      \hyperlink{utlist_8h_ae8c9864192170d02fd996abaa1589611}{\(\backslash\)}
+\hyperlink{utlist_8h_ae8c9864192170d02fd996abaa1589611}{  LDECLTYPE}(head) \_tmp;                                                                        \(\backslash\)
+  if ((head) == (del)) \{                                                                       \(\backslash\)
+    (head)=(head)->next;                                                                       \(\backslash\)
+  \} \textcolor{keywordflow}{else} \{                                                                                     \(\backslash\)
+    \_tmp = head;                                                                               \(\backslash\)
+    while (\_tmp->next && (\_tmp->next != (del))) \{                                              \(\backslash\)
+      \_tmp = \_tmp->next;                                                                       \(\backslash\)
+    \}                                                                                          \(\backslash\)
+    if (\_tmp->next) \{                                                                          \(\backslash\)
+      \_tmp->next = ((del)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next});                                                              \(\backslash\)
+    \}                                                                                          \(\backslash\)
+  \}                                                                                            \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+D\+E\+L\+E\+T\+E2\+\_\+\+V\+S2008@{L\+L\+\_\+\+D\+E\+L\+E\+T\+E2\+\_\+\+V\+S2008}}
+\index{L\+L\+\_\+\+D\+E\+L\+E\+T\+E2\+\_\+\+V\+S2008@{L\+L\+\_\+\+D\+E\+L\+E\+T\+E2\+\_\+\+V\+S2008}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+D\+E\+L\+E\+T\+E2\+\_\+\+V\+S2008}{LL_DELETE2_VS2008}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+D\+E\+L\+E\+T\+E2\+\_\+\+V\+S2008(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{del, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_a0fbcaa0892d4e741467fe1c0ce08f8dc}{}\label{utlist_8h_a0fbcaa0892d4e741467fe1c0ce08f8dc}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           \(\backslash\)
+  if ((head) == (del)) \{                                                                       \(\backslash\)
+    (head)=(head)->next;                                                                       \(\backslash\)
+  \} \textcolor{keywordflow}{else} \{                                                                                     \(\backslash\)
+    char *\_tmp = (\textcolor{keywordtype}{char}*)(head);                                                                \(\backslash\)
+    while ((head)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} && ((head)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} != (del))) \{                                          \(\backslash\)
+      head = (head)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next};                                                                     \(\backslash\)
+    \}                                                                                          \(\backslash\)
+    if ((head)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}) \{                                                                        \(\backslash\)
+      (head)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = ((del)->next);                                                            \(\backslash\)
+    \}                                                                                          \(\backslash\)
+    \{                                                                                          \(\backslash\)
+      char **\_head\_alias = (\textcolor{keywordtype}{char}**)&(head);                                                    \(\backslash\)
+      *\_head\_alias = \_tmp;                                                                     \(\backslash\)
+    \}                                                                                          \(\backslash\)
+  \}                                                                                            \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+D\+E\+L\+E\+T\+E\+\_\+\+V\+S2008@{L\+L\+\_\+\+D\+E\+L\+E\+T\+E\+\_\+\+V\+S2008}}
+\index{L\+L\+\_\+\+D\+E\+L\+E\+T\+E\+\_\+\+V\+S2008@{L\+L\+\_\+\+D\+E\+L\+E\+T\+E\+\_\+\+V\+S2008}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+D\+E\+L\+E\+T\+E\+\_\+\+V\+S2008}{LL_DELETE_VS2008}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+D\+E\+L\+E\+T\+E\+\_\+\+V\+S2008(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{del}
+\end{DoxyParamCaption}
+)~{\bf L\+L\+\_\+\+D\+E\+L\+E\+T\+E2\+\_\+\+V\+S2008}(head,del,next)}\hypertarget{utlist_8h_a832d4d46464fb2dada9e198ad4f70cdf}{}\label{utlist_8h_a832d4d46464fb2dada9e198ad4f70cdf}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+F\+O\+R\+E\+A\+CH@{L\+L\+\_\+\+F\+O\+R\+E\+A\+CH}}
+\index{L\+L\+\_\+\+F\+O\+R\+E\+A\+CH@{L\+L\+\_\+\+F\+O\+R\+E\+A\+CH}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+F\+O\+R\+E\+A\+CH}{LL_FOREACH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+F\+O\+R\+E\+A\+CH(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el}
+\end{DoxyParamCaption}
+)~{\bf L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}(head,el,next)}\hypertarget{utlist_8h_a487c0ce49f397e1743caae16a797e4bb}{}\label{utlist_8h_a487c0ce49f397e1743caae16a797e4bb}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2@{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}}
+\index{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2@{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2}{LL_FOREACH2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)~for(el=head;el;el=(el)-\/$>$next)}\hypertarget{utlist_8h_a02e4d427da9697e0c8200850972f9a17}{}\label{utlist_8h_a02e4d427da9697e0c8200850972f9a17}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE@{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE}}
+\index{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE@{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE}{LL_FOREACH_SAFE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+FE(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{tmp}
+\end{DoxyParamCaption}
+)~{\bf L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}(head,el,tmp,next)}\hypertarget{utlist_8h_ad0a695664d31f0b929fd50b39ebcf0ef}{}\label{utlist_8h_ad0a695664d31f0b929fd50b39ebcf0ef}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2@{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}}
+\index{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2@{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2}{LL_FOREACH_SAFE2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+A\+F\+E2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{tmp, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)~for((el)=(head);(el) \&\& (tmp = (el)-\/$>$next, 1); (el) = tmp)}\hypertarget{utlist_8h_adeb880a3409df5b041f6a9d4ef084dc1}{}\label{utlist_8h_adeb880a3409df5b041f6a9d4ef084dc1}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+P\+R\+E\+P\+E\+ND@{L\+L\+\_\+\+P\+R\+E\+P\+E\+ND}}
+\index{L\+L\+\_\+\+P\+R\+E\+P\+E\+ND@{L\+L\+\_\+\+P\+R\+E\+P\+E\+ND}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+P\+R\+E\+P\+E\+ND}{LL_PREPEND}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+P\+R\+E\+P\+E\+ND(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{add}
+\end{DoxyParamCaption}
+)~{\bf L\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}(head,add,next)}\hypertarget{utlist_8h_a851fb4b583b0dc000097eeee6dd551d4}{}\label{utlist_8h_a851fb4b583b0dc000097eeee6dd551d4}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2@{L\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}}
+\index{L\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2@{L\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2}{LL_PREPEND2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{add, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_ab2de55837ec70d7e467caee1ebe33b9a}{}\label{utlist_8h_ab2de55837ec70d7e467caee1ebe33b9a}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           \(\backslash\)
+  (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = head;                                                                          \(\backslash\)
+  head = add;                                                                                  \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM@{L\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM}}
+\index{L\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM@{L\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM}{LL_PREPEND_ELEM}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+P\+R\+E\+P\+E\+N\+D\+\_\+\+E\+L\+EM(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{add}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_a77713cebaee4dc6bec6405e092854c60}{}\label{utlist_8h_a77713cebaee4dc6bec6405e092854c60}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           
+      \hyperlink{utlist_8h_ae8c9864192170d02fd996abaa1589611}{\(\backslash\)}
+\hyperlink{utlist_8h_ae8c9864192170d02fd996abaa1589611}{ LDECLTYPE}(head) \_tmp;                                                                         \(\backslash\)
+ assert(head != NULL);                                                                         \(\backslash\)
+ assert(el != NULL);                                                                           \(\backslash\)
+ assert(add != NULL);                                                                          \(\backslash\)
+ (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (el);                                                                           \(\backslash\)
+ if ((head) == (el)) \{                                                                         \(\backslash\)
+  (head) = (add);                                                                              \(\backslash\)
+ \} \textcolor{keywordflow}{else} \{                                                                                      \(\backslash\)
+  \_tmp = head;                                                                                 \(\backslash\)
+  while (\_tmp->next && (\_tmp->next != (el))) \{                                                 \(\backslash\)
+   \_tmp = \_tmp->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next};                                                                          \(\backslash\)
+  \}                                                                                            \(\backslash\)
+  if (\_tmp->next) \{                                                                            \(\backslash\)
+    \_tmp->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (add);                                                                        \(\backslash\)
+  \}                                                                                            \(\backslash\)
+ \}                                                                                             \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)                                                                                    \(\backslash\)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM@{L\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM}}
+\index{L\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM@{L\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM}{LL_REPLACE_ELEM}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+E\+L\+EM(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{el, }
+\item[{}]{add}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_a13dd262d32d5c66a5cf044e03b849b95}{}\label{utlist_8h_a13dd262d32d5c66a5cf044e03b849b95}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           
+      \hyperlink{utlist_8h_ae8c9864192170d02fd996abaa1589611}{\(\backslash\)}
+\hyperlink{utlist_8h_ae8c9864192170d02fd996abaa1589611}{ LDECLTYPE}(head) \_tmp;                                                                         \(\backslash\)
+ assert(head != NULL);                                                                         \(\backslash\)
+ assert(el != NULL);                                                                           \(\backslash\)
+ assert(add != NULL);                                                                          \(\backslash\)
+ (add)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (el)->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next};                                                                     \(\backslash\)
+ if ((head) == (el)) \{                                                                         \(\backslash\)
+  (head) = (add);                                                                              \(\backslash\)
+ \} \textcolor{keywordflow}{else} \{                                                                                      \(\backslash\)
+  \_tmp = head;                                                                                 \(\backslash\)
+  while (\_tmp->next && (\_tmp->next != (el))) \{                                                 \(\backslash\)
+   \_tmp = \_tmp->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next};                                                                          \(\backslash\)
+  \}                                                                                            \(\backslash\)
+  if (\_tmp->next) \{                                                                            \(\backslash\)
+    \_tmp->\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next} = (add);                                                                        \(\backslash\)
+  \}                                                                                            \(\backslash\)
+ \}                                                                                             \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+S\+E\+A\+R\+CH@{L\+L\+\_\+\+S\+E\+A\+R\+CH}}
+\index{L\+L\+\_\+\+S\+E\+A\+R\+CH@{L\+L\+\_\+\+S\+E\+A\+R\+CH}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+S\+E\+A\+R\+CH}{LL_SEARCH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+S\+E\+A\+R\+CH(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{out, }
+\item[{}]{elt, }
+\item[{}]{cmp}
+\end{DoxyParamCaption}
+)~{\bf L\+L\+\_\+\+S\+E\+A\+R\+C\+H2}(head,out,elt,cmp,next)}\hypertarget{utlist_8h_af7a5ae66c9386c4b89403d9ca038adcb}{}\label{utlist_8h_af7a5ae66c9386c4b89403d9ca038adcb}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+S\+E\+A\+R\+C\+H2@{L\+L\+\_\+\+S\+E\+A\+R\+C\+H2}}
+\index{L\+L\+\_\+\+S\+E\+A\+R\+C\+H2@{L\+L\+\_\+\+S\+E\+A\+R\+C\+H2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+S\+E\+A\+R\+C\+H2}{LL_SEARCH2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+S\+E\+A\+R\+C\+H2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{out, }
+\item[{}]{elt, }
+\item[{}]{cmp, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_ac32e87bb9e7e7ee5c50ddd765fec2202}{}\label{utlist_8h_ac32e87bb9e7e7ee5c50ddd765fec2202}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           
+      \hyperlink{utlist_8h_a02e4d427da9697e0c8200850972f9a17}{\(\backslash\)}
+\hyperlink{utlist_8h_a02e4d427da9697e0c8200850972f9a17}{    LL\_FOREACH2}(head,out,\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}) \{                                                        
+             \(\backslash\)
+      if ((cmp(out,elt))==0) break;                                                            \(\backslash\)
+    \}                                                                                          \(\backslash\)
+\} while(0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR@{L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR}}
+\index{L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR@{L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR}{LL_SEARCH_SCALAR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+AR(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{out, }
+\item[{}]{field, }
+\item[{}]{val}
+\end{DoxyParamCaption}
+)~{\bf L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}(head,out,field,val,next)}\hypertarget{utlist_8h_a8c5c97079c5b259e4c0ff7c563b0f8ed}{}\label{utlist_8h_a8c5c97079c5b259e4c0ff7c563b0f8ed}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2@{L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}}
+\index{L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2@{L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2}{LL_SEARCH_SCALAR2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+S\+C\+A\+L\+A\+R2(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{out, }
+\item[{}]{field, }
+\item[{}]{val, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_a845ca1c4ffd9aa5511a7de108685cf41}{}\label{utlist_8h_a845ca1c4ffd9aa5511a7de108685cf41}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                                                           
+      \hyperlink{utlist_8h_a02e4d427da9697e0c8200850972f9a17}{\(\backslash\)}
+\hyperlink{utlist_8h_a02e4d427da9697e0c8200850972f9a17}{    LL\_FOREACH2}(head,out,\hyperlink{structlh__entry_a7c40c46e72d9a0ba071a8d49d535bc67}{next}) \{                                                        
+             \(\backslash\)
+      if ((out)->field == (val)) break;                                                        \(\backslash\)
+    \}                                                                                          \(\backslash\)
+\} while(0)
+\end{DoxyCode}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+S\+O\+RT@{L\+L\+\_\+\+S\+O\+RT}}
+\index{L\+L\+\_\+\+S\+O\+RT@{L\+L\+\_\+\+S\+O\+RT}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+S\+O\+RT}{LL_SORT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+S\+O\+RT(
+\begin{DoxyParamCaption}
+\item[{}]{list, }
+\item[{}]{cmp}
+\end{DoxyParamCaption}
+)~{\bf L\+L\+\_\+\+S\+O\+R\+T2}(list, cmp, next)}\hypertarget{utlist_8h_a0b2137d4a0c157cb7a1a30d9340ece31}{}\label{utlist_8h_a0b2137d4a0c157cb7a1a30d9340ece31}
+\index{utlist.\+h@{utlist.\+h}!L\+L\+\_\+\+S\+O\+R\+T2@{L\+L\+\_\+\+S\+O\+R\+T2}}
+\index{L\+L\+\_\+\+S\+O\+R\+T2@{L\+L\+\_\+\+S\+O\+R\+T2}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{L\+L\+\_\+\+S\+O\+R\+T2}{LL_SORT2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+L\+\_\+\+S\+O\+R\+T2(
+\begin{DoxyParamCaption}
+\item[{}]{list, }
+\item[{}]{cmp, }
+\item[{}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{utlist_8h_ab073dee297f8614db97aa576832a3af1}{}\label{utlist_8h_ab073dee297f8614db97aa576832a3af1}
+\index{utlist.\+h@{utlist.\+h}!U\+T\+L\+I\+S\+T\+\_\+\+V\+E\+R\+S\+I\+ON@{U\+T\+L\+I\+S\+T\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\index{U\+T\+L\+I\+S\+T\+\_\+\+V\+E\+R\+S\+I\+ON@{U\+T\+L\+I\+S\+T\+\_\+\+V\+E\+R\+S\+I\+ON}!utlist.\+h@{utlist.\+h}}
+\subsubsection[{\texorpdfstring{U\+T\+L\+I\+S\+T\+\_\+\+V\+E\+R\+S\+I\+ON}{UTLIST_VERSION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+T\+L\+I\+S\+T\+\_\+\+V\+E\+R\+S\+I\+ON~1.\+9.\+9}\hypertarget{utlist_8h_a9f3779f3c49ddf609c97f1c3d1f29730}{}\label{utlist_8h_a9f3779f3c49ddf609c97f1c3d1f29730}

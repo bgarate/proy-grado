@@ -1,0 +1,6 @@
+<map id="Communication::asociate" name="Communication::asociate">
+<area shape="rect" id="node2" href="$class_async_socket_channel.html#a16520ee5501d92d322a21f3f245855d2" title="AsyncSocketChannel\l::getConnection" alt="" coords="224,5,372,47"/>
+<area shape="rect" id="node3" href="$class_hello.html#ae1d6fea6f0359e1006a389e80d5c2cc8" title="Hello::ip" alt="" coords="263,71,333,98"/>
+<area shape="rect" id="node4" href="$class_hello.html#a3a6580d738360e427005cd9be561695c" title="Hello::port" alt="" coords="257,122,339,149"/>
+<area shape="rect" id="node5" href="$class_hello.html#ac4bce08f939da89c024ff5015351810f" title="Hello::id" alt="" coords="263,173,333,199"/>
+</map>

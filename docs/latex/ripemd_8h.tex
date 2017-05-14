@@ -1,0 +1,111 @@
+\hypertarget{ripemd_8h}{}\section{src/hal/pb2/include/openssl/ripemd.h File Reference}
+\label{ripemd_8h}\index{src/hal/pb2/include/openssl/ripemd.\+h@{src/hal/pb2/include/openssl/ripemd.\+h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+Include dependency graph for ripemd.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{ripemd_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_r_i_p_e_m_d160state__st}{R\+I\+P\+E\+M\+D160state\+\_\+st}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ripemd_8h_ad140fdb90a6a782fd82cfbe1a973dc3e}{R\+I\+P\+E\+M\+D160\+\_\+\+L\+O\+NG}~unsigned int
+\item 
+\#define \hyperlink{ripemd_8h_a48b541ae41583693729fc47f584d756f}{R\+I\+P\+E\+M\+D160\+\_\+\+C\+B\+L\+O\+CK}~64
+\item 
+\#define \hyperlink{ripemd_8h_a2a4ee496dfe1ef71297132c92c10f71c}{R\+I\+P\+E\+M\+D160\+\_\+\+L\+B\+L\+O\+CK}~(\hyperlink{ripemd_8h_a48b541ae41583693729fc47f584d756f}{R\+I\+P\+E\+M\+D160\+\_\+\+C\+B\+L\+O\+CK}/4)
+\item 
+\#define \hyperlink{ripemd_8h_a06a5447a09a212a99e8001aaf2ca3e71}{R\+I\+P\+E\+M\+D160\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}~20
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct_r_i_p_e_m_d160state__st}{R\+I\+P\+E\+M\+D160state\+\_\+st} \hyperlink{ripemd_8h_a57548127d8e218e8f130c6286dcfe570}{R\+I\+P\+E\+M\+D160\+\_\+\+C\+TX}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ripemd_8h_ac4a6f778bd3e6acdacbf0878b72ed519}{R\+I\+P\+E\+M\+D160\+\_\+\+Init} (\hyperlink{ripemd_8h_a57548127d8e218e8f130c6286dcfe570}{R\+I\+P\+E\+M\+D160\+\_\+\+C\+TX} $\ast$c)
+\item 
+int \hyperlink{ripemd_8h_a4c7dba69266269a36a730d2ad64ba1bc}{R\+I\+P\+E\+M\+D160\+\_\+\+Update} (\hyperlink{ripemd_8h_a57548127d8e218e8f130c6286dcfe570}{R\+I\+P\+E\+M\+D160\+\_\+\+C\+TX} $\ast$c, const void $\ast$data, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+int \hyperlink{ripemd_8h_a747b7ab6accfe1b04b72b39af1c05cdd}{R\+I\+P\+E\+M\+D160\+\_\+\+Final} (unsigned char $\ast$md, \hyperlink{ripemd_8h_a57548127d8e218e8f130c6286dcfe570}{R\+I\+P\+E\+M\+D160\+\_\+\+C\+TX} $\ast$c)
+\item 
+unsigned char $\ast$ \hyperlink{ripemd_8h_aa1c0de41209776ddbf86efa98f0bed3c}{R\+I\+P\+E\+M\+D160} (const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md)
+\item 
+void \hyperlink{ripemd_8h_a2e73f59cfe370e20a43eb6e1b9a26023}{R\+I\+P\+E\+M\+D160\+\_\+\+Transform} (\hyperlink{ripemd_8h_a57548127d8e218e8f130c6286dcfe570}{R\+I\+P\+E\+M\+D160\+\_\+\+C\+TX} $\ast$c, const unsigned char $\ast$b)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{ripemd.\+h@{ripemd.\+h}!R\+I\+P\+E\+M\+D160\+\_\+\+C\+B\+L\+O\+CK@{R\+I\+P\+E\+M\+D160\+\_\+\+C\+B\+L\+O\+CK}}
+\index{R\+I\+P\+E\+M\+D160\+\_\+\+C\+B\+L\+O\+CK@{R\+I\+P\+E\+M\+D160\+\_\+\+C\+B\+L\+O\+CK}!ripemd.\+h@{ripemd.\+h}}
+\subsubsection[{\texorpdfstring{R\+I\+P\+E\+M\+D160\+\_\+\+C\+B\+L\+O\+CK}{RIPEMD160_CBLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+I\+P\+E\+M\+D160\+\_\+\+C\+B\+L\+O\+CK~64}\hypertarget{ripemd_8h_a48b541ae41583693729fc47f584d756f}{}\label{ripemd_8h_a48b541ae41583693729fc47f584d756f}
+\index{ripemd.\+h@{ripemd.\+h}!R\+I\+P\+E\+M\+D160\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{R\+I\+P\+E\+M\+D160\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}}
+\index{R\+I\+P\+E\+M\+D160\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{R\+I\+P\+E\+M\+D160\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}!ripemd.\+h@{ripemd.\+h}}
+\subsubsection[{\texorpdfstring{R\+I\+P\+E\+M\+D160\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}{RIPEMD160_DIGEST_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+I\+P\+E\+M\+D160\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH~20}\hypertarget{ripemd_8h_a06a5447a09a212a99e8001aaf2ca3e71}{}\label{ripemd_8h_a06a5447a09a212a99e8001aaf2ca3e71}
+\index{ripemd.\+h@{ripemd.\+h}!R\+I\+P\+E\+M\+D160\+\_\+\+L\+B\+L\+O\+CK@{R\+I\+P\+E\+M\+D160\+\_\+\+L\+B\+L\+O\+CK}}
+\index{R\+I\+P\+E\+M\+D160\+\_\+\+L\+B\+L\+O\+CK@{R\+I\+P\+E\+M\+D160\+\_\+\+L\+B\+L\+O\+CK}!ripemd.\+h@{ripemd.\+h}}
+\subsubsection[{\texorpdfstring{R\+I\+P\+E\+M\+D160\+\_\+\+L\+B\+L\+O\+CK}{RIPEMD160_LBLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+I\+P\+E\+M\+D160\+\_\+\+L\+B\+L\+O\+CK~({\bf R\+I\+P\+E\+M\+D160\+\_\+\+C\+B\+L\+O\+CK}/4)}\hypertarget{ripemd_8h_a2a4ee496dfe1ef71297132c92c10f71c}{}\label{ripemd_8h_a2a4ee496dfe1ef71297132c92c10f71c}
+\index{ripemd.\+h@{ripemd.\+h}!R\+I\+P\+E\+M\+D160\+\_\+\+L\+O\+NG@{R\+I\+P\+E\+M\+D160\+\_\+\+L\+O\+NG}}
+\index{R\+I\+P\+E\+M\+D160\+\_\+\+L\+O\+NG@{R\+I\+P\+E\+M\+D160\+\_\+\+L\+O\+NG}!ripemd.\+h@{ripemd.\+h}}
+\subsubsection[{\texorpdfstring{R\+I\+P\+E\+M\+D160\+\_\+\+L\+O\+NG}{RIPEMD160_LONG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+I\+P\+E\+M\+D160\+\_\+\+L\+O\+NG~unsigned int}\hypertarget{ripemd_8h_ad140fdb90a6a782fd82cfbe1a973dc3e}{}\label{ripemd_8h_ad140fdb90a6a782fd82cfbe1a973dc3e}
+
+
+\subsection{Typedef Documentation}
+\index{ripemd.\+h@{ripemd.\+h}!R\+I\+P\+E\+M\+D160\+\_\+\+C\+TX@{R\+I\+P\+E\+M\+D160\+\_\+\+C\+TX}}
+\index{R\+I\+P\+E\+M\+D160\+\_\+\+C\+TX@{R\+I\+P\+E\+M\+D160\+\_\+\+C\+TX}!ripemd.\+h@{ripemd.\+h}}
+\subsubsection[{\texorpdfstring{R\+I\+P\+E\+M\+D160\+\_\+\+C\+TX}{RIPEMD160_CTX}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf R\+I\+P\+E\+M\+D160state\+\_\+st}  {\bf R\+I\+P\+E\+M\+D160\+\_\+\+C\+TX}}\hypertarget{ripemd_8h_a57548127d8e218e8f130c6286dcfe570}{}\label{ripemd_8h_a57548127d8e218e8f130c6286dcfe570}
+
+
+\subsection{Function Documentation}
+\index{ripemd.\+h@{ripemd.\+h}!R\+I\+P\+E\+M\+D160@{R\+I\+P\+E\+M\+D160}}
+\index{R\+I\+P\+E\+M\+D160@{R\+I\+P\+E\+M\+D160}!ripemd.\+h@{ripemd.\+h}}
+\subsubsection[{\texorpdfstring{R\+I\+P\+E\+M\+D160(const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md)}{RIPEMD160(const unsigned char *d, size_t n, unsigned char *md)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ R\+I\+P\+E\+M\+D160 (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{d, }
+\item[{size\+\_\+t}]{n, }
+\item[{unsigned char $\ast$}]{md}
+\end{DoxyParamCaption}
+)}\hypertarget{ripemd_8h_aa1c0de41209776ddbf86efa98f0bed3c}{}\label{ripemd_8h_aa1c0de41209776ddbf86efa98f0bed3c}
+\index{ripemd.\+h@{ripemd.\+h}!R\+I\+P\+E\+M\+D160\+\_\+\+Final@{R\+I\+P\+E\+M\+D160\+\_\+\+Final}}
+\index{R\+I\+P\+E\+M\+D160\+\_\+\+Final@{R\+I\+P\+E\+M\+D160\+\_\+\+Final}!ripemd.\+h@{ripemd.\+h}}
+\subsubsection[{\texorpdfstring{R\+I\+P\+E\+M\+D160\+\_\+\+Final(unsigned char $\ast$md, R\+I\+P\+E\+M\+D160\+\_\+\+C\+T\+X $\ast$c)}{RIPEMD160_Final(unsigned char *md, RIPEMD160_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int R\+I\+P\+E\+M\+D160\+\_\+\+Final (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{md, }
+\item[{{\bf R\+I\+P\+E\+M\+D160\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{ripemd_8h_a747b7ab6accfe1b04b72b39af1c05cdd}{}\label{ripemd_8h_a747b7ab6accfe1b04b72b39af1c05cdd}
+\index{ripemd.\+h@{ripemd.\+h}!R\+I\+P\+E\+M\+D160\+\_\+\+Init@{R\+I\+P\+E\+M\+D160\+\_\+\+Init}}
+\index{R\+I\+P\+E\+M\+D160\+\_\+\+Init@{R\+I\+P\+E\+M\+D160\+\_\+\+Init}!ripemd.\+h@{ripemd.\+h}}
+\subsubsection[{\texorpdfstring{R\+I\+P\+E\+M\+D160\+\_\+\+Init(\+R\+I\+P\+E\+M\+D160\+\_\+\+C\+T\+X $\ast$c)}{RIPEMD160_Init(RIPEMD160_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int R\+I\+P\+E\+M\+D160\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+I\+P\+E\+M\+D160\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{ripemd_8h_ac4a6f778bd3e6acdacbf0878b72ed519}{}\label{ripemd_8h_ac4a6f778bd3e6acdacbf0878b72ed519}
+\index{ripemd.\+h@{ripemd.\+h}!R\+I\+P\+E\+M\+D160\+\_\+\+Transform@{R\+I\+P\+E\+M\+D160\+\_\+\+Transform}}
+\index{R\+I\+P\+E\+M\+D160\+\_\+\+Transform@{R\+I\+P\+E\+M\+D160\+\_\+\+Transform}!ripemd.\+h@{ripemd.\+h}}
+\subsubsection[{\texorpdfstring{R\+I\+P\+E\+M\+D160\+\_\+\+Transform(\+R\+I\+P\+E\+M\+D160\+\_\+\+C\+T\+X $\ast$c, const unsigned char $\ast$b)}{RIPEMD160_Transform(RIPEMD160_CTX *c, const unsigned char *b)}}]{\setlength{\rightskip}{0pt plus 5cm}void R\+I\+P\+E\+M\+D160\+\_\+\+Transform (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+I\+P\+E\+M\+D160\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const unsigned char $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{ripemd_8h_a2e73f59cfe370e20a43eb6e1b9a26023}{}\label{ripemd_8h_a2e73f59cfe370e20a43eb6e1b9a26023}
+\index{ripemd.\+h@{ripemd.\+h}!R\+I\+P\+E\+M\+D160\+\_\+\+Update@{R\+I\+P\+E\+M\+D160\+\_\+\+Update}}
+\index{R\+I\+P\+E\+M\+D160\+\_\+\+Update@{R\+I\+P\+E\+M\+D160\+\_\+\+Update}!ripemd.\+h@{ripemd.\+h}}
+\subsubsection[{\texorpdfstring{R\+I\+P\+E\+M\+D160\+\_\+\+Update(\+R\+I\+P\+E\+M\+D160\+\_\+\+C\+T\+X $\ast$c, const void $\ast$data, size\+\_\+t len)}{RIPEMD160_Update(RIPEMD160_CTX *c, const void *data, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}int R\+I\+P\+E\+M\+D160\+\_\+\+Update (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+I\+P\+E\+M\+D160\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const void $\ast$}]{data, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{ripemd_8h_a4c7dba69266269a36a730d2ad64ba1bc}{}\label{ripemd_8h_a4c7dba69266269a36a730d2ad64ba1bc}

@@ -1,0 +1,11 @@
+<map id="_increaseClientCount" name="_increaseClientCount">
+<area shape="rect" id="node2" href="$ext_api_8c.html#ae2b8a79c5d58b7be6a7d868b1b9dcdfd" title="_softLock" alt="" coords="444,8,523,34"/>
+<area shape="rect" id="node5" href="$ext_api_platform_8c.html#ab2500e647bdc61a4ba72128b8a203fce" title="extApi_createGlobalMutex" alt="" coords="203,33,378,60"/>
+<area shape="rect" id="node6" href="$ext_api_8c.html#a607fea8cdbe94e5aea1f5772b5f4be52" title="_softUnlock" alt="" coords="245,84,337,110"/>
+<area shape="rect" id="node7" href="$ext_api_platform_8c.html#a23347bce7228948603cec19fee5e6c01" title="extApi_globalSimpleLock" alt="" coords="207,134,375,161"/>
+<area shape="rect" id="node9" href="$ext_api_platform_8c.html#ae7a9eb43dfd059cda96e5259555e3b1a" title="extApi_globalSimpleUnlock" alt="" coords="200,185,381,212"/>
+<area shape="rect" id="node3" href="$ext_api_platform_8c.html#a385771ea61682609251bc86beb69449f" title="extApi_switchThread" alt="" coords="585,46,729,73"/>
+<area shape="rect" id="node4" href="$ext_api_platform_8c.html#ab48366fe799ea73fc2650c65f463c7d3" title="extApi_sleepMs" alt="" coords="777,46,892,73"/>
+<area shape="rect" id="node8" href="$ext_api_platform_8c.html#af55c00f32f997391a5ac17db423df304" title="_simpleLock" alt="" coords="436,84,531,110"/>
+<area shape="rect" id="node10" href="$ext_api_platform_8c.html#a9930a20c9af1b0df18f220200ed8ac54" title="_simpleUnlock" alt="" coords="429,185,537,212"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Message::SerializeWithCachedSizes" name="Message::SerializeWithCachedSizes">
+<area shape="rect" id="node2" href="$class_message.html#a280acf280b0ebac63aa444c2db9431ea" title="Message::type" alt="" coords="301,5,409,32"/>
+<area shape="rect" id="node3" href="$class_message.html#a6687127e183b5c855012ff5a7137557a" title="Message::has_ping" alt="" coords="288,56,423,83"/>
+<area shape="rect" id="node4" href="$class_message.html#a828967ea849f5536979f42d8bfb1db81" title="Message::has_shutdown" alt="" coords="272,107,439,133"/>
+<area shape="rect" id="node5" href="$class_message.html#ab599ad42dc51bb64f4a1f54ab687052f" title="Message::has_advertisement" alt="" coords="259,157,452,184"/>
+<area shape="rect" id="node6" href="$class_message.html#ae2dc15c9e2b35d4659117baea58f7ad6" title="Message::has_hello" alt="" coords="286,208,425,235"/>
+</map>

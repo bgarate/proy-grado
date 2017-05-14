@@ -1,0 +1,12 @@
+<map id="_removeCommandReply_intint" name="_removeCommandReply_intint">
+<area shape="rect" id="node2" href="$ext_api_platform_8c.html#ad8acf16580444bfcd40c07e5fb342f85" title="extApi_lockResources" alt="" coords="231,56,384,83"/>
+<area shape="rect" id="node7" href="$ext_api_8c.html#ad33b42791692b0eeeec0a2c67502ce28" title="_getCommandPointer_ii" alt="" coords="227,157,388,184"/>
+<area shape="rect" id="node8" href="$ext_api_platform_8c.html#a31eede90e2a9d23574e09a92ec626d9b" title="extApi_endianConversionInt" alt="" coords="443,107,628,133"/>
+<area shape="rect" id="node10" href="$ext_api_8c.html#adaa820baed86efb2af6912461dd0759f" title="_removeChunkFromBuffer" alt="" coords="220,208,395,235"/>
+<area shape="rect" id="node11" href="$ext_api_platform_8c.html#a858ff89e6f07ac05bf4a9ab9828cca8e" title="extApi_unlockResources" alt="" coords="224,5,391,32"/>
+<area shape="rect" id="node3" href="$ext_api_platform_8c.html#af55c00f32f997391a5ac17db423df304" title="_simpleLock" alt="" coords="488,5,583,32"/>
+<area shape="rect" id="node6" href="$ext_api_platform_8c.html#a9930a20c9af1b0df18f220200ed8ac54" title="_simpleUnlock" alt="" coords="481,56,589,83"/>
+<area shape="rect" id="node4" href="$ext_api_platform_8c.html#a385771ea61682609251bc86beb69449f" title="extApi_switchThread" alt="" coords="676,5,820,32"/>
+<area shape="rect" id="node5" href="$ext_api_platform_8c.html#ab48366fe799ea73fc2650c65f463c7d3" title="extApi_sleepMs" alt="" coords="868,5,983,32"/>
+<area shape="rect" id="node9" href="$ext_api_platform_8c.html#ac7c8697b4686622ef5d969c9a3d7ff87" title="extApi_getIntFromPtr" alt="" coords="462,157,609,184"/>
+</map>

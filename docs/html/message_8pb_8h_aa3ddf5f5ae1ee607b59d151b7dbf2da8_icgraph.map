@@ -1,0 +1,8 @@
+<map id="Message_Type_descriptor" name="Message_Type_descriptor">
+<area shape="rect" id="node2" href="$message_8pb_8h.html#a7ca6024fd860c7731f92b69c438efbab" title="Message_Type_Name" alt="" coords="253,5,406,32"/>
+<area shape="rect" id="node4" href="$message_8pb_8h.html#a4f1e474b7ec5caa97540d4299f5e3df5" title="Message_Type_Parse" alt="" coords="253,56,405,83"/>
+<area shape="rect" id="node6" href="$class_message.html#afe208248065ee12c0bbffe71b54ed9ee" title="Message::Type_descriptor" alt="" coords="241,107,417,133"/>
+<area shape="rect" id="node7" href="$namespacegoogle_1_1protobuf.html#a68ff7e8c0cac9aa455585f1a91e7aece" title="google::protobuf::GetEnum\lDescriptor\&lt; ::Message_Type \&gt;" alt="" coords="228,158,431,199"/>
+<area shape="rect" id="node3" href="$class_message.html#acf7fb4b05f015126dcf9f534e7281712" title="Message::Type_Name" alt="" coords="479,5,633,32"/>
+<area shape="rect" id="node5" href="$class_message.html#af70480ec0754cee5dc6c72144a0f1bb1" title="Message::Type_Parse" alt="" coords="479,56,633,83"/>
+</map>

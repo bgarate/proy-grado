@@ -1,0 +1,110 @@
+\hypertarget{md4_8h}{}\section{src/hal/pb2/include/openssl/md4.h File Reference}
+\label{md4_8h}\index{src/hal/pb2/include/openssl/md4.\+h@{src/hal/pb2/include/openssl/md4.\+h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+Include dependency graph for md4.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{md4_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_m_d4state__st}{M\+D4state\+\_\+st}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{md4_8h_ad1088f1ba76d4b0e1ac5b25152319e89}{M\+D4\+\_\+\+L\+O\+NG}~unsigned int
+\item 
+\#define \hyperlink{md4_8h_a7cf465fa57d5b77b7152e4f57fc847cc}{M\+D4\+\_\+\+C\+B\+L\+O\+CK}~64
+\item 
+\#define \hyperlink{md4_8h_a355848ebbfb1946058a9de73968a62e9}{M\+D4\+\_\+\+L\+B\+L\+O\+CK}~(\hyperlink{md4_8h_a7cf465fa57d5b77b7152e4f57fc847cc}{M\+D4\+\_\+\+C\+B\+L\+O\+CK}/4)
+\item 
+\#define \hyperlink{md4_8h_ac91d9731e3eca871a80f7d2c494d5ee5}{M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}~16
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct_m_d4state__st}{M\+D4state\+\_\+st} \hyperlink{md4_8h_a304a0316e739d70b9d117dcb782bfc13}{M\+D4\+\_\+\+C\+TX}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{md4_8h_a536ab6f48d851513f212eaa955e3c1ae}{M\+D4\+\_\+\+Init} (\hyperlink{md4_8h_a304a0316e739d70b9d117dcb782bfc13}{M\+D4\+\_\+\+C\+TX} $\ast$c)
+\item 
+int \hyperlink{md4_8h_a18f0dec15aebfd7b88284df7324b8396}{M\+D4\+\_\+\+Update} (\hyperlink{md4_8h_a304a0316e739d70b9d117dcb782bfc13}{M\+D4\+\_\+\+C\+TX} $\ast$c, const void $\ast$data, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+int \hyperlink{md4_8h_aa9a472b51da0ebc0c06a225523674414}{M\+D4\+\_\+\+Final} (unsigned char $\ast$md, \hyperlink{md4_8h_a304a0316e739d70b9d117dcb782bfc13}{M\+D4\+\_\+\+C\+TX} $\ast$c)
+\item 
+unsigned char $\ast$ \hyperlink{md4_8h_a3128eeb5039fe9865910fcc3350c6f87}{M\+D4} (const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md)
+\item 
+void \hyperlink{md4_8h_af7527184b6fba94f711c2935bc638524}{M\+D4\+\_\+\+Transform} (\hyperlink{md4_8h_a304a0316e739d70b9d117dcb782bfc13}{M\+D4\+\_\+\+C\+TX} $\ast$c, const unsigned char $\ast$b)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{md4.\+h@{md4.\+h}!M\+D4\+\_\+\+C\+B\+L\+O\+CK@{M\+D4\+\_\+\+C\+B\+L\+O\+CK}}
+\index{M\+D4\+\_\+\+C\+B\+L\+O\+CK@{M\+D4\+\_\+\+C\+B\+L\+O\+CK}!md4.\+h@{md4.\+h}}
+\subsubsection[{\texorpdfstring{M\+D4\+\_\+\+C\+B\+L\+O\+CK}{MD4_CBLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+D4\+\_\+\+C\+B\+L\+O\+CK~64}\hypertarget{md4_8h_a7cf465fa57d5b77b7152e4f57fc847cc}{}\label{md4_8h_a7cf465fa57d5b77b7152e4f57fc847cc}
+\index{md4.\+h@{md4.\+h}!M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}}
+\index{M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}!md4.\+h@{md4.\+h}}
+\subsubsection[{\texorpdfstring{M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}{MD4_DIGEST_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+D4\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH~16}\hypertarget{md4_8h_ac91d9731e3eca871a80f7d2c494d5ee5}{}\label{md4_8h_ac91d9731e3eca871a80f7d2c494d5ee5}
+\index{md4.\+h@{md4.\+h}!M\+D4\+\_\+\+L\+B\+L\+O\+CK@{M\+D4\+\_\+\+L\+B\+L\+O\+CK}}
+\index{M\+D4\+\_\+\+L\+B\+L\+O\+CK@{M\+D4\+\_\+\+L\+B\+L\+O\+CK}!md4.\+h@{md4.\+h}}
+\subsubsection[{\texorpdfstring{M\+D4\+\_\+\+L\+B\+L\+O\+CK}{MD4_LBLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+D4\+\_\+\+L\+B\+L\+O\+CK~({\bf M\+D4\+\_\+\+C\+B\+L\+O\+CK}/4)}\hypertarget{md4_8h_a355848ebbfb1946058a9de73968a62e9}{}\label{md4_8h_a355848ebbfb1946058a9de73968a62e9}
+\index{md4.\+h@{md4.\+h}!M\+D4\+\_\+\+L\+O\+NG@{M\+D4\+\_\+\+L\+O\+NG}}
+\index{M\+D4\+\_\+\+L\+O\+NG@{M\+D4\+\_\+\+L\+O\+NG}!md4.\+h@{md4.\+h}}
+\subsubsection[{\texorpdfstring{M\+D4\+\_\+\+L\+O\+NG}{MD4_LONG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+D4\+\_\+\+L\+O\+NG~unsigned int}\hypertarget{md4_8h_ad1088f1ba76d4b0e1ac5b25152319e89}{}\label{md4_8h_ad1088f1ba76d4b0e1ac5b25152319e89}
+
+
+\subsection{Typedef Documentation}
+\index{md4.\+h@{md4.\+h}!M\+D4\+\_\+\+C\+TX@{M\+D4\+\_\+\+C\+TX}}
+\index{M\+D4\+\_\+\+C\+TX@{M\+D4\+\_\+\+C\+TX}!md4.\+h@{md4.\+h}}
+\subsubsection[{\texorpdfstring{M\+D4\+\_\+\+C\+TX}{MD4_CTX}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf M\+D4state\+\_\+st}  {\bf M\+D4\+\_\+\+C\+TX}}\hypertarget{md4_8h_a304a0316e739d70b9d117dcb782bfc13}{}\label{md4_8h_a304a0316e739d70b9d117dcb782bfc13}
+
+
+\subsection{Function Documentation}
+\index{md4.\+h@{md4.\+h}!M\+D4@{M\+D4}}
+\index{M\+D4@{M\+D4}!md4.\+h@{md4.\+h}}
+\subsubsection[{\texorpdfstring{M\+D4(const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md)}{MD4(const unsigned char *d, size_t n, unsigned char *md)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ M\+D4 (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{d, }
+\item[{size\+\_\+t}]{n, }
+\item[{unsigned char $\ast$}]{md}
+\end{DoxyParamCaption}
+)}\hypertarget{md4_8h_a3128eeb5039fe9865910fcc3350c6f87}{}\label{md4_8h_a3128eeb5039fe9865910fcc3350c6f87}
+\index{md4.\+h@{md4.\+h}!M\+D4\+\_\+\+Final@{M\+D4\+\_\+\+Final}}
+\index{M\+D4\+\_\+\+Final@{M\+D4\+\_\+\+Final}!md4.\+h@{md4.\+h}}
+\subsubsection[{\texorpdfstring{M\+D4\+\_\+\+Final(unsigned char $\ast$md, M\+D4\+\_\+\+C\+T\+X $\ast$c)}{MD4_Final(unsigned char *md, MD4_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int M\+D4\+\_\+\+Final (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{md, }
+\item[{{\bf M\+D4\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{md4_8h_aa9a472b51da0ebc0c06a225523674414}{}\label{md4_8h_aa9a472b51da0ebc0c06a225523674414}
+\index{md4.\+h@{md4.\+h}!M\+D4\+\_\+\+Init@{M\+D4\+\_\+\+Init}}
+\index{M\+D4\+\_\+\+Init@{M\+D4\+\_\+\+Init}!md4.\+h@{md4.\+h}}
+\subsubsection[{\texorpdfstring{M\+D4\+\_\+\+Init(\+M\+D4\+\_\+\+C\+T\+X $\ast$c)}{MD4_Init(MD4_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int M\+D4\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+D4\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{md4_8h_a536ab6f48d851513f212eaa955e3c1ae}{}\label{md4_8h_a536ab6f48d851513f212eaa955e3c1ae}
+\index{md4.\+h@{md4.\+h}!M\+D4\+\_\+\+Transform@{M\+D4\+\_\+\+Transform}}
+\index{M\+D4\+\_\+\+Transform@{M\+D4\+\_\+\+Transform}!md4.\+h@{md4.\+h}}
+\subsubsection[{\texorpdfstring{M\+D4\+\_\+\+Transform(\+M\+D4\+\_\+\+C\+T\+X $\ast$c, const unsigned char $\ast$b)}{MD4_Transform(MD4_CTX *c, const unsigned char *b)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+D4\+\_\+\+Transform (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+D4\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const unsigned char $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{md4_8h_af7527184b6fba94f711c2935bc638524}{}\label{md4_8h_af7527184b6fba94f711c2935bc638524}
+\index{md4.\+h@{md4.\+h}!M\+D4\+\_\+\+Update@{M\+D4\+\_\+\+Update}}
+\index{M\+D4\+\_\+\+Update@{M\+D4\+\_\+\+Update}!md4.\+h@{md4.\+h}}
+\subsubsection[{\texorpdfstring{M\+D4\+\_\+\+Update(\+M\+D4\+\_\+\+C\+T\+X $\ast$c, const void $\ast$data, size\+\_\+t len)}{MD4_Update(MD4_CTX *c, const void *data, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}int M\+D4\+\_\+\+Update (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+D4\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const void $\ast$}]{data, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{md4_8h_a18f0dec15aebfd7b88284df7324b8396}{}\label{md4_8h_a18f0dec15aebfd7b88284df7324b8396}

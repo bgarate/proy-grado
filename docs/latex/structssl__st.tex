@@ -1,0 +1,503 @@
+\hypertarget{structssl__st}{}\section{ssl\+\_\+st Struct Reference}
+\label{structssl__st}\index{ssl\+\_\+st@{ssl\+\_\+st}}
+
+
+{\ttfamily \#include $<$ssl.\+h$>$}
+
+
+
+Collaboration diagram for ssl\+\_\+st\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structssl__st__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structssl__st_a5ae7275d4f26447455746397ac00232c}{S\+T\+A\+C\+K\+\_\+\+OF} (\hyperlink{ssl_8h_a548d7a5d565a9e0e9bd45c49f8c95701}{S\+S\+L\+\_\+\+C\+I\+P\+H\+ER})$\ast$cipher\+\_\+list
+\item 
+\hyperlink{structssl__st_ae926fcbe52e4174a9e5ef8fb88282e45}{S\+T\+A\+C\+K\+\_\+\+OF} (\hyperlink{ssl_8h_a548d7a5d565a9e0e9bd45c49f8c95701}{S\+S\+L\+\_\+\+C\+I\+P\+H\+ER})$\ast$cipher\+\_\+list\+\_\+by\+\_\+id
+\item 
+\hyperlink{structssl__st_a3e6334502ba71000f571d6ddb26b76c5}{S\+T\+A\+C\+K\+\_\+\+OF} (\hyperlink{ossl__typ_8h_a5c5fc036757e87b9bd163d0221696533}{X509\+\_\+\+N\+A\+ME})$\ast$client\+\_\+\+CA
+\item 
+\hyperlink{structssl__st_acc0a36a4a42e6846ece423336c62ffce}{S\+T\+A\+C\+K\+\_\+\+OF} (\hyperlink{ossl__typ_8h_a88517618d0bd55dce0e63508cabfc37d}{O\+C\+S\+P\+\_\+\+R\+E\+S\+P\+ID})$\ast$tlsext\+\_\+ocsp\+\_\+ids
+\item 
+\hyperlink{structssl__st_aae6ff6d8a9ae850b7ea3f90fad7b0e5e}{S\+T\+A\+C\+K\+\_\+\+OF} (\hyperlink{ssl_8h_ad71374b5a3df5292d0722b703841292e}{S\+R\+T\+P\+\_\+\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+F\+I\+LE})$\ast$srtp\+\_\+profiles
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structssl__st_a104b2a57e68e7e8c228c34d9ffb0e3dd}{version}
+\item 
+int \hyperlink{structssl__st_a5d2a229f22c169bd5eecefd9f017e089}{type}
+\item 
+const \hyperlink{ssl_8h_a74d54b9a714accac31c73bfb55973e81}{S\+S\+L\+\_\+\+M\+E\+T\+H\+OD} $\ast$ \hyperlink{structssl__st_a10dff58d99726fe56b47ec037c54802e}{method}
+\item 
+\hyperlink{bio_8h_af3fabae1c9af50b9312cdff41e11d1dd}{B\+IO} $\ast$ \hyperlink{structssl__st_abd180ca9a0f2fb959b07600dcca58118}{rbio}
+\item 
+\hyperlink{bio_8h_af3fabae1c9af50b9312cdff41e11d1dd}{B\+IO} $\ast$ \hyperlink{structssl__st_a81a174cdc5f516202537ff6fef6680ed}{wbio}
+\item 
+\hyperlink{bio_8h_af3fabae1c9af50b9312cdff41e11d1dd}{B\+IO} $\ast$ \hyperlink{structssl__st_ab0e7dbfa9d11fab6879da0ad8625b65b}{bbio}
+\item 
+int \hyperlink{structssl__st_a10e8e706cff52214bc873c05786a80ce}{rwstate}
+\item 
+int \hyperlink{structssl__st_afc46f99873655d3532930b3f0abb3f98}{in\+\_\+handshake}
+\item 
+int($\ast$ \hyperlink{structssl__st_affcb724b5991a587b79a2f91ac7a5a7c}{handshake\+\_\+func} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$)
+\item 
+int \hyperlink{structssl__st_a022f1e4cf3a0a68ffc4f4d80d4de8d6b}{server}
+\item 
+int \hyperlink{structssl__st_a5e265a8751b5a1641b71efda933a6b61}{new\+\_\+session}
+\item 
+int \hyperlink{structssl__st_a3e921ca488cd9eec6ad4065ef627395a}{quiet\+\_\+shutdown}
+\item 
+int \hyperlink{structssl__st_a12a82cfd124852a54354a46012bdd502}{shutdown}
+\item 
+int \hyperlink{structssl__st_acf88d642e936bdeb73777730b63f70f6}{state}
+\item 
+int \hyperlink{structssl__st_a30d0255e120ff83b3c35ab05cd3dae64}{rstate}
+\item 
+\hyperlink{ossl__typ_8h_aaea4d745bf2689d2009791186616bb3c}{B\+U\+F\+\_\+\+M\+EM} $\ast$ \hyperlink{structssl__st_ae79d4878386098526f000f857b38854f}{init\+\_\+buf}
+\item 
+void $\ast$ \hyperlink{structssl__st_a0d932f5ec1630a3cbd511548c3556a45}{init\+\_\+msg}
+\item 
+int \hyperlink{structssl__st_a5bdef1be2cab43e264edd98f162f7fff}{init\+\_\+num}
+\item 
+int \hyperlink{structssl__st_a828422d492ba318c1985327ca8a6f219}{init\+\_\+off}
+\item 
+unsigned char $\ast$ \hyperlink{structssl__st_a5b43e468488be2327eac1c4396b568bc}{packet}
+\item 
+unsigned int \hyperlink{structssl__st_ae52697ae4cfec851e2b0d2c5ccaa1df7}{packet\+\_\+length}
+\item 
+struct \hyperlink{structssl3__state__st}{ssl3\+\_\+state\+\_\+st} $\ast$ \hyperlink{structssl__st_a2e2d2f47c0ac86c4329cc8035b3e4688}{s3}
+\item 
+struct \hyperlink{structdtls1__state__st}{dtls1\+\_\+state\+\_\+st} $\ast$ \hyperlink{structssl__st_afd70ab79ea0917b56fa74a8cb04ddaca}{d1}
+\item 
+int \hyperlink{structssl__st_a6be4ea32cec16e0cfb2034f1d8fc3f37}{read\+\_\+ahead}
+\item 
+void($\ast$ \hyperlink{structssl__st_a0b5f95998bc3a4a4193adeca3b7b289a}{msg\+\_\+callback} )(int write\+\_\+p, int \hyperlink{structssl__st_a104b2a57e68e7e8c228c34d9ffb0e3dd}{version}, int content\+\_\+type, const void $\ast$buf, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, \hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$ssl, void $\ast$arg)
+\item 
+void $\ast$ \hyperlink{structssl__st_a265c0d1adbd1e76b1b326a1f82b0cfcf}{msg\+\_\+callback\+\_\+arg}
+\item 
+int \hyperlink{structssl__st_a20d2f2c7a00b1fd70c28c81c2d6f34c2}{hit}
+\item 
+\hyperlink{x509__vfy_8h_a9b8209a7a29bafa279e1b5bc5f81cb23}{X509\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+P\+A\+R\+AM} $\ast$ \hyperlink{structssl__st_a384d0d3915209d3d4c8144146bab78aa}{param}
+\item 
+int \hyperlink{structssl__st_a501b23b52ff9106b5cba654187324d95}{mac\+\_\+flags}
+\item 
+\hyperlink{ssl_8h_abe973b3da5b2abbf35e7db39ac109eeb}{S\+S\+L\+\_\+\+A\+E\+A\+D\+\_\+\+C\+TX} $\ast$ \hyperlink{structssl__st_a77fcdce69b8829739b8beaff484f6610}{aead\+\_\+read\+\_\+ctx}
+\item 
+\hyperlink{ossl__typ_8h_aab2bd6a044e1d31ebc2fe82b3b0b3d9a}{E\+V\+P\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+C\+TX} $\ast$ \hyperlink{structssl__st_ae2efb2324ed8b45b65cc2a3aa5ac1a4d}{enc\+\_\+read\+\_\+ctx}
+\item 
+\hyperlink{ossl__typ_8h_a69cda4d21bd068f01c469222c1dd92fe}{E\+V\+P\+\_\+\+M\+D\+\_\+\+C\+TX} $\ast$ \hyperlink{structssl__st_af550f07608665dad2b09a83c42ce494c}{read\+\_\+hash}
+\item 
+\hyperlink{ssl_8h_abe973b3da5b2abbf35e7db39ac109eeb}{S\+S\+L\+\_\+\+A\+E\+A\+D\+\_\+\+C\+TX} $\ast$ \hyperlink{structssl__st_ae080a53247c9d2a2318f39190d466063}{aead\+\_\+write\+\_\+ctx}
+\item 
+\hyperlink{ossl__typ_8h_aab2bd6a044e1d31ebc2fe82b3b0b3d9a}{E\+V\+P\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+C\+TX} $\ast$ \hyperlink{structssl__st_a44444bb7794521afc2b9e52cd0c2570c}{enc\+\_\+write\+\_\+ctx}
+\item 
+\hyperlink{ossl__typ_8h_a69cda4d21bd068f01c469222c1dd92fe}{E\+V\+P\+\_\+\+M\+D\+\_\+\+C\+TX} $\ast$ \hyperlink{structssl__st_a491e1c0b9386b4003bb443af4a2d06d4}{write\+\_\+hash}
+\item 
+struct cert\+\_\+st $\ast$ \hyperlink{structssl__st_a335d212e807952601a0eabf4dfd978eb}{cert}
+\item 
+unsigned int \hyperlink{structssl__st_a7b63f375f11b5232a5dff69e26f6a438}{sid\+\_\+ctx\+\_\+length}
+\item 
+unsigned char \hyperlink{structssl__st_a486ddbf462473285440234c69568b9ce}{sid\+\_\+ctx} \mbox{[}\hyperlink{ssl_8h_a5cef804495c6414283f4f29d4cea0dd0}{S\+S\+L\+\_\+\+M\+A\+X\+\_\+\+S\+I\+D\+\_\+\+C\+T\+X\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}
+\item 
+\hyperlink{ssl_8h_a8dd6b81bbcb1b2d769235c37779d2a94}{S\+S\+L\+\_\+\+S\+E\+S\+S\+I\+ON} $\ast$ \hyperlink{structssl__st_ae6d956c10b03dd3f4d0a3a132466eb47}{session}
+\item 
+\hyperlink{ssl_8h_a65a9d48d5b4f31797d3ce43e3ac7a8a1}{G\+E\+N\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+CB} \hyperlink{structssl__st_aa315242df1667bfb185bfcaa5b7ca86f}{generate\+\_\+session\+\_\+id}
+\item 
+int \hyperlink{structssl__st_a7592fd603fe469b789f13bdbc55a172e}{verify\+\_\+mode}
+\item 
+int($\ast$ \hyperlink{structssl__st_a5891d1f44fd1385ae1c1c4e866450133}{verify\+\_\+callback} )(int ok, \hyperlink{ossl__typ_8h_ae681945a2cf88d6337137dc0260a1545}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX} $\ast$\hyperlink{structssl__st_a5a3ac76eff749d5d3c9ecf6b1a230497}{ctx})
+\item 
+void($\ast$ \hyperlink{structssl__st_aaf32f29b307cfa33c4a19a7cf11bc36f}{info\+\_\+callback} )(const \hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$ssl, int \hyperlink{structssl__st_a5d2a229f22c169bd5eecefd9f017e089}{type}, int val)
+\item 
+int \hyperlink{structssl__st_aca7ac14e5548bdd96990fa1d12aaef02}{error}
+\item 
+int \hyperlink{structssl__st_a6a6c337340e6b5986ca6a1381838c9ae}{error\+\_\+code}
+\item 
+\hyperlink{ossl__typ_8h_a1a21892c1193ee6eb572c2c72d3924ca}{S\+S\+L\+\_\+\+C\+TX} $\ast$ \hyperlink{structssl__st_a5a3ac76eff749d5d3c9ecf6b1a230497}{ctx}
+\item 
+int \hyperlink{structssl__st_a44db2b5a38c43821c3a852669e48d67f}{debug}
+\item 
+long \hyperlink{structssl__st_a3092706c43455cf6a410853d90aadb1f}{verify\+\_\+result}
+\item 
+\hyperlink{ossl__typ_8h_a7eaff1c18057495d8af18f22d1370b51}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} \hyperlink{structssl__st_ab71808924564517a2cfa30d1d5da910e}{ex\+\_\+data}
+\item 
+int \hyperlink{structssl__st_ac62377797495ce179f0110cb70867ccc}{references}
+\item 
+unsigned long \hyperlink{structssl__st_a82c8bfd123603c23ccca6fb45be6d75f}{options}
+\item 
+unsigned long \hyperlink{structssl__st_a10add2996a9ac029c3a8a4c19587e1b0}{mode}
+\item 
+long \hyperlink{structssl__st_add94a8a6fe24dad252c559253d0eea9a}{max\+\_\+cert\+\_\+list}
+\item 
+int \hyperlink{structssl__st_ad3c31c44e1c20703dc023f4a14fa0d54}{first\+\_\+packet}
+\item 
+int \hyperlink{structssl__st_af898db9604614a95a6830fbb5ce31850}{client\+\_\+version}
+\item 
+unsigned int \hyperlink{structssl__st_a201ff2c24c4a950fc529451563dac099}{max\+\_\+send\+\_\+fragment}
+\item 
+void($\ast$ \hyperlink{structssl__st_af36d613ef84698654b438baf81872ee6}{tlsext\+\_\+debug\+\_\+cb} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s, int client\+\_\+server, int \hyperlink{structssl__st_a5d2a229f22c169bd5eecefd9f017e089}{type}, unsigned char $\ast$data, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, void $\ast$arg)
+\item 
+void $\ast$ \hyperlink{structssl__st_a37c9fa10121176491c8a9e5617f7be83}{tlsext\+\_\+debug\+\_\+arg}
+\item 
+char $\ast$ \hyperlink{structssl__st_a693888a588035f237e93b0bce7af4b84}{tlsext\+\_\+hostname}
+\item 
+int \hyperlink{structssl__st_ac1ac6725cca99bc51b875fbe62ccb504}{servername\+\_\+done}
+\item 
+int \hyperlink{structssl__st_aba46c200c19caf4051d001f5ca0475e3}{tlsext\+\_\+status\+\_\+type}
+\item 
+int \hyperlink{structssl__st_a0a0d75de2cdedb99c07403d56aa9ae8c}{tlsext\+\_\+status\+\_\+expected}
+\item 
+X509\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+NS $\ast$ \hyperlink{structssl__st_a234c465dc9c34dde4ac3cc24a79467a1}{tlsext\+\_\+ocsp\+\_\+exts}
+\item 
+unsigned char $\ast$ \hyperlink{structssl__st_ab54a13d08a8b115b2a7897c9213b1fb7}{tlsext\+\_\+ocsp\+\_\+resp}
+\item 
+int \hyperlink{structssl__st_a4a86cdf17eb779e0d6e467105103eb5f}{tlsext\+\_\+ocsp\+\_\+resplen}
+\item 
+int \hyperlink{structssl__st_ac3163b212ec333ebcfba794e683be1d2}{tlsext\+\_\+ticket\+\_\+expected}
+\item 
+size\+\_\+t \hyperlink{structssl__st_a1661bf580598984c531b321c0a005d37}{tlsext\+\_\+ecpointformatlist\+\_\+length}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{structssl__st_adef7594aae7490bba474778a3cf35dc0}{tlsext\+\_\+ecpointformatlist}
+\item 
+size\+\_\+t \hyperlink{structssl__st_ac0a9a07be2d0e0f83b0844b61e82d06f}{tlsext\+\_\+ellipticcurvelist\+\_\+length}
+\item 
+uint16\+\_\+t $\ast$ \hyperlink{structssl__st_ade22f9d20414c2f8e317ca9c2b75a111}{tlsext\+\_\+ellipticcurvelist}
+\item 
+\hyperlink{ssl_8h_a6f21bcd57af48df2c3043423ec10f7d2}{T\+L\+S\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+T\+I\+C\+K\+E\+T\+\_\+\+E\+XT} $\ast$ \hyperlink{structssl__st_a88b1275f3d5733e3e856fe8c09d18566}{tlsext\+\_\+session\+\_\+ticket}
+\item 
+\hyperlink{ssl_8h_a8682d624fb1a55e1b7b036538f5c988c}{tls\+\_\+session\+\_\+ticket\+\_\+ext\+\_\+cb\+\_\+fn} \hyperlink{structssl__st_adfbd96d1abce945f541c432379fc994f}{tls\+\_\+session\+\_\+ticket\+\_\+ext\+\_\+cb}
+\item 
+void $\ast$ \hyperlink{structssl__st_a45dd63c101fc5b96773ab292285962a4}{tls\+\_\+session\+\_\+ticket\+\_\+ext\+\_\+cb\+\_\+arg}
+\item 
+\hyperlink{ssl_8h_aca102e595fe3f74f0af8a21c4b40cdb5}{tls\+\_\+session\+\_\+secret\+\_\+cb\+\_\+fn} \hyperlink{structssl__st_aff0b13d0e1261db9771d7cf0e64cc5cc}{tls\+\_\+session\+\_\+secret\+\_\+cb}
+\item 
+void $\ast$ \hyperlink{structssl__st_a3e4db63ea16d50062c8b2b062bb648d9}{tls\+\_\+session\+\_\+secret\+\_\+cb\+\_\+arg}
+\item 
+\hyperlink{ossl__typ_8h_a1a21892c1193ee6eb572c2c72d3924ca}{S\+S\+L\+\_\+\+C\+TX} $\ast$ \hyperlink{structssl__st_a704ffea820953b3ca385ce14e6efe570}{initial\+\_\+ctx}
+\item 
+unsigned char $\ast$ \hyperlink{structssl__st_aef796f12c3e90c045baad0cd1841e180}{next\+\_\+proto\+\_\+negotiated}
+\item 
+unsigned char \hyperlink{structssl__st_aa530fc5efd1d6b0f5f881dbd78b6d3de}{next\+\_\+proto\+\_\+negotiated\+\_\+len}
+\item 
+\hyperlink{ssl_8h_ad71374b5a3df5292d0722b703841292e}{S\+R\+T\+P\+\_\+\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+F\+I\+LE} $\ast$ \hyperlink{structssl__st_ae8776b7b0b446fb823d9f87176bcfa1d}{srtp\+\_\+profile}
+\item 
+unsigned int \hyperlink{structssl__st_a8ad372425499d47c2254c89fbcd0deed}{tlsext\+\_\+heartbeat}
+\item 
+unsigned int \hyperlink{structssl__st_a2abf4f35ea6d829b809e2c7c82acdd1f}{tlsext\+\_\+hb\+\_\+pending}
+\item 
+unsigned int \hyperlink{structssl__st_af5db9aefebe8c45e8f063d2033b1bffd}{tlsext\+\_\+hb\+\_\+seq}
+\item 
+unsigned char $\ast$ \hyperlink{structssl__st_ac34e3a88a8c4bd0397190b2a23fdfb3f}{alpn\+\_\+client\+\_\+proto\+\_\+list}
+\item 
+unsigned int \hyperlink{structssl__st_addabb2640bb49fd919f2f82620b8d36a}{alpn\+\_\+client\+\_\+proto\+\_\+list\+\_\+len}
+\item 
+int \hyperlink{structssl__st_a0a493dfdeb51c5c0a73107e0579e9601}{renegotiate}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!S\+T\+A\+C\+K\+\_\+\+OF@{S\+T\+A\+C\+K\+\_\+\+OF}}
+\index{S\+T\+A\+C\+K\+\_\+\+OF@{S\+T\+A\+C\+K\+\_\+\+OF}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{S\+T\+A\+C\+K\+\_\+\+O\+F(\+S\+S\+L\+\_\+\+C\+I\+P\+H\+E\+R)$\ast$cipher\+\_\+list}{STACK_OF(SSL_CIPHER)*cipher_list}}]{\setlength{\rightskip}{0pt plus 5cm}ssl\+\_\+st\+::\+S\+T\+A\+C\+K\+\_\+\+OF (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+S\+L\+\_\+\+C\+I\+P\+H\+ER}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{structssl__st_a5ae7275d4f26447455746397ac00232c}{}\label{structssl__st_a5ae7275d4f26447455746397ac00232c}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!S\+T\+A\+C\+K\+\_\+\+OF@{S\+T\+A\+C\+K\+\_\+\+OF}}
+\index{S\+T\+A\+C\+K\+\_\+\+OF@{S\+T\+A\+C\+K\+\_\+\+OF}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{S\+T\+A\+C\+K\+\_\+\+O\+F(\+S\+S\+L\+\_\+\+C\+I\+P\+H\+E\+R)$\ast$cipher\+\_\+list\+\_\+by\+\_\+id}{STACK_OF(SSL_CIPHER)*cipher_list_by_id}}]{\setlength{\rightskip}{0pt plus 5cm}ssl\+\_\+st\+::\+S\+T\+A\+C\+K\+\_\+\+OF (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+S\+L\+\_\+\+C\+I\+P\+H\+ER}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{structssl__st_ae926fcbe52e4174a9e5ef8fb88282e45}{}\label{structssl__st_ae926fcbe52e4174a9e5ef8fb88282e45}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!S\+T\+A\+C\+K\+\_\+\+OF@{S\+T\+A\+C\+K\+\_\+\+OF}}
+\index{S\+T\+A\+C\+K\+\_\+\+OF@{S\+T\+A\+C\+K\+\_\+\+OF}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{S\+T\+A\+C\+K\+\_\+\+O\+F(\+X509\+\_\+\+N\+A\+M\+E)$\ast$client\+\_\+\+CA}{STACK_OF(X509_NAME)*client_CA}}]{\setlength{\rightskip}{0pt plus 5cm}ssl\+\_\+st\+::\+S\+T\+A\+C\+K\+\_\+\+OF (
+\begin{DoxyParamCaption}
+\item[{{\bf X509\+\_\+\+N\+A\+ME}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{structssl__st_a3e6334502ba71000f571d6ddb26b76c5}{}\label{structssl__st_a3e6334502ba71000f571d6ddb26b76c5}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!S\+T\+A\+C\+K\+\_\+\+OF@{S\+T\+A\+C\+K\+\_\+\+OF}}
+\index{S\+T\+A\+C\+K\+\_\+\+OF@{S\+T\+A\+C\+K\+\_\+\+OF}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{S\+T\+A\+C\+K\+\_\+\+O\+F(\+O\+C\+S\+P\+\_\+\+R\+E\+S\+P\+I\+D)$\ast$tlsext\+\_\+ocsp\+\_\+ids}{STACK_OF(OCSP_RESPID)*tlsext_ocsp_ids}}]{\setlength{\rightskip}{0pt plus 5cm}ssl\+\_\+st\+::\+S\+T\+A\+C\+K\+\_\+\+OF (
+\begin{DoxyParamCaption}
+\item[{{\bf O\+C\+S\+P\+\_\+\+R\+E\+S\+P\+ID}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{structssl__st_acc0a36a4a42e6846ece423336c62ffce}{}\label{structssl__st_acc0a36a4a42e6846ece423336c62ffce}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!S\+T\+A\+C\+K\+\_\+\+OF@{S\+T\+A\+C\+K\+\_\+\+OF}}
+\index{S\+T\+A\+C\+K\+\_\+\+OF@{S\+T\+A\+C\+K\+\_\+\+OF}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{S\+T\+A\+C\+K\+\_\+\+O\+F(\+S\+R\+T\+P\+\_\+\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+F\+I\+L\+E)$\ast$srtp\+\_\+profiles}{STACK_OF(SRTP_PROTECTION_PROFILE)*srtp_profiles}}]{\setlength{\rightskip}{0pt plus 5cm}ssl\+\_\+st\+::\+S\+T\+A\+C\+K\+\_\+\+OF (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+R\+T\+P\+\_\+\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+F\+I\+LE}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{structssl__st_aae6ff6d8a9ae850b7ea3f90fad7b0e5e}{}\label{structssl__st_aae6ff6d8a9ae850b7ea3f90fad7b0e5e}
+
+
+\subsection{Member Data Documentation}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!aead\+\_\+read\+\_\+ctx@{aead\+\_\+read\+\_\+ctx}}
+\index{aead\+\_\+read\+\_\+ctx@{aead\+\_\+read\+\_\+ctx}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{aead\+\_\+read\+\_\+ctx}{aead_read_ctx}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+S\+L\+\_\+\+A\+E\+A\+D\+\_\+\+C\+TX}$\ast$ ssl\+\_\+st\+::aead\+\_\+read\+\_\+ctx}\hypertarget{structssl__st_a77fcdce69b8829739b8beaff484f6610}{}\label{structssl__st_a77fcdce69b8829739b8beaff484f6610}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!aead\+\_\+write\+\_\+ctx@{aead\+\_\+write\+\_\+ctx}}
+\index{aead\+\_\+write\+\_\+ctx@{aead\+\_\+write\+\_\+ctx}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{aead\+\_\+write\+\_\+ctx}{aead_write_ctx}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+S\+L\+\_\+\+A\+E\+A\+D\+\_\+\+C\+TX}$\ast$ ssl\+\_\+st\+::aead\+\_\+write\+\_\+ctx}\hypertarget{structssl__st_ae080a53247c9d2a2318f39190d466063}{}\label{structssl__st_ae080a53247c9d2a2318f39190d466063}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!alpn\+\_\+client\+\_\+proto\+\_\+list@{alpn\+\_\+client\+\_\+proto\+\_\+list}}
+\index{alpn\+\_\+client\+\_\+proto\+\_\+list@{alpn\+\_\+client\+\_\+proto\+\_\+list}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{alpn\+\_\+client\+\_\+proto\+\_\+list}{alpn_client_proto_list}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ ssl\+\_\+st\+::alpn\+\_\+client\+\_\+proto\+\_\+list}\hypertarget{structssl__st_ac34e3a88a8c4bd0397190b2a23fdfb3f}{}\label{structssl__st_ac34e3a88a8c4bd0397190b2a23fdfb3f}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!alpn\+\_\+client\+\_\+proto\+\_\+list\+\_\+len@{alpn\+\_\+client\+\_\+proto\+\_\+list\+\_\+len}}
+\index{alpn\+\_\+client\+\_\+proto\+\_\+list\+\_\+len@{alpn\+\_\+client\+\_\+proto\+\_\+list\+\_\+len}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{alpn\+\_\+client\+\_\+proto\+\_\+list\+\_\+len}{alpn_client_proto_list_len}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ssl\+\_\+st\+::alpn\+\_\+client\+\_\+proto\+\_\+list\+\_\+len}\hypertarget{structssl__st_addabb2640bb49fd919f2f82620b8d36a}{}\label{structssl__st_addabb2640bb49fd919f2f82620b8d36a}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!bbio@{bbio}}
+\index{bbio@{bbio}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{bbio}{bbio}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\+IO}$\ast$ ssl\+\_\+st\+::bbio}\hypertarget{structssl__st_ab0e7dbfa9d11fab6879da0ad8625b65b}{}\label{structssl__st_ab0e7dbfa9d11fab6879da0ad8625b65b}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!cert@{cert}}
+\index{cert@{cert}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{cert}{cert}}]{\setlength{\rightskip}{0pt plus 5cm}struct cert\+\_\+st$\ast$ ssl\+\_\+st\+::cert}\hypertarget{structssl__st_a335d212e807952601a0eabf4dfd978eb}{}\label{structssl__st_a335d212e807952601a0eabf4dfd978eb}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!client\+\_\+version@{client\+\_\+version}}
+\index{client\+\_\+version@{client\+\_\+version}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{client\+\_\+version}{client_version}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::client\+\_\+version}\hypertarget{structssl__st_af898db9604614a95a6830fbb5ce31850}{}\label{structssl__st_af898db9604614a95a6830fbb5ce31850}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!ctx@{ctx}}
+\index{ctx@{ctx}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{ctx}{ctx}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+S\+L\+\_\+\+C\+TX}$\ast$ ssl\+\_\+st\+::ctx}\hypertarget{structssl__st_a5a3ac76eff749d5d3c9ecf6b1a230497}{}\label{structssl__st_a5a3ac76eff749d5d3c9ecf6b1a230497}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!d1@{d1}}
+\index{d1@{d1}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{d1}{d1}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf dtls1\+\_\+state\+\_\+st}$\ast$ ssl\+\_\+st\+::d1}\hypertarget{structssl__st_afd70ab79ea0917b56fa74a8cb04ddaca}{}\label{structssl__st_afd70ab79ea0917b56fa74a8cb04ddaca}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!debug@{debug}}
+\index{debug@{debug}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{debug}{debug}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::debug}\hypertarget{structssl__st_a44db2b5a38c43821c3a852669e48d67f}{}\label{structssl__st_a44db2b5a38c43821c3a852669e48d67f}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!enc\+\_\+read\+\_\+ctx@{enc\+\_\+read\+\_\+ctx}}
+\index{enc\+\_\+read\+\_\+ctx@{enc\+\_\+read\+\_\+ctx}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{enc\+\_\+read\+\_\+ctx}{enc_read_ctx}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+V\+P\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+C\+TX}$\ast$ ssl\+\_\+st\+::enc\+\_\+read\+\_\+ctx}\hypertarget{structssl__st_ae2efb2324ed8b45b65cc2a3aa5ac1a4d}{}\label{structssl__st_ae2efb2324ed8b45b65cc2a3aa5ac1a4d}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!enc\+\_\+write\+\_\+ctx@{enc\+\_\+write\+\_\+ctx}}
+\index{enc\+\_\+write\+\_\+ctx@{enc\+\_\+write\+\_\+ctx}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{enc\+\_\+write\+\_\+ctx}{enc_write_ctx}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+V\+P\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+C\+TX}$\ast$ ssl\+\_\+st\+::enc\+\_\+write\+\_\+ctx}\hypertarget{structssl__st_a44444bb7794521afc2b9e52cd0c2570c}{}\label{structssl__st_a44444bb7794521afc2b9e52cd0c2570c}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!error@{error}}
+\index{error@{error}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{error}{error}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::error}\hypertarget{structssl__st_aca7ac14e5548bdd96990fa1d12aaef02}{}\label{structssl__st_aca7ac14e5548bdd96990fa1d12aaef02}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!error\+\_\+code@{error\+\_\+code}}
+\index{error\+\_\+code@{error\+\_\+code}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{error\+\_\+code}{error_code}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::error\+\_\+code}\hypertarget{structssl__st_a6a6c337340e6b5986ca6a1381838c9ae}{}\label{structssl__st_a6a6c337340e6b5986ca6a1381838c9ae}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!ex\+\_\+data@{ex\+\_\+data}}
+\index{ex\+\_\+data@{ex\+\_\+data}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{ex\+\_\+data}{ex_data}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} ssl\+\_\+st\+::ex\+\_\+data}\hypertarget{structssl__st_ab71808924564517a2cfa30d1d5da910e}{}\label{structssl__st_ab71808924564517a2cfa30d1d5da910e}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!first\+\_\+packet@{first\+\_\+packet}}
+\index{first\+\_\+packet@{first\+\_\+packet}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{first\+\_\+packet}{first_packet}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::first\+\_\+packet}\hypertarget{structssl__st_ad3c31c44e1c20703dc023f4a14fa0d54}{}\label{structssl__st_ad3c31c44e1c20703dc023f4a14fa0d54}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!generate\+\_\+session\+\_\+id@{generate\+\_\+session\+\_\+id}}
+\index{generate\+\_\+session\+\_\+id@{generate\+\_\+session\+\_\+id}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{generate\+\_\+session\+\_\+id}{generate_session_id}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+E\+N\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+CB} ssl\+\_\+st\+::generate\+\_\+session\+\_\+id}\hypertarget{structssl__st_aa315242df1667bfb185bfcaa5b7ca86f}{}\label{structssl__st_aa315242df1667bfb185bfcaa5b7ca86f}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!handshake\+\_\+func@{handshake\+\_\+func}}
+\index{handshake\+\_\+func@{handshake\+\_\+func}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{handshake\+\_\+func}{handshake_func}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+st\+::handshake\+\_\+func) ({\bf S\+SL} $\ast$)}\hypertarget{structssl__st_affcb724b5991a587b79a2f91ac7a5a7c}{}\label{structssl__st_affcb724b5991a587b79a2f91ac7a5a7c}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!hit@{hit}}
+\index{hit@{hit}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{hit}{hit}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::hit}\hypertarget{structssl__st_a20d2f2c7a00b1fd70c28c81c2d6f34c2}{}\label{structssl__st_a20d2f2c7a00b1fd70c28c81c2d6f34c2}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!in\+\_\+handshake@{in\+\_\+handshake}}
+\index{in\+\_\+handshake@{in\+\_\+handshake}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{in\+\_\+handshake}{in_handshake}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::in\+\_\+handshake}\hypertarget{structssl__st_afc46f99873655d3532930b3f0abb3f98}{}\label{structssl__st_afc46f99873655d3532930b3f0abb3f98}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!info\+\_\+callback@{info\+\_\+callback}}
+\index{info\+\_\+callback@{info\+\_\+callback}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{info\+\_\+callback}{info_callback}}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ ssl\+\_\+st\+::info\+\_\+callback) (const {\bf S\+SL} $\ast$ssl, int {\bf type}, int val)}\hypertarget{structssl__st_aaf32f29b307cfa33c4a19a7cf11bc36f}{}\label{structssl__st_aaf32f29b307cfa33c4a19a7cf11bc36f}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!init\+\_\+buf@{init\+\_\+buf}}
+\index{init\+\_\+buf@{init\+\_\+buf}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{init\+\_\+buf}{init_buf}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\+U\+F\+\_\+\+M\+EM}$\ast$ ssl\+\_\+st\+::init\+\_\+buf}\hypertarget{structssl__st_ae79d4878386098526f000f857b38854f}{}\label{structssl__st_ae79d4878386098526f000f857b38854f}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!init\+\_\+msg@{init\+\_\+msg}}
+\index{init\+\_\+msg@{init\+\_\+msg}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{init\+\_\+msg}{init_msg}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ ssl\+\_\+st\+::init\+\_\+msg}\hypertarget{structssl__st_a0d932f5ec1630a3cbd511548c3556a45}{}\label{structssl__st_a0d932f5ec1630a3cbd511548c3556a45}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!init\+\_\+num@{init\+\_\+num}}
+\index{init\+\_\+num@{init\+\_\+num}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{init\+\_\+num}{init_num}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::init\+\_\+num}\hypertarget{structssl__st_a5bdef1be2cab43e264edd98f162f7fff}{}\label{structssl__st_a5bdef1be2cab43e264edd98f162f7fff}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!init\+\_\+off@{init\+\_\+off}}
+\index{init\+\_\+off@{init\+\_\+off}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{init\+\_\+off}{init_off}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::init\+\_\+off}\hypertarget{structssl__st_a828422d492ba318c1985327ca8a6f219}{}\label{structssl__st_a828422d492ba318c1985327ca8a6f219}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!initial\+\_\+ctx@{initial\+\_\+ctx}}
+\index{initial\+\_\+ctx@{initial\+\_\+ctx}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{initial\+\_\+ctx}{initial_ctx}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+S\+L\+\_\+\+C\+TX}$\ast$ ssl\+\_\+st\+::initial\+\_\+ctx}\hypertarget{structssl__st_a704ffea820953b3ca385ce14e6efe570}{}\label{structssl__st_a704ffea820953b3ca385ce14e6efe570}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!mac\+\_\+flags@{mac\+\_\+flags}}
+\index{mac\+\_\+flags@{mac\+\_\+flags}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{mac\+\_\+flags}{mac_flags}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::mac\+\_\+flags}\hypertarget{structssl__st_a501b23b52ff9106b5cba654187324d95}{}\label{structssl__st_a501b23b52ff9106b5cba654187324d95}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!max\+\_\+cert\+\_\+list@{max\+\_\+cert\+\_\+list}}
+\index{max\+\_\+cert\+\_\+list@{max\+\_\+cert\+\_\+list}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{max\+\_\+cert\+\_\+list}{max_cert_list}}]{\setlength{\rightskip}{0pt plus 5cm}long ssl\+\_\+st\+::max\+\_\+cert\+\_\+list}\hypertarget{structssl__st_add94a8a6fe24dad252c559253d0eea9a}{}\label{structssl__st_add94a8a6fe24dad252c559253d0eea9a}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!max\+\_\+send\+\_\+fragment@{max\+\_\+send\+\_\+fragment}}
+\index{max\+\_\+send\+\_\+fragment@{max\+\_\+send\+\_\+fragment}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{max\+\_\+send\+\_\+fragment}{max_send_fragment}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ssl\+\_\+st\+::max\+\_\+send\+\_\+fragment}\hypertarget{structssl__st_a201ff2c24c4a950fc529451563dac099}{}\label{structssl__st_a201ff2c24c4a950fc529451563dac099}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!method@{method}}
+\index{method@{method}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{method}{method}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf S\+S\+L\+\_\+\+M\+E\+T\+H\+OD}$\ast$ ssl\+\_\+st\+::method}\hypertarget{structssl__st_a10dff58d99726fe56b47ec037c54802e}{}\label{structssl__st_a10dff58d99726fe56b47ec037c54802e}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!mode@{mode}}
+\index{mode@{mode}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{mode}{mode}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ssl\+\_\+st\+::mode}\hypertarget{structssl__st_a10add2996a9ac029c3a8a4c19587e1b0}{}\label{structssl__st_a10add2996a9ac029c3a8a4c19587e1b0}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!msg\+\_\+callback@{msg\+\_\+callback}}
+\index{msg\+\_\+callback@{msg\+\_\+callback}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{msg\+\_\+callback}{msg_callback}}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ ssl\+\_\+st\+::msg\+\_\+callback) (int write\+\_\+p, int {\bf version}, int content\+\_\+type, const void $\ast$buf, size\+\_\+t {\bf len}, {\bf S\+SL} $\ast$ssl, void $\ast$arg)}\hypertarget{structssl__st_a0b5f95998bc3a4a4193adeca3b7b289a}{}\label{structssl__st_a0b5f95998bc3a4a4193adeca3b7b289a}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!msg\+\_\+callback\+\_\+arg@{msg\+\_\+callback\+\_\+arg}}
+\index{msg\+\_\+callback\+\_\+arg@{msg\+\_\+callback\+\_\+arg}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{msg\+\_\+callback\+\_\+arg}{msg_callback_arg}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ ssl\+\_\+st\+::msg\+\_\+callback\+\_\+arg}\hypertarget{structssl__st_a265c0d1adbd1e76b1b326a1f82b0cfcf}{}\label{structssl__st_a265c0d1adbd1e76b1b326a1f82b0cfcf}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!new\+\_\+session@{new\+\_\+session}}
+\index{new\+\_\+session@{new\+\_\+session}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{new\+\_\+session}{new_session}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::new\+\_\+session}\hypertarget{structssl__st_a5e265a8751b5a1641b71efda933a6b61}{}\label{structssl__st_a5e265a8751b5a1641b71efda933a6b61}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!next\+\_\+proto\+\_\+negotiated@{next\+\_\+proto\+\_\+negotiated}}
+\index{next\+\_\+proto\+\_\+negotiated@{next\+\_\+proto\+\_\+negotiated}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{next\+\_\+proto\+\_\+negotiated}{next_proto_negotiated}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ ssl\+\_\+st\+::next\+\_\+proto\+\_\+negotiated}\hypertarget{structssl__st_aef796f12c3e90c045baad0cd1841e180}{}\label{structssl__st_aef796f12c3e90c045baad0cd1841e180}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!next\+\_\+proto\+\_\+negotiated\+\_\+len@{next\+\_\+proto\+\_\+negotiated\+\_\+len}}
+\index{next\+\_\+proto\+\_\+negotiated\+\_\+len@{next\+\_\+proto\+\_\+negotiated\+\_\+len}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{next\+\_\+proto\+\_\+negotiated\+\_\+len}{next_proto_negotiated_len}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char ssl\+\_\+st\+::next\+\_\+proto\+\_\+negotiated\+\_\+len}\hypertarget{structssl__st_aa530fc5efd1d6b0f5f881dbd78b6d3de}{}\label{structssl__st_aa530fc5efd1d6b0f5f881dbd78b6d3de}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!options@{options}}
+\index{options@{options}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{options}{options}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ssl\+\_\+st\+::options}\hypertarget{structssl__st_a82c8bfd123603c23ccca6fb45be6d75f}{}\label{structssl__st_a82c8bfd123603c23ccca6fb45be6d75f}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!packet@{packet}}
+\index{packet@{packet}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{packet}{packet}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ ssl\+\_\+st\+::packet}\hypertarget{structssl__st_a5b43e468488be2327eac1c4396b568bc}{}\label{structssl__st_a5b43e468488be2327eac1c4396b568bc}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!packet\+\_\+length@{packet\+\_\+length}}
+\index{packet\+\_\+length@{packet\+\_\+length}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{packet\+\_\+length}{packet_length}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ssl\+\_\+st\+::packet\+\_\+length}\hypertarget{structssl__st_ae52697ae4cfec851e2b0d2c5ccaa1df7}{}\label{structssl__st_ae52697ae4cfec851e2b0d2c5ccaa1df7}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!param@{param}}
+\index{param@{param}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{param}{param}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X509\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+P\+A\+R\+AM}$\ast$ ssl\+\_\+st\+::param}\hypertarget{structssl__st_a384d0d3915209d3d4c8144146bab78aa}{}\label{structssl__st_a384d0d3915209d3d4c8144146bab78aa}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!quiet\+\_\+shutdown@{quiet\+\_\+shutdown}}
+\index{quiet\+\_\+shutdown@{quiet\+\_\+shutdown}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{quiet\+\_\+shutdown}{quiet_shutdown}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::quiet\+\_\+shutdown}\hypertarget{structssl__st_a3e921ca488cd9eec6ad4065ef627395a}{}\label{structssl__st_a3e921ca488cd9eec6ad4065ef627395a}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!rbio@{rbio}}
+\index{rbio@{rbio}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{rbio}{rbio}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\+IO}$\ast$ ssl\+\_\+st\+::rbio}\hypertarget{structssl__st_abd180ca9a0f2fb959b07600dcca58118}{}\label{structssl__st_abd180ca9a0f2fb959b07600dcca58118}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!read\+\_\+ahead@{read\+\_\+ahead}}
+\index{read\+\_\+ahead@{read\+\_\+ahead}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{read\+\_\+ahead}{read_ahead}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::read\+\_\+ahead}\hypertarget{structssl__st_a6be4ea32cec16e0cfb2034f1d8fc3f37}{}\label{structssl__st_a6be4ea32cec16e0cfb2034f1d8fc3f37}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!read\+\_\+hash@{read\+\_\+hash}}
+\index{read\+\_\+hash@{read\+\_\+hash}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{read\+\_\+hash}{read_hash}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+V\+P\+\_\+\+M\+D\+\_\+\+C\+TX}$\ast$ ssl\+\_\+st\+::read\+\_\+hash}\hypertarget{structssl__st_af550f07608665dad2b09a83c42ce494c}{}\label{structssl__st_af550f07608665dad2b09a83c42ce494c}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!references@{references}}
+\index{references@{references}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{references}{references}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::references}\hypertarget{structssl__st_ac62377797495ce179f0110cb70867ccc}{}\label{structssl__st_ac62377797495ce179f0110cb70867ccc}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!renegotiate@{renegotiate}}
+\index{renegotiate@{renegotiate}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{renegotiate}{renegotiate}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::renegotiate}\hypertarget{structssl__st_a0a493dfdeb51c5c0a73107e0579e9601}{}\label{structssl__st_a0a493dfdeb51c5c0a73107e0579e9601}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!rstate@{rstate}}
+\index{rstate@{rstate}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{rstate}{rstate}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::rstate}\hypertarget{structssl__st_a30d0255e120ff83b3c35ab05cd3dae64}{}\label{structssl__st_a30d0255e120ff83b3c35ab05cd3dae64}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!rwstate@{rwstate}}
+\index{rwstate@{rwstate}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{rwstate}{rwstate}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::rwstate}\hypertarget{structssl__st_a10e8e706cff52214bc873c05786a80ce}{}\label{structssl__st_a10e8e706cff52214bc873c05786a80ce}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!s3@{s3}}
+\index{s3@{s3}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{s3}{s3}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ssl3\+\_\+state\+\_\+st}$\ast$ ssl\+\_\+st\+::s3}\hypertarget{structssl__st_a2e2d2f47c0ac86c4329cc8035b3e4688}{}\label{structssl__st_a2e2d2f47c0ac86c4329cc8035b3e4688}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!server@{server}}
+\index{server@{server}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{server}{server}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::server}\hypertarget{structssl__st_a022f1e4cf3a0a68ffc4f4d80d4de8d6b}{}\label{structssl__st_a022f1e4cf3a0a68ffc4f4d80d4de8d6b}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!servername\+\_\+done@{servername\+\_\+done}}
+\index{servername\+\_\+done@{servername\+\_\+done}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{servername\+\_\+done}{servername_done}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::servername\+\_\+done}\hypertarget{structssl__st_ac1ac6725cca99bc51b875fbe62ccb504}{}\label{structssl__st_ac1ac6725cca99bc51b875fbe62ccb504}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!session@{session}}
+\index{session@{session}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{session}{session}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+S\+L\+\_\+\+S\+E\+S\+S\+I\+ON}$\ast$ ssl\+\_\+st\+::session}\hypertarget{structssl__st_ae6d956c10b03dd3f4d0a3a132466eb47}{}\label{structssl__st_ae6d956c10b03dd3f4d0a3a132466eb47}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{shutdown}{shutdown}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::shutdown}\hypertarget{structssl__st_a12a82cfd124852a54354a46012bdd502}{}\label{structssl__st_a12a82cfd124852a54354a46012bdd502}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!sid\+\_\+ctx@{sid\+\_\+ctx}}
+\index{sid\+\_\+ctx@{sid\+\_\+ctx}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{sid\+\_\+ctx}{sid_ctx}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char ssl\+\_\+st\+::sid\+\_\+ctx\mbox{[}{\bf S\+S\+L\+\_\+\+M\+A\+X\+\_\+\+S\+I\+D\+\_\+\+C\+T\+X\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}}\hypertarget{structssl__st_a486ddbf462473285440234c69568b9ce}{}\label{structssl__st_a486ddbf462473285440234c69568b9ce}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!sid\+\_\+ctx\+\_\+length@{sid\+\_\+ctx\+\_\+length}}
+\index{sid\+\_\+ctx\+\_\+length@{sid\+\_\+ctx\+\_\+length}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{sid\+\_\+ctx\+\_\+length}{sid_ctx_length}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ssl\+\_\+st\+::sid\+\_\+ctx\+\_\+length}\hypertarget{structssl__st_a7b63f375f11b5232a5dff69e26f6a438}{}\label{structssl__st_a7b63f375f11b5232a5dff69e26f6a438}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!srtp\+\_\+profile@{srtp\+\_\+profile}}
+\index{srtp\+\_\+profile@{srtp\+\_\+profile}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{srtp\+\_\+profile}{srtp_profile}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+R\+T\+P\+\_\+\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N\+\_\+\+P\+R\+O\+F\+I\+LE}$\ast$ ssl\+\_\+st\+::srtp\+\_\+profile}\hypertarget{structssl__st_ae8776b7b0b446fb823d9f87176bcfa1d}{}\label{structssl__st_ae8776b7b0b446fb823d9f87176bcfa1d}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!state@{state}}
+\index{state@{state}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{state}{state}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::state}\hypertarget{structssl__st_acf88d642e936bdeb73777730b63f70f6}{}\label{structssl__st_acf88d642e936bdeb73777730b63f70f6}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tls\+\_\+session\+\_\+secret\+\_\+cb@{tls\+\_\+session\+\_\+secret\+\_\+cb}}
+\index{tls\+\_\+session\+\_\+secret\+\_\+cb@{tls\+\_\+session\+\_\+secret\+\_\+cb}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tls\+\_\+session\+\_\+secret\+\_\+cb}{tls_session_secret_cb}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tls\+\_\+session\+\_\+secret\+\_\+cb\+\_\+fn} ssl\+\_\+st\+::tls\+\_\+session\+\_\+secret\+\_\+cb}\hypertarget{structssl__st_aff0b13d0e1261db9771d7cf0e64cc5cc}{}\label{structssl__st_aff0b13d0e1261db9771d7cf0e64cc5cc}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tls\+\_\+session\+\_\+secret\+\_\+cb\+\_\+arg@{tls\+\_\+session\+\_\+secret\+\_\+cb\+\_\+arg}}
+\index{tls\+\_\+session\+\_\+secret\+\_\+cb\+\_\+arg@{tls\+\_\+session\+\_\+secret\+\_\+cb\+\_\+arg}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tls\+\_\+session\+\_\+secret\+\_\+cb\+\_\+arg}{tls_session_secret_cb_arg}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ ssl\+\_\+st\+::tls\+\_\+session\+\_\+secret\+\_\+cb\+\_\+arg}\hypertarget{structssl__st_a3e4db63ea16d50062c8b2b062bb648d9}{}\label{structssl__st_a3e4db63ea16d50062c8b2b062bb648d9}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tls\+\_\+session\+\_\+ticket\+\_\+ext\+\_\+cb@{tls\+\_\+session\+\_\+ticket\+\_\+ext\+\_\+cb}}
+\index{tls\+\_\+session\+\_\+ticket\+\_\+ext\+\_\+cb@{tls\+\_\+session\+\_\+ticket\+\_\+ext\+\_\+cb}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tls\+\_\+session\+\_\+ticket\+\_\+ext\+\_\+cb}{tls_session_ticket_ext_cb}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tls\+\_\+session\+\_\+ticket\+\_\+ext\+\_\+cb\+\_\+fn} ssl\+\_\+st\+::tls\+\_\+session\+\_\+ticket\+\_\+ext\+\_\+cb}\hypertarget{structssl__st_adfbd96d1abce945f541c432379fc994f}{}\label{structssl__st_adfbd96d1abce945f541c432379fc994f}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tls\+\_\+session\+\_\+ticket\+\_\+ext\+\_\+cb\+\_\+arg@{tls\+\_\+session\+\_\+ticket\+\_\+ext\+\_\+cb\+\_\+arg}}
+\index{tls\+\_\+session\+\_\+ticket\+\_\+ext\+\_\+cb\+\_\+arg@{tls\+\_\+session\+\_\+ticket\+\_\+ext\+\_\+cb\+\_\+arg}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tls\+\_\+session\+\_\+ticket\+\_\+ext\+\_\+cb\+\_\+arg}{tls_session_ticket_ext_cb_arg}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ ssl\+\_\+st\+::tls\+\_\+session\+\_\+ticket\+\_\+ext\+\_\+cb\+\_\+arg}\hypertarget{structssl__st_a45dd63c101fc5b96773ab292285962a4}{}\label{structssl__st_a45dd63c101fc5b96773ab292285962a4}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+debug\+\_\+arg@{tlsext\+\_\+debug\+\_\+arg}}
+\index{tlsext\+\_\+debug\+\_\+arg@{tlsext\+\_\+debug\+\_\+arg}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+debug\+\_\+arg}{tlsext_debug_arg}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ ssl\+\_\+st\+::tlsext\+\_\+debug\+\_\+arg}\hypertarget{structssl__st_a37c9fa10121176491c8a9e5617f7be83}{}\label{structssl__st_a37c9fa10121176491c8a9e5617f7be83}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+debug\+\_\+cb@{tlsext\+\_\+debug\+\_\+cb}}
+\index{tlsext\+\_\+debug\+\_\+cb@{tlsext\+\_\+debug\+\_\+cb}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+debug\+\_\+cb}{tlsext_debug_cb}}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ ssl\+\_\+st\+::tlsext\+\_\+debug\+\_\+cb) ({\bf S\+SL} $\ast$s, int client\+\_\+server, int {\bf type}, unsigned char $\ast$data, int {\bf len}, void $\ast$arg)}\hypertarget{structssl__st_af36d613ef84698654b438baf81872ee6}{}\label{structssl__st_af36d613ef84698654b438baf81872ee6}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+ecpointformatlist@{tlsext\+\_\+ecpointformatlist}}
+\index{tlsext\+\_\+ecpointformatlist@{tlsext\+\_\+ecpointformatlist}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+ecpointformatlist}{tlsext_ecpointformatlist}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ ssl\+\_\+st\+::tlsext\+\_\+ecpointformatlist}\hypertarget{structssl__st_adef7594aae7490bba474778a3cf35dc0}{}\label{structssl__st_adef7594aae7490bba474778a3cf35dc0}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+ecpointformatlist\+\_\+length@{tlsext\+\_\+ecpointformatlist\+\_\+length}}
+\index{tlsext\+\_\+ecpointformatlist\+\_\+length@{tlsext\+\_\+ecpointformatlist\+\_\+length}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+ecpointformatlist\+\_\+length}{tlsext_ecpointformatlist_length}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t ssl\+\_\+st\+::tlsext\+\_\+ecpointformatlist\+\_\+length}\hypertarget{structssl__st_a1661bf580598984c531b321c0a005d37}{}\label{structssl__st_a1661bf580598984c531b321c0a005d37}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+ellipticcurvelist@{tlsext\+\_\+ellipticcurvelist}}
+\index{tlsext\+\_\+ellipticcurvelist@{tlsext\+\_\+ellipticcurvelist}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+ellipticcurvelist}{tlsext_ellipticcurvelist}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t$\ast$ ssl\+\_\+st\+::tlsext\+\_\+ellipticcurvelist}\hypertarget{structssl__st_ade22f9d20414c2f8e317ca9c2b75a111}{}\label{structssl__st_ade22f9d20414c2f8e317ca9c2b75a111}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+ellipticcurvelist\+\_\+length@{tlsext\+\_\+ellipticcurvelist\+\_\+length}}
+\index{tlsext\+\_\+ellipticcurvelist\+\_\+length@{tlsext\+\_\+ellipticcurvelist\+\_\+length}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+ellipticcurvelist\+\_\+length}{tlsext_ellipticcurvelist_length}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t ssl\+\_\+st\+::tlsext\+\_\+ellipticcurvelist\+\_\+length}\hypertarget{structssl__st_ac0a9a07be2d0e0f83b0844b61e82d06f}{}\label{structssl__st_ac0a9a07be2d0e0f83b0844b61e82d06f}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+hb\+\_\+pending@{tlsext\+\_\+hb\+\_\+pending}}
+\index{tlsext\+\_\+hb\+\_\+pending@{tlsext\+\_\+hb\+\_\+pending}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+hb\+\_\+pending}{tlsext_hb_pending}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ssl\+\_\+st\+::tlsext\+\_\+hb\+\_\+pending}\hypertarget{structssl__st_a2abf4f35ea6d829b809e2c7c82acdd1f}{}\label{structssl__st_a2abf4f35ea6d829b809e2c7c82acdd1f}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+hb\+\_\+seq@{tlsext\+\_\+hb\+\_\+seq}}
+\index{tlsext\+\_\+hb\+\_\+seq@{tlsext\+\_\+hb\+\_\+seq}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+hb\+\_\+seq}{tlsext_hb_seq}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ssl\+\_\+st\+::tlsext\+\_\+hb\+\_\+seq}\hypertarget{structssl__st_af5db9aefebe8c45e8f063d2033b1bffd}{}\label{structssl__st_af5db9aefebe8c45e8f063d2033b1bffd}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+heartbeat@{tlsext\+\_\+heartbeat}}
+\index{tlsext\+\_\+heartbeat@{tlsext\+\_\+heartbeat}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+heartbeat}{tlsext_heartbeat}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ssl\+\_\+st\+::tlsext\+\_\+heartbeat}\hypertarget{structssl__st_a8ad372425499d47c2254c89fbcd0deed}{}\label{structssl__st_a8ad372425499d47c2254c89fbcd0deed}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+hostname@{tlsext\+\_\+hostname}}
+\index{tlsext\+\_\+hostname@{tlsext\+\_\+hostname}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+hostname}{tlsext_hostname}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ ssl\+\_\+st\+::tlsext\+\_\+hostname}\hypertarget{structssl__st_a693888a588035f237e93b0bce7af4b84}{}\label{structssl__st_a693888a588035f237e93b0bce7af4b84}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+ocsp\+\_\+exts@{tlsext\+\_\+ocsp\+\_\+exts}}
+\index{tlsext\+\_\+ocsp\+\_\+exts@{tlsext\+\_\+ocsp\+\_\+exts}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+ocsp\+\_\+exts}{tlsext_ocsp_exts}}]{\setlength{\rightskip}{0pt plus 5cm}X509\+\_\+\+E\+X\+T\+E\+N\+S\+I\+O\+NS$\ast$ ssl\+\_\+st\+::tlsext\+\_\+ocsp\+\_\+exts}\hypertarget{structssl__st_a234c465dc9c34dde4ac3cc24a79467a1}{}\label{structssl__st_a234c465dc9c34dde4ac3cc24a79467a1}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+ocsp\+\_\+resp@{tlsext\+\_\+ocsp\+\_\+resp}}
+\index{tlsext\+\_\+ocsp\+\_\+resp@{tlsext\+\_\+ocsp\+\_\+resp}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+ocsp\+\_\+resp}{tlsext_ocsp_resp}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ ssl\+\_\+st\+::tlsext\+\_\+ocsp\+\_\+resp}\hypertarget{structssl__st_ab54a13d08a8b115b2a7897c9213b1fb7}{}\label{structssl__st_ab54a13d08a8b115b2a7897c9213b1fb7}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+ocsp\+\_\+resplen@{tlsext\+\_\+ocsp\+\_\+resplen}}
+\index{tlsext\+\_\+ocsp\+\_\+resplen@{tlsext\+\_\+ocsp\+\_\+resplen}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+ocsp\+\_\+resplen}{tlsext_ocsp_resplen}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::tlsext\+\_\+ocsp\+\_\+resplen}\hypertarget{structssl__st_a4a86cdf17eb779e0d6e467105103eb5f}{}\label{structssl__st_a4a86cdf17eb779e0d6e467105103eb5f}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+session\+\_\+ticket@{tlsext\+\_\+session\+\_\+ticket}}
+\index{tlsext\+\_\+session\+\_\+ticket@{tlsext\+\_\+session\+\_\+ticket}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+session\+\_\+ticket}{tlsext_session_ticket}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+L\+S\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+T\+I\+C\+K\+E\+T\+\_\+\+E\+XT}$\ast$ ssl\+\_\+st\+::tlsext\+\_\+session\+\_\+ticket}\hypertarget{structssl__st_a88b1275f3d5733e3e856fe8c09d18566}{}\label{structssl__st_a88b1275f3d5733e3e856fe8c09d18566}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+status\+\_\+expected@{tlsext\+\_\+status\+\_\+expected}}
+\index{tlsext\+\_\+status\+\_\+expected@{tlsext\+\_\+status\+\_\+expected}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+status\+\_\+expected}{tlsext_status_expected}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::tlsext\+\_\+status\+\_\+expected}\hypertarget{structssl__st_a0a0d75de2cdedb99c07403d56aa9ae8c}{}\label{structssl__st_a0a0d75de2cdedb99c07403d56aa9ae8c}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+status\+\_\+type@{tlsext\+\_\+status\+\_\+type}}
+\index{tlsext\+\_\+status\+\_\+type@{tlsext\+\_\+status\+\_\+type}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+status\+\_\+type}{tlsext_status_type}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::tlsext\+\_\+status\+\_\+type}\hypertarget{structssl__st_aba46c200c19caf4051d001f5ca0475e3}{}\label{structssl__st_aba46c200c19caf4051d001f5ca0475e3}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!tlsext\+\_\+ticket\+\_\+expected@{tlsext\+\_\+ticket\+\_\+expected}}
+\index{tlsext\+\_\+ticket\+\_\+expected@{tlsext\+\_\+ticket\+\_\+expected}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{tlsext\+\_\+ticket\+\_\+expected}{tlsext_ticket_expected}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::tlsext\+\_\+ticket\+\_\+expected}\hypertarget{structssl__st_ac3163b212ec333ebcfba794e683be1d2}{}\label{structssl__st_ac3163b212ec333ebcfba794e683be1d2}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!type@{type}}
+\index{type@{type}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{type}{type}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::type}\hypertarget{structssl__st_a5d2a229f22c169bd5eecefd9f017e089}{}\label{structssl__st_a5d2a229f22c169bd5eecefd9f017e089}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!verify\+\_\+callback@{verify\+\_\+callback}}
+\index{verify\+\_\+callback@{verify\+\_\+callback}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{verify\+\_\+callback}{verify_callback}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+st\+::verify\+\_\+callback) (int ok, {\bf X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX} $\ast${\bf ctx})}\hypertarget{structssl__st_a5891d1f44fd1385ae1c1c4e866450133}{}\label{structssl__st_a5891d1f44fd1385ae1c1c4e866450133}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!verify\+\_\+mode@{verify\+\_\+mode}}
+\index{verify\+\_\+mode@{verify\+\_\+mode}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{verify\+\_\+mode}{verify_mode}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::verify\+\_\+mode}\hypertarget{structssl__st_a7592fd603fe469b789f13bdbc55a172e}{}\label{structssl__st_a7592fd603fe469b789f13bdbc55a172e}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!verify\+\_\+result@{verify\+\_\+result}}
+\index{verify\+\_\+result@{verify\+\_\+result}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{verify\+\_\+result}{verify_result}}]{\setlength{\rightskip}{0pt plus 5cm}long ssl\+\_\+st\+::verify\+\_\+result}\hypertarget{structssl__st_a3092706c43455cf6a410853d90aadb1f}{}\label{structssl__st_a3092706c43455cf6a410853d90aadb1f}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!version@{version}}
+\index{version@{version}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{version}{version}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+st\+::version}\hypertarget{structssl__st_a104b2a57e68e7e8c228c34d9ffb0e3dd}{}\label{structssl__st_a104b2a57e68e7e8c228c34d9ffb0e3dd}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!wbio@{wbio}}
+\index{wbio@{wbio}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{wbio}{wbio}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\+IO}$\ast$ ssl\+\_\+st\+::wbio}\hypertarget{structssl__st_a81a174cdc5f516202537ff6fef6680ed}{}\label{structssl__st_a81a174cdc5f516202537ff6fef6680ed}
+\index{ssl\+\_\+st@{ssl\+\_\+st}!write\+\_\+hash@{write\+\_\+hash}}
+\index{write\+\_\+hash@{write\+\_\+hash}!ssl\+\_\+st@{ssl\+\_\+st}}
+\subsubsection[{\texorpdfstring{write\+\_\+hash}{write_hash}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+V\+P\+\_\+\+M\+D\+\_\+\+C\+TX}$\ast$ ssl\+\_\+st\+::write\+\_\+hash}\hypertarget{structssl__st_a491e1c0b9386b4003bb443af4a2d06d4}{}\label{structssl__st_a491e1c0b9386b4003bb443af4a2d06d4}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/openssl/\hyperlink{ssl_8h}{ssl.\+h}\end{DoxyCompactItemize}

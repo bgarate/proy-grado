@@ -1,0 +1,615 @@
+\hypertarget{des_8h}{}\section{src/hal/pb2/include/openssl/des.h File Reference}
+\label{des_8h}\index{src/hal/pb2/include/openssl/des.\+h@{src/hal/pb2/include/openssl/des.\+h}}
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+Include dependency graph for des.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{des_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{des_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_d_e_s__ks}{D\+E\+S\+\_\+ks}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{des_8h_aaa5a2a97dcb6f597ea17f34872d7d2eb}{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+SZ}~(sizeof(\hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock}))
+\item 
+\#define \hyperlink{des_8h_ad5916c39b84ebf70f8a0abcc3cf1d71a}{D\+E\+S\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+SZ}~(sizeof(\hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule}))
+\item 
+\#define \hyperlink{des_8h_a89730e026cc6082480f070985e91e8aa}{D\+E\+S\+\_\+\+E\+N\+C\+R\+Y\+PT}~1
+\item 
+\#define \hyperlink{des_8h_a7ca3b464dc9e6cabf82f636101b6e133}{D\+E\+S\+\_\+\+D\+E\+C\+R\+Y\+PT}~0
+\item 
+\#define \hyperlink{des_8h_aa410ff584e827dc46f2ac399d21467fc}{D\+E\+S\+\_\+\+C\+B\+C\+\_\+\+M\+O\+DE}~0
+\item 
+\#define \hyperlink{des_8h_a0e8735ceb1ec58e5268c4915a87c3b5b}{D\+E\+S\+\_\+\+P\+C\+B\+C\+\_\+\+M\+O\+DE}~1
+\item 
+\#define \hyperlink{des_8h_ac7827e13433080b5c313e9a272310989}{D\+E\+S\+\_\+ecb2\+\_\+encrypt}(i,  o,  k1,  k2,  e)~\hyperlink{des_8h_a779ed672d4b6ec61e594975d6982ab36}{D\+E\+S\+\_\+ecb3\+\_\+encrypt}((i),(o),(k1),(k2),(k1),(e))
+\item 
+\#define \hyperlink{des_8h_a2e2e36f463e584d7e38250c5cf27c9c8}{D\+E\+S\+\_\+ede2\+\_\+cbc\+\_\+encrypt}(i,  o,  l,  k1,  k2,  iv,  e)~\hyperlink{des_8h_a428de5bb8a6db72dbde54d926ccdc1b5}{D\+E\+S\+\_\+ede3\+\_\+cbc\+\_\+encrypt}((i),(o),(l),(k1),(k2),(k1),(iv),(e))
+\item 
+\#define \hyperlink{des_8h_a47c05cebcae80ab368d0cb184b0a8683}{D\+E\+S\+\_\+ede2\+\_\+cfb64\+\_\+encrypt}(i,  o,  l,  k1,  k2,  iv,  n,  e)~\hyperlink{des_8h_a667c96949f41ae434ab5938243722c0f}{D\+E\+S\+\_\+ede3\+\_\+cfb64\+\_\+encrypt}((i),(o),(l),(k1),(k2),(k1),(iv),(n),(e))
+\item 
+\#define \hyperlink{des_8h_ad4de03c1176b34206c2d05d5d60907a0}{D\+E\+S\+\_\+ede2\+\_\+ofb64\+\_\+encrypt}(i,  o,  l,  k1,  k2,  iv,  n)~\hyperlink{des_8h_a43216d78874e3b7cb5fb67a947be17a8}{D\+E\+S\+\_\+ede3\+\_\+ofb64\+\_\+encrypt}((i),(o),(l),(k1),(k2),(k1),(iv),(n))
+\item 
+\#define \hyperlink{des_8h_a6232dad08c9f0045c960b673001d0ba8}{D\+E\+S\+\_\+fixup\+\_\+key\+\_\+parity}~\hyperlink{des_8h_a4179bef43ceb72cc2034f39e7d2d5ae4}{D\+E\+S\+\_\+set\+\_\+odd\+\_\+parity}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock}\mbox{[}8\mbox{]}
+\item 
+typedef unsigned char \hyperlink{des_8h_a45d2b0591b84bcc65c38210ebbe21a10}{const\+\_\+\+D\+E\+S\+\_\+cblock}\mbox{[}8\mbox{]}
+\item 
+typedef struct \hyperlink{struct_d_e_s__ks}{D\+E\+S\+\_\+ks} \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{des_8h_ac434f540a351ebe4ac27e687352006c8}{D\+E\+S\+\_\+options} (void)
+\item 
+void \hyperlink{des_8h_a779ed672d4b6ec61e594975d6982ab36}{D\+E\+S\+\_\+ecb3\+\_\+encrypt} (\hyperlink{des_8h_a45d2b0591b84bcc65c38210ebbe21a10}{const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$input, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$output, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks1, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks2, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks3, int enc)
+\item 
+D\+E\+S\+\_\+\+L\+O\+NG \hyperlink{des_8h_af7df1ea87542b23d4e05ef6e643c092f}{D\+E\+S\+\_\+cbc\+\_\+cksum} (const unsigned char $\ast$input, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$output, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$schedule, \hyperlink{des_8h_a45d2b0591b84bcc65c38210ebbe21a10}{const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$ivec)
+\item 
+void \hyperlink{des_8h_a1caad9de1bef793fad462fadbfc34991}{D\+E\+S\+\_\+cbc\+\_\+encrypt} (const unsigned char $\ast$input, unsigned char $\ast$output, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$schedule, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$ivec, int enc)
+\item 
+void \hyperlink{des_8h_a8e76ccede9beba2693bb6a9dc6198bb2}{D\+E\+S\+\_\+ncbc\+\_\+encrypt} (const unsigned char $\ast$input, unsigned char $\ast$output, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$schedule, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$ivec, int enc)
+\item 
+void \hyperlink{des_8h_ae2bb95630202cc4d4b3ae4b0c5a121be}{D\+E\+S\+\_\+xcbc\+\_\+encrypt} (const unsigned char $\ast$input, unsigned char $\ast$output, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$schedule, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$ivec, \hyperlink{des_8h_a45d2b0591b84bcc65c38210ebbe21a10}{const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$inw, \hyperlink{des_8h_a45d2b0591b84bcc65c38210ebbe21a10}{const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$outw, int enc)
+\item 
+void \hyperlink{des_8h_a395044f147ce2e92d1704ce52a4ba982}{D\+E\+S\+\_\+cfb\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, int numbits, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$schedule, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$ivec, int enc)
+\item 
+void \hyperlink{des_8h_a0adce8f5fdd9b4201b7cd1154672c853}{D\+E\+S\+\_\+ecb\+\_\+encrypt} (\hyperlink{des_8h_a45d2b0591b84bcc65c38210ebbe21a10}{const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$input, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$output, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks, int enc)
+\item 
+void \hyperlink{des_8h_a20671b8339b5a2c51a7463f305c69aef}{D\+E\+S\+\_\+encrypt1} (D\+E\+S\+\_\+\+L\+O\+NG $\ast$data, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks, int enc)
+\item 
+void \hyperlink{des_8h_a6761e0c07748685ba3f51f9be0e71a1d}{D\+E\+S\+\_\+encrypt2} (D\+E\+S\+\_\+\+L\+O\+NG $\ast$data, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks, int enc)
+\item 
+void \hyperlink{des_8h_a9bc22053779caeef634ec729d1f2889a}{D\+E\+S\+\_\+encrypt3} (D\+E\+S\+\_\+\+L\+O\+NG $\ast$data, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks1, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks2, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks3)
+\item 
+void \hyperlink{des_8h_a2f2c7cfc864d75daf329cb9102d8433c}{D\+E\+S\+\_\+decrypt3} (D\+E\+S\+\_\+\+L\+O\+NG $\ast$data, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks1, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks2, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks3)
+\item 
+void \hyperlink{des_8h_a428de5bb8a6db72dbde54d926ccdc1b5}{D\+E\+S\+\_\+ede3\+\_\+cbc\+\_\+encrypt} (const unsigned char $\ast$input, unsigned char $\ast$output, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks1, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks2, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks3, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$ivec, int enc)
+\item 
+void \hyperlink{des_8h_ae8604334e24501da3e17d19538ff024f}{D\+E\+S\+\_\+ede3\+\_\+cbcm\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks1, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks2, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks3, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$ivec1, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$ivec2, int enc)
+\item 
+void \hyperlink{des_8h_a667c96949f41ae434ab5938243722c0f}{D\+E\+S\+\_\+ede3\+\_\+cfb64\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks1, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks2, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks3, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$ivec, int $\ast$num, int enc)
+\item 
+void \hyperlink{des_8h_aced4464e7b96726934593c1b5c00bd2a}{D\+E\+S\+\_\+ede3\+\_\+cfb\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, int numbits, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks1, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks2, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks3, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$ivec, int enc)
+\item 
+void \hyperlink{des_8h_a43216d78874e3b7cb5fb67a947be17a8}{D\+E\+S\+\_\+ede3\+\_\+ofb64\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks1, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks2, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$ks3, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$ivec, int $\ast$num)
+\item 
+int \hyperlink{des_8h_af1a0bd8f6cda792b36115e6e9407ea6a}{D\+E\+S\+\_\+enc\+\_\+read} (int fd, void $\ast$buf, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$sched, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$iv)
+\item 
+int \hyperlink{des_8h_a6b8ba406b476e00d38aa124cf315a802}{D\+E\+S\+\_\+enc\+\_\+write} (int fd, const void $\ast$buf, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$sched, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$iv)
+\item 
+char $\ast$ \hyperlink{des_8h_ae444ad9f1c3fb2bd104eac2119e7a564}{D\+E\+S\+\_\+fcrypt} (const char $\ast$buf, const char $\ast$salt, char $\ast$ret)
+\item 
+char $\ast$ \hyperlink{des_8h_a1da3af1c8fd59e86f5578f5a34f1d7e3}{D\+E\+S\+\_\+crypt} (const char $\ast$buf, const char $\ast$salt)
+\item 
+void \hyperlink{des_8h_a54092355eb4f12e6a967c0c184d598e7}{D\+E\+S\+\_\+ofb\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, int numbits, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$schedule, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$ivec)
+\item 
+void \hyperlink{des_8h_a6a1fbcb25a342a0144207c34375940c9}{D\+E\+S\+\_\+pcbc\+\_\+encrypt} (const unsigned char $\ast$input, unsigned char $\ast$output, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$schedule, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$ivec, int enc)
+\item 
+D\+E\+S\+\_\+\+L\+O\+NG \hyperlink{des_8h_a93f75ae5197844305407b3ef3db061a2}{D\+E\+S\+\_\+quad\+\_\+cksum} (const unsigned char $\ast$input, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} output\mbox{[}$\,$\mbox{]}, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, int out\+\_\+count, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$seed)
+\item 
+int \hyperlink{des_8h_aed3355cbc23b38abe60a4ccf658d59c4}{D\+E\+S\+\_\+random\+\_\+key} (\hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$ret)
+\item 
+void \hyperlink{des_8h_a4179bef43ceb72cc2034f39e7d2d5ae4}{D\+E\+S\+\_\+set\+\_\+odd\+\_\+parity} (\hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$key)
+\item 
+int \hyperlink{des_8h_a1ce5c026b0d60ce08f255d45e9d24a0a}{D\+E\+S\+\_\+check\+\_\+key\+\_\+parity} (\hyperlink{des_8h_a45d2b0591b84bcc65c38210ebbe21a10}{const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$key)
+\item 
+int \hyperlink{des_8h_add6aa6210d8af56853e98f8dd67d22d7}{D\+E\+S\+\_\+is\+\_\+weak\+\_\+key} (\hyperlink{des_8h_a45d2b0591b84bcc65c38210ebbe21a10}{const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$key)
+\item 
+int \hyperlink{des_8h_a0af5031ced530f6a4aa70e1cd1695d7f}{D\+E\+S\+\_\+set\+\_\+key} (\hyperlink{des_8h_a45d2b0591b84bcc65c38210ebbe21a10}{const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$key, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$schedule)
+\item 
+int \hyperlink{des_8h_a396fd2ddeb304af170ced7bd22eec0b1}{D\+E\+S\+\_\+key\+\_\+sched} (\hyperlink{des_8h_a45d2b0591b84bcc65c38210ebbe21a10}{const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$key, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$schedule)
+\item 
+int \hyperlink{des_8h_a44f0916998768ca982f958da95771067}{D\+E\+S\+\_\+set\+\_\+key\+\_\+checked} (\hyperlink{des_8h_a45d2b0591b84bcc65c38210ebbe21a10}{const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$key, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$schedule)
+\item 
+void \hyperlink{des_8h_aa174247a199fa5c0b56b240d75d2845e}{D\+E\+S\+\_\+set\+\_\+key\+\_\+unchecked} (\hyperlink{des_8h_a45d2b0591b84bcc65c38210ebbe21a10}{const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$key, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$schedule)
+\item 
+void \hyperlink{des_8h_a60893cdc75d9ce8cbf4a5d7a874855c8}{D\+E\+S\+\_\+string\+\_\+to\+\_\+key} (const char $\ast$str, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$key)
+\item 
+void \hyperlink{des_8h_a80cfe8ba12977e829019eed080cd4aee}{D\+E\+S\+\_\+string\+\_\+to\+\_\+2keys} (const char $\ast$str, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$key1, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$key2)
+\item 
+void \hyperlink{des_8h_a4ee2c930904b7364e767f0e1b32f0f2e}{D\+E\+S\+\_\+cfb64\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$schedule, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$ivec, int $\ast$num, int enc)
+\item 
+void \hyperlink{des_8h_ac38c8c891f9887fab4e8921f9fac41a1}{D\+E\+S\+\_\+ofb64\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, long \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, \hyperlink{des_8h_a524e0ff852070682aced151c7cfbfd83}{D\+E\+S\+\_\+key\+\_\+schedule} $\ast$schedule, \hyperlink{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{D\+E\+S\+\_\+cblock} $\ast$ivec, int $\ast$num)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{des_8h_abff6dd5a8e0b6460e81b816d7bff6af7}{D\+E\+S\+\_\+check\+\_\+key}
+\item 
+int \hyperlink{des_8h_a1062fbb82d1ce0cdac2b880d37df1362}{D\+E\+S\+\_\+rw\+\_\+mode}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+\+C\+B\+C\+\_\+\+M\+O\+DE@{D\+E\+S\+\_\+\+C\+B\+C\+\_\+\+M\+O\+DE}}
+\index{D\+E\+S\+\_\+\+C\+B\+C\+\_\+\+M\+O\+DE@{D\+E\+S\+\_\+\+C\+B\+C\+\_\+\+M\+O\+DE}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+\+C\+B\+C\+\_\+\+M\+O\+DE}{DES_CBC_MODE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+S\+\_\+\+C\+B\+C\+\_\+\+M\+O\+DE~0}\hypertarget{des_8h_aa410ff584e827dc46f2ac399d21467fc}{}\label{des_8h_aa410ff584e827dc46f2ac399d21467fc}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+\+D\+E\+C\+R\+Y\+PT@{D\+E\+S\+\_\+\+D\+E\+C\+R\+Y\+PT}}
+\index{D\+E\+S\+\_\+\+D\+E\+C\+R\+Y\+PT@{D\+E\+S\+\_\+\+D\+E\+C\+R\+Y\+PT}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+\+D\+E\+C\+R\+Y\+PT}{DES_DECRYPT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+S\+\_\+\+D\+E\+C\+R\+Y\+PT~0}\hypertarget{des_8h_a7ca3b464dc9e6cabf82f636101b6e133}{}\label{des_8h_a7ca3b464dc9e6cabf82f636101b6e133}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+ecb2\+\_\+encrypt@{D\+E\+S\+\_\+ecb2\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+ecb2\+\_\+encrypt@{D\+E\+S\+\_\+ecb2\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+ecb2\+\_\+encrypt}{DES_ecb2_encrypt}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+S\+\_\+ecb2\+\_\+encrypt(
+\begin{DoxyParamCaption}
+\item[{}]{i, }
+\item[{}]{o, }
+\item[{}]{k1, }
+\item[{}]{k2, }
+\item[{}]{e}
+\end{DoxyParamCaption}
+)~{\bf D\+E\+S\+\_\+ecb3\+\_\+encrypt}((i),(o),(k1),(k2),(k1),(e))}\hypertarget{des_8h_ac7827e13433080b5c313e9a272310989}{}\label{des_8h_ac7827e13433080b5c313e9a272310989}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+ede2\+\_\+cbc\+\_\+encrypt@{D\+E\+S\+\_\+ede2\+\_\+cbc\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+ede2\+\_\+cbc\+\_\+encrypt@{D\+E\+S\+\_\+ede2\+\_\+cbc\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+ede2\+\_\+cbc\+\_\+encrypt}{DES_ede2_cbc_encrypt}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+S\+\_\+ede2\+\_\+cbc\+\_\+encrypt(
+\begin{DoxyParamCaption}
+\item[{}]{i, }
+\item[{}]{o, }
+\item[{}]{l, }
+\item[{}]{k1, }
+\item[{}]{k2, }
+\item[{}]{iv, }
+\item[{}]{e}
+\end{DoxyParamCaption}
+)~{\bf D\+E\+S\+\_\+ede3\+\_\+cbc\+\_\+encrypt}((i),(o),(l),(k1),(k2),(k1),(iv),(e))}\hypertarget{des_8h_a2e2e36f463e584d7e38250c5cf27c9c8}{}\label{des_8h_a2e2e36f463e584d7e38250c5cf27c9c8}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+ede2\+\_\+cfb64\+\_\+encrypt@{D\+E\+S\+\_\+ede2\+\_\+cfb64\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+ede2\+\_\+cfb64\+\_\+encrypt@{D\+E\+S\+\_\+ede2\+\_\+cfb64\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+ede2\+\_\+cfb64\+\_\+encrypt}{DES_ede2_cfb64_encrypt}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+S\+\_\+ede2\+\_\+cfb64\+\_\+encrypt(
+\begin{DoxyParamCaption}
+\item[{}]{i, }
+\item[{}]{o, }
+\item[{}]{l, }
+\item[{}]{k1, }
+\item[{}]{k2, }
+\item[{}]{iv, }
+\item[{}]{n, }
+\item[{}]{e}
+\end{DoxyParamCaption}
+)~{\bf D\+E\+S\+\_\+ede3\+\_\+cfb64\+\_\+encrypt}((i),(o),(l),(k1),(k2),(k1),(iv),(n),(e))}\hypertarget{des_8h_a47c05cebcae80ab368d0cb184b0a8683}{}\label{des_8h_a47c05cebcae80ab368d0cb184b0a8683}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+ede2\+\_\+ofb64\+\_\+encrypt@{D\+E\+S\+\_\+ede2\+\_\+ofb64\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+ede2\+\_\+ofb64\+\_\+encrypt@{D\+E\+S\+\_\+ede2\+\_\+ofb64\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+ede2\+\_\+ofb64\+\_\+encrypt}{DES_ede2_ofb64_encrypt}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+S\+\_\+ede2\+\_\+ofb64\+\_\+encrypt(
+\begin{DoxyParamCaption}
+\item[{}]{i, }
+\item[{}]{o, }
+\item[{}]{l, }
+\item[{}]{k1, }
+\item[{}]{k2, }
+\item[{}]{iv, }
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~{\bf D\+E\+S\+\_\+ede3\+\_\+ofb64\+\_\+encrypt}((i),(o),(l),(k1),(k2),(k1),(iv),(n))}\hypertarget{des_8h_ad4de03c1176b34206c2d05d5d60907a0}{}\label{des_8h_ad4de03c1176b34206c2d05d5d60907a0}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+\+E\+N\+C\+R\+Y\+PT@{D\+E\+S\+\_\+\+E\+N\+C\+R\+Y\+PT}}
+\index{D\+E\+S\+\_\+\+E\+N\+C\+R\+Y\+PT@{D\+E\+S\+\_\+\+E\+N\+C\+R\+Y\+PT}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+\+E\+N\+C\+R\+Y\+PT}{DES_ENCRYPT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+S\+\_\+\+E\+N\+C\+R\+Y\+PT~1}\hypertarget{des_8h_a89730e026cc6082480f070985e91e8aa}{}\label{des_8h_a89730e026cc6082480f070985e91e8aa}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+fixup\+\_\+key\+\_\+parity@{D\+E\+S\+\_\+fixup\+\_\+key\+\_\+parity}}
+\index{D\+E\+S\+\_\+fixup\+\_\+key\+\_\+parity@{D\+E\+S\+\_\+fixup\+\_\+key\+\_\+parity}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+fixup\+\_\+key\+\_\+parity}{DES_fixup_key_parity}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+S\+\_\+fixup\+\_\+key\+\_\+parity~{\bf D\+E\+S\+\_\+set\+\_\+odd\+\_\+parity}}\hypertarget{des_8h_a6232dad08c9f0045c960b673001d0ba8}{}\label{des_8h_a6232dad08c9f0045c960b673001d0ba8}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+SZ@{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+SZ}}
+\index{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+SZ@{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+SZ}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+SZ}{DES_KEY_SZ}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+S\+\_\+\+K\+E\+Y\+\_\+\+SZ~(sizeof({\bf D\+E\+S\+\_\+cblock}))}\hypertarget{des_8h_aaa5a2a97dcb6f597ea17f34872d7d2eb}{}\label{des_8h_aaa5a2a97dcb6f597ea17f34872d7d2eb}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+\+P\+C\+B\+C\+\_\+\+M\+O\+DE@{D\+E\+S\+\_\+\+P\+C\+B\+C\+\_\+\+M\+O\+DE}}
+\index{D\+E\+S\+\_\+\+P\+C\+B\+C\+\_\+\+M\+O\+DE@{D\+E\+S\+\_\+\+P\+C\+B\+C\+\_\+\+M\+O\+DE}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+\+P\+C\+B\+C\+\_\+\+M\+O\+DE}{DES_PCBC_MODE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+S\+\_\+\+P\+C\+B\+C\+\_\+\+M\+O\+DE~1}\hypertarget{des_8h_a0e8735ceb1ec58e5268c4915a87c3b5b}{}\label{des_8h_a0e8735ceb1ec58e5268c4915a87c3b5b}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+SZ@{D\+E\+S\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+SZ}}
+\index{D\+E\+S\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+SZ@{D\+E\+S\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+SZ}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+SZ}{DES_SCHEDULE_SZ}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+S\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+SZ~(sizeof({\bf D\+E\+S\+\_\+key\+\_\+schedule}))}\hypertarget{des_8h_ad5916c39b84ebf70f8a0abcc3cf1d71a}{}\label{des_8h_ad5916c39b84ebf70f8a0abcc3cf1d71a}
+
+
+\subsection{Typedef Documentation}
+\index{des.\+h@{des.\+h}!const\+\_\+\+D\+E\+S\+\_\+cblock@{const\+\_\+\+D\+E\+S\+\_\+cblock}}
+\index{const\+\_\+\+D\+E\+S\+\_\+cblock@{const\+\_\+\+D\+E\+S\+\_\+cblock}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{const\+\_\+\+D\+E\+S\+\_\+cblock}{const_DES_cblock}}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char const\+\_\+\+D\+E\+S\+\_\+cblock\mbox{[}8\mbox{]}}\hypertarget{des_8h_a45d2b0591b84bcc65c38210ebbe21a10}{}\label{des_8h_a45d2b0591b84bcc65c38210ebbe21a10}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+cblock@{D\+E\+S\+\_\+cblock}}
+\index{D\+E\+S\+\_\+cblock@{D\+E\+S\+\_\+cblock}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+cblock}{DES_cblock}}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char D\+E\+S\+\_\+cblock\mbox{[}8\mbox{]}}\hypertarget{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}{}\label{des_8h_adcbbb795f912b83b7aa8c2660eb1bee4}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+key\+\_\+schedule@{D\+E\+S\+\_\+key\+\_\+schedule}}
+\index{D\+E\+S\+\_\+key\+\_\+schedule@{D\+E\+S\+\_\+key\+\_\+schedule}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+key\+\_\+schedule}{DES_key_schedule}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf D\+E\+S\+\_\+ks}  {\bf D\+E\+S\+\_\+key\+\_\+schedule}}\hypertarget{des_8h_a524e0ff852070682aced151c7cfbfd83}{}\label{des_8h_a524e0ff852070682aced151c7cfbfd83}
+
+
+\subsection{Function Documentation}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+cbc\+\_\+cksum@{D\+E\+S\+\_\+cbc\+\_\+cksum}}
+\index{D\+E\+S\+\_\+cbc\+\_\+cksum@{D\+E\+S\+\_\+cbc\+\_\+cksum}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+cbc\+\_\+cksum(const unsigned char $\ast$input, D\+E\+S\+\_\+cblock $\ast$output, long length, D\+E\+S\+\_\+key\+\_\+schedule $\ast$schedule, const\+\_\+\+D\+E\+S\+\_\+cblock $\ast$ivec)}{DES_cbc_cksum(const unsigned char *input, DES_cblock *output, long length, DES_key_schedule *schedule, const_DES_cblock *ivec)}}]{\setlength{\rightskip}{0pt plus 5cm}D\+E\+S\+\_\+\+L\+O\+NG D\+E\+S\+\_\+cbc\+\_\+cksum (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{input, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{output, }
+\item[{long}]{length, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{schedule, }
+\item[{{\bf const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$}]{ivec}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_af7df1ea87542b23d4e05ef6e643c092f}{}\label{des_8h_af7df1ea87542b23d4e05ef6e643c092f}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+cbc\+\_\+encrypt@{D\+E\+S\+\_\+cbc\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+cbc\+\_\+encrypt@{D\+E\+S\+\_\+cbc\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+cbc\+\_\+encrypt(const unsigned char $\ast$input, unsigned char $\ast$output, long length, D\+E\+S\+\_\+key\+\_\+schedule $\ast$schedule, D\+E\+S\+\_\+cblock $\ast$ivec, int enc)}{DES_cbc_encrypt(const unsigned char *input, unsigned char *output, long length, DES_key_schedule *schedule, DES_cblock *ivec, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+cbc\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output, }
+\item[{long}]{length, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{schedule, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{ivec, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a1caad9de1bef793fad462fadbfc34991}{}\label{des_8h_a1caad9de1bef793fad462fadbfc34991}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+cfb64\+\_\+encrypt@{D\+E\+S\+\_\+cfb64\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+cfb64\+\_\+encrypt@{D\+E\+S\+\_\+cfb64\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+cfb64\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, long length, D\+E\+S\+\_\+key\+\_\+schedule $\ast$schedule, D\+E\+S\+\_\+cblock $\ast$ivec, int $\ast$num, int enc)}{DES_cfb64_encrypt(const unsigned char *in, unsigned char *out, long length, DES_key_schedule *schedule, DES_cblock *ivec, int *num, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+cfb64\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{long}]{length, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{schedule, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{ivec, }
+\item[{int $\ast$}]{num, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a4ee2c930904b7364e767f0e1b32f0f2e}{}\label{des_8h_a4ee2c930904b7364e767f0e1b32f0f2e}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+cfb\+\_\+encrypt@{D\+E\+S\+\_\+cfb\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+cfb\+\_\+encrypt@{D\+E\+S\+\_\+cfb\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+cfb\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, int numbits, long length, D\+E\+S\+\_\+key\+\_\+schedule $\ast$schedule, D\+E\+S\+\_\+cblock $\ast$ivec, int enc)}{DES_cfb_encrypt(const unsigned char *in, unsigned char *out, int numbits, long length, DES_key_schedule *schedule, DES_cblock *ivec, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+cfb\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{int}]{numbits, }
+\item[{long}]{length, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{schedule, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{ivec, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a395044f147ce2e92d1704ce52a4ba982}{}\label{des_8h_a395044f147ce2e92d1704ce52a4ba982}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+check\+\_\+key\+\_\+parity@{D\+E\+S\+\_\+check\+\_\+key\+\_\+parity}}
+\index{D\+E\+S\+\_\+check\+\_\+key\+\_\+parity@{D\+E\+S\+\_\+check\+\_\+key\+\_\+parity}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+check\+\_\+key\+\_\+parity(const\+\_\+\+D\+E\+S\+\_\+cblock $\ast$key)}{DES_check_key_parity(const_DES_cblock *key)}}]{\setlength{\rightskip}{0pt plus 5cm}int D\+E\+S\+\_\+check\+\_\+key\+\_\+parity (
+\begin{DoxyParamCaption}
+\item[{{\bf const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a1ce5c026b0d60ce08f255d45e9d24a0a}{}\label{des_8h_a1ce5c026b0d60ce08f255d45e9d24a0a}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+crypt@{D\+E\+S\+\_\+crypt}}
+\index{D\+E\+S\+\_\+crypt@{D\+E\+S\+\_\+crypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+crypt(const char $\ast$buf, const char $\ast$salt)}{DES_crypt(const char *buf, const char *salt)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ D\+E\+S\+\_\+crypt (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{buf, }
+\item[{const char $\ast$}]{salt}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a1da3af1c8fd59e86f5578f5a34f1d7e3}{}\label{des_8h_a1da3af1c8fd59e86f5578f5a34f1d7e3}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+decrypt3@{D\+E\+S\+\_\+decrypt3}}
+\index{D\+E\+S\+\_\+decrypt3@{D\+E\+S\+\_\+decrypt3}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+decrypt3(\+D\+E\+S\+\_\+\+L\+O\+N\+G $\ast$data, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks1, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks2, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks3)}{DES_decrypt3(DES_LONG *data, DES_key_schedule *ks1, DES_key_schedule *ks2, DES_key_schedule *ks3)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+decrypt3 (
+\begin{DoxyParamCaption}
+\item[{D\+E\+S\+\_\+\+L\+O\+NG $\ast$}]{data, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks1, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks2, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks3}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a2f2c7cfc864d75daf329cb9102d8433c}{}\label{des_8h_a2f2c7cfc864d75daf329cb9102d8433c}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+ecb3\+\_\+encrypt@{D\+E\+S\+\_\+ecb3\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+ecb3\+\_\+encrypt@{D\+E\+S\+\_\+ecb3\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+ecb3\+\_\+encrypt(const\+\_\+\+D\+E\+S\+\_\+cblock $\ast$input, D\+E\+S\+\_\+cblock $\ast$output, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks1, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks2, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks3, int enc)}{DES_ecb3_encrypt(const_DES_cblock *input, DES_cblock *output, DES_key_schedule *ks1, DES_key_schedule *ks2, DES_key_schedule *ks3, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+ecb3\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$}]{input, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{output, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks1, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks2, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks3, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a779ed672d4b6ec61e594975d6982ab36}{}\label{des_8h_a779ed672d4b6ec61e594975d6982ab36}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+ecb\+\_\+encrypt@{D\+E\+S\+\_\+ecb\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+ecb\+\_\+encrypt@{D\+E\+S\+\_\+ecb\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+ecb\+\_\+encrypt(const\+\_\+\+D\+E\+S\+\_\+cblock $\ast$input, D\+E\+S\+\_\+cblock $\ast$output, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks, int enc)}{DES_ecb_encrypt(const_DES_cblock *input, DES_cblock *output, DES_key_schedule *ks, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+ecb\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$}]{input, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{output, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a0adce8f5fdd9b4201b7cd1154672c853}{}\label{des_8h_a0adce8f5fdd9b4201b7cd1154672c853}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+ede3\+\_\+cbc\+\_\+encrypt@{D\+E\+S\+\_\+ede3\+\_\+cbc\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+ede3\+\_\+cbc\+\_\+encrypt@{D\+E\+S\+\_\+ede3\+\_\+cbc\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+ede3\+\_\+cbc\+\_\+encrypt(const unsigned char $\ast$input, unsigned char $\ast$output, long length, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks1, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks2, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks3, D\+E\+S\+\_\+cblock $\ast$ivec, int enc)}{DES_ede3_cbc_encrypt(const unsigned char *input, unsigned char *output, long length, DES_key_schedule *ks1, DES_key_schedule *ks2, DES_key_schedule *ks3, DES_cblock *ivec, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+ede3\+\_\+cbc\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output, }
+\item[{long}]{length, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks1, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks2, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks3, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{ivec, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a428de5bb8a6db72dbde54d926ccdc1b5}{}\label{des_8h_a428de5bb8a6db72dbde54d926ccdc1b5}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+ede3\+\_\+cbcm\+\_\+encrypt@{D\+E\+S\+\_\+ede3\+\_\+cbcm\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+ede3\+\_\+cbcm\+\_\+encrypt@{D\+E\+S\+\_\+ede3\+\_\+cbcm\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+ede3\+\_\+cbcm\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, long length, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks1, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks2, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks3, D\+E\+S\+\_\+cblock $\ast$ivec1, D\+E\+S\+\_\+cblock $\ast$ivec2, int enc)}{DES_ede3_cbcm_encrypt(const unsigned char *in, unsigned char *out, long length, DES_key_schedule *ks1, DES_key_schedule *ks2, DES_key_schedule *ks3, DES_cblock *ivec1, DES_cblock *ivec2, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+ede3\+\_\+cbcm\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{long}]{length, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks1, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks2, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks3, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{ivec1, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{ivec2, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_ae8604334e24501da3e17d19538ff024f}{}\label{des_8h_ae8604334e24501da3e17d19538ff024f}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+ede3\+\_\+cfb64\+\_\+encrypt@{D\+E\+S\+\_\+ede3\+\_\+cfb64\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+ede3\+\_\+cfb64\+\_\+encrypt@{D\+E\+S\+\_\+ede3\+\_\+cfb64\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+ede3\+\_\+cfb64\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, long length, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks1, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks2, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks3, D\+E\+S\+\_\+cblock $\ast$ivec, int $\ast$num, int enc)}{DES_ede3_cfb64_encrypt(const unsigned char *in, unsigned char *out, long length, DES_key_schedule *ks1, DES_key_schedule *ks2, DES_key_schedule *ks3, DES_cblock *ivec, int *num, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+ede3\+\_\+cfb64\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{long}]{length, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks1, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks2, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks3, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{ivec, }
+\item[{int $\ast$}]{num, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a667c96949f41ae434ab5938243722c0f}{}\label{des_8h_a667c96949f41ae434ab5938243722c0f}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+ede3\+\_\+cfb\+\_\+encrypt@{D\+E\+S\+\_\+ede3\+\_\+cfb\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+ede3\+\_\+cfb\+\_\+encrypt@{D\+E\+S\+\_\+ede3\+\_\+cfb\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+ede3\+\_\+cfb\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, int numbits, long length, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks1, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks2, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks3, D\+E\+S\+\_\+cblock $\ast$ivec, int enc)}{DES_ede3_cfb_encrypt(const unsigned char *in, unsigned char *out, int numbits, long length, DES_key_schedule *ks1, DES_key_schedule *ks2, DES_key_schedule *ks3, DES_cblock *ivec, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+ede3\+\_\+cfb\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{int}]{numbits, }
+\item[{long}]{length, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks1, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks2, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks3, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{ivec, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_aced4464e7b96726934593c1b5c00bd2a}{}\label{des_8h_aced4464e7b96726934593c1b5c00bd2a}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+ede3\+\_\+ofb64\+\_\+encrypt@{D\+E\+S\+\_\+ede3\+\_\+ofb64\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+ede3\+\_\+ofb64\+\_\+encrypt@{D\+E\+S\+\_\+ede3\+\_\+ofb64\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+ede3\+\_\+ofb64\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, long length, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks1, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks2, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks3, D\+E\+S\+\_\+cblock $\ast$ivec, int $\ast$num)}{DES_ede3_ofb64_encrypt(const unsigned char *in, unsigned char *out, long length, DES_key_schedule *ks1, DES_key_schedule *ks2, DES_key_schedule *ks3, DES_cblock *ivec, int *num)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+ede3\+\_\+ofb64\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{long}]{length, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks1, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks2, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks3, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{ivec, }
+\item[{int $\ast$}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a43216d78874e3b7cb5fb67a947be17a8}{}\label{des_8h_a43216d78874e3b7cb5fb67a947be17a8}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+enc\+\_\+read@{D\+E\+S\+\_\+enc\+\_\+read}}
+\index{D\+E\+S\+\_\+enc\+\_\+read@{D\+E\+S\+\_\+enc\+\_\+read}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+enc\+\_\+read(int fd, void $\ast$buf, int len, D\+E\+S\+\_\+key\+\_\+schedule $\ast$sched, D\+E\+S\+\_\+cblock $\ast$iv)}{DES_enc_read(int fd, void *buf, int len, DES_key_schedule *sched, DES_cblock *iv)}}]{\setlength{\rightskip}{0pt plus 5cm}int D\+E\+S\+\_\+enc\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{int}]{fd, }
+\item[{void $\ast$}]{buf, }
+\item[{int}]{len, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{sched, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{iv}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_af1a0bd8f6cda792b36115e6e9407ea6a}{}\label{des_8h_af1a0bd8f6cda792b36115e6e9407ea6a}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+enc\+\_\+write@{D\+E\+S\+\_\+enc\+\_\+write}}
+\index{D\+E\+S\+\_\+enc\+\_\+write@{D\+E\+S\+\_\+enc\+\_\+write}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+enc\+\_\+write(int fd, const void $\ast$buf, int len, D\+E\+S\+\_\+key\+\_\+schedule $\ast$sched, D\+E\+S\+\_\+cblock $\ast$iv)}{DES_enc_write(int fd, const void *buf, int len, DES_key_schedule *sched, DES_cblock *iv)}}]{\setlength{\rightskip}{0pt plus 5cm}int D\+E\+S\+\_\+enc\+\_\+write (
+\begin{DoxyParamCaption}
+\item[{int}]{fd, }
+\item[{const void $\ast$}]{buf, }
+\item[{int}]{len, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{sched, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{iv}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a6b8ba406b476e00d38aa124cf315a802}{}\label{des_8h_a6b8ba406b476e00d38aa124cf315a802}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+encrypt1@{D\+E\+S\+\_\+encrypt1}}
+\index{D\+E\+S\+\_\+encrypt1@{D\+E\+S\+\_\+encrypt1}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+encrypt1(\+D\+E\+S\+\_\+\+L\+O\+N\+G $\ast$data, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks, int enc)}{DES_encrypt1(DES_LONG *data, DES_key_schedule *ks, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+encrypt1 (
+\begin{DoxyParamCaption}
+\item[{D\+E\+S\+\_\+\+L\+O\+NG $\ast$}]{data, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a20671b8339b5a2c51a7463f305c69aef}{}\label{des_8h_a20671b8339b5a2c51a7463f305c69aef}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+encrypt2@{D\+E\+S\+\_\+encrypt2}}
+\index{D\+E\+S\+\_\+encrypt2@{D\+E\+S\+\_\+encrypt2}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+encrypt2(\+D\+E\+S\+\_\+\+L\+O\+N\+G $\ast$data, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks, int enc)}{DES_encrypt2(DES_LONG *data, DES_key_schedule *ks, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+encrypt2 (
+\begin{DoxyParamCaption}
+\item[{D\+E\+S\+\_\+\+L\+O\+NG $\ast$}]{data, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a6761e0c07748685ba3f51f9be0e71a1d}{}\label{des_8h_a6761e0c07748685ba3f51f9be0e71a1d}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+encrypt3@{D\+E\+S\+\_\+encrypt3}}
+\index{D\+E\+S\+\_\+encrypt3@{D\+E\+S\+\_\+encrypt3}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+encrypt3(\+D\+E\+S\+\_\+\+L\+O\+N\+G $\ast$data, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks1, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks2, D\+E\+S\+\_\+key\+\_\+schedule $\ast$ks3)}{DES_encrypt3(DES_LONG *data, DES_key_schedule *ks1, DES_key_schedule *ks2, DES_key_schedule *ks3)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+encrypt3 (
+\begin{DoxyParamCaption}
+\item[{D\+E\+S\+\_\+\+L\+O\+NG $\ast$}]{data, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks1, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks2, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{ks3}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a9bc22053779caeef634ec729d1f2889a}{}\label{des_8h_a9bc22053779caeef634ec729d1f2889a}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+fcrypt@{D\+E\+S\+\_\+fcrypt}}
+\index{D\+E\+S\+\_\+fcrypt@{D\+E\+S\+\_\+fcrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+fcrypt(const char $\ast$buf, const char $\ast$salt, char $\ast$ret)}{DES_fcrypt(const char *buf, const char *salt, char *ret)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ D\+E\+S\+\_\+fcrypt (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{buf, }
+\item[{const char $\ast$}]{salt, }
+\item[{char $\ast$}]{ret}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_ae444ad9f1c3fb2bd104eac2119e7a564}{}\label{des_8h_ae444ad9f1c3fb2bd104eac2119e7a564}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+is\+\_\+weak\+\_\+key@{D\+E\+S\+\_\+is\+\_\+weak\+\_\+key}}
+\index{D\+E\+S\+\_\+is\+\_\+weak\+\_\+key@{D\+E\+S\+\_\+is\+\_\+weak\+\_\+key}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+is\+\_\+weak\+\_\+key(const\+\_\+\+D\+E\+S\+\_\+cblock $\ast$key)}{DES_is_weak_key(const_DES_cblock *key)}}]{\setlength{\rightskip}{0pt plus 5cm}int D\+E\+S\+\_\+is\+\_\+weak\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{{\bf const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_add6aa6210d8af56853e98f8dd67d22d7}{}\label{des_8h_add6aa6210d8af56853e98f8dd67d22d7}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+key\+\_\+sched@{D\+E\+S\+\_\+key\+\_\+sched}}
+\index{D\+E\+S\+\_\+key\+\_\+sched@{D\+E\+S\+\_\+key\+\_\+sched}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+key\+\_\+sched(const\+\_\+\+D\+E\+S\+\_\+cblock $\ast$key, D\+E\+S\+\_\+key\+\_\+schedule $\ast$schedule)}{DES_key_sched(const_DES_cblock *key, DES_key_schedule *schedule)}}]{\setlength{\rightskip}{0pt plus 5cm}int D\+E\+S\+\_\+key\+\_\+sched (
+\begin{DoxyParamCaption}
+\item[{{\bf const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$}]{key, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{schedule}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a396fd2ddeb304af170ced7bd22eec0b1}{}\label{des_8h_a396fd2ddeb304af170ced7bd22eec0b1}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+ncbc\+\_\+encrypt@{D\+E\+S\+\_\+ncbc\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+ncbc\+\_\+encrypt@{D\+E\+S\+\_\+ncbc\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+ncbc\+\_\+encrypt(const unsigned char $\ast$input, unsigned char $\ast$output, long length, D\+E\+S\+\_\+key\+\_\+schedule $\ast$schedule, D\+E\+S\+\_\+cblock $\ast$ivec, int enc)}{DES_ncbc_encrypt(const unsigned char *input, unsigned char *output, long length, DES_key_schedule *schedule, DES_cblock *ivec, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+ncbc\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output, }
+\item[{long}]{length, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{schedule, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{ivec, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a8e76ccede9beba2693bb6a9dc6198bb2}{}\label{des_8h_a8e76ccede9beba2693bb6a9dc6198bb2}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+ofb64\+\_\+encrypt@{D\+E\+S\+\_\+ofb64\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+ofb64\+\_\+encrypt@{D\+E\+S\+\_\+ofb64\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+ofb64\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, long length, D\+E\+S\+\_\+key\+\_\+schedule $\ast$schedule, D\+E\+S\+\_\+cblock $\ast$ivec, int $\ast$num)}{DES_ofb64_encrypt(const unsigned char *in, unsigned char *out, long length, DES_key_schedule *schedule, DES_cblock *ivec, int *num)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+ofb64\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{long}]{length, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{schedule, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{ivec, }
+\item[{int $\ast$}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_ac38c8c891f9887fab4e8921f9fac41a1}{}\label{des_8h_ac38c8c891f9887fab4e8921f9fac41a1}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+ofb\+\_\+encrypt@{D\+E\+S\+\_\+ofb\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+ofb\+\_\+encrypt@{D\+E\+S\+\_\+ofb\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+ofb\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, int numbits, long length, D\+E\+S\+\_\+key\+\_\+schedule $\ast$schedule, D\+E\+S\+\_\+cblock $\ast$ivec)}{DES_ofb_encrypt(const unsigned char *in, unsigned char *out, int numbits, long length, DES_key_schedule *schedule, DES_cblock *ivec)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+ofb\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{int}]{numbits, }
+\item[{long}]{length, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{schedule, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{ivec}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a54092355eb4f12e6a967c0c184d598e7}{}\label{des_8h_a54092355eb4f12e6a967c0c184d598e7}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+options@{D\+E\+S\+\_\+options}}
+\index{D\+E\+S\+\_\+options@{D\+E\+S\+\_\+options}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+options(void)}{DES_options(void)}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ D\+E\+S\+\_\+options (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_ac434f540a351ebe4ac27e687352006c8}{}\label{des_8h_ac434f540a351ebe4ac27e687352006c8}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+pcbc\+\_\+encrypt@{D\+E\+S\+\_\+pcbc\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+pcbc\+\_\+encrypt@{D\+E\+S\+\_\+pcbc\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+pcbc\+\_\+encrypt(const unsigned char $\ast$input, unsigned char $\ast$output, long length, D\+E\+S\+\_\+key\+\_\+schedule $\ast$schedule, D\+E\+S\+\_\+cblock $\ast$ivec, int enc)}{DES_pcbc_encrypt(const unsigned char *input, unsigned char *output, long length, DES_key_schedule *schedule, DES_cblock *ivec, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+pcbc\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output, }
+\item[{long}]{length, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{schedule, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{ivec, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a6a1fbcb25a342a0144207c34375940c9}{}\label{des_8h_a6a1fbcb25a342a0144207c34375940c9}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+quad\+\_\+cksum@{D\+E\+S\+\_\+quad\+\_\+cksum}}
+\index{D\+E\+S\+\_\+quad\+\_\+cksum@{D\+E\+S\+\_\+quad\+\_\+cksum}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+quad\+\_\+cksum(const unsigned char $\ast$input, D\+E\+S\+\_\+cblock output[], long length, int out\+\_\+count, D\+E\+S\+\_\+cblock $\ast$seed)}{DES_quad_cksum(const unsigned char *input, DES_cblock output[], long length, int out_count, DES_cblock *seed)}}]{\setlength{\rightskip}{0pt plus 5cm}D\+E\+S\+\_\+\+L\+O\+NG D\+E\+S\+\_\+quad\+\_\+cksum (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{input, }
+\item[{{\bf D\+E\+S\+\_\+cblock}}]{output\mbox{[}$\,$\mbox{]}, }
+\item[{long}]{length, }
+\item[{int}]{out\+\_\+count, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{seed}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a93f75ae5197844305407b3ef3db061a2}{}\label{des_8h_a93f75ae5197844305407b3ef3db061a2}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+random\+\_\+key@{D\+E\+S\+\_\+random\+\_\+key}}
+\index{D\+E\+S\+\_\+random\+\_\+key@{D\+E\+S\+\_\+random\+\_\+key}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+random\+\_\+key(\+D\+E\+S\+\_\+cblock $\ast$ret)}{DES_random_key(DES_cblock *ret)}}]{\setlength{\rightskip}{0pt plus 5cm}int D\+E\+S\+\_\+random\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{ret}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_aed3355cbc23b38abe60a4ccf658d59c4}{}\label{des_8h_aed3355cbc23b38abe60a4ccf658d59c4}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+set\+\_\+key@{D\+E\+S\+\_\+set\+\_\+key}}
+\index{D\+E\+S\+\_\+set\+\_\+key@{D\+E\+S\+\_\+set\+\_\+key}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+set\+\_\+key(const\+\_\+\+D\+E\+S\+\_\+cblock $\ast$key, D\+E\+S\+\_\+key\+\_\+schedule $\ast$schedule)}{DES_set_key(const_DES_cblock *key, DES_key_schedule *schedule)}}]{\setlength{\rightskip}{0pt plus 5cm}int D\+E\+S\+\_\+set\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{{\bf const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$}]{key, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{schedule}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a0af5031ced530f6a4aa70e1cd1695d7f}{}\label{des_8h_a0af5031ced530f6a4aa70e1cd1695d7f}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+set\+\_\+key\+\_\+checked@{D\+E\+S\+\_\+set\+\_\+key\+\_\+checked}}
+\index{D\+E\+S\+\_\+set\+\_\+key\+\_\+checked@{D\+E\+S\+\_\+set\+\_\+key\+\_\+checked}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+set\+\_\+key\+\_\+checked(const\+\_\+\+D\+E\+S\+\_\+cblock $\ast$key, D\+E\+S\+\_\+key\+\_\+schedule $\ast$schedule)}{DES_set_key_checked(const_DES_cblock *key, DES_key_schedule *schedule)}}]{\setlength{\rightskip}{0pt plus 5cm}int D\+E\+S\+\_\+set\+\_\+key\+\_\+checked (
+\begin{DoxyParamCaption}
+\item[{{\bf const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$}]{key, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{schedule}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a44f0916998768ca982f958da95771067}{}\label{des_8h_a44f0916998768ca982f958da95771067}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+set\+\_\+key\+\_\+unchecked@{D\+E\+S\+\_\+set\+\_\+key\+\_\+unchecked}}
+\index{D\+E\+S\+\_\+set\+\_\+key\+\_\+unchecked@{D\+E\+S\+\_\+set\+\_\+key\+\_\+unchecked}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+set\+\_\+key\+\_\+unchecked(const\+\_\+\+D\+E\+S\+\_\+cblock $\ast$key, D\+E\+S\+\_\+key\+\_\+schedule $\ast$schedule)}{DES_set_key_unchecked(const_DES_cblock *key, DES_key_schedule *schedule)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+set\+\_\+key\+\_\+unchecked (
+\begin{DoxyParamCaption}
+\item[{{\bf const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$}]{key, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{schedule}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_aa174247a199fa5c0b56b240d75d2845e}{}\label{des_8h_aa174247a199fa5c0b56b240d75d2845e}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+set\+\_\+odd\+\_\+parity@{D\+E\+S\+\_\+set\+\_\+odd\+\_\+parity}}
+\index{D\+E\+S\+\_\+set\+\_\+odd\+\_\+parity@{D\+E\+S\+\_\+set\+\_\+odd\+\_\+parity}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+set\+\_\+odd\+\_\+parity(\+D\+E\+S\+\_\+cblock $\ast$key)}{DES_set_odd_parity(DES_cblock *key)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+set\+\_\+odd\+\_\+parity (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a4179bef43ceb72cc2034f39e7d2d5ae4}{}\label{des_8h_a4179bef43ceb72cc2034f39e7d2d5ae4}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+string\+\_\+to\+\_\+2keys@{D\+E\+S\+\_\+string\+\_\+to\+\_\+2keys}}
+\index{D\+E\+S\+\_\+string\+\_\+to\+\_\+2keys@{D\+E\+S\+\_\+string\+\_\+to\+\_\+2keys}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+string\+\_\+to\+\_\+2keys(const char $\ast$str, D\+E\+S\+\_\+cblock $\ast$key1, D\+E\+S\+\_\+cblock $\ast$key2)}{DES_string_to_2keys(const char *str, DES_cblock *key1, DES_cblock *key2)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+string\+\_\+to\+\_\+2keys (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{key1, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{key2}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a80cfe8ba12977e829019eed080cd4aee}{}\label{des_8h_a80cfe8ba12977e829019eed080cd4aee}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+string\+\_\+to\+\_\+key@{D\+E\+S\+\_\+string\+\_\+to\+\_\+key}}
+\index{D\+E\+S\+\_\+string\+\_\+to\+\_\+key@{D\+E\+S\+\_\+string\+\_\+to\+\_\+key}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+string\+\_\+to\+\_\+key(const char $\ast$str, D\+E\+S\+\_\+cblock $\ast$key)}{DES_string_to_key(const char *str, DES_cblock *key)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+string\+\_\+to\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_a60893cdc75d9ce8cbf4a5d7a874855c8}{}\label{des_8h_a60893cdc75d9ce8cbf4a5d7a874855c8}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+xcbc\+\_\+encrypt@{D\+E\+S\+\_\+xcbc\+\_\+encrypt}}
+\index{D\+E\+S\+\_\+xcbc\+\_\+encrypt@{D\+E\+S\+\_\+xcbc\+\_\+encrypt}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+xcbc\+\_\+encrypt(const unsigned char $\ast$input, unsigned char $\ast$output, long length, D\+E\+S\+\_\+key\+\_\+schedule $\ast$schedule, D\+E\+S\+\_\+cblock $\ast$ivec, const\+\_\+\+D\+E\+S\+\_\+cblock $\ast$inw, const\+\_\+\+D\+E\+S\+\_\+cblock $\ast$outw, int enc)}{DES_xcbc_encrypt(const unsigned char *input, unsigned char *output, long length, DES_key_schedule *schedule, DES_cblock *ivec, const_DES_cblock *inw, const_DES_cblock *outw, int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+E\+S\+\_\+xcbc\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output, }
+\item[{long}]{length, }
+\item[{{\bf D\+E\+S\+\_\+key\+\_\+schedule} $\ast$}]{schedule, }
+\item[{{\bf D\+E\+S\+\_\+cblock} $\ast$}]{ivec, }
+\item[{{\bf const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$}]{inw, }
+\item[{{\bf const\+\_\+\+D\+E\+S\+\_\+cblock} $\ast$}]{outw, }
+\item[{int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{des_8h_ae2bb95630202cc4d4b3ae4b0c5a121be}{}\label{des_8h_ae2bb95630202cc4d4b3ae4b0c5a121be}
+
+
+\subsection{Variable Documentation}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+check\+\_\+key@{D\+E\+S\+\_\+check\+\_\+key}}
+\index{D\+E\+S\+\_\+check\+\_\+key@{D\+E\+S\+\_\+check\+\_\+key}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+check\+\_\+key}{DES_check_key}}]{\setlength{\rightskip}{0pt plus 5cm}int D\+E\+S\+\_\+check\+\_\+key}\hypertarget{des_8h_abff6dd5a8e0b6460e81b816d7bff6af7}{}\label{des_8h_abff6dd5a8e0b6460e81b816d7bff6af7}
+\index{des.\+h@{des.\+h}!D\+E\+S\+\_\+rw\+\_\+mode@{D\+E\+S\+\_\+rw\+\_\+mode}}
+\index{D\+E\+S\+\_\+rw\+\_\+mode@{D\+E\+S\+\_\+rw\+\_\+mode}!des.\+h@{des.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+S\+\_\+rw\+\_\+mode}{DES_rw_mode}}]{\setlength{\rightskip}{0pt plus 5cm}int D\+E\+S\+\_\+rw\+\_\+mode}\hypertarget{des_8h_a1062fbb82d1ce0cdac2b880d37df1362}{}\label{des_8h_a1062fbb82d1ce0cdac2b880d37df1362}

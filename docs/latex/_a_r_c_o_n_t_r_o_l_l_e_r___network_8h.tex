@@ -1,0 +1,487 @@
+\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.h File Reference}
+\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h}\index{src/hal/pb2/include/lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{src/hal/pb2/include/lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+
+
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network allow to operate an A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager for send and receive commands.  
+
+
+{\ttfamily \#include $<$lib\+A\+R\+S\+A\+L/\+A\+R\+S\+A\+L\+\_\+\+Thread.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Network/\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Error.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream.\+h$>$}\\*
+Include dependency graph for A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___n_e_t_w_o_r_k___sending_configuration__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Sending\+Configuration\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Sending Configuration used to know the timeout policy in case of sending data timeout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Network controller allow to operate an A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager for send and receive commands. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a164dd0cd4fce6ca72d07d1980b745afc}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Disconnection\+Callback\+\_\+t}) (void $\ast$custom\+Data)
+\begin{DoxyCompactList}\small\item\em Callback used on disconnection of the network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+PE} \{ \\*
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17af381704eff2fc69586350dcc496300d9}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+A\+CK} = 0, 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17af6b5c56e752d012681ce4891bb3fad9d}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+CK}, 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17a75b5a44e43507c1835efd0fe94c07d10}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY}, 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17a2fa15334b96b71c24891fcd3956bef30}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+T\+R\+E\+AM}, 
+\\*
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17afbb2e50da77342beb7071b2d9e9c434b}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX}
+ \}
+\item 
+enum \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_afc3cfb477c5f48ceb62c1acc6e037cf3}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+TE} \{ \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_afc3cfb477c5f48ceb62c1acc6e037cf3afe59f3875ef8bae6230fe16bff695c89}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+ED} = 0, 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_afc3cfb477c5f48ceb62c1acc6e037cf3acb482768edb1da49d4f02a4fc87bc502}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+U\+N\+N\+I\+NG}, 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_afc3cfb477c5f48ceb62c1acc6e037cf3a2e6f8fbb58915a6b8a28588cceeb2cf9}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+SE}, 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_afc3cfb477c5f48ceb62c1acc6e037cf3ac63baf489b4897837ed0b84395200406}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+AX}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$ \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_acf29ed752e866d9bf47ad4765cd7f265}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+New} (\hyperlink{struct_a_r_d_i_s_c_o_v_e_r_y___device__t}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$discovery\+Device, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a164dd0cd4fce6ca72d07d1980b745afc}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Disconnection\+Callback\+\_\+t} disconnection\+Callback, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a327d2e622690a43883cb32af6102c6d2}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t} send\+Json\+Callback, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___device_8h_a327d2e622690a43883cb32af6102c6d2}{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t} receive\+Json\+Callback, void $\ast$custom\+Data, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Create a new Network Controller. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_ad83dc4cdbe8e0cb956f84d6f3f011929}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Delete} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$$\ast$network\+Controller)
+\begin{DoxyCompactList}\small\item\em Delete the Network Controller. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a83a0ba57ed908c519573c6c78cf7bf14}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Pause} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$network\+Controller)
+\begin{DoxyCompactList}\small\item\em Pauses the Network Controller. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a2200695edd5e1108756d6ddf0931e064}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Resume} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$network\+Controller)
+\begin{DoxyCompactList}\small\item\em Resumes the Network Controller. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a92a5b7acf1152e2bd8ba0a0a5c264e0b}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Video\+Receive\+Callback} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$network\+Controller, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_8h_ab6a9fb7e7c3662325953d1ae61cd9670}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Decoder\+Config\+Callback\+\_\+t} decoder\+Config\+Callback, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_8h_af6993a7f0bbe0f78bfe65e5f32b0a219}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Did\+Receive\+Frame\+Callback\+\_\+t} receive\+Frame\+Callback, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_8h_a83e4dca241c7a801f3c0475207b5abf2}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Timeout\+Frame\+Callback\+\_\+t} timeout\+Frame\+Callback, void $\ast$custom\+Data)
+\begin{DoxyCompactList}\small\item\em Set the callbacks of the video stream events. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_ae08172100ade75ae93003d5c0fd821fc}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Video\+Stream\+M\+P4\+Compliant} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$network\+Controller, int is\+M\+P4\+Compliant)
+\begin{DoxyCompactList}\small\item\em Set video stream compliant with the mp4 format. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_ab1e3396b2d0d02687feace15dd27282f}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Start\+Video\+Stream} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$network\+Controller)
+\begin{DoxyCompactList}\small\item\em Start Video stream. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a2673d5be1dbffbe7bead863feef4f003}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Stop\+Video\+Stream} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$network\+Controller)
+\begin{DoxyCompactList}\small\item\em Stop Video stream. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a8914dd14640543ddb44e802b1bd87ec1}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Audio\+Receive\+Callback} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$network\+Controller, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_8h_ab6a9fb7e7c3662325953d1ae61cd9670}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Decoder\+Config\+Callback\+\_\+t} decoder\+Config\+Callback, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_8h_af6993a7f0bbe0f78bfe65e5f32b0a219}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Did\+Receive\+Frame\+Callback\+\_\+t} receive\+Frame\+Callback, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_8h_a83e4dca241c7a801f3c0475207b5abf2}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Timeout\+Frame\+Callback\+\_\+t} timeout\+Frame\+Callback, void $\ast$custom\+Data)
+\begin{DoxyCompactList}\small\item\em Set the callbacks of the audio stream events. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_adf56f31c5c87b6135ace7279d7464d6f}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Start\+Audio\+Stream} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$network\+Controller)
+\begin{DoxyCompactList}\small\item\em Start Audio stream. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c295d036adc23a1b88d5e05159595ba}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Stop\+Audio\+Stream} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$network\+Controller)
+\begin{DoxyCompactList}\small\item\em Stop Audio stream. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a67edc84cd5d4091af64918a37fb890a1}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Send\+Data} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$network\+Controller, void $\ast$data, int data\+Size, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+PE} data\+Type, \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+RN} timeout\+Policy, \hyperlink{_a_r_n_e_t_w_o_r_k___error_8h_a4d5e22d088d6e667c4ae8d3536b3344e}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} $\ast$net\+Error)
+\begin{DoxyCompactList}\small\item\em Send data through the network. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a3c667362c4f1669af75f99e361334ea9}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Send\+Audio\+Frame} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$network\+Controller, uint8\+\_\+t $\ast$data, int data\+Size)
+\begin{DoxyCompactList}\small\item\em Send audio stream frame through the network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network allow to operate an A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager for send and receive commands. 
+
+\begin{DoxyDate}{Date}
+02/03/2015 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:maxime.maitre@parrot.com}{\tt maxime.\+maitre@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Disconnection\+Callback\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Disconnection\+Callback\+\_\+t}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Disconnection\+Callback\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Disconnection\+Callback\+\_\+t}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Disconnection\+Callback\+\_\+t}{ARCONTROLLER_Network_DisconnectionCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Disconnection\+Callback\+\_\+t) (void $\ast$custom\+Data)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a164dd0cd4fce6ca72d07d1980b745afc}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a164dd0cd4fce6ca72d07d1980b745afc}
+
+
+Callback used on disconnection of the network. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em custom\+Data} & Data given at the registering of the callback. \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t}{ARCONTROLLER_Network_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} {\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t}}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a1f0a7c894372b121f752d8a12bd00e74}
+
+
+Network controller allow to operate an A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager for send and receive commands. 
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+PE@{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+PE}}
+\index{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+PE@{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+PE}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+PE}{eARCONTROLLER_NETWORK_SENDING_DATA_TYPE}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+PE}}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17}
+Enum characterizing the type of data to send \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+A\+CK@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+A\+CK}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+A\+CK@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+A\+CK}}\item[{\em 
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+A\+CK\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17af381704eff2fc69586350dcc496300d9}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17af381704eff2fc69586350dcc496300d9}
+}]data N\+OT acknowledged \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+CK@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+CK}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+CK@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+CK}}\item[{\em 
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+CK\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17af6b5c56e752d012681ce4891bb3fad9d}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17af6b5c56e752d012681ce4891bb3fad9d}
+}]data acknowledged \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}\item[{\em 
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17a75b5a44e43507c1835efd0fe94c07d10}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17a75b5a44e43507c1835efd0fe94c07d10}
+}]high priority data \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+T\+R\+E\+AM@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+T\+R\+E\+AM}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+T\+R\+E\+AM@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+T\+R\+E\+AM}}\item[{\em 
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+T\+R\+E\+AM\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17a2fa15334b96b71c24891fcd3956bef30}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17a2fa15334b96b71c24891fcd3956bef30}
+}]strem data \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX}}\item[{\em 
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E\+\_\+\+M\+AX\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17afbb2e50da77342beb7071b2d9e9c434b}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c6700c5be6d1f22301df8328c250f17afbb2e50da77342beb7071b2d9e9c434b}
+}]Max of the enumeration \end{description}
+\end{Desc}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+TE@{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+TE}}
+\index{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+TE@{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+TE}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+TE}{eARCONTROLLER_NETWORK_STATE}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+TE}}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_afc3cfb477c5f48ceb62c1acc6e037cf3}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_afc3cfb477c5f48ceb62c1acc6e037cf3}
+Enum characterizing the states of the network controller \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+ED@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+ED}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+ED@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+ED}}\item[{\em 
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+ED\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_afc3cfb477c5f48ceb62c1acc6e037cf3afe59f3875ef8bae6230fe16bff695c89}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_afc3cfb477c5f48ceb62c1acc6e037cf3afe59f3875ef8bae6230fe16bff695c89}
+}]network controller stopped \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+U\+N\+N\+I\+NG@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+U\+N\+N\+I\+NG}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+U\+N\+N\+I\+NG@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+U\+N\+N\+I\+NG}}\item[{\em 
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+U\+N\+N\+I\+NG\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_afc3cfb477c5f48ceb62c1acc6e037cf3acb482768edb1da49d4f02a4fc87bc502}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_afc3cfb477c5f48ceb62c1acc6e037cf3acb482768edb1da49d4f02a4fc87bc502}
+}]network controller running \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+SE@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+SE}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+SE@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+SE}}\item[{\em 
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+SE\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_afc3cfb477c5f48ceb62c1acc6e037cf3a2e6f8fbb58915a6b8a28588cceeb2cf9}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_afc3cfb477c5f48ceb62c1acc6e037cf3a2e6f8fbb58915a6b8a28588cceeb2cf9}
+}]network controller in pause \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+AX@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+AX}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+AX@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+AX}}\item[{\em 
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+AX\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_afc3cfb477c5f48ceb62c1acc6e037cf3ac63baf489b4897837ed0b84395200406}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_afc3cfb477c5f48ceb62c1acc6e037cf3ac63baf489b4897837ed0b84395200406}
+}]Max of the enumeration \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Delete@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Delete}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Delete@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Delete}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Delete(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t $\ast$$\ast$network\+Controller)}{ARCONTROLLER_Network_Delete(ARCONTROLLER_Network_t **networkController)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$$\ast$}]{network\+Controller}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_ad83dc4cdbe8e0cb956f84d6f3f011929}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_ad83dc4cdbe8e0cb956f84d6f3f011929}
+
+
+Delete the Network Controller. 
+
+\begin{DoxyWarning}{Warning}
+This function free memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em network\+Controller} & The network controller to delete \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_acf29ed752e866d9bf47ad4765cd7f265}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+New()} 
+\end{DoxySeeAlso}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+New@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+New}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+New@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+New}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+New(\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t $\ast$discovery\+Device, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Disconnection\+Callback\+\_\+t disconnection\+Callback, A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t send\+Json\+Callback, A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t receive\+Json\+Callback, void $\ast$custom\+Data, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_Network_New(ARDISCOVERY_Device_t *discoveryDevice, ARCONTROLLER_Network_DisconnectionCallback_t disconnectionCallback, ARDISCOVERY_Device_ConnectionJsonCallback_t sendJsonCallback, ARDISCOVERY_Device_ConnectionJsonCallback_t receiveJsonCallback, void *customData, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t}$\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+t} $\ast$}]{discovery\+Device, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Disconnection\+Callback\+\_\+t}}]{disconnection\+Callback, }
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t}}]{send\+Json\+Callback, }
+\item[{{\bf A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Device\+\_\+\+Connection\+Json\+Callback\+\_\+t}}]{receive\+Json\+Callback, }
+\item[{void $\ast$}]{custom\+Data, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_acf29ed752e866d9bf47ad4765cd7f265}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_acf29ed752e866d9bf47ad4765cd7f265}
+
+
+Create a new Network Controller. 
+
+\begin{DoxyWarning}{Warning}
+This function allocate memory 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_ad83dc4cdbe8e0cb956f84d6f3f011929}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Delete()} must be called to delete the Network Controller and free the memory allocated. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em discovery\+Device} & The device to drive ; must be not N\+U\+LL. This device will be copied and can be deleted after the call of this function. \\
+\hline
+\mbox{\tt out}  & {\em error} & Executing error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new Network Controller 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_ad83dc4cdbe8e0cb956f84d6f3f011929}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Delete()} 
+\end{DoxySeeAlso}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Pause@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Pause}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Pause@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Pause}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Pause(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t $\ast$network\+Controller)}{ARCONTROLLER_Network_Pause(ARCONTROLLER_Network_t *networkController)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Pause (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$}]{network\+Controller}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a83a0ba57ed908c519573c6c78cf7bf14}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a83a0ba57ed908c519573c6c78cf7bf14}
+
+
+Pauses the Network Controller. 
+
+\begin{DoxyNote}{Note}
+Network Controller state must be A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+U\+N\+N\+I\+NG ; nothing will be done in others cases 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em network\+Controller} & The network Controller ; must be not N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a2200695edd5e1108756d6ddf0931e064}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Resume()} 
+\end{DoxySeeAlso}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Resume@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Resume}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Resume@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Resume}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Resume(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t $\ast$network\+Controller)}{ARCONTROLLER_Network_Resume(ARCONTROLLER_Network_t *networkController)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Resume (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$}]{network\+Controller}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a2200695edd5e1108756d6ddf0931e064}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a2200695edd5e1108756d6ddf0931e064}
+
+
+Resumes the Network Controller. 
+
+\begin{DoxyNote}{Note}
+Network Controller state must be A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+SE ; nothing will be done in A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+U\+N\+N\+I\+NG case ; in case A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+ED an error A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE will be returned. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em network\+Controller} & The network Controller ; must be not N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+executing error 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a83a0ba57ed908c519573c6c78cf7bf14}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Pause()} 
+\end{DoxySeeAlso}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Send\+Audio\+Frame@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Send\+Audio\+Frame}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Send\+Audio\+Frame@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Send\+Audio\+Frame}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Send\+Audio\+Frame(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t $\ast$network\+Controller, uint8\+\_\+t $\ast$data, int data\+Size)}{ARCONTROLLER_Network_SendAudioFrame(ARCONTROLLER_Network_t *networkController, uint8_t *data, int dataSize)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Send\+Audio\+Frame (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$}]{network\+Controller, }
+\item[{uint8\+\_\+t $\ast$}]{data, }
+\item[{int}]{data\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a3c667362c4f1669af75f99e361334ea9}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a3c667362c4f1669af75f99e361334ea9}
+
+
+Send audio stream frame through the network. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em network\+Controller} & The network Controller ; must be not N\+U\+LL. \\
+\hline
+\mbox{\tt in}  & {\em data} & The data to send. \\
+\hline
+\mbox{\tt in}  & {\em data\+Size} & The data size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Executing error. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Send\+Data@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Send\+Data}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Send\+Data@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Send\+Data}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Send\+Data(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t $\ast$network\+Controller, void $\ast$data, int data\+Size, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+E data\+Type, e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N timeout\+Policy, e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+O\+R $\ast$net\+Error)}{ARCONTROLLER_Network_SendData(ARCONTROLLER_Network_t *networkController, void *data, int dataSize, eARCONTROLLER_NETWORK_SENDING_DATA_TYPE dataType, eARNETWORK_MANAGER_CALLBACK_RETURN timeoutPolicy, eARNETWORK_ERROR *netError)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Send\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$}]{network\+Controller, }
+\item[{void $\ast$}]{data, }
+\item[{int}]{data\+Size, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+S\+E\+N\+D\+I\+N\+G\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+PE}}]{data\+Type, }
+\item[{{\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+RN}}]{timeout\+Policy, }
+\item[{{\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} $\ast$}]{net\+Error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a67edc84cd5d4091af64918a37fb890a1}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a67edc84cd5d4091af64918a37fb890a1}
+
+
+Send data through the network. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em network\+Controller} & The network Controller ; must be not N\+U\+LL. \\
+\hline
+\mbox{\tt in}  & {\em data} & The data to send. \\
+\hline
+\mbox{\tt in}  & {\em data\+Size} & The data size. \\
+\hline
+\mbox{\tt in}  & {\em data\+Type} & Type of the data to send. \\
+\hline
+\mbox{\tt in}  & {\em timeout\+Policy} & The policy to use when timeout. \\
+\hline
+\mbox{\tt in}  & {\em net\+Error} & executing network error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Executing error. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Audio\+Receive\+Callback@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Audio\+Receive\+Callback}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Audio\+Receive\+Callback@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Audio\+Receive\+Callback}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Audio\+Receive\+Callback(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t $\ast$network\+Controller, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Decoder\+Config\+Callback\+\_\+t decoder\+Config\+Callback, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Did\+Receive\+Frame\+Callback\+\_\+t receive\+Frame\+Callback, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Timeout\+Frame\+Callback\+\_\+t timeout\+Frame\+Callback, void $\ast$custom\+Data)}{ARCONTROLLER_Network_SetAudioReceiveCallback(ARCONTROLLER_Network_t *networkController, ARCONTROLLER_Stream_DecoderConfigCallback_t decoderConfigCallback, ARCONTROLLER_Stream_DidReceiveFrameCallback_t receiveFrameCallback, ARCONTROLLER_Stream_TimeoutFrameCallback_t timeoutFrameCallback, void *customData)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Audio\+Receive\+Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$}]{network\+Controller, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Decoder\+Config\+Callback\+\_\+t}}]{decoder\+Config\+Callback, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Did\+Receive\+Frame\+Callback\+\_\+t}}]{receive\+Frame\+Callback, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Timeout\+Frame\+Callback\+\_\+t}}]{timeout\+Frame\+Callback, }
+\item[{void $\ast$}]{custom\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a8914dd14640543ddb44e802b1bd87ec1}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a8914dd14640543ddb44e802b1bd87ec1}
+
+
+Set the callbacks of the audio stream events. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em network\+Controller} & The network Controller ; must be not N\+U\+LL. \\
+\hline
+\mbox{\tt in}  & {\em decoder\+Config\+Callback} & decoder configuration callback function. \\
+\hline
+\mbox{\tt in}  & {\em receive\+Frame\+Callback} & Callback when a frame is received. \\
+\hline
+\mbox{\tt in}  & {\em timeout\+Frame\+Callback} & Callback when timeout in frame receiving. \\
+\hline
+\mbox{\tt in}  & {\em custom\+Data} & Data to set as argument to the callbacks. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Executing error. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Video\+Receive\+Callback@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Video\+Receive\+Callback}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Video\+Receive\+Callback@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Video\+Receive\+Callback}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Video\+Receive\+Callback(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t $\ast$network\+Controller, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Decoder\+Config\+Callback\+\_\+t decoder\+Config\+Callback, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Did\+Receive\+Frame\+Callback\+\_\+t receive\+Frame\+Callback, A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Timeout\+Frame\+Callback\+\_\+t timeout\+Frame\+Callback, void $\ast$custom\+Data)}{ARCONTROLLER_Network_SetVideoReceiveCallback(ARCONTROLLER_Network_t *networkController, ARCONTROLLER_Stream_DecoderConfigCallback_t decoderConfigCallback, ARCONTROLLER_Stream_DidReceiveFrameCallback_t receiveFrameCallback, ARCONTROLLER_Stream_TimeoutFrameCallback_t timeoutFrameCallback, void *customData)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Video\+Receive\+Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$}]{network\+Controller, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Decoder\+Config\+Callback\+\_\+t}}]{decoder\+Config\+Callback, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Did\+Receive\+Frame\+Callback\+\_\+t}}]{receive\+Frame\+Callback, }
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+\_\+\+Timeout\+Frame\+Callback\+\_\+t}}]{timeout\+Frame\+Callback, }
+\item[{void $\ast$}]{custom\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a92a5b7acf1152e2bd8ba0a0a5c264e0b}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a92a5b7acf1152e2bd8ba0a0a5c264e0b}
+
+
+Set the callbacks of the video stream events. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em network\+Controller} & The network Controller ; must be not N\+U\+LL. \\
+\hline
+\mbox{\tt in}  & {\em decoder\+Config\+Callback} & decoder configuration callback function. \\
+\hline
+\mbox{\tt in}  & {\em receive\+Frame\+Callback} & Callback when a frame is received. \\
+\hline
+\mbox{\tt in}  & {\em timeout\+Frame\+Callback} & Callback when timeout in frame receiving. \\
+\hline
+\mbox{\tt in}  & {\em custom\+Data} & Data to set as argument to the callbacks. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Executing error. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Video\+Stream\+M\+P4\+Compliant@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Video\+Stream\+M\+P4\+Compliant}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Video\+Stream\+M\+P4\+Compliant@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Video\+Stream\+M\+P4\+Compliant}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Video\+Stream\+M\+P4\+Compliant(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t $\ast$network\+Controller, int is\+M\+P4\+Compliant)}{ARCONTROLLER_Network_SetVideoStreamMP4Compliant(ARCONTROLLER_Network_t *networkController, int isMP4Compliant)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Set\+Video\+Stream\+M\+P4\+Compliant (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$}]{network\+Controller, }
+\item[{int}]{is\+M\+P4\+Compliant}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_ae08172100ade75ae93003d5c0fd821fc}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_ae08172100ade75ae93003d5c0fd821fc}
+
+
+Set video stream compliant with the mp4 format. 
+
+\begin{DoxyNote}{Note}
+Must be set to decode H264 stream with the i\+OS hardware decoder. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em network\+Controller} & The network Controller ; must be not N\+U\+LL. \\
+\hline
+{\em is\+M\+P4\+Compliant} & 1 if the video stream must be compliant with mp4 format ; otherwide 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Executing error. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Start\+Audio\+Stream@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Start\+Audio\+Stream}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Start\+Audio\+Stream@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Start\+Audio\+Stream}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Start\+Audio\+Stream(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t $\ast$network\+Controller)}{ARCONTROLLER_Network_StartAudioStream(ARCONTROLLER_Network_t *networkController)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Start\+Audio\+Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$}]{network\+Controller}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_adf56f31c5c87b6135ace7279d7464d6f}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_adf56f31c5c87b6135ace7279d7464d6f}
+
+
+Start Audio stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em network\+Controller} & The network Controller ; must be not N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Executing error. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Start\+Video\+Stream@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Start\+Video\+Stream}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Start\+Video\+Stream@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Start\+Video\+Stream}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Start\+Video\+Stream(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t $\ast$network\+Controller)}{ARCONTROLLER_Network_StartVideoStream(ARCONTROLLER_Network_t *networkController)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Start\+Video\+Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$}]{network\+Controller}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_ab1e3396b2d0d02687feace15dd27282f}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_ab1e3396b2d0d02687feace15dd27282f}
+
+
+Start Video stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em network\+Controller} & The network Controller ; must be not N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Executing error. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Stop\+Audio\+Stream@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Stop\+Audio\+Stream}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Stop\+Audio\+Stream@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Stop\+Audio\+Stream}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Stop\+Audio\+Stream(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t $\ast$network\+Controller)}{ARCONTROLLER_Network_StopAudioStream(ARCONTROLLER_Network_t *networkController)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Stop\+Audio\+Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$}]{network\+Controller}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c295d036adc23a1b88d5e05159595ba}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a9c295d036adc23a1b88d5e05159595ba}
+
+
+Stop Audio stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em network\+Controller} & The network Controller ; must be not N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Executing error. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Stop\+Video\+Stream@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Stop\+Video\+Stream}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Stop\+Video\+Stream@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Stop\+Video\+Stream}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Stop\+Video\+Stream(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t $\ast$network\+Controller)}{ARCONTROLLER_Network_StopVideoStream(ARCONTROLLER_Network_t *networkController)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+\+Stop\+Video\+Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Network\+\_\+t} $\ast$}]{network\+Controller}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a2673d5be1dbffbe7bead863feef4f003}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___network_8h_a2673d5be1dbffbe7bead863feef4f003}
+
+
+Stop Video stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em network\+Controller} & The network Controller ; must be not N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Executing error. 
+\end{DoxyReturn}

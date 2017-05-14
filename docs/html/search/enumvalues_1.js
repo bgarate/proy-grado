@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['critical',['CRITICAL',['../class_logger.html#a8f625bd9ec5f706cb67b725a98743c04a99cd1c61610c76a57cb8d10d6df6b870',1,'Logger']]]
+  ['boosting',['BOOSTING',['../class_multi_tracker.html#ab6812f54aab6ae031431acf7f86e0ff9a701d1757588b2e8c1b007e488913a1cf',1,'MultiTracker']]],
+  ['bottom',['Bottom',['../hal_8hpp.html#adc0591c2c6aa3aa864336ece4978ab62a2ad9d63b69c4a10a5cc9cad923133bc4',1,'hal.hpp']]]
 ];

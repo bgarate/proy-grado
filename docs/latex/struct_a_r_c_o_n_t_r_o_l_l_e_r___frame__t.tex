@@ -1,0 +1,85 @@
+\hypertarget{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t}{}\section{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t Struct Reference}
+\label{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t}\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}}
+
+
+\hyperlink{struct_frame}{Frame} used to store stream data.  
+
+
+
+
+{\ttfamily \#include $<$A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a5122c89063c545d857dd5d42f2c224ae}{data}
+\item 
+uint32\+\_\+t \hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a9f0f2b8c097642057a35c0d03f257d49}{capacity}
+\item 
+uint32\+\_\+t \hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_ad65eb74407405e66fa3ff47e53c02ee5}{used}
+\item 
+uint32\+\_\+t \hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_aed2b924c47bea38c6f16ab466f0ec7b7}{missed}
+\item 
+uint32\+\_\+t \hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_ab41e19bcf0b5513cb2886c169d74d692}{width}
+\item 
+uint32\+\_\+t \hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a7c9f8d94a53b860096e8878e2e5e6ce7}{height}
+\item 
+uint64\+\_\+t \hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a0463e0aa3090ab0736684587fff441b3}{timestamp}
+\item 
+int \hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_acda3aab8cf69a6f6ac23a6bc2e86f4cd}{is\+I\+Frame}
+\item 
+int \hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a715792065d73509d5d29b4580ec791cb}{available}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a6f3b5e7c3be23df4291cfafaa17e3300}{base}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_ad3165486da3b6219238dd3120f3276f1}{metadata}
+\item 
+int \hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a1f2926b145f6c1e00f7304cfb7b10482}{metadata\+Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{struct_frame}{Frame} used to store stream data. 
+
+\subsection{Member Data Documentation}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}!available@{available}}
+\index{available@{available}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}}
+\subsubsection[{\texorpdfstring{available}{available}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t\+::available}\hypertarget{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a715792065d73509d5d29b4580ec791cb}{}\label{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a715792065d73509d5d29b4580ec791cb}
+Flag to inform if the frame is available ; \textquotesingle{}1\textquotesingle{} the frame is free ; \textquotesingle{}0\textquotesingle{} the frame is not available \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}!base@{base}}
+\index{base@{base}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}}
+\subsubsection[{\texorpdfstring{base}{base}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t\+::base}\hypertarget{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a6f3b5e7c3be23df4291cfafaa17e3300}{}\label{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a6f3b5e7c3be23df4291cfafaa17e3300}
+Data not modified \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}!capacity@{capacity}}
+\index{capacity@{capacity}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}}
+\subsubsection[{\texorpdfstring{capacity}{capacity}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t\+::capacity}\hypertarget{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a9f0f2b8c097642057a35c0d03f257d49}{}\label{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a9f0f2b8c097642057a35c0d03f257d49}
+Data capacity \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}!data@{data}}
+\index{data@{data}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}}
+\subsubsection[{\texorpdfstring{data}{data}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t\+::data}\hypertarget{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a5122c89063c545d857dd5d42f2c224ae}{}\label{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a5122c89063c545d857dd5d42f2c224ae}
+Data of the frame \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}!height@{height}}
+\index{height@{height}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}}
+\subsubsection[{\texorpdfstring{height}{height}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t\+::height}\hypertarget{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a7c9f8d94a53b860096e8878e2e5e6ce7}{}\label{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a7c9f8d94a53b860096e8878e2e5e6ce7}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}!is\+I\+Frame@{is\+I\+Frame}}
+\index{is\+I\+Frame@{is\+I\+Frame}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}}
+\subsubsection[{\texorpdfstring{is\+I\+Frame}{isIFrame}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t\+::is\+I\+Frame}\hypertarget{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_acda3aab8cf69a6f6ac23a6bc2e86f4cd}{}\label{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_acda3aab8cf69a6f6ac23a6bc2e86f4cd}
+Flag to inform if the frame is an I\+Frame ; \textquotesingle{}1\textquotesingle{} is an I\+Frame ; \textquotesingle{}0\textquotesingle{} is not an I\+Frame \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}!metadata@{metadata}}
+\index{metadata@{metadata}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}}
+\subsubsection[{\texorpdfstring{metadata}{metadata}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t\+::metadata}\hypertarget{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_ad3165486da3b6219238dd3120f3276f1}{}\label{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_ad3165486da3b6219238dd3120f3276f1}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}!metadata\+Size@{metadata\+Size}}
+\index{metadata\+Size@{metadata\+Size}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}}
+\subsubsection[{\texorpdfstring{metadata\+Size}{metadataSize}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t\+::metadata\+Size}\hypertarget{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a1f2926b145f6c1e00f7304cfb7b10482}{}\label{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a1f2926b145f6c1e00f7304cfb7b10482}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}!missed@{missed}}
+\index{missed@{missed}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}}
+\subsubsection[{\texorpdfstring{missed}{missed}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t\+::missed}\hypertarget{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_aed2b924c47bea38c6f16ab466f0ec7b7}{}\label{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_aed2b924c47bea38c6f16ab466f0ec7b7}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}}
+\subsubsection[{\texorpdfstring{timestamp}{timestamp}}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t\+::timestamp}\hypertarget{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a0463e0aa3090ab0736684587fff441b3}{}\label{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_a0463e0aa3090ab0736684587fff441b3}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}!used@{used}}
+\index{used@{used}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}}
+\subsubsection[{\texorpdfstring{used}{used}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t\+::used}\hypertarget{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_ad65eb74407405e66fa3ff47e53c02ee5}{}\label{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_ad65eb74407405e66fa3ff47e53c02ee5}
+size of the data \index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}!width@{width}}
+\index{width@{width}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}}
+\subsubsection[{\texorpdfstring{width}{width}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t\+::width}\hypertarget{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_ab41e19bcf0b5513cb2886c169d74d692}{}\label{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t_ab41e19bcf0b5513cb2886c169d74d692}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/lib\+A\+R\+Controller/\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h}\end{DoxyCompactItemize}

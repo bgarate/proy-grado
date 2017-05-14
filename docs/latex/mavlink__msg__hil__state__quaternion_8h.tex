@@ -1,0 +1,115 @@
+\hypertarget{mavlink__msg__hil__state__quaternion_8h}{}\section{src/hal/pb2/include/mavlink/common/mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.h File Reference}
+\label{mavlink__msg__hil__state__quaternion_8h}\index{src/hal/pb2/include/mavlink/common/mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{src/hal/pb2/include/mavlink/common/mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mavlink__msg__hil__state__quaternion_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{mavlink__msg__hil__state__quaternion_8h_a3730893f0c6d1459052770ee4b96249c}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+ON}~115
+\item 
+\#define \hyperlink{mavlink__msg__hil__state__quaternion_8h_ae69f30af11598b1d18d3cb35ba5a9cce}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+L\+EN}~64
+\item 
+\#define \hyperlink{mavlink__msg__hil__state__quaternion_8h_aec75368d4a081c4fc6c006d23b26e355}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+L\+EN}~64
+\item 
+\#define \hyperlink{mavlink__msg__hil__state__quaternion_8h_a0ac87fde50772e921be47279fea3f3b3}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+L\+EN}~64
+\item 
+\#define \hyperlink{mavlink__msg__hil__state__quaternion_8h_a76ca2a32072680386a52985b8765c54b}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+M\+I\+N\+\_\+\+L\+EN}~64
+\item 
+\#define \hyperlink{mavlink__msg__hil__state__quaternion_8h_a48b582ba9a736a74c0ecf1c96a3f2134}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+C\+RC}~4
+\item 
+\#define \hyperlink{mavlink__msg__hil__state__quaternion_8h_aaceea8c27802ca00c6b1bb570e336c09}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+C\+RC}~4
+\item 
+\#define \hyperlink{mavlink__msg__hil__state__quaternion_8h_a4d65fafbdf9385c94f50cfc34c9ef254}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+F\+I\+E\+L\+D\+\_\+\+A\+T\+T\+I\+T\+U\+D\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+L\+EN}~4
+\item 
+\#define \hyperlink{mavlink__msg__hil__state__quaternion_8h_a86827bb50f215e4f57f48e2f881d9e8c}{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+ON}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{mavlink__msg__hil__state__quaternion_8h_aea9dad11ef9e5040bbb02ffed1050145}{M\+A\+V\+P\+A\+C\+K\+ED} (typedef struct \+\_\+\+\_\+mavlink\+\_\+hil\+\_\+state\+\_\+quaternion\+\_\+t\{uint64\+\_\+t time\+\_\+usec;float attitude\+\_\+quaternion\mbox{[}4\mbox{]};float rollspeed;float pitchspeed;float yawspeed;int32\+\_\+t lat;int32\+\_\+t lon;int32\+\_\+t alt;int16\+\_\+t vx;int16\+\_\+t vy;int16\+\_\+t vz;uint16\+\_\+t ind\+\_\+airspeed;uint16\+\_\+t true\+\_\+airspeed;int16\+\_\+t xacc;int16\+\_\+t yacc;int16\+\_\+t zacc;\}) mavlink\+\_\+hil\+\_\+state\+\_\+quaternion\+\_\+t
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+ON@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+ON}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+ON@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+ON}!mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+ON}{MAVLINK_MESSAGE_INFO_HIL_STATE_QUATERNION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+I\+N\+F\+O\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+ON}\hypertarget{mavlink__msg__hil__state__quaternion_8h_a86827bb50f215e4f57f48e2f881d9e8c}{}\label{mavlink__msg__hil__state__quaternion_8h_a86827bb50f215e4f57f48e2f881d9e8c}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{ \(\backslash\)
+    \textcolor{stringliteral}{"HIL\_STATE\_QUATERNION"}, \(\backslash\)
+    16, \(\backslash\)
+    \{  \{ \textcolor{stringliteral}{"time\_usec"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4a12ee339a067a942cd309d69946fbd00b}{MAVLINK\_TYPE\_UINT64\_T}, 0, 0, offsetof(
+      mavlink\_hil\_state\_quaternion\_t, time\_usec) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"attitude\_quaternion"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4ae5f4d04c343191b5a24b28743a115385}{MAVLINK\_TYPE\_FLOAT}, 4, 8, offsetof(
+      mavlink\_hil\_state\_quaternion\_t, attitude\_quaternion) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"rollspeed"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4ae5f4d04c343191b5a24b28743a115385}{MAVLINK\_TYPE\_FLOAT}, 0, 24, offsetof(
+      mavlink\_hil\_state\_quaternion\_t, rollspeed) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"pitchspeed"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4ae5f4d04c343191b5a24b28743a115385}{MAVLINK\_TYPE\_FLOAT}, 0, 28, offsetof(
+      mavlink\_hil\_state\_quaternion\_t, pitchspeed) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"yawspeed"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4ae5f4d04c343191b5a24b28743a115385}{MAVLINK\_TYPE\_FLOAT}, 0, 32, offsetof(
+      mavlink\_hil\_state\_quaternion\_t, yawspeed) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"lat"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4af803883af3fbcaa9065749974a4d728a}{MAVLINK\_TYPE\_INT32\_T}, 0, 36, offsetof(
+      mavlink\_hil\_state\_quaternion\_t, lat) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"lon"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4af803883af3fbcaa9065749974a4d728a}{MAVLINK\_TYPE\_INT32\_T}, 0, 40, offsetof(
+      mavlink\_hil\_state\_quaternion\_t, lon) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"alt"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4af803883af3fbcaa9065749974a4d728a}{MAVLINK\_TYPE\_INT32\_T}, 0, 44, offsetof(
+      mavlink\_hil\_state\_quaternion\_t, alt) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"vx"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4aa77d38eacfce4c9d610a531423957a96}{MAVLINK\_TYPE\_INT16\_T}, 0, 48, offsetof(
+      mavlink\_hil\_state\_quaternion\_t, vx) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"vy"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4aa77d38eacfce4c9d610a531423957a96}{MAVLINK\_TYPE\_INT16\_T}, 0, 50, offsetof(
+      mavlink\_hil\_state\_quaternion\_t, vy) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"vz"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4aa77d38eacfce4c9d610a531423957a96}{MAVLINK\_TYPE\_INT16\_T}, 0, 52, offsetof(
+      mavlink\_hil\_state\_quaternion\_t, vz) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"ind\_airspeed"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4ac4c6864786bfcce3a9bd2f40572c90a4}{MAVLINK\_TYPE\_UINT16\_T}, 0, 54, offsetof(
+      mavlink\_hil\_state\_quaternion\_t, ind\_airspeed) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"true\_airspeed"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4ac4c6864786bfcce3a9bd2f40572c90a4}{MAVLINK\_TYPE\_UINT16\_T}, 0, 56, offsetof(
+      mavlink\_hil\_state\_quaternion\_t, true\_airspeed) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"xacc"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4aa77d38eacfce4c9d610a531423957a96}{MAVLINK\_TYPE\_INT16\_T}, 0, 58, offsetof(
+      mavlink\_hil\_state\_quaternion\_t, xacc) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"yacc"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4aa77d38eacfce4c9d610a531423957a96}{MAVLINK\_TYPE\_INT16\_T}, 0, 60, offsetof(
+      mavlink\_hil\_state\_quaternion\_t, yacc) \}, \(\backslash\)
+         \{ \textcolor{stringliteral}{"zacc"}, NULL, \hyperlink{mavlink__types_8h_ab6045b7adc25bdc05a5011a91dc645a4aa77d38eacfce4c9d610a531423957a96}{MAVLINK\_TYPE\_INT16\_T}, 0, 62, offsetof(
+      mavlink\_hil\_state\_quaternion\_t, zacc) \}, \(\backslash\)
+         \} \(\backslash\)
+\}
+\end{DoxyCode}
+\index{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+F\+I\+E\+L\+D\+\_\+\+A\+T\+T\+I\+T\+U\+D\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+F\+I\+E\+L\+D\+\_\+\+A\+T\+T\+I\+T\+U\+D\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+L\+EN}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+F\+I\+E\+L\+D\+\_\+\+A\+T\+T\+I\+T\+U\+D\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+F\+I\+E\+L\+D\+\_\+\+A\+T\+T\+I\+T\+U\+D\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+L\+EN}!mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+F\+I\+E\+L\+D\+\_\+\+A\+T\+T\+I\+T\+U\+D\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+L\+EN}{MAVLINK_MSG_HIL_STATE_QUATERNION_FIELD_ATTITUDE_QUATERNION_LEN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+F\+I\+E\+L\+D\+\_\+\+A\+T\+T\+I\+T\+U\+D\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+L\+EN~4}\hypertarget{mavlink__msg__hil__state__quaternion_8h_a4d65fafbdf9385c94f50cfc34c9ef254}{}\label{mavlink__msg__hil__state__quaternion_8h_a4d65fafbdf9385c94f50cfc34c9ef254}
+\index{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+C\+RC@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+C\+RC}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+C\+RC@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+C\+RC}!mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+C\+RC}{MAVLINK_MSG_ID_115_CRC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+C\+RC~4}\hypertarget{mavlink__msg__hil__state__quaternion_8h_aaceea8c27802ca00c6b1bb570e336c09}{}\label{mavlink__msg__hil__state__quaternion_8h_aaceea8c27802ca00c6b1bb570e336c09}
+\index{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+L\+EN}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+L\+EN}!mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+L\+EN}{MAVLINK_MSG_ID_115_LEN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+L\+EN~64}\hypertarget{mavlink__msg__hil__state__quaternion_8h_a0ac87fde50772e921be47279fea3f3b3}{}\label{mavlink__msg__hil__state__quaternion_8h_a0ac87fde50772e921be47279fea3f3b3}
+\index{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+M\+I\+N\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+M\+I\+N\+\_\+\+L\+EN}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+M\+I\+N\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+M\+I\+N\+\_\+\+L\+EN}!mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+M\+I\+N\+\_\+\+L\+EN}{MAVLINK_MSG_ID_115_MIN_LEN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+115\+\_\+\+M\+I\+N\+\_\+\+L\+EN~64}\hypertarget{mavlink__msg__hil__state__quaternion_8h_a76ca2a32072680386a52985b8765c54b}{}\label{mavlink__msg__hil__state__quaternion_8h_a76ca2a32072680386a52985b8765c54b}
+\index{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+ON@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+ON}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+ON@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+ON}!mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+ON}{MAVLINK_MSG_ID_HIL_STATE_QUATERNION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+ON~115}\hypertarget{mavlink__msg__hil__state__quaternion_8h_a3730893f0c6d1459052770ee4b96249c}{}\label{mavlink__msg__hil__state__quaternion_8h_a3730893f0c6d1459052770ee4b96249c}
+\index{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+C\+RC@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+C\+RC}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+C\+RC@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+C\+RC}!mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+C\+RC}{MAVLINK_MSG_ID_HIL_STATE_QUATERNION_CRC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+C\+RC~4}\hypertarget{mavlink__msg__hil__state__quaternion_8h_a48b582ba9a736a74c0ecf1c96a3f2134}{}\label{mavlink__msg__hil__state__quaternion_8h_a48b582ba9a736a74c0ecf1c96a3f2134}
+\index{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+L\+EN}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+L\+EN}!mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+L\+EN}{MAVLINK_MSG_ID_HIL_STATE_QUATERNION_LEN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+L\+EN~64}\hypertarget{mavlink__msg__hil__state__quaternion_8h_ae69f30af11598b1d18d3cb35ba5a9cce}{}\label{mavlink__msg__hil__state__quaternion_8h_ae69f30af11598b1d18d3cb35ba5a9cce}
+\index{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}!M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+L\+EN}}
+\index{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+L\+EN@{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+L\+EN}!mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+L\+EN}{MAVLINK_MSG_ID_HIL_STATE_QUATERNION_MIN_LEN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+V\+L\+I\+N\+K\+\_\+\+M\+S\+G\+\_\+\+I\+D\+\_\+\+H\+I\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+A\+T\+E\+R\+N\+I\+O\+N\+\_\+\+M\+I\+N\+\_\+\+L\+EN~64}\hypertarget{mavlink__msg__hil__state__quaternion_8h_aec75368d4a081c4fc6c006d23b26e355}{}\label{mavlink__msg__hil__state__quaternion_8h_aec75368d4a081c4fc6c006d23b26e355}
+
+
+\subsection{Function Documentation}
+\index{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}!M\+A\+V\+P\+A\+C\+K\+ED@{M\+A\+V\+P\+A\+C\+K\+ED}}
+\index{M\+A\+V\+P\+A\+C\+K\+ED@{M\+A\+V\+P\+A\+C\+K\+ED}!mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h@{mavlink\+\_\+msg\+\_\+hil\+\_\+state\+\_\+quaternion.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+V\+P\+A\+C\+K\+E\+D(typedef struct \+\_\+\+\_\+mavlink\+\_\+hil\+\_\+state\+\_\+quaternion\+\_\+t\lcurly{}uint64\+\_\+t time\+\_\+usec;float attitude\+\_\+quaternion[4];float rollspeed;float pitchspeed;float yawspeed;int32\+\_\+t lat;int32\+\_\+t lon;int32\+\_\+t alt;int16\+\_\+t vx;int16\+\_\+t vy;int16\+\_\+t vz;uint16\+\_\+t ind\+\_\+airspeed;uint16\+\_\+t true\+\_\+airspeed;int16\+\_\+t xacc;int16\+\_\+t yacc;int16\+\_\+t zacc;\rcurly{}) mavlink\+\_\+hil\+\_\+state\+\_\+quaternion\+\_\+t}{MAVPACKED(typedef struct __mavlink_hil_state_quaternion_t\{uint64_t time_usec;float attitude_quaternion[4];float rollspeed;float pitchspeed;float yawspeed;int32_t lat;int32_t lon;int32_t alt;int16_t vx;int16_t vy;int16_t vz;uint16_t ind_airspeed;uint16_t true_airspeed;int16_t xacc;int16_t yacc;int16_t zacc;\}) mavlink_hil_state_quaternion_t}}]{\setlength{\rightskip}{0pt plus 5cm}M\+A\+V\+P\+A\+C\+K\+ED (
+\begin{DoxyParamCaption}
+\item[{typedef struct \+\_\+\+\_\+mavlink\+\_\+hil\+\_\+state\+\_\+quaternion\+\_\+t\{uint64\+\_\+t time\+\_\+usec;float attitude\+\_\+quaternion\mbox{[}4\mbox{]};float rollspeed;float pitchspeed;float yawspeed;int32\+\_\+t lat;int32\+\_\+t lon;int32\+\_\+t alt;int16\+\_\+t vx;int16\+\_\+t vy;int16\+\_\+t vz;uint16\+\_\+t ind\+\_\+airspeed;uint16\+\_\+t true\+\_\+airspeed;int16\+\_\+t xacc;int16\+\_\+t yacc;int16\+\_\+t zacc;\}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{mavlink__msg__hil__state__quaternion_8h_aea9dad11ef9e5040bbb02ffed1050145}{}\label{mavlink__msg__hil__state__quaternion_8h_aea9dad11ef9e5040bbb02ffed1050145}

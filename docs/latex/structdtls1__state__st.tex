@@ -1,0 +1,177 @@
+\hypertarget{structdtls1__state__st}{}\section{dtls1\+\_\+state\+\_\+st Struct Reference}
+\label{structdtls1__state__st}\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+
+
+{\ttfamily \#include $<$dtls1.\+h$>$}
+
+
+
+Collaboration diagram for dtls1\+\_\+state\+\_\+st\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structdtls1__state__st__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{structdtls1__state__st_af87b8915e3c04aa1e8c858e15a967b2d}{send\+\_\+cookie}
+\item 
+unsigned char \hyperlink{structdtls1__state__st_a3600731c890da666b152e0bea4b17644}{cookie} \mbox{[}\hyperlink{dtls1_8h_a5c451434dd0ce6f73bd2cf57134ee864}{D\+T\+L\+S1\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}
+\item 
+unsigned char \hyperlink{structdtls1__state__st_a1a9425f1e37d872f3cc13026092b4ac6}{rcvd\+\_\+cookie} \mbox{[}\hyperlink{dtls1_8h_a5c451434dd0ce6f73bd2cf57134ee864}{D\+T\+L\+S1\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}
+\item 
+unsigned int \hyperlink{structdtls1__state__st_aa91963cca02aa5c981c3c1d5c3c6e472}{cookie\+\_\+len}
+\item 
+unsigned short \hyperlink{structdtls1__state__st_aa3c8e7915e684e4d99aef7e102c57479}{r\+\_\+epoch}
+\item 
+unsigned short \hyperlink{structdtls1__state__st_ac2348d97c73af669675caa7791fc7320}{w\+\_\+epoch}
+\item 
+\hyperlink{dtls1_8h_a7c7329402802de09daba80b9c492e8dc}{D\+T\+L\+S1\+\_\+\+B\+I\+T\+M\+AP} \hyperlink{structdtls1__state__st_a3e9ffaed4676ae794845eed4755ef8ce}{bitmap}
+\item 
+\hyperlink{dtls1_8h_a7c7329402802de09daba80b9c492e8dc}{D\+T\+L\+S1\+\_\+\+B\+I\+T\+M\+AP} \hyperlink{structdtls1__state__st_a2ef30a3f09e71c8d936db1f4a8a68c10}{next\+\_\+bitmap}
+\item 
+unsigned short \hyperlink{structdtls1__state__st_ac14d838ba2fa596ab378ac07bee6e0c8}{handshake\+\_\+write\+\_\+seq}
+\item 
+unsigned short \hyperlink{structdtls1__state__st_ae5ce4e4dc2d5625594b6c7a339198a23}{next\+\_\+handshake\+\_\+write\+\_\+seq}
+\item 
+unsigned short \hyperlink{structdtls1__state__st_a928b4ab02c52ca660cb46762133b21bb}{handshake\+\_\+read\+\_\+seq}
+\item 
+unsigned char \hyperlink{structdtls1__state__st_aceeaa0dd2d3f7a47a99a85c8db8013ea}{last\+\_\+write\+\_\+sequence} \mbox{[}8\mbox{]}
+\item 
+\hyperlink{dtls1_8h_aac9fce3ec0c12051ecb4de0e531747f8}{record\+\_\+pqueue} \hyperlink{structdtls1__state__st_ada130633ccbd3372ee777efb93c953a9}{unprocessed\+\_\+rcds}
+\item 
+\hyperlink{dtls1_8h_aac9fce3ec0c12051ecb4de0e531747f8}{record\+\_\+pqueue} \hyperlink{structdtls1__state__st_ac7496a32427c880c57cad29cf624983b}{processed\+\_\+rcds}
+\item 
+struct \+\_\+pqueue $\ast$ \hyperlink{structdtls1__state__st_a67e7d964f1ea8e37fc12ab89f623d28f}{buffered\+\_\+messages}
+\item 
+struct \+\_\+pqueue $\ast$ \hyperlink{structdtls1__state__st_af6ab57de288de98288a13ae449128084}{sent\+\_\+messages}
+\item 
+\hyperlink{dtls1_8h_aac9fce3ec0c12051ecb4de0e531747f8}{record\+\_\+pqueue} \hyperlink{structdtls1__state__st_a00969b1c93b0b229fbb98a4aabe9cd01}{buffered\+\_\+app\+\_\+data}
+\item 
+unsigned int \hyperlink{structdtls1__state__st_a834e8572b18cebed829621b26f629715}{listen}
+\item 
+unsigned int \hyperlink{structdtls1__state__st_a0518fb297c24c3b28e9ee3122be2967a}{mtu}
+\item 
+struct \hyperlink{structhm__header__st}{hm\+\_\+header\+\_\+st} \hyperlink{structdtls1__state__st_aa16e59d7f125177caa2b5939fcb13890}{w\+\_\+msg\+\_\+hdr}
+\item 
+struct \hyperlink{structhm__header__st}{hm\+\_\+header\+\_\+st} \hyperlink{structdtls1__state__st_a1c6a7daa242306285d142a607d0a63b1}{r\+\_\+msg\+\_\+hdr}
+\item 
+struct \hyperlink{structdtls1__timeout__st}{dtls1\+\_\+timeout\+\_\+st} \hyperlink{structdtls1__state__st_af619339c285b02986b695f6d505f1c36}{timeout}
+\item 
+struct timeval \hyperlink{structdtls1__state__st_a499a60c3bed45a4de6da508430035578}{next\+\_\+timeout}
+\item 
+unsigned short \hyperlink{structdtls1__state__st_ad5deca28499d48a4faa5fae12f621d93}{timeout\+\_\+duration}
+\item 
+unsigned char \hyperlink{structdtls1__state__st_a7fc037708d5e02c3b7e401aa06bf8df9}{alert\+\_\+fragment} \mbox{[}\hyperlink{dtls1_8h_a0b67a04e169539f32cbc3c4951f4340a}{D\+T\+L\+S1\+\_\+\+A\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}
+\item 
+unsigned int \hyperlink{structdtls1__state__st_afc29db2cfa1741bc83934534a82c9c99}{alert\+\_\+fragment\+\_\+len}
+\item 
+unsigned char \hyperlink{structdtls1__state__st_a1fca455e80d0a3036c79d9209ac51633}{handshake\+\_\+fragment} \mbox{[}\hyperlink{dtls1_8h_a313ba59cb24cf778204cfff800bebc4c}{D\+T\+L\+S1\+\_\+\+H\+M\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}
+\item 
+unsigned int \hyperlink{structdtls1__state__st_abeb5303866e89417b37551332cf28f08}{handshake\+\_\+fragment\+\_\+len}
+\item 
+unsigned int \hyperlink{structdtls1__state__st_a55559920472b96c76fbe4b1bf83c62e5}{retransmitting}
+\item 
+unsigned int \hyperlink{structdtls1__state__st_a1d0bfd86d37d9058a404a119b2f68ee9}{change\+\_\+cipher\+\_\+spec\+\_\+ok}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!alert\+\_\+fragment@{alert\+\_\+fragment}}
+\index{alert\+\_\+fragment@{alert\+\_\+fragment}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{alert\+\_\+fragment}{alert_fragment}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char dtls1\+\_\+state\+\_\+st\+::alert\+\_\+fragment\mbox{[}{\bf D\+T\+L\+S1\+\_\+\+A\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}}\hypertarget{structdtls1__state__st_a7fc037708d5e02c3b7e401aa06bf8df9}{}\label{structdtls1__state__st_a7fc037708d5e02c3b7e401aa06bf8df9}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!alert\+\_\+fragment\+\_\+len@{alert\+\_\+fragment\+\_\+len}}
+\index{alert\+\_\+fragment\+\_\+len@{alert\+\_\+fragment\+\_\+len}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{alert\+\_\+fragment\+\_\+len}{alert_fragment_len}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dtls1\+\_\+state\+\_\+st\+::alert\+\_\+fragment\+\_\+len}\hypertarget{structdtls1__state__st_afc29db2cfa1741bc83934534a82c9c99}{}\label{structdtls1__state__st_afc29db2cfa1741bc83934534a82c9c99}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!bitmap@{bitmap}}
+\index{bitmap@{bitmap}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{bitmap}{bitmap}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+T\+L\+S1\+\_\+\+B\+I\+T\+M\+AP} dtls1\+\_\+state\+\_\+st\+::bitmap}\hypertarget{structdtls1__state__st_a3e9ffaed4676ae794845eed4755ef8ce}{}\label{structdtls1__state__st_a3e9ffaed4676ae794845eed4755ef8ce}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!buffered\+\_\+app\+\_\+data@{buffered\+\_\+app\+\_\+data}}
+\index{buffered\+\_\+app\+\_\+data@{buffered\+\_\+app\+\_\+data}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{buffered\+\_\+app\+\_\+data}{buffered_app_data}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf record\+\_\+pqueue} dtls1\+\_\+state\+\_\+st\+::buffered\+\_\+app\+\_\+data}\hypertarget{structdtls1__state__st_a00969b1c93b0b229fbb98a4aabe9cd01}{}\label{structdtls1__state__st_a00969b1c93b0b229fbb98a4aabe9cd01}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!buffered\+\_\+messages@{buffered\+\_\+messages}}
+\index{buffered\+\_\+messages@{buffered\+\_\+messages}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{buffered\+\_\+messages}{buffered_messages}}]{\setlength{\rightskip}{0pt plus 5cm}struct \+\_\+pqueue$\ast$ dtls1\+\_\+state\+\_\+st\+::buffered\+\_\+messages}\hypertarget{structdtls1__state__st_a67e7d964f1ea8e37fc12ab89f623d28f}{}\label{structdtls1__state__st_a67e7d964f1ea8e37fc12ab89f623d28f}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!change\+\_\+cipher\+\_\+spec\+\_\+ok@{change\+\_\+cipher\+\_\+spec\+\_\+ok}}
+\index{change\+\_\+cipher\+\_\+spec\+\_\+ok@{change\+\_\+cipher\+\_\+spec\+\_\+ok}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{change\+\_\+cipher\+\_\+spec\+\_\+ok}{change_cipher_spec_ok}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dtls1\+\_\+state\+\_\+st\+::change\+\_\+cipher\+\_\+spec\+\_\+ok}\hypertarget{structdtls1__state__st_a1d0bfd86d37d9058a404a119b2f68ee9}{}\label{structdtls1__state__st_a1d0bfd86d37d9058a404a119b2f68ee9}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!cookie@{cookie}}
+\index{cookie@{cookie}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{cookie}{cookie}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char dtls1\+\_\+state\+\_\+st\+::cookie\mbox{[}{\bf D\+T\+L\+S1\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}}\hypertarget{structdtls1__state__st_a3600731c890da666b152e0bea4b17644}{}\label{structdtls1__state__st_a3600731c890da666b152e0bea4b17644}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!cookie\+\_\+len@{cookie\+\_\+len}}
+\index{cookie\+\_\+len@{cookie\+\_\+len}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{cookie\+\_\+len}{cookie_len}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dtls1\+\_\+state\+\_\+st\+::cookie\+\_\+len}\hypertarget{structdtls1__state__st_aa91963cca02aa5c981c3c1d5c3c6e472}{}\label{structdtls1__state__st_aa91963cca02aa5c981c3c1d5c3c6e472}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!handshake\+\_\+fragment@{handshake\+\_\+fragment}}
+\index{handshake\+\_\+fragment@{handshake\+\_\+fragment}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{handshake\+\_\+fragment}{handshake_fragment}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char dtls1\+\_\+state\+\_\+st\+::handshake\+\_\+fragment\mbox{[}{\bf D\+T\+L\+S1\+\_\+\+H\+M\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}}\hypertarget{structdtls1__state__st_a1fca455e80d0a3036c79d9209ac51633}{}\label{structdtls1__state__st_a1fca455e80d0a3036c79d9209ac51633}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!handshake\+\_\+fragment\+\_\+len@{handshake\+\_\+fragment\+\_\+len}}
+\index{handshake\+\_\+fragment\+\_\+len@{handshake\+\_\+fragment\+\_\+len}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{handshake\+\_\+fragment\+\_\+len}{handshake_fragment_len}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dtls1\+\_\+state\+\_\+st\+::handshake\+\_\+fragment\+\_\+len}\hypertarget{structdtls1__state__st_abeb5303866e89417b37551332cf28f08}{}\label{structdtls1__state__st_abeb5303866e89417b37551332cf28f08}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!handshake\+\_\+read\+\_\+seq@{handshake\+\_\+read\+\_\+seq}}
+\index{handshake\+\_\+read\+\_\+seq@{handshake\+\_\+read\+\_\+seq}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{handshake\+\_\+read\+\_\+seq}{handshake_read_seq}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short dtls1\+\_\+state\+\_\+st\+::handshake\+\_\+read\+\_\+seq}\hypertarget{structdtls1__state__st_a928b4ab02c52ca660cb46762133b21bb}{}\label{structdtls1__state__st_a928b4ab02c52ca660cb46762133b21bb}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!handshake\+\_\+write\+\_\+seq@{handshake\+\_\+write\+\_\+seq}}
+\index{handshake\+\_\+write\+\_\+seq@{handshake\+\_\+write\+\_\+seq}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{handshake\+\_\+write\+\_\+seq}{handshake_write_seq}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short dtls1\+\_\+state\+\_\+st\+::handshake\+\_\+write\+\_\+seq}\hypertarget{structdtls1__state__st_ac14d838ba2fa596ab378ac07bee6e0c8}{}\label{structdtls1__state__st_ac14d838ba2fa596ab378ac07bee6e0c8}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!last\+\_\+write\+\_\+sequence@{last\+\_\+write\+\_\+sequence}}
+\index{last\+\_\+write\+\_\+sequence@{last\+\_\+write\+\_\+sequence}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{last\+\_\+write\+\_\+sequence}{last_write_sequence}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char dtls1\+\_\+state\+\_\+st\+::last\+\_\+write\+\_\+sequence\mbox{[}8\mbox{]}}\hypertarget{structdtls1__state__st_aceeaa0dd2d3f7a47a99a85c8db8013ea}{}\label{structdtls1__state__st_aceeaa0dd2d3f7a47a99a85c8db8013ea}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!listen@{listen}}
+\index{listen@{listen}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{listen}{listen}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dtls1\+\_\+state\+\_\+st\+::listen}\hypertarget{structdtls1__state__st_a834e8572b18cebed829621b26f629715}{}\label{structdtls1__state__st_a834e8572b18cebed829621b26f629715}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!mtu@{mtu}}
+\index{mtu@{mtu}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{mtu}{mtu}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dtls1\+\_\+state\+\_\+st\+::mtu}\hypertarget{structdtls1__state__st_a0518fb297c24c3b28e9ee3122be2967a}{}\label{structdtls1__state__st_a0518fb297c24c3b28e9ee3122be2967a}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!next\+\_\+bitmap@{next\+\_\+bitmap}}
+\index{next\+\_\+bitmap@{next\+\_\+bitmap}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{next\+\_\+bitmap}{next_bitmap}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+T\+L\+S1\+\_\+\+B\+I\+T\+M\+AP} dtls1\+\_\+state\+\_\+st\+::next\+\_\+bitmap}\hypertarget{structdtls1__state__st_a2ef30a3f09e71c8d936db1f4a8a68c10}{}\label{structdtls1__state__st_a2ef30a3f09e71c8d936db1f4a8a68c10}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!next\+\_\+handshake\+\_\+write\+\_\+seq@{next\+\_\+handshake\+\_\+write\+\_\+seq}}
+\index{next\+\_\+handshake\+\_\+write\+\_\+seq@{next\+\_\+handshake\+\_\+write\+\_\+seq}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{next\+\_\+handshake\+\_\+write\+\_\+seq}{next_handshake_write_seq}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short dtls1\+\_\+state\+\_\+st\+::next\+\_\+handshake\+\_\+write\+\_\+seq}\hypertarget{structdtls1__state__st_ae5ce4e4dc2d5625594b6c7a339198a23}{}\label{structdtls1__state__st_ae5ce4e4dc2d5625594b6c7a339198a23}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!next\+\_\+timeout@{next\+\_\+timeout}}
+\index{next\+\_\+timeout@{next\+\_\+timeout}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{next\+\_\+timeout}{next_timeout}}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval dtls1\+\_\+state\+\_\+st\+::next\+\_\+timeout}\hypertarget{structdtls1__state__st_a499a60c3bed45a4de6da508430035578}{}\label{structdtls1__state__st_a499a60c3bed45a4de6da508430035578}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!processed\+\_\+rcds@{processed\+\_\+rcds}}
+\index{processed\+\_\+rcds@{processed\+\_\+rcds}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{processed\+\_\+rcds}{processed_rcds}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf record\+\_\+pqueue} dtls1\+\_\+state\+\_\+st\+::processed\+\_\+rcds}\hypertarget{structdtls1__state__st_ac7496a32427c880c57cad29cf624983b}{}\label{structdtls1__state__st_ac7496a32427c880c57cad29cf624983b}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!r\+\_\+epoch@{r\+\_\+epoch}}
+\index{r\+\_\+epoch@{r\+\_\+epoch}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{r\+\_\+epoch}{r_epoch}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short dtls1\+\_\+state\+\_\+st\+::r\+\_\+epoch}\hypertarget{structdtls1__state__st_aa3c8e7915e684e4d99aef7e102c57479}{}\label{structdtls1__state__st_aa3c8e7915e684e4d99aef7e102c57479}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!r\+\_\+msg\+\_\+hdr@{r\+\_\+msg\+\_\+hdr}}
+\index{r\+\_\+msg\+\_\+hdr@{r\+\_\+msg\+\_\+hdr}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{r\+\_\+msg\+\_\+hdr}{r_msg_hdr}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf hm\+\_\+header\+\_\+st} dtls1\+\_\+state\+\_\+st\+::r\+\_\+msg\+\_\+hdr}\hypertarget{structdtls1__state__st_a1c6a7daa242306285d142a607d0a63b1}{}\label{structdtls1__state__st_a1c6a7daa242306285d142a607d0a63b1}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!rcvd\+\_\+cookie@{rcvd\+\_\+cookie}}
+\index{rcvd\+\_\+cookie@{rcvd\+\_\+cookie}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{rcvd\+\_\+cookie}{rcvd_cookie}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char dtls1\+\_\+state\+\_\+st\+::rcvd\+\_\+cookie\mbox{[}{\bf D\+T\+L\+S1\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+L\+E\+N\+G\+TH}\mbox{]}}\hypertarget{structdtls1__state__st_a1a9425f1e37d872f3cc13026092b4ac6}{}\label{structdtls1__state__st_a1a9425f1e37d872f3cc13026092b4ac6}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!retransmitting@{retransmitting}}
+\index{retransmitting@{retransmitting}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{retransmitting}{retransmitting}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dtls1\+\_\+state\+\_\+st\+::retransmitting}\hypertarget{structdtls1__state__st_a55559920472b96c76fbe4b1bf83c62e5}{}\label{structdtls1__state__st_a55559920472b96c76fbe4b1bf83c62e5}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!send\+\_\+cookie@{send\+\_\+cookie}}
+\index{send\+\_\+cookie@{send\+\_\+cookie}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{send\+\_\+cookie}{send_cookie}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dtls1\+\_\+state\+\_\+st\+::send\+\_\+cookie}\hypertarget{structdtls1__state__st_af87b8915e3c04aa1e8c858e15a967b2d}{}\label{structdtls1__state__st_af87b8915e3c04aa1e8c858e15a967b2d}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!sent\+\_\+messages@{sent\+\_\+messages}}
+\index{sent\+\_\+messages@{sent\+\_\+messages}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{sent\+\_\+messages}{sent_messages}}]{\setlength{\rightskip}{0pt plus 5cm}struct \+\_\+pqueue$\ast$ dtls1\+\_\+state\+\_\+st\+::sent\+\_\+messages}\hypertarget{structdtls1__state__st_af6ab57de288de98288a13ae449128084}{}\label{structdtls1__state__st_af6ab57de288de98288a13ae449128084}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!timeout@{timeout}}
+\index{timeout@{timeout}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{timeout}{timeout}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf dtls1\+\_\+timeout\+\_\+st} dtls1\+\_\+state\+\_\+st\+::timeout}\hypertarget{structdtls1__state__st_af619339c285b02986b695f6d505f1c36}{}\label{structdtls1__state__st_af619339c285b02986b695f6d505f1c36}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!timeout\+\_\+duration@{timeout\+\_\+duration}}
+\index{timeout\+\_\+duration@{timeout\+\_\+duration}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{timeout\+\_\+duration}{timeout_duration}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short dtls1\+\_\+state\+\_\+st\+::timeout\+\_\+duration}\hypertarget{structdtls1__state__st_ad5deca28499d48a4faa5fae12f621d93}{}\label{structdtls1__state__st_ad5deca28499d48a4faa5fae12f621d93}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!unprocessed\+\_\+rcds@{unprocessed\+\_\+rcds}}
+\index{unprocessed\+\_\+rcds@{unprocessed\+\_\+rcds}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{unprocessed\+\_\+rcds}{unprocessed_rcds}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf record\+\_\+pqueue} dtls1\+\_\+state\+\_\+st\+::unprocessed\+\_\+rcds}\hypertarget{structdtls1__state__st_ada130633ccbd3372ee777efb93c953a9}{}\label{structdtls1__state__st_ada130633ccbd3372ee777efb93c953a9}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!w\+\_\+epoch@{w\+\_\+epoch}}
+\index{w\+\_\+epoch@{w\+\_\+epoch}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{w\+\_\+epoch}{w_epoch}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short dtls1\+\_\+state\+\_\+st\+::w\+\_\+epoch}\hypertarget{structdtls1__state__st_ac2348d97c73af669675caa7791fc7320}{}\label{structdtls1__state__st_ac2348d97c73af669675caa7791fc7320}
+\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}!w\+\_\+msg\+\_\+hdr@{w\+\_\+msg\+\_\+hdr}}
+\index{w\+\_\+msg\+\_\+hdr@{w\+\_\+msg\+\_\+hdr}!dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsubsection[{\texorpdfstring{w\+\_\+msg\+\_\+hdr}{w_msg_hdr}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf hm\+\_\+header\+\_\+st} dtls1\+\_\+state\+\_\+st\+::w\+\_\+msg\+\_\+hdr}\hypertarget{structdtls1__state__st_aa16e59d7f125177caa2b5939fcb13890}{}\label{structdtls1__state__st_aa16e59d7f125177caa2b5939fcb13890}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/openssl/\hyperlink{dtls1_8h}{dtls1.\+h}\end{DoxyCompactItemize}

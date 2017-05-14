@@ -1,0 +1,172 @@
+\hypertarget{structssl__method__st}{}\section{ssl\+\_\+method\+\_\+st Struct Reference}
+\label{structssl__method__st}\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+
+
+{\ttfamily \#include $<$ssl.\+h$>$}
+
+
+
+Collaboration diagram for ssl\+\_\+method\+\_\+st\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{structssl__method__st__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structssl__method__st_a1d231051899c943c03267d9ede6d2488}{version}
+\item 
+int($\ast$ \hyperlink{structssl__method__st_a7a5b5fc62a1f2d1e130bb67f5da66a81}{ssl\+\_\+new} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s)
+\item 
+void($\ast$ \hyperlink{structssl__method__st_ae1a1f21bb25134669738357096bfd629}{ssl\+\_\+clear} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s)
+\item 
+void($\ast$ \hyperlink{structssl__method__st_a8df364610bd0f741b9fe078a69d88e28}{ssl\+\_\+free} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s)
+\item 
+int($\ast$ \hyperlink{structssl__method__st_a414ff7e2c280fb8e5cee22bff2df8717}{ssl\+\_\+accept} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s)
+\item 
+int($\ast$ \hyperlink{structssl__method__st_acfec7986091a9749de81345a3833b595}{ssl\+\_\+connect} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s)
+\item 
+int($\ast$ \hyperlink{structssl__method__st_a113246b4c830059207f54935b8874289}{ssl\+\_\+read} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s, void $\ast$buf, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+int($\ast$ \hyperlink{structssl__method__st_a4216ad37e9a089392b0fe1915ed745d7}{ssl\+\_\+peek} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s, void $\ast$buf, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+int($\ast$ \hyperlink{structssl__method__st_aeaa1745bfd8cea08b5d943fa49c1804a}{ssl\+\_\+write} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s, const void $\ast$buf, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+int($\ast$ \hyperlink{structssl__method__st_a7dc97d1a59c10baa705a23e5aa4f7546}{ssl\+\_\+shutdown} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s)
+\item 
+int($\ast$ \hyperlink{structssl__method__st_a68ba7cb568d9c9c3e2bd15020a30beb0}{ssl\+\_\+renegotiate} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s)
+\item 
+int($\ast$ \hyperlink{structssl__method__st_a07e92db03c1a7907ed8346916c038215}{ssl\+\_\+renegotiate\+\_\+check} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s)
+\item 
+long($\ast$ \hyperlink{structssl__method__st_a128347c6e6007078bc17af9c64b566f3}{ssl\+\_\+get\+\_\+message} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s, int st1, int stn, int mt, long max, int $\ast$ok)
+\item 
+int($\ast$ \hyperlink{structssl__method__st_a9f992bd27f8e79cf166c9783bdc29932}{ssl\+\_\+read\+\_\+bytes} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s, int \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type}, unsigned char $\ast$buf, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, int peek)
+\item 
+int($\ast$ \hyperlink{structssl__method__st_a20933c416539a546d3749a725e0602e7}{ssl\+\_\+write\+\_\+bytes} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s, int \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type}, const void $\ast$buf\+\_\+, int \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+int($\ast$ \hyperlink{structssl__method__st_a1164901a31bb98ce046b971a09b29321}{ssl\+\_\+dispatch\+\_\+alert} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s)
+\item 
+long($\ast$ \hyperlink{structssl__method__st_a00f03ff5d9c47885e4cf9340ccb91dd8}{ssl\+\_\+ctrl} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s, int cmd, long larg, void $\ast$parg)
+\item 
+long($\ast$ \hyperlink{structssl__method__st_a894ef584342f0b95ab4156cada689c99}{ssl\+\_\+ctx\+\_\+ctrl} )(\hyperlink{ossl__typ_8h_a1a21892c1193ee6eb572c2c72d3924ca}{S\+S\+L\+\_\+\+C\+TX} $\ast$ctx, int cmd, long larg, void $\ast$parg)
+\item 
+const \hyperlink{ssl_8h_a548d7a5d565a9e0e9bd45c49f8c95701}{S\+S\+L\+\_\+\+C\+I\+P\+H\+ER} $\ast$($\ast$ \hyperlink{structssl__method__st_a51d27641af1ef292ad991acab889eb69}{get\+\_\+cipher\+\_\+by\+\_\+char} )(const unsigned char $\ast$ptr)
+\item 
+int($\ast$ \hyperlink{structssl__method__st_a625829ff35be4426d905e44ea04024cf}{put\+\_\+cipher\+\_\+by\+\_\+char} )(const \hyperlink{ssl_8h_a548d7a5d565a9e0e9bd45c49f8c95701}{S\+S\+L\+\_\+\+C\+I\+P\+H\+ER} $\ast$cipher, unsigned char $\ast$ptr)
+\item 
+int($\ast$ \hyperlink{structssl__method__st_a8fd510a866d8754bfd60e897ccb8d3b4}{ssl\+\_\+pending} )(const \hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s)
+\item 
+int($\ast$ \hyperlink{structssl__method__st_ad67301b9f432dca1d82eda0a2a73d402}{num\+\_\+ciphers} )(void)
+\item 
+const \hyperlink{ssl_8h_a548d7a5d565a9e0e9bd45c49f8c95701}{S\+S\+L\+\_\+\+C\+I\+P\+H\+ER} $\ast$($\ast$ \hyperlink{structssl__method__st_aa5b037fbac753dc98291d099d817a072}{get\+\_\+cipher} )(unsigned ncipher)
+\item 
+const struct \hyperlink{structssl__method__st}{ssl\+\_\+method\+\_\+st} $\ast$($\ast$ \hyperlink{structssl__method__st_a601499546a57b7fc73461cca2588a316}{get\+\_\+ssl\+\_\+method} )(int \hyperlink{structssl__method__st_a1d231051899c943c03267d9ede6d2488}{version})
+\item 
+long($\ast$ \hyperlink{structssl__method__st_a5a153fd1d3f82198c14ceca526c07efa}{get\+\_\+timeout} )(void)
+\item 
+struct ssl3\+\_\+enc\+\_\+method $\ast$ \hyperlink{structssl__method__st_aa9b5c4c60c391bc6771bd035aa10ce0a}{ssl3\+\_\+enc}
+\item 
+int($\ast$ \hyperlink{structssl__method__st_a84b47953e71129319b367394a6daca4b}{ssl\+\_\+version} )(void)
+\item 
+long($\ast$ \hyperlink{structssl__method__st_ac8ad5e3ad9b93cad8439c0af2c280c56}{ssl\+\_\+callback\+\_\+ctrl} )(\hyperlink{ossl__typ_8h_a71f21e09bf365489dab9d85bd4785e24}{S\+SL} $\ast$s, int cb\+\_\+id, void($\ast$\hyperlink{conf_8h_aa065f30aa9f5f9a42132c82c787ee70b}{fp})(void))
+\item 
+long($\ast$ \hyperlink{structssl__method__st_a993fb1170221e955a38978690bbfde45}{ssl\+\_\+ctx\+\_\+callback\+\_\+ctrl} )(\hyperlink{ossl__typ_8h_a1a21892c1193ee6eb572c2c72d3924ca}{S\+S\+L\+\_\+\+C\+TX} $\ast$s, int cb\+\_\+id, void($\ast$\hyperlink{conf_8h_aa065f30aa9f5f9a42132c82c787ee70b}{fp})(void))
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!get\+\_\+cipher@{get\+\_\+cipher}}
+\index{get\+\_\+cipher@{get\+\_\+cipher}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{get\+\_\+cipher}{get_cipher}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf S\+S\+L\+\_\+\+C\+I\+P\+H\+ER}$\ast$($\ast$ ssl\+\_\+method\+\_\+st\+::get\+\_\+cipher) (unsigned ncipher)}\hypertarget{structssl__method__st_aa5b037fbac753dc98291d099d817a072}{}\label{structssl__method__st_aa5b037fbac753dc98291d099d817a072}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!get\+\_\+cipher\+\_\+by\+\_\+char@{get\+\_\+cipher\+\_\+by\+\_\+char}}
+\index{get\+\_\+cipher\+\_\+by\+\_\+char@{get\+\_\+cipher\+\_\+by\+\_\+char}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{get\+\_\+cipher\+\_\+by\+\_\+char}{get_cipher_by_char}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf S\+S\+L\+\_\+\+C\+I\+P\+H\+ER}$\ast$($\ast$ ssl\+\_\+method\+\_\+st\+::get\+\_\+cipher\+\_\+by\+\_\+char) (const unsigned char $\ast$ptr)}\hypertarget{structssl__method__st_a51d27641af1ef292ad991acab889eb69}{}\label{structssl__method__st_a51d27641af1ef292ad991acab889eb69}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!get\+\_\+ssl\+\_\+method@{get\+\_\+ssl\+\_\+method}}
+\index{get\+\_\+ssl\+\_\+method@{get\+\_\+ssl\+\_\+method}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{get\+\_\+ssl\+\_\+method}{get_ssl_method}}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf ssl\+\_\+method\+\_\+st}$\ast$($\ast$ ssl\+\_\+method\+\_\+st\+::get\+\_\+ssl\+\_\+method) (int {\bf version})}\hypertarget{structssl__method__st_a601499546a57b7fc73461cca2588a316}{}\label{structssl__method__st_a601499546a57b7fc73461cca2588a316}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!get\+\_\+timeout@{get\+\_\+timeout}}
+\index{get\+\_\+timeout@{get\+\_\+timeout}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{get\+\_\+timeout}{get_timeout}}]{\setlength{\rightskip}{0pt plus 5cm}long($\ast$ ssl\+\_\+method\+\_\+st\+::get\+\_\+timeout) (void)}\hypertarget{structssl__method__st_a5a153fd1d3f82198c14ceca526c07efa}{}\label{structssl__method__st_a5a153fd1d3f82198c14ceca526c07efa}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!num\+\_\+ciphers@{num\+\_\+ciphers}}
+\index{num\+\_\+ciphers@{num\+\_\+ciphers}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{num\+\_\+ciphers}{num_ciphers}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+method\+\_\+st\+::num\+\_\+ciphers) (void)}\hypertarget{structssl__method__st_ad67301b9f432dca1d82eda0a2a73d402}{}\label{structssl__method__st_ad67301b9f432dca1d82eda0a2a73d402}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!put\+\_\+cipher\+\_\+by\+\_\+char@{put\+\_\+cipher\+\_\+by\+\_\+char}}
+\index{put\+\_\+cipher\+\_\+by\+\_\+char@{put\+\_\+cipher\+\_\+by\+\_\+char}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{put\+\_\+cipher\+\_\+by\+\_\+char}{put_cipher_by_char}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+method\+\_\+st\+::put\+\_\+cipher\+\_\+by\+\_\+char) (const {\bf S\+S\+L\+\_\+\+C\+I\+P\+H\+ER} $\ast$cipher, unsigned char $\ast$ptr)}\hypertarget{structssl__method__st_a625829ff35be4426d905e44ea04024cf}{}\label{structssl__method__st_a625829ff35be4426d905e44ea04024cf}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl3\+\_\+enc@{ssl3\+\_\+enc}}
+\index{ssl3\+\_\+enc@{ssl3\+\_\+enc}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl3\+\_\+enc}{ssl3_enc}}]{\setlength{\rightskip}{0pt plus 5cm}struct ssl3\+\_\+enc\+\_\+method$\ast$ ssl\+\_\+method\+\_\+st\+::ssl3\+\_\+enc}\hypertarget{structssl__method__st_aa9b5c4c60c391bc6771bd035aa10ce0a}{}\label{structssl__method__st_aa9b5c4c60c391bc6771bd035aa10ce0a}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+accept@{ssl\+\_\+accept}}
+\index{ssl\+\_\+accept@{ssl\+\_\+accept}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+accept}{ssl_accept}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+accept) ({\bf S\+SL} $\ast$s)}\hypertarget{structssl__method__st_a414ff7e2c280fb8e5cee22bff2df8717}{}\label{structssl__method__st_a414ff7e2c280fb8e5cee22bff2df8717}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+callback\+\_\+ctrl@{ssl\+\_\+callback\+\_\+ctrl}}
+\index{ssl\+\_\+callback\+\_\+ctrl@{ssl\+\_\+callback\+\_\+ctrl}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+callback\+\_\+ctrl}{ssl_callback_ctrl}}]{\setlength{\rightskip}{0pt plus 5cm}long($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+callback\+\_\+ctrl) ({\bf S\+SL} $\ast$s, int cb\+\_\+id, void($\ast${\bf fp})(void))}\hypertarget{structssl__method__st_ac8ad5e3ad9b93cad8439c0af2c280c56}{}\label{structssl__method__st_ac8ad5e3ad9b93cad8439c0af2c280c56}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+clear@{ssl\+\_\+clear}}
+\index{ssl\+\_\+clear@{ssl\+\_\+clear}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+clear}{ssl_clear}}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+clear) ({\bf S\+SL} $\ast$s)}\hypertarget{structssl__method__st_ae1a1f21bb25134669738357096bfd629}{}\label{structssl__method__st_ae1a1f21bb25134669738357096bfd629}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+connect@{ssl\+\_\+connect}}
+\index{ssl\+\_\+connect@{ssl\+\_\+connect}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+connect}{ssl_connect}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+connect) ({\bf S\+SL} $\ast$s)}\hypertarget{structssl__method__st_acfec7986091a9749de81345a3833b595}{}\label{structssl__method__st_acfec7986091a9749de81345a3833b595}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+ctrl@{ssl\+\_\+ctrl}}
+\index{ssl\+\_\+ctrl@{ssl\+\_\+ctrl}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+ctrl}{ssl_ctrl}}]{\setlength{\rightskip}{0pt plus 5cm}long($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+ctrl) ({\bf S\+SL} $\ast$s, int cmd, long larg, void $\ast$parg)}\hypertarget{structssl__method__st_a00f03ff5d9c47885e4cf9340ccb91dd8}{}\label{structssl__method__st_a00f03ff5d9c47885e4cf9340ccb91dd8}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+ctx\+\_\+callback\+\_\+ctrl@{ssl\+\_\+ctx\+\_\+callback\+\_\+ctrl}}
+\index{ssl\+\_\+ctx\+\_\+callback\+\_\+ctrl@{ssl\+\_\+ctx\+\_\+callback\+\_\+ctrl}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+ctx\+\_\+callback\+\_\+ctrl}{ssl_ctx_callback_ctrl}}]{\setlength{\rightskip}{0pt plus 5cm}long($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+ctx\+\_\+callback\+\_\+ctrl) ({\bf S\+S\+L\+\_\+\+C\+TX} $\ast$s, int cb\+\_\+id, void($\ast${\bf fp})(void))}\hypertarget{structssl__method__st_a993fb1170221e955a38978690bbfde45}{}\label{structssl__method__st_a993fb1170221e955a38978690bbfde45}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+ctx\+\_\+ctrl@{ssl\+\_\+ctx\+\_\+ctrl}}
+\index{ssl\+\_\+ctx\+\_\+ctrl@{ssl\+\_\+ctx\+\_\+ctrl}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+ctx\+\_\+ctrl}{ssl_ctx_ctrl}}]{\setlength{\rightskip}{0pt plus 5cm}long($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+ctx\+\_\+ctrl) ({\bf S\+S\+L\+\_\+\+C\+TX} $\ast$ctx, int cmd, long larg, void $\ast$parg)}\hypertarget{structssl__method__st_a894ef584342f0b95ab4156cada689c99}{}\label{structssl__method__st_a894ef584342f0b95ab4156cada689c99}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+dispatch\+\_\+alert@{ssl\+\_\+dispatch\+\_\+alert}}
+\index{ssl\+\_\+dispatch\+\_\+alert@{ssl\+\_\+dispatch\+\_\+alert}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+dispatch\+\_\+alert}{ssl_dispatch_alert}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+dispatch\+\_\+alert) ({\bf S\+SL} $\ast$s)}\hypertarget{structssl__method__st_a1164901a31bb98ce046b971a09b29321}{}\label{structssl__method__st_a1164901a31bb98ce046b971a09b29321}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+free@{ssl\+\_\+free}}
+\index{ssl\+\_\+free@{ssl\+\_\+free}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+free}{ssl_free}}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+free) ({\bf S\+SL} $\ast$s)}\hypertarget{structssl__method__st_a8df364610bd0f741b9fe078a69d88e28}{}\label{structssl__method__st_a8df364610bd0f741b9fe078a69d88e28}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+get\+\_\+message@{ssl\+\_\+get\+\_\+message}}
+\index{ssl\+\_\+get\+\_\+message@{ssl\+\_\+get\+\_\+message}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+get\+\_\+message}{ssl_get_message}}]{\setlength{\rightskip}{0pt plus 5cm}long($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+get\+\_\+message) ({\bf S\+SL} $\ast$s, int st1, int stn, int mt, long max, int $\ast$ok)}\hypertarget{structssl__method__st_a128347c6e6007078bc17af9c64b566f3}{}\label{structssl__method__st_a128347c6e6007078bc17af9c64b566f3}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+new@{ssl\+\_\+new}}
+\index{ssl\+\_\+new@{ssl\+\_\+new}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+new}{ssl_new}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+new) ({\bf S\+SL} $\ast$s)}\hypertarget{structssl__method__st_a7a5b5fc62a1f2d1e130bb67f5da66a81}{}\label{structssl__method__st_a7a5b5fc62a1f2d1e130bb67f5da66a81}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+peek@{ssl\+\_\+peek}}
+\index{ssl\+\_\+peek@{ssl\+\_\+peek}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+peek}{ssl_peek}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+peek) ({\bf S\+SL} $\ast$s, void $\ast$buf, int {\bf len})}\hypertarget{structssl__method__st_a4216ad37e9a089392b0fe1915ed745d7}{}\label{structssl__method__st_a4216ad37e9a089392b0fe1915ed745d7}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+pending@{ssl\+\_\+pending}}
+\index{ssl\+\_\+pending@{ssl\+\_\+pending}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+pending}{ssl_pending}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+pending) (const {\bf S\+SL} $\ast$s)}\hypertarget{structssl__method__st_a8fd510a866d8754bfd60e897ccb8d3b4}{}\label{structssl__method__st_a8fd510a866d8754bfd60e897ccb8d3b4}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+read@{ssl\+\_\+read}}
+\index{ssl\+\_\+read@{ssl\+\_\+read}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+read}{ssl_read}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+read) ({\bf S\+SL} $\ast$s, void $\ast$buf, int {\bf len})}\hypertarget{structssl__method__st_a113246b4c830059207f54935b8874289}{}\label{structssl__method__st_a113246b4c830059207f54935b8874289}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+read\+\_\+bytes@{ssl\+\_\+read\+\_\+bytes}}
+\index{ssl\+\_\+read\+\_\+bytes@{ssl\+\_\+read\+\_\+bytes}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+read\+\_\+bytes}{ssl_read_bytes}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+read\+\_\+bytes) ({\bf S\+SL} $\ast$s, int {\bf type}, unsigned char $\ast$buf, int {\bf len}, int peek)}\hypertarget{structssl__method__st_a9f992bd27f8e79cf166c9783bdc29932}{}\label{structssl__method__st_a9f992bd27f8e79cf166c9783bdc29932}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+renegotiate@{ssl\+\_\+renegotiate}}
+\index{ssl\+\_\+renegotiate@{ssl\+\_\+renegotiate}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+renegotiate}{ssl_renegotiate}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+renegotiate) ({\bf S\+SL} $\ast$s)}\hypertarget{structssl__method__st_a68ba7cb568d9c9c3e2bd15020a30beb0}{}\label{structssl__method__st_a68ba7cb568d9c9c3e2bd15020a30beb0}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+renegotiate\+\_\+check@{ssl\+\_\+renegotiate\+\_\+check}}
+\index{ssl\+\_\+renegotiate\+\_\+check@{ssl\+\_\+renegotiate\+\_\+check}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+renegotiate\+\_\+check}{ssl_renegotiate_check}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+renegotiate\+\_\+check) ({\bf S\+SL} $\ast$s)}\hypertarget{structssl__method__st_a07e92db03c1a7907ed8346916c038215}{}\label{structssl__method__st_a07e92db03c1a7907ed8346916c038215}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+shutdown@{ssl\+\_\+shutdown}}
+\index{ssl\+\_\+shutdown@{ssl\+\_\+shutdown}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+shutdown}{ssl_shutdown}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+shutdown) ({\bf S\+SL} $\ast$s)}\hypertarget{structssl__method__st_a7dc97d1a59c10baa705a23e5aa4f7546}{}\label{structssl__method__st_a7dc97d1a59c10baa705a23e5aa4f7546}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+version@{ssl\+\_\+version}}
+\index{ssl\+\_\+version@{ssl\+\_\+version}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+version}{ssl_version}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+version) (void)}\hypertarget{structssl__method__st_a84b47953e71129319b367394a6daca4b}{}\label{structssl__method__st_a84b47953e71129319b367394a6daca4b}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+write@{ssl\+\_\+write}}
+\index{ssl\+\_\+write@{ssl\+\_\+write}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+write}{ssl_write}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+write) ({\bf S\+SL} $\ast$s, const void $\ast$buf, int {\bf len})}\hypertarget{structssl__method__st_aeaa1745bfd8cea08b5d943fa49c1804a}{}\label{structssl__method__st_aeaa1745bfd8cea08b5d943fa49c1804a}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!ssl\+\_\+write\+\_\+bytes@{ssl\+\_\+write\+\_\+bytes}}
+\index{ssl\+\_\+write\+\_\+bytes@{ssl\+\_\+write\+\_\+bytes}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{ssl\+\_\+write\+\_\+bytes}{ssl_write_bytes}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ ssl\+\_\+method\+\_\+st\+::ssl\+\_\+write\+\_\+bytes) ({\bf S\+SL} $\ast$s, int {\bf type}, const void $\ast$buf\+\_\+, int {\bf len})}\hypertarget{structssl__method__st_a20933c416539a546d3749a725e0602e7}{}\label{structssl__method__st_a20933c416539a546d3749a725e0602e7}
+\index{ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}!version@{version}}
+\index{version@{version}!ssl\+\_\+method\+\_\+st@{ssl\+\_\+method\+\_\+st}}
+\subsubsection[{\texorpdfstring{version}{version}}]{\setlength{\rightskip}{0pt plus 5cm}int ssl\+\_\+method\+\_\+st\+::version}\hypertarget{structssl__method__st_a1d231051899c943c03267d9ede6d2488}{}\label{structssl__method__st_a1d231051899c943c03267d9ede6d2488}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/openssl/\hyperlink{ssl_8h}{ssl.\+h}\end{DoxyCompactItemize}

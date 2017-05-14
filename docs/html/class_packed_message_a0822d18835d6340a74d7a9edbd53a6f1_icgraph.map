@@ -1,0 +1,11 @@
+<map id="PackedMessage::unpack" name="PackedMessage::unpack">
+<area shape="rect" id="node2" href="$class_broadcaster.html#a29791f7e092b8da8747b0168b3bdb404" title="Broadcaster::receive" alt="" coords="232,63,375,90"/>
+<area shape="rect" id="node6" href="$class_connection.html#a55342f6aeedd34fc6a11dd79b59da69b" title="Connection::create" alt="" coords="432,13,564,39"/>
+<area shape="rect" id="node9" href="$class_socket_channel.html#a7439913d037d6b25518431732eb7a81a" title="SocketChannel::receive" alt="" coords="223,114,384,141"/>
+<area shape="rect" id="node3" href="$class_brain.html#a23d921369c5ec1218d7dc26d0f8270c2" title="Brain::loop" alt="" coords="456,114,540,141"/>
+<area shape="rect" id="node5" href="$class_connection.html#a47c25a31352a71e2a6902d37fc5fa2ba" title="Connection::start" alt="" coords="437,63,559,90"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a523d51f6d06fce5bbed3e074818569fb" title="main" alt="" coords="661,139,711,166"/>
+<area shape="rect" id="node7" href="$class_async_socket_channel.html#ae0d0010ef42fecc249ae1542b226130c" title="AsyncSocketChannel\l::serve" alt="" coords="612,5,760,47"/>
+<area shape="rect" id="node8" href="$class_communication.html#aed16e511327c62b6b5f418523f707a77" title="Communication::serve" alt="" coords="808,13,961,39"/>
+<area shape="rect" id="node10" href="$class_body.html#a898135b92fa8abf09d435f671f62cf29" title="Body::loop" alt="" coords="456,165,540,191"/>
+</map>

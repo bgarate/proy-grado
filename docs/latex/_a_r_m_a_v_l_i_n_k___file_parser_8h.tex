@@ -1,0 +1,140 @@
+\hypertarget{_a_r_m_a_v_l_i_n_k___file_parser_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.h File Reference}
+\label{_a_r_m_a_v_l_i_n_k___file_parser_8h}\index{src/hal/pb2/include/lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h@{src/hal/pb2/include/lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h}}
+
+
+Mavlink File Parser.  
+
+
+{\ttfamily \#include $<$lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+Error.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Mavlink/\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+List\+Utils.\+h$>$}\\*
+{\ttfamily \#include $<$mavlink/parrot/mavlink.\+h$>$}\\*
+Include dependency graph for A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_m_a_v_l_i_n_k___file_parser_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{_a_r_m_a_v_l_i_n_k___file_parser_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{_a_r_m_a_v_l_i_n_k___file_parser_8h_ac0e909fa56ee410fa109ac2fea2e910c}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t} \hyperlink{_a_r_m_a_v_l_i_n_k___file_parser_8h_ac0e909fa56ee410fa109ac2fea2e910c}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t}
+\begin{DoxyCompactList}\small\item\em A\+R\+Mavlink file parser structure allows to manage the process of parsing Mavlink files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___file_parser_8h_ac0e909fa56ee410fa109ac2fea2e910c}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t} $\ast$ \hyperlink{_a_r_m_a_v_l_i_n_k___file_parser_8h_ad52268dd1613049a356c70b9d11224c6}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+New} (\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Create a new file parser. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_m_a_v_l_i_n_k___file_parser_8h_a51890ddec648acf01190d780d5ff78d7}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+Delete} (\hyperlink{_a_r_m_a_v_l_i_n_k___file_parser_8h_ac0e909fa56ee410fa109ac2fea2e910c}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t} $\ast$$\ast$file\+Parser)
+\begin{DoxyCompactList}\small\item\em Delete the File parser. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_m_a_v_l_i_n_k___error_8h_aaf3710839eec2e3bb27a2511c4102706}{e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_m_a_v_l_i_n_k___file_parser_8h_a4f6280d1821e42a341b7527edb12d05e}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+Parse} (\hyperlink{_a_r_m_a_v_l_i_n_k___file_parser_8h_ac0e909fa56ee410fa109ac2fea2e910c}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t} $\ast$file\+Parser, const char $\ast$const file\+Path, \hyperlink{_a_r_m_a_v_l_i_n_k___list_utils_8h_a15f3b0988ac436ab109be894828d8aa7}{mission\+\_\+item\+\_\+list\+\_\+t} $\ast$mission\+Item\+List)
+\begin{DoxyCompactList}\small\item\em Parse a Mavlink file and store it in a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Mavlink File Parser. 
+
+\begin{DoxyDate}{Date}
+14/05/2014 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:djavan.bertrand@parrot.com}{\tt djavan.\+bertrand@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t}{ARMAVLINK_FileParser_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t} {\bf A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t}}\hypertarget{_a_r_m_a_v_l_i_n_k___file_parser_8h_ac0e909fa56ee410fa109ac2fea2e910c}{}\label{_a_r_m_a_v_l_i_n_k___file_parser_8h_ac0e909fa56ee410fa109ac2fea2e910c}
+
+
+A\+R\+Mavlink file parser structure allows to manage the process of parsing Mavlink files. 
+
+
+
+\subsection{Function Documentation}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+Delete@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+Delete}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+Delete@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+Delete}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+Delete(\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t $\ast$$\ast$file\+Parser)}{ARMAVLINK_FileParser_Delete(ARMAVLINK_FileParser_t **fileParser)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t} $\ast$$\ast$}]{file\+Parser}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___file_parser_8h_a51890ddec648acf01190d780d5ff78d7}{}\label{_a_r_m_a_v_l_i_n_k___file_parser_8h_a51890ddec648acf01190d780d5ff78d7}
+
+
+Delete the File parser. 
+
+\begin{DoxyWarning}{Warning}
+This function free memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Parser} & \+: address of the pointer on the file parser \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_m_a_v_l_i_n_k___file_parser_8h_ad52268dd1613049a356c70b9d11224c6}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+New()} 
+\end{DoxySeeAlso}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+New@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+New}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+New@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+New}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+New(e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARMAVLINK_FileParser_New(eARMAVLINK_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t}$\ast$ A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___file_parser_8h_ad52268dd1613049a356c70b9d11224c6}{}\label{_a_r_m_a_v_l_i_n_k___file_parser_8h_ad52268dd1613049a356c70b9d11224c6}
+
+
+Create a new file parser. 
+
+\begin{DoxyWarning}{Warning}
+This function allocate memory 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{_a_r_m_a_v_l_i_n_k___file_parser_8h_a51890ddec648acf01190d780d5ff78d7}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+Delete()} must be called to delete the file parser and free the memory allocated. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em error} & \+: pointer on the error output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer on the new file parser 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_m_a_v_l_i_n_k___file_parser_8h_a51890ddec648acf01190d780d5ff78d7}{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+Delete()} 
+\end{DoxySeeAlso}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+Parse@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+Parse}}
+\index{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+Parse@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+Parse}!A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h@{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+Parse(\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t $\ast$file\+Parser, const char $\ast$const file\+Path, mission\+\_\+item\+\_\+list\+\_\+t $\ast$mission\+Item\+List)}{ARMAVLINK_FileParser_Parse(ARMAVLINK_FileParser_t *fileParser, const char *const filePath, mission_item_list_t *missionItemList)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+E\+R\+R\+OR} A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+\+Parse (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+File\+Parser\+\_\+t} $\ast$}]{file\+Parser, }
+\item[{const char $\ast$const}]{file\+Path, }
+\item[{{\bf mission\+\_\+item\+\_\+list\+\_\+t} $\ast$}]{mission\+Item\+List}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_m_a_v_l_i_n_k___file_parser_8h_a4f6280d1821e42a341b7527edb12d05e}{}\label{_a_r_m_a_v_l_i_n_k___file_parser_8h_a4f6280d1821e42a341b7527edb12d05e}
+
+
+Parse a Mavlink file and store it in a list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em file\+Parser} & \+: pointer on the file parser \\
+\hline
+\mbox{\tt in}  & {\em file\+Path} & \+: the path of the file to parse \\
+\hline
+\mbox{\tt out}  & {\em mission\+Item\+List} & \+: a list of all mission items \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+M\+A\+V\+L\+I\+N\+K\+\_\+\+OK if parsing went well, the enum description of the error otherwise 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_m_a_v_l_i_n_k___list_utils_8h_a15f3b0988ac436ab109be894828d8aa7}{mission\+\_\+item\+\_\+list\+\_\+t} 
+\end{DoxySeeAlso}

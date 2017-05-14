@@ -1,0 +1,202 @@
+\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.h File Reference}
+\label{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h}\index{src/hal/pb2/include/lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h@{src/hal/pb2/include/lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h}}
+
+
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+Include dependency graph for A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}
+\begin{DoxyCompactList}\small\item\em \hyperlink{struct_frame}{Frame} used to store stream data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a7010998eff4f6e43ffdb6540edd7a226}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY}~60000
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t} $\ast$ \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a48b67a20e72ad952bf733eacebaae343}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Create a new frame. \end{DoxyCompactList}\item 
+\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t} $\ast$ \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a8f8b637aeeae349dc2b67da1c4e05fac}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New\+With\+Capacity} (uint32\+\_\+t default\+Capacity, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Create a new frame with specific capacity. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a651380fb32c44183ad283aa6364ca8da}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Delete} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t} $\ast$$\ast$frame)
+\begin{DoxyCompactList}\small\item\em Delete the frame. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a55b7d4efeb0c7ad3b9d0ef5a70cbc502}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+ensure\+Capacity\+Is\+At\+Least} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t} $\ast$frame, uint32\+\_\+t minimum\+Capacity, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Ensure the Capacity of the frame Is At Least \textquotesingle{}minimum\+Capacity\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_ab7c3379b41e1f16795d8b6c945786450}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Set\+Free} (\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t} $\ast$frame)
+\begin{DoxyCompactList}\small\item\em Free a frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame. 
+
+\begin{DoxyDate}{Date}
+02/03/2015 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:maxime.maitre@parrot.com}{\tt maxime.\+maitre@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY}{ARCONTROLLER_FRAME_DEFAULT_CAPACITY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY~60000}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a7010998eff4f6e43ffdb6540edd7a226}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a7010998eff4f6e43ffdb6540edd7a226}
+Default capacity of a new frame 
+
+\subsection{Function Documentation}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Delete@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Delete}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Delete@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Delete}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Delete(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t $\ast$$\ast$frame)}{ARCONTROLLER_Frame_Delete(ARCONTROLLER_Frame_t **frame)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t} $\ast$$\ast$}]{frame}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a651380fb32c44183ad283aa6364ca8da}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a651380fb32c44183ad283aa6364ca8da}
+
+
+Delete the frame. 
+
+\begin{DoxyWarning}{Warning}
+This function free memory. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & The frame to delete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a48b67a20e72ad952bf733eacebaae343}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New()}. 
+
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a8f8b637aeeae349dc2b67da1c4e05fac}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New\+With\+Capacity()}. 
+\end{DoxySeeAlso}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+ensure\+Capacity\+Is\+At\+Least@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+ensure\+Capacity\+Is\+At\+Least}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+ensure\+Capacity\+Is\+At\+Least@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+ensure\+Capacity\+Is\+At\+Least}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+ensure\+Capacity\+Is\+At\+Least(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t $\ast$frame, uint32\+\_\+t minimum\+Capacity, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_Frame_ensureCapacityIsAtLeast(ARCONTROLLER_Frame_t *frame, uint32_t minimumCapacity, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+ensure\+Capacity\+Is\+At\+Least (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t} $\ast$}]{frame, }
+\item[{uint32\+\_\+t}]{minimum\+Capacity, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a55b7d4efeb0c7ad3b9d0ef5a70cbc502}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a55b7d4efeb0c7ad3b9d0ef5a70cbc502}
+
+
+Ensure the Capacity of the frame Is At Least \textquotesingle{}minimum\+Capacity\textquotesingle{}. 
+
+\begin{DoxyNote}{Note}
+If the capacity is too small, data frame will be re-\/allocated to the good Capacity. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em frame} & The frame to delete. \\
+\hline
+\mbox{\tt out}  & {\em error} & Executing error. \\
+\hline
+\mbox{\tt in}  & {\em minimum\+Capacity} & The minimum capacity that the frame should have. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textquotesingle{}1\textquotesingle{} is the capacity is at least \textquotesingle{}minimum\+Capacity\textquotesingle{}, otherwise \textquotesingle{}0\textquotesingle{} 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New(e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_Frame_New(eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}$\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a48b67a20e72ad952bf733eacebaae343}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a48b67a20e72ad952bf733eacebaae343}
+
+
+Create a new frame. 
+
+\begin{DoxyWarning}{Warning}
+This function allocate memory 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a651380fb32c44183ad283aa6364ca8da}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Delete()} must be called to delete the frame and free the memory allocated. 
+\end{DoxyPostcond}
+\begin{DoxyNote}{Note}
+The capacity of the data frame wil be A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em error} & Executing error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new frame 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a8f8b637aeeae349dc2b67da1c4e05fac}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New\+With\+Capacity()} 
+
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a651380fb32c44183ad283aa6364ca8da}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Delete()} 
+\end{DoxySeeAlso}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New\+With\+Capacity@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New\+With\+Capacity}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New\+With\+Capacity@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New\+With\+Capacity}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New\+With\+Capacity(uint32\+\_\+t default\+Capacity, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_Frame_NewWithCapacity(uint32_t defaultCapacity, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}$\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New\+With\+Capacity (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{default\+Capacity, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a8f8b637aeeae349dc2b67da1c4e05fac}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a8f8b637aeeae349dc2b67da1c4e05fac}
+
+
+Create a new frame with specific capacity. 
+
+\begin{DoxyWarning}{Warning}
+This function allocate memory 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a651380fb32c44183ad283aa6364ca8da}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Delete()} must be called to delete the frame and free the memory allocated. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em default\+Capacity} & The default capacity of the frame. \\
+\hline
+\mbox{\tt out}  & {\em error} & Executing error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new frame. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a48b67a20e72ad952bf733eacebaae343}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+New()} 
+
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_a651380fb32c44183ad283aa6364ca8da}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Delete()} 
+\end{DoxySeeAlso}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Set\+Free@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Set\+Free}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Set\+Free@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Set\+Free}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Set\+Free(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t $\ast$frame)}{ARCONTROLLER_Frame_SetFree(ARCONTROLLER_Frame_t *frame)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+\+Set\+Free (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t} $\ast$}]{frame}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_ab7c3379b41e1f16795d8b6c945786450}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___frame_8h_ab7c3379b41e1f16795d8b6c945786450}
+
+
+Free a frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & The frame.\+r. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error Executing error. 
+\end{DoxyReturn}

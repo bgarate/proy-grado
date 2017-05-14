@@ -1,0 +1,12 @@
+<map id="Message::mutable_hello" name="Message::mutable_hello">
+<area shape="rect" id="node2" href="$class_brain.html#a23d921369c5ec1218d7dc26d0f8270c2" title="Brain::loop" alt="" coords="669,81,753,108"/>
+<area shape="rect" id="node4" href="$class_message_builder.html#a6e9bc743a54f5880a006229d0e5f0765" title="MessageBuilder::hello" alt="" coords="234,81,385,108"/>
+<area shape="rect" id="node9" href="$class_message.html#a04b6b278c333ee73af59b1b2623e1289" title="Message::MergePartialFrom\lCodedStream" alt="" coords="216,133,403,174"/>
+<area shape="rect" id="node10" href="$class_message.html#aeec4936f78a3ed399295e3f72840166f" title="Message::MergeFrom" alt="" coords="235,199,384,225"/>
+<area shape="rect" id="node11" href="$class_message.html#a1656eb682ce1b354645b8f0204d4d716" title="Message::GetMetadata" alt="" coords="230,249,389,276"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a523d51f6d06fce5bbed3e074818569fb" title="main" alt="" coords="805,107,856,133"/>
+<area shape="rect" id="node5" href="$class_communication.html#aed16e511327c62b6b5f418523f707a77" title="Communication::serve" alt="" coords="457,31,611,57"/>
+<area shape="rect" id="node6" href="$class_communication.html#ab64912f9a4137b930d717d8a3140d693" title="Communication::connect" alt="" coords="451,81,617,108"/>
+<area shape="rect" id="node7" href="$class_message_builder.html#a43d19ca77072e177d5bc494b7aced750" title="MessageBuilder::build" alt="" coords="459,132,609,159"/>
+<area shape="rect" id="node8" href="$class_brain.html#afa2f689c8360c9c9ad323bac5be4b42d" title="Brain::setup" alt="" coords="665,132,757,159"/>
+</map>

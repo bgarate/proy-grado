@@ -1,0 +1,6 @@
+<map id="_getCommandPointer_iss" name="_getCommandPointer_iss">
+<area shape="rect" id="node2" href="$ext_api_platform_8c.html#a31eede90e2a9d23574e09a92ec626d9b" title="extApi_endianConversionInt" alt="" coords="225,5,411,32"/>
+<area shape="rect" id="node3" href="$ext_api_platform_8c.html#ac7c8697b4686622ef5d969c9a3d7ff87" title="extApi_getIntFromPtr" alt="" coords="245,56,391,83"/>
+<area shape="rect" id="node4" href="$ext_api_platform_8c.html#a2fcd30322b227427c7092a48cac7d78a" title="extApi_areStringsSame" alt="" coords="239,107,397,133"/>
+<area shape="rect" id="node5" href="$ext_api_platform_8c.html#ab6136b9c73ac12f692dfabe8e3fa0759" title="extApi_getStringLength" alt="" coords="239,157,397,184"/>
+</map>

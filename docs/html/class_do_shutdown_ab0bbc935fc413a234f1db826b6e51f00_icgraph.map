@@ -1,0 +1,9 @@
+<map id="DoShutdown::internal_default_instance" name="DoShutdown::internal_default_instance">
+<area shape="rect" id="node2" href="$structprotobuf__message__2eproto_1_1_table_struct.html#a931144a94610d8291bdc069fc26e7ab8" title="protobuf_message_2eproto\l::TableStruct::InitDefaultsImpl" alt="" coords="200,5,397,47"/>
+<area shape="rect" id="node3" href="$class_message.html#a1656eb682ce1b354645b8f0204d4d716" title="Message::GetMetadata" alt="" coords="445,71,604,98"/>
+<area shape="rect" id="node4" href="$class_message.html#aab2ea329fff8637bc696e7979eadc827" title="Message::shutdown" alt="" coords="229,122,368,149"/>
+<area shape="rect" id="node6" href="$class_do_shutdown.html#a9e41496fb2642ab0956aeb03e79f2ffc" title="DoShutdown::DoShutdown" alt="" coords="209,173,389,199"/>
+<area shape="rect" id="node8" href="$class_do_shutdown.html#a91bbc47476d16a7f942b6a739ba55c95" title="DoShutdown::default\l_instance" alt="" coords="227,224,371,265"/>
+<area shape="rect" id="node5" href="$class_message.html#aeec4936f78a3ed399295e3f72840166f" title="Message::MergeFrom" alt="" coords="450,122,599,149"/>
+<area shape="rect" id="node7" href="$class_do_shutdown.html#af046b34c1f60919fb75263cf208c84df" title="DoShutdown::New" alt="" coords="459,173,591,199"/>
+</map>

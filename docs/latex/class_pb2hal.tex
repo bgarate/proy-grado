@@ -1,0 +1,285 @@
+\hypertarget{class_pb2hal}{}\section{Pb2hal Class Reference}
+\label{class_pb2hal}\index{Pb2hal@{Pb2hal}}
+
+
+Inheritance diagram for Pb2hal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{class_pb2hal__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pb2hal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{class_pb2hal__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_pb2hal_a4c09c3d9d4f002f09fa98623e83a7f4b}{Pb2hal} ()
+\item 
+void \hyperlink{class_pb2hal_a36a07430014895e34285e12881e4193b}{Pb2hal\+Before\+Delete} ()
+\item 
+void \hyperlink{class_pb2hal_a0caa1d537df7054f823a092c208de12e}{move} (int roll, int pitch, int yaw, int gaz)
+\item 
+void \hyperlink{class_pb2hal_a139f305d3ba6d3a8736914420128895c}{land} ()
+\item 
+void \hyperlink{class_pb2hal_a87834a3d1b4142c6d98e2dd93f4c3ffb}{takeoff} ()
+\item 
+int \hyperlink{class_pb2hal_a9504b93ebff1164367949aecbfd9c2ef}{batery\+Level} ()
+\item 
+cv\+::\+Mat $\ast$ \hyperlink{class_pb2hal_afd9dcf01b317140ca3fc58d2d3907ab9}{get\+Frame} (\hyperlink{hal_8hpp_adc0591c2c6aa3aa864336ece4978ab62}{Camera} cam)
+\item 
+double \hyperlink{class_pb2hal_a212b719d8a394edfd9d92020ede194ec}{get\+Altitude} ()
+\item 
+\hyperlink{struct_point}{Point} \hyperlink{class_pb2hal_a3dc0b2dc30a97f396d8a8525442a52e3}{get\+Orientation} ()
+\item 
+\hyperlink{struct_point}{Point} \hyperlink{class_pb2hal_a010064c234eddf22ebcdb25d2c9864e7}{get\+G\+P\+S\+Position} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_s_a_l___sem_8h_a74eaf25f9acaab7ff185cb3c30ffda1c}{A\+R\+S\+A\+L\+\_\+\+Sem\+\_\+t} \hyperlink{class_pb2hal_a11de30f365a04e339850b742309f3b8f}{statesem}
+\item 
+\hyperlink{_a_r_s_a_l___sem_8h_a74eaf25f9acaab7ff185cb3c30ffda1c}{A\+R\+S\+A\+L\+\_\+\+Sem\+\_\+t} \hyperlink{class_pb2hal_a50c2bf8f1c963e9765f997f9cb7e137c}{framesem}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Pb2hal@{Pb2hal}!Pb2hal@{Pb2hal}}
+\index{Pb2hal@{Pb2hal}!Pb2hal@{Pb2hal}}
+\subsubsection[{\texorpdfstring{Pb2hal()}{Pb2hal()}}]{\setlength{\rightskip}{0pt plus 5cm}Pb2hal\+::\+Pb2hal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_pb2hal_a4c09c3d9d4f002f09fa98623e83a7f4b}{}\label{class_pb2hal_a4c09c3d9d4f002f09fa98623e83a7f4b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pb2hal_a4c09c3d9d4f002f09fa98623e83a7f4b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Pb2hal@{Pb2hal}!batery\+Level@{batery\+Level}}
+\index{batery\+Level@{batery\+Level}!Pb2hal@{Pb2hal}}
+\subsubsection[{\texorpdfstring{batery\+Level()}{bateryLevel()}}]{\setlength{\rightskip}{0pt plus 5cm}int Pb2hal\+::batery\+Level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_pb2hal_a9504b93ebff1164367949aecbfd9c2ef}{}\label{class_pb2hal_a9504b93ebff1164367949aecbfd9c2ef}
+
+
+Implements \hyperlink{class_hal_a709862946eb7bc952156384187a17c82}{Hal}.
+
+\index{Pb2hal@{Pb2hal}!get\+Altitude@{get\+Altitude}}
+\index{get\+Altitude@{get\+Altitude}!Pb2hal@{Pb2hal}}
+\subsubsection[{\texorpdfstring{get\+Altitude()}{getAltitude()}}]{\setlength{\rightskip}{0pt plus 5cm}double Pb2hal\+::get\+Altitude (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_pb2hal_a212b719d8a394edfd9d92020ede194ec}{}\label{class_pb2hal_a212b719d8a394edfd9d92020ede194ec}
+
+
+Implements \hyperlink{class_hal_a9740bffd75eab1959fefea03545d5785}{Hal}.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{class_pb2hal_a212b719d8a394edfd9d92020ede194ec_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Pb2hal@{Pb2hal}!get\+Frame@{get\+Frame}}
+\index{get\+Frame@{get\+Frame}!Pb2hal@{Pb2hal}}
+\subsubsection[{\texorpdfstring{get\+Frame(\+Camera cam)}{getFrame(Camera cam)}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat$\ast$ Pb2hal\+::get\+Frame (
+\begin{DoxyParamCaption}
+\item[{{\bf Camera}}]{cam}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_pb2hal_afd9dcf01b317140ca3fc58d2d3907ab9}{}\label{class_pb2hal_afd9dcf01b317140ca3fc58d2d3907ab9}
+
+
+Implements \hyperlink{class_hal_a94dbc6927d08b2edc23772a5a0992b76}{Hal}.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{class_pb2hal_afd9dcf01b317140ca3fc58d2d3907ab9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{class_pb2hal_afd9dcf01b317140ca3fc58d2d3907ab9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Pb2hal@{Pb2hal}!get\+G\+P\+S\+Position@{get\+G\+P\+S\+Position}}
+\index{get\+G\+P\+S\+Position@{get\+G\+P\+S\+Position}!Pb2hal@{Pb2hal}}
+\subsubsection[{\texorpdfstring{get\+G\+P\+S\+Position()}{getGPSPosition()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} Pb2hal\+::get\+G\+P\+S\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_pb2hal_a010064c234eddf22ebcdb25d2c9864e7}{}\label{class_pb2hal_a010064c234eddf22ebcdb25d2c9864e7}
+
+
+Implements \hyperlink{class_hal_af4bb24ecd743845542ff724315511bea}{Hal}.
+
+\index{Pb2hal@{Pb2hal}!get\+Orientation@{get\+Orientation}}
+\index{get\+Orientation@{get\+Orientation}!Pb2hal@{Pb2hal}}
+\subsubsection[{\texorpdfstring{get\+Orientation()}{getOrientation()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} Pb2hal\+::get\+Orientation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_pb2hal_a3dc0b2dc30a97f396d8a8525442a52e3}{}\label{class_pb2hal_a3dc0b2dc30a97f396d8a8525442a52e3}
+
+
+Implements \hyperlink{class_hal_ad5356f99ad5599b471b819972d4fde86}{Hal}.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{class_pb2hal_a3dc0b2dc30a97f396d8a8525442a52e3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Pb2hal@{Pb2hal}!land@{land}}
+\index{land@{land}!Pb2hal@{Pb2hal}}
+\subsubsection[{\texorpdfstring{land()}{land()}}]{\setlength{\rightskip}{0pt plus 5cm}void Pb2hal\+::land (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_pb2hal_a139f305d3ba6d3a8736914420128895c}{}\label{class_pb2hal_a139f305d3ba6d3a8736914420128895c}
+
+
+Implements \hyperlink{class_hal_a8376a2668ed62e4d4d70f7b6336e84c4}{Hal}.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{class_pb2hal_a139f305d3ba6d3a8736914420128895c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Pb2hal@{Pb2hal}!move@{move}}
+\index{move@{move}!Pb2hal@{Pb2hal}}
+\subsubsection[{\texorpdfstring{move(int roll, int pitch, int yaw, int gaz)}{move(int roll, int pitch, int yaw, int gaz)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pb2hal\+::move (
+\begin{DoxyParamCaption}
+\item[{int}]{roll, }
+\item[{int}]{pitch, }
+\item[{int}]{yaw, }
+\item[{int}]{gaz}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_pb2hal_a0caa1d537df7054f823a092c208de12e}{}\label{class_pb2hal_a0caa1d537df7054f823a092c208de12e}
+
+
+Implements \hyperlink{class_hal_a91118650b6df6790f56bb8c10230fa0a}{Hal}.
+
+\index{Pb2hal@{Pb2hal}!Pb2hal\+Before\+Delete@{Pb2hal\+Before\+Delete}}
+\index{Pb2hal\+Before\+Delete@{Pb2hal\+Before\+Delete}!Pb2hal@{Pb2hal}}
+\subsubsection[{\texorpdfstring{Pb2hal\+Before\+Delete()}{Pb2halBeforeDelete()}}]{\setlength{\rightskip}{0pt plus 5cm}void Pb2hal\+::\+Pb2hal\+Before\+Delete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_pb2hal_a36a07430014895e34285e12881e4193b}{}\label{class_pb2hal_a36a07430014895e34285e12881e4193b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pb2hal_a36a07430014895e34285e12881e4193b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_pb2hal_a36a07430014895e34285e12881e4193b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Pb2hal@{Pb2hal}!takeoff@{takeoff}}
+\index{takeoff@{takeoff}!Pb2hal@{Pb2hal}}
+\subsubsection[{\texorpdfstring{takeoff()}{takeoff()}}]{\setlength{\rightskip}{0pt plus 5cm}void Pb2hal\+::takeoff (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_pb2hal_a87834a3d1b4142c6d98e2dd93f4c3ffb}{}\label{class_pb2hal_a87834a3d1b4142c6d98e2dd93f4c3ffb}
+
+
+Implements \hyperlink{class_hal_ac1968d088d9b905eb99fbe3f77d76757}{Hal}.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{class_pb2hal_a87834a3d1b4142c6d98e2dd93f4c3ffb_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Pb2hal@{Pb2hal}!framesem@{framesem}}
+\index{framesem@{framesem}!Pb2hal@{Pb2hal}}
+\subsubsection[{\texorpdfstring{framesem}{framesem}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+S\+A\+L\+\_\+\+Sem\+\_\+t} Pb2hal\+::framesem}\hypertarget{class_pb2hal_a50c2bf8f1c963e9765f997f9cb7e137c}{}\label{class_pb2hal_a50c2bf8f1c963e9765f997f9cb7e137c}
+\index{Pb2hal@{Pb2hal}!statesem@{statesem}}
+\index{statesem@{statesem}!Pb2hal@{Pb2hal}}
+\subsubsection[{\texorpdfstring{statesem}{statesem}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+S\+A\+L\+\_\+\+Sem\+\_\+t} Pb2hal\+::statesem}\hypertarget{class_pb2hal_a11de30f365a04e339850b742309f3b8f}{}\label{class_pb2hal_a11de30f365a04e339850b742309f3b8f}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/\hyperlink{pb2hal_8cpp}{pb2hal.\+cpp}\end{DoxyCompactItemize}

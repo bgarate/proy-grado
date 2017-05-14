@@ -1,0 +1,53 @@
+\hypertarget{structocsp__cert__status__st}{}\section{ocsp\+\_\+cert\+\_\+status\+\_\+st Struct Reference}
+\label{structocsp__cert__status__st}\index{ocsp\+\_\+cert\+\_\+status\+\_\+st@{ocsp\+\_\+cert\+\_\+status\+\_\+st}}
+
+
+{\ttfamily \#include $<$ocsp.\+h$>$}
+
+
+
+Collaboration diagram for ocsp\+\_\+cert\+\_\+status\+\_\+st\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{structocsp__cert__status__st__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structocsp__cert__status__st_a8e834ed8fedd7e6709723625989a2dcf}{type}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\hyperlink{ossl__typ_8h_af03954fbfeac7d608f362307da7c57eb}{ASN1\_NULL} $\ast$ \hyperlink{structocsp__cert__status__st_a96f64d7018fc012a59e5cbb4d315b16a}{good}\\
+\>\hyperlink{ocsp_8h_acff3cf1e134c62bfeb8e073b9a496c3b}{OCSP\_REVOKEDINFO} $\ast$ \hyperlink{structocsp__cert__status__st_a323bb45ae7def2ac2d8ad8541d7c12bd}{revoked}\\
+\>\hyperlink{ossl__typ_8h_af03954fbfeac7d608f362307da7c57eb}{ASN1\_NULL} $\ast$ \hyperlink{structocsp__cert__status__st_a092195c83ed96b20960ecb39fb04bbe8}{unknown}\\
+\} \hyperlink{structocsp__cert__status__st_a6d4c1250dc9b5223323e54da986baf60}{value}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{ocsp\+\_\+cert\+\_\+status\+\_\+st@{ocsp\+\_\+cert\+\_\+status\+\_\+st}!good@{good}}
+\index{good@{good}!ocsp\+\_\+cert\+\_\+status\+\_\+st@{ocsp\+\_\+cert\+\_\+status\+\_\+st}}
+\subsubsection[{\texorpdfstring{good}{good}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+S\+N1\+\_\+\+N\+U\+LL}$\ast$ ocsp\+\_\+cert\+\_\+status\+\_\+st\+::good}\hypertarget{structocsp__cert__status__st_a96f64d7018fc012a59e5cbb4d315b16a}{}\label{structocsp__cert__status__st_a96f64d7018fc012a59e5cbb4d315b16a}
+\index{ocsp\+\_\+cert\+\_\+status\+\_\+st@{ocsp\+\_\+cert\+\_\+status\+\_\+st}!revoked@{revoked}}
+\index{revoked@{revoked}!ocsp\+\_\+cert\+\_\+status\+\_\+st@{ocsp\+\_\+cert\+\_\+status\+\_\+st}}
+\subsubsection[{\texorpdfstring{revoked}{revoked}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\+C\+S\+P\+\_\+\+R\+E\+V\+O\+K\+E\+D\+I\+N\+FO}$\ast$ ocsp\+\_\+cert\+\_\+status\+\_\+st\+::revoked}\hypertarget{structocsp__cert__status__st_a323bb45ae7def2ac2d8ad8541d7c12bd}{}\label{structocsp__cert__status__st_a323bb45ae7def2ac2d8ad8541d7c12bd}
+\index{ocsp\+\_\+cert\+\_\+status\+\_\+st@{ocsp\+\_\+cert\+\_\+status\+\_\+st}!type@{type}}
+\index{type@{type}!ocsp\+\_\+cert\+\_\+status\+\_\+st@{ocsp\+\_\+cert\+\_\+status\+\_\+st}}
+\subsubsection[{\texorpdfstring{type}{type}}]{\setlength{\rightskip}{0pt plus 5cm}int ocsp\+\_\+cert\+\_\+status\+\_\+st\+::type}\hypertarget{structocsp__cert__status__st_a8e834ed8fedd7e6709723625989a2dcf}{}\label{structocsp__cert__status__st_a8e834ed8fedd7e6709723625989a2dcf}
+\index{ocsp\+\_\+cert\+\_\+status\+\_\+st@{ocsp\+\_\+cert\+\_\+status\+\_\+st}!unknown@{unknown}}
+\index{unknown@{unknown}!ocsp\+\_\+cert\+\_\+status\+\_\+st@{ocsp\+\_\+cert\+\_\+status\+\_\+st}}
+\subsubsection[{\texorpdfstring{unknown}{unknown}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+S\+N1\+\_\+\+N\+U\+LL}$\ast$ ocsp\+\_\+cert\+\_\+status\+\_\+st\+::unknown}\hypertarget{structocsp__cert__status__st_a092195c83ed96b20960ecb39fb04bbe8}{}\label{structocsp__cert__status__st_a092195c83ed96b20960ecb39fb04bbe8}
+\index{ocsp\+\_\+cert\+\_\+status\+\_\+st@{ocsp\+\_\+cert\+\_\+status\+\_\+st}!value@{value}}
+\index{value@{value}!ocsp\+\_\+cert\+\_\+status\+\_\+st@{ocsp\+\_\+cert\+\_\+status\+\_\+st}}
+\subsubsection[{\texorpdfstring{value}{value}}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \}   ocsp\+\_\+cert\+\_\+status\+\_\+st\+::value}\hypertarget{structocsp__cert__status__st_a6d4c1250dc9b5223323e54da986baf60}{}\label{structocsp__cert__status__st_a6d4c1250dc9b5223323e54da986baf60}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/openssl/\hyperlink{ocsp_8h}{ocsp.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,70 @@
+\hypertarget{chacha_8h}{}\section{src/hal/pb2/include/openssl/chacha.h File Reference}
+\label{chacha_8h}\index{src/hal/pb2/include/openssl/chacha.\+h@{src/hal/pb2/include/openssl/chacha.\+h}}
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+Include dependency graph for chacha.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{chacha_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_cha_cha__ctx}{Cha\+Cha\+\_\+ctx}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{chacha_8h_a4043704849954362adc74c1f27603eaa}{Cha\+Cha\+\_\+set\+\_\+key} (\hyperlink{struct_cha_cha__ctx}{Cha\+Cha\+\_\+ctx} $\ast$ctx, const unsigned char $\ast$key, unsigned int keybits)
+\item 
+void \hyperlink{chacha_8h_a49a48384a436b4390b4ea3f3ca18ce7e}{Cha\+Cha\+\_\+set\+\_\+iv} (\hyperlink{struct_cha_cha__ctx}{Cha\+Cha\+\_\+ctx} $\ast$ctx, const unsigned char $\ast$iv, const unsigned char $\ast$counter)
+\item 
+void \hyperlink{chacha_8h_aa2365bd903761adc70876127a1ac72bb}{Cha\+Cha} (\hyperlink{struct_cha_cha__ctx}{Cha\+Cha\+\_\+ctx} $\ast$ctx, unsigned char $\ast$out, const unsigned char $\ast$in, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+void \hyperlink{chacha_8h_add3ce638198512855fcf88ba36f4f5b8}{C\+R\+Y\+P\+T\+O\+\_\+chacha\+\_\+20} (unsigned char $\ast$out, const unsigned char $\ast$in, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}, const unsigned char key\mbox{[}32\mbox{]}, const unsigned char iv\mbox{[}8\mbox{]}, size\+\_\+t counter)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{chacha.\+h@{chacha.\+h}!Cha\+Cha@{Cha\+Cha}}
+\index{Cha\+Cha@{Cha\+Cha}!chacha.\+h@{chacha.\+h}}
+\subsubsection[{\texorpdfstring{Cha\+Cha(\+Cha\+Cha\+\_\+ctx $\ast$ctx, unsigned char $\ast$out, const unsigned char $\ast$in, size\+\_\+t len)}{ChaCha(ChaCha_ctx *ctx, unsigned char *out, const unsigned char *in, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cha\+Cha (
+\begin{DoxyParamCaption}
+\item[{{\bf Cha\+Cha\+\_\+ctx} $\ast$}]{ctx, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{const unsigned char $\ast$}]{in, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{chacha_8h_aa2365bd903761adc70876127a1ac72bb}{}\label{chacha_8h_aa2365bd903761adc70876127a1ac72bb}
+\index{chacha.\+h@{chacha.\+h}!Cha\+Cha\+\_\+set\+\_\+iv@{Cha\+Cha\+\_\+set\+\_\+iv}}
+\index{Cha\+Cha\+\_\+set\+\_\+iv@{Cha\+Cha\+\_\+set\+\_\+iv}!chacha.\+h@{chacha.\+h}}
+\subsubsection[{\texorpdfstring{Cha\+Cha\+\_\+set\+\_\+iv(\+Cha\+Cha\+\_\+ctx $\ast$ctx, const unsigned char $\ast$iv, const unsigned char $\ast$counter)}{ChaCha_set_iv(ChaCha_ctx *ctx, const unsigned char *iv, const unsigned char *counter)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cha\+Cha\+\_\+set\+\_\+iv (
+\begin{DoxyParamCaption}
+\item[{{\bf Cha\+Cha\+\_\+ctx} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{iv, }
+\item[{const unsigned char $\ast$}]{counter}
+\end{DoxyParamCaption}
+)}\hypertarget{chacha_8h_a49a48384a436b4390b4ea3f3ca18ce7e}{}\label{chacha_8h_a49a48384a436b4390b4ea3f3ca18ce7e}
+\index{chacha.\+h@{chacha.\+h}!Cha\+Cha\+\_\+set\+\_\+key@{Cha\+Cha\+\_\+set\+\_\+key}}
+\index{Cha\+Cha\+\_\+set\+\_\+key@{Cha\+Cha\+\_\+set\+\_\+key}!chacha.\+h@{chacha.\+h}}
+\subsubsection[{\texorpdfstring{Cha\+Cha\+\_\+set\+\_\+key(\+Cha\+Cha\+\_\+ctx $\ast$ctx, const unsigned char $\ast$key, unsigned int keybits)}{ChaCha_set_key(ChaCha_ctx *ctx, const unsigned char *key, unsigned int keybits)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cha\+Cha\+\_\+set\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{{\bf Cha\+Cha\+\_\+ctx} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{key, }
+\item[{unsigned int}]{keybits}
+\end{DoxyParamCaption}
+)}\hypertarget{chacha_8h_a4043704849954362adc74c1f27603eaa}{}\label{chacha_8h_a4043704849954362adc74c1f27603eaa}
+\index{chacha.\+h@{chacha.\+h}!C\+R\+Y\+P\+T\+O\+\_\+chacha\+\_\+20@{C\+R\+Y\+P\+T\+O\+\_\+chacha\+\_\+20}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+chacha\+\_\+20@{C\+R\+Y\+P\+T\+O\+\_\+chacha\+\_\+20}!chacha.\+h@{chacha.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+chacha\+\_\+20(unsigned char $\ast$out, const unsigned char $\ast$in, size\+\_\+t len, const unsigned char key[32], const unsigned char iv[8], size\+\_\+t counter)}{CRYPTO_chacha_20(unsigned char *out, const unsigned char *in, size_t len, const unsigned char key[32], const unsigned char iv[8], size_t counter)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+chacha\+\_\+20 (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{out, }
+\item[{const unsigned char $\ast$}]{in, }
+\item[{size\+\_\+t}]{len, }
+\item[{const unsigned char}]{key\mbox{[}32\mbox{]}, }
+\item[{const unsigned char}]{iv\mbox{[}8\mbox{]}, }
+\item[{size\+\_\+t}]{counter}
+\end{DoxyParamCaption}
+)}\hypertarget{chacha_8h_add3ce638198512855fcf88ba36f4f5b8}{}\label{chacha_8h_add3ce638198512855fcf88ba36f4f5b8}

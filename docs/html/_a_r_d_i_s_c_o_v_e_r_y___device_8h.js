@@ -1,0 +1,28 @@
+var _a_r_d_i_s_c_o_v_e_r_y___device_8h =
+[
+    [ "ARDISCOVERY_Device_t", "struct_a_r_d_i_s_c_o_v_e_r_y___device__t.html", "struct_a_r_d_i_s_c_o_v_e_r_y___device__t" ],
+    [ "ARDISCOVERY_Device_ConnectionJsonCallback_t", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#a327d2e622690a43883cb32af6102c6d2", null ],
+    [ "ARDISCOVERY_DEVICE_DelecteSpecificParameters_t", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#aa895834b4158a3400f9a7f133d971bf3", null ],
+    [ "ARDISCOVERY_DEVICE_DeleteARNetworkAL_t", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#a107375158dde241b1807827f3f11e271", null ],
+    [ "ARDISCOVERY_DEVICE_GetCopyOfSpecificParameters_t", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#aceb1e3ea2d04ecef6866f8c1227b03a1", null ],
+    [ "ARDISCOVERY_DEVICE_InitNetworkConfiguration_t", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#abce6d2c07b5f1b853aaa83e4be5de70c", null ],
+    [ "ARDISCOVERY_DEVICE_NewARNetworkAL_t", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#a10a87da9230caea749a74bafa09753bf", null ],
+    [ "ARDISCOVERY_Device_t", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#a7d132ec20bbff0d48740db8c269cd52f", null ],
+    [ "ARDISCOVERY_Device_BLEGetDevice", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#a567975da9f54e5cdf1676cf5008538d3", null ],
+    [ "ARDISCOVERY_Device_BLEGetManager", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#a736d0535b45151862d75c5ed7625016c", null ],
+    [ "ARDISCOVERY_Device_Delete", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#a71bca2d7305b0c4d489e15f1e5242116", null ],
+    [ "ARDISCOVERY_Device_DeleteARNetworkAL", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#a1931f078a4b58dc66efb629565a414d4", null ],
+    [ "ARDISCOVERY_Device_InitBLE", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#ace6278eacc78fd8208af2259bbea135c", null ],
+    [ "ARDISCOVERY_Device_InitNetworkConfiguration", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#a579a742c784c86ad2c3f288c1c93abd9", null ],
+    [ "ARDISCOVERY_Device_InitUSB", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#a8483926125314d6c8590793cd3bda2ea", null ],
+    [ "ARDISCOVERY_Device_InitWifi", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#ae8bf02b4f0f86b379b6125f3490a36ec", null ],
+    [ "ARDISCOVERY_Device_New", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#a76019ac2af18c6d8b7afdfa33777230e", null ],
+    [ "ARDISCOVERY_Device_NewARNetworkAL", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#ab55e22376cdf1a16c676ceee94d49c89", null ],
+    [ "ARDISCOVERY_Device_NewByCopy", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#a02c6572a4aeb6ef310b6967aceb2aab6", null ],
+    [ "ARDISCOVERY_Device_UsbAddConnectionCallbacks", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#a6f07db549290fb7225b9f5f85699f2b5", null ],
+    [ "ARDISCOVERY_Device_UsbGetMux", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#a2101ff7d7a923a9b6956de77c4311228", null ],
+    [ "ARDISCOVERY_Device_WifiAddConnectionCallbacks", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#abbfdc6835ec0b6c191166af6289ca1d0", null ],
+    [ "ARDISCOVERY_DEVICE_WifiGetIpAddress", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#acdf026038e40b09a52d1b91d05470c90", null ],
+    [ "ARDISCOVERY_Device_WifiSetDeviceToControllerPort", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#a3b4fd61ccf84adfd45363afb67a2cb84", null ],
+    [ "ARDISCOVERY_DEVICE_WifiSetQoSLevel", "_a_r_d_i_s_c_o_v_e_r_y___device_8h.html#a8319e307af4eaef0babbbfcfe014b977", null ]
+];

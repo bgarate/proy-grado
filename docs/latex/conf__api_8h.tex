@@ -1,0 +1,108 @@
+\hypertarget{conf__api_8h}{}\section{src/hal/pb2/include/openssl/conf\+\_\+api.h File Reference}
+\label{conf__api_8h}\index{src/hal/pb2/include/openssl/conf\+\_\+api.\+h@{src/hal/pb2/include/openssl/conf\+\_\+api.\+h}}
+{\ttfamily \#include $<$openssl/lhash.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/conf.\+h$>$}\\*
+Include dependency graph for conf\+\_\+api.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{conf__api_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_c_o_n_f___v_a_l_u_e}{C\+O\+N\+F\+\_\+\+V\+A\+L\+UE} $\ast$ \hyperlink{conf__api_8h_ad721ba0b1b0ec7203f230299dd4e4b91}{\+\_\+\+C\+O\+N\+F\+\_\+new\+\_\+section} (\hyperlink{ossl__typ_8h_a22bfdc2f19c31f1ec7bd6d807aeb68d2}{C\+O\+NF} $\ast$conf, const char $\ast$\hyperlink{x509v3_8h_a34053b1a08396d7684fa1c2a83257343}{section})
+\item 
+\hyperlink{struct_c_o_n_f___v_a_l_u_e}{C\+O\+N\+F\+\_\+\+V\+A\+L\+UE} $\ast$ \hyperlink{conf__api_8h_a5a06c807b043d90c1e7af9fc68c5d8d3}{\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+section} (const \hyperlink{ossl__typ_8h_a22bfdc2f19c31f1ec7bd6d807aeb68d2}{C\+O\+NF} $\ast$conf, const char $\ast$\hyperlink{x509v3_8h_a34053b1a08396d7684fa1c2a83257343}{section})
+\item 
+\hyperlink{conf__api_8h_a3b455346a40b49132e040499b3c006aa}{S\+T\+A\+C\+K\+\_\+\+OF} (\hyperlink{struct_c_o_n_f___v_a_l_u_e}{C\+O\+N\+F\+\_\+\+V\+A\+L\+UE})$\ast$\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+section\+\_\+values(const \hyperlink{ossl__typ_8h_a22bfdc2f19c31f1ec7bd6d807aeb68d2}{C\+O\+NF} $\ast$conf
+\item 
+int \hyperlink{conf__api_8h_a1d0814238f4427d6a433ec937e8d4794}{\+\_\+\+C\+O\+N\+F\+\_\+add\+\_\+string} (\hyperlink{ossl__typ_8h_a22bfdc2f19c31f1ec7bd6d807aeb68d2}{C\+O\+NF} $\ast$conf, \hyperlink{struct_c_o_n_f___v_a_l_u_e}{C\+O\+N\+F\+\_\+\+V\+A\+L\+UE} $\ast$\hyperlink{x509v3_8h_a34053b1a08396d7684fa1c2a83257343}{section}, \hyperlink{struct_c_o_n_f___v_a_l_u_e}{C\+O\+N\+F\+\_\+\+V\+A\+L\+UE} $\ast$value)
+\item 
+char $\ast$ \hyperlink{conf__api_8h_a0f37d799d1ca6f67e180e8493b8dcd6b}{\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+string} (const \hyperlink{ossl__typ_8h_a22bfdc2f19c31f1ec7bd6d807aeb68d2}{C\+O\+NF} $\ast$conf, const char $\ast$\hyperlink{x509v3_8h_a34053b1a08396d7684fa1c2a83257343}{section}, const char $\ast$name)
+\item 
+long \hyperlink{conf__api_8h_a16157f8d18818fff876b0c8e7cc9140e}{\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+number} (const \hyperlink{ossl__typ_8h_a22bfdc2f19c31f1ec7bd6d807aeb68d2}{C\+O\+NF} $\ast$conf, const char $\ast$\hyperlink{x509v3_8h_a34053b1a08396d7684fa1c2a83257343}{section}, const char $\ast$name)
+\item 
+int \hyperlink{conf__api_8h_a875977898221fc7c43ca68f6e4843687}{\+\_\+\+C\+O\+N\+F\+\_\+new\+\_\+data} (\hyperlink{ossl__typ_8h_a22bfdc2f19c31f1ec7bd6d807aeb68d2}{C\+O\+NF} $\ast$conf)
+\item 
+void \hyperlink{conf__api_8h_a40943144dce35a2e63200a5a40faab5c}{\+\_\+\+C\+O\+N\+F\+\_\+free\+\_\+data} (\hyperlink{ossl__typ_8h_a22bfdc2f19c31f1ec7bd6d807aeb68d2}{C\+O\+NF} $\ast$conf)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{conf__api_8h_a6a4f19e932bc4c92841653e974164301}{section}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{conf\+\_\+api.\+h@{conf\+\_\+api.\+h}!\+\_\+\+C\+O\+N\+F\+\_\+add\+\_\+string@{\+\_\+\+C\+O\+N\+F\+\_\+add\+\_\+string}}
+\index{\+\_\+\+C\+O\+N\+F\+\_\+add\+\_\+string@{\+\_\+\+C\+O\+N\+F\+\_\+add\+\_\+string}!conf\+\_\+api.\+h@{conf\+\_\+api.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+C\+O\+N\+F\+\_\+add\+\_\+string(\+C\+O\+N\+F $\ast$conf, C\+O\+N\+F\+\_\+\+V\+A\+L\+U\+E $\ast$section, C\+O\+N\+F\+\_\+\+V\+A\+L\+U\+E $\ast$value)}{_CONF_add_string(CONF *conf, CONF_VALUE *section, CONF_VALUE *value)}}]{\setlength{\rightskip}{0pt plus 5cm}int \+\_\+\+C\+O\+N\+F\+\_\+add\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+O\+NF} $\ast$}]{conf, }
+\item[{{\bf C\+O\+N\+F\+\_\+\+V\+A\+L\+UE} $\ast$}]{section, }
+\item[{{\bf C\+O\+N\+F\+\_\+\+V\+A\+L\+UE} $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{conf__api_8h_a1d0814238f4427d6a433ec937e8d4794}{}\label{conf__api_8h_a1d0814238f4427d6a433ec937e8d4794}
+\index{conf\+\_\+api.\+h@{conf\+\_\+api.\+h}!\+\_\+\+C\+O\+N\+F\+\_\+free\+\_\+data@{\+\_\+\+C\+O\+N\+F\+\_\+free\+\_\+data}}
+\index{\+\_\+\+C\+O\+N\+F\+\_\+free\+\_\+data@{\+\_\+\+C\+O\+N\+F\+\_\+free\+\_\+data}!conf\+\_\+api.\+h@{conf\+\_\+api.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+C\+O\+N\+F\+\_\+free\+\_\+data(\+C\+O\+N\+F $\ast$conf)}{_CONF_free_data(CONF *conf)}}]{\setlength{\rightskip}{0pt plus 5cm}void \+\_\+\+C\+O\+N\+F\+\_\+free\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+O\+NF} $\ast$}]{conf}
+\end{DoxyParamCaption}
+)}\hypertarget{conf__api_8h_a40943144dce35a2e63200a5a40faab5c}{}\label{conf__api_8h_a40943144dce35a2e63200a5a40faab5c}
+\index{conf\+\_\+api.\+h@{conf\+\_\+api.\+h}!\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+number@{\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+number}}
+\index{\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+number@{\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+number}!conf\+\_\+api.\+h@{conf\+\_\+api.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+number(const C\+O\+N\+F $\ast$conf, const char $\ast$section, const char $\ast$name)}{_CONF_get_number(const CONF *conf, const char *section, const char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}long \+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+number (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+O\+NF} $\ast$}]{conf, }
+\item[{const char $\ast$}]{section, }
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{conf__api_8h_a16157f8d18818fff876b0c8e7cc9140e}{}\label{conf__api_8h_a16157f8d18818fff876b0c8e7cc9140e}
+\index{conf\+\_\+api.\+h@{conf\+\_\+api.\+h}!\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+section@{\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+section}}
+\index{\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+section@{\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+section}!conf\+\_\+api.\+h@{conf\+\_\+api.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+section(const C\+O\+N\+F $\ast$conf, const char $\ast$section)}{_CONF_get_section(const CONF *conf, const char *section)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+O\+N\+F\+\_\+\+V\+A\+L\+UE}$\ast$ \+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+section (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+O\+NF} $\ast$}]{conf, }
+\item[{const char $\ast$}]{section}
+\end{DoxyParamCaption}
+)}\hypertarget{conf__api_8h_a5a06c807b043d90c1e7af9fc68c5d8d3}{}\label{conf__api_8h_a5a06c807b043d90c1e7af9fc68c5d8d3}
+\index{conf\+\_\+api.\+h@{conf\+\_\+api.\+h}!\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+string@{\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+string}}
+\index{\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+string@{\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+string}!conf\+\_\+api.\+h@{conf\+\_\+api.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+string(const C\+O\+N\+F $\ast$conf, const char $\ast$section, const char $\ast$name)}{_CONF_get_string(const CONF *conf, const char *section, const char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ \+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+O\+NF} $\ast$}]{conf, }
+\item[{const char $\ast$}]{section, }
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{conf__api_8h_a0f37d799d1ca6f67e180e8493b8dcd6b}{}\label{conf__api_8h_a0f37d799d1ca6f67e180e8493b8dcd6b}
+\index{conf\+\_\+api.\+h@{conf\+\_\+api.\+h}!\+\_\+\+C\+O\+N\+F\+\_\+new\+\_\+data@{\+\_\+\+C\+O\+N\+F\+\_\+new\+\_\+data}}
+\index{\+\_\+\+C\+O\+N\+F\+\_\+new\+\_\+data@{\+\_\+\+C\+O\+N\+F\+\_\+new\+\_\+data}!conf\+\_\+api.\+h@{conf\+\_\+api.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+C\+O\+N\+F\+\_\+new\+\_\+data(\+C\+O\+N\+F $\ast$conf)}{_CONF_new_data(CONF *conf)}}]{\setlength{\rightskip}{0pt plus 5cm}int \+\_\+\+C\+O\+N\+F\+\_\+new\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+O\+NF} $\ast$}]{conf}
+\end{DoxyParamCaption}
+)}\hypertarget{conf__api_8h_a875977898221fc7c43ca68f6e4843687}{}\label{conf__api_8h_a875977898221fc7c43ca68f6e4843687}
+\index{conf\+\_\+api.\+h@{conf\+\_\+api.\+h}!\+\_\+\+C\+O\+N\+F\+\_\+new\+\_\+section@{\+\_\+\+C\+O\+N\+F\+\_\+new\+\_\+section}}
+\index{\+\_\+\+C\+O\+N\+F\+\_\+new\+\_\+section@{\+\_\+\+C\+O\+N\+F\+\_\+new\+\_\+section}!conf\+\_\+api.\+h@{conf\+\_\+api.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+C\+O\+N\+F\+\_\+new\+\_\+section(\+C\+O\+N\+F $\ast$conf, const char $\ast$section)}{_CONF_new_section(CONF *conf, const char *section)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+O\+N\+F\+\_\+\+V\+A\+L\+UE}$\ast$ \+\_\+\+C\+O\+N\+F\+\_\+new\+\_\+section (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+O\+NF} $\ast$}]{conf, }
+\item[{const char $\ast$}]{section}
+\end{DoxyParamCaption}
+)}\hypertarget{conf__api_8h_ad721ba0b1b0ec7203f230299dd4e4b91}{}\label{conf__api_8h_ad721ba0b1b0ec7203f230299dd4e4b91}
+\index{conf\+\_\+api.\+h@{conf\+\_\+api.\+h}!S\+T\+A\+C\+K\+\_\+\+OF@{S\+T\+A\+C\+K\+\_\+\+OF}}
+\index{S\+T\+A\+C\+K\+\_\+\+OF@{S\+T\+A\+C\+K\+\_\+\+OF}!conf\+\_\+api.\+h@{conf\+\_\+api.\+h}}
+\subsubsection[{\texorpdfstring{S\+T\+A\+C\+K\+\_\+\+O\+F(\+C\+O\+N\+F\+\_\+\+V\+A\+L\+U\+E)$\ast$\+\_\+\+C\+O\+N\+F\+\_\+get\+\_\+section\+\_\+values(const C\+O\+N\+F $\ast$conf}{STACK_OF(CONF_VALUE)*_CONF_get_section_values(const CONF *conf}}]{\setlength{\rightskip}{0pt plus 5cm}S\+T\+A\+C\+K\+\_\+\+OF (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+O\+N\+F\+\_\+\+V\+A\+L\+UE}}]{}
+\end{DoxyParamCaption}
+) const}\hypertarget{conf__api_8h_a3b455346a40b49132e040499b3c006aa}{}\label{conf__api_8h_a3b455346a40b49132e040499b3c006aa}
+
+
+\subsection{Variable Documentation}
+\index{conf\+\_\+api.\+h@{conf\+\_\+api.\+h}!section@{section}}
+\index{section@{section}!conf\+\_\+api.\+h@{conf\+\_\+api.\+h}}
+\subsubsection[{\texorpdfstring{section}{section}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ section}\hypertarget{conf__api_8h_a6a4f19e932bc4c92841653e974164301}{}\label{conf__api_8h_a6a4f19e932bc4c92841653e974164301}

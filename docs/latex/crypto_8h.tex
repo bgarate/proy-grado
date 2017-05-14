@@ -1,0 +1,1507 @@
+\hypertarget{crypto_8h}{}\section{src/hal/pb2/include/openssl/crypto.h File Reference}
+\label{crypto_8h}\index{src/hal/pb2/include/openssl/crypto.\+h@{src/hal/pb2/include/openssl/crypto.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/stack.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/safestack.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/opensslv.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/ossl\+\_\+typ.\+h$>$}\\*
+Include dependency graph for crypto.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structopenssl__item__st}{openssl\+\_\+item\+\_\+st}
+\item 
+struct \hyperlink{struct_c_r_y_p_t_o__dynlock}{C\+R\+Y\+P\+T\+O\+\_\+dynlock}
+\item 
+struct \hyperlink{structcrypto__ex__data__st}{crypto\+\_\+ex\+\_\+data\+\_\+st}
+\item 
+struct \hyperlink{structcrypto__ex__data__func__st}{crypto\+\_\+ex\+\_\+data\+\_\+func\+\_\+st}
+\item 
+struct \hyperlink{structcrypto__threadid__st}{crypto\+\_\+threadid\+\_\+st}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{crypto_8h_a4956d8f776a26cc0f4f7f94d7dca3148}{S\+S\+L\+E\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER}~\hyperlink{opensslv_8h_ae05e9f9f2eb8a9e64f38cbdc47062d6e}{O\+P\+E\+N\+S\+S\+L\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER}
+\item 
+\#define \hyperlink{crypto_8h_a74a9f8a984ed90f79d509017ba5e475e}{S\+S\+L\+E\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+ON}~0
+\item 
+\#define \hyperlink{crypto_8h_a1b1adb0d7a504e33730ccb987cf36206}{S\+S\+L\+E\+A\+Y\+\_\+\+C\+F\+L\+A\+GS}~2
+\item 
+\#define \hyperlink{crypto_8h_ad75da87938feeb84fd165923e6f753e8}{S\+S\+L\+E\+A\+Y\+\_\+\+B\+U\+I\+L\+T\+\_\+\+ON}~3
+\item 
+\#define \hyperlink{crypto_8h_ab740dda99de5932e3129b96553deee51}{S\+S\+L\+E\+A\+Y\+\_\+\+P\+L\+A\+T\+F\+O\+RM}~4
+\item 
+\#define \hyperlink{crypto_8h_ad24a38af0b4903e5785fb7e7b3eff1f8}{S\+S\+L\+E\+A\+Y\+\_\+\+D\+IR}~5
+\item 
+\#define \hyperlink{crypto_8h_a59155ce15604fcf493414a4e9f137359}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+RR}~1
+\item 
+\#define \hyperlink{crypto_8h_a41d6081818c1baac025d380dff6d15cd}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+X\+\_\+\+D\+A\+TA}~2
+\item 
+\#define \hyperlink{crypto_8h_abcd6591ef6acea51bf9f6edb6bb05bca}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509}~3
+\item 
+\#define \hyperlink{crypto_8h_a514c71dc8501267571a9ccc554b72251}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+I\+N\+FO}~4
+\item 
+\#define \hyperlink{crypto_8h_abb49b04d226734fa74d3a2729c56539e}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+P\+K\+EY}~5
+\item 
+\#define \hyperlink{crypto_8h_acc0c636f451144eadad19883527a0a1a}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+C\+RL}~6
+\item 
+\#define \hyperlink{crypto_8h_ad2941e87c19cb5d8835978a1920fb360}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+R\+EQ}~7
+\item 
+\#define \hyperlink{crypto_8h_ab869ea3c0727d1195ca8bdb233614003}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+SA}~8
+\item 
+\#define \hyperlink{crypto_8h_a8ec88e37c68e88e1c7c63368fe2a2d8c}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+SA}~9
+\item 
+\#define \hyperlink{crypto_8h_aee0129d89ab09d6bccecd1ce55307584}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+V\+P\+\_\+\+P\+K\+EY}~10
+\item 
+\#define \hyperlink{crypto_8h_a2ff5c286424b480fc096193ab193b448}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+S\+T\+O\+RE}~11
+\item 
+\#define \hyperlink{crypto_8h_a625a294ce7ca3ded9be3b80f32282bd1}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+C\+TX}~12
+\item 
+\#define \hyperlink{crypto_8h_ac7e2c1c2b4fd4607a40e119924e4fc0c}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+C\+E\+RT}~13
+\item 
+\#define \hyperlink{crypto_8h_a9756a8a5d0486d60f1e40aa714eab85c}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+I\+ON}~14
+\item 
+\#define \hyperlink{crypto_8h_a4efc90ed9fdc06d4ecc056a66bda277c}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+\_\+\+C\+E\+RT}~15
+\item 
+\#define \hyperlink{crypto_8h_a1ab85f9ec12d0b086527b0e6ec345fcc}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+SL}~16
+\item 
+\#define \hyperlink{crypto_8h_acf87efa97cc977e49013af5e87e304bd}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+M\+E\+T\+H\+OD}~17
+\item 
+\#define \hyperlink{crypto_8h_aa9e33617eed56a72ed1798cd076e1e71}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+A\+ND}~18
+\item 
+\#define \hyperlink{crypto_8h_a59dc8a98a2240c8923492715e03c7f7f}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+A\+N\+D2}~19
+\item 
+\#define \hyperlink{crypto_8h_ae27b7d4dae7ec19346456ecfa4ed0bf4}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+M\+A\+L\+L\+OC}~20
+\item 
+\#define \hyperlink{crypto_8h_a0d64da1eeaf0f9b016264a1bad7e26a3}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+B\+IO}~21
+\item 
+\#define \hyperlink{crypto_8h_a485c8893a086095e5e7e615782262fa5}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+G\+E\+T\+H\+O\+S\+T\+B\+Y\+N\+A\+ME}~22
+\item 
+\#define \hyperlink{crypto_8h_a088e7619b09051943015a1ae265fa75e}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+G\+E\+T\+S\+E\+R\+V\+B\+Y\+N\+A\+ME}~23
+\item 
+\#define \hyperlink{crypto_8h_aa2c1fcf639d1b436285a0426a372d8e0}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+D\+IR}~24
+\item 
+\#define \hyperlink{crypto_8h_ad8b7b0fbb6c9fdea98d78a11a8dc97ff}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+S\+A\+\_\+\+B\+L\+I\+N\+D\+I\+NG}~25
+\item 
+\#define \hyperlink{crypto_8h_ad4d7c468a715660eb5639dcf39937708}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+DH}~26
+\item 
+\#define \hyperlink{crypto_8h_a8e0f7820daecae8691988db60dd380b8}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+M\+A\+L\+L\+O\+C2}~27
+\item 
+\#define \hyperlink{crypto_8h_a767aafa2cc763fa1301ae2e8ba47193d}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+SO}~28
+\item 
+\#define \hyperlink{crypto_8h_a5197d96134626698588fdd5bd5a40515}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+Y\+N\+L\+O\+CK}~29
+\item 
+\#define \hyperlink{crypto_8h_a49d4f90e6748128dc3976ee75a205099}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+N\+G\+I\+NE}~30
+\item 
+\#define \hyperlink{crypto_8h_a272e2ffecd9903bf2a439ec604968a72}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+UI}~31
+\item 
+\#define \hyperlink{crypto_8h_a922ff57b8c4fd321e28537b336fe114f}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+D\+SA}~32
+\item 
+\#define \hyperlink{crypto_8h_a25a9fafff765bd6d887708428c876c75}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+EC}~33
+\item 
+\#define \hyperlink{crypto_8h_a347f27d7dd50ca783fb71a7ab45eb351}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+DH}~34
+\item 
+\#define \hyperlink{crypto_8h_af474d4a13c7608ab4000c3568f023598}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+BN}~35
+\item 
+\#define \hyperlink{crypto_8h_a3d1a5ee400974e642a726946f4fede25}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+\_\+\+P\+R\+E\+\_\+\+C\+O\+MP}~36
+\item 
+\#define \hyperlink{crypto_8h_a525a5b117b66ad557ca3b110364b82fa}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+T\+O\+RE}~37
+\item 
+\#define \hyperlink{crypto_8h_a9029abd903c791773f22eea662b40341}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+C\+O\+MP}~38
+\item 
+\#define \hyperlink{crypto_8h_aa5ae846a651daadc3845b0fccce4e46e}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+F\+I\+PS}~39
+\item 
+\#define \hyperlink{crypto_8h_abbed94ff27c9c66c9e186b4bdc1dd519}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+F\+I\+P\+S2}~40
+\item 
+\#define \hyperlink{crypto_8h_a9eada33d182a1671c8f29a3df06190b3}{C\+R\+Y\+P\+T\+O\+\_\+\+N\+U\+M\+\_\+\+L\+O\+C\+KS}~41
+\item 
+\#define \hyperlink{crypto_8h_aeb4287d8bef364bc97ebef4f29fa2197}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+CK}~1
+\item 
+\#define \hyperlink{crypto_8h_ab5476e708fea24776738de40597833cb}{C\+R\+Y\+P\+T\+O\+\_\+\+U\+N\+L\+O\+CK}~2
+\item 
+\#define \hyperlink{crypto_8h_a9f08fd59d86931fa501066aaf09d22ce}{C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+AD}~4
+\item 
+\#define \hyperlink{crypto_8h_aca8b4aef3ca56cad89b94cb46797276c}{C\+R\+Y\+P\+T\+O\+\_\+\+W\+R\+I\+TE}~8
+\item 
+\#define \hyperlink{crypto_8h_ab3735c6a4dd562addce8043981d0ecdf}{C\+R\+Y\+P\+T\+O\+\_\+w\+\_\+lock}(\hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type})~\hyperlink{crypto_8h_a7f72294d0a4c19ce0e75c282be8ef0ec}{C\+R\+Y\+P\+T\+O\+\_\+lock}(\hyperlink{crypto_8h_aeb4287d8bef364bc97ebef4f29fa2197}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+CK}$\vert$\hyperlink{crypto_8h_aca8b4aef3ca56cad89b94cb46797276c}{C\+R\+Y\+P\+T\+O\+\_\+\+W\+R\+I\+TE},\hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type},\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{crypto_8h_a337cca587e1ea6c81accc78f0373569d}{C\+R\+Y\+P\+T\+O\+\_\+w\+\_\+unlock}(\hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type})~\hyperlink{crypto_8h_a7f72294d0a4c19ce0e75c282be8ef0ec}{C\+R\+Y\+P\+T\+O\+\_\+lock}(\hyperlink{crypto_8h_ab5476e708fea24776738de40597833cb}{C\+R\+Y\+P\+T\+O\+\_\+\+U\+N\+L\+O\+CK}$\vert$\hyperlink{crypto_8h_aca8b4aef3ca56cad89b94cb46797276c}{C\+R\+Y\+P\+T\+O\+\_\+\+W\+R\+I\+TE},\hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type},\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{crypto_8h_a1b327843e7f3b0e8c51d0ab1956f7c64}{C\+R\+Y\+P\+T\+O\+\_\+r\+\_\+lock}(\hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type})~\hyperlink{crypto_8h_a7f72294d0a4c19ce0e75c282be8ef0ec}{C\+R\+Y\+P\+T\+O\+\_\+lock}(\hyperlink{crypto_8h_aeb4287d8bef364bc97ebef4f29fa2197}{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+CK}$\vert$\hyperlink{crypto_8h_a9f08fd59d86931fa501066aaf09d22ce}{C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+AD},\hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type},\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{crypto_8h_a55fc2b1744dc55033c8b0709a11f92fc}{C\+R\+Y\+P\+T\+O\+\_\+r\+\_\+unlock}(\hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type})~\hyperlink{crypto_8h_a7f72294d0a4c19ce0e75c282be8ef0ec}{C\+R\+Y\+P\+T\+O\+\_\+lock}(\hyperlink{crypto_8h_ab5476e708fea24776738de40597833cb}{C\+R\+Y\+P\+T\+O\+\_\+\+U\+N\+L\+O\+CK}$\vert$\hyperlink{crypto_8h_a9f08fd59d86931fa501066aaf09d22ce}{C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+AD},\hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type},\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{crypto_8h_ab8556c4f12443f1876ce487dd0c8db27}{C\+R\+Y\+P\+T\+O\+\_\+add}(addr,  amount,  \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type})~\hyperlink{crypto_8h_af77d6ad2d71134fe7fb2e383f28dbf80}{C\+R\+Y\+P\+T\+O\+\_\+add\+\_\+lock}(addr,amount,\hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type},\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{crypto_8h_a3ca6c6e275cf4a57f2dcbbf0e515b853}{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+O\+FF}~0x0	/$\ast$ an enume $\ast$/
+\item 
+\#define \hyperlink{crypto_8h_a6a25092bf0270a8671df0369a6ccdecd}{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+ON}~0x1	/$\ast$ a bit $\ast$/
+\item 
+\#define \hyperlink{crypto_8h_a251476afe7b1f8951612adc6bd17dd93}{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+N\+A\+B\+LE}~0x2	/$\ast$ a bit $\ast$/
+\item 
+\#define \hyperlink{crypto_8h_a4a80a7d9078e510c70ad6c193cd387db}{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+D\+I\+S\+A\+B\+LE}~0x3	/$\ast$ an enume $\ast$/
+\item 
+\#define \hyperlink{crypto_8h_a749e295c704fbbf09b565243d67b5fda}{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+I\+ME}~0x1 /$\ast$ a bit $\ast$/
+\item 
+\#define \hyperlink{crypto_8h_ad211881e98a27d983ea949c8a16d5b49}{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+H\+R\+E\+AD}~0x2 /$\ast$ a bit $\ast$/
+\item 
+\#define \hyperlink{crypto_8h_aaa2c5af6372b57e2f6b7a476a67a623d}{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+A\+LL}~(\hyperlink{crypto_8h_a749e295c704fbbf09b565243d67b5fda}{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+I\+ME} $\vert$ \hyperlink{crypto_8h_ad211881e98a27d983ea949c8a16d5b49}{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+H\+R\+E\+AD})
+\item 
+\#define \hyperlink{crypto_8h_adcb5178e99231a37426339195921e9db}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+IO}~0
+\item 
+\#define \hyperlink{crypto_8h_aa9033915cb476c9bb4d97f28431794bc}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+SL}~1
+\item 
+\#define \hyperlink{crypto_8h_a41838765f6c3afc42aeca828b6884aed}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+S\+L\+\_\+\+C\+TX}~2
+\item 
+\#define \hyperlink{crypto_8h_a6c2fd7ded0724cac1cfbb8bb6e04483e}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+I\+ON}~3
+\item 
+\#define \hyperlink{crypto_8h_a957fb8abe55aa3940e68078694da8eb6}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509\+\_\+\+S\+T\+O\+RE}~4
+\item 
+\#define \hyperlink{crypto_8h_a30b655e9459543bdb06b750cdd992001}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX}~5
+\item 
+\#define \hyperlink{crypto_8h_af3e111174cdefcb125b402dc74484173}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+R\+SA}~6
+\item 
+\#define \hyperlink{crypto_8h_aea8d933d68fe31f0a300c15e94fc81bc}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+D\+SA}~7
+\item 
+\#define \hyperlink{crypto_8h_a25f98a5aeff28d391553d0660c58c724}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+DH}~8
+\item 
+\#define \hyperlink{crypto_8h_a0e1b34b273fb67d68332bf1a2ddca3ec}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+N\+G\+I\+NE}~9
+\item 
+\#define \hyperlink{crypto_8h_a971f06d0ec0c663ffbab68a07c4238b1}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509}~10
+\item 
+\#define \hyperlink{crypto_8h_a19933faaf76976c2be992b567863949d}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+UI}~11
+\item 
+\#define \hyperlink{crypto_8h_a0730dc86c4c6a90823d52046975c2e80}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+C\+D\+SA}~12
+\item 
+\#define \hyperlink{crypto_8h_a24488c51e7c15a768f66aef76a071a0e}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+C\+DH}~13
+\item 
+\#define \hyperlink{crypto_8h_abc40b3db6e429d33911911a83d2a4a8c}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+O\+MP}~14
+\item 
+\#define \hyperlink{crypto_8h_aa30669d2eb6fc1a42533b3fbdf800caf}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+T\+O\+RE}~15
+\item 
+\#define \hyperlink{crypto_8h_a0e131561a5ad4bc5466836a708ee37d3}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+U\+S\+ER}~100
+\item 
+\#define \hyperlink{crypto_8h_a1bea0a4d2516a2717e4d9cd6ef32b382}{C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+init}()
+\item 
+\#define \hyperlink{crypto_8h_a98082c05667f39db8e1f0cd699928013}{C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+debug\+\_\+init}()
+\item 
+\#define \hyperlink{crypto_8h_a8276d8522378b4e81d31e7b2c0b4c04e}{Mem\+Check\+\_\+start}()~\hyperlink{crypto_8h_a16e9f6f6bcd6717c96415e1a9d1bb904}{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+ctrl}(\hyperlink{crypto_8h_a6a25092bf0270a8671df0369a6ccdecd}{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+ON})
+\item 
+\#define \hyperlink{crypto_8h_af6160223118fdf4d6da320be2889097f}{Mem\+Check\+\_\+stop}()~\hyperlink{crypto_8h_a16e9f6f6bcd6717c96415e1a9d1bb904}{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+ctrl}(\hyperlink{crypto_8h_a3ca6c6e275cf4a57f2dcbbf0e515b853}{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+O\+FF})
+\item 
+\#define \hyperlink{crypto_8h_afdb80d14aed3b15d0ef71f72a872310d}{O\+P\+E\+N\+S\+S\+L\+\_\+malloc}(num)~\hyperlink{crypto_8h_a5ef38f58893710818de363485ce1df66}{C\+R\+Y\+P\+T\+O\+\_\+malloc}((int)num,\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{crypto_8h_aa0da41937271fafc8d9ebaa051feec16}{O\+P\+E\+N\+S\+S\+L\+\_\+strdup}(str)~\hyperlink{crypto_8h_ac42fe6fdfc461d44597bfbdb885b9609}{C\+R\+Y\+P\+T\+O\+\_\+strdup}((str),\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{crypto_8h_aba1c282c55c099a7f164b9380febfdf9}{O\+P\+E\+N\+S\+S\+L\+\_\+realloc}(addr,  num)~\hyperlink{crypto_8h_a3107ea051300e8d2652532920f03489c}{C\+R\+Y\+P\+T\+O\+\_\+realloc}((char $\ast$)addr,(int)num,\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{crypto_8h_ad41b0697e3274e344a9f12001187fb95}{O\+P\+E\+N\+S\+S\+L\+\_\+realloc\+\_\+clean}(addr,  old\+\_\+num,  num)~\hyperlink{crypto_8h_ac1d26dee2a9d0cc51c7873ac892dfa56}{C\+R\+Y\+P\+T\+O\+\_\+realloc\+\_\+clean}(addr,old\+\_\+num,num,\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{crypto_8h_a67a1da927713acebe6b004dc24c6760e}{O\+P\+E\+N\+S\+S\+L\+\_\+remalloc}(addr,  num)~\hyperlink{crypto_8h_a11fc0380d6338aaeed65c18a0bfa240b}{C\+R\+Y\+P\+T\+O\+\_\+remalloc}((char $\ast$$\ast$)addr,(int)num,\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{crypto_8h_a5e15ad04ccc852bc2140e6dff5647b73}{O\+P\+E\+N\+S\+S\+L\+\_\+free\+Func}~\hyperlink{crypto_8h_a1fa85649a422200760f1ba509c014141}{C\+R\+Y\+P\+T\+O\+\_\+free}
+\item 
+\#define \hyperlink{crypto_8h_aeb21bb7e51c4f5af3bdce7226e52ca5a}{O\+P\+E\+N\+S\+S\+L\+\_\+free}(addr)~\hyperlink{crypto_8h_a1fa85649a422200760f1ba509c014141}{C\+R\+Y\+P\+T\+O\+\_\+free}(addr)
+\item 
+\#define \hyperlink{crypto_8h_a343ed687a1e861fa39ed385790426ef5}{O\+P\+E\+N\+S\+S\+L\+\_\+malloc\+\_\+locked}(num)~\hyperlink{crypto_8h_a58320467ddd2b5ed178eeefc8d975622}{C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+locked}((int)num,\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{crypto_8h_a6941f5340d9bf33568dda6731e3e503a}{O\+P\+E\+N\+S\+S\+L\+\_\+free\+\_\+locked}(addr)~\hyperlink{crypto_8h_a9517d1d12d65fe6219dbebd55fb43bda}{C\+R\+Y\+P\+T\+O\+\_\+free\+\_\+locked}(addr)
+\item 
+\#define \hyperlink{crypto_8h_a3323b4d137a6095f5c647b362e5be170}{C\+R\+Y\+P\+T\+O\+\_\+push\+\_\+info}(info)~\hyperlink{crypto_8h_aeee2078b5831fd327c0cd62300ca7ab8}{C\+R\+Y\+P\+T\+O\+\_\+push\+\_\+info\+\_\+}(info, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+);
+\item 
+\#define \hyperlink{crypto_8h_a6e3638bf542fc7a6a394f34124aa2cba}{O\+P\+E\+N\+S\+S\+L\+\_\+assert}(e)~(void)((e) ? 0 \+: (\hyperlink{crypto_8h_a26714429c0c616a2070897e4cc38052d}{Open\+S\+S\+L\+Die}(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \#e),1))
+\item 
+\#define \hyperlink{crypto_8h_a4b2789a3388a879fbd65b1ba00ccc2b6}{O\+P\+E\+N\+S\+S\+L\+\_\+ia32cap}~($\ast$(\hyperlink{crypto_8h_a7f74cb3aa355b31a38df80e122609e7c}{O\+P\+E\+N\+S\+S\+L\+\_\+ia32cap\+\_\+loc}()))
+\item 
+\#define \hyperlink{crypto_8h_a3d6d5844c8b35c1124d5ea79b24091af}{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+E\+X\+\_\+\+N\+E\+W\+\_\+\+I\+N\+D\+EX}~100
+\item 
+\#define \hyperlink{crypto_8h_ae79a7c50d8aa3259041afe8336db0e10}{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+N\+E\+W\+\_\+\+D\+Y\+N\+L\+O\+C\+K\+ID}~103
+\item 
+\#define \hyperlink{crypto_8h_abda049a8a7547117b618d26e4324c442}{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+N\+E\+W\+\_\+\+L\+O\+C\+K\+ID}~101
+\item 
+\#define \hyperlink{crypto_8h_a494331b1b8eecfb1b245674a473efa98}{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+T\+\_\+\+E\+X\+\_\+\+D\+A\+TA}~102
+\item 
+\#define \hyperlink{crypto_8h_a602406cf6e8a1b8347cd728f9702f3e2}{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+D\+E\+F\+\_\+\+A\+D\+D\+\_\+\+I\+N\+D\+EX}~104
+\item 
+\#define \hyperlink{crypto_8h_ac5b2b20295204f0304f0ce10429e3f0e}{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+D\+E\+F\+\_\+\+G\+E\+T\+\_\+\+C\+L\+A\+SS}~105
+\item 
+\#define \hyperlink{crypto_8h_a8e0ef2abff65920dd5bf9c70fc442618}{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+F\+I\+P\+S\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET}~109
+\item 
+\#define \hyperlink{crypto_8h_a74cf72ffb586af8dc9f6dce63cf2b947}{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+D\+U\+P\+\_\+\+E\+X\+\_\+\+D\+A\+TA}~106
+\item 
+\#define \hyperlink{crypto_8h_ada34f6e84dcde385989584bd0ef75faa}{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+F\+R\+E\+E\+\_\+\+E\+X\+\_\+\+D\+A\+TA}~107
+\item 
+\#define \hyperlink{crypto_8h_a69d7c71e3766039a566e08bf72007270}{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+N\+E\+W\+\_\+\+E\+X\+\_\+\+D\+A\+TA}~108
+\item 
+\#define \hyperlink{crypto_8h_adc09e9d7cd1e5471caacf0340862fc33}{C\+R\+Y\+P\+T\+O\+\_\+\+R\+\_\+\+F\+I\+P\+S\+\_\+\+M\+O\+D\+E\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}~101
+\item 
+\#define \hyperlink{crypto_8h_ae9dc51dc9a2b10e0c7a897d6ea4d27d5}{C\+R\+Y\+P\+T\+O\+\_\+\+R\+\_\+\+N\+O\+\_\+\+D\+Y\+N\+L\+O\+C\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}~100
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structopenssl__item__st}{openssl\+\_\+item\+\_\+st} \hyperlink{crypto_8h_a420198cc02a146544ed8d3e05835a360}{O\+P\+E\+N\+S\+S\+L\+\_\+\+I\+T\+EM}
+\item 
+typedef struct \hyperlink{structbio__st}{bio\+\_\+st} \hyperlink{crypto_8h_a8ab471a5c4f9f8d706a3fc7d8381ea1c}{B\+I\+O\+\_\+dummy}
+\item 
+typedef struct \hyperlink{structcrypto__ex__data__func__st}{crypto\+\_\+ex\+\_\+data\+\_\+func\+\_\+st} \hyperlink{crypto_8h_a792be45f3b5c5dc2c3bc57192248bef9}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+F\+U\+N\+CS}
+\item 
+typedef struct st\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+I\+M\+PL \hyperlink{crypto_8h_a52be5518c28d0ef05f97c978a9fde2e4}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+I\+M\+PL}
+\item 
+typedef struct \hyperlink{structcrypto__threadid__st}{crypto\+\_\+threadid\+\_\+st} \hyperlink{crypto_8h_a5da789a29aa0f39047c22cfe52462226}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID}
+\item 
+typedef void $\ast$ \hyperlink{crypto_8h_a3dfc760917a238b35cf54f3b5102ccbd}{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+L\+E\+A\+K\+\_\+\+CB}(unsigned long, const char $\ast$, int, int, void $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{crypto_8h_a16e9f6f6bcd6717c96415e1a9d1bb904}{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+ctrl} (int mode)
+\item 
+int \hyperlink{crypto_8h_a8e7b75981670ea82982c3366b498f5ba}{C\+R\+Y\+P\+T\+O\+\_\+is\+\_\+mem\+\_\+check\+\_\+on} (void)
+\item 
+const char $\ast$ \hyperlink{crypto_8h_a61a4f24cdcce8f120892dfc013d76217}{S\+S\+Leay\+\_\+version} (int \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type})
+\item 
+unsigned long \hyperlink{crypto_8h_a7296273f2824612e9451bf6e4fa300d9}{S\+S\+Leay} (void)
+\item 
+const \hyperlink{crypto_8h_a52be5518c28d0ef05f97c978a9fde2e4}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+I\+M\+PL} $\ast$ \hyperlink{crypto_8h_a09b54db94c5c21c1b42cff859322dfa0}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+data\+\_\+implementation} (void)
+\item 
+int \hyperlink{crypto_8h_a58f893879b8d35886dccce88e9ad5361}{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+ex\+\_\+data\+\_\+implementation} (const \hyperlink{crypto_8h_a52be5518c28d0ef05f97c978a9fde2e4}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+I\+M\+PL} $\ast$i)
+\item 
+int \hyperlink{crypto_8h_a01ab6808c4e4ef1e5a879228f722a787}{C\+R\+Y\+P\+T\+O\+\_\+ex\+\_\+data\+\_\+new\+\_\+class} (void)
+\item 
+int \hyperlink{crypto_8h_a0e9be769c8df778a93b2650b4c09f9e9}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+new\+\_\+index} (int class\+\_\+index, long argl, void $\ast$argp, \hyperlink{ossl__typ_8h_a524acd717ae812f604e3027f8255d0ba}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+new} $\ast$new\+\_\+func, \hyperlink{ossl__typ_8h_a1235777e2310295c33f29a5f06e40682}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+dup} $\ast$dup\+\_\+func, \hyperlink{ossl__typ_8h_a723f84d260fce598230a3cdd45885246}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+free} $\ast$\hyperlink{asn1_8h_a942bd852ec8360a1803ceda0b1029986}{free\+\_\+func})
+\item 
+int \hyperlink{crypto_8h_a2be01d9b6b916d48a8a1be08af6bad3c}{C\+R\+Y\+P\+T\+O\+\_\+new\+\_\+ex\+\_\+data} (int class\+\_\+index, void $\ast$\hyperlink{x509_8h_a8e76a846a02bda3e8e416145f67e90ae}{obj}, \hyperlink{ossl__typ_8h_a7eaff1c18057495d8af18f22d1370b51}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} $\ast$ad)
+\item 
+int \hyperlink{crypto_8h_a04f40834dd51292bb6d1da655671bb8c}{C\+R\+Y\+P\+T\+O\+\_\+dup\+\_\+ex\+\_\+data} (int class\+\_\+index, \hyperlink{ossl__typ_8h_a7eaff1c18057495d8af18f22d1370b51}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} $\ast$to, \hyperlink{ossl__typ_8h_a7eaff1c18057495d8af18f22d1370b51}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} $\ast$from)
+\item 
+void \hyperlink{crypto_8h_a0ab5fa7e84dfdcb691f88aac8ddefd22}{C\+R\+Y\+P\+T\+O\+\_\+free\+\_\+ex\+\_\+data} (int class\+\_\+index, void $\ast$\hyperlink{x509_8h_a8e76a846a02bda3e8e416145f67e90ae}{obj}, \hyperlink{ossl__typ_8h_a7eaff1c18057495d8af18f22d1370b51}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} $\ast$ad)
+\item 
+int \hyperlink{crypto_8h_ac4a7d82b83b588b4f8c8e90c0179c600}{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+ex\+\_\+data} (\hyperlink{ossl__typ_8h_a7eaff1c18057495d8af18f22d1370b51}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} $\ast$ad, int idx, void $\ast$val)
+\item 
+void $\ast$ \hyperlink{crypto_8h_aff745d0f3e0974080b714f853d0edb11}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+data} (const \hyperlink{ossl__typ_8h_a7eaff1c18057495d8af18f22d1370b51}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} $\ast$ad, int idx)
+\item 
+void \hyperlink{crypto_8h_a99ad759160f9b800c191bfe78b7cade8}{C\+R\+Y\+P\+T\+O\+\_\+cleanup\+\_\+all\+\_\+ex\+\_\+data} (void)
+\item 
+int \hyperlink{crypto_8h_a6a6896a38529165a8e3f09f2b9735423}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+new\+\_\+lockid} (char $\ast$name)
+\item 
+int \hyperlink{crypto_8h_a73b718c83da28f5fd81dc41268e28f75}{C\+R\+Y\+P\+T\+O\+\_\+num\+\_\+locks} (void)
+\item 
+void \hyperlink{crypto_8h_a7f72294d0a4c19ce0e75c282be8ef0ec}{C\+R\+Y\+P\+T\+O\+\_\+lock} (int mode, int \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type}, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line)
+\item 
+void \hyperlink{crypto_8h_a8bceb26e9e96b974ea53dd790b76f208}{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locking\+\_\+callback} (void($\ast$func)(int mode, int \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type}, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line))
+\item 
+void \hyperlink{crypto_8h_aa128ce18040d8679dc65ce2d526d4089}{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+add\+\_\+lock\+\_\+callback} (int($\ast$func)(int $\ast$num, int mount, int \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type}, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line))
+\item 
+void \hyperlink{crypto_8h_a454969d2514d1730e5991ae5ac3a1ee9}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+numeric} (\hyperlink{crypto_8h_a5da789a29aa0f39047c22cfe52462226}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$id, unsigned long val)
+\item 
+void \hyperlink{crypto_8h_a8dc2cc1fd1cd914e7fa0fdf79f17d953}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+pointer} (\hyperlink{crypto_8h_a5da789a29aa0f39047c22cfe52462226}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$id, void $\ast$ptr)
+\item 
+int \hyperlink{crypto_8h_a0d56460e671369c8324fe4dadd468515}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+callback} (void($\ast$threadid\+\_\+func)(\hyperlink{crypto_8h_a5da789a29aa0f39047c22cfe52462226}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$))
+\item 
+void \hyperlink{crypto_8h_a5cb534419a491eefc612468062f83926}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+current} (\hyperlink{crypto_8h_a5da789a29aa0f39047c22cfe52462226}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$id)
+\item 
+int \hyperlink{crypto_8h_a4e5f3711f7fd547b874b783fd140f992}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+cmp} (const \hyperlink{crypto_8h_a5da789a29aa0f39047c22cfe52462226}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$a, const \hyperlink{crypto_8h_a5da789a29aa0f39047c22cfe52462226}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$b)
+\item 
+void \hyperlink{crypto_8h_ab0b09e8a88cefb347b972484a8123e2c}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+cpy} (\hyperlink{crypto_8h_a5da789a29aa0f39047c22cfe52462226}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$dest, const \hyperlink{crypto_8h_a5da789a29aa0f39047c22cfe52462226}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$src)
+\item 
+unsigned long \hyperlink{crypto_8h_ad379866c0a47f29effc210656af6b109}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+hash} (const \hyperlink{crypto_8h_a5da789a29aa0f39047c22cfe52462226}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$id)
+\item 
+void \hyperlink{crypto_8h_a0cddd5c7ae6bab589d48b4114c7048f7}{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+id\+\_\+callback} (unsigned long($\ast$func)(void))
+\item 
+unsigned long \hyperlink{crypto_8h_ae0a90746c99716c84812001d1a9f4058}{C\+R\+Y\+P\+T\+O\+\_\+thread\+\_\+id} (void)
+\item 
+const char $\ast$ \hyperlink{crypto_8h_acbec31a58846b45e6096156dc496a07e}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+lock\+\_\+name} (int \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type})
+\item 
+int \hyperlink{crypto_8h_af77d6ad2d71134fe7fb2e383f28dbf80}{C\+R\+Y\+P\+T\+O\+\_\+add\+\_\+lock} (int $\ast$pointer, int amount, int \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type}, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line)
+\item 
+int \hyperlink{crypto_8h_a5db9bb57e8e9514ca2e7773f865ef227}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+new\+\_\+dynlockid} (void)
+\item 
+void \hyperlink{crypto_8h_aa49cdafcabf446019c56d498a9862853}{C\+R\+Y\+P\+T\+O\+\_\+destroy\+\_\+dynlockid} (int i)
+\item 
+struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value $\ast$ \hyperlink{crypto_8h_a0df5a76ce78a9b7a3be5e8e112596331}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+value} (int i)
+\item 
+void \hyperlink{crypto_8h_a27929070a957e988885f8704ac5a5da5}{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+create\+\_\+callback} (struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value $\ast$($\ast$dyn\+\_\+create\+\_\+function)(const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line))
+\item 
+void \hyperlink{crypto_8h_a3d59695685fcbad4f3915a9636c64237}{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+lock\+\_\+callback} (void($\ast$dyn\+\_\+lock\+\_\+function)(int mode, struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value $\ast$l, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line))
+\item 
+void \hyperlink{crypto_8h_a404fd58eb1fb0bafe4316a9cbf1ea1fa}{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+destroy\+\_\+callback} (void($\ast$dyn\+\_\+destroy\+\_\+function)(struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value $\ast$l, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line))
+\item 
+int \hyperlink{crypto_8h_a88e4e28a6cec57e8849ea166b48543a2}{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+functions} (void $\ast$($\ast$m)(size\+\_\+t), void $\ast$($\ast$r)(void $\ast$, size\+\_\+t), void($\ast$f)(void $\ast$))
+\item 
+int \hyperlink{crypto_8h_a3763eab5594ab82c09ad983414fcc821}{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locked\+\_\+mem\+\_\+functions} (void $\ast$($\ast$m)(size\+\_\+t), void($\ast$\hyperlink{asn1_8h_a942bd852ec8360a1803ceda0b1029986}{free\+\_\+func})(void $\ast$))
+\item 
+int \hyperlink{crypto_8h_af593c14036f1e09b7580058c916149af}{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+ex\+\_\+functions} (void $\ast$($\ast$m)(size\+\_\+t, const char $\ast$, int), void $\ast$($\ast$r)(void $\ast$, size\+\_\+t, const char $\ast$, int), void($\ast$f)(void $\ast$))
+\item 
+int \hyperlink{crypto_8h_aec9a75224538c61d14661592e7cb493f}{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locked\+\_\+mem\+\_\+ex\+\_\+functions} (void $\ast$($\ast$m)(size\+\_\+t, const char $\ast$, int), void($\ast$\hyperlink{asn1_8h_a942bd852ec8360a1803ceda0b1029986}{free\+\_\+func})(void $\ast$))
+\item 
+int \hyperlink{crypto_8h_a5adaf683521ee3920fd0c444cb615449}{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+debug\+\_\+functions} (void($\ast$m)(void $\ast$, int, const char $\ast$, int, int), void($\ast$r)(void $\ast$, void $\ast$, int, const char $\ast$, int, int), void($\ast$f)(void $\ast$, int), void($\ast$so)(long), long($\ast$go)(void))
+\item 
+void \hyperlink{crypto_8h_afe107fe5c011a3105ed5dc5aebf9f65a}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+functions} (void $\ast$($\ast$$\ast$m)(size\+\_\+t), void $\ast$($\ast$$\ast$r)(void $\ast$, size\+\_\+t), void($\ast$$\ast$f)(void $\ast$))
+\item 
+void \hyperlink{crypto_8h_a7eaa7f2152055354e80f7f264d813a5c}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locked\+\_\+mem\+\_\+functions} (void $\ast$($\ast$$\ast$m)(size\+\_\+t), void($\ast$$\ast$f)(void $\ast$))
+\item 
+void \hyperlink{crypto_8h_af25566d9be72ec46f86a5acdfb55043f}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+ex\+\_\+functions} (void $\ast$($\ast$$\ast$m)(size\+\_\+t, const char $\ast$, int), void $\ast$($\ast$$\ast$r)(void $\ast$, size\+\_\+t, const char $\ast$, int), void($\ast$$\ast$f)(void $\ast$))
+\item 
+void \hyperlink{crypto_8h_a444fb6573fbfa3f04cd8587434911e7a}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locked\+\_\+mem\+\_\+ex\+\_\+functions} (void $\ast$($\ast$$\ast$m)(size\+\_\+t, const char $\ast$, int), void($\ast$$\ast$f)(void $\ast$))
+\item 
+void \hyperlink{crypto_8h_a64a15317ac03a55ff78698c14a234da9}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+debug\+\_\+functions} (void($\ast$$\ast$m)(void $\ast$, int, const char $\ast$, int, int), void($\ast$$\ast$r)(void $\ast$, void $\ast$, int, const char $\ast$, int, int), void($\ast$$\ast$f)(void $\ast$, int), void($\ast$$\ast$so)(long), long($\ast$$\ast$go)(void))
+\item 
+void $\ast$ \hyperlink{crypto_8h_a58320467ddd2b5ed178eeefc8d975622}{C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+locked} (int num, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line)
+\item 
+void \hyperlink{crypto_8h_a9517d1d12d65fe6219dbebd55fb43bda}{C\+R\+Y\+P\+T\+O\+\_\+free\+\_\+locked} (void $\ast$ptr)
+\item 
+void $\ast$ \hyperlink{crypto_8h_a5ef38f58893710818de363485ce1df66}{C\+R\+Y\+P\+T\+O\+\_\+malloc} (int num, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line)
+\item 
+char $\ast$ \hyperlink{crypto_8h_ac42fe6fdfc461d44597bfbdb885b9609}{C\+R\+Y\+P\+T\+O\+\_\+strdup} (const char $\ast$str, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line)
+\item 
+void \hyperlink{crypto_8h_a1fa85649a422200760f1ba509c014141}{C\+R\+Y\+P\+T\+O\+\_\+free} (void $\ast$ptr)
+\item 
+void $\ast$ \hyperlink{crypto_8h_a3107ea051300e8d2652532920f03489c}{C\+R\+Y\+P\+T\+O\+\_\+realloc} (void $\ast$addr, int num, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line)
+\item 
+void $\ast$ \hyperlink{crypto_8h_ac1d26dee2a9d0cc51c7873ac892dfa56}{C\+R\+Y\+P\+T\+O\+\_\+realloc\+\_\+clean} (void $\ast$addr, int old\+\_\+num, int num, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line)
+\item 
+void $\ast$ \hyperlink{crypto_8h_a11fc0380d6338aaeed65c18a0bfa240b}{C\+R\+Y\+P\+T\+O\+\_\+remalloc} (void $\ast$addr, int num, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line)
+\item 
+void \hyperlink{crypto_8h_a2aa47e40c63b05d00e9a780592f2a2b8}{O\+P\+E\+N\+S\+S\+L\+\_\+cleanse} (void $\ast$ptr, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+void \hyperlink{crypto_8h_a46b1883ef004a43faa3ff26318bb9220}{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+debug\+\_\+options} (long \hyperlink{x509v3_8h_ab3c186980893d6836a68407d221ae9c9}{bits})
+\item 
+long \hyperlink{crypto_8h_aadcc3cd5894aeeb73802422db6817b89}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+debug\+\_\+options} (void)
+\item 
+int \hyperlink{crypto_8h_aeee2078b5831fd327c0cd62300ca7ab8}{C\+R\+Y\+P\+T\+O\+\_\+push\+\_\+info\+\_\+} (const char $\ast$info, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line)
+\item 
+int \hyperlink{crypto_8h_adba40b25d5050bd40efd0c951284f330}{C\+R\+Y\+P\+T\+O\+\_\+pop\+\_\+info} (void)
+\item 
+int \hyperlink{crypto_8h_a503f333543546ccf93b4896cb54e00ff}{C\+R\+Y\+P\+T\+O\+\_\+remove\+\_\+all\+\_\+info} (void)
+\item 
+void \hyperlink{crypto_8h_a3f3820a9ced04efab38389f0d8761a34}{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+malloc} (void $\ast$addr, int num, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line, int before\+\_\+p) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((deprecated))
+\item 
+void \hyperlink{crypto_8h_a6a1b3943fc1156b8ea7ee3e71203eb66}{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+realloc} (void $\ast$addr1, void $\ast$addr2, int num, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line, int before\+\_\+p) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((deprecated))
+\item 
+void \hyperlink{crypto_8h_aed412e766791a000ee4f571058c84c53}{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+free} (void $\ast$addr, int before\+\_\+p) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((deprecated))
+\item 
+void \hyperlink{crypto_8h_a29ef26c6b65105d587d5eda53aeb9270}{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+set\+\_\+options} (long \hyperlink{x509v3_8h_ab3c186980893d6836a68407d221ae9c9}{bits}) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((deprecated))
+\item 
+long \hyperlink{crypto_8h_aedf301a03de4d29867b8c2ca35e4238e}{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+get\+\_\+options} (void) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((deprecated))
+\item 
+void \hyperlink{crypto_8h_abb29b778542ca9fd2c713aaa54b53362}{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks\+\_\+fp} (F\+I\+LE $\ast$)
+\item 
+void \hyperlink{crypto_8h_a7eec72230eccd6846270ed004e1dd814}{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks} (struct \hyperlink{structbio__st}{bio\+\_\+st} $\ast$bio)
+\item 
+void \hyperlink{crypto_8h_a5aac1be65c31d9a57e010d47d4d96fd2}{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks\+\_\+cb} (\hyperlink{crypto_8h_a3dfc760917a238b35cf54f3b5102ccbd}{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+L\+E\+A\+K\+\_\+\+CB} $\ast$\hyperlink{pem_8h_a92c578a1a1d2733de8cf205957a962fc}{cb})
+\item 
+void \hyperlink{crypto_8h_a26714429c0c616a2070897e4cc38052d}{Open\+S\+S\+L\+Die} (const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line, const char $\ast$assertion)
+\item 
+unsigned long $\ast$ \hyperlink{crypto_8h_a7f74cb3aa355b31a38df80e122609e7c}{O\+P\+E\+N\+S\+S\+L\+\_\+ia32cap\+\_\+loc} (void)
+\item 
+int \hyperlink{crypto_8h_a2fa6508f1431ecf404b9ffe992c92de1}{O\+P\+E\+N\+S\+S\+L\+\_\+isservice} (void)
+\item 
+void \hyperlink{crypto_8h_ab210ed1b6d160df38307383564d302cc}{O\+P\+E\+N\+S\+S\+L\+\_\+init} (void)
+\item 
+int \hyperlink{crypto_8h_a8cd9e185d80de8a50392bdf0f0eb502d}{C\+R\+Y\+P\+T\+O\+\_\+memcmp} (const void $\ast$a, const void $\ast$b, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len})
+\item 
+void \hyperlink{crypto_8h_acc626fbd21290b0f22a671d2093e8cf3}{E\+R\+R\+\_\+load\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+strings} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$)(int mode, int \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type}, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line) \hyperlink{crypto_8h_a6fcb71da80fdde326504940c2abb1971}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locking\+\_\+callback} (void)
+\item 
+int($\ast$)(int $\ast$num, int mount, int \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type}, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line) \hyperlink{crypto_8h_af3df8c5f95e1b4f75c9bbd4016a79871}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+add\+\_\+lock\+\_\+callback} (void)
+\item 
+void($\ast$)(\hyperlink{crypto_8h_a5da789a29aa0f39047c22cfe52462226}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$) \hyperlink{crypto_8h_a20c0a7e0c023cc1e1c150085cb9b4218}{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+get\+\_\+callback} (void)
+\item 
+unsigned long($\ast$)(void) \hyperlink{crypto_8h_a9af40289da7d95cec5889396e03a9430}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+id\+\_\+callback} (void)
+\item 
+struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value $\ast$($\ast$)(const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line) \hyperlink{crypto_8h_aa1fd8d0c3c302b7b753cfb92de93f782}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+create\+\_\+callback} (void)
+\item 
+void($\ast$)(int mode, struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value $\ast$l, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line) \hyperlink{crypto_8h_a33829e68feec94e5fb98a7161d13b0fa}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+lock\+\_\+callback} (void)
+\item 
+void($\ast$)(struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value $\ast$l, const char $\ast$\hyperlink{conf_8h_af0baa3ccdd9d2a6adf03b72e2bea5789}{file}, int line) \hyperlink{crypto_8h_abb9bf829e57745794eaf68aed4bf2181}{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+destroy\+\_\+callback} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+add@{C\+R\+Y\+P\+T\+O\+\_\+add}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+add@{C\+R\+Y\+P\+T\+O\+\_\+add}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+add}{CRYPTO_add}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+add(
+\begin{DoxyParamCaption}
+\item[{}]{addr, }
+\item[{}]{amount, }
+\item[{}]{{\bf type}}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+Y\+P\+T\+O\+\_\+add\+\_\+lock}(addr,amount,{\bf type},\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}\hypertarget{crypto_8h_ab8556c4f12443f1876ce487dd0c8db27}{}\label{crypto_8h_ab8556c4f12443f1876ce487dd0c8db27}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+IO@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+IO}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+IO@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+IO}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+IO}{CRYPTO_EX_INDEX_BIO}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+IO~0}\hypertarget{crypto_8h_adcb5178e99231a37426339195921e9db}{}\label{crypto_8h_adcb5178e99231a37426339195921e9db}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+O\+MP@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+O\+MP}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+O\+MP@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+O\+MP}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+O\+MP}{CRYPTO_EX_INDEX_COMP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+C\+O\+MP~14}\hypertarget{crypto_8h_abc40b3db6e429d33911911a83d2a4a8c}{}\label{crypto_8h_abc40b3db6e429d33911911a83d2a4a8c}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+DH@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+DH}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+DH@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+DH}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+DH}{CRYPTO_EX_INDEX_DH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+DH~8}\hypertarget{crypto_8h_a25f98a5aeff28d391553d0660c58c724}{}\label{crypto_8h_a25f98a5aeff28d391553d0660c58c724}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+D\+SA@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+D\+SA}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+D\+SA@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+D\+SA}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+D\+SA}{CRYPTO_EX_INDEX_DSA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+D\+SA~7}\hypertarget{crypto_8h_aea8d933d68fe31f0a300c15e94fc81bc}{}\label{crypto_8h_aea8d933d68fe31f0a300c15e94fc81bc}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+C\+DH@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+C\+DH}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+C\+DH@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+C\+DH}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+C\+DH}{CRYPTO_EX_INDEX_ECDH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+C\+DH~13}\hypertarget{crypto_8h_a24488c51e7c15a768f66aef76a071a0e}{}\label{crypto_8h_a24488c51e7c15a768f66aef76a071a0e}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+C\+D\+SA@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+C\+D\+SA}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+C\+D\+SA@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+C\+D\+SA}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+C\+D\+SA}{CRYPTO_EX_INDEX_ECDSA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+C\+D\+SA~12}\hypertarget{crypto_8h_a0730dc86c4c6a90823d52046975c2e80}{}\label{crypto_8h_a0730dc86c4c6a90823d52046975c2e80}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+N\+G\+I\+NE@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+N\+G\+I\+NE}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+N\+G\+I\+NE@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+N\+G\+I\+NE}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+N\+G\+I\+NE}{CRYPTO_EX_INDEX_ENGINE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+E\+N\+G\+I\+NE~9}\hypertarget{crypto_8h_a0e1b34b273fb67d68332bf1a2ddca3ec}{}\label{crypto_8h_a0e1b34b273fb67d68332bf1a2ddca3ec}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+R\+SA@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+R\+SA}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+R\+SA@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+R\+SA}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+R\+SA}{CRYPTO_EX_INDEX_RSA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+R\+SA~6}\hypertarget{crypto_8h_af3e111174cdefcb125b402dc74484173}{}\label{crypto_8h_af3e111174cdefcb125b402dc74484173}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+SL@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+SL}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+SL@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+SL}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+SL}{CRYPTO_EX_INDEX_SSL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+SL~1}\hypertarget{crypto_8h_aa9033915cb476c9bb4d97f28431794bc}{}\label{crypto_8h_aa9033915cb476c9bb4d97f28431794bc}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+S\+L\+\_\+\+C\+TX@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+S\+L\+\_\+\+C\+TX}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+S\+L\+\_\+\+C\+TX@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+S\+L\+\_\+\+C\+TX}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+S\+L\+\_\+\+C\+TX}{CRYPTO_EX_INDEX_SSL_CTX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+S\+L\+\_\+\+C\+TX~2}\hypertarget{crypto_8h_a41838765f6c3afc42aeca828b6884aed}{}\label{crypto_8h_a41838765f6c3afc42aeca828b6884aed}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+I\+ON@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+I\+ON}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+I\+ON@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+I\+ON}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+I\+ON}{CRYPTO_EX_INDEX_SSL_SESSION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+I\+ON~3}\hypertarget{crypto_8h_a6c2fd7ded0724cac1cfbb8bb6e04483e}{}\label{crypto_8h_a6c2fd7ded0724cac1cfbb8bb6e04483e}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+T\+O\+RE@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+T\+O\+RE}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+T\+O\+RE@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+T\+O\+RE}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+T\+O\+RE}{CRYPTO_EX_INDEX_STORE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+S\+T\+O\+RE~15}\hypertarget{crypto_8h_aa30669d2eb6fc1a42533b3fbdf800caf}{}\label{crypto_8h_aa30669d2eb6fc1a42533b3fbdf800caf}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+UI@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+UI}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+UI@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+UI}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+UI}{CRYPTO_EX_INDEX_UI}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+UI~11}\hypertarget{crypto_8h_a19933faaf76976c2be992b567863949d}{}\label{crypto_8h_a19933faaf76976c2be992b567863949d}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+U\+S\+ER@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+U\+S\+ER}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+U\+S\+ER@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+U\+S\+ER}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+U\+S\+ER}{CRYPTO_EX_INDEX_USER}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+U\+S\+ER~100}\hypertarget{crypto_8h_a0e131561a5ad4bc5466836a708ee37d3}{}\label{crypto_8h_a0e131561a5ad4bc5466836a708ee37d3}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509}{CRYPTO_EX_INDEX_X509}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509~10}\hypertarget{crypto_8h_a971f06d0ec0c663ffbab68a07c4238b1}{}\label{crypto_8h_a971f06d0ec0c663ffbab68a07c4238b1}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509\+\_\+\+S\+T\+O\+RE@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509\+\_\+\+S\+T\+O\+RE}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509\+\_\+\+S\+T\+O\+RE@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509\+\_\+\+S\+T\+O\+RE}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509\+\_\+\+S\+T\+O\+RE}{CRYPTO_EX_INDEX_X509_STORE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509\+\_\+\+S\+T\+O\+RE~4}\hypertarget{crypto_8h_a957fb8abe55aa3940e68078694da8eb6}{}\label{crypto_8h_a957fb8abe55aa3940e68078694da8eb6}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX}{CRYPTO_EX_INDEX_X509_STORE_CTX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+I\+N\+D\+E\+X\+\_\+\+X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX~5}\hypertarget{crypto_8h_a30b655e9459543bdb06b750cdd992001}{}\label{crypto_8h_a30b655e9459543bdb06b750cdd992001}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+E\+X\+\_\+\+N\+E\+W\+\_\+\+I\+N\+D\+EX@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+E\+X\+\_\+\+N\+E\+W\+\_\+\+I\+N\+D\+EX}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+E\+X\+\_\+\+N\+E\+W\+\_\+\+I\+N\+D\+EX@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+E\+X\+\_\+\+N\+E\+W\+\_\+\+I\+N\+D\+EX}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+E\+X\+\_\+\+N\+E\+W\+\_\+\+I\+N\+D\+EX}{CRYPTO_F_CRYPTO_GET_EX_NEW_INDEX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+E\+X\+\_\+\+N\+E\+W\+\_\+\+I\+N\+D\+EX~100}\hypertarget{crypto_8h_a3d6d5844c8b35c1124d5ea79b24091af}{}\label{crypto_8h_a3d6d5844c8b35c1124d5ea79b24091af}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+N\+E\+W\+\_\+\+D\+Y\+N\+L\+O\+C\+K\+ID@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+N\+E\+W\+\_\+\+D\+Y\+N\+L\+O\+C\+K\+ID}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+N\+E\+W\+\_\+\+D\+Y\+N\+L\+O\+C\+K\+ID@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+N\+E\+W\+\_\+\+D\+Y\+N\+L\+O\+C\+K\+ID}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+N\+E\+W\+\_\+\+D\+Y\+N\+L\+O\+C\+K\+ID}{CRYPTO_F_CRYPTO_GET_NEW_DYNLOCKID}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+N\+E\+W\+\_\+\+D\+Y\+N\+L\+O\+C\+K\+ID~103}\hypertarget{crypto_8h_ae79a7c50d8aa3259041afe8336db0e10}{}\label{crypto_8h_ae79a7c50d8aa3259041afe8336db0e10}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+N\+E\+W\+\_\+\+L\+O\+C\+K\+ID@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+N\+E\+W\+\_\+\+L\+O\+C\+K\+ID}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+N\+E\+W\+\_\+\+L\+O\+C\+K\+ID@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+N\+E\+W\+\_\+\+L\+O\+C\+K\+ID}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+N\+E\+W\+\_\+\+L\+O\+C\+K\+ID}{CRYPTO_F_CRYPTO_GET_NEW_LOCKID}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+G\+E\+T\+\_\+\+N\+E\+W\+\_\+\+L\+O\+C\+K\+ID~101}\hypertarget{crypto_8h_abda049a8a7547117b618d26e4324c442}{}\label{crypto_8h_abda049a8a7547117b618d26e4324c442}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+T\+\_\+\+E\+X\+\_\+\+D\+A\+TA@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+T\+\_\+\+E\+X\+\_\+\+D\+A\+TA}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+T\+\_\+\+E\+X\+\_\+\+D\+A\+TA@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+T\+\_\+\+E\+X\+\_\+\+D\+A\+TA}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+T\+\_\+\+E\+X\+\_\+\+D\+A\+TA}{CRYPTO_F_CRYPTO_SET_EX_DATA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+S\+E\+T\+\_\+\+E\+X\+\_\+\+D\+A\+TA~102}\hypertarget{crypto_8h_a494331b1b8eecfb1b245674a473efa98}{}\label{crypto_8h_a494331b1b8eecfb1b245674a473efa98}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+D\+E\+F\+\_\+\+A\+D\+D\+\_\+\+I\+N\+D\+EX@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+D\+E\+F\+\_\+\+A\+D\+D\+\_\+\+I\+N\+D\+EX}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+D\+E\+F\+\_\+\+A\+D\+D\+\_\+\+I\+N\+D\+EX@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+D\+E\+F\+\_\+\+A\+D\+D\+\_\+\+I\+N\+D\+EX}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+D\+E\+F\+\_\+\+A\+D\+D\+\_\+\+I\+N\+D\+EX}{CRYPTO_F_DEF_ADD_INDEX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+D\+E\+F\+\_\+\+A\+D\+D\+\_\+\+I\+N\+D\+EX~104}\hypertarget{crypto_8h_a602406cf6e8a1b8347cd728f9702f3e2}{}\label{crypto_8h_a602406cf6e8a1b8347cd728f9702f3e2}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+D\+E\+F\+\_\+\+G\+E\+T\+\_\+\+C\+L\+A\+SS@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+D\+E\+F\+\_\+\+G\+E\+T\+\_\+\+C\+L\+A\+SS}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+D\+E\+F\+\_\+\+G\+E\+T\+\_\+\+C\+L\+A\+SS@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+D\+E\+F\+\_\+\+G\+E\+T\+\_\+\+C\+L\+A\+SS}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+D\+E\+F\+\_\+\+G\+E\+T\+\_\+\+C\+L\+A\+SS}{CRYPTO_F_DEF_GET_CLASS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+D\+E\+F\+\_\+\+G\+E\+T\+\_\+\+C\+L\+A\+SS~105}\hypertarget{crypto_8h_ac5b2b20295204f0304f0ce10429e3f0e}{}\label{crypto_8h_ac5b2b20295204f0304f0ce10429e3f0e}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+F\+I\+P\+S\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+F\+I\+P\+S\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+F\+I\+P\+S\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+F\+I\+P\+S\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+F\+I\+P\+S\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET}{CRYPTO_F_FIPS_MODE_SET}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+F\+I\+P\+S\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET~109}\hypertarget{crypto_8h_a8e0ef2abff65920dd5bf9c70fc442618}{}\label{crypto_8h_a8e0ef2abff65920dd5bf9c70fc442618}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+D\+U\+P\+\_\+\+E\+X\+\_\+\+D\+A\+TA@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+D\+U\+P\+\_\+\+E\+X\+\_\+\+D\+A\+TA}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+D\+U\+P\+\_\+\+E\+X\+\_\+\+D\+A\+TA@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+D\+U\+P\+\_\+\+E\+X\+\_\+\+D\+A\+TA}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+D\+U\+P\+\_\+\+E\+X\+\_\+\+D\+A\+TA}{CRYPTO_F_INT_DUP_EX_DATA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+D\+U\+P\+\_\+\+E\+X\+\_\+\+D\+A\+TA~106}\hypertarget{crypto_8h_a74cf72ffb586af8dc9f6dce63cf2b947}{}\label{crypto_8h_a74cf72ffb586af8dc9f6dce63cf2b947}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+F\+R\+E\+E\+\_\+\+E\+X\+\_\+\+D\+A\+TA@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+F\+R\+E\+E\+\_\+\+E\+X\+\_\+\+D\+A\+TA}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+F\+R\+E\+E\+\_\+\+E\+X\+\_\+\+D\+A\+TA@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+F\+R\+E\+E\+\_\+\+E\+X\+\_\+\+D\+A\+TA}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+F\+R\+E\+E\+\_\+\+E\+X\+\_\+\+D\+A\+TA}{CRYPTO_F_INT_FREE_EX_DATA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+F\+R\+E\+E\+\_\+\+E\+X\+\_\+\+D\+A\+TA~107}\hypertarget{crypto_8h_ada34f6e84dcde385989584bd0ef75faa}{}\label{crypto_8h_ada34f6e84dcde385989584bd0ef75faa}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+N\+E\+W\+\_\+\+E\+X\+\_\+\+D\+A\+TA@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+N\+E\+W\+\_\+\+E\+X\+\_\+\+D\+A\+TA}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+N\+E\+W\+\_\+\+E\+X\+\_\+\+D\+A\+TA@{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+N\+E\+W\+\_\+\+E\+X\+\_\+\+D\+A\+TA}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+N\+E\+W\+\_\+\+E\+X\+\_\+\+D\+A\+TA}{CRYPTO_F_INT_NEW_EX_DATA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+F\+\_\+\+I\+N\+T\+\_\+\+N\+E\+W\+\_\+\+E\+X\+\_\+\+D\+A\+TA~108}\hypertarget{crypto_8h_a69d7c71e3766039a566e08bf72007270}{}\label{crypto_8h_a69d7c71e3766039a566e08bf72007270}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+CK@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+CK}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+CK@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+CK}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+CK}{CRYPTO_LOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+CK~1}\hypertarget{crypto_8h_aeb4287d8bef364bc97ebef4f29fa2197}{}\label{crypto_8h_aeb4287d8bef364bc97ebef4f29fa2197}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+B\+IO@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+B\+IO}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+B\+IO@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+B\+IO}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+B\+IO}{CRYPTO_LOCK_BIO}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+B\+IO~21}\hypertarget{crypto_8h_a0d64da1eeaf0f9b016264a1bad7e26a3}{}\label{crypto_8h_a0d64da1eeaf0f9b016264a1bad7e26a3}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+BN@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+BN}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+BN@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+BN}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+BN}{CRYPTO_LOCK_BN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+BN~35}\hypertarget{crypto_8h_af474d4a13c7608ab4000c3568f023598}{}\label{crypto_8h_af474d4a13c7608ab4000c3568f023598}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+C\+O\+MP@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+C\+O\+MP}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+C\+O\+MP@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+C\+O\+MP}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+C\+O\+MP}{CRYPTO_LOCK_COMP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+C\+O\+MP~38}\hypertarget{crypto_8h_a9029abd903c791773f22eea662b40341}{}\label{crypto_8h_a9029abd903c791773f22eea662b40341}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+DH@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+DH}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+DH@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+DH}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+DH}{CRYPTO_LOCK_DH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+DH~26}\hypertarget{crypto_8h_ad4d7c468a715660eb5639dcf39937708}{}\label{crypto_8h_ad4d7c468a715660eb5639dcf39937708}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+SA@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+SA}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+SA@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+SA}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+SA}{CRYPTO_LOCK_DSA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+SA~8}\hypertarget{crypto_8h_ab869ea3c0727d1195ca8bdb233614003}{}\label{crypto_8h_ab869ea3c0727d1195ca8bdb233614003}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+SO@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+SO}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+SO@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+SO}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+SO}{CRYPTO_LOCK_DSO}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+SO~28}\hypertarget{crypto_8h_a767aafa2cc763fa1301ae2e8ba47193d}{}\label{crypto_8h_a767aafa2cc763fa1301ae2e8ba47193d}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+Y\+N\+L\+O\+CK@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+Y\+N\+L\+O\+CK}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+Y\+N\+L\+O\+CK@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+Y\+N\+L\+O\+CK}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+Y\+N\+L\+O\+CK}{CRYPTO_LOCK_DYNLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+D\+Y\+N\+L\+O\+CK~29}\hypertarget{crypto_8h_a5197d96134626698588fdd5bd5a40515}{}\label{crypto_8h_a5197d96134626698588fdd5bd5a40515}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+EC@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+EC}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+EC@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+EC}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+EC}{CRYPTO_LOCK_EC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+EC~33}\hypertarget{crypto_8h_a25a9fafff765bd6d887708428c876c75}{}\label{crypto_8h_a25a9fafff765bd6d887708428c876c75}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+\_\+\+P\+R\+E\+\_\+\+C\+O\+MP@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+\_\+\+P\+R\+E\+\_\+\+C\+O\+MP}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+\_\+\+P\+R\+E\+\_\+\+C\+O\+MP@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+\_\+\+P\+R\+E\+\_\+\+C\+O\+MP}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+\_\+\+P\+R\+E\+\_\+\+C\+O\+MP}{CRYPTO_LOCK_EC_PRE_COMP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+\_\+\+P\+R\+E\+\_\+\+C\+O\+MP~36}\hypertarget{crypto_8h_a3d1a5ee400974e642a726946f4fede25}{}\label{crypto_8h_a3d1a5ee400974e642a726946f4fede25}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+DH@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+DH}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+DH@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+DH}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+DH}{CRYPTO_LOCK_ECDH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+DH~34}\hypertarget{crypto_8h_a347f27d7dd50ca783fb71a7ab45eb351}{}\label{crypto_8h_a347f27d7dd50ca783fb71a7ab45eb351}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+D\+SA@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+D\+SA}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+D\+SA@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+D\+SA}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+D\+SA}{CRYPTO_LOCK_ECDSA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+C\+D\+SA~32}\hypertarget{crypto_8h_a922ff57b8c4fd321e28537b336fe114f}{}\label{crypto_8h_a922ff57b8c4fd321e28537b336fe114f}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+N\+G\+I\+NE@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+N\+G\+I\+NE}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+N\+G\+I\+NE@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+N\+G\+I\+NE}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+N\+G\+I\+NE}{CRYPTO_LOCK_ENGINE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+N\+G\+I\+NE~30}\hypertarget{crypto_8h_a49d4f90e6748128dc3976ee75a205099}{}\label{crypto_8h_a49d4f90e6748128dc3976ee75a205099}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+RR@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+RR}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+RR@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+RR}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+RR}{CRYPTO_LOCK_ERR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+RR~1}\hypertarget{crypto_8h_a59155ce15604fcf493414a4e9f137359}{}\label{crypto_8h_a59155ce15604fcf493414a4e9f137359}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+V\+P\+\_\+\+P\+K\+EY@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+V\+P\+\_\+\+P\+K\+EY}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+V\+P\+\_\+\+P\+K\+EY@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+V\+P\+\_\+\+P\+K\+EY}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+V\+P\+\_\+\+P\+K\+EY}{CRYPTO_LOCK_EVP_PKEY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+V\+P\+\_\+\+P\+K\+EY~10}\hypertarget{crypto_8h_aee0129d89ab09d6bccecd1ce55307584}{}\label{crypto_8h_aee0129d89ab09d6bccecd1ce55307584}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+X\+\_\+\+D\+A\+TA@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+X\+\_\+\+D\+A\+TA}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+X\+\_\+\+D\+A\+TA@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+X\+\_\+\+D\+A\+TA}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+X\+\_\+\+D\+A\+TA}{CRYPTO_LOCK_EX_DATA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+E\+X\+\_\+\+D\+A\+TA~2}\hypertarget{crypto_8h_a41d6081818c1baac025d380dff6d15cd}{}\label{crypto_8h_a41d6081818c1baac025d380dff6d15cd}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+F\+I\+PS@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+F\+I\+PS}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+F\+I\+PS@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+F\+I\+PS}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+F\+I\+PS}{CRYPTO_LOCK_FIPS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+F\+I\+PS~39}\hypertarget{crypto_8h_aa5ae846a651daadc3845b0fccce4e46e}{}\label{crypto_8h_aa5ae846a651daadc3845b0fccce4e46e}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+F\+I\+P\+S2@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+F\+I\+P\+S2}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+F\+I\+P\+S2@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+F\+I\+P\+S2}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+F\+I\+P\+S2}{CRYPTO_LOCK_FIPS2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+F\+I\+P\+S2~40}\hypertarget{crypto_8h_abbed94ff27c9c66c9e186b4bdc1dd519}{}\label{crypto_8h_abbed94ff27c9c66c9e186b4bdc1dd519}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+G\+E\+T\+H\+O\+S\+T\+B\+Y\+N\+A\+ME@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+G\+E\+T\+H\+O\+S\+T\+B\+Y\+N\+A\+ME}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+G\+E\+T\+H\+O\+S\+T\+B\+Y\+N\+A\+ME@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+G\+E\+T\+H\+O\+S\+T\+B\+Y\+N\+A\+ME}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+G\+E\+T\+H\+O\+S\+T\+B\+Y\+N\+A\+ME}{CRYPTO_LOCK_GETHOSTBYNAME}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+G\+E\+T\+H\+O\+S\+T\+B\+Y\+N\+A\+ME~22}\hypertarget{crypto_8h_a485c8893a086095e5e7e615782262fa5}{}\label{crypto_8h_a485c8893a086095e5e7e615782262fa5}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+G\+E\+T\+S\+E\+R\+V\+B\+Y\+N\+A\+ME@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+G\+E\+T\+S\+E\+R\+V\+B\+Y\+N\+A\+ME}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+G\+E\+T\+S\+E\+R\+V\+B\+Y\+N\+A\+ME@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+G\+E\+T\+S\+E\+R\+V\+B\+Y\+N\+A\+ME}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+G\+E\+T\+S\+E\+R\+V\+B\+Y\+N\+A\+ME}{CRYPTO_LOCK_GETSERVBYNAME}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+G\+E\+T\+S\+E\+R\+V\+B\+Y\+N\+A\+ME~23}\hypertarget{crypto_8h_a088e7619b09051943015a1ae265fa75e}{}\label{crypto_8h_a088e7619b09051943015a1ae265fa75e}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+M\+A\+L\+L\+OC@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+M\+A\+L\+L\+OC}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+M\+A\+L\+L\+OC@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+M\+A\+L\+L\+OC}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+M\+A\+L\+L\+OC}{CRYPTO_LOCK_MALLOC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+M\+A\+L\+L\+OC~20}\hypertarget{crypto_8h_ae27b7d4dae7ec19346456ecfa4ed0bf4}{}\label{crypto_8h_ae27b7d4dae7ec19346456ecfa4ed0bf4}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+M\+A\+L\+L\+O\+C2@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+M\+A\+L\+L\+O\+C2}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+M\+A\+L\+L\+O\+C2@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+M\+A\+L\+L\+O\+C2}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+M\+A\+L\+L\+O\+C2}{CRYPTO_LOCK_MALLOC2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+M\+A\+L\+L\+O\+C2~27}\hypertarget{crypto_8h_a8e0f7820daecae8691988db60dd380b8}{}\label{crypto_8h_a8e0f7820daecae8691988db60dd380b8}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+A\+ND@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+A\+ND}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+A\+ND@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+A\+ND}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+A\+ND}{CRYPTO_LOCK_RAND}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+A\+ND~18}\hypertarget{crypto_8h_aa9e33617eed56a72ed1798cd076e1e71}{}\label{crypto_8h_aa9e33617eed56a72ed1798cd076e1e71}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+A\+N\+D2@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+A\+N\+D2}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+A\+N\+D2@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+A\+N\+D2}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+A\+N\+D2}{CRYPTO_LOCK_RAND2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+A\+N\+D2~19}\hypertarget{crypto_8h_a59dc8a98a2240c8923492715e03c7f7f}{}\label{crypto_8h_a59dc8a98a2240c8923492715e03c7f7f}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+D\+IR@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+D\+IR}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+D\+IR@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+D\+IR}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+D\+IR}{CRYPTO_LOCK_READDIR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+D\+IR~24}\hypertarget{crypto_8h_aa2c1fcf639d1b436285a0426a372d8e0}{}\label{crypto_8h_aa2c1fcf639d1b436285a0426a372d8e0}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+SA@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+SA}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+SA@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+SA}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+SA}{CRYPTO_LOCK_RSA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+SA~9}\hypertarget{crypto_8h_a8ec88e37c68e88e1c7c63368fe2a2d8c}{}\label{crypto_8h_a8ec88e37c68e88e1c7c63368fe2a2d8c}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+S\+A\+\_\+\+B\+L\+I\+N\+D\+I\+NG@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+S\+A\+\_\+\+B\+L\+I\+N\+D\+I\+NG}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+S\+A\+\_\+\+B\+L\+I\+N\+D\+I\+NG@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+S\+A\+\_\+\+B\+L\+I\+N\+D\+I\+NG}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+S\+A\+\_\+\+B\+L\+I\+N\+D\+I\+NG}{CRYPTO_LOCK_RSA_BLINDING}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+R\+S\+A\+\_\+\+B\+L\+I\+N\+D\+I\+NG~25}\hypertarget{crypto_8h_ad8b7b0fbb6c9fdea98d78a11a8dc97ff}{}\label{crypto_8h_ad8b7b0fbb6c9fdea98d78a11a8dc97ff}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+SL@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+SL}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+SL@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+SL}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+SL}{CRYPTO_LOCK_SSL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+SL~16}\hypertarget{crypto_8h_a1ab85f9ec12d0b086527b0e6ec345fcc}{}\label{crypto_8h_a1ab85f9ec12d0b086527b0e6ec345fcc}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+C\+E\+RT@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+C\+E\+RT}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+C\+E\+RT@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+C\+E\+RT}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+C\+E\+RT}{CRYPTO_LOCK_SSL_CERT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+C\+E\+RT~13}\hypertarget{crypto_8h_ac7e2c1c2b4fd4607a40e119924e4fc0c}{}\label{crypto_8h_ac7e2c1c2b4fd4607a40e119924e4fc0c}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+C\+TX@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+C\+TX}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+C\+TX@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+C\+TX}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+C\+TX}{CRYPTO_LOCK_SSL_CTX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+C\+TX~12}\hypertarget{crypto_8h_a625a294ce7ca3ded9be3b80f32282bd1}{}\label{crypto_8h_a625a294ce7ca3ded9be3b80f32282bd1}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+M\+E\+T\+H\+OD@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+M\+E\+T\+H\+OD}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+M\+E\+T\+H\+OD@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+M\+E\+T\+H\+OD}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+M\+E\+T\+H\+OD}{CRYPTO_LOCK_SSL_METHOD}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+M\+E\+T\+H\+OD~17}\hypertarget{crypto_8h_acf87efa97cc977e49013af5e87e304bd}{}\label{crypto_8h_acf87efa97cc977e49013af5e87e304bd}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+\_\+\+C\+E\+RT@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+\_\+\+C\+E\+RT}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+\_\+\+C\+E\+RT@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+\_\+\+C\+E\+RT}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+\_\+\+C\+E\+RT}{CRYPTO_LOCK_SSL_SESS_CERT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+\_\+\+C\+E\+RT~15}\hypertarget{crypto_8h_a4efc90ed9fdc06d4ecc056a66bda277c}{}\label{crypto_8h_a4efc90ed9fdc06d4ecc056a66bda277c}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+I\+ON@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+I\+ON}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+I\+ON@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+I\+ON}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+I\+ON}{CRYPTO_LOCK_SSL_SESSION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+S\+L\+\_\+\+S\+E\+S\+S\+I\+ON~14}\hypertarget{crypto_8h_a9756a8a5d0486d60f1e40aa714eab85c}{}\label{crypto_8h_a9756a8a5d0486d60f1e40aa714eab85c}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+T\+O\+RE@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+T\+O\+RE}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+T\+O\+RE@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+T\+O\+RE}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+T\+O\+RE}{CRYPTO_LOCK_STORE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+S\+T\+O\+RE~37}\hypertarget{crypto_8h_a525a5b117b66ad557ca3b110364b82fa}{}\label{crypto_8h_a525a5b117b66ad557ca3b110364b82fa}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+UI@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+UI}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+UI@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+UI}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+UI}{CRYPTO_LOCK_UI}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+UI~31}\hypertarget{crypto_8h_a272e2ffecd9903bf2a439ec604968a72}{}\label{crypto_8h_a272e2ffecd9903bf2a439ec604968a72}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509}{CRYPTO_LOCK_X509}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509~3}\hypertarget{crypto_8h_abcd6591ef6acea51bf9f6edb6bb05bca}{}\label{crypto_8h_abcd6591ef6acea51bf9f6edb6bb05bca}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+C\+RL@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+C\+RL}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+C\+RL@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+C\+RL}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+C\+RL}{CRYPTO_LOCK_X509_CRL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+C\+RL~6}\hypertarget{crypto_8h_acc0c636f451144eadad19883527a0a1a}{}\label{crypto_8h_acc0c636f451144eadad19883527a0a1a}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+I\+N\+FO@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+I\+N\+FO}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+I\+N\+FO@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+I\+N\+FO}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+I\+N\+FO}{CRYPTO_LOCK_X509_INFO}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+I\+N\+FO~4}\hypertarget{crypto_8h_a514c71dc8501267571a9ccc554b72251}{}\label{crypto_8h_a514c71dc8501267571a9ccc554b72251}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+P\+K\+EY@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+P\+K\+EY}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+P\+K\+EY@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+P\+K\+EY}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+P\+K\+EY}{CRYPTO_LOCK_X509_PKEY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+P\+K\+EY~5}\hypertarget{crypto_8h_abb49b04d226734fa74d3a2729c56539e}{}\label{crypto_8h_abb49b04d226734fa74d3a2729c56539e}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+R\+EQ@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+R\+EQ}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+R\+EQ@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+R\+EQ}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+R\+EQ}{CRYPTO_LOCK_X509_REQ}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+R\+EQ~7}\hypertarget{crypto_8h_ad2941e87c19cb5d8835978a1920fb360}{}\label{crypto_8h_ad2941e87c19cb5d8835978a1920fb360}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+S\+T\+O\+RE@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+S\+T\+O\+RE}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+S\+T\+O\+RE@{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+S\+T\+O\+RE}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+S\+T\+O\+RE}{CRYPTO_LOCK_X509_STORE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+C\+K\+\_\+\+X509\+\_\+\+S\+T\+O\+RE~11}\hypertarget{crypto_8h_a2ff5c286424b480fc096193ab193b448}{}\label{crypto_8h_a2ff5c286424b480fc096193ab193b448}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+debug\+\_\+init@{C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+debug\+\_\+init}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+debug\+\_\+init@{C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+debug\+\_\+init}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+debug\+\_\+init}{CRYPTO_malloc_debug_init}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+debug\+\_\+init(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a98082c05667f39db8e1f0cd699928013}{}\label{crypto_8h_a98082c05667f39db8e1f0cd699928013}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{\hyperlink{crypto_8h_a5adaf683521ee3920fd0c444cb615449}{\(\backslash\)}
+\hyperlink{crypto_8h_a5adaf683521ee3920fd0c444cb615449}{    CRYPTO\_set\_mem\_debug\_functions}(\(\backslash\)
+        \hyperlink{crypto_8h_a3f3820a9ced04efab38389f0d8761a34}{CRYPTO\_dbg\_malloc},\(\backslash\)
+        \hyperlink{crypto_8h_a6a1b3943fc1156b8ea7ee3e71203eb66}{CRYPTO\_dbg\_realloc},\(\backslash\)
+        \hyperlink{crypto_8h_aed412e766791a000ee4f571058c84c53}{CRYPTO\_dbg\_free},\(\backslash\)
+        \hyperlink{crypto_8h_a29ef26c6b65105d587d5eda53aeb9270}{CRYPTO\_dbg\_set\_options},\(\backslash\)
+        \hyperlink{crypto_8h_aedf301a03de4d29867b8c2ca35e4238e}{CRYPTO\_dbg\_get\_options});\(\backslash\)
+    \} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+init@{C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+init}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+init@{C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+init}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+init}{CRYPTO_malloc_init}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+init(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a1bea0a4d2516a2717e4d9cd6ef32b382}{}\label{crypto_8h_a1bea0a4d2516a2717e4d9cd6ef32b382}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{crypto_8h_a88e4e28a6cec57e8849ea166b48543a2}{CRYPTO\_set\_mem\_functions}(\(\backslash\)
+    malloc, realloc, free)
+\end{DoxyCode}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+D\+I\+S\+A\+B\+LE@{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+D\+I\+S\+A\+B\+LE@{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+D\+I\+S\+A\+B\+LE}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+D\+I\+S\+A\+B\+LE}{CRYPTO_MEM_CHECK_DISABLE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+D\+I\+S\+A\+B\+LE~0x3	/$\ast$ an enume $\ast$/}\hypertarget{crypto_8h_a4a80a7d9078e510c70ad6c193cd387db}{}\label{crypto_8h_a4a80a7d9078e510c70ad6c193cd387db}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+N\+A\+B\+LE@{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+N\+A\+B\+LE}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+N\+A\+B\+LE@{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+N\+A\+B\+LE}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+N\+A\+B\+LE}{CRYPTO_MEM_CHECK_ENABLE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+N\+A\+B\+LE~0x2	/$\ast$ a bit $\ast$/}\hypertarget{crypto_8h_a251476afe7b1f8951612adc6bd17dd93}{}\label{crypto_8h_a251476afe7b1f8951612adc6bd17dd93}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+O\+FF@{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+O\+FF}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+O\+FF@{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+O\+FF}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+O\+FF}{CRYPTO_MEM_CHECK_OFF}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+O\+FF~0x0	/$\ast$ an enume $\ast$/}\hypertarget{crypto_8h_a3ca6c6e275cf4a57f2dcbbf0e515b853}{}\label{crypto_8h_a3ca6c6e275cf4a57f2dcbbf0e515b853}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+ON@{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+ON}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+ON@{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+ON}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+ON}{CRYPTO_MEM_CHECK_ON}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+ON~0x1	/$\ast$ a bit $\ast$/}\hypertarget{crypto_8h_a6a25092bf0270a8671df0369a6ccdecd}{}\label{crypto_8h_a6a25092bf0270a8671df0369a6ccdecd}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+N\+U\+M\+\_\+\+L\+O\+C\+KS@{C\+R\+Y\+P\+T\+O\+\_\+\+N\+U\+M\+\_\+\+L\+O\+C\+KS}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+N\+U\+M\+\_\+\+L\+O\+C\+KS@{C\+R\+Y\+P\+T\+O\+\_\+\+N\+U\+M\+\_\+\+L\+O\+C\+KS}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+N\+U\+M\+\_\+\+L\+O\+C\+KS}{CRYPTO_NUM_LOCKS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+N\+U\+M\+\_\+\+L\+O\+C\+KS~41}\hypertarget{crypto_8h_a9eada33d182a1671c8f29a3df06190b3}{}\label{crypto_8h_a9eada33d182a1671c8f29a3df06190b3}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+push\+\_\+info@{C\+R\+Y\+P\+T\+O\+\_\+push\+\_\+info}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+push\+\_\+info@{C\+R\+Y\+P\+T\+O\+\_\+push\+\_\+info}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+push\+\_\+info}{CRYPTO_push_info}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+push\+\_\+info(
+\begin{DoxyParamCaption}
+\item[{}]{info}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+Y\+P\+T\+O\+\_\+push\+\_\+info\+\_\+}(info, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+);}\hypertarget{crypto_8h_a3323b4d137a6095f5c647b362e5be170}{}\label{crypto_8h_a3323b4d137a6095f5c647b362e5be170}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+R\+\_\+\+F\+I\+P\+S\+\_\+\+M\+O\+D\+E\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED@{C\+R\+Y\+P\+T\+O\+\_\+\+R\+\_\+\+F\+I\+P\+S\+\_\+\+M\+O\+D\+E\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+R\+\_\+\+F\+I\+P\+S\+\_\+\+M\+O\+D\+E\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED@{C\+R\+Y\+P\+T\+O\+\_\+\+R\+\_\+\+F\+I\+P\+S\+\_\+\+M\+O\+D\+E\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+R\+\_\+\+F\+I\+P\+S\+\_\+\+M\+O\+D\+E\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}{CRYPTO_R_FIPS_MODE_NOT_SUPPORTED}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+R\+\_\+\+F\+I\+P\+S\+\_\+\+M\+O\+D\+E\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED~101}\hypertarget{crypto_8h_adc09e9d7cd1e5471caacf0340862fc33}{}\label{crypto_8h_adc09e9d7cd1e5471caacf0340862fc33}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+r\+\_\+lock@{C\+R\+Y\+P\+T\+O\+\_\+r\+\_\+lock}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+r\+\_\+lock@{C\+R\+Y\+P\+T\+O\+\_\+r\+\_\+lock}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+r\+\_\+lock}{CRYPTO_r_lock}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+r\+\_\+lock(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf type}}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+Y\+P\+T\+O\+\_\+lock}({\bf C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+CK}$\vert${\bf C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+AD},{\bf type},\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}\hypertarget{crypto_8h_a1b327843e7f3b0e8c51d0ab1956f7c64}{}\label{crypto_8h_a1b327843e7f3b0e8c51d0ab1956f7c64}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+R\+\_\+\+N\+O\+\_\+\+D\+Y\+N\+L\+O\+C\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK@{C\+R\+Y\+P\+T\+O\+\_\+\+R\+\_\+\+N\+O\+\_\+\+D\+Y\+N\+L\+O\+C\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+R\+\_\+\+N\+O\+\_\+\+D\+Y\+N\+L\+O\+C\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK@{C\+R\+Y\+P\+T\+O\+\_\+\+R\+\_\+\+N\+O\+\_\+\+D\+Y\+N\+L\+O\+C\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+R\+\_\+\+N\+O\+\_\+\+D\+Y\+N\+L\+O\+C\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK}{CRYPTO_R_NO_DYNLOCK_CREATE_CALLBACK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+R\+\_\+\+N\+O\+\_\+\+D\+Y\+N\+L\+O\+C\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+A\+L\+L\+B\+A\+CK~100}\hypertarget{crypto_8h_ae9dc51dc9a2b10e0c7a897d6ea4d27d5}{}\label{crypto_8h_ae9dc51dc9a2b10e0c7a897d6ea4d27d5}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+r\+\_\+unlock@{C\+R\+Y\+P\+T\+O\+\_\+r\+\_\+unlock}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+r\+\_\+unlock@{C\+R\+Y\+P\+T\+O\+\_\+r\+\_\+unlock}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+r\+\_\+unlock}{CRYPTO_r_unlock}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+r\+\_\+unlock(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf type}}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+Y\+P\+T\+O\+\_\+lock}({\bf C\+R\+Y\+P\+T\+O\+\_\+\+U\+N\+L\+O\+CK}$\vert${\bf C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+AD},{\bf type},\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}\hypertarget{crypto_8h_a55fc2b1744dc55033c8b0709a11f92fc}{}\label{crypto_8h_a55fc2b1744dc55033c8b0709a11f92fc}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+AD@{C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+AD}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+AD@{C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+AD}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+AD}{CRYPTO_READ}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+R\+E\+AD~4}\hypertarget{crypto_8h_a9f08fd59d86931fa501066aaf09d22ce}{}\label{crypto_8h_a9f08fd59d86931fa501066aaf09d22ce}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+U\+N\+L\+O\+CK@{C\+R\+Y\+P\+T\+O\+\_\+\+U\+N\+L\+O\+CK}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+U\+N\+L\+O\+CK@{C\+R\+Y\+P\+T\+O\+\_\+\+U\+N\+L\+O\+CK}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+U\+N\+L\+O\+CK}{CRYPTO_UNLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+U\+N\+L\+O\+CK~2}\hypertarget{crypto_8h_ab5476e708fea24776738de40597833cb}{}\label{crypto_8h_ab5476e708fea24776738de40597833cb}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+w\+\_\+lock@{C\+R\+Y\+P\+T\+O\+\_\+w\+\_\+lock}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+w\+\_\+lock@{C\+R\+Y\+P\+T\+O\+\_\+w\+\_\+lock}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+w\+\_\+lock}{CRYPTO_w_lock}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+w\+\_\+lock(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf type}}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+Y\+P\+T\+O\+\_\+lock}({\bf C\+R\+Y\+P\+T\+O\+\_\+\+L\+O\+CK}$\vert${\bf C\+R\+Y\+P\+T\+O\+\_\+\+W\+R\+I\+TE},{\bf type},\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}\hypertarget{crypto_8h_ab3735c6a4dd562addce8043981d0ecdf}{}\label{crypto_8h_ab3735c6a4dd562addce8043981d0ecdf}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+w\+\_\+unlock@{C\+R\+Y\+P\+T\+O\+\_\+w\+\_\+unlock}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+w\+\_\+unlock@{C\+R\+Y\+P\+T\+O\+\_\+w\+\_\+unlock}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+w\+\_\+unlock}{CRYPTO_w_unlock}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+w\+\_\+unlock(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf type}}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+Y\+P\+T\+O\+\_\+lock}({\bf C\+R\+Y\+P\+T\+O\+\_\+\+U\+N\+L\+O\+CK}$\vert${\bf C\+R\+Y\+P\+T\+O\+\_\+\+W\+R\+I\+TE},{\bf type},\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}\hypertarget{crypto_8h_a337cca587e1ea6c81accc78f0373569d}{}\label{crypto_8h_a337cca587e1ea6c81accc78f0373569d}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+W\+R\+I\+TE@{C\+R\+Y\+P\+T\+O\+\_\+\+W\+R\+I\+TE}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+W\+R\+I\+TE@{C\+R\+Y\+P\+T\+O\+\_\+\+W\+R\+I\+TE}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+W\+R\+I\+TE}{CRYPTO_WRITE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+Y\+P\+T\+O\+\_\+\+W\+R\+I\+TE~8}\hypertarget{crypto_8h_aca8b4aef3ca56cad89b94cb46797276c}{}\label{crypto_8h_aca8b4aef3ca56cad89b94cb46797276c}
+\index{crypto.\+h@{crypto.\+h}!Mem\+Check\+\_\+start@{Mem\+Check\+\_\+start}}
+\index{Mem\+Check\+\_\+start@{Mem\+Check\+\_\+start}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{Mem\+Check\+\_\+start}{MemCheck_start}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Mem\+Check\+\_\+start(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+ctrl}({\bf C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+ON})}\hypertarget{crypto_8h_a8276d8522378b4e81d31e7b2c0b4c04e}{}\label{crypto_8h_a8276d8522378b4e81d31e7b2c0b4c04e}
+\index{crypto.\+h@{crypto.\+h}!Mem\+Check\+\_\+stop@{Mem\+Check\+\_\+stop}}
+\index{Mem\+Check\+\_\+stop@{Mem\+Check\+\_\+stop}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{Mem\+Check\+\_\+stop}{MemCheck_stop}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Mem\+Check\+\_\+stop(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+ctrl}({\bf C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+O\+FF})}\hypertarget{crypto_8h_af6160223118fdf4d6da320be2889097f}{}\label{crypto_8h_af6160223118fdf4d6da320be2889097f}
+\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+assert@{O\+P\+E\+N\+S\+S\+L\+\_\+assert}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+assert@{O\+P\+E\+N\+S\+S\+L\+\_\+assert}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+assert}{OPENSSL_assert}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+S\+S\+L\+\_\+assert(
+\begin{DoxyParamCaption}
+\item[{}]{e}
+\end{DoxyParamCaption}
+)~(void)((e) ? 0 \+: ({\bf Open\+S\+S\+L\+Die}(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \#e),1))}\hypertarget{crypto_8h_a6e3638bf542fc7a6a394f34124aa2cba}{}\label{crypto_8h_a6e3638bf542fc7a6a394f34124aa2cba}
+\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+free@{O\+P\+E\+N\+S\+S\+L\+\_\+free}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+free@{O\+P\+E\+N\+S\+S\+L\+\_\+free}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+free}{OPENSSL_free}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+S\+S\+L\+\_\+free(
+\begin{DoxyParamCaption}
+\item[{}]{addr}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+Y\+P\+T\+O\+\_\+free}(addr)}\hypertarget{crypto_8h_aeb21bb7e51c4f5af3bdce7226e52ca5a}{}\label{crypto_8h_aeb21bb7e51c4f5af3bdce7226e52ca5a}
+\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+free\+\_\+locked@{O\+P\+E\+N\+S\+S\+L\+\_\+free\+\_\+locked}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+free\+\_\+locked@{O\+P\+E\+N\+S\+S\+L\+\_\+free\+\_\+locked}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+free\+\_\+locked}{OPENSSL_free_locked}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+S\+S\+L\+\_\+free\+\_\+locked(
+\begin{DoxyParamCaption}
+\item[{}]{addr}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+Y\+P\+T\+O\+\_\+free\+\_\+locked}(addr)}\hypertarget{crypto_8h_a6941f5340d9bf33568dda6731e3e503a}{}\label{crypto_8h_a6941f5340d9bf33568dda6731e3e503a}
+\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+free\+Func@{O\+P\+E\+N\+S\+S\+L\+\_\+free\+Func}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+free\+Func@{O\+P\+E\+N\+S\+S\+L\+\_\+free\+Func}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+free\+Func}{OPENSSL_freeFunc}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+S\+S\+L\+\_\+free\+Func~{\bf C\+R\+Y\+P\+T\+O\+\_\+free}}\hypertarget{crypto_8h_a5e15ad04ccc852bc2140e6dff5647b73}{}\label{crypto_8h_a5e15ad04ccc852bc2140e6dff5647b73}
+\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+ia32cap@{O\+P\+E\+N\+S\+S\+L\+\_\+ia32cap}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+ia32cap@{O\+P\+E\+N\+S\+S\+L\+\_\+ia32cap}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+ia32cap}{OPENSSL_ia32cap}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+S\+S\+L\+\_\+ia32cap~($\ast$({\bf O\+P\+E\+N\+S\+S\+L\+\_\+ia32cap\+\_\+loc}()))}\hypertarget{crypto_8h_a4b2789a3388a879fbd65b1ba00ccc2b6}{}\label{crypto_8h_a4b2789a3388a879fbd65b1ba00ccc2b6}
+\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+malloc@{O\+P\+E\+N\+S\+S\+L\+\_\+malloc}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+malloc@{O\+P\+E\+N\+S\+S\+L\+\_\+malloc}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+malloc}{OPENSSL_malloc}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+S\+S\+L\+\_\+malloc(
+\begin{DoxyParamCaption}
+\item[{}]{num}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+Y\+P\+T\+O\+\_\+malloc}((int)num,\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}\hypertarget{crypto_8h_afdb80d14aed3b15d0ef71f72a872310d}{}\label{crypto_8h_afdb80d14aed3b15d0ef71f72a872310d}
+\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+malloc\+\_\+locked@{O\+P\+E\+N\+S\+S\+L\+\_\+malloc\+\_\+locked}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+malloc\+\_\+locked@{O\+P\+E\+N\+S\+S\+L\+\_\+malloc\+\_\+locked}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+malloc\+\_\+locked}{OPENSSL_malloc_locked}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+S\+S\+L\+\_\+malloc\+\_\+locked(
+\begin{DoxyParamCaption}
+\item[{}]{num}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+locked}((int)num,\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}\hypertarget{crypto_8h_a343ed687a1e861fa39ed385790426ef5}{}\label{crypto_8h_a343ed687a1e861fa39ed385790426ef5}
+\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+realloc@{O\+P\+E\+N\+S\+S\+L\+\_\+realloc}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+realloc@{O\+P\+E\+N\+S\+S\+L\+\_\+realloc}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+realloc}{OPENSSL_realloc}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+S\+S\+L\+\_\+realloc(
+\begin{DoxyParamCaption}
+\item[{}]{addr, }
+\item[{}]{num}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+Y\+P\+T\+O\+\_\+realloc}((char $\ast$)addr,(int)num,\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}\hypertarget{crypto_8h_aba1c282c55c099a7f164b9380febfdf9}{}\label{crypto_8h_aba1c282c55c099a7f164b9380febfdf9}
+\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+realloc\+\_\+clean@{O\+P\+E\+N\+S\+S\+L\+\_\+realloc\+\_\+clean}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+realloc\+\_\+clean@{O\+P\+E\+N\+S\+S\+L\+\_\+realloc\+\_\+clean}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+realloc\+\_\+clean}{OPENSSL_realloc_clean}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+S\+S\+L\+\_\+realloc\+\_\+clean(
+\begin{DoxyParamCaption}
+\item[{}]{addr, }
+\item[{}]{old\+\_\+num, }
+\item[{}]{num}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+Y\+P\+T\+O\+\_\+realloc\+\_\+clean}(addr,old\+\_\+num,num,\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}\hypertarget{crypto_8h_ad41b0697e3274e344a9f12001187fb95}{}\label{crypto_8h_ad41b0697e3274e344a9f12001187fb95}
+\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+remalloc@{O\+P\+E\+N\+S\+S\+L\+\_\+remalloc}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+remalloc@{O\+P\+E\+N\+S\+S\+L\+\_\+remalloc}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+remalloc}{OPENSSL_remalloc}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+S\+S\+L\+\_\+remalloc(
+\begin{DoxyParamCaption}
+\item[{}]{addr, }
+\item[{}]{num}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+Y\+P\+T\+O\+\_\+remalloc}((char $\ast$$\ast$)addr,(int)num,\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}\hypertarget{crypto_8h_a67a1da927713acebe6b004dc24c6760e}{}\label{crypto_8h_a67a1da927713acebe6b004dc24c6760e}
+\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+strdup@{O\+P\+E\+N\+S\+S\+L\+\_\+strdup}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+strdup@{O\+P\+E\+N\+S\+S\+L\+\_\+strdup}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+strdup}{OPENSSL_strdup}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+S\+S\+L\+\_\+strdup(
+\begin{DoxyParamCaption}
+\item[{}]{str}
+\end{DoxyParamCaption}
+)~{\bf C\+R\+Y\+P\+T\+O\+\_\+strdup}((str),\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}\hypertarget{crypto_8h_aa0da41937271fafc8d9ebaa051feec16}{}\label{crypto_8h_aa0da41937271fafc8d9ebaa051feec16}
+\index{crypto.\+h@{crypto.\+h}!S\+S\+L\+E\+A\+Y\+\_\+\+B\+U\+I\+L\+T\+\_\+\+ON@{S\+S\+L\+E\+A\+Y\+\_\+\+B\+U\+I\+L\+T\+\_\+\+ON}}
+\index{S\+S\+L\+E\+A\+Y\+\_\+\+B\+U\+I\+L\+T\+\_\+\+ON@{S\+S\+L\+E\+A\+Y\+\_\+\+B\+U\+I\+L\+T\+\_\+\+ON}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{S\+S\+L\+E\+A\+Y\+\_\+\+B\+U\+I\+L\+T\+\_\+\+ON}{SSLEAY_BUILT_ON}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+E\+A\+Y\+\_\+\+B\+U\+I\+L\+T\+\_\+\+ON~3}\hypertarget{crypto_8h_ad75da87938feeb84fd165923e6f753e8}{}\label{crypto_8h_ad75da87938feeb84fd165923e6f753e8}
+\index{crypto.\+h@{crypto.\+h}!S\+S\+L\+E\+A\+Y\+\_\+\+C\+F\+L\+A\+GS@{S\+S\+L\+E\+A\+Y\+\_\+\+C\+F\+L\+A\+GS}}
+\index{S\+S\+L\+E\+A\+Y\+\_\+\+C\+F\+L\+A\+GS@{S\+S\+L\+E\+A\+Y\+\_\+\+C\+F\+L\+A\+GS}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{S\+S\+L\+E\+A\+Y\+\_\+\+C\+F\+L\+A\+GS}{SSLEAY_CFLAGS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+E\+A\+Y\+\_\+\+C\+F\+L\+A\+GS~2}\hypertarget{crypto_8h_a1b1adb0d7a504e33730ccb987cf36206}{}\label{crypto_8h_a1b1adb0d7a504e33730ccb987cf36206}
+\index{crypto.\+h@{crypto.\+h}!S\+S\+L\+E\+A\+Y\+\_\+\+D\+IR@{S\+S\+L\+E\+A\+Y\+\_\+\+D\+IR}}
+\index{S\+S\+L\+E\+A\+Y\+\_\+\+D\+IR@{S\+S\+L\+E\+A\+Y\+\_\+\+D\+IR}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{S\+S\+L\+E\+A\+Y\+\_\+\+D\+IR}{SSLEAY_DIR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+E\+A\+Y\+\_\+\+D\+IR~5}\hypertarget{crypto_8h_ad24a38af0b4903e5785fb7e7b3eff1f8}{}\label{crypto_8h_ad24a38af0b4903e5785fb7e7b3eff1f8}
+\index{crypto.\+h@{crypto.\+h}!S\+S\+L\+E\+A\+Y\+\_\+\+P\+L\+A\+T\+F\+O\+RM@{S\+S\+L\+E\+A\+Y\+\_\+\+P\+L\+A\+T\+F\+O\+RM}}
+\index{S\+S\+L\+E\+A\+Y\+\_\+\+P\+L\+A\+T\+F\+O\+RM@{S\+S\+L\+E\+A\+Y\+\_\+\+P\+L\+A\+T\+F\+O\+RM}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{S\+S\+L\+E\+A\+Y\+\_\+\+P\+L\+A\+T\+F\+O\+RM}{SSLEAY_PLATFORM}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+E\+A\+Y\+\_\+\+P\+L\+A\+T\+F\+O\+RM~4}\hypertarget{crypto_8h_ab740dda99de5932e3129b96553deee51}{}\label{crypto_8h_ab740dda99de5932e3129b96553deee51}
+\index{crypto.\+h@{crypto.\+h}!S\+S\+L\+E\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+ON@{S\+S\+L\+E\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\index{S\+S\+L\+E\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+ON@{S\+S\+L\+E\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+ON}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{S\+S\+L\+E\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+ON}{SSLEAY_VERSION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+E\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+ON~0}\hypertarget{crypto_8h_a74a9f8a984ed90f79d509017ba5e475e}{}\label{crypto_8h_a74a9f8a984ed90f79d509017ba5e475e}
+\index{crypto.\+h@{crypto.\+h}!S\+S\+L\+E\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER@{S\+S\+L\+E\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER}}
+\index{S\+S\+L\+E\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER@{S\+S\+L\+E\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{S\+S\+L\+E\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER}{SSLEAY_VERSION_NUMBER}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+E\+A\+Y\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER~{\bf O\+P\+E\+N\+S\+S\+L\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER}}\hypertarget{crypto_8h_a4956d8f776a26cc0f4f7f94d7dca3148}{}\label{crypto_8h_a4956d8f776a26cc0f4f7f94d7dca3148}
+\index{crypto.\+h@{crypto.\+h}!V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+A\+LL@{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+A\+LL}}
+\index{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+A\+LL@{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+A\+LL}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+A\+LL}{V_CRYPTO_MDEBUG_ALL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+A\+LL~({\bf V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+I\+ME} $\vert$ {\bf V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+H\+R\+E\+AD})}\hypertarget{crypto_8h_aaa2c5af6372b57e2f6b7a476a67a623d}{}\label{crypto_8h_aaa2c5af6372b57e2f6b7a476a67a623d}
+\index{crypto.\+h@{crypto.\+h}!V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+H\+R\+E\+AD@{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+H\+R\+E\+AD}}
+\index{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+H\+R\+E\+AD@{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+H\+R\+E\+AD}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+H\+R\+E\+AD}{V_CRYPTO_MDEBUG_THREAD}}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+H\+R\+E\+AD~0x2 /$\ast$ a bit $\ast$/}\hypertarget{crypto_8h_ad211881e98a27d983ea949c8a16d5b49}{}\label{crypto_8h_ad211881e98a27d983ea949c8a16d5b49}
+\index{crypto.\+h@{crypto.\+h}!V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+I\+ME@{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+I\+ME}}
+\index{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+I\+ME@{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+I\+ME}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+I\+ME}{V_CRYPTO_MDEBUG_TIME}}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+D\+E\+B\+U\+G\+\_\+\+T\+I\+ME~0x1 /$\ast$ a bit $\ast$/}\hypertarget{crypto_8h_a749e295c704fbbf09b565243d67b5fda}{}\label{crypto_8h_a749e295c704fbbf09b565243d67b5fda}
+
+
+\subsection{Typedef Documentation}
+\index{crypto.\+h@{crypto.\+h}!B\+I\+O\+\_\+dummy@{B\+I\+O\+\_\+dummy}}
+\index{B\+I\+O\+\_\+dummy@{B\+I\+O\+\_\+dummy}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{B\+I\+O\+\_\+dummy}{BIO_dummy}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf bio\+\_\+st} {\bf B\+I\+O\+\_\+dummy}}\hypertarget{crypto_8h_a8ab471a5c4f9f8d706a3fc7d8381ea1c}{}\label{crypto_8h_a8ab471a5c4f9f8d706a3fc7d8381ea1c}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+F\+U\+N\+CS@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+F\+U\+N\+CS}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+F\+U\+N\+CS@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+F\+U\+N\+CS}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+F\+U\+N\+CS}{CRYPTO_EX_DATA_FUNCS}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf crypto\+\_\+ex\+\_\+data\+\_\+func\+\_\+st}  {\bf C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+F\+U\+N\+CS}}\hypertarget{crypto_8h_a792be45f3b5c5dc2c3bc57192248bef9}{}\label{crypto_8h_a792be45f3b5c5dc2c3bc57192248bef9}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+I\+M\+PL@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+I\+M\+PL}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+I\+M\+PL@{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+I\+M\+PL}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+I\+M\+PL}{CRYPTO_EX_DATA_IMPL}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct st\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+I\+M\+PL {\bf C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+I\+M\+PL}}\hypertarget{crypto_8h_a52be5518c28d0ef05f97c978a9fde2e4}{}\label{crypto_8h_a52be5518c28d0ef05f97c978a9fde2e4}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+L\+E\+A\+K\+\_\+\+CB@{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+L\+E\+A\+K\+\_\+\+CB}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+L\+E\+A\+K\+\_\+\+CB@{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+L\+E\+A\+K\+\_\+\+CB}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+L\+E\+A\+K\+\_\+\+CB}{CRYPTO_MEM_LEAK_CB}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+L\+E\+A\+K\+\_\+\+CB(unsigned long, const char $\ast$, int, int, void $\ast$)}\hypertarget{crypto_8h_a3dfc760917a238b35cf54f3b5102ccbd}{}\label{crypto_8h_a3dfc760917a238b35cf54f3b5102ccbd}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID}{CRYPTO_THREADID}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf crypto\+\_\+threadid\+\_\+st}  {\bf C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID}}\hypertarget{crypto_8h_a5da789a29aa0f39047c22cfe52462226}{}\label{crypto_8h_a5da789a29aa0f39047c22cfe52462226}
+\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+\+I\+T\+EM@{O\+P\+E\+N\+S\+S\+L\+\_\+\+I\+T\+EM}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+\+I\+T\+EM@{O\+P\+E\+N\+S\+S\+L\+\_\+\+I\+T\+EM}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+\+I\+T\+EM}{OPENSSL_ITEM}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf openssl\+\_\+item\+\_\+st}  {\bf O\+P\+E\+N\+S\+S\+L\+\_\+\+I\+T\+EM}}\hypertarget{crypto_8h_a420198cc02a146544ed8d3e05835a360}{}\label{crypto_8h_a420198cc02a146544ed8d3e05835a360}
+
+
+\subsection{Function Documentation}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+add\+\_\+lock@{C\+R\+Y\+P\+T\+O\+\_\+add\+\_\+lock}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+add\+\_\+lock@{C\+R\+Y\+P\+T\+O\+\_\+add\+\_\+lock}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+add\+\_\+lock(int $\ast$pointer, int amount, int type, const char $\ast$file, int line)}{CRYPTO_add_lock(int *pointer, int amount, int type, const char *file, int line)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+add\+\_\+lock (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{pointer, }
+\item[{int}]{amount, }
+\item[{int}]{type, }
+\item[{const char $\ast$}]{file, }
+\item[{int}]{line}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_af77d6ad2d71134fe7fb2e383f28dbf80}{}\label{crypto_8h_af77d6ad2d71134fe7fb2e383f28dbf80}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+cleanup\+\_\+all\+\_\+ex\+\_\+data@{C\+R\+Y\+P\+T\+O\+\_\+cleanup\+\_\+all\+\_\+ex\+\_\+data}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+cleanup\+\_\+all\+\_\+ex\+\_\+data@{C\+R\+Y\+P\+T\+O\+\_\+cleanup\+\_\+all\+\_\+ex\+\_\+data}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+cleanup\+\_\+all\+\_\+ex\+\_\+data(void)}{CRYPTO_cleanup_all_ex_data(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+cleanup\+\_\+all\+\_\+ex\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a99ad759160f9b800c191bfe78b7cade8}{}\label{crypto_8h_a99ad759160f9b800c191bfe78b7cade8}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+free@{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+free}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+free@{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+free}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+free(void $\ast$addr, int before\+\_\+p) \+\_\+\+\_\+attribute\+\_\+\+\_\+((deprecated))}{CRYPTO_dbg_free(void *addr, int before_p) __attribute__((deprecated))}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{addr, }
+\item[{int}]{before\+\_\+p}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_aed412e766791a000ee4f571058c84c53}{}\label{crypto_8h_aed412e766791a000ee4f571058c84c53}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+get\+\_\+options@{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+get\+\_\+options}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+get\+\_\+options@{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+get\+\_\+options}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+get\+\_\+options(void) \+\_\+\+\_\+attribute\+\_\+\+\_\+((deprecated))}{CRYPTO_dbg_get_options(void) __attribute__((deprecated))}}]{\setlength{\rightskip}{0pt plus 5cm}long C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+get\+\_\+options (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_aedf301a03de4d29867b8c2ca35e4238e}{}\label{crypto_8h_aedf301a03de4d29867b8c2ca35e4238e}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+malloc@{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+malloc}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+malloc@{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+malloc}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+malloc(void $\ast$addr, int num, const char $\ast$file, int line, int before\+\_\+p) \+\_\+\+\_\+attribute\+\_\+\+\_\+((deprecated))}{CRYPTO_dbg_malloc(void *addr, int num, const char *file, int line, int before_p) __attribute__((deprecated))}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+malloc (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{addr, }
+\item[{int}]{num, }
+\item[{const char $\ast$}]{file, }
+\item[{int}]{line, }
+\item[{int}]{before\+\_\+p}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a3f3820a9ced04efab38389f0d8761a34}{}\label{crypto_8h_a3f3820a9ced04efab38389f0d8761a34}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+realloc@{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+realloc}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+realloc@{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+realloc}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+realloc(void $\ast$addr1, void $\ast$addr2, int num, const char $\ast$file, int line, int before\+\_\+p) \+\_\+\+\_\+attribute\+\_\+\+\_\+((deprecated))}{CRYPTO_dbg_realloc(void *addr1, void *addr2, int num, const char *file, int line, int before_p) __attribute__((deprecated))}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+realloc (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{addr1, }
+\item[{void $\ast$}]{addr2, }
+\item[{int}]{num, }
+\item[{const char $\ast$}]{file, }
+\item[{int}]{line, }
+\item[{int}]{before\+\_\+p}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a6a1b3943fc1156b8ea7ee3e71203eb66}{}\label{crypto_8h_a6a1b3943fc1156b8ea7ee3e71203eb66}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+set\+\_\+options@{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+set\+\_\+options}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+set\+\_\+options@{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+set\+\_\+options}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+set\+\_\+options(long bits) \+\_\+\+\_\+attribute\+\_\+\+\_\+((deprecated))}{CRYPTO_dbg_set_options(long bits) __attribute__((deprecated))}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+dbg\+\_\+set\+\_\+options (
+\begin{DoxyParamCaption}
+\item[{long}]{bits}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a29ef26c6b65105d587d5eda53aeb9270}{}\label{crypto_8h_a29ef26c6b65105d587d5eda53aeb9270}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+destroy\+\_\+dynlockid@{C\+R\+Y\+P\+T\+O\+\_\+destroy\+\_\+dynlockid}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+destroy\+\_\+dynlockid@{C\+R\+Y\+P\+T\+O\+\_\+destroy\+\_\+dynlockid}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+destroy\+\_\+dynlockid(int i)}{CRYPTO_destroy_dynlockid(int i)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+destroy\+\_\+dynlockid (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_aa49cdafcabf446019c56d498a9862853}{}\label{crypto_8h_aa49cdafcabf446019c56d498a9862853}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+dup\+\_\+ex\+\_\+data@{C\+R\+Y\+P\+T\+O\+\_\+dup\+\_\+ex\+\_\+data}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+dup\+\_\+ex\+\_\+data@{C\+R\+Y\+P\+T\+O\+\_\+dup\+\_\+ex\+\_\+data}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+dup\+\_\+ex\+\_\+data(int class\+\_\+index, C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A $\ast$to, C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A $\ast$from)}{CRYPTO_dup_ex_data(int class_index, CRYPTO_EX_DATA *to, CRYPTO_EX_DATA *from)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+dup\+\_\+ex\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{int}]{class\+\_\+index, }
+\item[{{\bf C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} $\ast$}]{to, }
+\item[{{\bf C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} $\ast$}]{from}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a04f40834dd51292bb6d1da655671bb8c}{}\label{crypto_8h_a04f40834dd51292bb6d1da655671bb8c}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+ex\+\_\+data\+\_\+new\+\_\+class@{C\+R\+Y\+P\+T\+O\+\_\+ex\+\_\+data\+\_\+new\+\_\+class}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+ex\+\_\+data\+\_\+new\+\_\+class@{C\+R\+Y\+P\+T\+O\+\_\+ex\+\_\+data\+\_\+new\+\_\+class}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+ex\+\_\+data\+\_\+new\+\_\+class(void)}{CRYPTO_ex_data_new_class(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+ex\+\_\+data\+\_\+new\+\_\+class (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a01ab6808c4e4ef1e5a879228f722a787}{}\label{crypto_8h_a01ab6808c4e4ef1e5a879228f722a787}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+free@{C\+R\+Y\+P\+T\+O\+\_\+free}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+free@{C\+R\+Y\+P\+T\+O\+\_\+free}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+free(void $\ast$ptr)}{CRYPTO_free(void *ptr)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a1fa85649a422200760f1ba509c014141}{}\label{crypto_8h_a1fa85649a422200760f1ba509c014141}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+free\+\_\+ex\+\_\+data@{C\+R\+Y\+P\+T\+O\+\_\+free\+\_\+ex\+\_\+data}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+free\+\_\+ex\+\_\+data@{C\+R\+Y\+P\+T\+O\+\_\+free\+\_\+ex\+\_\+data}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+free\+\_\+ex\+\_\+data(int class\+\_\+index, void $\ast$obj, C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A $\ast$ad)}{CRYPTO_free_ex_data(int class_index, void *obj, CRYPTO_EX_DATA *ad)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+free\+\_\+ex\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{int}]{class\+\_\+index, }
+\item[{void $\ast$}]{obj, }
+\item[{{\bf C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} $\ast$}]{ad}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a0ab5fa7e84dfdcb691f88aac8ddefd22}{}\label{crypto_8h_a0ab5fa7e84dfdcb691f88aac8ddefd22}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+free\+\_\+locked@{C\+R\+Y\+P\+T\+O\+\_\+free\+\_\+locked}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+free\+\_\+locked@{C\+R\+Y\+P\+T\+O\+\_\+free\+\_\+locked}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+free\+\_\+locked(void $\ast$ptr)}{CRYPTO_free_locked(void *ptr)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+free\+\_\+locked (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a9517d1d12d65fe6219dbebd55fb43bda}{}\label{crypto_8h_a9517d1d12d65fe6219dbebd55fb43bda}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+value@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+value}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+value@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+value}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+value(int i)}{CRYPTO_get_dynlock_value(int i)}}]{\setlength{\rightskip}{0pt plus 5cm}struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value$\ast$ C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a0df5a76ce78a9b7a3be5e8e112596331}{}\label{crypto_8h_a0df5a76ce78a9b7a3be5e8e112596331}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+data@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+data}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+data@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+data}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+data(const C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A $\ast$ad, int idx)}{CRYPTO_get_ex_data(const CRYPTO_EX_DATA *ad, int idx)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} $\ast$}]{ad, }
+\item[{int}]{idx}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_aff745d0f3e0974080b714f853d0edb11}{}\label{crypto_8h_aff745d0f3e0974080b714f853d0edb11}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+data\+\_\+implementation@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+data\+\_\+implementation}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+data\+\_\+implementation@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+data\+\_\+implementation}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+data\+\_\+implementation(void)}{CRYPTO_get_ex_data_implementation(void)}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+I\+M\+PL}$\ast$ C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+data\+\_\+implementation (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a09b54db94c5c21c1b42cff859322dfa0}{}\label{crypto_8h_a09b54db94c5c21c1b42cff859322dfa0}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+new\+\_\+index@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+new\+\_\+index}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+new\+\_\+index@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+new\+\_\+index}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+new\+\_\+index(int class\+\_\+index, long argl, void $\ast$argp, C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+new $\ast$new\+\_\+func, C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+dup $\ast$dup\+\_\+func, C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+free $\ast$free\+\_\+func)}{CRYPTO_get_ex_new_index(int class_index, long argl, void *argp, CRYPTO_EX_new *new_func, CRYPTO_EX_dup *dup_func, CRYPTO_EX_free *free_func)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+ex\+\_\+new\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{int}]{class\+\_\+index, }
+\item[{long}]{argl, }
+\item[{void $\ast$}]{argp, }
+\item[{{\bf C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+new} $\ast$}]{new\+\_\+func, }
+\item[{{\bf C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+dup} $\ast$}]{dup\+\_\+func, }
+\item[{{\bf C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+free} $\ast$}]{free\+\_\+func}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a0e9be769c8df778a93b2650b4c09f9e9}{}\label{crypto_8h_a0e9be769c8df778a93b2650b4c09f9e9}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+lock\+\_\+name@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+lock\+\_\+name}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+lock\+\_\+name@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+lock\+\_\+name}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+lock\+\_\+name(int type)}{CRYPTO_get_lock_name(int type)}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+lock\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_acbec31a58846b45e6096156dc496a07e}{}\label{crypto_8h_acbec31a58846b45e6096156dc496a07e}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locked\+\_\+mem\+\_\+ex\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locked\+\_\+mem\+\_\+ex\+\_\+functions}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locked\+\_\+mem\+\_\+ex\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locked\+\_\+mem\+\_\+ex\+\_\+functions}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locked\+\_\+mem\+\_\+ex\+\_\+functions(void $\ast$($\ast$$\ast$m)(size\+\_\+t, const char $\ast$, int), void($\ast$$\ast$f)(void $\ast$))}{CRYPTO_get_locked_mem_ex_functions(void *(**m)(size_t, const char *, int), void(**f)(void *))}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locked\+\_\+mem\+\_\+ex\+\_\+functions (
+\begin{DoxyParamCaption}
+\item[{void $\ast$($\ast$$\ast$)(size\+\_\+t, const char $\ast$, int)}]{m, }
+\item[{void($\ast$$\ast$)(void $\ast$)}]{f}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a444fb6573fbfa3f04cd8587434911e7a}{}\label{crypto_8h_a444fb6573fbfa3f04cd8587434911e7a}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locked\+\_\+mem\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locked\+\_\+mem\+\_\+functions}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locked\+\_\+mem\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locked\+\_\+mem\+\_\+functions}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locked\+\_\+mem\+\_\+functions(void $\ast$($\ast$$\ast$m)(size\+\_\+t), void($\ast$$\ast$f)(void $\ast$))}{CRYPTO_get_locked_mem_functions(void *(**m)(size_t), void(**f)(void *))}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locked\+\_\+mem\+\_\+functions (
+\begin{DoxyParamCaption}
+\item[{void $\ast$($\ast$$\ast$)(size\+\_\+t)}]{m, }
+\item[{void($\ast$$\ast$)(void $\ast$)}]{f}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a7eaa7f2152055354e80f7f264d813a5c}{}\label{crypto_8h_a7eaa7f2152055354e80f7f264d813a5c}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+debug\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+debug\+\_\+functions}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+debug\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+debug\+\_\+functions}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+debug\+\_\+functions(void($\ast$$\ast$m)(void $\ast$, int, const char $\ast$, int, int), void($\ast$$\ast$r)(void $\ast$, void $\ast$, int, const char $\ast$, int, int), void($\ast$$\ast$f)(void $\ast$, int), void($\ast$$\ast$so)(long), long($\ast$$\ast$go)(void))}{CRYPTO_get_mem_debug_functions(void(**m)(void *, int, const char *, int, int), void(**r)(void *, void *, int, const char *, int, int), void(**f)(void *, int), void(**so)(long), long(**go)(void))}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+debug\+\_\+functions (
+\begin{DoxyParamCaption}
+\item[{void($\ast$$\ast$)(void $\ast$, int, const char $\ast$, int, int)}]{m, }
+\item[{void($\ast$$\ast$)(void $\ast$, void $\ast$, int, const char $\ast$, int, int)}]{r, }
+\item[{void($\ast$$\ast$)(void $\ast$, int)}]{f, }
+\item[{void($\ast$$\ast$)(long)}]{so, }
+\item[{long($\ast$$\ast$)(void)}]{go}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a64a15317ac03a55ff78698c14a234da9}{}\label{crypto_8h_a64a15317ac03a55ff78698c14a234da9}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+debug\+\_\+options@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+debug\+\_\+options}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+debug\+\_\+options@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+debug\+\_\+options}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+debug\+\_\+options(void)}{CRYPTO_get_mem_debug_options(void)}}]{\setlength{\rightskip}{0pt plus 5cm}long C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+debug\+\_\+options (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_aadcc3cd5894aeeb73802422db6817b89}{}\label{crypto_8h_aadcc3cd5894aeeb73802422db6817b89}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+ex\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+ex\+\_\+functions}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+ex\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+ex\+\_\+functions}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+ex\+\_\+functions(void $\ast$($\ast$$\ast$m)(size\+\_\+t, const char $\ast$, int), void $\ast$($\ast$$\ast$r)(void $\ast$, size\+\_\+t, const char $\ast$, int), void($\ast$$\ast$f)(void $\ast$))}{CRYPTO_get_mem_ex_functions(void *(**m)(size_t, const char *, int), void *(**r)(void *, size_t, const char *, int), void(**f)(void *))}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+ex\+\_\+functions (
+\begin{DoxyParamCaption}
+\item[{void $\ast$($\ast$$\ast$)(size\+\_\+t, const char $\ast$, int)}]{m, }
+\item[{void $\ast$($\ast$$\ast$)(void $\ast$, size\+\_\+t, const char $\ast$, int)}]{r, }
+\item[{void($\ast$$\ast$)(void $\ast$)}]{f}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_af25566d9be72ec46f86a5acdfb55043f}{}\label{crypto_8h_af25566d9be72ec46f86a5acdfb55043f}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+functions}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+functions}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+functions(void $\ast$($\ast$$\ast$m)(size\+\_\+t), void $\ast$($\ast$$\ast$r)(void $\ast$, size\+\_\+t), void($\ast$$\ast$f)(void $\ast$))}{CRYPTO_get_mem_functions(void *(**m)(size_t), void *(**r)(void *, size_t), void(**f)(void *))}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+mem\+\_\+functions (
+\begin{DoxyParamCaption}
+\item[{void $\ast$($\ast$$\ast$)(size\+\_\+t)}]{m, }
+\item[{void $\ast$($\ast$$\ast$)(void $\ast$, size\+\_\+t)}]{r, }
+\item[{void($\ast$$\ast$)(void $\ast$)}]{f}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_afe107fe5c011a3105ed5dc5aebf9f65a}{}\label{crypto_8h_afe107fe5c011a3105ed5dc5aebf9f65a}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+new\+\_\+dynlockid@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+new\+\_\+dynlockid}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+new\+\_\+dynlockid@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+new\+\_\+dynlockid}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+new\+\_\+dynlockid(void)}{CRYPTO_get_new_dynlockid(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+new\+\_\+dynlockid (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a5db9bb57e8e9514ca2e7773f865ef227}{}\label{crypto_8h_a5db9bb57e8e9514ca2e7773f865ef227}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+new\+\_\+lockid@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+new\+\_\+lockid}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+new\+\_\+lockid@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+new\+\_\+lockid}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+new\+\_\+lockid(char $\ast$name)}{CRYPTO_get_new_lockid(char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+new\+\_\+lockid (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a6a6896a38529165a8e3f09f2b9735423}{}\label{crypto_8h_a6a6896a38529165a8e3f09f2b9735423}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+is\+\_\+mem\+\_\+check\+\_\+on@{C\+R\+Y\+P\+T\+O\+\_\+is\+\_\+mem\+\_\+check\+\_\+on}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+is\+\_\+mem\+\_\+check\+\_\+on@{C\+R\+Y\+P\+T\+O\+\_\+is\+\_\+mem\+\_\+check\+\_\+on}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+is\+\_\+mem\+\_\+check\+\_\+on(void)}{CRYPTO_is_mem_check_on(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+is\+\_\+mem\+\_\+check\+\_\+on (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a8e7b75981670ea82982c3366b498f5ba}{}\label{crypto_8h_a8e7b75981670ea82982c3366b498f5ba}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+lock@{C\+R\+Y\+P\+T\+O\+\_\+lock}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+lock@{C\+R\+Y\+P\+T\+O\+\_\+lock}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+lock(int mode, int type, const char $\ast$file, int line)}{CRYPTO_lock(int mode, int type, const char *file, int line)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+lock (
+\begin{DoxyParamCaption}
+\item[{int}]{mode, }
+\item[{int}]{type, }
+\item[{const char $\ast$}]{file, }
+\item[{int}]{line}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a7f72294d0a4c19ce0e75c282be8ef0ec}{}\label{crypto_8h_a7f72294d0a4c19ce0e75c282be8ef0ec}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+malloc@{C\+R\+Y\+P\+T\+O\+\_\+malloc}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+malloc@{C\+R\+Y\+P\+T\+O\+\_\+malloc}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+malloc(int num, const char $\ast$file, int line)}{CRYPTO_malloc(int num, const char *file, int line)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ C\+R\+Y\+P\+T\+O\+\_\+malloc (
+\begin{DoxyParamCaption}
+\item[{int}]{num, }
+\item[{const char $\ast$}]{file, }
+\item[{int}]{line}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a5ef38f58893710818de363485ce1df66}{}\label{crypto_8h_a5ef38f58893710818de363485ce1df66}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+locked@{C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+locked}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+locked@{C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+locked}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+locked(int num, const char $\ast$file, int line)}{CRYPTO_malloc_locked(int num, const char *file, int line)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ C\+R\+Y\+P\+T\+O\+\_\+malloc\+\_\+locked (
+\begin{DoxyParamCaption}
+\item[{int}]{num, }
+\item[{const char $\ast$}]{file, }
+\item[{int}]{line}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a58320467ddd2b5ed178eeefc8d975622}{}\label{crypto_8h_a58320467ddd2b5ed178eeefc8d975622}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+ctrl@{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+ctrl}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+ctrl@{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+ctrl}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+ctrl(int mode)}{CRYPTO_mem_ctrl(int mode)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+ctrl (
+\begin{DoxyParamCaption}
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a16e9f6f6bcd6717c96415e1a9d1bb904}{}\label{crypto_8h_a16e9f6f6bcd6717c96415e1a9d1bb904}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks@{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks@{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks(struct bio\+\_\+st $\ast$bio)}{CRYPTO_mem_leaks(struct bio_st *bio)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks (
+\begin{DoxyParamCaption}
+\item[{struct {\bf bio\+\_\+st} $\ast$}]{bio}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a7eec72230eccd6846270ed004e1dd814}{}\label{crypto_8h_a7eec72230eccd6846270ed004e1dd814}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks\+\_\+cb@{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks\+\_\+cb}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks\+\_\+cb@{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks\+\_\+cb}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks\+\_\+cb(\+C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+L\+E\+A\+K\+\_\+\+C\+B $\ast$cb)}{CRYPTO_mem_leaks_cb(CRYPTO_MEM_LEAK_CB *cb)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks\+\_\+cb (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+R\+Y\+P\+T\+O\+\_\+\+M\+E\+M\+\_\+\+L\+E\+A\+K\+\_\+\+CB} $\ast$}]{cb}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a5aac1be65c31d9a57e010d47d4d96fd2}{}\label{crypto_8h_a5aac1be65c31d9a57e010d47d4d96fd2}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks\+\_\+fp@{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks\+\_\+fp}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks\+\_\+fp@{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks\+\_\+fp}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks\+\_\+fp(\+F\+I\+L\+E $\ast$)}{CRYPTO_mem_leaks_fp(FILE *)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+mem\+\_\+leaks\+\_\+fp (
+\begin{DoxyParamCaption}
+\item[{F\+I\+LE $\ast$}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_abb29b778542ca9fd2c713aaa54b53362}{}\label{crypto_8h_abb29b778542ca9fd2c713aaa54b53362}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+memcmp@{C\+R\+Y\+P\+T\+O\+\_\+memcmp}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+memcmp@{C\+R\+Y\+P\+T\+O\+\_\+memcmp}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+memcmp(const void $\ast$a, const void $\ast$b, size\+\_\+t len)}{CRYPTO_memcmp(const void *a, const void *b, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+memcmp (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{a, }
+\item[{const void $\ast$}]{b, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a8cd9e185d80de8a50392bdf0f0eb502d}{}\label{crypto_8h_a8cd9e185d80de8a50392bdf0f0eb502d}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+new\+\_\+ex\+\_\+data@{C\+R\+Y\+P\+T\+O\+\_\+new\+\_\+ex\+\_\+data}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+new\+\_\+ex\+\_\+data@{C\+R\+Y\+P\+T\+O\+\_\+new\+\_\+ex\+\_\+data}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+new\+\_\+ex\+\_\+data(int class\+\_\+index, void $\ast$obj, C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A $\ast$ad)}{CRYPTO_new_ex_data(int class_index, void *obj, CRYPTO_EX_DATA *ad)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+new\+\_\+ex\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{int}]{class\+\_\+index, }
+\item[{void $\ast$}]{obj, }
+\item[{{\bf C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} $\ast$}]{ad}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a2be01d9b6b916d48a8a1be08af6bad3c}{}\label{crypto_8h_a2be01d9b6b916d48a8a1be08af6bad3c}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+num\+\_\+locks@{C\+R\+Y\+P\+T\+O\+\_\+num\+\_\+locks}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+num\+\_\+locks@{C\+R\+Y\+P\+T\+O\+\_\+num\+\_\+locks}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+num\+\_\+locks(void)}{CRYPTO_num_locks(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+num\+\_\+locks (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a73b718c83da28f5fd81dc41268e28f75}{}\label{crypto_8h_a73b718c83da28f5fd81dc41268e28f75}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+pop\+\_\+info@{C\+R\+Y\+P\+T\+O\+\_\+pop\+\_\+info}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+pop\+\_\+info@{C\+R\+Y\+P\+T\+O\+\_\+pop\+\_\+info}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+pop\+\_\+info(void)}{CRYPTO_pop_info(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+pop\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_adba40b25d5050bd40efd0c951284f330}{}\label{crypto_8h_adba40b25d5050bd40efd0c951284f330}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+push\+\_\+info\+\_\+@{C\+R\+Y\+P\+T\+O\+\_\+push\+\_\+info\+\_\+}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+push\+\_\+info\+\_\+@{C\+R\+Y\+P\+T\+O\+\_\+push\+\_\+info\+\_\+}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+push\+\_\+info\+\_\+(const char $\ast$info, const char $\ast$file, int line)}{CRYPTO_push_info_(const char *info, const char *file, int line)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+push\+\_\+info\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{info, }
+\item[{const char $\ast$}]{file, }
+\item[{int}]{line}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_aeee2078b5831fd327c0cd62300ca7ab8}{}\label{crypto_8h_aeee2078b5831fd327c0cd62300ca7ab8}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+realloc@{C\+R\+Y\+P\+T\+O\+\_\+realloc}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+realloc@{C\+R\+Y\+P\+T\+O\+\_\+realloc}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+realloc(void $\ast$addr, int num, const char $\ast$file, int line)}{CRYPTO_realloc(void *addr, int num, const char *file, int line)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ C\+R\+Y\+P\+T\+O\+\_\+realloc (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{addr, }
+\item[{int}]{num, }
+\item[{const char $\ast$}]{file, }
+\item[{int}]{line}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a3107ea051300e8d2652532920f03489c}{}\label{crypto_8h_a3107ea051300e8d2652532920f03489c}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+realloc\+\_\+clean@{C\+R\+Y\+P\+T\+O\+\_\+realloc\+\_\+clean}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+realloc\+\_\+clean@{C\+R\+Y\+P\+T\+O\+\_\+realloc\+\_\+clean}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+realloc\+\_\+clean(void $\ast$addr, int old\+\_\+num, int num, const char $\ast$file, int line)}{CRYPTO_realloc_clean(void *addr, int old_num, int num, const char *file, int line)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ C\+R\+Y\+P\+T\+O\+\_\+realloc\+\_\+clean (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{addr, }
+\item[{int}]{old\+\_\+num, }
+\item[{int}]{num, }
+\item[{const char $\ast$}]{file, }
+\item[{int}]{line}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_ac1d26dee2a9d0cc51c7873ac892dfa56}{}\label{crypto_8h_ac1d26dee2a9d0cc51c7873ac892dfa56}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+remalloc@{C\+R\+Y\+P\+T\+O\+\_\+remalloc}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+remalloc@{C\+R\+Y\+P\+T\+O\+\_\+remalloc}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+remalloc(void $\ast$addr, int num, const char $\ast$file, int line)}{CRYPTO_remalloc(void *addr, int num, const char *file, int line)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ C\+R\+Y\+P\+T\+O\+\_\+remalloc (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{addr, }
+\item[{int}]{num, }
+\item[{const char $\ast$}]{file, }
+\item[{int}]{line}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a11fc0380d6338aaeed65c18a0bfa240b}{}\label{crypto_8h_a11fc0380d6338aaeed65c18a0bfa240b}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+remove\+\_\+all\+\_\+info@{C\+R\+Y\+P\+T\+O\+\_\+remove\+\_\+all\+\_\+info}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+remove\+\_\+all\+\_\+info@{C\+R\+Y\+P\+T\+O\+\_\+remove\+\_\+all\+\_\+info}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+remove\+\_\+all\+\_\+info(void)}{CRYPTO_remove_all_info(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+remove\+\_\+all\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a503f333543546ccf93b4896cb54e00ff}{}\label{crypto_8h_a503f333543546ccf93b4896cb54e00ff}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+add\+\_\+lock\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+add\+\_\+lock\+\_\+callback}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+add\+\_\+lock\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+add\+\_\+lock\+\_\+callback}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+add\+\_\+lock\+\_\+callback(int($\ast$func)(int $\ast$num, int mount, int type, const char $\ast$file, int line))}{CRYPTO_set_add_lock_callback(int(*func)(int *num, int mount, int type, const char *file, int line))}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+add\+\_\+lock\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{int($\ast$)(int $\ast$num, int mount, int {\bf type}, const char $\ast${\bf file}, int line)}]{func}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_aa128ce18040d8679dc65ce2d526d4089}{}\label{crypto_8h_aa128ce18040d8679dc65ce2d526d4089}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+create\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+create\+\_\+callback}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+create\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+create\+\_\+callback}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+create\+\_\+callback(struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value $\ast$($\ast$dyn\+\_\+create\+\_\+function)(const char $\ast$file, int line))}{CRYPTO_set_dynlock_create_callback(struct CRYPTO_dynlock_value *(*dyn_create_function)(const char *file, int line))}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+create\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value $\ast$($\ast$)(const char $\ast${\bf file}, int line)}]{dyn\+\_\+create\+\_\+function}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a27929070a957e988885f8704ac5a5da5}{}\label{crypto_8h_a27929070a957e988885f8704ac5a5da5}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+destroy\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+destroy\+\_\+callback}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+destroy\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+destroy\+\_\+callback}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+destroy\+\_\+callback(void($\ast$dyn\+\_\+destroy\+\_\+function)(struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value $\ast$l, const char $\ast$file, int line))}{CRYPTO_set_dynlock_destroy_callback(void(*dyn_destroy_function)(struct CRYPTO_dynlock_value *l, const char *file, int line))}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+destroy\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)(struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value $\ast$l, const char $\ast${\bf file}, int line)}]{dyn\+\_\+destroy\+\_\+function}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a404fd58eb1fb0bafe4316a9cbf1ea1fa}{}\label{crypto_8h_a404fd58eb1fb0bafe4316a9cbf1ea1fa}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+lock\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+lock\+\_\+callback}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+lock\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+lock\+\_\+callback}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+lock\+\_\+callback(void($\ast$dyn\+\_\+lock\+\_\+function)(int mode, struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value $\ast$l, const char $\ast$file, int line))}{CRYPTO_set_dynlock_lock_callback(void(*dyn_lock_function)(int mode, struct CRYPTO_dynlock_value *l, const char *file, int line))}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+dynlock\+\_\+lock\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)(int mode, struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value $\ast$l, const char $\ast${\bf file}, int line)}]{dyn\+\_\+lock\+\_\+function}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a3d59695685fcbad4f3915a9636c64237}{}\label{crypto_8h_a3d59695685fcbad4f3915a9636c64237}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+ex\+\_\+data@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+ex\+\_\+data}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+ex\+\_\+data@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+ex\+\_\+data}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+ex\+\_\+data(\+C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A $\ast$ad, int idx, void $\ast$val)}{CRYPTO_set_ex_data(CRYPTO_EX_DATA *ad, int idx, void *val)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+ex\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} $\ast$}]{ad, }
+\item[{int}]{idx, }
+\item[{void $\ast$}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_ac4a7d82b83b588b4f8c8e90c0179c600}{}\label{crypto_8h_ac4a7d82b83b588b4f8c8e90c0179c600}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+ex\+\_\+data\+\_\+implementation@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+ex\+\_\+data\+\_\+implementation}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+ex\+\_\+data\+\_\+implementation@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+ex\+\_\+data\+\_\+implementation}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+ex\+\_\+data\+\_\+implementation(const C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+I\+M\+P\+L $\ast$i)}{CRYPTO_set_ex_data_implementation(const CRYPTO_EX_DATA_IMPL *i)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+ex\+\_\+data\+\_\+implementation (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A\+\_\+\+I\+M\+PL} $\ast$}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a58f893879b8d35886dccce88e9ad5361}{}\label{crypto_8h_a58f893879b8d35886dccce88e9ad5361}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+id\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+id\+\_\+callback}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+id\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+id\+\_\+callback}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+id\+\_\+callback(unsigned long($\ast$func)(void))}{CRYPTO_set_id_callback(unsigned long(*func)(void))}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+id\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{unsigned long($\ast$)(void)}]{func}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a0cddd5c7ae6bab589d48b4114c7048f7}{}\label{crypto_8h_a0cddd5c7ae6bab589d48b4114c7048f7}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locked\+\_\+mem\+\_\+ex\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locked\+\_\+mem\+\_\+ex\+\_\+functions}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locked\+\_\+mem\+\_\+ex\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locked\+\_\+mem\+\_\+ex\+\_\+functions}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locked\+\_\+mem\+\_\+ex\+\_\+functions(void $\ast$($\ast$m)(size\+\_\+t, const char $\ast$, int), void($\ast$free\+\_\+func)(void $\ast$))}{CRYPTO_set_locked_mem_ex_functions(void *(*m)(size_t, const char *, int), void(*free_func)(void *))}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locked\+\_\+mem\+\_\+ex\+\_\+functions (
+\begin{DoxyParamCaption}
+\item[{void $\ast$($\ast$)(size\+\_\+t, const char $\ast$, int)}]{m, }
+\item[{void($\ast$)(void $\ast$)}]{free\+\_\+func}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_aec9a75224538c61d14661592e7cb493f}{}\label{crypto_8h_aec9a75224538c61d14661592e7cb493f}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locked\+\_\+mem\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locked\+\_\+mem\+\_\+functions}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locked\+\_\+mem\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locked\+\_\+mem\+\_\+functions}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locked\+\_\+mem\+\_\+functions(void $\ast$($\ast$m)(size\+\_\+t), void($\ast$free\+\_\+func)(void $\ast$))}{CRYPTO_set_locked_mem_functions(void *(*m)(size_t), void(*free_func)(void *))}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locked\+\_\+mem\+\_\+functions (
+\begin{DoxyParamCaption}
+\item[{void $\ast$($\ast$)(size\+\_\+t)}]{m, }
+\item[{void($\ast$)(void $\ast$)}]{free\+\_\+func}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a3763eab5594ab82c09ad983414fcc821}{}\label{crypto_8h_a3763eab5594ab82c09ad983414fcc821}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locking\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locking\+\_\+callback}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locking\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locking\+\_\+callback}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locking\+\_\+callback(void($\ast$func)(int mode, int type, const char $\ast$file, int line))}{CRYPTO_set_locking_callback(void(*func)(int mode, int type, const char *file, int line))}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+locking\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)(int mode, int {\bf type}, const char $\ast${\bf file}, int line)}]{func}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a8bceb26e9e96b974ea53dd790b76f208}{}\label{crypto_8h_a8bceb26e9e96b974ea53dd790b76f208}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+debug\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+debug\+\_\+functions}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+debug\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+debug\+\_\+functions}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+debug\+\_\+functions(void($\ast$m)(void $\ast$, int, const char $\ast$, int, int), void($\ast$r)(void $\ast$, void $\ast$, int, const char $\ast$, int, int), void($\ast$f)(void $\ast$, int), void($\ast$so)(long), long($\ast$go)(void))}{CRYPTO_set_mem_debug_functions(void(*m)(void *, int, const char *, int, int), void(*r)(void *, void *, int, const char *, int, int), void(*f)(void *, int), void(*so)(long), long(*go)(void))}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+debug\+\_\+functions (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)(void $\ast$, int, const char $\ast$, int, int)}]{m, }
+\item[{void($\ast$)(void $\ast$, void $\ast$, int, const char $\ast$, int, int)}]{r, }
+\item[{void($\ast$)(void $\ast$, int)}]{f, }
+\item[{void($\ast$)(long)}]{so, }
+\item[{long($\ast$)(void)}]{go}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a5adaf683521ee3920fd0c444cb615449}{}\label{crypto_8h_a5adaf683521ee3920fd0c444cb615449}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+debug\+\_\+options@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+debug\+\_\+options}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+debug\+\_\+options@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+debug\+\_\+options}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+debug\+\_\+options(long bits)}{CRYPTO_set_mem_debug_options(long bits)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+debug\+\_\+options (
+\begin{DoxyParamCaption}
+\item[{long}]{bits}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a46b1883ef004a43faa3ff26318bb9220}{}\label{crypto_8h_a46b1883ef004a43faa3ff26318bb9220}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+ex\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+ex\+\_\+functions}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+ex\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+ex\+\_\+functions}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+ex\+\_\+functions(void $\ast$($\ast$m)(size\+\_\+t, const char $\ast$, int), void $\ast$($\ast$r)(void $\ast$, size\+\_\+t, const char $\ast$, int), void($\ast$f)(void $\ast$))}{CRYPTO_set_mem_ex_functions(void *(*m)(size_t, const char *, int), void *(*r)(void *, size_t, const char *, int), void(*f)(void *))}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+ex\+\_\+functions (
+\begin{DoxyParamCaption}
+\item[{void $\ast$($\ast$)(size\+\_\+t, const char $\ast$, int)}]{m, }
+\item[{void $\ast$($\ast$)(void $\ast$, size\+\_\+t, const char $\ast$, int)}]{r, }
+\item[{void($\ast$)(void $\ast$)}]{f}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_af593c14036f1e09b7580058c916149af}{}\label{crypto_8h_af593c14036f1e09b7580058c916149af}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+functions}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+functions@{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+functions}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+functions(void $\ast$($\ast$m)(size\+\_\+t), void $\ast$($\ast$r)(void $\ast$, size\+\_\+t), void($\ast$f)(void $\ast$))}{CRYPTO_set_mem_functions(void *(*m)(size_t), void *(*r)(void *, size_t), void(*f)(void *))}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+set\+\_\+mem\+\_\+functions (
+\begin{DoxyParamCaption}
+\item[{void $\ast$($\ast$)(size\+\_\+t)}]{m, }
+\item[{void $\ast$($\ast$)(void $\ast$, size\+\_\+t)}]{r, }
+\item[{void($\ast$)(void $\ast$)}]{f}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a88e4e28a6cec57e8849ea166b48543a2}{}\label{crypto_8h_a88e4e28a6cec57e8849ea166b48543a2}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+strdup@{C\+R\+Y\+P\+T\+O\+\_\+strdup}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+strdup@{C\+R\+Y\+P\+T\+O\+\_\+strdup}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+strdup(const char $\ast$str, const char $\ast$file, int line)}{CRYPTO_strdup(const char *str, const char *file, int line)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ C\+R\+Y\+P\+T\+O\+\_\+strdup (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{const char $\ast$}]{file, }
+\item[{int}]{line}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_ac42fe6fdfc461d44597bfbdb885b9609}{}\label{crypto_8h_ac42fe6fdfc461d44597bfbdb885b9609}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+thread\+\_\+id@{C\+R\+Y\+P\+T\+O\+\_\+thread\+\_\+id}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+thread\+\_\+id@{C\+R\+Y\+P\+T\+O\+\_\+thread\+\_\+id}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+thread\+\_\+id(void)}{CRYPTO_thread_id(void)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long C\+R\+Y\+P\+T\+O\+\_\+thread\+\_\+id (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_ae0a90746c99716c84812001d1a9f4058}{}\label{crypto_8h_ae0a90746c99716c84812001d1a9f4058}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+cmp@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+cmp}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+cmp@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+cmp}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+cmp(const C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D $\ast$a, const C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D $\ast$b)}{CRYPTO_THREADID_cmp(const CRYPTO_THREADID *a, const CRYPTO_THREADID *b)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+cmp (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$}]{a, }
+\item[{const {\bf C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a4e5f3711f7fd547b874b783fd140f992}{}\label{crypto_8h_a4e5f3711f7fd547b874b783fd140f992}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+cpy@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+cpy}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+cpy@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+cpy}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+cpy(\+C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D $\ast$dest, const C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D $\ast$src)}{CRYPTO_THREADID_cpy(CRYPTO_THREADID *dest, const CRYPTO_THREADID *src)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+cpy (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$}]{dest, }
+\item[{const {\bf C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$}]{src}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_ab0b09e8a88cefb347b972484a8123e2c}{}\label{crypto_8h_ab0b09e8a88cefb347b972484a8123e2c}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+current@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+current}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+current@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+current}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+current(\+C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D $\ast$id)}{CRYPTO_THREADID_current(CRYPTO_THREADID *id)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+current (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a5cb534419a491eefc612468062f83926}{}\label{crypto_8h_a5cb534419a491eefc612468062f83926}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+hash@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+hash}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+hash@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+hash}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+hash(const C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D $\ast$id)}{CRYPTO_THREADID_hash(const CRYPTO_THREADID *id)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+hash (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_ad379866c0a47f29effc210656af6b109}{}\label{crypto_8h_ad379866c0a47f29effc210656af6b109}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+callback}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+callback}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+callback(void($\ast$threadid\+\_\+func)(\+C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D $\ast$))}{CRYPTO_THREADID_set_callback(void(*threadid_func)(CRYPTO_THREADID *))}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)({\bf C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$)}]{threadid\+\_\+func}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a0d56460e671369c8324fe4dadd468515}{}\label{crypto_8h_a0d56460e671369c8324fe4dadd468515}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+numeric@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+numeric}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+numeric@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+numeric}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+numeric(\+C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D $\ast$id, unsigned long val)}{CRYPTO_THREADID_set_numeric(CRYPTO_THREADID *id, unsigned long val)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+numeric (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$}]{id, }
+\item[{unsigned long}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a454969d2514d1730e5991ae5ac3a1ee9}{}\label{crypto_8h_a454969d2514d1730e5991ae5ac3a1ee9}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+pointer@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+pointer}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+pointer@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+pointer}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+pointer(\+C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D $\ast$id, void $\ast$ptr)}{CRYPTO_THREADID_set_pointer(CRYPTO_THREADID *id, void *ptr)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+set\+\_\+pointer (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$}]{id, }
+\item[{void $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a8dc2cc1fd1cd914e7fa0fdf79f17d953}{}\label{crypto_8h_a8dc2cc1fd1cd914e7fa0fdf79f17d953}
+\index{crypto.\+h@{crypto.\+h}!E\+R\+R\+\_\+load\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+strings@{E\+R\+R\+\_\+load\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+strings}}
+\index{E\+R\+R\+\_\+load\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+strings@{E\+R\+R\+\_\+load\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+strings}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+load\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+strings(void)}{ERR_load_CRYPTO_strings(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void E\+R\+R\+\_\+load\+\_\+\+C\+R\+Y\+P\+T\+O\+\_\+strings (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_acc626fbd21290b0f22a671d2093e8cf3}{}\label{crypto_8h_acc626fbd21290b0f22a671d2093e8cf3}
+\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+cleanse@{O\+P\+E\+N\+S\+S\+L\+\_\+cleanse}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+cleanse@{O\+P\+E\+N\+S\+S\+L\+\_\+cleanse}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+cleanse(void $\ast$ptr, size\+\_\+t len)}{OPENSSL_cleanse(void *ptr, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+P\+E\+N\+S\+S\+L\+\_\+cleanse (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a2aa47e40c63b05d00e9a780592f2a2b8}{}\label{crypto_8h_a2aa47e40c63b05d00e9a780592f2a2b8}
+\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+ia32cap\+\_\+loc@{O\+P\+E\+N\+S\+S\+L\+\_\+ia32cap\+\_\+loc}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+ia32cap\+\_\+loc@{O\+P\+E\+N\+S\+S\+L\+\_\+ia32cap\+\_\+loc}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+ia32cap\+\_\+loc(void)}{OPENSSL_ia32cap_loc(void)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long$\ast$ O\+P\+E\+N\+S\+S\+L\+\_\+ia32cap\+\_\+loc (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a7f74cb3aa355b31a38df80e122609e7c}{}\label{crypto_8h_a7f74cb3aa355b31a38df80e122609e7c}
+\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+init@{O\+P\+E\+N\+S\+S\+L\+\_\+init}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+init@{O\+P\+E\+N\+S\+S\+L\+\_\+init}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+init(void)}{OPENSSL_init(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+P\+E\+N\+S\+S\+L\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_ab210ed1b6d160df38307383564d302cc}{}\label{crypto_8h_ab210ed1b6d160df38307383564d302cc}
+\index{crypto.\+h@{crypto.\+h}!O\+P\+E\+N\+S\+S\+L\+\_\+isservice@{O\+P\+E\+N\+S\+S\+L\+\_\+isservice}}
+\index{O\+P\+E\+N\+S\+S\+L\+\_\+isservice@{O\+P\+E\+N\+S\+S\+L\+\_\+isservice}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{O\+P\+E\+N\+S\+S\+L\+\_\+isservice(void)}{OPENSSL_isservice(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+P\+E\+N\+S\+S\+L\+\_\+isservice (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a2fa6508f1431ecf404b9ffe992c92de1}{}\label{crypto_8h_a2fa6508f1431ecf404b9ffe992c92de1}
+\index{crypto.\+h@{crypto.\+h}!Open\+S\+S\+L\+Die@{Open\+S\+S\+L\+Die}}
+\index{Open\+S\+S\+L\+Die@{Open\+S\+S\+L\+Die}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{Open\+S\+S\+L\+Die(const char $\ast$file, int line, const char $\ast$assertion)}{OpenSSLDie(const char *file, int line, const char *assertion)}}]{\setlength{\rightskip}{0pt plus 5cm}void Open\+S\+S\+L\+Die (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file, }
+\item[{int}]{line, }
+\item[{const char $\ast$}]{assertion}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a26714429c0c616a2070897e4cc38052d}{}\label{crypto_8h_a26714429c0c616a2070897e4cc38052d}
+\index{crypto.\+h@{crypto.\+h}!S\+S\+Leay@{S\+S\+Leay}}
+\index{S\+S\+Leay@{S\+S\+Leay}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{S\+S\+Leay(void)}{SSLeay(void)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long S\+S\+Leay (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a7296273f2824612e9451bf6e4fa300d9}{}\label{crypto_8h_a7296273f2824612e9451bf6e4fa300d9}
+\index{crypto.\+h@{crypto.\+h}!S\+S\+Leay\+\_\+version@{S\+S\+Leay\+\_\+version}}
+\index{S\+S\+Leay\+\_\+version@{S\+S\+Leay\+\_\+version}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{S\+S\+Leay\+\_\+version(int type)}{SSLeay_version(int type)}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ S\+S\+Leay\+\_\+version (
+\begin{DoxyParamCaption}
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{crypto_8h_a61a4f24cdcce8f120892dfc013d76217}{}\label{crypto_8h_a61a4f24cdcce8f120892dfc013d76217}
+
+
+\subsection{Variable Documentation}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+add\+\_\+lock\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+add\+\_\+lock\+\_\+callback}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+add\+\_\+lock\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+add\+\_\+lock\+\_\+callback}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+add\+\_\+lock\+\_\+callback}{CRYPTO_get_add_lock_callback}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$)(int $\ast$num, int mount, int {\bf type}, const char $\ast${\bf file}, int line) C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+add\+\_\+lock\+\_\+callback(void)}\hypertarget{crypto_8h_af3df8c5f95e1b4f75c9bbd4016a79871}{}\label{crypto_8h_af3df8c5f95e1b4f75c9bbd4016a79871}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+create\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+create\+\_\+callback}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+create\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+create\+\_\+callback}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+create\+\_\+callback}{CRYPTO_get_dynlock_create_callback}}]{\setlength{\rightskip}{0pt plus 5cm}struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value$\ast$($\ast$)(const char $\ast${\bf file}, int line) C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+create\+\_\+callback(void)}\hypertarget{crypto_8h_aa1fd8d0c3c302b7b753cfb92de93f782}{}\label{crypto_8h_aa1fd8d0c3c302b7b753cfb92de93f782}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+destroy\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+destroy\+\_\+callback}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+destroy\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+destroy\+\_\+callback}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+destroy\+\_\+callback}{CRYPTO_get_dynlock_destroy_callback}}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$)(struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value $\ast$l, const char $\ast${\bf file}, int line) C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+destroy\+\_\+callback(void)}\hypertarget{crypto_8h_abb9bf829e57745794eaf68aed4bf2181}{}\label{crypto_8h_abb9bf829e57745794eaf68aed4bf2181}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+lock\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+lock\+\_\+callback}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+lock\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+lock\+\_\+callback}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+lock\+\_\+callback}{CRYPTO_get_dynlock_lock_callback}}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$)(int mode, struct C\+R\+Y\+P\+T\+O\+\_\+dynlock\+\_\+value $\ast$l, const char $\ast${\bf file}, int line) C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+dynlock\+\_\+lock\+\_\+callback(void)}\hypertarget{crypto_8h_a33829e68feec94e5fb98a7161d13b0fa}{}\label{crypto_8h_a33829e68feec94e5fb98a7161d13b0fa}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+id\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+id\+\_\+callback}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+id\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+id\+\_\+callback}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+id\+\_\+callback}{CRYPTO_get_id_callback}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long($\ast$)(void) C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+id\+\_\+callback(void)}\hypertarget{crypto_8h_a9af40289da7d95cec5889396e03a9430}{}\label{crypto_8h_a9af40289da7d95cec5889396e03a9430}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locking\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locking\+\_\+callback}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locking\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locking\+\_\+callback}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locking\+\_\+callback}{CRYPTO_get_locking_callback}}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$)(int mode, int {\bf type}, const char $\ast${\bf file}, int line) C\+R\+Y\+P\+T\+O\+\_\+get\+\_\+locking\+\_\+callback(void)}\hypertarget{crypto_8h_a6fcb71da80fdde326504940c2abb1971}{}\label{crypto_8h_a6fcb71da80fdde326504940c2abb1971}
+\index{crypto.\+h@{crypto.\+h}!C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+get\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+get\+\_\+callback}}
+\index{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+get\+\_\+callback@{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+get\+\_\+callback}!crypto.\+h@{crypto.\+h}}
+\subsubsection[{\texorpdfstring{C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+get\+\_\+callback}{CRYPTO_THREADID_get_callback}}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$)({\bf C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+ID} $\ast$) C\+R\+Y\+P\+T\+O\+\_\+\+T\+H\+R\+E\+A\+D\+I\+D\+\_\+get\+\_\+callback(void)}\hypertarget{crypto_8h_a20c0a7e0c023cc1e1c150085cb9b4218}{}\label{crypto_8h_a20c0a7e0c023cc1e1c150085cb9b4218}

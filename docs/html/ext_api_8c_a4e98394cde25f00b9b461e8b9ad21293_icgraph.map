@@ -1,0 +1,6 @@
+<map id="_sendMessage_socketOrSharedMem" name="_sendMessage_socketOrSharedMem">
+<area shape="rect" id="node2" href="$ext_api_8c.html#a59c9b2c70208a3484ea718c8a57773af" title="_communicationThread" alt="" coords="293,31,451,57"/>
+<area shape="rect" id="node3" href="$ext_api_8h.html#af8e78f3b4698eb09fe31f59c46a4848f" title="simxStart" alt="" coords="499,31,577,57"/>
+<area shape="rect" id="node4" href="$ext_api_8h.html#a0e7431db44935b74cf49ac5aa3edb6ec" title="mtlb_simxCallScriptFunction_b" alt="" coords="625,5,828,32"/>
+<area shape="rect" id="node5" href="$class_vrephal.html#ad9377410a966919d65911ed9dac227b7" title="Vrephal::Vrephal" alt="" coords="667,56,786,83"/>
+</map>

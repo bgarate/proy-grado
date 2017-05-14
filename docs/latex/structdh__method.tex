@@ -1,0 +1,62 @@
+\hypertarget{structdh__method}{}\section{dh\+\_\+method Struct Reference}
+\label{structdh__method}\index{dh\+\_\+method@{dh\+\_\+method}}
+
+
+{\ttfamily \#include $<$dh.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{structdh__method_a87f4af9c60229836248385adca5caa21}{name}
+\item 
+int($\ast$ \hyperlink{structdh__method_aa044fbb69099292fac13ab075afbe8cd}{generate\+\_\+key} )(\hyperlink{ossl__typ_8h_a5a5072cfe75a51d0ff201c0a8d2d68b2}{DH} $\ast$dh)
+\item 
+int($\ast$ \hyperlink{structdh__method_a1377905955b360c0113cc24643110c28}{compute\+\_\+key} )(unsigned char $\ast$key, const \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$pub\+\_\+key, \hyperlink{ossl__typ_8h_a5a5072cfe75a51d0ff201c0a8d2d68b2}{DH} $\ast$dh)
+\item 
+int($\ast$ \hyperlink{structdh__method_af5261585e1ca4edaa2edd70a77f72274}{bn\+\_\+mod\+\_\+exp} )(const \hyperlink{ossl__typ_8h_a5a5072cfe75a51d0ff201c0a8d2d68b2}{DH} $\ast$dh, \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$r, const \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$a, const \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$p, const \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$m, \hyperlink{ossl__typ_8h_a0b235a35b7dd7922c097571ecd90e2bc}{B\+N\+\_\+\+C\+TX} $\ast$ctx, \hyperlink{ossl__typ_8h_aec902d353e00ced6d3fee6cd033a8bd0}{B\+N\+\_\+\+M\+O\+N\+T\+\_\+\+C\+TX} $\ast$m\+\_\+ctx)
+\item 
+int($\ast$ \hyperlink{structdh__method_a672b716394908a7d67984290a41015c9}{init} )(\hyperlink{ossl__typ_8h_a5a5072cfe75a51d0ff201c0a8d2d68b2}{DH} $\ast$dh)
+\item 
+int($\ast$ \hyperlink{structdh__method_adc4990f1d4887b7a495fa452d7ebfcf2}{finish} )(\hyperlink{ossl__typ_8h_a5a5072cfe75a51d0ff201c0a8d2d68b2}{DH} $\ast$dh)
+\item 
+int \hyperlink{structdh__method_ab1ae3816d0648ee6d7345087df0fa61c}{flags}
+\item 
+char $\ast$ \hyperlink{structdh__method_a01cec981a5f6dd3386a24f083cf9812d}{app\+\_\+data}
+\item 
+int($\ast$ \hyperlink{structdh__method_ae2c9fce365f3381757c58f0e00441453}{generate\+\_\+params} )(\hyperlink{ossl__typ_8h_a5a5072cfe75a51d0ff201c0a8d2d68b2}{DH} $\ast$dh, int prime\+\_\+len, int generator, \hyperlink{ossl__typ_8h_ae122a8be18f4fe821e5389381ececa09}{B\+N\+\_\+\+G\+E\+N\+CB} $\ast$\hyperlink{pem_8h_a92c578a1a1d2733de8cf205957a962fc}{cb})
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{dh\+\_\+method@{dh\+\_\+method}!app\+\_\+data@{app\+\_\+data}}
+\index{app\+\_\+data@{app\+\_\+data}!dh\+\_\+method@{dh\+\_\+method}}
+\subsubsection[{\texorpdfstring{app\+\_\+data}{app_data}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ dh\+\_\+method\+::app\+\_\+data}\hypertarget{structdh__method_a01cec981a5f6dd3386a24f083cf9812d}{}\label{structdh__method_a01cec981a5f6dd3386a24f083cf9812d}
+\index{dh\+\_\+method@{dh\+\_\+method}!bn\+\_\+mod\+\_\+exp@{bn\+\_\+mod\+\_\+exp}}
+\index{bn\+\_\+mod\+\_\+exp@{bn\+\_\+mod\+\_\+exp}!dh\+\_\+method@{dh\+\_\+method}}
+\subsubsection[{\texorpdfstring{bn\+\_\+mod\+\_\+exp}{bn_mod_exp}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ dh\+\_\+method\+::bn\+\_\+mod\+\_\+exp) (const {\bf DH} $\ast$dh, {\bf B\+I\+G\+N\+UM} $\ast$r, const {\bf B\+I\+G\+N\+UM} $\ast$a, const {\bf B\+I\+G\+N\+UM} $\ast$p, const {\bf B\+I\+G\+N\+UM} $\ast$m, {\bf B\+N\+\_\+\+C\+TX} $\ast$ctx, {\bf B\+N\+\_\+\+M\+O\+N\+T\+\_\+\+C\+TX} $\ast$m\+\_\+ctx)}\hypertarget{structdh__method_af5261585e1ca4edaa2edd70a77f72274}{}\label{structdh__method_af5261585e1ca4edaa2edd70a77f72274}
+\index{dh\+\_\+method@{dh\+\_\+method}!compute\+\_\+key@{compute\+\_\+key}}
+\index{compute\+\_\+key@{compute\+\_\+key}!dh\+\_\+method@{dh\+\_\+method}}
+\subsubsection[{\texorpdfstring{compute\+\_\+key}{compute_key}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ dh\+\_\+method\+::compute\+\_\+key) (unsigned char $\ast$key, const {\bf B\+I\+G\+N\+UM} $\ast$pub\+\_\+key, {\bf DH} $\ast$dh)}\hypertarget{structdh__method_a1377905955b360c0113cc24643110c28}{}\label{structdh__method_a1377905955b360c0113cc24643110c28}
+\index{dh\+\_\+method@{dh\+\_\+method}!finish@{finish}}
+\index{finish@{finish}!dh\+\_\+method@{dh\+\_\+method}}
+\subsubsection[{\texorpdfstring{finish}{finish}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ dh\+\_\+method\+::finish) ({\bf DH} $\ast$dh)}\hypertarget{structdh__method_adc4990f1d4887b7a495fa452d7ebfcf2}{}\label{structdh__method_adc4990f1d4887b7a495fa452d7ebfcf2}
+\index{dh\+\_\+method@{dh\+\_\+method}!flags@{flags}}
+\index{flags@{flags}!dh\+\_\+method@{dh\+\_\+method}}
+\subsubsection[{\texorpdfstring{flags}{flags}}]{\setlength{\rightskip}{0pt plus 5cm}int dh\+\_\+method\+::flags}\hypertarget{structdh__method_ab1ae3816d0648ee6d7345087df0fa61c}{}\label{structdh__method_ab1ae3816d0648ee6d7345087df0fa61c}
+\index{dh\+\_\+method@{dh\+\_\+method}!generate\+\_\+key@{generate\+\_\+key}}
+\index{generate\+\_\+key@{generate\+\_\+key}!dh\+\_\+method@{dh\+\_\+method}}
+\subsubsection[{\texorpdfstring{generate\+\_\+key}{generate_key}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ dh\+\_\+method\+::generate\+\_\+key) ({\bf DH} $\ast$dh)}\hypertarget{structdh__method_aa044fbb69099292fac13ab075afbe8cd}{}\label{structdh__method_aa044fbb69099292fac13ab075afbe8cd}
+\index{dh\+\_\+method@{dh\+\_\+method}!generate\+\_\+params@{generate\+\_\+params}}
+\index{generate\+\_\+params@{generate\+\_\+params}!dh\+\_\+method@{dh\+\_\+method}}
+\subsubsection[{\texorpdfstring{generate\+\_\+params}{generate_params}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ dh\+\_\+method\+::generate\+\_\+params) ({\bf DH} $\ast$dh, int prime\+\_\+len, int generator, {\bf B\+N\+\_\+\+G\+E\+N\+CB} $\ast${\bf cb})}\hypertarget{structdh__method_ae2c9fce365f3381757c58f0e00441453}{}\label{structdh__method_ae2c9fce365f3381757c58f0e00441453}
+\index{dh\+\_\+method@{dh\+\_\+method}!init@{init}}
+\index{init@{init}!dh\+\_\+method@{dh\+\_\+method}}
+\subsubsection[{\texorpdfstring{init}{init}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ dh\+\_\+method\+::init) ({\bf DH} $\ast$dh)}\hypertarget{structdh__method_a672b716394908a7d67984290a41015c9}{}\label{structdh__method_a672b716394908a7d67984290a41015c9}
+\index{dh\+\_\+method@{dh\+\_\+method}!name@{name}}
+\index{name@{name}!dh\+\_\+method@{dh\+\_\+method}}
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dh\+\_\+method\+::name}\hypertarget{structdh__method_a87f4af9c60229836248385adca5caa21}{}\label{structdh__method_a87f4af9c60229836248385adca5caa21}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/openssl/\hyperlink{dh_8h}{dh.\+h}\end{DoxyCompactItemize}

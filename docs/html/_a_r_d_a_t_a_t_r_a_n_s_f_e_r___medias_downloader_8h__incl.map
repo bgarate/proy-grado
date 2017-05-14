@@ -1,0 +1,28 @@
+<map id="src/hal/pb2/include/libARDataTransfer/ARDATATRANSFER_MediasDownloader.h" name="src/hal/pb2/include/libARDataTransfer/ARDATATRANSFER_MediasDownloader.h">
+<area shape="rect" id="node2" href="$_a_r_d_i_s_c_o_v_e_r_y___discovery_8h.html" title="libARDiscovery/ARDISCOVERY\l_Discovery.h" alt="" coords="573,363,789,404"/>
+<area shape="rect" id="node4" href="$_a_r_utils_8h.html" title="libARUtils header file. Global include file. " alt="" coords="288,109,431,136"/>
+<area shape="rect" id="node5" href="$_a_r_u_t_i_l_s___error_8h.html" title="libARUtils error header, This file contains all error of ARUTILS " alt="" coords="107,363,249,404"/>
+<area shape="rect" id="node6" href="$_a_r_u_t_i_l_s___manager_8h.html" title="libARUtils Manager header file. " alt="" coords="473,184,616,225"/>
+<area shape="rect" id="node32" href="$_a_r_u_t_i_l_s___ftp_8h.html" title="libARUtils Ftp header file. " alt="" coords="391,273,533,315"/>
+<area shape="rect" id="node34" href="$_a_r_u_t_i_l_s___http_8h.html" title="libARUtils Http header file. " alt="" coords="224,273,367,315"/>
+<area shape="rect" id="node35" href="$_a_r_u_t_i_l_s___file_system_8h.html" title="libARUtils FileSystem header file. " alt="" coords="5,184,148,225"/>
+<area shape="rect" id="node7" href="$_a_r_d_i_s_c_o_v_e_r_y___device_8h.html" title="Discovery Device contains the informations of a device discovered. " alt="" coords="1019,273,1235,315"/>
+<area shape="rect" id="node8" href="$json_8h.html" title="json/json.h" alt="" coords="1873,370,1958,397"/>
+<area shape="rect" id="node17" href="$_a_r_n_e_t_w_o_r_k_a_l___manager_8h.html" title="network manager allow to send over network. " alt="" coords="863,363,1090,404"/>
+<area shape="rect" id="node20" href="$_a_r_n_e_t_w_o_r_k_a_l___error_8h.html" title="libARNetworkAL errors known. " alt="" coords="566,452,793,493"/>
+<area shape="rect" id="node27" href="$_a_r_n_e_t_w_o_r_k___i_o_buffer_param_8h.html" title="prameters used to set the parameters of a new IOBuffer " alt="" coords="1163,452,1358,493"/>
+<area shape="rect" id="node29" href="$_a_r_d_i_s_c_o_v_e_r_y___error_8h.html" title="libARDiscovery/ARDISCOVERY\l_Error.h" alt="" coords="1382,452,1598,493"/>
+<area shape="rect" id="node30" href="$_a_r_d_i_s_c_o_v_e_r_y___connection_8h.html" title="libARDiscovery/ARDISCOVERY\l_Connection.h" alt="" coords="1455,363,1671,404"/>
+<area shape="rect" id="node31" href="$_a_r_d_i_s_c_o_v_e_r_y___network_configuration_8h.html" title="network configuration used to create a network " alt="" coords="1165,363,1381,404"/>
+<area shape="rect" id="node9" href="$bits_8h.html" title="bits.h" alt="" coords="1753,459,1808,486"/>
+<area shape="rect" id="node10" href="$debug_8h.html" title="debug.h" alt="" coords="1832,459,1900,486"/>
+<area shape="rect" id="node11" href="$linkhash_8h.html" title="linkhash.h" alt="" coords="1924,459,2005,486"/>
+<area shape="rect" id="node12" href="$arraylist_8h.html" title="arraylist.h" alt="" coords="2029,459,2108,486"/>
+<area shape="rect" id="node13" href="$json__util_8h.html" title="json_util.h" alt="" coords="2184,459,2265,486"/>
+<area shape="rect" id="node14" href="$json__object_8h.html" title="json_object.h" alt="" coords="2097,549,2195,575"/>
+<area shape="rect" id="node15" href="$json__tokener_8h.html" title="json_tokener.h" alt="" coords="1622,459,1729,486"/>
+<area shape="rect" id="node21" href="$_a_r_n_e_t_w_o_r_k_a_l___frame_8h.html" title="define the network frame protocol " alt="" coords="1062,541,1289,583"/>
+<area shape="rect" id="node22" href="$_a_r_s_a_l___socket_8h.html" title="This file contains headers about socket abstraction layer. " alt="" coords="817,459,1003,486"/>
+<area shape="rect" id="node28" href="$_a_r_n_e_t_w_o_r_k___error_8h.html" title="libARNetwork errors known. " alt="" coords="1313,541,1507,583"/>
+<area shape="rect" id="node33" href="$_a_r_s_a_l___sem_8h.html" title="This file contains headers about semaphore abstraction layer. " alt="" coords="376,370,548,397"/>
+</map>

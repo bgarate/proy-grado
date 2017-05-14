@@ -1,0 +1,32 @@
+<map id="src/hal/pb2/include/libARNetworkAL/ARNETWORKAL_Manager.h" name="src/hal/pb2/include/libARNetworkAL/ARNETWORKAL_Manager.h">
+<area shape="rect" id="node2" href="$_a_r_d_i_s_c_o_v_e_r_y___device_8h.html" title="Discovery Device contains the informations of a device discovered. " alt="" coords="1214,109,1434,165"/>
+<area shape="rect" id="node26" href="$_a_r_n_e_t_w_o_r_k___manager_8h.html" title="network manager allow to send data acknowledged or not. " alt="" coords="1605,109,1803,165"/>
+<area shape="rect" id="node31" href="$_a_r_network_a_l_8h.html" title="Global header for libARNetworkAL. " alt="" coords="1827,117,2050,158"/>
+<area shape="rect" id="node3" href="$_a_r_c_o_n_t_r_o_l_l_e_r___network_8h.html" title="ARCONTROLLER_Network allow to operate an ARNETWORK_Manager for send and receive commands. " alt="" coords="1286,317,1514,373"/>
+<area shape="rect" id="node9" href="$_a_r_c_o_n_t_r_o_l_l_e_r___stream_8h.html" title="ARCONTROLLER_Stream allow to operate ARStream for receive a stream. " alt="" coords="1134,213,1362,269"/>
+<area shape="rect" id="node10" href="$_a_r_c_o_n_t_r_o_l_l_e_r___stream1_8h.html" title="ARCONTROLLER_Stream1 allow to operate ARStream for receive a stream. " alt="" coords="1438,213,1666,269"/>
+<area shape="rect" id="node11" href="$_a_r_discovery_8h.html" title="src/hal/pb2/include\l/libARDiscovery/ARDiscovery.h" alt="" coords="899,221,1109,262"/>
+<area shape="rect" id="node15" href="$_a_r_u_t_i_l_s___manager_8h.html" title="libARUtils Manager header file. " alt="" coords="612,213,759,269"/>
+<area shape="rect" id="node4" href="$_a_r_controller_8h.html" title="Global header for libARController. " alt="" coords="1245,637,1449,678"/>
+<area shape="rect" id="node7" href="$_a_r_c_o_n_t_r_o_l_l_e_r___feature_8h.html" title="Feature controller allow to send command related of a Feature. " alt="" coords="1286,421,1514,477"/>
+<area shape="rect" id="node5" href="$pb2hal_8cpp.html" title="src/hal/pb2/pb2hal.cpp" alt="" coords="1163,748,1317,775"/>
+<area shape="rect" id="node6" href="$pb2haltest_8cpp.html" title="src/hal/pb2/pb2haltest.cpp" alt="" coords="1153,845,1327,871"/>
+<area shape="rect" id="node8" href="$_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html" title="Device controller allow to drive a device. " alt="" coords="1233,525,1461,581"/>
+<area shape="rect" id="node12" href="$_a_r_m_e_d_i_a___video_encapsuler_8h.html" title="src/hal/pb2/include\l/libARMedia/ARMEDIA\l_VideoEncapsuler.h" alt="" coords="929,317,1087,373"/>
+<area shape="rect" id="node13" href="$_a_r_m_e_d_i_a___video_atoms_8h.html" title="src/hal/pb2/include\l/libARMedia/ARMEDIA\l_VideoAtoms.h" alt="" coords="929,421,1087,477"/>
+<area shape="rect" id="node14" href="$_a_r_media_8h.html" title="src/hal/pb2/include\l/libARMedia/ARMedia.h" alt="" coords="927,533,1089,574"/>
+<area shape="rect" id="node16" href="$_a_r_d_a_t_a_t_r_a_n_s_f_e_r___downloader_8h.html" title="libARDataTransfer Downloader header file. " alt="" coords="637,317,904,373"/>
+<area shape="rect" id="node17" href="$_a_r_d_a_t_a_t_r_a_n_s_f_e_r___uploader_8h.html" title="libARDataTransfer Uploader header file. " alt="" coords="467,525,733,581"/>
+<area shape="rect" id="node22" href="$_a_r_utils_8h.html" title="libARUtils header file. Global include file. " alt="" coords="356,325,503,366"/>
+<area shape="rect" id="node18" href="$_a_r_u_p_d_a_t_e_r___manager_8h.html" title="libARUpdater Manager header file. " alt="" coords="364,629,556,685"/>
+<area shape="rect" id="node19" href="$_a_r_updater_8h.html" title="libARUpdater header file. Global include file for ARUpdater_Manager " alt="" coords="368,837,552,879"/>
+<area shape="rect" id="node20" href="$_a_r_u_p_d_a_t_e_r___downloader_8h.html" title="libARUpdater Downloader header file. " alt="" coords="364,733,556,789"/>
+<area shape="rect" id="node21" href="$_a_r_u_p_d_a_t_e_r___uploader_8h.html" title="libARUpdater Uploader header file. " alt="" coords="580,733,772,789"/>
+<area shape="rect" id="node23" href="$_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h.html" title="libARDataTransfer DataDownloader header file.. " alt="" coords="5,421,272,477"/>
+<area shape="rect" id="node25" href="$_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h.html" title="libARDataTransfer MediasDownloader header file. " alt="" coords="296,421,563,477"/>
+<area shape="rect" id="node24" href="$_a_r_data_transfer_8h.html" title="libARDataTransfer header file. Global include file for ARDataTransfer_Manager, ARDataTransfer_DataDow..." alt="" coords="198,533,442,574"/>
+<area shape="rect" id="node27" href="$_a_r_network_8h.html" title="Global header for libARNetwork. " alt="" coords="2147,221,2338,262"/>
+<area shape="rect" id="node28" href="$_a_r_s_t_r_e_a_m___reader_8h.html" title="Stream reader on network. " alt="" coords="1741,213,1920,269"/>
+<area shape="rect" id="node30" href="$_a_r_s_t_r_e_a_m___sender_8h.html" title="Stream sender over network. " alt="" coords="1944,213,2123,269"/>
+<area shape="rect" id="node29" href="$_a_r_stream_8h.html" title="Global header for libARStream. " alt="" coords="1844,325,2020,366"/>
+</map>

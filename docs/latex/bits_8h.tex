@@ -1,0 +1,62 @@
+\hypertarget{bits_8h}{}\section{src/hal/pb2/include/json/bits.h File Reference}
+\label{bits_8h}\index{src/hal/pb2/include/json/bits.\+h@{src/hal/pb2/include/json/bits.\+h}}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bits_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{bits_8h_a3dde282dc23d0eaa3c4840df8dc262d4}{json\+\_\+min}(a,  b)~((a) $<$ (b) ? (a) \+: (b))
+\item 
+\#define \hyperlink{bits_8h_a57d63d199d4b9ea40359253618951300}{json\+\_\+max}(a,  b)~((a) $>$ (b) ? (a) \+: (b))
+\item 
+\#define \hyperlink{bits_8h_a1cf38b22d3a118ad48d9282c32c048aa}{hexdigit}(x)~(((x) $<$= \textquotesingle{}9\textquotesingle{}) ? (x) -\/ \textquotesingle{}0\textquotesingle{} \+: ((x) \& 7) + 9)
+\item 
+\#define \hyperlink{bits_8h_a863a898e607f8c2ff87b7052e326740f}{error\+\_\+ptr}(error)~((void$\ast$)error)
+\item 
+\#define \hyperlink{bits_8h_a4a887e5fb7cde221bcab9c6f39d93fc1}{is\+\_\+error}(ptr)~((unsigned long)ptr $>$ (unsigned long)-\/4000\+L)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{bits.\+h@{bits.\+h}!error\+\_\+ptr@{error\+\_\+ptr}}
+\index{error\+\_\+ptr@{error\+\_\+ptr}!bits.\+h@{bits.\+h}}
+\subsubsection[{\texorpdfstring{error\+\_\+ptr}{error_ptr}}]{\setlength{\rightskip}{0pt plus 5cm}\#define error\+\_\+ptr(
+\begin{DoxyParamCaption}
+\item[{}]{error}
+\end{DoxyParamCaption}
+)~((void$\ast$)error)}\hypertarget{bits_8h_a863a898e607f8c2ff87b7052e326740f}{}\label{bits_8h_a863a898e607f8c2ff87b7052e326740f}
+\index{bits.\+h@{bits.\+h}!hexdigit@{hexdigit}}
+\index{hexdigit@{hexdigit}!bits.\+h@{bits.\+h}}
+\subsubsection[{\texorpdfstring{hexdigit}{hexdigit}}]{\setlength{\rightskip}{0pt plus 5cm}\#define hexdigit(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(((x) $<$= \textquotesingle{}9\textquotesingle{}) ? (x) -\/ \textquotesingle{}0\textquotesingle{} \+: ((x) \& 7) + 9)}\hypertarget{bits_8h_a1cf38b22d3a118ad48d9282c32c048aa}{}\label{bits_8h_a1cf38b22d3a118ad48d9282c32c048aa}
+\index{bits.\+h@{bits.\+h}!is\+\_\+error@{is\+\_\+error}}
+\index{is\+\_\+error@{is\+\_\+error}!bits.\+h@{bits.\+h}}
+\subsubsection[{\texorpdfstring{is\+\_\+error}{is_error}}]{\setlength{\rightskip}{0pt plus 5cm}\#define is\+\_\+error(
+\begin{DoxyParamCaption}
+\item[{}]{ptr}
+\end{DoxyParamCaption}
+)~((unsigned long)ptr $>$ (unsigned long)-\/4000\+L)}\hypertarget{bits_8h_a4a887e5fb7cde221bcab9c6f39d93fc1}{}\label{bits_8h_a4a887e5fb7cde221bcab9c6f39d93fc1}
+\index{bits.\+h@{bits.\+h}!json\+\_\+max@{json\+\_\+max}}
+\index{json\+\_\+max@{json\+\_\+max}!bits.\+h@{bits.\+h}}
+\subsubsection[{\texorpdfstring{json\+\_\+max}{json_max}}]{\setlength{\rightskip}{0pt plus 5cm}\#define json\+\_\+max(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~((a) $>$ (b) ? (a) \+: (b))}\hypertarget{bits_8h_a57d63d199d4b9ea40359253618951300}{}\label{bits_8h_a57d63d199d4b9ea40359253618951300}
+\index{bits.\+h@{bits.\+h}!json\+\_\+min@{json\+\_\+min}}
+\index{json\+\_\+min@{json\+\_\+min}!bits.\+h@{bits.\+h}}
+\subsubsection[{\texorpdfstring{json\+\_\+min}{json_min}}]{\setlength{\rightskip}{0pt plus 5cm}\#define json\+\_\+min(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~((a) $<$ (b) ? (a) \+: (b))}\hypertarget{bits_8h_a3dde282dc23d0eaa3c4840df8dc262d4}{}\label{bits_8h_a3dde282dc23d0eaa3c4840df8dc262d4}

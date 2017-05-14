@@ -1,0 +1,10 @@
+<map id="Ping::type" name="Ping::type">
+<area shape="rect" id="node2" href="$class_body.html#a898135b92fa8abf09d435f671f62cf29" title="Body::loop" alt="" coords="182,5,266,32"/>
+<area shape="rect" id="node4" href="$class_brain.html#a23d921369c5ec1218d7dc26d0f8270c2" title="Brain::loop" alt="" coords="182,56,266,83"/>
+<area shape="rect" id="node5" href="$class_ping.html#a17ce4500b68684b5559d64582f85ac83" title="Ping::SerializeWithCached\lSizes" alt="" coords="135,107,313,149"/>
+<area shape="rect" id="node6" href="$class_ping.html#afaaa02e1530f7932d9dde670d91522a0" title="Ping::InternalSerializeWith\lCachedSizesToArray" alt="" coords="136,173,312,214"/>
+<area shape="rect" id="node7" href="$class_ping.html#aeed77c8be5aa982bcaa8eb4387bf0e41" title="Ping::ByteSizeLong" alt="" coords="155,239,293,265"/>
+<area shape="rect" id="node8" href="$class_ping.html#aaa95c9bed6bcbea48fad8b360bf9ad07" title="Ping::MergeFrom" alt="" coords="163,289,285,316"/>
+<area shape="rect" id="node9" href="$class_ping.html#a36cbd90f664fba2f065c1ef35b03a8b4" title="Ping::GetMetadata" alt="" coords="159,340,289,367"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a523d51f6d06fce5bbed3e074818569fb" title="main" alt="" coords="361,31,412,57"/>
+</map>

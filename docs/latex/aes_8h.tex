@@ -1,0 +1,252 @@
+\hypertarget{aes_8h}{}\section{src/hal/pb2/include/openssl/aes.h File Reference}
+\label{aes_8h}\index{src/hal/pb2/include/openssl/aes.\+h@{src/hal/pb2/include/openssl/aes.\+h}}
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+Include dependency graph for aes.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{aes_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structaes__key__st}{aes\+\_\+key\+\_\+st}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{aes_8h_a91e721bca5c6db6402fc3a4781d69b10}{A\+E\+S\+\_\+\+E\+N\+C\+R\+Y\+PT}~1
+\item 
+\#define \hyperlink{aes_8h_a8a3cf36dc3c8860519f33907bad182c9}{A\+E\+S\+\_\+\+D\+E\+C\+R\+Y\+PT}~0
+\item 
+\#define \hyperlink{aes_8h_ab517fa1010f3c588859797f1b87c4bcd}{A\+E\+S\+\_\+\+M\+A\+X\+NR}~14
+\item 
+\#define \hyperlink{aes_8h_af19ab913a847ad1e91c5291215116de1}{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}~16
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structaes__key__st}{aes\+\_\+key\+\_\+st} \hyperlink{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}{A\+E\+S\+\_\+\+K\+EY}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{aes_8h_ac6c76ba23ba8a1e1376ca3526ce67923}{A\+E\+S\+\_\+options} (void)
+\item 
+int \hyperlink{aes_8h_af2a2a79bf29fae1cc93b4aa43c2b833c}{A\+E\+S\+\_\+set\+\_\+encrypt\+\_\+key} (const unsigned char $\ast$user\+Key, const int \hyperlink{x509v3_8h_ab3c186980893d6836a68407d221ae9c9}{bits}, \hyperlink{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}{A\+E\+S\+\_\+\+K\+EY} $\ast$key)
+\item 
+int \hyperlink{aes_8h_a2091bfbf02d00a2f4ce67085d1a0d0ac}{A\+E\+S\+\_\+set\+\_\+decrypt\+\_\+key} (const unsigned char $\ast$user\+Key, const int \hyperlink{x509v3_8h_ab3c186980893d6836a68407d221ae9c9}{bits}, \hyperlink{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}{A\+E\+S\+\_\+\+K\+EY} $\ast$key)
+\item 
+void \hyperlink{aes_8h_a5e9cae0f27ffa404595a3c9f7ea7eb56}{A\+E\+S\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, const \hyperlink{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}{A\+E\+S\+\_\+\+K\+EY} $\ast$key)
+\item 
+void \hyperlink{aes_8h_ad545fd3f8c468db40a9e1a0e73ba20fc}{A\+E\+S\+\_\+decrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, const \hyperlink{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}{A\+E\+S\+\_\+\+K\+EY} $\ast$key)
+\item 
+void \hyperlink{aes_8h_a9b95c679d720e1c6c0c02b19bd0c46e6}{A\+E\+S\+\_\+ecb\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, const \hyperlink{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}{A\+E\+S\+\_\+\+K\+EY} $\ast$key, const int enc)
+\item 
+void \hyperlink{aes_8h_ab2d1e7f57f124bddd22a4d37fa79c6df}{A\+E\+S\+\_\+cbc\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}{A\+E\+S\+\_\+\+K\+EY} $\ast$key, unsigned char $\ast$ivec, const int enc)
+\item 
+void \hyperlink{aes_8h_afd3484f1568b5bf4fcda4678b703c5f3}{A\+E\+S\+\_\+cfb128\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}{A\+E\+S\+\_\+\+K\+EY} $\ast$key, unsigned char $\ast$ivec, int $\ast$num, const int enc)
+\item 
+void \hyperlink{aes_8h_a49287edcfb7ddac7b11d8f7df107c590}{A\+E\+S\+\_\+cfb1\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}{A\+E\+S\+\_\+\+K\+EY} $\ast$key, unsigned char $\ast$ivec, int $\ast$num, const int enc)
+\item 
+void \hyperlink{aes_8h_a79fca9c7b44868d5585d42bdcb70a569}{A\+E\+S\+\_\+cfb8\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}{A\+E\+S\+\_\+\+K\+EY} $\ast$key, unsigned char $\ast$ivec, int $\ast$num, const int enc)
+\item 
+void \hyperlink{aes_8h_ac8f85a1eb59542c28e35da54a9f6553d}{A\+E\+S\+\_\+ofb128\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}{A\+E\+S\+\_\+\+K\+EY} $\ast$key, unsigned char $\ast$ivec, int $\ast$num)
+\item 
+void \hyperlink{aes_8h_a25e156520d2c7de5421433606cd20d49}{A\+E\+S\+\_\+ctr128\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}{A\+E\+S\+\_\+\+K\+EY} $\ast$key, unsigned char ivec\mbox{[}\hyperlink{aes_8h_af19ab913a847ad1e91c5291215116de1}{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}\mbox{]}, unsigned char ecount\+\_\+buf\mbox{[}\hyperlink{aes_8h_af19ab913a847ad1e91c5291215116de1}{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}\mbox{]}, unsigned int $\ast$num)
+\item 
+void \hyperlink{aes_8h_ac5547c8d334dbbaa9c8a9805246b6d85}{A\+E\+S\+\_\+ige\+\_\+encrypt} (const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t \hyperlink{asn1_8h_a5a2d57a92488e64c730cabc247c9d5b5}{length}, const \hyperlink{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}{A\+E\+S\+\_\+\+K\+EY} $\ast$key, unsigned char $\ast$ivec, const int enc)
+\item 
+int \hyperlink{aes_8h_acfa555c0e26f771041bdb51bb8e5774b}{A\+E\+S\+\_\+wrap\+\_\+key} (\hyperlink{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}{A\+E\+S\+\_\+\+K\+EY} $\ast$key, const unsigned char $\ast$iv, unsigned char $\ast$out, const unsigned char $\ast$in, unsigned int inlen)
+\item 
+int \hyperlink{aes_8h_abf54bdbccc9a52fd9614a10ffcc9121c}{A\+E\+S\+\_\+unwrap\+\_\+key} (\hyperlink{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}{A\+E\+S\+\_\+\+K\+EY} $\ast$key, const unsigned char $\ast$iv, unsigned char $\ast$out, const unsigned char $\ast$in, unsigned int inlen)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE@{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}}
+\index{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE@{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}{AES_BLOCK_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE~16}\hypertarget{aes_8h_af19ab913a847ad1e91c5291215116de1}{}\label{aes_8h_af19ab913a847ad1e91c5291215116de1}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+\+D\+E\+C\+R\+Y\+PT@{A\+E\+S\+\_\+\+D\+E\+C\+R\+Y\+PT}}
+\index{A\+E\+S\+\_\+\+D\+E\+C\+R\+Y\+PT@{A\+E\+S\+\_\+\+D\+E\+C\+R\+Y\+PT}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+\+D\+E\+C\+R\+Y\+PT}{AES_DECRYPT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+E\+S\+\_\+\+D\+E\+C\+R\+Y\+PT~0}\hypertarget{aes_8h_a8a3cf36dc3c8860519f33907bad182c9}{}\label{aes_8h_a8a3cf36dc3c8860519f33907bad182c9}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+\+E\+N\+C\+R\+Y\+PT@{A\+E\+S\+\_\+\+E\+N\+C\+R\+Y\+PT}}
+\index{A\+E\+S\+\_\+\+E\+N\+C\+R\+Y\+PT@{A\+E\+S\+\_\+\+E\+N\+C\+R\+Y\+PT}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+\+E\+N\+C\+R\+Y\+PT}{AES_ENCRYPT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+E\+S\+\_\+\+E\+N\+C\+R\+Y\+PT~1}\hypertarget{aes_8h_a91e721bca5c6db6402fc3a4781d69b10}{}\label{aes_8h_a91e721bca5c6db6402fc3a4781d69b10}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+\+M\+A\+X\+NR@{A\+E\+S\+\_\+\+M\+A\+X\+NR}}
+\index{A\+E\+S\+\_\+\+M\+A\+X\+NR@{A\+E\+S\+\_\+\+M\+A\+X\+NR}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+\+M\+A\+X\+NR}{AES_MAXNR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+E\+S\+\_\+\+M\+A\+X\+NR~14}\hypertarget{aes_8h_ab517fa1010f3c588859797f1b87c4bcd}{}\label{aes_8h_ab517fa1010f3c588859797f1b87c4bcd}
+
+
+\subsection{Typedef Documentation}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+\+K\+EY@{A\+E\+S\+\_\+\+K\+EY}}
+\index{A\+E\+S\+\_\+\+K\+EY@{A\+E\+S\+\_\+\+K\+EY}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+\+K\+EY}{AES_KEY}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf aes\+\_\+key\+\_\+st} {\bf A\+E\+S\+\_\+\+K\+EY}}\hypertarget{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}{}\label{aes_8h_a8f7795796ab08087e20c6d603bf25a8c}
+
+
+\subsection{Function Documentation}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+cbc\+\_\+encrypt@{A\+E\+S\+\_\+cbc\+\_\+encrypt}}
+\index{A\+E\+S\+\_\+cbc\+\_\+encrypt@{A\+E\+S\+\_\+cbc\+\_\+encrypt}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+cbc\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t length, const A\+E\+S\+\_\+\+K\+E\+Y $\ast$key, unsigned char $\ast$ivec, const int enc)}{AES_cbc_encrypt(const unsigned char *in, unsigned char *out, size_t length, const AES_KEY *key, unsigned char *ivec, const int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+\_\+cbc\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{length, }
+\item[{const {\bf A\+E\+S\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{unsigned char $\ast$}]{ivec, }
+\item[{const int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{aes_8h_ab2d1e7f57f124bddd22a4d37fa79c6df}{}\label{aes_8h_ab2d1e7f57f124bddd22a4d37fa79c6df}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+cfb128\+\_\+encrypt@{A\+E\+S\+\_\+cfb128\+\_\+encrypt}}
+\index{A\+E\+S\+\_\+cfb128\+\_\+encrypt@{A\+E\+S\+\_\+cfb128\+\_\+encrypt}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+cfb128\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t length, const A\+E\+S\+\_\+\+K\+E\+Y $\ast$key, unsigned char $\ast$ivec, int $\ast$num, const int enc)}{AES_cfb128_encrypt(const unsigned char *in, unsigned char *out, size_t length, const AES_KEY *key, unsigned char *ivec, int *num, const int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+\_\+cfb128\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{length, }
+\item[{const {\bf A\+E\+S\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{unsigned char $\ast$}]{ivec, }
+\item[{int $\ast$}]{num, }
+\item[{const int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{aes_8h_afd3484f1568b5bf4fcda4678b703c5f3}{}\label{aes_8h_afd3484f1568b5bf4fcda4678b703c5f3}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+cfb1\+\_\+encrypt@{A\+E\+S\+\_\+cfb1\+\_\+encrypt}}
+\index{A\+E\+S\+\_\+cfb1\+\_\+encrypt@{A\+E\+S\+\_\+cfb1\+\_\+encrypt}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+cfb1\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t length, const A\+E\+S\+\_\+\+K\+E\+Y $\ast$key, unsigned char $\ast$ivec, int $\ast$num, const int enc)}{AES_cfb1_encrypt(const unsigned char *in, unsigned char *out, size_t length, const AES_KEY *key, unsigned char *ivec, int *num, const int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+\_\+cfb1\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{length, }
+\item[{const {\bf A\+E\+S\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{unsigned char $\ast$}]{ivec, }
+\item[{int $\ast$}]{num, }
+\item[{const int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{aes_8h_a49287edcfb7ddac7b11d8f7df107c590}{}\label{aes_8h_a49287edcfb7ddac7b11d8f7df107c590}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+cfb8\+\_\+encrypt@{A\+E\+S\+\_\+cfb8\+\_\+encrypt}}
+\index{A\+E\+S\+\_\+cfb8\+\_\+encrypt@{A\+E\+S\+\_\+cfb8\+\_\+encrypt}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+cfb8\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t length, const A\+E\+S\+\_\+\+K\+E\+Y $\ast$key, unsigned char $\ast$ivec, int $\ast$num, const int enc)}{AES_cfb8_encrypt(const unsigned char *in, unsigned char *out, size_t length, const AES_KEY *key, unsigned char *ivec, int *num, const int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+\_\+cfb8\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{length, }
+\item[{const {\bf A\+E\+S\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{unsigned char $\ast$}]{ivec, }
+\item[{int $\ast$}]{num, }
+\item[{const int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{aes_8h_a79fca9c7b44868d5585d42bdcb70a569}{}\label{aes_8h_a79fca9c7b44868d5585d42bdcb70a569}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+ctr128\+\_\+encrypt@{A\+E\+S\+\_\+ctr128\+\_\+encrypt}}
+\index{A\+E\+S\+\_\+ctr128\+\_\+encrypt@{A\+E\+S\+\_\+ctr128\+\_\+encrypt}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+ctr128\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t length, const A\+E\+S\+\_\+\+K\+E\+Y $\ast$key, unsigned char ivec[A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE], unsigned char ecount\+\_\+buf[A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE], unsigned int $\ast$num)}{AES_ctr128_encrypt(const unsigned char *in, unsigned char *out, size_t length, const AES_KEY *key, unsigned char ivec[AES_BLOCK_SIZE], unsigned char ecount_buf[AES_BLOCK_SIZE], unsigned int *num)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+\_\+ctr128\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{length, }
+\item[{const {\bf A\+E\+S\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{unsigned char}]{ivec\mbox{[}\+A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E\mbox{]}, }
+\item[{unsigned char}]{ecount\+\_\+buf\mbox{[}\+A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+Z\+E\mbox{]}, }
+\item[{unsigned int $\ast$}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{aes_8h_a25e156520d2c7de5421433606cd20d49}{}\label{aes_8h_a25e156520d2c7de5421433606cd20d49}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+decrypt@{A\+E\+S\+\_\+decrypt}}
+\index{A\+E\+S\+\_\+decrypt@{A\+E\+S\+\_\+decrypt}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+decrypt(const unsigned char $\ast$in, unsigned char $\ast$out, const A\+E\+S\+\_\+\+K\+E\+Y $\ast$key)}{AES_decrypt(const unsigned char *in, unsigned char *out, const AES_KEY *key)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{const {\bf A\+E\+S\+\_\+\+K\+EY} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{aes_8h_ad545fd3f8c468db40a9e1a0e73ba20fc}{}\label{aes_8h_ad545fd3f8c468db40a9e1a0e73ba20fc}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+ecb\+\_\+encrypt@{A\+E\+S\+\_\+ecb\+\_\+encrypt}}
+\index{A\+E\+S\+\_\+ecb\+\_\+encrypt@{A\+E\+S\+\_\+ecb\+\_\+encrypt}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+ecb\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, const A\+E\+S\+\_\+\+K\+E\+Y $\ast$key, const int enc)}{AES_ecb_encrypt(const unsigned char *in, unsigned char *out, const AES_KEY *key, const int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+\_\+ecb\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{const {\bf A\+E\+S\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{const int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{aes_8h_a9b95c679d720e1c6c0c02b19bd0c46e6}{}\label{aes_8h_a9b95c679d720e1c6c0c02b19bd0c46e6}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+encrypt@{A\+E\+S\+\_\+encrypt}}
+\index{A\+E\+S\+\_\+encrypt@{A\+E\+S\+\_\+encrypt}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, const A\+E\+S\+\_\+\+K\+E\+Y $\ast$key)}{AES_encrypt(const unsigned char *in, unsigned char *out, const AES_KEY *key)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{const {\bf A\+E\+S\+\_\+\+K\+EY} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{aes_8h_a5e9cae0f27ffa404595a3c9f7ea7eb56}{}\label{aes_8h_a5e9cae0f27ffa404595a3c9f7ea7eb56}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+ige\+\_\+encrypt@{A\+E\+S\+\_\+ige\+\_\+encrypt}}
+\index{A\+E\+S\+\_\+ige\+\_\+encrypt@{A\+E\+S\+\_\+ige\+\_\+encrypt}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+ige\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t length, const A\+E\+S\+\_\+\+K\+E\+Y $\ast$key, unsigned char $\ast$ivec, const int enc)}{AES_ige_encrypt(const unsigned char *in, unsigned char *out, size_t length, const AES_KEY *key, unsigned char *ivec, const int enc)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+\_\+ige\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{length, }
+\item[{const {\bf A\+E\+S\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{unsigned char $\ast$}]{ivec, }
+\item[{const int}]{enc}
+\end{DoxyParamCaption}
+)}\hypertarget{aes_8h_ac5547c8d334dbbaa9c8a9805246b6d85}{}\label{aes_8h_ac5547c8d334dbbaa9c8a9805246b6d85}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+ofb128\+\_\+encrypt@{A\+E\+S\+\_\+ofb128\+\_\+encrypt}}
+\index{A\+E\+S\+\_\+ofb128\+\_\+encrypt@{A\+E\+S\+\_\+ofb128\+\_\+encrypt}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+ofb128\+\_\+encrypt(const unsigned char $\ast$in, unsigned char $\ast$out, size\+\_\+t length, const A\+E\+S\+\_\+\+K\+E\+Y $\ast$key, unsigned char $\ast$ivec, int $\ast$num)}{AES_ofb128_encrypt(const unsigned char *in, unsigned char *out, size_t length, const AES_KEY *key, unsigned char *ivec, int *num)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+\_\+ofb128\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{size\+\_\+t}]{length, }
+\item[{const {\bf A\+E\+S\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{unsigned char $\ast$}]{ivec, }
+\item[{int $\ast$}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{aes_8h_ac8f85a1eb59542c28e35da54a9f6553d}{}\label{aes_8h_ac8f85a1eb59542c28e35da54a9f6553d}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+options@{A\+E\+S\+\_\+options}}
+\index{A\+E\+S\+\_\+options@{A\+E\+S\+\_\+options}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+options(void)}{AES_options(void)}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ A\+E\+S\+\_\+options (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{aes_8h_ac6c76ba23ba8a1e1376ca3526ce67923}{}\label{aes_8h_ac6c76ba23ba8a1e1376ca3526ce67923}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+set\+\_\+decrypt\+\_\+key@{A\+E\+S\+\_\+set\+\_\+decrypt\+\_\+key}}
+\index{A\+E\+S\+\_\+set\+\_\+decrypt\+\_\+key@{A\+E\+S\+\_\+set\+\_\+decrypt\+\_\+key}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+set\+\_\+decrypt\+\_\+key(const unsigned char $\ast$user\+Key, const int bits, A\+E\+S\+\_\+\+K\+E\+Y $\ast$key)}{AES_set_decrypt_key(const unsigned char *userKey, const int bits, AES_KEY *key)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+E\+S\+\_\+set\+\_\+decrypt\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{user\+Key, }
+\item[{const int}]{bits, }
+\item[{{\bf A\+E\+S\+\_\+\+K\+EY} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{aes_8h_a2091bfbf02d00a2f4ce67085d1a0d0ac}{}\label{aes_8h_a2091bfbf02d00a2f4ce67085d1a0d0ac}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+set\+\_\+encrypt\+\_\+key@{A\+E\+S\+\_\+set\+\_\+encrypt\+\_\+key}}
+\index{A\+E\+S\+\_\+set\+\_\+encrypt\+\_\+key@{A\+E\+S\+\_\+set\+\_\+encrypt\+\_\+key}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+set\+\_\+encrypt\+\_\+key(const unsigned char $\ast$user\+Key, const int bits, A\+E\+S\+\_\+\+K\+E\+Y $\ast$key)}{AES_set_encrypt_key(const unsigned char *userKey, const int bits, AES_KEY *key)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+E\+S\+\_\+set\+\_\+encrypt\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{user\+Key, }
+\item[{const int}]{bits, }
+\item[{{\bf A\+E\+S\+\_\+\+K\+EY} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{aes_8h_af2a2a79bf29fae1cc93b4aa43c2b833c}{}\label{aes_8h_af2a2a79bf29fae1cc93b4aa43c2b833c}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+unwrap\+\_\+key@{A\+E\+S\+\_\+unwrap\+\_\+key}}
+\index{A\+E\+S\+\_\+unwrap\+\_\+key@{A\+E\+S\+\_\+unwrap\+\_\+key}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+unwrap\+\_\+key(\+A\+E\+S\+\_\+\+K\+E\+Y $\ast$key, const unsigned char $\ast$iv, unsigned char $\ast$out, const unsigned char $\ast$in, unsigned int inlen)}{AES_unwrap_key(AES_KEY *key, const unsigned char *iv, unsigned char *out, const unsigned char *in, unsigned int inlen)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+E\+S\+\_\+unwrap\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+E\+S\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{const unsigned char $\ast$}]{iv, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned int}]{inlen}
+\end{DoxyParamCaption}
+)}\hypertarget{aes_8h_abf54bdbccc9a52fd9614a10ffcc9121c}{}\label{aes_8h_abf54bdbccc9a52fd9614a10ffcc9121c}
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+wrap\+\_\+key@{A\+E\+S\+\_\+wrap\+\_\+key}}
+\index{A\+E\+S\+\_\+wrap\+\_\+key@{A\+E\+S\+\_\+wrap\+\_\+key}!aes.\+h@{aes.\+h}}
+\subsubsection[{\texorpdfstring{A\+E\+S\+\_\+wrap\+\_\+key(\+A\+E\+S\+\_\+\+K\+E\+Y $\ast$key, const unsigned char $\ast$iv, unsigned char $\ast$out, const unsigned char $\ast$in, unsigned int inlen)}{AES_wrap_key(AES_KEY *key, const unsigned char *iv, unsigned char *out, const unsigned char *in, unsigned int inlen)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+E\+S\+\_\+wrap\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+E\+S\+\_\+\+K\+EY} $\ast$}]{key, }
+\item[{const unsigned char $\ast$}]{iv, }
+\item[{unsigned char $\ast$}]{out, }
+\item[{const unsigned char $\ast$}]{in, }
+\item[{unsigned int}]{inlen}
+\end{DoxyParamCaption}
+)}\hypertarget{aes_8h_acfa555c0e26f771041bdb51bb8e5774b}{}\label{aes_8h_acfa555c0e26f771041bdb51bb8e5774b}

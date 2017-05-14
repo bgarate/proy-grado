@@ -1,0 +1,121 @@
+\hypertarget{md5_8h}{}\section{src/hal/pb2/include/openssl/md5.h File Reference}
+\label{md5_8h}\index{src/hal/pb2/include/openssl/md5.\+h@{src/hal/pb2/include/openssl/md5.\+h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+Include dependency graph for md5.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{md5_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_m_d5state__st}{M\+D5state\+\_\+st}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{md5_8h_a4729ab2c371d584a924f599dd4af7016}{\+\_\+\+\_\+bounded\+\_\+\+\_\+}(x,  y,  z)
+\item 
+\#define \hyperlink{md5_8h_a9823dc2539b5bd2e5dfc531d5b1c64db}{M\+D5\+\_\+\+L\+O\+NG}~unsigned int
+\item 
+\#define \hyperlink{md5_8h_aca89bd6cc5f4faa406a88e5df782f375}{M\+D5\+\_\+\+C\+B\+L\+O\+CK}~64
+\item 
+\#define \hyperlink{md5_8h_a8ddf53027505210f2be7d42e9069ce2e}{M\+D5\+\_\+\+L\+B\+L\+O\+CK}~(\hyperlink{md5_8h_aca89bd6cc5f4faa406a88e5df782f375}{M\+D5\+\_\+\+C\+B\+L\+O\+CK}/4)
+\item 
+\#define \hyperlink{md5_8h_a09a4f4b2f28cbe522d9b80153666029c}{M\+D5\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}~16
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct_m_d5state__st}{M\+D5state\+\_\+st} \hyperlink{md5_8h_a9d6613c48cc6841ee520da3b5a4cbab7}{M\+D5\+\_\+\+C\+TX}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{md5_8h_ae06ac750835b8cb838b6be5986ddcad9}{M\+D5\+\_\+\+Init} (\hyperlink{md5_8h_a9d6613c48cc6841ee520da3b5a4cbab7}{M\+D5\+\_\+\+C\+TX} $\ast$c)
+\item 
+int \hyperlink{md5_8h_a005d0137e59d7d065e5cfd7305c949fe}{M\+D5\+\_\+\+Update} (\hyperlink{md5_8h_a9d6613c48cc6841ee520da3b5a4cbab7}{M\+D5\+\_\+\+C\+TX} $\ast$c, const void $\ast$data, size\+\_\+t \hyperlink{x509_8h_ad8c3db4434e9cb5cd772cc009f40e856}{len}) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((\hyperlink{sha_8h_a4729ab2c371d584a924f599dd4af7016}{\+\_\+\+\_\+bounded\+\_\+\+\_\+}(\+\_\+\+\_\+buffer\+\_\+\+\_\+
+\item 
+int int \hyperlink{md5_8h_a27f265ee83f172c2e805e6ef81f0c76c}{M\+D5\+\_\+\+Final} (unsigned char $\ast$md, \hyperlink{md5_8h_a9d6613c48cc6841ee520da3b5a4cbab7}{M\+D5\+\_\+\+C\+TX} $\ast$c)
+\item 
+unsigned char $\ast$ \hyperlink{md5_8h_a7c59b1ddf4405cc341d271264dcf595f}{M\+D5} (const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}((\hyperlink{sha_8h_a4729ab2c371d584a924f599dd4af7016}{\+\_\+\+\_\+bounded\+\_\+\+\_\+}(\+\_\+\+\_\+buffer\+\_\+\+\_\+
+\item 
+unsigned char void \hyperlink{md5_8h_a6061730b7994dfa1ed572b63c9bbef60}{M\+D5\+\_\+\+Transform} (\hyperlink{md5_8h_a9d6613c48cc6841ee520da3b5a4cbab7}{M\+D5\+\_\+\+C\+TX} $\ast$c, const unsigned char $\ast$b)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{md5.\+h@{md5.\+h}!\+\_\+\+\_\+bounded\+\_\+\+\_\+@{\+\_\+\+\_\+bounded\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+bounded\+\_\+\+\_\+@{\+\_\+\+\_\+bounded\+\_\+\+\_\+}!md5.\+h@{md5.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+bounded\+\_\+\+\_\+}{__bounded__}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+bounded\+\_\+\+\_\+(
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{y, }
+\item[{}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{md5_8h_a4729ab2c371d584a924f599dd4af7016}{}\label{md5_8h_a4729ab2c371d584a924f599dd4af7016}
+\index{md5.\+h@{md5.\+h}!M\+D5\+\_\+\+C\+B\+L\+O\+CK@{M\+D5\+\_\+\+C\+B\+L\+O\+CK}}
+\index{M\+D5\+\_\+\+C\+B\+L\+O\+CK@{M\+D5\+\_\+\+C\+B\+L\+O\+CK}!md5.\+h@{md5.\+h}}
+\subsubsection[{\texorpdfstring{M\+D5\+\_\+\+C\+B\+L\+O\+CK}{MD5_CBLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+D5\+\_\+\+C\+B\+L\+O\+CK~64}\hypertarget{md5_8h_aca89bd6cc5f4faa406a88e5df782f375}{}\label{md5_8h_aca89bd6cc5f4faa406a88e5df782f375}
+\index{md5.\+h@{md5.\+h}!M\+D5\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{M\+D5\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}}
+\index{M\+D5\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{M\+D5\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}!md5.\+h@{md5.\+h}}
+\subsubsection[{\texorpdfstring{M\+D5\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}{MD5_DIGEST_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+D5\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH~16}\hypertarget{md5_8h_a09a4f4b2f28cbe522d9b80153666029c}{}\label{md5_8h_a09a4f4b2f28cbe522d9b80153666029c}
+\index{md5.\+h@{md5.\+h}!M\+D5\+\_\+\+L\+B\+L\+O\+CK@{M\+D5\+\_\+\+L\+B\+L\+O\+CK}}
+\index{M\+D5\+\_\+\+L\+B\+L\+O\+CK@{M\+D5\+\_\+\+L\+B\+L\+O\+CK}!md5.\+h@{md5.\+h}}
+\subsubsection[{\texorpdfstring{M\+D5\+\_\+\+L\+B\+L\+O\+CK}{MD5_LBLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+D5\+\_\+\+L\+B\+L\+O\+CK~({\bf M\+D5\+\_\+\+C\+B\+L\+O\+CK}/4)}\hypertarget{md5_8h_a8ddf53027505210f2be7d42e9069ce2e}{}\label{md5_8h_a8ddf53027505210f2be7d42e9069ce2e}
+\index{md5.\+h@{md5.\+h}!M\+D5\+\_\+\+L\+O\+NG@{M\+D5\+\_\+\+L\+O\+NG}}
+\index{M\+D5\+\_\+\+L\+O\+NG@{M\+D5\+\_\+\+L\+O\+NG}!md5.\+h@{md5.\+h}}
+\subsubsection[{\texorpdfstring{M\+D5\+\_\+\+L\+O\+NG}{MD5_LONG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+D5\+\_\+\+L\+O\+NG~unsigned int}\hypertarget{md5_8h_a9823dc2539b5bd2e5dfc531d5b1c64db}{}\label{md5_8h_a9823dc2539b5bd2e5dfc531d5b1c64db}
+
+
+\subsection{Typedef Documentation}
+\index{md5.\+h@{md5.\+h}!M\+D5\+\_\+\+C\+TX@{M\+D5\+\_\+\+C\+TX}}
+\index{M\+D5\+\_\+\+C\+TX@{M\+D5\+\_\+\+C\+TX}!md5.\+h@{md5.\+h}}
+\subsubsection[{\texorpdfstring{M\+D5\+\_\+\+C\+TX}{MD5_CTX}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf M\+D5state\+\_\+st}  {\bf M\+D5\+\_\+\+C\+TX}}\hypertarget{md5_8h_a9d6613c48cc6841ee520da3b5a4cbab7}{}\label{md5_8h_a9d6613c48cc6841ee520da3b5a4cbab7}
+
+
+\subsection{Function Documentation}
+\index{md5.\+h@{md5.\+h}!M\+D5@{M\+D5}}
+\index{M\+D5@{M\+D5}!md5.\+h@{md5.\+h}}
+\subsubsection[{\texorpdfstring{M\+D5(const unsigned char $\ast$d, size\+\_\+t n, unsigned char $\ast$md) \+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+bounded\+\_\+\+\_\+(\+\_\+\+\_\+buffer\+\_\+\+\_\+}{MD5(const unsigned char *d, size_t n, unsigned char *md) __attribute__((__bounded__(__buffer__}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ M\+D5 (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{d, }
+\item[{size\+\_\+t}]{n, }
+\item[{unsigned char $\ast$}]{md}
+\end{DoxyParamCaption}
+)}\hypertarget{md5_8h_a7c59b1ddf4405cc341d271264dcf595f}{}\label{md5_8h_a7c59b1ddf4405cc341d271264dcf595f}
+\index{md5.\+h@{md5.\+h}!M\+D5\+\_\+\+Final@{M\+D5\+\_\+\+Final}}
+\index{M\+D5\+\_\+\+Final@{M\+D5\+\_\+\+Final}!md5.\+h@{md5.\+h}}
+\subsubsection[{\texorpdfstring{M\+D5\+\_\+\+Final(unsigned char $\ast$md, M\+D5\+\_\+\+C\+T\+X $\ast$c)}{MD5_Final(unsigned char *md, MD5_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int int M\+D5\+\_\+\+Final (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{md, }
+\item[{{\bf M\+D5\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{md5_8h_a27f265ee83f172c2e805e6ef81f0c76c}{}\label{md5_8h_a27f265ee83f172c2e805e6ef81f0c76c}
+\index{md5.\+h@{md5.\+h}!M\+D5\+\_\+\+Init@{M\+D5\+\_\+\+Init}}
+\index{M\+D5\+\_\+\+Init@{M\+D5\+\_\+\+Init}!md5.\+h@{md5.\+h}}
+\subsubsection[{\texorpdfstring{M\+D5\+\_\+\+Init(\+M\+D5\+\_\+\+C\+T\+X $\ast$c)}{MD5_Init(MD5_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int M\+D5\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+D5\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{md5_8h_ae06ac750835b8cb838b6be5986ddcad9}{}\label{md5_8h_ae06ac750835b8cb838b6be5986ddcad9}
+\index{md5.\+h@{md5.\+h}!M\+D5\+\_\+\+Transform@{M\+D5\+\_\+\+Transform}}
+\index{M\+D5\+\_\+\+Transform@{M\+D5\+\_\+\+Transform}!md5.\+h@{md5.\+h}}
+\subsubsection[{\texorpdfstring{M\+D5\+\_\+\+Transform(\+M\+D5\+\_\+\+C\+T\+X $\ast$c, const unsigned char $\ast$b)}{MD5_Transform(MD5_CTX *c, const unsigned char *b)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char void M\+D5\+\_\+\+Transform (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+D5\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const unsigned char $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{md5_8h_a6061730b7994dfa1ed572b63c9bbef60}{}\label{md5_8h_a6061730b7994dfa1ed572b63c9bbef60}
+\index{md5.\+h@{md5.\+h}!M\+D5\+\_\+\+Update@{M\+D5\+\_\+\+Update}}
+\index{M\+D5\+\_\+\+Update@{M\+D5\+\_\+\+Update}!md5.\+h@{md5.\+h}}
+\subsubsection[{\texorpdfstring{M\+D5\+\_\+\+Update(\+M\+D5\+\_\+\+C\+T\+X $\ast$c, const void $\ast$data, size\+\_\+t len) \+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+bounded\+\_\+\+\_\+(\+\_\+\+\_\+buffer\+\_\+\+\_\+}{MD5_Update(MD5_CTX *c, const void *data, size_t len) __attribute__((__bounded__(__buffer__}}]{\setlength{\rightskip}{0pt plus 5cm}int M\+D5\+\_\+\+Update (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+D5\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const void $\ast$}]{data, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{md5_8h_a005d0137e59d7d065e5cfd7305c949fe}{}\label{md5_8h_a005d0137e59d7d065e5cfd7305c949fe}

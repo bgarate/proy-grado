@@ -1,0 +1,649 @@
+\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Network/\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.h File Reference}
+\label{_a_r_n_e_t_w_o_r_k___manager_8h}\index{src/hal/pb2/include/lib\+A\+R\+Network/\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{src/hal/pb2/include/lib\+A\+R\+Network/\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+
+
+network manager allow to send data acknowledged or not.  
+
+
+{\ttfamily \#include $<$lib\+A\+R\+Network/\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Error.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Network/\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Network\+A\+L/\+A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager.\+h$>$}\\*
+Include dependency graph for A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_n_e_t_w_o_r_k___manager_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_n_e_t_w_o_r_k___manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+RN}($\ast$ \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a2fb81d9ffec674d08b0d09e1a7d30fb5}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Callback\+\_\+t}) (int Io\+Buffer\+Id, uint8\+\_\+t $\ast$data\+Ptr, void $\ast$custom\+Data, \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+US} status)
+\begin{DoxyCompactList}\small\item\em callback use when the data are sent or have a timeout \end{DoxyCompactList}\item 
+typedef struct \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t}
+\begin{DoxyCompactList}\small\item\em network manager allow to send and receive data acknowledged or not. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a760739425fd2f1f00bf3fc957338a9f1}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+On\+Disconnect\+\_\+t}) (\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$manager, \hyperlink{struct_a_r_n_e_t_w_o_r_k_a_l___manager__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager\+\_\+t} $\ast$al\+Manager, void $\ast$custom\+Data)
+\begin{DoxyCompactList}\small\item\em fuction called on disconnect \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+RN} \{ \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11a1e0bf67010e3d81f6be85a083cd4485a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+D\+E\+F\+A\+U\+LT} = 0, 
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11affbc2f5f4c2a849a89e7f832ec997df1}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+D\+A\+T\+A\+\_\+\+P\+OP} = A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+D\+E\+F\+A\+U\+LT, 
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11ac65d15974ad6c94c9e2b3477bcecce97}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+T\+RY}, 
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11a6327fb6ebd77955d5dee723368cf2e0e}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+F\+L\+U\+SH}
+ \}\begin{DoxyCompactList}\small\item\em status return by the callback. \end{DoxyCompactList}
+\item 
+enum \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+US} \{ \\*
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493a7d834c9271c800a877d799e1e0daa29d}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+E\+NT} = 0, 
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493a33d9239f7e424672e5211d8043433467}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+ED}, 
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493a368924219fbe7c3f5658b0d2ba61f8d2}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+T\+I\+M\+E\+O\+UT}, 
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493ad2bfea03d1de263afaaad67d6050f051}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+C\+EL}, 
+\\*
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493aa79cadc387cdfc60b3ee5dc43c335304}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+EE}, 
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493a8cfc64cab94af77e7f279a3e7b2820d6}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+D\+O\+NE}
+ \}\begin{DoxyCompactList}\small\item\em status sent by the callback. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$ \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a50a86539c55dbf2a54f0e22baccdf578}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+New} (\hyperlink{struct_a_r_n_e_t_w_o_r_k_a_l___manager__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager\+\_\+t} $\ast$network\+A\+L\+Manager, unsigned int number\+Of\+Input, \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} $\ast$input\+Param\+Arr, unsigned int number\+Of\+Output, \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} $\ast$output\+Param\+Arr, int ping\+Delay\+Ms, \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a760739425fd2f1f00bf3fc957338a9f1}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+On\+Disconnect\+\_\+t} on\+Disconnect\+Callback, void $\ast$custom\+Data, \hyperlink{_a_r_n_e_t_w_o_r_k___error_8h_a4d5e22d088d6e667c4ae8d3536b3344e}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Create a new Manager. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a60c710d54c7b882a66f00ad020ba8b07}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Delete} (\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$$\ast$manager\+Ptr\+Addr)
+\begin{DoxyCompactList}\small\item\em Delete the Manager. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a38d277285c0fed3eb0b066c4cc441616}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Sending\+Thread\+Run} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Manage the sending of the data. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a8e4eb73c36998e8616acbb9b1b6351de}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Receiving\+Thread\+Run} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Manage the reception of the data. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_affe3126b6c6bbeb903b62f01a31995ac}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Stop} (\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$manager\+Ptr)
+\begin{DoxyCompactList}\small\item\em stop the threads of sending and reception \end{DoxyCompactList}\item 
+\hyperlink{_a_r_n_e_t_w_o_r_k___error_8h_a4d5e22d088d6e667c4ae8d3536b3344e}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a080e9981c8891fabe0afbabecd950fe9}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush} (\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$manager\+Ptr)
+\begin{DoxyCompactList}\small\item\em Flush all buffers of the network manager. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_n_e_t_w_o_r_k___error_8h_a4d5e22d088d6e667c4ae8d3536b3344e}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_ace22ddaf5de87a707afbf773e754772c}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Send\+Data} (\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$manager\+Ptr, int input\+Buffer\+ID, uint8\+\_\+t $\ast$data\+Ptr, int data\+Size, void $\ast$custom\+Data, \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a2fb81d9ffec674d08b0d09e1a7d30fb5}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Callback\+\_\+t} callback, int do\+Data\+Copy)
+\begin{DoxyCompactList}\small\item\em Add data to send in a I\+O\+Buffer. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_n_e_t_w_o_r_k___error_8h_a4d5e22d088d6e667c4ae8d3536b3344e}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_aa96fd246308dd5f5cb08b762080ff5c6}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Read\+Data} (\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$manager\+Ptr, int output\+Buffer\+ID, uint8\+\_\+t $\ast$data\+Ptr, int data\+Limit\+Size, int $\ast$read\+Size\+Ptr)
+\begin{DoxyCompactList}\small\item\em Read data received in a I\+O\+Buffer using variable size data (blocking function) \end{DoxyCompactList}\item 
+\hyperlink{_a_r_n_e_t_w_o_r_k___error_8h_a4d5e22d088d6e667c4ae8d3536b3344e}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a02ca8da6f65ca2842612e15a305fc33f}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Try\+Read\+Data} (\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$manager\+Ptr, int output\+Buffer\+ID, uint8\+\_\+t $\ast$data\+Ptr, int data\+Limit\+Size, int $\ast$read\+Size\+Ptr)
+\begin{DoxyCompactList}\small\item\em try to read data received in a I\+O\+Buffer using variable size data (non-\/blocking function) \end{DoxyCompactList}\item 
+\hyperlink{_a_r_n_e_t_w_o_r_k___error_8h_a4d5e22d088d6e667c4ae8d3536b3344e}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a7bafbab104b1e8612fb421e9ca1dddd8}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Read\+Data\+With\+Timeout} (\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$manager\+Ptr, int output\+Buffer\+ID, uint8\+\_\+t $\ast$data\+Ptr, int data\+Limit\+Size, int $\ast$read\+Size\+Ptr, int timeout\+Ms)
+\begin{DoxyCompactList}\small\item\em Read, with timeout, a data received in I\+O\+Buffer using variable size data. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_n_e_t_w_o_r_k___error_8h_a4d5e22d088d6e667c4ae8d3536b3344e}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_ac0cc32355f8df68227fe58d98428fb76}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush\+Input\+Buffer} (\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$manager\+Ptr, int in\+Buffer\+ID)
+\begin{DoxyCompactList}\small\item\em Flush an input buffer. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_n_e_t_w_o_r_k___error_8h_a4d5e22d088d6e667c4ae8d3536b3344e}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a8767b29d8adb5a76c0e2a072ea8fd925}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush\+Output\+Buffer} (\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$manager\+Ptr, int out\+Buffer\+ID)
+\begin{DoxyCompactList}\small\item\em Flush an output buffer. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a4fe209e3978a247f02ebf23c8f00be6c}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Estimated\+Latency} (\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$manager\+Ptr)
+\begin{DoxyCompactList}\small\item\em Gets the estimated latency of the A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_af8ae55795f8d1988f9fb1a5bf7e1ff3b}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Estimated\+Miss\+Percentage} (\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$manager\+Ptr, int out\+Buffer\+ID)
+\begin{DoxyCompactList}\small\item\em Gets the estimated miss percentage of an output buffer. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_n_e_t_w_o_r_k___error_8h_a4d5e22d088d6e667c4ae8d3536b3344e}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a0eb85bbfbd8cafa08b41c2b2493fabeb}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Set\+Minimum\+Time\+Between\+Sends} (\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$manager\+Ptr, int minimum\+Time\+Ms)
+\begin{DoxyCompactList}\small\item\em Sets the minimum time between two network sends for the given A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t Default value is 1ms. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_n_e_t_w_o_r_k___error_8h_a4d5e22d088d6e667c4ae8d3536b3344e}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_ad83a152e0a52c12ce62d56ca2768c27b}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Input\+Data\+Event\+Fd} (\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$manager\+Ptr, int $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Get eventfd associated to incoming data. (Linux platform only) This fd shall be used to monitor incoming packets. This fd is readable when incoming data are received and need to be processed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+network manager allow to send data acknowledged or not. 
+
+\begin{DoxyDate}{Date}
+05/18/2012 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:maxime.maitre@parrot.com}{\tt maxime.\+maitre@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Callback\+\_\+t@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Callback\+\_\+t}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Callback\+\_\+t@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Callback\+\_\+t}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Callback\+\_\+t}{ARNETWORK_Manager_Callback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+RN}($\ast$ A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Callback\+\_\+t) (int Io\+Buffer\+Id, uint8\+\_\+t $\ast$data\+Ptr, void $\ast$custom\+Data, {\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+US} status)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a2fb81d9ffec674d08b0d09e1a7d30fb5}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a2fb81d9ffec674d08b0d09e1a7d30fb5}
+
+
+callback use when the data are sent or have a timeout 
+
+\begin{DoxyWarning}{Warning}
+the callback can\textquotesingle{}t call the A\+R\+N\+E\+T\+W\+O\+RK\textquotesingle{}s functions 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Io\+Buffer\+Id} & identifier of the Io\+Buffer is calling back \\
+\hline
+\mbox{\tt in}  & {\em data\+Ptr} & pointer on the data \\
+\hline
+\mbox{\tt in}  & {\em custom\+Data} & custom data \\
+\hline
+\mbox{\tt in}  & {\em status} & indicating the reason of the callback. e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+US type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+what do in timeout case 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+US} 
+\end{DoxySeeAlso}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+On\+Disconnect\+\_\+t@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+On\+Disconnect\+\_\+t}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+On\+Disconnect\+\_\+t@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+On\+Disconnect\+\_\+t}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+On\+Disconnect\+\_\+t}{ARNETWORK_Manager_OnDisconnect_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+On\+Disconnect\+\_\+t) ({\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$manager, {\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager\+\_\+t} $\ast$al\+Manager, void $\ast$custom\+Data)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a760739425fd2f1f00bf3fc957338a9f1}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a760739425fd2f1f00bf3fc957338a9f1}
+
+
+fuction called on disconnect 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The manager \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t}{ARNETWORK_Manager_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} {\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t}}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}
+
+
+network manager allow to send and receive data acknowledged or not. 
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+RN@{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+RN}}
+\index{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+RN@{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+RN}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+RN}{eARNETWORK_MANAGER_CALLBACK_RETURN}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+RN}}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11}
+
+
+status return by the callback. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+D\+E\+F\+A\+U\+LT@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+D\+E\+F\+A\+U\+LT}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+D\+E\+F\+A\+U\+LT@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+D\+E\+F\+A\+U\+LT}}\item[{\em 
+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+D\+E\+F\+A\+U\+LT\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11a1e0bf67010e3d81f6be85a083cd4485a}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11a1e0bf67010e3d81f6be85a083cd4485a}
+}]default value must be returned when the status callback differ of A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+T\+I\+M\+E\+O\+UT \index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+D\+A\+T\+A\+\_\+\+P\+OP@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+D\+A\+T\+A\+\_\+\+P\+OP}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+D\+A\+T\+A\+\_\+\+P\+OP@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+D\+A\+T\+A\+\_\+\+P\+OP}}\item[{\em 
+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+D\+A\+T\+A\+\_\+\+P\+OP\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11affbc2f5f4c2a849a89e7f832ec997df1}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11affbc2f5f4c2a849a89e7f832ec997df1}
+}]pop the data (default behavior) \index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+T\+RY@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+T\+RY}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+T\+RY@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+T\+RY}}\item[{\em 
+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+T\+RY\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11ac65d15974ad6c94c9e2b3477bcecce97}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11ac65d15974ad6c94c9e2b3477bcecce97}
+}]reset the number of retry \index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+F\+L\+U\+SH@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+F\+L\+U\+SH}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+F\+L\+U\+SH@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+F\+L\+U\+SH}}\item[{\em 
+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+F\+L\+U\+SH\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11a6327fb6ebd77955d5dee723368cf2e0e}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a1a1d7235d3e2a2ff206fad131eacfc11a6327fb6ebd77955d5dee723368cf2e0e}
+}]flush all input buffers \end{description}
+\end{Desc}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+US@{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+US}}
+\index{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+US@{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+US}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+US}{eARNETWORK_MANAGER_CALLBACK_STATUS}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+US}}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493}
+
+
+status sent by the callback. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+E\+NT@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+E\+NT}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+E\+NT@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+E\+NT}}\item[{\em 
+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+E\+NT\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493a7d834c9271c800a877d799e1e0daa29d}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493a7d834c9271c800a877d799e1e0daa29d}
+}]data sent \index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+ED@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+ED}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+ED@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+ED}}\item[{\em 
+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+ED\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493a33d9239f7e424672e5211d8043433467}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493a33d9239f7e424672e5211d8043433467}
+}]acknowledged received \index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+T\+I\+M\+E\+O\+UT@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+T\+I\+M\+E\+O\+UT}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+T\+I\+M\+E\+O\+UT@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+T\+I\+M\+E\+O\+UT}}\item[{\em 
+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+T\+I\+M\+E\+O\+UT\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493a368924219fbe7c3f5658b0d2ba61f8d2}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493a368924219fbe7c3f5658b0d2ba61f8d2}
+}]timeout occurred, data not received; the callback must return what the network manager must do with the data. \index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+C\+EL@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+C\+EL}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+C\+EL@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+C\+EL}}\item[{\em 
+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+C\+EL\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493ad2bfea03d1de263afaaad67d6050f051}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493ad2bfea03d1de263afaaad67d6050f051}
+}]data will not sent \index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+EE@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+EE}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+EE@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+EE}}\item[{\em 
+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+EE\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493aa79cadc387cdfc60b3ee5dc43c335304}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493aa79cadc387cdfc60b3ee5dc43c335304}
+}]free the data sent without Data Copy. \index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+D\+O\+NE@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+D\+O\+NE}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+D\+O\+NE@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+D\+O\+NE}}\item[{\em 
+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+D\+O\+NE\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493a8cfc64cab94af77e7f279a3e7b2820d6}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_afd73389d6fdbaa8b27b3a6553f0d8493a8cfc64cab94af77e7f279a3e7b2820d6}
+}]the use of the data is done, the date will not more used \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Delete@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Delete}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Delete@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Delete}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Delete(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t $\ast$$\ast$manager\+Ptr\+Addr)}{ARNETWORK_Manager_Delete(ARNETWORK_Manager_t **managerPtrAddr)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$$\ast$}]{manager\+Ptr\+Addr}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a60c710d54c7b882a66f00ad020ba8b07}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a60c710d54c7b882a66f00ad020ba8b07}
+
+
+Delete the Manager. 
+
+\begin{DoxyWarning}{Warning}
+This function free memory 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager\+Ptr\+Addr} & address of the pointer on the Manager \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a50a86539c55dbf2a54f0e22baccdf578}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+New()} 
+\end{DoxySeeAlso}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t $\ast$manager\+Ptr)}{ARNETWORK_Manager_Flush(ARNETWORK_Manager_t *managerPtr)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$}]{manager\+Ptr}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a080e9981c8891fabe0afbabecd950fe9}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a080e9981c8891fabe0afbabecd950fe9}
+
+
+Flush all buffers of the network manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager\+Ptr} & pointer on the Manager \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR 
+\end{DoxyReturn}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush\+Input\+Buffer@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush\+Input\+Buffer}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush\+Input\+Buffer@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush\+Input\+Buffer}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush\+Input\+Buffer(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t $\ast$manager\+Ptr, int in\+Buffer\+I\+D)}{ARNETWORK_Manager_FlushInputBuffer(ARNETWORK_Manager_t *managerPtr, int inBufferID)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush\+Input\+Buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$}]{manager\+Ptr, }
+\item[{int}]{in\+Buffer\+ID}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_ac0cc32355f8df68227fe58d98428fb76}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_ac0cc32355f8df68227fe58d98428fb76}
+
+
+Flush an input buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager\+Ptr} & Pointer to the A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t \\
+\hline
+\mbox{\tt in}  & {\em in\+Buffer\+ID} & Identifier of the buffer to flush \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR type 
+\end{DoxyReturn}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush\+Output\+Buffer@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush\+Output\+Buffer}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush\+Output\+Buffer@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush\+Output\+Buffer}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush\+Output\+Buffer(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t $\ast$manager\+Ptr, int out\+Buffer\+I\+D)}{ARNETWORK_Manager_FlushOutputBuffer(ARNETWORK_Manager_t *managerPtr, int outBufferID)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Flush\+Output\+Buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$}]{manager\+Ptr, }
+\item[{int}]{out\+Buffer\+ID}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a8767b29d8adb5a76c0e2a072ea8fd925}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a8767b29d8adb5a76c0e2a072ea8fd925}
+
+
+Flush an output buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager\+Ptr} & Pointer to the A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t \\
+\hline
+\mbox{\tt in}  & {\em out\+Buffer\+ID} & Identifier of the buffer to flush \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR type 
+\end{DoxyReturn}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Estimated\+Latency@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Estimated\+Latency}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Estimated\+Latency@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Estimated\+Latency}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Estimated\+Latency(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t $\ast$manager\+Ptr)}{ARNETWORK_Manager_GetEstimatedLatency(ARNETWORK_Manager_t *managerPtr)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Estimated\+Latency (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$}]{manager\+Ptr}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a4fe209e3978a247f02ebf23c8f00be6c}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a4fe209e3978a247f02ebf23c8f00be6c}
+
+
+Gets the estimated latency of the A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager. 
+
+This function returns the maximum value between the last internal ping result, and the current ping timer. This allows a greater reactivity for ping spikes
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager\+Ptr} & Pointer to the A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The estimated latency in ms, or a negative value if we couldn\textquotesingle{}t determine it 
+\end{DoxyReturn}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Estimated\+Miss\+Percentage@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Estimated\+Miss\+Percentage}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Estimated\+Miss\+Percentage@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Estimated\+Miss\+Percentage}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Estimated\+Miss\+Percentage(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t $\ast$manager\+Ptr, int out\+Buffer\+I\+D)}{ARNETWORK_Manager_GetEstimatedMissPercentage(ARNETWORK_Manager_t *managerPtr, int outBufferID)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Estimated\+Miss\+Percentage (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$}]{manager\+Ptr, }
+\item[{int}]{out\+Buffer\+ID}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_af8ae55795f8d1988f9fb1a5bf7e1ff3b}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_af8ae55795f8d1988f9fb1a5bf7e1ff3b}
+
+
+Gets the estimated miss percentage of an output buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager\+Ptr} & Pointer to the A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t \\
+\hline
+{\em out\+Buffer\+ID} & Identifier of the buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Estimated miss percentage \mbox{[}0-\/100\mbox{]}. A negative value is an error (\hyperlink{_a_r_n_e_t_w_o_r_k___error_8h_a4d5e22d088d6e667c4ae8d3536b3344e}{e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR}) 
+\end{DoxyReturn}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Input\+Data\+Event\+Fd@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Input\+Data\+Event\+Fd}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Input\+Data\+Event\+Fd@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Input\+Data\+Event\+Fd}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Input\+Data\+Event\+Fd(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t $\ast$manager\+Ptr, int $\ast$fd)}{ARNETWORK_Manager_GetInputDataEventFd(ARNETWORK_Manager_t *managerPtr, int *fd)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Get\+Input\+Data\+Event\+Fd (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$}]{manager\+Ptr, }
+\item[{int $\ast$}]{fd}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_ad83a152e0a52c12ce62d56ca2768c27b}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_ad83a152e0a52c12ce62d56ca2768c27b}
+
+
+Get eventfd associated to incoming data. (Linux platform only) This fd shall be used to monitor incoming packets. This fd is readable when incoming data are received and need to be processed. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager\+Ptr} & Pointer to the A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t \\
+\hline
+\mbox{\tt out}  & {\em File} & descriptor pointer filled by function on success. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR type 
+\end{DoxyReturn}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+New@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+New}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+New@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+New}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+New(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager\+\_\+t $\ast$network\+A\+L\+Manager, unsigned int number\+Of\+Input, A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t $\ast$input\+Param\+Arr, unsigned int number\+Of\+Output, A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t $\ast$output\+Param\+Arr, int ping\+Delay\+Ms, A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+On\+Disconnect\+\_\+t on\+Disconnect\+Callback, void $\ast$custom\+Data, e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARNETWORK_Manager_New(ARNETWORKAL_Manager_t *networkALManager, unsigned int numberOfInput, ARNETWORK_IOBufferParam_t *inputParamArr, unsigned int numberOfOutput, ARNETWORK_IOBufferParam_t *outputParamArr, int pingDelayMs, ARNETWORK_Manager_OnDisconnect_t onDisconnectCallback, void *customData, eARNETWORK_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t}$\ast$ A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager\+\_\+t} $\ast$}]{network\+A\+L\+Manager, }
+\item[{unsigned int}]{number\+Of\+Input, }
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} $\ast$}]{input\+Param\+Arr, }
+\item[{unsigned int}]{number\+Of\+Output, }
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} $\ast$}]{output\+Param\+Arr, }
+\item[{int}]{ping\+Delay\+Ms, }
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+On\+Disconnect\+\_\+t}}]{on\+Disconnect\+Callback, }
+\item[{void $\ast$}]{custom\+Data, }
+\item[{{\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a50a86539c55dbf2a54f0e22baccdf578}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a50a86539c55dbf2a54f0e22baccdf578}
+
+
+Create a new Manager. 
+
+\begin{DoxyWarning}{Warning}
+This function allocate memory 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{struct_a_r_n_e_t_w_o_r_k_a_l___manager__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager\+\_\+t} must be created to initialize the network. 
+
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a60c710d54c7b882a66f00ad020ba8b07}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Delete()} must be called to delete the Network and free the memory allocated. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em network\+A\+L\+Manager} & An initialized \hyperlink{struct_a_r_n_e_t_w_o_r_k_a_l___manager__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+Manager\+\_\+t} instance which will be used for all network operations \\
+\hline
+\mbox{\tt in}  & {\em number\+Of\+Input} & Number of input buffer \\
+\hline
+\mbox{\tt in}  & {\em input\+Param\+Arr} & array of the parameters of creation of the inputs. The array must contain as many parameters as the number of input buffer. \\
+\hline
+\mbox{\tt in}  & {\em number\+Of\+Output} & Number of output buffer \\
+\hline
+\mbox{\tt in}  & {\em output\+Param\+Arr} & array of the parameters of creation of the outputs. The array must contain as many parameters as the number of output buffer. \\
+\hline
+\mbox{\tt in}  & {\em ping\+Delay\+Ms} & Minimum amount of time (ms) between two pings. Put a negative value to disable ping, and zero to use default value \\
+\hline
+\mbox{\tt in}  & {\em on\+Disconnect\+Callback} & fuction called on disconnect. \\
+\hline
+\mbox{\tt in}  & {\em custom\+Data} & custom Data sent to the callbacks. \\
+\hline
+\mbox{\tt out}  & {\em error} & error output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new Manager 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This creator adds for all output, one other I\+O\+Buffer for storing the acknowledgment to return. These new buffers are added in the input and output buffer arrays. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+The identifiers of the Io\+Buffer should not exceed the value 128. 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a60c710d54c7b882a66f00ad020ba8b07}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Delete()} 
+\end{DoxySeeAlso}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Read\+Data@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Read\+Data}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Read\+Data@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Read\+Data}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Read\+Data(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t $\ast$manager\+Ptr, int output\+Buffer\+I\+D, uint8\+\_\+t $\ast$data\+Ptr, int data\+Limit\+Size, int $\ast$read\+Size\+Ptr)}{ARNETWORK_Manager_ReadData(ARNETWORK_Manager_t *managerPtr, int outputBufferID, uint8_t *dataPtr, int dataLimitSize, int *readSizePtr)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Read\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$}]{manager\+Ptr, }
+\item[{int}]{output\+Buffer\+ID, }
+\item[{uint8\+\_\+t $\ast$}]{data\+Ptr, }
+\item[{int}]{data\+Limit\+Size, }
+\item[{int $\ast$}]{read\+Size\+Ptr}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_aa96fd246308dd5f5cb08b762080ff5c6}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_aa96fd246308dd5f5cb08b762080ff5c6}
+
+
+Read data received in a I\+O\+Buffer using variable size data (blocking function) 
+
+\begin{DoxyWarning}{Warning}
+This is a blocking function. 
+
+Applications which need to close the manager should N\+OT use this function 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager\+Ptr} & pointer on the Manager \\
+\hline
+\mbox{\tt in}  & {\em output\+Buffer\+ID} & identifier of the output buffer in which the data must be read \\
+\hline
+\mbox{\tt out}  & {\em data\+Ptr} & pointer on the data read \\
+\hline
+\mbox{\tt in}  & {\em data\+Limit\+Size} & limit size of the copy \\
+\hline
+\mbox{\tt out}  & {\em read\+Size\+Ptr} & pointer to store the size of the data read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR type 
+\end{DoxyReturn}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Read\+Data\+With\+Timeout@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Read\+Data\+With\+Timeout}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Read\+Data\+With\+Timeout@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Read\+Data\+With\+Timeout}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Read\+Data\+With\+Timeout(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t $\ast$manager\+Ptr, int output\+Buffer\+I\+D, uint8\+\_\+t $\ast$data\+Ptr, int data\+Limit\+Size, int $\ast$read\+Size\+Ptr, int timeout\+Ms)}{ARNETWORK_Manager_ReadDataWithTimeout(ARNETWORK_Manager_t *managerPtr, int outputBufferID, uint8_t *dataPtr, int dataLimitSize, int *readSizePtr, int timeoutMs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Read\+Data\+With\+Timeout (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$}]{manager\+Ptr, }
+\item[{int}]{output\+Buffer\+ID, }
+\item[{uint8\+\_\+t $\ast$}]{data\+Ptr, }
+\item[{int}]{data\+Limit\+Size, }
+\item[{int $\ast$}]{read\+Size\+Ptr, }
+\item[{int}]{timeout\+Ms}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a7bafbab104b1e8612fb421e9ca1dddd8}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a7bafbab104b1e8612fb421e9ca1dddd8}
+
+
+Read, with timeout, a data received in I\+O\+Buffer using variable size data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager\+Ptr} & pointer on the A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t \\
+\hline
+\mbox{\tt in}  & {\em output\+Buffer\+ID} & identifier of the output buffer in which the data must be read \\
+\hline
+\mbox{\tt out}  & {\em data\+Ptr} & pointer on the data read \\
+\hline
+\mbox{\tt in}  & {\em data\+Limit\+Size} & limit size of the copy \\
+\hline
+\mbox{\tt out}  & {\em read\+Size\+Ptr} & pointer to store the size of the data read \\
+\hline
+\mbox{\tt in}  & {\em timeout\+Ms} & maximum time in millisecond to wait if there is no data to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR type 
+\end{DoxyReturn}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Receiving\+Thread\+Run@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Receiving\+Thread\+Run}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Receiving\+Thread\+Run@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Receiving\+Thread\+Run}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Receiving\+Thread\+Run(void $\ast$data)}{ARNETWORK_Manager_ReceivingThreadRun(void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Receiving\+Thread\+Run (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a8e4eb73c36998e8616acbb9b1b6351de}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a8e4eb73c36998e8616acbb9b1b6351de}
+
+
+Manage the reception of the data. 
+
+\begin{DoxyWarning}{Warning}
+This function must be called by a specific thread. 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+Before join the thread calling this function, \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_affe3126b6c6bbeb903b62f01a31995ac}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Stop()} must be called. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & thread datas of type A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t$\ast$ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\+U\+LL 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_affe3126b6c6bbeb903b62f01a31995ac}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Stop()} 
+\end{DoxySeeAlso}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Send\+Data@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Send\+Data}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Send\+Data@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Send\+Data}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Send\+Data(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t $\ast$manager\+Ptr, int input\+Buffer\+I\+D, uint8\+\_\+t $\ast$data\+Ptr, int data\+Size, void $\ast$custom\+Data, A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Callback\+\_\+t callback, int do\+Data\+Copy)}{ARNETWORK_Manager_SendData(ARNETWORK_Manager_t *managerPtr, int inputBufferID, uint8_t *dataPtr, int dataSize, void *customData, ARNETWORK_Manager_Callback_t callback, int doDataCopy)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Send\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$}]{manager\+Ptr, }
+\item[{int}]{input\+Buffer\+ID, }
+\item[{uint8\+\_\+t $\ast$}]{data\+Ptr, }
+\item[{int}]{data\+Size, }
+\item[{void $\ast$}]{custom\+Data, }
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Callback\+\_\+t}}]{callback, }
+\item[{int}]{do\+Data\+Copy}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_ace22ddaf5de87a707afbf773e754772c}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_ace22ddaf5de87a707afbf773e754772c}
+
+
+Add data to send in a I\+O\+Buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager\+Ptr} & pointer on the Manager \\
+\hline
+\mbox{\tt in}  & {\em input\+Buffer\+ID} & identifier of the input buffer in which the data must be stored \\
+\hline
+\mbox{\tt in}  & {\em data\+Ptr} & pointer on the data to send \\
+\hline
+\mbox{\tt in}  & {\em data\+Size} & size of the data to send \\
+\hline
+\mbox{\tt in}  & {\em custom\+Data} & custom data sent to the callback \\
+\hline
+\mbox{\tt in}  & {\em callback} & pointer on the callback to call when the data is sent or an error occurred \\
+\hline
+\mbox{\tt in}  & {\em do\+Data\+Copy} & indicator to copy the data in the A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR 
+\end{DoxyReturn}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Sending\+Thread\+Run@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Sending\+Thread\+Run}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Sending\+Thread\+Run@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Sending\+Thread\+Run}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Sending\+Thread\+Run(void $\ast$data)}{ARNETWORK_Manager_SendingThreadRun(void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Sending\+Thread\+Run (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a38d277285c0fed3eb0b066c4cc441616}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a38d277285c0fed3eb0b066c4cc441616}
+
+
+Manage the sending of the data. 
+
+\begin{DoxyWarning}{Warning}
+This function must be called in its own thread. 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+Before join the thread calling this function, \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_affe3126b6c6bbeb903b62f01a31995ac}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Stop()} must be called. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & thread data of type A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t$\ast$ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\+U\+LL 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_affe3126b6c6bbeb903b62f01a31995ac}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Stop()} 
+\end{DoxySeeAlso}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Set\+Minimum\+Time\+Between\+Sends@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Set\+Minimum\+Time\+Between\+Sends}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Set\+Minimum\+Time\+Between\+Sends@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Set\+Minimum\+Time\+Between\+Sends}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Set\+Minimum\+Time\+Between\+Sends(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t $\ast$manager\+Ptr, int minimum\+Time\+Ms)}{ARNETWORK_Manager_SetMinimumTimeBetweenSends(ARNETWORK_Manager_t *managerPtr, int minimumTimeMs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Set\+Minimum\+Time\+Between\+Sends (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$}]{manager\+Ptr, }
+\item[{int}]{minimum\+Time\+Ms}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a0eb85bbfbd8cafa08b41c2b2493fabeb}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a0eb85bbfbd8cafa08b41c2b2493fabeb}
+
+
+Sets the minimum time between two network sends for the given A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t Default value is 1ms. 
+
+\begin{DoxyWarning}{Warning}
+The \hyperlink{_a_r_n_e_t_w_o_r_k_a_l___frame_8h_aee43e1c38faf96b7cfb53b02e9150750aa6d5c6e58dea417035f43e7452543e0b}{A\+R\+N\+E\+T\+W\+O\+R\+K\+A\+L\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+A\+T\+A\+\_\+\+L\+O\+W\+\_\+\+L\+A\+T\+E\+N\+CY} buffers are not affected by this setting 
+
+Setting a bad minimum time can result in erratic behavior of the library 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em manager\+Ptr} & Pointer to the A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t \\
+\hline
+{\em minimum\+Time\+Ms} & Minimum time, in miliseconds, between two network sends \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR type 
+\end{DoxyReturn}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Stop@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Stop}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Stop@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Stop}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Stop(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t $\ast$manager\+Ptr)}{ARNETWORK_Manager_Stop(ARNETWORK_Manager_t *managerPtr)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Stop (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$}]{manager\+Ptr}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_affe3126b6c6bbeb903b62f01a31995ac}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_affe3126b6c6bbeb903b62f01a31995ac}
+
+
+stop the threads of sending and reception 
+
+Used to kill the threads calling \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a38d277285c0fed3eb0b066c4cc441616}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Sending\+Thread\+Run()} and \hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a8e4eb73c36998e8616acbb9b1b6351de}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Receiving\+Thread\+Run()}. 
+\begin{DoxyParams}{Parameters}
+{\em manager\+Ptr} & pointer on the Manager \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a38d277285c0fed3eb0b066c4cc441616}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Sending\+Thread\+Run()} 
+
+\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a8e4eb73c36998e8616acbb9b1b6351de}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Receiving\+Thread\+Run()} 
+\end{DoxySeeAlso}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Try\+Read\+Data@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Try\+Read\+Data}}
+\index{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Try\+Read\+Data@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Try\+Read\+Data}!A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h@{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Try\+Read\+Data(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t $\ast$manager\+Ptr, int output\+Buffer\+I\+D, uint8\+\_\+t $\ast$data\+Ptr, int data\+Limit\+Size, int $\ast$read\+Size\+Ptr)}{ARNETWORK_Manager_TryReadData(ARNETWORK_Manager_t *managerPtr, int outputBufferID, uint8_t *dataPtr, int dataLimitSize, int *readSizePtr)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR} A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+\+Try\+Read\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$}]{manager\+Ptr, }
+\item[{int}]{output\+Buffer\+ID, }
+\item[{uint8\+\_\+t $\ast$}]{data\+Ptr, }
+\item[{int}]{data\+Limit\+Size, }
+\item[{int $\ast$}]{read\+Size\+Ptr}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_n_e_t_w_o_r_k___manager_8h_a02ca8da6f65ca2842612e15a305fc33f}{}\label{_a_r_n_e_t_w_o_r_k___manager_8h_a02ca8da6f65ca2842612e15a305fc33f}
+
+
+try to read data received in a I\+O\+Buffer using variable size data (non-\/blocking function) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em manager\+Ptr} & pointer on the Manager \\
+\hline
+\mbox{\tt in}  & {\em output\+Buffer\+ID} & identifier of the output buffer in which the data must be read \\
+\hline
+\mbox{\tt out}  & {\em data\+Ptr} & pointer on the data read \\
+\hline
+\mbox{\tt in}  & {\em data\+Limit\+Size} & limit size of the copy \\
+\hline
+\mbox{\tt out}  & {\em read\+Size\+Ptr} & pointer to store the size of the data read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error e\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+E\+R\+R\+OR type 
+\end{DoxyReturn}

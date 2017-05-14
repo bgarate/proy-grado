@@ -1,0 +1,10 @@
+<map id="Hello::port" name="Hello::port">
+<area shape="rect" id="node2" href="$class_brain.html#a23d921369c5ec1218d7dc26d0f8270c2" title="Brain::loop" alt="" coords="367,19,451,45"/>
+<area shape="rect" id="node4" href="$class_communication.html#a303009b7e1a4f714d02fb8729ea98f0b" title="Communication::asociate" alt="" coords="142,44,313,71"/>
+<area shape="rect" id="node5" href="$class_hello.html#ac92291e781c2c1edde2a3c3e059bfc95" title="Hello::SerializeWithCached\lSizes" alt="" coords="136,95,319,137"/>
+<area shape="rect" id="node6" href="$class_hello.html#aa016d3f9806dfe20be84701c1745a7e5" title="Hello::InternalSerialize\lWithCachedSizesToArray" alt="" coords="141,161,314,202"/>
+<area shape="rect" id="node7" href="$class_hello.html#a5e4c274ae3c79f7c33de700ea8768858" title="Hello::ByteSizeLong" alt="" coords="157,227,298,253"/>
+<area shape="rect" id="node8" href="$class_hello.html#af01676342b30ab0ea8c04893df6ea19d" title="Hello::MergeFrom" alt="" coords="164,277,291,304"/>
+<area shape="rect" id="node9" href="$class_hello.html#af317fbebedc25e52461c38d70433814b" title="Hello::GetMetadata" alt="" coords="160,328,295,355"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a523d51f6d06fce5bbed3e074818569fb" title="main" alt="" coords="499,19,549,45"/>
+</map>

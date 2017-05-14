@@ -1,0 +1,409 @@
+\hypertarget{_a_r_s_a_l___time_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+S\+A\+L/\+A\+R\+S\+A\+L\+\_\+\+Time.h File Reference}
+\label{_a_r_s_a_l___time_8h}\index{src/hal/pb2/include/lib\+A\+R\+S\+A\+L/\+A\+R\+S\+A\+L\+\_\+\+Time.\+h@{src/hal/pb2/include/lib\+A\+R\+S\+A\+L/\+A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+
+
+This file contains headers about time abstraction layer.  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$sys/time.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+Include dependency graph for A\+R\+S\+A\+L\+\_\+\+Time.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_s_a_l___time_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_s_a_l___time_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_a_r_s_a_l___time_8h_ae74892147bd331be31e297310d8a226d}{S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC}(sec)~((sec) $\ast$ 1000)
+\begin{DoxyCompactList}\small\item\em Convert second to millisecond. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_s_a_l___time_8h_ae2bd25a37cd245d00430ffdd63c68afd}{S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC}(sec)~((sec) $\ast$ 1000000)
+\begin{DoxyCompactList}\small\item\em Convert second to microsecond. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_s_a_l___time_8h_a82daf02ca6a7280bb1a05080e3d3e16b}{S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC}(sec)~((sec) $\ast$ 1000000000)
+\begin{DoxyCompactList}\small\item\em Convert second to nanosecond. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_s_a_l___time_8h_a19288131d1f83e9e35b269efc44ed974}{M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC}(msec)~((msec) / 1000)
+\begin{DoxyCompactList}\small\item\em Convert millisecond to second. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_s_a_l___time_8h_a01b2e5ace2bc824059927003a96b29a8}{M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC}(msec)~((msec) $\ast$ 1000)
+\begin{DoxyCompactList}\small\item\em Convert millisecond to microsecond. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_s_a_l___time_8h_aa38812c49d8b3aed518c15837c6a0f27}{M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC}(msec)~((msec) $\ast$ 1000000)
+\begin{DoxyCompactList}\small\item\em Convert millisecond to nanosecond. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_s_a_l___time_8h_a45e1ddd2e7ffd3a95051181311b449b7}{U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC}(usec)~((usec) / 1000000)
+\begin{DoxyCompactList}\small\item\em Convert microsecond to second. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_s_a_l___time_8h_a86505459f306210fad0d4ecdce6f7146}{U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC}(usec)~((usec) / 1000)
+\begin{DoxyCompactList}\small\item\em Convert microsecond to millisecond. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_s_a_l___time_8h_a2e0ba345ecfb51c3b119512c7e56dcdc}{U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC}(usec)~((usec) $\ast$ 1000)
+\begin{DoxyCompactList}\small\item\em Convert microsecond to nanosecond. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_s_a_l___time_8h_a328474d0cf98a5db4f115fdc4afbc7da}{N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC}(nsec)~((nsec) / 1000000000)
+\begin{DoxyCompactList}\small\item\em Convert nanosecond to second. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_s_a_l___time_8h_add05066e87b1cbe46282cd83dd5da34d}{N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC}(nsec)~((nsec) / 1000000)
+\begin{DoxyCompactList}\small\item\em Convert nanosecond to millisecond. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_s_a_l___time_8h_afaddfb5c433631e3488307b3fcfd8f24}{N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC}(nsec)~((nsec) / 1000)
+\begin{DoxyCompactList}\small\item\em Convert nanosecond to microsecond. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_s_a_l___time_8h_a584277e2b3df9a5db0e93000b09df811}{T\+I\+M\+E\+V\+A\+L\+\_\+\+T\+O\+\_\+\+T\+I\+M\+E\+S\+P\+EC}(tv,  ts)
+\begin{DoxyCompactList}\small\item\em Convert timeval structure to timespec structure. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_s_a_l___time_8h_afc92eb02ef4fa20e3b1f1ecc1acc1349}{T\+I\+M\+E\+S\+P\+E\+C\+\_\+\+T\+O\+\_\+\+T\+I\+M\+E\+V\+AL}(ts,  tv)
+\begin{DoxyCompactList}\small\item\em Convert timespec structure to timeval structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_a_r_s_a_l___time_8h_a5b4bfc3cd791b1a878d971638e3dbe3a}{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Get\+Time} (struct timespec $\ast$res)
+\begin{DoxyCompactList}\small\item\em Gets the current system time as a timespec. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_s_a_l___time_8h_a5ccc8b762bf0433cfd0b419451d0a7ae}{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Get\+Local\+Time} (struct timespec $\ast$res, struct tm $\ast$local\+Time)
+\begin{DoxyCompactList}\small\item\em Gets the current local time both as a struct timespec and as a struct tm. This function is typically used for displaying a date to the user, where A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Get\+Time\} may yield a non meaningful date. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_s_a_l___time_8h_a57d1d89d659fe8f604e17a38695a51f7}{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Timeval\+Equals} (struct timeval $\ast$t1, struct timeval $\ast$t2)
+\begin{DoxyCompactList}\small\item\em Checks the equality of two timeval. \end{DoxyCompactList}\item 
+int \hyperlink{_a_r_s_a_l___time_8h_a3508965d94a31d19c3481f4b165abe42}{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Timespec\+Equals} (struct timespec $\ast$t1, struct timespec $\ast$t2)
+\begin{DoxyCompactList}\small\item\em Checks the equality of two timespec. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{_a_r_s_a_l___time_8h_a8254cd724b199c20c6b2cf2f516bf06d}{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Compute\+Timeval\+Ms\+Time\+Diff} (struct timeval $\ast$start, struct timeval $\ast$end)
+\begin{DoxyCompactList}\small\item\em Computes the difference between two timeval. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{_a_r_s_a_l___time_8h_add8418b17bb2f2e441479b704c7fe18a}{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Compute\+Timespec\+Ms\+Time\+Diff} (struct timespec $\ast$start, struct timespec $\ast$end)
+\begin{DoxyCompactList}\small\item\em Computes the difference between two timespec. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains headers about time abstraction layer. 
+
+\begin{DoxyDate}{Date}
+05/18/2012 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:frederic.dhaeyer@parrot.com}{\tt frederic.\+dhaeyer@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC@{M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC}}
+\index{M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC@{M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC}{MSEC_TO_NSEC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC(
+\begin{DoxyParamCaption}
+\item[{}]{msec}
+\end{DoxyParamCaption}
+)~((msec) $\ast$ 1000000)}\hypertarget{_a_r_s_a_l___time_8h_aa38812c49d8b3aed518c15837c6a0f27}{}\label{_a_r_s_a_l___time_8h_aa38812c49d8b3aed518c15837c6a0f27}
+
+
+Convert millisecond to nanosecond. 
+
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC@{M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC}}
+\index{M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC@{M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC}{MSEC_TO_SEC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC(
+\begin{DoxyParamCaption}
+\item[{}]{msec}
+\end{DoxyParamCaption}
+)~((msec) / 1000)}\hypertarget{_a_r_s_a_l___time_8h_a19288131d1f83e9e35b269efc44ed974}{}\label{_a_r_s_a_l___time_8h_a19288131d1f83e9e35b269efc44ed974}
+
+
+Convert millisecond to second. 
+
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC@{M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC}}
+\index{M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC@{M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC}{MSEC_TO_USEC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC(
+\begin{DoxyParamCaption}
+\item[{}]{msec}
+\end{DoxyParamCaption}
+)~((msec) $\ast$ 1000)}\hypertarget{_a_r_s_a_l___time_8h_a01b2e5ace2bc824059927003a96b29a8}{}\label{_a_r_s_a_l___time_8h_a01b2e5ace2bc824059927003a96b29a8}
+
+
+Convert millisecond to microsecond. 
+
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC@{N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC}}
+\index{N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC@{N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC}{NSEC_TO_MSEC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC(
+\begin{DoxyParamCaption}
+\item[{}]{nsec}
+\end{DoxyParamCaption}
+)~((nsec) / 1000000)}\hypertarget{_a_r_s_a_l___time_8h_add05066e87b1cbe46282cd83dd5da34d}{}\label{_a_r_s_a_l___time_8h_add05066e87b1cbe46282cd83dd5da34d}
+
+
+Convert nanosecond to millisecond. 
+
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC@{N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC}}
+\index{N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC@{N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC}{NSEC_TO_SEC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC(
+\begin{DoxyParamCaption}
+\item[{}]{nsec}
+\end{DoxyParamCaption}
+)~((nsec) / 1000000000)}\hypertarget{_a_r_s_a_l___time_8h_a328474d0cf98a5db4f115fdc4afbc7da}{}\label{_a_r_s_a_l___time_8h_a328474d0cf98a5db4f115fdc4afbc7da}
+
+
+Convert nanosecond to second. 
+
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC@{N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC}}
+\index{N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC@{N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC}{NSEC_TO_USEC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC(
+\begin{DoxyParamCaption}
+\item[{}]{nsec}
+\end{DoxyParamCaption}
+)~((nsec) / 1000)}\hypertarget{_a_r_s_a_l___time_8h_afaddfb5c433631e3488307b3fcfd8f24}{}\label{_a_r_s_a_l___time_8h_afaddfb5c433631e3488307b3fcfd8f24}
+
+
+Convert nanosecond to microsecond. 
+
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC@{S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC}}
+\index{S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC@{S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC}{SEC_TO_MSEC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC(
+\begin{DoxyParamCaption}
+\item[{}]{sec}
+\end{DoxyParamCaption}
+)~((sec) $\ast$ 1000)}\hypertarget{_a_r_s_a_l___time_8h_ae74892147bd331be31e297310d8a226d}{}\label{_a_r_s_a_l___time_8h_ae74892147bd331be31e297310d8a226d}
+
+
+Convert second to millisecond. 
+
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC@{S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC}}
+\index{S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC@{S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC}{SEC_TO_NSEC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC(
+\begin{DoxyParamCaption}
+\item[{}]{sec}
+\end{DoxyParamCaption}
+)~((sec) $\ast$ 1000000000)}\hypertarget{_a_r_s_a_l___time_8h_a82daf02ca6a7280bb1a05080e3d3e16b}{}\label{_a_r_s_a_l___time_8h_a82daf02ca6a7280bb1a05080e3d3e16b}
+
+
+Convert second to nanosecond. 
+
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC@{S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC}}
+\index{S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC@{S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC}{SEC_TO_USEC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+C\+\_\+\+T\+O\+\_\+\+U\+S\+EC(
+\begin{DoxyParamCaption}
+\item[{}]{sec}
+\end{DoxyParamCaption}
+)~((sec) $\ast$ 1000000)}\hypertarget{_a_r_s_a_l___time_8h_ae2bd25a37cd245d00430ffdd63c68afd}{}\label{_a_r_s_a_l___time_8h_ae2bd25a37cd245d00430ffdd63c68afd}
+
+
+Convert second to microsecond. 
+
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!T\+I\+M\+E\+S\+P\+E\+C\+\_\+\+T\+O\+\_\+\+T\+I\+M\+E\+V\+AL@{T\+I\+M\+E\+S\+P\+E\+C\+\_\+\+T\+O\+\_\+\+T\+I\+M\+E\+V\+AL}}
+\index{T\+I\+M\+E\+S\+P\+E\+C\+\_\+\+T\+O\+\_\+\+T\+I\+M\+E\+V\+AL@{T\+I\+M\+E\+S\+P\+E\+C\+\_\+\+T\+O\+\_\+\+T\+I\+M\+E\+V\+AL}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{T\+I\+M\+E\+S\+P\+E\+C\+\_\+\+T\+O\+\_\+\+T\+I\+M\+E\+V\+AL}{TIMESPEC_TO_TIMEVAL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+I\+M\+E\+S\+P\+E\+C\+\_\+\+T\+O\+\_\+\+T\+I\+M\+E\+V\+AL(
+\begin{DoxyParamCaption}
+\item[{}]{ts, }
+\item[{}]{tv}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___time_8h_afc92eb02ef4fa20e3b1f1ecc1acc1349}{}\label{_a_r_s_a_l___time_8h_afc92eb02ef4fa20e3b1f1ecc1acc1349}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}                                              \(\backslash\)
+    \{                                               \(\backslash\)
+        (tv)->tv\_sec = (ts)->tv\_sec;                \(\backslash\)
+        (tv)->tv\_usec = \hyperlink{_a_r_s_a_l___time_8h_afaddfb5c433631e3488307b3fcfd8f24}{NSEC\_TO\_USEC}((ts)->tv\_nsec);\(\backslash\)
+    \} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+
+
+Convert timespec structure to timeval structure. 
+
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!T\+I\+M\+E\+V\+A\+L\+\_\+\+T\+O\+\_\+\+T\+I\+M\+E\+S\+P\+EC@{T\+I\+M\+E\+V\+A\+L\+\_\+\+T\+O\+\_\+\+T\+I\+M\+E\+S\+P\+EC}}
+\index{T\+I\+M\+E\+V\+A\+L\+\_\+\+T\+O\+\_\+\+T\+I\+M\+E\+S\+P\+EC@{T\+I\+M\+E\+V\+A\+L\+\_\+\+T\+O\+\_\+\+T\+I\+M\+E\+S\+P\+EC}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{T\+I\+M\+E\+V\+A\+L\+\_\+\+T\+O\+\_\+\+T\+I\+M\+E\+S\+P\+EC}{TIMEVAL_TO_TIMESPEC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+I\+M\+E\+V\+A\+L\+\_\+\+T\+O\+\_\+\+T\+I\+M\+E\+S\+P\+EC(
+\begin{DoxyParamCaption}
+\item[{}]{tv, }
+\item[{}]{ts}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___time_8h_a584277e2b3df9a5db0e93000b09df811}{}\label{_a_r_s_a_l___time_8h_a584277e2b3df9a5db0e93000b09df811}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}                                              \(\backslash\)
+    \{                                               \(\backslash\)
+        (ts)->tv\_sec = (tv)->tv\_sec;                \(\backslash\)
+        (ts)->tv\_nsec = \hyperlink{_a_r_s_a_l___time_8h_a2e0ba345ecfb51c3b119512c7e56dcdc}{USEC\_TO\_NSEC}((tv)->tv\_usec);\(\backslash\)
+    \} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+
+
+Convert timeval structure to timespec structure. 
+
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC@{U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC}}
+\index{U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC@{U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC}{USEC_TO_MSEC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+M\+S\+EC(
+\begin{DoxyParamCaption}
+\item[{}]{usec}
+\end{DoxyParamCaption}
+)~((usec) / 1000)}\hypertarget{_a_r_s_a_l___time_8h_a86505459f306210fad0d4ecdce6f7146}{}\label{_a_r_s_a_l___time_8h_a86505459f306210fad0d4ecdce6f7146}
+
+
+Convert microsecond to millisecond. 
+
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC@{U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC}}
+\index{U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC@{U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC}{USEC_TO_NSEC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+N\+S\+EC(
+\begin{DoxyParamCaption}
+\item[{}]{usec}
+\end{DoxyParamCaption}
+)~((usec) $\ast$ 1000)}\hypertarget{_a_r_s_a_l___time_8h_a2e0ba345ecfb51c3b119512c7e56dcdc}{}\label{_a_r_s_a_l___time_8h_a2e0ba345ecfb51c3b119512c7e56dcdc}
+
+
+Convert microsecond to nanosecond. 
+
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC@{U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC}}
+\index{U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC@{U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC}{USEC_TO_SEC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+E\+C\+\_\+\+T\+O\+\_\+\+S\+EC(
+\begin{DoxyParamCaption}
+\item[{}]{usec}
+\end{DoxyParamCaption}
+)~((usec) / 1000000)}\hypertarget{_a_r_s_a_l___time_8h_a45e1ddd2e7ffd3a95051181311b449b7}{}\label{_a_r_s_a_l___time_8h_a45e1ddd2e7ffd3a95051181311b449b7}
+
+
+Convert microsecond to second. 
+
+
+
+\subsection{Function Documentation}
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Compute\+Timespec\+Ms\+Time\+Diff@{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Compute\+Timespec\+Ms\+Time\+Diff}}
+\index{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Compute\+Timespec\+Ms\+Time\+Diff@{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Compute\+Timespec\+Ms\+Time\+Diff}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Compute\+Timespec\+Ms\+Time\+Diff(struct timespec $\ast$start, struct timespec $\ast$end)}{ARSAL_Time_ComputeTimespecMsTimeDiff(struct timespec *start, struct timespec *end)}}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Compute\+Timespec\+Ms\+Time\+Diff (
+\begin{DoxyParamCaption}
+\item[{struct timespec $\ast$}]{start, }
+\item[{struct timespec $\ast$}]{end}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___time_8h_add8418b17bb2f2e441479b704c7fe18a}{}\label{_a_r_s_a_l___time_8h_add8418b17bb2f2e441479b704c7fe18a}
+
+
+Computes the difference between two timespec. 
+
+This function returns the time, in miliseconds, between the two given timespecs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start of the time interval to compute \\
+\hline
+{\em end} & End of the time interval to compute \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of ms between the two timespec. A negative number is an error 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Make sure that \char`\"{}end\char`\"{} is after \char`\"{}start\char`\"{} 
+\end{DoxyWarning}
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Compute\+Timeval\+Ms\+Time\+Diff@{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Compute\+Timeval\+Ms\+Time\+Diff}}
+\index{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Compute\+Timeval\+Ms\+Time\+Diff@{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Compute\+Timeval\+Ms\+Time\+Diff}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Compute\+Timeval\+Ms\+Time\+Diff(struct timeval $\ast$start, struct timeval $\ast$end)}{ARSAL_Time_ComputeTimevalMsTimeDiff(struct timeval *start, struct timeval *end)}}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Compute\+Timeval\+Ms\+Time\+Diff (
+\begin{DoxyParamCaption}
+\item[{struct timeval $\ast$}]{start, }
+\item[{struct timeval $\ast$}]{end}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___time_8h_a8254cd724b199c20c6b2cf2f516bf06d}{}\label{_a_r_s_a_l___time_8h_a8254cd724b199c20c6b2cf2f516bf06d}
+
+
+Computes the difference between two timeval. 
+
+This function returns the time, in miliseconds, between the two given timevals.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start of the time interval to compute \\
+\hline
+{\em end} & End of the time interval to compute \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of ms between the two timeval. A negative number is an error 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Make sure that \char`\"{}end\char`\"{} is after \char`\"{}start\char`\"{} 
+\end{DoxyWarning}
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Get\+Local\+Time@{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Get\+Local\+Time}}
+\index{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Get\+Local\+Time@{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Get\+Local\+Time}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Get\+Local\+Time(struct timespec $\ast$res, struct tm $\ast$local\+Time)}{ARSAL_Time_GetLocalTime(struct timespec *res, struct tm *localTime)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Get\+Local\+Time (
+\begin{DoxyParamCaption}
+\item[{struct timespec $\ast$}]{res, }
+\item[{struct tm $\ast$}]{local\+Time}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___time_8h_a5ccc8b762bf0433cfd0b419451d0a7ae}{}\label{_a_r_s_a_l___time_8h_a5ccc8b762bf0433cfd0b419451d0a7ae}
+
+
+Gets the current local time both as a struct timespec and as a struct tm. This function is typically used for displaying a date to the user, where A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Get\+Time\} may yield a non meaningful date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & Pointer to a timespec struct which will hold the local time (optionnal, may be N\+U\+LL) \\
+\hline
+{\em local\+Time} & Pointer to a tm struct which will hold the local time (optionnal, may be N\+U\+LL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The returned value is affected by discontinuous jumps in the system time (e.\+g., if the system administrator manually changes the clock), and by the incremental adjustments performed by adjtime(3) and N\+TP. 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+0 if no error occures, -\/1 if any error occured 
+\end{DoxyReturn}
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Get\+Time@{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Get\+Time}}
+\index{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Get\+Time@{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Get\+Time}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Get\+Time(struct timespec $\ast$res)}{ARSAL_Time_GetTime(struct timespec *res)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Get\+Time (
+\begin{DoxyParamCaption}
+\item[{struct timespec $\ast$}]{res}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___time_8h_a5b4bfc3cd791b1a878d971638e3dbe3a}{}\label{_a_r_s_a_l___time_8h_a5b4bfc3cd791b1a878d971638e3dbe3a}
+
+
+Gets the current system time as a timespec. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & Pointer to a timespec struct which will be filled with the current time\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function may return a non meaningful date, but is suitable for time interval calculations
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if no error occured, -\/1 if any error occured 
+\end{DoxyReturn}
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Timespec\+Equals@{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Timespec\+Equals}}
+\index{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Timespec\+Equals@{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Timespec\+Equals}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Timespec\+Equals(struct timespec $\ast$t1, struct timespec $\ast$t2)}{ARSAL_Time_TimespecEquals(struct timespec *t1, struct timespec *t2)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Timespec\+Equals (
+\begin{DoxyParamCaption}
+\item[{struct timespec $\ast$}]{t1, }
+\item[{struct timespec $\ast$}]{t2}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___time_8h_a3508965d94a31d19c3481f4b165abe42}{}\label{_a_r_s_a_l___time_8h_a3508965d94a31d19c3481f4b165abe42}
+
+
+Checks the equality of two timespec. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t1} & First time to compare \\
+\hline
+{\em t2} & Second time to compare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if t1 and t2 represent the same value 
+
+0 in all other cases 
+\end{DoxyReturn}
+\index{A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}!A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Timeval\+Equals@{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Timeval\+Equals}}
+\index{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Timeval\+Equals@{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Timeval\+Equals}!A\+R\+S\+A\+L\+\_\+\+Time.\+h@{A\+R\+S\+A\+L\+\_\+\+Time.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Timeval\+Equals(struct timeval $\ast$t1, struct timeval $\ast$t2)}{ARSAL_Time_TimevalEquals(struct timeval *t1, struct timeval *t2)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+S\+A\+L\+\_\+\+Time\+\_\+\+Timeval\+Equals (
+\begin{DoxyParamCaption}
+\item[{struct timeval $\ast$}]{t1, }
+\item[{struct timeval $\ast$}]{t2}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_a_l___time_8h_a57d1d89d659fe8f604e17a38695a51f7}{}\label{_a_r_s_a_l___time_8h_a57d1d89d659fe8f604e17a38695a51f7}
+
+
+Checks the equality of two timeval. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t1} & First time to compare \\
+\hline
+{\em t2} & Second time to compare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if t1 and t2 represent the same value 
+
+0 in all other cases 
+\end{DoxyReturn}

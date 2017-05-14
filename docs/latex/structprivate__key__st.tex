@@ -1,0 +1,72 @@
+\hypertarget{structprivate__key__st}{}\section{private\+\_\+key\+\_\+st Struct Reference}
+\label{structprivate__key__st}\index{private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}}
+
+
+{\ttfamily \#include $<$x509.\+h$>$}
+
+
+
+Collaboration diagram for private\+\_\+key\+\_\+st\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structprivate__key__st__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structprivate__key__st_a16bd44f055e649572a0f5b0d62a92219}{version}
+\item 
+\hyperlink{ossl__typ_8h_aa2b6185e6254f36f709cd6577fb5022e}{X509\+\_\+\+A\+L\+G\+OR} $\ast$ \hyperlink{structprivate__key__st_a866f6478e044bb225e3c9983df4b48a2}{enc\+\_\+algor}
+\item 
+\hyperlink{ossl__typ_8h_afbd05e94e0f0430a2b729473efec88c1}{A\+S\+N1\+\_\+\+O\+C\+T\+E\+T\+\_\+\+S\+T\+R\+I\+NG} $\ast$ \hyperlink{structprivate__key__st_a514cc301684203bf755bbc83033f51aa}{enc\+\_\+pkey}
+\item 
+\hyperlink{ossl__typ_8h_a2fca4fef9e4c7a2a739b1ea04acb56ce}{E\+V\+P\+\_\+\+P\+K\+EY} $\ast$ \hyperlink{structprivate__key__st_ab6fa39f8beba82366b4a0c9af1d68231}{dec\+\_\+pkey}
+\item 
+int \hyperlink{structprivate__key__st_a4fd59ffeb31b0bc4acf1330ba4c1cfab}{key\+\_\+length}
+\item 
+char $\ast$ \hyperlink{structprivate__key__st_a648ff8dfa3759f8cf7e78e8f0acf621e}{key\+\_\+data}
+\item 
+int \hyperlink{structprivate__key__st_a6cba7d7973cf8425493d996dd8464e29}{key\+\_\+free}
+\item 
+\hyperlink{evp_8h_a0ff32d74885621bf0ee4f962602e6c9b}{E\+V\+P\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+I\+N\+FO} \hyperlink{structprivate__key__st_afeef179b98e87f1f950eb977dda61fc4}{cipher}
+\item 
+int \hyperlink{structprivate__key__st_a96a0fec0281fed6acf1d455f2d5c93ff}{references}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}!cipher@{cipher}}
+\index{cipher@{cipher}!private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}}
+\subsubsection[{\texorpdfstring{cipher}{cipher}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+V\+P\+\_\+\+C\+I\+P\+H\+E\+R\+\_\+\+I\+N\+FO} private\+\_\+key\+\_\+st\+::cipher}\hypertarget{structprivate__key__st_afeef179b98e87f1f950eb977dda61fc4}{}\label{structprivate__key__st_afeef179b98e87f1f950eb977dda61fc4}
+\index{private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}!dec\+\_\+pkey@{dec\+\_\+pkey}}
+\index{dec\+\_\+pkey@{dec\+\_\+pkey}!private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}}
+\subsubsection[{\texorpdfstring{dec\+\_\+pkey}{dec_pkey}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+V\+P\+\_\+\+P\+K\+EY}$\ast$ private\+\_\+key\+\_\+st\+::dec\+\_\+pkey}\hypertarget{structprivate__key__st_ab6fa39f8beba82366b4a0c9af1d68231}{}\label{structprivate__key__st_ab6fa39f8beba82366b4a0c9af1d68231}
+\index{private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}!enc\+\_\+algor@{enc\+\_\+algor}}
+\index{enc\+\_\+algor@{enc\+\_\+algor}!private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}}
+\subsubsection[{\texorpdfstring{enc\+\_\+algor}{enc_algor}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X509\+\_\+\+A\+L\+G\+OR}$\ast$ private\+\_\+key\+\_\+st\+::enc\+\_\+algor}\hypertarget{structprivate__key__st_a866f6478e044bb225e3c9983df4b48a2}{}\label{structprivate__key__st_a866f6478e044bb225e3c9983df4b48a2}
+\index{private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}!enc\+\_\+pkey@{enc\+\_\+pkey}}
+\index{enc\+\_\+pkey@{enc\+\_\+pkey}!private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}}
+\subsubsection[{\texorpdfstring{enc\+\_\+pkey}{enc_pkey}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+S\+N1\+\_\+\+O\+C\+T\+E\+T\+\_\+\+S\+T\+R\+I\+NG}$\ast$ private\+\_\+key\+\_\+st\+::enc\+\_\+pkey}\hypertarget{structprivate__key__st_a514cc301684203bf755bbc83033f51aa}{}\label{structprivate__key__st_a514cc301684203bf755bbc83033f51aa}
+\index{private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}!key\+\_\+data@{key\+\_\+data}}
+\index{key\+\_\+data@{key\+\_\+data}!private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}}
+\subsubsection[{\texorpdfstring{key\+\_\+data}{key_data}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ private\+\_\+key\+\_\+st\+::key\+\_\+data}\hypertarget{structprivate__key__st_a648ff8dfa3759f8cf7e78e8f0acf621e}{}\label{structprivate__key__st_a648ff8dfa3759f8cf7e78e8f0acf621e}
+\index{private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}!key\+\_\+free@{key\+\_\+free}}
+\index{key\+\_\+free@{key\+\_\+free}!private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}}
+\subsubsection[{\texorpdfstring{key\+\_\+free}{key_free}}]{\setlength{\rightskip}{0pt plus 5cm}int private\+\_\+key\+\_\+st\+::key\+\_\+free}\hypertarget{structprivate__key__st_a6cba7d7973cf8425493d996dd8464e29}{}\label{structprivate__key__st_a6cba7d7973cf8425493d996dd8464e29}
+\index{private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}!key\+\_\+length@{key\+\_\+length}}
+\index{key\+\_\+length@{key\+\_\+length}!private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}}
+\subsubsection[{\texorpdfstring{key\+\_\+length}{key_length}}]{\setlength{\rightskip}{0pt plus 5cm}int private\+\_\+key\+\_\+st\+::key\+\_\+length}\hypertarget{structprivate__key__st_a4fd59ffeb31b0bc4acf1330ba4c1cfab}{}\label{structprivate__key__st_a4fd59ffeb31b0bc4acf1330ba4c1cfab}
+\index{private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}!references@{references}}
+\index{references@{references}!private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}}
+\subsubsection[{\texorpdfstring{references}{references}}]{\setlength{\rightskip}{0pt plus 5cm}int private\+\_\+key\+\_\+st\+::references}\hypertarget{structprivate__key__st_a96a0fec0281fed6acf1d455f2d5c93ff}{}\label{structprivate__key__st_a96a0fec0281fed6acf1d455f2d5c93ff}
+\index{private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}!version@{version}}
+\index{version@{version}!private\+\_\+key\+\_\+st@{private\+\_\+key\+\_\+st}}
+\subsubsection[{\texorpdfstring{version}{version}}]{\setlength{\rightskip}{0pt plus 5cm}int private\+\_\+key\+\_\+st\+::version}\hypertarget{structprivate__key__st_a16bd44f055e649572a0f5b0d62a92219}{}\label{structprivate__key__st_a16bd44f055e649572a0f5b0d62a92219}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/openssl/\hyperlink{x509_8h}{x509.\+h}\end{DoxyCompactItemize}

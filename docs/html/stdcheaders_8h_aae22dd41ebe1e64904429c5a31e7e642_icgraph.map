@@ -1,0 +1,8 @@
+<map id="fread" name="fread">
+<area shape="rect" id="node2" href="$ext_api_platform_8h.html#a59aed17e565e299ee7ee50f12b5c1e87" title="extApi_readFile" alt="" coords="104,81,216,108"/>
+<area shape="rect" id="node3" href="$ext_api_8h.html#ab3b832d46c5823b6928d5d007778c1ab" title="simxTransferFile" alt="" coords="264,81,383,108"/>
+<area shape="rect" id="node4" href="$ext_api_8h.html#aba004fe8c4230080573cf6a84609cc4c" title="simxLoadModel" alt="" coords="431,5,545,32"/>
+<area shape="rect" id="node5" href="$ext_api_8h.html#a0e7431db44935b74cf49ac5aa3edb6ec" title="mtlb_simxCallScriptFunction_b" alt="" coords="593,81,796,108"/>
+<area shape="rect" id="node6" href="$ext_api_8h.html#a0c14eaf2751f64cb99cc09ca40f690d1" title="simxLoadUI" alt="" coords="442,107,534,133"/>
+<area shape="rect" id="node7" href="$ext_api_8h.html#a334778d7372013cf32278c35cfb1e401" title="simxLoadScene" alt="" coords="431,157,545,184"/>
+</map>

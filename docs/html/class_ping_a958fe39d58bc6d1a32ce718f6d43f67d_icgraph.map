@@ -1,0 +1,9 @@
+<map id="Ping::set_type" name="Ping::set_type">
+<area shape="rect" id="node2" href="$class_body.html#a898135b92fa8abf09d435f671f62cf29" title="Body::loop" alt="" coords="217,5,301,32"/>
+<area shape="rect" id="node4" href="$class_brain.html#afa2f689c8360c9c9ad323bac5be4b42d" title="Brain::setup" alt="" coords="213,56,305,83"/>
+<area shape="rect" id="node5" href="$class_brain.html#a23d921369c5ec1218d7dc26d0f8270c2" title="Brain::loop" alt="" coords="217,107,301,133"/>
+<area shape="rect" id="node6" href="$class_ping.html#acd787a5f6a08da73732ab836a45a6e37" title="Ping::MergePartialFromCoded\lStream" alt="" coords="160,158,357,199"/>
+<area shape="rect" id="node7" href="$class_ping.html#aaa95c9bed6bcbea48fad8b360bf9ad07" title="Ping::MergeFrom" alt="" coords="197,224,320,251"/>
+<area shape="rect" id="node8" href="$class_ping.html#a36cbd90f664fba2f065c1ef35b03a8b4" title="Ping::GetMetadata" alt="" coords="193,275,324,301"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a523d51f6d06fce5bbed3e074818569fb" title="main" alt="" coords="405,56,456,83"/>
+</map>

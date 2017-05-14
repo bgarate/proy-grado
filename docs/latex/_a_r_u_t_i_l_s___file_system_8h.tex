@@ -1,0 +1,224 @@
+\hypertarget{_a_r_u_t_i_l_s___file_system_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Utils/\+A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.h File Reference}
+\label{_a_r_u_t_i_l_s___file_system_8h}\index{src/hal/pb2/include/lib\+A\+R\+Utils/\+A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h@{src/hal/pb2/include/lib\+A\+R\+Utils/\+A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h}}
+
+
+lib\+A\+R\+Utils File\+System header file.  
+
+
+{\ttfamily \#include \char`\"{}lib\+A\+R\+Utils/\+A\+R\+U\+T\+I\+L\+S\+\_\+\+Error.\+h\char`\"{}}\\*
+Include dependency graph for A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{_a_r_u_t_i_l_s___file_system_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_u_t_i_l_s___file_system_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_a_r_u_t_i_l_s___file_system_8h_a662ef6b080dafbfea853f1c1cafd1f91}{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+I\+L\+E\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+A\+X\+\_\+\+F\+D\+\_\+\+F\+O\+R\+\_\+\+F\+TW}~20
+\begin{DoxyCompactList}\small\item\em The maximum directory depth for ftw/\+A\+R\+S\+A\+L\+\_\+\+Ftw calls. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___file_system_8h_ae46374c90feab353d314faf709046b9e}{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Is\+Exist} (const char $\ast$name\+Path)
+\begin{DoxyCompactList}\small\item\em Check if local file system file or directory exist. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___file_system_8h_a8afd26ba785f87888170dbea105d2b5d}{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Get\+File\+Size} (const char $\ast$name\+Path, int64\+\_\+t $\ast$size)
+\begin{DoxyCompactList}\small\item\em Get local file system file size in bytes. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___file_system_8h_ab34d52faf75fa8e3a9f2362be3c259e1}{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Rename} (const char $\ast$old\+Name, const char $\ast$new\+Name)
+\begin{DoxyCompactList}\small\item\em Rename local file system file. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___file_system_8h_afdf641fca641a222031868ae8a3bd573}{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Remove\+File} (const char $\ast$local\+Path)
+\begin{DoxyCompactList}\small\item\em Remove local file system file. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___file_system_8h_a25f9e7f411c682715ba24e81c8172d6c}{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Remove\+Dir} (const char $\ast$local\+Path)
+\begin{DoxyCompactList}\small\item\em Remove recurcively a directory and its content. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_u_t_i_l_s___error_8h_a81b04857c8ef56e7a291b795dd4de43f}{e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_u_t_i_l_s___file_system_8h_a779b4c686ca79fe956987683c7daebc9}{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Get\+Free\+Space} (const char $\ast$local\+Path, double $\ast$free\+Space)
+\begin{DoxyCompactList}\small\item\em Get free space in bytes of the local file system directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+lib\+A\+R\+Utils File\+System header file. 
+
+\begin{DoxyDate}{Date}
+19/12/2013 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:david.flattin.ext@parrot.com}{\tt david.\+flattin.\+ext@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+I\+L\+E\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+A\+X\+\_\+\+F\+D\+\_\+\+F\+O\+R\+\_\+\+F\+TW@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+I\+L\+E\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+A\+X\+\_\+\+F\+D\+\_\+\+F\+O\+R\+\_\+\+F\+TW}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+I\+L\+E\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+A\+X\+\_\+\+F\+D\+\_\+\+F\+O\+R\+\_\+\+F\+TW@{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+I\+L\+E\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+A\+X\+\_\+\+F\+D\+\_\+\+F\+O\+R\+\_\+\+F\+TW}!A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+I\+L\+E\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+A\+X\+\_\+\+F\+D\+\_\+\+F\+O\+R\+\_\+\+F\+TW}{ARUTILS_FILE_SYSTEM_MAX_FD_FOR_FTW}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+U\+T\+I\+L\+S\+\_\+\+F\+I\+L\+E\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+A\+X\+\_\+\+F\+D\+\_\+\+F\+O\+R\+\_\+\+F\+TW~20}\hypertarget{_a_r_u_t_i_l_s___file_system_8h_a662ef6b080dafbfea853f1c1cafd1f91}{}\label{_a_r_u_t_i_l_s___file_system_8h_a662ef6b080dafbfea853f1c1cafd1f91}
+
+
+The maximum directory depth for ftw/\+A\+R\+S\+A\+L\+\_\+\+Ftw calls. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_s_a_l___ftw_8h_acb76ab9a45a78e45960d60c3112f8771}{A\+R\+S\+A\+L\+\_\+\+Ftw} () 
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Get\+File\+Size@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Get\+File\+Size}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Get\+File\+Size@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Get\+File\+Size}!A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Get\+File\+Size(const char $\ast$name\+Path, int64\+\_\+t $\ast$size)}{ARUTILS_FileSystem_GetFileSize(const char *namePath, int64_t *size)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Get\+File\+Size (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name\+Path, }
+\item[{int64\+\_\+t $\ast$}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___file_system_8h_a8afd26ba785f87888170dbea105d2b5d}{}\label{_a_r_u_t_i_l_s___file_system_8h_a8afd26ba785f87888170dbea105d2b5d}
+
+
+Get local file system file size in bytes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em name\+Path} & The string name path \\
+\hline
+\mbox{\tt out}  & {\em size} & The size of the file if success \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Get\+Free\+Space@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Get\+Free\+Space}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Get\+Free\+Space@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Get\+Free\+Space}!A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Get\+Free\+Space(const char $\ast$local\+Path, double $\ast$free\+Space)}{ARUTILS_FileSystem_GetFreeSpace(const char *localPath, double *freeSpace)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Get\+Free\+Space (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{local\+Path, }
+\item[{double $\ast$}]{free\+Space}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___file_system_8h_a779b4c686ca79fe956987683c7daebc9}{}\label{_a_r_u_t_i_l_s___file_system_8h_a779b4c686ca79fe956987683c7daebc9}
+
+
+Get free space in bytes of the local file system directory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em local\+Path} & The file name path string \\
+\hline
+\mbox{\tt out}  & {\em free\+Space} & The free space of the local directory \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Is\+Exist@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Is\+Exist}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Is\+Exist@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Is\+Exist}!A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Is\+Exist(const char $\ast$name\+Path)}{ARUTILS_FileSystem_IsExist(const char *namePath)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Is\+Exist (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name\+Path}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___file_system_8h_ae46374c90feab353d314faf709046b9e}{}\label{_a_r_u_t_i_l_s___file_system_8h_ae46374c90feab353d314faf709046b9e}
+
+
+Check if local file system file or directory exist. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em name\+Path} & The string name path \\
+\hline
+\mbox{\tt out}  & {\em size} & The size of the file if success \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK, A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+I\+L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND if it not exist. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Remove\+Dir@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Remove\+Dir}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Remove\+Dir@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Remove\+Dir}!A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Remove\+Dir(const char $\ast$local\+Path)}{ARUTILS_FileSystem_RemoveDir(const char *localPath)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Remove\+Dir (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{local\+Path}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___file_system_8h_a25f9e7f411c682715ba24e81c8172d6c}{}\label{_a_r_u_t_i_l_s___file_system_8h_a25f9e7f411c682715ba24e81c8172d6c}
+
+
+Remove recurcively a directory and its content. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em local\+Path} & The file name path string \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_s_a_l___ftw_8h_acb76ab9a45a78e45960d60c3112f8771}{A\+R\+S\+A\+L\+\_\+\+Ftw} (), rmdir 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Remove\+File@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Remove\+File}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Remove\+File@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Remove\+File}!A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Remove\+File(const char $\ast$local\+Path)}{ARUTILS_FileSystem_RemoveFile(const char *localPath)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Remove\+File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{local\+Path}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___file_system_8h_afdf641fca641a222031868ae8a3bd573}{}\label{_a_r_u_t_i_l_s___file_system_8h_afdf641fca641a222031868ae8a3bd573}
+
+
+Remove local file system file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em local\+Path} & The file name path string \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+remove 
+\end{DoxySeeAlso}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h}!A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Rename@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Rename}}
+\index{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Rename@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Rename}!A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h@{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Rename(const char $\ast$old\+Name, const char $\ast$new\+Name)}{ARUTILS_FileSystem_Rename(const char *oldName, const char *newName)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR} A\+R\+U\+T\+I\+L\+S\+\_\+\+File\+System\+\_\+\+Rename (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{old\+Name, }
+\item[{const char $\ast$}]{new\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_u_t_i_l_s___file_system_8h_ab34d52faf75fa8e3a9f2362be3c259e1}{}\label{_a_r_u_t_i_l_s___file_system_8h_ab34d52faf75fa8e3a9f2362be3c259e1}
+
+
+Rename local file system file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Name} & The old file name path string \\
+\hline
+{\em new\+Name} & The new file name path string \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em On} & success, returns A\+R\+U\+T\+I\+L\+S\+\_\+\+OK. Otherwise, it returns an error number of e\+A\+R\+U\+T\+I\+L\+S\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See also}
+stat () 
+\end{DoxySeeAlso}

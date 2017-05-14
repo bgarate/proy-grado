@@ -1,0 +1,8 @@
+<map id="protobuf_ping_2eproto::InitDefaults" name="protobuf_ping_2eproto::InitDefaults">
+<area shape="rect" id="node2" href="$namespaceprotobuf__ping__2eproto.html#a208142d5c3a1fb52a39b9221afe49f5a" title="protobuf_ping_2eproto\l::AddDescriptorsImpl" alt="" coords="204,13,355,54"/>
+<area shape="rect" id="node5" href="$class_ping.html#af5927f79e7c2503e999e7a5b936ebc0e" title="Ping::Ping" alt="" coords="238,79,321,105"/>
+<area shape="rect" id="node7" href="$class_ping.html#a13fd7ef9ce8b0a95ecb2a90cbe39588d" title="Ping::default_instance" alt="" coords="204,129,355,156"/>
+<area shape="rect" id="node3" href="$namespaceprotobuf__ping__2eproto.html#ae3cb3909c68bd4b876872dafd97cb142" title="protobuf_ping_2eproto\l::AddDescriptors" alt="" coords="403,13,553,54"/>
+<area shape="rect" id="node4" href="$structprotobuf__ping__2eproto_1_1_static_descriptor_initializer.html#a36f6ff12a1a09dad25ca353f67c22d87" title="protobuf_ping_2eproto\l::StaticDescriptorInitializer\l::StaticDescriptorInitializer" alt="" coords="601,5,777,61"/>
+<area shape="rect" id="node6" href="$class_ping.html#ab68530014f62d78280ecc9760882e610" title="Ping::New" alt="" coords="437,79,519,105"/>
+</map>

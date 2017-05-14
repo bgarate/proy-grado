@@ -1,0 +1,7 @@
+<map id="extApi_deleteGlobalMutex" name="extApi_deleteGlobalMutex">
+<area shape="rect" id="node2" href="$ext_api_8c.html#ad4bccb7d96f6831cdc4ee9a4c2daf245" title="_decreaseClientCount" alt="" coords="228,31,379,57"/>
+<area shape="rect" id="node3" href="$ext_api_8h.html#af8e78f3b4698eb09fe31f59c46a4848f" title="simxStart" alt="" coords="560,5,639,32"/>
+<area shape="rect" id="node6" href="$ext_api_8h.html#a1ef5e6857ae562f0e910d471ea683202" title="simxFinish" alt="" coords="427,56,512,83"/>
+<area shape="rect" id="node4" href="$ext_api_8h.html#a0e7431db44935b74cf49ac5aa3edb6ec" title="mtlb_simxCallScriptFunction_b" alt="" coords="687,56,889,83"/>
+<area shape="rect" id="node5" href="$class_vrephal.html#ad9377410a966919d65911ed9dac227b7" title="Vrephal::Vrephal" alt="" coords="729,5,847,32"/>
+</map>

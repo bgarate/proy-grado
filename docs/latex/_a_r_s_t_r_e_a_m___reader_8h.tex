@@ -1,0 +1,432 @@
+\hypertarget{_a_r_s_t_r_e_a_m___reader_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Stream/\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.h File Reference}
+\label{_a_r_s_t_r_e_a_m___reader_8h}\index{src/hal/pb2/include/lib\+A\+R\+Stream/\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{src/hal/pb2/include/lib\+A\+R\+Stream/\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}
+
+
+Stream reader on network.  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Network/\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Stream/\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Error.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Stream/\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter.\+h$>$}\\*
+Include dependency graph for A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_s_t_r_e_a_m___reader_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{_a_r_s_t_r_e_a_m___reader_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a4956d64ebc1f42d8c5d4ad0e1d6f3ea4}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+A\+C\+K\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+D\+E\+F\+A\+U\+LT}~(5)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\+\_\+t $\ast$($\ast$ \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_ae467a2d6ed44e7ba712dbe086acc22ff}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Frame\+Complete\+Callback\+\_\+t}) (\hyperlink{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975eda}{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+SE} cause, uint8\+\_\+t $\ast$frame\+Pointer, uint32\+\_\+t frame\+Size, int number\+Of\+Skipped\+Frames, int is\+Flush\+Frame, uint32\+\_\+t $\ast$new\+Buffer\+Capacity, void $\ast$custom)
+\begin{DoxyCompactList}\small\item\em Callback called when a new frame is ready in a buffer. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a24e2c6eda094b5f79a9bd3c8a2aa5604}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t} \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a24e2c6eda094b5f79a9bd3c8a2aa5604}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t}
+\begin{DoxyCompactList}\small\item\em An A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t instance allow reading streamed frames from a network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975eda}{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+SE} \{ \\*
+\hyperlink{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975edaab352fe54ff8113b47bc6c4e46da6f334}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+C\+O\+M\+P\+L\+E\+TE} = 0, 
+\hyperlink{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975edaaece2615c83b90841944ea05cf57b0fe0}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+O\+O\+\_\+\+S\+M\+A\+LL}, 
+\hyperlink{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975edaafd165b36aa101f746065cbaec0aec288}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+C\+O\+P\+Y\+\_\+\+C\+O\+M\+P\+L\+E\+TE}, 
+\hyperlink{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975edaa9d15639a009297f81d30e0c3377bec0e}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+C\+A\+N\+C\+EL}, 
+\\*
+\hyperlink{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975edaa48a898a80ffcb079bf9cd9a27f57273c}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+M\+AX}
+ \}\begin{DoxyCompactList}\small\item\em Causes for Frame\+Complete callback. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_af237ba7e564c1e536ee2173476cac9ae}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Init\+Stream\+Data\+Buffer} (\hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} $\ast$buffer\+Params, int buffer\+ID, int max\+Fragment\+Size, uint32\+\_\+t max\+Number\+Of\+Fragment)
+\begin{DoxyCompactList}\small\item\em Sets an \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} to describe a stream data buffer. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_ae83d8759f782346254b18271af171be0}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Init\+Stream\+Ack\+Buffer} (\hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} $\ast$buffer\+Params, int buffer\+ID)
+\begin{DoxyCompactList}\small\item\em Sets an \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} to describe a stream ack buffer. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a24e2c6eda094b5f79a9bd3c8a2aa5604}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t} $\ast$ \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a8d8b8868adf53ee0b0681ddc2377c7c4}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+New} (\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$manager, int data\+Buffer\+ID, int ack\+Buffer\+ID, \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_ae467a2d6ed44e7ba712dbe086acc22ff}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Frame\+Complete\+Callback\+\_\+t} callback, uint8\+\_\+t $\ast$frame\+Buffer, uint32\+\_\+t frame\+Buffer\+Size, uint32\+\_\+t max\+Fragment\+Size, int32\+\_\+t max\+Ack\+Interval, void $\ast$custom, \hyperlink{_a_r_s_t_r_e_a_m___error_8h_a8eb716e8b166994e8662532ed199a10f}{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Creates a new A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a8219ee9016e2919425f0859390a7bce1}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Stop\+Reader} (\hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a24e2c6eda094b5f79a9bd3c8a2aa5604}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t} $\ast$reader)
+\begin{DoxyCompactList}\small\item\em Stops a running A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_s_t_r_e_a_m___error_8h_a8eb716e8b166994e8662532ed199a10f}{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a6cba9caad19cfe5451241c47247b424c}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Delete} (\hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a24e2c6eda094b5f79a9bd3c8a2aa5604}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t} $\ast$$\ast$reader)
+\begin{DoxyCompactList}\small\item\em Deletes an A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_afc9b0affb026e4cf90e09134e1b6d578}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Run\+Data\+Thread} (void $\ast$A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t\+\_\+\+Param)
+\begin{DoxyCompactList}\small\item\em Runs the data loop of the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a129ecb448f4ed2d2f60bfd36caf68b7b}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Run\+Ack\+Thread} (void $\ast$A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t\+\_\+\+Param)
+\begin{DoxyCompactList}\small\item\em Runs the acknowledge loop of the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t. \end{DoxyCompactList}\item 
+float \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a94003b88b2f03e7f0cc8e6d3b5f0cf7f}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Get\+Estimated\+Efficiency} (\hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a24e2c6eda094b5f79a9bd3c8a2aa5604}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t} $\ast$reader)
+\begin{DoxyCompactList}\small\item\em Gets the estimated network efficiency for the A\+R\+S\+T\+R\+E\+AM link An efficiency of 1.\+0f means that we did not receive any useless packet. Efficiency is computed on all frames for which the Reader got at least a packet, even if the frame was not complete. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_ad126b0059c88833febba7d963dfc0d92}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Get\+Custom} (\hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a24e2c6eda094b5f79a9bd3c8a2aa5604}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t} $\ast$reader)
+\begin{DoxyCompactList}\small\item\em Gets the custom pointer associated with the reader. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_s_t_r_e_a_m___error_8h_a8eb716e8b166994e8662532ed199a10f}{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a1a7d9a730dae29b17b25a5bd0478b08b}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Add\+Filter} (\hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a24e2c6eda094b5f79a9bd3c8a2aa5604}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t} $\ast$reader, \hyperlink{struct_a_r_s_t_r_e_a_m___filter__t}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t} $\ast$filter)
+\begin{DoxyCompactList}\small\item\em Adds a new \hyperlink{struct_a_r_s_t_r_e_a_m___filter__t}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t} to the reader. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stream reader on network. 
+
+\begin{DoxyDate}{Date}
+03/22/2013 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:nicolas.brulez@parrot.com}{\tt nicolas.\+brulez@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+A\+C\+K\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+D\+E\+F\+A\+U\+LT@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+A\+C\+K\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+D\+E\+F\+A\+U\+LT}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+A\+C\+K\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+D\+E\+F\+A\+U\+LT@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+A\+C\+K\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+D\+E\+F\+A\+U\+LT}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+A\+C\+K\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+D\+E\+F\+A\+U\+LT}{ARSTREAM_READER_MAX_ACK_INTERVAL_DEFAULT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+A\+C\+K\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+D\+E\+F\+A\+U\+LT~(5)}\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_a4956d64ebc1f42d8c5d4ad0e1d6f3ea4}{}\label{_a_r_s_t_r_e_a_m___reader_8h_a4956d64ebc1f42d8c5d4ad0e1d6f3ea4}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Frame\+Complete\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Frame\+Complete\+Callback\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Frame\+Complete\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Frame\+Complete\+Callback\+\_\+t}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Frame\+Complete\+Callback\+\_\+t}{ARSTREAM_Reader_FrameCompleteCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\+\_\+t$\ast$($\ast$ A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Frame\+Complete\+Callback\+\_\+t) ({\bf e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+SE} cause, uint8\+\_\+t $\ast$frame\+Pointer, uint32\+\_\+t frame\+Size, int number\+Of\+Skipped\+Frames, int is\+Flush\+Frame, uint32\+\_\+t $\ast$new\+Buffer\+Capacity, void $\ast$custom)}\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_ae467a2d6ed44e7ba712dbe086acc22ff}{}\label{_a_r_s_t_r_e_a_m___reader_8h_ae467a2d6ed44e7ba712dbe086acc22ff}
+
+
+Callback called when a new frame is ready in a buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cause} & Describes why this callback was called \\
+\hline
+\mbox{\tt in}  & {\em frame\+Pointer} & Pointer to the frame buffer which was received \\
+\hline
+\mbox{\tt in}  & {\em frame\+Size} & Used size in frame\+Pointer buffer \\
+\hline
+\mbox{\tt in}  & {\em is\+Flush\+Frame} & Boolean-\/like (0-\/1) flag telling if the complete frame was a flush frame (typically an I-\/\+Frame) for the sender \\
+\hline
+\mbox{\tt in}  & {\em number\+Of\+Skipped\+Frames} & Number of frames which were skipped between the previous call and this one. (Usually 0) \\
+\hline
+\mbox{\tt in,out}  & {\em new\+Buffer\+Capacity} & Capacity of the next buffer to use \\
+\hline
+\mbox{\tt in}  & {\em custom} & Custom pointer passed during A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+New\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+address of a new buffer which will hold the next frame
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If cause is A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+C\+O\+M\+P\+L\+E\+TE, frame\+Pointer contains a valid frame. 
+
+If cause is A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+O\+O\+\_\+\+S\+M\+A\+LL, datas will be copied into the new frame. Old frame buffer will still be in use until the callback is called again with A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+C\+O\+P\+Y\+\_\+\+C\+O\+M\+P\+L\+E\+TE cause. If the new frame is still too small, the callback will be called again, until a suitable buffer is provided. new\+Buffer\+Capacity holds a suitable capacity for the new buffer, but still has to be updated by the application. 
+
+If cause is A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+C\+O\+P\+Y\+\_\+\+C\+O\+M\+P\+L\+E\+TE, the return value and new\+Buffer\+Capacity are unused. If number\+Of\+Skipped\+Frames is non-\/zero, then the current frame will be skipped (usually because the buffer returned after the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+O\+O\+\_\+\+S\+M\+A\+LL was smaller than the previous buffer). 
+
+If cause is A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+C\+A\+N\+C\+EL, the return value and new\+Buffer\+Capacity are unused
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+If the cause is A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+O\+O\+\_\+\+S\+M\+A\+LL, returning a buffer shorter than \textquotesingle{}frame\+Size\textquotesingle{} will cause the library to skip the current frame 
+
+In any case, returning a N\+U\+LL buffer is not supported. 
+\end{DoxyWarning}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t}{ARSTREAM_Reader_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t} {\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t}}\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_a24e2c6eda094b5f79a9bd3c8a2aa5604}{}\label{_a_r_s_t_r_e_a_m___reader_8h_a24e2c6eda094b5f79a9bd3c8a2aa5604}
+
+
+An A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t instance allow reading streamed frames from a network. 
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+SE@{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+SE}}
+\index{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+SE@{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+SE}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+SE}{eARSTREAM_READER_CAUSE}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+SE}}\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975eda}{}\label{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975eda}
+
+
+Causes for Frame\+Complete callback. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+C\+O\+M\+P\+L\+E\+TE@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+C\+O\+M\+P\+L\+E\+TE}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+C\+O\+M\+P\+L\+E\+TE@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+C\+O\+M\+P\+L\+E\+TE}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+C\+O\+M\+P\+L\+E\+TE\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975edaab352fe54ff8113b47bc6c4e46da6f334}{}\label{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975edaab352fe54ff8113b47bc6c4e46da6f334}
+}]\hyperlink{struct_frame}{Frame} is complete (no error) \index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+O\+O\+\_\+\+S\+M\+A\+LL@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+O\+O\+\_\+\+S\+M\+A\+LL}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+O\+O\+\_\+\+S\+M\+A\+LL@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+O\+O\+\_\+\+S\+M\+A\+LL}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+O\+O\+\_\+\+S\+M\+A\+LL\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975edaaece2615c83b90841944ea05cf57b0fe0}{}\label{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975edaaece2615c83b90841944ea05cf57b0fe0}
+}]\hyperlink{struct_frame}{Frame} buffer is too small for the frame on the network \index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+C\+O\+P\+Y\+\_\+\+C\+O\+M\+P\+L\+E\+TE@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+C\+O\+P\+Y\+\_\+\+C\+O\+M\+P\+L\+E\+TE}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+C\+O\+P\+Y\+\_\+\+C\+O\+M\+P\+L\+E\+TE@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+C\+O\+P\+Y\+\_\+\+C\+O\+M\+P\+L\+E\+TE}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+C\+O\+P\+Y\+\_\+\+C\+O\+M\+P\+L\+E\+TE\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975edaafd165b36aa101f746065cbaec0aec288}{}\label{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975edaafd165b36aa101f746065cbaec0aec288}
+}]Copy of previous frame buffer is complete (called only after A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+O\+O\+\_\+\+S\+M\+A\+LL) \index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+C\+A\+N\+C\+EL@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+C\+A\+N\+C\+EL}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+C\+A\+N\+C\+EL@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+C\+A\+N\+C\+EL}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+C\+A\+N\+C\+EL\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975edaa9d15639a009297f81d30e0c3377bec0e}{}\label{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975edaa9d15639a009297f81d30e0c3377bec0e}
+}]Reader is closing, so buffer is no longer used \index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+M\+AX@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+M\+AX}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+M\+AX@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+M\+AX}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+C\+A\+U\+S\+E\+\_\+\+M\+AX\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975edaa48a898a80ffcb079bf9cd9a27f57273c}{}\label{_a_r_s_t_r_e_a_m___reader_8h_ae7b0aef7f05e99d271fcb04c81975edaa48a898a80ffcb079bf9cd9a27f57273c}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Add\+Filter@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Add\+Filter}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Add\+Filter@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Add\+Filter}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Add\+Filter(\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t $\ast$reader, A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t $\ast$filter)}{ARSTREAM_Reader_AddFilter(ARSTREAM_Reader_t *reader, ARSTREAM_Filter_t *filter)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Add\+Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t} $\ast$}]{reader, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t} $\ast$}]{filter}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_a1a7d9a730dae29b17b25a5bd0478b08b}{}\label{_a_r_s_t_r_e_a_m___reader_8h_a1a7d9a730dae29b17b25a5bd0478b08b}
+
+
+Adds a new \hyperlink{struct_a_r_s_t_r_e_a_m___filter__t}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t} to the reader. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reader} & The A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t \\
+\hline
+\mbox{\tt in}  & {\em filter} & The \hyperlink{struct_a_r_s_t_r_e_a_m___filter__t}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t} to add (at the end of the filter chain !)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+OK if the filter was added 
+
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+U\+SY if the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t is running (you cannot add filters to a running instance) 
+
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if reader does not point to a valid A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The reader will keep a reference on the filter until deleted, so you should not invalidate the filter before stopping/deleting the reader. 
+\end{DoxyNote}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Delete@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Delete}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Delete@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Delete}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Delete(\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t $\ast$$\ast$reader)}{ARSTREAM_Reader_Delete(ARSTREAM_Reader_t **reader)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t} $\ast$$\ast$}]{reader}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_a6cba9caad19cfe5451241c47247b424c}{}\label{_a_r_s_t_r_e_a_m___reader_8h_a6cba9caad19cfe5451241c47247b424c}
+
+
+Deletes an A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t. 
+
+\begin{DoxyWarning}{Warning}
+This function should N\+OT be called on a running A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & Pointer to the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t $\ast$ to delete\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+OK if the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t was deleted 
+
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+U\+SY if the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t is still busy and can not be stopped now (probably because \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a8219ee9016e2919425f0859390a7bce1}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Stop\+Reader()} was not called yet) 
+
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if reader does not point to a valid A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The library use a double pointer, so it can set $\ast$reader to N\+U\+LL after freeing it 
+\end{DoxyNote}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Get\+Custom@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Get\+Custom}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Get\+Custom@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Get\+Custom}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Get\+Custom(\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t $\ast$reader)}{ARSTREAM_Reader_GetCustom(ARSTREAM_Reader_t *reader)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Get\+Custom (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t} $\ast$}]{reader}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_ad126b0059c88833febba7d963dfc0d92}{}\label{_a_r_s_t_r_e_a_m___reader_8h_ad126b0059c88833febba7d963dfc0d92}
+
+
+Gets the custom pointer associated with the reader. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reader} & The A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The custom pointer associated with this reader, or N\+U\+LL if reader does not point to a valid reader 
+\end{DoxyReturn}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Get\+Estimated\+Efficiency@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Get\+Estimated\+Efficiency}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Get\+Estimated\+Efficiency@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Get\+Estimated\+Efficiency}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Get\+Estimated\+Efficiency(\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t $\ast$reader)}{ARSTREAM_Reader_GetEstimatedEfficiency(ARSTREAM_Reader_t *reader)}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Get\+Estimated\+Efficiency (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t} $\ast$}]{reader}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_a94003b88b2f03e7f0cc8e6d3b5f0cf7f}{}\label{_a_r_s_t_r_e_a_m___reader_8h_a94003b88b2f03e7f0cc8e6d3b5f0cf7f}
+
+
+Gets the estimated network efficiency for the A\+R\+S\+T\+R\+E\+AM link An efficiency of 1.\+0f means that we did not receive any useless packet. Efficiency is computed on all frames for which the Reader got at least a packet, even if the frame was not complete. 
+
+\begin{DoxyWarning}{Warning}
+This function is a debug-\/only function and will disappear on release builds 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reader} & The A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Init\+Stream\+Ack\+Buffer@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Init\+Stream\+Ack\+Buffer}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Init\+Stream\+Ack\+Buffer@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Init\+Stream\+Ack\+Buffer}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Init\+Stream\+Ack\+Buffer(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t $\ast$buffer\+Params, int buffer\+I\+D)}{ARSTREAM_Reader_InitStreamAckBuffer(ARNETWORK_IOBufferParam_t *bufferParams, int bufferID)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Init\+Stream\+Ack\+Buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} $\ast$}]{buffer\+Params, }
+\item[{int}]{buffer\+ID}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_ae83d8759f782346254b18271af171be0}{}\label{_a_r_s_t_r_e_a_m___reader_8h_ae83d8759f782346254b18271af171be0}
+
+
+Sets an \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} to describe a stream ack buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em buffer\+Params} & Pointer to the \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} to set \\
+\hline
+\mbox{\tt in}  & {\em buffer\+ID} & ID to set in the \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Init\+Stream\+Data\+Buffer@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Init\+Stream\+Data\+Buffer}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Init\+Stream\+Data\+Buffer@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Init\+Stream\+Data\+Buffer}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Init\+Stream\+Data\+Buffer(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t $\ast$buffer\+Params, int buffer\+I\+D, int max\+Fragment\+Size, uint32\+\_\+t max\+Number\+Of\+Fragment)}{ARSTREAM_Reader_InitStreamDataBuffer(ARNETWORK_IOBufferParam_t *bufferParams, int bufferID, int maxFragmentSize, uint32_t maxNumberOfFragment)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Init\+Stream\+Data\+Buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} $\ast$}]{buffer\+Params, }
+\item[{int}]{buffer\+ID, }
+\item[{int}]{max\+Fragment\+Size, }
+\item[{uint32\+\_\+t}]{max\+Number\+Of\+Fragment}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_af237ba7e564c1e536ee2173476cac9ae}{}\label{_a_r_s_t_r_e_a_m___reader_8h_af237ba7e564c1e536ee2173476cac9ae}
+
+
+Sets an \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} to describe a stream data buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em buffer\+Params} & Pointer to the \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} to set \\
+\hline
+\mbox{\tt in}  & {\em buffer\+ID} & ID to set in the \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} \\
+\hline
+\mbox{\tt in}  & {\em max\+Fragment\+Size} & Maximum allowed size for a video data fragment. Video frames larger that will be fragmented. \\
+\hline
+\mbox{\tt in}  & {\em max\+Number\+Of\+Fragment} & number maximum of fragment of one frame. \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+New@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+New}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+New@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+New}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+New(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t $\ast$manager, int data\+Buffer\+I\+D, int ack\+Buffer\+I\+D, A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Frame\+Complete\+Callback\+\_\+t callback, uint8\+\_\+t $\ast$frame\+Buffer, uint32\+\_\+t frame\+Buffer\+Size, uint32\+\_\+t max\+Fragment\+Size, int32\+\_\+t max\+Ack\+Interval, void $\ast$custom, e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARSTREAM_Reader_New(ARNETWORK_Manager_t *manager, int dataBufferID, int ackBufferID, ARSTREAM_Reader_FrameCompleteCallback_t callback, uint8_t *frameBuffer, uint32_t frameBufferSize, uint32_t maxFragmentSize, int32_t maxAckInterval, void *custom, eARSTREAM_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t}$\ast$ A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{int}]{data\+Buffer\+ID, }
+\item[{int}]{ack\+Buffer\+ID, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Frame\+Complete\+Callback\+\_\+t}}]{callback, }
+\item[{uint8\+\_\+t $\ast$}]{frame\+Buffer, }
+\item[{uint32\+\_\+t}]{frame\+Buffer\+Size, }
+\item[{uint32\+\_\+t}]{max\+Fragment\+Size, }
+\item[{int32\+\_\+t}]{max\+Ack\+Interval, }
+\item[{void $\ast$}]{custom, }
+\item[{{\bf e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_a8d8b8868adf53ee0b0681ddc2377c7c4}{}\label{_a_r_s_t_r_e_a_m___reader_8h_a8d8b8868adf53ee0b0681ddc2377c7c4}
+
+
+Creates a new A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory. An A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t muse be deleted by a call to A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Delete
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em manager} & Pointer to a valid and connected A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t, which will be used to stream frames \\
+\hline
+\mbox{\tt in}  & {\em data\+Buffer\+ID} & ID of a Stream\+Data\+Buffer available within the manager \\
+\hline
+\mbox{\tt in}  & {\em ack\+Buffer\+ID} & ID of a Stream\+Ack\+Buffer available within the manager \\
+\hline
+\mbox{\tt in}  & {\em callback} & The callback which will be called every time a new frame is available \\
+\hline
+\mbox{\tt in}  & {\em frame\+Buffer} & The adress of the first frame\+Buffer to use \\
+\hline
+\mbox{\tt in}  & {\em frame\+Buffer\+Size} & The length of the frame\+Buffer (to avoid overflow) \\
+\hline
+\mbox{\tt in}  & {\em max\+Fragment\+Size} & Maximum allowed size for a video data fragment. Video frames larger that will be fragmented. \\
+\hline
+\mbox{\tt in}  & {\em max\+Ack\+Interval} & Maximum interval between sending A\+C\+Ks. 0 disables only periodic A\+C\+Ks. -\/1 disables A\+C\+Ks completely. If unsure, use the default value in A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+A\+C\+K\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+D\+E\+F\+A\+U\+LT. \\
+\hline
+\mbox{\tt in}  & {\em custom} & Custom pointer which will be passed to callback \\
+\hline
+\mbox{\tt out}  & {\em error} & Optionnal pointer to an e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR to hold any error information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the new A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t, or N\+U\+LL if an error occured 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_s_t_r_e_a_m___reader_8h_af237ba7e564c1e536ee2173476cac9ae}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Init\+Stream\+Data\+Buffer()} 
+
+\hyperlink{_a_r_s_t_r_e_a_m___reader_8h_ae83d8759f782346254b18271af171be0}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Init\+Stream\+Ack\+Buffer()} 
+
+\hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a8219ee9016e2919425f0859390a7bce1}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Stop\+Reader()} 
+
+\hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a6cba9caad19cfe5451241c47247b424c}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Delete()} 
+\end{DoxySeeAlso}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Run\+Ack\+Thread@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Run\+Ack\+Thread}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Run\+Ack\+Thread@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Run\+Ack\+Thread}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Run\+Ack\+Thread(void $\ast$\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t\+\_\+\+Param)}{ARSTREAM_Reader_RunAckThread(void *ARSTREAM_Reader_t_Param)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Run\+Ack\+Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t\+\_\+\+Param}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_a129ecb448f4ed2d2f60bfd36caf68b7b}{}\label{_a_r_s_t_r_e_a_m___reader_8h_a129ecb448f4ed2d2f60bfd36caf68b7b}
+
+
+Runs the acknowledge loop of the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t. 
+
+\begin{DoxyWarning}{Warning}
+This function never returns until \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a8219ee9016e2919425f0859390a7bce1}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Stop\+Reader()} is called. Thus, it should be called on its own thread 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+Stop the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t by calling \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a8219ee9016e2919425f0859390a7bce1}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Stop\+Reader()} before joining the thread calling this function 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t\+\_\+\+Param} & A valid (A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t $\ast$) casted as a (void $\ast$) \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Run\+Data\+Thread@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Run\+Data\+Thread}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Run\+Data\+Thread@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Run\+Data\+Thread}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Run\+Data\+Thread(void $\ast$\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t\+\_\+\+Param)}{ARSTREAM_Reader_RunDataThread(void *ARSTREAM_Reader_t_Param)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Run\+Data\+Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t\+\_\+\+Param}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_afc9b0affb026e4cf90e09134e1b6d578}{}\label{_a_r_s_t_r_e_a_m___reader_8h_afc9b0affb026e4cf90e09134e1b6d578}
+
+
+Runs the data loop of the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t. 
+
+\begin{DoxyWarning}{Warning}
+This function never returns until \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a8219ee9016e2919425f0859390a7bce1}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Stop\+Reader()} is called. Thus, it should be called on its own thread 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+Stop the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t by calling \hyperlink{_a_r_s_t_r_e_a_m___reader_8h_a8219ee9016e2919425f0859390a7bce1}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Stop\+Reader()} before joining the thread calling this function 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t\+\_\+\+Param} & A valid (A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t $\ast$) casted as a (void $\ast$) \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Stop\+Reader@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Stop\+Reader}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Stop\+Reader@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Stop\+Reader}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Stop\+Reader(\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t $\ast$reader)}{ARSTREAM_Reader_StopReader(ARSTREAM_Reader_t *reader)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+\+Stop\+Reader (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t} $\ast$}]{reader}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___reader_8h_a8219ee9016e2919425f0859390a7bce1}{}\label{_a_r_s_t_r_e_a_m___reader_8h_a8219ee9016e2919425f0859390a7bce1}
+
+
+Stops a running A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t. 
+
+\begin{DoxyWarning}{Warning}
+Once stopped, an A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t can not be restarted
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reader} & The A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Reader\+\_\+t to stop\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Calling this function multiple times has no effect 
+\end{DoxyNote}

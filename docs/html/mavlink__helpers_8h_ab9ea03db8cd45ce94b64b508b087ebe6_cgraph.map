@@ -1,0 +1,7 @@
+<map id="mavlink_frame_char" name="mavlink_frame_char">
+<area shape="rect" id="node2" href="$mavlink__helpers_8h.html#a0e22b58900ea14d70bff3aadb38dbb3d" title="mavlink_frame_char\l_buffer" alt="" coords="195,23,333,65"/>
+<area shape="rect" id="node5" href="$mavlink__helpers_8h.html#a65cce515993cd158e828aa7d061ca5b8" title="mavlink_get_channel\l_buffer" alt="" coords="192,89,336,130"/>
+<area shape="rect" id="node6" href="$mavlink__helpers_8h.html#ac006d308067f48514ca5c0cf0b046c28" title="mavlink_get_channel\l_status" alt="" coords="192,154,336,195"/>
+<area shape="rect" id="node3" href="$mavlink__helpers_8h.html#ae7cbde569213151151d20c3766edd244" title="mavlink_start_checksum" alt="" coords="391,5,557,32"/>
+<area shape="rect" id="node4" href="$mavlink__helpers_8h.html#a3293deb7b51f9a9f0b30bf56c8739593" title="mavlink_update_checksum" alt="" coords="384,56,564,83"/>
+</map>

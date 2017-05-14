@@ -1,0 +1,540 @@
+\hypertarget{_a_r_s_t_r_e_a_m___sender_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Stream/\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.h File Reference}
+\label{_a_r_s_t_r_e_a_m___sender_8h}\index{src/hal/pb2/include/lib\+A\+R\+Stream/\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{src/hal/pb2/include/lib\+A\+R\+Stream/\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+
+
+Stream sender over network.  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Network/\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Stream/\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Stream/\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Error.\+h$>$}\\*
+Include dependency graph for A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_s_t_r_e_a_m___sender_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{_a_r_s_t_r_e_a_m___sender_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a090aeb087a1d842285d85cd3e649a9f3}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+I\+N\+I\+M\+U\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+E\+S\+\_\+\+MS}~(15)
+\begin{DoxyCompactList}\small\item\em Default minimum wait time for A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Set\+Time\+Between\+Retries calls. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_aa26f058e9d6c7239cdfad29939e21683}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+A\+X\+I\+M\+U\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+E\+S\+\_\+\+MS}~(50)
+\begin{DoxyCompactList}\small\item\em Default maximum wait time for A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Set\+Time\+Between\+Retries calls. \end{DoxyCompactList}\item 
+\#define \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a93f076c791d04f4e1299ed6d7cc4a127}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+ES}~(100000)
+\begin{DoxyCompactList}\small\item\em \char`\"{}\+Infinite\char`\"{} time. Use this time as both minimum and maximum time in A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Set\+Time\+Between\+Retries to disable retries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a3fcc1a4114873f3c65a610066ab6d75e}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Frame\+Update\+Callback\+\_\+t}) (\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01d}{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US} status, uint8\+\_\+t $\ast$frame\+Pointer, uint32\+\_\+t frame\+Size, void $\ast$custom)
+\begin{DoxyCompactList}\small\item\em Callback type for sender informations This callback is called when a frame pointer is no longer needed by the library. This can occur when a frame is acknowledged, cancelled, or if a network error happened. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a10fd0b4d4d23202e08626434f3b3479f}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a10fd0b4d4d23202e08626434f3b3479f}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t}
+\begin{DoxyCompactList}\small\item\em An A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t instance allow streaming frames over a network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01d}{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US} \{ \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01daa8d856331e4c05cca27f18d55119b416}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+E\+NT} = 0, 
+\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01dab1d823a098890ea715536d5da93a5d2f}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+C\+A\+N\+C\+EL}, 
+\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01da6b56f5700a9b9cdd1ca1f52bef2e99d7}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+A\+T\+E\+\_\+\+A\+CK}, 
+\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01dafdf3bde2360d86ec27d445a03064a7c0}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+AX}
+ \}\begin{DoxyCompactList}\small\item\em Callback status values. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a153ec12bc13015070bd1913cd69e6f4b}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Init\+Stream\+Data\+Buffer} (\hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} $\ast$buffer\+Params, int buffer\+ID, int max\+Fragment\+Size, uint32\+\_\+t max\+Fragment\+Per\+Frame)
+\begin{DoxyCompactList}\small\item\em Sets an \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} to describe a stream data buffer. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a3fe39c7a529b90d52292a3a3230f693f}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Init\+Stream\+Ack\+Buffer} (\hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} $\ast$buffer\+Params, int buffer\+ID)
+\begin{DoxyCompactList}\small\item\em Sets an \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} to describe a stream ack buffer. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a10fd0b4d4d23202e08626434f3b3479f}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$ \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a9d1cd19879d1b648442ce051e7ac5820}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+New} (\hyperlink{_a_r_n_e_t_w_o_r_k___manager_8h_a3cd7bd69cd0a9bc49ad5422887f3dc5a}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$manager, int data\+Buffer\+ID, int ack\+Buffer\+ID, \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a3fcc1a4114873f3c65a610066ab6d75e}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Frame\+Update\+Callback\+\_\+t} callback, uint32\+\_\+t frames\+Buffer\+Size, uint32\+\_\+t max\+Fragment\+Size, uint32\+\_\+t max\+Number\+Of\+Fragment, void $\ast$custom, \hyperlink{_a_r_s_t_r_e_a_m___error_8h_a8eb716e8b166994e8662532ed199a10f}{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Creates a new A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_s_t_r_e_a_m___error_8h_a8eb716e8b166994e8662532ed199a10f}{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_af331564376e4273adb87ea1bea545a74}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Set\+Time\+Between\+Retries} (\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a10fd0b4d4d23202e08626434f3b3479f}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$sender, int min\+Wait\+Time\+Ms, int max\+Wait\+Time\+Ms)
+\begin{DoxyCompactList}\small\item\em Sets the minimum and maximum time between retries. Setting a small retry time might increase reliability, at the cost of network and cpu loads. Setting a high retry time might decrease reliability, but also reduce the network and cpu loads. These rules apply to both the minimum and the maximum time. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a034b1ab574d7b4b306c85e66efe872d2}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Stop\+Sender} (\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a10fd0b4d4d23202e08626434f3b3479f}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$sender)
+\begin{DoxyCompactList}\small\item\em Stops a running A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_s_t_r_e_a_m___error_8h_a8eb716e8b166994e8662532ed199a10f}{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_ae1c5bab26c9280a0b80016ba892b0949}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Delete} (\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a10fd0b4d4d23202e08626434f3b3479f}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$$\ast$sender)
+\begin{DoxyCompactList}\small\item\em Deletes an A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_s_t_r_e_a_m___error_8h_a8eb716e8b166994e8662532ed199a10f}{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a432cf3ba0832728e7e297e109b9ae4fe}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Send\+New\+Frame} (\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a10fd0b4d4d23202e08626434f3b3479f}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$sender, uint8\+\_\+t $\ast$frame\+Buffer, uint32\+\_\+t frame\+Size, int flush\+Previous\+Frames, int $\ast$nb\+Previous\+Frames)
+\begin{DoxyCompactList}\small\item\em Sends a new frame. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_s_t_r_e_a_m___error_8h_a8eb716e8b166994e8662532ed199a10f}{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_ac5f9e36064f1f9f492e55daddae077e3}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Flush\+Frames\+Queue} (\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a10fd0b4d4d23202e08626434f3b3479f}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$sender)
+\begin{DoxyCompactList}\small\item\em Flushes all currently queued frames. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_abefd92cdf525c2133c6f8800a8611ca9}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Run\+Data\+Thread} (void $\ast$A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t\+\_\+\+Param)
+\begin{DoxyCompactList}\small\item\em Runs the data loop of the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_ae61e9e48df5fb874640d51dc561171c8}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Run\+Ack\+Thread} (void $\ast$A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t\+\_\+\+Param)
+\begin{DoxyCompactList}\small\item\em Runs the acknowledge loop of the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t. \end{DoxyCompactList}\item 
+float \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_abf569a68173c7750b202876f1e716c49}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Get\+Estimated\+Efficiency} (\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a10fd0b4d4d23202e08626434f3b3479f}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$sender)
+\begin{DoxyCompactList}\small\item\em Gets the estimated network efficiency for the A\+R\+S\+T\+R\+E\+AM link An efficiency of 1.\+0f means that we did not do any retries. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a54fda4155457ba3e6d4673ab45f545bc}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Get\+Custom} (\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a10fd0b4d4d23202e08626434f3b3479f}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$sender)
+\begin{DoxyCompactList}\small\item\em Gets the custom pointer associated with the sender. \end{DoxyCompactList}\item 
+\hyperlink{_a_r_s_t_r_e_a_m___error_8h_a8eb716e8b166994e8662532ed199a10f}{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a99ede00b1fe88b1c30b548f33fca4982}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Add\+Filter} (\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a10fd0b4d4d23202e08626434f3b3479f}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$sender, \hyperlink{struct_a_r_s_t_r_e_a_m___filter__t}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t} $\ast$filter)
+\begin{DoxyCompactList}\small\item\em Adds a new \hyperlink{struct_a_r_s_t_r_e_a_m___filter__t}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t} to the sender. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stream sender over network. 
+
+\begin{DoxyDate}{Date}
+03/21/2013 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:nicolas.brulez@parrot.com}{\tt nicolas.\+brulez@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+A\+X\+I\+M\+U\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+E\+S\+\_\+\+MS@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+A\+X\+I\+M\+U\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+E\+S\+\_\+\+MS}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+A\+X\+I\+M\+U\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+E\+S\+\_\+\+MS@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+A\+X\+I\+M\+U\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+E\+S\+\_\+\+MS}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+A\+X\+I\+M\+U\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+E\+S\+\_\+\+MS}{ARSTREAM_SENDER_DEFAULT_MAXIMUM_TIME_BETWEEN_RETRIES_MS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+A\+X\+I\+M\+U\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+E\+S\+\_\+\+MS~(50)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_aa26f058e9d6c7239cdfad29939e21683}{}\label{_a_r_s_t_r_e_a_m___sender_8h_aa26f058e9d6c7239cdfad29939e21683}
+
+
+Default maximum wait time for A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Set\+Time\+Between\+Retries calls. 
+
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+I\+N\+I\+M\+U\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+E\+S\+\_\+\+MS@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+I\+N\+I\+M\+U\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+E\+S\+\_\+\+MS}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+I\+N\+I\+M\+U\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+E\+S\+\_\+\+MS@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+I\+N\+I\+M\+U\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+E\+S\+\_\+\+MS}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+I\+N\+I\+M\+U\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+E\+S\+\_\+\+MS}{ARSTREAM_SENDER_DEFAULT_MINIMUM_TIME_BETWEEN_RETRIES_MS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+I\+N\+I\+M\+U\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+E\+S\+\_\+\+MS~(15)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_a090aeb087a1d842285d85cd3e649a9f3}{}\label{_a_r_s_t_r_e_a_m___sender_8h_a090aeb087a1d842285d85cd3e649a9f3}
+
+
+Default minimum wait time for A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Set\+Time\+Between\+Retries calls. 
+
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+ES@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+ES}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+ES@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+ES}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+ES}{ARSTREAM_SENDER_INFINITE_TIME_BETWEEN_RETRIES}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+ES~(100000)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_a93f076c791d04f4e1299ed6d7cc4a127}{}\label{_a_r_s_t_r_e_a_m___sender_8h_a93f076c791d04f4e1299ed6d7cc4a127}
+
+
+\char`\"{}\+Infinite\char`\"{} time. Use this time as both minimum and maximum time in A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Set\+Time\+Between\+Retries to disable retries. 
+
+\begin{DoxyWarning}{Warning}
+Disabling the retry system will lower the reliability of the stream! 
+\end{DoxyWarning}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Frame\+Update\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Frame\+Update\+Callback\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Frame\+Update\+Callback\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Frame\+Update\+Callback\+\_\+t}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Frame\+Update\+Callback\+\_\+t}{ARSTREAM_Sender_FrameUpdateCallback_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Frame\+Update\+Callback\+\_\+t) ({\bf e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US} status, uint8\+\_\+t $\ast$frame\+Pointer, uint32\+\_\+t frame\+Size, void $\ast$custom)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_a3fcc1a4114873f3c65a610066ab6d75e}{}\label{_a_r_s_t_r_e_a_m___sender_8h_a3fcc1a4114873f3c65a610066ab6d75e}
+
+
+Callback type for sender informations This callback is called when a frame pointer is no longer needed by the library. This can occur when a frame is acknowledged, cancelled, or if a network error happened. 
+
+This callback is also used when we receive the first \char`\"{}full-\/ack\char`\"{} for an old frame. In this case, the frame\+Pointer and frame\+Size arguments are unused and set to N\+U\+LL. There is no way to identify the \char`\"{}old\char`\"{} frame, but the library guarantees that the L\+A\+T\+E\+\_\+\+A\+CK status will only be called for previously cancelled frames, and at most once per cancelled frame.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em status} & Why the call was made \\
+\hline
+\mbox{\tt in}  & {\em frame\+Pointer} & Pointer to the frame which was sent/cancelled \\
+\hline
+\mbox{\tt in}  & {\em frame\+Size} & Size, in bytes, of the frame \\
+\hline
+\mbox{\tt in}  & {\em custom} & Custom pointer passed during A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+New \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+If the status is A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+A\+T\+E\+\_\+\+A\+CK, then the frame\+Pointer will be N\+U\+LL. 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01d}{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US} 
+\end{DoxySeeAlso}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t}{ARSTREAM_Sender_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} {\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t}}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_a10fd0b4d4d23202e08626434f3b3479f}{}\label{_a_r_s_t_r_e_a_m___sender_8h_a10fd0b4d4d23202e08626434f3b3479f}
+
+
+An A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t instance allow streaming frames over a network. 
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US@{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US}}
+\index{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US@{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US}{eARSTREAM_SENDER_STATUS}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+US}}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01d}{}\label{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01d}
+
+
+Callback status values. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+E\+NT@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+E\+NT}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+E\+NT@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+E\+NT}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+E\+NT\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01daa8d856331e4c05cca27f18d55119b416}{}\label{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01daa8d856331e4c05cca27f18d55119b416}
+}]\hyperlink{struct_frame}{Frame} was sent and acknowledged by peer \index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+C\+A\+N\+C\+EL@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+C\+A\+N\+C\+EL}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+C\+A\+N\+C\+EL@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+C\+A\+N\+C\+EL}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+C\+A\+N\+C\+EL\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01dab1d823a098890ea715536d5da93a5d2f}{}\label{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01dab1d823a098890ea715536d5da93a5d2f}
+}]\hyperlink{struct_frame}{Frame} was not sent, and was cancelled by a new frame \index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+A\+T\+E\+\_\+\+A\+CK@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+A\+T\+E\+\_\+\+A\+CK}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+A\+T\+E\+\_\+\+A\+CK@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+A\+T\+E\+\_\+\+A\+CK}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+A\+T\+E\+\_\+\+A\+CK\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01da6b56f5700a9b9cdd1ca1f52bef2e99d7}{}\label{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01da6b56f5700a9b9cdd1ca1f52bef2e99d7}
+}]We received a full ack for an old frame. The callback will be called with null pointer and zero size. \index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+AX@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+AX}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+AX@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+AX}}\item[{\em 
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+AX\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01dafdf3bde2360d86ec27d445a03064a7c0}{}\label{_a_r_s_t_r_e_a_m___sender_8h_ac3e6c617607473990c705a0d081dd01dafdf3bde2360d86ec27d445a03064a7c0}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Add\+Filter@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Add\+Filter}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Add\+Filter@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Add\+Filter}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Add\+Filter(\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t $\ast$sender, A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t $\ast$filter)}{ARSTREAM_Sender_AddFilter(ARSTREAM_Sender_t *sender, ARSTREAM_Filter_t *filter)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Add\+Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$}]{sender, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t} $\ast$}]{filter}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_a99ede00b1fe88b1c30b548f33fca4982}{}\label{_a_r_s_t_r_e_a_m___sender_8h_a99ede00b1fe88b1c30b548f33fca4982}
+
+
+Adds a new \hyperlink{struct_a_r_s_t_r_e_a_m___filter__t}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t} to the sender. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sender} & The A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t \\
+\hline
+\mbox{\tt in}  & {\em filter} & The \hyperlink{struct_a_r_s_t_r_e_a_m___filter__t}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Filter\+\_\+t} to add (at the end of the filter chain !)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+OK if the filter was added 
+
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+U\+SY if the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t is running (you cannot add filters to a running instance) 
+
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if sender does not point to a valid A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The sender will keep a reference on the filter until deleted, so you should not invalidate the filter before stopping/deleting the sender. 
+\end{DoxyNote}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Delete@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Delete}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Delete@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Delete}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Delete(\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t $\ast$$\ast$sender)}{ARSTREAM_Sender_Delete(ARSTREAM_Sender_t **sender)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$$\ast$}]{sender}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_ae1c5bab26c9280a0b80016ba892b0949}{}\label{_a_r_s_t_r_e_a_m___sender_8h_ae1c5bab26c9280a0b80016ba892b0949}
+
+
+Deletes an A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t. 
+
+\begin{DoxyWarning}{Warning}
+This function should N\+OT be called on a running A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Pointer to the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t $\ast$ to delete\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+OK if the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t was deleted 
+
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+U\+SY if the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t is still busy and can not be stopped now (probably because \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a034b1ab574d7b4b306c85e66efe872d2}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Stop\+Sender()} was not called yet) 
+
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if sender does not point to a valid A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The library use a double pointer, so it can set $\ast$sender to N\+U\+LL after freeing it 
+\end{DoxyNote}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Flush\+Frames\+Queue@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Flush\+Frames\+Queue}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Flush\+Frames\+Queue@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Flush\+Frames\+Queue}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Flush\+Frames\+Queue(\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t $\ast$sender)}{ARSTREAM_Sender_FlushFramesQueue(ARSTREAM_Sender_t *sender)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Flush\+Frames\+Queue (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$}]{sender}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_ac5f9e36064f1f9f492e55daddae077e3}{}\label{_a_r_s_t_r_e_a_m___sender_8h_ac5f9e36064f1f9f492e55daddae077e3}
+
+
+Flushes all currently queued frames. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sender} & The A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t to be flushed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+OK if no error occured. 
+
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if the sender is invalid. 
+\end{DoxyReturn}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Get\+Custom@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Get\+Custom}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Get\+Custom@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Get\+Custom}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Get\+Custom(\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t $\ast$sender)}{ARSTREAM_Sender_GetCustom(ARSTREAM_Sender_t *sender)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Get\+Custom (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$}]{sender}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_a54fda4155457ba3e6d4673ab45f545bc}{}\label{_a_r_s_t_r_e_a_m___sender_8h_a54fda4155457ba3e6d4673ab45f545bc}
+
+
+Gets the custom pointer associated with the sender. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sender} & The A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The custom pointer associated with this sender, or N\+U\+LL if sender does not point to a valid sender 
+\end{DoxyReturn}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Get\+Estimated\+Efficiency@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Get\+Estimated\+Efficiency}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Get\+Estimated\+Efficiency@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Get\+Estimated\+Efficiency}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Get\+Estimated\+Efficiency(\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t $\ast$sender)}{ARSTREAM_Sender_GetEstimatedEfficiency(ARSTREAM_Sender_t *sender)}}]{\setlength{\rightskip}{0pt plus 5cm}float A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Get\+Estimated\+Efficiency (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$}]{sender}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_abf569a68173c7750b202876f1e716c49}{}\label{_a_r_s_t_r_e_a_m___sender_8h_abf569a68173c7750b202876f1e716c49}
+
+
+Gets the estimated network efficiency for the A\+R\+S\+T\+R\+E\+AM link An efficiency of 1.\+0f means that we did not do any retries. 
+
+\begin{DoxyWarning}{Warning}
+This function is a debug-\/only function and will disappear on release builds 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sender} & The A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Init\+Stream\+Ack\+Buffer@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Init\+Stream\+Ack\+Buffer}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Init\+Stream\+Ack\+Buffer@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Init\+Stream\+Ack\+Buffer}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Init\+Stream\+Ack\+Buffer(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t $\ast$buffer\+Params, int buffer\+I\+D)}{ARSTREAM_Sender_InitStreamAckBuffer(ARNETWORK_IOBufferParam_t *bufferParams, int bufferID)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Init\+Stream\+Ack\+Buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} $\ast$}]{buffer\+Params, }
+\item[{int}]{buffer\+ID}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_a3fe39c7a529b90d52292a3a3230f693f}{}\label{_a_r_s_t_r_e_a_m___sender_8h_a3fe39c7a529b90d52292a3a3230f693f}
+
+
+Sets an \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} to describe a stream ack buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em buffer\+Params} & Pointer to the \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} to set \\
+\hline
+\mbox{\tt in}  & {\em buffer\+ID} & ID to set in the \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Init\+Stream\+Data\+Buffer@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Init\+Stream\+Data\+Buffer}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Init\+Stream\+Data\+Buffer@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Init\+Stream\+Data\+Buffer}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Init\+Stream\+Data\+Buffer(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t $\ast$buffer\+Params, int buffer\+I\+D, int max\+Fragment\+Size, uint32\+\_\+t max\+Fragment\+Per\+Frame)}{ARSTREAM_Sender_InitStreamDataBuffer(ARNETWORK_IOBufferParam_t *bufferParams, int bufferID, int maxFragmentSize, uint32_t maxFragmentPerFrame)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Init\+Stream\+Data\+Buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} $\ast$}]{buffer\+Params, }
+\item[{int}]{buffer\+ID, }
+\item[{int}]{max\+Fragment\+Size, }
+\item[{uint32\+\_\+t}]{max\+Fragment\+Per\+Frame}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_a153ec12bc13015070bd1913cd69e6f4b}{}\label{_a_r_s_t_r_e_a_m___sender_8h_a153ec12bc13015070bd1913cd69e6f4b}
+
+
+Sets an \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} to describe a stream data buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em buffer\+Params} & Pointer to the \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} to set \\
+\hline
+\mbox{\tt in}  & {\em buffer\+ID} & ID to set in the \hyperlink{struct_a_r_n_e_t_w_o_r_k___i_o_buffer_param__t}{A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+I\+O\+Buffer\+Param\+\_\+t} \\
+\hline
+\mbox{\tt in}  & {\em max\+Fragment\+Size} & Maximum allowed size for a video data fragment. Video frames larger that will be fragmented. \\
+\hline
+\mbox{\tt in}  & {\em max\+Number\+Of\+Fragment} & number maximum of fragment of one frame. \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+New@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+New}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+New@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+New}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+New(\+A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t $\ast$manager, int data\+Buffer\+I\+D, int ack\+Buffer\+I\+D, A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Frame\+Update\+Callback\+\_\+t callback, uint32\+\_\+t frames\+Buffer\+Size, uint32\+\_\+t max\+Fragment\+Size, uint32\+\_\+t max\+Number\+Of\+Fragment, void $\ast$custom, e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARSTREAM_Sender_New(ARNETWORK_Manager_t *manager, int dataBufferID, int ackBufferID, ARSTREAM_Sender_FrameUpdateCallback_t callback, uint32_t framesBufferSize, uint32_t maxFragmentSize, uint32_t maxNumberOfFragment, void *custom, eARSTREAM_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t}$\ast$ A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t} $\ast$}]{manager, }
+\item[{int}]{data\+Buffer\+ID, }
+\item[{int}]{ack\+Buffer\+ID, }
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Frame\+Update\+Callback\+\_\+t}}]{callback, }
+\item[{uint32\+\_\+t}]{frames\+Buffer\+Size, }
+\item[{uint32\+\_\+t}]{max\+Fragment\+Size, }
+\item[{uint32\+\_\+t}]{max\+Number\+Of\+Fragment, }
+\item[{void $\ast$}]{custom, }
+\item[{{\bf e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_a9d1cd19879d1b648442ce051e7ac5820}{}\label{_a_r_s_t_r_e_a_m___sender_8h_a9d1cd19879d1b648442ce051e7ac5820}
+
+
+Creates a new A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t. 
+
+\begin{DoxyWarning}{Warning}
+This function allocates memory. An A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t muse be deleted by a call to A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Delete
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em manager} & Pointer to a valid and connected A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t, which will be used to stream frames \\
+\hline
+\mbox{\tt in}  & {\em data\+Buffer\+ID} & ID of a Stream\+Data\+Buffer available within the manager \\
+\hline
+\mbox{\tt in}  & {\em ack\+Buffer\+ID} & ID of a Stream\+Ack\+Buffer available within the manager \\
+\hline
+\mbox{\tt in}  & {\em callback} & The status update callback which will be called every time the status of a send-\/frame is updated \\
+\hline
+\mbox{\tt in}  & {\em frames\+Buffer\+Size} & Number of frames that the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t instance will be able to hold in queue \\
+\hline
+\mbox{\tt in}  & {\em max\+Fragment\+Size} & Maximum allowed size for a video data fragment. Video frames larger that will be fragmented. \\
+\hline
+\mbox{\tt in}  & {\em max\+Number\+Of\+Fragment} & number maximum of fragment of one frame. \\
+\hline
+\mbox{\tt in}  & {\em custom} & Custom pointer which will be passed to callback \\
+\hline
+\mbox{\tt out}  & {\em error} & Optionnal pointer to an e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR to hold any error information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the new A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t, or N\+U\+LL if an error occured
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+frames\+Buffer\+Size should be greater than the number of frames between two I-\/\+Frames
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a153ec12bc13015070bd1913cd69e6f4b}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Init\+Stream\+Data\+Buffer()} 
+
+\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a3fe39c7a529b90d52292a3a3230f693f}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Init\+Stream\+Ack\+Buffer()} 
+
+\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a034b1ab574d7b4b306c85e66efe872d2}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Stop\+Sender()} 
+
+\hyperlink{_a_r_s_t_r_e_a_m___sender_8h_ae1c5bab26c9280a0b80016ba892b0949}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Delete()} 
+\end{DoxySeeAlso}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Run\+Ack\+Thread@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Run\+Ack\+Thread}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Run\+Ack\+Thread@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Run\+Ack\+Thread}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Run\+Ack\+Thread(void $\ast$\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t\+\_\+\+Param)}{ARSTREAM_Sender_RunAckThread(void *ARSTREAM_Sender_t_Param)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Run\+Ack\+Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t\+\_\+\+Param}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_ae61e9e48df5fb874640d51dc561171c8}{}\label{_a_r_s_t_r_e_a_m___sender_8h_ae61e9e48df5fb874640d51dc561171c8}
+
+
+Runs the acknowledge loop of the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t. 
+
+\begin{DoxyWarning}{Warning}
+This function never returns until \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a034b1ab574d7b4b306c85e66efe872d2}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Stop\+Sender()} is called. Thus, it should be called on its own thread 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+Stop the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t by calling \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a034b1ab574d7b4b306c85e66efe872d2}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Stop\+Sender()} before joining the thread calling this function 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t\+\_\+\+Param} & A valid (A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t $\ast$) casted as a (void $\ast$) \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Run\+Data\+Thread@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Run\+Data\+Thread}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Run\+Data\+Thread@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Run\+Data\+Thread}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Run\+Data\+Thread(void $\ast$\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t\+\_\+\+Param)}{ARSTREAM_Sender_RunDataThread(void *ARSTREAM_Sender_t_Param)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Run\+Data\+Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t\+\_\+\+Param}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_abefd92cdf525c2133c6f8800a8611ca9}{}\label{_a_r_s_t_r_e_a_m___sender_8h_abefd92cdf525c2133c6f8800a8611ca9}
+
+
+Runs the data loop of the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t. 
+
+\begin{DoxyWarning}{Warning}
+This function never returns until \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a034b1ab574d7b4b306c85e66efe872d2}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Stop\+Sender()} is called. Thus, it should be called on its own thread 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+Stop the A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t by calling \hyperlink{_a_r_s_t_r_e_a_m___sender_8h_a034b1ab574d7b4b306c85e66efe872d2}{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Stop\+Sender()} before joining the thread calling this function 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t\+\_\+\+Param} & A valid (A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t $\ast$) casted as a (void $\ast$) \\
+\hline
+\end{DoxyParams}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Send\+New\+Frame@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Send\+New\+Frame}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Send\+New\+Frame@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Send\+New\+Frame}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Send\+New\+Frame(\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t $\ast$sender, uint8\+\_\+t $\ast$frame\+Buffer, uint32\+\_\+t frame\+Size, int flush\+Previous\+Frames, int $\ast$nb\+Previous\+Frames)}{ARSTREAM_Sender_SendNewFrame(ARSTREAM_Sender_t *sender, uint8_t *frameBuffer, uint32_t frameSize, int flushPreviousFrames, int *nbPreviousFrames)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Send\+New\+Frame (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$}]{sender, }
+\item[{uint8\+\_\+t $\ast$}]{frame\+Buffer, }
+\item[{uint32\+\_\+t}]{frame\+Size, }
+\item[{int}]{flush\+Previous\+Frames, }
+\item[{int $\ast$}]{nb\+Previous\+Frames}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_a432cf3ba0832728e7e297e109b9ae4fe}{}\label{_a_r_s_t_r_e_a_m___sender_8h_a432cf3ba0832728e7e297e109b9ae4fe}
+
+
+Sends a new frame. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sender} & The A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t which will try to send the frame \\
+\hline
+\mbox{\tt in}  & {\em frame\+Buffer} & pointer to the frame in memory \\
+\hline
+\mbox{\tt in}  & {\em frame\+Size} & size of the frame in memory \\
+\hline
+\mbox{\tt in}  & {\em flush\+Previous\+Frames} & Boolean-\/like flag (0/1). If active, tells the sender to flush the frame queue when adding this frame. \\
+\hline
+\mbox{\tt out}  & {\em nb\+Previous\+Frames} & Optionnal int pointer which will store the number of frames previously in the buffer (even if the buffer is flushed) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+OK if no error happened 
+
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if the sender or frame\+Buffer pointer is invalid, or if frame\+Size is zero 
+
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+R\+A\+M\+E\+\_\+\+T\+O\+O\+\_\+\+L\+A\+R\+GE if the frame\+Size is greater that the maximum frame size of the lib\+A\+R\+Stream (typically 128000 bytes) 
+
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+F\+U\+LL if the frame can not be added to queue. This value can not happen if flush\+Previous\+Frames is active 
+\end{DoxyReturn}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Set\+Time\+Between\+Retries@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Set\+Time\+Between\+Retries}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Set\+Time\+Between\+Retries@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Set\+Time\+Between\+Retries}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Set\+Time\+Between\+Retries(\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t $\ast$sender, int min\+Wait\+Time\+Ms, int max\+Wait\+Time\+Ms)}{ARSTREAM_Sender_SetTimeBetweenRetries(ARSTREAM_Sender_t *sender, int minWaitTimeMs, int maxWaitTimeMs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+OR} A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Set\+Time\+Between\+Retries (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$}]{sender, }
+\item[{int}]{min\+Wait\+Time\+Ms, }
+\item[{int}]{max\+Wait\+Time\+Ms}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_af331564376e4273adb87ea1bea545a74}{}\label{_a_r_s_t_r_e_a_m___sender_8h_af331564376e4273adb87ea1bea545a74}
+
+
+Sets the minimum and maximum time between retries. Setting a small retry time might increase reliability, at the cost of network and cpu loads. Setting a high retry time might decrease reliability, but also reduce the network and cpu loads. These rules apply to both the minimum and the maximum time. 
+
+The library selects a wait time between the two bounds using data retrieved from the A\+R\+N\+E\+T\+W\+O\+R\+K\+\_\+\+Manager\+\_\+t.
+
+If the minimum and maximum wait times are equal, then the library will always use this time.
+
+\begin{DoxyNote}{Note}
+To reset to default values, use A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+I\+N\+I\+M\+U\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+E\+S\+\_\+\+MS and A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+A\+X\+I\+M\+U\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+E\+S\+\_\+\+MS. 
+
+To disable retries, use A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+S\+E\+N\+D\+E\+R\+\_\+\+I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+T\+I\+M\+E\+\_\+\+B\+E\+T\+W\+E\+E\+N\+\_\+\+R\+E\+T\+R\+I\+ES as both minimum and maximum time. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Setting a too low maximum wait time might create a very high network bandwidth, and a very high cpu load. 
+
+Setting a too big minimum wait time (i.\+e. greater than the time between two flush frames) will effectively disable retries. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Wait\+Time\+Ms} & The minimum time between two retries, in miliseconds. \\
+\hline
+{\em max\+Wait\+Time\+Ms} & The maximum time between two retries, in miliseconds.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+OK if the new time range is set. 
+
+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS if sender is N\+U\+LL, or if min\+Wait\+Time\+Ms is greater than max\+Wait\+Time\+Ms. 
+\end{DoxyReturn}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Stop\+Sender@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Stop\+Sender}}
+\index{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Stop\+Sender@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Stop\+Sender}!A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h@{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Stop\+Sender(\+A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t $\ast$sender)}{ARSTREAM_Sender_StopSender(ARSTREAM_Sender_t *sender)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+\+Stop\+Sender (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t} $\ast$}]{sender}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_s_t_r_e_a_m___sender_8h_a034b1ab574d7b4b306c85e66efe872d2}{}\label{_a_r_s_t_r_e_a_m___sender_8h_a034b1ab574d7b4b306c85e66efe872d2}
+
+
+Stops a running A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t. 
+
+\begin{DoxyWarning}{Warning}
+Once stopped, an A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t can not be restarted
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sender} & The A\+R\+S\+T\+R\+E\+A\+M\+\_\+\+Sender\+\_\+t to stop\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Calling this function multiple times has no effect 
+\end{DoxyNote}

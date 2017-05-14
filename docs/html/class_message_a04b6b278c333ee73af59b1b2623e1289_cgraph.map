@@ -1,0 +1,7 @@
+<map id="Message::MergePartialFromCodedStream" name="Message::MergePartialFromCodedStream">
+<area shape="rect" id="node2" href="$class_message.html#a8118c1b12f068dacbf3535c9879b2a25" title="Message::set_type" alt="" coords="283,5,416,32"/>
+<area shape="rect" id="node3" href="$class_message.html#a06f736eaae116cd37bdaeaccf6c46135" title="Message::mutable_ping" alt="" coords="269,56,429,83"/>
+<area shape="rect" id="node4" href="$class_message.html#a3e3d6de62220b9b1dc4bd476ddb1c6ab" title="Message::mutable_shutdown" alt="" coords="253,107,445,133"/>
+<area shape="rect" id="node5" href="$class_message.html#a1569a203e1c3b8ee7961c02a46280269" title="Message::mutable_advertisement" alt="" coords="240,157,459,184"/>
+<area shape="rect" id="node6" href="$class_message.html#ab74acd4d120a7c3cbdc26a8d61eeec55" title="Message::mutable_hello" alt="" coords="268,208,431,235"/>
+</map>

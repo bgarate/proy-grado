@@ -1,0 +1,96 @@
+\hypertarget{whrlpool_8h}{}\section{src/hal/pb2/include/openssl/whrlpool.h File Reference}
+\label{whrlpool_8h}\index{src/hal/pb2/include/openssl/whrlpool.\+h@{src/hal/pb2/include/openssl/whrlpool.\+h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/opensslconf.\+h$>$}\\*
+Include dependency graph for whrlpool.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{whrlpool_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_w_h_i_r_l_p_o_o_l___c_t_x}{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+TX}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{whrlpool_8h_addcbb5b0b778aef896b9eccd0c08e18e}{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}~(512/8)
+\item 
+\#define \hyperlink{whrlpool_8h_a65ca1c8d3e51542563a11fa1ebaaa095}{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+B\+B\+L\+O\+CK}~512
+\item 
+\#define \hyperlink{whrlpool_8h_a29662900a78ba844a98b6119ea32975f}{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+O\+U\+N\+T\+ER}~(256/8)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{whrlpool_8h_a6328a6e926ac12c50365911a8ae22c19}{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Init} (\hyperlink{struct_w_h_i_r_l_p_o_o_l___c_t_x}{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+TX} $\ast$c)
+\item 
+int \hyperlink{whrlpool_8h_a97dd3c7b5b04afb4f37e42204d207de7}{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Update} (\hyperlink{struct_w_h_i_r_l_p_o_o_l___c_t_x}{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+TX} $\ast$c, const void $\ast$inp, size\+\_\+t \hyperlink{x509_8h_a3fb78b1e1dea1301c549fdcb5a6ddc11}{bytes})
+\item 
+void \hyperlink{whrlpool_8h_a2f4f489193ec4616b90a06fae01eb9b2}{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Bit\+Update} (\hyperlink{struct_w_h_i_r_l_p_o_o_l___c_t_x}{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+TX} $\ast$c, const void $\ast$inp, size\+\_\+t \hyperlink{x509v3_8h_ab3c186980893d6836a68407d221ae9c9}{bits})
+\item 
+int \hyperlink{whrlpool_8h_a07b4be19540f4979d2ee839461aecd08}{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Final} (unsigned char $\ast$md, \hyperlink{struct_w_h_i_r_l_p_o_o_l___c_t_x}{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+TX} $\ast$c)
+\item 
+unsigned char $\ast$ \hyperlink{whrlpool_8h_a8fd99972bc34cd0ccf08e0193ee2907d}{W\+H\+I\+R\+L\+P\+O\+OL} (const void $\ast$inp, size\+\_\+t \hyperlink{x509_8h_a3fb78b1e1dea1301c549fdcb5a6ddc11}{bytes}, unsigned char $\ast$md)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{whrlpool.\+h@{whrlpool.\+h}!W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+B\+B\+L\+O\+CK@{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+B\+B\+L\+O\+CK}}
+\index{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+B\+B\+L\+O\+CK@{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+B\+B\+L\+O\+CK}!whrlpool.\+h@{whrlpool.\+h}}
+\subsubsection[{\texorpdfstring{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+B\+B\+L\+O\+CK}{WHIRLPOOL_BBLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+B\+B\+L\+O\+CK~512}\hypertarget{whrlpool_8h_a65ca1c8d3e51542563a11fa1ebaaa095}{}\label{whrlpool_8h_a65ca1c8d3e51542563a11fa1ebaaa095}
+\index{whrlpool.\+h@{whrlpool.\+h}!W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+O\+U\+N\+T\+ER@{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+O\+U\+N\+T\+ER}}
+\index{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+O\+U\+N\+T\+ER@{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+O\+U\+N\+T\+ER}!whrlpool.\+h@{whrlpool.\+h}}
+\subsubsection[{\texorpdfstring{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+O\+U\+N\+T\+ER}{WHIRLPOOL_COUNTER}}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+O\+U\+N\+T\+ER~(256/8)}\hypertarget{whrlpool_8h_a29662900a78ba844a98b6119ea32975f}{}\label{whrlpool_8h_a29662900a78ba844a98b6119ea32975f}
+\index{whrlpool.\+h@{whrlpool.\+h}!W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}}
+\index{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH@{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}!whrlpool.\+h@{whrlpool.\+h}}
+\subsubsection[{\texorpdfstring{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH}{WHIRLPOOL_DIGEST_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+D\+I\+G\+E\+S\+T\+\_\+\+L\+E\+N\+G\+TH~(512/8)}\hypertarget{whrlpool_8h_addcbb5b0b778aef896b9eccd0c08e18e}{}\label{whrlpool_8h_addcbb5b0b778aef896b9eccd0c08e18e}
+
+
+\subsection{Function Documentation}
+\index{whrlpool.\+h@{whrlpool.\+h}!W\+H\+I\+R\+L\+P\+O\+OL@{W\+H\+I\+R\+L\+P\+O\+OL}}
+\index{W\+H\+I\+R\+L\+P\+O\+OL@{W\+H\+I\+R\+L\+P\+O\+OL}!whrlpool.\+h@{whrlpool.\+h}}
+\subsubsection[{\texorpdfstring{W\+H\+I\+R\+L\+P\+O\+O\+L(const void $\ast$inp, size\+\_\+t bytes, unsigned char $\ast$md)}{WHIRLPOOL(const void *inp, size_t bytes, unsigned char *md)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ W\+H\+I\+R\+L\+P\+O\+OL (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{inp, }
+\item[{size\+\_\+t}]{bytes, }
+\item[{unsigned char $\ast$}]{md}
+\end{DoxyParamCaption}
+)}\hypertarget{whrlpool_8h_a8fd99972bc34cd0ccf08e0193ee2907d}{}\label{whrlpool_8h_a8fd99972bc34cd0ccf08e0193ee2907d}
+\index{whrlpool.\+h@{whrlpool.\+h}!W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Bit\+Update@{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Bit\+Update}}
+\index{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Bit\+Update@{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Bit\+Update}!whrlpool.\+h@{whrlpool.\+h}}
+\subsubsection[{\texorpdfstring{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Bit\+Update(\+W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+T\+X $\ast$c, const void $\ast$inp, size\+\_\+t bits)}{WHIRLPOOL_BitUpdate(WHIRLPOOL_CTX *c, const void *inp, size_t bits)}}]{\setlength{\rightskip}{0pt plus 5cm}void W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Bit\+Update (
+\begin{DoxyParamCaption}
+\item[{{\bf W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const void $\ast$}]{inp, }
+\item[{size\+\_\+t}]{bits}
+\end{DoxyParamCaption}
+)}\hypertarget{whrlpool_8h_a2f4f489193ec4616b90a06fae01eb9b2}{}\label{whrlpool_8h_a2f4f489193ec4616b90a06fae01eb9b2}
+\index{whrlpool.\+h@{whrlpool.\+h}!W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Final@{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Final}}
+\index{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Final@{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Final}!whrlpool.\+h@{whrlpool.\+h}}
+\subsubsection[{\texorpdfstring{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Final(unsigned char $\ast$md, W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+T\+X $\ast$c)}{WHIRLPOOL_Final(unsigned char *md, WHIRLPOOL_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Final (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{md, }
+\item[{{\bf W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{whrlpool_8h_a07b4be19540f4979d2ee839461aecd08}{}\label{whrlpool_8h_a07b4be19540f4979d2ee839461aecd08}
+\index{whrlpool.\+h@{whrlpool.\+h}!W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Init@{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Init}}
+\index{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Init@{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Init}!whrlpool.\+h@{whrlpool.\+h}}
+\subsubsection[{\texorpdfstring{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Init(\+W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+T\+X $\ast$c)}{WHIRLPOOL_Init(WHIRLPOOL_CTX *c)}}]{\setlength{\rightskip}{0pt plus 5cm}int W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+TX} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{whrlpool_8h_a6328a6e926ac12c50365911a8ae22c19}{}\label{whrlpool_8h_a6328a6e926ac12c50365911a8ae22c19}
+\index{whrlpool.\+h@{whrlpool.\+h}!W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Update@{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Update}}
+\index{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Update@{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Update}!whrlpool.\+h@{whrlpool.\+h}}
+\subsubsection[{\texorpdfstring{W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Update(\+W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+T\+X $\ast$c, const void $\ast$inp, size\+\_\+t bytes)}{WHIRLPOOL_Update(WHIRLPOOL_CTX *c, const void *inp, size_t bytes)}}]{\setlength{\rightskip}{0pt plus 5cm}int W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+Update (
+\begin{DoxyParamCaption}
+\item[{{\bf W\+H\+I\+R\+L\+P\+O\+O\+L\+\_\+\+C\+TX} $\ast$}]{c, }
+\item[{const void $\ast$}]{inp, }
+\item[{size\+\_\+t}]{bytes}
+\end{DoxyParamCaption}
+)}\hypertarget{whrlpool_8h_a97dd3c7b5b04afb4f37e42204d207de7}{}\label{whrlpool_8h_a97dd3c7b5b04afb4f37e42204d207de7}

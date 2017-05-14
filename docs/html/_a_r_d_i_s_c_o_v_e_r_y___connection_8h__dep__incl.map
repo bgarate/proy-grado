@@ -1,0 +1,26 @@
+<map id="src/hal/pb2/include/libARDiscovery/ARDISCOVERY_Connection.h" name="src/hal/pb2/include/libARDiscovery/ARDISCOVERY_Connection.h">
+<area shape="rect" id="node2" href="$_a_r_discovery_8h.html" title="src/hal/pb2/include\l/libARDiscovery/ARDiscovery.h" alt="" coords="5,221,216,262"/>
+<area shape="rect" id="node8" href="$_a_r_d_i_s_c_o_v_e_r_y___device_8h.html" title="Discovery Device contains the informations of a device discovered. " alt="" coords="258,109,478,165"/>
+<area shape="rect" id="node3" href="$_a_r_m_e_d_i_a___video_encapsuler_8h.html" title="src/hal/pb2/include\l/libARMedia/ARMEDIA\l_VideoEncapsuler.h" alt="" coords="23,317,182,373"/>
+<area shape="rect" id="node6" href="$pb2hal_8cpp.html" title="src/hal/pb2/pb2hal.cpp" alt="" coords="215,748,369,775"/>
+<area shape="rect" id="node4" href="$_a_r_m_e_d_i_a___video_atoms_8h.html" title="src/hal/pb2/include\l/libARMedia/ARMEDIA\l_VideoAtoms.h" alt="" coords="23,421,182,477"/>
+<area shape="rect" id="node5" href="$_a_r_media_8h.html" title="src/hal/pb2/include\l/libARMedia/ARMedia.h" alt="" coords="21,533,184,574"/>
+<area shape="rect" id="node7" href="$pb2haltest_8cpp.html" title="src/hal/pb2/pb2haltest.cpp" alt="" coords="205,845,379,871"/>
+<area shape="rect" id="node9" href="$_a_r_c_o_n_t_r_o_l_l_e_r___network_8h.html" title="ARCONTROLLER_Network allow to operate an ARNETWORK_Manager for send and receive commands. " alt="" coords="305,317,533,373"/>
+<area shape="rect" id="node13" href="$_a_r_c_o_n_t_r_o_l_l_e_r___stream_8h.html" title="ARCONTROLLER_Stream allow to operate ARStream for receive a stream. " alt="" coords="543,213,771,269"/>
+<area shape="rect" id="node14" href="$_a_r_c_o_n_t_r_o_l_l_e_r___stream1_8h.html" title="ARCONTROLLER_Stream1 allow to operate ARStream for receive a stream. " alt="" coords="291,213,519,269"/>
+<area shape="rect" id="node15" href="$_a_r_u_t_i_l_s___manager_8h.html" title="libARUtils Manager header file. " alt="" coords="900,213,1047,269"/>
+<area shape="rect" id="node10" href="$_a_r_controller_8h.html" title="Global header for libARController. " alt="" coords="259,637,463,678"/>
+<area shape="rect" id="node11" href="$_a_r_c_o_n_t_r_o_l_l_e_r___feature_8h.html" title="Feature controller allow to send command related of a Feature. " alt="" coords="341,421,569,477"/>
+<area shape="rect" id="node12" href="$_a_r_c_o_n_t_r_o_l_l_e_r___device_8h.html" title="Device controller allow to drive a device. " alt="" coords="391,525,619,581"/>
+<area shape="rect" id="node16" href="$_a_r_d_a_t_a_t_r_a_n_s_f_e_r___downloader_8h.html" title="libARDataTransfer Downloader header file. " alt="" coords="945,317,1212,373"/>
+<area shape="rect" id="node17" href="$_a_r_d_a_t_a_t_r_a_n_s_f_e_r___uploader_8h.html" title="libARDataTransfer Uploader header file. " alt="" coords="1156,525,1423,581"/>
+<area shape="rect" id="node22" href="$_a_r_utils_8h.html" title="libARUtils header file. Global include file. " alt="" coords="775,325,921,366"/>
+<area shape="rect" id="node18" href="$_a_r_u_p_d_a_t_e_r___manager_8h.html" title="libARUpdater Manager header file. " alt="" coords="1053,629,1245,685"/>
+<area shape="rect" id="node19" href="$_a_r_updater_8h.html" title="libARUpdater header file. Global include file for ARUpdater_Manager " alt="" coords="1057,837,1241,879"/>
+<area shape="rect" id="node20" href="$_a_r_u_p_d_a_t_e_r___downloader_8h.html" title="libARUpdater Downloader header file. " alt="" coords="1187,733,1379,789"/>
+<area shape="rect" id="node21" href="$_a_r_u_p_d_a_t_e_r___uploader_8h.html" title="libARUpdater Uploader header file. " alt="" coords="920,733,1112,789"/>
+<area shape="rect" id="node23" href="$_a_r_d_a_t_a_t_r_a_n_s_f_e_r___data_downloader_8h.html" title="libARDataTransfer DataDownloader header file.. " alt="" coords="985,421,1252,477"/>
+<area shape="rect" id="node25" href="$_a_r_d_a_t_a_t_r_a_n_s_f_e_r___medias_downloader_8h.html" title="libARDataTransfer MediasDownloader header file. " alt="" coords="695,421,961,477"/>
+<area shape="rect" id="node24" href="$_a_r_data_transfer_8h.html" title="libARDataTransfer header file. Global include file for ARDataTransfer_Manager, ARDataTransfer_DataDow..." alt="" coords="887,533,1131,574"/>
+</map>

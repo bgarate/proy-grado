@@ -1,0 +1,57 @@
+\hypertarget{structenv__md__ctx__st}{}\section{env\+\_\+md\+\_\+ctx\+\_\+st Struct Reference}
+\label{structenv__md__ctx__st}\index{env\+\_\+md\+\_\+ctx\+\_\+st@{env\+\_\+md\+\_\+ctx\+\_\+st}}
+
+
+{\ttfamily \#include $<$evp.\+h$>$}
+
+
+
+Collaboration diagram for env\+\_\+md\+\_\+ctx\+\_\+st\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{structenv__md__ctx__st__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{ossl__typ_8h_aac66cf010326fa9a927c2a34888f45d3}{E\+V\+P\+\_\+\+MD} $\ast$ \hyperlink{structenv__md__ctx__st_a5cd23227051f7f605039f24f105f0dea}{digest}
+\item 
+\hyperlink{ossl__typ_8h_abac45b251498719318e60ab8d6192510}{E\+N\+G\+I\+NE} $\ast$ \hyperlink{structenv__md__ctx__st_aa74b6022586da8be425ea8eb897a8130}{engine}
+\item 
+unsigned long \hyperlink{structenv__md__ctx__st_aae521b439879e6584b766d7703741d43}{flags}
+\item 
+void $\ast$ \hyperlink{structenv__md__ctx__st_a9e1598967116d321673826a7909e7efa}{md\+\_\+data}
+\item 
+\hyperlink{ossl__typ_8h_aaadbb75633e4460a52864970a3b875de}{E\+V\+P\+\_\+\+P\+K\+E\+Y\+\_\+\+C\+TX} $\ast$ \hyperlink{structenv__md__ctx__st_aaf0d8bf6f34617159fd263074a07a555}{pctx}
+\item 
+int($\ast$ \hyperlink{structenv__md__ctx__st_a55517be3f51260fe504e146b9b651d60}{update} )(\hyperlink{ossl__typ_8h_a69cda4d21bd068f01c469222c1dd92fe}{E\+V\+P\+\_\+\+M\+D\+\_\+\+C\+TX} $\ast$ctx, const void $\ast$data, size\+\_\+t count)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{env\+\_\+md\+\_\+ctx\+\_\+st@{env\+\_\+md\+\_\+ctx\+\_\+st}!digest@{digest}}
+\index{digest@{digest}!env\+\_\+md\+\_\+ctx\+\_\+st@{env\+\_\+md\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{digest}{digest}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf E\+V\+P\+\_\+\+MD}$\ast$ env\+\_\+md\+\_\+ctx\+\_\+st\+::digest}\hypertarget{structenv__md__ctx__st_a5cd23227051f7f605039f24f105f0dea}{}\label{structenv__md__ctx__st_a5cd23227051f7f605039f24f105f0dea}
+\index{env\+\_\+md\+\_\+ctx\+\_\+st@{env\+\_\+md\+\_\+ctx\+\_\+st}!engine@{engine}}
+\index{engine@{engine}!env\+\_\+md\+\_\+ctx\+\_\+st@{env\+\_\+md\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{engine}{engine}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+N\+G\+I\+NE}$\ast$ env\+\_\+md\+\_\+ctx\+\_\+st\+::engine}\hypertarget{structenv__md__ctx__st_aa74b6022586da8be425ea8eb897a8130}{}\label{structenv__md__ctx__st_aa74b6022586da8be425ea8eb897a8130}
+\index{env\+\_\+md\+\_\+ctx\+\_\+st@{env\+\_\+md\+\_\+ctx\+\_\+st}!flags@{flags}}
+\index{flags@{flags}!env\+\_\+md\+\_\+ctx\+\_\+st@{env\+\_\+md\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{flags}{flags}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long env\+\_\+md\+\_\+ctx\+\_\+st\+::flags}\hypertarget{structenv__md__ctx__st_aae521b439879e6584b766d7703741d43}{}\label{structenv__md__ctx__st_aae521b439879e6584b766d7703741d43}
+\index{env\+\_\+md\+\_\+ctx\+\_\+st@{env\+\_\+md\+\_\+ctx\+\_\+st}!md\+\_\+data@{md\+\_\+data}}
+\index{md\+\_\+data@{md\+\_\+data}!env\+\_\+md\+\_\+ctx\+\_\+st@{env\+\_\+md\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{md\+\_\+data}{md_data}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ env\+\_\+md\+\_\+ctx\+\_\+st\+::md\+\_\+data}\hypertarget{structenv__md__ctx__st_a9e1598967116d321673826a7909e7efa}{}\label{structenv__md__ctx__st_a9e1598967116d321673826a7909e7efa}
+\index{env\+\_\+md\+\_\+ctx\+\_\+st@{env\+\_\+md\+\_\+ctx\+\_\+st}!pctx@{pctx}}
+\index{pctx@{pctx}!env\+\_\+md\+\_\+ctx\+\_\+st@{env\+\_\+md\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{pctx}{pctx}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+V\+P\+\_\+\+P\+K\+E\+Y\+\_\+\+C\+TX}$\ast$ env\+\_\+md\+\_\+ctx\+\_\+st\+::pctx}\hypertarget{structenv__md__ctx__st_aaf0d8bf6f34617159fd263074a07a555}{}\label{structenv__md__ctx__st_aaf0d8bf6f34617159fd263074a07a555}
+\index{env\+\_\+md\+\_\+ctx\+\_\+st@{env\+\_\+md\+\_\+ctx\+\_\+st}!update@{update}}
+\index{update@{update}!env\+\_\+md\+\_\+ctx\+\_\+st@{env\+\_\+md\+\_\+ctx\+\_\+st}}
+\subsubsection[{\texorpdfstring{update}{update}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ env\+\_\+md\+\_\+ctx\+\_\+st\+::update) ({\bf E\+V\+P\+\_\+\+M\+D\+\_\+\+C\+TX} $\ast$ctx, const void $\ast$data, size\+\_\+t count)}\hypertarget{structenv__md__ctx__st_a55517be3f51260fe504e146b9b651d60}{}\label{structenv__md__ctx__st_a55517be3f51260fe504e146b9b651d60}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/openssl/\hyperlink{evp_8h}{evp.\+h}\end{DoxyCompactItemize}

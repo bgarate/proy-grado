@@ -1,0 +1,5 @@
+<map id="mavlink_reset_channel_status" name="mavlink_reset_channel_status">
+<area shape="rect" id="node2" href="$mavlink__helpers_8h.html#ac006d308067f48514ca5c0cf0b046c28" title="mavlink_get_channel\l_status" alt="" coords="689,17,833,59"/>
+<area shape="rect" id="node3" href="$mavlink__helpers_8h.html#aa66131138fc02101dcc73b4b556ab422" title="Finalize a MAVLink message with channel assignment. " alt="" coords="208,50,419,77"/>
+<area shape="rect" id="node4" href="$mavlink__helpers_8h.html#af3bea083c5ec83f5b6570b2bd4a817d0" title="Finalize a MAVLink message with MAVLINK_COMM_0 as default channel. " alt="" coords="467,75,641,102"/>
+</map>

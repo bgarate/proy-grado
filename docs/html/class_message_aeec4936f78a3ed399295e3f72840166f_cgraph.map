@@ -1,0 +1,20 @@
+<map id="Message::MergeFrom" name="Message::MergeFrom">
+<area shape="rect" id="node2" href="$class_message.html#a6687127e183b5c855012ff5a7137557a" title="Message::has_ping" alt="" coords="245,5,379,32"/>
+<area shape="rect" id="node3" href="$class_message.html#a06f736eaae116cd37bdaeaccf6c46135" title="Message::mutable_ping" alt="" coords="232,56,392,83"/>
+<area shape="rect" id="node4" href="$class_message.html#ac6583c594c172467063c0e3f2b30e82a" title="Message::ping" alt="" coords="259,107,365,133"/>
+<area shape="rect" id="node6" href="$class_message.html#a828967ea849f5536979f42d8bfb1db81" title="Message::has_shutdown" alt="" coords="229,157,395,184"/>
+<area shape="rect" id="node7" href="$class_message.html#a3e3d6de62220b9b1dc4bd476ddb1c6ab" title="Message::mutable_shutdown" alt="" coords="216,208,408,235"/>
+<area shape="rect" id="node8" href="$class_message.html#aab2ea329fff8637bc696e7979eadc827" title="Message::shutdown" alt="" coords="243,259,381,285"/>
+<area shape="rect" id="node10" href="$class_message.html#ab599ad42dc51bb64f4a1f54ab687052f" title="Message::has_advertisement" alt="" coords="215,309,409,336"/>
+<area shape="rect" id="node11" href="$class_message.html#a1569a203e1c3b8ee7961c02a46280269" title="Message::mutable_advertisement" alt="" coords="203,360,421,387"/>
+<area shape="rect" id="node12" href="$class_message.html#ad837be1ca50959f5e3a46abb0283a9d0" title="Message::advertisement" alt="" coords="229,411,395,437"/>
+<area shape="rect" id="node14" href="$class_message.html#ae2dc15c9e2b35d4659117baea58f7ad6" title="Message::has_hello" alt="" coords="243,461,381,488"/>
+<area shape="rect" id="node15" href="$class_message.html#ab74acd4d120a7c3cbdc26a8d61eeec55" title="Message::mutable_hello" alt="" coords="231,512,393,539"/>
+<area shape="rect" id="node16" href="$class_message.html#a898179de741961b94361a2afa251dea0" title="Message::hello" alt="" coords="257,563,367,589"/>
+<area shape="rect" id="node18" href="$class_message.html#a280acf280b0ebac63aa444c2db9431ea" title="Message::type" alt="" coords="258,613,366,640"/>
+<area shape="rect" id="node19" href="$class_message.html#a8118c1b12f068dacbf3535c9879b2a25" title="Message::set_type" alt="" coords="245,664,379,691"/>
+<area shape="rect" id="node5" href="$class_ping.html#a2d8195a2aff9e1014459165c746ce0cf" title="Ping::internal_default\l_instance" alt="" coords="475,99,619,141"/>
+<area shape="rect" id="node9" href="$class_do_shutdown.html#ab0bbc935fc413a234f1db826b6e51f00" title="DoShutdown::internal\l_default_instance" alt="" coords="474,251,621,293"/>
+<area shape="rect" id="node13" href="$class_advertisement.html#a5de3c30b307a764143dcdb7b2f6d9874" title="Advertisement::internal\l_default_instance" alt="" coords="469,403,625,445"/>
+<area shape="rect" id="node17" href="$class_hello.html#a2e142108ca801c978442fa5a754f1e29" title="Hello::internal_default\l_instance" alt="" coords="473,555,621,597"/>
+</map>

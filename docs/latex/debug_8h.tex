@@ -1,0 +1,155 @@
+\hypertarget{debug_8h}{}\section{src/hal/pb2/include/json/debug.h File Reference}
+\label{debug_8h}\index{src/hal/pb2/include/json/debug.\+h@{src/hal/pb2/include/json/debug.\+h}}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debug_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{debug_8h_a50f21a239fa040a10ad4cfdb4278b02b}{M\+C\+\_\+\+S\+E\+T\+\_\+\+D\+E\+B\+UG}(x)~if (0) \hyperlink{debug_8h_af65a73617b71476020a005b20bf02726}{mc\+\_\+set\+\_\+debug}(x)
+\item 
+\#define \hyperlink{debug_8h_acb272a4b4444b69cd995236f167f90ba}{M\+C\+\_\+\+G\+E\+T\+\_\+\+D\+E\+B\+UG}()~(0)
+\item 
+\#define \hyperlink{debug_8h_acf1e895cb5eb7f334cbe51901e6bb918}{M\+C\+\_\+\+S\+E\+T\+\_\+\+S\+Y\+S\+L\+OG}(x)~if (0) \hyperlink{debug_8h_aadb888da410116384e75a00db30da705}{mc\+\_\+set\+\_\+syslog}(x)
+\item 
+\#define \hyperlink{debug_8h_a25591d3d4754c0c6d1f2b5463fb4977e}{M\+C\+\_\+\+A\+B\+O\+RT}(x, ...)~if (0) \hyperlink{debug_8h_a44913dbc4f1abf6614d42b22b941c092}{mc\+\_\+abort}(x, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{debug_8h_afda355b35d18bf2e6a2a22d5c8eef42c}{M\+C\+\_\+\+D\+E\+B\+UG}(x, ...)~if (0) \hyperlink{debug_8h_a600cf4cbbe19c0c15ca3710210e35aba}{mc\+\_\+debug}(x, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{debug_8h_a11ba39cecbe449af5b86fa2f78e9da9d}{M\+C\+\_\+\+E\+R\+R\+OR}(x, ...)~if (0) \hyperlink{debug_8h_abf22ea3a331c7ff21c23da91a07c7cb2}{mc\+\_\+error}(x, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{debug_8h_a5ef640ce1e9e61c5f6632aefbbfa0041}{M\+C\+\_\+\+I\+N\+FO}(x, ...)~if (0) \hyperlink{debug_8h_acbb92996a994e316ff65ed3a026e12a4}{mc\+\_\+info}(x, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{debug_8h_af65a73617b71476020a005b20bf02726}{mc\+\_\+set\+\_\+debug} (int debug)
+\item 
+int \hyperlink{debug_8h_a3b3ab3ae8b438384fb109a2e38646b6e}{mc\+\_\+get\+\_\+debug} (void)
+\item 
+void \hyperlink{debug_8h_aadb888da410116384e75a00db30da705}{mc\+\_\+set\+\_\+syslog} (int syslog)
+\item 
+void \hyperlink{debug_8h_a44913dbc4f1abf6614d42b22b941c092}{mc\+\_\+abort} (const char $\ast$msg,...)
+\item 
+void \hyperlink{debug_8h_a600cf4cbbe19c0c15ca3710210e35aba}{mc\+\_\+debug} (const char $\ast$msg,...)
+\item 
+void \hyperlink{debug_8h_abf22ea3a331c7ff21c23da91a07c7cb2}{mc\+\_\+error} (const char $\ast$msg,...)
+\item 
+void \hyperlink{debug_8h_acbb92996a994e316ff65ed3a026e12a4}{mc\+\_\+info} (const char $\ast$msg,...)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{debug.\+h@{debug.\+h}!M\+C\+\_\+\+A\+B\+O\+RT@{M\+C\+\_\+\+A\+B\+O\+RT}}
+\index{M\+C\+\_\+\+A\+B\+O\+RT@{M\+C\+\_\+\+A\+B\+O\+RT}!debug.\+h@{debug.\+h}}
+\subsubsection[{\texorpdfstring{M\+C\+\_\+\+A\+B\+O\+RT}{MC_ABORT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+C\+\_\+\+A\+B\+O\+RT(
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~if (0) {\bf mc\+\_\+abort}(x, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}\hypertarget{debug_8h_a25591d3d4754c0c6d1f2b5463fb4977e}{}\label{debug_8h_a25591d3d4754c0c6d1f2b5463fb4977e}
+\index{debug.\+h@{debug.\+h}!M\+C\+\_\+\+D\+E\+B\+UG@{M\+C\+\_\+\+D\+E\+B\+UG}}
+\index{M\+C\+\_\+\+D\+E\+B\+UG@{M\+C\+\_\+\+D\+E\+B\+UG}!debug.\+h@{debug.\+h}}
+\subsubsection[{\texorpdfstring{M\+C\+\_\+\+D\+E\+B\+UG}{MC_DEBUG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+C\+\_\+\+D\+E\+B\+UG(
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~if (0) {\bf mc\+\_\+debug}(x, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}\hypertarget{debug_8h_afda355b35d18bf2e6a2a22d5c8eef42c}{}\label{debug_8h_afda355b35d18bf2e6a2a22d5c8eef42c}
+\index{debug.\+h@{debug.\+h}!M\+C\+\_\+\+E\+R\+R\+OR@{M\+C\+\_\+\+E\+R\+R\+OR}}
+\index{M\+C\+\_\+\+E\+R\+R\+OR@{M\+C\+\_\+\+E\+R\+R\+OR}!debug.\+h@{debug.\+h}}
+\subsubsection[{\texorpdfstring{M\+C\+\_\+\+E\+R\+R\+OR}{MC_ERROR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+C\+\_\+\+E\+R\+R\+OR(
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~if (0) {\bf mc\+\_\+error}(x, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}\hypertarget{debug_8h_a11ba39cecbe449af5b86fa2f78e9da9d}{}\label{debug_8h_a11ba39cecbe449af5b86fa2f78e9da9d}
+\index{debug.\+h@{debug.\+h}!M\+C\+\_\+\+G\+E\+T\+\_\+\+D\+E\+B\+UG@{M\+C\+\_\+\+G\+E\+T\+\_\+\+D\+E\+B\+UG}}
+\index{M\+C\+\_\+\+G\+E\+T\+\_\+\+D\+E\+B\+UG@{M\+C\+\_\+\+G\+E\+T\+\_\+\+D\+E\+B\+UG}!debug.\+h@{debug.\+h}}
+\subsubsection[{\texorpdfstring{M\+C\+\_\+\+G\+E\+T\+\_\+\+D\+E\+B\+UG}{MC_GET_DEBUG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+C\+\_\+\+G\+E\+T\+\_\+\+D\+E\+B\+UG(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(0)}\hypertarget{debug_8h_acb272a4b4444b69cd995236f167f90ba}{}\label{debug_8h_acb272a4b4444b69cd995236f167f90ba}
+\index{debug.\+h@{debug.\+h}!M\+C\+\_\+\+I\+N\+FO@{M\+C\+\_\+\+I\+N\+FO}}
+\index{M\+C\+\_\+\+I\+N\+FO@{M\+C\+\_\+\+I\+N\+FO}!debug.\+h@{debug.\+h}}
+\subsubsection[{\texorpdfstring{M\+C\+\_\+\+I\+N\+FO}{MC_INFO}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+C\+\_\+\+I\+N\+FO(
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~if (0) {\bf mc\+\_\+info}(x, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}\hypertarget{debug_8h_a5ef640ce1e9e61c5f6632aefbbfa0041}{}\label{debug_8h_a5ef640ce1e9e61c5f6632aefbbfa0041}
+\index{debug.\+h@{debug.\+h}!M\+C\+\_\+\+S\+E\+T\+\_\+\+D\+E\+B\+UG@{M\+C\+\_\+\+S\+E\+T\+\_\+\+D\+E\+B\+UG}}
+\index{M\+C\+\_\+\+S\+E\+T\+\_\+\+D\+E\+B\+UG@{M\+C\+\_\+\+S\+E\+T\+\_\+\+D\+E\+B\+UG}!debug.\+h@{debug.\+h}}
+\subsubsection[{\texorpdfstring{M\+C\+\_\+\+S\+E\+T\+\_\+\+D\+E\+B\+UG}{MC_SET_DEBUG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+C\+\_\+\+S\+E\+T\+\_\+\+D\+E\+B\+UG(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~if (0) {\bf mc\+\_\+set\+\_\+debug}(x)}\hypertarget{debug_8h_a50f21a239fa040a10ad4cfdb4278b02b}{}\label{debug_8h_a50f21a239fa040a10ad4cfdb4278b02b}
+\index{debug.\+h@{debug.\+h}!M\+C\+\_\+\+S\+E\+T\+\_\+\+S\+Y\+S\+L\+OG@{M\+C\+\_\+\+S\+E\+T\+\_\+\+S\+Y\+S\+L\+OG}}
+\index{M\+C\+\_\+\+S\+E\+T\+\_\+\+S\+Y\+S\+L\+OG@{M\+C\+\_\+\+S\+E\+T\+\_\+\+S\+Y\+S\+L\+OG}!debug.\+h@{debug.\+h}}
+\subsubsection[{\texorpdfstring{M\+C\+\_\+\+S\+E\+T\+\_\+\+S\+Y\+S\+L\+OG}{MC_SET_SYSLOG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+C\+\_\+\+S\+E\+T\+\_\+\+S\+Y\+S\+L\+OG(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~if (0) {\bf mc\+\_\+set\+\_\+syslog}(x)}\hypertarget{debug_8h_acf1e895cb5eb7f334cbe51901e6bb918}{}\label{debug_8h_acf1e895cb5eb7f334cbe51901e6bb918}
+
+
+\subsection{Function Documentation}
+\index{debug.\+h@{debug.\+h}!mc\+\_\+abort@{mc\+\_\+abort}}
+\index{mc\+\_\+abort@{mc\+\_\+abort}!debug.\+h@{debug.\+h}}
+\subsubsection[{\texorpdfstring{mc\+\_\+abort(const char $\ast$msg,...)}{mc_abort(const char *msg,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void mc\+\_\+abort (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{msg, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{debug_8h_a44913dbc4f1abf6614d42b22b941c092}{}\label{debug_8h_a44913dbc4f1abf6614d42b22b941c092}
+\index{debug.\+h@{debug.\+h}!mc\+\_\+debug@{mc\+\_\+debug}}
+\index{mc\+\_\+debug@{mc\+\_\+debug}!debug.\+h@{debug.\+h}}
+\subsubsection[{\texorpdfstring{mc\+\_\+debug(const char $\ast$msg,...)}{mc_debug(const char *msg,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void mc\+\_\+debug (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{msg, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{debug_8h_a600cf4cbbe19c0c15ca3710210e35aba}{}\label{debug_8h_a600cf4cbbe19c0c15ca3710210e35aba}
+\index{debug.\+h@{debug.\+h}!mc\+\_\+error@{mc\+\_\+error}}
+\index{mc\+\_\+error@{mc\+\_\+error}!debug.\+h@{debug.\+h}}
+\subsubsection[{\texorpdfstring{mc\+\_\+error(const char $\ast$msg,...)}{mc_error(const char *msg,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void mc\+\_\+error (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{msg, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{debug_8h_abf22ea3a331c7ff21c23da91a07c7cb2}{}\label{debug_8h_abf22ea3a331c7ff21c23da91a07c7cb2}
+\index{debug.\+h@{debug.\+h}!mc\+\_\+get\+\_\+debug@{mc\+\_\+get\+\_\+debug}}
+\index{mc\+\_\+get\+\_\+debug@{mc\+\_\+get\+\_\+debug}!debug.\+h@{debug.\+h}}
+\subsubsection[{\texorpdfstring{mc\+\_\+get\+\_\+debug(void)}{mc_get_debug(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int mc\+\_\+get\+\_\+debug (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{debug_8h_a3b3ab3ae8b438384fb109a2e38646b6e}{}\label{debug_8h_a3b3ab3ae8b438384fb109a2e38646b6e}
+\index{debug.\+h@{debug.\+h}!mc\+\_\+info@{mc\+\_\+info}}
+\index{mc\+\_\+info@{mc\+\_\+info}!debug.\+h@{debug.\+h}}
+\subsubsection[{\texorpdfstring{mc\+\_\+info(const char $\ast$msg,...)}{mc_info(const char *msg,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void mc\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{msg, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{debug_8h_acbb92996a994e316ff65ed3a026e12a4}{}\label{debug_8h_acbb92996a994e316ff65ed3a026e12a4}
+\index{debug.\+h@{debug.\+h}!mc\+\_\+set\+\_\+debug@{mc\+\_\+set\+\_\+debug}}
+\index{mc\+\_\+set\+\_\+debug@{mc\+\_\+set\+\_\+debug}!debug.\+h@{debug.\+h}}
+\subsubsection[{\texorpdfstring{mc\+\_\+set\+\_\+debug(int debug)}{mc_set_debug(int debug)}}]{\setlength{\rightskip}{0pt plus 5cm}void mc\+\_\+set\+\_\+debug (
+\begin{DoxyParamCaption}
+\item[{int}]{debug}
+\end{DoxyParamCaption}
+)}\hypertarget{debug_8h_af65a73617b71476020a005b20bf02726}{}\label{debug_8h_af65a73617b71476020a005b20bf02726}
+\index{debug.\+h@{debug.\+h}!mc\+\_\+set\+\_\+syslog@{mc\+\_\+set\+\_\+syslog}}
+\index{mc\+\_\+set\+\_\+syslog@{mc\+\_\+set\+\_\+syslog}!debug.\+h@{debug.\+h}}
+\subsubsection[{\texorpdfstring{mc\+\_\+set\+\_\+syslog(int syslog)}{mc_set_syslog(int syslog)}}]{\setlength{\rightskip}{0pt plus 5cm}void mc\+\_\+set\+\_\+syslog (
+\begin{DoxyParamCaption}
+\item[{int}]{syslog}
+\end{DoxyParamCaption}
+)}\hypertarget{debug_8h_aadb888da410116384e75a00db30da705}{}\label{debug_8h_aadb888da410116384e75a00db30da705}

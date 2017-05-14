@@ -1,0 +1,87 @@
+\hypertarget{structdsa__method}{}\section{dsa\+\_\+method Struct Reference}
+\label{structdsa__method}\index{dsa\+\_\+method@{dsa\+\_\+method}}
+
+
+{\ttfamily \#include $<$dsa.\+h$>$}
+
+
+
+Collaboration diagram for dsa\+\_\+method\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{structdsa__method__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{structdsa__method_a83d504a9d8609d6172a7e4a824791933}{name}
+\item 
+\hyperlink{dsa_8h_a48a9879e7bbc21af161fb409c679f3c8}{D\+S\+A\+\_\+\+S\+IG} $\ast$($\ast$ \hyperlink{structdsa__method_acac9dacfe7fd6637af11f0280ed087ad}{dsa\+\_\+do\+\_\+sign} )(const unsigned char $\ast$dgst, int dlen, \hyperlink{ossl__typ_8h_aa26536f205a5c5f39111260bf246ed9d}{D\+SA} $\ast$dsa)
+\item 
+int($\ast$ \hyperlink{structdsa__method_a6c731fb594e9d87b38351caf21b52f72}{dsa\+\_\+sign\+\_\+setup} )(\hyperlink{ossl__typ_8h_aa26536f205a5c5f39111260bf246ed9d}{D\+SA} $\ast$dsa, \hyperlink{ossl__typ_8h_a0b235a35b7dd7922c097571ecd90e2bc}{B\+N\+\_\+\+C\+TX} $\ast$ctx\+\_\+in, \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$$\ast$kinvp, \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$$\ast$rp)
+\item 
+int($\ast$ \hyperlink{structdsa__method_a48d8dcf12cd14676633cde4b06dbe1c5}{dsa\+\_\+do\+\_\+verify} )(const unsigned char $\ast$dgst, int dgst\+\_\+len, \hyperlink{dsa_8h_a48a9879e7bbc21af161fb409c679f3c8}{D\+S\+A\+\_\+\+S\+IG} $\ast$sig, \hyperlink{ossl__typ_8h_aa26536f205a5c5f39111260bf246ed9d}{D\+SA} $\ast$dsa)
+\item 
+int($\ast$ \hyperlink{structdsa__method_a6295bfda1f4be2fc9e04e69c6a104f4d}{dsa\+\_\+mod\+\_\+exp} )(\hyperlink{ossl__typ_8h_aa26536f205a5c5f39111260bf246ed9d}{D\+SA} $\ast$dsa, \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$rr, \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$a1, \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$p1, \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$a2, \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$p2, \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$m, \hyperlink{ossl__typ_8h_a0b235a35b7dd7922c097571ecd90e2bc}{B\+N\+\_\+\+C\+TX} $\ast$ctx, \hyperlink{ossl__typ_8h_aec902d353e00ced6d3fee6cd033a8bd0}{B\+N\+\_\+\+M\+O\+N\+T\+\_\+\+C\+TX} $\ast$in\+\_\+mont)
+\item 
+int($\ast$ \hyperlink{structdsa__method_afeec883c6d822b9faa7a03f2217fc651}{bn\+\_\+mod\+\_\+exp} )(\hyperlink{ossl__typ_8h_aa26536f205a5c5f39111260bf246ed9d}{D\+SA} $\ast$dsa, \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$r, \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$a, const \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$p, const \hyperlink{ossl__typ_8h_a6fb19728907ec6515e4bfb716bffa141}{B\+I\+G\+N\+UM} $\ast$m, \hyperlink{ossl__typ_8h_a0b235a35b7dd7922c097571ecd90e2bc}{B\+N\+\_\+\+C\+TX} $\ast$ctx, \hyperlink{ossl__typ_8h_aec902d353e00ced6d3fee6cd033a8bd0}{B\+N\+\_\+\+M\+O\+N\+T\+\_\+\+C\+TX} $\ast$m\+\_\+ctx)
+\item 
+int($\ast$ \hyperlink{structdsa__method_acfaf05310756308b9849f278cdfd91c6}{init} )(\hyperlink{ossl__typ_8h_aa26536f205a5c5f39111260bf246ed9d}{D\+SA} $\ast$dsa)
+\item 
+int($\ast$ \hyperlink{structdsa__method_aad9fed78046fe8c6f995ba9ee8bd59d2}{finish} )(\hyperlink{ossl__typ_8h_aa26536f205a5c5f39111260bf246ed9d}{D\+SA} $\ast$dsa)
+\item 
+int \hyperlink{structdsa__method_ae5a10b0b8d5b139e5818da8da5223ebc}{flags}
+\item 
+char $\ast$ \hyperlink{structdsa__method_a08528c35da49dcebc0675cb9b66bbeb9}{app\+\_\+data}
+\item 
+int($\ast$ \hyperlink{structdsa__method_a22d30cb3e62b00cbb818f7d2bacb99f7}{dsa\+\_\+paramgen} )(\hyperlink{ossl__typ_8h_aa26536f205a5c5f39111260bf246ed9d}{D\+SA} $\ast$dsa, int \hyperlink{x509v3_8h_ab3c186980893d6836a68407d221ae9c9}{bits}, const unsigned char $\ast$seed, int seed\+\_\+len, int $\ast$counter\+\_\+ret, unsigned long $\ast$h\+\_\+ret, \hyperlink{ossl__typ_8h_ae122a8be18f4fe821e5389381ececa09}{B\+N\+\_\+\+G\+E\+N\+CB} $\ast$\hyperlink{pem_8h_a92c578a1a1d2733de8cf205957a962fc}{cb})
+\item 
+int($\ast$ \hyperlink{structdsa__method_a55bf9cc2d75b43788806388a6e924eb1}{dsa\+\_\+keygen} )(\hyperlink{ossl__typ_8h_aa26536f205a5c5f39111260bf246ed9d}{D\+SA} $\ast$dsa)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{dsa\+\_\+method@{dsa\+\_\+method}!app\+\_\+data@{app\+\_\+data}}
+\index{app\+\_\+data@{app\+\_\+data}!dsa\+\_\+method@{dsa\+\_\+method}}
+\subsubsection[{\texorpdfstring{app\+\_\+data}{app_data}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ dsa\+\_\+method\+::app\+\_\+data}\hypertarget{structdsa__method_a08528c35da49dcebc0675cb9b66bbeb9}{}\label{structdsa__method_a08528c35da49dcebc0675cb9b66bbeb9}
+\index{dsa\+\_\+method@{dsa\+\_\+method}!bn\+\_\+mod\+\_\+exp@{bn\+\_\+mod\+\_\+exp}}
+\index{bn\+\_\+mod\+\_\+exp@{bn\+\_\+mod\+\_\+exp}!dsa\+\_\+method@{dsa\+\_\+method}}
+\subsubsection[{\texorpdfstring{bn\+\_\+mod\+\_\+exp}{bn_mod_exp}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ dsa\+\_\+method\+::bn\+\_\+mod\+\_\+exp) ({\bf D\+SA} $\ast$dsa, {\bf B\+I\+G\+N\+UM} $\ast$r, {\bf B\+I\+G\+N\+UM} $\ast$a, const {\bf B\+I\+G\+N\+UM} $\ast$p, const {\bf B\+I\+G\+N\+UM} $\ast$m, {\bf B\+N\+\_\+\+C\+TX} $\ast$ctx, {\bf B\+N\+\_\+\+M\+O\+N\+T\+\_\+\+C\+TX} $\ast$m\+\_\+ctx)}\hypertarget{structdsa__method_afeec883c6d822b9faa7a03f2217fc651}{}\label{structdsa__method_afeec883c6d822b9faa7a03f2217fc651}
+\index{dsa\+\_\+method@{dsa\+\_\+method}!dsa\+\_\+do\+\_\+sign@{dsa\+\_\+do\+\_\+sign}}
+\index{dsa\+\_\+do\+\_\+sign@{dsa\+\_\+do\+\_\+sign}!dsa\+\_\+method@{dsa\+\_\+method}}
+\subsubsection[{\texorpdfstring{dsa\+\_\+do\+\_\+sign}{dsa_do_sign}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+S\+A\+\_\+\+S\+IG}$\ast$($\ast$ dsa\+\_\+method\+::dsa\+\_\+do\+\_\+sign) (const unsigned char $\ast$dgst, int dlen, {\bf D\+SA} $\ast$dsa)}\hypertarget{structdsa__method_acac9dacfe7fd6637af11f0280ed087ad}{}\label{structdsa__method_acac9dacfe7fd6637af11f0280ed087ad}
+\index{dsa\+\_\+method@{dsa\+\_\+method}!dsa\+\_\+do\+\_\+verify@{dsa\+\_\+do\+\_\+verify}}
+\index{dsa\+\_\+do\+\_\+verify@{dsa\+\_\+do\+\_\+verify}!dsa\+\_\+method@{dsa\+\_\+method}}
+\subsubsection[{\texorpdfstring{dsa\+\_\+do\+\_\+verify}{dsa_do_verify}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ dsa\+\_\+method\+::dsa\+\_\+do\+\_\+verify) (const unsigned char $\ast$dgst, int dgst\+\_\+len, {\bf D\+S\+A\+\_\+\+S\+IG} $\ast$sig, {\bf D\+SA} $\ast$dsa)}\hypertarget{structdsa__method_a48d8dcf12cd14676633cde4b06dbe1c5}{}\label{structdsa__method_a48d8dcf12cd14676633cde4b06dbe1c5}
+\index{dsa\+\_\+method@{dsa\+\_\+method}!dsa\+\_\+keygen@{dsa\+\_\+keygen}}
+\index{dsa\+\_\+keygen@{dsa\+\_\+keygen}!dsa\+\_\+method@{dsa\+\_\+method}}
+\subsubsection[{\texorpdfstring{dsa\+\_\+keygen}{dsa_keygen}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ dsa\+\_\+method\+::dsa\+\_\+keygen) ({\bf D\+SA} $\ast$dsa)}\hypertarget{structdsa__method_a55bf9cc2d75b43788806388a6e924eb1}{}\label{structdsa__method_a55bf9cc2d75b43788806388a6e924eb1}
+\index{dsa\+\_\+method@{dsa\+\_\+method}!dsa\+\_\+mod\+\_\+exp@{dsa\+\_\+mod\+\_\+exp}}
+\index{dsa\+\_\+mod\+\_\+exp@{dsa\+\_\+mod\+\_\+exp}!dsa\+\_\+method@{dsa\+\_\+method}}
+\subsubsection[{\texorpdfstring{dsa\+\_\+mod\+\_\+exp}{dsa_mod_exp}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ dsa\+\_\+method\+::dsa\+\_\+mod\+\_\+exp) ({\bf D\+SA} $\ast$dsa, {\bf B\+I\+G\+N\+UM} $\ast$rr, {\bf B\+I\+G\+N\+UM} $\ast$a1, {\bf B\+I\+G\+N\+UM} $\ast$p1, {\bf B\+I\+G\+N\+UM} $\ast$a2, {\bf B\+I\+G\+N\+UM} $\ast$p2, {\bf B\+I\+G\+N\+UM} $\ast$m, {\bf B\+N\+\_\+\+C\+TX} $\ast$ctx, {\bf B\+N\+\_\+\+M\+O\+N\+T\+\_\+\+C\+TX} $\ast$in\+\_\+mont)}\hypertarget{structdsa__method_a6295bfda1f4be2fc9e04e69c6a104f4d}{}\label{structdsa__method_a6295bfda1f4be2fc9e04e69c6a104f4d}
+\index{dsa\+\_\+method@{dsa\+\_\+method}!dsa\+\_\+paramgen@{dsa\+\_\+paramgen}}
+\index{dsa\+\_\+paramgen@{dsa\+\_\+paramgen}!dsa\+\_\+method@{dsa\+\_\+method}}
+\subsubsection[{\texorpdfstring{dsa\+\_\+paramgen}{dsa_paramgen}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ dsa\+\_\+method\+::dsa\+\_\+paramgen) ({\bf D\+SA} $\ast$dsa, int {\bf bits}, const unsigned char $\ast$seed, int seed\+\_\+len, int $\ast$counter\+\_\+ret, unsigned long $\ast$h\+\_\+ret, {\bf B\+N\+\_\+\+G\+E\+N\+CB} $\ast${\bf cb})}\hypertarget{structdsa__method_a22d30cb3e62b00cbb818f7d2bacb99f7}{}\label{structdsa__method_a22d30cb3e62b00cbb818f7d2bacb99f7}
+\index{dsa\+\_\+method@{dsa\+\_\+method}!dsa\+\_\+sign\+\_\+setup@{dsa\+\_\+sign\+\_\+setup}}
+\index{dsa\+\_\+sign\+\_\+setup@{dsa\+\_\+sign\+\_\+setup}!dsa\+\_\+method@{dsa\+\_\+method}}
+\subsubsection[{\texorpdfstring{dsa\+\_\+sign\+\_\+setup}{dsa_sign_setup}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ dsa\+\_\+method\+::dsa\+\_\+sign\+\_\+setup) ({\bf D\+SA} $\ast$dsa, {\bf B\+N\+\_\+\+C\+TX} $\ast$ctx\+\_\+in, {\bf B\+I\+G\+N\+UM} $\ast$$\ast$kinvp, {\bf B\+I\+G\+N\+UM} $\ast$$\ast$rp)}\hypertarget{structdsa__method_a6c731fb594e9d87b38351caf21b52f72}{}\label{structdsa__method_a6c731fb594e9d87b38351caf21b52f72}
+\index{dsa\+\_\+method@{dsa\+\_\+method}!finish@{finish}}
+\index{finish@{finish}!dsa\+\_\+method@{dsa\+\_\+method}}
+\subsubsection[{\texorpdfstring{finish}{finish}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ dsa\+\_\+method\+::finish) ({\bf D\+SA} $\ast$dsa)}\hypertarget{structdsa__method_aad9fed78046fe8c6f995ba9ee8bd59d2}{}\label{structdsa__method_aad9fed78046fe8c6f995ba9ee8bd59d2}
+\index{dsa\+\_\+method@{dsa\+\_\+method}!flags@{flags}}
+\index{flags@{flags}!dsa\+\_\+method@{dsa\+\_\+method}}
+\subsubsection[{\texorpdfstring{flags}{flags}}]{\setlength{\rightskip}{0pt plus 5cm}int dsa\+\_\+method\+::flags}\hypertarget{structdsa__method_ae5a10b0b8d5b139e5818da8da5223ebc}{}\label{structdsa__method_ae5a10b0b8d5b139e5818da8da5223ebc}
+\index{dsa\+\_\+method@{dsa\+\_\+method}!init@{init}}
+\index{init@{init}!dsa\+\_\+method@{dsa\+\_\+method}}
+\subsubsection[{\texorpdfstring{init}{init}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ dsa\+\_\+method\+::init) ({\bf D\+SA} $\ast$dsa)}\hypertarget{structdsa__method_acfaf05310756308b9849f278cdfd91c6}{}\label{structdsa__method_acfaf05310756308b9849f278cdfd91c6}
+\index{dsa\+\_\+method@{dsa\+\_\+method}!name@{name}}
+\index{name@{name}!dsa\+\_\+method@{dsa\+\_\+method}}
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dsa\+\_\+method\+::name}\hypertarget{structdsa__method_a83d504a9d8609d6172a7e4a824791933}{}\label{structdsa__method_a83d504a9d8609d6172a7e4a824791933}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/pb2/include/openssl/\hyperlink{dsa_8h}{dsa.\+h}\end{DoxyCompactItemize}

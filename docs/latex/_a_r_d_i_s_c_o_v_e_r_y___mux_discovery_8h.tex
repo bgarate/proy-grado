@@ -1,0 +1,96 @@
+\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.h File Reference}
+\label{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h}\index{src/hal/pb2/include/lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{src/hal/pb2/include/lib\+A\+R\+Discovery/\+A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_a150141250093c40c8569172380e64053}{device\+\_\+added\+\_\+cb\+\_\+t}) (const char $\ast$name, uint32\+\_\+t \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type}, const char $\ast$id, void $\ast$userdata)
+\item 
+typedef void($\ast$ \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_aee685b8f44889f8c14d9c323c26c8b19}{device\+\_\+removed\+\_\+cb\+\_\+t}) (const char $\ast$name, uint32\+\_\+t \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type}, const char $\ast$id, void $\ast$userdata)
+\item 
+typedef void($\ast$ \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_afe1617a3b2ff2b731ad7c48f36096df3}{device\+\_\+conn\+\_\+resp\+\_\+cb\+\_\+t}) (uint32\+\_\+t status, const char $\ast$json, void $\ast$userdata)
+\item 
+typedef void($\ast$ \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_aee75d8e10cec63f503e71f393e86ad4b}{eof\+\_\+cb\+\_\+t}) (void $\ast$userdata)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct Mux\+Discovery\+Ctx $\ast$ \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_a9a8c44d14b8106f7e2cc5303be4ea4d0}{A\+R\+Discovery\+\_\+\+Mux\+Discovery\+\_\+new} (struct mux\+\_\+ctx $\ast$muxctx, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_a150141250093c40c8569172380e64053}{device\+\_\+added\+\_\+cb\+\_\+t} device\+\_\+added\+\_\+cb, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_aee685b8f44889f8c14d9c323c26c8b19}{device\+\_\+removed\+\_\+cb\+\_\+t} device\+\_\+removed\+\_\+cb, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_aee75d8e10cec63f503e71f393e86ad4b}{eof\+\_\+cb\+\_\+t} eof\+\_\+cb, void $\ast$userdata)
+\item 
+void \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_abb5a7d89a833cbe5f9dcc80c77593097}{A\+R\+Discovery\+\_\+\+Mux\+Discovery\+\_\+dispose} (struct Mux\+Discovery\+Ctx $\ast$ctx)
+\item 
+struct Mux\+Connection\+Ctx $\ast$ \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_a10b40deb210fe5d50f7d2113dc36146b}{A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+new} (struct mux\+\_\+ctx $\ast$muxctx, \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_afe1617a3b2ff2b731ad7c48f36096df3}{device\+\_\+conn\+\_\+resp\+\_\+cb\+\_\+t} device\+\_\+conn\+\_\+resp\+\_\+cb, void $\ast$userdata)
+\item 
+int \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_ab2007a6c1812ad9b8077406f5333fdd6}{A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+send\+Conn\+Req} (struct Mux\+Connection\+Ctx $\ast$ctx, const char $\ast$controller\+Name, const char $\ast$controller\+Type, const char $\ast$device\+Id, const char $\ast$json)
+\item 
+void \hyperlink{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_ad00b007c0d14339f5b273be9e157e81c}{A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+dispose} (struct Mux\+Connection\+Ctx $\ast$ctx)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}!device\+\_\+added\+\_\+cb\+\_\+t@{device\+\_\+added\+\_\+cb\+\_\+t}}
+\index{device\+\_\+added\+\_\+cb\+\_\+t@{device\+\_\+added\+\_\+cb\+\_\+t}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}}
+\subsubsection[{\texorpdfstring{device\+\_\+added\+\_\+cb\+\_\+t}{device_added_cb_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ device\+\_\+added\+\_\+cb\+\_\+t) (const char $\ast$name, uint32\+\_\+t {\bf type}, const char $\ast$id, void $\ast$userdata)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_a150141250093c40c8569172380e64053}{}\label{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_a150141250093c40c8569172380e64053}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}!device\+\_\+conn\+\_\+resp\+\_\+cb\+\_\+t@{device\+\_\+conn\+\_\+resp\+\_\+cb\+\_\+t}}
+\index{device\+\_\+conn\+\_\+resp\+\_\+cb\+\_\+t@{device\+\_\+conn\+\_\+resp\+\_\+cb\+\_\+t}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}}
+\subsubsection[{\texorpdfstring{device\+\_\+conn\+\_\+resp\+\_\+cb\+\_\+t}{device_conn_resp_cb_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ device\+\_\+conn\+\_\+resp\+\_\+cb\+\_\+t) (uint32\+\_\+t status, const char $\ast$json, void $\ast$userdata)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_afe1617a3b2ff2b731ad7c48f36096df3}{}\label{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_afe1617a3b2ff2b731ad7c48f36096df3}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}!device\+\_\+removed\+\_\+cb\+\_\+t@{device\+\_\+removed\+\_\+cb\+\_\+t}}
+\index{device\+\_\+removed\+\_\+cb\+\_\+t@{device\+\_\+removed\+\_\+cb\+\_\+t}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}}
+\subsubsection[{\texorpdfstring{device\+\_\+removed\+\_\+cb\+\_\+t}{device_removed_cb_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ device\+\_\+removed\+\_\+cb\+\_\+t) (const char $\ast$name, uint32\+\_\+t {\bf type}, const char $\ast$id, void $\ast$userdata)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_aee685b8f44889f8c14d9c323c26c8b19}{}\label{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_aee685b8f44889f8c14d9c323c26c8b19}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}!eof\+\_\+cb\+\_\+t@{eof\+\_\+cb\+\_\+t}}
+\index{eof\+\_\+cb\+\_\+t@{eof\+\_\+cb\+\_\+t}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}}
+\subsubsection[{\texorpdfstring{eof\+\_\+cb\+\_\+t}{eof_cb_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ eof\+\_\+cb\+\_\+t) (void $\ast$userdata)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_aee75d8e10cec63f503e71f393e86ad4b}{}\label{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_aee75d8e10cec63f503e71f393e86ad4b}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}!A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+dispose@{A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+dispose}}
+\index{A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+dispose@{A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+dispose}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+dispose(struct Mux\+Connection\+Ctx $\ast$ctx)}{ARDiscovery_MuxConnection_dispose(struct MuxConnectionCtx *ctx)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+dispose (
+\begin{DoxyParamCaption}
+\item[{struct Mux\+Connection\+Ctx $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_ad00b007c0d14339f5b273be9e157e81c}{}\label{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_ad00b007c0d14339f5b273be9e157e81c}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}!A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+new@{A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+new}}
+\index{A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+new@{A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+new}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+new(struct mux\+\_\+ctx $\ast$muxctx, device\+\_\+conn\+\_\+resp\+\_\+cb\+\_\+t device\+\_\+conn\+\_\+resp\+\_\+cb, void $\ast$userdata)}{ARDiscovery_MuxConnection_new(struct mux_ctx *muxctx, device_conn_resp_cb_t device_conn_resp_cb, void *userdata)}}]{\setlength{\rightskip}{0pt plus 5cm}struct Mux\+Connection\+Ctx$\ast$ A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{struct mux\+\_\+ctx $\ast$}]{muxctx, }
+\item[{{\bf device\+\_\+conn\+\_\+resp\+\_\+cb\+\_\+t}}]{device\+\_\+conn\+\_\+resp\+\_\+cb, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_a10b40deb210fe5d50f7d2113dc36146b}{}\label{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_a10b40deb210fe5d50f7d2113dc36146b}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}!A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+send\+Conn\+Req@{A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+send\+Conn\+Req}}
+\index{A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+send\+Conn\+Req@{A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+send\+Conn\+Req}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+send\+Conn\+Req(struct Mux\+Connection\+Ctx $\ast$ctx, const char $\ast$controller\+Name, const char $\ast$controller\+Type, const char $\ast$device\+Id, const char $\ast$json)}{ARDiscovery_MuxConnection_sendConnReq(struct MuxConnectionCtx *ctx, const char *controllerName, const char *controllerType, const char *deviceId, const char *json)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+R\+Discovery\+\_\+\+Mux\+Connection\+\_\+send\+Conn\+Req (
+\begin{DoxyParamCaption}
+\item[{struct Mux\+Connection\+Ctx $\ast$}]{ctx, }
+\item[{const char $\ast$}]{controller\+Name, }
+\item[{const char $\ast$}]{controller\+Type, }
+\item[{const char $\ast$}]{device\+Id, }
+\item[{const char $\ast$}]{json}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_ab2007a6c1812ad9b8077406f5333fdd6}{}\label{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_ab2007a6c1812ad9b8077406f5333fdd6}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}!A\+R\+Discovery\+\_\+\+Mux\+Discovery\+\_\+dispose@{A\+R\+Discovery\+\_\+\+Mux\+Discovery\+\_\+dispose}}
+\index{A\+R\+Discovery\+\_\+\+Mux\+Discovery\+\_\+dispose@{A\+R\+Discovery\+\_\+\+Mux\+Discovery\+\_\+dispose}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+Discovery\+\_\+\+Mux\+Discovery\+\_\+dispose(struct Mux\+Discovery\+Ctx $\ast$ctx)}{ARDiscovery_MuxDiscovery_dispose(struct MuxDiscoveryCtx *ctx)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+Discovery\+\_\+\+Mux\+Discovery\+\_\+dispose (
+\begin{DoxyParamCaption}
+\item[{struct Mux\+Discovery\+Ctx $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_abb5a7d89a833cbe5f9dcc80c77593097}{}\label{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_abb5a7d89a833cbe5f9dcc80c77593097}
+\index{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}!A\+R\+Discovery\+\_\+\+Mux\+Discovery\+\_\+new@{A\+R\+Discovery\+\_\+\+Mux\+Discovery\+\_\+new}}
+\index{A\+R\+Discovery\+\_\+\+Mux\+Discovery\+\_\+new@{A\+R\+Discovery\+\_\+\+Mux\+Discovery\+\_\+new}!A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h@{A\+R\+D\+I\+S\+C\+O\+V\+E\+R\+Y\+\_\+\+Mux\+Discovery.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+Discovery\+\_\+\+Mux\+Discovery\+\_\+new(struct mux\+\_\+ctx $\ast$muxctx, device\+\_\+added\+\_\+cb\+\_\+t device\+\_\+added\+\_\+cb, device\+\_\+removed\+\_\+cb\+\_\+t device\+\_\+removed\+\_\+cb, eof\+\_\+cb\+\_\+t eof\+\_\+cb, void $\ast$userdata)}{ARDiscovery_MuxDiscovery_new(struct mux_ctx *muxctx, device_added_cb_t device_added_cb, device_removed_cb_t device_removed_cb, eof_cb_t eof_cb, void *userdata)}}]{\setlength{\rightskip}{0pt plus 5cm}struct Mux\+Discovery\+Ctx$\ast$ A\+R\+Discovery\+\_\+\+Mux\+Discovery\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{struct mux\+\_\+ctx $\ast$}]{muxctx, }
+\item[{{\bf device\+\_\+added\+\_\+cb\+\_\+t}}]{device\+\_\+added\+\_\+cb, }
+\item[{{\bf device\+\_\+removed\+\_\+cb\+\_\+t}}]{device\+\_\+removed\+\_\+cb, }
+\item[{{\bf eof\+\_\+cb\+\_\+t}}]{eof\+\_\+cb, }
+\item[{void $\ast$}]{userdata}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_a9a8c44d14b8106f7e2cc5303be4ea4d0}{}\label{_a_r_d_i_s_c_o_v_e_r_y___mux_discovery_8h_a9a8c44d14b8106f7e2cc5303be4ea4d0}

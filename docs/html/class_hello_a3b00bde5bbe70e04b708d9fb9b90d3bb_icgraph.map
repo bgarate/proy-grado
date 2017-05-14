@@ -1,0 +1,10 @@
+<map id="Hello::set_name" name="Hello::set_name">
+<area shape="rect" id="node2" href="$class_message_builder.html#a6e9bc743a54f5880a006229d0e5f0765" title="MessageBuilder::hello" alt="" coords="171,81,321,108"/>
+<area shape="rect" id="node9" href="$class_hello.html#af317fbebedc25e52461c38d70433814b" title="Hello::GetMetadata" alt="" coords="179,132,313,159"/>
+<area shape="rect" id="node3" href="$class_communication.html#aed16e511327c62b6b5f418523f707a77" title="Communication::serve" alt="" coords="376,5,529,32"/>
+<area shape="rect" id="node4" href="$class_communication.html#ab64912f9a4137b930d717d8a3140d693" title="Communication::connect" alt="" coords="369,56,536,83"/>
+<area shape="rect" id="node7" href="$class_message_builder.html#a43d19ca77072e177d5bc494b7aced750" title="MessageBuilder::build" alt="" coords="377,107,528,133"/>
+<area shape="rect" id="node5" href="$class_brain.html#a23d921369c5ec1218d7dc26d0f8270c2" title="Brain::loop" alt="" coords="588,56,672,83"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a523d51f6d06fce5bbed3e074818569fb" title="main" alt="" coords="724,81,775,108"/>
+<area shape="rect" id="node8" href="$class_brain.html#afa2f689c8360c9c9ad323bac5be4b42d" title="Brain::setup" alt="" coords="584,107,676,133"/>
+</map>

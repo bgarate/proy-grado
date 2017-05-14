@@ -1,0 +1,169 @@
+\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h}{}\section{src/hal/pb2/include/lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.h File Reference}
+\label{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h}\index{src/hal/pb2/include/lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h@{src/hal/pb2/include/lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h}}
+
+
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Error.\+h$>$}\\*
+{\ttfamily \#include $<$lib\+A\+R\+Controller/\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame.\+h$>$}\\*
+Include dependency graph for A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a3f858fe8002790ce3733e0e10450769e}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+P\+O\+O\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE}~40
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a961f02e80feeeab94ecd476b48aaaa96}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t} \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a961f02e80feeeab94ecd476b48aaaa96}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a961f02e80feeeab94ecd476b48aaaa96}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t} $\ast$ \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a4a6a36d591084ea3bfc2c07077b2b554}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+New} (uint32\+\_\+t capacity, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Create a new Stream Pool. \end{DoxyCompactList}\item 
+void \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a1ae6536a727f31a9db02d84061b97ff4}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Delete} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a961f02e80feeeab94ecd476b48aaaa96}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t} $\ast$$\ast$stream\+Pool)
+\begin{DoxyCompactList}\small\item\em Delete the Stream Pool. \end{DoxyCompactList}\item 
+\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t} $\ast$ \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_aec27f5dbd94c2ca746aeebe21b6b4567}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Get\+Next\+Free\+Frame} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a961f02e80feeeab94ecd476b48aaaa96}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t} $\ast$stream\+Pool, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Return the first free frmae of the pool. \end{DoxyCompactList}\item 
+\hyperlink{struct_a_r_c_o_n_t_r_o_l_l_e_r___frame__t}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t} $\ast$ \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a84428844f6a0c0df83ffb15d0fb5c129}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Get\+Frame\+From\+Data} (\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a961f02e80feeeab94ecd476b48aaaa96}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t} $\ast$stream\+Pool, uint8\+\_\+t $\ast$frame\+Data, \hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___error_8h_a9f4333b24ef305244d2f1fbcc86b1048}{e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$error)
+\begin{DoxyCompactList}\small\item\em Return the first free frmae of the pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool. 
+
+\begin{DoxyDate}{Date}
+02/03/2015 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\href{mailto:maxime.maitre@parrot.com}{\tt maxime.\+maitre@parrot.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+P\+O\+O\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+P\+O\+O\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+P\+O\+O\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+P\+O\+O\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+P\+O\+O\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE}{ARCONTROLLER_STREAMPOOL_DEFAULT_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+S\+T\+R\+E\+A\+M\+P\+O\+O\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+I\+ZE~40}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a3f858fe8002790ce3733e0e10450769e}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a3f858fe8002790ce3733e0e10450769e}
+
+
+\subsection{Typedef Documentation}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t}{ARCONTROLLER_StreamPool_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t} {\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t}}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a961f02e80feeeab94ecd476b48aaaa96}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a961f02e80feeeab94ecd476b48aaaa96}
+
+
+\subsection{Function Documentation}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Delete@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Delete}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Delete@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Delete}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Delete(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t $\ast$$\ast$stream\+Pool)}{ARCONTROLLER_StreamPool_Delete(ARCONTROLLER_StreamPool_t **streamPool)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t} $\ast$$\ast$}]{stream\+Pool}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a1ae6536a727f31a9db02d84061b97ff4}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a1ae6536a727f31a9db02d84061b97ff4}
+
+
+Delete the Stream Pool. 
+
+\begin{DoxyWarning}{Warning}
+This function free memory. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Pool} & The Stream Pool to delete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a4a6a36d591084ea3bfc2c07077b2b554}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+New()}. 
+\end{DoxySeeAlso}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Get\+Frame\+From\+Data@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Get\+Frame\+From\+Data}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Get\+Frame\+From\+Data@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Get\+Frame\+From\+Data}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Get\+Frame\+From\+Data(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t $\ast$stream\+Pool, uint8\+\_\+t $\ast$frame\+Data, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_StreamPool_GetFrameFromData(ARCONTROLLER_StreamPool_t *streamPool, uint8_t *frameData, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}$\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Get\+Frame\+From\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t} $\ast$}]{stream\+Pool, }
+\item[{uint8\+\_\+t $\ast$}]{frame\+Data, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a84428844f6a0c0df83ffb15d0fb5c129}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a84428844f6a0c0df83ffb15d0fb5c129}
+
+
+Return the first free frmae of the pool. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em stream\+Pool} & The Stream Pool. \\
+\hline
+\mbox{\tt out}  & {\em error} & Executing error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new Stream Pool. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Get\+Next\+Free\+Frame@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Get\+Next\+Free\+Frame}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Get\+Next\+Free\+Frame@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Get\+Next\+Free\+Frame}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Get\+Next\+Free\+Frame(\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t $\ast$stream\+Pool, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_StreamPool_GetNextFreeFrame(ARCONTROLLER_StreamPool_t *streamPool, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Frame\+\_\+t}$\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Get\+Next\+Free\+Frame (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t} $\ast$}]{stream\+Pool, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_aec27f5dbd94c2ca746aeebe21b6b4567}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_aec27f5dbd94c2ca746aeebe21b6b4567}
+
+
+Return the first free frmae of the pool. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em stream\+Pool} & The Stream Pool. \\
+\hline
+\mbox{\tt out}  & {\em error} & Executing error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new Stream Pool. 
+\end{DoxyReturn}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+New@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+New}}
+\index{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+New@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+New}!A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h@{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool.\+h}}
+\subsubsection[{\texorpdfstring{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+New(uint32\+\_\+t capacity, e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+O\+R $\ast$error)}{ARCONTROLLER_StreamPool_New(uint32_t capacity, eARCONTROLLER_ERROR *error)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+t}$\ast$ A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+New (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{capacity, }
+\item[{{\bf e\+A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+R\+R\+OR} $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a4a6a36d591084ea3bfc2c07077b2b554}{}\label{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a4a6a36d591084ea3bfc2c07077b2b554}
+
+
+Create a new Stream Pool. 
+
+\begin{DoxyWarning}{Warning}
+This function allocate memory. 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a1ae6536a727f31a9db02d84061b97ff4}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Delete()} must be called to delete the Stream Pool and free the memory allocated. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em capacity} & Capacity of the pool. \\
+\hline
+\mbox{\tt out}  & {\em error} & Executing error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new Stream Pool. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_a_r_c_o_n_t_r_o_l_l_e_r___stream_pool_8h_a1ae6536a727f31a9db02d84061b97ff4}{A\+R\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+Stream\+Pool\+\_\+\+Delete}. 
+\end{DoxySeeAlso}

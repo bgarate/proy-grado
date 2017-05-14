@@ -1,0 +1,10 @@
+<map id="src/hal/pb2/include/openssl/ui_compat.h" name="src/hal/pb2/include/openssl/ui_compat.h">
+<area shape="rect" id="node2" href="$opensslconf_8h.html" title="openssl/opensslconf.h" alt="" coords="643,319,795,345"/>
+<area shape="rect" id="node4" href="$ui_8h.html" title="openssl/ui.h" alt="" coords="622,95,714,121"/>
+<area shape="rect" id="node3" href="$opensslfeatures_8h.html" title="openssl/opensslfeatures.h" alt="" coords="631,393,806,420"/>
+<area shape="rect" id="node5" href="$crypto_8h.html" title="openssl/crypto.h" alt="" coords="367,169,486,196"/>
+<area shape="rect" id="node9" href="$safestack_8h.html" title="openssl/safestack.h" alt="" coords="5,244,144,271"/>
+<area shape="rect" id="node11" href="$ossl__typ_8h.html" title="openssl/ossl_typ.h" alt="" coords="603,244,733,271"/>
+<area shape="rect" id="node8" href="$stack_8h.html" title="openssl/stack.h" alt="" coords="71,319,185,345"/>
+<area shape="rect" id="node10" href="$opensslv_8h.html" title="openssl/opensslv.h" alt="" coords="219,244,354,271"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Connection::create" name="Connection::create">
+<area shape="rect" id="node2" href="$class_async_socket_channel.html#ae0d0010ef42fecc249ae1542b226130c" title="AsyncSocketChannel\l::serve" alt="" coords="185,5,333,47"/>
+<area shape="rect" id="node3" href="$class_communication.html#aed16e511327c62b6b5f418523f707a77" title="Communication::serve" alt="" coords="381,13,535,39"/>
+</map>

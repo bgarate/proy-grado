@@ -1,0 +1,7 @@
+<map id="Message::internal_default_instance" name="Message::internal_default_instance">
+<area shape="rect" id="node2" href="$class_message.html#a4fc4f717b634e66070366cb7722d7761" title="Message::Message" alt="" coords="245,5,381,32"/>
+<area shape="rect" id="node4" href="$class_message.html#a3f7275462831f787a861271687bcad67" title="Message::~Message" alt="" coords="241,56,385,83"/>
+<area shape="rect" id="node5" href="$class_message.html#a698452c44213e0e57cf047fee56418ae" title="Message::default_instance" alt="" coords="224,107,403,133"/>
+<area shape="rect" id="node6" href="$class_message.html#a1656eb682ce1b354645b8f0204d4d716" title="Message::GetMetadata" alt="" coords="234,157,393,184"/>
+<area shape="rect" id="node3" href="$class_message.html#a999f73547788c977054d3e28f3ae1761" title="Message::New" alt="" coords="451,5,561,32"/>
+</map>
