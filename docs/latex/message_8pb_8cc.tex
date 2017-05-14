@@ -1,0 +1,96 @@
+\hypertarget{message_8pb_8cc}{}\section{src/proto/message.pb.\+cc File Reference}
+\label{message_8pb_8cc}\index{src/proto/message.\+pb.\+cc@{src/proto/message.\+pb.\+cc}}
+{\ttfamily \#include \char`\"{}message.\+pb.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$google/protobuf/stubs/common.\+h$>$}\\*
+{\ttfamily \#include $<$google/protobuf/stubs/port.\+h$>$}\\*
+{\ttfamily \#include $<$google/protobuf/stubs/once.\+h$>$}\\*
+{\ttfamily \#include $<$google/protobuf/io/coded\+\_\+stream.\+h$>$}\\*
+{\ttfamily \#include $<$google/protobuf/wire\+\_\+format\+\_\+lite\+\_\+inl.\+h$>$}\\*
+{\ttfamily \#include $<$google/protobuf/descriptor.\+h$>$}\\*
+{\ttfamily \#include $<$google/protobuf/generated\+\_\+message\+\_\+reflection.\+h$>$}\\*
+{\ttfamily \#include $<$google/protobuf/reflection\+\_\+ops.\+h$>$}\\*
+{\ttfamily \#include $<$google/protobuf/wire\+\_\+format.\+h$>$}\\*
+Include dependency graph for message.\+pb.\+cc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{message_8pb_8cc__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_message_default_type_internal}{Message\+Default\+Type\+Internal}
+\item 
+struct \hyperlink{structprotobuf__message__2eproto_1_1_static_descriptor_initializer}{protobuf\+\_\+message\+\_\+2eproto\+::\+Static\+Descriptor\+Initializer}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceprotobuf__message__2eproto}{protobuf\+\_\+message\+\_\+2eproto}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{message_8pb_8cc_a020e0a0bb943c4473eac722b585472ea}{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+U\+P\+P\+R\+E\+S\+S\+\_\+\+P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+I\+ON}
+\item 
+\#define \hyperlink{message_8pb_8cc_a4c80c2bbfbdfa57f53e1537bbb6567bb}{D\+O\+\_\+}(E\+X\+P\+R\+E\+S\+S\+I\+ON)~if (!G\+O\+O\+G\+L\+E\+\_\+\+P\+R\+E\+D\+I\+C\+T\+\_\+\+T\+R\+UE(E\+X\+P\+R\+E\+S\+S\+I\+ON)) goto failure
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespaceprotobuf__message__2eproto_a0904ee0f747524cc1986baf4a9e9b3af}{protobuf\+\_\+message\+\_\+2eproto\+::\+Init\+Defaults} ()
+\item 
+void \hyperlink{namespaceprotobuf__message__2eproto_a2e03bfe5373fdbf0a2bb488e51de0c19}{protobuf\+\_\+message\+\_\+2eproto\+::\+Add\+Descriptors\+Impl} ()
+\item 
+void \hyperlink{namespaceprotobuf__message__2eproto_a6141a47817b5c3560ccd3f3396656732}{protobuf\+\_\+message\+\_\+2eproto\+::\+Add\+Descriptors} ()
+\item 
+const \+::google\+::protobuf\+::\+Enum\+Descriptor $\ast$ \hyperlink{message_8pb_8cc_aa3ddf5f5ae1ee607b59d151b7dbf2da8}{Message\+\_\+\+Type\+\_\+descriptor} ()
+\item 
+bool \hyperlink{message_8pb_8cc_ae9987bd9ffe65387412c5f1ae18f7a52}{Message\+\_\+\+Type\+\_\+\+Is\+Valid} (int value)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_message_default_type_internal}{Message\+Default\+Type\+Internal} \hyperlink{message_8pb_8cc_a3570a90d86d5df60acfec3bc97996549}{\+\_\+\+Message\+\_\+default\+\_\+instance\+\_\+}
+\item 
+struct \hyperlink{structprotobuf__message__2eproto_1_1_static_descriptor_initializer}{protobuf\+\_\+message\+\_\+2eproto\+::\+Static\+Descriptor\+Initializer} \hyperlink{namespaceprotobuf__message__2eproto_a326463751c85e569b98ef24ea8a840c9}{protobuf\+\_\+message\+\_\+2eproto\+::static\+\_\+descriptor\+\_\+initializer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{message.\+pb.\+cc@{message.\+pb.\+cc}!D\+O\+\_\+@{D\+O\+\_\+}}
+\index{D\+O\+\_\+@{D\+O\+\_\+}!message.\+pb.\+cc@{message.\+pb.\+cc}}
+\subsubsection[{\texorpdfstring{D\+O\+\_\+}{DO_}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+O\+\_\+(
+\begin{DoxyParamCaption}
+\item[{}]{E\+X\+P\+R\+E\+S\+S\+I\+ON}
+\end{DoxyParamCaption}
+)~if (!G\+O\+O\+G\+L\+E\+\_\+\+P\+R\+E\+D\+I\+C\+T\+\_\+\+T\+R\+UE(E\+X\+P\+R\+E\+S\+S\+I\+ON)) goto failure}\hypertarget{message_8pb_8cc_a4c80c2bbfbdfa57f53e1537bbb6567bb}{}\label{message_8pb_8cc_a4c80c2bbfbdfa57f53e1537bbb6567bb}
+\index{message.\+pb.\+cc@{message.\+pb.\+cc}!I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+U\+P\+P\+R\+E\+S\+S\+\_\+\+P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+I\+ON@{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+U\+P\+P\+R\+E\+S\+S\+\_\+\+P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+I\+ON}}
+\index{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+U\+P\+P\+R\+E\+S\+S\+\_\+\+P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+I\+ON@{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+U\+P\+P\+R\+E\+S\+S\+\_\+\+P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+I\+ON}!message.\+pb.\+cc@{message.\+pb.\+cc}}
+\subsubsection[{\texorpdfstring{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+U\+P\+P\+R\+E\+S\+S\+\_\+\+P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+I\+ON}{INTERNAL_SUPPRESS_PROTOBUF_FIELD_DEPRECATION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+U\+P\+P\+R\+E\+S\+S\+\_\+\+P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+I\+ON}\hypertarget{message_8pb_8cc_a020e0a0bb943c4473eac722b585472ea}{}\label{message_8pb_8cc_a020e0a0bb943c4473eac722b585472ea}
+
+
+\subsection{Function Documentation}
+\index{message.\+pb.\+cc@{message.\+pb.\+cc}!Message\+\_\+\+Type\+\_\+descriptor@{Message\+\_\+\+Type\+\_\+descriptor}}
+\index{Message\+\_\+\+Type\+\_\+descriptor@{Message\+\_\+\+Type\+\_\+descriptor}!message.\+pb.\+cc@{message.\+pb.\+cc}}
+\subsubsection[{\texorpdfstring{Message\+\_\+\+Type\+\_\+descriptor()}{Message_Type_descriptor()}}]{\setlength{\rightskip}{0pt plus 5cm}const \+::google\+::protobuf\+::\+Enum\+Descriptor$\ast$ Message\+\_\+\+Type\+\_\+descriptor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{message_8pb_8cc_aa3ddf5f5ae1ee607b59d151b7dbf2da8}{}\label{message_8pb_8cc_aa3ddf5f5ae1ee607b59d151b7dbf2da8}
+\index{message.\+pb.\+cc@{message.\+pb.\+cc}!Message\+\_\+\+Type\+\_\+\+Is\+Valid@{Message\+\_\+\+Type\+\_\+\+Is\+Valid}}
+\index{Message\+\_\+\+Type\+\_\+\+Is\+Valid@{Message\+\_\+\+Type\+\_\+\+Is\+Valid}!message.\+pb.\+cc@{message.\+pb.\+cc}}
+\subsubsection[{\texorpdfstring{Message\+\_\+\+Type\+\_\+\+Is\+Valid(int value)}{Message_Type_IsValid(int value)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Message\+\_\+\+Type\+\_\+\+Is\+Valid (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{message_8pb_8cc_ae9987bd9ffe65387412c5f1ae18f7a52}{}\label{message_8pb_8cc_ae9987bd9ffe65387412c5f1ae18f7a52}
+
+
+\subsection{Variable Documentation}
+\index{message.\+pb.\+cc@{message.\+pb.\+cc}!\+\_\+\+Message\+\_\+default\+\_\+instance\+\_\+@{\+\_\+\+Message\+\_\+default\+\_\+instance\+\_\+}}
+\index{\+\_\+\+Message\+\_\+default\+\_\+instance\+\_\+@{\+\_\+\+Message\+\_\+default\+\_\+instance\+\_\+}!message.\+pb.\+cc@{message.\+pb.\+cc}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Message\+\_\+default\+\_\+instance\+\_\+}{_Message_default_instance_}}]{\setlength{\rightskip}{0pt plus 5cm} {\bf Message\+Default\+Type\+Internal}  \+\_\+\+Message\+\_\+default\+\_\+instance\+\_\+}\hypertarget{message_8pb_8cc_a3570a90d86d5df60acfec3bc97996549}{}\label{message_8pb_8cc_a3570a90d86d5df60acfec3bc97996549}

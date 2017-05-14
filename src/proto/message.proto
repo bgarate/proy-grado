@@ -3,6 +3,7 @@ syntax = "proto3";
 import "ping.proto";
 import "advertisement.proto";
 import "shutdown.proto";
+import "hello.proto";
 
 message Message {
 
@@ -12,10 +13,12 @@ message Message {
         PING = 0;
         SHUTDOWN = 1;
         ADVERTISEMENT = 2;
+        HELLO = 3;
     }
 
     Ping ping = 100;
     DoShutdown shutdown = 101;
     Advertisement advertisement = 102;
+    Hello hello = 103;
 
 }

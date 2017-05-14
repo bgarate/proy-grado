@@ -6,9 +6,11 @@
 #define PROY_GRADO_BRAIN_H
 
 
-#include "src/messages/SocketChannel.h"
-#include "src/messages/Broadcaster.h"
+#include <src/communication/Communication.h>
+#include <src/messages/SocketChannel.h>
+#include <src/messages/Broadcaster.h>
 #include "MessageHandler.h"
+#include "Config.h"
 
 class Brain {
 public:
@@ -16,20 +18,20 @@ public:
 
     void loop();
 
-    void setup(bool isRoot);
-    static const unsigned short BRAIN_SERVE_PORT = 11500;
+    void setup(Config* config, bool isRoot);
 
 private:
-    SocketChannel communication;
+    Communication communication;
+    SocketChannel bodyCommunication;
     MessageHandler messsageHandler;
 
+    Config* config;
     void PingHandler(Message &msg);
 
     void advertise();
 
     bool should_exit = false;
     bool isRoot;
-    static const unsigned short BROADCAST_PORT = 11501;
 
     void communicateWithBody(unsigned short port);
 
@@ -38,14 +40,13 @@ private:
     long deltaTime = 0;
     long runningTime = 0;
     long lastAdvertisementTime = 0;
-    static const long ADVERTISEMENT_LAPSE = 5000;
     Broadcaster broadcaster;
-
-    void handleMessages() const;
 
     void handleMessages();
 
     void AdvertisementHandler(Message &msg);
+
+    void HelloHandler(Message &msg);
 };
 
 

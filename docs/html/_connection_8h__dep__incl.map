@@ -1,0 +1,11 @@
+<map id="src/messages/Connection.h" name="src/messages/Connection.h">
+<area shape="rect" id="node2" href="$_async_socket_channel_8h.html" title="src/messages/AsyncSocket\lChannel.h" alt="" coords="399,80,585,121"/>
+<area shape="rect" id="node3" href="$_communication_8h.html" title="src/communication/Communication.h" alt="" coords="251,169,490,196"/>
+<area shape="rect" id="node9" href="$_async_socket_channel_8cpp.html" title="src/messages/AsyncSocket\lChannel.cpp" alt="" coords="521,244,708,285"/>
+<area shape="rect" id="node10" href="$_connection_8cpp.html" title="src/messages/Connection.cpp" alt="" coords="659,87,858,114"/>
+<area shape="rect" id="node4" href="$_brain_8h.html" title="src/Brain.h" alt="" coords="135,251,220,278"/>
+<area shape="rect" id="node8" href="$_communication_8cpp.html" title="src/communication/Communication.cpp" alt="" coords="245,251,497,278"/>
+<area shape="rect" id="node5" href="$_body_8cpp.html" title="src/Body.cpp" alt="" coords="5,333,104,360"/>
+<area shape="rect" id="node6" href="$_brain_8cpp.html" title="src/Brain.cpp" alt="" coords="128,333,227,360"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="251,333,349,360"/>
+</map>

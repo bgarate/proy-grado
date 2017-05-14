@@ -1,0 +1,96 @@
+\hypertarget{ping_8pb_8cc}{}\section{src/proto/ping.pb.\+cc File Reference}
+\label{ping_8pb_8cc}\index{src/proto/ping.\+pb.\+cc@{src/proto/ping.\+pb.\+cc}}
+{\ttfamily \#include \char`\"{}ping.\+pb.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$google/protobuf/stubs/common.\+h$>$}\\*
+{\ttfamily \#include $<$google/protobuf/stubs/port.\+h$>$}\\*
+{\ttfamily \#include $<$google/protobuf/stubs/once.\+h$>$}\\*
+{\ttfamily \#include $<$google/protobuf/io/coded\+\_\+stream.\+h$>$}\\*
+{\ttfamily \#include $<$google/protobuf/wire\+\_\+format\+\_\+lite\+\_\+inl.\+h$>$}\\*
+{\ttfamily \#include $<$google/protobuf/descriptor.\+h$>$}\\*
+{\ttfamily \#include $<$google/protobuf/generated\+\_\+message\+\_\+reflection.\+h$>$}\\*
+{\ttfamily \#include $<$google/protobuf/reflection\+\_\+ops.\+h$>$}\\*
+{\ttfamily \#include $<$google/protobuf/wire\+\_\+format.\+h$>$}\\*
+Include dependency graph for ping.\+pb.\+cc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ping_8pb_8cc__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_ping_default_type_internal}{Ping\+Default\+Type\+Internal}
+\item 
+struct \hyperlink{structprotobuf__ping__2eproto_1_1_static_descriptor_initializer}{protobuf\+\_\+ping\+\_\+2eproto\+::\+Static\+Descriptor\+Initializer}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceprotobuf__ping__2eproto}{protobuf\+\_\+ping\+\_\+2eproto}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ping_8pb_8cc_a020e0a0bb943c4473eac722b585472ea}{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+U\+P\+P\+R\+E\+S\+S\+\_\+\+P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+I\+ON}
+\item 
+\#define \hyperlink{ping_8pb_8cc_a4c80c2bbfbdfa57f53e1537bbb6567bb}{D\+O\+\_\+}(E\+X\+P\+R\+E\+S\+S\+I\+ON)~if (!G\+O\+O\+G\+L\+E\+\_\+\+P\+R\+E\+D\+I\+C\+T\+\_\+\+T\+R\+UE(E\+X\+P\+R\+E\+S\+S\+I\+ON)) goto failure
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespaceprotobuf__ping__2eproto_a4da00112559a8a5b501ec9d17927aab2}{protobuf\+\_\+ping\+\_\+2eproto\+::\+Init\+Defaults} ()
+\item 
+void \hyperlink{namespaceprotobuf__ping__2eproto_a208142d5c3a1fb52a39b9221afe49f5a}{protobuf\+\_\+ping\+\_\+2eproto\+::\+Add\+Descriptors\+Impl} ()
+\item 
+void \hyperlink{namespaceprotobuf__ping__2eproto_ae3cb3909c68bd4b876872dafd97cb142}{protobuf\+\_\+ping\+\_\+2eproto\+::\+Add\+Descriptors} ()
+\item 
+const \+::google\+::protobuf\+::\+Enum\+Descriptor $\ast$ \hyperlink{ping_8pb_8cc_a879f112871ff1ddd46e1194a8318ce23}{Ping\+\_\+\+Ping\+Type\+\_\+descriptor} ()
+\item 
+bool \hyperlink{ping_8pb_8cc_a867cadce5b56f8777d00ea80bac2d20f}{Ping\+\_\+\+Ping\+Type\+\_\+\+Is\+Valid} (int value)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ping_default_type_internal}{Ping\+Default\+Type\+Internal} \hyperlink{ping_8pb_8cc_a99d936cf8bb4bfee3cf8618ccd885122}{\+\_\+\+Ping\+\_\+default\+\_\+instance\+\_\+}
+\item 
+struct \hyperlink{structprotobuf__ping__2eproto_1_1_static_descriptor_initializer}{protobuf\+\_\+ping\+\_\+2eproto\+::\+Static\+Descriptor\+Initializer} \hyperlink{namespaceprotobuf__ping__2eproto_a117cab3e5661b7c6b74347dae80dd6ea}{protobuf\+\_\+ping\+\_\+2eproto\+::static\+\_\+descriptor\+\_\+initializer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{ping.\+pb.\+cc@{ping.\+pb.\+cc}!D\+O\+\_\+@{D\+O\+\_\+}}
+\index{D\+O\+\_\+@{D\+O\+\_\+}!ping.\+pb.\+cc@{ping.\+pb.\+cc}}
+\subsubsection[{\texorpdfstring{D\+O\+\_\+}{DO_}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+O\+\_\+(
+\begin{DoxyParamCaption}
+\item[{}]{E\+X\+P\+R\+E\+S\+S\+I\+ON}
+\end{DoxyParamCaption}
+)~if (!G\+O\+O\+G\+L\+E\+\_\+\+P\+R\+E\+D\+I\+C\+T\+\_\+\+T\+R\+UE(E\+X\+P\+R\+E\+S\+S\+I\+ON)) goto failure}\hypertarget{ping_8pb_8cc_a4c80c2bbfbdfa57f53e1537bbb6567bb}{}\label{ping_8pb_8cc_a4c80c2bbfbdfa57f53e1537bbb6567bb}
+\index{ping.\+pb.\+cc@{ping.\+pb.\+cc}!I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+U\+P\+P\+R\+E\+S\+S\+\_\+\+P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+I\+ON@{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+U\+P\+P\+R\+E\+S\+S\+\_\+\+P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+I\+ON}}
+\index{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+U\+P\+P\+R\+E\+S\+S\+\_\+\+P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+I\+ON@{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+U\+P\+P\+R\+E\+S\+S\+\_\+\+P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+I\+ON}!ping.\+pb.\+cc@{ping.\+pb.\+cc}}
+\subsubsection[{\texorpdfstring{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+U\+P\+P\+R\+E\+S\+S\+\_\+\+P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+I\+ON}{INTERNAL_SUPPRESS_PROTOBUF_FIELD_DEPRECATION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+U\+P\+P\+R\+E\+S\+S\+\_\+\+P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+I\+ON}\hypertarget{ping_8pb_8cc_a020e0a0bb943c4473eac722b585472ea}{}\label{ping_8pb_8cc_a020e0a0bb943c4473eac722b585472ea}
+
+
+\subsection{Function Documentation}
+\index{ping.\+pb.\+cc@{ping.\+pb.\+cc}!Ping\+\_\+\+Ping\+Type\+\_\+descriptor@{Ping\+\_\+\+Ping\+Type\+\_\+descriptor}}
+\index{Ping\+\_\+\+Ping\+Type\+\_\+descriptor@{Ping\+\_\+\+Ping\+Type\+\_\+descriptor}!ping.\+pb.\+cc@{ping.\+pb.\+cc}}
+\subsubsection[{\texorpdfstring{Ping\+\_\+\+Ping\+Type\+\_\+descriptor()}{Ping_PingType_descriptor()}}]{\setlength{\rightskip}{0pt plus 5cm}const \+::google\+::protobuf\+::\+Enum\+Descriptor$\ast$ Ping\+\_\+\+Ping\+Type\+\_\+descriptor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{ping_8pb_8cc_a879f112871ff1ddd46e1194a8318ce23}{}\label{ping_8pb_8cc_a879f112871ff1ddd46e1194a8318ce23}
+\index{ping.\+pb.\+cc@{ping.\+pb.\+cc}!Ping\+\_\+\+Ping\+Type\+\_\+\+Is\+Valid@{Ping\+\_\+\+Ping\+Type\+\_\+\+Is\+Valid}}
+\index{Ping\+\_\+\+Ping\+Type\+\_\+\+Is\+Valid@{Ping\+\_\+\+Ping\+Type\+\_\+\+Is\+Valid}!ping.\+pb.\+cc@{ping.\+pb.\+cc}}
+\subsubsection[{\texorpdfstring{Ping\+\_\+\+Ping\+Type\+\_\+\+Is\+Valid(int value)}{Ping_PingType_IsValid(int value)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Ping\+\_\+\+Ping\+Type\+\_\+\+Is\+Valid (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{ping_8pb_8cc_a867cadce5b56f8777d00ea80bac2d20f}{}\label{ping_8pb_8cc_a867cadce5b56f8777d00ea80bac2d20f}
+
+
+\subsection{Variable Documentation}
+\index{ping.\+pb.\+cc@{ping.\+pb.\+cc}!\+\_\+\+Ping\+\_\+default\+\_\+instance\+\_\+@{\+\_\+\+Ping\+\_\+default\+\_\+instance\+\_\+}}
+\index{\+\_\+\+Ping\+\_\+default\+\_\+instance\+\_\+@{\+\_\+\+Ping\+\_\+default\+\_\+instance\+\_\+}!ping.\+pb.\+cc@{ping.\+pb.\+cc}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Ping\+\_\+default\+\_\+instance\+\_\+}{_Ping_default_instance_}}]{\setlength{\rightskip}{0pt plus 5cm} {\bf Ping\+Default\+Type\+Internal}  \+\_\+\+Ping\+\_\+default\+\_\+instance\+\_\+}\hypertarget{ping_8pb_8cc_a99d936cf8bb4bfee3cf8618ccd885122}{}\label{ping_8pb_8cc_a99d936cf8bb4bfee3cf8618ccd885122}

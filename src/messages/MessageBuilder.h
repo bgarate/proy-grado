@@ -7,11 +7,13 @@
 
 
 #include <src/proto/message.pb.h>
+#include "boost/asio/ip/address_v4.hpp"
+
 
 class MessageBuilder {
 public:
     static Message build(Message_Type type);
-
+    static Message hello(std::string name, unsigned int id, boost::asio::ip::address_v4 ip, unsigned short port);
 };
 
 

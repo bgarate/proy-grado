@@ -1,0 +1,16 @@
+<map id="src/Brain.h" name="src/Brain.h">
+<area shape="rect" id="node2" href="$_communication_8h.html" title="src/communication/Communication.h" alt="" coords="1359,80,1598,107"/>
+<area shape="rect" id="node36" href="$_socket_channel_8h.html" title="src/messages/SocketChannel.h" alt="" coords="307,244,515,271"/>
+<area shape="rect" id="node37" href="$_broadcaster_8h.html" title="src/messages/Broadcaster.h" alt="" coords="1736,80,1925,107"/>
+<area shape="rect" id="node39" href="$_message_handler_8h.html" title="MessageHandler.h" alt="" coords="2141,80,2272,107"/>
+<area shape="rect" id="node43" href="$_config_8h.html" title="Config.h" alt="" coords="29,244,99,271"/>
+<area shape="rect" id="node4" href="$_async_socket_channel_8h.html" title="src/messages/AsyncSocket\lChannel.h" alt="" coords="835,155,1021,196"/>
+<area shape="rect" id="node8" href="$message_8pb_8h.html" title="src/proto/message.pb.h" alt="" coords="1675,408,1834,435"/>
+<area shape="rect" id="node27" href="$_connection_8h.html" title="Connection.h" alt="" coords="1031,244,1129,271"/>
+<area shape="rect" id="node34" href="$_message_queue_8h.html" title="MessageQueue.h" alt="" coords="1517,326,1641,353"/>
+<area shape="rect" id="node21" href="$ping_8pb_8h.html" title="ping.pb.h" alt="" coords="1831,483,1905,509"/>
+<area shape="rect" id="node22" href="$advertisement_8pb_8h.html" title="advertisement.pb.h" alt="" coords="1388,483,1521,509"/>
+<area shape="rect" id="node23" href="$shutdown_8pb_8h.html" title="shutdown.pb.h" alt="" coords="1545,483,1652,509"/>
+<area shape="rect" id="node24" href="$hello_8pb_8h.html" title="hello.pb.h" alt="" coords="1677,483,1755,509"/>
+<area shape="rect" id="node31" href="$_packed_message_8h.html" title="PackedMessage.h" alt="" coords="760,326,891,353"/>
+</map>

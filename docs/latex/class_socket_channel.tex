@@ -1,0 +1,103 @@
+\hypertarget{class_socket_channel}{}\section{Socket\+Channel Class Reference}
+\label{class_socket_channel}\index{Socket\+Channel@{Socket\+Channel}}
+
+
+{\ttfamily \#include $<$Socket\+Channel.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_socket_channel_a37c5c043a2fc90bdbad5c4d4bd571233}{$\sim$\+Socket\+Channel} ()
+\item 
+bool \hyperlink{class_socket_channel_aa637ab0cf9278947562215220aab223d}{is\+Server} ()
+\item 
+void \hyperlink{class_socket_channel_a6b864640d80bf30b9f994d651ebebfdf}{connect} (std\+::string host, unsigned short port)
+\item 
+void \hyperlink{class_socket_channel_a9a251fc36970a2fab2a49f063a73c8aa}{serve} (unsigned short port)
+\item 
+\hyperlink{class_message}{Message} \hyperlink{class_socket_channel_a7439913d037d6b25518431732eb7a81a}{receive} ()
+\item 
+void \hyperlink{class_socket_channel_ac8b29f83f74e74a4f421b6cae74680d4}{send} (\hyperlink{class_message}{Message} msg)
+\item 
+bool \hyperlink{class_socket_channel_ae97a575875158fb08daeec245c0e8963}{message\+Available} ()
+\item 
+boost\+::asio\+::ip\+::address\+\_\+v4 \hyperlink{class_socket_channel_abbfebdf49765901d24755de63d96a7c8}{get\+Ip} ()
+\item 
+unsigned short \hyperlink{class_socket_channel_aee3dd105f08667776dff0cd812dbfe16}{get\+Port} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Socket\+Channel@{Socket\+Channel}!````~Socket\+Channel@{$\sim$\+Socket\+Channel}}
+\index{````~Socket\+Channel@{$\sim$\+Socket\+Channel}!Socket\+Channel@{Socket\+Channel}}
+\subsubsection[{\texorpdfstring{$\sim$\+Socket\+Channel()}{~SocketChannel()}}]{\setlength{\rightskip}{0pt plus 5cm}Socket\+Channel\+::$\sim$\+Socket\+Channel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_socket_channel_a37c5c043a2fc90bdbad5c4d4bd571233}{}\label{class_socket_channel_a37c5c043a2fc90bdbad5c4d4bd571233}
+
+
+\subsection{Member Function Documentation}
+\index{Socket\+Channel@{Socket\+Channel}!connect@{connect}}
+\index{connect@{connect}!Socket\+Channel@{Socket\+Channel}}
+\subsubsection[{\texorpdfstring{connect(std\+::string host, unsigned short port)}{connect(std::string host, unsigned short port)}}]{\setlength{\rightskip}{0pt plus 5cm}void Socket\+Channel\+::connect (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{host, }
+\item[{unsigned short}]{port}
+\end{DoxyParamCaption}
+)}\hypertarget{class_socket_channel_a6b864640d80bf30b9f994d651ebebfdf}{}\label{class_socket_channel_a6b864640d80bf30b9f994d651ebebfdf}
+\index{Socket\+Channel@{Socket\+Channel}!get\+Ip@{get\+Ip}}
+\index{get\+Ip@{get\+Ip}!Socket\+Channel@{Socket\+Channel}}
+\subsubsection[{\texorpdfstring{get\+Ip()}{getIp()}}]{\setlength{\rightskip}{0pt plus 5cm}asio\+::ip\+::address\+\_\+v4 Socket\+Channel\+::get\+Ip (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_socket_channel_abbfebdf49765901d24755de63d96a7c8}{}\label{class_socket_channel_abbfebdf49765901d24755de63d96a7c8}
+\index{Socket\+Channel@{Socket\+Channel}!get\+Port@{get\+Port}}
+\index{get\+Port@{get\+Port}!Socket\+Channel@{Socket\+Channel}}
+\subsubsection[{\texorpdfstring{get\+Port()}{getPort()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Socket\+Channel\+::get\+Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_socket_channel_aee3dd105f08667776dff0cd812dbfe16}{}\label{class_socket_channel_aee3dd105f08667776dff0cd812dbfe16}
+\index{Socket\+Channel@{Socket\+Channel}!is\+Server@{is\+Server}}
+\index{is\+Server@{is\+Server}!Socket\+Channel@{Socket\+Channel}}
+\subsubsection[{\texorpdfstring{is\+Server()}{isServer()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Socket\+Channel\+::is\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_socket_channel_aa637ab0cf9278947562215220aab223d}{}\label{class_socket_channel_aa637ab0cf9278947562215220aab223d}
+\index{Socket\+Channel@{Socket\+Channel}!message\+Available@{message\+Available}}
+\index{message\+Available@{message\+Available}!Socket\+Channel@{Socket\+Channel}}
+\subsubsection[{\texorpdfstring{message\+Available()}{messageAvailable()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Socket\+Channel\+::message\+Available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_socket_channel_ae97a575875158fb08daeec245c0e8963}{}\label{class_socket_channel_ae97a575875158fb08daeec245c0e8963}
+\index{Socket\+Channel@{Socket\+Channel}!receive@{receive}}
+\index{receive@{receive}!Socket\+Channel@{Socket\+Channel}}
+\subsubsection[{\texorpdfstring{receive()}{receive()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Message} Socket\+Channel\+::receive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_socket_channel_a7439913d037d6b25518431732eb7a81a}{}\label{class_socket_channel_a7439913d037d6b25518431732eb7a81a}
+\index{Socket\+Channel@{Socket\+Channel}!send@{send}}
+\index{send@{send}!Socket\+Channel@{Socket\+Channel}}
+\subsubsection[{\texorpdfstring{send(\+Message msg)}{send(Message msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void Socket\+Channel\+::send (
+\begin{DoxyParamCaption}
+\item[{{\bf Message}}]{msg}
+\end{DoxyParamCaption}
+)}\hypertarget{class_socket_channel_ac8b29f83f74e74a4f421b6cae74680d4}{}\label{class_socket_channel_ac8b29f83f74e74a4f421b6cae74680d4}
+\index{Socket\+Channel@{Socket\+Channel}!serve@{serve}}
+\index{serve@{serve}!Socket\+Channel@{Socket\+Channel}}
+\subsubsection[{\texorpdfstring{serve(unsigned short port)}{serve(unsigned short port)}}]{\setlength{\rightskip}{0pt plus 5cm}void Socket\+Channel\+::serve (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{port}
+\end{DoxyParamCaption}
+)}\hypertarget{class_socket_channel_a9a251fc36970a2fab2a49f063a73c8aa}{}\label{class_socket_channel_a9a251fc36970a2fab2a49f063a73c8aa}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/messages/\hyperlink{_socket_channel_8h}{Socket\+Channel.\+h}\item 
+src/messages/\hyperlink{_socket_channel_8cpp}{Socket\+Channel.\+cpp}\end{DoxyCompactItemize}

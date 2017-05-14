@@ -9,12 +9,13 @@
 #include "src/messages/SocketChannel.h"
 #include "MessageHandler.h"
 #include "hal/hal.hpp"
+#include "Config.h"
 
 class Body {
 public:
     Body(Hal* hal);
 
-    void setup(std::string brainHost);
+    void setup(Config* config);
     void loop();
 
 private:
@@ -25,7 +26,7 @@ private:
     void communicateWithBrain(std::string brainHost, unsigned short port);
 
     bool should_exit = false;
-
+    Config* config;
     void ShutdownHandler(Message &msg);
 };
 

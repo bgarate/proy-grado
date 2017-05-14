@@ -1,0 +1,27 @@
+var class_do_shutdown =
+[
+    [ "DoShutdown", "class_do_shutdown.html#a9e41496fb2642ab0956aeb03e79f2ffc", null ],
+    [ "~DoShutdown", "class_do_shutdown.html#acdc83e4c56ce5cbdcb7c1ea6c146e75f", null ],
+    [ "DoShutdown", "class_do_shutdown.html#abbb12bcbdeb136fe4896153ccefb4058", null ],
+    [ "ByteSizeLong", "class_do_shutdown.html#a36e573c232da258498228579141190aa", null ],
+    [ "Clear", "class_do_shutdown.html#a88dae4aa7ac119a7b87dd08db805f4ee", null ],
+    [ "clear_force", "class_do_shutdown.html#adb04131ab945007f6a26dd354cda5646", null ],
+    [ "CopyFrom", "class_do_shutdown.html#ad5876e00a840a19406a13ac089553f97", null ],
+    [ "CopyFrom", "class_do_shutdown.html#aab7f76cef5e12622def6c90801e2cacf", null ],
+    [ "force", "class_do_shutdown.html#ae470392499921248bf6c46c58d233f6d", null ],
+    [ "GetCachedSize", "class_do_shutdown.html#a777d4dd7d704d95ccc6602504aca1bef", null ],
+    [ "GetMetadata", "class_do_shutdown.html#afdf336a80f04202a41dc30c877f4387a", null ],
+    [ "InternalSerializeWithCachedSizesToArray", "class_do_shutdown.html#a41be0c5e3ff0bf16f15e0bab33fe2bb2", null ],
+    [ "IsInitialized", "class_do_shutdown.html#a1a202ffa75c33eac706f04eb501d1089", null ],
+    [ "MergeFrom", "class_do_shutdown.html#a367300e6485923b044fdcea2630d4cc3", null ],
+    [ "MergeFrom", "class_do_shutdown.html#aded6118b22cf31c18d0fe58af6fce37e", null ],
+    [ "MergePartialFromCodedStream", "class_do_shutdown.html#adc9b83c923b2e4bb8b843f7400f1d3e1", null ],
+    [ "New", "class_do_shutdown.html#a13aa27286876300bd7c506812f8479ba", null ],
+    [ "New", "class_do_shutdown.html#af046b34c1f60919fb75263cf208c84df", null ],
+    [ "operator=", "class_do_shutdown.html#a254bcb06ff69ece5ed5ea7cdbe19e7dc", null ],
+    [ "SerializeWithCachedSizes", "class_do_shutdown.html#aea724703f66a2e7af297d10af1d4e0c5", null ],
+    [ "SerializeWithCachedSizesToArray", "class_do_shutdown.html#a0ad12d5aaf4613fad5819b2dea94186b", null ],
+    [ "set_force", "class_do_shutdown.html#ae7fa2e4d96746b439cfad473a0ec2192", null ],
+    [ "Swap", "class_do_shutdown.html#a331c8643e8b18c7b0bf2c1391de46067", null ],
+    [ "protobuf_shutdown_2eproto::TableStruct", "class_do_shutdown.html#a777ca90370183861c7fa0d95a1e958d6", null ]
+];

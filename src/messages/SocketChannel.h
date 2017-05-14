@@ -2,12 +2,13 @@
 // Created by bruno on 09/04/17.
 //
 
-#ifndef PROY_GRADO_COMMUNICATION_H
-#define PROY_GRADO_COMMUNICATION_H
+#ifndef PROY_GRADO_SOCKETCHANNEL_H
+#define PROY_GRADO_SOCKETCHANNEL_H
 
 #include <boost/asio/io_service.hpp>
 #include <boost/asio/ip/tcp.hpp>
 #include <boost/asio/ip/address.hpp>
+#include <cstdint>
 #include "iostream"
 
 using boost::asio::ip::tcp;
@@ -45,4 +46,4 @@ private:
 };
 
 
-#endif //PROY_GRADO_COMMUNICATION_H
+#endif //PROY_GRADO_SOCKETCHANNEL_H

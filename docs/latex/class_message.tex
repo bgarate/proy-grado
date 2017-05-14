@@ -1,0 +1,655 @@
+\hypertarget{class_message}{}\section{Message Class Reference}
+\label{class_message}\index{Message@{Message}}
+
+
+{\ttfamily \#include $<$message.\+pb.\+h$>$}
+
+
+
+Inheritance diagram for Message\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_message__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Message\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_message__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{message_8pb_8h_a1b620cd54f3d6b48f3c5f7979545b160}{Message\+\_\+\+Type} \hyperlink{class_message_a587bf4d6e90da72f7ba67689081e6bcb}{Type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_message_a4fc4f717b634e66070366cb7722d7761}{Message} ()
+\item 
+virtual \hyperlink{class_message_a3f7275462831f787a861271687bcad67}{$\sim$\+Message} ()
+\item 
+\hyperlink{class_message_ae5690269cddc346084a2cb6017acd286}{Message} (const \hyperlink{class_message}{Message} \&from)
+\item 
+\hyperlink{class_message}{Message} \& \hyperlink{class_message_aaf5c447bbab6306a94f2260718163681}{operator=} (const \hyperlink{class_message}{Message} \&from)
+\item 
+void \hyperlink{class_message_a6fabda3c4c2c71f1b9607e136dee483e}{Swap} (\hyperlink{class_message}{Message} $\ast$other)
+\item 
+\hyperlink{class_message}{Message} $\ast$ \hyperlink{class_message_a7c0fa750d5725069af260579f0006b74}{New} () const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL
+\item 
+\hyperlink{class_message}{Message} $\ast$ \hyperlink{class_message_a999f73547788c977054d3e28f3ae1761}{New} (\+::google\+::protobuf\+::\+Arena $\ast$arena) const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL
+\item 
+void \hyperlink{class_message_aace762966fec95ac8649947cf4418f28}{Copy\+From} (const \+::google\+::protobuf\+::\+Message \&from) P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL
+\item 
+void \hyperlink{class_message_adbc529475b8405b11e0c4218cf0ca67b}{Merge\+From} (const \+::google\+::protobuf\+::\+Message \&from) P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL
+\item 
+void \hyperlink{class_message_abd25f3bb289b59841d064eb218d21e9c}{Copy\+From} (const \hyperlink{class_message}{Message} \&from)
+\item 
+void \hyperlink{class_message_aeec4936f78a3ed399295e3f72840166f}{Merge\+From} (const \hyperlink{class_message}{Message} \&from)
+\item 
+void \hyperlink{class_message_a99a19d1b45d1510b23bbb91d4cb81681}{Clear} () P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL
+\item 
+bool \hyperlink{class_message_acdfc5073e447c1c3aea9524e66be794f}{Is\+Initialized} () const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL
+\item 
+size\+\_\+t \hyperlink{class_message_a6995b73c465e1d15df282625deeb52e8}{Byte\+Size\+Long} () const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL
+\item 
+bool \hyperlink{class_message_a04b6b278c333ee73af59b1b2623e1289}{Merge\+Partial\+From\+Coded\+Stream} (\+::google\+::protobuf\+::io\+::\+Coded\+Input\+Stream $\ast$input) P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL
+\item 
+void \hyperlink{class_message_acbed042857c6b319d891b6a4053b5fbb}{Serialize\+With\+Cached\+Sizes} (\+::google\+::protobuf\+::io\+::\+Coded\+Output\+Stream $\ast$output) const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL
+\item 
+\+::google\+::protobuf\+::uint8 $\ast$ \hyperlink{class_message_aa118b1d50aa0744b930265ad07169e0d}{Internal\+Serialize\+With\+Cached\+Sizes\+To\+Array} (bool deterministic,\+::google\+::protobuf\+::uint8 $\ast$target) const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL
+\item 
+\+::google\+::protobuf\+::uint8 $\ast$ \hyperlink{class_message_a2f00b1061964e467f55cdec7f96fe5b0}{Serialize\+With\+Cached\+Sizes\+To\+Array} (\+::google\+::protobuf\+::uint8 $\ast$output) const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL
+\item 
+int \hyperlink{class_message_af2aea2b07908e1cc7ab7c5987b722bfa}{Get\+Cached\+Size} () const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL
+\item 
+\+::google\+::protobuf\+::\+Metadata \hyperlink{class_message_a1656eb682ce1b354645b8f0204d4d716}{Get\+Metadata} () const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL
+\item 
+bool \hyperlink{class_message_a6687127e183b5c855012ff5a7137557a}{has\+\_\+ping} () const 
+\item 
+void \hyperlink{class_message_a67a393c3c6b9824cf07ab746fa7894d1}{clear\+\_\+ping} ()
+\item 
+const \+::\hyperlink{class_ping}{Ping} \& \hyperlink{class_message_ac6583c594c172467063c0e3f2b30e82a}{ping} () const 
+\item 
+\+::\hyperlink{class_ping}{Ping} $\ast$ \hyperlink{class_message_a06f736eaae116cd37bdaeaccf6c46135}{mutable\+\_\+ping} ()
+\item 
+\+::\hyperlink{class_ping}{Ping} $\ast$ \hyperlink{class_message_a604c08996b70b2bd6f16c71a6bc3060e}{release\+\_\+ping} ()
+\item 
+void \hyperlink{class_message_aaeb94d5348e4d13c7f5831950b19bcd3}{set\+\_\+allocated\+\_\+ping} (\+::\hyperlink{class_ping}{Ping} $\ast$\hyperlink{class_message_ac6583c594c172467063c0e3f2b30e82a}{ping})
+\item 
+bool \hyperlink{class_message_a828967ea849f5536979f42d8bfb1db81}{has\+\_\+shutdown} () const 
+\item 
+void \hyperlink{class_message_a0af7e8f920d051736f92968f3c4f8046}{clear\+\_\+shutdown} ()
+\item 
+const \+::\hyperlink{class_do_shutdown}{Do\+Shutdown} \& \hyperlink{class_message_aab2ea329fff8637bc696e7979eadc827}{shutdown} () const 
+\item 
+\+::\hyperlink{class_do_shutdown}{Do\+Shutdown} $\ast$ \hyperlink{class_message_a3e3d6de62220b9b1dc4bd476ddb1c6ab}{mutable\+\_\+shutdown} ()
+\item 
+\+::\hyperlink{class_do_shutdown}{Do\+Shutdown} $\ast$ \hyperlink{class_message_aa2f2ec957125d1cd4030dcc499c19ad7}{release\+\_\+shutdown} ()
+\item 
+void \hyperlink{class_message_aabcdaa4db978dd877e117297ea555af4}{set\+\_\+allocated\+\_\+shutdown} (\+::\hyperlink{class_do_shutdown}{Do\+Shutdown} $\ast$\hyperlink{class_message_aab2ea329fff8637bc696e7979eadc827}{shutdown})
+\item 
+bool \hyperlink{class_message_ab599ad42dc51bb64f4a1f54ab687052f}{has\+\_\+advertisement} () const 
+\item 
+void \hyperlink{class_message_a65ab7f4447d5f33c839cd9f889d053fc}{clear\+\_\+advertisement} ()
+\item 
+const \+::\hyperlink{class_advertisement}{Advertisement} \& \hyperlink{class_message_ad837be1ca50959f5e3a46abb0283a9d0}{advertisement} () const 
+\item 
+\+::\hyperlink{class_advertisement}{Advertisement} $\ast$ \hyperlink{class_message_a1569a203e1c3b8ee7961c02a46280269}{mutable\+\_\+advertisement} ()
+\item 
+\+::\hyperlink{class_advertisement}{Advertisement} $\ast$ \hyperlink{class_message_a65a766ceb0dd2a5b3a37e0500b245e2c}{release\+\_\+advertisement} ()
+\item 
+void \hyperlink{class_message_a73b5a21942f1206693d911ea6357f302}{set\+\_\+allocated\+\_\+advertisement} (\+::\hyperlink{class_advertisement}{Advertisement} $\ast$\hyperlink{class_message_ad837be1ca50959f5e3a46abb0283a9d0}{advertisement})
+\item 
+bool \hyperlink{class_message_ae2dc15c9e2b35d4659117baea58f7ad6}{has\+\_\+hello} () const 
+\item 
+void \hyperlink{class_message_aa5146ec2842b67ec3fbd1ad3f7efa76d}{clear\+\_\+hello} ()
+\item 
+const \+::\hyperlink{class_hello}{Hello} \& \hyperlink{class_message_a898179de741961b94361a2afa251dea0}{hello} () const 
+\item 
+\+::\hyperlink{class_hello}{Hello} $\ast$ \hyperlink{class_message_ab74acd4d120a7c3cbdc26a8d61eeec55}{mutable\+\_\+hello} ()
+\item 
+\+::\hyperlink{class_hello}{Hello} $\ast$ \hyperlink{class_message_ad97dbbb06f566bca0343d401924b80f7}{release\+\_\+hello} ()
+\item 
+void \hyperlink{class_message_a02b81f83621d5e66bc77e37a2ca954eb}{set\+\_\+allocated\+\_\+hello} (\+::\hyperlink{class_hello}{Hello} $\ast$\hyperlink{class_message_a898179de741961b94361a2afa251dea0}{hello})
+\item 
+void \hyperlink{class_message_a6624e1a34cb787f818475d4b8b091d2d}{clear\+\_\+type} ()
+\item 
+\+::\hyperlink{message_8pb_8h_a1b620cd54f3d6b48f3c5f7979545b160}{Message\+\_\+\+Type} \hyperlink{class_message_a280acf280b0ebac63aa444c2db9431ea}{type} () const 
+\item 
+void \hyperlink{class_message_a8118c1b12f068dacbf3535c9879b2a25}{set\+\_\+type} (\+::\hyperlink{message_8pb_8h_a1b620cd54f3d6b48f3c5f7979545b160}{Message\+\_\+\+Type} value)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \+::google\+::protobuf\+::\+Descriptor $\ast$ \hyperlink{class_message_abdecae930e09b6ea3f22621b5d605821}{descriptor} ()
+\item 
+static const \hyperlink{class_message}{Message} \& \hyperlink{class_message_a698452c44213e0e57cf047fee56418ae}{default\+\_\+instance} ()
+\item 
+static const \hyperlink{class_message}{Message} $\ast$ \hyperlink{class_message_a0ab98269ed7906e7542c0d7fcdb25c6e}{internal\+\_\+default\+\_\+instance} ()
+\item 
+static bool \hyperlink{class_message_ac709f95123530e0aef536023d5f547ff}{Type\+\_\+\+Is\+Valid} (int value)
+\item 
+static const \+::google\+::protobuf\+::\+Enum\+Descriptor $\ast$ \hyperlink{class_message_afe208248065ee12c0bbffe71b54ed9ee}{Type\+\_\+descriptor} ()
+\item 
+static const \+::std\+::string \& \hyperlink{class_message_acf7fb4b05f015126dcf9f534e7281712}{Type\+\_\+\+Name} (\hyperlink{message_8pb_8h_a1b620cd54f3d6b48f3c5f7979545b160}{Type} value)
+\item 
+static bool \hyperlink{class_message_af70480ec0754cee5dc6c72144a0f1bb1}{Type\+\_\+\+Parse} (const \+::std\+::string \&name, \hyperlink{message_8pb_8h_a1b620cd54f3d6b48f3c5f7979545b160}{Type} $\ast$value)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{message_8pb_8h_a1b620cd54f3d6b48f3c5f7979545b160}{Type} \hyperlink{class_message_abc34006eaf98f78c4f90767fd89f7216}{P\+I\+NG}
+\item 
+static const \hyperlink{message_8pb_8h_a1b620cd54f3d6b48f3c5f7979545b160}{Type} \hyperlink{class_message_ad4dfaa2599a7afc20df9fd87b0f09fea}{S\+H\+U\+T\+D\+O\+WN}
+\item 
+static const \hyperlink{message_8pb_8h_a1b620cd54f3d6b48f3c5f7979545b160}{Type} \hyperlink{class_message_a9079ebddf775dd11d7bae2ec733e961d}{A\+D\+V\+E\+R\+T\+I\+S\+E\+M\+E\+NT}
+\item 
+static const \hyperlink{message_8pb_8h_a1b620cd54f3d6b48f3c5f7979545b160}{Type} \hyperlink{class_message_a6bda6b58f826adddb08642316e32ed1f}{H\+E\+L\+LO}
+\item 
+static const \hyperlink{message_8pb_8h_a1b620cd54f3d6b48f3c5f7979545b160}{Type} \hyperlink{class_message_a9fc82f92e8d5c8d07f77e60d057a4077}{Type\+\_\+\+M\+IN}
+\item 
+static const \hyperlink{message_8pb_8h_a1b620cd54f3d6b48f3c5f7979545b160}{Type} \hyperlink{class_message_aad308e35392d6a12f366c39c06d4dd92}{Type\+\_\+\+M\+AX}
+\item 
+static const int \hyperlink{class_message_afdad43f1f3fd8af53d430fa57b3c85f9}{Type\+\_\+\+A\+R\+R\+A\+Y\+S\+I\+ZE}
+\item 
+static const int \hyperlink{class_message_a2197ba45f05dac9a2bd760c7b3a2d1a4}{k\+Ping\+Field\+Number} = 100
+\item 
+static const int \hyperlink{class_message_abcfb3771be4f6daf22c28853761bcd33}{k\+Shutdown\+Field\+Number} = 101
+\item 
+static const int \hyperlink{class_message_a75120b6dcf3c241e7e79c6244714031b}{k\+Advertisement\+Field\+Number} = 102
+\item 
+static const int \hyperlink{class_message_a48c7ce9a4b7f9205834eb1f9c0b0d88a}{k\+Hello\+Field\+Number} = 103
+\item 
+static const int \hyperlink{class_message_a7e929836116d1d4afdf1048ee821637a}{k\+Type\+Field\+Number} = 1
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{class_message_a2a479fe4885e147bf2a7ae83f2bf282e}{protobuf\+\_\+message\+\_\+2eproto\+::\+Table\+Struct}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{Message@{Message}!Type@{Type}}
+\index{Type@{Type}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Type}{Type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Message\+\_\+\+Type} {\bf Message\+::\+Type}}\hypertarget{class_message_a587bf4d6e90da72f7ba67689081e6bcb}{}\label{class_message_a587bf4d6e90da72f7ba67689081e6bcb}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Message@{Message}!Message@{Message}}
+\index{Message@{Message}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Message()}{Message()}}]{\setlength{\rightskip}{0pt plus 5cm}Message\+::\+Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_message_a4fc4f717b634e66070366cb7722d7761}{}\label{class_message_a4fc4f717b634e66070366cb7722d7761}
+\index{Message@{Message}!````~Message@{$\sim$\+Message}}
+\index{````~Message@{$\sim$\+Message}!Message@{Message}}
+\subsubsection[{\texorpdfstring{$\sim$\+Message()}{~Message()}}]{\setlength{\rightskip}{0pt plus 5cm}Message\+::$\sim$\+Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_message_a3f7275462831f787a861271687bcad67}{}\label{class_message_a3f7275462831f787a861271687bcad67}
+\index{Message@{Message}!Message@{Message}}
+\index{Message@{Message}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Message(const Message \&from)}{Message(const Message &from)}}]{\setlength{\rightskip}{0pt plus 5cm}Message\+::\+Message (
+\begin{DoxyParamCaption}
+\item[{const {\bf Message} \&}]{from}
+\end{DoxyParamCaption}
+)}\hypertarget{class_message_ae5690269cddc346084a2cb6017acd286}{}\label{class_message_ae5690269cddc346084a2cb6017acd286}
+
+
+\subsection{Member Function Documentation}
+\index{Message@{Message}!advertisement@{advertisement}}
+\index{advertisement@{advertisement}!Message@{Message}}
+\subsubsection[{\texorpdfstring{advertisement() const }{advertisement() const }}]{\setlength{\rightskip}{0pt plus 5cm}const \+::{\bf Advertisement} \& Message\+::advertisement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_ad837be1ca50959f5e3a46abb0283a9d0}{}\label{class_message_ad837be1ca50959f5e3a46abb0283a9d0}
+\index{Message@{Message}!Byte\+Size\+Long@{Byte\+Size\+Long}}
+\index{Byte\+Size\+Long@{Byte\+Size\+Long}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Byte\+Size\+Long() const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL}{ByteSizeLong() const PROTOBUF_FINAL}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Message\+::\+Byte\+Size\+Long (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_message_a6995b73c465e1d15df282625deeb52e8}{}\label{class_message_a6995b73c465e1d15df282625deeb52e8}
+\index{Message@{Message}!Clear@{Clear}}
+\index{Clear@{Clear}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Clear() P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL}{Clear() PROTOBUF_FINAL}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::\+Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_message_a99a19d1b45d1510b23bbb91d4cb81681}{}\label{class_message_a99a19d1b45d1510b23bbb91d4cb81681}
+\index{Message@{Message}!clear\+\_\+advertisement@{clear\+\_\+advertisement}}
+\index{clear\+\_\+advertisement@{clear\+\_\+advertisement}!Message@{Message}}
+\subsubsection[{\texorpdfstring{clear\+\_\+advertisement()}{clear_advertisement()}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::clear\+\_\+advertisement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a65ab7f4447d5f33c839cd9f889d053fc}{}\label{class_message_a65ab7f4447d5f33c839cd9f889d053fc}
+\index{Message@{Message}!clear\+\_\+hello@{clear\+\_\+hello}}
+\index{clear\+\_\+hello@{clear\+\_\+hello}!Message@{Message}}
+\subsubsection[{\texorpdfstring{clear\+\_\+hello()}{clear_hello()}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::clear\+\_\+hello (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_aa5146ec2842b67ec3fbd1ad3f7efa76d}{}\label{class_message_aa5146ec2842b67ec3fbd1ad3f7efa76d}
+\index{Message@{Message}!clear\+\_\+ping@{clear\+\_\+ping}}
+\index{clear\+\_\+ping@{clear\+\_\+ping}!Message@{Message}}
+\subsubsection[{\texorpdfstring{clear\+\_\+ping()}{clear_ping()}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::clear\+\_\+ping (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a67a393c3c6b9824cf07ab746fa7894d1}{}\label{class_message_a67a393c3c6b9824cf07ab746fa7894d1}
+\index{Message@{Message}!clear\+\_\+shutdown@{clear\+\_\+shutdown}}
+\index{clear\+\_\+shutdown@{clear\+\_\+shutdown}!Message@{Message}}
+\subsubsection[{\texorpdfstring{clear\+\_\+shutdown()}{clear_shutdown()}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::clear\+\_\+shutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a0af7e8f920d051736f92968f3c4f8046}{}\label{class_message_a0af7e8f920d051736f92968f3c4f8046}
+\index{Message@{Message}!clear\+\_\+type@{clear\+\_\+type}}
+\index{clear\+\_\+type@{clear\+\_\+type}!Message@{Message}}
+\subsubsection[{\texorpdfstring{clear\+\_\+type()}{clear_type()}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::clear\+\_\+type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a6624e1a34cb787f818475d4b8b091d2d}{}\label{class_message_a6624e1a34cb787f818475d4b8b091d2d}
+\index{Message@{Message}!Copy\+From@{Copy\+From}}
+\index{Copy\+From@{Copy\+From}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Copy\+From(const \+::google\+::protobuf\+::\+Message \&from) P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL}{CopyFrom(const ::google::protobuf::Message &from) PROTOBUF_FINAL}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::\+Copy\+From (
+\begin{DoxyParamCaption}
+\item[{const \+::google\+::protobuf\+::\+Message \&}]{from}
+\end{DoxyParamCaption}
+)}\hypertarget{class_message_aace762966fec95ac8649947cf4418f28}{}\label{class_message_aace762966fec95ac8649947cf4418f28}
+\index{Message@{Message}!Copy\+From@{Copy\+From}}
+\index{Copy\+From@{Copy\+From}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Copy\+From(const Message \&from)}{CopyFrom(const Message &from)}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::\+Copy\+From (
+\begin{DoxyParamCaption}
+\item[{const {\bf Message} \&}]{from}
+\end{DoxyParamCaption}
+)}\hypertarget{class_message_abd25f3bb289b59841d064eb218d21e9c}{}\label{class_message_abd25f3bb289b59841d064eb218d21e9c}
+\index{Message@{Message}!default\+\_\+instance@{default\+\_\+instance}}
+\index{default\+\_\+instance@{default\+\_\+instance}!Message@{Message}}
+\subsubsection[{\texorpdfstring{default\+\_\+instance()}{default_instance()}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Message} \& Message\+::default\+\_\+instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_message_a698452c44213e0e57cf047fee56418ae}{}\label{class_message_a698452c44213e0e57cf047fee56418ae}
+\index{Message@{Message}!descriptor@{descriptor}}
+\index{descriptor@{descriptor}!Message@{Message}}
+\subsubsection[{\texorpdfstring{descriptor()}{descriptor()}}]{\setlength{\rightskip}{0pt plus 5cm}const \+::google\+::protobuf\+::\+Descriptor $\ast$ Message\+::descriptor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_message_abdecae930e09b6ea3f22621b5d605821}{}\label{class_message_abdecae930e09b6ea3f22621b5d605821}
+\index{Message@{Message}!Get\+Cached\+Size@{Get\+Cached\+Size}}
+\index{Get\+Cached\+Size@{Get\+Cached\+Size}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Get\+Cached\+Size() const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL}{GetCachedSize() const PROTOBUF_FINAL}}]{\setlength{\rightskip}{0pt plus 5cm}int Message\+::\+Get\+Cached\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_af2aea2b07908e1cc7ab7c5987b722bfa}{}\label{class_message_af2aea2b07908e1cc7ab7c5987b722bfa}
+\index{Message@{Message}!Get\+Metadata@{Get\+Metadata}}
+\index{Get\+Metadata@{Get\+Metadata}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Get\+Metadata() const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL}{GetMetadata() const PROTOBUF_FINAL}}]{\setlength{\rightskip}{0pt plus 5cm}google\+::protobuf\+::\+Metadata Message\+::\+Get\+Metadata (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_message_a1656eb682ce1b354645b8f0204d4d716}{}\label{class_message_a1656eb682ce1b354645b8f0204d4d716}
+\index{Message@{Message}!has\+\_\+advertisement@{has\+\_\+advertisement}}
+\index{has\+\_\+advertisement@{has\+\_\+advertisement}!Message@{Message}}
+\subsubsection[{\texorpdfstring{has\+\_\+advertisement() const }{has_advertisement() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Message\+::has\+\_\+advertisement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_ab599ad42dc51bb64f4a1f54ab687052f}{}\label{class_message_ab599ad42dc51bb64f4a1f54ab687052f}
+\index{Message@{Message}!has\+\_\+hello@{has\+\_\+hello}}
+\index{has\+\_\+hello@{has\+\_\+hello}!Message@{Message}}
+\subsubsection[{\texorpdfstring{has\+\_\+hello() const }{has_hello() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Message\+::has\+\_\+hello (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_ae2dc15c9e2b35d4659117baea58f7ad6}{}\label{class_message_ae2dc15c9e2b35d4659117baea58f7ad6}
+\index{Message@{Message}!has\+\_\+ping@{has\+\_\+ping}}
+\index{has\+\_\+ping@{has\+\_\+ping}!Message@{Message}}
+\subsubsection[{\texorpdfstring{has\+\_\+ping() const }{has_ping() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Message\+::has\+\_\+ping (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a6687127e183b5c855012ff5a7137557a}{}\label{class_message_a6687127e183b5c855012ff5a7137557a}
+\index{Message@{Message}!has\+\_\+shutdown@{has\+\_\+shutdown}}
+\index{has\+\_\+shutdown@{has\+\_\+shutdown}!Message@{Message}}
+\subsubsection[{\texorpdfstring{has\+\_\+shutdown() const }{has_shutdown() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Message\+::has\+\_\+shutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a828967ea849f5536979f42d8bfb1db81}{}\label{class_message_a828967ea849f5536979f42d8bfb1db81}
+\index{Message@{Message}!hello@{hello}}
+\index{hello@{hello}!Message@{Message}}
+\subsubsection[{\texorpdfstring{hello() const }{hello() const }}]{\setlength{\rightskip}{0pt plus 5cm}const \+::{\bf Hello} \& Message\+::hello (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a898179de741961b94361a2afa251dea0}{}\label{class_message_a898179de741961b94361a2afa251dea0}
+\index{Message@{Message}!internal\+\_\+default\+\_\+instance@{internal\+\_\+default\+\_\+instance}}
+\index{internal\+\_\+default\+\_\+instance@{internal\+\_\+default\+\_\+instance}!Message@{Message}}
+\subsubsection[{\texorpdfstring{internal\+\_\+default\+\_\+instance()}{internal_default_instance()}}]{\setlength{\rightskip}{0pt plus 5cm}static const {\bf Message}$\ast$ Message\+::internal\+\_\+default\+\_\+instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_message_a0ab98269ed7906e7542c0d7fcdb25c6e}{}\label{class_message_a0ab98269ed7906e7542c0d7fcdb25c6e}
+\index{Message@{Message}!Internal\+Serialize\+With\+Cached\+Sizes\+To\+Array@{Internal\+Serialize\+With\+Cached\+Sizes\+To\+Array}}
+\index{Internal\+Serialize\+With\+Cached\+Sizes\+To\+Array@{Internal\+Serialize\+With\+Cached\+Sizes\+To\+Array}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Internal\+Serialize\+With\+Cached\+Sizes\+To\+Array(bool deterministic,\+::google\+::protobuf\+::uint8 $\ast$target) const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL}{InternalSerializeWithCachedSizesToArray(bool deterministic,::google::protobuf::uint8 *target) const PROTOBUF_FINAL}}]{\setlength{\rightskip}{0pt plus 5cm}google\+::protobuf\+::uint8 $\ast$ Message\+::\+Internal\+Serialize\+With\+Cached\+Sizes\+To\+Array (
+\begin{DoxyParamCaption}
+\item[{bool}]{deterministic, }
+\item[{\+::google\+::protobuf\+::uint8 $\ast$}]{target}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_message_aa118b1d50aa0744b930265ad07169e0d}{}\label{class_message_aa118b1d50aa0744b930265ad07169e0d}
+\index{Message@{Message}!Is\+Initialized@{Is\+Initialized}}
+\index{Is\+Initialized@{Is\+Initialized}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Is\+Initialized() const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL}{IsInitialized() const PROTOBUF_FINAL}}]{\setlength{\rightskip}{0pt plus 5cm}bool Message\+::\+Is\+Initialized (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_message_acdfc5073e447c1c3aea9524e66be794f}{}\label{class_message_acdfc5073e447c1c3aea9524e66be794f}
+\index{Message@{Message}!Merge\+From@{Merge\+From}}
+\index{Merge\+From@{Merge\+From}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Merge\+From(const \+::google\+::protobuf\+::\+Message \&from) P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL}{MergeFrom(const ::google::protobuf::Message &from) PROTOBUF_FINAL}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::\+Merge\+From (
+\begin{DoxyParamCaption}
+\item[{const \+::google\+::protobuf\+::\+Message \&}]{from}
+\end{DoxyParamCaption}
+)}\hypertarget{class_message_adbc529475b8405b11e0c4218cf0ca67b}{}\label{class_message_adbc529475b8405b11e0c4218cf0ca67b}
+\index{Message@{Message}!Merge\+From@{Merge\+From}}
+\index{Merge\+From@{Merge\+From}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Merge\+From(const Message \&from)}{MergeFrom(const Message &from)}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::\+Merge\+From (
+\begin{DoxyParamCaption}
+\item[{const {\bf Message} \&}]{from}
+\end{DoxyParamCaption}
+)}\hypertarget{class_message_aeec4936f78a3ed399295e3f72840166f}{}\label{class_message_aeec4936f78a3ed399295e3f72840166f}
+\index{Message@{Message}!Merge\+Partial\+From\+Coded\+Stream@{Merge\+Partial\+From\+Coded\+Stream}}
+\index{Merge\+Partial\+From\+Coded\+Stream@{Merge\+Partial\+From\+Coded\+Stream}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Merge\+Partial\+From\+Coded\+Stream(\+::google\+::protobuf\+::io\+::\+Coded\+Input\+Stream $\ast$input) P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL}{MergePartialFromCodedStream(::google::protobuf::io::CodedInputStream *input) PROTOBUF_FINAL}}]{\setlength{\rightskip}{0pt plus 5cm}bool Message\+::\+Merge\+Partial\+From\+Coded\+Stream (
+\begin{DoxyParamCaption}
+\item[{\+::google\+::protobuf\+::io\+::\+Coded\+Input\+Stream $\ast$}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{class_message_a04b6b278c333ee73af59b1b2623e1289}{}\label{class_message_a04b6b278c333ee73af59b1b2623e1289}
+\index{Message@{Message}!mutable\+\_\+advertisement@{mutable\+\_\+advertisement}}
+\index{mutable\+\_\+advertisement@{mutable\+\_\+advertisement}!Message@{Message}}
+\subsubsection[{\texorpdfstring{mutable\+\_\+advertisement()}{mutable_advertisement()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Advertisement} $\ast$ Message\+::mutable\+\_\+advertisement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a1569a203e1c3b8ee7961c02a46280269}{}\label{class_message_a1569a203e1c3b8ee7961c02a46280269}
+\index{Message@{Message}!mutable\+\_\+hello@{mutable\+\_\+hello}}
+\index{mutable\+\_\+hello@{mutable\+\_\+hello}!Message@{Message}}
+\subsubsection[{\texorpdfstring{mutable\+\_\+hello()}{mutable_hello()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hello} $\ast$ Message\+::mutable\+\_\+hello (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_ab74acd4d120a7c3cbdc26a8d61eeec55}{}\label{class_message_ab74acd4d120a7c3cbdc26a8d61eeec55}
+\index{Message@{Message}!mutable\+\_\+ping@{mutable\+\_\+ping}}
+\index{mutable\+\_\+ping@{mutable\+\_\+ping}!Message@{Message}}
+\subsubsection[{\texorpdfstring{mutable\+\_\+ping()}{mutable_ping()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ping} $\ast$ Message\+::mutable\+\_\+ping (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a06f736eaae116cd37bdaeaccf6c46135}{}\label{class_message_a06f736eaae116cd37bdaeaccf6c46135}
+\index{Message@{Message}!mutable\+\_\+shutdown@{mutable\+\_\+shutdown}}
+\index{mutable\+\_\+shutdown@{mutable\+\_\+shutdown}!Message@{Message}}
+\subsubsection[{\texorpdfstring{mutable\+\_\+shutdown()}{mutable_shutdown()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Do\+Shutdown} $\ast$ Message\+::mutable\+\_\+shutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a3e3d6de62220b9b1dc4bd476ddb1c6ab}{}\label{class_message_a3e3d6de62220b9b1dc4bd476ddb1c6ab}
+\index{Message@{Message}!New@{New}}
+\index{New@{New}!Message@{Message}}
+\subsubsection[{\texorpdfstring{New() const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL}{New() const PROTOBUF_FINAL}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Message}$\ast$ Message\+::\+New (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a7c0fa750d5725069af260579f0006b74}{}\label{class_message_a7c0fa750d5725069af260579f0006b74}
+\index{Message@{Message}!New@{New}}
+\index{New@{New}!Message@{Message}}
+\subsubsection[{\texorpdfstring{New(\+::google\+::protobuf\+::\+Arena $\ast$arena) const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL}{New(::google::protobuf::Arena *arena) const PROTOBUF_FINAL}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Message} $\ast$ Message\+::\+New (
+\begin{DoxyParamCaption}
+\item[{\+::google\+::protobuf\+::\+Arena $\ast$}]{arena}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_message_a999f73547788c977054d3e28f3ae1761}{}\label{class_message_a999f73547788c977054d3e28f3ae1761}
+\index{Message@{Message}!operator=@{operator=}}
+\index{operator=@{operator=}!Message@{Message}}
+\subsubsection[{\texorpdfstring{operator=(const Message \&from)}{operator=(const Message &from)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Message}\& Message\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Message} \&}]{from}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_aaf5c447bbab6306a94f2260718163681}{}\label{class_message_aaf5c447bbab6306a94f2260718163681}
+\index{Message@{Message}!ping@{ping}}
+\index{ping@{ping}!Message@{Message}}
+\subsubsection[{\texorpdfstring{ping() const }{ping() const }}]{\setlength{\rightskip}{0pt plus 5cm}const \+::{\bf Ping} \& Message\+::ping (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_ac6583c594c172467063c0e3f2b30e82a}{}\label{class_message_ac6583c594c172467063c0e3f2b30e82a}
+\index{Message@{Message}!release\+\_\+advertisement@{release\+\_\+advertisement}}
+\index{release\+\_\+advertisement@{release\+\_\+advertisement}!Message@{Message}}
+\subsubsection[{\texorpdfstring{release\+\_\+advertisement()}{release_advertisement()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Advertisement} $\ast$ Message\+::release\+\_\+advertisement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a65a766ceb0dd2a5b3a37e0500b245e2c}{}\label{class_message_a65a766ceb0dd2a5b3a37e0500b245e2c}
+\index{Message@{Message}!release\+\_\+hello@{release\+\_\+hello}}
+\index{release\+\_\+hello@{release\+\_\+hello}!Message@{Message}}
+\subsubsection[{\texorpdfstring{release\+\_\+hello()}{release_hello()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hello} $\ast$ Message\+::release\+\_\+hello (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_ad97dbbb06f566bca0343d401924b80f7}{}\label{class_message_ad97dbbb06f566bca0343d401924b80f7}
+\index{Message@{Message}!release\+\_\+ping@{release\+\_\+ping}}
+\index{release\+\_\+ping@{release\+\_\+ping}!Message@{Message}}
+\subsubsection[{\texorpdfstring{release\+\_\+ping()}{release_ping()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ping} $\ast$ Message\+::release\+\_\+ping (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a604c08996b70b2bd6f16c71a6bc3060e}{}\label{class_message_a604c08996b70b2bd6f16c71a6bc3060e}
+\index{Message@{Message}!release\+\_\+shutdown@{release\+\_\+shutdown}}
+\index{release\+\_\+shutdown@{release\+\_\+shutdown}!Message@{Message}}
+\subsubsection[{\texorpdfstring{release\+\_\+shutdown()}{release_shutdown()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Do\+Shutdown} $\ast$ Message\+::release\+\_\+shutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_aa2f2ec957125d1cd4030dcc499c19ad7}{}\label{class_message_aa2f2ec957125d1cd4030dcc499c19ad7}
+\index{Message@{Message}!Serialize\+With\+Cached\+Sizes@{Serialize\+With\+Cached\+Sizes}}
+\index{Serialize\+With\+Cached\+Sizes@{Serialize\+With\+Cached\+Sizes}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Serialize\+With\+Cached\+Sizes(\+::google\+::protobuf\+::io\+::\+Coded\+Output\+Stream $\ast$output) const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL}{SerializeWithCachedSizes(::google::protobuf::io::CodedOutputStream *output) const PROTOBUF_FINAL}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::\+Serialize\+With\+Cached\+Sizes (
+\begin{DoxyParamCaption}
+\item[{\+::google\+::protobuf\+::io\+::\+Coded\+Output\+Stream $\ast$}]{output}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_message_acbed042857c6b319d891b6a4053b5fbb}{}\label{class_message_acbed042857c6b319d891b6a4053b5fbb}
+\index{Message@{Message}!Serialize\+With\+Cached\+Sizes\+To\+Array@{Serialize\+With\+Cached\+Sizes\+To\+Array}}
+\index{Serialize\+With\+Cached\+Sizes\+To\+Array@{Serialize\+With\+Cached\+Sizes\+To\+Array}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Serialize\+With\+Cached\+Sizes\+To\+Array(\+::google\+::protobuf\+::uint8 $\ast$output) const P\+R\+O\+T\+O\+B\+U\+F\+\_\+\+F\+I\+N\+AL}{SerializeWithCachedSizesToArray(::google::protobuf::uint8 *output) const PROTOBUF_FINAL}}]{\setlength{\rightskip}{0pt plus 5cm}\+::google\+::protobuf\+::uint8$\ast$ Message\+::\+Serialize\+With\+Cached\+Sizes\+To\+Array (
+\begin{DoxyParamCaption}
+\item[{\+::google\+::protobuf\+::uint8 $\ast$}]{output}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a2f00b1061964e467f55cdec7f96fe5b0}{}\label{class_message_a2f00b1061964e467f55cdec7f96fe5b0}
+\index{Message@{Message}!set\+\_\+allocated\+\_\+advertisement@{set\+\_\+allocated\+\_\+advertisement}}
+\index{set\+\_\+allocated\+\_\+advertisement@{set\+\_\+allocated\+\_\+advertisement}!Message@{Message}}
+\subsubsection[{\texorpdfstring{set\+\_\+allocated\+\_\+advertisement(\+::\+Advertisement $\ast$advertisement)}{set_allocated_advertisement(::Advertisement *advertisement)}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::set\+\_\+allocated\+\_\+advertisement (
+\begin{DoxyParamCaption}
+\item[{\+::{\bf Advertisement} $\ast$}]{advertisement}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a73b5a21942f1206693d911ea6357f302}{}\label{class_message_a73b5a21942f1206693d911ea6357f302}
+\index{Message@{Message}!set\+\_\+allocated\+\_\+hello@{set\+\_\+allocated\+\_\+hello}}
+\index{set\+\_\+allocated\+\_\+hello@{set\+\_\+allocated\+\_\+hello}!Message@{Message}}
+\subsubsection[{\texorpdfstring{set\+\_\+allocated\+\_\+hello(\+::\+Hello $\ast$hello)}{set_allocated_hello(::Hello *hello)}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::set\+\_\+allocated\+\_\+hello (
+\begin{DoxyParamCaption}
+\item[{\+::{\bf Hello} $\ast$}]{hello}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a02b81f83621d5e66bc77e37a2ca954eb}{}\label{class_message_a02b81f83621d5e66bc77e37a2ca954eb}
+\index{Message@{Message}!set\+\_\+allocated\+\_\+ping@{set\+\_\+allocated\+\_\+ping}}
+\index{set\+\_\+allocated\+\_\+ping@{set\+\_\+allocated\+\_\+ping}!Message@{Message}}
+\subsubsection[{\texorpdfstring{set\+\_\+allocated\+\_\+ping(\+::\+Ping $\ast$ping)}{set_allocated_ping(::Ping *ping)}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::set\+\_\+allocated\+\_\+ping (
+\begin{DoxyParamCaption}
+\item[{\+::{\bf Ping} $\ast$}]{ping}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_aaeb94d5348e4d13c7f5831950b19bcd3}{}\label{class_message_aaeb94d5348e4d13c7f5831950b19bcd3}
+\index{Message@{Message}!set\+\_\+allocated\+\_\+shutdown@{set\+\_\+allocated\+\_\+shutdown}}
+\index{set\+\_\+allocated\+\_\+shutdown@{set\+\_\+allocated\+\_\+shutdown}!Message@{Message}}
+\subsubsection[{\texorpdfstring{set\+\_\+allocated\+\_\+shutdown(\+::\+Do\+Shutdown $\ast$shutdown)}{set_allocated_shutdown(::DoShutdown *shutdown)}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::set\+\_\+allocated\+\_\+shutdown (
+\begin{DoxyParamCaption}
+\item[{\+::{\bf Do\+Shutdown} $\ast$}]{shutdown}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_aabcdaa4db978dd877e117297ea555af4}{}\label{class_message_aabcdaa4db978dd877e117297ea555af4}
+\index{Message@{Message}!set\+\_\+type@{set\+\_\+type}}
+\index{set\+\_\+type@{set\+\_\+type}!Message@{Message}}
+\subsubsection[{\texorpdfstring{set\+\_\+type(\+::\+Message\+\_\+\+Type value)}{set_type(::Message_Type value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::set\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{\+::{\bf Message\+\_\+\+Type}}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a8118c1b12f068dacbf3535c9879b2a25}{}\label{class_message_a8118c1b12f068dacbf3535c9879b2a25}
+\index{Message@{Message}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!Message@{Message}}
+\subsubsection[{\texorpdfstring{shutdown() const }{shutdown() const }}]{\setlength{\rightskip}{0pt plus 5cm}const \+::{\bf Do\+Shutdown} \& Message\+::shutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_aab2ea329fff8637bc696e7979eadc827}{}\label{class_message_aab2ea329fff8637bc696e7979eadc827}
+\index{Message@{Message}!Swap@{Swap}}
+\index{Swap@{Swap}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Swap(\+Message $\ast$other)}{Swap(Message *other)}}]{\setlength{\rightskip}{0pt plus 5cm}void Message\+::\+Swap (
+\begin{DoxyParamCaption}
+\item[{{\bf Message} $\ast$}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{class_message_a6fabda3c4c2c71f1b9607e136dee483e}{}\label{class_message_a6fabda3c4c2c71f1b9607e136dee483e}
+\index{Message@{Message}!type@{type}}
+\index{type@{type}!Message@{Message}}
+\subsubsection[{\texorpdfstring{type() const }{type() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Message\+\_\+\+Type} Message\+::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_message_a280acf280b0ebac63aa444c2db9431ea}{}\label{class_message_a280acf280b0ebac63aa444c2db9431ea}
+\index{Message@{Message}!Type\+\_\+descriptor@{Type\+\_\+descriptor}}
+\index{Type\+\_\+descriptor@{Type\+\_\+descriptor}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Type\+\_\+descriptor()}{Type_descriptor()}}]{\setlength{\rightskip}{0pt plus 5cm}static const \+::google\+::protobuf\+::\+Enum\+Descriptor$\ast$ Message\+::\+Type\+\_\+descriptor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_message_afe208248065ee12c0bbffe71b54ed9ee}{}\label{class_message_afe208248065ee12c0bbffe71b54ed9ee}
+\index{Message@{Message}!Type\+\_\+\+Is\+Valid@{Type\+\_\+\+Is\+Valid}}
+\index{Type\+\_\+\+Is\+Valid@{Type\+\_\+\+Is\+Valid}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Type\+\_\+\+Is\+Valid(int value)}{Type_IsValid(int value)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Message\+::\+Type\+\_\+\+Is\+Valid (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_message_ac709f95123530e0aef536023d5f547ff}{}\label{class_message_ac709f95123530e0aef536023d5f547ff}
+\index{Message@{Message}!Type\+\_\+\+Name@{Type\+\_\+\+Name}}
+\index{Type\+\_\+\+Name@{Type\+\_\+\+Name}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Type\+\_\+\+Name(\+Type value)}{Type_Name(Type value)}}]{\setlength{\rightskip}{0pt plus 5cm}static const \+::std\+::string\& Message\+::\+Type\+\_\+\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Type}}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_message_acf7fb4b05f015126dcf9f534e7281712}{}\label{class_message_acf7fb4b05f015126dcf9f534e7281712}
+\index{Message@{Message}!Type\+\_\+\+Parse@{Type\+\_\+\+Parse}}
+\index{Type\+\_\+\+Parse@{Type\+\_\+\+Parse}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Type\+\_\+\+Parse(const \+::std\+::string \&name, Type $\ast$value)}{Type_Parse(const ::std::string &name, Type *value)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Message\+::\+Type\+\_\+\+Parse (
+\begin{DoxyParamCaption}
+\item[{const \+::std\+::string \&}]{name, }
+\item[{{\bf Type} $\ast$}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_message_af70480ec0754cee5dc6c72144a0f1bb1}{}\label{class_message_af70480ec0754cee5dc6c72144a0f1bb1}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Message@{Message}!protobuf\+\_\+message\+\_\+2eproto\+::\+Table\+Struct@{protobuf\+\_\+message\+\_\+2eproto\+::\+Table\+Struct}}
+\index{protobuf\+\_\+message\+\_\+2eproto\+::\+Table\+Struct@{protobuf\+\_\+message\+\_\+2eproto\+::\+Table\+Struct}!Message@{Message}}
+\subsubsection[{\texorpdfstring{protobuf\+\_\+message\+\_\+2eproto\+::\+Table\+Struct}{protobuf_message_2eproto::TableStruct}}]{\setlength{\rightskip}{0pt plus 5cm}friend struct {\bf protobuf\+\_\+message\+\_\+2eproto\+::\+Table\+Struct}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{class_message_a2a479fe4885e147bf2a7ae83f2bf282e}{}\label{class_message_a2a479fe4885e147bf2a7ae83f2bf282e}
+
+
+\subsection{Member Data Documentation}
+\index{Message@{Message}!A\+D\+V\+E\+R\+T\+I\+S\+E\+M\+E\+NT@{A\+D\+V\+E\+R\+T\+I\+S\+E\+M\+E\+NT}}
+\index{A\+D\+V\+E\+R\+T\+I\+S\+E\+M\+E\+NT@{A\+D\+V\+E\+R\+T\+I\+S\+E\+M\+E\+NT}!Message@{Message}}
+\subsubsection[{\texorpdfstring{A\+D\+V\+E\+R\+T\+I\+S\+E\+M\+E\+NT}{ADVERTISEMENT}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Message\+\_\+\+Type} Message\+::\+A\+D\+V\+E\+R\+T\+I\+S\+E\+M\+E\+NT\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_message_a9079ebddf775dd11d7bae2ec733e961d}{}\label{class_message_a9079ebddf775dd11d7bae2ec733e961d}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+    \hyperlink{message_8pb_8h_a1b620cd54f3d6b48f3c5f7979545b160aaf909cb57ee266259b2a3557e5baf098}{Message\_Type\_ADVERTISEMENT}
+\end{DoxyCode}
+\index{Message@{Message}!H\+E\+L\+LO@{H\+E\+L\+LO}}
+\index{H\+E\+L\+LO@{H\+E\+L\+LO}!Message@{Message}}
+\subsubsection[{\texorpdfstring{H\+E\+L\+LO}{HELLO}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Message\+\_\+\+Type} Message\+::\+H\+E\+L\+LO\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_message_a6bda6b58f826adddb08642316e32ed1f}{}\label{class_message_a6bda6b58f826adddb08642316e32ed1f}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+    \hyperlink{message_8pb_8h_a1b620cd54f3d6b48f3c5f7979545b160ab791bcd660645a863b5ea1a1f1a8291d}{Message\_Type\_HELLO}
+\end{DoxyCode}
+\index{Message@{Message}!k\+Advertisement\+Field\+Number@{k\+Advertisement\+Field\+Number}}
+\index{k\+Advertisement\+Field\+Number@{k\+Advertisement\+Field\+Number}!Message@{Message}}
+\subsubsection[{\texorpdfstring{k\+Advertisement\+Field\+Number}{kAdvertisementFieldNumber}}]{\setlength{\rightskip}{0pt plus 5cm}const int Message\+::k\+Advertisement\+Field\+Number = 102\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_message_a75120b6dcf3c241e7e79c6244714031b}{}\label{class_message_a75120b6dcf3c241e7e79c6244714031b}
+\index{Message@{Message}!k\+Hello\+Field\+Number@{k\+Hello\+Field\+Number}}
+\index{k\+Hello\+Field\+Number@{k\+Hello\+Field\+Number}!Message@{Message}}
+\subsubsection[{\texorpdfstring{k\+Hello\+Field\+Number}{kHelloFieldNumber}}]{\setlength{\rightskip}{0pt plus 5cm}const int Message\+::k\+Hello\+Field\+Number = 103\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_message_a48c7ce9a4b7f9205834eb1f9c0b0d88a}{}\label{class_message_a48c7ce9a4b7f9205834eb1f9c0b0d88a}
+\index{Message@{Message}!k\+Ping\+Field\+Number@{k\+Ping\+Field\+Number}}
+\index{k\+Ping\+Field\+Number@{k\+Ping\+Field\+Number}!Message@{Message}}
+\subsubsection[{\texorpdfstring{k\+Ping\+Field\+Number}{kPingFieldNumber}}]{\setlength{\rightskip}{0pt plus 5cm}const int Message\+::k\+Ping\+Field\+Number = 100\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_message_a2197ba45f05dac9a2bd760c7b3a2d1a4}{}\label{class_message_a2197ba45f05dac9a2bd760c7b3a2d1a4}
+\index{Message@{Message}!k\+Shutdown\+Field\+Number@{k\+Shutdown\+Field\+Number}}
+\index{k\+Shutdown\+Field\+Number@{k\+Shutdown\+Field\+Number}!Message@{Message}}
+\subsubsection[{\texorpdfstring{k\+Shutdown\+Field\+Number}{kShutdownFieldNumber}}]{\setlength{\rightskip}{0pt plus 5cm}const int Message\+::k\+Shutdown\+Field\+Number = 101\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_message_abcfb3771be4f6daf22c28853761bcd33}{}\label{class_message_abcfb3771be4f6daf22c28853761bcd33}
+\index{Message@{Message}!k\+Type\+Field\+Number@{k\+Type\+Field\+Number}}
+\index{k\+Type\+Field\+Number@{k\+Type\+Field\+Number}!Message@{Message}}
+\subsubsection[{\texorpdfstring{k\+Type\+Field\+Number}{kTypeFieldNumber}}]{\setlength{\rightskip}{0pt plus 5cm}const int Message\+::k\+Type\+Field\+Number = 1\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_message_a7e929836116d1d4afdf1048ee821637a}{}\label{class_message_a7e929836116d1d4afdf1048ee821637a}
+\index{Message@{Message}!P\+I\+NG@{P\+I\+NG}}
+\index{P\+I\+NG@{P\+I\+NG}!Message@{Message}}
+\subsubsection[{\texorpdfstring{P\+I\+NG}{PING}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Message\+\_\+\+Type} Message\+::\+P\+I\+NG\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_message_abc34006eaf98f78c4f90767fd89f7216}{}\label{class_message_abc34006eaf98f78c4f90767fd89f7216}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+    \hyperlink{message_8pb_8h_a1b620cd54f3d6b48f3c5f7979545b160a585150d90c2510e56b92aa0bd8d0d552}{Message\_Type\_PING}
+\end{DoxyCode}
+\index{Message@{Message}!S\+H\+U\+T\+D\+O\+WN@{S\+H\+U\+T\+D\+O\+WN}}
+\index{S\+H\+U\+T\+D\+O\+WN@{S\+H\+U\+T\+D\+O\+WN}!Message@{Message}}
+\subsubsection[{\texorpdfstring{S\+H\+U\+T\+D\+O\+WN}{SHUTDOWN}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Message\+\_\+\+Type} Message\+::\+S\+H\+U\+T\+D\+O\+WN\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_message_ad4dfaa2599a7afc20df9fd87b0f09fea}{}\label{class_message_ad4dfaa2599a7afc20df9fd87b0f09fea}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+    \hyperlink{message_8pb_8h_a1b620cd54f3d6b48f3c5f7979545b160a8e12d42a70a33d4cc5ef06acef830b77}{Message\_Type\_SHUTDOWN}
+\end{DoxyCode}
+\index{Message@{Message}!Type\+\_\+\+A\+R\+R\+A\+Y\+S\+I\+ZE@{Type\+\_\+\+A\+R\+R\+A\+Y\+S\+I\+ZE}}
+\index{Type\+\_\+\+A\+R\+R\+A\+Y\+S\+I\+ZE@{Type\+\_\+\+A\+R\+R\+A\+Y\+S\+I\+ZE}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Type\+\_\+\+A\+R\+R\+A\+Y\+S\+I\+ZE}{Type_ARRAYSIZE}}]{\setlength{\rightskip}{0pt plus 5cm}const int Message\+::\+Type\+\_\+\+A\+R\+R\+A\+Y\+S\+I\+ZE\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_message_afdad43f1f3fd8af53d430fa57b3c85f9}{}\label{class_message_afdad43f1f3fd8af53d430fa57b3c85f9}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+    \hyperlink{message_8pb_8h_a67b5ea393c8852bab3714524d9d9d7f3}{Message\_Type\_Type\_ARRAYSIZE}
+\end{DoxyCode}
+\index{Message@{Message}!Type\+\_\+\+M\+AX@{Type\+\_\+\+M\+AX}}
+\index{Type\+\_\+\+M\+AX@{Type\+\_\+\+M\+AX}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Type\+\_\+\+M\+AX}{Type_MAX}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Message\+\_\+\+Type} Message\+::\+Type\+\_\+\+M\+AX\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_message_aad308e35392d6a12f366c39c06d4dd92}{}\label{class_message_aad308e35392d6a12f366c39c06d4dd92}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+    \hyperlink{message_8pb_8h_af22d92487ccd5d41b9d4cb8cc7896ded}{Message\_Type\_Type\_MAX}
+\end{DoxyCode}
+\index{Message@{Message}!Type\+\_\+\+M\+IN@{Type\+\_\+\+M\+IN}}
+\index{Type\+\_\+\+M\+IN@{Type\+\_\+\+M\+IN}!Message@{Message}}
+\subsubsection[{\texorpdfstring{Type\+\_\+\+M\+IN}{Type_MIN}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Message\+\_\+\+Type} Message\+::\+Type\+\_\+\+M\+IN\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_message_a9fc82f92e8d5c8d07f77e60d057a4077}{}\label{class_message_a9fc82f92e8d5c8d07f77e60d057a4077}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+    \hyperlink{message_8pb_8h_a8894bdaf08226955480cbd6198dac18d}{Message\_Type\_Type\_MIN}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/proto/\hyperlink{message_8pb_8h}{message.\+pb.\+h}\item 
+src/proto/\hyperlink{message_8pb_8cc}{message.\+pb.\+cc}\end{DoxyCompactItemize}

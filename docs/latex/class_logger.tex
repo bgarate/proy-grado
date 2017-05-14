@@ -1,0 +1,148 @@
+\hypertarget{class_logger}{}\section{Logger Class Reference}
+\label{class_logger}\index{Logger@{Logger}}
+
+
+{\ttfamily \#include $<$Logger.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_logger_a8f625bd9ec5f706cb67b725a98743c04}{Log\+Type} \{ \\*
+\hyperlink{class_logger_a8f625bd9ec5f706cb67b725a98743c04a99cd1c61610c76a57cb8d10d6df6b870}{Log\+Type\+::\+C\+R\+I\+T\+I\+C\+AL}, 
+\hyperlink{class_logger_a8f625bd9ec5f706cb67b725a98743c04abb1ca97ec761fc37101737ba0aa2e7c5}{Log\+Type\+::\+E\+R\+R\+OR}, 
+\hyperlink{class_logger_a8f625bd9ec5f706cb67b725a98743c04a059e9861e0400dfbe05c98a841f3f96b}{Log\+Type\+::\+W\+A\+R\+N\+I\+NG}, 
+\hyperlink{class_logger_a8f625bd9ec5f706cb67b725a98743c04a551b723eafd6a31d444fcb2f5920fbd3}{Log\+Type\+::\+I\+N\+FO}, 
+\\*
+\hyperlink{class_logger_a8f625bd9ec5f706cb67b725a98743c04adc30ec20708ef7b0f641ef78b7880a15}{Log\+Type\+::\+D\+E\+B\+UG}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_logger_abc41bfb031d896170c7675fa96a6b30c}{Logger} ()
+\item 
+\hyperlink{class_logger_acb668a9e186a25fbaad2e4af6d1ed00a}{$\sim$\+Logger} ()
+\item 
+void \hyperlink{class_logger_a053de045cd00393f4def7d5b6c5cab38}{Log} (std\+::string msg, \hyperlink{class_logger_a8f625bd9ec5f706cb67b725a98743c04}{Log\+Type} severity)
+\item 
+void \hyperlink{class_logger_a5adf33889fdf061aa0dc756d38eb5e90}{set\+Source} (std\+::string source)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_logger}{Logger} \& \hyperlink{class_logger_acebb37f5538780e6c14f13de6ec497bc}{get\+Instance} ()
+\item 
+static void \hyperlink{class_logger_a1e371911c3a930af5959cfe4de3a0e25}{log\+Critical} (std\+::string msg)
+\item 
+static void \hyperlink{class_logger_ada4ef25d16123b5367a70c9fa0ef0fd7}{log\+Error} (std\+::string msg)
+\item 
+static void \hyperlink{class_logger_a0835527c3b67be24326a8447856d84a6}{log\+Warning} (std\+::string msg)
+\item 
+static void \hyperlink{class_logger_a4fe03aa253188ef739b5dec5e036f640}{log\+Info} (std\+::string msg)
+\item 
+static void \hyperlink{class_logger_ad8278460637697892593e6ef633d54a4}{log\+Debug} (std\+::string msg)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\index{Logger@{Logger}!Log\+Type@{Log\+Type}}
+\index{Log\+Type@{Log\+Type}!Logger@{Logger}}
+\subsubsection[{\texorpdfstring{Log\+Type}{LogType}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Logger\+::\+Log\+Type}\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{class_logger_a8f625bd9ec5f706cb67b725a98743c04}{}\label{class_logger_a8f625bd9ec5f706cb67b725a98743c04}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\+R\+I\+T\+I\+C\+AL@{C\+R\+I\+T\+I\+C\+AL}!Logger@{Logger}}\index{Logger@{Logger}!C\+R\+I\+T\+I\+C\+AL@{C\+R\+I\+T\+I\+C\+AL}}\item[{\em 
+C\+R\+I\+T\+I\+C\+AL\hypertarget{class_logger_a8f625bd9ec5f706cb67b725a98743c04a99cd1c61610c76a57cb8d10d6df6b870}{}\label{class_logger_a8f625bd9ec5f706cb67b725a98743c04a99cd1c61610c76a57cb8d10d6df6b870}
+}]\index{E\+R\+R\+OR@{E\+R\+R\+OR}!Logger@{Logger}}\index{Logger@{Logger}!E\+R\+R\+OR@{E\+R\+R\+OR}}\item[{\em 
+E\+R\+R\+OR\hypertarget{class_logger_a8f625bd9ec5f706cb67b725a98743c04abb1ca97ec761fc37101737ba0aa2e7c5}{}\label{class_logger_a8f625bd9ec5f706cb67b725a98743c04abb1ca97ec761fc37101737ba0aa2e7c5}
+}]\index{W\+A\+R\+N\+I\+NG@{W\+A\+R\+N\+I\+NG}!Logger@{Logger}}\index{Logger@{Logger}!W\+A\+R\+N\+I\+NG@{W\+A\+R\+N\+I\+NG}}\item[{\em 
+W\+A\+R\+N\+I\+NG\hypertarget{class_logger_a8f625bd9ec5f706cb67b725a98743c04a059e9861e0400dfbe05c98a841f3f96b}{}\label{class_logger_a8f625bd9ec5f706cb67b725a98743c04a059e9861e0400dfbe05c98a841f3f96b}
+}]\index{I\+N\+FO@{I\+N\+FO}!Logger@{Logger}}\index{Logger@{Logger}!I\+N\+FO@{I\+N\+FO}}\item[{\em 
+I\+N\+FO\hypertarget{class_logger_a8f625bd9ec5f706cb67b725a98743c04a551b723eafd6a31d444fcb2f5920fbd3}{}\label{class_logger_a8f625bd9ec5f706cb67b725a98743c04a551b723eafd6a31d444fcb2f5920fbd3}
+}]\index{D\+E\+B\+UG@{D\+E\+B\+UG}!Logger@{Logger}}\index{Logger@{Logger}!D\+E\+B\+UG@{D\+E\+B\+UG}}\item[{\em 
+D\+E\+B\+UG\hypertarget{class_logger_a8f625bd9ec5f706cb67b725a98743c04adc30ec20708ef7b0f641ef78b7880a15}{}\label{class_logger_a8f625bd9ec5f706cb67b725a98743c04adc30ec20708ef7b0f641ef78b7880a15}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Logger@{Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!Logger@{Logger}}
+\subsubsection[{\texorpdfstring{Logger()}{Logger()}}]{\setlength{\rightskip}{0pt plus 5cm}Logger\+::\+Logger (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_logger_abc41bfb031d896170c7675fa96a6b30c}{}\label{class_logger_abc41bfb031d896170c7675fa96a6b30c}
+\index{Logger@{Logger}!````~Logger@{$\sim$\+Logger}}
+\index{````~Logger@{$\sim$\+Logger}!Logger@{Logger}}
+\subsubsection[{\texorpdfstring{$\sim$\+Logger()}{~Logger()}}]{\setlength{\rightskip}{0pt plus 5cm}Logger\+::$\sim$\+Logger (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_logger_acb668a9e186a25fbaad2e4af6d1ed00a}{}\label{class_logger_acb668a9e186a25fbaad2e4af6d1ed00a}
+
+
+\subsection{Member Function Documentation}
+\index{Logger@{Logger}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Logger@{Logger}}
+\subsubsection[{\texorpdfstring{get\+Instance()}{getInstance()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} \& Logger\+::get\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_logger_acebb37f5538780e6c14f13de6ec497bc}{}\label{class_logger_acebb37f5538780e6c14f13de6ec497bc}
+\index{Logger@{Logger}!Log@{Log}}
+\index{Log@{Log}!Logger@{Logger}}
+\subsubsection[{\texorpdfstring{Log(std\+::string msg, Log\+Type severity)}{Log(std::string msg, LogType severity)}}]{\setlength{\rightskip}{0pt plus 5cm}void Logger\+::\+Log (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{msg, }
+\item[{{\bf Logger\+::\+Log\+Type}}]{severity}
+\end{DoxyParamCaption}
+)}\hypertarget{class_logger_a053de045cd00393f4def7d5b6c5cab38}{}\label{class_logger_a053de045cd00393f4def7d5b6c5cab38}
+\index{Logger@{Logger}!log\+Critical@{log\+Critical}}
+\index{log\+Critical@{log\+Critical}!Logger@{Logger}}
+\subsubsection[{\texorpdfstring{log\+Critical(std\+::string msg)}{logCritical(std::string msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void Logger\+::log\+Critical (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_logger_a1e371911c3a930af5959cfe4de3a0e25}{}\label{class_logger_a1e371911c3a930af5959cfe4de3a0e25}
+\index{Logger@{Logger}!log\+Debug@{log\+Debug}}
+\index{log\+Debug@{log\+Debug}!Logger@{Logger}}
+\subsubsection[{\texorpdfstring{log\+Debug(std\+::string msg)}{logDebug(std::string msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void Logger\+::log\+Debug (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_logger_ad8278460637697892593e6ef633d54a4}{}\label{class_logger_ad8278460637697892593e6ef633d54a4}
+\index{Logger@{Logger}!log\+Error@{log\+Error}}
+\index{log\+Error@{log\+Error}!Logger@{Logger}}
+\subsubsection[{\texorpdfstring{log\+Error(std\+::string msg)}{logError(std::string msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void Logger\+::log\+Error (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_logger_ada4ef25d16123b5367a70c9fa0ef0fd7}{}\label{class_logger_ada4ef25d16123b5367a70c9fa0ef0fd7}
+\index{Logger@{Logger}!log\+Info@{log\+Info}}
+\index{log\+Info@{log\+Info}!Logger@{Logger}}
+\subsubsection[{\texorpdfstring{log\+Info(std\+::string msg)}{logInfo(std::string msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void Logger\+::log\+Info (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_logger_a4fe03aa253188ef739b5dec5e036f640}{}\label{class_logger_a4fe03aa253188ef739b5dec5e036f640}
+\index{Logger@{Logger}!log\+Warning@{log\+Warning}}
+\index{log\+Warning@{log\+Warning}!Logger@{Logger}}
+\subsubsection[{\texorpdfstring{log\+Warning(std\+::string msg)}{logWarning(std::string msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void Logger\+::log\+Warning (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_logger_a0835527c3b67be24326a8447856d84a6}{}\label{class_logger_a0835527c3b67be24326a8447856d84a6}
+\index{Logger@{Logger}!set\+Source@{set\+Source}}
+\index{set\+Source@{set\+Source}!Logger@{Logger}}
+\subsubsection[{\texorpdfstring{set\+Source(std\+::string source)}{setSource(std::string source)}}]{\setlength{\rightskip}{0pt plus 5cm}void Logger\+::set\+Source (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{source}
+\end{DoxyParamCaption}
+)}\hypertarget{class_logger_a5adf33889fdf061aa0dc756d38eb5e90}{}\label{class_logger_a5adf33889fdf061aa0dc756d38eb5e90}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/logging/\hyperlink{_logger_8h}{Logger.\+h}\item 
+src/logging/\hyperlink{_logger_8cpp}{Logger.\+cpp}\end{DoxyCompactItemize}

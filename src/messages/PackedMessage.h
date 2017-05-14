@@ -7,6 +7,7 @@
 
 #include <boost/cstdint.hpp>
 #include <boost/shared_ptr.hpp>
+#include <cstdint>
 #include "vector"
 
 typedef std::vector<boost::uint8_t> data_buffer;

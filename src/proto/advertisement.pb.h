@@ -132,7 +132,7 @@ class Advertisement : public ::google::protobuf::Message /* @@protoc_insertion_p
   ::google::protobuf::uint32 ip_;
   ::google::protobuf::uint32 port_;
   mutable int _cached_size_;
-  friend struct  protobuf_advertisement_2eproto::TableStruct;
+  friend struct protobuf_advertisement_2eproto::TableStruct;
 };
 // ===================================================================
 

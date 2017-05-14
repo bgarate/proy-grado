@@ -1,0 +1,99 @@
+\hypertarget{class_packed_message}{}\section{Packed\+Message$<$ T $>$ Class Template Reference}
+\label{class_packed_message}\index{Packed\+Message$<$ T $>$@{Packed\+Message$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Packed\+Message.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::shared\+\_\+ptr$<$ T $>$ \hyperlink{class_packed_message_abd3314a806bd82d0b6fc076034e3d7f6}{Message\+Pointer}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_packed_message_a54361c18b3c4d092b491ebddd4cd3514}{Packed\+Message} (\hyperlink{class_packed_message_abd3314a806bd82d0b6fc076034e3d7f6}{Message\+Pointer} msg=\hyperlink{class_packed_message_abd3314a806bd82d0b6fc076034e3d7f6}{Message\+Pointer}(new T))
+\item 
+void \hyperlink{class_packed_message_a109d884ee70ef7fd6e7c7288dd4cd003}{set\+Msg} (\hyperlink{class_packed_message_abd3314a806bd82d0b6fc076034e3d7f6}{Message\+Pointer} msg)
+\item 
+\hyperlink{class_packed_message_abd3314a806bd82d0b6fc076034e3d7f6}{Message\+Pointer} \hyperlink{class_packed_message_a5892ce717ad163486796a6648718b284}{get\+Msg} ()
+\item 
+bool \hyperlink{class_packed_message_a87f97f2ced02c3b9044dea707a5d3aac}{pack} (\hyperlink{_packed_message_8h_a9c53615665c5a1ed76b034e6e4f97942}{data\+\_\+buffer} \&buf) const 
+\item 
+bool \hyperlink{class_packed_message_a0822d18835d6340a74d7a9edbd53a6f1}{unpack} (const \hyperlink{_packed_message_8h_a9c53615665c5a1ed76b034e6e4f97942}{data\+\_\+buffer} \&buf)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned \hyperlink{class_packed_message_abb912f0c1590bab05b8dd20b74dc9116}{decode\+\_\+header} (const \hyperlink{_packed_message_8h_a9c53615665c5a1ed76b034e6e4f97942}{data\+\_\+buffer} \&buf)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned \hyperlink{class_packed_message_a487152563442f0225bffb9e0402cd94e}{H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+ZE} = 4
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{Packed\+Message@{Packed\+Message}!Message\+Pointer@{Message\+Pointer}}
+\index{Message\+Pointer@{Message\+Pointer}!Packed\+Message@{Packed\+Message}}
+\subsubsection[{\texorpdfstring{Message\+Pointer}{MessagePointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ typedef boost\+::shared\+\_\+ptr$<$T$>$ {\bf Packed\+Message}$<$ T $>$\+::{\bf Message\+Pointer}}\hypertarget{class_packed_message_abd3314a806bd82d0b6fc076034e3d7f6}{}\label{class_packed_message_abd3314a806bd82d0b6fc076034e3d7f6}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Packed\+Message@{Packed\+Message}!Packed\+Message@{Packed\+Message}}
+\index{Packed\+Message@{Packed\+Message}!Packed\+Message@{Packed\+Message}}
+\subsubsection[{\texorpdfstring{Packed\+Message(\+Message\+Pointer msg=\+Message\+Pointer(new T))}{PackedMessage(MessagePointer msg=MessagePointer(new T))}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Packed\+Message}$<$ T $>$\+::{\bf Packed\+Message} (
+\begin{DoxyParamCaption}
+\item[{{\bf Message\+Pointer}}]{msg = {\ttfamily {\bf Message\+Pointer}(new~T)}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_packed_message_a54361c18b3c4d092b491ebddd4cd3514}{}\label{class_packed_message_a54361c18b3c4d092b491ebddd4cd3514}
+
+
+\subsection{Member Function Documentation}
+\index{Packed\+Message@{Packed\+Message}!decode\+\_\+header@{decode\+\_\+header}}
+\index{decode\+\_\+header@{decode\+\_\+header}!Packed\+Message@{Packed\+Message}}
+\subsubsection[{\texorpdfstring{decode\+\_\+header(const data\+\_\+buffer \&buf)}{decode_header(const data_buffer &buf)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static unsigned {\bf Packed\+Message}$<$ T $>$\+::decode\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{const {\bf data\+\_\+buffer} \&}]{buf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_packed_message_abb912f0c1590bab05b8dd20b74dc9116}{}\label{class_packed_message_abb912f0c1590bab05b8dd20b74dc9116}
+\index{Packed\+Message@{Packed\+Message}!get\+Msg@{get\+Msg}}
+\index{get\+Msg@{get\+Msg}!Packed\+Message@{Packed\+Message}}
+\subsubsection[{\texorpdfstring{get\+Msg()}{getMsg()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Message\+Pointer} {\bf Packed\+Message}$<$ T $>$\+::get\+Msg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_packed_message_a5892ce717ad163486796a6648718b284}{}\label{class_packed_message_a5892ce717ad163486796a6648718b284}
+\index{Packed\+Message@{Packed\+Message}!pack@{pack}}
+\index{pack@{pack}!Packed\+Message@{Packed\+Message}}
+\subsubsection[{\texorpdfstring{pack(data\+\_\+buffer \&buf) const }{pack(data_buffer &buf) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ bool {\bf Packed\+Message}$<$ T $>$\+::pack (
+\begin{DoxyParamCaption}
+\item[{{\bf data\+\_\+buffer} \&}]{buf}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_packed_message_a87f97f2ced02c3b9044dea707a5d3aac}{}\label{class_packed_message_a87f97f2ced02c3b9044dea707a5d3aac}
+\index{Packed\+Message@{Packed\+Message}!set\+Msg@{set\+Msg}}
+\index{set\+Msg@{set\+Msg}!Packed\+Message@{Packed\+Message}}
+\subsubsection[{\texorpdfstring{set\+Msg(\+Message\+Pointer msg)}{setMsg(MessagePointer msg)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf Packed\+Message}$<$ T $>$\+::set\+Msg (
+\begin{DoxyParamCaption}
+\item[{{\bf Message\+Pointer}}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_packed_message_a109d884ee70ef7fd6e7c7288dd4cd003}{}\label{class_packed_message_a109d884ee70ef7fd6e7c7288dd4cd003}
+\index{Packed\+Message@{Packed\+Message}!unpack@{unpack}}
+\index{unpack@{unpack}!Packed\+Message@{Packed\+Message}}
+\subsubsection[{\texorpdfstring{unpack(const data\+\_\+buffer \&buf)}{unpack(const data_buffer &buf)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ bool {\bf Packed\+Message}$<$ T $>$\+::unpack (
+\begin{DoxyParamCaption}
+\item[{const {\bf data\+\_\+buffer} \&}]{buf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_packed_message_a0822d18835d6340a74d7a9edbd53a6f1}{}\label{class_packed_message_a0822d18835d6340a74d7a9edbd53a6f1}
+
+
+\subsection{Member Data Documentation}
+\index{Packed\+Message@{Packed\+Message}!H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+ZE@{H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+ZE}}
+\index{H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+ZE@{H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+ZE}!Packed\+Message@{Packed\+Message}}
+\subsubsection[{\texorpdfstring{H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+ZE}{HEADER_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const unsigned {\bf Packed\+Message}$<$ T $>$\+::H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+ZE = 4\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_packed_message_a487152563442f0225bffb9e0402cd94e}{}\label{class_packed_message_a487152563442f0225bffb9e0402cd94e}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/messages/\hyperlink{_packed_message_8h}{Packed\+Message.\+h}\end{DoxyCompactItemize}

@@ -125,7 +125,7 @@ class DoShutdown : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool force_;
   mutable int _cached_size_;
-  friend struct  protobuf_shutdown_2eproto::TableStruct;
+  friend struct protobuf_shutdown_2eproto::TableStruct;
 };
 // ===================================================================
 

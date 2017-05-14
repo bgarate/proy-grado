@@ -1,0 +1,123 @@
+\hypertarget{class_multi_tracker}{}\section{Multi\+Tracker Class Reference}
+\label{class_multi_tracker}\index{Multi\+Tracker@{Multi\+Tracker}}
+
+
+{\ttfamily \#include $<$Multi\+Tracker.\+h$>$}
+
+
+
+Inheritance diagram for Multi\+Tracker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_multi_tracker__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Multi\+Tracker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_multi_tracker__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9}{Algorithm} \{ \\*
+\hyperlink{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9ab1ec37319ba2c8496771dbb23e8ed553}{Algorithm\+::\+M\+E\+D\+I\+A\+N\+F\+L\+OW}, 
+\hyperlink{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9a8ef4ac08814f3de3bff92300d69f940a}{Algorithm\+::\+M\+IL}, 
+\hyperlink{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9a701d1757588b2e8c1b007e488913a1cf}{Algorithm\+::\+B\+O\+O\+S\+T\+I\+NG}, 
+\hyperlink{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9a8fe8ff13575bf765967b4091f866fb3b}{Algorithm\+::\+K\+CF}, 
+\\*
+\hyperlink{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9ac509b3bd238b50a1f6f9f3cfd6cc3d2b}{Algorithm\+::\+T\+LD}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_multi_tracker_a4387f9d863e08f10f8095cc34aaafaf2}{Multi\+Tracker} (\hyperlink{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9}{Algorithm} algorithm)
+\item 
+void \hyperlink{class_multi_tracker_a050ccd2cd1406aef5dfd1858a5ab8d29}{set\+Targets} (std\+::vector$<$ cv\+::\+Rect2d $>$ targets, cv\+::\+Mat frame) override
+\item 
+std\+::vector$<$ cv\+::\+Rect2d $>$ \hyperlink{class_multi_tracker_aca1ffe7d9943d9e726b5a0d6e4824c65}{get\+Targets} () override
+\item 
+bool \hyperlink{class_multi_tracker_a11dde58c6f6033a86e5abb84fc4b6ec6}{track} (cv\+::\+Mat track) override
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\index{Multi\+Tracker@{Multi\+Tracker}!Algorithm@{Algorithm}}
+\index{Algorithm@{Algorithm}!Multi\+Tracker@{Multi\+Tracker}}
+\subsubsection[{\texorpdfstring{Algorithm}{Algorithm}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Multi\+Tracker\+::\+Algorithm}\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9}{}\label{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\+E\+D\+I\+A\+N\+F\+L\+OW@{M\+E\+D\+I\+A\+N\+F\+L\+OW}!Multi\+Tracker@{Multi\+Tracker}}\index{Multi\+Tracker@{Multi\+Tracker}!M\+E\+D\+I\+A\+N\+F\+L\+OW@{M\+E\+D\+I\+A\+N\+F\+L\+OW}}\item[{\em 
+M\+E\+D\+I\+A\+N\+F\+L\+OW\hypertarget{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9ab1ec37319ba2c8496771dbb23e8ed553}{}\label{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9ab1ec37319ba2c8496771dbb23e8ed553}
+}]\index{M\+IL@{M\+IL}!Multi\+Tracker@{Multi\+Tracker}}\index{Multi\+Tracker@{Multi\+Tracker}!M\+IL@{M\+IL}}\item[{\em 
+M\+IL\hypertarget{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9a8ef4ac08814f3de3bff92300d69f940a}{}\label{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9a8ef4ac08814f3de3bff92300d69f940a}
+}]\index{B\+O\+O\+S\+T\+I\+NG@{B\+O\+O\+S\+T\+I\+NG}!Multi\+Tracker@{Multi\+Tracker}}\index{Multi\+Tracker@{Multi\+Tracker}!B\+O\+O\+S\+T\+I\+NG@{B\+O\+O\+S\+T\+I\+NG}}\item[{\em 
+B\+O\+O\+S\+T\+I\+NG\hypertarget{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9a701d1757588b2e8c1b007e488913a1cf}{}\label{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9a701d1757588b2e8c1b007e488913a1cf}
+}]\index{K\+CF@{K\+CF}!Multi\+Tracker@{Multi\+Tracker}}\index{Multi\+Tracker@{Multi\+Tracker}!K\+CF@{K\+CF}}\item[{\em 
+K\+CF\hypertarget{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9a8fe8ff13575bf765967b4091f866fb3b}{}\label{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9a8fe8ff13575bf765967b4091f866fb3b}
+}]\index{T\+LD@{T\+LD}!Multi\+Tracker@{Multi\+Tracker}}\index{Multi\+Tracker@{Multi\+Tracker}!T\+LD@{T\+LD}}\item[{\em 
+T\+LD\hypertarget{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9ac509b3bd238b50a1f6f9f3cfd6cc3d2b}{}\label{class_multi_tracker_ab6812f54aab6ae031431acf7f86e0ff9ac509b3bd238b50a1f6f9f3cfd6cc3d2b}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Multi\+Tracker@{Multi\+Tracker}!Multi\+Tracker@{Multi\+Tracker}}
+\index{Multi\+Tracker@{Multi\+Tracker}!Multi\+Tracker@{Multi\+Tracker}}
+\subsubsection[{\texorpdfstring{Multi\+Tracker(\+Algorithm algorithm)}{MultiTracker(Algorithm algorithm)}}]{\setlength{\rightskip}{0pt plus 5cm}Multi\+Tracker\+::\+Multi\+Tracker (
+\begin{DoxyParamCaption}
+\item[{{\bf Algorithm}}]{algorithm}
+\end{DoxyParamCaption}
+)}\hypertarget{class_multi_tracker_a4387f9d863e08f10f8095cc34aaafaf2}{}\label{class_multi_tracker_a4387f9d863e08f10f8095cc34aaafaf2}
+
+
+\subsection{Member Function Documentation}
+\index{Multi\+Tracker@{Multi\+Tracker}!get\+Targets@{get\+Targets}}
+\index{get\+Targets@{get\+Targets}!Multi\+Tracker@{Multi\+Tracker}}
+\subsubsection[{\texorpdfstring{get\+Targets() override}{getTargets() override}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ cv\+::\+Rect2d $>$ Multi\+Tracker\+::get\+Targets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_multi_tracker_aca1ffe7d9943d9e726b5a0d6e4824c65}{}\label{class_multi_tracker_aca1ffe7d9943d9e726b5a0d6e4824c65}
+
+
+Implements \hyperlink{class_tracking_algorithm_af92544c5d3056b6879e03e66630c96db}{Tracking\+Algorithm}.
+
+\index{Multi\+Tracker@{Multi\+Tracker}!set\+Targets@{set\+Targets}}
+\index{set\+Targets@{set\+Targets}!Multi\+Tracker@{Multi\+Tracker}}
+\subsubsection[{\texorpdfstring{set\+Targets(std\+::vector$<$ cv\+::\+Rect2d $>$ targets, cv\+::\+Mat frame) override}{setTargets(std::vector< cv::Rect2d > targets, cv::Mat frame) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Multi\+Tracker\+::set\+Targets (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ cv\+::\+Rect2d $>$}]{targets, }
+\item[{cv\+::\+Mat}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_multi_tracker_a050ccd2cd1406aef5dfd1858a5ab8d29}{}\label{class_multi_tracker_a050ccd2cd1406aef5dfd1858a5ab8d29}
+
+
+Implements \hyperlink{class_tracking_algorithm_a35be145d443c348e4de6d79a3cfe7c8f}{Tracking\+Algorithm}.
+
+\index{Multi\+Tracker@{Multi\+Tracker}!track@{track}}
+\index{track@{track}!Multi\+Tracker@{Multi\+Tracker}}
+\subsubsection[{\texorpdfstring{track(cv\+::\+Mat track) override}{track(cv::Mat track) override}}]{\setlength{\rightskip}{0pt plus 5cm}bool Multi\+Tracker\+::track (
+\begin{DoxyParamCaption}
+\item[{cv\+::\+Mat}]{track}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_multi_tracker_a11dde58c6f6033a86e5abb84fc4b6ec6}{}\label{class_multi_tracker_a11dde58c6f6033a86e5abb84fc4b6ec6}
+
+
+Implements \hyperlink{class_tracking_algorithm_abdc72e17100fd63557f37f83e9ddaf34}{Tracking\+Algorithm}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/tracking/\hyperlink{_multi_tracker_8h}{Multi\+Tracker.\+h}\item 
+src/tracking/\hyperlink{_multi_tracker_8cpp}{Multi\+Tracker.\+cpp}\end{DoxyCompactItemize}

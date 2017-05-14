@@ -7,6 +7,7 @@
 #include <src/messages/Broadcaster.h>
 #include "Brain.h"
 #include "logging/Logger.h"
+#include "Config.h"
 
 namespace chrono = std::chrono;
 
@@ -15,25 +16,29 @@ Brain::Brain() {
                                     [this](Message m){this->PingHandler(m);});
     messsageHandler.registerHandler(Message_Type::Message_Type_ADVERTISEMENT,
                                     [this](Message m){this->AdvertisementHandler(m);});
+    messsageHandler.registerHandler(Message_Type::Message_Type_HELLO,
+                                    [this](Message m){this->HelloHandler(m);});
 }
 
-void Brain::setup(bool isRoot) {
+void Brain::setup(Config* config,bool isRoot) {
     this->isRoot = isRoot;
+    this->config = config;
+
     Logger::getInstance().setSource("BRAIN");
 
-    communicateWithBody(BRAIN_SERVE_PORT);
-    broadcaster.setup(BROADCAST_PORT);
-
+    communicateWithBody(config->getBodyPort());
+    broadcaster.setup(config->getBroadcastPort());
+    communication.setup(config->getName(), config->getId());
 };
 
 void Brain::communicateWithBody(unsigned short port) {
-    communication.serve(port);
+    bodyCommunication.serve(port);
     Logger::logInfo("Brain has established a connection!");
 
     Message ping = MessageBuilder::build(Message_Type_PING);
     ping.mutable_ping()->set_type(Ping_PingType::Ping_PingType_REQUEST);
 
-    communication.send(ping);
+    bodyCommunication.send(ping);
     Logger::logInfo("PING REQUEST sent");
 
 
@@ -66,13 +71,18 @@ void Brain::loop() {
 }
 
 void Brain::handleMessages() {
-    if(communication.messageAvailable()) {
-        Message msg = communication.receive();
+    if(bodyCommunication.messageAvailable()) {
+        Message msg = bodyCommunication.receive();
         messsageHandler.handle(msg);
     }
 
     if(broadcaster.messageAvailable()) {
         Message msg = broadcaster.receive();
+        messsageHandler.handle(msg);
+    }
+
+    while (communication.messageAvailable()) {
+        Message msg = communication.getMessage();
         messsageHandler.handle(msg);
     }
 }
@@ -83,7 +93,7 @@ void Brain::PingHandler(Message& msg){
     if(ping->type() == Ping_PingType_REQUEST) {
         Logger::logInfo("PING REQUEST received");
         ping->set_type(Ping_PingType_ACK);
-        communication.send(msg);
+        bodyCommunication.send(msg);
     } else {
         Logger::logInfo("PING ACK received");
         //shutdown();
@@ -93,20 +103,20 @@ void Brain::PingHandler(Message& msg){
 
 void Brain::shutdown() {
     should_exit = true;
-    communication.send(MessageBuilder::build(Message_Type_SHUTDOWN));
+    bodyCommunication.send(MessageBuilder::build(Message_Type_SHUTDOWN));
     Logger::logWarning("SHUTDOWN request sent");
 }
 
 void Brain::advertise() {
 
-    if(runningTime - lastAdvertisementTime > ADVERTISEMENT_LAPSE) {
+    if(runningTime - lastAdvertisementTime > config->getAdvertisementLapse()) {
 
         Message msg = MessageBuilder::build(Message_Type::Message_Type_ADVERTISEMENT);
 
         Advertisement* advertisement = msg.mutable_advertisement();
 
-        advertisement->set_ip((uint32_t) communication.getIp().to_ulong());
-        advertisement->set_port(communication.getPort());
+        advertisement->set_ip((uint32_t) bodyCommunication.getIp().to_ulong());
+        advertisement->set_port(bodyCommunication.getPort());
 
         broadcaster.broadcast(msg);
         Logger::logDebug("Advertising sent");
@@ -119,9 +129,27 @@ void Brain::AdvertisementHandler(Message& msg){
 
     Advertisement* advertisement = msg.mutable_advertisement();
 
+    boost::asio::ip::address_v4 address = boost::asio::ip::address_v4(advertisement->ip());
+
     Logger::logDebug("Advertisement received from " +
-                             boost::asio::ip::address_v4(advertisement->ip()).to_string() + ":" +
+                             address.to_string() + ":" +
                              std::to_string(advertisement->port()));
+
+    communication.connect(address, (unsigned short) advertisement->port());
 
 }
 
+void Brain::HelloHandler(Message& msg){
+
+    Hello* hello = msg.mutable_hello();
+
+    boost::asio::ip::address_v4 address = boost::asio::ip::address_v4(hello->ip());
+
+    Logger::logDebug("Hello received from " +
+                     hello->name() + "(" + std::to_string(hello->id()) + ") at " +
+                     address.to_string() + ":" +
+                     std::to_string(hello->port()));
+
+    communication.asociate(hello);
+
+}

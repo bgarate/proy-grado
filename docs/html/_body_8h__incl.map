@@ -1,0 +1,11 @@
+<map id="src/Body.h" name="src/Body.h">
+<area shape="rect" id="node3" href="$_socket_channel_8h.html" title="src/messages/SocketChannel.h" alt="" coords="251,80,459,107"/>
+<area shape="rect" id="node8" href="$_message_handler_8h.html" title="MessageHandler.h" alt="" coords="856,80,987,107"/>
+<area shape="rect" id="node29" href="$hal_8hpp.html" title="hal/hal.hpp" alt="" coords="1284,80,1369,107"/>
+<area shape="rect" id="node32" href="$_config_8h.html" title="Config.h" alt="" coords="31,80,102,107"/>
+<area shape="rect" id="node12" href="$message_8pb_8h.html" title="proto/message.pb.h" alt="" coords="969,155,1106,181"/>
+<area shape="rect" id="node25" href="$ping_8pb_8h.html" title="ping.pb.h" alt="" coords="1187,229,1261,256"/>
+<area shape="rect" id="node26" href="$advertisement_8pb_8h.html" title="advertisement.pb.h" alt="" coords="899,229,1032,256"/>
+<area shape="rect" id="node27" href="$shutdown_8pb_8h.html" title="shutdown.pb.h" alt="" coords="1056,229,1163,256"/>
+<area shape="rect" id="node28" href="$hello_8pb_8h.html" title="hello.pb.h" alt="" coords="745,229,823,256"/>
+</map>

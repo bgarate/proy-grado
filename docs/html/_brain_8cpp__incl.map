@@ -1,0 +1,19 @@
+<map id="src/Brain.cpp" name="src/Brain.cpp">
+<area shape="rect" id="node2" href="$message_8pb_8h.html" title="src/proto/message.pb.h" alt="" coords="1004,483,1163,509"/>
+<area shape="rect" id="node19" href="$_message_builder_8h.html" title="src/messages/MessageBuilder.h" alt="" coords="1092,155,1304,181"/>
+<area shape="rect" id="node21" href="$_broadcaster_8h.html" title="src/messages/Broadcaster.h" alt="" coords="863,155,1053,181"/>
+<area shape="rect" id="node23" href="$_brain_8h.html" title="Brain.h" alt="" coords="1501,80,1564,107"/>
+<area shape="rect" id="node45" href="$_config_8h.html" title="Config.h" alt="" coords="2539,155,2609,181"/>
+<area shape="rect" id="node46" href="$_logger_8h.html" title="logging/Logger.h" alt="" coords="2710,80,2827,107"/>
+<area shape="rect" id="node15" href="$ping_8pb_8h.html" title="ping.pb.h" alt="" coords="1305,557,1379,584"/>
+<area shape="rect" id="node16" href="$advertisement_8pb_8h.html" title="advertisement.pb.h" alt="" coords="1017,557,1150,584"/>
+<area shape="rect" id="node17" href="$shutdown_8pb_8h.html" title="shutdown.pb.h" alt="" coords="1174,557,1281,584"/>
+<area shape="rect" id="node18" href="$hello_8pb_8h.html" title="hello.pb.h" alt="" coords="863,557,941,584"/>
+<area shape="rect" id="node24" href="$_communication_8h.html" title="src/communication/Communication.h" alt="" coords="1552,155,1791,181"/>
+<area shape="rect" id="node40" href="$_socket_channel_8h.html" title="src/messages/SocketChannel.h" alt="" coords="2351,319,2559,345"/>
+<area shape="rect" id="node41" href="$_message_handler_8h.html" title="MessageHandler.h" alt="" coords="1327,155,1458,181"/>
+<area shape="rect" id="node26" href="$_async_socket_channel_8h.html" title="src/messages/AsyncSocket\lChannel.h" alt="" coords="2067,229,2254,271"/>
+<area shape="rect" id="node32" href="$_connection_8h.html" title="Connection.h" alt="" coords="1899,319,1998,345"/>
+<area shape="rect" id="node39" href="$_message_queue_8h.html" title="MessageQueue.h" alt="" coords="1285,401,1409,427"/>
+<area shape="rect" id="node36" href="$_packed_message_8h.html" title="PackedMessage.h" alt="" coords="1833,401,1963,427"/>
+</map>

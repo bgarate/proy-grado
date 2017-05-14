@@ -2,7 +2,6 @@
 // Created by bruno on 09/04/17.
 //
 
-#include <google/protobuf/message.h>
 #include <src/proto/message.pb.h>
 #include "SocketChannel.h"
 

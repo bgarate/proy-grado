@@ -1,0 +1,10 @@
+<map id="src/messages/AsyncSocketChannel.h" name="src/messages/AsyncSocketChannel.h">
+<area shape="rect" id="node6" href="$message_8pb_8h.html" title="src/proto/message.pb.h" alt="" coords="873,259,1031,285"/>
+<area shape="rect" id="node25" href="$_connection_8h.html" title="Connection.h" alt="" coords="1147,95,1245,121"/>
+<area shape="rect" id="node19" href="$ping_8pb_8h.html" title="ping.pb.h" alt="" coords="1095,333,1169,360"/>
+<area shape="rect" id="node20" href="$advertisement_8pb_8h.html" title="advertisement.pb.h" alt="" coords="937,333,1071,360"/>
+<area shape="rect" id="node21" href="$shutdown_8pb_8h.html" title="shutdown.pb.h" alt="" coords="652,333,759,360"/>
+<area shape="rect" id="node22" href="$hello_8pb_8h.html" title="hello.pb.h" alt="" coords="783,333,862,360"/>
+<area shape="rect" id="node29" href="$_packed_message_8h.html" title="PackedMessage.h" alt="" coords="1632,177,1763,203"/>
+<area shape="rect" id="node32" href="$_message_queue_8h.html" title="MessageQueue.h" alt="" coords="1034,177,1158,203"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="src/messages/Connection.h" name="src/messages/Connection.h">
+<area shape="rect" id="node6" href="$message_8pb_8h.html" title="src/proto/message.pb.h" alt="" coords="881,169,1040,196"/>
+<area shape="rect" id="node26" href="$_packed_message_8h.html" title="PackedMessage.h" alt="" coords="1331,87,1462,114"/>
+<area shape="rect" id="node30" href="$_message_queue_8h.html" title="MessageQueue.h" alt="" coords="1075,87,1199,114"/>
+<area shape="rect" id="node19" href="$ping_8pb_8h.html" title="ping.pb.h" alt="" coords="1110,244,1185,271"/>
+<area shape="rect" id="node20" href="$advertisement_8pb_8h.html" title="advertisement.pb.h" alt="" coords="822,244,955,271"/>
+<area shape="rect" id="node21" href="$shutdown_8pb_8h.html" title="shutdown.pb.h" alt="" coords="979,244,1086,271"/>
+<area shape="rect" id="node22" href="$hello_8pb_8h.html" title="hello.pb.h" alt="" coords="668,244,747,271"/>
+</map>

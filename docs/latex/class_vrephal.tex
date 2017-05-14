@@ -1,0 +1,189 @@
+\hypertarget{class_vrephal}{}\section{Vrephal Class Reference}
+\label{class_vrephal}\index{Vrephal@{Vrephal}}
+
+
+Inheritance diagram for Vrephal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=130pt]{class_vrephal__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Vrephal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=130pt]{class_vrephal__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_vrephal_ad9377410a966919d65911ed9dac227b7}{Vrephal} ()
+\item 
+void \hyperlink{class_vrephal_a8a6deee4a51c6d94827f1a4a443dd192}{hrotate} (double vel)
+\item 
+void \hyperlink{class_vrephal_a3f6e29717b83d61585e98c256fde9d52}{hmove} (double angle, double vel)
+\item 
+void \hyperlink{class_vrephal_a2be0357052fba0e962f2c16552a6dc58}{vmove} (double vel)
+\item 
+void \hyperlink{class_vrephal_ab3475a8fa59a6b22fe8624194339b346}{land} ()
+\item 
+void \hyperlink{class_vrephal_aeae911ac4d0f00bb8acc22b89e858d1c}{takeoff} ()
+\item 
+void \hyperlink{class_vrephal_a4fe7665b2348c74314f819bddd3f3bd4}{target\+Altitude} (double altitude)
+\item 
+int \hyperlink{class_vrephal_a119e0a2bda6232b7ad7e314c58692086}{batery\+Level} ()
+\item 
+cv\+::\+Mat \hyperlink{class_vrephal_a86bcc3267f400f8df62c1f13a3447d0e}{get\+Frame} (\hyperlink{hal_8hpp_adc0591c2c6aa3aa864336ece4978ab62}{Camera} cam)
+\item 
+double \hyperlink{class_vrephal_a561080b3af7b9a53790a7e4c00b1925e}{get\+Altitude} ()
+\item 
+\hyperlink{struct_point}{Point} \hyperlink{class_vrephal_a8189d1b9b4c2bd35910110f503615c35}{get\+Orientation} ()
+\item 
+\hyperlink{struct_point}{Point} \hyperlink{class_vrephal_a7dcae4f99c03042a708b3fe420df4aeb}{get\+G\+P\+S\+Position} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Vrephal@{Vrephal}!Vrephal@{Vrephal}}
+\index{Vrephal@{Vrephal}!Vrephal@{Vrephal}}
+\subsubsection[{\texorpdfstring{Vrephal()}{Vrephal()}}]{\setlength{\rightskip}{0pt plus 5cm}Vrephal\+::\+Vrephal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vrephal_ad9377410a966919d65911ed9dac227b7}{}\label{class_vrephal_ad9377410a966919d65911ed9dac227b7}
+
+
+\subsection{Member Function Documentation}
+\index{Vrephal@{Vrephal}!batery\+Level@{batery\+Level}}
+\index{batery\+Level@{batery\+Level}!Vrephal@{Vrephal}}
+\subsubsection[{\texorpdfstring{batery\+Level()}{bateryLevel()}}]{\setlength{\rightskip}{0pt plus 5cm}int Vrephal\+::batery\+Level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_vrephal_a119e0a2bda6232b7ad7e314c58692086}{}\label{class_vrephal_a119e0a2bda6232b7ad7e314c58692086}
+
+
+Implements \hyperlink{class_hal_a709862946eb7bc952156384187a17c82}{Hal}.
+
+\index{Vrephal@{Vrephal}!get\+Altitude@{get\+Altitude}}
+\index{get\+Altitude@{get\+Altitude}!Vrephal@{Vrephal}}
+\subsubsection[{\texorpdfstring{get\+Altitude()}{getAltitude()}}]{\setlength{\rightskip}{0pt plus 5cm}double Vrephal\+::get\+Altitude (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_vrephal_a561080b3af7b9a53790a7e4c00b1925e}{}\label{class_vrephal_a561080b3af7b9a53790a7e4c00b1925e}
+
+
+Implements \hyperlink{class_hal_a9740bffd75eab1959fefea03545d5785}{Hal}.
+
+\index{Vrephal@{Vrephal}!get\+Frame@{get\+Frame}}
+\index{get\+Frame@{get\+Frame}!Vrephal@{Vrephal}}
+\subsubsection[{\texorpdfstring{get\+Frame(\+Camera cam)}{getFrame(Camera cam)}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat Vrephal\+::get\+Frame (
+\begin{DoxyParamCaption}
+\item[{{\bf Camera}}]{cam}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_vrephal_a86bcc3267f400f8df62c1f13a3447d0e}{}\label{class_vrephal_a86bcc3267f400f8df62c1f13a3447d0e}
+
+
+Implements \hyperlink{class_hal_ab0ae734602805980b9c6777db73058e9}{Hal}.
+
+\index{Vrephal@{Vrephal}!get\+G\+P\+S\+Position@{get\+G\+P\+S\+Position}}
+\index{get\+G\+P\+S\+Position@{get\+G\+P\+S\+Position}!Vrephal@{Vrephal}}
+\subsubsection[{\texorpdfstring{get\+G\+P\+S\+Position()}{getGPSPosition()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} Vrephal\+::get\+G\+P\+S\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_vrephal_a7dcae4f99c03042a708b3fe420df4aeb}{}\label{class_vrephal_a7dcae4f99c03042a708b3fe420df4aeb}
+
+
+Implements \hyperlink{class_hal_af4bb24ecd743845542ff724315511bea}{Hal}.
+
+\index{Vrephal@{Vrephal}!get\+Orientation@{get\+Orientation}}
+\index{get\+Orientation@{get\+Orientation}!Vrephal@{Vrephal}}
+\subsubsection[{\texorpdfstring{get\+Orientation()}{getOrientation()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} Vrephal\+::get\+Orientation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_vrephal_a8189d1b9b4c2bd35910110f503615c35}{}\label{class_vrephal_a8189d1b9b4c2bd35910110f503615c35}
+
+
+Implements \hyperlink{class_hal_ad5356f99ad5599b471b819972d4fde86}{Hal}.
+
+\index{Vrephal@{Vrephal}!hmove@{hmove}}
+\index{hmove@{hmove}!Vrephal@{Vrephal}}
+\subsubsection[{\texorpdfstring{hmove(double angle, double vel)}{hmove(double angle, double vel)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vrephal\+::hmove (
+\begin{DoxyParamCaption}
+\item[{double}]{angle, }
+\item[{double}]{vel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_vrephal_a3f6e29717b83d61585e98c256fde9d52}{}\label{class_vrephal_a3f6e29717b83d61585e98c256fde9d52}
+
+
+Implements \hyperlink{class_hal_a15c5ef8f3009634d0bf6262b826235b0}{Hal}.
+
+\index{Vrephal@{Vrephal}!hrotate@{hrotate}}
+\index{hrotate@{hrotate}!Vrephal@{Vrephal}}
+\subsubsection[{\texorpdfstring{hrotate(double vel)}{hrotate(double vel)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vrephal\+::hrotate (
+\begin{DoxyParamCaption}
+\item[{double}]{vel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_vrephal_a8a6deee4a51c6d94827f1a4a443dd192}{}\label{class_vrephal_a8a6deee4a51c6d94827f1a4a443dd192}
+
+
+Implements \hyperlink{class_hal_a38abd3a6254650b4c28035521e3efa40}{Hal}.
+
+\index{Vrephal@{Vrephal}!land@{land}}
+\index{land@{land}!Vrephal@{Vrephal}}
+\subsubsection[{\texorpdfstring{land()}{land()}}]{\setlength{\rightskip}{0pt plus 5cm}void Vrephal\+::land (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_vrephal_ab3475a8fa59a6b22fe8624194339b346}{}\label{class_vrephal_ab3475a8fa59a6b22fe8624194339b346}
+
+
+Implements \hyperlink{class_hal_a8376a2668ed62e4d4d70f7b6336e84c4}{Hal}.
+
+\index{Vrephal@{Vrephal}!takeoff@{takeoff}}
+\index{takeoff@{takeoff}!Vrephal@{Vrephal}}
+\subsubsection[{\texorpdfstring{takeoff()}{takeoff()}}]{\setlength{\rightskip}{0pt plus 5cm}void Vrephal\+::takeoff (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_vrephal_aeae911ac4d0f00bb8acc22b89e858d1c}{}\label{class_vrephal_aeae911ac4d0f00bb8acc22b89e858d1c}
+
+
+Implements \hyperlink{class_hal_ac1968d088d9b905eb99fbe3f77d76757}{Hal}.
+
+\index{Vrephal@{Vrephal}!target\+Altitude@{target\+Altitude}}
+\index{target\+Altitude@{target\+Altitude}!Vrephal@{Vrephal}}
+\subsubsection[{\texorpdfstring{target\+Altitude(double altitude)}{targetAltitude(double altitude)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vrephal\+::target\+Altitude (
+\begin{DoxyParamCaption}
+\item[{double}]{altitude}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_vrephal_a4fe7665b2348c74314f819bddd3f3bd4}{}\label{class_vrephal_a4fe7665b2348c74314f819bddd3f3bd4}
+
+
+Implements \hyperlink{class_hal_a11055efac17ca7bd23b8b6df4ce7938c}{Hal}.
+
+\index{Vrephal@{Vrephal}!vmove@{vmove}}
+\index{vmove@{vmove}!Vrephal@{Vrephal}}
+\subsubsection[{\texorpdfstring{vmove(double vel)}{vmove(double vel)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vrephal\+::vmove (
+\begin{DoxyParamCaption}
+\item[{double}]{vel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_vrephal_a2be0357052fba0e962f2c16552a6dc58}{}\label{class_vrephal_a2be0357052fba0e962f2c16552a6dc58}
+
+
+Implements \hyperlink{class_hal_ac50577557c4e55ad643175f95ac2f584}{Hal}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/hal/vrep/\hyperlink{vrephal_8cpp}{vrephal.\+cpp}\end{DoxyCompactItemize}

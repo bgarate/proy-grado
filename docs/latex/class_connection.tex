@@ -1,0 +1,107 @@
+\hypertarget{class_connection}{}\section{Connection Class Reference}
+\label{class_connection}\index{Connection@{Connection}}
+
+
+{\ttfamily \#include $<$Connection.\+h$>$}
+
+
+
+Inheritance diagram for Connection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{class_connection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Connection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{class_connection__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::shared\+\_\+ptr$<$ \hyperlink{class_connection}{Connection} $>$ \hyperlink{class_connection_afc73789251390ec9c9c6e3750b104f08}{Pointer}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_connection_a47c25a31352a71e2a6902d37fc5fa2ba}{start} ()
+\item 
+void \hyperlink{class_connection_a484d8c6cc1426b9c00980acdd28c000d}{send} (\hyperlink{class_message}{Message} msg)
+\item 
+boost\+::asio\+::ip\+::address\+\_\+v4 \hyperlink{class_connection_a1aaf9861212ce321849edac339efed0f}{get\+Ip} ()
+\item 
+unsigned short \hyperlink{class_connection_a898e60a2d6ec6b8b25e3299bb15972fc}{get\+Port} ()
+\item 
+boost\+::asio\+::ip\+::tcp\+::socket \& \hyperlink{class_connection_aba7b36e96bdd0b2495b3f8c6850a3ce9}{get\+Socket} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_connection_afc73789251390ec9c9c6e3750b104f08}{Pointer} \hyperlink{class_connection_a55342f6aeedd34fc6a11dd79b59da69b}{create} (boost\+::asio\+::io\+\_\+service \&io\+\_\+service, \hyperlink{class_message_queue}{Message\+Queue} $\ast$queue)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{Connection@{Connection}!Pointer@{Pointer}}
+\index{Pointer@{Pointer}!Connection@{Connection}}
+\subsubsection[{\texorpdfstring{Pointer}{Pointer}}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost\+::shared\+\_\+ptr$<${\bf Connection}$>$ {\bf Connection\+::\+Pointer}}\hypertarget{class_connection_afc73789251390ec9c9c6e3750b104f08}{}\label{class_connection_afc73789251390ec9c9c6e3750b104f08}
+
+
+\subsection{Member Function Documentation}
+\index{Connection@{Connection}!create@{create}}
+\index{create@{create}!Connection@{Connection}}
+\subsubsection[{\texorpdfstring{create(boost\+::asio\+::io\+\_\+service \&io\+\_\+service, Message\+Queue $\ast$queue)}{create(boost::asio::io_service &io_service, MessageQueue *queue)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Connection\+::\+Pointer} Connection\+::create (
+\begin{DoxyParamCaption}
+\item[{boost\+::asio\+::io\+\_\+service \&}]{io\+\_\+service, }
+\item[{{\bf Message\+Queue} $\ast$}]{queue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_connection_a55342f6aeedd34fc6a11dd79b59da69b}{}\label{class_connection_a55342f6aeedd34fc6a11dd79b59da69b}
+\index{Connection@{Connection}!get\+Ip@{get\+Ip}}
+\index{get\+Ip@{get\+Ip}!Connection@{Connection}}
+\subsubsection[{\texorpdfstring{get\+Ip()}{getIp()}}]{\setlength{\rightskip}{0pt plus 5cm}asio\+::ip\+::address\+\_\+v4 Connection\+::get\+Ip (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_connection_a1aaf9861212ce321849edac339efed0f}{}\label{class_connection_a1aaf9861212ce321849edac339efed0f}
+\index{Connection@{Connection}!get\+Port@{get\+Port}}
+\index{get\+Port@{get\+Port}!Connection@{Connection}}
+\subsubsection[{\texorpdfstring{get\+Port()}{getPort()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Connection\+::get\+Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_connection_a898e60a2d6ec6b8b25e3299bb15972fc}{}\label{class_connection_a898e60a2d6ec6b8b25e3299bb15972fc}
+\index{Connection@{Connection}!get\+Socket@{get\+Socket}}
+\index{get\+Socket@{get\+Socket}!Connection@{Connection}}
+\subsubsection[{\texorpdfstring{get\+Socket()}{getSocket()}}]{\setlength{\rightskip}{0pt plus 5cm}tcp\+::socket \& Connection\+::get\+Socket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_connection_aba7b36e96bdd0b2495b3f8c6850a3ce9}{}\label{class_connection_aba7b36e96bdd0b2495b3f8c6850a3ce9}
+\index{Connection@{Connection}!send@{send}}
+\index{send@{send}!Connection@{Connection}}
+\subsubsection[{\texorpdfstring{send(\+Message msg)}{send(Message msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void Connection\+::send (
+\begin{DoxyParamCaption}
+\item[{{\bf Message}}]{msg}
+\end{DoxyParamCaption}
+)}\hypertarget{class_connection_a484d8c6cc1426b9c00980acdd28c000d}{}\label{class_connection_a484d8c6cc1426b9c00980acdd28c000d}
+\index{Connection@{Connection}!start@{start}}
+\index{start@{start}!Connection@{Connection}}
+\subsubsection[{\texorpdfstring{start()}{start()}}]{\setlength{\rightskip}{0pt plus 5cm}void Connection\+::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_connection_a47c25a31352a71e2a6902d37fc5fa2ba}{}\label{class_connection_a47c25a31352a71e2a6902d37fc5fa2ba}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/messages/\hyperlink{_connection_8h}{Connection.\+h}\item 
+src/messages/\hyperlink{_connection_8cpp}{Connection.\+cpp}\end{DoxyCompactItemize}

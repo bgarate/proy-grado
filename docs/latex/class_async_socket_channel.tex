@@ -1,0 +1,104 @@
+\hypertarget{class_async_socket_channel}{}\section{Async\+Socket\+Channel Class Reference}
+\label{class_async_socket_channel}\index{Async\+Socket\+Channel@{Async\+Socket\+Channel}}
+
+
+{\ttfamily \#include $<$Async\+Socket\+Channel.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ void(\hyperlink{class_connection_afc73789251390ec9c9c6e3750b104f08}{Connection\+::\+Pointer})$>$ \hyperlink{class_async_socket_channel_a9fae896907c968c9ea2ec825cd130b31}{Connection\+Acepted\+Handler}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_async_socket_channel_a98d850ca495d47b38d7d981ee7ee243b}{Async\+Socket\+Channel} (\hyperlink{class_message_queue}{Message\+Queue} $\ast$queue)
+\item 
+\hyperlink{class_async_socket_channel_aee710afec500bd16eb47f2c423baeb56}{$\sim$\+Async\+Socket\+Channel} ()
+\item 
+bool \hyperlink{class_async_socket_channel_ab2839fe16b7dffa0502ca69dc7e66299}{is\+Server} ()
+\item 
+\hyperlink{class_connection_afc73789251390ec9c9c6e3750b104f08}{Connection\+::\+Pointer} \hyperlink{class_async_socket_channel_a7b32d91f71dbea006cd1f7e631abb5c8}{connect} (boost\+::asio\+::ip\+::address\+\_\+v4 address, unsigned short port)
+\item 
+void \hyperlink{class_async_socket_channel_ae0d0010ef42fecc249ae1542b226130c}{serve} (unsigned short port)
+\item 
+\hyperlink{class_connection_afc73789251390ec9c9c6e3750b104f08}{Connection\+::\+Pointer} \hyperlink{class_async_socket_channel_a16520ee5501d92d322a21f3f245855d2}{get\+Connection} (boost\+::asio\+::ip\+::address\+\_\+v4 address, unsigned short port)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_async_socket_channel_a9fae896907c968c9ea2ec825cd130b31}{Connection\+Acepted\+Handler} \hyperlink{class_async_socket_channel_a3dd24a37941604546e8875892410250c}{Acepted\+Connection}
+\item 
+std\+::vector$<$ \hyperlink{class_connection_afc73789251390ec9c9c6e3750b104f08}{Connection\+::\+Pointer} $>$ \hyperlink{class_async_socket_channel_aae682104eaebf291b57c586489bb500f}{connections}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{Async\+Socket\+Channel@{Async\+Socket\+Channel}!Connection\+Acepted\+Handler@{Connection\+Acepted\+Handler}}
+\index{Connection\+Acepted\+Handler@{Connection\+Acepted\+Handler}!Async\+Socket\+Channel@{Async\+Socket\+Channel}}
+\subsubsection[{\texorpdfstring{Connection\+Acepted\+Handler}{ConnectionAceptedHandler}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::function$<$void({\bf Connection\+::\+Pointer})$>$ {\bf Async\+Socket\+Channel\+::\+Connection\+Acepted\+Handler}}\hypertarget{class_async_socket_channel_a9fae896907c968c9ea2ec825cd130b31}{}\label{class_async_socket_channel_a9fae896907c968c9ea2ec825cd130b31}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Async\+Socket\+Channel@{Async\+Socket\+Channel}!Async\+Socket\+Channel@{Async\+Socket\+Channel}}
+\index{Async\+Socket\+Channel@{Async\+Socket\+Channel}!Async\+Socket\+Channel@{Async\+Socket\+Channel}}
+\subsubsection[{\texorpdfstring{Async\+Socket\+Channel(\+Message\+Queue $\ast$queue)}{AsyncSocketChannel(MessageQueue *queue)}}]{\setlength{\rightskip}{0pt plus 5cm}Async\+Socket\+Channel\+::\+Async\+Socket\+Channel (
+\begin{DoxyParamCaption}
+\item[{{\bf Message\+Queue} $\ast$}]{queue}
+\end{DoxyParamCaption}
+)}\hypertarget{class_async_socket_channel_a98d850ca495d47b38d7d981ee7ee243b}{}\label{class_async_socket_channel_a98d850ca495d47b38d7d981ee7ee243b}
+\index{Async\+Socket\+Channel@{Async\+Socket\+Channel}!````~Async\+Socket\+Channel@{$\sim$\+Async\+Socket\+Channel}}
+\index{````~Async\+Socket\+Channel@{$\sim$\+Async\+Socket\+Channel}!Async\+Socket\+Channel@{Async\+Socket\+Channel}}
+\subsubsection[{\texorpdfstring{$\sim$\+Async\+Socket\+Channel()}{~AsyncSocketChannel()}}]{\setlength{\rightskip}{0pt plus 5cm}Async\+Socket\+Channel\+::$\sim$\+Async\+Socket\+Channel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_async_socket_channel_aee710afec500bd16eb47f2c423baeb56}{}\label{class_async_socket_channel_aee710afec500bd16eb47f2c423baeb56}
+
+
+\subsection{Member Function Documentation}
+\index{Async\+Socket\+Channel@{Async\+Socket\+Channel}!connect@{connect}}
+\index{connect@{connect}!Async\+Socket\+Channel@{Async\+Socket\+Channel}}
+\subsubsection[{\texorpdfstring{connect(boost\+::asio\+::ip\+::address\+\_\+v4 address, unsigned short port)}{connect(boost::asio::ip::address_v4 address, unsigned short port)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Connection\+::\+Pointer} Async\+Socket\+Channel\+::connect (
+\begin{DoxyParamCaption}
+\item[{boost\+::asio\+::ip\+::address\+\_\+v4}]{address, }
+\item[{unsigned short}]{port}
+\end{DoxyParamCaption}
+)}\hypertarget{class_async_socket_channel_a7b32d91f71dbea006cd1f7e631abb5c8}{}\label{class_async_socket_channel_a7b32d91f71dbea006cd1f7e631abb5c8}
+\index{Async\+Socket\+Channel@{Async\+Socket\+Channel}!get\+Connection@{get\+Connection}}
+\index{get\+Connection@{get\+Connection}!Async\+Socket\+Channel@{Async\+Socket\+Channel}}
+\subsubsection[{\texorpdfstring{get\+Connection(boost\+::asio\+::ip\+::address\+\_\+v4 address, unsigned short port)}{getConnection(boost::asio::ip::address_v4 address, unsigned short port)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Connection\+::\+Pointer} Async\+Socket\+Channel\+::get\+Connection (
+\begin{DoxyParamCaption}
+\item[{boost\+::asio\+::ip\+::address\+\_\+v4}]{address, }
+\item[{unsigned short}]{port}
+\end{DoxyParamCaption}
+)}\hypertarget{class_async_socket_channel_a16520ee5501d92d322a21f3f245855d2}{}\label{class_async_socket_channel_a16520ee5501d92d322a21f3f245855d2}
+\index{Async\+Socket\+Channel@{Async\+Socket\+Channel}!is\+Server@{is\+Server}}
+\index{is\+Server@{is\+Server}!Async\+Socket\+Channel@{Async\+Socket\+Channel}}
+\subsubsection[{\texorpdfstring{is\+Server()}{isServer()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Async\+Socket\+Channel\+::is\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_async_socket_channel_ab2839fe16b7dffa0502ca69dc7e66299}{}\label{class_async_socket_channel_ab2839fe16b7dffa0502ca69dc7e66299}
+\index{Async\+Socket\+Channel@{Async\+Socket\+Channel}!serve@{serve}}
+\index{serve@{serve}!Async\+Socket\+Channel@{Async\+Socket\+Channel}}
+\subsubsection[{\texorpdfstring{serve(unsigned short port)}{serve(unsigned short port)}}]{\setlength{\rightskip}{0pt plus 5cm}void Async\+Socket\+Channel\+::serve (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{port}
+\end{DoxyParamCaption}
+)}\hypertarget{class_async_socket_channel_ae0d0010ef42fecc249ae1542b226130c}{}\label{class_async_socket_channel_ae0d0010ef42fecc249ae1542b226130c}
+
+
+\subsection{Member Data Documentation}
+\index{Async\+Socket\+Channel@{Async\+Socket\+Channel}!Acepted\+Connection@{Acepted\+Connection}}
+\index{Acepted\+Connection@{Acepted\+Connection}!Async\+Socket\+Channel@{Async\+Socket\+Channel}}
+\subsubsection[{\texorpdfstring{Acepted\+Connection}{AceptedConnection}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Connection\+Acepted\+Handler} Async\+Socket\+Channel\+::\+Acepted\+Connection}\hypertarget{class_async_socket_channel_a3dd24a37941604546e8875892410250c}{}\label{class_async_socket_channel_a3dd24a37941604546e8875892410250c}
+\index{Async\+Socket\+Channel@{Async\+Socket\+Channel}!connections@{connections}}
+\index{connections@{connections}!Async\+Socket\+Channel@{Async\+Socket\+Channel}}
+\subsubsection[{\texorpdfstring{connections}{connections}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Connection\+::\+Pointer}$>$ Async\+Socket\+Channel\+::connections}\hypertarget{class_async_socket_channel_aae682104eaebf291b57c586489bb500f}{}\label{class_async_socket_channel_aae682104eaebf291b57c586489bb500f}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/messages/\hyperlink{_async_socket_channel_8h}{Async\+Socket\+Channel.\+h}\item 
+src/messages/\hyperlink{_async_socket_channel_8cpp}{Async\+Socket\+Channel.\+cpp}\end{DoxyCompactItemize}

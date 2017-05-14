@@ -1,0 +1,7 @@
+<map id="src/proto/message.pb.cc" name="src/proto/message.pb.cc">
+<area shape="rect" id="node2" href="$message_8pb_8h.html" title="message.pb.h" alt="" coords="787,87,891,114"/>
+<area shape="rect" id="node15" href="$ping_8pb_8h.html" title="ping.pb.h" alt="" coords="1099,169,1173,196"/>
+<area shape="rect" id="node16" href="$advertisement_8pb_8h.html" title="advertisement.pb.h" alt="" coords="941,169,1075,196"/>
+<area shape="rect" id="node17" href="$shutdown_8pb_8h.html" title="shutdown.pb.h" alt="" coords="656,169,763,196"/>
+<area shape="rect" id="node18" href="$hello_8pb_8h.html" title="hello.pb.h" alt="" coords="838,169,917,196"/>
+</map>

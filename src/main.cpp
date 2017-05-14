@@ -40,23 +40,27 @@ int main(int argc, const char* args[]) {
     if (startBody && startBrain) {
         pid_t pid = fork();
 
-        startBody = pid == 0;
+        startBody = pid != 0;
         startBrain = !startBody;
     }
+
+    Config* config = new Config();
 
     if (startBody) {
         Hal* hal = new Vrephal();
         Body body(hal);
 
-        body.setup("localhost");
+        body.setup(config);
         body.loop();
         delete hal;
     } else {
         Brain brain;
 
-        brain.setup(isRoot);
+        brain.setup(config, isRoot);
         brain.loop();
     }
+
+    delete config;
 
     Logger::logWarning("Program exiting");
     waitpid(-1, NULL, 0);
