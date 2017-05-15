@@ -45,8 +45,8 @@ void Logger::Log(std::string msg, Logger::LogType severity) {
             console->info(msg);
             break;
         case LogType::DEBUG:
-            std::cout << msg << std::endl;
-            //console->debug(msg);
+            //std::cout << msg << std::endl;
+            console->debug(msg);
             break;
     }
 
