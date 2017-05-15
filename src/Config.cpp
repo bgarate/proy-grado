@@ -20,28 +20,28 @@ void Config::setId(unsigned int id) {
     Config::id = id;
 }
 
-const std::string &Config::getBodyHost() const {
-    return bodyHost;
+const std::string &Config::getBrainHost() const {
+    return brainHost;
 }
 
-void Config::setBodyHost(const std::string &bodyHost) {
-    Config::bodyHost = bodyHost;
+void Config::setBrainHost(const std::string &brainHost) {
+    Config::brainHost = brainHost;
 }
 
-unsigned short Config::getBodyPort() const {
-    return bodyPort;
+unsigned short Config::getBrainPort() const {
+    return brainPort;
 }
 
-void Config::setBodyPort(unsigned short bodyPort) {
-    Config::bodyPort = bodyPort;
+void Config::setBrainPort(unsigned short brainPort) {
+    Config::brainPort = brainPort;
 }
 
 Config::Config() {
 
     name = "PB2";
     id = 0;
-    bodyHost = "localhost";
-    bodyPort = 11500;
+    brainHost = "localhost";
+    brainPort = 11500;
     broadcastPort = 11501;
     advertisementLapse = 5000;
 
@@ -61,4 +61,12 @@ int Config::getAdvertisementLapse() const {
 
 void Config::setAdvertisementLapse(int advertisementLapse) {
     Config::advertisementLapse = advertisementLapse;
+}
+
+HalType Config::getHalType() const {
+    return halType;
+}
+
+void Config::setHalType(HalType halType) {
+    Config::halType = halType;
 }

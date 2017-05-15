@@ -1,6 +1,6 @@
 #libtls pkg-config source file
 
-prefix=/home/santy/Escritorio/Proyecto/SDK/linuxsdk3/out/arsdk-native/staging/usr
+prefix=/home/bruno/arsdk/out/arsdk-native/staging/usr
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

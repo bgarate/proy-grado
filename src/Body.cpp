@@ -22,7 +22,7 @@ Body::Body(Hal *hal) {
 
 void Body::setup(Config* config) {
     Logger::getInstance().setSource("BODY");
-    communicateWithBrain(config->getBodyHost(), config->getBodyPort());
+    communicateWithBrain(config->getBrainHost(), config->getBrainPort());
 }
 void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 

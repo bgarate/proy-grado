@@ -20,13 +20,12 @@ Brain::Brain() {
                                     [this](Message m){this->HelloHandler(m);});
 }
 
-void Brain::setup(Config* config,bool isRoot) {
-    this->isRoot = isRoot;
+void Brain::setup(Config* config) {
     this->config = config;
 
     Logger::getInstance().setSource("BRAIN");
 
-    communicateWithBody(config->getBodyPort());
+    communicateWithBody(config->getBrainPort());
     broadcaster.setup(config->getBroadcastPort());
     communication.setup(config->getName(), config->getId());
 };

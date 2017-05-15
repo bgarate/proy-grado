@@ -5,9 +5,27 @@
 #ifndef PROY_GRADO_CONFIG_H
 #define PROY_GRADO_CONFIG_H
 
+#include <src/hal/hal.hpp>
 #include "iostream"
 
 class Config {
+
+private:
+    std::string name;
+    unsigned int id;
+
+    std::string brainHost;
+    unsigned short brainPort;
+
+    unsigned short broadcastPort;
+
+    int advertisementLapse;
+
+    HalType halType;
+public:
+    HalType getHalType() const;
+
+    void setHalType(HalType halType);
 
 public:
 
@@ -21,33 +39,22 @@ public:
 
     void setId(unsigned int id);
 
-    const std::string &getBodyHost() const;
+    const std::string &getBrainHost() const;
 
-    void setBodyHost(const std::string &bodyHost);
+    void setBrainHost(const std::string &bodyHost);
 
-    unsigned short getBodyPort() const;
+    unsigned short getBrainPort() const;
 
-    void setBodyPort(unsigned short bodyPort);
+    void setBrainPort(unsigned short bodyPort);
 
     unsigned short getBroadcastPort() const;
 
     void setBroadcastPort(unsigned short broadcastPort);
 
-
-private:
-    std::string name;
-    unsigned int id;
-
-    std::string bodyHost;
-    unsigned short bodyPort;
-
-    unsigned short broadcastPort;
-
-   int advertisementLapse;
-public:
     int getAdvertisementLapse() const;
 
     void setAdvertisementLapse(int advertisementLapse);
+
 
 };
 

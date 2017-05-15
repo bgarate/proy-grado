@@ -1,4 +1,4 @@
-<map id="Config::getBodyHost" name="Config::getBodyHost">
+<map id="Config::getBodyHost" name="Config::getBrainHost">
 <area shape="rect" id="node2" href="$class_body.html#a74a678b9bdb90594271faded7fe2be36" title="Body::setup" alt="" coords="197,5,289,32"/>
 <area shape="rect" id="node3" href="$main_8cpp.html#a523d51f6d06fce5bbed3e074818569fb" title="main" alt="" coords="337,5,388,32"/>
 </map>

@@ -18,7 +18,7 @@ public:
 
     void loop();
 
-    void setup(Config* config, bool isRoot);
+    void setup(Config* config);
 
 private:
     Communication communication;
@@ -31,7 +31,6 @@ private:
     void advertise();
 
     bool should_exit = false;
-    bool isRoot;
 
     void communicateWithBody(unsigned short port);
 

@@ -7,7 +7,7 @@
 <area shape="rect" id="node31" href="$class_brain.html#a23d921369c5ec1218d7dc26d0f8270c2" title="Brain::loop" alt="" coords="129,1643,213,1669"/>
 <area shape="rect" id="node4" href="$class_logger.html#acebb37f5538780e6c14f13de6ec497bc" title="Logger::getInstance" alt="" coords="744,512,881,539"/>
 <area shape="rect" id="node5" href="$class_logger.html#a5adf33889fdf061aa0dc756d38eb5e90" title="Logger::setSource" alt="" coords="336,259,464,285"/>
-<area shape="rect" id="node6" href="$class_config.html#a1611555d61b524b6a2562643a59085eb" title="Config::getBodyHost" alt="" coords="328,107,472,133"/>
+<area shape="rect" id="node6" href="$class_config.html#a1611555d61b524b6a2562643a59085eb" title="Config::getBrainHost" alt="" coords="328,107,472,133"/>
 <area shape="rect" id="node7" href="$class_config.html#aea3a5f84be3a9cdf280fff77fdcb51f0" title="Config::getBodyPort" alt="" coords="330,309,470,336"/>
 <area shape="rect" id="node8" href="$class_socket_channel.html#a6b864640d80bf30b9f994d651ebebfdf" title="SocketChannel::connect" alt="" coords="317,208,483,235"/>
 <area shape="rect" id="node10" href="$class_logger.html#a4fe03aa253188ef739b5dec5e036f640" title="Logger::logInfo" alt="" coords="346,715,454,741"/>

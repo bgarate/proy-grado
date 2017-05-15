@@ -5,6 +5,12 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
+enum class HalType {
+    Dummy,
+    Pb2,
+    Vrep
+};
+
 //Velocidad de giro por defecto
 #define DEFAULT_ROTATE_VEL 1;
 
@@ -18,10 +24,20 @@
 	} Frame;
 
 	//Definicion point
-	typedef struct {
+	typedef struct Point{
 		double x;
 		double y;
 		double z;
+		Point (double x,double y,double z) {
+            this->x = x;
+            this->y = y;
+            this->z = z;
+        }
+        Point(){
+            x = 0;
+            y = 0;
+            z = 0;
+        }
 	} Point; 
 
 class Hal{

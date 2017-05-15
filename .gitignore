@@ -92,3 +92,4 @@ fabric.properties
 /proy_grado.cbp
 /proy_grado
 /cmake-build-debug/
+!src/hal/pb2/*

@@ -9,6 +9,8 @@ find_package(Boost REQUIRED system program_options)
 find_package(Protobuf REQUIRED)
 find_package (Threads)
 
+link_directories(src/hal/pb2/lib)
+
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES src/tracking/TrackingAlgorithm.h)
@@ -27,11 +29,13 @@ set(SOURCE_FILES ${SOURCE_FILES} src/messages/AsyncSocketChannel.cpp src/message
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/PackedMessage.h src/messages/MessageBuilder.cpp src/messages/MessageBuilder.h src/MessageHandler.cpp src/MessageHandler.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/hal/hal.hpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/hal/vrep/extApi.c src/hal/vrep/extApi.h src/hal/vrep/extApiInternal.h src/hal/vrep/extApiPlatform.c src/hal/vrep/extApiPlatform.h src/hal/vrep/v_repConst.h src/hal/vrep/vrephal.cpp)
+set(SOURCE_FILES ${SOURCE_FILES} src/hal/pb2/pb2hal.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/Broadcaster.cpp src/messages/Broadcaster.h)
-set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/main.cpp src/Config.cpp src/Config.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/main.cpp src/Config.cpp src/Config.h src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h)
 
 ADD_SUBDIRECTORY(src/proto)
 
+include_directories(src/hal/pb2/include)
 include_directories(${Boost_INCLUDE_DIRS})
 include_directories(lib/spdlog/include)
 include_directories(${Protobuf_INCLUDE_DIRS})
@@ -47,5 +51,9 @@ target_link_libraries(proy_grado ${Boost_LIBRARIES})
 target_link_libraries(proy_grado ${Protobuf_LIBRARIES})
 target_link_libraries(proy_grado proto)
 target_link_libraries(proy_grado ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(proy_grado libarcommands.so libarcontroller.so libardiscovery.so libarnetwork.so
+        libarnetworkal.so libarsal.so libarstream.so libarstream2.so libarmavlink.so libjson.so
+        libarmedia.so libarutils.so libcurl.so libardatatransfer.so libmux.so libpomp.so libcrypto.so
+        libssl.so libz.so libncurses.so libtls.so libarupdater.so)
 
 
