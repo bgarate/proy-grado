@@ -44,7 +44,8 @@ class Pb2hal: public Hal {
 	atomic<double> orientationy;
 	atomic<double> orientationz;
 
-	cv::Mat* lastframe;
+	//cv::Mat* lastframe;
+	ARCONTROLLER_Frame_t *lastframe;
 
 	/******Funciones auxiliares******/
 	//Discovery
@@ -226,8 +227,8 @@ class Pb2hal: public Hal {
 			//convertir imagen
 			ARSAL_Sem_Wait(&(p2this->framesem));
 			
-			delete p2this->lastframe;
-			p2this->lastframe = new cv::Mat(frame->height,frame->width,CV_8UC3,frame->data);
+			p2this->lastframe = frame;
+			//p2this->lastframe = new cv::Mat(frame->height,frame->width,CV_8UC3,frame->data);
 
 	        //cv::cvtColor(*lastframe,*lastframe,cv::COLOR_BGR2RGB);
 	        //cv::flip(*lastframe,*lastframe,0);
@@ -479,7 +480,8 @@ class Pb2hal: public Hal {
 	cv::Mat* getFrame(Camera cam){
 
 		ARSAL_Sem_Init(&(framesem),0,1);
-		cv::Mat* aux = new cv::Mat(*lastframe);
+		//cv::Mat* aux = new cv::Mat(*lastframe);
+		cv::Mat* aux = new cv::Mat(lastframe->height,lastframe->width,CV_8UC3,lastframe->data);
 		ARSAL_Sem_Init(&(framesem),0,1);
 		return aux;
 	}
