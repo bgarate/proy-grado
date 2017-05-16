@@ -47,8 +47,8 @@ class Vrephal: public Hal {
 	            if(this->yaw<-100){this->yaw=-0;}else if(this->yaw>100){this->yaw=0;}
 	            if(this->gaz<-100){this->gaz=-0;}else if(this->gaz>100){this->gaz=0;}
 
-	            simxFloat * orientation = new simxFloat[3];
-	            simxFloat * position = new simxFloat[3];
+	            simxFloat orientation[3];
+	            simxFloat position[3];
 	            simxFloat rfactor = 4;
 
 	            position[0] = -rfactor*this->pitch*factor;//pitch
@@ -86,18 +86,18 @@ class Vrephal: public Hal {
 	            if(this->yaw<-100){this->yaw=-100;}else if(this->yaw>100){this->yaw=100;}
 	            if(this->gaz<-100){this->gaz=-100;}else if(this->gaz>100){this->gaz=100;}
 
-	            simxFloat * orientation = new simxFloat[3];
-	            simxFloat * position = new simxFloat[3];
+	            simxFloat orientation[3];
+	            simxFloat position[3];
 
-	            position[0] = this->pitch*factor;//pitch
-	            position[1] = this->yaw*factor;//yaw
-	            position[2] = this->gaz*factor;//gaz
+	            position[0] = (this->pitch*factor);//pitch
+	            position[1] = (this->yaw * factor);//yaw
+	            position[2] = (this->gaz*factor);//gaz
 	            orientation[0]= 0;
 	            orientation[1]= 0;
 	            orientation[2]= (this->roll*factor);//roll
 
             	simxSetObjectOrientation(clientID, targetHandler, targetHandler, orientation, simx_opmode_blocking);
-            	simxSetObjectPosition(clientID, targetHandler, targetHandler, position, simx_opmode_blocking);
+            	simxSetObjectPosition(clientID, targetHandler, targetHandler,  position, simx_opmode_blocking);
 
             	moving1 = 1;
             }
@@ -205,8 +205,8 @@ class Vrephal: public Hal {
 	// --> Despegue y aterrizaje
 	void land(){
 
-		simxFloat * position = new simxFloat[3];
-		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
+		simxFloat position[3];
+		simxGetObjectPosition(clientID, targetHandler, -1, (simxFloat *)position, simx_opmode_blocking);
 
 	    //Modificar posicion
 	    position[2] = 0.05;
@@ -225,7 +225,7 @@ class Vrephal: public Hal {
 	}
 	void takeoff(){
 
-		simxFloat * position = new simxFloat[3];
+		simxFloat position[3];
 		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
 
 	    //Modificar posicion
@@ -276,13 +276,12 @@ class Vrephal: public Hal {
 			cameraHandler = quadricopterFloorCamHandler;
 		}
 
-		simxInt* resolution = new simxInt[2];
+		simxInt resolution[2];
 		simxUChar* image;
-		int size = 512*512;
 
-		image = new simxUChar[size*3];
-
+		image = new simxUChar[512*512*3];
 		simxInt aux = simxGetVisionSensorImage(clientID, cameraHandler,resolution,&image,0,simx_opmode_blocking);
+
 
 		//convertir imagen
 		cv::Mat* res = new cv::Mat(resolution[1],resolution[0],CV_8UC3,image);
@@ -298,7 +297,7 @@ class Vrephal: public Hal {
 	// --> Altura
 	double getAltitude(){
 
-		simxFloat * position = new simxFloat[3];
+		simxFloat position[3];
 		simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
 
 		double pos = position[2];
@@ -308,7 +307,7 @@ class Vrephal: public Hal {
 	// --> Orientación 
 	Point getOrientation(){
 
-		simxFloat * orientation = new simxFloat[3];
+		simxFloat orientation[3];
 	  	simxGetObjectOrientation(clientID, quadricopterHandler, -1, orientation, simx_opmode_blocking);
 
 	  	Point ori;
@@ -322,7 +321,7 @@ class Vrephal: public Hal {
 	// --> Coordenadas
 	Point getGPSPosition(){
 
-		simxFloat * position = new simxFloat[3];
+		simxFloat position[3];
 		simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
 
 		Point pos;

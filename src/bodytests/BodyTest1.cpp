@@ -95,6 +95,9 @@ public:
         cv::waitKey(1);
         //test track end
 
+        //release
+        //delete frame->data;
+        //frame->release();
     }
 
     void FinishBodyTest(){

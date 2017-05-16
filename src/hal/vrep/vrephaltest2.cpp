@@ -30,6 +30,7 @@ int main(int argc, char** argv){
 	sleep(2);
 
 	//girar en un sentido
+	cout << "Giro positivo..." << endl;
 	hal.move(vel, 0, 0, 0);
 	sleep(2);
 	hal.move(0, 0, 0, 0);
