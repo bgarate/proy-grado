@@ -103,6 +103,8 @@ int main(int argc, char** argv){
     cv::imshow( "Display window", *res );                   // Show our image inside it.
     cv::waitKey(0);
 
+	res->release();
+
 	//Altura
 	cout << "Altura: " << hal.getAltitude() << endl;
 
