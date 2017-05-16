@@ -29,6 +29,7 @@ int main(int argc, const char* args[]) {
             ("brainPort", po::value<uint8>(), "Port where to find the brain")
             ("broadcastPort", po::value<uint8>(), "Port to which drones can broadcast an advertisement")
             ("advertisementLapse", po::value<int>(), "Lapse in milliseconds between drone advertisements")
+            ("commsPort", po::value<int>(), "Port in which the drone acepts incoming connections from other drones")
             ("hal", po::value<string>(), "Hal to be used (dummy,pb2,vrep)");
 
     po::variables_map vm;
@@ -51,6 +52,10 @@ int main(int argc, const char* args[]) {
 
     if(vm.count("brainPort") > 0) {
         config->setBrainPort(vm["brainPort"].as<uint8>());
+    }
+
+    if(vm.count("commsPort") > 0) {
+        config->setCommsPort(vm["commsPort"].as<uint8>());
     }
 
     if(vm.count("broadcastPort") > 0) {
@@ -89,7 +94,7 @@ int main(int argc, const char* args[]) {
     if (startBody && startBrain) {
         pid_t pid = fork();
 
-        startBody = pid != 0;
+        startBody = pid == 0;
         startBrain = !startBody;
     }
 

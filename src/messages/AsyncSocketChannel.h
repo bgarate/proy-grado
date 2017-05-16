@@ -29,7 +29,8 @@ public:
     ~AsyncSocketChannel();
     bool isServer();
     Connection::Pointer connect(boost::asio::ip::address_v4 address, unsigned short port);
-    void serve(unsigned short  port);
+    void serve(unsigned short port);
+    unsigned short getServingPort();
     Connection::Pointer getConnection(boost::asio::ip::address_v4 address, unsigned short port);
     std::vector<Connection::Pointer> connections;
 private:
@@ -40,6 +41,7 @@ private:
     static const int MAX_NUMBER_RETRIES = 3;
 
     void acceptNext();
+    unsigned short servingPort;
 
     boost::shared_ptr<tcp::acceptor> acceptor;
 

@@ -22,10 +22,8 @@ private:
     int advertisementLapse;
 
     HalType halType;
-public:
-    HalType getHalType() const;
 
-    void setHalType(HalType halType);
+    unsigned short commsPort;
 
 public:
 
@@ -55,6 +53,13 @@ public:
 
     void setAdvertisementLapse(int advertisementLapse);
 
+    unsigned short getCommsPort() const;
+
+    void setCommsPort(unsigned short commsPort);
+
+    HalType getHalType() const;
+
+    void setHalType(HalType halType);
 
 };
 

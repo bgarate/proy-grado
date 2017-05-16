@@ -28,6 +28,7 @@ void Brain::setup(Config* config) {
     communicateWithBody(config->getBrainPort());
     broadcaster.setup(config->getBroadcastPort());
     communication.setup(config->getName(), config->getId());
+    communication.serve(config->getCommsPort());
 };
 
 void Brain::communicateWithBody(unsigned short port) {
@@ -114,8 +115,8 @@ void Brain::advertise() {
 
         Advertisement* advertisement = msg.mutable_advertisement();
 
-        advertisement->set_ip((uint32_t) bodyCommunication.getIp().to_ulong());
-        advertisement->set_port(bodyCommunication.getPort());
+        advertisement->set_ip((uint32_t) communication.getIp().to_ulong());
+        advertisement->set_port(communication.getPort());
 
         broadcaster.broadcast(msg);
         Logger::logDebug("Advertising sent");

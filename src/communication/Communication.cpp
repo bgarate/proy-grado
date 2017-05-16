@@ -3,6 +3,7 @@
 //
 
 #include <src/messages/MessageBuilder.h>
+#include <src/messages/IpResolver.h>
 #include "Communication.h"
 
 Communication::Communication() :
@@ -69,4 +70,13 @@ Message Communication::getMessage() {
 
 bool Communication::messageAvailable() {
     return !queue->empty();
+}
+
+boost::asio::ip::address_v4 Communication::getIp() {
+    IpResolver resolver;
+    return resolver.resolve();
+}
+
+unsigned short Communication::getPort() {
+    return socketHandler.getServingPort();
 }

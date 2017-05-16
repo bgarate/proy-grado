@@ -68,6 +68,7 @@ void AsyncSocketChannel::serve(unsigned short port) {
     acceptor = boost::shared_ptr<tcp::acceptor>(new tcp::acceptor(service, tcp::endpoint(tcp::v4(), port)));
 
     isServing = true;
+    servingPort = port;
 
     acceptNext();
 
@@ -117,6 +118,10 @@ Connection::Pointer AsyncSocketChannel::getConnection(address_v4 address, unsign
     }
 
     return NULL;
+}
+
+unsigned short AsyncSocketChannel::getServingPort() {
+    return servingPort;
 }
 
 

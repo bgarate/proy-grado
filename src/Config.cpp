@@ -44,6 +44,7 @@ Config::Config() {
     brainPort = 11500;
     broadcastPort = 11501;
     advertisementLapse = 5000;
+    commsPort = 11502;
 
 }
 
@@ -69,4 +70,12 @@ HalType Config::getHalType() const {
 
 void Config::setHalType(HalType halType) {
     Config::halType = halType;
+}
+
+unsigned short Config::getCommsPort() const {
+    return commsPort;
+}
+
+void Config::setCommsPort(unsigned short commsPort) {
+    Config::commsPort = commsPort;
 }

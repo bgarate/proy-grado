@@ -43,7 +43,7 @@ void Body::loop() {
             messsageHandler.handle(msg);
         }
 
-        bt->BodyTestStep();
+        //bt->BodyTestStep();
 
         if(should_exit)
             break;

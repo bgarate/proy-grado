@@ -13,6 +13,7 @@
 #include "boost/asio/basic_socket.hpp"
 #include "../logging/Logger.h"
 #include "PackedMessage.h"
+#include "IpResolver.h"
 
 namespace asio = boost::asio;
 
@@ -61,7 +62,9 @@ bool SocketChannel::isServer() {
 
 void SocketChannel::serve(unsigned short port) {
 
-    Logger::logDebug("Starting server on " + std::to_string(port));
+    IpResolver resolver;
+    boost::asio::ip::address_v4 ip = resolver.resolve();
+    Logger::logDebug("Starting server on " +  ip.to_string() + ":" + std::to_string(port));
 
     tcp::acceptor acceptor(service, tcp::endpoint(tcp::v4(), port));
 

@@ -26,6 +26,8 @@ public:
     bool messageAvailable();
     Message getMessage();
     void setup(std::string name, unsigned int id);
+    boost::asio::ip::address_v4 getIp();
+    unsigned short getPort();
 private:
     std::map<unsigned int, Connection::Pointer> connections;
     MessageQueue* queue;
