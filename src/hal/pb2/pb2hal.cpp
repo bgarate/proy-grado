@@ -19,6 +19,7 @@ extern "C"{
 }
 
 #include <atomic>
+#include <libARController/ARController.h>
 
 using namespace std;
 
@@ -45,7 +46,7 @@ class Pb2hal: public Hal {
 	atomic<double> orientationz;
 
 	//cv::Mat* lastframe;
-	ARCONTROLLER_Frame_t *lastframe;
+	ARCONTROLLER_Frame_t *lastframe = NULL;
 
 	/******Funciones auxiliares******/
 	//Discovery
@@ -85,16 +86,21 @@ class Pb2hal: public Hal {
 	    switch (newState)
 	    {
 	        case ARCONTROLLER_DEVICE_STATE_RUNNING:
-	            break;
+
+				ARSAL_Sem_Post(&(p2this->statesem));
+
+				break;
 	        case ARCONTROLLER_DEVICE_STATE_STOPPED:
-	        		ARSAL_Sem_Post(&(p2this->statesem));
-	        		
-	            break;
+
+				ARSAL_Sem_Post(&(p2this->statesem));
+
+				break;
 	        case ARCONTROLLER_DEVICE_STATE_STARTING:
-	            	ARSAL_Sem_Post(&(p2this->statesem));
-	            break;
+
+				break;
 	        case ARCONTROLLER_DEVICE_STATE_STOPPING:
-	            break;
+
+				break;
 	        default:
 	            break;
 	    }
@@ -166,8 +172,8 @@ class Pb2hal: public Hal {
 		            }
 		        }
 		    }
-		//ORIENTATION changed
-		    if (commandKey == ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGEVENT_MOVEBYEND){
+		//ATTITUDE changed
+		    if (commandKey == ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ATTITUDECHANGED){
 
 		        ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
 		        ARCONTROLLER_DICTIONARY_ELEMENT_t *element = NULL;
@@ -176,19 +182,19 @@ class Pb2hal: public Hal {
 		        if (element != NULL){
 
 
-		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGEVENT_MOVEBYEND_DX, arg);
+		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ATTITUDECHANGED_ROLL, arg);
 		            if (arg != NULL){
 		                
 		                p2this->orientationx = arg->value.Float;
 		            }
 
-		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGEVENT_MOVEBYEND_DY, arg);
+		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ATTITUDECHANGED_PITCH, arg);
 		            if (arg != NULL){
 
 		                p2this->orientationy = arg->value.Float;
 		            }
 
-		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGEVENT_MOVEBYEND_DZ, arg);
+		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ATTITUDECHANGED_YAW, arg);
 		            if (arg != NULL){
 
 		                p2this->orientationz = arg->value.Float;
@@ -204,7 +210,11 @@ class Pb2hal: public Hal {
 	//VideoStreming auxs
 	static eARCONTROLLER_ERROR configDecoderCallback (ARCONTROLLER_Stream_Codec_t codec, void *customData){
 
-		Pb2hal * p2this = (Pb2hal*) customData;
+		cout << "codec: " << (int)codec.type << endl;
+
+		//cout << "in decoder frame" << endl;
+
+		//Pb2hal * p2this = (Pb2hal*) customData;
 
 	    // configure your decoder
 	    // return ARCONTROLLER_OK if configuration went well
@@ -220,18 +230,26 @@ class Pb2hal: public Hal {
 	    // otherwise, return ARCONTROLLER_ERROR. In that case,
 	    // configDecoderCallback will be called again
 
+		//cout << "in receive frame" << endl;
+
 		if (frame != NULL){
 
 			Pb2hal * p2this = (Pb2hal*) customData;
 
 			//convertir imagen
 			ARSAL_Sem_Wait(&(p2this->framesem));
-			
+
 			p2this->lastframe = frame;
 			//p2this->lastframe = new cv::Mat(frame->height,frame->width,CV_8UC3,frame->data);
 
 	        //cv::cvtColor(*lastframe,*lastframe,cv::COLOR_BGR2RGB);
 	        //cv::flip(*lastframe,*lastframe,0);
+
+			std::vector<uchar> ans_vector (frame->data, frame->data + frame->used);
+			cv::Mat* aux = new cv::Mat(cv::imdecode(cv::Mat (ans_vector), -1));
+			cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
+			cv::imshow( "Display window", *aux );                   // Show our image inside it.
+			cv::waitKey(0);
 
 			ARSAL_Sem_Post(&(p2this->framesem));
 		} else {
@@ -252,17 +270,16 @@ class Pb2hal: public Hal {
 	    eARCONTROLLER_ERROR error = ARCONTROLLER_OK;
 
 	    eARCONTROLLER_DEVICE_STATE state = ARCONTROLLER_Device_GetState(deviceController, &error);
+		cout << "ARCONTROLLER_Device_GetState error code: " << ARCONTROLLER_Error_ToString(error) << endl;
 	    if ((error == ARCONTROLLER_OK) && (state != ARCONTROLLER_DEVICE_STATE_STOPPED))
 	    {
 	        // after that, stateChanged should be called soon
-	        error = ARCONTROLLER_Device_Stop (deviceController);
+	        error = ARCONTROLLER_Device_Stop(deviceController);
+			cout << "ARCONTROLLER_Device_Stop error code: " << ARCONTROLLER_Error_ToString(error) << endl;
 
-	        if (error == ARCONTROLLER_OK)
-	        {
-	            //sem_wait(&someSemaphore);
-	        }
-	        else
-	        {
+	        if (error == ARCONTROLLER_OK){
+				ARSAL_Sem_Wait(&(statesem));
+	        }else{
 	            fprintf(stderr, "- error:%s", ARCONTROLLER_Error_ToString(error));
 	        }
 	    }
@@ -281,8 +298,7 @@ class Pb2hal: public Hal {
 	        ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
 	        ARCONTROLLER_DICTIONARY_ELEMENT_t *element = NULL;
 	        HASH_FIND_STR (elementDictionary, ARCONTROLLER_DICTIONARY_SINGLE_KEY, element);
-	        if (element != NULL)
-	        {
+	        if (element != NULL){
 	            // Get the value
 	            HASH_FIND_STR(element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE, arg);
 	            if (arg != NULL)
@@ -345,26 +361,21 @@ class Pb2hal: public Hal {
 
 		cout << "ARCONTROLLER_Device_Start error code: " << ARCONTROLLER_Error_ToString(error) << endl;
 
-		while (ARCONTROLLER_Device_GetState(deviceController, &error) != ARCONTROLLER_DEVICE_STATE_RUNNING){
+		/*while (ARCONTROLLER_Device_GetState(deviceController, &error) != ARCONTROLLER_DEVICE_STATE_RUNNING){
 			cout << "Esperando estado running" << endl;
-		}
+		}*/
 
-		cout << "Estado: " << ARCONTROLLER_Device_GetState(deviceController, &error) << endl;
-		cout << "Estado vuelo: " << getFlyingState(deviceController) << endl;
+		//cout << "Estado: " << ARCONTROLLER_Device_GetState(deviceController, &error) << endl;
+		//cout << "Estado vuelo: " << getFlyingState(deviceController) << endl;
 
 		ARSAL_Sem_Wait(&(statesem));
+		cout << "Iniciado!" << endl;
 	}
 
 	void Pb2halBeforeDelete(){
 
 		deleteDeviceController(deviceController);
-
-		eARCONTROLLER_ERROR error = ARCONTROLLER_OK;
-		while (ARCONTROLLER_Device_GetState(deviceController, &error) != ARCONTROLLER_DEVICE_STATE_STOPPED){
-			cout << "Esperando estado stopped" << endl;
-		}
-
-		ARSAL_Sem_Wait(&(statesem));
+		cout << "Terminó!" << endl;
 	}
 
 
@@ -378,6 +389,7 @@ class Pb2hal: public Hal {
         if(yaw<-100){yaw=-0;}else if(yaw>100){yaw=0;}
         if(gaz<-100){gaz=-0;}else if(gaz>100){gaz=0;}
 
+		//deviceController->aRDrone3->setPilotingPCMD(deviceController->aRDrone3,)
 	 	deviceController->aRDrone3->setPilotingPCMDFlag(deviceController->aRDrone3,0);
 		deviceController->aRDrone3->setPilotingPCMDRoll(deviceController->aRDrone3, roll);
 		deviceController->aRDrone3->setPilotingPCMDPitch(deviceController->aRDrone3, pitch);
@@ -425,7 +437,7 @@ class Pb2hal: public Hal {
 	    while(1){
 	    	eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE flyingState = getFlyingState(deviceController);
 	    	if(flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_LANDED){
-	    		cout << "Esperando bajar" << endl;
+	    		//cout << "Esperando bajar" << endl;
 	    		break;
 	    	}
 	    }
@@ -447,7 +459,7 @@ class Pb2hal: public Hal {
 	    //Esperar que termine
 	    //sleep(1);
 	    while(1){
-	    	cout << "Esperando subir" << endl;
+	    	//cout << "Esperando subir" << endl;
 	    	eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE flyingState = getFlyingState(deviceController);
 	    	if(flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_HOVERING 
 	    			|| flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_FLYING){
@@ -479,10 +491,17 @@ class Pb2hal: public Hal {
 	// --> Obtener captura de imagen (ambas cámaras)
 	cv::Mat* getFrame(Camera cam){
 
-		ARSAL_Sem_Init(&(framesem),0,1);
+		ARSAL_Sem_Wait(&(framesem));
 		//cv::Mat* aux = new cv::Mat(*lastframe);
-		cv::Mat* aux = new cv::Mat(lastframe->height,lastframe->width,CV_8UC3,lastframe->data);
-		ARSAL_Sem_Init(&(framesem),0,1);
+		//cv::Mat* aux = new cv::Mat(lastframe->height,lastframe->width,CV_8UC3,lastframe->data);
+		//cout << lastframe->data[0] << endl;
+
+
+		std::vector<uchar> ans_vector (lastframe->data, lastframe->data + lastframe->used);
+		cv::Mat* aux = new cv::Mat(cv::imdecode(cv::Mat (ans_vector), -1));
+		//*aux = cv::imdecode(cv::Mat (ans_vector), -1);
+
+		ARSAL_Sem_Post(&(framesem));
 		return aux;
 	}
 
