@@ -211,6 +211,7 @@ class Pb2hal: public Hal {
 	static eARCONTROLLER_ERROR configDecoderCallback (ARCONTROLLER_Stream_Codec_t codec, void *customData){
 
 		cout << "codec: " << (int)codec.type << endl;
+		ARSAL_PRINT(ARSAL_PRINT_ERROR, "Bebop", "decoderConfigCallback codec.type :%d", codec.type);
 
 		//cout << "in decoder frame" << endl;
 
@@ -246,9 +247,9 @@ class Pb2hal: public Hal {
 	        //cv::flip(*lastframe,*lastframe,0);
 
 			std::vector<uchar> ans_vector (frame->data, frame->data + frame->used);
-			cv::Mat* aux = new cv::Mat(cv::imdecode(cv::Mat (ans_vector), -1));
+			cv::Mat aux = cv::imdecode(cv::Mat (ans_vector), -1);
 			cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
-			cv::imshow( "Display window", *aux );                   // Show our image inside it.
+			cv::imshow( "Display window", aux );                   // Show our image inside it.
 			cv::waitKey(0);
 
 			ARSAL_Sem_Post(&(p2this->framesem));
