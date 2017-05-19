@@ -28,6 +28,7 @@ class FlightManeuver : public BodyTest {
     void InitBodyTest(Hal *hal) override {
         this->hal = hal;
         cv::namedWindow("Bebop", cv::WINDOW_AUTOSIZE);
+        hal->takeoff();
     }
 
     bool BodyTestStep(double deltaTime) override {
@@ -52,7 +53,7 @@ class FlightManeuver : public BodyTest {
     }
 
     void FinishBodyTest() override {
-
+        hal->land();
     }
 
 };

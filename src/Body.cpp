@@ -23,7 +23,6 @@ Body::Body(Hal *hal) {
     messsageHandler.registerHandler(Message_Type::Message_Type_SHUTDOWN, [this](Message m){this->ShutdownHandler(m);});
 }
 
-
 void Body::setup(Config* config) {
     Logger::getInstance().setSource("BODY");
     communicateWithBrain(config->getBrainHost(), config->getBrainPort());
@@ -38,7 +37,7 @@ void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
 void Body::loop() {
     chrono::steady_clock::time_point startTime = chrono::steady_clock::now();
-    chrono::steady_clock::time_point lastTime = startTime;
+    chrono::steady_clock::time_point lastTime;
     chrono::steady_clock::time_point newTime = startTime;
 
     BodyTest* bt = new FlightManeuver();
