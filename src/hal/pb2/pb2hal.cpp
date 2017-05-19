@@ -218,7 +218,7 @@ class Pb2hal: public Hal {
 
 	//VideoStreming auxs
 	static eARCONTROLLER_ERROR configDecoderCallback (ARCONTROLLER_Stream_Codec_t codec, void *customData){
-
+/*
 		Pb2hal * p2this = (Pb2hal*) customData;
 
 		if (codec.type == ARCONTROLLER_STREAM_CODEC_TYPE_H264)
@@ -243,14 +243,14 @@ class Pb2hal: public Hal {
 			return ARCONTROLLER_ERROR;
 		}
 
-		return ARCONTROLLER_OK;
+		*/
 	    return ARCONTROLLER_OK;
 	}
 
 	static eARCONTROLLER_ERROR didReceiveFrameCallback (ARCONTROLLER_Frame_t *frame, void *customData){
 
         Pb2hal * p2this = (Pb2hal*) customData;
-
+/*
         if (!frame)
         {
             Logger::logWarning("Received frame is NULL");
@@ -286,8 +286,8 @@ class Pb2hal: public Hal {
 
         ARSAL_Sem_Wait(&(p2this->framesem));
 
-        if(p2this->frameAvailable)
-            Logger::logWarning("Frame lost");
+        /*if(p2this->frameAvailable)
+            Logger::logWarning("Frame lost");*//*
 
         p2this->frameAvailable = true;
 
@@ -297,7 +297,7 @@ class Pb2hal: public Hal {
                   p2this->cvFrame->data);
 
         ARSAL_Sem_Post(&(p2this->framesem));
-
+*/
 	    return ARCONTROLLER_OK;
 	}
 
@@ -349,6 +349,7 @@ class Pb2hal: public Hal {
 	        HASH_FIND_STR (elementDictionary, ARCONTROLLER_DICTIONARY_SINGLE_KEY, element);
 	        if (element != NULL){
 	            // Get the value
+
 	            HASH_FIND_STR(element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE, arg);
 	            if (arg != NULL)
 	            {
@@ -405,7 +406,7 @@ class Pb2hal: public Hal {
                                  string(ARCONTROLLER_Error_ToString(error)));
             }
 
-            ARDISCOVERY_Device_Delete(&device);
+            // ARDISCOVERY_Device_Delete(&device);
 
             //Funcion que escucha cambios de estados
             error = ARCONTROLLER_Device_AddStateChangedCallback(deviceController, changedState, this);
@@ -442,18 +443,12 @@ class Pb2hal: public Hal {
 
             ARSAL_Sem_Wait(&(statesem));
 
-            eARCONTROLLER_DEVICE_STATE state = ARCONTROLLER_Device_GetState(deviceController, &error);
-
-            if ((error != ARCONTROLLER_OK) || (state != ARCONTROLLER_DEVICE_STATE_RUNNING)) {
-                throw std::runtime_error("Waiting for device failed: " +
-                                         std::string(ARCONTROLLER_Error_ToString(error)));
-            }
-
 			connected = true;
 
             Logger::logInfo("Pb2Hal iniciado");
 
         } catch (const std::runtime_error ex) {
+			Logger::logError("Error during initialization: " + string(ex.what()));
             Disconnect();
         }
     }
@@ -542,6 +537,8 @@ class Pb2hal: public Hal {
 
 	    //Esperar que termine
 	    while(1){
+            ThrowOnInternalError("Takeoff failed");
+
 	    	eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE flyingState = getFlyingState(deviceController);
 	    	if(flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_HOVERING 
 	    			|| flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_FLYING){
@@ -574,7 +571,7 @@ class Pb2hal: public Hal {
 	// --> Obtener captura de imagen (ambas cámaras)
 	cv::Mat* getFrame(Camera cam){
 
-		ARSAL_Sem_Wait(&(framesem));
+		/*ARSAL_Sem_Wait(&(framesem));
 
         if(!frameAvailable)
             Logger::logWarning("No frame available");
@@ -582,7 +579,9 @@ class Pb2hal: public Hal {
         frameAvailable = false;
 
             return cvFrame;
-		ARSAL_Sem_Post(&(framesem));
+		ARSAL_Sem_Post(&(framesem));*/
+
+		return NULL;
 
 	}
 

@@ -36,20 +36,23 @@ void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 }
 
 void Body::loop() {
-    chrono::steady_clock::time_point startTime = chrono::steady_clock::now();
-    chrono::steady_clock::time_point lastTime;
-    chrono::steady_clock::time_point newTime = startTime;
 
     BodyTest* bt = new FlightManeuver();
     //BodyTest* bt = new BodyTest2();
     bt->InitBodyTest(this->hal);
+    Logger::logInfo("Body started");
 
-    while (true) {
+    chrono::steady_clock::time_point startTime = chrono::steady_clock::now();
+    chrono::steady_clock::time_point lastTime;
+    chrono::steady_clock::time_point newTime = startTime;
+
+    sleep(3);
+    /*while (true) {
         lastTime = newTime;
         newTime = chrono::steady_clock::now();
 
-        deltaTime = std::chrono::duration_cast<std::chrono::milliseconds>(newTime - lastTime).count();
-        runningTime = std::chrono::duration_cast<std::chrono::milliseconds>(newTime - startTime).count();
+        deltaTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - lastTime).count();
+        runningTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - startTime).count();
 
         if(communication.messageAvailable()) {
             Message msg = communication.receive();
@@ -64,8 +67,9 @@ void Body::loop() {
         if(should_exit)
             break;
 
-        sleep(0);
-    }
+        usleep(1000);
+    }*/
+    Logger::logDebug("Finishing test");
     bt->FinishBodyTest();
 
 }

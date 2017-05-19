@@ -3,6 +3,7 @@
 //
 
 #include <zconf.h>
+#include <src/logging/Logger.h>
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
 
@@ -28,7 +29,9 @@ class FlightManeuver : public BodyTest {
     void InitBodyTest(Hal *hal) override {
         this->hal = hal;
         cv::namedWindow("Bebop", cv::WINDOW_AUTOSIZE);
+        Logger::logInfo("Pre takeoff");
         hal->takeoff();
+        Logger::logInfo("Post takeoff");
     }
 
     bool BodyTestStep(double deltaTime) override {
@@ -38,15 +41,17 @@ class FlightManeuver : public BodyTest {
         hal->move((int)(directionTime.y * 100),(int)(directionTime.x * 100),
                   0,(int)(directionTime.z) * 100);
 
-        if(currentTime >= directionTime.s * 1000) {
+        if(currentTime >= directionTime.s * 1000000) {
             currentTime = 0;
             currentStep++;
+            Logger::logCritical("Changed!");
         } else {
             currentTime += deltaTime;
+            Logger::logError(std::to_string(currentTime));
         }
 
         cv::Mat* frame = hal->getFrame(Camera::Front);
-        cv::imshow("tracker", *frame);
+        /*cv::imshow("tracker", *frame);*/
 
         return currentStep < sequence.size();
 
