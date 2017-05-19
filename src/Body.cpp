@@ -3,6 +3,7 @@
 //
 
 #include <src/proto/message.pb.h>
+#include <chrono>
 #include "Body.h"
 #include "logging/Logger.h"
 #include "Brain.h"
@@ -12,6 +13,9 @@
 #include "src/bodytests/BodyTest.h"
 #include "src/bodytests/BodyTest1.cpp"
 #include "src/bodytests/BodyTest2.cpp"
+#include "src/bodytests/FlightManeuver.cpp"
+
+namespace chrono = std::chrono;
 
 Body::Body(Hal *hal) {
     this->hal = hal;
@@ -23,6 +27,7 @@ Body::Body(Hal *hal) {
 void Body::setup(Config* config) {
     Logger::getInstance().setSource("BODY");
     communicateWithBrain(config->getBrainHost(), config->getBrainPort());
+    hal->Connect();
 }
 void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
@@ -32,18 +37,30 @@ void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 }
 
 void Body::loop() {
+    chrono::steady_clock::time_point startTime = chrono::steady_clock::now();
+    chrono::steady_clock::time_point lastTime = startTime;
+    chrono::steady_clock::time_point newTime = startTime;
 
-    BodyTest* bt = new BodyTest1();
+    BodyTest* bt = new FlightManeuver();
     //BodyTest* bt = new BodyTest2();
     bt->InitBodyTest(this->hal);
 
     while (true) {
+        lastTime = newTime;
+        newTime = chrono::steady_clock::now();
+
+        deltaTime = std::chrono::duration_cast<std::chrono::milliseconds>(newTime - lastTime).count();
+        runningTime = std::chrono::duration_cast<std::chrono::milliseconds>(newTime - startTime).count();
+
         if(communication.messageAvailable()) {
             Message msg = communication.receive();
             messsageHandler.handle(msg);
         }
 
-        //bt->BodyTestStep();
+        bool res = bt->BodyTestStep(deltaTime);
+
+        if(!res)
+            break;
 
         if(should_exit)
             break;
@@ -51,6 +68,7 @@ void Body::loop() {
         sleep(0);
     }
     bt->FinishBodyTest();
+
 }
 
 void Body::PingHandler(Message& msg){
@@ -75,6 +93,10 @@ void Body::ShutdownHandler(Message& msg){
 
     should_exit = true;
 
+}
+
+void Body::cleanup() {
+    hal->Disconnect();
 }
 
 

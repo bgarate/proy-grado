@@ -131,6 +131,14 @@ class Vrephal: public Hal {
 	}
 
 
+	void Connect() {
+
+	}
+
+	void Disconnect(){
+
+	}
+
 	/************Movimiento*************/
 
 	//Set movimientos

@@ -26,8 +26,8 @@ int main(int argc, const char* args[]) {
             ("brain", "Starts the brain")
             ("body", "Starts the body")
             ("brainHost", po::value<std::string>(), "Host where to find the brain")
-            ("brainPort", po::value<uint8>(), "Port where to find the brain")
-            ("broadcastPort", po::value<uint8>(), "Port to which drones can broadcast an advertisement")
+            ("brainPort", po::value<uint16 >(), "Port where to find the brain")
+            ("broadcastPort", po::value<uint16>(), "Port to which drones can broadcast an advertisement")
             ("advertisementLapse", po::value<int>(), "Lapse in milliseconds between drone advertisements")
             ("commsPort", po::value<int>(), "Port in which the drone acepts incoming connections from other drones")
             ("hal", po::value<string>(), "Hal to be used (dummy,pb2,vrep)");
@@ -51,11 +51,11 @@ int main(int argc, const char* args[]) {
     }
 
     if(vm.count("brainPort") > 0) {
-        config->setBrainPort(vm["brainPort"].as<uint8>());
+        config->setBrainPort(vm["brainPort"].as<uint16>());
     }
 
     if(vm.count("commsPort") > 0) {
-        config->setCommsPort(vm["commsPort"].as<uint8>());
+        config->setCommsPort(vm["commsPort"].as<uint16>());
     }
 
     if(vm.count("broadcastPort") > 0) {
@@ -71,7 +71,7 @@ int main(int argc, const char* args[]) {
     if(startBody) {
 
         if(vm.count("hal") == 0){
-            std::cout << "A Hal type must be chosen: dummy, pb2, vrep" << endl;
+            std::cout << "A Hal type must be chosen\n   --hal=[dummy|pb2|vrep]" << endl;
             return 0;
         }
         string choosenHal = vm["hal"].as<string>();
@@ -104,6 +104,7 @@ int main(int argc, const char* args[]) {
 
         body.setup(config);
         body.loop();
+        body.cleanup();
         delete hal;
 
     } else {
@@ -111,6 +112,8 @@ int main(int argc, const char* args[]) {
 
         brain.setup(config);
         brain.loop();
+        brain.cleanup();
+
     }
 
     delete config;

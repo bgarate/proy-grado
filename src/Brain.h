@@ -20,6 +20,8 @@ public:
 
     void setup(Config* config);
 
+    void cleanup();
+
 private:
     Communication communication;
     SocketChannel bodyCommunication;

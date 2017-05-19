@@ -131,11 +131,13 @@ void Brain::AdvertisementHandler(Message& msg){
 
     boost::asio::ip::address_v4 address = boost::asio::ip::address_v4(advertisement->ip());
 
-    Logger::logDebug("Advertisement received from " +
-                             address.to_string() + ":" +
-                             std::to_string(advertisement->port()));
+    if(address != communication.getIp() && advertisement->port() != communication.getPort()){
+        Logger::logDebug("Advertisement received from " +
+                         address.to_string() + ":" +
+                         std::to_string(advertisement->port()));
 
-    communication.connect(address, (unsigned short) advertisement->port());
+        communication.connect(address, (unsigned short) advertisement->port());
+    }
 
 }
 
@@ -151,5 +153,9 @@ void Brain::HelloHandler(Message& msg){
                      std::to_string(hello->port()));
 
     communication.asociate(hello);
+
+}
+
+void Brain::cleanup() {
 
 }

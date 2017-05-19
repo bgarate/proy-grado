@@ -68,7 +68,7 @@ public:
         }
     }
 
-    void BodyTestStep(){
+    bool BodyTestStep(double deltaTime){
 
         //test hal begin
         aux++;
@@ -98,6 +98,8 @@ public:
         //release
         //delete frame->data;
         //frame->release();
+
+        return true;
     }
 
     void FinishBodyTest(){

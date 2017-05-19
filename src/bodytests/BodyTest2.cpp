@@ -41,7 +41,7 @@ public:
         cv::namedWindow("tracker", cv::WINDOW_AUTOSIZE);
     }
 
-    void BodyTestStep(){
+    bool BodyTestStep(double deltaTime){
 
         //test hal begin
         /*aux++;
@@ -66,6 +66,8 @@ public:
         imshow("tracker", *frame);
         cv::waitKey(1);
         //test track end
+
+        return true;
 
     }
 

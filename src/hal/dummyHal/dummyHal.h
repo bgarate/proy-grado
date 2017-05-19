@@ -25,6 +25,10 @@ class DummyHal: public Hal {
 
     Point getGPSPosition() override;
 
+    void Disconnect() override;
+
+    void Connect() override;
+
 };
 
 

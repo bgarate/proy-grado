@@ -93,6 +93,10 @@ class Hal{
 
 	virtual Point getGPSPosition() = 0;
 
+    virtual void Connect() = 0;
+
+    virtual void Disconnect() = 0;
+
 };
 
 #endif

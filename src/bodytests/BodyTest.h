@@ -8,7 +8,7 @@ class BodyTest {
 public:
     virtual void InitBodyTest(Hal* hal) = 0;
 
-    virtual void BodyTestStep() = 0;
+    virtual bool BodyTestStep(double deltaTime) = 0;
 
     virtual void FinishBodyTest() = 0;
 };

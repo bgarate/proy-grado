@@ -1,4 +1,5 @@
 #include "../hal.hpp"
+#include "VideoDecoder.h"
 
 #include <math.h>
 #include <iostream>
@@ -19,7 +20,8 @@ extern "C"{
 }
 
 #include <atomic>
-#include <libARController/ARController.h>
+#include <boost/thread/mutex.hpp>
+#include <src/logging/Logger.h>
 
 using namespace std;
 
@@ -30,8 +32,9 @@ class Pb2hal: public Hal {
 	const char * HOST = "192.168.42.1"; 
 
 	//Variables aux 
-	ARDISCOVERY_Device_t *device = NULL;
 	ARCONTROLLER_Device_t *deviceController = NULL;
+
+    atomic<bool> connected;
 
 	atomic<int> batteryLevel;
 	
@@ -45,8 +48,10 @@ class Pb2hal: public Hal {
 	atomic<double> orientationy;
 	atomic<double> orientationz;
 
-	//cv::Mat* lastframe;
-	ARCONTROLLER_Frame_t *lastframe = NULL;
+    VideoDecoder videoDecoder;
+
+	cv::Mat* cvFrame = NULL;
+    bool frameAvailable = false;
 
 	/******Funciones auxiliares******/
 	//Discovery
@@ -57,30 +62,33 @@ class Pb2hal: public Hal {
 
 	    if (ip == NULL || port == 0)
 	    {
-	        fprintf(stderr, "Bad parameters");
-	        return device;
+            throw new runtime_error("Bad parameters");
 	    }
 
 	    device = ARDISCOVERY_Device_New(&errorDiscovery);
 
 	    if (errorDiscovery == ARDISCOVERY_OK){
-	        
 	        errorDiscovery = ARDISCOVERY_Device_InitWifi (device, product, name, ip, port);
 
-	    	cout << "ARDISCOVERY_Device_InitWifi error code: " << ARDISCOVERY_Error_ToString(errorDiscovery) << endl; 
+            if(errorDiscovery != ARDISCOVERY_OK) {
+                throw new runtime_error("ARDISCOVERY_Device_InitWifi error code: " +
+                                 string(ARDISCOVERY_Error_ToString(errorDiscovery)));
+            }
+        } else {
 
-	    } else {
+            throw new runtime_error("ARDISCOVERY_Device_New error code: " +
+                             string(ARDISCOVERY_Error_ToString(errorDiscovery)));
 
 	        ARDISCOVERY_Device_Delete(&device);
-	    }
+        }
 
-	    cout << "ARDISCOVERY_Device_New error code: " << ARDISCOVERY_Error_ToString(errorDiscovery) << endl;
 
 	    return device;
 	}
 
 	// called when the state of the device controller has changed
 	static void changedState(eARCONTROLLER_DEVICE_STATE newState, eARCONTROLLER_ERROR error, void *customData){
+
 		Pb2hal * p2this = (Pb2hal*) customData;
 
 	    switch (newState)
@@ -109,6 +117,7 @@ class Pb2hal: public Hal {
 	// called when a command has been received from the drone
 	static void receivedOnCommand (eARCONTROLLER_DICTIONARY_KEY commandKey, ARCONTROLLER_DICTIONARY_ELEMENT_t *elementDictionary, void *customData)
 	{
+
 	    if (elementDictionary != NULL){
 
 	    	Pb2hal * p2this = (Pb2hal*) customData;
@@ -210,52 +219,80 @@ class Pb2hal: public Hal {
 	//VideoStreming auxs
 	static eARCONTROLLER_ERROR configDecoderCallback (ARCONTROLLER_Stream_Codec_t codec, void *customData){
 
-		cout << "codec: " << (int)codec.type << endl;
-		ARSAL_PRINT(ARSAL_PRINT_ERROR, "Bebop", "decoderConfigCallback codec.type :%d", codec.type);
+		Pb2hal * p2this = (Pb2hal*) customData;
 
-		//cout << "in decoder frame" << endl;
+		if (codec.type == ARCONTROLLER_STREAM_CODEC_TYPE_H264)
+		{
+			Logger::logInfo("H264 configuration packet received: #SPS: " +
+                            std::to_string(codec.parameters.h264parameters.spsSize) +
+                            " #PPS: " + std::to_string(codec.parameters.h264parameters.ppsSize) +
+                            " (MP4? " + std::to_string(codec.parameters.h264parameters.isMP4Compliant) + ")");
 
-		//Pb2hal * p2this = (Pb2hal*) customData;
+			if (!p2this->videoDecoder.SetH264Params(
+					codec.parameters.h264parameters.spsBuffer,
+					codec.parameters.h264parameters.spsSize,
+					codec.parameters.h264parameters.ppsBuffer,
+					codec.parameters.h264parameters.ppsSize))
+			{
+				return ARCONTROLLER_ERROR;
+			}
+		}
+		else
+		{
+			Logger::logWarning("Codec type is not H264");
+			return ARCONTROLLER_ERROR;
+		}
 
-	    // configure your decoder
-	    // return ARCONTROLLER_OK if configuration went well
-	    // otherwise, return ARCONTROLLER_ERROR. In that case,
-	    // configDecoderCallback will be called again
+		return ARCONTROLLER_OK;
 	    return ARCONTROLLER_OK;
 	}
 
 	static eARCONTROLLER_ERROR didReceiveFrameCallback (ARCONTROLLER_Frame_t *frame, void *customData){
 
-		// display the frame
-	    // return ARCONTROLLER_OK if display went well
-	    // otherwise, return ARCONTROLLER_ERROR. In that case,
-	    // configDecoderCallback will be called again
+        Pb2hal * p2this = (Pb2hal*) customData;
 
-		//cout << "in receive frame" << endl;
+        if (!frame)
+        {
+            Logger::logWarning("Received frame is NULL");
+            return ARCONTROLLER_ERROR_NO_VIDEO;
+        }
 
-		if (frame != NULL){
+        if (!p2this->videoDecoder.Decode(frame))
+        {
+            Logger::logError("Video decode failed");
+            return ARCONTROLLER_ERROR_NO_VIDEO;
+        }
 
-			Pb2hal * p2this = (Pb2hal*) customData;
+        uint32_t width = p2this->videoDecoder.GetFrameWidth();
+        uint32_t height = p2this->videoDecoder.GetFrameHeight();
 
-			//convertir imagen
-			ARSAL_Sem_Wait(&(p2this->framesem));
+        const uint32_t num_bytes = width*height * 3;
 
-			p2this->lastframe = frame;
-			//p2this->lastframe = new cv::Mat(frame->height,frame->width,CV_8UC3,frame->data);
+        if (num_bytes == 0)
+        {
+            Logger::logWarning("No picture size");
+        }
 
-	        //cv::cvtColor(*lastframe,*lastframe,cv::COLOR_BGR2RGB);
-	        //cv::flip(*lastframe,*lastframe,0);
+        if(p2this->cvFrame == NULL){
+            p2this->cvFrame = new cv::Mat(height, width, CV_8UC3);
+        } else {
+            if(width != p2this->cvFrame->cols || width != p2this->cvFrame->rows)
+                throw new std::runtime_error("Image dimensions have changed!");
+        }
 
-			std::vector<uchar> ans_vector (frame->data, frame->data + frame->used);
-			cv::Mat aux = cv::imdecode(cv::Mat (ans_vector), -1);
-			cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
-			cv::imshow( "Display window", aux );                   // Show our image inside it.
-			cv::waitKey(0);
+        ARSAL_Sem_Wait(&(p2this->framesem));
 
-			ARSAL_Sem_Post(&(p2this->framesem));
-		} else {
+        if(p2this->frameAvailable)
+            Logger::logWarning("Frame lost");
 
-		}
+        p2this->frameAvailable = true;
+
+        // New frame is ready
+        std::copy(p2this->videoDecoder.GetFrameRGBRawCstPtr(),
+                  p2this->videoDecoder.GetFrameRGBRawCstPtr() + num_bytes,
+                  p2this->cvFrame->data);
+
+        ARSAL_Sem_Post(&(p2this->framesem));
 
 	    return ARCONTROLLER_OK;
 	}
@@ -263,7 +300,7 @@ class Pb2hal: public Hal {
 	// This function will wait until the device controller is stopped
 	void deleteDeviceController(ARCONTROLLER_Device_t *deviceController)
 	{
-	    if (deviceController == NULL)
+        if (deviceController == NULL)
 	    {
 	        return;
 	    }
@@ -271,22 +308,29 @@ class Pb2hal: public Hal {
 	    eARCONTROLLER_ERROR error = ARCONTROLLER_OK;
 
 	    eARCONTROLLER_DEVICE_STATE state = ARCONTROLLER_Device_GetState(deviceController, &error);
-		cout << "ARCONTROLLER_Device_GetState error code: " << ARCONTROLLER_Error_ToString(error) << endl;
+
+        if(error != ARCONTROLLER_OK) {
+            Logger::logError("ARCONTROLLER_Device_GetState error code: " +
+                             string(ARCONTROLLER_Error_ToString(error)));
+        }
+
 	    if ((error == ARCONTROLLER_OK) && (state != ARCONTROLLER_DEVICE_STATE_STOPPED))
 	    {
 	        // after that, stateChanged should be called soon
 	        error = ARCONTROLLER_Device_Stop(deviceController);
-			cout << "ARCONTROLLER_Device_Stop error code: " << ARCONTROLLER_Error_ToString(error) << endl;
 
 	        if (error == ARCONTROLLER_OK){
 				ARSAL_Sem_Wait(&(statesem));
-	        }else{
-	            fprintf(stderr, "- error:%s", ARCONTROLLER_Error_ToString(error));
-	        }
+	        } else {
+                Logger::logError("ARCONTROLLER_Device_Stop error code: " +
+                                 string(ARCONTROLLER_Error_ToString(error)));
+            }
 	    }
 
 	    // once the device controller is stopped, we can delete it
 	    ARCONTROLLER_Device_Delete(&deviceController);
+
+        connected = false;
 	}
 
 	//Obtener estado de vuelo
@@ -318,65 +362,101 @@ class Pb2hal: public Hal {
 
 	/************Constructor*************/ 
 
-	Pb2hal(){
+	Pb2hal() {
 
-		ARSAL_Sem_Init(&(statesem),0,0);
-		ARSAL_Sem_Init(&(framesem),0,1);
+        ARSAL_Sem_Init(&(statesem), 0, 0);
+        ARSAL_Sem_Init(&(framesem), 0, 1);
 
-		batteryLevel = 100;
-	
-		gpslatitude = 0;
-		gpslongitude = 0;
-		gpsaltitude = 0;
-		
-		altitude = 0;
+        batteryLevel = 100;
 
-		orientationx = 0;
-		orientationy = 0;
-		orientationz = 0;
+        gpslatitude = 0;
+        gpslongitude = 0;
+        gpsaltitude = 0;
 
-		//Discovery
-		device = createDiscoveryDevice(ARDISCOVERY_PRODUCT_BEBOP_2, "bebop2", HOST, PORT);
+        altitude = 0;
 
-		//Crear device controller
-		eARCONTROLLER_ERROR error = ARCONTROLLER_OK;
-		deviceController = ARCONTROLLER_Device_New (device, &error);
+        orientationx = 0;
+        orientationy = 0;
+        orientationz = 0;
 
-		cout << "ARCONTROLLER_Device_New error code: " << ARCONTROLLER_Error_ToString(error) << endl;
+        connected = false;
 
-		//Funcion que escucha cambios de estados
-		error = ARCONTROLLER_Device_AddStateChangedCallback(deviceController, changedState, this);
+    }
 
-		cout << "ARCONTROLLER_Device_AddStateChangedCallback error code: " << ARCONTROLLER_Error_ToString(error) << endl;
+    void Connect() {
+        try {
+            if (connected)
+                throw new std::runtime_error("Ya conectado!");
 
-		//Funcion que recibe comandos del drone
-		error = ARCONTROLLER_Device_AddCommandReceivedCallback(deviceController, receivedOnCommand, this);
+            //Discovery
+            ARDISCOVERY_Device_t *device = createDiscoveryDevice(ARDISCOVERY_PRODUCT_BEBOP_2, "bebop2", HOST, PORT);
 
-		cout << "ARCONTROLLER_Device_AddCommandReceivedCallback error code: " << ARCONTROLLER_Error_ToString(error) << endl;
+            //Crear device controller
+            eARCONTROLLER_ERROR error = ARCONTROLLER_OK;
 
-		//Escuchar video Streming
-		error = ARCONTROLLER_Device_SetVideoStreamCallbacks(deviceController, configDecoderCallback, didReceiveFrameCallback, NULL , this);
-	
-		//Start device controller
-		error = ARCONTROLLER_Device_Start(deviceController);
+            deviceController = ARCONTROLLER_Device_New(device, &error);
 
-		cout << "ARCONTROLLER_Device_Start error code: " << ARCONTROLLER_Error_ToString(error) << endl;
+            if (error != ARCONTROLLER_OK) {
+                Logger::logError("ARCONTROLLER_Device_New error code: " +
+                                 string(ARCONTROLLER_Error_ToString(error)));
+            }
 
-		/*while (ARCONTROLLER_Device_GetState(deviceController, &error) != ARCONTROLLER_DEVICE_STATE_RUNNING){
-			cout << "Esperando estado running" << endl;
-		}*/
+            ARDISCOVERY_Device_Delete(&device);
 
-		//cout << "Estado: " << ARCONTROLLER_Device_GetState(deviceController, &error) << endl;
-		//cout << "Estado vuelo: " << getFlyingState(deviceController) << endl;
+            //Funcion que escucha cambios de estados
+            error = ARCONTROLLER_Device_AddStateChangedCallback(deviceController, changedState, this);
 
-		ARSAL_Sem_Wait(&(statesem));
-		cout << "Iniciado!" << endl;
-	}
+            if (error != ARCONTROLLER_OK) {
+                Logger::logError("ARCONTROLLER_Device_AddStateChangedCallback error code: " +
+                                 string(ARCONTROLLER_Error_ToString(error)));
+            }
 
-	void Pb2halBeforeDelete(){
+            //Funcion que recibe comandos del drone
+            error = ARCONTROLLER_Device_AddCommandReceivedCallback(deviceController, receivedOnCommand, this);
 
+            if (error != ARCONTROLLER_OK) {
+                Logger::logError("ARCONTROLLER_Device_AddCommandReceivedCallback error code: " +
+                                 string(ARCONTROLLER_Error_ToString(error)));
+            }
+
+            //Escuchar video Streming
+            error = ARCONTROLLER_Device_SetVideoStreamCallbacks(deviceController, configDecoderCallback,
+                                                                didReceiveFrameCallback, NULL, this);
+
+            if (error != ARCONTROLLER_OK) {
+                Logger::logError("ARCONTROLLER_Device_SetVideoStreamCallbacks error code: " +
+                                 string(ARCONTROLLER_Error_ToString(error)));
+            }
+
+            //Start device controller
+            error = ARCONTROLLER_Device_Start(deviceController);
+
+            if (error != ARCONTROLLER_OK) {
+                Logger::logError("ARCONTROLLER_Device_Start error code: " +
+                                 string(ARCONTROLLER_Error_ToString(error)));
+            }
+
+            ARSAL_Sem_Wait(&(statesem));
+
+            eARCONTROLLER_DEVICE_STATE state = ARCONTROLLER_Device_GetState(deviceController, &error);
+
+            if ((error != ARCONTROLLER_OK) || (state != ARCONTROLLER_DEVICE_STATE_RUNNING)) {
+                throw std::runtime_error("Waiting for device failed: " +
+                                         std::string(ARCONTROLLER_Error_ToString(error)));
+            }
+
+            Logger::logInfo("Pb2Hal iniciado");
+
+        } catch (const std::runtime_error ex) {
+            Disconnect();
+        }
+    }
+
+	void Disconnect(){
+        Logger::logInfo("Cleaning up");
 		deleteDeviceController(deviceController);
-		cout << "Terminó!" << endl;
+        ARSAL_Sem_Destroy(&statesem);
+        Logger::logInfo("Pb2Hal finalizado");
 	}
 
 
@@ -421,15 +501,14 @@ class Pb2hal: public Hal {
 	// --> Despegue y aterrizaje
 	void land(){
 
-		if (deviceController == NULL){
-			cout << "Device controller es null" << endl;
-	        return;
-	    }
+		ThrowOnInternalError("Land failed");
+
+        Logger::logInfo("Atterizando");
 
 	    eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE flyingState = getFlyingState(deviceController);
 	    if (flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_FLYING 
 	    		|| flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_HOVERING){
-	    	cout << "Landeando" << endl;
+
 	        deviceController->aRDrone3->sendPilotingLanding(deviceController->aRDrone3);
 	    }
 
@@ -438,36 +517,33 @@ class Pb2hal: public Hal {
 	    while(1){
 	    	eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE flyingState = getFlyingState(deviceController);
 	    	if(flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_LANDED){
-	    		//cout << "Esperando bajar" << endl;
 	    		break;
 	    	}
 	    }
-	    cout << "Bajó" << endl;
+
+        Logger::logInfo("Aterrizado");
 	}
 
 	void takeoff(){
-		
-	    if (deviceController == NULL){
-	    	cout << "Device controller es null" << endl;
-	        return;
-	    }
+
+        ThrowOnInternalError("Takeoff failed");
+
+        Logger::logInfo("Taking off");
 
 	    if (getFlyingState(deviceController) == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_LANDED){
-	    	cout << "Takeingofiando" << endl;
 	        deviceController->aRDrone3->sendPilotingTakeOff(deviceController->aRDrone3);
 	    }
 
 	    //Esperar que termine
-	    //sleep(1);
 	    while(1){
-	    	//cout << "Esperando subir" << endl;
 	    	eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE flyingState = getFlyingState(deviceController);
 	    	if(flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_HOVERING 
 	    			|| flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_FLYING){
 	    		break;
 	    	}
 	    }
-	    cout << "Subió" << endl;
+
+        Logger::logInfo("Took off");
 	}
 
 	/*// --> Altura objetivo
@@ -493,24 +569,21 @@ class Pb2hal: public Hal {
 	cv::Mat* getFrame(Camera cam){
 
 		ARSAL_Sem_Wait(&(framesem));
-		//cv::Mat* aux = new cv::Mat(*lastframe);
-		//cv::Mat* aux = new cv::Mat(lastframe->height,lastframe->width,CV_8UC3,lastframe->data);
-		//cout << lastframe->data[0] << endl;
 
+        if(!frameAvailable)
+            Logger::logWarning("No frame available");
 
-		std::vector<uchar> ans_vector (lastframe->data, lastframe->data + lastframe->used);
-		cv::Mat* aux = new cv::Mat(cv::imdecode(cv::Mat (ans_vector), -1));
-		//*aux = cv::imdecode(cv::Mat (ans_vector), -1);
+        frameAvailable = false;
 
+            return cvFrame;
 		ARSAL_Sem_Post(&(framesem));
-		return aux;
+
 	}
 
 	/************Posición*************/
 
 	// --> Altura
 	double getAltitude(){
-
 		return altitude;
 	}
 
@@ -537,6 +610,14 @@ class Pb2hal: public Hal {
 		return pos;
 	}
 
+
+    void ThrowOnInternalError(const std::string &message)
+    {
+        if (!connected || !deviceController)
+        {
+            throw std::runtime_error(message);
+        }
+    }
 
 };
 

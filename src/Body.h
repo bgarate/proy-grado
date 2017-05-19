@@ -17,7 +17,7 @@ public:
 
     void setup(Config* config);
     void loop();
-
+    void cleanup();
 private:
     SocketChannel communication;
     MessageHandler messsageHandler;
@@ -28,6 +28,9 @@ private:
     bool should_exit = false;
     Config* config;
     void ShutdownHandler(Message &msg);
+
+    long deltaTime = 0;
+    long runningTime = 0;
 };
 
 

@@ -1,13 +1,16 @@
 cmake_minimum_required(VERSION 3.5)
 project(proy_grado)
 
+set(CMAKE_MODULE_PATH cmake)
+
 set(spdlog_DIR lib/cmake/spdlog)
 
 find_package(OpenCV REQUIRED)
 find_package(Threads REQUIRED)
-find_package(Boost REQUIRED system program_options)
+find_package(Boost REQUIRED system program_options thread)
 find_package(Protobuf REQUIRED)
 find_package (Threads)
+find_package(FFmpeg REQUIRED)
 
 link_directories(src/hal/pb2/lib)
 
@@ -31,7 +34,7 @@ set(SOURCE_FILES ${SOURCE_FILES} src/hal/hal.hpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/hal/vrep/extApi.c src/hal/vrep/extApi.h src/hal/vrep/extApiInternal.h src/hal/vrep/extApiPlatform.c src/hal/vrep/extApiPlatform.h src/hal/vrep/v_repConst.h src/hal/vrep/vrephal.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/hal/pb2/pb2hal.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/Broadcaster.cpp src/messages/Broadcaster.h)
-set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/main.cpp src/Config.cpp src/Config.h src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h src/messages/IpResolver.cpp src/messages/IpResolver.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/main.cpp src/Config.cpp src/Config.h src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h src/messages/IpResolver.cpp src/messages/IpResolver.h src/hal/pb2/VideoDecoder.cpp src/hal/pb2/VideoDecoder.h src/bodytests/FlightManeuver.cpp)
 
 ADD_SUBDIRECTORY(src/proto)
 
@@ -39,6 +42,7 @@ include_directories(src/hal/pb2/include)
 include_directories(${Boost_INCLUDE_DIRS})
 include_directories(lib/spdlog/include)
 include_directories(${Protobuf_INCLUDE_DIRS})
+include_directories(${FFMPEG_INCLUDE_DIR})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_executable(proy_grado ${SOURCE_FILES} ${PROTO_SRC} ${PROTO_HEADER})
@@ -51,6 +55,7 @@ target_link_libraries(proy_grado ${Boost_LIBRARIES})
 target_link_libraries(proy_grado ${Protobuf_LIBRARIES})
 target_link_libraries(proy_grado proto)
 target_link_libraries(proy_grado ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(proy_grado ${FFMPEG_LIBRARIES})
 target_link_libraries(proy_grado libarcommands.so libarcontroller.so libardiscovery.so libarnetwork.so
         libarnetworkal.so libarsal.so libarstream.so libarstream2.so libarmavlink.so libjson.so
         libarmedia.so libarutils.so libcurl.so libardatatransfer.so libmux.so libpomp.so libcrypto.so

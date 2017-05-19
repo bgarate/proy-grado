@@ -36,3 +36,13 @@ Point DummyHal::getOrientation() {
 Point DummyHal::getGPSPosition() {
     return Point(1,1,1);
 }
+
+
+void DummyHal::Connect() {
+
+}
+
+void DummyHal::Disconnect(){
+
+}
+
