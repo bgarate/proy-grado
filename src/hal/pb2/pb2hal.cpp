@@ -276,8 +276,12 @@ class Pb2hal: public Hal {
         if(p2this->cvFrame == NULL){
             p2this->cvFrame = new cv::Mat(height, width, CV_8UC3);
         } else {
-            if(width != p2this->cvFrame->cols || width != p2this->cvFrame->rows)
-                throw new std::runtime_error("Image dimensions have changed!");
+            if(width != p2this->cvFrame->cols || width != p2this->cvFrame->rows){
+				//throw new std::runtime_error("Image dimensions have changed!");
+
+				delete p2this->cvFrame;
+				p2this->cvFrame = new cv::Mat(height, width, CV_8UC3);
+			}
         }
 
         ARSAL_Sem_Wait(&(p2this->framesem));
@@ -444,6 +448,8 @@ class Pb2hal: public Hal {
                 throw std::runtime_error("Waiting for device failed: " +
                                          std::string(ARCONTROLLER_Error_ToString(error)));
             }
+
+			connected = true;
 
             Logger::logInfo("Pb2Hal iniciado");
 
