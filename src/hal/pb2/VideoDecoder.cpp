@@ -151,7 +151,7 @@ void VideoDecoder::CleanupBuffers()
         sws_freeContext(img_convert_ctx_ptr_);
     }
 
-    Logger::logError("Buffer cleanup!");
+    Logger::logInfo("Buffer cleanup!");
 }
 
 void VideoDecoder::Reset()
@@ -170,13 +170,13 @@ void VideoDecoder::Reset()
 
     codec_initialized_ = false;
     first_iframe_recv_ = false;
-    Logger::logError("Reset!");
+    Logger::logInfo("Reset!");
 }
 
 VideoDecoder::~VideoDecoder()
 {
     Reset();
-    Logger::logError("Dstr!");
+    Logger::logInfo("Destructor!");
 }
 
 void VideoDecoder::ConvertFrameToRGB()
@@ -235,7 +235,7 @@ bool VideoDecoder::Decode(const ARCONTROLLER_Frame_t *bebop_frame_ptr_)
      * */
     if (update_codec_params_ && codec_data_.size())
     {
-        Logger::logError("Updating H264 codec parameters (Buffer Size: " + std::to_string(codec_data_.size()) + ") ...");
+        Logger::logInfo("Updating H264 codec parameters (Buffer Size: " + std::to_string(codec_data_.size()) + ") ...");
         packet_.data = &codec_data_[0];
         packet_.size = (int) codec_data_.size();
         int32_t frame_finished = 0;
@@ -274,7 +274,7 @@ bool VideoDecoder::Decode(const ARCONTROLLER_Frame_t *bebop_frame_ptr_)
             {
                 if ((GetFrameWidth() != width_prev) || (GetFrameHeight() != height_prev))
                 {
-                    Logger::logError("Frame size changed to " +
+                    Logger::logInfo("Frame size changed to " +
                                              std::to_string(GetFrameWidth()) + "x" +
                                              std::to_string(GetFrameHeight()));
                     if (!ReallocateBuffers())
