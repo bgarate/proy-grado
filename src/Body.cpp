@@ -46,8 +46,8 @@ void Body::loop() {
     chrono::steady_clock::time_point lastTime;
     chrono::steady_clock::time_point newTime = startTime;
 
-    sleep(3);
-    /*while (true) {
+    //sleep(3);
+    while (true) {
         lastTime = newTime;
         newTime = chrono::steady_clock::now();
 
@@ -68,7 +68,7 @@ void Body::loop() {
             break;
 
         usleep(1000);
-    }*/
+    }
     Logger::logDebug("Finishing test");
     bt->FinishBodyTest();
 

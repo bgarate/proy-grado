@@ -218,7 +218,7 @@ class Pb2hal: public Hal {
 
 	//VideoStreming auxs
 	static eARCONTROLLER_ERROR configDecoderCallback (ARCONTROLLER_Stream_Codec_t codec, void *customData){
-/*
+
 		Pb2hal * p2this = (Pb2hal*) customData;
 
 		if (codec.type == ARCONTROLLER_STREAM_CODEC_TYPE_H264)
@@ -243,14 +243,14 @@ class Pb2hal: public Hal {
 			return ARCONTROLLER_ERROR;
 		}
 
-		*/
+
 	    return ARCONTROLLER_OK;
 	}
 
 	static eARCONTROLLER_ERROR didReceiveFrameCallback (ARCONTROLLER_Frame_t *frame, void *customData){
 
         Pb2hal * p2this = (Pb2hal*) customData;
-/*
+
         if (!frame)
         {
             Logger::logWarning("Received frame is NULL");
@@ -287,7 +287,7 @@ class Pb2hal: public Hal {
         ARSAL_Sem_Wait(&(p2this->framesem));
 
         /*if(p2this->frameAvailable)
-            Logger::logWarning("Frame lost");*//*
+            Logger::logWarning("Frame lost");*/
 
         p2this->frameAvailable = true;
 
@@ -297,7 +297,7 @@ class Pb2hal: public Hal {
                   p2this->cvFrame->data);
 
         ARSAL_Sem_Post(&(p2this->framesem));
-*/
+
 	    return ARCONTROLLER_OK;
 	}
 

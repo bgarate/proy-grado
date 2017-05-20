@@ -11,7 +11,7 @@ class FlightManeuver : public BodyTest {
 
     typedef struct DirectionTime {
         DirectionTime():x(0),y(0),z(0),s(0){};
-        DirectionTime(double x, double y, double z):x(x), y(y),z(0), s(1000){}
+        DirectionTime(double x, double y, double z):x(x), y(y),z(0), s(1){}
         DirectionTime(double x, double y, double z, double s):x(x), y(y),z(0), s(s){}
         double x;
         double y;
@@ -23,8 +23,8 @@ class FlightManeuver : public BodyTest {
     Hal* hal;
     int currentStep = 0;
     double currentTime = 0;
-    std::vector<DirectionTime> sequence = {DirectionTime(-0.25,0,2), DirectionTime(0,-0.25,2),
-                                DirectionTime(0.25,0,2),DirectionTime(0,0.25,2)};
+    std::vector<DirectionTime> sequence = {DirectionTime(-0.25,0,0,2), DirectionTime(0,-0.25,0,2),
+                                DirectionTime(0.25,0,0,2),DirectionTime(0,0.25,0,2)};
 
     void InitBodyTest(Hal *hal) override {
         this->hal = hal;
@@ -44,14 +44,16 @@ class FlightManeuver : public BodyTest {
         if(currentTime >= directionTime.s * 1000000) {
             currentTime = 0;
             currentStep++;
-            Logger::logCritical("Changed!");
+            Logger::logInfo("Changed!");
         } else {
             currentTime += deltaTime;
-            Logger::logError(std::to_string(currentTime));
         }
 
         cv::Mat* frame = hal->getFrame(Camera::Front);
-        /*cv::imshow("tracker", *frame);*/
+        if(frame!=NULL){
+            cv::imshow("tracker", *frame);
+            cv::waitKey(1);
+        }
 
         return currentStep < sequence.size();
 
