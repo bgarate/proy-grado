@@ -155,61 +155,6 @@ class Vrephal: public Hal {
 		}
 	}
 
-
-	/*// --> Rotación horizontal
-	void hrotate(double vel){
-
-		simxFloat * orientation = new simxFloat[3];
-	  	simxGetObjectOrientation(clientID, targetHandler, -1, orientation, simx_opmode_blocking);
-
-	  	//Calcular orientacion	  	
-        orientation[0]= orientation[0];
-        orientation[1]= orientation[1];
-        orientation[2]= orientation[2] + (vel*0.1);
-
-		simxSetObjectOrientation(clientID, targetHandler, -1, orientation, simx_opmode_blocking);
-
-	}
-
-	// --> Movimiento horizontal
-	void hmove(double angle, double vel){
-
-		//calcular vector
-		double x = vel*cos(angle*2*M_PI/360.0);
-		double y = vel*sin(angle*2*M_PI/360.0);
-
-		simxFloat * position = new simxFloat[3];
-		simxFloat * newposition = new simxFloat[3];
-		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
-
-	    //Modificar posicion
-	    newposition[0] = position[0] + x*0.1;
-	    newposition[1] = position[1] + y*0.1;
-	    newposition[2] = position[2];
-
-	    simxSetObjectPosition(clientID, targetHandler, -1, newposition, simx_opmode_blocking);
-	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
-	    simxSetObjectPosition(clientID, targetHandler, -1, newposition, simx_opmode_blocking);
-	}
-
-	// --> Movimiento vertical
-	void vmove(double vel){
-
-		simxFloat * position = new simxFloat[3];
-		simxFloat * newposition = new simxFloat[3];
-		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
-
-	    //Modificar posicion
-	    newposition[0] = position[0];
-	    newposition[1] = position[1];
-	    newposition[2] = position[2] + vel*0.1;
-
-	    simxSetObjectPosition(clientID, targetHandler, -1, newposition, simx_opmode_blocking);
-	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
-	    simxSetObjectPosition(clientID, targetHandler, -1, newposition, simx_opmode_blocking);
-
-	}*/
-
 	// --> Despegue y aterrizaje
 	void land(){
 
@@ -249,18 +194,6 @@ class Vrephal: public Hal {
 			}
 	    }
 	}
-
-	/*// --> Altura objetivo
-	void targetAltitude(double altitude){
-
-		simxFloat * position = new simxFloat[3];
-		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
-
-	    //Modificar posicion
-	    position[2] = altitude;
-
-	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
-	}*/
 
 	/************Estado del drone*************/
 
