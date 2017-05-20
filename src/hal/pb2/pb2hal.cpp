@@ -480,24 +480,12 @@ class Pb2hal: public Hal {
 		deviceController->aRDrone3->setPilotingPCMDFlag(deviceController->aRDrone3,1);
 	 }
 
+    void rmove(double dx, double dy, double dz, double dh){
+        //todo
 
-	/*// --> Rotación horizontal
-	void hrotate(double vel){
+        //deviceController->aRDrone3->sendPilotingMoveBy(deviceController->aRDrone3,dx, dy, dz, dh);
+    }
 
-		//TODO
-	}
-
-	// --> Movimiento horizontal
-	void hmove(double angle, double vel){
-
-		//TODO
-	}
-
-	// --> Movimiento vertical
-	void vmove(double vel){
-
-		//TODO
-	}*/
 
 	// --> Despegue y aterrizaje
 	void land(){
@@ -548,12 +536,6 @@ class Pb2hal: public Hal {
 
         Logger::logInfo("Took off");
 	}
-
-	/*// --> Altura objetivo
-	void targetgpsaltitude(double gpsaltitude){
-
-		//TODO
-	}*/
 
 	/************Estado del drone*************/
 

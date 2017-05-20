@@ -49,6 +49,12 @@ class Hal{
 	//gaz = arriba-abajo
 	virtual void move(int roll, int pitch, int yaw, int gaz) = 0;
 
+	//dx desplazamiento en el ejex
+	//dy desplazamiento en el ejey
+	//dz desplazamiento en el ejez
+	//dh algulo de desplazamiento (en grados)
+	virtual void rmove(double dx, double dy, double dz, double dh) = 0;
+
 
 	// --> Despegue y aterrizaje
 	virtual void land() = 0;

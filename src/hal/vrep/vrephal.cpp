@@ -109,33 +109,30 @@ class Vrephal: public Hal {
 
 	public:
 
-	/************Constructor*************/ 
+	/************Constructor*************/
 
-	Vrephal(){
+	void Connect() {
 		//Conectar con V-REP
-		clientID = simxStart(HOST, PORT, true, true, 5000, 5); 
-		
-	    //Obtener handlers
-	    simxInt res1 = simxGetObjectHandle(clientID, "Quadricopter_target",&targetHandler,simx_opmode_blocking);
-	    simxInt res2 = simxGetObjectHandle(clientID, "Quadricopter",&quadricopterHandler,simx_opmode_blocking);
-	    simxInt res3 = simxGetObjectHandle(clientID, "Vision_sensorFloor",&quadricopterFloorCamHandler,simx_opmode_blocking);
-	    simxInt res4 = simxGetObjectHandle(clientID, "Vision_sensorFront",&quadricopterFrontCamHandler,simx_opmode_blocking);
+		clientID = simxStart(HOST, PORT, true, true, 5000, 5);
+		simxInt res = simxStartSimulation(clientID, simx_opmode_blocking);
+
+		//Obtener handlers
+		simxInt res1 = simxGetObjectHandle(clientID, "Quadricopter_target",&targetHandler,simx_opmode_blocking);
+		simxInt res2 = simxGetObjectHandle(clientID, "Quadricopter",&quadricopterHandler,simx_opmode_blocking);
+		simxInt res3 = simxGetObjectHandle(clientID, "Vision_sensorFloor",&quadricopterFloorCamHandler,simx_opmode_blocking);
+		simxInt res4 = simxGetObjectHandle(clientID, "Vision_sensorFront",&quadricopterFrontCamHandler,simx_opmode_blocking);
 
 		//Iniciar deamon
 		this->moving=0;
 		this->roll=0;
-	    this->pitch=0;
-	    this->yaw=0;
-	    this->gaz=0;
+		this->pitch=0;
+		this->yaw=0;
+		this->gaz=0;
 		this->t = new thread(&Vrephal::deamon, this);
 	}
 
-
-	void Connect() {
-
-	}
-
 	void Disconnect(){
+		simxInt res = simxStopSimulation(clientID, simx_opmode_blocking);
 
 	}
 
@@ -153,6 +150,10 @@ class Vrephal: public Hal {
 		} else {
 			this->moving=0;
 		}
+	}
+
+	void rmove(double dx, double dy, double dz, double dh){
+	//todo
 	}
 
 	// --> Despegue y aterrizaje

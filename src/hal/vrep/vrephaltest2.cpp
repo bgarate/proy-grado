@@ -14,6 +14,7 @@ using namespace std;
 int main(int argc, char** argv){
 
 	Vrephal hal;
+	hal.Connect();
 
 	/************** MOVIMIENTO *****************/
 
@@ -116,4 +117,6 @@ int main(int argc, char** argv){
 	//Posicion
 	Point p = hal.getOrientation();
 	cout << "Posición: [" << p.x << ", " << p.y << ", " << p.z << "]" << endl;
+
+	hal.Disconnect();
 }
