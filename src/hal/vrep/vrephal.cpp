@@ -63,8 +63,8 @@ class Vrephal: public Hal {
 
             	usleep(25000);
 
-            	position[0] = -position[0]/2;//pitch
-	            position[1] = -position[1]/2;//yaw
+            	position[0] = -position[0]/1;//pitch
+	            position[1] = -position[1]/1;//yaw
 	            position[2] = 0;//gaz
 	            orientation[0]= 0;
 	            orientation[1]= 0;
