@@ -31,6 +31,10 @@ private:
 
     long deltaTime = 0;
     long runningTime = 0;
+
+    void waitPing();
+
+    long pingWait;
 };
 
 

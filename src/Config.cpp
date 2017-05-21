@@ -37,7 +37,6 @@ void Config::setBrainPort(unsigned short brainPort) {
 }
 
 Config::Config() {
-
     name = "PB2";
     id = 0;
     brainHost = "localhost";
@@ -45,7 +44,8 @@ Config::Config() {
     broadcastPort = 11501;
     advertisementLapse = 5000;
     commsPort = 11502;
-
+    pingTimeout = 2000;
+    pingLapse = 5000;
 }
 
 unsigned short Config::getBroadcastPort() const {
@@ -78,4 +78,20 @@ unsigned short Config::getCommsPort() const {
 
 void Config::setCommsPort(unsigned short commsPort) {
     Config::commsPort = commsPort;
+}
+
+unsigned int Config::getPingTimeout() const {
+    return pingTimeout;
+}
+
+void Config::setPingTimeout(unsigned int pingTimeout) {
+    Config::pingTimeout = pingTimeout;
+}
+
+unsigned int Config::getPingLapse() const {
+    return pingLapse;
+}
+
+void Config::setPingLapse(unsigned int pingLapse) {
+    Config::pingLapse = pingLapse;
 }

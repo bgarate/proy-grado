@@ -29,6 +29,8 @@ class DummyHal: public Hal {
 
     void Connect() override;
 
+    State getState() override;
+
 };
 
 

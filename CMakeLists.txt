@@ -17,10 +17,10 @@ link_directories(src/hal/pb2/lib)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES src/tracking/TrackingAlgorithm.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/logging/Logger.cpp src/logging/Logger.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/tracking/HogDetector.cpp src/tracking/HogDetector.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/tracking/MultiTracker.cpp src/tracking/MultiTracker.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/tracking/DetectAndTrack.cpp src/tracking/DetectAndTrack.h)
-set(SOURCE_FILES ${SOURCE_FILES} src/logging/Logger.cpp src/logging/Logger.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/tracking/Track.cpp src/tracking/Track.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/SocketChannel.cpp src/messages/SocketChannel.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/Brain.cpp src/Brain.h)
@@ -35,6 +35,7 @@ set(SOURCE_FILES ${SOURCE_FILES} src/hal/vrep/extApi.c src/hal/vrep/extApi.h src
 set(SOURCE_FILES ${SOURCE_FILES} src/hal/pb2/pb2hal.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/Broadcaster.cpp src/messages/Broadcaster.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/main.cpp src/Config.cpp src/Config.h src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h src/messages/IpResolver.cpp src/messages/IpResolver.h src/hal/pb2/VideoDecoder.cpp src/hal/pb2/VideoDecoder.h src/bodytests/FlightManeuver.cpp)
+
 
 ADD_SUBDIRECTORY(src/proto)
 

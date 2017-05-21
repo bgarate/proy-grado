@@ -33,7 +33,9 @@ public:
     unsigned short getPort();
 
 private:
-    static const int MAX_NUMBER_RETRIES = 3;
+
+    static const int MAX_NUMBER_RETRIES;
+
     bool isServing;
     io_service service;
     tcp::socket* socket;

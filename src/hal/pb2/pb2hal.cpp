@@ -48,6 +48,9 @@ class Pb2hal: public Hal {
 	atomic<double> orientationy;
 	atomic<double> orientationz;
 
+    atomic<State> state;
+
+
     VideoDecoder videoDecoder;
 
 	cv::Mat* cvFrame = NULL;
@@ -114,7 +117,31 @@ class Pb2hal: public Hal {
 	    }
 	}
 
-	// called when a command has been received from the drone
+    static State mapFlyingState(eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE state) {
+        switch (state){
+            case ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_LANDED:
+                return State::Landed;
+            case ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_TAKINGOFF:
+                return State::TakingOff;
+            case ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_HOVERING:
+                return State::Hovering;
+            case ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_FLYING:
+                return State::Flying;
+            case ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_LANDING:
+                return State::Landing;
+            case ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_EMERGENCY:
+                return State::Emergency;
+            case ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_EMERGENCY_LANDING:
+                return State::EmergencyLanding;
+            case ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_MOTOR_RAMPING:
+            case ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_MAX:
+            case ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_USERTAKEOFF:
+            default:
+                throw new std::runtime_error("Unknown flying state");
+        }
+    }
+
+    // called when a command has been received from the drone
 	static void receivedOnCommand (eARCONTROLLER_DICTIONARY_KEY commandKey, ARCONTROLLER_DICTIONARY_ELEMENT_t *elementDictionary, void *customData)
 	{
 
@@ -212,13 +239,28 @@ class Pb2hal: public Hal {
 
 		        }
 		    }
+            // FLYING STATE
+            if ((commandKey == ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED) && (elementDictionary != NULL))
+            {
+                ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
+                ARCONTROLLER_DICTIONARY_ELEMENT_t *element = NULL;
+                HASH_FIND_STR (elementDictionary, ARCONTROLLER_DICTIONARY_SINGLE_KEY, element);
+                if (element != NULL)
+                {
+                    HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE, arg);
+                    if (arg != NULL)
+                    {
+                        p2this->state = mapFlyingState((eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE)arg->value.I32);
+                    }
+                }
+            }
 	    }
 	}
 
 
 	//VideoStreming auxs
 	static eARCONTROLLER_ERROR configDecoderCallback (ARCONTROLLER_Stream_Codec_t codec, void *customData){
-/*
+
 		Pb2hal * p2this = (Pb2hal*) customData;
 
 		if (codec.type == ARCONTROLLER_STREAM_CODEC_TYPE_H264)
@@ -243,14 +285,13 @@ class Pb2hal: public Hal {
 			return ARCONTROLLER_ERROR;
 		}
 
-		*/
 	    return ARCONTROLLER_OK;
 	}
 
 	static eARCONTROLLER_ERROR didReceiveFrameCallback (ARCONTROLLER_Frame_t *frame, void *customData){
 
         Pb2hal * p2this = (Pb2hal*) customData;
-/*
+
         if (!frame)
         {
             Logger::logWarning("Received frame is NULL");
@@ -276,9 +317,9 @@ class Pb2hal: public Hal {
         if(p2this->cvFrame == NULL){
             p2this->cvFrame = new cv::Mat(height, width, CV_8UC3);
         } else {
-            if(width != p2this->cvFrame->cols || width != p2this->cvFrame->rows){
-				//throw new std::runtime_error("Image dimensions have changed!");
-
+            if(width != p2this->cvFrame->cols || height != p2this->cvFrame->rows){
+				Logger::logWarning("Image dimensions have changed: " +
+                                           std::to_string(width) + "x" + std::to_string(height));
 				delete p2this->cvFrame;
 				p2this->cvFrame = new cv::Mat(height, width, CV_8UC3);
 			}
@@ -287,7 +328,7 @@ class Pb2hal: public Hal {
         ARSAL_Sem_Wait(&(p2this->framesem));
 
         /*if(p2this->frameAvailable)
-            Logger::logWarning("Frame lost");*//*
+            Logger::logWarning("Frame lost");*/
 
         p2this->frameAvailable = true;
 
@@ -297,7 +338,7 @@ class Pb2hal: public Hal {
                   p2this->cvFrame->data);
 
         ARSAL_Sem_Post(&(p2this->framesem));
-*/
+
 	    return ARCONTROLLER_OK;
 	}
 
@@ -338,7 +379,7 @@ class Pb2hal: public Hal {
 	}
 
 	//Obtener estado de vuelo
-	eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE getFlyingState(ARCONTROLLER_Device_t *deviceController){
+	/*eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE getFlyingState(ARCONTROLLER_Device_t *deviceController){
 	    eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE flyingState = ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_MAX;
 	    eARCONTROLLER_ERROR error;
 	    ARCONTROLLER_DICTIONARY_ELEMENT_t *elementDictionary = ARCONTROLLER_ARDrone3_GetCommandElements(deviceController->aRDrone3, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED, &error);
@@ -359,7 +400,7 @@ class Pb2hal: public Hal {
 	        }
 	    }
 	    return flyingState;
-	}
+	}*/
 
 	public:
 	ARSAL_Sem_t statesem;
@@ -368,6 +409,8 @@ class Pb2hal: public Hal {
 	/************Constructor*************/ 
 
 	Pb2hal() {
+
+        ARSAL_Print_SetCallback(customPrintCallback);
 
         ARSAL_Sem_Init(&(statesem), 0, 0);
         ARSAL_Sem_Init(&(framesem), 0, 1);
@@ -386,6 +429,41 @@ class Pb2hal: public Hal {
 
         connected = false;
 
+        state = State::Unknown;
+
+    }
+
+    static int customPrintCallback(eARSAL_PRINT_LEVEL level, const char *tag, const char *format, va_list va) {
+
+        static const int LOG_BUFFER_SIZE = 500;
+        static thread_local char logBuffer[LOG_BUFFER_SIZE];
+
+        vsnprintf(logBuffer, (LOG_BUFFER_SIZE - 1), format, va);
+        logBuffer[LOG_BUFFER_SIZE- 1] = '\0';
+
+        switch(level) {
+            case ARSAL_PRINT_FATAL:
+                Logger::logCritical(logBuffer);
+                break;
+            case ARSAL_PRINT_ERROR:
+                Logger::logError(logBuffer);
+                break;
+            case ARSAL_PRINT_WARNING:
+                Logger::logWarning(logBuffer);
+                break;
+            case ARSAL_PRINT_INFO:
+                Logger::logInfo(logBuffer);
+                break;
+            case ARSAL_PRINT_DEBUG:
+                Logger::logDebug(logBuffer);
+                break;
+            case ARSAL_PRINT_VERBOSE:
+                Logger::logDebug(logBuffer);
+                break;
+            case ARSAL_PRINT_MAX:break;
+        }
+
+        return 0;
     }
 
     void Connect() {
@@ -504,25 +582,14 @@ class Pb2hal: public Hal {
 
 		ThrowOnInternalError("Land failed");
 
-        Logger::logInfo("Atterizando");
+        Logger::logInfo("Landing");
 
-	    eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE flyingState = getFlyingState(deviceController);
-	    if (flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_FLYING 
-	    		|| flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_HOVERING){
-
+	    if (state == State::Flying || state == State::Hovering || state == State::TakingOff){
 	        deviceController->aRDrone3->sendPilotingLanding(deviceController->aRDrone3);
-	    }
+	    } else {
+            Logger::logWarning("Cannot land: drone isn't flying, hovering or taking off");
+        }
 
-	    //Esperar que termine
-	    //sleep(1);
-	    while(1){
-	    	eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE flyingState = getFlyingState(deviceController);
-	    	if(flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_LANDED){
-	    		break;
-	    	}
-	    }
-
-        Logger::logInfo("Aterrizado");
 	}
 
 	void takeoff(){
@@ -531,22 +598,12 @@ class Pb2hal: public Hal {
 
         Logger::logInfo("Taking off");
 
-	    if (getFlyingState(deviceController) == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_LANDED){
+	    if (state == State::Landed){
 	        deviceController->aRDrone3->sendPilotingTakeOff(deviceController->aRDrone3);
-	    }
+	    } else {
+            Logger::logWarning("Cannot take off: drone isn't landed");
+        }
 
-	    //Esperar que termine
-	    while(1){
-            ThrowOnInternalError("Takeoff failed");
-
-	    	eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE flyingState = getFlyingState(deviceController);
-	    	if(flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_HOVERING 
-	    			|| flyingState == ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_FLYING){
-	    		break;
-	    	}
-	    }
-
-        Logger::logInfo("Took off");
 	}
 
 	/*// --> Altura objetivo
@@ -571,15 +628,15 @@ class Pb2hal: public Hal {
 	// --> Obtener captura de imagen (ambas cámaras)
 	cv::Mat* getFrame(Camera cam){
 
-		/*ARSAL_Sem_Wait(&(framesem));
+		ARSAL_Sem_Wait(&(framesem));
 
         if(!frameAvailable)
             Logger::logWarning("No frame available");
 
         frameAvailable = false;
 
-            return cvFrame;
-		ARSAL_Sem_Post(&(framesem));*/
+        return cvFrame;
+		ARSAL_Sem_Post(&(framesem));
 
 		return NULL;
 
@@ -622,6 +679,10 @@ class Pb2hal: public Hal {
         {
             throw std::runtime_error(message);
         }
+    }
+
+    State getState() {
+        return state;
     }
 
 };

@@ -17,9 +17,11 @@
 
 namespace asio = boost::asio;
 
+const int SocketChannel::MAX_NUMBER_RETRIES = 3;
+
 void SocketChannel::tryConnect(std::string host, unsigned short port){
 
-    Logger::logDebug("Connecting to " + host + ":" + std::to_string(port));
+    Logger::logDebug("Connecting to %s:%u") << host << port;
 
     tcp::resolver resolver(service);
     tcp::resolver::query query(host, std::to_string(port));
@@ -29,7 +31,7 @@ void SocketChannel::tryConnect(std::string host, unsigned short port){
     socket = new tcp::socket(service);
     asio::connect(*socket, endpoint_iterator);
 
-    Logger::logDebug("Connected to " + socket->remote_endpoint().address().to_string() + ":" + std::to_string(port));
+    Logger::logDebug("Connected to %s:%u") << socket->remote_endpoint().address() << port;
 
     isServing = false;
 }
@@ -49,7 +51,7 @@ void SocketChannel::connect(std::string host, unsigned short port) {
                 throw;
             }
             retries++;
-            Logger::logWarning("Couldn't connect. Retry " + std::to_string(retries) + " of " + std::to_string(MAX_NUMBER_RETRIES));
+            Logger::logWarning("Couldn't connect. Retry %u of %u") << retries << MAX_NUMBER_RETRIES;
             sleep(1);
         }
     }
@@ -64,7 +66,7 @@ void SocketChannel::serve(unsigned short port) {
 
     IpResolver resolver;
     boost::asio::ip::address_v4 ip = resolver.resolve();
-    Logger::logDebug("Starting server on " +  ip.to_string() + ":" + std::to_string(port));
+    Logger::logDebug("Starting server on %s:%u") << ip.to_string() << port;
 
     tcp::acceptor acceptor(service, tcp::endpoint(tcp::v4(), port));
 
@@ -72,7 +74,7 @@ void SocketChannel::serve(unsigned short port) {
     acceptor.accept(*socket);
 
     asio::ip::basic_endpoint<tcp> remote = socket->remote_endpoint();
-    Logger::logDebug("Connected with " + remote.address().to_string() + ":" + std::to_string(remote.port()));
+    Logger::logDebug("Connected with %s:%u") << remote.address().to_string() << remote.port();
 
     isServing = true;
 

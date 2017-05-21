@@ -29,19 +29,14 @@ void Brain::setup(Config* config) {
     broadcaster.setup(config->getBroadcastPort());
     communication.setup(config->getName(), config->getId());
     communication.serve(config->getCommsPort());
+
+    pingWait = 0;
+    waitingPing = false;
 };
 
 void Brain::communicateWithBody(unsigned short port) {
     bodyCommunication.serve(port);
     Logger::logInfo("Brain has established a connection!");
-
-    Message ping = MessageBuilder::build(Message_Type_PING);
-    ping.mutable_ping()->set_type(Ping_PingType::Ping_PingType_REQUEST);
-
-    bodyCommunication.send(ping);
-    Logger::logInfo("PING REQUEST sent");
-
-
 }
 
 void Brain::loop() {
@@ -55,18 +50,38 @@ void Brain::loop() {
         lastTime = newTime;
         newTime = chrono::steady_clock::now();
 
-        deltaTime = std::chrono::duration_cast<std::chrono::milliseconds>(newTime - lastTime).count();
-        runningTime = std::chrono::duration_cast<std::chrono::milliseconds>(newTime - startTime).count();
+        deltaTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - lastTime).count();
+        runningTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - startTime).count();
 
         handleMessages();
 
         advertise();
+        sendPingIfAppropiate();
 
         if(should_exit) {
             break;
         }
 
         sleep(0);
+    }
+}
+
+void Brain::sendPingIfAppropiate() {
+
+    pingWait += deltaTime;
+
+    if(waitingPing && pingWait > config->getPingTimeout()  * 1000) {
+        Logger::logError("Ping not ACKed in %u milliseconds") << pingWait / 1000;
+        should_exit = true;
+    } else if(!waitingPing && pingWait > config->getPingLapse() * 1000) {
+        Message ping = MessageBuilder::build(Message_Type_PING);
+        ping.mutable_ping()->set_type(Ping_PingType::Ping_PingType_REQUEST);
+
+        bodyCommunication.send(ping);
+        Logger::logInfo("PING REQUEST sent");
+
+        pingWait = 0;
+        waitingPing = true;
     }
 }
 
@@ -91,12 +106,15 @@ void Brain::PingHandler(Message& msg){
 
     Ping* ping = msg.mutable_ping();
     if(ping->type() == Ping_PingType_REQUEST) {
+
         Logger::logInfo("PING REQUEST received");
         ping->set_type(Ping_PingType_ACK);
         bodyCommunication.send(msg);
+
     } else {
         Logger::logInfo("PING ACK received");
-        //shutdown();
+        waitingPing = false;
+        pingWait = 0;
     }
 
 }
@@ -109,7 +127,7 @@ void Brain::shutdown() {
 
 void Brain::advertise() {
 
-    if(runningTime - lastAdvertisementTime > config->getAdvertisementLapse()) {
+    if(runningTime - lastAdvertisementTime > config->getAdvertisementLapse() * 1000) {
 
         Message msg = MessageBuilder::build(Message_Type::Message_Type_ADVERTISEMENT);
 
@@ -132,9 +150,8 @@ void Brain::AdvertisementHandler(Message& msg){
     boost::asio::ip::address_v4 address = boost::asio::ip::address_v4(advertisement->ip());
 
     if(address != communication.getIp() && advertisement->port() != communication.getPort()){
-        Logger::logDebug("Advertisement received from " +
-                         address.to_string() + ":" +
-                         std::to_string(advertisement->port()));
+        Logger::logDebug("Advertisement received from %s:%u") << address.to_string() <<
+                         advertisement->port();
 
         communication.connect(address, (unsigned short) advertisement->port());
     }
@@ -147,10 +164,9 @@ void Brain::HelloHandler(Message& msg){
 
     boost::asio::ip::address_v4 address = boost::asio::ip::address_v4(hello->ip());
 
-    Logger::logDebug("Hello received from " +
-                     hello->name() + "(" + std::to_string(hello->id()) + ") at " +
-                     address.to_string() + ":" +
-                     std::to_string(hello->port()));
+    Logger::logDebug("Hello received from %s(%u) at %s:%u") << hello->name() <<
+                     hello->id() << address.to_string() <<
+                     hello->port();
 
     communication.asociate(hello);
 

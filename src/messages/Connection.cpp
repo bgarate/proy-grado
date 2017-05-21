@@ -28,7 +28,7 @@ tcp::socket& Connection::getSocket(){
 
 void Connection::start() {
     const boost::asio::ip::basic_endpoint <tcp> remote = socket.remote_endpoint();
-    Logger::logDebug("Connected with " + remote.address().to_string() + ":" + std::to_string(remote.port()));
+    Logger::logDebug("Connected with %s:%u") << remote.address() << remote.port();
 
     receive();
 
@@ -56,7 +56,7 @@ void Connection::handleReadBody(const boost::system::error_code& error){
 
         receive();
     } else {
-        Logger::logError("Error while receiving body: " + error.message());
+        Logger::logError("Error while receiving body:\n%s" + error.message());
     }
 
 }
@@ -83,7 +83,7 @@ void Connection::handleReadHeader(const boost::system::error_code& error){
                          boost::bind(&Connection::handleReadBody, shared_from_this(), boost::asio::placeholders::error));
 
     } else {
-        Logger::logError("Error while receiving header: " + error.message());
+        Logger::logError("Error while receiving header:\n%s") << error.message();
     }
 
 }

@@ -46,3 +46,8 @@ void DummyHal::Disconnect(){
 
 }
 
+State DummyHal::getState() {
+    return State::Flying;
+}
+
+

@@ -139,7 +139,12 @@ class Vrephal: public Hal {
 
 	}
 
-	/************Movimiento*************/
+    State getState() {
+        return State::Flying;
+    }
+
+
+    /************Movimiento*************/
 
 	//Set movimientos
 	void move(int roll, int pitch, int yaw, int gaz){

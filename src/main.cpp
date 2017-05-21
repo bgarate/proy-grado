@@ -86,7 +86,7 @@ int main(int argc, const char* args[]) {
             config->setHalType(HalType::Vrep);
             hal = new Vrephal();
         } else {
-            std::cout << "Unknown Hal type '" + choosenHal + "'" << endl;
+            std::cout << "Unknown Hal type '" << choosenHal << "'" << endl;
             return 0;
         }
     }
@@ -113,7 +113,6 @@ int main(int argc, const char* args[]) {
         brain.setup(config);
         brain.loop();
         brain.cleanup();
-
     }
 
     delete config;

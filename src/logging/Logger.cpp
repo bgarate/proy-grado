@@ -3,9 +3,11 @@
 //
 
 #include <iostream>
+#include <cstdio>
 #include "Logger.h"
 #include "spdlog/spdlog.h"
 #include "stdio.h"
+#include "boost/format.hpp"
 
 
 Logger &Logger::getInstance() {
@@ -31,6 +33,7 @@ void Logger::initConsole(std::string name) {
 }
 
 void Logger::Log(std::string msg, Logger::LogType severity) {
+
     switch (severity){
         case LogType::CRITICAL:
             console->critical(msg);
@@ -45,7 +48,6 @@ void Logger::Log(std::string msg, Logger::LogType severity) {
             console->info(msg);
             break;
         case LogType::DEBUG:
-            //std::cout << msg << std::endl;
             console->debug(msg);
             break;
     }
@@ -57,24 +59,24 @@ Logger::~Logger() {
     spdlog::drop_all();
 }
 
-void Logger::logCritical(std::string msg) {
-    Logger::getInstance().Log(msg, LogType::CRITICAL);
+Logger::Formatter Logger::logDebug(std::string msg) {
+    return Formatter(msg, LogType::DEBUG);
 }
 
-void Logger::logError(std::string msg) {
-    Logger::getInstance().Log(msg, LogType::ERROR);
+Logger::Formatter Logger::logInfo(std::string msg) {
+    return Formatter(msg, LogType::INFO);
 }
 
-void Logger::logWarning(std::string msg) {
-    Logger::getInstance().Log(msg, LogType::WARNING);
+Logger::Formatter Logger::logCritical(std::string msg) {
+    return Formatter(msg, LogType::CRITICAL);
 }
 
-void Logger::logInfo(std::string msg) {
-    Logger::getInstance().Log(msg, LogType::INFO);
+Logger::Formatter Logger::logError(std::string msg) {
+    return Formatter(msg, LogType::ERROR);
 }
 
-void Logger::logDebug(std::string msg) {
-    Logger::getInstance().Log(msg, LogType::DEBUG);
+Logger::Formatter Logger::logWarning(std::string msg) {
+    return Formatter(msg, LogType::WARNING);
 }
 
 void Logger::setSource(std::string source) {

@@ -25,6 +25,10 @@ private:
 
     unsigned short commsPort;
 
+    unsigned int pingTimeout;
+
+    unsigned int pingLapse;
+
 public:
 
     Config();
@@ -60,6 +64,14 @@ public:
     HalType getHalType() const;
 
     void setHalType(HalType halType);
+
+    unsigned int getPingTimeout() const;
+
+    void setPingTimeout(unsigned int pingTimeout);
+
+    unsigned int getPingLapse() const;
+
+    void setPingLapse(unsigned int pingLapse);
 
 };
 

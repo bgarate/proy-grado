@@ -19,7 +19,7 @@ namespace asio = boost::asio;
 
 Connection::Pointer AsyncSocketChannel::tryConnect(boost::asio::ip::address_v4 address, unsigned short port){
 
-    Logger::logDebug("Connecting to " + address .to_string()+ ":" + std::to_string(port));
+    Logger::logDebug("Connecting to %s:%u") << address.to_string() << port;
 
     Connection::Pointer connection = Connection::create(service, queue);
 
@@ -48,7 +48,7 @@ Connection::Pointer AsyncSocketChannel::connect(boost::asio::ip::address_v4 addr
                 throw;
             }
             retries++;
-            Logger::logWarning("Couldn't connect. Retry " + std::to_string(retries) + " of " + std::to_string(MAX_NUMBER_RETRIES));
+            Logger::logWarning("Couldn't connect. Retry %u of %u") << retries,MAX_NUMBER_RETRIES;
             sleep(1);
         }
     }
@@ -63,7 +63,7 @@ bool AsyncSocketChannel::isServer() {
 
 void AsyncSocketChannel::serve(unsigned short port) {
 
-    Logger::logDebug("Starting server on " + std::to_string(port));
+    Logger::logDebug("Starting server on %s") << port;
 
     acceptor = boost::shared_ptr<tcp::acceptor>(new tcp::acceptor(service, tcp::endpoint(tcp::v4(), port)));
 
@@ -85,7 +85,7 @@ void AsyncSocketChannel::acceptNext() {
             connections.push_back(connection);
             AceptedConnection(connection);
         } else {
-            Logger::logError("Error accepting connection:\n" + error.message());
+            Logger::logError("Error accepting connection:\n%s") << error.message();
         }
 
         acceptNext();

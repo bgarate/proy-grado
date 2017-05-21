@@ -17,6 +17,8 @@ enum class HalType {
 //Enumerado cámara
 	enum class Camera {Front, Bottom};
 
+    enum class State {Unknown, Landed, TakingOff, Hovering, Flying, Landing, Emergency, EmergencyLanding};
+
 	//Definicion frame
 	typedef struct {
 		char ** data;
@@ -48,7 +50,7 @@ class Hal{
 
 	//roll = rotate
 	//pitch =  backward-forward
-	//yaw = derecha-izuquierda
+	//yaw = derecha-izquierda
 	//gaz = arriba-abajo
 	virtual void move(int roll, int pitch, int yaw, int gaz) = 0;
 
@@ -96,6 +98,8 @@ class Hal{
     virtual void Connect() = 0;
 
     virtual void Disconnect() = 0;
+
+    virtual State getState() = 0;
 
 };
 

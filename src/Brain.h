@@ -48,6 +48,11 @@ private:
     void AdvertisementHandler(Message &msg);
 
     void HelloHandler(Message &msg);
+
+    void sendPingIfAppropiate();
+
+    unsigned int pingWait;
+    bool waitingPing;
 };
 
 

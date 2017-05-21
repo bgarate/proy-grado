@@ -27,6 +27,7 @@ void Body::setup(Config* config) {
     Logger::getInstance().setSource("BODY");
     communicateWithBrain(config->getBrainHost(), config->getBrainPort());
     hal->Connect();
+    pingWait = 0;
 }
 void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
@@ -46,8 +47,7 @@ void Body::loop() {
     chrono::steady_clock::time_point lastTime;
     chrono::steady_clock::time_point newTime = startTime;
 
-    sleep(3);
-    /*while (true) {
+    while (true) {
         lastTime = newTime;
         newTime = chrono::steady_clock::now();
 
@@ -59,6 +59,8 @@ void Body::loop() {
             messsageHandler.handle(msg);
         }
 
+        waitPing();
+
         bool res = bt->BodyTestStep(deltaTime);
 
         if(!res)
@@ -68,7 +70,7 @@ void Body::loop() {
             break;
 
         usleep(1000);
-    }*/
+    }
     Logger::logDebug("Finishing test");
     bt->FinishBodyTest();
 
@@ -82,9 +84,9 @@ void Body::PingHandler(Message& msg){
         ping->set_type(Ping_PingType_ACK);
         communication.send(msg);
         Logger::logInfo("PING ACK sent");
+        pingWait = 0;
     } else {
         Logger::logInfo("PING ACK received");
-
     }
 
 }
@@ -100,6 +102,15 @@ void Body::ShutdownHandler(Message& msg){
 
 void Body::cleanup() {
     hal->Disconnect();
+}
+
+void Body::waitPing() {
+    pingWait += deltaTime;
+
+    if(pingWait > (config->getPingLapse() + config->getPingTimeout()) * 1000) {
+        Logger::logError("Ping not received in %u milliseconds") << (int)(pingWait / 1000);
+        should_exit = true;
+    }
 }
 
 
