@@ -14,10 +14,12 @@ using namespace std;
 int main(int argc, char** argv){
 
 	Vrephal hal;
+	hal.Connect();
 
 	/************** MOVIMIENTO *****************/
 
 	double vel = 100;
+	int msleep = 5;
 
 	//despegar
 	cout << "Despegar..." << endl;
@@ -32,7 +34,7 @@ int main(int argc, char** argv){
 	//girar en un sentido
 	cout << "Giro positivo..." << endl;
 	hal.move(vel, 0, 0, 0);
-	sleep(2);
+	sleep(msleep);
 	hal.move(0, 0, 0, 0);
 
 	sleep(4);
@@ -40,7 +42,7 @@ int main(int argc, char** argv){
 	//girar en el otro
 	cout << "Giro negativo..." << endl;
 	hal.move(-vel, 0, 0, 0);
-	sleep(2);
+	sleep(msleep);
 	hal.move(0, 0, 0, 0);
 
 	sleep(4);
@@ -48,14 +50,14 @@ int main(int argc, char** argv){
 	//adelante
 	cout << "Adelante..." << endl;
 	hal.move(0, vel, 0, 0);
-	sleep(2);
+	sleep(msleep);
 	hal.move(0, 0, 0, 0);
 
 	sleep(2);
 
 	//atras
 	hal.move(0, -vel, 0, 0);
-	sleep(2);
+	sleep(msleep);
 	hal.move(0, 0, 0, 0);
 
 	sleep(2);
@@ -63,28 +65,28 @@ int main(int argc, char** argv){
 	//a un lado
 	cout << "Para un lado..." << endl;
 	hal.move(0, 0, vel, 0);
-	sleep(2);
+	sleep(msleep);
 	hal.move(0, 0, 0, 0);
 
 	sleep(2);
 
 	//al otro lado
 	hal.move(0, 0, -vel, 0);
-	sleep(2);
+	sleep(msleep);
 	hal.move(0, 0, 0, 0);
 
 	sleep(2);
 
 	//arriba
 	hal.move(0, 0, 0, vel);
-	sleep(2);
+	sleep(msleep);
 	hal.move(0, 0, 0, 0);
 
 	sleep(2);
 
 	//abajo
 	hal.move(0, 0, 0, -vel);
-	sleep(2);
+	sleep(msleep);
 	hal.move(0, 0, 0, 0);
 
 	sleep(2);
@@ -115,4 +117,6 @@ int main(int argc, char** argv){
 	//Posicion
 	Point p = hal.getOrientation();
 	cout << "Posición: [" << p.x << ", " << p.y << ", " << p.z << "]" << endl;
+
+	hal.Disconnect();
 }

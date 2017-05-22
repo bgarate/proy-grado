@@ -63,8 +63,8 @@ class Vrephal: public Hal {
 
             	usleep(25000);
 
-            	position[0] = -position[0]/2;//pitch
-	            position[1] = -position[1]/2;//yaw
+            	position[0] = -position[0]/1;//pitch
+	            position[1] = -position[1]/1;//yaw
 	            position[2] = 0;//gaz
 	            orientation[0]= 0;
 	            orientation[1]= 0;
@@ -109,33 +109,30 @@ class Vrephal: public Hal {
 
 	public:
 
-	/************Constructor*************/ 
+	/************Constructor*************/
 
-	Vrephal(){
+	void Connect() {
 		//Conectar con V-REP
-		clientID = simxStart(HOST, PORT, true, true, 5000, 5); 
-		
-	    //Obtener handlers
-	    simxInt res1 = simxGetObjectHandle(clientID, "Quadricopter_target",&targetHandler,simx_opmode_blocking);
-	    simxInt res2 = simxGetObjectHandle(clientID, "Quadricopter",&quadricopterHandler,simx_opmode_blocking);
-	    simxInt res3 = simxGetObjectHandle(clientID, "Vision_sensorFloor",&quadricopterFloorCamHandler,simx_opmode_blocking);
-	    simxInt res4 = simxGetObjectHandle(clientID, "Vision_sensorFront",&quadricopterFrontCamHandler,simx_opmode_blocking);
+		clientID = simxStart(HOST, PORT, true, true, 5000, 5);
+		simxInt res = simxStartSimulation(clientID, simx_opmode_blocking);
+
+		//Obtener handlers
+		simxInt res1 = simxGetObjectHandle(clientID, "Quadricopter_target",&targetHandler,simx_opmode_blocking);
+		simxInt res2 = simxGetObjectHandle(clientID, "Quadricopter",&quadricopterHandler,simx_opmode_blocking);
+		simxInt res3 = simxGetObjectHandle(clientID, "Vision_sensorFloor",&quadricopterFloorCamHandler,simx_opmode_blocking);
+		simxInt res4 = simxGetObjectHandle(clientID, "Vision_sensorFront",&quadricopterFrontCamHandler,simx_opmode_blocking);
 
 		//Iniciar deamon
 		this->moving=0;
 		this->roll=0;
-	    this->pitch=0;
-	    this->yaw=0;
-	    this->gaz=0;
+		this->pitch=0;
+		this->yaw=0;
+		this->gaz=0;
 		this->t = new thread(&Vrephal::deamon, this);
 	}
 
-
-	void Connect() {
-
-	}
-
 	void Disconnect(){
+		simxInt res = simxStopSimulation(clientID, simx_opmode_blocking);
 
 	}
 
@@ -160,60 +157,9 @@ class Vrephal: public Hal {
 		}
 	}
 
-
-	/*// --> Rotación horizontal
-	void hrotate(double vel){
-
-		simxFloat * orientation = new simxFloat[3];
-	  	simxGetObjectOrientation(clientID, targetHandler, -1, orientation, simx_opmode_blocking);
-
-	  	//Calcular orientacion	  	
-        orientation[0]= orientation[0];
-        orientation[1]= orientation[1];
-        orientation[2]= orientation[2] + (vel*0.1);
-
-		simxSetObjectOrientation(clientID, targetHandler, -1, orientation, simx_opmode_blocking);
-
+	void rmove(double dx, double dy, double dz, double dh){
+	//todo
 	}
-
-	// --> Movimiento horizontal
-	void hmove(double angle, double vel){
-
-		//calcular vector
-		double x = vel*cos(angle*2*M_PI/360.0);
-		double y = vel*sin(angle*2*M_PI/360.0);
-
-		simxFloat * position = new simxFloat[3];
-		simxFloat * newposition = new simxFloat[3];
-		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
-
-	    //Modificar posicion
-	    newposition[0] = position[0] + x*0.1;
-	    newposition[1] = position[1] + y*0.1;
-	    newposition[2] = position[2];
-
-	    simxSetObjectPosition(clientID, targetHandler, -1, newposition, simx_opmode_blocking);
-	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
-	    simxSetObjectPosition(clientID, targetHandler, -1, newposition, simx_opmode_blocking);
-	}
-
-	// --> Movimiento vertical
-	void vmove(double vel){
-
-		simxFloat * position = new simxFloat[3];
-		simxFloat * newposition = new simxFloat[3];
-		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
-
-	    //Modificar posicion
-	    newposition[0] = position[0];
-	    newposition[1] = position[1];
-	    newposition[2] = position[2] + vel*0.1;
-
-	    simxSetObjectPosition(clientID, targetHandler, -1, newposition, simx_opmode_blocking);
-	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
-	    simxSetObjectPosition(clientID, targetHandler, -1, newposition, simx_opmode_blocking);
-
-	}*/
 
 	// --> Despegue y aterrizaje
 	void land(){
@@ -254,18 +200,6 @@ class Vrephal: public Hal {
 			}
 	    }
 	}
-
-	/*// --> Altura objetivo
-	void targetAltitude(double altitude){
-
-		simxFloat * position = new simxFloat[3];
-		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
-
-	    //Modificar posicion
-	    position[2] = altitude;
-
-	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
-	}*/
 
 	/************Estado del drone*************/
 
