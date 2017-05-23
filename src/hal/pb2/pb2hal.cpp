@@ -227,6 +227,7 @@ class Pb2hal: public Hal {
 	    return ARCONTROLLER_OK;
 	}
 
+    //todo: mover procesamiento del frame a getframe con cache
 	static eARCONTROLLER_ERROR didReceiveFrameCallback (ARCONTROLLER_Frame_t *frame, void *customData){
 
         Pb2hal * p2this = (Pb2hal*) customData;
@@ -275,6 +276,9 @@ class Pb2hal: public Hal {
         std::copy(p2this->videoDecoder.GetFrameRGBRawCstPtr(),
                   p2this->videoDecoder.GetFrameRGBRawCstPtr() + num_bytes,
                   p2this->cvFrame->data);
+
+        cv::cvtColor(*p2this->cvFrame,*p2this->cvFrame,cv::COLOR_BGR2RGB);
+
 
         ARSAL_Sem_Post(&(p2this->framesem));
 
@@ -466,6 +470,8 @@ class Pb2hal: public Hal {
 
 			connected = true;
 
+            deviceController->aRDrone3->sendMediaStreamingVideoEnable(deviceController->aRDrone3, true);
+
             Logger::logInfo("Pb2Hal iniciado");
 
         } catch (const std::runtime_error ex) {
@@ -558,16 +564,13 @@ class Pb2hal: public Hal {
 
 		ARSAL_Sem_Wait(&(framesem));
 
-        if(!frameAvailable)
-            Logger::logWarning("No frame available");
+        //if(!frameAvailable)
+        //    Logger::logWarning("No frame available");
 
         frameAvailable = false;
 
+        ARSAL_Sem_Post(&(framesem));
         return cvFrame;
-		ARSAL_Sem_Post(&(framesem));
-
-		return NULL;
-
 	}
 
 	/************Posición*************/

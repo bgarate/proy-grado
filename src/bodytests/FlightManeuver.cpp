@@ -77,8 +77,11 @@ class FlightManeuver : public BodyTest {
                 currentTime += deltaTime;
             }
 
-            //cv::Mat *frame = hal->getFrame(Camera::Front);
-            /*cv::imshow("tracker", *frame);*/
+            cv::Mat *frame = hal->getFrame(Camera::Front);
+            if(frame != NULL){
+                cv::imshow("tracker", *frame);
+                cv::waitKey(1);
+            }
         }
         return true;
 
