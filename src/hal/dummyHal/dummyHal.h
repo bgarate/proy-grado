@@ -31,6 +31,7 @@ class DummyHal: public Hal {
 
     State getState() override;
 
+    void rmove(double dx, double dy, double dz, double dh);
 };
 
 

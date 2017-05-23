@@ -26,13 +26,36 @@ class FlightManeuver : public BodyTest {
     std::vector<DirectionTime> sequence = {DirectionTime(-0.25,0,0,2), DirectionTime(0,-0.25,0,2),
                                 DirectionTime(0.25,0,0,2),DirectionTime(0,0.25,0,2)};
 
+    bool waitingTakeOff = false;
+    bool waitingLanding = false;
+
     void InitBodyTest(Hal *hal) override {
         this->hal = hal;
         cv::namedWindow("Bebop", cv::WINDOW_AUTOSIZE);
-        hal->takeoff();
+
     }
 
     bool BodyTestStep(double deltaTime) override {
+
+        if(hal->getState() == State::Landed){
+            // Despegar
+            hal->takeoff();
+            waitingTakeOff = true;
+            return true;
+        } else if(waitingTakeOff &&
+                (hal->getState() == State::Hovering || hal->getState() == State::Flying))
+        {
+            // Despegado
+            waitingTakeOff = false;
+        } else if(waitingLanding || hal->getState() == State::Landed){
+            // Aterrizado
+            return false;
+        } else if(currentStep >= sequence.size() && !waitingLanding){
+            // Aterrizar
+            hal->land();
+            waitingLanding = true;
+            return true;
+        }
 
         DirectionTime directionTime = sequence[currentStep];
 
@@ -50,7 +73,7 @@ class FlightManeuver : public BodyTest {
         cv::Mat* frame = hal->getFrame(Camera::Front);
         /*cv::imshow("tracker", *frame);*/
 
-        return currentStep < sequence.size();
+        return true;
 
     }
 

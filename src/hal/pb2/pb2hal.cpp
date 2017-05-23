@@ -1,5 +1,6 @@
 #include "../hal.hpp"
 #include "VideoDecoder.h"
+#include "CommandHandler.h"
 
 #include <math.h>
 #include <iostream>
@@ -50,8 +51,8 @@ class Pb2hal: public Hal {
 
     atomic<State> state;
 
-
     VideoDecoder videoDecoder;
+    CommandHandler commandHandler;
 
 	cv::Mat* cvFrame = NULL;
     bool frameAvailable = false;
@@ -141,120 +142,57 @@ class Pb2hal: public Hal {
         }
     }
 
+    void registerHandlers(){
+        commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_COMMON_COMMONSTATE_BATTERYSTATECHANGED,
+                        [=](CommandDictionary* d) {this->BatteryStateChanged(d);});
+        commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_POSITIONCHANGED,
+                                       [=](CommandDictionary* d) {this->GpsPositionChanged(d);});
+        commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ALTITUDECHANGED,
+                                       [=](CommandDictionary* d) {this->AltitudeChanged(d);});
+        commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ATTITUDECHANGED,
+                                       [=](CommandDictionary* d) {this->AttitudeChanged(d);});
+        commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED,
+                                       [=](CommandDictionary* d) {this->FlyingStateChanged(d);});
+
+
+    }
+
+    void BatteryStateChanged(CommandDictionary* dictionary){
+        this->batteryLevel = dictionary->getUInt8(ARCONTROLLER_DICTIONARY_KEY_COMMON_COMMONSTATE_BATTERYSTATECHANGED_PERCENT);
+    }
+
+    void FlyingStateChanged(CommandDictionary* dictionary){
+        int stateValue = dictionary->getInteger(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE);
+        this->state = mapFlyingState((eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE)stateValue);
+    }
+
+    void GpsPositionChanged(CommandDictionary* dictionary){
+        this->gpslatitude =
+                dictionary->getDouble(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_POSITIONCHANGED_LATITUDE);
+        this->gpslongitude =
+                dictionary->getDouble(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_POSITIONCHANGED_LONGITUDE);
+        this->gpsaltitude =
+                dictionary->getDouble(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_POSITIONCHANGED_ALTITUDE);
+    }
+
+    void AttitudeChanged(CommandDictionary* dictionary){
+        this->orientationx =
+                dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ATTITUDECHANGED_ROLL);
+        this->orientationy =
+                dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ATTITUDECHANGED_PITCH);
+        this->orientationz =
+                dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ATTITUDECHANGED_YAW);
+    }
+
+    void AltitudeChanged(CommandDictionary* dictionary){
+        this->altitude = dictionary->getUInt8(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ALTITUDECHANGED_ALTITUDE);
+    }
+
     // called when a command has been received from the drone
 	static void receivedOnCommand (eARCONTROLLER_DICTIONARY_KEY commandKey, ARCONTROLLER_DICTIONARY_ELEMENT_t *elementDictionary, void *customData)
 	{
-
-	    if (elementDictionary != NULL){
-
-	    	Pb2hal * p2this = (Pb2hal*) customData;
-
-	    //BATTERY STATE changed
-	        if (commandKey == ARCONTROLLER_DICTIONARY_KEY_COMMON_COMMONSTATE_BATTERYSTATECHANGED){
-
-	            ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
-	            ARCONTROLLER_DICTIONARY_ELEMENT_t *element = NULL;
-	            HASH_FIND_STR (elementDictionary, ARCONTROLLER_DICTIONARY_SINGLE_KEY, element);
-
-	            if (element != NULL){
-
-	                HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_COMMON_COMMONSTATE_BATTERYSTATECHANGED_PERCENT, arg);
-	                if (arg != NULL){
-	                    p2this->batteryLevel = (int) arg->value.U8;
-	                }
-	            }
-	        }
-	    //GPS POSITION changed
-	        if (commandKey == ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_POSITIONCHANGED){
-		        
-		        ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
-		        ARCONTROLLER_DICTIONARY_ELEMENT_t *element = NULL;
-		        HASH_FIND_STR (elementDictionary, ARCONTROLLER_DICTIONARY_SINGLE_KEY, element);
-		        
-		        if (element != NULL){
-		            
-		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_POSITIONCHANGED_LATITUDE, arg);
-		            if (arg != NULL){
-
-		                p2this->gpslatitude = arg->value.Double;
-		            }
-
-		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_POSITIONCHANGED_LONGITUDE, arg);
-		            if (arg != NULL){
-
-		                p2this->gpslongitude = arg->value.Double;
-		            }
-
-		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_POSITIONCHANGED_ALTITUDE, arg);
-		            if (arg != NULL){
-
-		                p2this->gpsaltitude = arg->value.Double;
-		            }
-		        }
-		    }
-		//ALTITUDE changed
-		    if (commandKey == ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ALTITUDECHANGED){
-		        
-		        ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
-		        ARCONTROLLER_DICTIONARY_ELEMENT_t *element = NULL;
-		        HASH_FIND_STR (elementDictionary, ARCONTROLLER_DICTIONARY_SINGLE_KEY, element);
-		        
-		        if (element != NULL){
-		            
-		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ALTITUDECHANGED_ALTITUDE, arg);
-		            if (arg != NULL){
-		                
-		                p2this->altitude = arg->value.Double;
-		            }
-		        }
-		    }
-		//ATTITUDE changed
-		    if (commandKey == ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ATTITUDECHANGED){
-
-		        ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
-		        ARCONTROLLER_DICTIONARY_ELEMENT_t *element = NULL;
-		        HASH_FIND_STR (elementDictionary, ARCONTROLLER_DICTIONARY_SINGLE_KEY, element);
-		        
-		        if (element != NULL){
-
-
-		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ATTITUDECHANGED_ROLL, arg);
-		            if (arg != NULL){
-		                
-		                p2this->orientationx = arg->value.Float;
-		            }
-
-		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ATTITUDECHANGED_PITCH, arg);
-		            if (arg != NULL){
-
-		                p2this->orientationy = arg->value.Float;
-		            }
-
-		            HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ATTITUDECHANGED_YAW, arg);
-		            if (arg != NULL){
-
-		                p2this->orientationz = arg->value.Float;
-		            }
-
-
-		        }
-		    }
-            // FLYING STATE
-            if ((commandKey == ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED) && (elementDictionary != NULL))
-            {
-                ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
-                ARCONTROLLER_DICTIONARY_ELEMENT_t *element = NULL;
-                HASH_FIND_STR (elementDictionary, ARCONTROLLER_DICTIONARY_SINGLE_KEY, element);
-                if (element != NULL)
-                {
-                    HASH_FIND_STR (element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE, arg);
-                    if (arg != NULL)
-                    {
-                        p2this->state = mapFlyingState((eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE)arg->value.I32);
-                    }
-                }
-            }
-	    }
+        Pb2hal * p2this = (Pb2hal*) customData;
+        p2this->commandHandler.handle(commandKey, elementDictionary);
 	}
 
 
@@ -558,24 +496,9 @@ class Pb2hal: public Hal {
 		deviceController->aRDrone3->setPilotingPCMDFlag(deviceController->aRDrone3,1);
 	 }
 
-
-	/*// --> Rotación horizontal
-	void hrotate(double vel){
-
-		//TODO
-	}
-
-	// --> Movimiento horizontal
-	void hmove(double angle, double vel){
-
-		//TODO
-	}
-
-	// --> Movimiento vertical
-	void vmove(double vel){
-
-		//TODO
-	}*/
+    void rmove(double dx, double dy, double dz, double dh) {
+        //todo
+    }
 
 	// --> Despegue y aterrizaje
 	void land(){

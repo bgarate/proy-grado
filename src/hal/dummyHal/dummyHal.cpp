@@ -46,6 +46,10 @@ void DummyHal::Disconnect(){
 
 }
 
+void DummyHal::rmove(double dx, double dy, double dz, double dh) {
+
+};
+
 State DummyHal::getState() {
     return State::Flying;
 }
