@@ -144,15 +144,15 @@ class Pb2hal: public Hal {
 
     void registerHandlers(){
         commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_COMMON_COMMONSTATE_BATTERYSTATECHANGED,
-                        [=](CommandDictionary* d) {this->BatteryStateChanged(d);});
+                        [this](CommandDictionary* d) {this->BatteryStateChanged(d);});
         commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_POSITIONCHANGED,
-                                       [=](CommandDictionary* d) {this->GpsPositionChanged(d);});
+                                       [this](CommandDictionary* d) {this->GpsPositionChanged(d);});
         commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ALTITUDECHANGED,
-                                       [=](CommandDictionary* d) {this->AltitudeChanged(d);});
+                                       [this](CommandDictionary* d) {this->AltitudeChanged(d);});
         commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ATTITUDECHANGED,
-                                       [=](CommandDictionary* d) {this->AttitudeChanged(d);});
+                                       [this](CommandDictionary* d) {this->AttitudeChanged(d);});
         commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED,
-                                       [=](CommandDictionary* d) {this->FlyingStateChanged(d);});
+                                       [this](CommandDictionary* d) {this->FlyingStateChanged(d);});
 
 
     }
@@ -164,6 +164,7 @@ class Pb2hal: public Hal {
     void FlyingStateChanged(CommandDictionary* dictionary){
         int stateValue = dictionary->getInteger(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE);
         this->state = mapFlyingState((eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE)stateValue);
+        Logger::logError("State changed: %u") << (int)(State)this->state;
     }
 
     void GpsPositionChanged(CommandDictionary* dictionary){
@@ -185,7 +186,7 @@ class Pb2hal: public Hal {
     }
 
     void AltitudeChanged(CommandDictionary* dictionary){
-        this->altitude = dictionary->getUInt8(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ALTITUDECHANGED_ALTITUDE);
+        this->altitude = dictionary->getDouble(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ALTITUDECHANGED_ALTITUDE);
     }
 
     // called when a command has been received from the drone
@@ -313,8 +314,6 @@ class Pb2hal: public Hal {
 	    // once the device controller is stopped, we can delete it
 	    ARCONTROLLER_Device_Delete(&deviceController);
 
-        registerHandlers();
-
         connected = false;
 	}
 
@@ -434,6 +433,8 @@ class Pb2hal: public Hal {
                                  string(ARCONTROLLER_Error_ToString(error)));
             }
 
+            registerHandlers();
+
             //Funcion que recibe comandos del drone
             error = ARCONTROLLER_Device_AddCommandReceivedCallback(deviceController, receivedOnCommand, this);
 
@@ -458,6 +459,8 @@ class Pb2hal: public Hal {
                 Logger::logError("ARCONTROLLER_Device_Start error code: " +
                                  string(ARCONTROLLER_Error_ToString(error)));
             }
+
+            state = State::Landed;
 
             ARSAL_Sem_Wait(&(statesem));
 

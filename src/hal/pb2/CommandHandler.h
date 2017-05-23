@@ -19,6 +19,7 @@ extern "C"{
 
 class CommandDictionary {
 public:
+
     CommandDictionary(ARCONTROLLER_DICTIONARY_ELEMENT_t* dictionary);
     float getFloat(const char* str);
     double getDouble(const char* str);
@@ -32,6 +33,9 @@ private:
 
 class CommandHandler {
 public:
+
+    typedef std::pair<eARCONTROLLER_DICTIONARY_KEY,std::function<void (CommandDictionary*)>> HandlerPair;
+
     void registerHandler(eARCONTROLLER_DICTIONARY_KEY type, std::function<void(CommandDictionary*)> fn);
     void handle(eARCONTROLLER_DICTIONARY_KEY type, ARCONTROLLER_DICTIONARY_ELEMENT_t *elementDictionary);
 private:

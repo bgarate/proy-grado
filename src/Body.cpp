@@ -25,6 +25,7 @@ Body::Body(Hal *hal) {
 
 void Body::setup(Config* config) {
     Logger::getInstance().setSource("BODY");
+    this->config = config;
     communicateWithBrain(config->getBrainHost(), config->getBrainPort());
     hal->Connect();
     pingWait = 0;
@@ -59,7 +60,7 @@ void Body::loop() {
             messsageHandler.handle(msg);
         }
 
-        waitPing();
+        //waitPing();
 
         bool res = bt->BodyTestStep(deltaTime);
 

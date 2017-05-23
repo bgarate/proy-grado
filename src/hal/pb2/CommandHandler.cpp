@@ -11,24 +11,26 @@
 void CommandHandler::registerHandler(eARCONTROLLER_DICTIONARY_KEY type,
                                      std::function<void(CommandDictionary*)> fn) {
 
-    handlers[type] = fn;
+    handlers.insert(HandlerPair(type,fn));
 
 }
 
 void CommandHandler::handle(eARCONTROLLER_DICTIONARY_KEY type, ARCONTROLLER_DICTIONARY_ELEMENT_t *elementDictionary) {
 
-    ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
-    ARCONTROLLER_DICTIONARY_ELEMENT_t *element = NULL;
-    HASH_FIND_STR (elementDictionary, ARCONTROLLER_DICTIONARY_SINGLE_KEY, element);
+    if(handlers.find(type) != handlers.end()) {
 
-    if (element != NULL) {
+        ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
+        ARCONTROLLER_DICTIONARY_ELEMENT_t *element = NULL;
+        HASH_FIND_STR (elementDictionary, ARCONTROLLER_DICTIONARY_SINGLE_KEY, element);
 
-        std::function<void(CommandDictionary*)> &fn= handlers[type];
-        CommandDictionary* commandDictionary = new CommandDictionary(element);
-        fn(commandDictionary);
-        delete commandDictionary;
+        if (element != NULL) {
+
+            std::function<void(CommandDictionary *)> fn = handlers.at(type);
+            CommandDictionary *commandDictionary = new CommandDictionary(element);
+            fn(commandDictionary);
+            delete commandDictionary;
+        }
     }
-
 }
 
 CommandDictionary::CommandDictionary(ARCONTROLLER_DICTIONARY_ELEMENT_t *dictionary) {
@@ -37,24 +39,24 @@ CommandDictionary::CommandDictionary(ARCONTROLLER_DICTIONARY_ELEMENT_t *dictiona
 
 float CommandDictionary::getFloat(const char *str) {
     ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
-    HASH_FIND_STR (dictionary, str, arg);
+    HASH_FIND_STR (dictionary->arguments, str, arg);
     return arg->value.Float;
 }
 
 double CommandDictionary::getDouble(const char *str) {
     ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
-    HASH_FIND_STR (dictionary, str, arg);
+    HASH_FIND_STR (dictionary->arguments, str, arg);
     return arg->value.Double;
 }
 
 int32_t CommandDictionary::getInteger(const char *str) {
     ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
-    HASH_FIND_STR (dictionary, str, arg);
+    HASH_FIND_STR (dictionary->arguments, str, arg);
     return arg->value.I32;
 }
 
 uint8_t CommandDictionary::getUInt8(const char *str) {
     ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
-    HASH_FIND_STR (dictionary, str, arg);
+    HASH_FIND_STR (dictionary->arguments, str, arg);
     return arg->value.U8;
 }

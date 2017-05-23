@@ -12,7 +12,7 @@
 
 class MessageHandler {
 
-    typedef std::pair<Message_Type,std::function<void (Message)>> HandlerPair;
+        typedef std::pair<Message_Type,std::function<void (Message)>> HandlerPair;
 
 public:
     void registerHandler(Message_Type type, std::function<void(Message)> fn);

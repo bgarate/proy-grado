@@ -28,6 +28,7 @@ class FlightManeuver : public BodyTest {
 
     bool waitingTakeOff = false;
     bool waitingLanding = false;
+    bool tookOff = false;
 
     void InitBodyTest(Hal *hal) override {
         this->hal = hal;
@@ -37,48 +38,54 @@ class FlightManeuver : public BodyTest {
 
     bool BodyTestStep(double deltaTime) override {
 
-        if(hal->getState() == State::Landed){
+        if(hal->getState() == State::Landed && !tookOff){
             // Despegar
+            Logger::logError("Despegar");
             hal->takeoff();
+            tookOff = true;
             waitingTakeOff = true;
             return true;
         } else if(waitingTakeOff &&
                 (hal->getState() == State::Hovering || hal->getState() == State::Flying))
         {
+            Logger::logError("Despegado");
             // Despegado
             waitingTakeOff = false;
-        } else if(waitingLanding || hal->getState() == State::Landed){
+        } else if(waitingLanding && hal->getState() == State::Landed){
             // Aterrizado
+            Logger::logError("Aterrizado");
             return false;
         } else if(currentStep >= sequence.size() && !waitingLanding){
             // Aterrizar
+            Logger::logError("Aterrizar");
             hal->land();
             waitingLanding = true;
             return true;
+        } else if(!waitingLanding && !waitingTakeOff) {
+
+
+            DirectionTime directionTime = sequence[currentStep];
+
+            hal->move((int) (directionTime.y * 100), (int) (directionTime.x * 100),
+                      0, (int) (directionTime.z) * 100);
+
+            if (currentTime >= directionTime.s * 1000000) {
+                currentTime = 0;
+                currentStep++;
+                Logger::logInfo("Next element in flight maneuver sequence");
+            } else {
+                currentTime += deltaTime;
+            }
+
+            //cv::Mat *frame = hal->getFrame(Camera::Front);
+            /*cv::imshow("tracker", *frame);*/
         }
-
-        DirectionTime directionTime = sequence[currentStep];
-
-        hal->move((int)(directionTime.y * 100),(int)(directionTime.x * 100),
-                  0,(int)(directionTime.z) * 100);
-
-        if(currentTime >= directionTime.s * 1000000) {
-            currentTime = 0;
-            currentStep++;
-            Logger::logInfo("Next element in flight maneuver sequence");
-        } else {
-            currentTime += deltaTime;
-        }
-
-        cv::Mat* frame = hal->getFrame(Camera::Front);
-        /*cv::imshow("tracker", *frame);*/
-
         return true;
 
     }
 
     void FinishBodyTest() override {
-        hal->land();
+        //hal->land();
     }
 
 };
