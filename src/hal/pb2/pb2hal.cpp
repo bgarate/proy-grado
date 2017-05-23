@@ -313,6 +313,8 @@ class Pb2hal: public Hal {
 	    // once the device controller is stopped, we can delete it
 	    ARCONTROLLER_Device_Delete(&deviceController);
 
+        registerHandlers();
+
         connected = false;
 	}
 
