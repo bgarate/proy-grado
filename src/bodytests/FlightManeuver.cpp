@@ -4,6 +4,9 @@
 
 #include <zconf.h>
 #include <src/logging/Logger.h>
+#include <src/tracking/DetectAndTrack.h>
+#include <src/tracking/HogDetector.h>
+#include <src/tracking/MultiTracker.h>
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
 
@@ -23,22 +26,50 @@ class FlightManeuver : public BodyTest {
     Hal* hal;
     int currentStep = 0;
     double currentTime = 0;
-    std::vector<DirectionTime> sequence = {DirectionTime(-0.25,0,0,2), DirectionTime(0,-0.25,0,2),
-                                DirectionTime(0.25,0,0,2),DirectionTime(0,0.25,0,2)};
+    /*std::vector<DirectionTime> sequence = {
+            DirectionTime(-0.25,0,0,2),
+            DirectionTime(0,0,0,2),
+            DirectionTime(0,-0.25,0,2),
+            DirectionTime(0,0,0,2),
+            DirectionTime(0.25,0,0,2),
+            DirectionTime(0,0,0,2),
+            DirectionTime(0,0.25,0,2)};*/
+
+    std::vector<DirectionTime> sequence = {DirectionTime(0,0,0,1000)};
 
     bool waitingTakeOff = false;
     bool waitingLanding = false;
     bool tookOff = false;
 
+    cv::Scalar colors[9];
+    DetectionAlgorithm* detector;
+    TrackingAlgorithm* tracker;
+    DetectAndTrack* detectAndTrack;
+
     void InitBodyTest(Hal *hal) override {
         this->hal = hal;
-        cv::namedWindow("Bebop", cv::WINDOW_AUTOSIZE);
 
+        colors[0] = cv::Scalar(255,0,0);
+        colors[1] = cv::Scalar(0,255,0);
+        colors[2] = cv::Scalar(0,0,255);
+        colors[3] = cv::Scalar(120,120,0);
+        colors[4] = cv::Scalar(0,120,120);
+        colors[5] = cv::Scalar(120,0,120);
+        colors[6] = cv::Scalar(255,0,120);
+        colors[7] = cv::Scalar(0,120,255);
+        colors[8] = cv::Scalar(255,120,0);
+        detector = new HogDetector();
+        tracker = new MultiTracker(MultiTracker::Algorithm::KCF);
+        detectAndTrack =  new DetectAndTrack(detector, tracker);
+
+        cv::namedWindow("", cv::WINDOW_AUTOSIZE);
+
+        Logger::logInfo("Bateria: %u") << hal->bateryLevel();
     }
 
     bool BodyTestStep(double deltaTime) override {
 
-        if(hal->getState() == State::Landed && !tookOff){
+        /*if(hal->getState() == State::Landed && !tookOff){
             // Despegar
             Logger::logError("Despegar");
             hal->takeoff();
@@ -55,7 +86,7 @@ class FlightManeuver : public BodyTest {
             // Aterrizado
             Logger::logError("Aterrizado");
             return false;
-        } else if(currentStep >= sequence.size() && !waitingLanding){
+        } else*/ if(currentStep >= sequence.size() && !waitingLanding){
             // Aterrizar
             Logger::logError("Aterrizar");
             hal->land();
@@ -79,8 +110,20 @@ class FlightManeuver : public BodyTest {
 
             cv::Mat *frame = hal->getFrame(Camera::Front);
             if(frame != NULL){
+
+                //test track begin
+                //update the tracking result
+                std::vector<Track> objects = detectAndTrack->update(*frame);
+
+                // draw the tracked object
+                for (unsigned i = 0; i < objects.size(); i++)
+                    rectangle(*frame, objects[i].getRect(), colors[objects[i].getNumber() % (sizeof(colors)/sizeof(cv::Scalar))], 2, 1);
+
+
                 cv::imshow("tracker", *frame);
-                cv::waitKey(1);
+                if(cv::waitKey(1) == 27){
+                    return false;
+                }
             }
         }
         return true;
@@ -88,7 +131,8 @@ class FlightManeuver : public BodyTest {
     }
 
     void FinishBodyTest() override {
-        //hal->land();
+        if(hal->getState() != State::Landed)
+            hal->land();
     }
 
 };

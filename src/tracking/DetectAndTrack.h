@@ -15,14 +15,18 @@ public:
     DetectAndTrack(DetectionAlgorithm* detector, TrackingAlgorithm* tracker);
     std::vector<Track> update(cv::Mat frame);
     const double KEEP_TRACK_OVERLAP_THRESHOLD = 0.3;
+    const double FRAMES_TO_DETECT = 5;
 private:
     DetectionAlgorithm* detector;
     TrackingAlgorithm* tracker;
     std::vector<Track> tracks;
+    std::vector<cv::Rect2d> accumulatedFound;
     std::vector<Track> updateDetections(std::vector<cv::Rect2d> newDectections);
     void updateTracks(std::vector<cv::Rect2d> tracking);
     int trackCount = 0;
     int trackedFrames = 0;
+
+    void filter_rects(std::vector<cv::Rect2d> &candidates, std::vector<cv::Rect2d> &objects);
 };
 
 

@@ -3,6 +3,7 @@
 //
 
 #include "HogDetector.h"
+#include "AreaRect.h"
 
 HogDetector::HogDetector() {
     hog.setSVMDetector(cv::HOGDescriptor::getDefaultPeopleDetector());
@@ -24,7 +25,7 @@ void HogDetector::detect(cv::Mat frame) {
     else
         resizedFrame = frame;
 
-    hog.detectMultiScale(resizedFrame, found, 1, cv::Size(8, 8), cv::Size(32, 32), 1.05, 2);
+    hog.detectMultiScale(resizedFrame, found, 1, cv::Size(4, 4), cv::Size(32, 32), 1.05, 1);
 
     filter_rects(found, found_filtered);
 
@@ -36,25 +37,6 @@ void HogDetector::detect(cv::Mat frame) {
     }
 
 }
-struct AreaRect {
-
-    AreaRect(){}
-    AreaRect(cv::Rect r)
-    {
-        x1 = r.x;
-        y1 = r.y;
-        x2 = r.x + r.width;
-        y2 = r.y + r.height;
-        area = r.width * r.height;
-        rect = r;
-    }
-    double x1, x2, y1, y2, area;
-
-    cv::Rect rect;
-
-};
-
-
 
 void HogDetector::filter_rects(std::vector<cv::Rect> &candidates, std::vector<cv::Rect2d> &objects) {
 
@@ -63,7 +45,7 @@ void HogDetector::filter_rects(std::vector<cv::Rect> &candidates, std::vector<cv
     std::vector<AreaRect> sortedCandidates;
     for(cv::Rect r : candidates)
         sortedCandidates.push_back(AreaRect(r));
-
+/*
     std::sort(sortedCandidates.begin(),sortedCandidates.end(), [](const AreaRect &a,const AreaRect &b) {
         return a.y2 < b.y2;
     });
@@ -101,7 +83,7 @@ void HogDetector::filter_rects(std::vector<cv::Rect> &candidates, std::vector<cv
         toRemove.clear();
 
     }
-
+*/
     for(AreaRect &c : sortedCandidates)
         objects.push_back(c.rect);
 
