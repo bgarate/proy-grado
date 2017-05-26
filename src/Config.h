@@ -5,7 +5,7 @@
 #ifndef PROY_GRADO_CONFIG_H
 #define PROY_GRADO_CONFIG_H
 
-#include <src/hal/hal.hpp>
+#include <src/hal/HalType.hpp>
 #include "iostream"
 
 class Config {

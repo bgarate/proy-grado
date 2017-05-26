@@ -72,7 +72,7 @@ public:
 
     bool SetH264Params(uint8_t* sps_buffer_ptr, uint32_t sps_buffer_size,
                        uint8_t* pps_buffer_ptr, uint32_t pps_buffer_size);
-    bool Decode(const ARCONTROLLER_Frame_t* bebop_frame_ptr_);
+    bool Decode(uint8_t *data, const uint32_t used);
     inline uint32_t GetFrameWidth() const {return codec_initialized_ ? codec_ctx_ptr_->width : 0;}
     inline uint32_t GetFrameHeight() const {return codec_initialized_ ? codec_ctx_ptr_->height : 0;}
 

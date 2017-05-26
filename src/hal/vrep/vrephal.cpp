@@ -12,6 +12,7 @@ extern "C" {
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include "memory"
 
 #include <thread>
 #include <unistd.h>
@@ -30,6 +31,8 @@ class Vrephal: public Hal {
 	simxInt targetHandler, quadricopterHandler, quadricopterFloorCamHandler, quadricopterFrontCamHandler;
     thread* t;
     atomic<int> moving, moving1,roll,pitch,yaw,gaz;
+
+    Config* config;
 
 	//Funcion auxiliar
 
@@ -140,6 +143,9 @@ class Vrephal: public Hal {
         return State::Flying;
     }
 
+    void setup(Config* config) {
+        this->config = config;
+    }
 
     /************Movimiento*************/
 
@@ -214,7 +220,7 @@ class Vrephal: public Hal {
 	/************Cámara*************/
 
 	// --> Obtener captura de imagen (ambas cámaras)
-	cv::Mat* getFrame(Camera cam){
+    std::shared_ptr<cv::Mat> getFrame(Camera cam){
 
 		simxInt cameraHandler;
 		if (cam == Camera::Front){
@@ -231,7 +237,8 @@ class Vrephal: public Hal {
 
 
 		//convertir imagen
-		cv::Mat* res = new cv::Mat(resolution[1],resolution[0],CV_8UC3,image);
+        std::shared_ptr<cv::Mat> res =
+                std::shared_ptr<cv::Mat>(new cv::Mat(resolution[1],resolution[0],CV_8UC3,image));
 
         cv::cvtColor(*res,*res,cv::COLOR_BGR2RGB);
         cv::flip(*res,*res,0);

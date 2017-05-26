@@ -11,7 +11,7 @@ private:
     int auxind = 0;
     int auxarr[2] = {0,180};*/
 
-    cv::Mat *frame;
+    std::shared_ptr<cv::Mat> frame;
 
     cv::Scalar colors[9];
     DetectionAlgorithm* detector;

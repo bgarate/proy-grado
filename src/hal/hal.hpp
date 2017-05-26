@@ -4,12 +4,8 @@
 //opencv
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
-
-enum class HalType {
-    Dummy,
-    Pb2,
-    Vrep
-};
+#include <src/Config.h>
+#include "memory"
 
 //Enumerado cámara
 	enum class Camera {Front, Bottom};
@@ -42,6 +38,7 @@ enum class HalType {
 class Hal{
 	public:
 
+    virtual void setup(Config* config) = 0;
 
 	/************Movimiento*************/
 
@@ -76,7 +73,7 @@ class Hal{
 	/************Cámara*************/
 
 	// --> Obtener captura de imagen (ambas cámaras)
-	virtual cv::Mat* getFrame(Camera cam) = 0;
+	virtual std::shared_ptr<cv::Mat> getFrame(Camera cam) = 0;
 
 	/************Posición*************/
 

@@ -3,26 +3,41 @@
 //
 
 #include <src/hal/hal.hpp>
+#include <memory.h>
 #include "dummyHal.h"
+
+DummyHal::DummyHal():videoSource("/home/bruno/proy-grado/exapleTracking.mpg") {
+    state = State::Landed;
+}
 
 void DummyHal::move(int roll, int pitch, int yaw, int gaz) {
     return;
 }
 
+void DummyHal::setup(Config* config) {
+    this->config = config;
+}
+
 void DummyHal::land() {
-    return;
+    state = State::Landed;
 }
 
 void DummyHal::takeoff() {
-    return;
+    state = State::Flying;
 }
 
 int DummyHal::bateryLevel() {
     return 100;
 }
 
-cv::Mat *DummyHal::getFrame(Camera cam) {
-    return nullptr;
+std::shared_ptr<cv::Mat> DummyHal::getFrame(Camera cam) {
+    cv::Mat frame;
+    videoSource >> frame;
+    if(frame.empty()) {
+        videoSource.set(cv::CAP_PROP_POS_FRAMES, 0);
+        videoSource >> frame;
+    }
+    return std::shared_ptr<cv::Mat>(new cv::Mat(frame));
 }
 
 double DummyHal::getAltitude() {

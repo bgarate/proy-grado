@@ -27,6 +27,7 @@ void Body::setup(Config* config) {
     Logger::getInstance().setSource("BODY");
     this->config = config;
     communicateWithBrain(config->getBrainHost(), config->getBrainPort());
+    hal->setup(config);
     hal->Connect();
     pingWait = 0;
 }

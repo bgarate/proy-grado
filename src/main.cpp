@@ -8,6 +8,7 @@
 #include "Brain.h"
 #include "hal/vrep/vrephal.cpp"
 #include "hal/pb2/pb2hal.cpp"
+#include "hal/HalType.hpp"
 
 namespace po = boost::program_options;
 
@@ -30,6 +31,8 @@ int main(int argc, const char* args[]) {
             ("broadcastPort", po::value<uint16>(), "Port to which drones can broadcast an advertisement")
             ("advertisementLapse", po::value<int>(), "Lapse in milliseconds between drone advertisements")
             ("commsPort", po::value<int>(), "Port in which the drone acepts incoming connections from other drones")
+            ("pingLapse", po::value<int>(), "Interval between Brain-Body pings")
+            ("pingTimeout", po::value<int>(), "Timeout before a ping is considered lost")
             ("hal", po::value<string>(), "Hal to be used (dummy,pb2,vrep)");
 
     po::variables_map vm;
@@ -64,6 +67,14 @@ int main(int argc, const char* args[]) {
 
     if(vm.count("advertisementLapse") > 0) {
         config->setAdvertisementLapse(vm["advertisementLapse"].as<int>());
+    }
+
+    if(vm.count("pingLapse") > 0) {
+        config->setPingLapse(vm["pingLapse"].as<uint32>());
+    }
+
+    if(vm.count("pingTimeout") > 0) {
+        config->setPingTimeout(vm["pingTimeout"].as<uint32>());
     }
 
     Hal* hal;

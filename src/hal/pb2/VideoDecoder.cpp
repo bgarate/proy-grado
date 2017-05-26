@@ -212,7 +212,7 @@ bool VideoDecoder::SetH264Params(uint8_t *sps_buffer_ptr, uint32_t sps_buffer_si
     return update_codec_params_;
 }
 
-bool VideoDecoder::Decode(const ARCONTROLLER_Frame_t *bebop_frame_ptr_)
+bool VideoDecoder::Decode(uint8_t *data, const uint32_t used)
 {
     if (!codec_initialized_)
     {
@@ -252,14 +252,14 @@ bool VideoDecoder::Decode(const ARCONTROLLER_Frame_t *bebop_frame_ptr_)
         }
     }
 
-    if (!bebop_frame_ptr_->data || !bebop_frame_ptr_->used)
+    if (!data || !used)
     {
         Logger::logError("Invalid frame data. Skipping.");
         return false;
     }
 
-    packet_.data = bebop_frame_ptr_->data;
-    packet_.size = bebop_frame_ptr_->used;
+    packet_.data = data;
+    packet_.size = used;
 
     const uint32_t width_prev = GetFrameWidth();
     const uint32_t height_prev = GetFrameHeight();

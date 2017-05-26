@@ -16,7 +16,7 @@ private:
 
     std::thread* t;
 
-    cv::Mat* frame;
+    std::shared_ptr<cv::Mat> frame;
 
     cv::Scalar colors[9];
     DetectionAlgorithm* detector;

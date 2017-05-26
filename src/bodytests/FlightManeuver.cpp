@@ -62,14 +62,14 @@ class FlightManeuver : public BodyTest {
         tracker = new MultiTracker(MultiTracker::Algorithm::KCF);
         detectAndTrack =  new DetectAndTrack(detector, tracker);
 
-        cv::namedWindow("", cv::WINDOW_AUTOSIZE);
+        cv::namedWindow("tracker", cv::WINDOW_AUTOSIZE);
 
         Logger::logInfo("Bateria: %u") << hal->bateryLevel();
     }
 
     bool BodyTestStep(double deltaTime) override {
 
-        /*if(hal->getState() == State::Landed && !tookOff){
+        if(hal->getState() == State::Landed && !tookOff){
             // Despegar
             Logger::logError("Despegar");
             hal->takeoff();
@@ -86,7 +86,7 @@ class FlightManeuver : public BodyTest {
             // Aterrizado
             Logger::logError("Aterrizado");
             return false;
-        } else*/ if(currentStep >= sequence.size() && !waitingLanding){
+        } else if(currentStep >= sequence.size() && !waitingLanding){
             // Aterrizar
             Logger::logError("Aterrizar");
             hal->land();
@@ -108,7 +108,7 @@ class FlightManeuver : public BodyTest {
                 currentTime += deltaTime;
             }
 
-            cv::Mat *frame = hal->getFrame(Camera::Front);
+            std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
             if(frame != NULL){
 
                 //test track begin

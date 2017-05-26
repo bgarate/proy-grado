@@ -17,6 +17,7 @@ link_directories(src/hal/pb2/lib)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES src/tracking/TrackingAlgorithm.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/Config.cpp src/Config.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/logging/Logger.cpp src/logging/Logger.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/tracking/HogDetector.cpp src/tracking/HogDetector.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/tracking/MultiTracker.cpp src/tracking/MultiTracker.h)
@@ -30,11 +31,12 @@ set(SOURCE_FILES ${SOURCE_FILES} src/communication/Communication.cpp src/communi
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/Connection.cpp src/messages/Connection.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/AsyncSocketChannel.cpp src/messages/AsyncSocketChannel.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/PackedMessage.h src/messages/MessageBuilder.cpp src/messages/MessageBuilder.h src/MessageHandler.cpp src/MessageHandler.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/hal/HalType.hpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/hal/hal.hpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/hal/vrep/extApi.c src/hal/vrep/extApi.h src/hal/vrep/extApiInternal.h src/hal/vrep/extApiPlatform.c src/hal/vrep/extApiPlatform.h src/hal/vrep/v_repConst.h src/hal/vrep/vrephal.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/hal/pb2/pb2hal.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/Broadcaster.cpp src/messages/Broadcaster.h)
-set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/main.cpp src/Config.cpp src/Config.h src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h src/messages/IpResolver.cpp src/messages/IpResolver.h src/hal/pb2/VideoDecoder.cpp src/hal/pb2/VideoDecoder.h src/bodytests/FlightManeuver.cpp src/hal/pb2/CommandHandler.cpp src/hal/pb2/CommandHandler.h src/tracking/AreaRect.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/main.cpp src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h src/messages/IpResolver.cpp src/messages/IpResolver.h src/hal/pb2/VideoDecoder.cpp src/hal/pb2/VideoDecoder.h src/bodytests/FlightManeuver.cpp src/hal/pb2/CommandHandler.cpp src/hal/pb2/CommandHandler.h src/tracking/AreaRect.h)
 
 
 ADD_SUBDIRECTORY(src/proto)
