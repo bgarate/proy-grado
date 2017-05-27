@@ -23,6 +23,7 @@
 		double x;
 		double y;
 		double z;
+
 		Point (double x,double y,double z) {
             this->x = x;
             this->y = y;
@@ -33,6 +34,15 @@
             y = 0;
             z = 0;
         }
+
+        double Roll(){return x;}
+        double Pitch(){return y;}
+        double Yaw(){return z;}
+
+        double Latitude(){return x;}
+        double Longitude(){return y;}
+        double Altitude(){return z;}
+
 	} Point; 
 
 class Hal{

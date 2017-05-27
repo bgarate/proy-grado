@@ -94,7 +94,6 @@ void Body::PingHandler(Message& msg){
         ping->set_type(Ping_PingType_ACK);
         communication.send(msg);
         Logger::logDebug("PING ACK sent");
-        visualDebugger.writeConsole("PING!!! at " + std::to_string(pingWait));
         pingWait = 0;
     } else {
         Logger::logDebug("PING ACK received");
@@ -112,6 +111,7 @@ void Body::ShutdownHandler(Message& msg){
 }
 
 void Body::cleanup() {
+    visualDebugger.cleanup();
     hal->Disconnect();
 }
 

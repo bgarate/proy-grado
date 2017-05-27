@@ -2,9 +2,11 @@
 // Created by bruno on 27/05/17.
 //
 
+#include <boost/format.hpp>
 #include "VisualDebugger.h"
 
 const cv::Scalar VisualDebugger::WHITE_COLOR = cv::Scalar(255,255,255);
+const cv::Scalar VisualDebugger::GREEN_COLOR = cv::Scalar(0,205,0);
 
 void VisualDebugger::setup(Config *config) {
     this->config = config;
@@ -42,7 +44,7 @@ cv::Scalar VisualDebugger::getStateColor(State state){
         case State::Hovering:
             return cv::Scalar(34,139,34);
         case State::Flying:
-            return cv::Scalar(0,205,0);
+            return GREEN_COLOR;
         case State::Landing:
             return cv::Scalar(255,193,37);
         case State::Emergency:
@@ -79,12 +81,38 @@ void VisualDebugger::setStatus(State state, int battery, double altitude, Point 
     cv::Scalar statusColor =  getStateColor(state);
 
     cv::Size textSize =
-            cv::getTextSize(statusName, CONSOLE_FONT, CONSOLE_FONT_SIZE, 2, NULL);
+            cv::getTextSize(statusName, CONSOLE_FONT, 2, 1, NULL);
 
     cv::Point textOrigin = cv::Point(10, textSize.height + 10);
 
-    cv::putText(frame, statusName, textOrigin, CONSOLE_FONT, CONSOLE_FONT_SIZE, statusColor, 2);
+    cv::putText(frame, statusName, textOrigin, CONSOLE_FONT, 2, statusColor, 1);
 
+    std::vector<std::string> colValues = {
+            (boost::format("Bateria: %3u%%") % battery).str(),
+            (boost::format("Altitud: %3.2fm") % altitude).str(),
+            (boost::format("Lat: %3.2f Long: %3.2f Alt: %3.2f") % orientation.Latitude() %
+             orientation.Longitude() % orientation.Altitude()).str(),
+            (boost::format("Roll: %3.2f Pitch: %3.2f Yaw: %3.2f") % orientation.Roll() %
+            orientation.Pitch() % orientation.Yaw()).str(),
+    };
+
+
+    textOrigin = cv::Point(10, frame.rows - 10);
+    cv::putText(frame, colValues[0], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR);
+
+
+    textSize = cv::getTextSize(colValues[1], CONSOLE_FONT, 1, 1, NULL);
+    textOrigin = cv::Point((frame.cols - textSize.width)/2, frame.rows - 10);
+    cv::putText(frame, colValues[1], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR);
+
+    textSize = cv::getTextSize(colValues[2], CONSOLE_FONT, 1, 1, NULL);
+    textOrigin = cv::Point(frame.cols - textSize.width - 10, frame.rows - 10);
+    cv::putText(frame, colValues[2], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR);
+
+    cv::Size previousTextSize = textSize;
+    textSize = cv::getTextSize(colValues[3], CONSOLE_FONT, 1, 1, NULL);
+    textOrigin = cv::Point(frame.cols - textSize.width - 10, frame.rows - previousTextSize.height - 20);
+    cv::putText(frame, colValues[3], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR);
 
 }
 
@@ -92,6 +120,11 @@ int VisualDebugger::show(){
 
     if(!config->isVisualDebugEnabled())
         return 0;
+
+
+    if(frame.cols == 0 || frame.rows == 0)
+        return 0;
+
 
     cv::Point center = cv::Point(frame.cols / 2, frame.rows / 2);
 
@@ -119,7 +152,7 @@ int VisualDebugger::show(){
 }
 
 void VisualDebugger::cleanup() {
-    cvDestroyWindow("tracker");
+    cvDestroyWindow(windowName.c_str());
 }
 
 void VisualDebugger::writeConsole(std::string str) {

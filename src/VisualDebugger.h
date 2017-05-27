@@ -28,6 +28,8 @@ private:
     cv::Mat frame;
 
     static const cv::Scalar WHITE_COLOR;
+    static const cv::Scalar GREEN_COLOR;
+
     static const int CONSOLE_QUEUE_SIZE = 5;
     static const int CONSOLE_FONT = cv::FONT_HERSHEY_PLAIN;
     static const int CONSOLE_FONT_SIZE = 1;

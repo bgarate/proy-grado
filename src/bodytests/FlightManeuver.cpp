@@ -62,30 +62,39 @@ class FlightManeuver : public BodyTest {
 
     bool BodyTestStep(double deltaTime) override {
 
-        if(hal->getState() == State::Landed && !tookOff){
+        std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
+
+        if (frame != NULL) {
+            visualDebugger->setFrame(frame);
+        }
+
+        if (hal->getState() == State::Landed && !tookOff) {
             // Despegar
             Logger::logError("Despegar");
+            visualDebugger->writeConsole("Despegar");
             hal->takeoff();
             tookOff = true;
             waitingTakeOff = true;
             return true;
-        } else if(waitingTakeOff &&
-                (hal->getState() == State::Hovering || hal->getState() == State::Flying))
-        {
+        } else if (waitingTakeOff &&
+                   (hal->getState() == State::Hovering || hal->getState() == State::Flying)) {
             Logger::logError("Despegado");
+            visualDebugger->writeConsole("Despegado");
             // Despegado
             waitingTakeOff = false;
-        } else if(waitingLanding && hal->getState() == State::Landed){
+        } else if (waitingLanding && hal->getState() == State::Landed) {
             // Aterrizado
             Logger::logError("Aterrizado");
+            visualDebugger->writeConsole("Aterrizado");
             return false;
-        } else if(currentStep >= sequence.size() && !waitingLanding){
+        } else if (currentStep >= sequence.size() && !waitingLanding) {
             // Aterrizar
             Logger::logError("Aterrizar");
+            visualDebugger->writeConsole("Aterrizar");
             hal->land();
             waitingLanding = true;
             return true;
-        } else if(!waitingLanding && !waitingTakeOff) {
+        } else if (!waitingLanding && !waitingTakeOff) {
 
 
             DirectionTime directionTime = sequence[currentStep];
@@ -97,22 +106,21 @@ class FlightManeuver : public BodyTest {
                 currentTime = 0;
                 currentStep++;
                 Logger::logInfo("Next element in flight maneuver sequence");
+                visualDebugger->writeConsole("Next element in flight maneuver sequence");
             } else {
                 currentTime += deltaTime;
             }
 
-            std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
-            if(frame != NULL){
+            if (frame != NULL) {
 
                 //test track begin
                 //update the tracking result
                 std::vector<Track> objects = detectAndTrack->update(frame);
-                visualDebugger->setFrame(frame);
-
                 visualDebugger->setTracks(objects);
 
             }
         }
+
         return true;
 
     }
