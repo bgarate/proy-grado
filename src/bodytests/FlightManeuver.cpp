@@ -35,7 +35,7 @@ class FlightManeuver : public BodyTest {
             DirectionTime(0,0,0,2),
             DirectionTime(0,0.25,0,2)};*/
 
-    std::vector<DirectionTime> sequence = {DirectionTime(0,0,0,1000)};
+    std::vector<DirectionTime> sequence = {DirectionTime(0,0,0,60)};
 
     bool waitingTakeOff = false;
     bool waitingLanding = false;
@@ -122,6 +122,7 @@ class FlightManeuver : public BodyTest {
 
                 cv::imshow("tracker", *frame);
                 if(cv::waitKey(1) == 27){
+                    cvDestroyWindow("tracker");
                     return false;
                 }
             }

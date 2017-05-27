@@ -479,19 +479,24 @@ class Pb2hal: public Hal {
 
 	 void move(int roll, int pitch, int yaw, int gaz){
 
-    	//normalize
-        if(roll<-100){roll=0;}else if(roll>100){roll=0;}
-        if(pitch<-100){pitch=0;}else if(pitch>100){pitch=0;}
-        if(yaw<-100){yaw=-0;}else if(yaw>100){yaw=0;}
-        if(gaz<-100){gaz=-0;}else if(gaz>100){gaz=0;}
+        if (state == State::Flying || state == State::Hovering) {
 
-		//deviceController->aRDrone3->setPilotingPCMD(deviceController->aRDrone3,)
-	 	deviceController->aRDrone3->setPilotingPCMDFlag(deviceController->aRDrone3,0);
-		deviceController->aRDrone3->setPilotingPCMDRoll(deviceController->aRDrone3, roll);
-		deviceController->aRDrone3->setPilotingPCMDPitch(deviceController->aRDrone3, pitch);
-		deviceController->aRDrone3->setPilotingPCMDYaw(deviceController->aRDrone3, yaw);
-		deviceController->aRDrone3->setPilotingPCMDGaz(deviceController->aRDrone3, gaz);
-		deviceController->aRDrone3->setPilotingPCMDFlag(deviceController->aRDrone3,1);
+            //normalize
+            if (roll < -100) { roll = 0; } else if (roll > 100) { roll = 0; }
+            if (pitch < -100) { pitch = 0; } else if (pitch > 100) { pitch = 0; }
+            if (yaw < -100) { yaw = -0; } else if (yaw > 100) { yaw = 0; }
+            if (gaz < -100) { gaz = -0; } else if (gaz > 100) { gaz = 0; }
+
+            //deviceController->aRDrone3->setPilotingPCMD(deviceController->aRDrone3,)
+            deviceController->aRDrone3->setPilotingPCMDFlag(deviceController->aRDrone3, 0);
+            deviceController->aRDrone3->setPilotingPCMDRoll(deviceController->aRDrone3, roll);
+            deviceController->aRDrone3->setPilotingPCMDPitch(deviceController->aRDrone3, pitch);
+            deviceController->aRDrone3->setPilotingPCMDYaw(deviceController->aRDrone3, yaw);
+            deviceController->aRDrone3->setPilotingPCMDGaz(deviceController->aRDrone3, gaz);
+            deviceController->aRDrone3->setPilotingPCMDFlag(deviceController->aRDrone3, 1);
+        } else {
+            Logger::logWarning("Cannot move: drone isn't flying or hovering");
+        }
 	 }
 
     void rmove(double dx, double dy, double dz, double dh) {

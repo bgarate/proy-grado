@@ -17,6 +17,7 @@ extern "C" {
 #include <thread>
 #include <unistd.h>
 #include <atomic>
+#include <src/logging/Logger.h>
 
 using namespace std;
 
@@ -31,6 +32,7 @@ class Vrephal: public Hal {
 	simxInt targetHandler, quadricopterHandler, quadricopterFloorCamHandler, quadricopterFrontCamHandler;
     thread* t;
     atomic<int> moving, moving1,roll,pitch,yaw,gaz;
+	atomic<State> state;
 
     Config* config;
 
@@ -105,7 +107,22 @@ class Vrephal: public Hal {
             	moving1 = 1;
             }
 
-            
+            if(state == State::Landing){
+				simxFloat position[3];
+				simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
+				if(position[2]< 0.1){
+					simxSetIntegerSignal(clientID,"motorsoff",1,simx_opmode_blocking);
+					this->state = State::Landed;
+				}
+			}
+			if(state == State::TakingOff){
+				simxFloat position[3];
+				simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
+				if(position[2] > 0.9){
+					this->state = State::Hovering;
+				}
+			}
+
 		}
 	}
 
@@ -132,6 +149,8 @@ class Vrephal: public Hal {
 		this->yaw=0;
 		this->gaz=0;
 		this->t = new thread(&Vrephal::deamon, this);
+
+		this->state = State::Landed;
 	}
 
 	void Disconnect(){
@@ -140,7 +159,7 @@ class Vrephal: public Hal {
 	}
 
     State getState() {
-        return State::Flying;
+        return state;
     }
 
     void setup(Config* config) {
@@ -152,14 +171,21 @@ class Vrephal: public Hal {
 	//Set movimientos
 	void move(int roll, int pitch, int yaw, int gaz){
 
-		if(roll!=0 || pitch!=0 || yaw!=0 || gaz!=0){
-			this->moving=1;
-			this->roll=roll;
-		    this->pitch=pitch;
-		    this->yaw=yaw;
-		    this->gaz=gaz;
+		if (state == State::Flying || state == State::Hovering) {
+
+			if(roll!=0 || pitch!=0 || yaw!=0 || gaz!=0){
+				this->moving=1;
+				this->roll=roll;
+				this->pitch=pitch;
+				this->yaw=yaw;
+				this->gaz=gaz;
+				this->state = State::Flying;
+			} else {
+				this->moving=0;
+				this->state = State::Hovering;
+			}
 		} else {
-			this->moving=0;
+			Logger::logWarning("Cannot move: drone isn't flying or hovering");
 		}
 	}
 
@@ -170,41 +196,41 @@ class Vrephal: public Hal {
 	// --> Despegue y aterrizaje
 	void land(){
 
-		simxFloat position[3];
-		simxGetObjectPosition(clientID, targetHandler, -1, (simxFloat *)position, simx_opmode_blocking);
+		Logger::logInfo("Landing");
 
-	    //Modificar posicion
-	    position[2] = 0.05;
+		if (state == State::Flying || state == State::Hovering || state == State::TakingOff){
+			simxFloat position[3];
+			simxGetObjectPosition(clientID, targetHandler, -1, (simxFloat *)position, simx_opmode_blocking);
 
-	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
+			//Modificar posicion
+			position[2] = 0.05;
 
-	   	while(1){
-			simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
-			if(position[2]< 0.1){
-				break;
-			}
-	    }
+			simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
+			this->state = State::Landing;
 
-	    simxSetIntegerSignal(clientID,"motorsoff",1,simx_opmode_blocking);
-
+		} else {
+			Logger::logWarning("Cannot land: drone isn't flying, hovering or taking off");
+		}
 	}
 	void takeoff(){
 
-		simxFloat position[3];
-		simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
+		Logger::logInfo("Taking off");
 
-	    //Modificar posicion
-	    position[2] = 1;
+		if (state == State::Landed){
+			simxFloat position[3];
+			simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
 
-	    simxSetIntegerSignal(clientID,"motorsoff",0,simx_opmode_blocking);
-	    simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
+			//Modificar posicion
+			position[2] = 1;
 
-	    while(1){
-			simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
-			if(position[2] > 0.9){
-				break;
-			}
-	    }
+			simxSetIntegerSignal(clientID,"motorsoff",0,simx_opmode_blocking);
+			simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
+
+			this->state = State::TakingOff;
+
+		} else {
+			Logger::logWarning("Cannot take off: drone isn't landed");
+		}
 	}
 
 	/************Estado del drone*************/
