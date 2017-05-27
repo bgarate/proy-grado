@@ -4,6 +4,8 @@
 
 #include <iostream>
 #include <cstdio>
+#include <iomanip>
+#include <sstream>
 #include "Logger.h"
 #include "spdlog/spdlog.h"
 #include "stdio.h"
@@ -25,11 +27,14 @@ void Logger::initConsole(std::string name) {
     auto color_sink = std::make_shared<spdlog::sinks::ansicolor_sink>(stdout_sink);
     sinks.push_back(color_sink);
 
-    console = std::make_shared<spdlog::logger>(name, begin(sinks), end(sinks));
+    std::stringstream stream;
+    stream << std::left << std::setw(NAME_PADDING) << name;
+
+    console = std::make_shared<spdlog::logger>(stream.str(), begin(sinks), end(sinks));
     spdlog::register_logger(console);
 
     spdlog::set_level(spdlog::level::debug);
-    spdlog::set_pattern("[%H:%M:%S] [%n] [%l] %v");
+    spdlog::set_pattern("[%H:%M:%S.%e] [%n] [%L] %v");
 }
 
 void Logger::Log(std::string msg, Logger::LogType severity) {

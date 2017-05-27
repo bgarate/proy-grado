@@ -78,7 +78,7 @@ void Brain::sendPingIfAppropiate() {
         ping.mutable_ping()->set_type(Ping_PingType::Ping_PingType_REQUEST);
 
         bodyCommunication.send(ping);
-        Logger::logInfo("PING REQUEST sent");
+        Logger::logDebug("PING REQUEST sent");
 
         pingWait = 0;
         waitingPing = true;
@@ -107,12 +107,12 @@ void Brain::PingHandler(Message& msg){
     Ping* ping = msg.mutable_ping();
     if(ping->type() == Ping_PingType_REQUEST) {
 
-        Logger::logInfo("PING REQUEST received");
+        Logger::logDebug("PING REQUEST received");
         ping->set_type(Ping_PingType_ACK);
         bodyCommunication.send(msg);
 
     } else {
-        Logger::logInfo("PING ACK received");
+        Logger::logDebug("PING ACK received. Request was sent %u milliseconds ago") << pingWait / 1000;
         waitingPing = false;
         pingWait = 0;
     }

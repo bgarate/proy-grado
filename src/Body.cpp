@@ -27,6 +27,7 @@ void Body::setup(Config* config) {
     Logger::getInstance().setSource("BODY");
     this->config = config;
     communicateWithBrain(config->getBrainHost(), config->getBrainPort());
+    visualDebugger.setup(config);
     hal->setup(config);
     hal->Connect();
     pingWait = 0;
@@ -42,7 +43,7 @@ void Body::loop() {
 
     BodyTest* bt = new FlightManeuver();
     //BodyTest* bt = new BodyTest2();
-    bt->InitBodyTest(this->hal);
+    bt->InitBodyTest(this->hal, &visualDebugger);
     Logger::logInfo("Body started");
 
     chrono::steady_clock::time_point startTime = chrono::steady_clock::now();
@@ -61,12 +62,17 @@ void Body::loop() {
             messsageHandler.handle(msg);
         }
 
-        //waitPing();
+        waitPing();
 
         bool res = bt->BodyTestStep(deltaTime);
 
         if(!res)
-            break;
+            should_exit = true;
+
+        if(visualDebugger.show() == 27){
+            should_exit = true;
+        }
+
 
         if(should_exit)
             break;
@@ -82,13 +88,13 @@ void Body::PingHandler(Message& msg){
 
     Ping* ping = msg.mutable_ping();
     if(ping->type() == Ping_PingType_REQUEST) {
-        Logger::logInfo("PING REQUEST received");
+        Logger::logDebug("PING REQUEST received. Last was %u milliseconds ago") << pingWait / 1000;
         ping->set_type(Ping_PingType_ACK);
         communication.send(msg);
-        Logger::logInfo("PING ACK sent");
+        Logger::logDebug("PING ACK sent");
         pingWait = 0;
     } else {
-        Logger::logInfo("PING ACK received");
+        Logger::logDebug("PING ACK received");
     }
 
 }

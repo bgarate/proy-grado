@@ -62,6 +62,7 @@ private:
     std::shared_ptr<spdlog::logger> console;
     std::string source;
     void initConsole(std::string name);
+    static const int NAME_PADDING = 5;
 
 };
 

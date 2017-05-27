@@ -7,6 +7,7 @@
 #include <src/tracking/DetectAndTrack.h>
 #include <src/tracking/HogDetector.h>
 #include <src/tracking/MultiTracker.h>
+#include <src/VisualDebugger.h>
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
 
@@ -41,28 +42,20 @@ class FlightManeuver : public BodyTest {
     bool waitingLanding = false;
     bool tookOff = false;
 
-    cv::Scalar colors[9];
     DetectionAlgorithm* detector;
     TrackingAlgorithm* tracker;
     DetectAndTrack* detectAndTrack;
 
-    void InitBodyTest(Hal *hal) override {
+    VisualDebugger* visualDebugger;
+
+    void InitBodyTest(Hal *hal, VisualDebugger* visualDebugger) override {
         this->hal = hal;
 
-        colors[0] = cv::Scalar(255,0,0);
-        colors[1] = cv::Scalar(0,255,0);
-        colors[2] = cv::Scalar(0,0,255);
-        colors[3] = cv::Scalar(120,120,0);
-        colors[4] = cv::Scalar(0,120,120);
-        colors[5] = cv::Scalar(120,0,120);
-        colors[6] = cv::Scalar(255,0,120);
-        colors[7] = cv::Scalar(0,120,255);
-        colors[8] = cv::Scalar(255,120,0);
         detector = new HogDetector();
         tracker = new MultiTracker(MultiTracker::Algorithm::KCF);
         detectAndTrack =  new DetectAndTrack(detector, tracker);
 
-        cv::namedWindow("tracker", cv::WINDOW_AUTOSIZE);
+        this->visualDebugger = visualDebugger;
 
         Logger::logInfo("Bateria: %u") << hal->bateryLevel();
     }
@@ -113,17 +106,11 @@ class FlightManeuver : public BodyTest {
 
                 //test track begin
                 //update the tracking result
-                std::vector<Track> objects = detectAndTrack->update(*frame);
+                std::vector<Track> objects = detectAndTrack->update(frame);
+                visualDebugger->setFrame(frame);
 
-                // draw the tracked object
-                for (unsigned i = 0; i < objects.size(); i++)
-                    rectangle(*frame, objects[i].getRect(), colors[objects[i].getNumber() % (sizeof(colors)/sizeof(cv::Scalar))], 2, 1);
+                visualDebugger->setTracks(objects);
 
-
-                cv::imshow("tracker", *frame);
-                if(cv::waitKey(1) == 27){
-                    return false;
-                }
             }
         }
         return true;

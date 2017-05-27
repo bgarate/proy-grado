@@ -13,7 +13,7 @@
 class DetectionAlgorithm {
 public:
     virtual std::vector<cv::Rect2d> getFound() = 0;
-    virtual void detect(cv::Mat frame) = 0;
+    virtual void detect(std::shared_ptr<cv::Mat> frame) = 0;
 };
 
 

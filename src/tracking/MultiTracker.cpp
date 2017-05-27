@@ -4,17 +4,17 @@
 
 #include "MultiTracker.h"
 
-void MultiTracker::setTargets(std::vector<cv::Rect2d> targets, cv::Mat frame) {
+void MultiTracker::setTargets(std::vector<cv::Rect2d> targets, std::shared_ptr<cv::Mat> frame) {
     trackers = cv::MultiTracker(getAlgorithm(algorithm));
-    trackers.add(frame, targets);
+    trackers.add(*frame, targets);
 }
 
 std::vector<cv::Rect2d> MultiTracker::getTargets() {
     return trackers.objects;
 }
 
-bool MultiTracker::track(cv::Mat track) {
-    return trackers.update(track);
+bool MultiTracker::track(std::shared_ptr<cv::Mat> track) {
+    return trackers.update(*track);
 }
 
 MultiTracker::MultiTracker(Algorithm algorithm): trackers(getAlgorithm(algorithm)) {

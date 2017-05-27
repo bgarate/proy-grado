@@ -10,6 +10,7 @@
 #include "MessageHandler.h"
 #include "hal/hal.hpp"
 #include "Config.h"
+#include "VisualDebugger.h"
 
 class Body {
 public:
@@ -21,6 +22,7 @@ public:
 private:
     SocketChannel communication;
     MessageHandler messsageHandler;
+    VisualDebugger visualDebugger;
     Hal* hal;
     void PingHandler(Message &msg);
     void communicateWithBrain(std::string brainHost, unsigned short port);

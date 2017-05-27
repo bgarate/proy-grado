@@ -11,7 +11,7 @@ DetectAndTrack::DetectAndTrack(DetectionAlgorithm *detector, TrackingAlgorithm *
     this->tracker = tracker;
 }
 
-std::vector<Track> DetectAndTrack::update(cv::Mat frame) {
+std::vector<Track> DetectAndTrack::update(std::shared_ptr<cv::Mat> frame) {
 
     if(trackedFrames % 50 <= FRAMES_TO_DETECT - 1) {
 

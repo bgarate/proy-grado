@@ -2,7 +2,7 @@
 #include "src/tracking/DetectAndTrack.h"
 #include "src/tracking/MultiTracker.h"
 #include "src/tracking/HogDetector.h"
-
+#include "src/VisualDebugger.h"
 #include <thread>
 #include <unistd.h>
 
@@ -26,7 +26,7 @@ private:
 
 public:
 
-    void InitBodyTest(Hal* hal){
+    void InitBodyTest(Hal* hal, VisualDebugger* visualDebugger){
         this->hal = hal;
         this->hal->takeoff();
 
@@ -84,7 +84,7 @@ public:
 
         //test track begin
         //update the tracking result
-        std::vector<Track> objects = detectAndTrack->update(*frame);
+        std::vector<Track> objects = detectAndTrack->update(frame);
 
         // draw the tracked object
         for (unsigned i = 0; i < objects.size(); i++)

@@ -29,6 +29,8 @@ private:
 
     unsigned int pingLapse;
 
+    bool visualDebugEnabled;
+
 public:
 
     Config();
@@ -72,6 +74,10 @@ public:
     unsigned int getPingLapse() const;
 
     void setPingLapse(unsigned int pingLapse);
+
+    bool isVisualDebugEnabled() const;
+
+    void setVisualDebugEnabled(bool visualDebug);
 
 };
 
