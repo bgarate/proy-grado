@@ -69,6 +69,8 @@ void Body::loop() {
         if(!res)
             should_exit = true;
 
+        visualDebugger.setStatus(hal->getState(),hal->bateryLevel(),
+                                 hal->getAltitude(), hal->getGPSPosition(), hal->getOrientation());
         if(visualDebugger.show() == 27){
             should_exit = true;
         }
@@ -92,6 +94,7 @@ void Body::PingHandler(Message& msg){
         ping->set_type(Ping_PingType_ACK);
         communication.send(msg);
         Logger::logDebug("PING ACK sent");
+        visualDebugger.writeConsole("PING!!! at " + std::to_string(pingWait));
         pingWait = 0;
     } else {
         Logger::logDebug("PING ACK received");

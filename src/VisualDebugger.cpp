@@ -2,8 +2,9 @@
 // Created by bruno on 27/05/17.
 //
 
-
 #include "VisualDebugger.h"
+
+const cv::Scalar VisualDebugger::WHITE_COLOR = cv::Scalar(255,255,255);
 
 void VisualDebugger::setup(Config *config) {
     this->config = config;
@@ -15,7 +16,7 @@ void VisualDebugger::setup(Config *config) {
 
 void VisualDebugger::setFrame(std::shared_ptr<cv::Mat> frame) {
     if(frame != NULL)
-        this->frame = *frame;
+        frame->copyTo(this->frame);
 }
 
 void VisualDebugger::setTracks(std::vector<Track> tracks) {
@@ -30,12 +31,100 @@ void VisualDebugger::setTracks(std::vector<Track> tracks) {
 
 }
 
-int VisualDebugger::show(){
+cv::Scalar VisualDebugger::getStateColor(State state){
+    switch (state){
+        case State::Unknown:
+            return WHITE_COLOR;
+        case State::Landed:
+            return cv::Scalar(255,215,0);
+        case State::TakingOff:
+            return cv::Scalar(99,184,255);
+        case State::Hovering:
+            return cv::Scalar(34,139,34);
+        case State::Flying:
+            return cv::Scalar(0,205,0);
+        case State::Landing:
+            return cv::Scalar(255,193,37);
+        case State::Emergency:
+            return cv::Scalar(255,0,0);
+        case State::EmergencyLanding:
+            return cv::Scalar(205,55,0);
+    }
+}
 
+std::string VisualDebugger::getStateName(State state){
+    switch (state){
+        case State::Unknown:
+            return "Unknown";
+        case State::Landed:
+            return "Landed";
+        case State::TakingOff:
+            return "Taking off";
+        case State::Hovering:
+            return "Hovering";
+        case State::Flying:
+            return "Flying";
+        case State::Landing:
+            return "Landing";
+        case State::Emergency:
+            return "Emergency";
+        case State::EmergencyLanding:
+            return "Emergency landing";
+    }
+}
+
+void VisualDebugger::setStatus(State state, int battery, double altitude, Point gps, Point orientation){
+
+    std::string statusName = getStateName(state);
+    cv::Scalar statusColor =  getStateColor(state);
+
+    cv::Size textSize =
+            cv::getTextSize(statusName, CONSOLE_FONT, CONSOLE_FONT_SIZE, 2, NULL);
+
+    cv::Point textOrigin = cv::Point(10, textSize.height + 10);
+
+    cv::putText(frame, statusName, textOrigin, CONSOLE_FONT, CONSOLE_FONT_SIZE, statusColor, 2);
+
+
+}
+
+int VisualDebugger::show(){
 
     if(!config->isVisualDebugEnabled())
         return 0;
 
+    cv::Point center = cv::Point(frame.cols / 2, frame.rows / 2);
+
+    cv::line(frame, cv::Point(center.x - 5, center.y), cv::Point(center.x + 5, center.y),WHITE_COLOR);
+    cv::line(frame, cv::Point(center.x, center.y - 5), cv::Point(center.x, center.y + 5),WHITE_COLOR);
+
+    int consoleY = 10;
+
+    for(std::string str : console){
+
+        cv::Size textSize =
+                cv::getTextSize(str, CONSOLE_FONT, CONSOLE_FONT_SIZE, CONSOLE_FONT_THICKNESS, NULL);
+
+        cv::Point textOrigin = cv::Point(frame.cols - textSize.width - 10,
+            consoleY + textSize.height);
+
+        cv::putText(frame, str, textOrigin, CONSOLE_FONT, CONSOLE_FONT_SIZE, WHITE_COLOR, CONSOLE_FONT_THICKNESS);
+
+        consoleY += textSize.height + 10;
+
+    }
+
     cv::imshow(windowName, frame);
     return cv::waitKey(1);
+}
+
+void VisualDebugger::cleanup() {
+    cvDestroyWindow("tracker");
+}
+
+void VisualDebugger::writeConsole(std::string str) {
+    if(console.size() == CONSOLE_QUEUE_SIZE)
+        console.pop_back();
+
+    console.insert(console.begin(), str);
 }
