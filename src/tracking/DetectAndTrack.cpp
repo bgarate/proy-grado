@@ -21,26 +21,50 @@ std::vector<Track> DetectAndTrack::update(std::shared_ptr<cv::Mat> frame) {
             accumulatedFound.push_back(found);
         }
 
-
     }
 
     if(trackedFrames % 50 == FRAMES_TO_DETECT - 1) {
 
-        if(accumulatedFound.empty())
-            return {};
+        if(!accumulatedFound.empty()) {
 
-        std::vector<cv::Rect2d> filteredRects;
-        filter_rects(accumulatedFound,filteredRects);
+            std::vector<cv::Rect2d> filteredRects;
+            filter_rects(accumulatedFound, filteredRects);
 
-        tracker->setTargets(filteredRects, frame);
+            tracker->setTargets(filteredRects, frame);
 
-        int oldTrackingCount = trackCount;
-        tracks = updateDetections(filteredRects);
+            int oldTrackingCount = trackCount;
+            tracks = updateDetections(filteredRects);
 
-        Logger::logDebug("%u detections. %u objects detected. %u new tracks.") <<
-                               accumulatedFound.size() << filteredRects.size() << trackCount - oldTrackingCount;
+            Logger::logDebug("%u detections. %u objects detected. %u new tracks.") <<
+                                                                                   accumulatedFound.size()
+                                                                                   << filteredRects.size()
+                                                                                   << trackCount - oldTrackingCount;
 
-        accumulatedFound.clear();
+            accumulatedFound.clear();
+        } else {
+
+            std::vector<cv::Rect2d> tracksToKeep;
+
+            for(Track& track : tracks){
+                cv::Rect2d r = track.getRect();
+                cv::Point2d center = cv::Point2d(r.x + r.width / 2, r.y + r.height / 2);
+                if(center.x > frame->cols * ROI_MARGIN && center.x < frame->cols * (1 - ROI_MARGIN) &&
+                        center.y > frame->rows * ROI_MARGIN && center.y < frame->rows* (1 - ROI_MARGIN))
+                    tracksToKeep.push_back(track.getRect());
+            }
+
+            if (!tracksToKeep.empty()) {
+                Logger::logDebug("No objects detected. Keeping %u from %u tracks in ROI")
+                        << tracksToKeep.size() << tracks.size();
+            } else {
+                Logger::logDebug("No objects detected. %u tracks outside ROI");
+                return {};
+            }
+
+            tracker->setTargets(tracksToKeep, frame);
+            tracks = updateDetections(tracksToKeep);
+
+        }
     }
 
     bool trackingOk = tracker->track(frame);

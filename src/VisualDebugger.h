@@ -18,22 +18,26 @@ class VisualDebugger {
 public:
     void setup(Config* config);
     void setFrame(std::shared_ptr<cv::Mat> frame);
-    void setStatus(State state, int battery, double altitude, Point gps, Point orientation);
-    int show();
+    void setStatus(State state, int battery, double altitude, Point gps, Point orientation, int fps,
+                   long runningTime);
+    int show(long deltaTime);
     void setTracks(std::vector<Track> tracks);
     void writeConsole(std::string str);
     void cleanup();
 private:
     Config* config;
     cv::Mat frame;
+    std::shared_ptr<cv::Mat> originalFrame;
 
     static const cv::Scalar WHITE_COLOR;
     static const cv::Scalar GREEN_COLOR;
+    static const cv::Scalar GREY_COLOR;
 
     static const int CONSOLE_QUEUE_SIZE = 5;
     static const int CONSOLE_FONT = cv::FONT_HERSHEY_PLAIN;
     static const int CONSOLE_FONT_SIZE = 1;
     static const int CONSOLE_FONT_THICKNESS = 1;
+    static constexpr const double OUTPUT_FPS = 25;
 
     std::array<cv::Scalar, 9> colors ={{ cv::Scalar(255,0,0),
                          cv::Scalar(0,255,0),
@@ -52,6 +56,11 @@ private:
     static std::string getStateName(State state);
 
     cv::Scalar getStateColor(State state);
+    cv::VideoWriter rawOutput;
+    cv::VideoWriter hudOutput;
+
+    void openWriters(cv::Size frameSize);
+    bool shouldOpen;
 };
 
 

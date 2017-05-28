@@ -16,7 +16,8 @@ public:
     DetectAndTrack(DetectionAlgorithm* detector, TrackingAlgorithm* tracker);
     std::vector<Track> update(std::shared_ptr<cv::Mat> frame);
     const double KEEP_TRACK_OVERLAP_THRESHOLD = 0.3;
-    const double FRAMES_TO_DETECT = 5;
+    const double FRAMES_TO_DETECT = 2;
+    static constexpr const double ROI_MARGIN = 0.2;
 private:
     DetectionAlgorithm* detector;
     TrackingAlgorithm* tracker;

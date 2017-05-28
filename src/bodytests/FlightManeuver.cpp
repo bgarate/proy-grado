@@ -36,7 +36,7 @@ class FlightManeuver : public BodyTest {
             DirectionTime(0,0,0,2),
             DirectionTime(0,0.25,0,2)};*/
 
-    std::vector<DirectionTime> sequence = {DirectionTime(0,0,0,10)};
+    std::vector<DirectionTime> sequence = {DirectionTime(0,0,0,100)};
 
     bool waitingTakeOff = false;
     bool waitingLanding = false;

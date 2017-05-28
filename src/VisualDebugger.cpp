@@ -3,10 +3,14 @@
 //
 
 #include <boost/format.hpp>
+#include <chrono>
+#include <src/logging/Logger.h>
+#include <src/tracking/DetectAndTrack.h>
 #include "VisualDebugger.h"
 
 const cv::Scalar VisualDebugger::WHITE_COLOR = cv::Scalar(255,255,255);
 const cv::Scalar VisualDebugger::GREEN_COLOR = cv::Scalar(0,205,0);
+const cv::Scalar VisualDebugger::GREY_COLOR = cv::Scalar(205,205,205);
 
 void VisualDebugger::setup(Config *config) {
     this->config = config;
@@ -14,16 +18,48 @@ void VisualDebugger::setup(Config *config) {
 
     if(config->isVisualDebugEnabled())
         cv::namedWindow(windowName, cv::WINDOW_AUTOSIZE);
+
+    shouldOpen = config->isOutputRawVideo() || config->isOutputHudVideo();
+
 }
 
 void VisualDebugger::setFrame(std::shared_ptr<cv::Mat> frame) {
-    if(frame != NULL)
+    if(frame != NULL && (config->isOutputRawVideo() || config->isOutputHudVideo() ||
+                        config->isVisualDebugEnabled())) {
+        originalFrame = frame;
         frame->copyTo(this->frame);
+
+        if(shouldOpen && frame->cols > 0 && frame->rows > 0) {
+            openWriters(cv::Size(frame->cols, frame->rows));
+        }
+    }
+}
+
+void VisualDebugger::openWriters(cv::Size frameSize){
+
+    shouldOpen = false;
+
+    std::chrono::milliseconds ms = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::system_clock::now().time_since_epoch());
+    std::string videoPath = config->getOutputPath() + "/" + std::to_string(ms.count()) + "_";
+    std::string rawVideoPath = videoPath + "RAW.avi";
+    std::string hudVideoPath = videoPath + "HUD.avi";
+
+    int fourccCode = cv::VideoWriter::fourcc('M','J','P','G');
+
+    if(config->isOutputRawVideo()) {
+        rawOutput.open(rawVideoPath, fourccCode, OUTPUT_FPS, frameSize);
+        Logger::logInfo("RAW video output on %s") << rawVideoPath;
+    }
+
+    if(config->isOutputHudVideo()) {
+        hudOutput.open(hudVideoPath, fourccCode, OUTPUT_FPS, frameSize);
+        Logger::logInfo("HUD video output on %s") << hudVideoPath;
+    }
 }
 
 void VisualDebugger::setTracks(std::vector<Track> tracks) {
 
-    if(!config->isVisualDebugEnabled())
+    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideo())
         return;
 
     // draw the tracked object
@@ -75,7 +111,11 @@ std::string VisualDebugger::getStateName(State state){
     }
 }
 
-void VisualDebugger::setStatus(State state, int battery, double altitude, Point gps, Point orientation){
+void VisualDebugger::setStatus(State state, int battery, double altitude, Point gps, Point orientation,
+    int fps, long runningTime){
+
+    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideo())
+        return;
 
     std::string statusName = getStateName(state);
     cv::Scalar statusColor =  getStateColor(state);
@@ -87,7 +127,11 @@ void VisualDebugger::setStatus(State state, int battery, double altitude, Point 
 
     cv::putText(frame, statusName, textOrigin, CONSOLE_FONT, 2, statusColor, 1);
 
+    long runningSeconds = runningTime / 1000000;
+    long runningMinutes = runningSeconds / 60;
+
     std::vector<std::string> colValues = {
+            (boost::format("FPS: %3u Running time: %02um:%02us") % fps % runningMinutes % (runningSeconds % 60)).str(),
             (boost::format("Bateria: %3u%%") % battery).str(),
             (boost::format("Altitud: %3.2fm") % altitude).str(),
             (boost::format("Lat: %3.2f Long: %3.2f Alt: %3.2f") % orientation.Latitude() %
@@ -96,31 +140,32 @@ void VisualDebugger::setStatus(State state, int battery, double altitude, Point 
             orientation.Pitch() % orientation.Yaw()).str(),
     };
 
-
-    textOrigin = cv::Point(10, frame.rows - 10);
+    textSize = cv::getTextSize(colValues[0], CONSOLE_FONT, 1, 1, NULL);
+    textOrigin = cv::Point((frame.cols - textSize.width)/2, textSize.height + 10);
     cv::putText(frame, colValues[0], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR);
 
-
-    textSize = cv::getTextSize(colValues[1], CONSOLE_FONT, 1, 1, NULL);
-    textOrigin = cv::Point((frame.cols - textSize.width)/2, frame.rows - 10);
+    textOrigin = cv::Point(10, frame.rows - 10);
     cv::putText(frame, colValues[1], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR);
 
     textSize = cv::getTextSize(colValues[2], CONSOLE_FONT, 1, 1, NULL);
-    textOrigin = cv::Point(frame.cols - textSize.width - 10, frame.rows - 10);
+    textOrigin = cv::Point((frame.cols - textSize.width)/2, frame.rows - 10);
     cv::putText(frame, colValues[2], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR);
 
-    cv::Size previousTextSize = textSize;
     textSize = cv::getTextSize(colValues[3], CONSOLE_FONT, 1, 1, NULL);
-    textOrigin = cv::Point(frame.cols - textSize.width - 10, frame.rows - previousTextSize.height - 20);
+    textOrigin = cv::Point(frame.cols - textSize.width - 10, frame.rows - 10);
     cv::putText(frame, colValues[3], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR);
+
+    cv::Size previousTextSize = textSize;
+    textSize = cv::getTextSize(colValues[4], CONSOLE_FONT, 1, 1, NULL);
+    textOrigin = cv::Point(frame.cols - textSize.width - 10, frame.rows - previousTextSize.height - 20);
+    cv::putText(frame, colValues[4], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR);
 
 }
 
-int VisualDebugger::show(){
+int VisualDebugger::show(long deltaTime){
 
-    if(!config->isVisualDebugEnabled())
+    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideo() && !config->isOutputRawVideo())
         return 0;
-
 
     if(frame.cols == 0 || frame.rows == 0)
         return 0;
@@ -131,7 +176,16 @@ int VisualDebugger::show(){
     cv::line(frame, cv::Point(center.x - 5, center.y), cv::Point(center.x + 5, center.y),WHITE_COLOR);
     cv::line(frame, cv::Point(center.x, center.y - 5), cv::Point(center.x, center.y + 5),WHITE_COLOR);
 
+    double roiStart = DetectAndTrack::ROI_MARGIN;
+    double roiEnd = 1 - DetectAndTrack::ROI_MARGIN;
+
+    cv::rectangle(frame,
+                  cv::Point((int)(frame.cols * roiStart), (int)(frame.rows * roiStart)),
+                  cv::Point((int)(frame.cols * roiEnd), (int)(frame.rows * roiEnd)),
+                  WHITE_COLOR);
+
     int consoleY = 10;
+    bool first = true;
 
     for(std::string str : console){
 
@@ -141,9 +195,30 @@ int VisualDebugger::show(){
         cv::Point textOrigin = cv::Point(frame.cols - textSize.width - 10,
             consoleY + textSize.height);
 
-        cv::putText(frame, str, textOrigin, CONSOLE_FONT, CONSOLE_FONT_SIZE, WHITE_COLOR, CONSOLE_FONT_THICKNESS);
+        cv::putText(frame, str, textOrigin, CONSOLE_FONT, CONSOLE_FONT_SIZE, first ? WHITE_COLOR : GREY_COLOR,
+                    CONSOLE_FONT_THICKNESS);
 
         consoleY += textSize.height + 10;
+        first = false;
+
+    }
+
+    if(hudOutput.isOpened() || rawOutput.isOpened()) {
+
+        double timePerFrame = 1000000 / OUTPUT_FPS;
+
+        int framesPassed = config->isRealTimeVideoOutput() ? (int)(deltaTime / timePerFrame) : 1;
+
+        if(framesPassed > OUTPUT_FPS)
+            Logger::logWarning("%u frames passed") << framesPassed;
+
+        for (int i = 0; i < framesPassed; ++i) {
+            if(hudOutput.isOpened())
+                hudOutput.write(frame);
+
+            if(rawOutput.isOpened())
+                rawOutput.write(*originalFrame);
+        }
 
     }
 
@@ -153,6 +228,12 @@ int VisualDebugger::show(){
 
 void VisualDebugger::cleanup() {
     cvDestroyWindow(windowName.c_str());
+
+    if(hudOutput.isOpened())
+        hudOutput.release();
+
+    if(rawOutput.isOpened())
+        rawOutput.release();
 }
 
 void VisualDebugger::writeConsole(std::string str) {

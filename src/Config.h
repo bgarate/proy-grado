@@ -31,6 +31,34 @@ private:
 
     bool visualDebugEnabled;
 
+    bool outputHudVideo;
+
+    bool realTimeVideoOutput;
+public:
+    bool isRealTimeVideoOutput() const;
+
+    void setRealTimeVideoOutput(bool realTimeVideoOutput);
+
+private:
+
+    std::string outputPath;
+public:
+    const std::string &getOutputPath() const;
+
+    void setOutputPath(const std::string &outputPath);
+
+public:
+    bool isOutputHudVideo() const;
+
+    void setOutputHudVideo(bool outputHudVideo);
+
+    bool isOutputRawVideo() const;
+
+    void setOutputRawVideo(bool outputRawVideo);
+
+private:
+    bool outputRawVideo;
+
 public:
 
     Config();

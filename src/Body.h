@@ -31,7 +31,11 @@ private:
     Config* config;
     void ShutdownHandler(Message &msg);
 
-    long deltaTime = 0;
+    int elapsedFrames = 0;
+    int elapsedTime = 0;
+    int fps = 0;
+
+    int deltaTime = 0;
     long runningTime = 0;
 
     void waitPing();

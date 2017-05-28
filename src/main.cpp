@@ -34,6 +34,10 @@ int main(int argc, const char* args[]) {
             ("pingLapse", po::value<int>(), "Interval between Brain-Body pings")
             ("pingTimeout", po::value<int>(), "Timeout before a ping is considered lost")
             ("visualDebug", po::value<bool>(), "Enable visual debugging")
+            ("outputRaw", po::value<bool>(), "Enable video output for RAW frames")
+            ("outputHUD", po::value<bool>(), "Enable video output for HUD frames")
+            ("outputPath", po::value<std::string>(), "Output path")
+            ("realTimeOutput", po::value<bool>(), "Video output is real time")
             ("hal", po::value<string>(), "Hal to be used (dummy,pb2,vrep)");
 
     po::variables_map vm;
@@ -80,6 +84,22 @@ int main(int argc, const char* args[]) {
 
     if(vm.count("visualDebug") > 0) {
         config->setVisualDebugEnabled(vm["visualDebug"].as<bool>());
+    }
+
+    if(vm.count("outputRaw") > 0) {
+        config->setOutputRawVideo(vm["outputRaw"].as<bool>());
+    }
+
+    if(vm.count("outputHUD") > 0) {
+        config->setOutputHudVideo(vm["outputHUD"].as<bool>());
+    }
+
+    if(vm.count("outputPath") > 0) {
+        config->setOutputPath(vm["outputPath"].as<std::string>());
+    }
+
+    if(vm.count("realTimeOutput") > 0) {
+        config->setRealTimeVideoOutput(vm["realTimeOutput"].as<bool>());
     }
 
     Hal* hal;

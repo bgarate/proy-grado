@@ -69,12 +69,19 @@ void Body::loop() {
         if(!res)
             should_exit = true;
 
-        visualDebugger.setStatus(hal->getState(),hal->bateryLevel(),
-                                 hal->getAltitude(), hal->getGPSPosition(), hal->getOrientation());
-        if(visualDebugger.show() == 27){
-            should_exit = true;
+        elapsedFrames++;
+        elapsedTime += deltaTime;
+        if(elapsedTime >= 1000000) {
+            fps = elapsedFrames * 1000000 / elapsedTime;
+            elapsedFrames = 0;
+            elapsedTime = 0;
         }
 
+        visualDebugger.setStatus(hal->getState(),hal->bateryLevel(),
+                                 hal->getAltitude(), hal->getGPSPosition(), hal->getOrientation(), fps, runningTime);
+        if(visualDebugger.show(deltaTime) == 27){
+            should_exit = true;
+        }
 
         if(should_exit)
             break;

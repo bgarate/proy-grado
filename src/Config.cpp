@@ -47,6 +47,10 @@ Config::Config() {
     pingTimeout = 2000;
     pingLapse = 5000;
     visualDebugEnabled = true;
+    outputHudVideo = true;
+    outputRawVideo = false;
+    outputPath = "";
+    realTimeVideoOutput = false;
 }
 
 unsigned short Config::getBroadcastPort() const {
@@ -103,4 +107,36 @@ bool Config::isVisualDebugEnabled() const {
 
 void Config::setVisualDebugEnabled(bool visualDebug) {
     Config::visualDebugEnabled = visualDebug;
+}
+
+bool Config::isOutputHudVideo() const {
+    return outputHudVideo;
+}
+
+void Config::setOutputHudVideo(bool outputHudVideo) {
+    Config::outputHudVideo = outputHudVideo;
+}
+
+bool Config::isOutputRawVideo() const {
+    return outputRawVideo;
+}
+
+void Config::setOutputRawVideo(bool outputRawVideo) {
+    Config::outputRawVideo = outputRawVideo;
+}
+
+const std::string &Config::getOutputPath() const {
+    return outputPath;
+}
+
+void Config::setOutputPath(const std::string &outputPath) {
+    Config::outputPath = outputPath;
+}
+
+bool Config::isRealTimeVideoOutput() const {
+    return realTimeVideoOutput;
+}
+
+void Config::setRealTimeVideoOutput(bool realTimeVideoOutput) {
+    Config::realTimeVideoOutput = realTimeVideoOutput;
 }
