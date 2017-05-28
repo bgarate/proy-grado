@@ -7,6 +7,7 @@
 #include <src/tracking/DetectAndTrack.h>
 #include <src/tracking/HogDetector.h>
 #include <src/tracking/MultiTracker.h>
+#include <src/hal/ManualControl.h>
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
 
@@ -46,8 +47,13 @@ class FlightManeuver : public BodyTest {
     TrackingAlgorithm* tracker;
     DetectAndTrack* detectAndTrack;
 
+    ManualControl *mc;
+    bool inmc = false;
+
     void InitBodyTest(Hal *hal) override {
         this->hal = hal;
+
+        mc = new ManualControl(hal);
 
         colors[0] = cv::Scalar(255,0,0);
         colors[1] = cv::Scalar(0,255,0);
@@ -69,7 +75,13 @@ class FlightManeuver : public BodyTest {
 
     bool BodyTestStep(double deltaTime) override {
 
-        if(hal->getState() == State::Landed && !tookOff){
+
+        if (inmc) {
+            //anything
+            if(mc->stopped())
+                return false;
+            return true;
+        } else if(hal->getState() == State::Landed && !tookOff){
             // Despegar
             Logger::logError("Despegar");
             hal->takeoff();
@@ -121,9 +133,14 @@ class FlightManeuver : public BodyTest {
 
 
                 cv::imshow("tracker", *frame);
-                if(cv::waitKey(1) == 27){
+                int key = cv::waitKey(1);
+                if(key == 27){
                     cvDestroyWindow("tracker");
                     return false;
+                } else if(key == 32){
+                    cvDestroyWindow("tracker");
+                    mc->run();
+                    inmc = true;
                 }
             }
         }
