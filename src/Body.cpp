@@ -66,7 +66,8 @@ void Body::loop() {
             messsageHandler.handle(msg);
         }
 
-        //waitPing();
+        if(config->isPingEnabled())
+            waitPing();
 
         if(!inmc){
 
