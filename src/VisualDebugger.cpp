@@ -19,12 +19,12 @@ void VisualDebugger::setup(Config *config) {
     if(config->isVisualDebugEnabled())
         cv::namedWindow(windowName, cv::WINDOW_AUTOSIZE);
 
-    shouldOpen = config->isOutputRawVideo() || config->isOutputHudVideo();
+    shouldOpen = config->isOutputRawVideoEnabled() || config->isOutputHudVideoEnabled();
 
 }
 
 void VisualDebugger::setFrame(std::shared_ptr<cv::Mat> frame) {
-    if(frame != NULL && (config->isOutputRawVideo() || config->isOutputHudVideo() ||
+    if(frame != NULL && (config->isOutputRawVideoEnabled() || config->isOutputHudVideoEnabled() ||
                         config->isVisualDebugEnabled())) {
         originalFrame = frame;
         frame->copyTo(this->frame);
@@ -46,12 +46,12 @@ void VisualDebugger::openWriters(cv::Size frameSize){
 
     int fourccCode = cv::VideoWriter::fourcc('M','J','P','G');
 
-    if(config->isOutputRawVideo()) {
+    if(config->isOutputRawVideoEnabled()) {
         rawOutput.open(rawVideoPath, fourccCode, OUTPUT_FPS, frameSize);
         Logger::logInfo("RAW video output on %s") << rawVideoPath;
     }
 
-    if(config->isOutputHudVideo()) {
+    if(config->isOutputHudVideoEnabled()) {
         hudOutput.open(hudVideoPath, fourccCode, OUTPUT_FPS, frameSize);
         Logger::logInfo("HUD video output on %s") << hudVideoPath;
     }
@@ -59,7 +59,7 @@ void VisualDebugger::openWriters(cv::Size frameSize){
 
 void VisualDebugger::setTracks(std::vector<Track> tracks) {
 
-    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideo())
+    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideoEnabled())
         return;
 
     // draw the tracked object
@@ -114,7 +114,7 @@ std::string VisualDebugger::getStateName(State state){
 void VisualDebugger::setStatus(State state, int battery, double altitude, Point gps, Point orientation,
     int fps, long runningTime){
 
-    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideo())
+    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideoEnabled())
         return;
 
     std::string statusName = getStateName(state);
@@ -164,7 +164,8 @@ void VisualDebugger::setStatus(State state, int battery, double altitude, Point 
 
 int VisualDebugger::show(long deltaTime){
 
-    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideo() && !config->isOutputRawVideo())
+    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideoEnabled() &&
+            !config->isOutputRawVideoEnabled())
         return 0;
 
     if(frame.cols == 0 || frame.rows == 0)
@@ -207,7 +208,7 @@ int VisualDebugger::show(long deltaTime){
 
         double timePerFrame = 1000000 / OUTPUT_FPS;
 
-        int framesPassed = config->isRealTimeVideoOutput() ? (int)(deltaTime / timePerFrame) : 1;
+        int framesPassed = config->isRealTimeVideoOutputEnabled() ? (int)(deltaTime / timePerFrame) : 1;
 
         if(framesPassed > OUTPUT_FPS)
             Logger::logWarning("%u frames passed") << framesPassed;

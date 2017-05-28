@@ -10,6 +10,8 @@
 #include "hal/pb2/pb2hal.cpp"
 #include "hal/HalType.hpp"
 
+Config *getConfig(const boost::program_options::variables_map &vm);
+
 namespace po = boost::program_options;
 
 void welcome_message() {
@@ -39,6 +41,7 @@ int main(int argc, const char* args[]) {
             ("outputPath", po::value<std::string>(), "Output path")
             ("realTimeOutput", po::value<bool>(), "Video output is real time")
             ("hal", po::value<string>(), "Hal to be used (dummy,pb2,vrep)");
+            ("ping", po::value<bool>(), "Enables ping between body and brain");
 
     po::variables_map vm;
     po::store(po::parse_command_line(argc, args, desc), vm);
@@ -52,55 +55,7 @@ int main(int argc, const char* args[]) {
         return 0;
     }
 
-    Config* config = new Config();
-
-    if(vm.count("brainHost") > 0) {
-        config->setBrainHost(vm["brainHost"].as<std::string>());
-    }
-
-    if(vm.count("brainPort") > 0) {
-        config->setBrainPort(vm["brainPort"].as<int>());
-    }
-
-    if(vm.count("commsPort") > 0) {
-        config->setCommsPort(vm["commsPort"].as<int>());
-    }
-
-    if(vm.count("broadcastPort") > 0) {
-        config->setAdvertisementLapse(vm["broadcastPort"].as<int>());
-    }
-
-    if(vm.count("advertisementLapse") > 0) {
-        config->setAdvertisementLapse(vm["advertisementLapse"].as<int>());
-    }
-
-    if(vm.count("pingLapse") > 0) {
-        config->setPingLapse(vm["pingLapse"].as<int>());
-    }
-
-    if(vm.count("pingTimeout") > 0) {
-        config->setPingTimeout(vm["pingTimeout"].as<int>());
-    }
-
-    if(vm.count("visualDebug") > 0) {
-        config->setVisualDebugEnabled(vm["visualDebug"].as<bool>());
-    }
-
-    if(vm.count("outputRaw") > 0) {
-        config->setOutputRawVideo(vm["outputRaw"].as<bool>());
-    }
-
-    if(vm.count("outputHUD") > 0) {
-        config->setOutputHudVideo(vm["outputHUD"].as<bool>());
-    }
-
-    if(vm.count("outputPath") > 0) {
-        config->setOutputPath(vm["outputPath"].as<std::string>());
-    }
-
-    if(vm.count("realTimeOutput") > 0) {
-        config->setRealTimeVideoOutput(vm["realTimeOutput"].as<bool>());
-    }
+    Config *config = getConfig(vm);
 
     Hal* hal;
 
@@ -158,5 +113,64 @@ int main(int argc, const char* args[]) {
 
 
     return 0;
+}
+
+Config *getConfig(const boost::program_options::variables_map &vm) {
+
+    Config* config = new Config();
+
+    if(vm.count("brainHost") > 0) {
+        config->setBrainHost(vm["brainHost"].as<string>());
+    }
+
+    if(vm.count("brainPort") > 0) {
+        config->setBrainPort(vm["brainPort"].as<int>());
+    }
+
+    if(vm.count("commsPort") > 0) {
+        config->setCommsPort(vm["commsPort"].as<int>());
+    }
+
+    if(vm.count("broadcastPort") > 0) {
+        config->setAdvertisementLapse(vm["broadcastPort"].as<int>());
+    }
+
+    if(vm.count("advertisementLapse") > 0) {
+        config->setAdvertisementLapse(vm["advertisementLapse"].as<int>());
+    }
+
+    if(vm.count("pingLapse") > 0) {
+        config->setPingLapse(vm["pingLapse"].as<int>());
+    }
+
+    if(vm.count("pingTimeout") > 0) {
+        config->setPingTimeout(vm["pingTimeout"].as<int>());
+    }
+
+    if(vm.count("visualDebug") > 0) {
+        config->setVisualDebugEnabled(vm["visualDebug"].as<bool>());
+    }
+
+    if(vm.count("outputRaw") > 0) {
+        config->setOutputRawVideoEnabled(vm["outputRaw"].as<bool>());
+    }
+
+    if(vm.count("outputHUD") > 0) {
+        config->setOutputHudVideoEnabled(vm["outputHUD"].as<bool>());
+    }
+
+    if(vm.count("outputPath") > 0) {
+        config->setOutputPath(vm["outputPath"].as<string>());
+    }
+
+    if(vm.count("realTimeOutput") > 0) {
+        config->setRealTimeVideoOutputEnabled(vm["realTimeOutput"].as<bool>());
+    }
+
+    if(vm.count("ping") > 0) {
+        config->setPingEnabled(vm["ping"].as<bool>());
+    }
+
+    return config;
 }
 

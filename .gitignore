@@ -93,3 +93,4 @@ fabric.properties
 /proy_grado
 /cmake-build-debug/
 !/src/hal/pb2/lib/*
+/output/*.avi

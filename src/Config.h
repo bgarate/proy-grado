@@ -31,35 +31,36 @@ private:
 
     bool visualDebugEnabled;
 
-    bool outputHudVideo;
+    bool outputHudVideoEnabled;
 
-    bool realTimeVideoOutput;
-public:
-    bool isRealTimeVideoOutput() const;
+    bool realTimeVideoOutputEnabled;
 
-    void setRealTimeVideoOutput(bool realTimeVideoOutput);
-
-private:
+    bool outputRawVideoEnabled;
 
     std::string outputPath;
+
+    bool pingEnabled;
+public:
+    bool isPingEnabled() const;
+
+    void setPingEnabled(bool pingEnabled);
+
 public:
     const std::string &getOutputPath() const;
 
     void setOutputPath(const std::string &outputPath);
 
-public:
-    bool isOutputHudVideo() const;
+    bool isOutputHudVideoEnabled() const;
 
-    void setOutputHudVideo(bool outputHudVideo);
+    void setOutputHudVideoEnabled(bool outputHudVideo);
 
-    bool isOutputRawVideo() const;
+    bool isOutputRawVideoEnabled() const;
 
-    void setOutputRawVideo(bool outputRawVideo);
+    void setOutputRawVideoEnabled(bool outputRawVideo);
 
-private:
-    bool outputRawVideo;
+    bool isRealTimeVideoOutputEnabled() const;
 
-public:
+    void setRealTimeVideoOutputEnabled(bool realTimeVideoOutput);
 
     Config();
 

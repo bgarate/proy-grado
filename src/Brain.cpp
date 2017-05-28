@@ -56,7 +56,9 @@ void Brain::loop() {
         handleMessages();
 
         advertise();
-        sendPingIfAppropiate();
+
+        if(config->isPingEnabled())
+            sendPingIfAppropiate();
 
         if(should_exit) {
             break;

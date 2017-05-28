@@ -47,10 +47,11 @@ Config::Config() {
     pingTimeout = 2000;
     pingLapse = 5000;
     visualDebugEnabled = true;
-    outputHudVideo = true;
-    outputRawVideo = false;
+    outputHudVideoEnabled = true;
+    outputRawVideoEnabled = false;
     outputPath = "";
-    realTimeVideoOutput = false;
+    realTimeVideoOutputEnabled = false;
+    pingEnabled = true;
 }
 
 unsigned short Config::getBroadcastPort() const {
@@ -109,20 +110,20 @@ void Config::setVisualDebugEnabled(bool visualDebug) {
     Config::visualDebugEnabled = visualDebug;
 }
 
-bool Config::isOutputHudVideo() const {
-    return outputHudVideo;
+bool Config::isOutputHudVideoEnabled() const {
+    return outputHudVideoEnabled;
 }
 
-void Config::setOutputHudVideo(bool outputHudVideo) {
-    Config::outputHudVideo = outputHudVideo;
+void Config::setOutputHudVideoEnabled(bool outputHudVideoEnabled) {
+    Config::outputHudVideoEnabled = outputHudVideoEnabled;
 }
 
-bool Config::isOutputRawVideo() const {
-    return outputRawVideo;
+bool Config::isOutputRawVideoEnabled() const {
+    return outputRawVideoEnabled;
 }
 
-void Config::setOutputRawVideo(bool outputRawVideo) {
-    Config::outputRawVideo = outputRawVideo;
+void Config::setOutputRawVideoEnabled(bool outputRawVideoEnabled) {
+    Config::outputRawVideoEnabled = outputRawVideoEnabled;
 }
 
 const std::string &Config::getOutputPath() const {
@@ -133,10 +134,18 @@ void Config::setOutputPath(const std::string &outputPath) {
     Config::outputPath = outputPath;
 }
 
-bool Config::isRealTimeVideoOutput() const {
-    return realTimeVideoOutput;
+bool Config::isRealTimeVideoOutputEnabled() const {
+    return realTimeVideoOutputEnabled;
 }
 
-void Config::setRealTimeVideoOutput(bool realTimeVideoOutput) {
-    Config::realTimeVideoOutput = realTimeVideoOutput;
+void Config::setRealTimeVideoOutputEnabled(bool realTimeVideoOutputEnabled) {
+    Config::realTimeVideoOutputEnabled = realTimeVideoOutputEnabled;
+}
+
+bool Config::isPingEnabled() const {
+    return pingEnabled;
+}
+
+void Config::setPingEnabled(bool pingEnabled) {
+    Config::pingEnabled = pingEnabled;
 }
