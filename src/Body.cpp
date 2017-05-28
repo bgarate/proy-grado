@@ -65,7 +65,6 @@ void Body::loop() {
             messsageHandler.handle(msg);
         }
 
-        waitPing();
         //waitPing();
 
         if(!inmc){
@@ -75,16 +74,16 @@ void Body::loop() {
             if(!res)
                 should_exit = true;
 
-        elapsedFrames++;
-        elapsedTime += deltaTime;
-        if(elapsedTime >= 1000000) {
-            fps = elapsedFrames * 1000000 / elapsedTime;
-            elapsedFrames = 0;
-            elapsedTime = 0;
-        }
+            elapsedFrames++;
+            elapsedTime += deltaTime;
+            if(elapsedTime >= 1000000) {
+                fps = elapsedFrames * 1000000 / elapsedTime;
+                elapsedFrames = 0;
+                elapsedTime = 0;
+            }
 
-        visualDebugger.setStatus(hal->getState(),hal->bateryLevel(),
-                                 hal->getAltitude(), hal->getGPSPosition(), hal->getOrientation(), fps, runningTime);
+            visualDebugger.setStatus(hal->getState(),hal->bateryLevel(),
+                                     hal->getAltitude(), hal->getGPSPosition(), hal->getOrientation(), fps, runningTime);
             int key = visualDebugger.show(deltaTime);
             if(key == 27){
                 should_exit = true;

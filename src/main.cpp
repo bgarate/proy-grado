@@ -59,11 +59,11 @@ int main(int argc, const char* args[]) {
     }
 
     if(vm.count("brainPort") > 0) {
-        config->setBrainPort(vm["brainPort"].as<uint16>());
+        config->setBrainPort(vm["brainPort"].as<int>());
     }
 
     if(vm.count("commsPort") > 0) {
-        config->setCommsPort(vm["commsPort"].as<uint16>());
+        config->setCommsPort(vm["commsPort"].as<int>());
     }
 
     if(vm.count("broadcastPort") > 0) {
@@ -75,11 +75,11 @@ int main(int argc, const char* args[]) {
     }
 
     if(vm.count("pingLapse") > 0) {
-        config->setPingLapse(vm["pingLapse"].as<uint32>());
+        config->setPingLapse(vm["pingLapse"].as<int>());
     }
 
     if(vm.count("pingTimeout") > 0) {
-        config->setPingTimeout(vm["pingTimeout"].as<uint32>());
+        config->setPingTimeout(vm["pingTimeout"].as<int>());
     }
 
     if(vm.count("visualDebug") > 0) {
