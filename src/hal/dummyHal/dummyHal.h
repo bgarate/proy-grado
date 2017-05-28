@@ -34,6 +34,8 @@ public:
 
     State getState() override;
 
+    bool isRmoving() override;
+
     void rmove(double dx, double dy, double dz, double dh) override;
 
     void setup(Config* config) override;

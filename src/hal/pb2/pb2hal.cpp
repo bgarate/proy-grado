@@ -644,5 +644,10 @@ class Pb2hal: public Hal {
         return state;
     }
 
+    bool isRmoving(){
+        //todo
+        return false;
+    }
+
 };
 
