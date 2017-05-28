@@ -46,6 +46,7 @@ Config::Config() {
     commsPort = 11502;
     pingTimeout = 2000;
     pingLapse = 5000;
+    visualDebugEnabled = true;
 }
 
 unsigned short Config::getBroadcastPort() const {
@@ -94,4 +95,12 @@ unsigned int Config::getPingLapse() const {
 
 void Config::setPingLapse(unsigned int pingLapse) {
     Config::pingLapse = pingLapse;
+}
+
+bool Config::isVisualDebugEnabled() const {
+    return visualDebugEnabled;
+}
+
+void Config::setVisualDebugEnabled(bool visualDebug) {
+    Config::visualDebugEnabled = visualDebug;
 }

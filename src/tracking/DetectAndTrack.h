@@ -5,6 +5,7 @@
 #ifndef PROY_GRADO_DETECTANDTRACK_H
 #define PROY_GRADO_DETECTANDTRACK_H
 
+#include "memory"
 
 #include "DetectionAlgorithm.h"
 #include "TrackingAlgorithm.h"
@@ -13,7 +14,7 @@
 class DetectAndTrack {
 public:
     DetectAndTrack(DetectionAlgorithm* detector, TrackingAlgorithm* tracker);
-    std::vector<Track> update(cv::Mat frame);
+    std::vector<Track> update(std::shared_ptr<cv::Mat> frame);
     const double KEEP_TRACK_OVERLAP_THRESHOLD = 0.3;
     const double FRAMES_TO_DETECT = 5;
 private:

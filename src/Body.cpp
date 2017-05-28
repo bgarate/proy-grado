@@ -27,9 +27,13 @@ void Body::setup(Config* config) {
     Logger::getInstance().setSource("BODY");
     this->config = config;
     communicateWithBrain(config->getBrainHost(), config->getBrainPort());
+    visualDebugger.setup(config);
     hal->setup(config);
     hal->Connect();
     pingWait = 0;
+
+    this->mc = new ManualControl(hal);
+    this->inmc = false;
 }
 void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
@@ -42,7 +46,7 @@ void Body::loop() {
 
     BodyTest* bt = new FlightManeuver();
     //BodyTest* bt = new BodyTest2();
-    bt->InitBodyTest(this->hal);
+    bt->InitBodyTest(this->hal, &visualDebugger);
     Logger::logInfo("Body started");
 
     chrono::steady_clock::time_point startTime = chrono::steady_clock::now();
@@ -63,10 +67,28 @@ void Body::loop() {
 
         //waitPing();
 
-        bool res = bt->BodyTestStep(deltaTime);
+        if(!inmc){
 
-        if(!res)
-            break;
+            bool res = bt->BodyTestStep(deltaTime);
+
+            if(!res)
+                should_exit = true;
+
+            visualDebugger.setStatus(hal->getState(),hal->bateryLevel(),
+                                     hal->getAltitude(), hal->getGPSPosition(), hal->getOrientation());
+            int key = visualDebugger.show();
+            if(key == 27){
+                should_exit = true;
+            } else if (key == 32) {
+                visualDebugger.cleanup();
+                mc->run();
+                inmc=true;
+            }
+        } else if(mc->stopped()) {//q dentro de manual control
+            should_exit = true;
+        }
+
+
 
         if(should_exit)
             break;
@@ -82,13 +104,13 @@ void Body::PingHandler(Message& msg){
 
     Ping* ping = msg.mutable_ping();
     if(ping->type() == Ping_PingType_REQUEST) {
-        Logger::logInfo("PING REQUEST received");
+        Logger::logDebug("PING REQUEST received. Last was %u milliseconds ago") << pingWait / 1000;
         ping->set_type(Ping_PingType_ACK);
         communication.send(msg);
-        Logger::logInfo("PING ACK sent");
+        Logger::logDebug("PING ACK sent");
         pingWait = 0;
     } else {
-        Logger::logInfo("PING ACK received");
+        Logger::logDebug("PING ACK received");
     }
 
 }
@@ -103,6 +125,7 @@ void Body::ShutdownHandler(Message& msg){
 }
 
 void Body::cleanup() {
+    visualDebugger.cleanup();
     hal->Disconnect();
 }
 

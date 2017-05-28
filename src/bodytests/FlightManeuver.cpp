@@ -7,7 +7,7 @@
 #include <src/tracking/DetectAndTrack.h>
 #include <src/tracking/HogDetector.h>
 #include <src/tracking/MultiTracker.h>
-#include <src/hal/ManualControl.h>
+#include <src/VisualDebugger.h>
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
 
@@ -42,69 +42,61 @@ class FlightManeuver : public BodyTest {
     bool waitingLanding = false;
     bool tookOff = false;
 
-    cv::Scalar colors[9];
     DetectionAlgorithm* detector;
     TrackingAlgorithm* tracker;
     DetectAndTrack* detectAndTrack;
 
-    ManualControl *mc;
     bool inmc = false;
 
-    void InitBodyTest(Hal *hal) override {
+    VisualDebugger* visualDebugger;
+
+    void InitBodyTest(Hal *hal, VisualDebugger* visualDebugger) override {
         this->hal = hal;
 
-        mc = new ManualControl(hal);
-
-        colors[0] = cv::Scalar(255,0,0);
-        colors[1] = cv::Scalar(0,255,0);
-        colors[2] = cv::Scalar(0,0,255);
-        colors[3] = cv::Scalar(120,120,0);
-        colors[4] = cv::Scalar(0,120,120);
-        colors[5] = cv::Scalar(120,0,120);
-        colors[6] = cv::Scalar(255,0,120);
-        colors[7] = cv::Scalar(0,120,255);
-        colors[8] = cv::Scalar(255,120,0);
         detector = new HogDetector();
         tracker = new MultiTracker(MultiTracker::Algorithm::KCF);
         detectAndTrack =  new DetectAndTrack(detector, tracker);
 
-        cv::namedWindow("tracker", cv::WINDOW_AUTOSIZE);
+        this->visualDebugger = visualDebugger;
 
         Logger::logInfo("Bateria: %u") << hal->bateryLevel();
     }
 
     bool BodyTestStep(double deltaTime) override {
 
+        std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
 
-        if (inmc) {
-            //anything
-            if(mc->stopped())
-                return false;
-            return true;
-        } else if(hal->getState() == State::Landed && !tookOff){
+        if (frame != NULL) {
+            visualDebugger->setFrame(frame);
+        }
+
+        if (hal->getState() == State::Landed && !tookOff) {
             // Despegar
             Logger::logError("Despegar");
+            visualDebugger->writeConsole("Despegar");
             hal->takeoff();
             tookOff = true;
             waitingTakeOff = true;
             return true;
-        } else if(waitingTakeOff &&
-                (hal->getState() == State::Hovering || hal->getState() == State::Flying))
-        {
+        } else if (waitingTakeOff &&
+                   (hal->getState() == State::Hovering || hal->getState() == State::Flying)) {
             Logger::logError("Despegado");
+            visualDebugger->writeConsole("Despegado");
             // Despegado
             waitingTakeOff = false;
-        } else if(waitingLanding && hal->getState() == State::Landed){
+        } else if (waitingLanding && hal->getState() == State::Landed) {
             // Aterrizado
             Logger::logError("Aterrizado");
+            visualDebugger->writeConsole("Aterrizado");
             return false;
-        } else if(currentStep >= sequence.size() && !waitingLanding){
+        } else if (currentStep >= sequence.size() && !waitingLanding) {
             // Aterrizar
             Logger::logError("Aterrizar");
+            visualDebugger->writeConsole("Aterrizar");
             hal->land();
             waitingLanding = true;
             return true;
-        } else if(!waitingLanding && !waitingTakeOff) {
+        } else if (!waitingLanding && !waitingTakeOff) {
 
 
             DirectionTime directionTime = sequence[currentStep];
@@ -116,34 +108,21 @@ class FlightManeuver : public BodyTest {
                 currentTime = 0;
                 currentStep++;
                 Logger::logInfo("Next element in flight maneuver sequence");
+                visualDebugger->writeConsole("Next element in flight maneuver sequence");
             } else {
                 currentTime += deltaTime;
             }
 
-            std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
-            if(frame != NULL){
+            if (frame != NULL) {
 
                 //test track begin
                 //update the tracking result
-                std::vector<Track> objects = detectAndTrack->update(*frame);
+                std::vector<Track> objects = detectAndTrack->update(frame);
+                visualDebugger->setTracks(objects);
 
-                // draw the tracked object
-                for (unsigned i = 0; i < objects.size(); i++)
-                    rectangle(*frame, objects[i].getRect(), colors[objects[i].getNumber() % (sizeof(colors)/sizeof(cv::Scalar))], 2, 1);
-
-
-                cv::imshow("tracker", *frame);
-                int key = cv::waitKey(1);
-                if(key == 27){
-                    cvDestroyWindow("tracker");
-                    return false;
-                } else if(key == 32){
-                    cvDestroyWindow("tracker");
-                    mc->run();
-                    inmc = true;
-                }
             }
         }
+
         return true;
 
     }

@@ -265,10 +265,10 @@ public:
         //convertir imagen
         std::shared_ptr<cv::Mat> res =
                 std::shared_ptr<cv::Mat>(new cv::Mat(resolution[1],resolution[0],CV_8UC3,image));
-
-        cv::cvtColor(*res,*res,cv::COLOR_BGR2RGB);
-        cv::flip(*res,*res,0);
-
+        if(res != NULL) {
+            cv::cvtColor(*res, *res, cv::COLOR_BGR2RGB);
+            cv::flip(*res, *res, 0);
+        }
         return res;
     }
 

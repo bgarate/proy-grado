@@ -12,9 +12,9 @@
 
 class TrackingAlgorithm {
 public:
-    virtual void setTargets(std::vector<cv::Rect2d> targets, cv::Mat frame) = 0;
+    virtual void setTargets(std::vector<cv::Rect2d> targets, std::shared_ptr<cv::Mat> frame) = 0;
     virtual std::vector<cv::Rect2d> getTargets() = 0;
-    virtual bool track(cv::Mat track) = 0;
+    virtual bool track(std::shared_ptr<cv::Mat> track) = 0;
 };
 
 

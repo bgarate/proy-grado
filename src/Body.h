@@ -6,10 +6,12 @@
 #define PROY_GRADO_BODY_H
 
 #include <iostream>
+#include <src/hal/ManualControl.h>
 #include "src/messages/SocketChannel.h"
 #include "MessageHandler.h"
 #include "hal/hal.hpp"
 #include "Config.h"
+#include "VisualDebugger.h"
 
 class Body {
 public:
@@ -21,6 +23,7 @@ public:
 private:
     SocketChannel communication;
     MessageHandler messsageHandler;
+    VisualDebugger visualDebugger;
     Hal* hal;
     void PingHandler(Message &msg);
     void communicateWithBrain(std::string brainHost, unsigned short port);
@@ -35,6 +38,9 @@ private:
     void waitPing();
 
     long pingWait;
+
+    ManualControl *mc;
+    bool inmc;
 };
 
 
