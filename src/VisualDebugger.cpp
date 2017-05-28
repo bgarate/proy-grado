@@ -63,9 +63,19 @@ void VisualDebugger::setTracks(std::vector<Track> tracks) {
         return;
 
     // draw the tracked object
-    for (unsigned i = 0; i < tracks.size(); i++)
-        rectangle(frame, tracks[i].getRect(),
-                  colors[tracks[i].getNumber() % (sizeof(colors)/sizeof(cv::Scalar))], 2, 1);
+    for (unsigned i = 0; i < tracks.size(); i++) {
+        Track track = tracks[i];
+        cv::Scalar color =  colors[track.getNumber() % (sizeof(colors)/sizeof(cv::Scalar))];
+        std::string number = std::to_string(track.getNumber());
+
+        rectangle(frame, track.getRect(), color, 2, 1);
+
+        cv::Rect2d trackRect = track.getRect();
+        cv::Size textSize = cv::getTextSize(number, CONSOLE_FONT, 1, 1, NULL);
+        cv::Point textOrigin = cv::Point((int)trackRect.x + trackRect.width - textSize.width,
+                                         trackRect.y - textSize.height);
+        cv::putText(frame, number, textOrigin, CONSOLE_FONT, 1, color);
+    }
 
 }
 
