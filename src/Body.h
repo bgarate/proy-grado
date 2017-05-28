@@ -6,6 +6,7 @@
 #define PROY_GRADO_BODY_H
 
 #include <iostream>
+#include <src/hal/ManualControl.h>
 #include "src/messages/SocketChannel.h"
 #include "MessageHandler.h"
 #include "hal/hal.hpp"
@@ -41,6 +42,9 @@ private:
     void waitPing();
 
     long pingWait;
+
+    ManualControl *mc;
+    bool inmc;
 };
 
 

@@ -1,6 +1,6 @@
 #include "../hal.hpp"
 extern "C" {
-     #include "extApi.h"
+#include "extApi.h"
 }
 #include <math.h>
 #include <iostream>
@@ -23,140 +23,140 @@ using namespace std;
 
 class Vrephal: public Hal {
 
-	//Constantes
-	const int PORT = 19997;
-	const char * HOST = "127.0.0.1"; 
+    //Constantes
+    const int PORT = 19997;
+    const char * HOST = "127.0.0.1";
 
-	//Variables aux 
-	int clientID;
-	simxInt targetHandler, quadricopterHandler, quadricopterFloorCamHandler, quadricopterFrontCamHandler;
+    //Variables aux
+    int clientID;
+    simxInt targetHandler, quadricopterHandler, quadricopterFloorCamHandler, quadricopterFrontCamHandler;
     thread* t;
     atomic<int> moving, moving1,roll,pitch,yaw,gaz;
-	atomic<State> state;
+    atomic<State> state;
 
     Config* config;
 
-	//Funcion auxiliar
+    //Funcion auxiliar
 
-	void deamon(){
-		while(1){
+    void deamon(){
+        while(1){
             usleep(25000);
 
             simxFloat factor = 0.001;
 
             if(this->moving==0 && this->moving1==1){
 
-            	//normalize
-	            if(this->roll<-100){this->roll=0;}else if(this->roll>100){this->roll=0;}
-	            if(this->pitch<-100){this->pitch=0;}else if(this->pitch>100){this->pitch=0;}
-	            if(this->yaw<-100){this->yaw=-0;}else if(this->yaw>100){this->yaw=0;}
-	            if(this->gaz<-100){this->gaz=-0;}else if(this->gaz>100){this->gaz=0;}
+                //normalize
+                if(this->roll<-100){this->roll=0;}else if(this->roll>100){this->roll=0;}
+                if(this->pitch<-100){this->pitch=0;}else if(this->pitch>100){this->pitch=0;}
+                if(this->yaw<-100){this->yaw=-0;}else if(this->yaw>100){this->yaw=0;}
+                if(this->gaz<-100){this->gaz=-0;}else if(this->gaz>100){this->gaz=0;}
 
-	            simxFloat orientation[3];
-	            simxFloat position[3];
-	            simxFloat rfactor = 4;
+                simxFloat orientation[3];
+                simxFloat position[3];
+                simxFloat rfactor = 4;
 
-	            position[0] = -rfactor*this->pitch*factor;//pitch
-	            position[1] = -rfactor*this->yaw*factor;//yaw
-	            position[2] = -rfactor*this->gaz*factor;//gaz
-	            orientation[0]= 0;
-	            orientation[1]= 0;
-	            orientation[2]= -rfactor*(this->roll*factor);//roll
+                position[0] = -rfactor*this->pitch*factor;//pitch
+                position[1] = rfactor*this->yaw*factor;//yaw
+                position[2] = -rfactor*this->gaz*factor;//gaz
+                orientation[0]= 0;
+                orientation[1]= 0;
+                orientation[2]= rfactor*(this->roll*factor);//roll
 
-	            simxSetObjectOrientation(clientID, targetHandler, targetHandler, orientation, simx_opmode_blocking);
-            	simxSetObjectPosition(clientID, targetHandler, targetHandler, position, simx_opmode_blocking);
+                simxSetObjectOrientation(clientID, targetHandler, targetHandler, orientation, simx_opmode_blocking);
+                simxSetObjectPosition(clientID, targetHandler, targetHandler, position, simx_opmode_blocking);
 
-            	usleep(25000);
+                usleep(25000);
 
-            	position[0] = -position[0]/1;//pitch
-	            position[1] = -position[1]/1;//yaw
-	            position[2] = 0;//gaz
-	            orientation[0]= 0;
-	            orientation[1]= 0;
-	            orientation[2]= -orientation[2]/2;//roll
+                position[0] = -position[0]/1;//pitch
+                position[1] = -position[1]/1;//yaw
+                position[2] = 0;//gaz
+                orientation[0]= 0;
+                orientation[1]= 0;
+                orientation[2]= orientation[2]/2;//roll
 
-            	simxSetObjectPosition(clientID, targetHandler, targetHandler, position, simx_opmode_blocking);
+                simxSetObjectPosition(clientID, targetHandler, targetHandler, position, simx_opmode_blocking);
 
-				this->roll=0;
-			    this->pitch=0;
-			    this->yaw=0;
-			    this->gaz=0;
-			    moving1 = 0;
+                this->roll=0;
+                this->pitch=0;
+                this->yaw=0;
+                this->gaz=0;
+                moving1 = 0;
 
             } else if(this->moving==1){
 
-            	//normalize
-	            if(this->roll<-100){this->roll=-100;}else if(this->roll>100){this->roll=100;}
-	            if(this->pitch<-100){this->pitch=-100;}else if(this->pitch>100){this->pitch=100;}
-	            if(this->yaw<-100){this->yaw=-100;}else if(this->yaw>100){this->yaw=100;}
-	            if(this->gaz<-100){this->gaz=-100;}else if(this->gaz>100){this->gaz=100;}
+                //normalize
+                if(this->roll<-100){this->roll=-100;}else if(this->roll>100){this->roll=100;}
+                if(this->pitch<-100){this->pitch=-100;}else if(this->pitch>100){this->pitch=100;}
+                if(this->yaw<-100){this->yaw=-100;}else if(this->yaw>100){this->yaw=100;}
+                if(this->gaz<-100){this->gaz=-100;}else if(this->gaz>100){this->gaz=100;}
 
-	            simxFloat orientation[3];
-	            simxFloat position[3];
+                simxFloat orientation[3];
+                simxFloat position[3];
 
-	            position[0] = (this->pitch*factor);//pitch
-	            position[1] = (this->yaw * factor);//yaw
-	            position[2] = (this->gaz*factor);//gaz
-	            orientation[0]= 0;
-	            orientation[1]= 0;
-	            orientation[2]= (this->roll*factor);//roll
+                position[0] = (this->pitch*factor);//pitch
+                position[1] = -(this->yaw * factor);//yaw
+                position[2] = (this->gaz*factor);//gaz
+                orientation[0]= 0;
+                orientation[1]= 0;
+                orientation[2]= -(this->roll*factor);//roll
 
-            	simxSetObjectOrientation(clientID, targetHandler, targetHandler, orientation, simx_opmode_blocking);
-            	simxSetObjectPosition(clientID, targetHandler, targetHandler,  position, simx_opmode_blocking);
+                simxSetObjectOrientation(clientID, targetHandler, targetHandler, orientation, simx_opmode_blocking);
+                simxSetObjectPosition(clientID, targetHandler, targetHandler,  position, simx_opmode_blocking);
 
-            	moving1 = 1;
+                moving1 = 1;
             }
 
             if(state == State::Landing){
-				simxFloat position[3];
-				simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
-				if(position[2]< 0.1){
-					simxSetIntegerSignal(clientID,"motorsoff",1,simx_opmode_blocking);
-					this->state = State::Landed;
-				}
-			}
-			if(state == State::TakingOff){
-				simxFloat position[3];
-				simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
-				if(position[2] > 0.9){
-					this->state = State::Hovering;
-				}
-			}
+                simxFloat position[3];
+                simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
+                if(position[2]< 0.1){
+                    simxSetIntegerSignal(clientID,"motorsoff",1,simx_opmode_blocking);
+                    this->state = State::Landed;
+                }
+            }
+            if(state == State::TakingOff){
+                simxFloat position[3];
+                simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
+                if(position[2] > 0.9){
+                    this->state = State::Hovering;
+                }
+            }
 
-		}
-	}
+        }
+    }
 
 
-	public:
+public:
 
-	/************Constructor*************/
+    /************Constructor*************/
 
-	void Connect() {
-		//Conectar con V-REP
-		clientID = simxStart(HOST, PORT, true, true, 5000, 5);
-		simxInt res = simxStartSimulation(clientID, simx_opmode_blocking);
+    void Connect() {
+        //Conectar con V-REP
+        clientID = simxStart(HOST, PORT, true, true, 5000, 5);
+        simxInt res = simxStartSimulation(clientID, simx_opmode_blocking);
 
-		//Obtener handlers
-		simxInt res1 = simxGetObjectHandle(clientID, "Quadricopter_target",&targetHandler,simx_opmode_blocking);
-		simxInt res2 = simxGetObjectHandle(clientID, "Quadricopter",&quadricopterHandler,simx_opmode_blocking);
-		simxInt res3 = simxGetObjectHandle(clientID, "Vision_sensorFloor",&quadricopterFloorCamHandler,simx_opmode_blocking);
-		simxInt res4 = simxGetObjectHandle(clientID, "Vision_sensorFront",&quadricopterFrontCamHandler,simx_opmode_blocking);
+        //Obtener handlers
+        simxInt res1 = simxGetObjectHandle(clientID, "Quadricopter_target",&targetHandler,simx_opmode_blocking);
+        simxInt res2 = simxGetObjectHandle(clientID, "Quadricopter",&quadricopterHandler,simx_opmode_blocking);
+        simxInt res3 = simxGetObjectHandle(clientID, "Vision_sensorFloor",&quadricopterFloorCamHandler,simx_opmode_blocking);
+        simxInt res4 = simxGetObjectHandle(clientID, "Vision_sensorFront",&quadricopterFrontCamHandler,simx_opmode_blocking);
 
-		//Iniciar deamon
-		this->moving=0;
-		this->roll=0;
-		this->pitch=0;
-		this->yaw=0;
-		this->gaz=0;
-		this->t = new thread(&Vrephal::deamon, this);
+        //Iniciar deamon
+        this->moving=0;
+        this->roll=0;
+        this->pitch=0;
+        this->yaw=0;
+        this->gaz=0;
+        this->t = new thread(&Vrephal::deamon, this);
 
-		this->state = State::Landed;
-	}
+        this->state = State::Landed;
+    }
 
-	void Disconnect(){
-		simxInt res = simxStopSimulation(clientID, simx_opmode_blocking);
+    void Disconnect(){
+        simxInt res = simxStopSimulation(clientID, simx_opmode_blocking);
 
-	}
+    }
 
     State getState() {
         return state;
@@ -168,150 +168,149 @@ class Vrephal: public Hal {
 
     /************Movimiento*************/
 
-	//Set movimientos
-	void move(int roll, int pitch, int yaw, int gaz){
+    //Set movimientos
+    void move(int roll, int pitch, int yaw, int gaz){
 
-		if (state == State::Flying || state == State::Hovering) {
+        if (state == State::Flying || state == State::Hovering) {
 
-			if(roll!=0 || pitch!=0 || yaw!=0 || gaz!=0){
-				this->moving=1;
-				this->roll=roll;
-				this->pitch=pitch;
-				this->yaw=yaw;
-				this->gaz=gaz;
-				this->state = State::Flying;
-			} else {
-				this->moving=0;
-				this->state = State::Hovering;
-			}
-		} else {
-			Logger::logWarning("Cannot move: drone isn't flying or hovering");
-		}
-	}
+            if(roll!=0 || pitch!=0 || yaw!=0 || gaz!=0){
+                this->moving=1;
+                this->roll=roll;
+                this->pitch=pitch;
+                this->yaw=yaw;
+                this->gaz=gaz;
+                this->state = State::Flying;
+            } else {
+                this->moving=0;
+                this->state = State::Hovering;
+            }
+        } else {
+            Logger::logWarning("Cannot move: drone isn't flying or hovering");
+        }
+    }
 
-	void rmove(double dx, double dy, double dz, double dh){
-	//todo
-	}
+    void rmove(double dx, double dy, double dz, double dh){
+        //todo
+    }
 
-	// --> Despegue y aterrizaje
-	void land(){
+    // --> Despegue y aterrizaje
+    void land(){
 
-		Logger::logInfo("Landing");
+        Logger::logInfo("Landing");
 
-		if (state == State::Flying || state == State::Hovering || state == State::TakingOff){
-			simxFloat position[3];
-			simxGetObjectPosition(clientID, targetHandler, -1, (simxFloat *)position, simx_opmode_blocking);
+        if (state == State::Flying || state == State::Hovering || state == State::TakingOff){
+            simxFloat position[3];
+            simxGetObjectPosition(clientID, targetHandler, -1, (simxFloat *)position, simx_opmode_blocking);
 
-			//Modificar posicion
-			position[2] = 0.05;
+            //Modificar posicion
+            position[2] = 0.05;
 
-			simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
-			this->state = State::Landing;
+            simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
+            this->state = State::Landing;
 
-		} else {
-			Logger::logWarning("Cannot land: drone isn't flying, hovering or taking off");
-		}
-	}
-	void takeoff(){
+        } else {
+            Logger::logWarning("Cannot land: drone isn't flying, hovering or taking off");
+        }
+    }
+    void takeoff(){
 
-		Logger::logInfo("Taking off");
+        Logger::logInfo("Taking off");
 
-		if (state == State::Landed){
-			simxFloat position[3];
-			simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
+        if (state == State::Landed){
+            simxFloat position[3];
+            simxGetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_blocking);
 
-			//Modificar posicion
-			position[2] = 1;
+            //Modificar posicion
+            position[2] = 1;
 
-			simxSetIntegerSignal(clientID,"motorsoff",0,simx_opmode_blocking);
-			simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
+            simxSetIntegerSignal(clientID,"motorsoff",0,simx_opmode_blocking);
+            simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
 
-			this->state = State::TakingOff;
+            this->state = State::TakingOff;
 
-		} else {
-			Logger::logWarning("Cannot take off: drone isn't landed");
-		}
-	}
+        } else {
+            Logger::logWarning("Cannot take off: drone isn't landed");
+        }
+    }
 
-	/************Estado del drone*************/
+    /************Estado del drone*************/
 
-	// --> Batería 
-	int bateryLevel(){
-		return 100;
-	}
+    // --> Batería
+    int bateryLevel(){
+        return 100;
+    }
 
-	// --> Intensidad de la conexión
-	//todo
+    // --> Intensidad de la conexión
+    //todo
 
-	/************Cámara*************/
+    /************Cámara*************/
 
-	// --> Obtener captura de imagen (ambas cámaras)
+    // --> Obtener captura de imagen (ambas cámaras)
     std::shared_ptr<cv::Mat> getFrame(Camera cam){
 
-		simxInt cameraHandler;
-		if (cam == Camera::Front){
-			cameraHandler = quadricopterFrontCamHandler;
-		} else {
-			cameraHandler = quadricopterFloorCamHandler;
-		}
+        simxInt cameraHandler;
+        if (cam == Camera::Front){
+            cameraHandler = quadricopterFrontCamHandler;
+        } else {
+            cameraHandler = quadricopterFloorCamHandler;
+        }
 
-		simxInt resolution[2];
-		simxUChar* image;
+        simxInt resolution[2];
+        simxUChar* image;
 
-		image = new simxUChar[512*512*3];
-		simxInt aux = simxGetVisionSensorImage(clientID, cameraHandler,resolution,&image,0,simx_opmode_blocking);
+        image = new simxUChar[512*512*3];
+        simxInt aux = simxGetVisionSensorImage(clientID, cameraHandler,resolution,&image,0,simx_opmode_blocking);
 
 
-		//convertir imagen
+        //convertir imagen
         std::shared_ptr<cv::Mat> res =
                 std::shared_ptr<cv::Mat>(new cv::Mat(resolution[1],resolution[0],CV_8UC3,image));
+        if(res != NULL) {
+            cv::cvtColor(*res, *res, cv::COLOR_BGR2RGB);
+            cv::flip(*res, *res, 0);
+        }
+        return res;
+    }
 
-        cv::cvtColor(*res,*res,cv::COLOR_BGR2RGB);
-        cv::flip(*res,*res,0);
+    /************Posición*************/
 
-		return res;
-	}
+    // --> Altura
+    double getAltitude(){
 
-	/************Posición*************/
+        simxFloat position[3];
+        simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
 
-	// --> Altura
-	double getAltitude(){
+        double pos = position[2];
+        return pos;
+    }
 
-		simxFloat position[3];
-		simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
+    // --> Orientación
+    Point getOrientation(){
 
-		double pos = position[2];
-		return pos;
-	}
+        simxFloat orientation[3];
+        simxGetObjectOrientation(clientID, quadricopterHandler, -1, orientation, simx_opmode_blocking);
 
-	// --> Orientación 
-	Point getOrientation(){
+        Point ori;
+        ori.x = orientation[0];
+        ori.y = orientation[1];
+        ori.z = orientation[2];
 
-		simxFloat orientation[3];
-	  	simxGetObjectOrientation(clientID, quadricopterHandler, -1, orientation, simx_opmode_blocking);
+        return ori;
+    }
 
-	  	Point ori;
-	  	ori.x = orientation[0];
-	  	ori.y = orientation[1];
-	  	ori.z = orientation[2];
+    // --> Coordenadas
+    Point getGPSPosition(){
 
-		return ori;
-	}	
+        simxFloat position[3];
+        simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
 
-	// --> Coordenadas
-	Point getGPSPosition(){
+        Point pos;
+        pos.x = position[0];
+        pos.y = position[1];
+        pos.z = position[2];
 
-		simxFloat position[3];
-		simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
-
-		Point pos;
-	  	pos.x = position[0];
-	  	pos.y = position[1];
-	  	pos.z = position[2];
-
-		return pos;
-	}
+        return pos;
+    }
 
 
 };
-

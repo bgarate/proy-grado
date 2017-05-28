@@ -31,6 +31,9 @@ void Body::setup(Config* config) {
     hal->setup(config);
     hal->Connect();
     pingWait = 0;
+
+    this->mc = new ManualControl(hal);
+    this->inmc = false;
 }
 void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
@@ -63,11 +66,14 @@ void Body::loop() {
         }
 
         waitPing();
+        //waitPing();
 
-        bool res = bt->BodyTestStep(deltaTime);
+        if(!inmc){
 
-        if(!res)
-            should_exit = true;
+            bool res = bt->BodyTestStep(deltaTime);
+
+            if(!res)
+                should_exit = true;
 
         elapsedFrames++;
         elapsedTime += deltaTime;
@@ -79,7 +85,15 @@ void Body::loop() {
 
         visualDebugger.setStatus(hal->getState(),hal->bateryLevel(),
                                  hal->getAltitude(), hal->getGPSPosition(), hal->getOrientation(), fps, runningTime);
-        if(visualDebugger.show(deltaTime) == 27){
+            int key = visualDebugger.show(deltaTime);
+            if(key == 27){
+                should_exit = true;
+            } else if (key == 32) {
+                visualDebugger.cleanup();
+                mc->run();
+                inmc=true;
+            }
+        } else if(mc->stopped()) {//q dentro de manual control
             should_exit = true;
         }
 

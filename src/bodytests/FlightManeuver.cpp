@@ -46,6 +46,8 @@ class FlightManeuver : public BodyTest {
     TrackingAlgorithm* tracker;
     DetectAndTrack* detectAndTrack;
 
+    bool inmc = false;
+
     VisualDebugger* visualDebugger;
 
     void InitBodyTest(Hal *hal, VisualDebugger* visualDebugger) override {
