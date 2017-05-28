@@ -174,7 +174,7 @@ class Pb2hal: public Hal {
     }
 
     void MoveByEnd(CommandDictionary* dictionary){
-        this->rmoveactive;
+        this->rmoveactive = false;
     }
 
     void BatteryStateChanged(CommandDictionary* dictionary){
