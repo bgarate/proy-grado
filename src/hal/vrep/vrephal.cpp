@@ -31,9 +31,9 @@ class Vrephal: public Hal {
     int clientID;
     simxInt targetHandler, quadricopterHandler, quadricopterFloorCamHandler, quadricopterFrontCamHandler;
     thread* t;
-    atomic<int> moving, moving1,roll,pitch,yaw,gaz;
+    atomic<int> roll,pitch,yaw,gaz;
     atomic<double> dx, dy,dz, dh;
-    atomic<int> rmoveactive, rmoving;
+    atomic<bool> rmoveactive, rmoving, moving, moving1;
     atomic<State> state;
 
     Config* config;
@@ -46,35 +46,35 @@ class Vrephal: public Hal {
             simxFloat factor = 0.001;
 
             //Movimiento relativo
-            if(rmoveactive == 1 && rmoving == 0){
+            if(rmoveactive && !rmoving){
 
                 if(dx!=0 ){//pitch
-                    rmoving = 1;
-                    moving=1;
+                    rmoving = true;
+                    moving=true;
                     if(dx<0){pitch=-50;}else{pitch=50;};
                     this->state = State::Flying;
                 }
                 if(dy!=0 ){//yaw
-                    rmoving = 1;
-                    moving=1;
+                    rmoving = true;
+                    moving=true;
                     if(dy<0){yaw=-50;}else{yaw=50;};
                     this->state = State::Flying;
                 }
                 if(dz!=0 ){//gaz
-                    rmoving = 1;
-                    moving=1;
+                    rmoving = true;
+                    moving=true;
                     gaz=50;
                     if(dz<0){gaz=-50;}else{gaz=50;};
                     this->state = State::Flying;
                 }
                 if(dh!=0 ){//roll
-                    rmoving = 1;
-                    moving=1;
+                    rmoving = true;
+                    moving=true;
                     roll=50;
                     if(dh<0){roll=-50;}else{roll=50;};
                     this->state = State::Flying;
                 }
-            } else if (rmoveactive == 1) {//controlar el fin del movminento
+            } else if (rmoveactive) {//controlar el fin del movminento
 
                 if(abs(dx) <0.1){//pitch
                     pitch=0;
@@ -90,21 +90,21 @@ class Vrephal: public Hal {
                 }
 
                 if(pitch==0 && yaw==0 && gaz==0 && roll==0){
-                    this->moving=0;
+                    this->moving=true;
 
                     this->dx = 0;//pitch
                     this->dy = 0;//yaw
                     this->dz = 0;//gaz
                     this->dh = 0;//roll
-                    this->rmoving=0;
-                    this->rmoveactive=0;
+                    this->rmoving=false;
+                    this->rmoveactive=false;
 
                     this->state = State::Hovering;
                 }
             }
 
 
-            if(this->moving==0 && this->moving1==1){
+            if(!this->moving && this->moving1){
 
                 //normalize
                 if(this->roll<-100){this->roll=0;}else if(this->roll>100){this->roll=0;}
@@ -141,9 +141,9 @@ class Vrephal: public Hal {
                 this->pitch=0;
                 this->yaw=0;
                 this->gaz=0;
-                moving1 = 0;
+                moving1 = false;
 
-            } else if(this->moving==1){
+            } else if(this->moving){
 
                 //normalize
                 if(this->roll<-100){this->roll=-100;}else if(this->roll>100){this->roll=100;}
@@ -191,7 +191,7 @@ class Vrephal: public Hal {
                 simxSetObjectOrientation(clientID, targetHandler, targetHandler, orientation, simx_opmode_blocking);
                 simxSetObjectPosition(clientID, targetHandler, targetHandler,  position, simx_opmode_blocking);
 
-                moving1 = 1;
+                moving1 = true;
             }
 
             if(state == State::Landing){
@@ -230,7 +230,7 @@ public:
         simxInt res4 = simxGetObjectHandle(clientID, "Vision_sensorFront",&quadricopterFrontCamHandler,simx_opmode_blocking);
 
         //Iniciar deamon
-        this->moving=0;
+        this->moving=false;
         this->roll=0;
         this->pitch=0;
         this->yaw=0;
@@ -240,8 +240,8 @@ public:
         this->dy = 0;//yaw
         this->dz = 0;//gaz
         this->dh = 0;//roll
-        this->rmoveactive = 0;
-        this->rmoving=0;
+        this->rmoveactive = false;
+        this->rmoving=false;
 
         this->t = new thread(&Vrephal::deamon, this);
 
@@ -258,7 +258,7 @@ public:
     }
 
     bool isRmoving() {
-        return rmoveactive == 1;
+        return rmoveactive;
     }
 
     void setup(Config* config) {
@@ -278,25 +278,25 @@ public:
                 this->pitch=pitch;
                 this->yaw=-yaw;
                 this->gaz=gaz;
-                this->moving=1;
+                this->moving=true;
 
                 this->dx = 0;//pitch
                 this->dy = 0;//yaw
                 this->dz = 0;//gaz
                 this->dh = 0;//roll
-                this->rmoveactive = 0;
-                this->rmoving=0;
+                this->rmoveactive = false;
+                this->rmoving=false;
 
                 this->state = State::Flying;
             } else {
-                this->moving=0;
+                this->moving=true;
 
                 this->dx = 0;//pitch
                 this->dy = 0;//yaw
                 this->dz = 0;//gaz
                 this->dh = 0;//roll
-                this->rmoveactive = 0;
-                this->rmoving=0;
+                this->rmoveactive = false;
+                this->rmoving=false;
 
                 this->state = State::Hovering;
             }
@@ -309,7 +309,7 @@ public:
 
         if (state == State::Flying || state == State::Hovering) {
 
-            this->moving=0;
+            this->moving=true;
             this->roll=0;
             this->pitch=0;
             this->yaw=0;
@@ -319,7 +319,7 @@ public:
             this->dy = -dy;//yaw
             this->dz = dz;//gaz
             this->dh = -dh;//roll
-            this->rmoveactive = 1;
+            this->rmoveactive = true;
 
         } else {
             Logger::logWarning("Cannot rmove: drone isn't flying or hovering");

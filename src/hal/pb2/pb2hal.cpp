@@ -54,6 +54,8 @@ class Pb2hal: public Hal {
 
     atomic<State> state;
 
+    atomic<int> rmoveactive;
+
     VideoDecoder videoDecoder;
     CommandHandler commandHandler;
 
@@ -165,8 +167,14 @@ class Pb2hal: public Hal {
                                        [this](CommandDictionary* d) {this->AttitudeChanged(d);});
         commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED,
                                        [this](CommandDictionary* d) {this->FlyingStateChanged(d);});
+        commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGEVENT_MOVEBYEND,
+                                       [this](CommandDictionary* d) {this->MoveByEnd(d);});
 
 
+    }
+
+    void MoveByEnd(CommandDictionary* dictionary){
+        this->rmoveactive;
     }
 
     void BatteryStateChanged(CommandDictionary* dictionary){
@@ -357,6 +365,8 @@ class Pb2hal: public Hal {
         orientationy = 0;
         orientationz = 0;
 
+        rmoveactive = false;
+
         connected = false;
 
         state = State::Unknown;
@@ -500,7 +510,13 @@ class Pb2hal: public Hal {
 	 }
 
     void rmove(double dx, double dy, double dz, double dh) {
-        //todo
+
+        if (state == State::Flying || state == State::Hovering) {
+            deviceController->aRDrone3->sendPilotingMoveBy(deviceController->aRDrone3, dx, dy, dz, dh);
+            rmoveactive = true;
+        } else {
+            Logger::logWarning("Cannot rmove: drone isn't flying or hovering");
+        }
     }
 
 	// --> Despegue y aterrizaje
@@ -645,8 +661,7 @@ class Pb2hal: public Hal {
     }
 
     bool isRmoving(){
-        //todo
-        return false;
+        return rmoveactive;
     }
 
 };
