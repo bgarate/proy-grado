@@ -64,7 +64,12 @@ class Vrephal: public Hal {
                     rmoving = true;
                     moving=true;
                     if(dz<0){gaz=-50;}else{gaz=50;};
-                    this->state = State::Flying;
+                    if(this->state != State::Landing){
+                        this->state = State::Flying;
+                    } else {
+                        gaz = -100;
+                    }
+
                 }
                 if(dh!=0 ){//yaw
                     rmoving = true;
@@ -97,7 +102,10 @@ class Vrephal: public Hal {
                     this->rmoving=false;
                     this->rmoveactive=false;
 
-                    this->state = State::Hovering;
+
+                    if(this->state != State::Landing){
+                        this->state = State::Hovering;
+                    }
                 }
             }
 
@@ -195,11 +203,20 @@ class Vrephal: public Hal {
             if(state == State::Landing){
                 simxFloat position[3];
                 simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
-                if(position[2]< 0.1){
+                if(position[2] < 0.2 && position[2] > 0){
                     simxSetIntegerSignal(clientID,"motorsoff",1,simx_opmode_blocking);
                     this->state = State::Landed;
                 }
             }
+            /*if(this->state == State::Landed){
+                simxFloat position[3];
+                simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
+                if(position[2] < 0.2 && position[2] > 0){
+                    simxSetIntegerSignal(clientID,"motorsoff",1,simx_opmode_blocking);
+                    this->state = State::Landed;
+                }
+            }*/
+
             if(state == State::TakingOff){
                 simxFloat position[3];
                 simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
@@ -338,9 +355,10 @@ public:
             simxGetObjectPosition(clientID, targetHandler, -1, (simxFloat *)position, simx_opmode_blocking);
 
             //Modificar posicion
-            position[2] = 0.05;
+            //position[2] = 0.05;
+            this->rmove(0,0,position[2],0);
 
-            simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
+            //simxSetObjectPosition(clientID, targetHandler, -1, position, simx_opmode_oneshot);
             this->state = State::Landing;
 
         } else {
