@@ -14,6 +14,7 @@
 #include "src/bodytests/BodyTest1.cpp"
 #include "src/bodytests/BodyTest2.cpp"
 #include "src/bodytests/FlightManeuver.cpp"
+#include "src/bodytests/BodyTestRmove.cpp"
 
 namespace chrono = std::chrono;
 
@@ -44,8 +45,8 @@ void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
 void Body::loop() {
 
-    BodyTest* bt = new FlightManeuver();
-    //BodyTest* bt = new BodyTest2();
+    //BodyTest* bt = new FlightManeuver();
+    BodyTest* bt = new BodyTestRmove();
     bt->InitBodyTest(this->hal, &visualDebugger);
     Logger::logInfo("Body started");
 
@@ -67,6 +68,12 @@ void Body::loop() {
 
         if(config->isPingEnabled())
             waitPing();
+
+        std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
+
+        if (frame != NULL) {
+            visualDebugger.setFrame(frame);
+        }
 
         if(!inmc){
 
@@ -95,7 +102,13 @@ void Body::loop() {
             }
         } else if(mc->stopped()) {//q dentro de manual control
             should_exit = true;
+        } else{
+
+            /*visualDebugger.setStatus(hal->getState(),hal->bateryLevel(),
+                                     hal->getAltitude(), hal->getGPSPosition(), hal->getOrientation(), fps, runningTime);
+            int key = visualDebugger.show(deltaTime);*/
         }
+
 
         if(should_exit)
             break;

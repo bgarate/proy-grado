@@ -40,7 +40,7 @@ int main(int argc, const char* args[]) {
             ("outputHUD", po::value<bool>(), "Enable video output for HUD frames")
             ("outputPath", po::value<std::string>(), "Output path")
             ("realTimeOutput", po::value<bool>(), "Video output is real time")
-            ("hal", po::value<string>(), "Hal to be used (dummy,pb2,vrep)");
+            ("hal", po::value<string>(), "Hal to be used (dummy,pb2,vrep)")
             ("ping", po::value<bool>(), "Enables ping between body and brain");
 
     po::variables_map vm;

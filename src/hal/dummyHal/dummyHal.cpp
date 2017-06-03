@@ -6,7 +6,7 @@
 #include <memory.h>
 #include "dummyHal.h"
 
-DummyHal::DummyHal():videoSource("/home/bruno/proy-grado/exapleTracking.mpg") {
+DummyHal::DummyHal():videoSource("/home/santy/Escritorio/Proyecto/Git/proy-grado/exapleTracking.mpg") {
     state = State::Landed;
 }
 
@@ -67,6 +67,11 @@ void DummyHal::rmove(double dx, double dy, double dz, double dh) {
 
 State DummyHal::getState() {
     return state;
+}
+
+bool DummyHal::isRmoving(){
+    //todo
+    return false;
 }
 
 

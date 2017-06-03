@@ -11,12 +11,12 @@
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
 
-class FlightManeuver : public BodyTest {
+class BodyTestRmove : public BodyTest {
 
     typedef struct DirectionTime {
         DirectionTime():x(0),y(0),z(0),s(0){};
-        DirectionTime(double x, double y, double z):x(x), y(y),z(z), s(1){}
-        DirectionTime(double x, double y, double z, double s):x(x), y(y),z(z), s(s){}
+        DirectionTime(double x, double y, double z):x(x), y(y),z(0), s(1){}
+        DirectionTime(double x, double y, double z, double s):x(x), y(y),z(0), s(s){}
         double x;
         double y;
         double z;
@@ -25,22 +25,11 @@ class FlightManeuver : public BodyTest {
 
 
     Hal* hal;
-    int currentStep = 0;
-    double currentTime = 0;
-    /*std::vector<DirectionTime> sequence = {
-            DirectionTime(-0.25,0,0,2),
-            DirectionTime(0,0,0,2),
-            DirectionTime(0,-0.25,0,2),
-            DirectionTime(0,0,0,2),
-            DirectionTime(0.25,0,0,2),
-            DirectionTime(0,0,0,2),
-            DirectionTime(0,0.25,0,2)};*/
-
-    std::vector<DirectionTime> sequence = {DirectionTime(0,0,0.25,1),DirectionTime(0,0,0,100)};
 
     bool waitingTakeOff = false;
     bool waitingLanding = false;
     bool tookOff = false;
+    bool rmovemode = false;
 
     DetectionAlgorithm* detector;
     TrackingAlgorithm* tracker;
@@ -66,9 +55,9 @@ class FlightManeuver : public BodyTest {
 
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
 
-        /*if (frame != NULL) {
+        if (frame != NULL) {
             visualDebugger->setFrame(frame);
-        }*/
+        }
 
         if (hal->getState() == State::Landed && !tookOff) {
             // Despegar
@@ -89,29 +78,20 @@ class FlightManeuver : public BodyTest {
             Logger::logError("Aterrizado");
             visualDebugger->writeConsole("Aterrizado");
             return false;
-        } else if (currentStep >= sequence.size() && !waitingLanding) {
+        } else if (rmovemode && !hal->isRmoving() && !waitingLanding) {
             // Aterrizar
             Logger::logError("Aterrizar");
             visualDebugger->writeConsole("Aterrizar");
             hal->land();
             waitingLanding = true;
             return true;
-        } else if (!waitingLanding && !waitingTakeOff) {
+
+        } else if (!rmovemode && !waitingLanding && !waitingTakeOff) {
 
 
-            DirectionTime directionTime = sequence[currentStep];
-
-            hal->move((int) (directionTime.y * 100), (int) (directionTime.x * 100),
-                      0, (int) (directionTime.z * 100));
-
-            if (currentTime >= directionTime.s * 1000000) {
-                currentTime = 0;
-                currentStep++;
-                Logger::logInfo("Next element in flight maneuver sequence");
-                visualDebugger->writeConsole("Next element in flight maneuver sequence");
-            } else {
-                currentTime += deltaTime;
-            }
+            hal->rmove(0,0,-3,0);
+            rmovemode=true;
+            Logger::logError("Do rmove");
 
             if (frame != NULL) {
 

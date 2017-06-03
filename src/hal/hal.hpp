@@ -103,6 +103,8 @@ class Hal{
 
     virtual State getState() = 0;
 
+	virtual bool isRmoving() = 0;
+
 };
 
 #endif

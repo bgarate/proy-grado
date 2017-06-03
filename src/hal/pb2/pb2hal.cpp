@@ -54,15 +54,12 @@ class Pb2hal: public Hal {
 
     atomic<State> state;
 
+    atomic<int> rmoveactive;
+
     VideoDecoder videoDecoder;
     CommandHandler commandHandler;
 
-    bool validCachedFrame = false;
-	std::shared_ptr<cv::Mat> cachedFrame = NULL;
-    uint8_t* receivedFrame = NULL;
-    uint32_t receivedFrameSize = 0;
-    int frameBufferSize = 0;
-
+	std::shared_ptr<cv::Mat> cvFrame = NULL;
     bool frameAvailable = false;
 
 	/******Funciones auxiliares******/
@@ -165,8 +162,14 @@ class Pb2hal: public Hal {
                                        [this](CommandDictionary* d) {this->AttitudeChanged(d);});
         commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED,
                                        [this](CommandDictionary* d) {this->FlyingStateChanged(d);});
+        commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGEVENT_MOVEBYEND,
+                                       [this](CommandDictionary* d) {this->MoveByEnd(d);});
 
 
+    }
+
+    void MoveByEnd(CommandDictionary* dictionary){
+        this->rmoveactive = false;
     }
 
     void BatteryStateChanged(CommandDictionary* dictionary){
@@ -249,25 +252,48 @@ class Pb2hal: public Hal {
             return ARCONTROLLER_ERROR_NO_VIDEO;
         }
 
-        ARSAL_Sem_Wait(&(p2this->framesem));
-
-        if(p2this->frameBufferSize < frame->used) {
-            Logger::logInfo("Frame buffer resized from %u bytes to %u bytes")
-                    << p2this->frameBufferSize << frame->used;
-            p2this->frameBufferSize = frame->used;
-            p2this->receivedFrame = (uint8_t*)realloc(p2this->receivedFrame, frame->used);
+        if (!p2this->videoDecoder.Decode(frame->data,frame->used))
+        {
+            Logger::logError("Video decode failed");
+            return ARCONTROLLER_ERROR_NO_VIDEO;
         }
 
-        p2this->receivedFrameSize = frame->used;
-        std::copy(frame->data, frame->data + frame->used, p2this->receivedFrame);
+        uint32_t width = p2this->videoDecoder.GetFrameWidth();
+        uint32_t height = p2this->videoDecoder.GetFrameHeight();
 
-        p2this->validCachedFrame = false;
-        p2this->frameAvailable = true;
+        const uint32_t num_bytes = width*height * 3;
 
-        ARSAL_Sem_Post(&(p2this->framesem));
+        if (num_bytes == 0)
+        {
+            Logger::logWarning("No picture size");
+        }
+
+        if(p2this->cvFrame == NULL){
+            p2this->cvFrame = std::shared_ptr<cv::Mat>(new cv::Mat(height, width, CV_8UC3));
+        } else {
+            if(width != p2this->cvFrame->cols || height != p2this->cvFrame->rows){
+				Logger::logWarning("Image dimensions have changed: " +
+                                           std::to_string(width) + "x" + std::to_string(height));
+				p2this->cvFrame = std::shared_ptr<cv::Mat>(new cv::Mat(height, width, CV_8UC3));
+			}
+        }
+
+        ARSAL_Sem_Wait(&(p2this->framesem));
 
         /*if(p2this->frameAvailable)
-         Logger::logWarning("Frame lost");*/
+            Logger::logWarning("Frame lost");*/
+
+        p2this->frameAvailable = true;
+
+        // New frame is ready
+        std::copy(p2this->videoDecoder.GetFrameRGBRawCstPtr(),
+                  p2this->videoDecoder.GetFrameRGBRawCstPtr() + num_bytes,
+                  p2this->cvFrame->data);
+
+        cv::cvtColor(*p2this->cvFrame,*p2this->cvFrame,cv::COLOR_BGR2RGB);
+
+
+        ARSAL_Sem_Post(&(p2this->framesem));
 
 	    return ARCONTROLLER_OK;
 	}
@@ -356,6 +382,8 @@ class Pb2hal: public Hal {
         orientationx = 0;
         orientationy = 0;
         orientationz = 0;
+
+        rmoveactive = false;
 
         connected = false;
 
@@ -500,7 +528,13 @@ class Pb2hal: public Hal {
 	 }
 
     void rmove(double dx, double dy, double dz, double dh) {
-        //todo
+
+        if (state == State::Flying || state == State::Hovering) {
+            deviceController->aRDrone3->sendPilotingMoveBy(deviceController->aRDrone3, dx, dy, dz, dh);
+            rmoveactive = true;
+        } else {
+            Logger::logWarning("Cannot rmove: drone isn't flying or hovering");
+        }
     }
 
 	// --> Despegue y aterrizaje
@@ -552,53 +586,17 @@ class Pb2hal: public Hal {
 	/************Cámara*************/
 
 	// --> Obtener captura de imagen (ambas cámaras)
-    std::shared_ptr<cv::Mat> getFrame(Camera cam){
+	std::shared_ptr<cv::Mat> getFrame(Camera cam){
 
-        if(validCachedFrame)
-            return cachedFrame;
-
-        ARSAL_Sem_Wait(&(framesem));
-        bool res = videoDecoder.Decode(receivedFrame, receivedFrameSize);
-        ARSAL_Sem_Post(&(framesem));
-
-        if (!res)
-        {
-            Logger::logError("Video decode failed");
-            return NULL;
-        }
-
-        uint32_t width = videoDecoder.GetFrameWidth();
-        uint32_t height = videoDecoder.GetFrameHeight();
-
-        const uint32_t num_bytes = width*height * 3;
-
-        if (num_bytes == 0)
-        {
-            Logger::logError("No picture size");
-            return NULL;
-        }
-
-        if(cachedFrame == NULL){
-            cachedFrame = std::shared_ptr<cv::Mat>(new cv::Mat(height, width, CV_8UC3));
-        } else if(width != cachedFrame->cols || height != cachedFrame->rows) {
-            Logger::logWarning("Image dimensions have changed: %ux%u") << width << height;
-            cachedFrame = std::shared_ptr<cv::Mat>(new cv::Mat(height, width, CV_8UC3));
-        }
-
-        // New frame is ready
-        std::copy(videoDecoder.GetFrameRGBRawCstPtr(),
-                  videoDecoder.GetFrameRGBRawCstPtr() + num_bytes,
-                  cachedFrame->data);
-
-        cv::cvtColor(*cachedFrame,*cachedFrame,cv::COLOR_BGR2RGB);
+		ARSAL_Sem_Wait(&(framesem));
 
         //if(!frameAvailable)
         //    Logger::logWarning("No frame available");
 
         frameAvailable = false;
-        validCachedFrame = true;
 
-        return cachedFrame;
+        ARSAL_Sem_Post(&(framesem));
+        return cvFrame;
 	}
 
 	/************Posición*************/
@@ -642,6 +640,10 @@ class Pb2hal: public Hal {
 
     State getState() {
         return state;
+    }
+
+    bool isRmoving(){
+        return rmoveactive;
     }
 
 };

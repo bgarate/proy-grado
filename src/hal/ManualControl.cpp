@@ -136,17 +136,17 @@ void ManualControl::deamon(){
             }else if(w) {
                 gaz = 50;
             }else if(d){
-                roll = 50;
+                yaw = 50;
             }else if(a){
-                roll = -50;
+                yaw = -50;
             }else if(up){
                 pitch=50;
             }else if(down){
                 pitch=-50;
             }else if(right){
-                yaw=50;
+                roll=50;
             }else if(left){
-                yaw=-50;
+                roll=-50;
             }else{
                 moving = false;
             }
@@ -158,6 +158,7 @@ void ManualControl::deamon(){
 }
 
 void ManualControl::run(){
+    hal->move(0,0,0,0);
     this->t = new std::thread(&ManualControl::deamon, this);
 }
 
