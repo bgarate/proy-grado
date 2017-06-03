@@ -54,24 +54,22 @@ class Vrephal: public Hal {
                     if(dx<0){pitch=-50;}else{pitch=50;};
                     this->state = State::Flying;
                 }
-                if(dy!=0 ){//yaw
+                if(dy!=0 ){//roll
                     rmoving = true;
                     moving=true;
-                    if(dy<0){yaw=-50;}else{yaw=50;};
+                    if(dy<0){roll=-50;}else{roll=50;};
                     this->state = State::Flying;
                 }
                 if(dz!=0 ){//gaz
                     rmoving = true;
                     moving=true;
-                    gaz=50;
                     if(dz<0){gaz=-50;}else{gaz=50;};
                     this->state = State::Flying;
                 }
-                if(dh!=0 ){//roll
+                if(dh!=0 ){//yaw
                     rmoving = true;
                     moving=true;
-                    roll=50;
-                    if(dh<0){roll=-50;}else{roll=50;};
+                    if(dh<0){yaw=-50;}else{yaw=50;};
                     this->state = State::Flying;
                 }
             } else if (rmoveactive) {//controlar el fin del movminento
@@ -79,14 +77,14 @@ class Vrephal: public Hal {
                 if(abs(dx) <0.1){//pitch
                     pitch=0;
                 }
-                if(abs(dy) <0.1){//yaw
-                    yaw=0;
+                if(abs(dy) <0.1){//roll
+                    roll=0;
                 }
                 if(abs(dz) <0.1){//gaz
                     gaz=0;
                 }
-                if(abs(dh) <0.1){//roll
-                    roll=0;
+                if(abs(dh) <0.1){//yaw
+                    yaw=0;
                 }
 
                 if(pitch==0 && yaw==0 && gaz==0 && roll==0){
@@ -117,11 +115,11 @@ class Vrephal: public Hal {
                 simxFloat rfactor = 4;
 
                 position[0] = -rfactor*this->pitch*factor;//pitch
-                position[1] = -rfactor*this->yaw*factor;//yaw
+                position[1] = -rfactor*this->roll*factor;//roll
                 position[2] = -rfactor*this->gaz*factor;//gaz
                 orientation[0]= 0;
                 orientation[1]= 0;
-                orientation[2]= -rfactor*(this->roll*factor);//roll
+                orientation[2]= -rfactor*(this->yaw*factor);//yaw
 
                 simxSetObjectOrientation(clientID, targetHandler, targetHandler, orientation, simx_opmode_blocking);
                 simxSetObjectPosition(clientID, targetHandler, targetHandler, position, simx_opmode_blocking);
@@ -129,11 +127,11 @@ class Vrephal: public Hal {
                 usleep(25000);
 
                 position[0] = -position[0]*1;//pitch
-                position[1] = -position[1]*1;//yaw
+                position[1] = -position[1]*1;//roll
                 position[2] = 0;//gaz
                 orientation[0]= 0;
                 orientation[1]= 0;
-                orientation[2]= -orientation[2]/2;//roll
+                orientation[2]= -orientation[2]/2;//yaw
 
                 simxSetObjectPosition(clientID, targetHandler, targetHandler, position, simx_opmode_blocking);
 
@@ -155,11 +153,11 @@ class Vrephal: public Hal {
                 simxFloat position[3];
 
                 position[0] = (this->pitch*factor);//pitch
-                position[1] = (this->yaw * factor);//yaw
+                position[1] = (this->roll * factor);//roll
                 position[2] = (this->gaz*factor);//gaz
                 orientation[0]= 0;
                 orientation[1]= 0;
-                orientation[2]= (this->roll*factor);//roll
+                orientation[2]= (this->yaw*factor);//yaw
 
                 if(rmoving){
 
@@ -289,7 +287,11 @@ public:
 
                 this->state = State::Flying;
             } else {
-                this->moving=true;
+                this->moving=false;
+                this->roll=0;
+                this->pitch=0;
+                this->yaw=0;
+                this->gaz=0;
 
                 this->dx = 0;//pitch
                 this->dy = 0;//yaw
@@ -309,7 +311,7 @@ public:
 
         if (state == State::Flying || state == State::Hovering) {
 
-            this->moving=true;
+            this->moving=false;
             this->roll=0;
             this->pitch=0;
             this->yaw=0;
@@ -317,7 +319,7 @@ public:
 
             this->dx = dx;//pitch
             this->dy = -dy;//yaw
-            this->dz = dz;//gaz
+            this->dz = -dz;//gaz
             this->dh = -dh;//roll
             this->rmoveactive = true;
 
@@ -398,9 +400,11 @@ public:
         //convertir imagen
         std::shared_ptr<cv::Mat> res =
                 std::shared_ptr<cv::Mat>(new cv::Mat(resolution[1],resolution[0],CV_8UC3,image));
-        if(res != NULL) {
+        if(res != NULL && res->rows > 0 && res->cols > 0) {
             cv::cvtColor(*res, *res, cv::COLOR_BGR2RGB);
             cv::flip(*res, *res, 0);
+        } else {
+            res = NULL;
         }
         return res;
     }

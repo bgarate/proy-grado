@@ -57,7 +57,7 @@ std::vector<Track> DetectAndTrack::update(std::shared_ptr<cv::Mat> frame) {
                 Logger::logDebug("No objects detected. Keeping %u from %u tracks in ROI")
                         << tracksToKeep.size() << tracks.size();
             } else {
-                Logger::logDebug("No objects detected. %u tracks outside ROI");
+                Logger::logDebug("No objects detected. %u tracks outside ROI") << tracksToKeep.size();
                 return {};
             }
 

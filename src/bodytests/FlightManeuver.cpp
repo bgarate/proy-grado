@@ -15,8 +15,8 @@ class FlightManeuver : public BodyTest {
 
     typedef struct DirectionTime {
         DirectionTime():x(0),y(0),z(0),s(0){};
-        DirectionTime(double x, double y, double z):x(x), y(y),z(0), s(1){}
-        DirectionTime(double x, double y, double z, double s):x(x), y(y),z(0), s(s){}
+        DirectionTime(double x, double y, double z):x(x), y(y),z(z), s(1){}
+        DirectionTime(double x, double y, double z, double s):x(x), y(y),z(z), s(s){}
         double x;
         double y;
         double z;
@@ -36,7 +36,7 @@ class FlightManeuver : public BodyTest {
             DirectionTime(0,0,0,2),
             DirectionTime(0,0.25,0,2)};*/
 
-    std::vector<DirectionTime> sequence = {DirectionTime(0,0,0,100)};
+    std::vector<DirectionTime> sequence = {DirectionTime(0,0,0.25,1),DirectionTime(0,0,0,100)};
 
     bool waitingTakeOff = false;
     bool waitingLanding = false;
@@ -66,9 +66,9 @@ class FlightManeuver : public BodyTest {
 
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
 
-        if (frame != NULL) {
+        /*if (frame != NULL) {
             visualDebugger->setFrame(frame);
-        }
+        }*/
 
         if (hal->getState() == State::Landed && !tookOff) {
             // Despegar
@@ -102,7 +102,7 @@ class FlightManeuver : public BodyTest {
             DirectionTime directionTime = sequence[currentStep];
 
             hal->move((int) (directionTime.y * 100), (int) (directionTime.x * 100),
-                      0, (int) (directionTime.z) * 100);
+                      0, (int) (directionTime.z * 100));
 
             if (currentTime >= directionTime.s * 1000000) {
                 currentTime = 0;

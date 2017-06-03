@@ -69,6 +69,12 @@ void Body::loop() {
         if(config->isPingEnabled())
             waitPing();
 
+        std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
+
+        if (frame != NULL) {
+            visualDebugger.setFrame(frame);
+        }
+
         if(!inmc){
 
             bool res = bt->BodyTestStep(deltaTime);
@@ -96,7 +102,13 @@ void Body::loop() {
             }
         } else if(mc->stopped()) {//q dentro de manual control
             should_exit = true;
+        } else{
+
+            /*visualDebugger.setStatus(hal->getState(),hal->bateryLevel(),
+                                     hal->getAltitude(), hal->getGPSPosition(), hal->getOrientation(), fps, runningTime);
+            int key = visualDebugger.show(deltaTime);*/
         }
+
 
         if(should_exit)
             break;

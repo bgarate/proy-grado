@@ -6,7 +6,7 @@
 #include <memory.h>
 #include "dummyHal.h"
 
-DummyHal::DummyHal():videoSource("/home/bruno/proy-grado/exapleTracking.mpg") {
+DummyHal::DummyHal():videoSource("/home/santy/Escritorio/Proyecto/Git/proy-grado/exapleTracking.mpg") {
     state = State::Landed;
 }
 

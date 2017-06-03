@@ -89,7 +89,7 @@ class BodyTestRmove : public BodyTest {
         } else if (!rmovemode && !waitingLanding && !waitingTakeOff) {
 
 
-            hal->rmove(0,0,0,1.57);
+            hal->rmove(0,0,-3,0);
             rmovemode=true;
             Logger::logError("Do rmove");
 
