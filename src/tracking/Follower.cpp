@@ -14,7 +14,7 @@ FollowCommand::FollowCommand(Point displacement, Point rotation) :
 }
 
 FollowCommand Follower::follow(std::vector<Track> tracks) {
-
+/*
     FollowCommand followCommand;
     
     if(!isFollowing())
@@ -39,7 +39,7 @@ FollowCommand Follower::follow(std::vector<Track> tracks) {
 
     cv::Point displacement = trackCenter - frameCenter;
 
-
+*/
 
 }
 

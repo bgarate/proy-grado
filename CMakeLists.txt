@@ -40,6 +40,7 @@ set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/Mess
 
 
 ADD_SUBDIRECTORY(src/proto)
+ADD_SUBDIRECTORY(lib/ORB_SLAM2)
 
 include_directories(src/hal/pb2/include)
 include_directories(${Boost_INCLUDE_DIRS})
@@ -64,4 +65,5 @@ target_link_libraries(proy_grado libarcommands.so libarcontroller.so libardiscov
         libarmedia.so libarutils.so libcurl.so libardatatransfer.so libmux.so libpomp.so libcrypto.so
         libssl.so libz.so libncurses.so libtls.so libarupdater.so)
 
+target_link_libraries(proy_grado ORB_SLAM2)
 
