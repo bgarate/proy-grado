@@ -94,3 +94,5 @@ fabric.properties
 /cmake-build-debug/
 !/src/hal/pb2/lib/*
 /output/*.avi
+/resources/mav0/*
+/resources/rgbd_dataset_freiburg1_360
