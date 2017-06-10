@@ -12,7 +12,7 @@ find_package(Protobuf REQUIRED)
 find_package (Threads)
 find_package(FFmpeg REQUIRED)
 
-find_package(Eigen3 3.1.0 REQUIRED)
+find_package(Eigen3 REQUIRED)
 find_package(Pangolin REQUIRED)
 
 link_directories(src/hal/pb2/lib)
