@@ -12,7 +12,12 @@ find_package(Protobuf REQUIRED)
 find_package (Threads)
 find_package(FFmpeg REQUIRED)
 
+find_package(Eigen3 3.1.0 REQUIRED)
+find_package(Pangolin REQUIRED)
+
 link_directories(src/hal/pb2/lib)
+link_directories(lib/ORB_SLAM2/Thirdparty/DBoW2/lib)
+link_directories(lib/ORB_SLAM2/Thirdparty/g2o/lib)
 
 set(CMAKE_CXX_STANDARD 11)
 
@@ -37,7 +42,7 @@ set(SOURCE_FILES ${SOURCE_FILES} src/hal/vrep/extApi.c src/hal/vrep/extApi.h src
 set(SOURCE_FILES ${SOURCE_FILES} src/hal/pb2/pb2hal.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/Broadcaster.cpp src/messages/Broadcaster.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/main.cpp src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h src/messages/IpResolver.cpp src/messages/IpResolver.h src/hal/pb2/VideoDecoder.cpp src/hal/pb2/VideoDecoder.h src/bodytests/FlightManeuver.cpp src/hal/pb2/CommandHandler.cpp src/hal/pb2/CommandHandler.h src/tracking/AreaRect.h src/hal/ManualControl.cpp src/hal/ManualControl.h src/VisualDebugger.cpp src/VisualDebugger.h src/tracking/Follower.cpp src/tracking/Follower.h)
-
+set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/OrbSlam2.cpp)
 
 ADD_SUBDIRECTORY(src/proto)
 ADD_SUBDIRECTORY(lib/ORB_SLAM2)
@@ -48,6 +53,10 @@ include_directories(lib/spdlog/include)
 include_directories(${Protobuf_INCLUDE_DIRS})
 include_directories(${FFMPEG_INCLUDE_DIR})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
+include_directories(
+        ${EIGEN3_INCLUDE_DIR}
+        ${Pangolin_INCLUDE_DIRS}
+)
 
 add_executable(proy_grado ${SOURCE_FILES} ${PROTO_SRC} ${PROTO_HEADER})
 
@@ -65,5 +74,12 @@ target_link_libraries(proy_grado libarcommands.so libarcontroller.so libardiscov
         libarmedia.so libarutils.so libcurl.so libardatatransfer.so libmux.so libpomp.so libcrypto.so
         libssl.so libz.so libncurses.so libtls.so libarupdater.so)
 
+
+target_link_libraries(proy_grado
+        ${EIGEN3_LIBS}
+        ${Pangolin_LIBRARIES}
+        libDBoW2.so
+        libg2o.so
+        )
 target_link_libraries(proy_grado ORB_SLAM2)
 

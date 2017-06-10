@@ -14,9 +14,8 @@
 #include "src/bodytests/BodyTest1.cpp"
 #include "src/bodytests/BodyTest2.cpp"
 #include "src/bodytests/FlightManeuver.cpp"
+#include "src/bodytests/OrbSlam2.cpp"
 #include "src/bodytests/BodyTestRmove.cpp"
-
-namespace chrono = std::chrono;
 
 Body::Body(Hal *hal) {
     this->hal = hal;
@@ -46,7 +45,7 @@ void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 void Body::loop() {
 
     //BodyTest* bt = new FlightManeuver();
-    BodyTest* bt = new BodyTestRmove();
+    BodyTest* bt = new OrbSlam2();
     bt->InitBodyTest(this->hal, &visualDebugger);
     Logger::logInfo("Body started");
 

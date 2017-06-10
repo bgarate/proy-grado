@@ -127,6 +127,9 @@ void VisualDebugger::setStatus(State state, int battery, double altitude, Point 
     if(!config->isVisualDebugEnabled() && !config->isOutputHudVideoEnabled())
         return;
 
+    if(frame.cols == 0 && frame.rows == 0)
+        return;
+
     std::string statusName = getStateName(state);
     cv::Scalar statusColor =  getStateColor(state);
 
@@ -233,8 +236,12 @@ int VisualDebugger::show(long deltaTime){
 
     }
 
-    cv::imshow(windowName, frame);
-    return cv::waitKey(1);
+    if(config->isVisualDebugEnabled() && frame.cols > 0 && frame.rows > 0) {
+        cv::imshow(windowName, frame);
+        return cv::waitKey(1);
+    } else {
+        return 0;
+    }
 }
 
 void VisualDebugger::cleanup() {
