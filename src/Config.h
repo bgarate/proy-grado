@@ -6,44 +6,11 @@
 #define PROY_GRADO_CONFIG_H
 
 #include <src/hal/HalType.hpp>
+#include <opencv2/core/types.hpp>
+#include <src/hal/Point.h>
 #include "iostream"
 
 class Config {
-
-private:
-    std::string name;
-    unsigned int id;
-
-    std::string brainHost;
-    unsigned short brainPort;
-
-    unsigned short broadcastPort;
-
-    int advertisementLapse;
-
-    HalType halType;
-
-    unsigned short commsPort;
-
-    unsigned int pingTimeout;
-
-    unsigned int pingLapse;
-
-    bool visualDebugEnabled;
-
-    bool outputHudVideoEnabled;
-
-    bool realTimeVideoOutputEnabled;
-
-    bool outputRawVideoEnabled;
-
-    std::string outputPath;
-
-    bool pingEnabled;
-public:
-    bool isPingEnabled() const;
-
-    void setPingEnabled(bool pingEnabled);
 
 public:
     const std::string &getOutputPath() const;
@@ -107,6 +74,70 @@ public:
     bool isVisualDebugEnabled() const;
 
     void setVisualDebugEnabled(bool visualDebug);
+
+    bool isPingEnabled() const;
+
+    void setPingEnabled(bool pingEnabled);
+
+    double getFov() const;
+
+    void setFov(double fov);
+
+    const cv::Size &getFrameSize() const;
+
+    void setFrameSize(const cv::Size &frameSize);
+
+    double getFrameSizeRatio();
+
+    double getVerticalFov();
+
+    /**
+     * Gets the Bebop 2 drone physical camera tilt. It doesnt takes into account
+     * software tilt. It is taken as the vertical angle between the camera orientation
+     * and the horizontal plane.
+     * @return
+     */
+    const double getCameraTilt() const;
+
+    void setCameraTilt(const double cameraTilt);
+
+
+private:
+    std::string name;
+    unsigned int id;
+
+    std::string brainHost;
+    unsigned short brainPort;
+
+    unsigned short broadcastPort;
+
+    int advertisementLapse;
+
+    HalType halType;
+
+    unsigned short commsPort;
+
+    unsigned int pingTimeout;
+
+    unsigned int pingLapse;
+
+    bool visualDebugEnabled;
+
+    bool outputHudVideoEnabled;
+
+    bool realTimeVideoOutputEnabled;
+
+    bool outputRawVideoEnabled;
+
+    std::string outputPath;
+
+    bool pingEnabled;
+
+    double fov;
+
+    cv::Size frameSize;
+
+    double cameraTilt;
 
 };
 

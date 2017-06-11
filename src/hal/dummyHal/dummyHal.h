@@ -7,6 +7,7 @@
 
 
 #include <src/hal/hal.hpp>
+#include "Point.h"
 
 class DummyHal: public Hal {
 public:

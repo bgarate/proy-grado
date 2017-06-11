@@ -8,32 +8,52 @@
 
 #include <src/hal/hal.hpp>
 #include "Track.h"
+#include "../hal/Point.h"
 
 class FollowCommand {
 public:
-    Point displacement;
-    Point rotation;
+    double distance;
+    Point angularDisplacement;
+    double distance;
+    Point outputDisplacement;
+    Point outputRotation;
     FollowCommand();
-    FollowCommand(Point displacement, Point rotation);
 };
 
 class Follower {
 public:
-    FollowCommand follow(std::vector<Track> tracks);
+    Follower(Config* config);
+    FollowCommand follow(std::vector<Track> tracks, double altitude, double deltaTime);
     void setFollowee(int followee);
     bool isFollowing();
 
-    void setSize(cv::Size size);
+    void setFrameSize(cv::Size frameSize);
     cv::Point getFolloweeVelocity();
 private:
     static const int NOT_FOLLOWING = -1;
 
-    static const int SLOW_DOWN_RADIUS_X = 10;
-    static const int SLOW_DOWN_RADIUS_Y = 20;
+    static const double TARGET_DISTANCE = 5;
+    static const double TARGET_DISTANCE_SLOW_DOWN_RADIUS = 2;
+    static const double DISPLACEMENT_MAX_VELOCITIY = 1;
+
+    static const double EPSILON_ANGULAR_DIFFERENCE = 10;
+    static const double TARGET_YAW_SLOW_DOWN_RADIUS = 20;
+    static const double YAW_MAX_VELOCITY = 1;
+
 
     cv::Point followeeVelocity;
     int followee;
-    cv::Size size;
+
+    Config* config = NULL;
+
+    Point getAngularDisplacement(Track track);
+
+    inline double toDegrees(double rad);
+    inline double toRadians(double deg);
+
+    Point getDisplacement(double distance, double deltaTime);
+
+    Point getRotation(double horizontalAngle, double deltaTime);
 };
 
 

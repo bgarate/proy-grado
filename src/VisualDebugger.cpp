@@ -7,6 +7,7 @@
 #include <src/logging/Logger.h>
 #include <src/tracking/DetectAndTrack.h>
 #include "VisualDebugger.h"
+#include "Point.h"
 
 const cv::Scalar VisualDebugger::WHITE_COLOR = cv::Scalar(255,255,255);
 const cv::Scalar VisualDebugger::GREEN_COLOR = cv::Scalar(0,205,0);

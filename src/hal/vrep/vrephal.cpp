@@ -13,6 +13,7 @@ extern "C" {
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include "memory"
+#include "Point.h"
 
 #include <thread>
 #include <unistd.h>

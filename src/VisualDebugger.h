@@ -10,8 +10,8 @@
 #include <opencv2/core/mat.hpp>
 #include <memory>
 #include "Config.h"
+#include "Point.h"
 #include <opencv/cv.hpp>
-#include <src/tracking/Track.h>
 #include <src/hal/hal.hpp>
 
 class VisualDebugger {
