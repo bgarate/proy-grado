@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 project(proy_grado)
 
-set(CMAKE_MODULE_PATH cmake)
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}" cmake)
 
 set(spdlog_DIR lib/cmake/spdlog)
 
@@ -41,7 +41,7 @@ set(SOURCE_FILES ${SOURCE_FILES} src/hal/hal.hpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/hal/vrep/extApi.c src/hal/vrep/extApi.h src/hal/vrep/extApiInternal.h src/hal/vrep/extApiPlatform.c src/hal/vrep/extApiPlatform.h src/hal/vrep/v_repConst.h src/hal/vrep/vrephal.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/hal/pb2/pb2hal.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/Broadcaster.cpp src/messages/Broadcaster.h)
-set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/main.cpp src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h src/messages/IpResolver.cpp src/messages/IpResolver.h src/hal/pb2/VideoDecoder.cpp src/hal/pb2/VideoDecoder.h src/bodytests/FlightManeuver.cpp src/hal/pb2/CommandHandler.cpp src/hal/pb2/CommandHandler.h src/tracking/AreaRect.h src/hal/ManualControl.cpp src/hal/ManualControl.h src/VisualDebugger.cpp src/VisualDebugger.h src/tracking/Follower.cpp src/tracking/Follower.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/main.cpp src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h src/messages/IpResolver.cpp src/messages/IpResolver.h src/hal/pb2/VideoDecoder.cpp src/hal/pb2/VideoDecoder.h src/bodytests/FlightManeuver.cpp src/hal/pb2/CommandHandler.cpp src/hal/pb2/CommandHandler.h src/tracking/AreaRect.h src/hal/ManualControl.cpp src/hal/ManualControl.h src/VisualDebugger.cpp src/VisualDebugger.h )# src/tracking/Follower.cpp src/tracking/Follower.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/OrbSlam2.cpp)
 
 ADD_SUBDIRECTORY(src/proto)
@@ -81,5 +81,5 @@ target_link_libraries(proy_grado
         libDBoW2.so
         libg2o.so
         )
+#target_link_libraries(proy_grado libORB_SLAM2.so)
 target_link_libraries(proy_grado ORB_SLAM2)
-

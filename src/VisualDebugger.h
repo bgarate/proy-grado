@@ -10,7 +10,8 @@
 #include <opencv2/core/mat.hpp>
 #include <memory>
 #include "Config.h"
-#include "Point.h"
+#include <src/hal/Point.h>
+#include <src/tracking/Track.h>
 #include <opencv/cv.hpp>
 #include <src/hal/hal.hpp>
 

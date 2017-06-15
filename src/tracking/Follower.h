@@ -14,7 +14,6 @@ class FollowCommand {
 public:
     double distance;
     Point angularDisplacement;
-    double distance;
     Point outputDisplacement;
     Point outputRotation;
     FollowCommand();

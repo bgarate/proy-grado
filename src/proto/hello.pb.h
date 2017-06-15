@@ -154,7 +154,7 @@ class Hello : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::google::protobuf::uint32 port_;
   ::google::protobuf::uint32 id_;
   mutable int _cached_size_;
-  friend struct protobuf_hello_2eproto::TableStruct;
+  friend struct  protobuf_hello_2eproto::TableStruct;
 };
 // ===================================================================
 
@@ -223,7 +223,7 @@ inline void Hello::set_name(const ::std::string& value) {
 inline void Hello::set_name(::std::string&& value) {
   
   name_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:Hello.name)
 }
 #endif

@@ -235,7 +235,7 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::Hello* hello_;
   int type_;
   mutable int _cached_size_;
-  friend struct protobuf_message_2eproto::TableStruct;
+  friend struct  protobuf_message_2eproto::TableStruct;
 };
 // ===================================================================
 

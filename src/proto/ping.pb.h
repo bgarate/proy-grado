@@ -173,7 +173,7 @@ class Ping : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   int type_;
   mutable int _cached_size_;
-  friend struct protobuf_ping_2eproto::TableStruct;
+  friend struct  protobuf_ping_2eproto::TableStruct;
 };
 // ===================================================================
 

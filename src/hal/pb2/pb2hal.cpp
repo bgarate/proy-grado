@@ -1,7 +1,7 @@
 #include "../hal.hpp"
 #include "VideoDecoder.h"
 #include "CommandHandler.h"
-#include "Point.h"
+#include <src/hal/Point.h>
 
 #include <math.h>
 #include <iostream>

@@ -291,8 +291,7 @@ bool Message::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // .Message.Type type = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u)) {
+        if (tag == 8u) {
           int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
@@ -306,8 +305,7 @@ bool Message::MergePartialFromCodedStream(
 
       // .Ping ping = 100;
       case 100: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(802u)) {
+        if (tag == 802u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_ping()));
         } else {
@@ -318,8 +316,7 @@ bool Message::MergePartialFromCodedStream(
 
       // .DoShutdown shutdown = 101;
       case 101: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(810u)) {
+        if (tag == 810u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_shutdown()));
         } else {
@@ -330,8 +327,7 @@ bool Message::MergePartialFromCodedStream(
 
       // .Advertisement advertisement = 102;
       case 102: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(818u)) {
+        if (tag == 818u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_advertisement()));
         } else {
@@ -342,8 +338,7 @@ bool Message::MergePartialFromCodedStream(
 
       // .Hello hello = 103;
       case 103: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(826u)) {
+        if (tag == 826u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_hello()));
         } else {

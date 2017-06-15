@@ -5,7 +5,7 @@
 #include <src/hal/hal.hpp>
 #include <memory.h>
 #include "dummyHal.h"
-#include "Point.h"
+#include <src/hal/Point.h>
 
 DummyHal::DummyHal():videoSource("/home/bruno/proy-grado/test2.mp4") {
     state = State::Landed;
