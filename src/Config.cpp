@@ -149,3 +149,36 @@ bool Config::isPingEnabled() const {
 void Config::setPingEnabled(bool pingEnabled) {
     Config::pingEnabled = pingEnabled;
 }
+
+double Config::getFov() const {
+    return fov;
+}
+
+void Config::setFov(double fov) {
+    Config::fov = fov;
+}
+
+const cv::Size &Config::getFrameSize() const {
+    return frameSize;
+}
+
+void Config::setFrameSize(const cv::Size &frameSize) {
+    Config::frameSize = frameSize;
+}
+
+double Config::getFrameSizeRatio() {
+    return frameSize.width/(double)frameSize.height;
+}
+
+double Config::getVerticalFov() {
+    return fov / getFrameSizeRatio();
+}
+
+const double Config::getCameraTilt() const {
+    return cameraTilt;
+}
+
+void Config::setCameraTilt(const double cameraTilt) {
+    Config::cameraTilt = cameraTilt;
+}
+

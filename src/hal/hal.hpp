@@ -6,6 +6,7 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <src/Config.h>
 #include "memory"
+#include "Point.h"
 
 //Enumerado cámara
 	enum class Camera {Front, Bottom};
@@ -17,33 +18,6 @@
 		char ** data;
 		int width, height;
 	} Frame;
-
-	//Definicion point
-	typedef struct Point{
-		double x;
-		double y;
-		double z;
-
-		Point (double x,double y,double z) {
-            this->x = x;
-            this->y = y;
-            this->z = z;
-        }
-        Point(){
-            x = 0;
-            y = 0;
-            z = 0;
-        }
-
-        double Roll(){return x;}
-        double Pitch(){return y;}
-        double Yaw(){return z;}
-
-        double Latitude(){return x;}
-        double Longitude(){return y;}
-        double Altitude(){return z;}
-
-	} Point; 
 
 class Hal{
 	public:

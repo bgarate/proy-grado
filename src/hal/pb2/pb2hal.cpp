@@ -1,6 +1,7 @@
 #include "../hal.hpp"
 #include "VideoDecoder.h"
 #include "CommandHandler.h"
+#include "Point.h"
 
 #include <math.h>
 #include <iostream>
@@ -17,13 +18,11 @@
 extern "C"{
 	#include <libARSAL/ARSAL.h>
 	#include <libARController/ARController.h>
-	#include <libARDiscovery/ARDiscovery.h>	
 }
 
 #include <atomic>
 #include <boost/thread/mutex.hpp>
 #include <src/logging/Logger.h>
-#include <libARController/ARCONTROLLER_Frame.h>
 
 using namespace std;
 
