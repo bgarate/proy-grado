@@ -33,7 +33,7 @@ FollowCommand Follower::follow(std::vector<Track> tracks, double altitude, doubl
 
     Point angularDisplacement = getAngularDisplacement(track);
 
-    double verticalAngle = 90 - (config->getCameraTilt() - config->getVerticalFov()/2 - angularDisplacement.Tilt());
+    double verticalAngle = 90 - config->getCameraTilt() - config->getVerticalFov()/2 + angularDisplacement.Tilt());
     double horizontalAngle = angularDisplacement.Pan();
 
     double distance = altitude * std::tan(toRadians(verticalAngle));
