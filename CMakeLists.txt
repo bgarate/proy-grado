@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 project(proy_grado)
 
+#set(CMAKE_BUILD_TYPE Debug)
+
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}" cmake)
 
 set(spdlog_DIR lib/cmake/spdlog)
