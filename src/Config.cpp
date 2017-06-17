@@ -44,7 +44,7 @@ Config::Config() {
     broadcastPort = 11501;
     advertisementLapse = 5000;
     commsPort = 11502;
-    pingTimeout = 2000;
+    pingTimeout = 10000;
     pingLapse = 5000;
     visualDebugEnabled = true;
     outputHudVideoEnabled = true;
