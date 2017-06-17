@@ -84,17 +84,12 @@ void Body::loop() {
             if(!res)
                 should_exit = true;
 
-            elapsedFrames++;
-            elapsedTime += deltaTime;
-            if(elapsedTime >= 1000000) {
-                fps = elapsedFrames * 1000000 / elapsedTime;
-                elapsedFrames = 0;
-                elapsedTime = 0;
-            }
+            CalculateFPS();
 
             visualDebugger.setStatus(hal->getState(),hal->bateryLevel(),
                                      hal->getAltitude(), hal->getGPSPosition(), hal->getOrientation(), fps, runningTime);
             int key = visualDebugger.show(deltaTime);
+
             if(key == 27){
                 should_exit = true;
             } else if (key == 32) {
@@ -102,13 +97,9 @@ void Body::loop() {
                 mc->run();
                 inmc=true;
             }
+
         } else if(mc->stopped()) {//q dentro de manual control
             should_exit = true;
-        } else{
-
-            /*visualDebugger.setStatus(hal->getState(),hal->bateryLevel(),
-                                     hal->getAltitude(), hal->getGPSPosition(), hal->getOrientation(), fps, runningTime);
-            int key = visualDebugger.show(deltaTime);*/
         }
 
 
@@ -117,9 +108,23 @@ void Body::loop() {
 
         usleep(1000);
     }
+
+    visualDebugger.cleanup();
+
     Logger::logDebug("Finishing test");
     bt->FinishBodyTest();
 
+}
+
+void Body::CalculateFPS() {
+    elapsedFrames++;
+    elapsedTime += deltaTime;
+
+    if (elapsedTime >= 1000000) {
+        fps = elapsedFrames * 1000000 / elapsedTime;
+        elapsedFrames = 0;
+        elapsedTime = 0;
+    }
 }
 
 void Body::PingHandler(Message& msg){

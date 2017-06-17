@@ -45,6 +45,8 @@ private:
 
     ManualControl *mc;
     bool inmc;
+
+    void CalculateFPS();
 };
 
 

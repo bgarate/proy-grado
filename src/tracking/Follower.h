@@ -12,7 +12,7 @@
 
 class FollowCommand {
 public:
-    double distance;
+    Point linearDisplacement;
     Point angularDisplacement;
     Point outputDisplacement;
     Point outputRotation;
@@ -26,18 +26,17 @@ public:
     void setFollowee(int followee);
     bool isFollowing();
 
-    void setFrameSize(cv::Size frameSize);
     cv::Point getFolloweeVelocity();
 private:
     static const int NOT_FOLLOWING = -1;
 
-    static const double TARGET_DISTANCE = 5;
-    static const double TARGET_DISTANCE_SLOW_DOWN_RADIUS = 2;
-    static const double DISPLACEMENT_MAX_VELOCITIY = 1;
+    static constexpr const double TARGET_DISTANCE = 5;
+    static constexpr const double TARGET_DISTANCE_SLOW_DOWN_RADIUS = 2;
+    static constexpr const double DISPLACEMENT_MAX_VELOCITIY = 1;
 
-    static const double EPSILON_ANGULAR_DIFFERENCE = 10;
-    static const double TARGET_YAW_SLOW_DOWN_RADIUS = 20;
-    static const double YAW_MAX_VELOCITY = 1;
+    static constexpr const double EPSILON_ANGULAR_DIFFERENCE = 10;
+    static constexpr const double TARGET_YAW_SLOW_DOWN_RADIUS = 20;
+    static constexpr const double YAW_MAX_VELOCITY = 1;
 
 
     cv::Point followeeVelocity;
