@@ -10,6 +10,7 @@
 #include <src/VisualDebugger.h>
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
+#include <lib/ORB_SLAM2/include/System.h>
 
 class BodyTestRmove2 : public BodyTest {
 
@@ -50,6 +51,10 @@ class BodyTestRmove2 : public BodyTest {
 
     VisualDebugger* visualDebugger;
 
+    //O
+    //ORB_SLAM2::System* SLAM;
+    //long runningTime = 0;
+
     void InitBodyTest(Hal *hal, VisualDebugger* visualDebugger) override {
         this->hal = hal;
 
@@ -60,11 +65,24 @@ class BodyTestRmove2 : public BodyTest {
         this->visualDebugger = visualDebugger;
 
         Logger::logInfo("Bateria: %u") << hal->bateryLevel();
+
+        //O
+        //const std::string voc = "/home/santy/Escritorio/Proyecto/Git/proy-grado/lib/ORB_SLAM2/Vocabulary/ORBvoc.txt";
+        //const std::string settings ="/home/santy/Escritorio/Proyecto/Git/proy-grado/lib/ORB_SLAM2/Examples/Monocular/TUM1.yaml";
+        //SLAM = new ORB_SLAM2::System(voc,settings, ORB_SLAM2::System::MONOCULAR,true);
     }
 
     bool BodyTestStep(double deltaTime) override {
 
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
+
+        //O
+        /*if(frame != NULL && frame->rows > 0 & frame->cols > 0) {
+            cv::Mat grey;
+            cv::cvtColor(*frame, grey, CV_BGR2GRAY);
+            runningTime += deltaTime;
+            SLAM->TrackMonocular(grey, runningTime / 1000.0);
+        }*/
 
         if (frame != NULL) {
             visualDebugger->setFrame(frame);
@@ -120,13 +138,21 @@ class BodyTestRmove2 : public BodyTest {
             Logger::logError("Do rmove");
 
             if (frame != NULL) {
-
                 //test track begin
                 //update the tracking result
                 std::vector<Track> objects = detectAndTrack->update(frame);
                 visualDebugger->setTracks(objects);
-
             }
+
+        } else if (rmovemode){
+
+            if (frame != NULL) {
+                //test track begin
+                //update the tracking result
+                std::vector<Track> objects = detectAndTrack->update(frame);
+                visualDebugger->setTracks(objects);
+            }
+
         }
 
         return true;
