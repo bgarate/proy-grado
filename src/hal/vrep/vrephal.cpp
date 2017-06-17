@@ -27,6 +27,8 @@ class Vrephal: public Hal {
     //Constantes
     const int PORT = 19997;
     const char * HOST = "127.0.0.1";
+    const int width = 680;
+    const int height = 420;
 
     //Variables aux
     int clientID;
@@ -417,10 +419,10 @@ public:
             simxInt resolution[2];
             simxUChar *image;
 
-            image = new simxUChar[512 * 512 * 3];
+            image = new simxUChar[width * height * 3];
             simxInt aux = simxGetVisionSensorImage(clientID, cameraHandler, resolution, &image, 0,
                                                    simx_opmode_blocking);
-            
+
             //convertir imagen
             cachedframe =
                     std::shared_ptr<cv::Mat>(new cv::Mat(resolution[1], resolution[0], CV_8UC3, image));
