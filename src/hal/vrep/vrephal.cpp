@@ -339,7 +339,8 @@ public:
             this->dy = -dy;//yaw
             this->dz = -dz;//gaz
             this->dh = -dh;//roll
-            this->rmoveactive = true;
+            if(dx!=0 || dy !=0 || dz!=0 || dh!=0)
+                this->rmoveactive = true;
 
         } else {
             Logger::logWarning("Cannot rmove: drone isn't flying or hovering");
