@@ -43,6 +43,7 @@ class Vrephal: public Hal {
 
     std::shared_ptr<cv::Mat> cachedframe;
     chrono::steady_clock::time_point frameTime;
+    simxUChar *image = NULL;
 
     void deamon(){
         while(1){
@@ -417,9 +418,7 @@ public:
             }
 
             simxInt resolution[2];
-            simxUChar *image;
-
-            image = new simxUChar[width * height * 3];
+            
             simxInt aux = simxGetVisionSensorImage(clientID, cameraHandler, resolution, &image, 0,
                                                    simx_opmode_blocking);
 
