@@ -11,6 +11,12 @@ DetectAndTrack::DetectAndTrack(DetectionAlgorithm *detector, TrackingAlgorithm *
     this->tracker = tracker;
 }
 
+bool DetectAndTrack::insideROI(cv::Rect2d r, std::shared_ptr<cv::Mat> frame) {
+    cv::Point2d center = cv::Point2d(r.x + r.width / 2, r.y + r.height / 2);
+    return (center.x > frame->cols * ROI_MARGIN && center.x < frame->cols * (1 - ROI_MARGIN) &&
+       center.y > frame->rows * ROI_MARGIN && center.y < frame->rows* (1 - ROI_MARGIN));
+}
+
 std::vector<Track> DetectAndTrack::update(std::shared_ptr<cv::Mat> frame) {
 
     if(trackedFrames % 50 <= FRAMES_TO_DETECT - 1) {
@@ -25,39 +31,44 @@ std::vector<Track> DetectAndTrack::update(std::shared_ptr<cv::Mat> frame) {
 
     if(trackedFrames % 50 == FRAMES_TO_DETECT - 1) {
 
+        std::vector<cv::Rect2d> tracksToKeep;
+
+        for(Track& track : tracks){
+            cv::Rect2d r = track.getRect();
+            if(insideROI(r, frame))
+                tracksToKeep.push_back(track.getRect());
+        }
+
         if(!accumulatedFound.empty()) {
 
+            std::vector<cv::Rect2d> detectedAndKept;
+
+            std::copy(accumulatedFound.begin(), accumulatedFound.end(), std::back_inserter(detectedAndKept));
+            std::copy(tracksToKeep.begin(), tracksToKeep.end(), std::back_inserter(detectedAndKept));
+
             std::vector<cv::Rect2d> filteredRects;
-            filter_rects(accumulatedFound, filteredRects);
+            filter_rects(detectedAndKept, filteredRects);
 
             tracker->setTargets(filteredRects, frame);
 
             int oldTrackingCount = trackCount;
             tracks = updateDetections(filteredRects);
 
-            Logger::logDebug("%u detections. %u objects detected. %u new tracks.") <<
+            Logger::logDebug("%u new detections. %u objects kept. %u resulting objects. %u new tracks.") <<
                                                                                    accumulatedFound.size()
+                                                                                    << tracksToKeep.size()
                                                                                    << filteredRects.size()
                                                                                    << trackCount - oldTrackingCount;
 
             accumulatedFound.clear();
         } else {
 
-            std::vector<cv::Rect2d> tracksToKeep;
-
-            for(Track& track : tracks){
-                cv::Rect2d r = track.getRect();
-                cv::Point2d center = cv::Point2d(r.x + r.width / 2, r.y + r.height / 2);
-                if(center.x > frame->cols * ROI_MARGIN && center.x < frame->cols * (1 - ROI_MARGIN) &&
-                        center.y > frame->rows * ROI_MARGIN && center.y < frame->rows* (1 - ROI_MARGIN))
-                    tracksToKeep.push_back(track.getRect());
-            }
-
             if (!tracksToKeep.empty()) {
                 Logger::logDebug("No objects detected. Keeping %u from %u tracks in ROI")
                         << tracksToKeep.size() << tracks.size();
             } else {
-                Logger::logDebug("No objects detected. %u tracks outside ROI") << tracksToKeep.size();
+                if(!tracksToKeep.empty())
+                    Logger::logDebug("No objects detected. %u tracks outside ROI") << tracksToKeep.size();
                 return {};
             }
 

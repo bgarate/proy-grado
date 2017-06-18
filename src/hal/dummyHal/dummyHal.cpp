@@ -7,7 +7,7 @@
 #include "dummyHal.h"
 #include <src/hal/Point.h>
 
-DummyHal::DummyHal():videoSource("/home/bruno/proy-grado/test2.mp4") {
+DummyHal::DummyHal():videoSource("/home/bruno/proy-grado/drone2.mp4") {
     state = State::Landed;
 }
 
@@ -42,7 +42,7 @@ std::shared_ptr<cv::Mat> DummyHal::getFrame(Camera cam) {
 }
 
 double DummyHal::getAltitude() {
-    return 1;
+    return 5;
 }
 
 Point DummyHal::getOrientation() {

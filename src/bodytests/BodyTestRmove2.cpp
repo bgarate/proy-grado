@@ -50,7 +50,7 @@ class BodyTestRmove2 : public BodyTest {
 
     VisualDebugger* visualDebugger;
 
-    void InitBodyTest(Hal *hal, VisualDebugger* visualDebugger) override {
+    void InitBodyTest(Hal *hal, Config* config, VisualDebugger* visualDebugger) override {
         this->hal = hal;
 
         detector = new HogDetector();

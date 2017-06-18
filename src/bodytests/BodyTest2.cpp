@@ -22,7 +22,7 @@ private:
 
 public:
 
-    void InitBodyTest(Hal* hal, VisualDebugger* visualDebugger){
+    void InitBodyTest(Hal* hal, Config* config, VisualDebugger* visualDebugger){
         this->hal = hal;
         this->hal->takeoff();
 

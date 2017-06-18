@@ -6,7 +6,7 @@
 #include "Follower.h"
 
 FollowCommand::FollowCommand() {
-
+    this->followee = Follower::NOT_FOLLOWING;
 }
 
 
@@ -21,23 +21,33 @@ FollowCommand Follower::follow(std::vector<Track> tracks, double altitude, doubl
         [this](Track t){return t.getNumber() == this->followee;});
 
     if (iterator == tracks.end()) {
-        followee = NOT_FOLLOWING;
+        stopFollowing();
         return followCommand;
     }
 
     Track track = *iterator;
 
-    ++iterator;
-    if (iterator != tracks.end())
-        throw new std::runtime_error("More than one track with same id");
+    cv::Point trackPoint = cv::Point((int)(track.getRect().x + track.getRect().width / 2),
+                                      (int)(track.getRect().y + track.getRect().height));
 
-    Point angularDisplacement = getAngularDisplacement(track);
+    followCommand = getCommand(altitude, deltaTime, trackPoint);
+    followCommand.followee = followee;
 
-    double verticalAngle = 90 - config->getCameraTilt() - config->getVerticalFov()/2 + angularDisplacement.Tilt());
+    return followCommand;
+
+}
+
+FollowCommand Follower::getCommand(double altitude, double deltaTime, const cv::Point &trackPoint) {
+
+    Point angularDisplacement = getAngularDisplacement(trackPoint);
+
+    FollowCommand followCommand;
+
+    double verticalAngle = 90 - config->getCameraTilt() - angularDisplacement.Tilt();
     double horizontalAngle = angularDisplacement.Pan();
 
-    double distance = altitude * std::tan(toRadians(verticalAngle));
-    double horizontalDistance = altitude * std::tan(toRadians(horizontalAngle));
+    double distance = altitude * tan(toRadians(verticalAngle));
+    double horizontalDistance = distance * tan(toRadians(horizontalAngle));
 
     followCommand.linearDisplacement = Point(horizontalDistance, distance, altitude);
     followCommand.angularDisplacement = angularDisplacement;
@@ -45,7 +55,6 @@ FollowCommand Follower::follow(std::vector<Track> tracks, double altitude, doubl
     followCommand.outputRotation = getRotation(horizontalAngle, deltaTime);
 
     return followCommand;
-
 }
 
 Point Follower::getDisplacement(double distance, double deltaTime) {
@@ -82,22 +91,20 @@ Point Follower::getRotation(double horizontalAngle, double deltaTime) {
     return rotation;
 };
 
-Point Follower::getAngularDisplacement(Track track) {
+Point Follower::getAngularDisplacement(cv::Point2i trackPoint) {
 
     cv::Size frameSize = config->getFrameSize();
 
     cv::Point frameCenter = cv::Point(frameSize.width/2, frameSize.height/2);
-    cv::Point trackCenter = cv::Point((int)(track.getRect().x + track.getRect().width / 2),
-                                      (int)(track.getRect().y + track.getRect().height / 2));
-
-    double displacementX = trackCenter.x - frameCenter.x;
 
     // DisplacementY se mide desde la base del track, asumiendo que es el punto de
     // contacto con el piso
-    double displacementY = (track.getRect().y + track.getRect().height) - frameCenter.x;
+    double displacementY = trackPoint.y - frameCenter.y;
+    double displacementX = trackPoint.x - frameCenter.x;
 
-    double tgPan = displacementX/(frameSize.width/2)*std::tan(toRadians(config->getFov()));
-    double tgTilt = displacementY/(frameSize.height/2)*std::tan(toRadians(config->getVerticalFov()));
+
+    double tgPan = displacementX/(frameSize.width/2)*std::tan(toRadians(config->getFov()/2));
+    double tgTilt = displacementY/(frameSize.height/2)*std::tan(toRadians(config->getVerticalFov()/2));
 
     return Point(toDegrees(std::atan(tgPan)),toDegrees(std::atan(tgTilt)),0);
 
@@ -109,6 +116,10 @@ void Follower::setFollowee(int followee) {
 
 bool Follower::isFollowing() {
     return followee != NOT_FOLLOWING;
+}
+
+void Follower::stopFollowing() {
+    followee = NOT_FOLLOWING;
 }
 
 cv::Point Follower::getFolloweeVelocity() {

@@ -29,6 +29,8 @@ private:
     int trackedFrames = 0;
 
     void filter_rects(std::vector<cv::Rect2d> &candidates, std::vector<cv::Rect2d> &objects);
+
+    bool insideROI(cv::Rect2d r,std::shared_ptr<cv::Mat> frame);
 };
 
 
