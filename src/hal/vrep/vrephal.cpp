@@ -27,6 +27,8 @@ class Vrephal: public Hal {
     //Constantes
     const int PORT = 19997;
     const char * HOST = "127.0.0.1";
+    const int width = 680;
+    const int height = 420;
 
     //Variables aux
     int clientID;
@@ -39,7 +41,9 @@ class Vrephal: public Hal {
 
     Config* config;
 
-    //Funcion auxiliar
+    std::shared_ptr<cv::Mat> cachedframe;
+    chrono::steady_clock::time_point frameTime;
+    simxUChar *image = NULL;
 
     void deamon(){
         while(1){
@@ -403,30 +407,34 @@ public:
     // --> Obtener captura de imagen (ambas cámaras)
     std::shared_ptr<cv::Mat> getFrame(Camera cam){
 
-        simxInt cameraHandler;
-        if (cam == Camera::Front){
-            cameraHandler = quadricopterFrontCamHandler;
-        } else {
-            cameraHandler = quadricopterFloorCamHandler;
+        if(std::chrono::duration_cast<std::chrono::microseconds>
+                (chrono::steady_clock::now() - this->frameTime).count() > (0.25 * 1000000)) {
+
+            simxInt cameraHandler;
+            if (cam == Camera::Front) {
+                cameraHandler = quadricopterFrontCamHandler;
+            } else {
+                cameraHandler = quadricopterFloorCamHandler;
+            }
+
+            simxInt resolution[2];
+            
+            simxInt aux = simxGetVisionSensorImage(clientID, cameraHandler, resolution, &image, 0,
+                                                   simx_opmode_blocking);
+
+            //convertir imagen
+            cachedframe =
+                    std::shared_ptr<cv::Mat>(new cv::Mat(resolution[1], resolution[0], CV_8UC3, image));
+            if (cachedframe != NULL && cachedframe->rows > 0 && cachedframe->cols > 0) {
+                cv::cvtColor(*cachedframe, *cachedframe, cv::COLOR_BGR2RGB);
+                cv::flip(*cachedframe, *cachedframe, 0);
+            } else {
+                cachedframe = NULL;
+            }
+
+            this->frameTime = chrono::steady_clock::now();
         }
-
-        simxInt resolution[2];
-        simxUChar* image;
-
-        image = new simxUChar[512*512*3];
-        simxInt aux = simxGetVisionSensorImage(clientID, cameraHandler,resolution,&image,0,simx_opmode_blocking);
-
-
-        //convertir imagen
-        std::shared_ptr<cv::Mat> res =
-                std::shared_ptr<cv::Mat>(new cv::Mat(resolution[1],resolution[0],CV_8UC3,image));
-        if(res != NULL && res->rows > 0 && res->cols > 0) {
-            cv::cvtColor(*res, *res, cv::COLOR_BGR2RGB);
-            cv::flip(*res, *res, 0);
-        } else {
-            res = NULL;
-        }
-        return res;
+        return cachedframe;
     }
 
     /************Posición*************/
