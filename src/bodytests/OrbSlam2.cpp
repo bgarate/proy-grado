@@ -27,8 +27,8 @@ class OrbSlam2 : public BodyTest {
     void InitBodyTest(Hal *hal, Config* config, VisualDebugger* visualDebugger) override {
         this->hal = hal;
         this->visualDebugger = visualDebugger;
-        const std::string voc = "/home/santy/Escritorio/Proyecto/Git/proy-grado/lib/ORB_SLAM2/Vocabulary/ORBvoc.txt";
-        const std::string settings ="/home/santy/Escritorio/Proyecto/Git/proy-grado/lib/ORB_SLAM2/Examples/Monocular/TUM1.yaml";
+        const std::string voc = "lib/ORB_SLAM2/Vocabulary/ORBvoc.txt";
+        const std::string settings ="lib/ORB_SLAM2/Examples/Monocular/TUM1.yaml";
         SLAM = new ORB_SLAM2::System(voc,settings, ORB_SLAM2::System::MONOCULAR,true);
     }
 

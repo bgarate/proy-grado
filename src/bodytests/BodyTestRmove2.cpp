@@ -50,7 +50,7 @@ class BodyTestRmove2 : public BodyTest {
     bool inmc = false;
 
     VisualDebugger* visualDebugger;
-    
+
     //O
     /*ORB_SLAM2::System* SLAM;
     long runningTime = 0;*/
