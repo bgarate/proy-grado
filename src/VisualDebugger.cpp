@@ -17,11 +17,19 @@ void VisualDebugger::setup(Config *config) {
     this->config = config;
     windowName = config->getName() + " - VisualDebugger";
 
-    if(config->isVisualDebugEnabled())
+    if(config->isVisualDebugEnabled()) {
         cv::namedWindow(windowName, cv::WINDOW_AUTOSIZE);
+        cv::setMouseCallback(windowName, VisualDebugger::onMouse, this);
+    }
 
+
+    follower = new Follower(config);
     shouldOpen = config->isOutputRawVideoEnabled() || config->isOutputHudVideoEnabled();
 
+}
+
+void VisualDebugger::onMouse(int evt, int x, int y, int flag, void* thisPtr) {
+    ((VisualDebugger*)thisPtr)->mousePosition = cv::Point2i(x,y);
 }
 
 void VisualDebugger::setFrame(std::shared_ptr<cv::Mat> frame) {
@@ -59,6 +67,8 @@ void VisualDebugger::openWriters(cv::Size frameSize){
 }
 
 void VisualDebugger::setTracks(std::vector<Track> tracks) {
+
+    this->tracks = tracks;
 
     if(!config->isVisualDebugEnabled() && !config->isOutputHudVideoEnabled())
         return;
@@ -130,6 +140,8 @@ void VisualDebugger::setStatus(State state, int battery, double altitude, Point 
 
     if(frame.cols == 0 && frame.rows == 0)
         return;
+
+    this->altitude = altitude;
 
     std::string statusName = getStateName(state);
     cv::Scalar statusColor =  getStateColor(state);
@@ -260,4 +272,43 @@ void VisualDebugger::writeConsole(std::string str) {
         console.pop_back();
 
     console.insert(console.begin(), str);
+}
+
+void VisualDebugger::setFollowCommand(FollowCommand command) {
+
+    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideoEnabled())
+        return;
+
+    if(frame.cols == 0 && frame.rows == 0)
+        return;
+
+    std::vector<Track>::iterator iterator = std::find_if(tracks.begin(), tracks.end(),
+                             [this, command](Track t){return t.getNumber() == command.followee;});
+
+    Track track = *iterator;
+
+    cv::Scalar color =  colors[track.getNumber() % (sizeof(colors)/sizeof(cv::Scalar))];
+
+    cv::Rect2d trackRect = track.getRect();
+    rectangle(frame,
+              cv::Rect2d(trackRect.x + 10, trackRect.y + 10, trackRect.width - 20, trackRect.height - 20),
+              color, 1, 1);
+
+    std::string str = (boost::format("%.2fm") % command.linearDisplacement.y).str();
+
+    cv::Size textSize = cv::getTextSize(str, CONSOLE_FONT, 1, 1, NULL);
+    cv::Point textOrigin = cv::Point((int)trackRect.x, (int)trackRect.y - textSize.height);
+    cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, color);
+}
+
+void VisualDebugger::drawMouse(double deltaTime) {
+
+    FollowCommand command = follower->getCommand(altitude, deltaTime, mousePosition);
+
+    std::string str = (boost::format("%.2fm") % command.linearDisplacement.y).str();
+
+    cv::Size textSize = cv::getTextSize(str, CONSOLE_FONT, 1, 1, NULL);
+    cv::Point textOrigin = cv::Point(mousePosition.x + 10, mousePosition.y + 10);
+    cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, VisualDebugger::WHITE_COLOR);
+
 }

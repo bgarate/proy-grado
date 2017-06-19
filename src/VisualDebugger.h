@@ -14,6 +14,7 @@
 #include <src/tracking/Track.h>
 #include <opencv/cv.hpp>
 #include <src/hal/hal.hpp>
+#include <src/tracking/Follower.h>
 
 class VisualDebugger {
 public:
@@ -25,6 +26,10 @@ public:
     void setTracks(std::vector<Track> tracks);
     void writeConsole(std::string str);
     void cleanup();
+
+    void setFollowCommand(FollowCommand command);
+    void drawMouse(double deltaTime);
+
 private:
     Config* config;
     cv::Mat frame;
@@ -39,6 +44,8 @@ private:
     static const int CONSOLE_FONT_SIZE = 1;
     static const int CONSOLE_FONT_THICKNESS = 1;
     static constexpr const double OUTPUT_FPS = 25;
+
+    double altitude = 0;
 
     std::array<cv::Scalar, 9> colors ={{ cv::Scalar(255,0,0),
                          cv::Scalar(0,255,0),
@@ -62,6 +69,12 @@ private:
 
     void openWriters(cv::Size frameSize);
     bool shouldOpen;
+    std::vector<Track> tracks;
+
+    static void onMouse(int evt, int x, int y, int flag, void *thisPtr);
+    cv::Point2i mousePosition;
+
+    Follower* follower;
 };
 
 

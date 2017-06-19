@@ -12,6 +12,7 @@
 
 class FollowCommand {
 public:
+    int followee;
     Point linearDisplacement;
     Point angularDisplacement;
     Point outputDisplacement;
@@ -25,10 +26,13 @@ public:
     FollowCommand follow(std::vector<Track> tracks, double altitude, double deltaTime);
     void setFollowee(int followee);
     bool isFollowing();
-
+    void stopFollowing();
     cv::Point getFolloweeVelocity();
-private:
     static const int NOT_FOLLOWING = -1;
+
+    FollowCommand getCommand(double altitude, double deltaTime, const cv::Point &trackPoint);
+private:
+
 
     static constexpr const double TARGET_DISTANCE = 5;
     static constexpr const double TARGET_DISTANCE_SLOW_DOWN_RADIUS = 2;
@@ -40,11 +44,11 @@ private:
 
 
     cv::Point followeeVelocity;
-    int followee;
+    int followee = NOT_FOLLOWING;
 
     Config* config = NULL;
 
-    Point getAngularDisplacement(Track track);
+    Point getAngularDisplacement(cv::Point2i trackProint);
 
     inline double toDegrees(double rad);
     inline double toRadians(double deg);
@@ -52,6 +56,7 @@ private:
     Point getDisplacement(double distance, double deltaTime);
 
     Point getRotation(double horizontalAngle, double deltaTime);
+
 };
 
 

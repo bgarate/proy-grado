@@ -8,6 +8,7 @@
 #include <src/tracking/HogDetector.h>
 #include <src/tracking/MultiTracker.h>
 #include <src/VisualDebugger.h>
+#include <src/tracking/Follower.h>
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
 
@@ -45,17 +46,22 @@ class FlightManeuver : public BodyTest {
     DetectionAlgorithm* detector;
     TrackingAlgorithm* tracker;
     DetectAndTrack* detectAndTrack;
+    Follower* follower;
 
     bool inmc = false;
 
     VisualDebugger* visualDebugger;
 
-    void InitBodyTest(Hal *hal, VisualDebugger* visualDebugger) override {
+    void InitBodyTest(Hal *hal, Config* config, VisualDebugger* visualDebugger) override {
         this->hal = hal;
 
         detector = new HogDetector();
         tracker = new MultiTracker(MultiTracker::Algorithm::KCF);
         detectAndTrack =  new DetectAndTrack(detector, tracker);
+        follower = new Follower(config);
+
+        std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
+        config->setFrameSize(cv::Point(frame->size().width,frame->size().height));
 
         this->visualDebugger = visualDebugger;
 
@@ -119,6 +125,16 @@ class FlightManeuver : public BodyTest {
                 //update the tracking result
                 std::vector<Track> objects = detectAndTrack->update(frame);
                 visualDebugger->setTracks(objects);
+
+                if(objects.empty())
+                    follower->stopFollowing();
+                else if(!follower->isFollowing())
+                    follower->setFollowee(objects.front().getNumber());
+
+                FollowCommand followCommand = follower->follow(objects, hal->getAltitude(),deltaTime);
+
+                if(follower->isFollowing())
+                    visualDebugger->setFollowCommand(followCommand);
 
             }
         }

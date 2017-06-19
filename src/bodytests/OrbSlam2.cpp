@@ -24,7 +24,7 @@ class OrbSlam2 : public BodyTest {
 
     long runningTime = 0;
 
-    void InitBodyTest(Hal *hal, VisualDebugger* visualDebugger) override {
+    void InitBodyTest(Hal *hal, Config* config, VisualDebugger* visualDebugger) override {
         this->hal = hal;
         this->visualDebugger = visualDebugger;
         const std::string voc = "/home/santy/Escritorio/Proyecto/Git/proy-grado/lib/ORB_SLAM2/Vocabulary/ORBvoc.txt";

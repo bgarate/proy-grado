@@ -52,6 +52,10 @@ Config::Config() {
     outputPath = "";
     realTimeVideoOutputEnabled = false;
     pingEnabled = true;
+
+    cameraTilt = 15;
+    frameSize = cv::Size(640,480);
+    fov = 80;
 }
 
 unsigned short Config::getBroadcastPort() const {
@@ -163,6 +167,9 @@ const cv::Size &Config::getFrameSize() const {
 }
 
 void Config::setFrameSize(const cv::Size &frameSize) {
+    if(frameSize.width * frameSize.width == 0)
+        throw new std::runtime_error("Frame area cannot be zero");
+
     Config::frameSize = frameSize;
 }
 

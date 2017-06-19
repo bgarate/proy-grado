@@ -45,11 +45,11 @@ void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
 void Body::loop() {
 
-    //BodyTest* bt = new FlightManeuver();
+    BodyTest* bt = new FlightManeuver();
     //BodyTest* bt = new OrbSlam2();
-    BodyTest* bt = new BodyTestRmove2();
+    //BodyTest* bt = new BodyTestRmove2();
 
-    bt->InitBodyTest(this->hal, &visualDebugger);
+    bt->InitBodyTest(this->hal, config, &visualDebugger);
     Logger::logInfo("Body started");
 
     chrono::steady_clock::time_point startTime = chrono::steady_clock::now();
@@ -88,6 +88,7 @@ void Body::loop() {
 
             visualDebugger.setStatus(hal->getState(),hal->bateryLevel(),
                                      hal->getAltitude(), hal->getGPSPosition(), hal->getOrientation(), fps, runningTime);
+            visualDebugger.drawMouse(deltaTime);
             int key = visualDebugger.show(deltaTime);
 
             if(key == 27){

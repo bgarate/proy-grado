@@ -50,12 +50,13 @@ class BodyTestRmove2 : public BodyTest {
     bool inmc = false;
 
     VisualDebugger* visualDebugger;
-
+    
     //O
     /*ORB_SLAM2::System* SLAM;
     long runningTime = 0;*/
 
-    void InitBodyTest(Hal *hal, VisualDebugger* visualDebugger) override {
+    void InitBodyTest(Hal *hal, Config* config, VisualDebugger* visualDebugger) override {
+
         this->hal = hal;
 
         detector = new HogDetector();
