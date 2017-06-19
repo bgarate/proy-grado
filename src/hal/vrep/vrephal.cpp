@@ -29,6 +29,9 @@ class Vrephal: public Hal {
     const char * HOST = "127.0.0.1";
     const int width = 680;
     const int height = 420;
+    const double metersInADegree = (111.32*1000);
+    const double latitudeOffset = -34.901112; //Montevideo
+    const double longitudeOffset = -56.164532; //Montevideo
 
     //Variables aux
     int clientID;
@@ -470,8 +473,8 @@ public:
         simxGetObjectPosition(clientID, quadricopterHandler, -1, position, simx_opmode_blocking);
 
         Point pos;
-        pos.x = position[0];
-        pos.y = position[1];
+        pos.x = (position[0]/ metersInADegree) + latitudeOffset;
+        pos.y = (position[1]/ metersInADegree) + longitudeOffset;
         pos.z = position[2];
 
         return pos;

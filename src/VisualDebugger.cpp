@@ -148,8 +148,8 @@ void VisualDebugger::setStatus(State state, int battery, double altitude, Point 
             (boost::format("FPS: %3u Running time: %02um:%02us") % fps % runningMinutes % (runningSeconds % 60)).str(),
             (boost::format("Bateria: %3u%%") % battery).str(),
             (boost::format("Altitud: %3.2fm") % altitude).str(),
-            (boost::format("Lat: %3.2f Long: %3.2f Alt: %3.2f") % orientation.Latitude() %
-             orientation.Longitude() % orientation.Altitude()).str(),
+            (boost::format("Lat: %3.2f Long: %3.2f Alt: %3.2f") % gps.Latitude() %
+             gps.Longitude() % gps.Altitude()).str(),
             (boost::format("Roll: %3.2f Pitch: %3.2f Yaw: %3.2f") % orientation.Roll() %
             orientation.Pitch() % orientation.Yaw()).str(),
     };

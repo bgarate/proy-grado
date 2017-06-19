@@ -52,8 +52,8 @@ class BodyTestRmove2 : public BodyTest {
     VisualDebugger* visualDebugger;
 
     //O
-    //ORB_SLAM2::System* SLAM;
-    //long runningTime = 0;
+    /*ORB_SLAM2::System* SLAM;
+    long runningTime = 0;*/
 
     void InitBodyTest(Hal *hal, VisualDebugger* visualDebugger) override {
         this->hal = hal;
@@ -67,9 +67,9 @@ class BodyTestRmove2 : public BodyTest {
         Logger::logInfo("Bateria: %u") << hal->bateryLevel();
 
         //O
-        //const std::string voc = "/home/santy/Escritorio/Proyecto/Git/proy-grado/lib/ORB_SLAM2/Vocabulary/ORBvoc.txt";
-        //const std::string settings ="/home/santy/Escritorio/Proyecto/Git/proy-grado/lib/ORB_SLAM2/Examples/Monocular/TUM1.yaml";
-        //SLAM = new ORB_SLAM2::System(voc,settings, ORB_SLAM2::System::MONOCULAR,true);
+        /*const std::string voc = "/home/santy/Escritorio/Proyecto/Git/proy-grado/lib/ORB_SLAM2/Vocabulary/ORBvoc.txt";
+        const std::string settings ="/home/santy/Escritorio/Proyecto/Git/proy-grado/lib/ORB_SLAM2/Examples/Monocular/TUM1.yaml";
+        SLAM = new ORB_SLAM2::System(voc,settings, ORB_SLAM2::System::MONOCULAR,true);*/
     }
 
     bool BodyTestStep(double deltaTime) override {
