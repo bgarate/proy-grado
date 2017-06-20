@@ -97,6 +97,8 @@ void Body::loop() {
                 visualDebugger.cleanup();
                 mc->run();
                 inmc=true;
+            } else if (key == (int)'c'){
+                visualDebugger.captureImage();
             }
 
         } else if(mc->stopped()) {//q dentro de manual control

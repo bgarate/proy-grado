@@ -30,6 +30,8 @@ public:
     void setFollowCommand(FollowCommand command);
     void drawMouse(double deltaTime);
 
+    void captureImage();
+
 private:
     Config* config;
     cv::Mat frame;

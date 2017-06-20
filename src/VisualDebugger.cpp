@@ -90,6 +90,25 @@ void VisualDebugger::setTracks(std::vector<Track> tracks) {
 
 }
 
+void VisualDebugger::captureImage() {
+    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideoEnabled())
+        return;
+
+    if(originalFrame == NULL || originalFrame->cols * originalFrame->rows == 0)
+        return;
+
+    std::chrono::milliseconds ms =
+            std::chrono::duration_cast<std::chrono::milliseconds>(
+                    std::chrono::system_clock::now().time_since_epoch());
+
+    std::string imgPath = config->getOutputPath() + "/" + std::to_string(ms.count()) + "_Image.jpg";
+
+    cv::imwrite(imgPath, *originalFrame);
+
+    Logger::logInfo("Capture saved to %s") << imgPath;
+
+}
+
 cv::Scalar VisualDebugger::getStateColor(State state){
     switch (state){
         case State::Unknown:
