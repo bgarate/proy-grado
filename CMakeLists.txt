@@ -11,7 +11,7 @@ find_package(OpenCV REQUIRED)
 find_package(Threads REQUIRED)
 find_package(Boost REQUIRED system program_options thread)
 find_package(Protobuf REQUIRED)
-find_package (Threads)
+find_package(Threads REQUIRED)
 find_package(FFmpeg REQUIRED)
 
 find_package(Eigen3 REQUIRED)
@@ -44,8 +44,11 @@ set(SOURCE_FILES ${SOURCE_FILES} src/hal/hal.hpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/hal/vrep/extApi.c src/hal/vrep/extApi.h src/hal/vrep/extApiInternal.h src/hal/vrep/extApiPlatform.c src/hal/vrep/extApiPlatform.h src/hal/vrep/v_repConst.h src/hal/vrep/vrephal.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/hal/pb2/pb2hal.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/Broadcaster.cpp src/messages/Broadcaster.h)
-set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/main.cpp src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h src/messages/IpResolver.cpp src/messages/IpResolver.h src/hal/pb2/VideoDecoder.cpp src/hal/pb2/VideoDecoder.h src/bodytests/FlightManeuver.cpp src/hal/pb2/CommandHandler.cpp src/hal/pb2/CommandHandler.h src/tracking/AreaRect.h src/hal/ManualControl.cpp src/hal/ManualControl.h src/VisualDebugger.cpp src/VisualDebugger.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h src/messages/IpResolver.cpp src/messages/IpResolver.h src/hal/pb2/VideoDecoder.cpp src/hal/pb2/VideoDecoder.h src/bodytests/FlightManeuver.cpp src/hal/pb2/CommandHandler.cpp src/hal/pb2/CommandHandler.h src/tracking/AreaRect.h src/hal/ManualControl.cpp src/hal/ManualControl.h src/VisualDebugger.cpp src/VisualDebugger.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/OrbSlam2.cpp)
+set(SOURCE_FILES ${SOURCE_FILES} src/main.cpp)
+
+set(CALIBRATION_MAIN src/calibration.cpp)
 
 ADD_SUBDIRECTORY(src/proto)
 ADD_SUBDIRECTORY(lib/ORB_SLAM2)
@@ -62,27 +65,29 @@ include_directories(
 )
 
 add_executable(proy_grado ${SOURCE_FILES} ${PROTO_SRC} ${PROTO_HEADER})
+add_executable(calibration ${CALIBRATION_MAIN})
 
 target_compile_options(proy_grado PUBLIC -DNON_MATLAB_PARSING -DMAX_EXT_API_CONNECTIONS=255 -D__linux)
+target_compile_options(calibration PUBLIC -DNON_MATLAB_PARSING -DMAX_EXT_API_CONNECTIONS=255 -D__linux)
+
 
 target_link_libraries(proy_grado ${OpenCV_LIBS})
 target_link_libraries(proy_grado ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(proy_grado ${Boost_LIBRARIES})
 target_link_libraries(proy_grado ${Protobuf_LIBRARIES})
 target_link_libraries(proy_grado proto)
-target_link_libraries(proy_grado ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(proy_grado ${FFMPEG_LIBRARIES})
 target_link_libraries(proy_grado libarcommands.so libarcontroller.so libardiscovery.so libarnetwork.so
         libarnetworkal.so libarsal.so libarstream.so libarstream2.so libarmavlink.so libjson.so
         libarmedia.so libarutils.so libcurl.so libardatatransfer.so libmux.so libpomp.so libcrypto.so
         libssl.so libz.so libncurses.so libtls.so libarupdater.so)
 
+target_link_libraries(calibration ${OpenCV_LIBS})
+target_link_libraries(calibration ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(calibration ${Boost_LIBRARIES})
+target_link_libraries(calibration ${FFMPEG_LIBRARIES})
 
-target_link_libraries(proy_grado
-        ${EIGEN3_LIBS}
-        ${Pangolin_LIBRARIES}
-        libDBoW2.so
-        libg2o.so
-        )
+target_link_libraries(proy_grado ${EIGEN3_LIBS} ${Pangolin_LIBRARIES} libDBoW2.so libg2o.so)
+
 #target_link_libraries(proy_grado libORB_SLAM2.so)
 target_link_libraries(proy_grado ORB_SLAM2)
