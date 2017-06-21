@@ -47,7 +47,6 @@ set(SOURCE_FILES ${SOURCE_FILES} src/messages/Broadcaster.cpp src/messages/Broad
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h src/messages/IpResolver.cpp src/messages/IpResolver.h src/hal/pb2/VideoDecoder.cpp src/hal/pb2/VideoDecoder.h src/bodytests/FlightManeuver.cpp src/hal/pb2/CommandHandler.cpp src/hal/pb2/CommandHandler.h src/tracking/AreaRect.h src/hal/ManualControl.cpp src/hal/ManualControl.h src/VisualDebugger.cpp src/VisualDebugger.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/OrbSlam2.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/main.cpp)
-
 set(CALIBRATION_MAIN src/calibration.cpp)
 
 ADD_SUBDIRECTORY(src/proto)

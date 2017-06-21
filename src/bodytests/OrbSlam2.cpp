@@ -28,7 +28,7 @@ class OrbSlam2 : public BodyTest {
         this->hal = hal;
         this->visualDebugger = visualDebugger;
         const std::string voc = "lib/ORB_SLAM2/Vocabulary/ORBvoc.txt";
-        const std::string settings ="lib/ORB_SLAM2/Examples/Monocular/TUM1.yaml";
+        const std::string settings ="lib/ORB_SLAM2/Examples/Monocular/CustomCalib.yaml";
         SLAM = new ORB_SLAM2::System(voc,settings, ORB_SLAM2::System::MONOCULAR,true);
     }
 
@@ -37,9 +37,9 @@ class OrbSlam2 : public BodyTest {
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
         if(frame != NULL && frame->rows > 0 & frame->cols > 0) {
             cv::Mat grey;
-            cv::cvtColor(*frame, grey, CV_BGR2GRAY);
+            //cv::cvtColor(*frame, grey, CV_BGR2GRAY);
             runningTime += deltaTime;
-            SLAM->TrackMonocular(grey, runningTime / 1000.0);
+            SLAM->TrackMonocular(*frame, runningTime / (double)1000000.0);
         }
 
         return true;
