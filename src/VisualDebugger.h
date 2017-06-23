@@ -15,6 +15,7 @@
 #include <opencv/cv.hpp>
 #include <src/hal/hal.hpp>
 #include <src/tracking/Follower.h>
+#include <lib/ORB_SLAM2/include/System.h>
 
 class VisualDebugger {
 public:
@@ -31,6 +32,9 @@ public:
     void drawMouse(double deltaTime);
 
     void captureImage();
+
+    void setOrbSlam(ORB_SLAM2::System *slam);
+    void drawOrbSlam();
 
 private:
     Config* config;
@@ -77,6 +81,12 @@ private:
     cv::Point2i mousePosition;
 
     Follower* follower;
+
+    ORB_SLAM2::FrameDrawer *frameDrawer = NULL;
+
+    std::string lastState = "";
+
+
 };
 
 

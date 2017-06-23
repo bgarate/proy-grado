@@ -30,6 +30,7 @@ class OrbSlam2 : public BodyTest {
         const std::string voc = "lib/ORB_SLAM2/Vocabulary/ORBvoc.txt";
         const std::string settings ="lib/ORB_SLAM2/Examples/Monocular/CustomCalib.yaml";
         SLAM = new ORB_SLAM2::System(voc,settings, ORB_SLAM2::System::MONOCULAR,true);
+        visualDebugger->setOrbSlam(SLAM);
     }
 
     bool BodyTestStep(double deltaTime) override {

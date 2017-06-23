@@ -89,6 +89,7 @@ void Body::loop() {
             visualDebugger.setStatus(hal->getState(),hal->bateryLevel(),
                                      hal->getAltitude(), hal->getGPSPosition(), hal->getOrientation(), fps, runningTime);
             visualDebugger.drawMouse(deltaTime);
+            visualDebugger.drawOrbSlam();
             int key = visualDebugger.show(deltaTime);
 
             if(key == 27){

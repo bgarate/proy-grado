@@ -8,6 +8,7 @@
 #include <src/tracking/DetectAndTrack.h>
 #include "VisualDebugger.h"
 #include <src/hal/Point.h>
+#include <lib/ORB_SLAM2/include/System.h>
 
 const cv::Scalar VisualDebugger::WHITE_COLOR = cv::Scalar(255,255,255);
 const cv::Scalar VisualDebugger::GREEN_COLOR = cv::Scalar(0,205,0);
@@ -15,7 +16,7 @@ const cv::Scalar VisualDebugger::GREY_COLOR = cv::Scalar(205,205,205);
 
 void VisualDebugger::setup(Config *config) {
     this->config = config;
-    windowName = config->getName() + " - VisualDebugger";
+    windowName = "VisualDebugger";
 
     if(config->isVisualDebugEnabled()) {
         cv::namedWindow(windowName, cv::WINDOW_AUTOSIZE);
@@ -205,6 +206,22 @@ void VisualDebugger::setStatus(State state, int battery, double altitude, Point 
     textOrigin = cv::Point(frame.cols - textSize.width - 10, frame.rows - previousTextSize.height - 20);
     cv::putText(frame, colValues[4], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR);
 
+}
+
+void VisualDebugger::drawOrbSlam() {
+    if(frameDrawer == NULL)
+        return;
+
+    std::string state = frameDrawer->DrawFrame(frame);
+
+    if(state != lastState) {
+        writeConsole(state);
+        lastState = state;
+    }
+}
+
+void VisualDebugger::setOrbSlam(ORB_SLAM2::System* slam) {
+    frameDrawer = slam->mpFrameDrawer;
 }
 
 int VisualDebugger::show(long deltaTime){
