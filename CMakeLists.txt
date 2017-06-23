@@ -21,6 +21,12 @@ link_directories(src/hal/pb2/lib)
 link_directories(lib/ORB_SLAM2/Thirdparty/DBoW2/lib)
 link_directories(lib/ORB_SLAM2/Thirdparty/g2o/lib)
 
+
+#svo
+link_directories(src/svo)
+link_directories(src/vikit)
+link_directories(src/sophus)
+
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES src/tracking/TrackingAlgorithm.h)
@@ -63,6 +69,9 @@ include_directories(
         ${Pangolin_INCLUDE_DIRS}
 )
 
+#svo
+include_directories(src)
+
 add_executable(proy_grado ${SOURCE_FILES} ${PROTO_SRC} ${PROTO_HEADER})
 add_executable(calibration ${CALIBRATION_MAIN})
 
@@ -90,3 +99,6 @@ target_link_libraries(proy_grado ${EIGEN3_LIBS} ${Pangolin_LIBRARIES} libDBoW2.s
 
 #target_link_libraries(proy_grado libORB_SLAM2.so)
 target_link_libraries(proy_grado ORB_SLAM2)
+
+#svo
+target_link_libraries(proy_grado libsvo.so libvikit_common.so libSophus.so)
