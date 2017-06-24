@@ -9,6 +9,7 @@
 #include <src/tracking/MultiTracker.h>
 #include <src/VisualDebugger.h>
 #include <src/tracking/Follower.h>
+#include <src/tracking/CascadeDetector.h>
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
 
@@ -55,7 +56,7 @@ class FlightManeuver : public BodyTest {
     void InitBodyTest(Hal *hal, Config* config, VisualDebugger* visualDebugger) override {
         this->hal = hal;
 
-        detector = new HogDetector();
+        detector = new CascadeDetector();
         tracker = new MultiTracker(MultiTracker::Algorithm::KCF);
         detectAndTrack =  new DetectAndTrack(detector, tracker);
         follower = new Follower(config);
