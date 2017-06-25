@@ -43,11 +43,11 @@ std::vector<Track> DetectAndTrack::update(std::shared_ptr<cv::Mat> frame) {
 
             std::vector<cv::Rect2d> detectedAndKept;
 
-            std::copy(accumulatedFound.begin(), accumulatedFound.end(), std::back_inserter(detectedAndKept));
             std::copy(tracksToKeep.begin(), tracksToKeep.end(), std::back_inserter(detectedAndKept));
+            std::copy(accumulatedFound.begin(), accumulatedFound.end(), std::back_inserter(detectedAndKept));
 
             std::vector<cv::Rect2d> filteredRects;
-            filter_rects(detectedAndKept, filteredRects);
+            filter_rects(detectedAndKept, tracksToKeep.size(), filteredRects);
 
             tracker->setTargets(filteredRects, frame);
 
@@ -80,7 +80,7 @@ std::vector<Track> DetectAndTrack::update(std::shared_ptr<cv::Mat> frame) {
 
     bool trackingOk = tracker->track(frame);
 
-    updateTracks(tracker->getTargets());
+    updateTracks(tracker->getTargets(), frame);
 
     if(trackingOk) {
         trackedFrames++;
@@ -94,13 +94,13 @@ std::vector<Track> DetectAndTrack::update(std::shared_ptr<cv::Mat> frame) {
 }
 
 
-void DetectAndTrack::filter_rects(std::vector<cv::Rect2d> &candidates, std::vector<cv::Rect2d> &objects) {
+void DetectAndTrack::filter_rects(std::vector<cv::Rect2d> &candidates, unsigned long tracksKept,std::vector<cv::Rect2d> &objects) {
 
     // Uses non maxima supression
 
     std::vector<AreaRect> sortedCandidates;
-    for(cv::Rect r : candidates)
-        sortedCandidates.push_back(AreaRect(r));
+    for(int i = 0; i < candidates.size();i++)
+        sortedCandidates.push_back(AreaRect(candidates[i], i < tracksKept));
 
     std::sort(sortedCandidates.begin(),sortedCandidates.end(), [](const AreaRect &a,const AreaRect &b) {
         return a.y2 < b.y2;
@@ -110,9 +110,12 @@ void DetectAndTrack::filter_rects(std::vector<cv::Rect2d> &candidates, std::vect
 
     while(!sortedCandidates.empty()){
 
-        AreaRect selected = sortedCandidates.back().rect;
-        objects.push_back(selected.rect);
+        AreaRect selected = sortedCandidates.back();
+        cv::Rect rectToKeep = selected.rect;
+        bool isFromKeptTrack = selected.isPreviousTrack;
         toRemove.push_back(sortedCandidates.size()-1);
+
+        unsigned int indexToRemove = 0;
 
         for(unsigned int i = 0; i < sortedCandidates.size() - 1; i++) {
 
@@ -128,10 +131,22 @@ void DetectAndTrack::filter_rects(std::vector<cv::Rect2d> &candidates, std::vect
 
             double overlap = (width*heigth)/selected.area;
 
-            if(overlap > 0.5){
-                toRemove.push_back(i);
+            if(overlap > KEEP_TRACK_OVERLAP_THRESHOLD){
+                toRemove.push_back(indexToRemove);
+                if(isFromKeptTrack != r.isPreviousTrack) {
+                    isFromKeptTrack = true;
+                    rectToKeep = selected.isPreviousTrack ? rectToKeep : r.rect;
+                } else {
+                    if(r.rect.width * r.rect.height < selected.rect.height * selected.rect.width)
+                        rectToKeep = r.rect;
+                }
+
+            } else {
+                indexToRemove++;
             }
         }
+
+        objects.push_back(rectToKeep);
 
         for(unsigned int j : toRemove)
             sortedCandidates.erase(sortedCandidates.begin() + j);
@@ -177,9 +192,35 @@ std::vector<Track> DetectAndTrack::updateDetections(std::vector<cv::Rect2d> newD
 
 }
 
-void DetectAndTrack::updateTracks(std::vector<cv::Rect2d> tracking) {
+void DetectAndTrack::updateTracks(std::vector<cv::Rect2d> tracking, std::shared_ptr<cv::Mat> frame) {
+
+    std::vector<unsigned long> tracksToRemove;
+    unsigned long indexToRemove = 0;
+
     for (unsigned long i = 0; i < tracking.size(); ++i) {
-        tracks.at(i).setRect(tracking[i]);
+        cv::Rect2d t = tracking[i];
+
+        if(t.x + t.width > 0 && t.y + t.height > 0 &&
+           t.x < frame->cols && t.y < frame->rows) {
+            tracks.at(i).setRect(t);
+            indexToRemove++;
+        } else {
+            tracksToRemove.push_back(indexToRemove);
+        }
+
+    }
+
+    if(!tracksToRemove.empty()) {
+        Logger::logDebug("%u tracks lost") << tracksToRemove.size();
+        for(unsigned long i : tracksToRemove)
+            tracks.erase(tracks.begin() + i);
+
+        std::vector<cv::Rect2d> newTargets;
+        for(Track t : tracks)
+            newTargets.push_back(t.getRect());
+
+        tracker->setTargets(newTargets, frame);
+
     }
 }
 

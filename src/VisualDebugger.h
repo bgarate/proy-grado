@@ -36,6 +36,8 @@ public:
     void setOrbSlam(ORB_SLAM2::System *slam);
     void drawOrbSlam();
 
+    void drawHorizon(int y);
+
 private:
     Config* config;
     cv::Mat frame;
@@ -44,6 +46,8 @@ private:
     static const cv::Scalar WHITE_COLOR;
     static const cv::Scalar GREEN_COLOR;
     static const cv::Scalar GREY_COLOR;
+    static const cv::Scalar BLACK_COLOR;
+    static const cv::Scalar RED_COLOR;
 
     static const int CONSOLE_QUEUE_SIZE = 5;
     static const int CONSOLE_FONT = cv::FONT_HERSHEY_PLAIN;

@@ -137,6 +137,8 @@ class FlightManeuver : public BodyTest {
                 if(follower->isFollowing())
                     visualDebugger->setFollowCommand(followCommand);
 
+                visualDebugger->drawHorizon(follower->getHorizon());
+
             }
         }
 

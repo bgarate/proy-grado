@@ -13,6 +13,8 @@
 const cv::Scalar VisualDebugger::WHITE_COLOR = cv::Scalar(255,255,255);
 const cv::Scalar VisualDebugger::GREEN_COLOR = cv::Scalar(0,205,0);
 const cv::Scalar VisualDebugger::GREY_COLOR = cv::Scalar(205,205,205);
+const cv::Scalar VisualDebugger::BLACK_COLOR = cv::Scalar(0,0,0);
+const cv::Scalar VisualDebugger::RED_COLOR = cv::Scalar(255,0,0);
 
 void VisualDebugger::setup(Config *config) {
     this->config = config;
@@ -86,7 +88,7 @@ void VisualDebugger::setTracks(std::vector<Track> tracks) {
         cv::Size textSize = cv::getTextSize(number, CONSOLE_FONT, 1, 1, NULL);
         cv::Point textOrigin = cv::Point((int)trackRect.x + trackRect.width - textSize.width,
                                          trackRect.y - textSize.height);
-        cv::putText(frame, number, textOrigin, CONSOLE_FONT, 1, color);
+        cv::putText(frame, number, textOrigin, CONSOLE_FONT, 1, color, 1, cv::LINE_AA);
     }
 
 }
@@ -171,7 +173,8 @@ void VisualDebugger::setStatus(State state, int battery, double altitude, Point 
 
     cv::Point textOrigin = cv::Point(10, textSize.height + 10);
 
-    cv::putText(frame, statusName, textOrigin, CONSOLE_FONT, 2, statusColor, 1);
+    cv::putText(frame, statusName, cv::Point(textOrigin.x + 2, textOrigin.y + 2), CONSOLE_FONT, 2, BLACK_COLOR, 2, cv::LINE_AA);
+    cv::putText(frame, statusName, textOrigin, CONSOLE_FONT, 2, statusColor, 2, cv::LINE_AA);
 
     long runningSeconds = runningTime / 1000000;
     long runningMinutes = runningSeconds / 60;
@@ -186,25 +189,34 @@ void VisualDebugger::setStatus(State state, int battery, double altitude, Point 
             orientation.Pitch() % orientation.Yaw()).str(),
     };
 
+
+    cv::Mat overlay;
+    frame.copyTo(overlay);
+
+    cv::rectangle(overlay, cv::Rect(0, frame.rows - 50, frame.cols,50), BLACK_COLOR, cv::FILLED);
+    cv::addWeighted(overlay, 0.3, frame, 0.7, 0, frame);
+
     textSize = cv::getTextSize(colValues[0], CONSOLE_FONT, 1, 1, NULL);
     textOrigin = cv::Point((frame.cols - textSize.width)/2, textSize.height + 10);
-    cv::putText(frame, colValues[0], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR);
+    cv::putText(frame, colValues[0], cv::Point(textOrigin.x + 1, textOrigin.y + 1),
+                CONSOLE_FONT, 1, BLACK_COLOR, 1, cv::LINE_AA);
+    cv::putText(frame, colValues[0], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR, 1, cv::LINE_AA);
 
     textOrigin = cv::Point(10, frame.rows - 10);
-    cv::putText(frame, colValues[1], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR);
+    cv::putText(frame, colValues[1], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR, 1, cv::LINE_AA);
 
     textSize = cv::getTextSize(colValues[2], CONSOLE_FONT, 1, 1, NULL);
     textOrigin = cv::Point((frame.cols - textSize.width)/2, frame.rows - 10);
-    cv::putText(frame, colValues[2], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR);
+    cv::putText(frame, colValues[2], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR, 1, cv::LINE_AA);
 
     textSize = cv::getTextSize(colValues[3], CONSOLE_FONT, 1, 1, NULL);
     textOrigin = cv::Point(frame.cols - textSize.width - 10, frame.rows - 10);
-    cv::putText(frame, colValues[3], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR);
+    cv::putText(frame, colValues[3], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR, 1, cv::LINE_AA);
 
     cv::Size previousTextSize = textSize;
     textSize = cv::getTextSize(colValues[4], CONSOLE_FONT, 1, 1, NULL);
     textOrigin = cv::Point(frame.cols - textSize.width - 10, frame.rows - previousTextSize.height - 20);
-    cv::putText(frame, colValues[4], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR);
+    cv::putText(frame, colValues[4], textOrigin, CONSOLE_FONT, 1, GREEN_COLOR, 1, cv::LINE_AA);
 
 }
 
@@ -259,7 +271,7 @@ int VisualDebugger::show(long deltaTime){
             consoleY + textSize.height);
 
         cv::putText(frame, str, textOrigin, CONSOLE_FONT, CONSOLE_FONT_SIZE, first ? WHITE_COLOR : GREY_COLOR,
-                    CONSOLE_FONT_THICKNESS);
+                    CONSOLE_FONT_THICKNESS, cv::LINE_AA);
 
         consoleY += textSize.height + 10;
         first = false;
@@ -334,7 +346,7 @@ void VisualDebugger::setFollowCommand(FollowCommand command) {
 
     cv::Size textSize = cv::getTextSize(str, CONSOLE_FONT, 1, 1, NULL);
     cv::Point textOrigin = cv::Point((int)trackRect.x, (int)trackRect.y - textSize.height);
-    cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, color);
+    cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, color, 1, cv::LINE_AA);
 }
 
 void VisualDebugger::drawMouse(double deltaTime) {
@@ -345,6 +357,18 @@ void VisualDebugger::drawMouse(double deltaTime) {
 
     cv::Size textSize = cv::getTextSize(str, CONSOLE_FONT, 1, 1, NULL);
     cv::Point textOrigin = cv::Point(mousePosition.x + 10, mousePosition.y + 10);
-    cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, VisualDebugger::WHITE_COLOR);
+    cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, VisualDebugger::WHITE_COLOR, 1, cv::LINE_AA);
+
+}
+
+void VisualDebugger::drawHorizon(int y) {
+
+    cv::line(frame, cv::Point(0,y), cv::Point(frame.cols,y), RED_COLOR);
+
+    std::string str = (boost::format("Tilt: %u") % config->getCameraTilt()).str();
+
+    cv::Size textSize = cv::getTextSize(str, CONSOLE_FONT, 1, 1, NULL);
+    cv::Point textOrigin = cv::Point(frame.cols - textSize.width - 10, y - textSize.height);
+    cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, VisualDebugger::RED_COLOR, 1, cv::LINE_AA);
 
 }

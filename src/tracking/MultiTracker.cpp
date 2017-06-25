@@ -15,23 +15,7 @@ std::vector<cv::Rect2d> MultiTracker::getTargets() {
 }
 
 bool MultiTracker::track(std::shared_ptr<cv::Mat> track) {
-
-    std::vector<cv::Rect2d> tracks;
-
-    bool ret = trackers.update(*track);
-
-    for (cv::Rect t : getTargets())
-    {
-        if(t.x + t.width > 0 && t.y + t.height > 0 && t.x < track->cols && t.y < track->rows)
-            tracks.push_back(t);
-    }
-
-    if(tracks.size() != getTargets().size()) {
-        Logger::logDebug("Track lost");
-        setTargets(tracks, track);
-    }
-
-    return ret;
+    return trackers.update(*track);
 }
 
 MultiTracker::MultiTracker(Algorithm algorithm): trackers(getAlgorithm(algorithm)) {

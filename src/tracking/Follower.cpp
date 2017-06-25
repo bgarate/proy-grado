@@ -110,6 +110,21 @@ Point Follower::getAngularDisplacement(cv::Point2i trackPoint) {
 
 }
 
+int Follower::getHorizon() {
+
+    cv::Size frameSize = config->getFrameSize();
+
+    int frameCenter = frameSize.height/2;
+
+    double tgTilt = std::tan(toRadians(config->getCameraTilt()));
+    double tgHalfFov = std::tan(toRadians(config->getVerticalFov()/2));
+
+    double displacementY = tgTilt/tgHalfFov*frameCenter;
+
+    return frameCenter - (int)displacementY;
+
+}
+
 void Follower::setFollowee(int followee) {
     this->followee = followee;
 }
@@ -137,3 +152,4 @@ double Follower::toDegrees(double rad) {
 double Follower::toRadians(double deg) {
     return deg / 180 * M_PI;
 }
+

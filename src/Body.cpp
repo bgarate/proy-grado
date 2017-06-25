@@ -100,6 +100,10 @@ void Body::loop() {
                 inmc=true;
             } else if (key == (int)'c'){
                 visualDebugger.captureImage();
+            } else if (key == (int)'t'){
+                config->setCameraTilt(std::min(config->getVerticalFov()/2,config->getCameraTilt() + 0.1));
+            } else if (key == (int)'r'){
+                config->setCameraTilt(std::max(-config->getVerticalFov()/2,config->getCameraTilt() - 0.1));
             }
 
         } else if(mc->stopped()) {//q dentro de manual control

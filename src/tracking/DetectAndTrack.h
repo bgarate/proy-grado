@@ -24,13 +24,15 @@ private:
     std::vector<Track> tracks;
     std::vector<cv::Rect2d> accumulatedFound;
     std::vector<Track> updateDetections(std::vector<cv::Rect2d> newDectections);
-    void updateTracks(std::vector<cv::Rect2d> tracking);
+
     int trackCount = 0;
     int trackedFrames = 0;
 
-    void filter_rects(std::vector<cv::Rect2d> &candidates, std::vector<cv::Rect2d> &objects);
+    void filter_rects(std::vector<cv::Rect2d> &candidates, unsigned long tracksKept, std::vector<cv::Rect2d> &objects);
 
     bool insideROI(cv::Rect2d r,std::shared_ptr<cv::Mat> frame);
+
+    void updateTracks(std::vector<cv::Rect2d> tracking, std::shared_ptr<cv::Mat> frame);
 };
 
 

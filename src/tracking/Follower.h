@@ -31,6 +31,9 @@ public:
     static const int NOT_FOLLOWING = -1;
 
     FollowCommand getCommand(double altitude, double deltaTime, const cv::Point &trackPoint);
+
+    int getHorizon();
+
 private:
 
 

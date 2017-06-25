@@ -9,7 +9,7 @@
 struct AreaRect {
 
     AreaRect(){}
-    AreaRect(cv::Rect r)
+    AreaRect(cv::Rect r, bool isPreviousTrack)
     {
         x1 = r.x;
         y1 = r.y;
@@ -17,10 +17,12 @@ struct AreaRect {
         y2 = r.y + r.height;
         area = r.width * r.height;
         rect = r;
+        this->isPreviousTrack = isPreviousTrack;
     }
     double x1, x2, y1, y2, area;
 
     cv::Rect rect;
+    bool isPreviousTrack;
 
 };
 
