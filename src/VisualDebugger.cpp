@@ -353,10 +353,10 @@ void VisualDebugger::setFollowCommand(FollowCommand command) {
 
     double xPercentage = command.outputRotation.Yaw() / Follower::YAW_MAX_VELOCITY;
     double yPercentage = command.outputDisplacement.Pitch() / Follower::DISPLACEMENT_MAX_VELOCITIY;
-    double tgAngle = std::tan(yPercentage / xPercentage);
+    double length = std::sqrt(xPercentage * xPercentage + yPercentage * yPercentage);
 
-    cv::Point displacement = cv::Point(frameCenter.x + tgAngle * 40,
-                                       frameCenter.y - 40 / tgAngle);
+    cv::Point displacement = cv::Point(frameCenter.x + xPercentage / length * 40,
+                                       frameCenter.y - yPercentage / length * 40);
 
     cv::arrowedLine(frame, frameCenter, displacement, RED_COLOR);
 

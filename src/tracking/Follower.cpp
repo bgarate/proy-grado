@@ -80,9 +80,6 @@ Point Follower::getRotation(double horizontalAngle, double deltaTime) {
 
     Point rotation = Point();
 
-    if(std::abs(horizontalAngle) <= EPSILON_ANGULAR_DIFFERENCE)
-        return rotation;
-
     // TODO: Falta emplear la velocidad angular actual y deltaTime
 
     rotation.Yaw(std::min((horizontalAngle / TARGET_YAW_SLOW_DOWN_RADIUS),1.0) *

@@ -43,7 +43,6 @@ private:
     static constexpr const double TARGET_DISTANCE = 5;
     static constexpr const double TARGET_DISTANCE_SLOW_DOWN_RADIUS = 2;
 
-    static constexpr const double EPSILON_ANGULAR_DIFFERENCE = 10;
     static constexpr const double TARGET_YAW_SLOW_DOWN_RADIUS = 20;
 
 
