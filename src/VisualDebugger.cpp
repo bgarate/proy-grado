@@ -347,6 +347,19 @@ void VisualDebugger::setFollowCommand(FollowCommand command) {
     cv::Size textSize = cv::getTextSize(str, CONSOLE_FONT, 1, 1, NULL);
     cv::Point textOrigin = cv::Point((int)trackRect.x, (int)trackRect.y - textSize.height);
     cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, color, 1, cv::LINE_AA);
+
+    cv::Point frameCenter = cv::Point(frame.cols / 2, frame.rows /2);
+    cv::circle(frame, frameCenter, 40, RED_COLOR);
+
+    double xPercentage = command.outputRotation.Yaw() / Follower::YAW_MAX_VELOCITY;
+    double yPercentage = command.outputDisplacement.Pitch() / Follower::DISPLACEMENT_MAX_VELOCITIY;
+    double tgAngle = std::tan(yPercentage / xPercentage);
+
+    cv::Point displacement = cv::Point(frameCenter.x + tgAngle * 40,
+                                       frameCenter.y - 40 / tgAngle);
+
+    cv::arrowedLine(frame, frameCenter, displacement, RED_COLOR);
+
 }
 
 void VisualDebugger::drawMouse(double deltaTime) {

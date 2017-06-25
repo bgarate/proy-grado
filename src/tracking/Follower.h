@@ -30,6 +30,9 @@ public:
     cv::Point getFolloweeVelocity();
     static const int NOT_FOLLOWING = -1;
 
+    static constexpr const double YAW_MAX_VELOCITY = 1;
+    static constexpr const double DISPLACEMENT_MAX_VELOCITIY = 1;
+
     FollowCommand getCommand(double altitude, double deltaTime, const cv::Point &trackPoint);
 
     int getHorizon();
@@ -39,11 +42,9 @@ private:
 
     static constexpr const double TARGET_DISTANCE = 5;
     static constexpr const double TARGET_DISTANCE_SLOW_DOWN_RADIUS = 2;
-    static constexpr const double DISPLACEMENT_MAX_VELOCITIY = 1;
 
     static constexpr const double EPSILON_ANGULAR_DIFFERENCE = 10;
     static constexpr const double TARGET_YAW_SLOW_DOWN_RADIUS = 20;
-    static constexpr const double YAW_MAX_VELOCITY = 1;
 
 
     cv::Point followeeVelocity;
