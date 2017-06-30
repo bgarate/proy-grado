@@ -21,6 +21,7 @@ Brain::Brain() {
 }
 
 void Brain::setup(Config* config) {
+
     this->config = config;
 
     Logger::getInstance().setSource("BRAIN");
@@ -131,6 +132,7 @@ void Brain::advertise() {
 
     if(runningTime - lastAdvertisementTime > config->getAdvertisementLapse() * 1000) {
 
+
         Message msg = MessageBuilder::build(Message_Type::Message_Type_ADVERTISEMENT);
 
         Advertisement* advertisement = msg.mutable_advertisement();
@@ -150,6 +152,8 @@ void Brain::AdvertisementHandler(Message& msg){
     Advertisement* advertisement = msg.mutable_advertisement();
 
     boost::asio::ip::address_v4 address = boost::asio::ip::address_v4(advertisement->ip());
+
+    std::cout << std::endl << "Manejando Advertise" << std::endl;
 
     if(address != communication.getIp() && advertisement->port() != communication.getPort()){
         Logger::logDebug("Advertisement received from %s:%u") << address.to_string() <<
