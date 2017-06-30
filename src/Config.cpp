@@ -37,8 +37,7 @@ void Config::setBrainPort(unsigned short brainPort) {
 }
 
 Config::Config() {
-    name = "PB2";
-    id = 0;
+
     brainHost = "localhost";
     brainPort = 11500;
     broadcastPort = 11501;

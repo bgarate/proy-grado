@@ -15,6 +15,7 @@
 #include "src/bodytests/BodyTest2.cpp"
 #include "src/bodytests/FlightManeuver.cpp"
 #include "src/bodytests/Follow.cpp"
+#include "src/bodytests/PatrolAndFollow.cpp"
 #include "src/bodytests/OrbSlam2.cpp"
 #include "src/bodytests/BodyTestRmove.cpp"
 #include "src/bodytests/BodyTestRmove2.cpp"
@@ -46,7 +47,7 @@ void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
 void Body::loop() {
 
-    BodyTest* bt = new Follow();
+    BodyTest* bt = new PatrolAndFollow();
     //BodyTest* bt = new OrbSlam2();
     //BodyTest* bt = new BodyTestRmove2();
 
@@ -173,5 +174,6 @@ void Body::waitPing() {
         should_exit = true;
     }
 }
+
 
 
