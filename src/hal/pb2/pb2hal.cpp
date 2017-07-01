@@ -1,7 +1,7 @@
 #include "../hal.hpp"
 #include "VideoDecoder.h"
 #include "CommandHandler.h"
-#include <src/hal/Point.h>
+#include "../Point.h"
 
 #include <math.h>
 #include <iostream>
@@ -22,7 +22,7 @@ extern "C"{
 
 #include <atomic>
 #include <boost/thread/mutex.hpp>
-#include <src/logging/Logger.h>
+#include "../../logging/Logger.h"
 
 using namespace std;
 

@@ -13,12 +13,12 @@ extern "C" {
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include "memory"
-#include <src/hal/Point.h>
+#include "../Point.h"
 
 #include <thread>
 #include <unistd.h>
 #include <atomic>
-#include <src/logging/Logger.h>
+#include "../../logging/Logger.h"
 
 using namespace std;
 

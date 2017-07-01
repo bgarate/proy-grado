@@ -6,9 +6,9 @@
 #define PROY_GRADO_COMMUNICATION_H
 
 #include <boost/shared_ptr.hpp>
-#include <src/messages/AsyncSocketChannel.h>
-#include <src/messages/MessageQueue.h>
-#include <src/messages/Connection.h>
+#include "../messages/AsyncSocketChannel.h"
+#include "../messages/MessageQueue.h"
+#include "../messages/Connection.h"
 #include "boost/asio/ip/address_v4.hpp"
 #include "boost/lockfree/queue.hpp"
 #include "../proto/message.pb.h"

@@ -3,14 +3,14 @@
 //
 
 #include <zconf.h>
-#include <src/logging/Logger.h>
-#include <src/tracking/DetectAndTrack.h>
-#include <src/tracking/HogDetector.h>
-#include <src/tracking/MultiTracker.h>
-#include <src/VisualDebugger.h>
+#include "../logging/Logger.h"
+#include "../tracking/DetectAndTrack.h"
+#include "../tracking/HogDetector.h"
+#include "../tracking/MultiTracker.h"
+#include "../VisualDebugger.h"
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
-#include <lib/ORB_SLAM2/include/System.h>
+#include "../lib/ORB_SLAM2/include/System.h"
 
 class BodyTestRmove2 : public BodyTest {
 

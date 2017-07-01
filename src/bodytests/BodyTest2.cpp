@@ -1,8 +1,8 @@
-#include <src/VisualDebugger.h>
+#include "../VisualDebugger.h"
 #include "BodyTest.h"
-#include "src/tracking/DetectAndTrack.h"
-#include "src/tracking/MultiTracker.h"
-#include "src/tracking/HogDetector.h"
+#include "../tracking/DetectAndTrack.h"
+#include "../tracking/MultiTracker.h"
+#include "../tracking/HogDetector.h"
 
 class BodyTest2: public BodyTest {
 private:

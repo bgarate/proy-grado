@@ -2,7 +2,7 @@
 #include <boost/program_options.hpp>
 #include <wait.h>
 #include <tiff.h>
-#include <src/hal/dummyHal/dummyHal.h>
+#include "hal/dummyHal/dummyHal.h"
 #include "logging/Logger.h"
 #include "Body.h"
 #include "Brain.h"

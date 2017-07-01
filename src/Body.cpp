@@ -10,14 +10,14 @@
 #include "tracking/DetectAndTrack.h"
 #include "tracking/MultiTracker.h"
 #include "tracking/HogDetector.h"
-#include "src/bodytests/BodyTest.h"
-#include "src/bodytests/BodyTest1.cpp"
-#include "src/bodytests/BodyTest2.cpp"
-#include "src/bodytests/FlightManeuver.cpp"
-#include "src/bodytests/Follow.cpp"
-#include "src/bodytests/OrbSlam2.cpp"
-#include "src/bodytests/BodyTestRmove.cpp"
-#include "src/bodytests/BodyTestRmove2.cpp"
+#include "bodytests/BodyTest.h"
+#include "bodytests/BodyTest1.cpp"
+#include "bodytests/BodyTest2.cpp"
+#include "bodytests/FlightManeuver.cpp"
+#include "bodytests/Follow.cpp"
+#include "bodytests/OrbSlam2.cpp"
+#include "bodytests/BodyTestRmove.cpp"
+#include "bodytests/BodyTestRmove2.cpp"
 
 Body::Body(Hal *hal) {
     this->hal = hal;
@@ -46,8 +46,8 @@ void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
 void Body::loop() {
 
-    BodyTest* bt = new Follow();
-    //BodyTest* bt = new OrbSlam2();
+    //BodyTest* bt = new Follow();
+    BodyTest* bt = new OrbSlam2();
     //BodyTest* bt = new BodyTestRmove2();
 
     bt->InitBodyTest(this->hal, config, &visualDebugger);

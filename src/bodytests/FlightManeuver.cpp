@@ -3,13 +3,13 @@
 //
 
 #include <zconf.h>
-#include <src/logging/Logger.h>
-#include <src/tracking/DetectAndTrack.h>
-#include <src/tracking/HogDetector.h>
-#include <src/tracking/MultiTracker.h>
-#include <src/VisualDebugger.h>
-#include <src/tracking/Follower.h>
-#include <src/tracking/CascadeDetector.h>
+#include "../logging/Logger.h"
+#include "../tracking/DetectAndTrack.h"
+#include "../tracking/HogDetector.h"
+#include "../tracking/MultiTracker.h"
+#include "../VisualDebugger.h"
+#include "../tracking/Follower.h"
+#include "../tracking/CascadeDetector.h"
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
 

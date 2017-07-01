@@ -6,8 +6,8 @@
 #define PROY_GRADO_BODY_H
 
 #include <iostream>
-#include <src/hal/ManualControl.h>
-#include "src/messages/SocketChannel.h"
+#include "hal/ManualControl.h"
+#include "messages/SocketChannel.h"
 #include "MessageHandler.h"
 #include "hal/hal.hpp"
 #include "Config.h"

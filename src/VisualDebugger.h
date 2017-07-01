@@ -10,12 +10,12 @@
 #include <opencv2/core/mat.hpp>
 #include <memory>
 #include "Config.h"
-#include <src/hal/Point.h>
-#include <src/tracking/Track.h>
+#include "hal/Point.h"
+#include "tracking/Track.h"
 #include <opencv/cv.hpp>
-#include <src/hal/hal.hpp>
-#include <src/tracking/Follower.h>
-#include <lib/ORB_SLAM2/include/System.h>
+#include "hal/hal.hpp"
+#include "tracking/Follower.h"
+#include "../lib/ORB_SLAM2/include/System.h"
 
 class VisualDebugger {
 public:

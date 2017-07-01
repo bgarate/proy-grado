@@ -3,8 +3,8 @@
 //
 
 #include <google/protobuf/message.h>
-#include <src/proto/message.pb.h>
-#include <src/communication/Communication.h>
+#include "../proto/message.pb.h"
+#include "../communication/Communication.h"
 #include "AsyncSocketChannel.h"
 
 #include "boost/asio/connect.hpp"

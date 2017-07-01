@@ -4,7 +4,7 @@
 //opencv
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
-#include <src/Config.h>
+#include "../Config.h"
 #include "memory"
 #include "Point.h"
 

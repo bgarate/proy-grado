@@ -5,10 +5,9 @@
 #ifndef PROY_GRADO_CONFIG_H
 #define PROY_GRADO_CONFIG_H
 
-#include <src/hal/HalType.hpp>
 #include <opencv2/core/types.hpp>
-#include <src/hal/Point.h>
 #include "iostream"
+#include "hal/HalType.hpp"
 
 class Config {
 

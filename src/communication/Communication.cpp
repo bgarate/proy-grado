@@ -2,8 +2,8 @@
 // Created by bruno on 27/04/17.
 //
 
-#include <src/messages/MessageBuilder.h>
-#include <src/messages/IpResolver.h>
+#include "../messages/MessageBuilder.h"
+#include "../messages/IpResolver.h"
 #include "Communication.h"
 
 Communication::Communication() :

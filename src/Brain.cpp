@@ -3,8 +3,8 @@
 //
 
 #include <src/proto/message.pb.h>
-#include <src/messages/MessageBuilder.h>
-#include <src/messages/Broadcaster.h>
+#include "messages/MessageBuilder.h"
+#include "messages/Broadcaster.h"
 #include "Brain.h"
 #include "logging/Logger.h"
 #include "Config.h"

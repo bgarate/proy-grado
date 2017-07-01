@@ -9,7 +9,7 @@
 #include <string>
 
 #include <boost/lexical_cast.hpp>
-#include <src/logging/Logger.h>
+#include "../../logging/Logger.h"
 
 
 void VideoDecoder::ThrowOnCondition(const bool cond, const std::string &message)
