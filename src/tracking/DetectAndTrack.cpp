@@ -35,7 +35,7 @@ std::vector<Track> DetectAndTrack::update(std::shared_ptr<cv::Mat> frame) {
 
         for(Track& track : tracks){
             cv::Rect2d r = track.getRect();
-            if(insideROI(r, frame))
+            if(insideROI(r, frame) && false)
                 tracksToKeep.push_back(track.getRect());
         }
 
@@ -112,7 +112,7 @@ void DetectAndTrack::filter_rects(std::vector<cv::Rect2d> &candidates, unsigned 
 
         AreaRect selected = sortedCandidates.back();
         cv::Rect rectToKeep = selected.rect;
-        bool isFromKeptTrack = selected.isPreviousTrack;
+        bool isFromNewTrack = !selected.isPreviousTrack;
         toRemove.push_back(sortedCandidates.size()-1);
 
         unsigned int indexToRemove = 0;
@@ -133,9 +133,9 @@ void DetectAndTrack::filter_rects(std::vector<cv::Rect2d> &candidates, unsigned 
 
             if(overlap > KEEP_TRACK_OVERLAP_THRESHOLD){
                 toRemove.push_back(indexToRemove);
-                if(isFromKeptTrack != r.isPreviousTrack) {
-                    isFromKeptTrack = true;
-                    rectToKeep = selected.isPreviousTrack ? rectToKeep : r.rect;
+                if(isFromNewTrack != r.isPreviousTrack) {
+                    isFromNewTrack = false;
+                    rectToKeep = r.isPreviousTrack ? rectToKeep : r.rect;
                 } else {
                     if(r.rect.width * r.rect.height < selected.rect.height * selected.rect.width)
                         rectToKeep = r.rect;

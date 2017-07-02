@@ -17,6 +17,7 @@ public:
     cv::Rect2d getRect();
     void setRect(cv::Rect2d r);
     double getOverlapRatio(cv::Rect2d r) const;
+
 private:
     int number;
     cv::Rect2d rect;
