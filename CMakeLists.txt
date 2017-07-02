@@ -3,7 +3,9 @@ project(proy_grado)
 
 #set(CMAKE_BUILD_TYPE Debug)
 
-set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}" cmake)
+set(EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}")
+
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}" cmake )
 
 set(spdlog_DIR lib/cmake/spdlog)
 
@@ -23,6 +25,7 @@ link_directories(lib/ORB_SLAM2/Thirdparty/g2o/lib)
 
 set(CMAKE_CXX_STANDARD 11)
 
+set(SOURCE_FILES src/proto/message.pb.h src/proto/message.pb.cc)
 set(SOURCE_FILES src/tracking/TrackingAlgorithm.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/Config.cpp src/Config.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/tracking/Follower.cpp src/tracking/Follower.h)
@@ -64,8 +67,7 @@ include_directories(
         ${EIGEN3_INCLUDE_DIR}
         ${Pangolin_INCLUDE_DIRS}
 )
-
-add_executable(proy_grado ${SOURCE_FILES} ${PROTO_SRC} ${PROTO_HEADER})
+add_executable(proy_grado ${SOURCE_FILES})
 add_executable(calibration ${CALIBRATION_MAIN})
 
 target_compile_options(proy_grado PUBLIC -DNON_MATLAB_PARSING -DMAX_EXT_API_CONNECTIONS=255 -D__linux)

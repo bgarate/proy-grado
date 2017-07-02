@@ -6,8 +6,8 @@
 #define PROY_GRADO_DUMMYHAL_H
 
 
-#include <src/hal/hal.hpp>
-#include <src/hal/Point.h>
+#include "../hal.hpp"
+#include "../Point.h"
 
 class DummyHal: public Hal {
 public:

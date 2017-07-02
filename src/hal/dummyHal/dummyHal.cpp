@@ -2,10 +2,10 @@
 // Created by bruno on 14/05/17.
 //
 
-#include <src/hal/hal.hpp>
+#include "../hal.hpp"
 #include <memory.h>
 #include "dummyHal.h"
-#include <src/hal/Point.h>
+#include "../Point.h"
 
 DummyHal::DummyHal():videoSource("drone2.mp4") {
     state = State::Landed;

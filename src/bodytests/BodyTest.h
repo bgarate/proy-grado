@@ -1,8 +1,8 @@
 #ifndef PROY_GRADO_BODYTEST1_H
 #define PROY_GRADO_BODYTEST1_H
 
-#include "src/hal/hal.hpp"
-#include "src/VisualDebugger.h"
+#include "../hal/hal.hpp"
+#include "../VisualDebugger.h"
 
 class BodyTest {
 

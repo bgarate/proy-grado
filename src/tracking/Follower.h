@@ -6,9 +6,9 @@
 #define PROY_GRADO_FOLLOWER_H
 
 
-#include <src/hal/hal.hpp>
 #include "Track.h"
 #include "../hal/Point.h"
+#include "../Config.h"
 
 class FollowCommand {
 public:

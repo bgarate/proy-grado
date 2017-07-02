@@ -1,8 +1,8 @@
 #include "BodyTest.h"
-#include "src/tracking/DetectAndTrack.h"
-#include "src/tracking/MultiTracker.h"
-#include "src/tracking/HogDetector.h"
-#include "src/VisualDebugger.h"
+#include "../tracking/DetectAndTrack.h"
+#include "../tracking/MultiTracker.h"
+#include "../tracking/HogDetector.h"
+#include "../VisualDebugger.h"
 #include <thread>
 #include <unistd.h>
 

@@ -2,8 +2,10 @@
 // Created by bruno on 01/04/17.
 //
 
-#include <src/logging/Logger.h>
+
+#include "../logging/Logger.h"
 #include "MultiTracker.h"
+
 
 void MultiTracker::setTargets(std::vector<cv::Rect2d> targets, std::shared_ptr<cv::Mat> frame) {
     trackers = cv::MultiTracker(getAlgorithm(algorithm));

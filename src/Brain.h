@@ -6,9 +6,9 @@
 #define PROY_GRADO_BRAIN_H
 
 
-#include <src/communication/Communication.h>
-#include <src/messages/SocketChannel.h>
-#include <src/messages/Broadcaster.h>
+#include "communication/Communication.h"
+#include "messages/SocketChannel.h"
+#include "messages/Broadcaster.h"
 #include "MessageHandler.h"
 #include "Config.h"
 
