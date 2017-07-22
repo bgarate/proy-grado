@@ -10,23 +10,49 @@ FollowCommand::FollowCommand() {
 }
 
 
+double Follower::distance(cv::Point a, cv::Point b) {
+    return std::pow(a.x - b.x, 2) + std::pow(a.y - b.y, 2);
+}
+
 FollowCommand Follower::follow(std::vector<Track> tracks, double altitude, double deltaTime) {
 
     FollowCommand followCommand;
 
-    if (!isFollowing())
+
+/*
+ * if (!isFollowing())
         return followCommand;
 
-    std::vector<Track>::iterator iterator = std::find_if(tracks.begin(), tracks.end(),
+ * std::vector<Track>::iterator iterator = std::find_if(tracks.begin(), tracks.end(),
         [this](Track t){return t.getNumber() == this->followee;});
+*/
 
+    if(tracks.empty()) {
+        stopFollowing();
+        return followCommand;
+    }
+
+    cv::Point frameCenter = cv::Point(config->getFrameSize().width / 2,
+                                      config->getFrameSize().height / 2);
+
+    std::sort(tracks.begin(),tracks.end(),[this,frameCenter](Track a, Track b){
+        cv::Point aCenter = cv::Point(a.getRect().x + a.getRect().width / 2,
+                                      a.getRect().y + a.getRect().height / 2);
+        cv::Point bCenter = cv::Point(b.getRect().x + b.getRect().width / 2,
+                                      b.getRect().y + b.getRect().height / 2);
+        return distance(aCenter, frameCenter) < distance(bCenter,frameCenter);
+    });
+
+    Track track = tracks.front();
+    setFollowee(track.getNumber());
+/*
     if (iterator == tracks.end()) {
         stopFollowing();
         return followCommand;
     }
 
     Track track = *iterator;
-
+*/
     cv::Point trackPoint = cv::Point((int)(track.getRect().x + track.getRect().width / 2),
                                       (int)(track.getRect().y + track.getRect().height));
 

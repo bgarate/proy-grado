@@ -29,12 +29,13 @@ class Follow : public BodyTest {
     DetectAndTrack* detectAndTrack;
     Follower* follower;
 
-    double targetAltitude = 3;
+    double targetAltitude = 2;
     double altitudeSlowdownRadius = 1;
 
     bool inmc = false;
 
     VisualDebugger* visualDebugger;
+    Config* config;
 
     void InitBodyTest(Hal *hal, Config* config, VisualDebugger* visualDebugger) override {
         this->hal = hal;
@@ -45,8 +46,7 @@ class Follow : public BodyTest {
         follower = new Follower(config);
 
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
-        config->setFrameSize(cv::Point(frame->size().width,frame->size().height));
-
+        this->config = config;
         this->visualDebugger = visualDebugger;
 
     }
@@ -79,6 +79,7 @@ class Follow : public BodyTest {
             currentTime += deltaTime;
 
             if (frame != NULL) {
+                config->setFrameSize(cv::Point(frame->size().width,frame->size().height));
 
                 std::vector<Track> objects = detectAndTrack->update(frame);
                 visualDebugger->setTracks(objects);

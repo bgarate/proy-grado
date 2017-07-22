@@ -26,14 +26,24 @@ class BodyTestRmove2 : public BodyTest {
 
     //PATRON DE VIGILANCIA
     std::vector<DirectionTime> sequence = {DirectionTime(0,0,-1,0),
-                                           DirectionTime(2,0,0,0),
-                                           DirectionTime(0,0,0,-1.5708),
-                                           DirectionTime(0,0,0,4.71239),
                                            DirectionTime(4,0,0,0),
                                            DirectionTime(0,0,0,-1.5708),
                                            DirectionTime(0,0,0,4.71239),
-                                           DirectionTime(2,0,0,0)
+                                           DirectionTime(8,0,0,0),
+                                           DirectionTime(0,0,0,-1.5708),
+                                           DirectionTime(0,0,0,4.71239),
+                                           DirectionTime(4,0,0,0)
     };
+    /*std::vector<DirectionTime> sequence = {DirectionTime(0,0,-1,0),
+                                           DirectionTime(4,0,0,0),
+                                           DirectionTime(0,0,0,-1.5708),
+                                           DirectionTime(4,0,0,0),
+                                           DirectionTime(0,0,0,-1.5708),
+                                           DirectionTime(4,0,0,0),
+                                           DirectionTime(0,0,0,-1.5708),
+                                           DirectionTime(4,0,0,0),
+                                           DirectionTime(0,0,0,-1.5708)
+    };*/
 
 
     Hal* hal;

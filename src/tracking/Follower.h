@@ -31,7 +31,7 @@ public:
     static const int NOT_FOLLOWING = -1;
 
     static constexpr const double YAW_MAX_VELOCITY = 1;
-    static constexpr const double DISPLACEMENT_MAX_VELOCITIY = 1;
+    static constexpr const double DISPLACEMENT_MAX_VELOCITIY = 0.3;
 
     FollowCommand getCommand(double altitude, double deltaTime, const cv::Point &trackPoint);
 
@@ -60,6 +60,7 @@ private:
 
     Point getRotation(double horizontalAngle, double deltaTime);
 
+    double distance(cv::Point a, cv::Point b);
 };
 
 
