@@ -23,6 +23,9 @@ public:
     void setFrame(std::shared_ptr<cv::Mat> frame);
     void setStatus(State state, int battery, double altitude, Point gps, Point orientation, int fps,
                    long runningTime);
+
+    void setSubStatus(std::string subStatus);
+
     int show(long deltaTime);
     void setTracks(std::vector<Track> tracks);
     void writeConsole(std::string str);
@@ -48,6 +51,7 @@ private:
     static const cv::Scalar GREY_COLOR;
     static const cv::Scalar BLACK_COLOR;
     static const cv::Scalar RED_COLOR;
+    static const cv::Scalar BLUE_COLOR;
 
     static const int CONSOLE_QUEUE_SIZE = 5;
     static const int CONSOLE_FONT = cv::FONT_HERSHEY_PLAIN;
@@ -90,7 +94,7 @@ private:
 
     std::string lastState = "";
 
-
+    string subStatus = "";
 };
 
 

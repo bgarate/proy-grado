@@ -14,7 +14,8 @@ const cv::Scalar VisualDebugger::WHITE_COLOR = cv::Scalar(255,255,255);
 const cv::Scalar VisualDebugger::GREEN_COLOR = cv::Scalar(0,205,0);
 const cv::Scalar VisualDebugger::GREY_COLOR = cv::Scalar(205,205,205);
 const cv::Scalar VisualDebugger::BLACK_COLOR = cv::Scalar(0,0,0);
-const cv::Scalar VisualDebugger::RED_COLOR = cv::Scalar(255,0,0);
+const cv::Scalar VisualDebugger::RED_COLOR = cv::Scalar(0,0,255);
+const cv::Scalar VisualDebugger::BLUE_COLOR = cv::Scalar(255,0,0);
 
 void VisualDebugger::setup(Config *config) {
     this->config = config;
@@ -175,6 +176,14 @@ void VisualDebugger::setStatus(State state, int battery, double altitude, Point 
 
     cv::putText(frame, statusName, cv::Point(textOrigin.x + 2, textOrigin.y + 2), CONSOLE_FONT, 2, BLACK_COLOR, 2, cv::LINE_AA);
     cv::putText(frame, statusName, textOrigin, CONSOLE_FONT, 2, statusColor, 2, cv::LINE_AA);
+
+
+    textSize = cv::getTextSize(subStatus, CONSOLE_FONT, 1, 1, NULL);
+    textOrigin = cv::Point(textOrigin.x, textOrigin.y + textSize.height + 10);
+
+    cv::putText(frame, subStatus, cv::Point(textOrigin.x + 1, textOrigin.y + 1),
+                CONSOLE_FONT, 1, BLACK_COLOR, 1, cv::LINE_AA);
+    cv::putText(frame, subStatus, textOrigin, CONSOLE_FONT, 1, BLUE_COLOR, 1, cv::LINE_AA);
 
     long runningSeconds = runningTime / 1000000;
     long runningMinutes = runningSeconds / 60;
@@ -349,14 +358,15 @@ void VisualDebugger::setFollowCommand(FollowCommand command) {
     cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, color, 1, cv::LINE_AA);
 
     cv::Point frameCenter = cv::Point(frame.cols / 2, frame.rows /2);
-    cv::circle(frame, frameCenter, 40, RED_COLOR);
+
+    cv::rectangle(frame, cv::Point(frameCenter.x - 40, frameCenter.y - 40),
+                  cv::Point(frameCenter.x + 40, frameCenter.y + 40), RED_COLOR);
 
     double xPercentage = command.outputRotation.Yaw() / Follower::YAW_MAX_VELOCITY;
     double yPercentage = command.outputDisplacement.Pitch() / Follower::DISPLACEMENT_MAX_VELOCITIY;
-    double length = std::sqrt(xPercentage * xPercentage + yPercentage * yPercentage);
 
-    cv::Point displacement = cv::Point(frameCenter.x + xPercentage / length * 40,
-                                       frameCenter.y - yPercentage / length * 40);
+    cv::Point displacement = cv::Point(frameCenter.x + xPercentage * 40,
+                                       frameCenter.y - yPercentage * 40);
 
     cv::arrowedLine(frame, frameCenter, displacement, RED_COLOR);
 
@@ -384,4 +394,8 @@ void VisualDebugger::drawHorizon(int y) {
     cv::Point textOrigin = cv::Point(frame.cols - textSize.width - 10, y - textSize.height);
     cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, VisualDebugger::RED_COLOR, 1, cv::LINE_AA);
 
+}
+
+void VisualDebugger::setSubStatus(std::string subStatus) {
+    this->subStatus = subStatus;
 }

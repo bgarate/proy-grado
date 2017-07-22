@@ -72,7 +72,7 @@ State DummyHal::getState() {
 
 bool DummyHal::isRmoving(){
     //todo
-    return false;
+    return true;
 }
 
 
