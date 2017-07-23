@@ -4,11 +4,13 @@
 
 #include <boost/format.hpp>
 #include <chrono>
+#include <src/landtracking/MarkTrack.h>
 #include "logging/Logger.h"
 #include "tracking/DetectAndTrack.h"
 #include "VisualDebugger.h"
 #include "hal/Point.h"
 #include "../lib/ORB_SLAM2/include/System.h"
+#include "tracking/MultiTracker.h"
 
 const cv::Scalar VisualDebugger::WHITE_COLOR = cv::Scalar(255,255,255);
 const cv::Scalar VisualDebugger::GREEN_COLOR = cv::Scalar(0,205,0);
@@ -92,6 +94,17 @@ void VisualDebugger::setTracks(std::vector<Track> tracks) {
         cv::putText(frame, number, textOrigin, CONSOLE_FONT, 1, color, 1, cv::LINE_AA);
     }
 
+}
+
+void VisualDebugger::setSquareTracks(std::vector<std::vector<cv::Point>> squareTracks) {
+
+    for( int k = 0; k < squareTracks.size(); k++ ){
+
+        if(contourArea(squareTracks[k]) > 10){
+            drawContours( frame, squareTracks, k, cv::Scalar(255,200,0), 2, 8);
+
+        }
+    }
 }
 
 void VisualDebugger::captureImage() {

@@ -16,6 +16,7 @@
 #include "hal/hal.hpp"
 #include "tracking/Follower.h"
 #include "../lib/ORB_SLAM2/include/System.h"
+#include "tracking/MultiTracker.h"
 
 class VisualDebugger {
 public:
@@ -28,6 +29,7 @@ public:
 
     int show(long deltaTime);
     void setTracks(std::vector<Track> tracks);
+    void setSquareTracks(std::vector<std::vector<cv::Point>> squareTracks);
     void writeConsole(std::string str);
     void cleanup();
 

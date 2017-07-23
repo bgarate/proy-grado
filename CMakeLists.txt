@@ -53,6 +53,8 @@ set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/Mess
 set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/OrbSlam2.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/main.cpp)
 set(CALIBRATION_MAIN src/calibration.cpp)
+set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkTrack.cpp src/landtracking/MarkTrack.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/landtracking/MarkTrack.cpp src/landtracking/MarkTrack.h)
 
 ADD_SUBDIRECTORY(src/proto)
 ADD_SUBDIRECTORY(lib/ORB_SLAM2)
@@ -69,10 +71,11 @@ include_directories(
 )
 add_executable(proy_grado ${SOURCE_FILES})
 add_executable(calibration ${CALIBRATION_MAIN})
+add_executable(landtracking ${LANDTRACKING_MAIN})
 
 target_compile_options(proy_grado PUBLIC -DNON_MATLAB_PARSING -DMAX_EXT_API_CONNECTIONS=255 -D__linux)
 target_compile_options(calibration PUBLIC -DNON_MATLAB_PARSING -DMAX_EXT_API_CONNECTIONS=255 -D__linux)
-
+target_compile_options(landtracking PUBLIC -DNON_MATLAB_PARSING -DMAX_EXT_API_CONNECTIONS=255 -D__linux)
 
 target_link_libraries(proy_grado ${OpenCV_LIBS})
 target_link_libraries(proy_grado ${CMAKE_THREAD_LIBS_INIT})
@@ -89,6 +92,8 @@ target_link_libraries(calibration ${OpenCV_LIBS})
 target_link_libraries(calibration ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(calibration ${Boost_LIBRARIES})
 target_link_libraries(calibration ${FFMPEG_LIBRARIES})
+
+target_link_libraries(landtracking ${OpenCV_LIBS})
 
 target_link_libraries(proy_grado ${EIGEN3_LIBS} ${Pangolin_LIBRARIES} libDBoW2.so libg2o.so)
 
