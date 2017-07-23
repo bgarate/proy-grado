@@ -29,7 +29,7 @@ public:
 
     int show(long deltaTime);
     void setTracks(std::vector<Track> tracks);
-    void setSquareTracks(std::vector<std::vector<cv::Point>> squareTracks);
+    void setSquareTracks(std::vector<cv::Point> squarePoints);
     void writeConsole(std::string str);
     void cleanup();
 

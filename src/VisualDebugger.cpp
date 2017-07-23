@@ -96,14 +96,11 @@ void VisualDebugger::setTracks(std::vector<Track> tracks) {
 
 }
 
-void VisualDebugger::setSquareTracks(std::vector<std::vector<cv::Point>> squareTracks) {
+void VisualDebugger::setSquareTracks(std::vector<cv::Point> squarePoints) {
 
-    for( int k = 0; k < squareTracks.size(); k++ ){
+    for( int k = 0; k < squarePoints.size(); k++ ){
 
-        if(contourArea(squareTracks[k]) > 10){
-            drawContours( frame, squareTracks, k, cv::Scalar(255,200,0), 2, 8);
-
-        }
+        cv::circle(frame, squarePoints[k], 10,  cv::Scalar(255,0,0), -1, 8, 0 );
     }
 }
 

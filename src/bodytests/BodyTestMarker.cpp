@@ -31,8 +31,8 @@ public:
 
         if (frame != NULL) {
 
-            std::vector<std::vector<cv::Point>> squareTracks = markTrack->Track(frame);
-            visualDebugger->setSquareTracks(squareTracks);
+            std::vector<cv::Point> squarePoints = markTrack->Track(frame);
+            visualDebugger->setSquareTracks(squarePoints);
         }
 
         return true;

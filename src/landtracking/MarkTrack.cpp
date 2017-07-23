@@ -4,7 +4,7 @@ MarkTrack::MarkTrack(){
     this->inicialized = false;
 }
 
-std::vector<std::vector<cv::Point>> MarkTrack::Track(std::shared_ptr<cv::Mat> frame){
+std::vector<cv::Point> MarkTrack::Track(std::shared_ptr<cv::Mat> frame){
 
     if(!this->inicialized){
         this->gray = new cv::Mat(frame->size(), CV_MAKETYPE(frame->depth(), 1));
@@ -24,6 +24,8 @@ std::vector<std::vector<cv::Point>> MarkTrack::Track(std::shared_ptr<cv::Mat> fr
         mu[i] = moments( contours[i], false );
         mc[i] = cv::Point2f( mu[i].m10/mu[i].m00 , mu[i].m01/mu[i].m00 );
     }
+
+    std::vector<cv::Point> squarePoints;
 
     for( int i = 0; i < contours.size(); i++ ){
 
@@ -50,26 +52,16 @@ std::vector<std::vector<cv::Point>> MarkTrack::Track(std::shared_ptr<cv::Mat> fr
             if (c >= 5){
                 marklist[mark] = i;
                 mark = mark + 1 ;
+                cv::Point p( (pointsseq[0].x+pointsseq[2].x)/2,
+                                              (pointsseq[0].y+pointsseq[2].y)/2);
+                squarePoints.push_back(p);
+                cv::circle( *frame, p, 10,  cv::Scalar(255,0,0), -1, 8, 0 );
             }
         }
     }
 
-    std::vector<std::vector<cv::Point>> squareContours;
-    for( int k = 0; k < mark; k++ ){
+    //imshow ( "Image", *frame );
+    //cv::waitKey(1);
 
-        if(marklist[k] < contours.size() && contourArea(contours[marklist[k]]) > 10){
-            //drawContours( *frame, contours, marklist[k] , cv::Scalar(255,200,0), 2, 8);//, hierarchy, 0 );
-
-
-            squareContours.push_back(contours[marklist[k]]);
-            drawContours( *frame, squareContours, squareContours.size()-1 , cv::Scalar(255,200,0), 2, 8);
-        }
-
-
-    }
-
-    imshow ( "Image", *frame );
-    cv::waitKey(1);
-
-    return squareContours;
+    return squarePoints;
 }
