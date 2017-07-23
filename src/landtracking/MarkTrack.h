@@ -10,7 +10,7 @@ private:
 
     bool inicialized;
     std::vector<std::vector<cv::Point>> contours;
-    std::vector<std::vector<cv::Point>> squareContours;
+    //std::vector<std::vector<cv::Point>> squareContours;
     std::vector<cv::Vec4i> hierarchy;
     std::vector<cv::Point> pointsseq;
     int mark;

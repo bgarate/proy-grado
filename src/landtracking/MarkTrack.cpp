@@ -54,10 +54,12 @@ std::vector<std::vector<cv::Point>> MarkTrack::Track(std::shared_ptr<cv::Mat> fr
         }
     }
 
+    std::vector<std::vector<cv::Point>> squareContours;
     for( int k = 0; k < mark; k++ ){
 
         if(marklist[k] < contours.size() && contourArea(contours[marklist[k]]) > 10){
             //drawContours( *frame, contours, marklist[k] , cv::Scalar(255,200,0), 2, 8);//, hierarchy, 0 );
+
 
             squareContours.push_back(contours[marklist[k]]);
             drawContours( *frame, squareContours, squareContours.size()-1 , cv::Scalar(255,200,0), 2, 8);
