@@ -13,6 +13,7 @@
 #include "hal/Point.h"
 #include "tracking/Track.h"
 #include <opencv/cv.hpp>
+#include <src/tracking/OpticalFlow.h>
 #include "hal/hal.hpp"
 #include "tracking/Follower.h"
 #include "../lib/ORB_SLAM2/include/System.h"
@@ -40,6 +41,8 @@ public:
     void drawOrbSlam();
 
     void drawHorizon(int y);
+
+    void OpticalFlow(OpticalFlowPoints *points);
 
 private:
     Config* config;

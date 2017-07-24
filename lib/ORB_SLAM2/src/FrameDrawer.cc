@@ -41,6 +41,8 @@ std::string FrameDrawer::DrawFrame(cv::Mat& frame)
     vector<cv::KeyPoint> vIniKeys; // Initialization: KeyPoints in reference frame
     vector<int> vMatches; // Initialization: correspondeces with reference keypoints
     vector<cv::KeyPoint> vCurrentKeys; // KeyPoints in current frame
+    vector<MapPoint*> vMapPoints;
+    cv::Mat mCameraPosition = mmCameraPostion.clone();
     vector<bool> vbVO, vbMap; // Tracked MapPoints in current frame
     int state; // Tracking state
 
@@ -56,18 +58,21 @@ std::string FrameDrawer::DrawFrame(cv::Mat& frame)
         if(mState==Tracking::NOT_INITIALIZED)
         {
             vCurrentKeys = mvCurrentKeys;
+            vMapPoints = mvMapPoints;
             vIniKeys = mvIniKeys;
             vMatches = mvIniMatches;
         }
         else if(mState==Tracking::OK)
         {
             vCurrentKeys = mvCurrentKeys;
+            vMapPoints = mvMapPoints;
             vbVO = mvbVO;
             vbMap = mvbMap;
         }
         else if(mState==Tracking::LOST)
         {
             vCurrentKeys = mvCurrentKeys;
+            vMapPoints = mvMapPoints;
         }
     } // destroy scoped mutex -> release mutex
 
@@ -92,6 +97,10 @@ std::string FrameDrawer::DrawFrame(cv::Mat& frame)
         mnTrackedVO=0;
         const float r = 5;
         const int n = vCurrentKeys.size();
+
+        const double maxDistance = longestDistanceRecorded > 0 ? longestDistanceRecorded : 15;
+        longestDistanceRecorded = 0;
+
         for(int i=0;i<n;i++)
         {
             if(vbVO[i] || vbMap[i])
@@ -105,8 +114,19 @@ std::string FrameDrawer::DrawFrame(cv::Mat& frame)
                 // This is a match to a MapPoint in the map
                 if(vbMap[i])
                 {
-                    cv::rectangle(frame,pt1,pt2,cv::Scalar(0,255,0));
-                    cv::circle(frame,vCurrentKeys[i].pt,2,cv::Scalar(0,255,0),-1);
+                    cv::Scalar color = cv::Scalar(0,255,0);
+
+                    MapPoint* mp = vMapPoints[i];
+
+                    if(mp != NULL) {
+                        double distance = cv::norm(mp->GetWorldPos() - mCameraPosition);
+                        int val = (int)(max(distance/maxDistance,0.0) * 255);
+                        color = cv::Scalar(0,0,255-val);
+                        longestDistanceRecorded = max(longestDistanceRecorded, distance);
+                    }
+
+                    cv::rectangle(frame,pt1,pt2,color);
+                    cv::circle(frame,vCurrentKeys[i].pt,2,color,-1);
                     mnTracked++;
                 }
                 else // This is match to a "visual odometry" MapPoint created in the last frame
@@ -170,6 +190,10 @@ void FrameDrawer::Update(Tracking *pTracker)
     unique_lock<mutex> lock(mMutex);
     //pTracker->mImGray.copyTo(mIm);
     mvCurrentKeys=pTracker->mCurrentFrame.mvKeys;
+    mvMapPoints=pTracker->mCurrentFrame.mvpMapPoints;
+    mmCameraPostion = pTracker->mCurrentFrame.GetCameraCenter();
+
+
     N = mvCurrentKeys.size();
     mvbVO = vector<bool>(N,false);
     mvbMap = vector<bool>(N,false);

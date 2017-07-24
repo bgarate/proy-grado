@@ -41,6 +41,7 @@ class MapPoint;
 class KeyFrame;
 
 class Frame
+
 {
 public:
     Frame();

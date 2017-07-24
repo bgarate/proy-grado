@@ -11,6 +11,7 @@
 #include "tracking/MultiTracker.h"
 #include "tracking/HogDetector.h"
 #include "bodytests/BodyTest.h"
+#include "bodytests/OpticalFlowObstacleAvoidance.cpp"
 #include "bodytests/BodyTest1.cpp"
 #include "bodytests/BodyTest2.cpp"
 #include "bodytests/FlightManeuver.cpp"
@@ -48,8 +49,9 @@ void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
 void Body::loop() {
 
-    BodyTest* bt = new PatrolAndFollow();
+    //BodyTest* bt = new PatrolAndFollow();
     //BodyTest* bt = new OrbSlam2();
+    BodyTest* bt = new OpticalFlowObstacleAvoidance();
     //BodyTest* bt = new BodyTestRmove2();
     //BodyTest* bt = new Follow();
 

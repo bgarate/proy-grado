@@ -10,27 +10,16 @@
 #include "tracking/DetectAndTrack.h"
 #include "tracking/MultiTracker.h"
 #include "tracking/HogDetector.h"
-<<<<<<< HEAD
 #include "bodytests/BodyTest.h"
 #include "bodytests/BodyTest1.cpp"
 #include "bodytests/BodyTest2.cpp"
 #include "bodytests/FlightManeuver.cpp"
 #include "bodytests/Follow.cpp"
 #include "bodytests/OrbSlam2.cpp"
+#include "bodytests/PatrolAndFollow.cpp"
 #include "bodytests/BodyTestRmove.cpp"
 #include "bodytests/BodyTestRmove2.cpp"
 #include "bodytests/BodyTestDummy.cpp"
-=======
-#include "src/bodytests/BodyTest.h"
-#include "src/bodytests/BodyTest1.cpp"
-#include "src/bodytests/BodyTest2.cpp"
-#include "src/bodytests/FlightManeuver.cpp"
-#include "src/bodytests/Follow.cpp"
-#include "src/bodytests/PatrolAndFollow.cpp"
-#include "src/bodytests/OrbSlam2.cpp"
-#include "src/bodytests/BodyTestRmove.cpp"
-#include "src/bodytests/BodyTestRmove2.cpp"
->>>>>>> follower
 
 Body::Body(Hal *hal) {
     this->hal = hal;
@@ -62,11 +51,13 @@ void Body::loop() {
 <<<<<<< HEAD
     BodyTest* bt = new BodyTestDummy();
     //BodyTest* bt = new Follow();
-=======
-    BodyTest* bt = new PatrolAndFollow();
->>>>>>> follower
     //BodyTest* bt = new OrbSlam2();
+=======
+    //BodyTest* bt = new PatrolAndFollow();
+    BodyTest* bt = new OrbSlam2();
+>>>>>>> follower
     //BodyTest* bt = new BodyTestRmove2();
+    //BodyTest* bt = new Follow();
 
     bt->InitBodyTest(this->hal, config, &visualDebugger);
     Logger::logInfo("Body started");

@@ -4,6 +4,7 @@
 
 #include <boost/format.hpp>
 #include <chrono>
+#include <src/tracking/OpticalFlow.h>
 #include "logging/Logger.h"
 #include "tracking/DetectAndTrack.h"
 #include "VisualDebugger.h"
@@ -398,4 +399,19 @@ void VisualDebugger::drawHorizon(int y) {
 
 void VisualDebugger::setSubStatus(std::string subStatus) {
     this->subStatus = subStatus;
+}
+
+void VisualDebugger::OpticalFlow(OpticalFlowPoints *points) {
+
+    for (int i = 0; i < points->Start.size(); ++i) {
+        cv::Point2f v = points->End[i] - points->Start[i];
+        double distance = std::sqrt(v.x*v.x+v.y*v.y);
+        cv::line(frame, points->Start[i], points->End[i],
+                 distance > points->thresholdDistance ? RED_COLOR : BLUE_COLOR, 2);
+    }
+
+    if(config->isVisualDebugEnabled()) {
+        cv::imshow("Background", points->bgMask);
+    }
+
 }

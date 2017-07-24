@@ -1,3 +1,6 @@
 lib/ORB_SLAM2/Vocabulary/ORBvoc.txt filter=lfs diff=lfs merge=lfs -text
 drone.mp4 filter=lfs diff=lfs merge=lfs -text
 drone2.mp4 filter=lfs diff=lfs merge=lfs -text
+dash.mp4 filter=lfs diff=lfs merge=lfs -text
+dash2.mp4 filter=lfs diff=lfs merge=lfs -text
+dash3.mp4 filter=lfs diff=lfs merge=lfs -text

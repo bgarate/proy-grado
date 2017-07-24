@@ -56,12 +56,16 @@ protected:
     // Info of the frame to be drawn
     int N;
     vector<cv::KeyPoint> mvCurrentKeys;
+    vector<MapPoint*> mvMapPoints;
     vector<bool> mvbMap, mvbVO;
+    cv::Mat mmCameraPostion;
     bool mbOnlyTracking;
     int mnTracked, mnTrackedVO;
     vector<cv::KeyPoint> mvIniKeys;
     vector<int> mvIniMatches;
     int mState;
+
+    double longestDistanceRecorded = 0;
 
     Map* mpMap;
 
