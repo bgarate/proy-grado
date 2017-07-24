@@ -8,7 +8,7 @@
 #include "../tracking/HogDetector.h"
 #include "../tracking/MultiTracker.h"
 #include "../VisualDebugger.h"
-#include "../../lib/ORB_SLAM2/include/System.h"
+//#include "../../lib/ORB_SLAM2/include/System.h"
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
 
@@ -31,7 +31,7 @@ class OrbSlam2 : public BodyTest {
         //const std::string settings ="lib/ORB_SLAM2/Examples/Monocular/CustomCalib.yaml";
         const std::string settings ="lib/ORB_SLAM2/Examples/Monocular/EuRoC.yaml";
         SLAM = new ORB_SLAM2::System(voc,settings, ORB_SLAM2::System::MONOCULAR,true);
-        visualDebugger->setOrbSlam(SLAM);
+        //visualDebugger->setOrbSlam(SLAM);
     }
 
     bool BodyTestStep(double deltaTime) override {

@@ -9,7 +9,6 @@
 #include "tracking/DetectAndTrack.h"
 #include "VisualDebugger.h"
 #include "hal/Point.h"
-#include "../lib/ORB_SLAM2/include/System.h"
 
 const cv::Scalar VisualDebugger::WHITE_COLOR = cv::Scalar(255,255,255);
 const cv::Scalar VisualDebugger::GREEN_COLOR = cv::Scalar(0,205,0);
@@ -231,7 +230,7 @@ void VisualDebugger::setStatus(State state, int battery, double altitude, Point 
 }
 
 void VisualDebugger::drawOrbSlam() {
-    if(frameDrawer == NULL)
+/*    if(frameDrawer == NULL)
         return;
 
     std::string state = frameDrawer->DrawFrame(frame);
@@ -239,13 +238,13 @@ void VisualDebugger::drawOrbSlam() {
     if(state != lastState) {
         writeConsole(state);
         lastState = state;
-    }
+    }*/
 }
-
+/*
 void VisualDebugger::setOrbSlam(ORB_SLAM2::System* slam) {
     frameDrawer = slam->mpFrameDrawer;
 }
-
+*/
 int VisualDebugger::show(long deltaTime){
 
     if(!config->isVisualDebugEnabled() && !config->isOutputHudVideoEnabled() &&
@@ -403,15 +402,20 @@ void VisualDebugger::setSubStatus(std::string subStatus) {
 
 void VisualDebugger::OpticalFlow(OpticalFlowPoints *points) {
 
-    for (int i = 0; i < points->Start.size(); ++i) {
-        cv::Point2f v = points->End[i] - points->Start[i];
-        double distance = std::sqrt(v.x*v.x+v.y*v.y);
-        cv::line(frame, points->Start[i], points->End[i],
-                 distance > points->thresholdDistance ? RED_COLOR : BLUE_COLOR, 2);
-    }
+    cv::Mat mask;
+    points->bgMask.copyTo(mask);
+    cv::cvtColor(mask, mask, cv::COLOR_GRAY2BGR);
 
     if(config->isVisualDebugEnabled()) {
-        cv::imshow("Background", points->bgMask);
+        for (int i = 0; i < points->Start.size(); ++i) {
+            cv::Point2f v = points->End[i] - points->Start[i];
+            double distance = std::sqrt(v.x * v.x + v.y * v.y);
+            cv::arrowedLine(mask, points->Start[i], points->End[i],
+                     distance > points->thresholdDistance ? RED_COLOR : BLUE_COLOR, 1);
+        }
+
+
+        cv::imshow("Background", mask);
     }
 
 }

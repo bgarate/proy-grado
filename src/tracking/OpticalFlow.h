@@ -45,8 +45,10 @@ private:
 
     std::vector<cv::Point2f> clusterFeatures();
 
-    static constexpr float CLUSTER_DISTANCE = 500;
-    const int MINIMUM_CLUSTER_ELEMENTS = 3;
+    static constexpr float CLUSTER_DISTANCE = 250;
+    const int MINIMUM_CLUSTER_ELEMENTS = 1;
+
+    void distanceEstimation();
 };
 
 

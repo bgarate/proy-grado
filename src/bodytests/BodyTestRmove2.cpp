@@ -10,7 +10,7 @@
 #include "../VisualDebugger.h"
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
-#include "../../lib/ORB_SLAM2/include/System.h"
+//#include "../../lib/ORB_SLAM2/include/System.h"
 
 class BodyTestRmove2 : public BodyTest {
 

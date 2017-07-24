@@ -34,13 +34,13 @@ void OpticalFlow::Update(std::shared_ptr<cv::Mat> frame, double deltaTime) {
 
     timeElapsedFromLastRetrack += deltaTime;
 
-    if(timeElapsedFromLastRetrack > 10000) // 10ms
+    if(timeElapsedFromLastRetrack > 100000) // 100ms
         needsRetrack = true;
 
     if(needsRetrack) {
         cv::goodFeaturesToTrack(currentFrame, Points->Start, MAX_FEATURES, 0.01, 10, Points->bgMask, 3, false, 0.04);
+        Points->Start = clusterFeatures();
         if(!Points->Start.empty()) {
-            Points->Start = clusterFeatures();
             cv::cornerSubPix(currentFrame, Points->Start, SUB_PIX_WIN_SIZE, cv::Size(-1, -1), termcrit);
             needsRetrack = false;
             timeElapsedFromLastRetrack = 0;
@@ -105,6 +105,12 @@ OpticalFlowPoints* OpticalFlow::GetPoints() {
     return Points;
 }
 
+void OpticalFlow::distanceEstimation() {
+
+    
+
+}
+
 std::vector<cv::Point2f> OpticalFlow::clusterFeatures() {
 
     if(Points->Start.size() <= 2)
@@ -117,25 +123,30 @@ std::vector<cv::Point2f> OpticalFlow::clusterFeatures() {
     std::vector<cv::Point2f> keptFeatures;
     int clusterElements = 0;
 
-    cv::Point2f point = Points->Start[0];
+    cv::Point2f previousPoint = Points->Start[0];
 
     for (int i = 1; i < Points->Start.size(); ++i) {
         cv::Point2f currentPoint = Points->Start[i];
-        cv::Point2f v = point - currentPoint;
+        cv::Point2f v = currentPoint - previousPoint;
+
         float sqrdDistance = v.x*v.x + v.y*v.y;
 
         if(sqrdDistance < CLUSTER_DISTANCE) {
-            point = currentPoint;
             clusterElements++;
         } else {
-            if(clusterElements > MINIMUM_CLUSTER_ELEMENTS) {
-                keptFeatures.push_back(point);
+            if(clusterElements >= MINIMUM_CLUSTER_ELEMENTS) {
+                keptFeatures.push_back(currentPoint);
             }
-            clusterElements = 0;
+            clusterElements = 1;
         }
+
+        previousPoint = currentPoint;
     }
 
-    return Points->Start;
+    if(clusterElements > MINIMUM_CLUSTER_ELEMENTS)
+        keptFeatures.push_back(previousPoint);
+
+    return keptFeatures;
 
 
 }

@@ -20,8 +20,8 @@ find_package(Eigen3 REQUIRED)
 find_package(Pangolin REQUIRED)
 
 link_directories(src/hal/pb2/lib)
-link_directories(lib/ORB_SLAM2/Thirdparty/DBoW2/lib)
-link_directories(lib/ORB_SLAM2/Thirdparty/g2o/lib)
+#link_directories(lib/ORB_SLAM2/Thirdparty/DBoW2/lib)
+#link_directories(lib/ORB_SLAM2/Thirdparty/g2o/lib)
 
 set(CMAKE_CXX_STANDARD 11)
 
@@ -50,12 +50,13 @@ set(SOURCE_FILES ${SOURCE_FILES} src/hal/pb2/pb2hal.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/Broadcaster.cpp src/messages/Broadcaster.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/FlightManeuver.cpp src/bodytests/Follow.cpp src/bodytests/PatrolAndFollow.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h src/messages/IpResolver.cpp src/messages/IpResolver.h src/hal/pb2/VideoDecoder.cpp src/hal/pb2/VideoDecoder.h src/hal/pb2/CommandHandler.cpp src/hal/pb2/CommandHandler.h src/tracking/AreaRect.h src/hal/ManualControl.cpp src/hal/ManualControl.h src/VisualDebugger.cpp src/VisualDebugger.h)
-set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/OrbSlam2.cpp src/bodytests/OpticalFlowObstacleAvoidance.cpp)
+#set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/OrbSlam2.cpp)
+set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/OpticalFlowObstacleAvoidance.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/main.cpp src/tracking/OpticalFlow.cpp src/tracking/OpticalFlow.h)
 set(CALIBRATION_MAIN src/calibration.cpp)
 
 ADD_SUBDIRECTORY(src/proto)
-ADD_SUBDIRECTORY(lib/ORB_SLAM2)
+#ADD_SUBDIRECTORY(lib/ORB_SLAM2)
 
 include_directories(src/hal/pb2/include)
 include_directories(${Boost_INCLUDE_DIRS})
@@ -91,7 +92,7 @@ target_link_libraries(calibration ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(calibration ${Boost_LIBRARIES})
 target_link_libraries(calibration ${FFMPEG_LIBRARIES})
 
-target_link_libraries(proy_grado ${EIGEN3_LIBS} ${Pangolin_LIBRARIES} libDBoW2.so libg2o.so)
+#target_link_libraries(proy_grado ${EIGEN3_LIBS} ${Pangolin_LIBRARIES} libDBoW2.so libg2o.so)
 
 #target_link_libraries(proy_grado libORB_SLAM2.so)
-target_link_libraries(proy_grado ORB_SLAM2)
+#target_link_libraries(proy_grado ORB_SLAM2)

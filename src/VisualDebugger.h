@@ -16,7 +16,6 @@
 #include <src/tracking/OpticalFlow.h>
 #include "hal/hal.hpp"
 #include "tracking/Follower.h"
-#include "../lib/ORB_SLAM2/include/System.h"
 
 class VisualDebugger {
 public:
@@ -37,7 +36,7 @@ public:
 
     void captureImage();
 
-    void setOrbSlam(ORB_SLAM2::System *slam);
+    //void setOrbSlam(ORB_SLAM2::System *slam);
     void drawOrbSlam();
 
     void drawHorizon(int y);
@@ -93,11 +92,11 @@ private:
 
     Follower* follower;
 
-    ORB_SLAM2::FrameDrawer *frameDrawer = NULL;
+    //ORB_SLAM2::FrameDrawer *frameDrawer = NULL;
 
     std::string lastState = "";
 
-    string subStatus = "";
+    std::string subStatus = "";
 };
 
 
