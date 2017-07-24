@@ -8,16 +8,7 @@ class MarkTrack {
 
 private:
 
-    bool inicialized;
-    std::vector<std::vector<cv::Point>> contours;
-    std::vector<cv::Vec4i> hierarchy;
-    std::vector<cv::Point> pointsseq;
-    int mark;
-    int marklist[4];
-
-    float const squareTolerance = 0.15;
-
-    cv::Mat *gray, *edges;
+    float const squareTolerance = 0.2;
 
 public:
 

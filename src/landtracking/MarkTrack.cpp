@@ -1,21 +1,21 @@
 #include "MarkTrack.h"
 
 MarkTrack::MarkTrack(){
-    this->inicialized = false;
 }
 
 std::vector<cv::Point> MarkTrack::Track(std::shared_ptr<cv::Mat> frame){
 
-    if(!this->inicialized){
-        this->gray = new cv::Mat(frame->size(), CV_MAKETYPE(frame->depth(), 1));
-        this->edges = new cv::Mat(frame->size(), CV_MAKETYPE(frame->depth(), 1));
-    }
+    std::vector<std::vector<cv::Point>> contours;
+    std::vector<cv::Vec4i> hierarchy;
+    std::vector<cv::Point> pointsseq;
+    cv::Mat *gray, *edges;
+
+    gray = new cv::Mat(frame->size(), CV_MAKETYPE(frame->depth(), 1));
+    edges = new cv::Mat(frame->size(), CV_MAKETYPE(frame->depth(), 1));
 
     cvtColor(*frame,*gray,CV_RGB2GRAY);
     Canny(*gray, *edges, 100 , 200, 3);
     findContours(*edges, contours, hierarchy, cv::RETR_TREE, cv::CHAIN_APPROX_SIMPLE);
-
-    mark = 0;
 
     std::vector<cv::Moments> mu(contours.size());
     std::vector<cv::Point2f> mc(contours.size());
@@ -30,7 +30,6 @@ std::vector<cv::Point> MarkTrack::Track(std::shared_ptr<cv::Mat> frame){
     for( int i = 0; i < contours.size(); i++ ){
 
         approxPolyDP(contours[i], pointsseq, arcLength(contours[i], true)*0.02, true);
-        //bool isSquare = ( (pointsseq[0].x+pointsseq[1].x+pointsseq[2].x+pointsseq[3].x)/4-pointsseq[0].x ) < (pointsseq[0].x*squareTolerance);
         bool isSquare = (pointsseq[0].x-pointsseq[1].x) < (pointsseq[0].x*squareTolerance)
                         && (pointsseq[1].x-pointsseq[2].x) < (pointsseq[0].x*squareTolerance)
                         && (pointsseq[2].x-pointsseq[3].x) < (pointsseq[0].x*squareTolerance)
@@ -50,18 +49,23 @@ std::vector<cv::Point> MarkTrack::Track(std::shared_ptr<cv::Mat> frame){
                 c = c+1;
 
             if (c >= 5){
-                marklist[mark] = i;
-                mark = mark + 1 ;
+
                 cv::Point p( (pointsseq[0].x+pointsseq[2].x)/2,
                                               (pointsseq[0].y+pointsseq[2].y)/2);
                 squarePoints.push_back(p);
-                cv::circle( *frame, p, 10,  cv::Scalar(255,0,0), -1, 8, 0 );
+                //cv::circle( *frame, p, 10,  cv::Scalar(255,0,0), -1, 8, 0 );
+                cv::rectangle(*frame, pointsseq[0],pointsseq[2], cv::Scalar(0,0,255), 2, 8, 0);
             }
         }
+
+
     }
 
-    //imshow ( "Image", *frame );
-    //cv::waitKey(1);
+    imshow ( "Image", *frame );
+    cv::waitKey(1);
+
+    delete gray;
+    delete edges;
 
     return squarePoints;
 }

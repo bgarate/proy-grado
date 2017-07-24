@@ -101,6 +101,19 @@ void VisualDebugger::setSquareTracks(std::vector<cv::Point> squarePoints) {
     for( int k = 0; k < squarePoints.size(); k++ ){
 
         cv::circle(frame, squarePoints[k], 10,  cv::Scalar(255,0,0), -1, 8, 0 );
+        if(k == 3){
+
+            int j;
+
+            if (sqrt((squarePoints[0].x-squarePoints[1].x)^2+(squarePoints[0].y-squarePoints[1].y)^2)
+                > sqrt((squarePoints[0].x-squarePoints[2].x)^2+(squarePoints[0].y-squarePoints[2].y)^2)){
+                j = 1;
+            } else {
+                j = 2;
+            }
+
+            //cv::rectangle(frame, squarePoints[0],squarePoints[j], cv::Scalar(0,0,255), 2, 8, 0);
+        }
     }
 }
 
