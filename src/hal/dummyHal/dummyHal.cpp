@@ -31,6 +31,10 @@ int DummyHal::bateryLevel() {
     return 100;
 }
 
+void setCamera(Camera cam){
+
+}
+
 std::shared_ptr<cv::Mat> DummyHal::getFrame(Camera cam) {
     cv::Mat frame;
     videoSource >> frame;

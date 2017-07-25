@@ -22,6 +22,7 @@ extern "C"{
 
 #include <atomic>
 #include <boost/thread/mutex.hpp>
+#include <libARController/ARController.h>
 #include "../../logging/Logger.h"
 
 using namespace std;
@@ -31,6 +32,8 @@ class Pb2hal: public Hal {
 	//Constantes
 	const int PORT = 44444;
 	const char * HOST = "192.168.42.1";
+
+    float bottomTilt, frontTilt, defaultPan;
 
     Config* config;
 
@@ -151,6 +154,7 @@ class Pb2hal: public Hal {
     }
 
     void registerHandlers(){
+
         commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_COMMON_COMMONSTATE_BATTERYSTATECHANGED,
                         [this](CommandDictionary* d) {this->BatteryStateChanged(d);});
         commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_POSITIONCHANGED,
@@ -163,7 +167,10 @@ class Pb2hal: public Hal {
                                        [this](CommandDictionary* d) {this->FlyingStateChanged(d);});
         commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGEVENT_MOVEBYEND,
                                        [this](CommandDictionary* d) {this->MoveByEnd(d);});
-
+        commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_COMMON_CAMERASETTINGSSTATE_CAMERASETTINGSCHANGED,
+                                       [this](CommandDictionary* d) {this->CameraSettingsChanged(d);});
+        commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_CAMERASTATE_ORIENTATIONV2,
+                                       [this](CommandDictionary* d) {this->CameraStateOrientation(d);});
 
     }
 
@@ -201,6 +208,25 @@ class Pb2hal: public Hal {
 
     void AltitudeChanged(CommandDictionary* dictionary){
         this->altitude = dictionary->getDouble(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_ALTITUDECHANGED_ALTITUDE);
+    }
+
+    void CameraSettingsChanged(CommandDictionary* dictionary)
+    {
+        //dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_COMMON_CAMERASETTINGSSTATE_CAMERASETTINGSCHANGED_FOV);
+        //dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_COMMON_CAMERASETTINGSSTATE_CAMERASETTINGSCHANGED_PANMAX);
+        //dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_COMMON_CAMERASETTINGSSTATE_CAMERASETTINGSCHANGED_PANMIN);
+        //dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_COMMON_CAMERASETTINGSSTATE_CAMERASETTINGSCHANGED_TILTMAX);
+        if (this->bottomTilt == -1)
+            this->bottomTilt = dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_COMMON_CAMERASETTINGSSTATE_CAMERASETTINGSCHANGED_TILTMIN);
+    }
+
+    void CameraStateOrientation(CommandDictionary* dictionary){
+
+        if(this->frontTilt == -1)
+            this->frontTilt = dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_CAMERASTATE_ORIENTATIONV2_TILT);
+
+        if(this->defaultPan == -1)
+            this->defaultPan = dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_CAMERASTATE_ORIENTATIONV2_PAN);
     }
 
     // called when a command has been received from the drone
@@ -333,30 +359,6 @@ class Pb2hal: public Hal {
         connected = false;
 	}
 
-	//Obtener estado de vuelo
-	/*eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE getFlyingState(ARCONTROLLER_Device_t *deviceController){
-	    eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE flyingState = ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_MAX;
-	    eARCONTROLLER_ERROR error;
-	    ARCONTROLLER_DICTIONARY_ELEMENT_t *elementDictionary = ARCONTROLLER_ARDrone3_GetCommandElements(deviceController->aRDrone3, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED, &error);
-	    if (error == ARCONTROLLER_OK && elementDictionary != NULL)
-	    {
-	        ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
-	        ARCONTROLLER_DICTIONARY_ELEMENT_t *element = NULL;
-	        HASH_FIND_STR (elementDictionary, ARCONTROLLER_DICTIONARY_SINGLE_KEY, element);
-	        if (element != NULL){
-	            // Get the value
-
-	            HASH_FIND_STR(element->arguments, ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE, arg);
-	            if (arg != NULL)
-	            {
-	                // Enums are stored as I32
-	                flyingState = (eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE)arg->value.I32;
-	            }
-	        }
-	    }
-	    return flyingState;
-	}*/
-
 	public:
 	ARSAL_Sem_t statesem;
 	ARSAL_Sem_t framesem;
@@ -388,6 +390,9 @@ class Pb2hal: public Hal {
 
         state = State::Unknown;
 
+        bottomTilt = -1;
+        frontTilt = -1;
+        defaultPan = -1;
     }
 
     static int customPrintCallback(eARSAL_PRINT_LEVEL level, const char *tag, const char *format, va_list va) {
@@ -584,10 +589,18 @@ class Pb2hal: public Hal {
 
 	/************Cámara*************/
 
-	// --> Obtener captura de imagen (ambas cámaras)
-	std::shared_ptr<cv::Mat> getFrame(Camera cam){
+    // --> Elegir de que camara quiero obtener la imagen
+    void setCamera(Camera cam){
+        if (cam == Camera::Bottom)
+            deviceController->aRDrone3->sendCameraOrientationV2(deviceController->aRDrone3, this->bottomTilt, this->defaultPan);
+        else
+            deviceController->aRDrone3->sendCameraOrientationV2(deviceController->aRDrone3,this->frontTilt, this->defaultPan);
+    }
 
-		ARSAL_Sem_Wait(&(framesem));
+    // --> Obtener captura de imagen (ambas cámaras)
+    std::shared_ptr<cv::Mat> getFrame(Camera cam){
+
+        ARSAL_Sem_Wait(&(framesem));
 
         //if(!frameAvailable)
         //    Logger::logWarning("No frame available");
