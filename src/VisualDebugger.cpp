@@ -16,6 +16,7 @@ const cv::Scalar VisualDebugger::GREY_COLOR = cv::Scalar(205,205,205);
 const cv::Scalar VisualDebugger::BLACK_COLOR = cv::Scalar(0,0,0);
 const cv::Scalar VisualDebugger::RED_COLOR = cv::Scalar(0,0,255);
 const cv::Scalar VisualDebugger::BLUE_COLOR = cv::Scalar(255,0,0);
+const cv::Scalar VisualDebugger::CYAN_COLOR = cv::Scalar(255,255,0);
 
 void VisualDebugger::setup(Config *config) {
     this->config = config;
@@ -407,6 +408,15 @@ void VisualDebugger::OpticalFlow(OpticalFlowPoints *points) {
     cv::cvtColor(mask, mask, cv::COLOR_GRAY2BGR);
 
     if(config->isVisualDebugEnabled()) {
+
+        for (int j = 0; j < points->Clusters.size(); ++j) {
+            std::vector<cv::Point2f> &cluster = points->Clusters[j];
+            for (int k = 0; k < cluster.size(); ++k) {
+                cv::circle(mask, cluster[k], 3, GREEN_COLOR, -1);
+            }
+            cv::rectangle(mask, points->BoundingBoxes[j], CYAN_COLOR, 1);
+        }
+
         for (int i = 0; i < points->Start.size(); ++i) {
             cv::Point2f v = points->End[i] - points->Start[i];
             double distance = std::sqrt(v.x * v.x + v.y * v.y);

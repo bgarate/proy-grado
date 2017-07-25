@@ -41,7 +41,8 @@ int main(int argc, const char* args[]) {
             ("outputPath", po::value<std::string>(), "Output path")
             ("realTimeOutput", po::value<bool>(), "Video output is real time")
             ("hal", po::value<string>(), "Hal to be used (dummy,pb2,vrep)")
-            ("ping", po::value<bool>(), "Enables ping between body and brain");
+            ("ping", po::value<bool>(), "Enables ping between body and brain")
+            ("sleepDelay", po::value<int>(), "Sleep delay in brain and body loop in microseconds");
 
     po::variables_map vm;
     po::store(po::parse_command_line(argc, args, desc), vm);
@@ -169,6 +170,10 @@ Config *getConfig(const boost::program_options::variables_map &vm) {
 
     if(vm.count("ping") > 0) {
         config->setPingEnabled(vm["ping"].as<bool>());
+    }
+
+    if(vm.count("sleepDelay") > 0) {
+        config->setSleepDelay(vm["sleepDelay"].as<int>());
     }
 
     return config;

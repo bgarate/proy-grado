@@ -65,7 +65,7 @@ void Brain::loop() {
             break;
         }
 
-        sleep(0);
+        usleep(config->getSleepDelay());
     }
 }
 

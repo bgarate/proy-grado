@@ -100,6 +100,10 @@ public:
 
     void setCameraTilt(const double cameraTilt);
 
+    unsigned int getSleepDelay() const;
+
+    void setSleepDelay(unsigned int sleepDelay);
+
 
 private:
     std::string name;
@@ -137,6 +141,8 @@ private:
     cv::Size frameSize;
 
     double cameraTilt;
+
+    unsigned int sleepDelay;
 
 };
 

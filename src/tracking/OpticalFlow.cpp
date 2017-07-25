@@ -5,6 +5,7 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv/cv.hpp>
 #include "OpticalFlow.h"
+#include "DbScan.h"
 
 const cv::Size OpticalFlow::SUB_PIX_WIN_SIZE = cv::Size(10,10);
 const cv::Size OpticalFlow::WIN_SIZE = cv::Size(31,31);
@@ -83,6 +84,8 @@ void OpticalFlow::Update(std::shared_ptr<cv::Mat> frame, double deltaTime) {
 
         Points->thresholdDistance = Points->minDistance + (Points->maxDistance - Points->minDistance) * 1 / 3;
 
+        OpticalFlow::distanceEstimation();
+
     }
 }
 
@@ -107,7 +110,15 @@ OpticalFlowPoints* OpticalFlow::GetPoints() {
 
 void OpticalFlow::distanceEstimation() {
 
-    
+    DbScan dbScan(&Points->Start, 30, 3);
+
+    Points->Clusters = dbScan.run();
+
+    Points->BoundingBoxes.clear();
+
+    for(std::vector<cv::Point2f> cluster : Points->Clusters) {
+        Points->BoundingBoxes.push_back(cv::boundingRect(cluster));
+    }
 
 }
 

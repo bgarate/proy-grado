@@ -54,6 +54,7 @@ private:
     static const cv::Scalar BLACK_COLOR;
     static const cv::Scalar RED_COLOR;
     static const cv::Scalar BLUE_COLOR;
+    static const cv::Scalar CYAN_COLOR;
 
     static const int CONSOLE_QUEUE_SIZE = 5;
     static const int CONSOLE_FONT = cv::FONT_HERSHEY_PLAIN;

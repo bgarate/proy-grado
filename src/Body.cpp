@@ -120,7 +120,7 @@ void Body::loop() {
         if(should_exit)
             break;
 
-        usleep(1000);
+        usleep(config->getSleepDelay());
     }
 
     visualDebugger.cleanup();

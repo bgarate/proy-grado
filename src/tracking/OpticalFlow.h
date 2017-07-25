@@ -17,6 +17,8 @@ typedef struct {
     double minDistance;
     double thresholdDistance;
     cv::Mat bgMask;
+    std::vector<std::vector<cv::Point2f>> Clusters;
+    std::vector<cv::Rect2f> BoundingBoxes;
 } OpticalFlowPoints;
 
 class OpticalFlow {

@@ -51,6 +51,7 @@ Config::Config() {
     outputPath = "";
     realTimeVideoOutputEnabled = false;
     pingEnabled = true;
+    sleepDelay = 0;
 
     cameraTilt = 15;
     frameSize = cv::Size(640,480);
@@ -187,4 +188,14 @@ const double Config::getCameraTilt() const {
 void Config::setCameraTilt(const double cameraTilt) {
     Config::cameraTilt = cameraTilt;
 }
+
+unsigned int Config::getSleepDelay() const {
+    return sleepDelay;
+}
+
+void Config::setSleepDelay(unsigned int sleepDelay) {
+    this->sleepDelay = sleepDelay;
+}
+
+
 
