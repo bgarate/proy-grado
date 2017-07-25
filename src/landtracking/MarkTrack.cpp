@@ -54,15 +54,15 @@ std::vector<cv::Point> MarkTrack::Track(std::shared_ptr<cv::Mat> frame){
                                               (pointsseq[0].y+pointsseq[2].y)/2);
                 squarePoints.push_back(p);
                 //cv::circle( *frame, p, 10,  cv::Scalar(255,0,0), -1, 8, 0 );
-                cv::rectangle(*frame, pointsseq[0],pointsseq[2], cv::Scalar(0,0,255), 2, 8, 0);
+                //cv::rectangle(*frame, pointsseq[0],pointsseq[2], cv::Scalar(0,0,255), 2, 8, 0);
             }
         }
 
 
     }
 
-    imshow ( "Image", *frame );
-    cv::waitKey(1);
+    //imshow ( "Image", *frame );
+    //cv::waitKey(1);
 
     delete gray;
     delete edges;
