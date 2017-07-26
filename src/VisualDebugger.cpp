@@ -424,6 +424,10 @@ void VisualDebugger::OpticalFlow(OpticalFlowPoints *points) {
                      distance > points->thresholdDistance ? RED_COLOR : BLUE_COLOR, 1);
         }
 
+        for (int l = 0; l < points->ClustersCenters.size(); ++l) {
+            int proximityColor = (int)(255 * (points->Proximity[l] + 0.1));
+            cv::circle(mask, points->ClustersCenters[l], 10, cv::Scalar(0, proximityColor, 0),-1);
+        }
 
         cv::imshow("Background", mask);
     }

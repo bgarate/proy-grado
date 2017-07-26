@@ -8,6 +8,8 @@
 
 #include <opencv2/core/mat.hpp>
 #include <opencv2/video/background_segm.hpp>
+#include <opencv2/imgproc.hpp>
+#include <opencv2/highgui.hpp>
 #include <memory>
 
 typedef struct {
@@ -19,6 +21,8 @@ typedef struct {
     cv::Mat bgMask;
     std::vector<std::vector<cv::Point2f>> Clusters;
     std::vector<cv::Rect2f> BoundingBoxes;
+    std::vector<cv::Point> ClustersCenters;
+    std::vector<float> Proximity;
 } OpticalFlowPoints;
 
 class OpticalFlow {
@@ -51,6 +55,12 @@ private:
     const int MINIMUM_CLUSTER_ELEMENTS = 1;
 
     void distanceEstimation();
+
+    const float TEMPLATE_SCALE_STEP = 0.1;
+    const int TEMPLATE_SCALE_NUMBER_STEPS = 9;
+    int TEMPLATE_SIZE = 32;
+
+    int TEMPLATE_MATCH_METHOD = cv::TM_CCOEFF;
 };
 
 

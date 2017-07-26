@@ -6,6 +6,7 @@
 #include <opencv/cv.hpp>
 #include "OpticalFlow.h"
 #include "DbScan.h"
+#include "Helpers.h"
 
 const cv::Size OpticalFlow::SUB_PIX_WIN_SIZE = cv::Size(10,10);
 const cv::Size OpticalFlow::WIN_SIZE = cv::Size(31,31);
@@ -113,11 +114,60 @@ void OpticalFlow::distanceEstimation() {
     DbScan dbScan(&Points->Start, 30, 3);
 
     Points->Clusters = dbScan.run();
-
     Points->BoundingBoxes.clear();
+    Points->ClustersCenters.clear();
+    Points->Proximity.clear();
 
     for(std::vector<cv::Point2f> cluster : Points->Clusters) {
         Points->BoundingBoxes.push_back(cv::boundingRect(cluster));
+        cv::Point2f sum = std::accumulate(cluster.begin(), cluster.end(), cv::Point2f(0,0));
+        cv::Point center = cv::Point((int)(sum.x/cluster.size()),(int)(sum.y/cluster.size()));
+        Points->ClustersCenters.push_back(center);
+    }
+
+    for (int i = 0; i < Points->Clusters.size(); ++i) {
+
+        cv::Point center = Points->ClustersCenters[i];
+        cv::Rect templateBox(center.x - TEMPLATE_SIZE / 2, center.y - TEMPLATE_SIZE / 2,
+                             TEMPLATE_SIZE, TEMPLATE_SIZE);
+
+        templateBox = Helpers::Clip(templateBox, currentFrame.size());
+
+        cv::Mat current = currentFrame(templateBox);
+
+        bool minimizingMethod = TEMPLATE_MATCH_METHOD  == CV_TM_SQDIFF || TEMPLATE_MATCH_METHOD == CV_TM_SQDIFF_NORMED;
+
+        float bestScale = 0;
+        double bestScore = 0;
+
+        for (int j = 1; j <= TEMPLATE_SCALE_NUMBER_STEPS; ++j) {
+            float scale = 1 + j * TEMPLATE_SCALE_STEP;
+            cv::Mat scaledPrevious;
+            cv::resize(previousFrame(templateBox), scaledPrevious, cv::Size(), scale, scale);
+
+            cv::Mat result;
+
+            int result_cols = scaledPrevious.cols - current.cols + 1;
+            int result_rows = scaledPrevious.rows - current.rows + 1;
+
+            cv::matchTemplate(scaledPrevious, current, result, TEMPLATE_MATCH_METHOD);
+            result.create(result_rows, result_cols, CV_32FC1);
+
+            double minScore;
+            double maxScore;
+
+            cv::minMaxLoc(result, &minScore, &maxScore);
+
+            if((minimizingMethod && -minScore > bestScore) ||
+                    (!minimizingMethod && maxScore > bestScore)) {
+                bestScore = minimizingMethod ? -minScore : maxScore;
+                bestScale = scale;
+            }
+
+        }
+
+        Points->Proximity.push_back(bestScale - 1);
+
     }
 
 }
