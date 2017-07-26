@@ -1,7 +1,7 @@
 #include "BodyTest.h"
 #include "../VisualDebugger.h"
 #include "../logging/Logger.h"
-#include "../landtracking/MarkTrack.h"
+#include "src/landtracking/MarkerTrack.h"
 #include <thread>
 #include <unistd.h>
 
@@ -11,7 +11,7 @@ public:
 
     Hal* hal;
     VisualDebugger* visualDebugger;
-    MarkTrack* markTrack;
+    MarkerTrack* markTrack;
 
     void InitBodyTest(Hal* hal, Config* config, VisualDebugger* visualDebugger){
 
@@ -19,7 +19,7 @@ public:
 
         this->visualDebugger = visualDebugger;
 
-        this->markTrack = new MarkTrack();
+        this->markTrack = new MarkerTrack();
 
         Logger::logInfo("Bateria: %u") << hal->bateryLevel();
 

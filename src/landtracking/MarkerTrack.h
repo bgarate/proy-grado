@@ -4,7 +4,7 @@
 #ifndef PROY_GRADO_MARKTRACK_H
 #define PROY_GRADO_MARKTRACK_H
 
-class MarkTrack {
+class MarkerTrack {
 
 private:
 
@@ -12,7 +12,7 @@ private:
 
 public:
 
-    MarkTrack();
+    MarkerTrack();
 
     std::vector<cv::Point> Track(std::shared_ptr<cv::Mat> frame);
 

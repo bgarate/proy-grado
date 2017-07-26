@@ -1,9 +1,9 @@
-#include "MarkTrack.h"
+#include "MarkerTrack.h"
 
-MarkTrack::MarkTrack(){
+MarkerTrack::MarkerTrack(){
 }
 
-std::vector<cv::Point> MarkTrack::Track(std::shared_ptr<cv::Mat> frame){
+std::vector<cv::Point> MarkerTrack::Track(std::shared_ptr<cv::Mat> frame){
 
     std::vector<std::vector<cv::Point>> contours;
     std::vector<cv::Vec4i> hierarchy;

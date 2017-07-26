@@ -53,8 +53,8 @@ set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/Mess
 set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/OrbSlam2.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/main.cpp)
 set(CALIBRATION_MAIN src/calibration.cpp)
-set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkTrack.cpp src/landtracking/MarkTrack.h)
-set(SOURCE_FILES ${SOURCE_FILES} src/landtracking/MarkTrack.cpp src/landtracking/MarkTrack.h)
+set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h)
 
 ADD_SUBDIRECTORY(src/proto)
 ADD_SUBDIRECTORY(lib/ORB_SLAM2)
