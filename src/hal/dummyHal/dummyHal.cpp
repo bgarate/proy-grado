@@ -31,7 +31,7 @@ int DummyHal::bateryLevel() {
     return 100;
 }
 
-void DummyHal::setCamera(Camera cam){
+void DummyHal::setCameraTilt(Camera cam){
 
 }
 

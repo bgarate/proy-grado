@@ -169,8 +169,6 @@ class Pb2hal: public Hal {
                                        [this](CommandDictionary* d) {this->MoveByEnd(d);});
         commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_COMMON_CAMERASETTINGSSTATE_CAMERASETTINGSCHANGED,
                                        [this](CommandDictionary* d) {this->CameraSettingsChanged(d);});
-        commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_CAMERASTATE_ORIENTATIONV2,
-                                       [this](CommandDictionary* d) {this->CameraStateOrientation(d);});
 
     }
 
@@ -218,15 +216,6 @@ class Pb2hal: public Hal {
         //dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_COMMON_CAMERASETTINGSSTATE_CAMERASETTINGSCHANGED_TILTMAX);
         if (this->bottomTilt == -1)
             this->bottomTilt = dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_COMMON_CAMERASETTINGSSTATE_CAMERASETTINGSCHANGED_TILTMIN);
-    }
-
-    void CameraStateOrientation(CommandDictionary* dictionary){
-
-        if(this->frontTilt == -1)
-            this->frontTilt = dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_CAMERASTATE_ORIENTATIONV2_TILT);
-
-        if(this->defaultPan == -1)
-            this->defaultPan = dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_CAMERASTATE_ORIENTATIONV2_PAN);
     }
 
     // called when a command has been received from the drone
@@ -393,6 +382,7 @@ class Pb2hal: public Hal {
         bottomTilt = -1;
         frontTilt = -1;
         defaultPan = -1;
+
     }
 
     static int customPrintCallback(eARSAL_PRINT_LEVEL level, const char *tag, const char *format, va_list va) {
@@ -490,6 +480,8 @@ class Pb2hal: public Hal {
 			connected = true;
 
             deviceController->aRDrone3->sendMediaStreamingVideoEnable(deviceController->aRDrone3, true);
+
+            deviceController->aRDrone3->setCameraOrientationV2(deviceController->aRDrone3,0, 0);
 
             Logger::logInfo("Pb2Hal iniciado");
 
@@ -590,11 +582,12 @@ class Pb2hal: public Hal {
 	/************Cámara*************/
 
     // --> Elegir de que camara quiero obtener la imagen
-    void setCamera(Camera cam){
+    void setCameraTilt(Camera cam){
+
         if (cam == Camera::Bottom)
-            deviceController->aRDrone3->sendCameraOrientationV2(deviceController->aRDrone3, this->bottomTilt, this->defaultPan);
+            deviceController->aRDrone3->setCameraOrientationV2(deviceController->aRDrone3, this->bottomTilt, 0);
         else
-            deviceController->aRDrone3->sendCameraOrientationV2(deviceController->aRDrone3,this->frontTilt, this->defaultPan);
+            deviceController->aRDrone3->setCameraOrientationV2(deviceController->aRDrone3,0, 0);
     }
 
     // --> Obtener captura de imagen (ambas cámaras)

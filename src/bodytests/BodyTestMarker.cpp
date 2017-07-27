@@ -23,6 +23,7 @@ public:
 
         Logger::logInfo("Bateria: %u") << hal->bateryLevel();
 
+
     }
 
     bool BodyTestStep(double deltaTime){
@@ -30,6 +31,8 @@ public:
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
 
         if (frame != NULL) {
+
+            hal->setCameraTilt(Camera::Bottom);
 
             std::vector<cv::Point> squarePoints = markTrack->Track(frame);
             visualDebugger->setSquareTracks(squarePoints);

@@ -52,13 +52,31 @@ std::vector<cv::Point> MarkerTrack::Track(std::shared_ptr<cv::Mat> frame){
 
                 cv::Point p( (pointsseq[0].x+pointsseq[2].x)/2,
                                               (pointsseq[0].y+pointsseq[2].y)/2);
-                squarePoints.push_back(p);
+
+                cv::Point v = pointsseq[0] - pointsseq[2];
+                float tolerance = v.x*v.x+v.y*v.y;
+
+
+                bool isnew = true;
+                for(int h = 0; h < squarePoints.size(); h++){
+
+                    cv::Point vaux = p-squarePoints[h];
+                    float d = vaux.x*vaux.x+vaux.y*vaux.y;
+
+                    if(d<tolerance){
+                        isnew = false;
+                    }
+                }
+
+                if(isnew){
+                    squarePoints.push_back(p);
+                }
+
                 //cv::circle( *frame, p, 10,  cv::Scalar(255,0,0), -1, 8, 0 );
                 //cv::rectangle(*frame, pointsseq[0],pointsseq[2], cv::Scalar(0,0,255), 2, 8, 0);
+                //break;
             }
         }
-
-
     }
 
     //imshow ( "Image", *frame );

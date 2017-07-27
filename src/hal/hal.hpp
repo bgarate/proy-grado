@@ -57,7 +57,7 @@ class Hal{
 	/************Cámara*************/
 
 	// --> Elegir de que camara quiero obtener la imagen
-	virtual void setCamera(Camera cam) = 0;
+	virtual void setCameraTilt(Camera cam) = 0;
 
 	// --> Obtener captura de imagen (ambas cámaras)
 	virtual std::shared_ptr<cv::Mat> getFrame(Camera cam) = 0;

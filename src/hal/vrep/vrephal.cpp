@@ -408,7 +408,7 @@ public:
     /************Cámara*************/
 
     // --> Elegir de que camara quiero obtener la imagen
-    void setCamera(Camera cam){
+    void setCameraTilt(Camera cam){
 
     }
 
