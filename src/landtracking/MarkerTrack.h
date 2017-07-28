@@ -10,6 +10,7 @@ private:
 
     float const squareTolerance = 0.2;
 
+
 public:
 
     MarkerTrack();

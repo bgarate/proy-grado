@@ -37,6 +37,7 @@ public:
             std::vector<cv::Point> squarePoints = markTrack->Track(frame);
             visualDebugger->setSquareTracks(squarePoints);
 
+            cv::Point frameSize(frame->size().width,frame->size().height);
         }
 
         return true;
