@@ -64,6 +64,8 @@ void MarkerLand::land(std::vector<cv::Point> points, cv::Point frameSize){
                     // girar a la izquierda todo
                 }
             }
+        } else {
+            //no me muevo todo
         }
 
     } else if(this->state == LandingState::Centring){
@@ -109,6 +111,8 @@ void MarkerLand::land(std::vector<cv::Point> points, cv::Point frameSize){
                     //mover hacia atras todo
                 }
             }
+        } else {
+            //no me muevo todo
         }
 
     } else if(this->state == LandingState::FinalPositioning){
@@ -140,6 +144,8 @@ void MarkerLand::land(std::vector<cv::Point> points, cv::Point frameSize){
                 }
             }
 
+        } else {
+            //no me muevo todo
         }
 
     }
