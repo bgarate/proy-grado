@@ -21,6 +21,7 @@
 #include "bodytests/BodyTestRmove.cpp"
 #include "bodytests/BodyTestRmove2.cpp"
 #include "bodytests/BodyTestDummy.cpp"
+#include "bodytests/BodyTestMarker.cpp"
 
 Body::Body(Hal *hal) {
     this->hal = hal;
@@ -54,6 +55,7 @@ void Body::loop() {
     BodyTest* bt = new OpticalFlowObstacleAvoidance();
     //BodyTest* bt = new BodyTestRmove2();
     //BodyTest* bt = new Follow();
+    //BodyTest* bt = new BodyTestMarker();
 
     bt->InitBodyTest(this->hal, config, &visualDebugger);
     Logger::logInfo("Body started");

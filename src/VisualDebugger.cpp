@@ -5,10 +5,12 @@
 #include <boost/format.hpp>
 #include <chrono>
 #include <src/tracking/OpticalFlow.h>
+#include <src/landtracking/MarkerTrack.h>
 #include "logging/Logger.h"
 #include "tracking/DetectAndTrack.h"
 #include "VisualDebugger.h"
 #include "hal/Point.h"
+#include "tracking/MultiTracker.h"
 
 const cv::Scalar VisualDebugger::WHITE_COLOR = cv::Scalar(255,255,255);
 const cv::Scalar VisualDebugger::GREEN_COLOR = cv::Scalar(0,205,0);
@@ -93,6 +95,27 @@ void VisualDebugger::setTracks(std::vector<Track> tracks) {
         cv::putText(frame, number, textOrigin, CONSOLE_FONT, 1, color, 1, cv::LINE_AA);
     }
 
+}
+
+void VisualDebugger::setSquareTracks(std::vector<cv::Point> squarePoints) {
+
+    for( int k = 0; k < squarePoints.size(); k++ ){
+
+        cv::circle(frame, squarePoints[k], 10,  cv::Scalar(255,0,0), -1, 8, 0 );
+        if(k == 3){
+
+            int j;
+
+            if (sqrt((squarePoints[0].x-squarePoints[1].x)^2+(squarePoints[0].y-squarePoints[1].y)^2)
+                > sqrt((squarePoints[0].x-squarePoints[2].x)^2+(squarePoints[0].y-squarePoints[2].y)^2)){
+                j = 1;
+            } else {
+                j = 2;
+            }
+
+            //cv::rectangle(frame, squarePoints[0],squarePoints[j], cv::Scalar(0,0,255), 2, 8, 0);
+        }
+    }
 }
 
 void VisualDebugger::captureImage() {

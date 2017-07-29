@@ -21,6 +21,8 @@ public:
 
     int bateryLevel() override;
 
+    void setCameraTilt(Camera cam);
+
     std::shared_ptr<cv::Mat> getFrame(Camera cam) override;
 
     double getAltitude() override;

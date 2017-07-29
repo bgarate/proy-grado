@@ -407,6 +407,11 @@ public:
 
     /************Cámara*************/
 
+    // --> Elegir de que camara quiero obtener la imagen
+    void setCameraTilt(Camera cam){
+
+    }
+
     // --> Obtener captura de imagen (ambas cámaras)
     std::shared_ptr<cv::Mat> getFrame(Camera cam){
 

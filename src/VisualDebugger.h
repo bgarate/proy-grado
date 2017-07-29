@@ -16,6 +16,7 @@
 #include <src/tracking/OpticalFlow.h>
 #include "hal/hal.hpp"
 #include "tracking/Follower.h"
+#include "tracking/MultiTracker.h"
 
 class VisualDebugger {
 public:
@@ -28,6 +29,7 @@ public:
 
     int show(long deltaTime);
     void setTracks(std::vector<Track> tracks);
+    void setSquareTracks(std::vector<cv::Point> squarePoints);
     void writeConsole(std::string str);
     void cleanup();
 

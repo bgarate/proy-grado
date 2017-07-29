@@ -7,7 +7,7 @@
 #include "dummyHal.h"
 #include "../Point.h"
 
-DummyHal::DummyHal():videoSource("drone2.mp4") {
+DummyHal::DummyHal():videoSource("marker.mp4") {
     state = State::Landed;
 }
 
@@ -29,6 +29,10 @@ void DummyHal::takeoff() {
 
 int DummyHal::bateryLevel() {
     return 100;
+}
+
+void DummyHal::setCameraTilt(Camera cam){
+
 }
 
 std::shared_ptr<cv::Mat> DummyHal::getFrame(Camera cam) {
