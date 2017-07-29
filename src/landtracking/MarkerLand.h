@@ -5,12 +5,20 @@
 
 enum class LandingState {Inactive ,Finding, Rotating, Centring, FinalPositioning};
 
+class LandMoveCommand {
+public:
+    bool land;
+    float pitch;
+    float roll;
+    float yaw;
+};
+
 class MarkerLand {
 
 public:
     MarkerLand();
 
-    void land(std::vector<cv::Point> points, cv::Point frameSize);
+    LandMoveCommand land(std::vector<cv::Point> points, cv::Point frameSize);
 
     bool isLanding();
 
@@ -19,7 +27,10 @@ public:
 private:
     LandingState state;
 
-    float alignmentTolerance = 0.1;
+    const float alignmentTolerance = 0.1;
+    const float pitchPorcent = 0.20;
+    const float rollPorcent = 0.20;
+    const float yawPorcent = 0.30;
 
 };
 

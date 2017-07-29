@@ -9,8 +9,13 @@ MarkerLand::MarkerLand(){
 
 }
 
-void MarkerLand::land(std::vector<cv::Point> points, cv::Point frameSize){
+LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameSize){
 
+    LandMoveCommand res;
+    res.pitch = 0;
+    res.roll = 0;
+    res.yaw = 0;
+    res.land = false;
 
     if(this->state == LandingState::Inactive){
 
@@ -58,14 +63,14 @@ void MarkerLand::land(std::vector<cv::Point> points, cv::Point frameSize){
 
                 if( points[orderbyY[a]].y > points[orderbyY[b]].y ){
 
-                    //girar a la derecha todo
+                    //girar a la derecha
+                    res.roll = this->rollPorcent;
                 } else {
 
-                    // girar a la izquierda todo
+                    // girar a la izquierda
+                    res.roll = this->rollPorcent;
                 }
             }
-        } else {
-            //no me muevo todo
         }
 
     } else if(this->state == LandingState::Centring){
@@ -96,23 +101,25 @@ void MarkerLand::land(std::vector<cv::Point> points, cv::Point frameSize){
                 //movimiento eje x
                 if( squareCenter.x > frameCenter.x){
 
-                    //movera la derecha todo
+                    //movera la derecha
+                    res.roll = this->rollPorcent;
                 } else {
 
-                    //mover a la izuierda todo
+                    //mover a la izuierda
+                    res.roll = - this->rollPorcent;
                 }
 
                 //movimiento eje y
                 if( squareCenter.y > frameCenter.x ){
 
-                    //mover hacia adelante todo
+                    //mover hacia adelante
+                    res.pitch = this->pitchPorcent;
                 } else {
 
-                    //mover hacia atras todo
+                    //mover hacia atras
+                    res.pitch = -this->pitchPorcent;
                 }
             }
-        } else {
-            //no me muevo todo
         }
 
     } else if(this->state == LandingState::FinalPositioning){
@@ -134,18 +141,19 @@ void MarkerLand::land(std::vector<cv::Point> points, cv::Point frameSize){
             if( points[orderbyY[0]].y - (frameSize.y/2) < alignmentTolerance){
 
                 this->state = LandingState::Inactive;
-                //land = ture todo
+                //land
+                res.land = true;
             } else {
 
                 if(points[orderbyY[0]].y > (frameSize.y/2)){
-                    //mover hacia adelante todo
+                    //mover hacia adelante
+                    res.pitch = this->pitchPorcent;
                 } else {
-                    //mover hacia atras todo
+                    //mover hacia atras
+                    res.pitch = -this->pitchPorcent;
                 }
             }
 
-        } else {
-            //no me muevo todo
         }
 
     }
@@ -157,5 +165,5 @@ bool MarkerLand::isLanding(){
 }
 
 void MarkerLand::stopLanding(){
-
+    this->state = LandingState::Inactive;
 }
