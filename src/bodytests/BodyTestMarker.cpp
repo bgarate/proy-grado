@@ -14,6 +14,10 @@ public:
     VisualDebugger* visualDebugger;
     MarkerTrack* markTrack;
     MarkerLand* markerLand;
+
+    bool waitingTakeOff = false;
+    bool tookOff = false;
+
     void InitBodyTest(Hal* hal, Config* config, VisualDebugger* visualDebugger){
 
         this->hal = hal;
@@ -32,30 +36,68 @@ public:
     bool BodyTestStep(double deltaTime){
 
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
+        visualDebugger->setSubStatus("");
 
-        if (frame != NULL) {
 
-            hal->setCameraTilt(Camera::Bottom);
+        //DESPEGAR
+        if (hal->getState() == State::Landed && !tookOff) {
+            // Despegar
+            Logger::logError("Despegar");
+            visualDebugger->writeConsole("Despegar");
+            hal->takeoff();
+            tookOff = true;
+            waitingTakeOff = true;
+            return true;
 
-            std::vector<cv::Point> squarePoints = markTrack->Track(frame);
-            visualDebugger->setSquareTracks(squarePoints);
+            //DESPEGADO
+        } else if (waitingTakeOff &&
+                   (hal->getState() == State::Hovering || hal->getState() == State::Flying)) {
+            Logger::logError("Despegado");
+            visualDebugger->writeConsole("Despegado");
+            // Despegado
+            waitingTakeOff = false;
 
-            cv::Point frameSize(frame->size().width,frame->size().height);
+            //ATERRIZADO
+        } else {
+            if (frame != NULL) {
 
-            LandMoveCommand command = markerLand->land(squarePoints, frameSize);
+                hal->setCameraTilt(Camera::Bottom);
 
-            if(command.land){
-                hal->land();
-            } else {
-                hal->move((int)(command.roll*100),(int)(command.pitch*100), (int)(command.yaw * 100),/*gaz*/0);
+                std::vector<cv::Point> squarePoints = markTrack->Track(frame);
+                visualDebugger->setSquareTracks(squarePoints);
+
+                cv::Point frameSize(frame->size().width,frame->size().height);
+
+                LandMoveCommand command = markerLand->land(squarePoints, frameSize);
+
+                if (command.state == LandingState::Inactive)
+                        visualDebugger->setSubStatus("Inactivo");
+                else if (command.state == LandingState::Finding)
+                        visualDebugger->setSubStatus("Buscando");
+                else if (command.state == LandingState::Rotating)
+                        visualDebugger->setSubStatus("Rotando");
+                else if (command.state == LandingState::Centring)
+                        visualDebugger->setSubStatus("Centrando");
+                else if (command.state == LandingState::FinalPositioning)
+                        visualDebugger->setSubStatus("Posicioando");
+
+
+                if(command.land){
+                    visualDebugger->setSubStatus("Aterrizando");
+                    return false;
+                } else {
+                    hal->move((int)(command.roll*100),(int)(command.pitch*100), (int)(command.yaw * 100),/*gaz*/0);
+                }
             }
+
         }
 
         return true;
     }
 
     void FinishBodyTest(){
-
+        if(hal->getState() != State::Landed)
+            hal->land();
     }
 
 };

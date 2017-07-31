@@ -55,6 +55,7 @@ set(SOURCE_FILES ${SOURCE_FILES} src/main.cpp)
 set(CALIBRATION_MAIN src/calibration.cpp)
 set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h)
 
 ADD_SUBDIRECTORY(src/proto)
 ADD_SUBDIRECTORY(lib/ORB_SLAM2)

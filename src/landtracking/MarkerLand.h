@@ -11,6 +11,7 @@ public:
     float pitch;
     float roll;
     float yaw;
+    LandingState state;
 };
 
 class MarkerLand {

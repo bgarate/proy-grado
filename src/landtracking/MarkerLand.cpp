@@ -7,6 +7,7 @@
 
 MarkerLand::MarkerLand(){
 
+    this->state = LandingState::Inactive;
 }
 
 LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameSize){
@@ -45,7 +46,7 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                     }
             }
 
-            if( (points[orderbyY[0]].y -points[orderbyY[1]].y) < frameSize.y*alignmentTolerance){//Estoy alineado
+            if( abs(points[orderbyY[0]].y -points[orderbyY[1]].y) < frameSize.y*alignmentTolerance){//Estoy alineado
 
                 this->state = LandingState::Centring;
 
@@ -92,8 +93,8 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
             cv::Point frameCenter = cv::Point(frameSize.x / 2,
                                               frameSize.y / 2);
 
-            if( (squareCenter.x-frameCenter.x) < frameSize.x*alignmentTolerance
-                    and (squareCenter.y-frameCenter.y) < frameSize.y*alignmentTolerance){
+            if( abs(squareCenter.x-frameCenter.x) < frameSize.x*alignmentTolerance
+                    and abs(squareCenter.y-frameCenter.y) < frameSize.y*alignmentTolerance){
 
                 this->state = LandingState::FinalPositioning;
             } else {
@@ -138,7 +139,7 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 }
             }
 
-            if( points[orderbyY[0]].y - (frameSize.y/2) < alignmentTolerance){
+            if( abs(points[orderbyY[0]].y - (frameSize.y/2)) < frameSize.y*alignmentTolerance){
 
                 this->state = LandingState::Inactive;
                 //land
@@ -157,6 +158,8 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
         }
 
     }
+    res.state = this->state;
+    return res;
 }
 
 bool MarkerLand::isLanding(){
