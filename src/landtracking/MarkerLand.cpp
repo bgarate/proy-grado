@@ -10,13 +10,22 @@ MarkerLand::MarkerLand(){
     this->state = LandingState::Inactive;
 }
 
-LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameSize){
+LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameSize, double altitude){
 
     LandMoveCommand res;
     res.pitch = 0;
     res.roll = 0;
     res.yaw = 0;
+    res.gaz = 0;
     res.land = false;
+
+    if(abs(altitude - landAltitude) > alignmentTolerance*landAltitude){
+        if(altitude > landAltitude){
+            res.gaz = -this->gazPorcent;
+        } else {
+            res.gaz = this->gazPorcent;
+        }
+    }
 
     if(this->state == LandingState::Inactive){
 
@@ -65,11 +74,11 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 if( points[orderbyY[a]].y > points[orderbyY[b]].y ){
 
                     //girar a la derecha
-                    res.roll = this->rollPorcent;
+                    res.yaw = this->yawPorcent;
                 } else {
 
                     // girar a la izquierda
-                    res.roll = this->rollPorcent;
+                    res.yaw = this->yawPorcent;
                 }
             }
         }

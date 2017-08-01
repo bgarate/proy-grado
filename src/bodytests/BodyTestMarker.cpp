@@ -68,7 +68,7 @@ public:
 
                 cv::Point frameSize(frame->size().width,frame->size().height);
 
-                LandMoveCommand command = markerLand->land(squarePoints, frameSize);
+                LandMoveCommand command = markerLand->land(squarePoints, frameSize,hal->getAltitude());
 
                 if (command.state == LandingState::Inactive)
                         visualDebugger->setSubStatus("Inactivo");
@@ -86,7 +86,7 @@ public:
                     visualDebugger->setSubStatus("Aterrizando");
                     return false;
                 } else {
-                    hal->move((int)(command.roll*100),(int)(command.pitch*100), (int)(command.yaw * 100),/*gaz*/0);
+                    hal->move((int)(command.roll*100),(int)(command.pitch*100), (int)(command.yaw * 100),(int)(command.gaz * 100));
                 }
             }
 
