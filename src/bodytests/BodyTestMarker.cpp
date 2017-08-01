@@ -66,6 +66,12 @@ public:
                 std::vector<cv::Point> squarePoints = markTrack->Track(frame);
                 visualDebugger->setSquareTracks(squarePoints);
 
+                if(squarePoints.size()>0){
+                    cv::Point p = squarePoints[0];
+                    int a = 1;
+                }
+
+
                 cv::Point frameSize(frame->size().width,frame->size().height);
 
                 LandMoveCommand command = markerLand->land(squarePoints, frameSize,hal->getAltitude());

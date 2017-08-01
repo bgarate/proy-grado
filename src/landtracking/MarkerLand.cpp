@@ -44,7 +44,7 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
         if(points.size() == 4){
 
             //ordenar por y
-            int orderbyY[4] = {1,2,3,4};
+            int orderbyY[4] = {0,1,2,3};
             for(int i = 0; i < 4; i++){
                     for (int k = i+1; k < 4; k++){
                         if(points[orderbyY[k]].y <  points[orderbyY[i]].y){
@@ -55,6 +55,8 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                     }
             }
 
+            float a = abs(points[orderbyY[0]].y -points[orderbyY[1]].y);
+            float b = frameSize.y*alignmentTolerance;
             if( abs(points[orderbyY[0]].y -points[orderbyY[1]].y) < frameSize.y*alignmentTolerance){//Estoy alineado
 
                 this->state = LandingState::Centring;
@@ -64,20 +66,20 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 //order en x
                 int a, b;
                 if(points[orderbyY[0]].x > points[orderbyY[1]].x){
-                    a=0;
-                    b=1;
-                }else{
                     a=1;
                     b=0;
+                }else{
+                    a=0;
+                    b=1;
                 }
 
-                if( points[orderbyY[a]].y > points[orderbyY[b]].y ){
+                if( points[orderbyY[a]].y < points[orderbyY[b]].y ){
 
-                    //girar a la derecha
-                    res.yaw = this->yawPorcent;
+                    //girar a la izquierda
+                    res.yaw = -this->yawPorcent;
                 } else {
 
-                    // girar a la izquierda
+                    // girar a la derecha
                     res.yaw = this->yawPorcent;
                 }
             }
@@ -122,12 +124,12 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 //movimiento eje y
                 if( squareCenter.y > frameCenter.x ){
 
-                    //mover hacia adelante
-                    res.pitch = this->pitchPorcent;
-                } else {
-
                     //mover hacia atras
                     res.pitch = -this->pitchPorcent;
+                } else {
+
+                    //mover hacia adelande
+                    res.pitch = this->pitchPorcent;
                 }
             }
         }
@@ -137,7 +139,7 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
         if(points.size() == 2){
 
             //ordenar por y
-            int orderbyY[4] = {1,2,3,4};
+            int orderbyY[4] = {0,1,2,3};
             for(int i = 0; i < 4; i++){
                 for (int k = i+1; k < 4; k++){
                     if(points[orderbyY[k]].y <  points[orderbyY[i]].y){
@@ -155,7 +157,7 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 res.land = true;
             } else {
 
-                if(points[orderbyY[0]].y > (frameSize.y/2)){
+                if(points[orderbyY[0]].y < (frameSize.y/2)){
                     //mover hacia adelante
                     res.pitch = this->pitchPorcent;
                 } else {
