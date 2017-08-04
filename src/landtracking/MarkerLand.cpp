@@ -32,7 +32,7 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
         this->state = LandingState::Finding;
     } else if(this->state == LandingState::Finding){
 
-        if(points.size() == 4){
+        if(points.size() == 5){
 
             //this->state = LandingState::Rotating;
             this->state = LandingState::Centring;
