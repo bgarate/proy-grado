@@ -29,12 +29,16 @@ public:
 private:
     LandingState state;
 
+    const float fullvel = 0.5;
+    const float pitchvelfactor = 0.20;
+    const float rollvelfactor = 0.15;
+
     const float alignmentTolerance = 0.05;
     const float landAltitude = 2;
     const float pitchPorcent = 0.05;
     const float rollPorcent = 0.05;
     const float yawPorcent = 0.1;
-    const float gazPorcent = 0.3;
+    const float gazPorcent = 0.5;
 
 };
 

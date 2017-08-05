@@ -32,14 +32,14 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
         this->state = LandingState::Finding;
     } else if(this->state == LandingState::Finding){
 
-        if(points.size() == 5){
+        if(false/*points.size() == 4*/){
 
             //this->state = LandingState::Rotating;
             this->state = LandingState::Centring;
         }else if (points.size() > 0){
             //buscar con referencia
 
-            if(points.size()==3){
+            if(points.size()>=3){
 
                 //////CENTRANDO PUNTO MEDIO
                 float d = 0;
@@ -58,7 +58,8 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                                                   frameSize.y / 2);
 
                 //movimiento eje x
-                if( squareCenter.x > frameCenter.x){
+                res.roll = ( (squareCenter.x - frameCenter.x) / (frameSize.x/2) ) * (this->rollvelfactor);
+                /*if( squareCenter.x > frameCenter.x){
 
                     //movera la derecha
                     res.roll = this->rollPorcent;
@@ -66,10 +67,11 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
                     //mover a la izuierda
                     res.roll = - this->rollPorcent;
-                }
+                }*/
 
                 //movimiento eje y
-                if( squareCenter.y > frameCenter.y ){
+                res.pitch = ( (frameCenter.y - squareCenter.y ) / (frameSize.y/2) ) * (this->pitchvelfactor);
+                /*if( squareCenter.y > frameCenter.y ){
 
                     //mover hacia atras
                     res.pitch = -this->pitchPorcent;
@@ -77,7 +79,7 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
                     //mover hacia adelande
                     res.pitch = this->pitchPorcent;
-                }
+                }*/
 
 
             } else if (points.size()==2){
@@ -89,22 +91,26 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 if( points[0].x > frameCenter.x && points[1].x > frameCenter.x){
 
                     //movera la derecha
-                    res.roll = this->rollPorcent;
+                    //res.roll = this->rollPorcent;
+                    res.roll = fullvel* (this->rollvelfactor);
                 } else if( points[0].x < frameCenter.x && points[1].x < frameCenter.x){
 
                     //mover a la izuierda
-                    res.roll = - this->rollPorcent;
+                    //res.roll = - this->rollPorcent;
+                    res.roll = -fullvel* (this->rollvelfactor);
                 }
 
                 //movimiento eje y
                 if( points[0].y > frameCenter.y && points[1].y > frameCenter.y){
 
                     //mover hacia atras
-                    res.pitch = -this->pitchPorcent;
+                    //res.pitch = -this->pitchPorcent;
+                    res.pitch = -fullvel* (this->pitchvelfactor);
                 } else if( points[0].y < frameCenter.y && points[1].y < frameCenter.y){
 
                     //mover hacia adelande
-                    res.pitch = this->pitchPorcent;
+                    //res.pitch = this->pitchPorcent;
+                    res.pitch = fullvel* (this->pitchvelfactor);
                 }
 
             } else {//size 1
@@ -116,22 +122,26 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 if( points[0].x > frameCenter.x ){
 
                     //movera la derecha
-                    res.roll = this->rollPorcent;
+                    //res.roll = this->rollPorcent;
+                    res.roll = fullvel* (this->rollvelfactor);
                 } else if( points[0].x < frameCenter.x ){
 
                     //mover a la izuierda
-                    res.roll = - this->rollPorcent;
+                    //res.roll = - this->rollPorcent;
+                    res.roll = -fullvel* (this->rollvelfactor);
                 }
 
                 //movimiento eje y
                 if( points[0].y > frameCenter.y){
 
                     //mover hacia atras
-                    res.pitch = -this->pitchPorcent;
+                    //res.pitch = -this->pitchPorcent;
+                    res.pitch = -fullvel* (this->pitchvelfactor);
                 } else if( points[0].y < frameCenter.y){
 
                     //mover hacia adelande
-                    res.pitch = this->pitchPorcent;
+                    //res.pitch = this->pitchPorcent;
+                    res.pitch = fullvel* (this->pitchvelfactor);
                 }
 
             }
