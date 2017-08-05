@@ -32,6 +32,7 @@ private:
     const float fullvel = 0.5;
     const float pitchvelfactor = 0.20;
     const float rollvelfactor = 0.15;
+    const float yawvelfactor = 0.25;
 
     const float alignmentTolerance = 0.05;
     const float landAltitude = 2;

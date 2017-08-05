@@ -29,19 +29,19 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
     if(this->state == LandingState::Inactive){
 
-        this->state = LandingState::Finding;
-    } else if(this->state == LandingState::Finding){
+        this->state = LandingState::Centring;
+    } else if(this->state == LandingState::Centring){
 
-        if(false/*points.size() == 4*/){
+        /*if(points.size() == 4){
 
             //this->state = LandingState::Rotating;
             this->state = LandingState::Centring;
-        }else if (points.size() > 0){
-            //buscar con referencia
+        }else*/
+        if (points.size() > 0){
 
-            if(points.size()>=3){
+            if(points.size()>=3){//Centrar punto medio
 
-                //////CENTRANDO PUNTO MEDIO
+                //Calcular punto opuesto a [0]
                 float d = 0;
                 int b;
                 for(int i = 0; i<3; i++){
@@ -54,63 +54,95 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 }
 
                 cv::Point squareCenter( (points[0].x+points[b].x)/2, (points[0].y+points[b].y)/2);
-                cv::Point frameCenter = cv::Point(frameSize.x / 2,
-                                                  frameSize.y / 2);
+                cv::Point frameCenter = cv::Point(frameSize.x / 2, frameSize.y / 2);
 
                 //movimiento eje x
                 res.roll = ( (squareCenter.x - frameCenter.x) / (frameSize.x/2) ) * (this->rollvelfactor);
-                /*if( squareCenter.x > frameCenter.x){
 
-                    //movera la derecha
-                    res.roll = this->rollPorcent;
-                } else {
-
-                    //mover a la izuierda
-                    res.roll = - this->rollPorcent;
-                }*/
 
                 //movimiento eje y
                 res.pitch = ( (frameCenter.y - squareCenter.y ) / (frameSize.y/2) ) * (this->pitchvelfactor);
-                /*if( squareCenter.y > frameCenter.y ){
 
-                    //mover hacia atras
-                    res.pitch = -this->pitchPorcent;
+
+                //movimiento de rotación
+                int c = 1;
+                int a = 0;
+                if(b == 1)
+                    c = 2;
+
+                int ys[2];//Puntos agrupados por similitud de y de izquierda a derecha
+                if(abs(points[c].y-points[a].y) < abs(points[c].y-points[b].y)){
+
+                    if(points[a].x < points[c].x){
+                        ys[0]=a;
+                        ys[1]=c;
+                    }else{
+                        ys[0]=c;
+                        ys[1]=a;
+                    }
                 } else {
 
-                    //mover hacia adelande
-                    res.pitch = this->pitchPorcent;
-                }*/
+                    if(points[b].x < points[c].x){
+                        ys[0]=b;
+                        ys[1]=c;
+                    }else{
+                        ys[0]=c;
+                        ys[1]=b;
+                    }
+                }
+
+
+                cv::Point auxpoit = points[ys[1]] - points[ys[0]];
+                float l = std::sqrt(auxpoit.x*auxpoit.x + auxpoit.y*auxpoit.y);
+                if(points[ys[0]].y<points[ys[1]].y){//ys[0] está mas arriba
+
+                    //girar a la izquierda
+                    res.yaw= -((points[ys[1]].y-points[ys[0]].y) / l) * (this->yawvelfactor);
+                }else{//ys[1] está mas arriba
+
+                    //girar a la derecha
+                    res.yaw= ((points[ys[0]].y-points[ys[1]].y) / l) * (this->yawvelfactor);
+                }
 
 
             } else if (points.size()==2){
 
-                cv::Point frameCenter = cv::Point(frameSize.x / 2,
-                                                  frameSize.y / 2);
+                cv::Point frameCenter = cv::Point(frameSize.x / 2, frameSize.y / 2);
 
-                //movimiento eje x
+                ////Movimiento eje x
                 if( points[0].x > frameCenter.x && points[1].x > frameCenter.x){
 
-                    //movera la derecha
-                    //res.roll = this->rollPorcent;
-                    res.roll = fullvel* (this->rollvelfactor);
+                    //Movera la derecha
+                    int auxmax=0;
+                    if(points[1].x>points[0].x)
+                        auxmax=1;
+                    res.roll = (points[auxmax].x/frameSize.x) * (this->rollvelfactor);
+
                 } else if( points[0].x < frameCenter.x && points[1].x < frameCenter.x){
 
                     //mover a la izuierda
-                    //res.roll = - this->rollPorcent;
-                    res.roll = -fullvel* (this->rollvelfactor);
+                    int auxmax=0;
+                    if(points[1].x<points[0].x)
+                        auxmax=1;
+                    res.roll = -((frameSize.x - points[auxmax].x)/frameSize.x) * (this->rollvelfactor);
                 }
 
                 //movimiento eje y
                 if( points[0].y > frameCenter.y && points[1].y > frameCenter.y){
 
                     //mover hacia atras
-                    //res.pitch = -this->pitchPorcent;
-                    res.pitch = -fullvel* (this->pitchvelfactor);
+                    int auxmax=0;
+                    if(points[1].y>points[0].y)
+                        auxmax=1;
+                    res.pitch = -(points[auxmax].y/frameSize.y) * (this->pitchvelfactor);
+
                 } else if( points[0].y < frameCenter.y && points[1].y < frameCenter.y){
 
                     //mover hacia adelande
-                    //res.pitch = this->pitchPorcent;
-                    res.pitch = fullvel* (this->pitchvelfactor);
+                    int auxmax=0;
+                    if(points[1].y<points[0].y)
+                        auxmax=1;
+                    res.pitch = (frameSize.y - points[auxmax].y/frameSize.y) * (this->pitchvelfactor);
                 }
 
             } else {//size 1
@@ -122,26 +154,24 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 if( points[0].x > frameCenter.x ){
 
                     //movera la derecha
-                    //res.roll = this->rollPorcent;
-                    res.roll = fullvel* (this->rollvelfactor);
+                    res.roll = (points[0].x/frameSize.x) * (this->rollvelfactor);
+
                 } else if( points[0].x < frameCenter.x ){
 
                     //mover a la izuierda
-                    //res.roll = - this->rollPorcent;
-                    res.roll = -fullvel* (this->rollvelfactor);
+                    res.roll = -(frameSize.x - points[0].x/frameSize.x) * (this->rollvelfactor);
                 }
 
                 //movimiento eje y
                 if( points[0].y > frameCenter.y){
 
                     //mover hacia atras
-                    //res.pitch = -this->pitchPorcent;
-                    res.pitch = -fullvel* (this->pitchvelfactor);
+                    res.pitch = -(points[0].y/frameSize.y) * (this->pitchvelfactor);
+
                 } else if( points[0].y < frameCenter.y){
 
                     //mover hacia adelande
-                    //res.pitch = this->pitchPorcent;
-                    res.pitch = fullvel* (this->pitchvelfactor);
+                    res.pitch = (frameSize.y - points[0].y/frameSize.y) * (this->pitchvelfactor);
                 }
 
             }
@@ -149,151 +179,6 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
         }else {
             //Buscar Puntos in referencia: todo
-        }
-
-    /*} else if(this->state == LandingState::Rotating){
-
-        if(points.size() == 4){
-
-            //ordenar por y
-            int orderbyY[4] = {0,1,2,3};
-            for(int i = 0; i < 4; i++){
-                    for (int k = i+1; k < 4; k++){
-                        if(points[orderbyY[k]].y <  points[orderbyY[i]].y){
-                            int aux = orderbyY[i];
-                            orderbyY[i] = orderbyY[k];
-                            orderbyY[k] = aux;
-                        }
-                    }
-            }
-
-
-            if( abs(points[orderbyY[0]].y -points[orderbyY[1]].y) < frameSize.y*alignmentTolerance){//Estoy alineado
-
-                this->state = LandingState::Centring;
-
-            }else{//Tengo que alinear
-
-                //order en x
-                int a, b;
-                if(points[orderbyY[0]].x > points[orderbyY[1]].x){
-                    a=1;
-                    b=0;
-                }else{
-                    a=0;
-                    b=1;
-                }
-
-                if( points[orderbyY[a]].y < points[orderbyY[b]].y ){
-
-                    //girar a la izquierda
-                    res.yaw = -this->yawPorcent;
-                } else {
-
-                    // girar a la derecha
-                    res.yaw = this->yawPorcent;
-                }
-            }
-        }
-    */
-    } else if(this->state == LandingState::Centring){
-
-        if(points.size() == 4){
-
-            bool centred = false, rotated = false;
-
-
-            //////CENTRANDO PUNTO MEDIO
-            float d = 0;
-            int b;
-            for(int i = 0; i<4; i++){
-
-                cv::Point aux = points[0] - points[i];
-
-                if( (aux.x*aux.x+aux.y+aux.y) > d){
-                    b = i;
-                }
-            }
-
-            cv::Point squareCenter( (points[0].x+points[b].x)/2, (points[0].y+points[b].y)/2);
-            cv::Point frameCenter = cv::Point(frameSize.x / 2,
-                                              frameSize.y / 2);
-
-            if( abs(squareCenter.x-frameCenter.x) < frameSize.x*alignmentTolerance
-                    and abs(squareCenter.y-frameCenter.y) < frameSize.y*alignmentTolerance){
-
-                //this->state = LandingState::FinalPositioning;
-                centred = true;
-            } else {
-
-                //movimiento eje x
-                if( squareCenter.x > frameCenter.x){
-
-                    //movera la derecha
-                    res.roll = this->rollPorcent;
-                } else {
-
-                    //mover a la izuierda
-                    res.roll = - this->rollPorcent;
-                }
-
-                //movimiento eje y
-                if( squareCenter.y > frameCenter.y ){
-
-                    //mover hacia atras
-                    res.pitch = -this->pitchPorcent;
-                } else {
-
-                    //mover hacia adelande
-                    res.pitch = this->pitchPorcent;
-                }
-            }
-
-            //////ROTANDO
-            //ordenar por y
-            int orderbyY[4] = {0,1,2,3};
-            for(int i = 0; i < 4; i++){
-                for (int k = i+1; k < 4; k++){
-                    if(points[orderbyY[k]].y <  points[orderbyY[i]].y){
-                        int aux = orderbyY[i];
-                        orderbyY[i] = orderbyY[k];
-                        orderbyY[k] = aux;
-                    }
-                }
-            }
-
-
-            if( abs(points[orderbyY[0]].y -points[orderbyY[1]].y) < frameSize.y*alignmentTolerance){//Estoy alineado
-
-                //this->state = LandingState::Centring;
-                rotated = true;
-
-            }else{//Tengo que alinear
-
-                //order en x
-                int a, b;
-                if(points[orderbyY[0]].x > points[orderbyY[1]].x){
-                    a=1;
-                    b=0;
-                }else{
-                    a=0;
-                    b=1;
-                }
-
-                if( points[orderbyY[a]].y < points[orderbyY[b]].y ){
-
-                    //girar a la izquierda
-                    res.yaw = -this->yawPorcent;
-                } else {
-
-                    // girar a la derecha
-                    res.yaw = this->yawPorcent;
-                }
-            }
-
-            //////Cambio de estado
-            if(centred && rotated)
-                this->state = LandingState::FinalPositioning;
         }
 
     } else if(this->state == LandingState::FinalPositioning){
