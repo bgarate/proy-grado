@@ -3,7 +3,7 @@
 #ifndef PROY_GRADO_MARKERLAND_H
 #define PROY_GRADO_MARKERLAND_H
 
-enum class LandingState {Inactive ,Finding, Rotating, Centring, FinalPositioning};
+enum class LandingState {Inactive, Centring, Landing};
 
 class LandMoveCommand {
 public:
@@ -29,17 +29,12 @@ public:
 private:
     LandingState state;
 
-    const float fullvel = 0.5;
-    const float pitchvelfactor = 0.20;
-    const float rollvelfactor = 0.15;
-    const float yawvelfactor = 0.25;
+    const float pitchvelfactor = 0.12;
+    const float rollvelfactor = 0.16;
+    const float yawvelfactor = 1;
+    const float gazvelfactor = 0.5;
 
-    const float alignmentTolerance = 0.05;
     const float landAltitude = 2;
-    const float pitchPorcent = 0.05;
-    const float rollPorcent = 0.05;
-    const float yawPorcent = 0.1;
-    const float gazPorcent = 0.5;
 
 };
 

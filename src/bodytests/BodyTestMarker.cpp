@@ -78,14 +78,10 @@ public:
 
                 if (command.state == LandingState::Inactive)
                         visualDebugger->setSubStatus("Inactivo");
-                else if (command.state == LandingState::Finding)
-                        visualDebugger->setSubStatus("Buscando");
-                else if (command.state == LandingState::Rotating)
-                        visualDebugger->setSubStatus("Rotando");
                 else if (command.state == LandingState::Centring)
                         visualDebugger->setSubStatus("Centrando");
-                else if (command.state == LandingState::FinalPositioning)
-                        visualDebugger->setSubStatus("Posicioando");
+                else if (command.state == LandingState::Landing)
+                        visualDebugger->setSubStatus("Aterrizando");
 
 
                 if(command.land){
@@ -93,8 +89,8 @@ public:
                     return false;
                 } else /*if (command.roll != 0 || command.pitch != 0 || command.yaw != 0 || command.gaz != 0 )*/ {
 
-                    hal->move((int)(command.roll*100),(int)(command.pitch*100), (int)(command.yaw * 100),(int)(command.gaz * 100));
-                    //std::cout <<
+                    hal->move((int)(command.roll*100),(int)(command.pitch*100), (int)(-command.yaw * 100),(int)(command.gaz * 100));
+                    //std::cout << "Pitch: " << (int)(command.pitch*100) << " Roll: " << (int)(command.roll*100) << std::endl;
                 }
             }
 
