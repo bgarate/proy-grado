@@ -36,6 +36,8 @@ private:
 
     const float landAltitude = 2;
 
+    const float xtolerance=0.1, ytolerance=0.05, altitudetolereance=0.4;
+
 };
 
 

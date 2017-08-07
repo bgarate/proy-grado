@@ -45,6 +45,13 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 cv::Point squareCenter( (points[0].x+points[b].x)/2, (points[0].y+points[b].y)/2);
                 cv::Point frameCenter = cv::Point(frameSize.x / 2, frameSize.y / 2);
 
+                cv::Point differece = squareCenter - frameCenter;
+                if( abs(differece.x)< ((float)frameCenter.x*xtolerance) &&  abs(differece.y)< ((float)frameCenter.y*ytolerance)){
+                    this->state == LandingState::Landing;
+                    res.state = this->state;
+                    return res;
+                }
+
                 //movimiento eje x
                 res.roll = ( ((float)squareCenter.x - (float)frameCenter.x) / ((float)frameSize.x/2) ) * (this->rollvelfactor);
 
@@ -172,6 +179,11 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
     } else if(this->state == LandingState::Landing){
 
+        if(altitude > altitudetolereance){
+            res.gaz = -100;
+        } else{
+            res.land = true;
+        }
 
     }
     res.state = this->state;
