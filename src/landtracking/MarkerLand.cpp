@@ -45,9 +45,9 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 cv::Point squareCenter( (points[0].x+points[b].x)/2, (points[0].y+points[b].y)/2);
                 cv::Point frameCenter = cv::Point(frameSize.x / 2, frameSize.y / 2);
 
-                cv::Point differece = squareCenter - frameCenter;
-                if( abs(differece.x)< ((float)frameCenter.x*xtolerance) &&  abs(differece.y)< ((float)frameCenter.y*ytolerance)){
-                    this->state == LandingState::Landing;
+               cv::Point differece = squareCenter - frameCenter;
+                if( std::abs((float)differece.x)< ((float)frameCenter.x*xtolerance) &&  std::abs((float)differece.y)< ((float)frameCenter.y*ytolerance)){
+                    this->state = LandingState::Landing;
                     res.state = this->state;
                     return res;
                 }
@@ -67,7 +67,7 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                     c = 2;
 
                 int ys[2];//Puntos agrupados por similitud de y de izquierda a derecha
-                if(abs(points[c].y-points[a].y) < abs(points[c].y-points[b].y)){
+                if(std::abs(points[c].y-points[a].y) < std::abs(points[c].y-points[b].y)){
 
                     if(points[a].x < points[c].x){
                         ys[0]=a;
@@ -179,11 +179,12 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
     } else if(this->state == LandingState::Landing){
 
-        if(altitude > altitudetolereance){
+        res.land = true;
+        /*if(altitude > altitudetolereance){
             res.gaz = -100;
         } else{
             res.land = true;
-        }
+        }*/
 
     }
     res.state = this->state;

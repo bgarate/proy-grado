@@ -34,9 +34,9 @@ private:
     const float yawvelfactor = 1;
     const float gazvelfactor = 0.5;
 
-    const float landAltitude = 2;
+    const float landAltitude = 1.5;
 
-    const float xtolerance=0.1, ytolerance=0.05, altitudetolereance=0.4;
+    const float xtolerance=0.025, ytolerance=0.05, altitudetolereance=1;
 
 };
 

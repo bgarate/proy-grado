@@ -18,8 +18,9 @@ public:
     bool waitingTakeOff = false;
     bool tookOff = false;
     bool forward = true;
+    bool rmovemode = false;
 
-    float forwardpitch = 0.25;
+    float forwardpitch = 0.25  ;
 
     void InitBodyTest(Hal* hal, Config* config, VisualDebugger* visualDebugger){
 
@@ -60,11 +61,18 @@ public:
             // Despegado
             waitingTakeOff = false;
 
+            hal->rmove(0, 0, -1.5, 0);
+            rmovemode=true;
+
+        }
+        //FIN DE MOVIMIENTO
+         else if (rmovemode && !hal->isRmoving()) {
+            rmovemode = false;
+
             //mover adelante hasta encontrar la plataforma
             hal->move(0,(int)forwardpitch*100, 0,0);
 
-
-        } else {//ATERRIZAR EN PLATAFORMA
+        }else {//ATERRIZAR EN PLATAFORMA
             if (frame != NULL) {
 
                 hal->setCameraTilt(Camera::Bottom);
@@ -95,11 +103,12 @@ public:
 
                 if(command.land){
                     visualDebugger->setSubStatus("Aterrizando");
+                    hal->land();
                     return false;
                 }else if(!forward){
 
                     hal->move((int)(command.roll*100),(int)(command.pitch*100), (int)(-command.yaw * 100),(int)(command.gaz * 100));
-                    //std::cout << "Pitch: " << (int)(command.pitch*100) << " Roll: " << (int)(command.roll*100) << std::endl;
+                    std::cout << "Pitch: " << (int)(command.pitch*100) << " Roll: " << (int)(command.roll*100) << std::endl;
                 }
             }
 
