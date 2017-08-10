@@ -25,8 +25,8 @@ link_directories(src/hal/pb2/lib)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES src/proto/message.pb.h src/proto/message.pb.cc)
-set(SOURCE_FILES src/tracking/TrackingAlgorithm.h)
+#set(SOURCE_FILES src/proto/message.pb.h src/proto/message.pb.cc)
+set(SOURCE_FILES ${SOURCE_FILES} src/tracking/TrackingAlgorithm.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/Config.cpp src/Config.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/tracking/Follower.cpp src/tracking/Follower.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/logging/Logger.cpp src/logging/Logger.h)
@@ -52,10 +52,14 @@ set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/FlightManeuver.cpp src/bodytests/
 set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h src/messages/IpResolver.cpp src/messages/IpResolver.h src/hal/pb2/VideoDecoder.cpp src/hal/pb2/VideoDecoder.h src/hal/pb2/CommandHandler.cpp src/hal/pb2/CommandHandler.h src/tracking/AreaRect.h src/hal/ManualControl.cpp src/hal/ManualControl.h src/VisualDebugger.cpp src/VisualDebugger.h)
 #set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/OrbSlam2.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/OpticalFlowObstacleAvoidance.cpp)
+set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/TrackMarkers.cpp src/navigation/MarkerTracker.cpp src/navigation/MarkerTracker.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/main.cpp src/tracking/OpticalFlow.cpp src/tracking/OpticalFlow.h src/tracking/DbScan.cpp src/tracking/DbScan.h src/tracking/Helpers.h)
-set(CALIBRATION_MAIN src/calibration.cpp)
-set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h)
+set(SOURCE_FILES ${SOURCE_FILES}  src/navigation/World.cpp src/navigation/World.h src/navigation/NavigationDebugger.cpp src/navigation/NavigationDebugger.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h)
+
+set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h)
+set(CALIBRATION_MAIN src/calibration.cpp)
+set(MARKER_MAIN src/navigation/MarkerTracker.cpp src/navigation/MarkerTracker.h src/marker.cpp)
 
 ADD_SUBDIRECTORY(src/proto)
 #ADD_SUBDIRECTORY(lib/ORB_SLAM2)
@@ -72,6 +76,7 @@ include_directories(
         ${Pangolin_INCLUDE_DIRS}
 )
 add_executable(proy_grado ${SOURCE_FILES})
+add_executable(marker_generator ${MARKER_MAIN})
 add_executable(calibration ${CALIBRATION_MAIN})
 add_executable(landtracking ${LANDTRACKING_MAIN})
 
@@ -96,6 +101,11 @@ target_link_libraries(calibration ${Boost_LIBRARIES})
 target_link_libraries(calibration ${FFMPEG_LIBRARIES})
 
 target_link_libraries(landtracking ${OpenCV_LIBS})
+
+target_link_libraries(marker_generator ${OpenCV_LIBS})
+target_link_libraries(marker_generator ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(marker_generator ${Boost_LIBRARIES})
+target_link_libraries(proy_grado ${EIGEN3_LIBS} ${Pangolin_LIBRARIES})
 
 #target_link_libraries(proy_grado ${EIGEN3_LIBS} ${Pangolin_LIBRARIES} libDBoW2.so libg2o.so)
 

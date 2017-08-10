@@ -56,6 +56,15 @@ Config::Config() {
     cameraTilt = 15;
     frameSize = cv::Size(640,480);
     fov = 80;
+
+
+    fs = cv::FileStorage("laptop_bg_camera.yml", cv::FileStorage::READ);
+
+    fs["camera_matrix"] >> cameraMatrix;
+    fs["distortion_coefficients"] >> distortionCoefficients;
+
+    fs.release();
+
 }
 
 unsigned short Config::getBroadcastPort() const {
@@ -195,6 +204,14 @@ unsigned int Config::getSleepDelay() const {
 
 void Config::setSleepDelay(unsigned int sleepDelay) {
     this->sleepDelay = sleepDelay;
+}
+
+cv::Mat Config::getDistortionCoefficients() {
+    return distortionCoefficients;
+}
+
+cv::Mat Config::getCameraMatrix() {
+    return cameraMatrix;
 }
 
 

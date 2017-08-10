@@ -8,6 +8,7 @@
 #include <opencv2/core/types.hpp>
 #include "iostream"
 #include "hal/HalType.hpp"
+#include <opencv2/opencv.hpp>
 
 class Config {
 
@@ -104,6 +105,10 @@ public:
 
     void setSleepDelay(unsigned int sleepDelay);
 
+    cv::Mat getCameraMatrix();
+
+    cv::Mat getDistortionCoefficients();
+
 
 private:
     std::string name;
@@ -144,6 +149,11 @@ private:
 
     unsigned int sleepDelay;
 
+    cv::FileStorage fs;
+
+    cv::Mat cameraMatrix;
+
+    cv::Mat distortionCoefficients;
 };
 
 

@@ -12,11 +12,11 @@
 #include "tracking/HogDetector.h"
 #include "bodytests/BodyTest.h"
 #include "bodytests/OpticalFlowObstacleAvoidance.cpp"
+#include "bodytests/TrackMarkers.cpp"
 #include "bodytests/BodyTest1.cpp"
 #include "bodytests/BodyTest2.cpp"
 #include "bodytests/FlightManeuver.cpp"
 #include "bodytests/Follow.cpp"
-//#include "bodytests/OrbSlam2.cpp"
 #include "bodytests/PatrolAndFollow.cpp"
 #include "bodytests/BodyTestRmove.cpp"
 #include "bodytests/BodyTestRmove2.cpp"
@@ -52,10 +52,11 @@ void Body::loop() {
 
     //BodyTest* bt = new PatrolAndFollow();
     //BodyTest* bt = new OrbSlam2();
-    BodyTest* bt = new OpticalFlowObstacleAvoidance();
+    //BodyTest* bt = new OpticalFlowObstacleAvoidance();
     //BodyTest* bt = new BodyTestRmove2();
     //BodyTest* bt = new Follow();
     //BodyTest* bt = new BodyTestMarker();
+    BodyTest* bt = new TrackMarkers();
 
     bt->InitBodyTest(this->hal, config, &visualDebugger);
     Logger::logInfo("Body started");

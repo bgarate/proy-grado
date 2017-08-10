@@ -456,3 +456,33 @@ void VisualDebugger::OpticalFlow(OpticalFlowPoints *points) {
     }
 
 }
+
+void VisualDebugger::ShowMarkers(std::vector<Marker> markers) {
+
+    if (config->isVisualDebugEnabled()) {
+
+        for(Marker& marker : markers){
+            cv::Scalar color = colors[marker.Id % (sizeof(colors)/sizeof(cv::Scalar))];
+
+            std::vector<cv::Point2i> corners;
+
+            std::for_each(marker.Corners.begin(), marker.Corners.end(),
+                      [&corners](const cv::Point2f &item) {
+                          corners.push_back(cv::Point2i((int)item.x, (int)item.y)) ;}) ;
+
+            cv::polylines(frame, corners, true, color);
+
+            cv::Point2f point = marker.Corners[0];
+            std::string str = (boost::format("%u, %.2fm") % marker.Id % marker.Distance).str();
+            cv::Size textSize = cv::getTextSize(str, CONSOLE_FONT, 1, 1, NULL);
+            cv::Point textOrigin = cv::Point((int)point.x, (int)(point.y - textSize.height - 10));
+            cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, color, 1, cv::LINE_AA);
+
+            cv::aruco::drawAxis(frame, config->getCameraMatrix(), config->getDistortionCoefficients(),
+                                marker.Rotation, marker.Translation, 0.1);
+
+        }
+
+    }
+
+}

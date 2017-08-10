@@ -1,5 +1,5 @@
 //
-// Created by bruno on 14/05/17.
+// Created by bruno on 14/05/17.Drones
 //
 
 #include "../hal.hpp"
@@ -7,8 +7,9 @@
 #include "dummyHal.h"
 #include "../Point.h"
 
-DummyHal::DummyHal():videoSource("marker.mp4") {
+DummyHal::DummyHal() {
     state = State::Landed;
+    videoSource.open(-1);
 }
 
 void DummyHal::move(int roll, int pitch, int yaw, int gaz) {

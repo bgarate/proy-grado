@@ -14,6 +14,7 @@
 #include "tracking/Track.h"
 #include <opencv/cv.hpp>
 #include <src/tracking/OpticalFlow.h>
+#include <src/navigation/MarkerTracker.h>
 #include "hal/hal.hpp"
 #include "tracking/Follower.h"
 #include "tracking/MultiTracker.h"
@@ -44,6 +45,8 @@ public:
     void drawHorizon(int y);
 
     void OpticalFlow(OpticalFlowPoints *points);
+
+    void ShowMarkers(std::vector<Marker> markers);
 
 private:
     Config* config;
