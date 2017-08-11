@@ -2,6 +2,8 @@
 // Created by bruno on 08/08/17.
 //
 
+#include <opencv/cv.hpp>
+#include <iostream>
 #include "World.h"
 
 void World::addMarker(cv::Vec3d position, cv::Vec3d rotation, int id) {
@@ -40,23 +42,18 @@ std::vector<WorldObject *> World::getMarkers() {
 }
 
 const cv::Vec3d WorldObject::getPosition() {
-    std::unique_lock<std::mutex> lck(positionMutex);
+    std::unique_lock<std::mutex> lck(mutex);
     return cv::Vec3d(position);
 }
 
 const cv::Vec3d WorldObject::getRotation() {
-    std::unique_lock<std::mutex> lck(rotationMutex);
+    std::unique_lock<std::mutex> lck(mutex);
     return cv::Vec3d(rotation);
 }
 
-void WorldObject::setPosition(const cv::Vec3d &position) {
-    std::unique_lock<std::mutex> lck(positionMutex);
-    this->position = cv::Vec3d(position);
-}
-
-void WorldObject::setRotation(const cv::Vec3d &rotation) {
-    std::unique_lock<std::mutex> lck(rotationMutex);
-    this->rotation = cv::Vec3d(rotation);
+void WorldObject::setInversePose(const cv::Vec3d &position, const cv::Vec3d &rotation) {
+    std::unique_lock<std::mutex> lck(mutex);
+    calculateObjectMatrix(position, rotation);
 }
 
 int WorldObject::getId() const {
@@ -65,4 +62,17 @@ int WorldObject::getId() const {
 
 ObjectType WorldObject::getType() const {
     return type;
+}
+
+void WorldObject::calculateObjectMatrix(const cv::Vec3d &position, const cv::Vec3d &rotation) {
+    // Calc camera pose
+    cv::Mat R;
+    cv::Rodrigues(rotation, R);
+
+    cv::Mat cameraPose = -R.t() * (cv::Mat)position;
+
+    this->position = cv::Vec3d(cameraPose);
+    this->rotation = rotation;
+
+
 }

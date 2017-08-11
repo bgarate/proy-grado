@@ -38,7 +38,7 @@ class TrackMarkers : public BodyTest {
         world.addMarker(cv::Vec3d(0,10,0),cv::Vec3d(0,0,0), 1);
         world.addMarker(cv::Vec3d(5,0,0),cv::Vec3d(0,0,0), 0);
 
-        world.addDrone(cv::Vec3d(5,0,0),cv::Vec3d(0,0,0), 0);
+        world.addDrone(cv::Vec3d(5,0,0),cv::Vec3d(0,0,0), config->getId());
 
         drone = world.getDrones()[0];
 
@@ -53,9 +53,10 @@ class TrackMarkers : public BodyTest {
         if(frame != NULL && !frame->empty()) {
             tracker->Update(frame, deltaTime);
             visualDebugger->ShowMarkers(tracker->Markers);
-            if(tracker->Markers.size()>0)
-                world.getDrones()[0]->setPosition(
-                        cv::Vec3d(tracker->Markers[0].EstimatedCameraPose));
+            if(tracker->Markers.size()>0) {
+                world.getDrones()[0]->setInversePose(
+                        cv::Vec3d(tracker->Markers[0].Translation),cv::Vec3d(tracker->Markers[0].Rotation));
+            }
         }
 
         return true;

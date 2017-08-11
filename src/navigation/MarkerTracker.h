@@ -20,17 +20,14 @@ struct Marker {
             Id(id), Corners(corners), Rotation(rotation),
             Translation(translation) {
 
-        // Calc camera pose
-        cv::Mat R;
-        cv::Rodrigues(rotation, R);
-        EstimatedCameraPose = -R.t() * (cv::Mat)translation;
+
+
     }
 
     std::vector<cv::Point2f> Corners;
     int Id;
     cv::Vec3d Rotation;
     cv::Vec3d Translation;
-    cv::Mat EstimatedCameraPose;
     float Distance;
 };
 

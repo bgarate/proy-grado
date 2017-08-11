@@ -25,8 +25,7 @@ public:
 
     const cv::Vec3d getPosition();
     const cv::Vec3d getRotation();
-    void setPosition(const cv::Vec3d& position);
-    void setRotation(const cv::Vec3d& rotation);
+    void setInversePose(const cv::Vec3d& position, const cv::Vec3d& rotation);
     int getId() const;
     ObjectType getType() const;
 
@@ -36,8 +35,8 @@ private:
     cv::Vec3d rotation;
     ObjectType type;
     int id;
-    std::mutex positionMutex;
-    std::mutex rotationMutex;
+    std::mutex mutex;
+    void calculateObjectMatrix(const cv::Vec3d &position, const cv::Vec3d &rotation);
 };
 
 class World {

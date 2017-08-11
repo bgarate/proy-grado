@@ -4,6 +4,7 @@
 
 #include <memory>
 #include <src/Config.h>
+#include <thread>
 #include "MarkerTracker.h"
 
 MarkerTracker::MarkerTracker(Config* config) {
