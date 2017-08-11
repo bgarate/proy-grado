@@ -36,7 +36,7 @@ private:
 
     const float landAltitude = 1.5;
 
-    const float xtolerance=0.025, ytolerance=0.05, altitudetolereance=1;
+    const float xtolerance=0.013, ytolerance=0.025, ydiferencetolerance=0.1, altitudetolereance=1;
 
 };
 

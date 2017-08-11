@@ -45,13 +45,6 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 cv::Point squareCenter( (points[0].x+points[b].x)/2, (points[0].y+points[b].y)/2);
                 cv::Point frameCenter = cv::Point(frameSize.x / 2, frameSize.y / 2);
 
-               cv::Point differece = squareCenter - frameCenter;
-                if( std::abs((float)differece.x)< ((float)frameCenter.x*xtolerance) &&  std::abs((float)differece.y)< ((float)frameCenter.y*ytolerance)){
-                    this->state = LandingState::Landing;
-                    res.state = this->state;
-                    return res;
-                }
-
                 //movimiento eje x
                 res.roll = ( ((float)squareCenter.x - (float)frameCenter.x) / ((float)frameSize.x/2) ) * (this->rollvelfactor);
 
@@ -98,6 +91,17 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
                     //girar a la derecha
                     res.yaw= (((float)points[ys[0]].y-(float)points[ys[1]].y) / l) * (this->yawvelfactor);
+                }
+
+                //Tengo que aterrizar?
+                cv::Point differece = squareCenter - frameCenter;
+                if( std::abs((float)differece.x)< ((float)frameCenter.x*xtolerance)
+                    &&  std::abs((float)differece.y)< ((float)frameCenter.y*ytolerance)
+                    && std::abs(points[ys[0]].y-points[ys[1]].y) < frameSize.y*ydiferencetolerance ){
+
+                    this->state = LandingState::Landing;
+                    res.state = this->state;
+                    return res;
                 }
 
 

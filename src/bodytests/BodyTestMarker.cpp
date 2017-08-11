@@ -63,16 +63,18 @@ public:
 
             hal->rmove(0, 0, -1.5, 0);
             rmovemode=true;
+            visualDebugger->setSubStatus("Subiendo");
 
         }
         //FIN DE MOVIMIENTO
          else if (rmovemode && !hal->isRmoving()) {
-            rmovemode = false;
 
+            rmovemode = false;
             //mover adelante hasta encontrar la plataforma
             hal->move(0,(int)forwardpitch*100, 0,0);
+            visualDebugger->setSubStatus("Adelante");
 
-        }else {//ATERRIZAR EN PLATAFORMA
+        }else if(!rmovemode) {//ATERRIZAR EN PLATAFORMA
             if (frame != NULL) {
 
                 hal->setCameraTilt(Camera::Bottom);
