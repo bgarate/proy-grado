@@ -9,7 +9,7 @@
 #include "Point.h"
 
 //Enumerado cámara
-	enum class Camera {Front, Bottom};
+	enum class Camera {Front, Bottom, Middle};
 
     enum class State {Unknown, Landed, TakingOff, Hovering, Flying, Landing, Emergency, EmergencyLanding};
 

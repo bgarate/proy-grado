@@ -37,8 +37,8 @@ public:
     static constexpr double TARGET_APROXIMATION_DISTANCE = 2.0;
     static constexpr double TARGET_REACHED_DISTANCE = 0.75;
     static constexpr double ALIGNEMENT_ANGLE_THRESOLD = 15;
-    static constexpr double DISPLACEMENT_MAX_VELOCITY = 0.3;
-    static constexpr double YAW_MAX_VELOCITY = 1;
+    static constexpr double DISPLACEMENT_MAX_VELOCITY = 0.15;
+    static constexpr double YAW_MAX_VELOCITY = 0.5;
 private:
 
     Config* config;

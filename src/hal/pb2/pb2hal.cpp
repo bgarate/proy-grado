@@ -586,6 +586,8 @@ class Pb2hal: public Hal {
 
         if (cam == Camera::Bottom)
             deviceController->aRDrone3->setCameraOrientationV2(deviceController->aRDrone3, this->bottomTilt, 0);
+        else if(cam== Camera::Middle)
+            deviceController->aRDrone3->setCameraOrientationV2(deviceController->aRDrone3, this->bottomTilt / 2, 0);
         else
             deviceController->aRDrone3->setCameraOrientationV2(deviceController->aRDrone3,0, 0);
     }

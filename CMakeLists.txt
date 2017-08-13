@@ -54,9 +54,9 @@ set(SOURCE_FILES ${SOURCE_FILES} src/messages/MessageQueue.cpp src/messages/Mess
 #set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/OrbSlam2.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/OpticalFlowObstacleAvoidance.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/TrackMarkers.cpp src/navigation/MarkerTracker.cpp src/navigation/MarkerTracker.h)
-set(SOURCE_FILES ${SOURCE_FILES} src/main.cpp src/tracking/OpticalFlow.cpp src/tracking/OpticalFlow.h src/tracking/DbScan.cpp src/tracking/DbScan.h src/tracking/Helpers.h)
 set(SOURCE_FILES ${SOURCE_FILES}  src/navigation/World.cpp src/navigation/World.h src/navigation/NavigationDebugger.cpp src/navigation/NavigationDebugger.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h src/navigation/MarkerFollower.cpp src/navigation/MarkerFollower.cpp src/navigation/MarkerFollower.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/main.cpp src/tracking/OpticalFlow.cpp src/tracking/OpticalFlow.h src/tracking/DbScan.cpp src/tracking/DbScan.h src/tracking/Helpers.h)
 
 set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h)
 set(CALIBRATION_MAIN src/calibration.cpp)

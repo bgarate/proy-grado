@@ -58,7 +58,7 @@ Config::Config() {
     fov = 80;
 
 
-    fs = cv::FileStorage("laptop_bg_camera.yml", cv::FileStorage::READ);
+    fs = cv::FileStorage("CustomCalib.yaml", cv::FileStorage::READ);
 
     fs["camera_matrix"] >> cameraMatrix;
     fs["distortion_coefficients"] >> distortionCoefficients;

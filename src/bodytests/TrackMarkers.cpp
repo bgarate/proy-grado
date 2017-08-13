@@ -77,6 +77,7 @@ class TrackMarkers : public BodyTest {
     bool BodyTestStep(double deltaTime) override {
 
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
+        hal->setCameraTilt(Camera::Middle);
 
         //DESPEGAR
         if (hal->getState() == State::Landed && !tookOff) {
@@ -121,7 +122,7 @@ class TrackMarkers : public BodyTest {
                 double deltaAltitude = targetAltitude - currentAltitude;
                 double gaz = std::max(-1.0, std::min(1.0, (deltaAltitude / altitudeSlowdownRadius)));
 
-                hal->move(0, (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (gaz * 100));
+                //hal->move(0, (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (gaz * 100));
             }
 
         }
