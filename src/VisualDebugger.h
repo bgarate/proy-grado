@@ -17,6 +17,7 @@
 #include <src/navigation/MarkerTracker.h>
 #include "hal/hal.hpp"
 #include "tracking/Follower.h"
+#include "navigation/MarkerFollower.h"
 #include "tracking/MultiTracker.h"
 
 class VisualDebugger {
@@ -47,6 +48,8 @@ public:
     void OpticalFlow(OpticalFlowPoints *points);
 
     void ShowMarkers(std::vector<Marker> markers);
+
+    void setNavigationCommand(NavigationCommand command);
 
 private:
     Config* config;
@@ -103,6 +106,7 @@ private:
     std::string lastState = "";
 
     std::string subStatus = "";
+
 };
 
 

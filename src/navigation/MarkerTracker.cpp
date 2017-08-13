@@ -5,6 +5,7 @@
 #include <memory>
 #include <src/Config.h>
 #include <thread>
+#include <src/logging/Logger.h>
 #include "MarkerTracker.h"
 
 MarkerTracker::MarkerTracker(Config* config) {
@@ -25,8 +26,7 @@ int MarkerTracker::getDictionarySize() {
 void MarkerTracker::Update(std::shared_ptr<cv::Mat> frame, double deltaTime) {
 
     std::vector<std::vector<cv::Point2f>> corners;
-    std::vector<cv::Vec3d> translations;
-    std::vector<cv::Vec3d> rotations;
+
     std::vector<int> ids;
 
     cv::aruco::detectMarkers(*frame, dictionary,
@@ -40,7 +40,15 @@ void MarkerTracker::Update(std::shared_ptr<cv::Mat> frame, double deltaTime) {
     Markers.clear();
 
     for (int i = 0; i < corners.size(); ++i) {
-        Markers.push_back(Marker(ids[i], corners[i], rotations[i], translations[i]));
+
+        Marker marker(ids[i], corners[i], rotations[i], translations[i]);
+
+        if(!marker.isFacingUp()) {
+            Logger::logWarning("Marker %u discarded as it was incorrectly positioned: %s %s")
+                    << marker.Id << marker.getXYZPosition() << marker.getEulerAngles();
+        }
+
+        Markers.push_back(marker);
     }
 
 }

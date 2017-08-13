@@ -15,6 +15,7 @@ find_package(Boost REQUIRED system program_options thread)
 find_package(Protobuf REQUIRED)
 find_package(Threads REQUIRED)
 find_package(FFmpeg REQUIRED)
+find_package(Cairo REQUIRED)
 
 find_package(Eigen3 REQUIRED)
 find_package(Pangolin REQUIRED)
@@ -55,7 +56,7 @@ set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/OpticalFlowObstacleAvoidance.cpp)
 set(SOURCE_FILES ${SOURCE_FILES} src/bodytests/TrackMarkers.cpp src/navigation/MarkerTracker.cpp src/navigation/MarkerTracker.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/main.cpp src/tracking/OpticalFlow.cpp src/tracking/OpticalFlow.h src/tracking/DbScan.cpp src/tracking/DbScan.h src/tracking/Helpers.h)
 set(SOURCE_FILES ${SOURCE_FILES}  src/navigation/World.cpp src/navigation/World.h src/navigation/NavigationDebugger.cpp src/navigation/NavigationDebugger.h)
-set(SOURCE_FILES ${SOURCE_FILES} src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h src/navigation/MarkerFollower.cpp src/navigation/MarkerFollower.cpp src/navigation/MarkerFollower.h)
 
 set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h)
 set(CALIBRATION_MAIN src/calibration.cpp)
@@ -75,6 +76,8 @@ include_directories(
         ${EIGEN3_INCLUDE_DIR}
         ${Pangolin_INCLUDE_DIRS}
 )
+include_directories(${CAIRO_INCLUDE_DIRS})
+
 add_executable(proy_grado ${SOURCE_FILES})
 add_executable(marker_generator ${MARKER_MAIN})
 add_executable(calibration ${CALIBRATION_MAIN})
@@ -90,6 +93,7 @@ target_link_libraries(proy_grado ${Boost_LIBRARIES})
 target_link_libraries(proy_grado ${Protobuf_LIBRARIES})
 target_link_libraries(proy_grado proto)
 target_link_libraries(proy_grado ${FFMPEG_LIBRARIES})
+target_link_libraries(proy_grado ${CAIRO_LIBRARIES})
 target_link_libraries(proy_grado libarcommands.so libarcontroller.so libardiscovery.so libarnetwork.so
         libarnetworkal.so libarsal.so libarstream.so libarstream2.so libarmavlink.so libjson.so
         libarmedia.so libarutils.so libcurl.so libardatatransfer.so libmux.so libpomp.so libcrypto.so
@@ -99,6 +103,7 @@ target_link_libraries(calibration ${OpenCV_LIBS})
 target_link_libraries(calibration ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(calibration ${Boost_LIBRARIES})
 target_link_libraries(calibration ${FFMPEG_LIBRARIES})
+
 
 target_link_libraries(landtracking ${OpenCV_LIBS})
 

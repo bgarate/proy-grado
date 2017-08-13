@@ -6,6 +6,7 @@
 #include <chrono>
 #include <src/tracking/OpticalFlow.h>
 #include <src/landtracking/MarkerTrack.h>
+#include <src/navigation/MarkerFollower.h>
 #include "logging/Logger.h"
 #include "tracking/DetectAndTrack.h"
 #include "VisualDebugger.h"
@@ -353,6 +354,29 @@ void VisualDebugger::writeConsole(std::string str) {
         console.pop_back();
 
     console.insert(console.begin(), str);
+}
+
+void VisualDebugger::setNavigationCommand(NavigationCommand command) {
+
+    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideoEnabled())
+        return;
+
+    if(frame.cols == 0 && frame.rows == 0)
+        return;
+
+    cv::Point frameCenter = cv::Point(frame.cols / 2, frame.rows /2);
+
+    cv::rectangle(frame, cv::Point(frameCenter.x - 40, frameCenter.y - 40),
+                  cv::Point(frameCenter.x + 40, frameCenter.y + 40), RED_COLOR);
+
+    double xPercentage = command.YawSpeed / MarkerFollower::YAW_MAX_VELOCITY;
+    double yPercentage = command.ForwardSpeed / MarkerFollower::DISPLACEMENT_MAX_VELOCITY;
+
+    cv::Point displacement = cv::Point(frameCenter.x + xPercentage * 40,
+                                       frameCenter.y - yPercentage * 40);
+
+    cv::arrowedLine(frame, frameCenter, displacement, RED_COLOR);
+
 }
 
 void VisualDebugger::setFollowCommand(FollowCommand command) {

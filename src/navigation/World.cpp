@@ -31,6 +31,16 @@ std::vector<WorldObject *> World::getDrones() {
     return ret;
 }
 
+WorldObject* World::getMarker(int id) {
+    std::unique_lock<std::mutex> lck(objectsMutex);
+
+    auto it = std::find_if(objects.begin(), objects.end(),
+                           [id](const WorldObject* o){return o->getId() == id &&
+                                   o->getType() == ObjectType::MARKER;} );
+
+    return it != objects.end() ? *it : NULL;
+}
+
 std::vector<WorldObject *> World::getMarkers() {
     std::unique_lock<std::mutex> lck(objectsMutex);
     std::vector<WorldObject *> ret;
@@ -39,6 +49,16 @@ std::vector<WorldObject *> World::getMarkers() {
                  std::back_inserter(ret), [](const WorldObject* o){return o->getType() == ObjectType::MARKER;} );
 
     return ret;
+}
+
+void WorldObject::setPosition(const cv::Vec3d position) {
+    std::unique_lock<std::mutex> lck(mutex);
+    this->position = position;
+}
+
+void WorldObject::setRotation(const cv::Vec3d rotation) {
+    std::unique_lock<std::mutex> lck(mutex);
+    this->rotation = rotation;
 }
 
 const cv::Vec3d WorldObject::getPosition() {
@@ -69,10 +89,30 @@ void WorldObject::calculateObjectMatrix(const cv::Vec3d &position, const cv::Vec
     cv::Mat R;
     cv::Rodrigues(rotation, R);
 
-    cv::Mat cameraPose = -R.t() * (cv::Mat)position;
+
+    R = R.t();
+    cv::Mat cameraPose = -R * (cv::Mat)position;
+
+    cv::Vec3d inverseRotation;
+    cv::Rodrigues(R, inverseRotation);
 
     this->position = cv::Vec3d(cameraPose);
-    this->rotation = rotation;
+    this->rotation = inverseRotation;
 
 
+    cameraMatrix = cv::Mat::eye(4, 4, R.type());
+    R.copyTo(cameraMatrix.rowRange(0, 3).colRange(0, 3)); // copies R into camPose
+    cameraPose.copyTo(cameraMatrix.rowRange(0, 3).colRange(3, 4)); // copies tvec into camPose
+    double* x = &cameraMatrix.at<double>(3,3);
+
+    *x = 1;
+
+
+}
+
+cv::Mat WorldObject::getCameraMatrix() {
+    std::unique_lock<std::mutex> lck(mutex);
+    cv::Mat ret;
+    cameraMatrix.copyTo(ret);
+    return ret;
 }

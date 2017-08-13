@@ -10,6 +10,7 @@
 DummyHal::DummyHal() {
     state = State::Landed;
     videoSource.open(-1);
+    //videoSource.open("test01.mp4");
 }
 
 void DummyHal::move(int roll, int pitch, int yaw, int gaz) {
@@ -47,7 +48,7 @@ std::shared_ptr<cv::Mat> DummyHal::getFrame(Camera cam) {
 }
 
 double DummyHal::getAltitude() {
-    return 5;
+    return 1;
 }
 
 Point DummyHal::getOrientation() {
