@@ -20,7 +20,7 @@ public:
     bool forward = true;
     bool rmovemode = false;
 
-    float forwardpitch = 0.25  ;
+    float forwardpitch = 0.1;
 
     void InitBodyTest(Hal* hal, Config* config, VisualDebugger* visualDebugger){
 
@@ -45,7 +45,6 @@ public:
         if (hal->getState() == State::Landed && !tookOff) {//DESPEGAR
 
             // Despegar
-            Logger::logError("Despegar");
             visualDebugger->writeConsole("Despegar");
             hal->takeoff();
             tookOff = true;
@@ -56,12 +55,11 @@ public:
         } else if (waitingTakeOff &&
                    (hal->getState() == State::Hovering || hal->getState() == State::Flying)) {//DESPEGADO
 
-            Logger::logError("Despegado");
             visualDebugger->writeConsole("Despegado");
             // Despegado
             waitingTakeOff = false;
 
-            hal->rmove(0, 0, -1.5, 0);
+            hal->rmove(0, 0, -1.0, 0);
             rmovemode=true;
             visualDebugger->setSubStatus("Subiendo");
 
@@ -71,10 +69,11 @@ public:
 
             rmovemode = false;
             //mover adelante hasta encontrar la plataforma
-            hal->move(0,(int)forwardpitch*100, 0,0);
-            visualDebugger->setSubStatus("Adelante");
+            //hal->move(0,(int)forwardpitch*100, 0,0);
+            //hal->rmove(5, 0, 0, 0);
+            //visualDebugger->setSubStatus("Adelante");
 
-        }else if(!rmovemode) {//ATERRIZAR EN PLATAFORMA
+        }else if(!rmovemode && !waitingTakeOff) {//ATERRIZAR EN PLATAFORMA
             if (frame != NULL) {
 
                 hal->setCameraTilt(Camera::Bottom);
@@ -99,7 +98,7 @@ public:
                 else if (command.state == LandingState::Landing)
                         visualDebugger->setSubStatus("Aterrizando");
 
-                if(command.roll!=0||command.pitch!=0||command.yaw!=0){
+                if(std::abs(command.roll+command.pitch+command.yaw)>0.0001){
                     forward=false;
                 }
 
@@ -111,6 +110,8 @@ public:
 
                     hal->move((int)(command.roll*100),(int)(command.pitch*100), (int)(-command.yaw * 100),(int)(command.gaz * 100));
                     std::cout << "Pitch: " << (int)(command.pitch*100) << " Roll: " << (int)(command.roll*100) << std::endl;
+                } else {
+                    hal->move(0,(int)(forwardpitch*100), 0,0);
                 }
             }
 
