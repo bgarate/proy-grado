@@ -84,7 +84,7 @@ public:
     int getDictionarySize();
     void Update(std::shared_ptr<cv::Mat> frame, double deltaTime);
 
-    static constexpr float MARKER_SIDE_LENGTH = 0.089;
+    static constexpr float MARKER_SIDE_LENGTH = 0.12;
 
 private:
 

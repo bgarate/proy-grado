@@ -34,7 +34,7 @@ private:
 
     cairo_surface_t *cairo_create_x11_surface0(int x, int y);
 
-    const int SCALE = 60;
+    const int SCALE = 45;
     static const cv::Size SIZE;
 
     int GetX(double x);

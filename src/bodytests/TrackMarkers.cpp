@@ -31,7 +31,7 @@ class TrackMarkers : public BodyTest {
 
     WorldObject* drone;
 
-    double targetAltitude = 3;
+    double targetAltitude = 1.5;
     double altitudeSlowdownRadius = 1;
 
     void InitBodyTest(Hal *hal, Config* config, VisualDebugger* visualDebugger) override {
@@ -39,10 +39,21 @@ class TrackMarkers : public BodyTest {
         this->visualDebugger = visualDebugger;
         tracker = new MarkerTracker(config);
 
-        world.addMarker(cv::Vec3d(0,1,0),cv::Vec3d(0,0,0), 0);
-        world.addMarker(cv::Vec3d(0,1.55,0),cv::Vec3d(0,0,-90), 16);
-        world.addMarker(cv::Vec3d(-0.32,1.55,0),cv::Vec3d(0,0, 180), 17);
-        world.addMarker(cv::Vec3d(-0.32,1,0),cv::Vec3d(0,0, 90), 13);
+        world.addMarker(cv::Vec3d(0,0,0),cv::Vec3d(0,0,0), 0);
+        world.addMarker(cv::Vec3d(0,2.65,0),cv::Vec3d(0,0,0), 5);
+        world.addMarker(cv::Vec3d(0,2.65+2.05,0),cv::Vec3d(0,0,0), 1);
+        world.addMarker(cv::Vec3d(0,2.65+2.05+1.56,0),cv::Vec3d(0,0,90), 8);
+
+        world.addMarker(cv::Vec3d(1.74,2.65+2.05+1.56,0),cv::Vec3d(0,0,90), 4);
+        world.addMarker(cv::Vec3d(1.74+1.47,2.65+2.05+1.56,0),cv::Vec3d(0,0,180), 11);
+
+        world.addMarker(cv::Vec3d(1.74+1.47,1.40+1.40+1.9,0),cv::Vec3d(0,0,180), 9);
+        world.addMarker(cv::Vec3d(1.74+1.47,1.40+1.40,0),cv::Vec3d(0,0,180), 10);
+        world.addMarker(cv::Vec3d(1.74+1.47,1.40,0),cv::Vec3d(0,0,180), 6);
+        world.addMarker(cv::Vec3d(1.74+1.47,0,0),cv::Vec3d(0,0,-90), 7);
+
+        world.addMarker(cv::Vec3d(1.67,0,0),cv::Vec3d(0,0,-90), 3);
+        world.addMarker(cv::Vec3d(1.67,2.75,0),cv::Vec3d(0,0,0), 2);
 
         world.addDrone(cv::Vec3d(5,0,0),cv::Vec3d(0,0,0), config->getId());
 
@@ -53,38 +64,66 @@ class TrackMarkers : public BodyTest {
         navigationDebugger = new NavigationDebugger(config, &world);
         navigationDebugger->Init();
 
-        std::vector<int> path = {0,16,17,13};
+        std::vector<int> path = {0,5,1,8,4,11,9,10,6,7,3};
 
         follower->setPath(path);
 
         //navigationDebuggerThread = std::thread(&NavigationDebugger::Run, navigationDebugger);
     }
 
+    bool tookOff = false;
+    bool waitingTakeOff = false;
+
     bool BodyTestStep(double deltaTime) override {
 
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
-        if(frame != NULL && !frame->empty()) {
-            tracker->Update(frame, deltaTime);
-            NavigationCommand command = follower->update(tracker->Markers, hal->getAltitude(), deltaTime);
 
-            drone->setPosition(follower->EstimatedPosition);
-            drone->setRotation(follower->EstimatedPose);
+        //DESPEGAR
+        if (hal->getState() == State::Landed && !tookOff) {
+            // Despegar
+            Logger::logError("Despegar");
+            visualDebugger->writeConsole("Despegar");
+            hal->takeoff();
+            tookOff = true;
+            waitingTakeOff = true;
+            return true;
 
-            visualDebugger->ShowMarkers(tracker->Markers);
-            visualDebugger->setNavigationCommand(command);
-            navigationDebugger->Run(command,
-                                    follower->getTargetId(),follower->EstimatedPositions, follower->EstimatedPoses);
+            //DESPEGADO
+        } else if (waitingTakeOff &&
+                   (hal->getState() == State::Hovering || hal->getState() == State::Flying)) {
+            Logger::logError("Despegado");
+            visualDebugger->writeConsole("Despegado");
+            // Despegado
+            waitingTakeOff = false;
 
-            /*if(tracker->Markers.size()>0) {
-                world.getDrones()[0]->setInversePose(
-                        cv::Vec3d(tracker->Markers[0].Translation),cv::Vec3d(tracker->Markers[0].Rotation));
-            }*/
+        //MOVERSE
+        } else {
 
-            double currentAltitude = hal->getAltitude();
-            double deltaAltitude = targetAltitude - currentAltitude;
-            double gaz = std::max(-1.0, std::min(1.0, (deltaAltitude / altitudeSlowdownRadius)));
+            if (frame != NULL && !frame->empty()) {
+                tracker->Update(frame, deltaTime);
+                NavigationCommand command = follower->update(tracker->Markers, hal->getAltitude(), deltaTime);
 
-            hal->move(0, (int)(command.ForwardSpeed * 100),(int)(command.YawSpeed * 100), (int)(gaz * 100));
+                drone->setPosition(follower->EstimatedPosition);
+                drone->setRotation(follower->EstimatedPose);
+
+                visualDebugger->ShowMarkers(tracker->Markers);
+                visualDebugger->setNavigationCommand(command);
+                navigationDebugger->Run(command,
+                                        follower->getTargetId(), follower->EstimatedPositions,
+                                        follower->EstimatedPoses);
+
+                /*if(tracker->Markers.size()>0) {
+                    world.getDrones()[0]->setInversePose(
+                            cv::Vec3d(tracker->Markers[0].Translation),cv::Vec3d(tracker->Markers[0].Rotation));
+                }*/
+
+                double currentAltitude = hal->getAltitude();
+                double deltaAltitude = targetAltitude - currentAltitude;
+                double gaz = std::max(-1.0, std::min(1.0, (deltaAltitude / altitudeSlowdownRadius)));
+
+                hal->move(0, (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (gaz * 100));
+            }
+
         }
 
         return true;
