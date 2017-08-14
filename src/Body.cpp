@@ -53,10 +53,10 @@ void Body::loop() {
     //BodyTest* bt = new PatrolAndFollow();
     //BodyTest* bt = new OrbSlam2();
     //BodyTest* bt = new OpticalFlowObstacleAvoidance();
-    //BodyTest* bt = new BodyTestRmove2();
+    BodyTest* bt = new BodyTestRmove2();
     //BodyTest* bt = new Follow();
     //BodyTest* bt = new BodyTestMarker();
-    BodyTest* bt = new TrackMarkers();
+    //BodyTest* bt = new TrackMarkers();
 
     bt->InitBodyTest(this->hal, config, &visualDebugger);
     Logger::logInfo("Body started");

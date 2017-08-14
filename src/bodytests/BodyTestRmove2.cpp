@@ -25,7 +25,7 @@ class BodyTestRmove2 : public BodyTest {
     } DirectionTime;
 
     //PATRON DE VIGILANCIA
-    std::vector<DirectionTime> sequence = {DirectionTime(0,0,-1,0),
+    /*std::vector<DirectionTime> sequence = {DirectionTime(0,0,-1,0),
                                            DirectionTime(4,0,0,0),
                                            DirectionTime(0,0,0,-1.5708),
                                            DirectionTime(0,0,0,4.71239),
@@ -33,17 +33,18 @@ class BodyTestRmove2 : public BodyTest {
                                            DirectionTime(0,0,0,-1.5708),
                                            DirectionTime(0,0,0,4.71239),
                                            DirectionTime(4,0,0,0)
-    };
-    /*std::vector<DirectionTime> sequence = {DirectionTime(0,0,-1,0),
-                                           DirectionTime(4,0,0,0),
-                                           DirectionTime(0,0,0,-1.5708),
-                                           DirectionTime(4,0,0,0),
-                                           DirectionTime(0,0,0,-1.5708),
-                                           DirectionTime(4,0,0,0),
-                                           DirectionTime(0,0,0,-1.5708),
-                                           DirectionTime(4,0,0,0),
-                                           DirectionTime(0,0,0,-1.5708)
     };*/
+    std::vector<DirectionTime> sequence = {DirectionTime(0,0,-1,0),
+                                           DirectionTime(6,0,0,0),
+                                           //DirectionTime(0,0,0,-1.5708),
+                                           DirectionTime(0,0,0,(M_PI/2)*3*1.1),
+                                           DirectionTime(10,0,0,0),
+                                           DirectionTime(0,0,0,(-1.5708)*1.2),
+                                           DirectionTime(6,0,0,0),
+                                           DirectionTime(0,0,0,(-1.5708)*0.8),
+                                           DirectionTime(8,0,0,0),
+                                           DirectionTime(0,0,0,-1.5708)
+    };
 
 
     Hal* hal;
