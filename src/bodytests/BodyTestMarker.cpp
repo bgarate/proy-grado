@@ -20,7 +20,7 @@ public:
     bool forward = true;
     bool rmovemode = false;
 
-    float forwardpitch = 0.1;
+    float forwardpitch = 0.05;
 
     void InitBodyTest(Hal* hal, Config* config, VisualDebugger* visualDebugger){
 
@@ -59,7 +59,7 @@ public:
             // Despegado
             waitingTakeOff = false;
 
-            hal->rmove(0, 0, -1.0, 0);
+            hal->rmove(0, 0, -0.3, 0);
             rmovemode=true;
             visualDebugger->setSubStatus("Subiendo");
 
