@@ -2,6 +2,7 @@
 // Created by santy on 25/07/17.
 //
 
+#include <zconf.h>
 #include "MarkerLand.h"
 
 
@@ -42,7 +43,7 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                     }
                 }
 
-                cv::Point squareCenter( (points[0].x+points[b].x)/2, (points[0].y+points[b].y)/2);
+                cv::Point squareCenter( (points[0].x+points[b].x)/2-(std::abs(points[0].x-points[b].x)/8), (points[0].y+points[b].y)/2);//Corro el x hacia un lado
                 cv::Point frameCenter = cv::Point(frameSize.x / 2, frameSize.y / 2);
 
                 //movimiento eje x
@@ -51,7 +52,6 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
                 //movimiento eje y
                 res.pitch = ( ((float)frameCenter.y - (float)squareCenter.y ) / ((float)frameSize.y/2) ) * (this->pitchvelfactor);
-
 
                 //movimiento de rotación
                 int c = 1;
@@ -83,7 +83,7 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
                 cv::Point auxpoit = points[ys[1]] - points[ys[0]];
                 float l = std::sqrt(auxpoit.x*auxpoit.x + auxpoit.y*auxpoit.y);
-                if(points[ys[0]].y<points[ys[1]].y){//ys[0] está mas arriba
+                if(std::abs(points[ys[0]].y - points[ys[1]].y) > (l*0.5) || points[ys[0]].y < points[ys[1]].y ){//ys[0] está mas arriba
 
                     //girar a la izquierda
                     res.yaw= -(((float)points[ys[1]].y-(float)points[ys[0]].y) / l) * (this->yawvelfactor);
@@ -94,14 +94,16 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 }
 
                 //Tengo que aterrizar?
-                cv::Point differece = squareCenter - frameCenter;
-                if( std::abs((float)differece.x)< ((float)frameCenter.x*xtolerance)
+                /*cv::Point differece = squareCenter - frameCenter;
+                /if( std::abs((float)differece.x)< ((float)frameCenter.x*xtolerance)
                     &&  std::abs((float)differece.y)< ((float)frameCenter.y*ytolerance)
-                    && std::abs(points[ys[0]].y-points[ys[1]].y) < frameSize.y*ydiferencetolerance ){
+                    && std::abs(points[ys[0]].y-points[ys[1]].y) < frameSize.y*ydiferencetolerance ){*/
+                if(std::abs(res.pitch)<0.1&&std::abs(res.roll)<0.0002&&std::abs(res.yaw<0.1)){
 
-                    this->state = LandingState::Landing;
+                    /*this->state = LandingState::Landing;
                     res.state = this->state;
-                    return res;
+                    return res;*/
+                    std::cout << "Land!!" << std::endl;
                 }
 
 
@@ -179,16 +181,22 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
         }else {
             //Buscar Puntos in referencia: todo
+            //if(altitude < 2.0)
+            //    res.gaz=0.3;
+            //res.gaz = (2.5 - altitude)/2.5 * (this->gazvelfactor);
         }
 
     } else if(this->state == LandingState::Landing){
 
-        res.land = true;
-        /*if(altitude > altitudetolereance){
-            res.gaz = -100;
+        //res.land = true;
+        if(!this->preland/*altitude > altitudetolereance*/){
+            res.gaz = -0.5;
+            res.pitch=0.7;
+
+            this->preland=true;
         } else{
             res.land = true;
-        }*/
+        }
 
     }
     res.state = this->state;

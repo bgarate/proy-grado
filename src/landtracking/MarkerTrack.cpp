@@ -14,6 +14,8 @@ std::vector<cv::Point> MarkerTrack::Track(std::shared_ptr<cv::Mat> frame){
     edges = new cv::Mat(frame->size(), CV_MAKETYPE(frame->depth(), 1));
 
     cvtColor(*frame,*gray,CV_RGB2GRAY);
+    //cv::threshold(*gray, *gray, 220,255,cv::THRESH_TOZERO);
+
     Canny(*gray, *edges, 100 , 200, 3);
     findContours(*edges, contours, hierarchy, cv::RETR_TREE, cv::CHAIN_APPROX_SIMPLE);
 
@@ -79,7 +81,7 @@ std::vector<cv::Point> MarkerTrack::Track(std::shared_ptr<cv::Mat> frame){
         }
     }
 
-    //imshow ( "Image", *frame );
+    //imshow ( "Image", *gray );
     //cv::waitKey(1);
 
     delete gray;
