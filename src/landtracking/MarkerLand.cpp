@@ -32,18 +32,34 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
             if(points.size()>=3){//Centrar punto medio
 
                 //Calcular punto opuesto a [0]
-                float d = 0;
-                int b;
-                for(int i = 0; i<3; i++){
+                float dc01,dc02,dc12;
+                cv::Point v01,v02,v12;
+                int a,b,c;
 
-                    cv::Point aux = points[0] - points[i];
+                v01 = points[0] - points[1];
+                dc01 = v01.x*v01.x+v01.y*v01.y;
 
-                    if( (aux.x*aux.x+aux.y*aux.y) > d){
-                        b = i;
-                    }
+                v02 = points[0] - points[2];
+                dc02 = v02.x*v02.x+v02.y*v02.y;
+
+                v12 = points[1] - points[2];
+                dc12 = v12.x*v12.x+v12.y*v12.y;
+
+                if(dc01> dc02 && dc01 > dc12){
+                    a=0;
+                    b=1;
+                    c=2;
+                } else if(dc02 > dc01 && dc02 > dc12){
+                    a=0;
+                    b=2;
+                    c=1;
+                } else {
+                    a=1;
+                    b=2;
+                    c=0;
                 }
 
-                cv::Point squareCenter( (points[0].x+points[b].x)/2-(std::abs(points[0].x-points[b].x)/8), (points[0].y+points[b].y)/2);//Corro el x hacia un lado
+                cv::Point squareCenter( (points[a].x+points[b].x)/2, (points[a].y+points[b].y)/2);
                 cv::Point frameCenter = cv::Point(frameSize.x / 2, frameSize.y / 2);
 
                 //movimiento eje x
@@ -54,11 +70,6 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 res.pitch = ( ((float)frameCenter.y - (float)squareCenter.y ) / ((float)frameSize.y/2) ) * (this->pitchvelfactor);
 
                 //movimiento de rotación
-                int c = 1;
-                int a = 0;
-                if(b == 1)
-                    c = 2;
-
                 int ys[2];//Puntos agrupados por similitud de y de izquierda a derecha
                 if(std::abs(points[c].y-points[a].y) < std::abs(points[c].y-points[b].y)){
 
@@ -83,10 +94,15 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
                 cv::Point auxpoit = points[ys[1]] - points[ys[0]];
                 float l = std::sqrt(auxpoit.x*auxpoit.x + auxpoit.y*auxpoit.y);
-                if(std::abs(points[ys[0]].y - points[ys[1]].y) > (l*0.5) || points[ys[0]].y < points[ys[1]].y ){//ys[0] está mas arriba
+                if( points[ys[0]].y < points[ys[1]].y ){//ys[0] está mas arriba
 
                     //girar a la izquierda
-                    res.yaw= -(((float)points[ys[1]].y-(float)points[ys[0]].y) / l) * (this->yawvelfactor);
+                    if( (((float)points[ys[1]].y-(float)points[ys[0]].y) / l) > 0.5 ){
+                        res.yaw= (((float)points[ys[1]].y-(float)points[ys[0]].y) / l) * (this->yawvelfactor);
+                    } else {
+                        res.yaw= -(((float)points[ys[1]].y-(float)points[ys[0]].y) / l) * (this->yawvelfactor);
+                    }
+
                 }else{//ys[1] está mas arriba
 
                     //girar a la derecha
@@ -94,16 +110,12 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 }
 
                 //Tengo que aterrizar?
-                /*cv::Point differece = squareCenter - frameCenter;
-                /if( std::abs((float)differece.x)< ((float)frameCenter.x*xtolerance)
-                    &&  std::abs((float)differece.y)< ((float)frameCenter.y*ytolerance)
-                    && std::abs(points[ys[0]].y-points[ys[1]].y) < frameSize.y*ydiferencetolerance ){*/
-                if(std::abs(res.pitch)<0.1&&std::abs(res.roll)<0.0002&&std::abs(res.yaw<0.1)){
+                if(std::abs(res.pitch)<pitchtolerance &&std::abs(res.roll)<rolltolerance &&std::abs(res.yaw)<yawtolerance){
 
-                    /*this->state = LandingState::Landing;
+                    this->state = LandingState::Landing;
                     res.state = this->state;
-                    return res;*/
-                    std::cout << "Land!!" << std::endl;
+                    return res;
+                    //std::cout << "Land!!" << std::endl;
                 }
 
 
@@ -192,6 +204,7 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
         if(!this->preland/*altitude > altitudetolereance*/){
             res.gaz = -0.5;
             res.pitch=0.7;
+            res.roll=-0.5;
 
             this->preland=true;
         } else{

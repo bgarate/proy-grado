@@ -36,6 +36,9 @@ private:
 
     const float landAltitude = 1.0;
 
+    const float pitchtolerance = 0.01;
+    const float rolltolerance = 0.005;
+    const float yawtolerance = 0.05;
     const float xtolerance=0.02, ytolerance=0.05, ydiferencetolerance=0.1, altitudetolereance=0.1;
 
     bool preland = false;
