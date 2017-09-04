@@ -1,7 +1,3 @@
-//
-// Created by santy on 25/07/17.
-//
-
 #include <zconf.h>
 #include "MarkerLand.h"
 
@@ -9,6 +5,11 @@
 MarkerLand::MarkerLand(){
 
     this->state = LandingState::Inactive;
+    lastres.pitch = 0;
+    lastres.roll = 0;
+    lastres.yaw = 0;
+    lastres.gaz = 0;
+    lastres.land = false;
 }
 
 LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameSize, double altitude){
@@ -109,13 +110,14 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                     res.yaw= (((float)points[ys[0]].y-(float)points[ys[1]].y) / l) * (this->yawvelfactor);
                 }
 
+                res.yaw=0.0;
+
                 //Tengo que aterrizar?
                 if(std::abs(res.pitch)<pitchtolerance &&std::abs(res.roll)<rolltolerance &&std::abs(res.yaw)<yawtolerance){
 
                     this->state = LandingState::Landing;
                     res.state = this->state;
                     return res;
-                    //std::cout << "Land!!" << std::endl;
                 }
 
 
@@ -192,19 +194,19 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
 
         }else {
-            //Buscar Puntos in referencia: todo
-            //if(altitude < 2.0)
-            //    res.gaz=0.3;
-            //res.gaz = (2.5 - altitude)/2.5 * (this->gazvelfactor);
+            //Buscar Puntos in referencia (sigo la ultima orden conocida)
+            res.pitch = lastres.pitch;
+            res.roll = lastres.roll;
+            res.yaw = lastres.yaw;
+            res.gaz = lastres.gaz;
         }
 
     } else if(this->state == LandingState::Landing){
 
-        //res.land = true;
-        if(!this->preland/*altitude > altitudetolereance*/){
-            res.gaz = -0.5;
-            res.pitch=0.7;
-            res.roll=-0.5;
+        if(!this->preland){
+            res.gaz = this->gazpreland;
+            res.pitch= this->pitchpreland;
+            res.roll= this->rollpreland;
 
             this->preland=true;
         } else{
@@ -213,6 +215,10 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
     }
     res.state = this->state;
+    lastres.pitch = res.pitch;
+    lastres.roll = res.roll;
+    lastres.yaw = res.yaw;
+    lastres.gaz = res.gaz;
     return res;
 }
 
@@ -223,4 +229,9 @@ bool MarkerLand::isLanding(){
 
 void MarkerLand::stopLanding(){
     this->state = LandingState::Inactive;
+    lastres.pitch = 0;
+    lastres.roll = 0;
+    lastres.yaw = 0;
+    lastres.gaz = 0;
+    lastres.land = false;
 }

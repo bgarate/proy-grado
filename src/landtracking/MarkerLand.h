@@ -31,7 +31,7 @@ private:
 
     const float pitchvelfactor = 0.06;
     const float rollvelfactor = 0.08;
-    const float yawvelfactor = 1;
+    const float yawvelfactor = 0.6;
     const float gazvelfactor = 0.5;
 
     const float landAltitude = 1.0;
@@ -39,9 +39,14 @@ private:
     const float pitchtolerance = 0.01;
     const float rolltolerance = 0.005;
     const float yawtolerance = 0.05;
-    const float xtolerance=0.02, ytolerance=0.05, ydiferencetolerance=0.1, altitudetolereance=0.1;
+
+    const float gazpreland = -0.5;
+    const float pitchpreland = 0.7;
+    const float rollpreland = -0.4;
 
     bool preland = false;
+
+    LandMoveCommand lastres;
 
 };
 

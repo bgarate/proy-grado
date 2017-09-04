@@ -16,7 +16,7 @@ public:
     MarkerLand* markerLand;
 
     bool waitingTakeOff = false;
-    bool tookOff = true;//= false;
+    bool tookOff = false;
     bool forward = true;
     bool rmovemode = false;
 
@@ -108,11 +108,11 @@ public:
                     return false;
                 }else if(!forward){
 
-                    //hal->move((int)(command.roll*100),(int)(command.pitch*100), (int)(-command.yaw * 100),(int)(command.gaz * 100));
+                    hal->move((int)(command.roll*100),(int)(command.pitch*100), (int)(-command.yaw * 100),(int)(command.gaz * 100));
                     //std::cout << "Pitch: " << (int)(command.pitch*100) << " Roll: " << (int)(command.roll*100) << std::endl;
                     std::cout << "Yaw: " << command.yaw << "    Pitch: " << command.pitch << "  Roll: " << command.roll << std::endl;
                 } else {
-                    //hal->move(0,(int)(forwardpitch*100), 0,0);
+                    hal->move(0,(int)(forwardpitch*100), 0,0);
                     std::cout << "Forwarding" << std::endl;
                 }
             }
