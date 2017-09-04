@@ -21,7 +21,7 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
     res.gaz = 0;
     res.land = false;
 
-    res.gaz = (landAltitude - altitude)/landAltitude * (this->gazvelfactor);
+    res.gaz = (float)(landAltitude - altitude)/landAltitude * (this->gazvelfactor);
 
     if(this->state == LandingState::Inactive){
 
@@ -94,7 +94,7 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
 
                 cv::Point auxpoit = points[ys[1]] - points[ys[0]];
-                float l = std::sqrt(auxpoit.x*auxpoit.x + auxpoit.y*auxpoit.y);
+                float l = (float) std::sqrt(auxpoit.x*auxpoit.x + auxpoit.y*auxpoit.y);
                 if( points[ys[0]].y < points[ys[1]].y ){//ys[0] está mas arriba
 
                     //girar a la izquierda
