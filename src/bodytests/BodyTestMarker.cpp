@@ -100,7 +100,11 @@ public:
                     //debug
                     std::cout << "Yaw: " << command.yaw << "    Pitch: " << command.pitch << "  Roll: " << command.roll << std::endl;
                 } else {
-                    hal->move(0,(int)(forwardpitch*100), 0,0);
+                    int gaz = 0;
+                    if(hal->getAltitude()<2)
+                        gaz=5;
+
+                    hal->move(0,(int)(forwardpitch*100), 0,gaz);
 
                     //debug
                     std::cout << "Forwarding" << std::endl;

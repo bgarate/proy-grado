@@ -7,7 +7,7 @@
 #include "dummyHal.h"
 #include "../Point.h"
 
-DummyHal::DummyHal():videoSource("markerland.mp4") {
+DummyHal::DummyHal():videoSource("markertest.mp4") {
     state = State::Landed;
 }
 

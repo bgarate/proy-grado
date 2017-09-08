@@ -41,10 +41,17 @@ private:
     const float yawtolerance = 0.05;
 
     const float gazpreland = -0.5;
-    const float pitchpreland = 0.7;
+    const float pitchpreland = 1.0;
     const float rollpreland = -0.4;
 
-    bool preland = false;
+    const int maxSetpsWithoutReference = 100;
+    const float withoutReferencePitch = 0.05;
+
+    const int contZeroVelTolerance = 5;
+
+    int countWithoutReference;
+    int countZeroVel;
+    bool preland;
 
     LandMoveCommand lastres;
 

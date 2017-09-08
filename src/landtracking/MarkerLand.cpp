@@ -10,6 +10,9 @@ MarkerLand::MarkerLand(){
     lastres.yaw = 0;
     lastres.gaz = 0;
     lastres.land = false;
+    preland = false;
+    countWithoutReference = 0;
+    countZeroVel = 0;
 }
 
 LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameSize, double altitude){
@@ -29,6 +32,8 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
     } else if(this->state == LandingState::Centring){
 
         if (points.size() > 0){
+
+            countWithoutReference = 0;
 
             if(points.size()>=3){//Centrar punto medio
 
@@ -110,14 +115,21 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                     res.yaw= (((float)points[ys[0]].y-(float)points[ys[1]].y) / l) * (this->yawvelfactor);
                 }
 
+                //NO GIRAR
                 res.yaw=0.0;
 
                 //Tengo que aterrizar?
                 if(std::abs(res.pitch)<pitchtolerance &&std::abs(res.roll)<rolltolerance &&std::abs(res.yaw)<yawtolerance){
 
-                    this->state = LandingState::Landing;
-                    res.state = this->state;
-                    return res;
+                    countZeroVel++;
+
+                    if(countZeroVel > contZeroVelTolerance){
+                        this->state = LandingState::Landing;
+                        res.state = this->state;
+                        return res;
+                    }
+                } else {
+                    countZeroVel=0;
                 }
 
 
@@ -195,10 +207,15 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
         }else {
             //Buscar Puntos in referencia (sigo la ultima orden conocida)
-            res.pitch = lastres.pitch;
-            res.roll = lastres.roll;
-            res.yaw = lastres.yaw;
-            res.gaz = lastres.gaz;
+
+            countWithoutReference++;
+            if(countWithoutReference < maxSetpsWithoutReference){
+                res.pitch = lastres.pitch;
+                res.roll = lastres.roll;
+                res.yaw = lastres.yaw;
+                res.gaz = withoutReferencePitch;
+            }
+
         }
 
     } else if(this->state == LandingState::Landing){
