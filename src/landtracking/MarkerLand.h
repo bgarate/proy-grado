@@ -41,7 +41,7 @@ private:
     const float yawtolerance = 0.05;
 
     const float gazpreland = -0.5;
-    const float pitchpreland = 1.0;
+    const float pitchpreland = 0.8;
     const float rollpreland = -0.4;
 
     const int maxSetpsWithoutReference = 100;

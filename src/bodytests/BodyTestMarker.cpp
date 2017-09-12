@@ -101,7 +101,7 @@ public:
                     std::cout << "Yaw: " << command.yaw << "    Pitch: " << command.pitch << "  Roll: " << command.roll << std::endl;
                 } else {
                     int gaz = 0;
-                    if(hal->getAltitude()<2)
+                    if(hal->getAltitude()<2.5)
                         gaz=5;
 
                     hal->move(0,(int)(forwardpitch*100), 0,gaz);
