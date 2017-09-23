@@ -41,6 +41,7 @@ void Body::setup(Config* config) {
     this->mc = new ManualControl(hal);
     this->inmc = false;
 }
+
 void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
     communication.connect(brainHost, port);

@@ -9,152 +9,127 @@
 #include "iostream"
 #include "hal/HalType.hpp"
 #include <opencv2/opencv.hpp>
+#include <yaml-cpp/yaml.h>
+
+#define CONFIG_KEY(PARENT, KEY) static constexpr const ConfigKey KEY = ConfigKey(#KEY,#PARENT);
+
+struct ConfigKey {
+public:
+    constexpr ConfigKey(const char* key, const char* parent):Key(key),Parent(parent){}
+    const char* Key;
+    const char* Parent;
+};
+
+struct ConfigKeys {
+
+    struct Drone {
+        CONFIG_KEY(Drone, Name)
+        CONFIG_KEY(Drone, Id)
+        CONFIG_KEY(Drone, HalType)
+        CONFIG_KEY(Drone, FOV)
+        CONFIG_KEY(Drone, FrameSize)
+        CONFIG_KEY(Drone, CameraTilt)
+        CONFIG_KEY(Drone, SleepDelay)
+        CONFIG_KEY(Drone, CameraMatrix)
+        CONFIG_KEY(Drone, DistortionCoefficients)
+    };
+
+    struct Communications {
+        CONFIG_KEY(Communications, BrainHost)
+        CONFIG_KEY(Communications, BrainPort)
+        CONFIG_KEY(Communications, BroadcastPort)
+        CONFIG_KEY(Communications, AdvertisementLapse)
+        CONFIG_KEY(Communications, CommunicationPort)
+        CONFIG_KEY(Communications, PingTimeout)
+        CONFIG_KEY(Communications, PingLapse)
+        CONFIG_KEY(Communications, PingEnabled);
+    };
+
+    struct Debugging {
+        CONFIG_KEY(Debugging, VisualDebugEnabled);
+        CONFIG_KEY(Debugging, OutputHudVideoEnabled);
+        CONFIG_KEY(Debugging, RealTimeVideoOutputEnabled);
+        CONFIG_KEY(Debugging, OutputRawVideoEnabled);
+        CONFIG_KEY(Debugging, OutputPath);
+    };
+
+    struct Body {
+        CONFIG_KEY(Body, SleepDelay)
+    };
+};
 
 class Config {
 
 public:
-    const std::string &getOutputPath() const;
 
-    void setOutputPath(const std::string &outputPath);
+    Config():path("config.yaml"){}
 
-    bool isOutputHudVideoEnabled() const;
+    void SetPath(const std::string &path) {
+        this->path = std::string(path);
+    }
 
-    void setOutputHudVideoEnabled(bool outputHudVideo);
+    template <typename T>
+    void Set(const ConfigKey &key, T value) {
+        config[std::string(key.Parent)][std::string(key.Key)] = value;
+    }
 
-    bool isOutputRawVideoEnabled() const;
+    template <typename T>
+    T Get(const ConfigKey &key) {
+        return config[std::string(key.Parent)][std::string(key.Key)].as<T>();
+    }
 
-    void setOutputRawVideoEnabled(bool outputRawVideo);
+    void Load() {
 
-    bool isRealTimeVideoOutputEnabled() const;
+        std::ifstream file(path);
 
-    void setRealTimeVideoOutputEnabled(bool realTimeVideoOutput);
+        if(file) {
+            SetDefaults();
+            Save();
+        }
 
-    Config();
+        config = YAML::LoadFile(path);
+    }
 
-    const std::string &getName() const;
-
-    void setName(const std::string &name);
-
-    unsigned int getId() const;
-
-    void setId(unsigned int id);
-
-    const std::string &getBrainHost() const;
-
-    void setBrainHost(const std::string &bodyHost);
-
-    unsigned short getBrainPort() const;
-
-    void setBrainPort(unsigned short bodyPort);
-
-    unsigned short getBroadcastPort() const;
-
-    void setBroadcastPort(unsigned short broadcastPort);
-
-    int getAdvertisementLapse() const;
-
-    void setAdvertisementLapse(int advertisementLapse);
-
-    unsigned short getCommsPort() const;
-
-    void setCommsPort(unsigned short commsPort);
-
-    HalType getHalType() const;
-
-    void setHalType(HalType halType);
-
-    unsigned int getPingTimeout() const;
-
-    void setPingTimeout(unsigned int pingTimeout);
-
-    unsigned int getPingLapse() const;
-
-    void setPingLapse(unsigned int pingLapse);
-
-    bool isVisualDebugEnabled() const;
-
-    void setVisualDebugEnabled(bool visualDebug);
-
-    bool isPingEnabled() const;
-
-    void setPingEnabled(bool pingEnabled);
-
-    double getFov() const;
-
-    void setFov(double fov);
-
-    const cv::Size &getFrameSize() const;
-
-    void setFrameSize(const cv::Size &frameSize);
-
-    double getFrameSizeRatio();
-
-    double getVerticalFov();
-
-    /**
-     * Gets the Bebop 2 drone physical camera tilt. It doesnt takes into account
-     * software tilt. It is taken as the vertical angle between the camera orientation
-     * and the horizontal plane.
-     * @return
-     */
-    const double getCameraTilt() const;
-
-    void setCameraTilt(const double cameraTilt);
-
-    unsigned int getSleepDelay() const;
-
-    void setSleepDelay(unsigned int sleepDelay);
-
-    cv::Mat getCameraMatrix();
-
-    cv::Mat getDistortionCoefficients();
-
+    void Save() {
+        std::ofstream file(path);
+        file << config;
+        file.close();
+    }
 
 private:
-    std::string name;
-    unsigned int id;
+    YAML::Node config;
+    std::string path;
 
-    std::string brainHost;
-    unsigned short brainPort;
+    void Get(const ConfigKey &key);
 
-    unsigned short broadcastPort;
+    void SetDefaults() {
+        YAML::Node node = YAML::Node();
 
-    int advertisementLapse;
+        Set(ConfigKeys::Drone::CameraTilt, 15);
+        Set(ConfigKeys::Drone::FrameSize, cv::Size(640,480));
+        Set(ConfigKeys::Drone::FOV, 80);
 
-    HalType halType;
+        Set(ConfigKeys::Drone::CameraMatrix, 80);
+        Set(ConfigKeys::Drone::DistortionCoefficients, 80);
 
-    unsigned short commsPort;
+        Set(ConfigKeys::Communications::BrainHost, "localhost");
+        Set(ConfigKeys::Communications::BrainPort, 11500);
+        Set(ConfigKeys::Communications::BroadcastPort, 11501);
+        Set(ConfigKeys::Communications::AdvertisementLapse, 5000);
+        Set(ConfigKeys::Communications::CommunicationPort, 11502);
+        Set(ConfigKeys::Communications::PingTimeout, 10000);
+        Set(ConfigKeys::Communications::PingLapse, 5000);
+        Set(ConfigKeys::Communications::PingEnabled, false);
 
-    unsigned int pingTimeout;
+        Set(ConfigKeys::Debugging::VisualDebugEnabled, true);
+        Set(ConfigKeys::Debugging::OutputHudVideoEnabled, true);
+        Set(ConfigKeys::Debugging::OutputRawVideoEnabled, false);
+        Set(ConfigKeys::Debugging::OutputPath, "");
+        Set(ConfigKeys::Debugging::RealTimeVideoOutputEnabled, false);
 
-    unsigned int pingLapse;
+        Set(ConfigKeys::Body::SleepDelay, 0);
 
-    bool visualDebugEnabled;
-
-    bool outputHudVideoEnabled;
-
-    bool realTimeVideoOutputEnabled;
-
-    bool outputRawVideoEnabled;
-
-    std::string outputPath;
-
-    bool pingEnabled;
-
-    double fov;
-
-    cv::Size frameSize;
-
-    double cameraTilt;
-
-    unsigned int sleepDelay;
-
-    cv::FileStorage fs;
-
-    cv::Mat cameraMatrix;
-
-    cv::Mat distortionCoefficients;
+    }
 };
-
 
 #endif //PROY_GRADO_CONFIG_H

@@ -97,3 +97,4 @@ fabric.properties
 /output/*.avi
 /resources/mav0/*
 /resources/rgbd_dataset_freiburg1_360
+/output/*

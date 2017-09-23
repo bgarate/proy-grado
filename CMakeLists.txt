@@ -16,6 +16,7 @@ find_package(Protobuf REQUIRED)
 find_package(Threads REQUIRED)
 find_package(FFmpeg REQUIRED)
 find_package(Cairo REQUIRED)
+find_package(yaml-cpp REQUIRED)
 
 find_package(Eigen3 REQUIRED)
 find_package(Pangolin REQUIRED)
@@ -28,7 +29,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 #set(SOURCE_FILES src/proto/message.pb.h src/proto/message.pb.cc)
 set(SOURCE_FILES ${SOURCE_FILES} src/tracking/TrackingAlgorithm.h)
-set(SOURCE_FILES ${SOURCE_FILES} src/Config.cpp src/Config.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/Config.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/tracking/Follower.cpp src/tracking/Follower.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/logging/Logger.cpp src/logging/Logger.h)
 set(SOURCE_FILES ${SOURCE_FILES} src/tracking/HogDetector.cpp src/tracking/HogDetector.h)
@@ -94,6 +95,8 @@ target_link_libraries(proy_grado ${Protobuf_LIBRARIES})
 target_link_libraries(proy_grado proto)
 target_link_libraries(proy_grado ${FFMPEG_LIBRARIES})
 target_link_libraries(proy_grado ${CAIRO_LIBRARIES})
+target_link_libraries(proy_grado ${yaml-cpp_LIBRARIES})
+target_link_libraries(proy_grado ${EIGEN3_LIBS} ${Pangolin_LIBRARIES})
 target_link_libraries(proy_grado libarcommands.so libarcontroller.so libardiscovery.so libarnetwork.so
         libarnetworkal.so libarsal.so libarstream.so libarstream2.so libarmavlink.so libjson.so
         libarmedia.so libarutils.so libcurl.so libardatatransfer.so libmux.so libpomp.so libcrypto.so
@@ -110,7 +113,6 @@ target_link_libraries(landtracking ${OpenCV_LIBS})
 target_link_libraries(marker_generator ${OpenCV_LIBS})
 target_link_libraries(marker_generator ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(marker_generator ${Boost_LIBRARIES})
-target_link_libraries(proy_grado ${EIGEN3_LIBS} ${Pangolin_LIBRARIES})
 
 #target_link_libraries(proy_grado ${EIGEN3_LIBS} ${Pangolin_LIBRARIES} libDBoW2.so libg2o.so)
 

@@ -32,8 +32,8 @@ FollowCommand Follower::follow(std::vector<Track> tracks, double altitude, doubl
         return followCommand;
     }
 
-    cv::Point frameCenter = cv::Point(config->getFrameSize().width / 2,
-                                      config->getFrameSize().height / 2);
+    cv::Point frameCenter = cv::Point(config->Get<cv::Size>(ConfigKeys::Drone::FrameSize).width / 2,
+                                      config->Get<cv::Size>(ConfigKeys::Drone::FrameSize).height / 2);
 
     std::sort(tracks.begin(),tracks.end(),[this,frameCenter](Track a, Track b){
         cv::Point aCenter = cv::Point(a.getRect().x + a.getRect().width / 2,
@@ -116,7 +116,7 @@ Point Follower::getRotation(double horizontalAngle, double deltaTime) {
 
 Point Follower::getAngularDisplacement(cv::Point2i trackPoint) {
 
-    cv::Size frameSize = config->getFrameSize();
+    cv::Size frameSize = config->Get<cv::Size>(ConfigKeys::Drone::FrameSize);
 
     cv::Point frameCenter = cv::Point(frameSize.width/2, frameSize.height/2);
 
@@ -135,7 +135,7 @@ Point Follower::getAngularDisplacement(cv::Point2i trackPoint) {
 
 int Follower::getHorizon() {
 
-    cv::Size frameSize = config->getFrameSize();
+    cv::Size frameSize = config->Get<cv::Size>(ConfigKeys::Drone::FrameSize);
 
     int frameCenter = frameSize.height/2;
 
