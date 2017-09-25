@@ -3,7 +3,7 @@
 #ifndef PROY_GRADO_MARKERLAND_H
 #define PROY_GRADO_MARKERLAND_H
 
-enum class LandingState {Inactive ,Finding, Rotating, Centring, FinalPositioning};
+enum class LandingState {Inactive, Centring, Landing};
 
 class LandMoveCommand {
 public:
@@ -11,6 +11,8 @@ public:
     float pitch;
     float roll;
     float yaw;
+    float gaz;
+    LandingState state;
 };
 
 class MarkerLand {
@@ -18,7 +20,7 @@ class MarkerLand {
 public:
     MarkerLand();
 
-    LandMoveCommand land(std::vector<cv::Point> points, cv::Point frameSize);
+    LandMoveCommand land(std::vector<cv::Point> points, cv::Point frameSize, double altitude);
 
     bool isLanding();
 
@@ -27,10 +29,31 @@ public:
 private:
     LandingState state;
 
-    const float alignmentTolerance = 0.1;
-    const float pitchPorcent = 0.20;
-    const float rollPorcent = 0.20;
-    const float yawPorcent = 0.30;
+    const float pitchvelfactor = 0.06;
+    const float rollvelfactor = 0.08;
+    const float yawvelfactor = 0.6;
+    const float gazvelfactor = 0.5;
+
+    const float landAltitude = 1.0;
+
+    const float pitchtolerance = 0.01;
+    const float rolltolerance = 0.005;
+    const float yawtolerance = 0.05;
+
+    const float gazpreland = -0.5;
+    const float pitchpreland = 0.8;
+    const float rollpreland = -0.4;
+
+    const int maxSetpsWithoutReference = 100;
+    const float withoutReferencePitch = 0.05;
+
+    const int contZeroVelTolerance = 5;
+
+    int countWithoutReference;
+    int countZeroVel;
+    bool preland;
+
+    LandMoveCommand lastres;
 
 };
 
