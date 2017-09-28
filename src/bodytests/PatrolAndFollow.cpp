@@ -12,6 +12,7 @@
 #include "../hal/hal.hpp"
 //#include <lib/ORB_SLAM2/include/System.h>
 #include <src/tracking/CascadeDetector.h>
+#include <src/ConfigKeys.h>
 
 class PatrolAndFollow : public BodyTest {
 
@@ -68,7 +69,7 @@ class PatrolAndFollow : public BodyTest {
         follower = new Follower(config);
 
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
-        config->setFrameSize(cv::Point(frame->size().width,frame->size().height));
+        config->Set(ConfigKeys::Drone::FrameSize, cv::Size(frame->size().width,frame->size().height));
 
         this->visualDebugger = visualDebugger;
 

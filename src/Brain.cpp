@@ -8,6 +8,7 @@
 #include "Brain.h"
 #include "logging/Logger.h"
 #include "Config.h"
+#include "ConfigKeys.h"
 
 namespace chrono = std::chrono;
 
@@ -26,10 +27,10 @@ void Brain::setup(Config* config) {
 
     Logger::getInstance().setSource("BRAIN");
 
-    communicateWithBody(config->getBrainPort());
-    broadcaster.setup(config->getBroadcastPort());
-    communication.setup(config->getName(), config->getId());
-    communication.serve(config->getCommsPort());
+    communicateWithBody(config->Get(ConfigKeys::Communications::BrainPort));
+    broadcaster.setup(config->Get(ConfigKeys::Communications::BroadcastPort));
+    communication.setup(config->Get(ConfigKeys::Drone::Name), config->Get(ConfigKeys::Drone::Id));
+    communication.serve(config->Get(ConfigKeys::Communications::CommunicationPort));
 
     pingWait = 0;
     waitingPing = false;
@@ -58,14 +59,14 @@ void Brain::loop() {
 
         advertise();
 
-        if(config->isPingEnabled())
+        if(config->Get(ConfigKeys::Communications::PingEnabled))
             sendPingIfAppropiate();
 
         if(should_exit) {
             break;
         }
 
-        usleep(config->getSleepDelay());
+        usleep(config->Get(ConfigKeys::Body::SleepDelay));
     }
 }
 
@@ -73,10 +74,10 @@ void Brain::sendPingIfAppropiate() {
 
     pingWait += deltaTime;
 
-    if(waitingPing && pingWait > config->getPingTimeout()  * 1000) {
+    if(waitingPing && pingWait > config->Get(ConfigKeys::Communications::PingTimeout) * 1000) {
         Logger::logError("Ping not ACKed in %u milliseconds") << pingWait / 1000;
         should_exit = true;
-    } else if(!waitingPing && pingWait > config->getPingLapse() * 1000) {
+    } else if(!waitingPing && pingWait > config->Get(ConfigKeys::Communications::PingTimeout) * 1000) {
         Message ping = MessageBuilder::build(Message_Type_PING);
         ping.mutable_ping()->set_type(Ping_PingType::Ping_PingType_REQUEST);
 
@@ -130,7 +131,7 @@ void Brain::shutdown() {
 
 void Brain::advertise() {
 
-    if(runningTime - lastAdvertisementTime > config->getAdvertisementLapse() * 1000) {
+    if(runningTime - lastAdvertisementTime > config->Get(ConfigKeys::Communications::AdvertisementLapse) * 1000) {
 
 
         Message msg = MessageBuilder::build(Message_Type::Message_Type_ADVERTISEMENT);

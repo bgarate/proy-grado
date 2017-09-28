@@ -4,6 +4,7 @@
 
 #include <cmath>
 #include "Follower.h"
+#include "src/ConfigKeys.h"
 
 FollowCommand::FollowCommand() {
     this->followee = Follower::NOT_FOLLOWING;
@@ -69,7 +70,7 @@ FollowCommand Follower::getCommand(double altitude, double deltaTime, const cv::
 
     FollowCommand followCommand;
 
-    double verticalAngle = 90 - config->getCameraTilt() - angularDisplacement.Tilt();
+    double verticalAngle = 90 - config->Get<double>(ConfigKeys::Drone::CameraTilt) - angularDisplacement.Tilt();
     double horizontalAngle = angularDisplacement.Pan();
 
     double distance = altitude * tan(toRadians(verticalAngle));
@@ -125,9 +126,10 @@ Point Follower::getAngularDisplacement(cv::Point2i trackPoint) {
     double displacementY = trackPoint.y - frameCenter.y;
     double displacementX = trackPoint.x - frameCenter.x;
 
+    double fov = config->Get<double>(ConfigKeys::Drone::FOV);
 
-    double tgPan = displacementX/(frameSize.width/2)*std::tan(toRadians(config->getFov()/2));
-    double tgTilt = displacementY/(frameSize.height/2)*std::tan(toRadians(config->getVerticalFov()/2));
+    double tgPan = displacementX/(frameSize.width/2)*std::tan(toRadians(fov/2));
+    double tgTilt = displacementY/(frameSize.height/2)*std::tan(toRadians(config->Get<double>(ConfigKeys::Drone::VerticalFOV)/2));
 
     return Point(toDegrees(std::atan(tgPan)),toDegrees(std::atan(tgTilt)),0);
 
@@ -139,8 +141,8 @@ int Follower::getHorizon() {
 
     int frameCenter = frameSize.height/2;
 
-    double tgTilt = std::tan(toRadians(config->getCameraTilt()));
-    double tgHalfFov = std::tan(toRadians(config->getVerticalFov()/2));
+    double tgTilt = std::tan(toRadians(config->Get<double>(ConfigKeys::Drone::CameraTilt)));
+    double tgHalfFov = std::tan(toRadians(config->Get<double>(ConfigKeys::Drone::VerticalFOV)/2));
 
     double displacementY = tgTilt/tgHalfFov*frameCenter;
 

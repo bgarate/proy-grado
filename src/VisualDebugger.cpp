@@ -12,6 +12,7 @@
 #include "VisualDebugger.h"
 #include "hal/Point.h"
 #include "tracking/MultiTracker.h"
+#include "ConfigKeys.h"
 
 const cv::Scalar VisualDebugger::WHITE_COLOR = cv::Scalar(255,255,255);
 const cv::Scalar VisualDebugger::GREEN_COLOR = cv::Scalar(0,205,0);
@@ -25,14 +26,14 @@ void VisualDebugger::setup(Config *config) {
     this->config = config;
     windowName = "VisualDebugger";
 
-    if(config->isVisualDebugEnabled()) {
+    if(config->Get(ConfigKeys::Debugging::VisualDebugEnabled)) {
         cv::namedWindow(windowName, cv::WINDOW_AUTOSIZE);
         cv::setMouseCallback(windowName, VisualDebugger::onMouse, this);
     }
 
 
     follower = new Follower(config);
-    shouldOpen = config->isOutputRawVideoEnabled() || config->isOutputHudVideoEnabled();
+    shouldOpen = config->Get(ConfigKeys::Debugging::OutputRawVideoEnabled) || config->Get(ConfigKeys::Debugging::OutputHudVideoEnabled);
 
 }
 
@@ -41,8 +42,8 @@ void VisualDebugger::onMouse(int evt, int x, int y, int flag, void* thisPtr) {
 }
 
 void VisualDebugger::setFrame(std::shared_ptr<cv::Mat> frame) {
-    if(frame != NULL && (config->isOutputRawVideoEnabled() || config->isOutputHudVideoEnabled() ||
-                        config->isVisualDebugEnabled())) {
+    if(frame != NULL && (config->Get(ConfigKeys::Debugging::OutputRawVideoEnabled) || config->Get(ConfigKeys::Debugging::OutputHudVideoEnabled) ||
+                        config->Get(ConfigKeys::Debugging::VisualDebugEnabled))) {
         originalFrame = frame;
         frame->copyTo(this->frame);
 
@@ -57,18 +58,18 @@ void VisualDebugger::openWriters(cv::Size frameSize){
     shouldOpen = false;
 
     std::chrono::milliseconds ms = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::system_clock::now().time_since_epoch());
-    std::string videoPath = config->getOutputPath() + "/" + std::to_string(ms.count()) + "_";
+    std::string videoPath = config->Get(ConfigKeys::Debugging::OutputPath) + "/" + std::to_string(ms.count()) + "_";
     std::string rawVideoPath = videoPath + "RAW.avi";
     std::string hudVideoPath = videoPath + "HUD.avi";
 
     int fourccCode = cv::VideoWriter::fourcc('M','J','P','G');
 
-    if(config->isOutputRawVideoEnabled()) {
+    if(config->Get(ConfigKeys::Debugging::OutputRawVideoEnabled)) {
         rawOutput.open(rawVideoPath, fourccCode, OUTPUT_FPS, frameSize);
         Logger::logInfo("RAW video output on %s") << rawVideoPath;
     }
 
-    if(config->isOutputHudVideoEnabled()) {
+    if(config->Get(ConfigKeys::Debugging::OutputHudVideoEnabled)) {
         hudOutput.open(hudVideoPath, fourccCode, OUTPUT_FPS, frameSize);
         Logger::logInfo("HUD video output on %s") << hudVideoPath;
     }
@@ -78,7 +79,7 @@ void VisualDebugger::setTracks(std::vector<Track> tracks) {
 
     this->tracks = tracks;
 
-    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideoEnabled())
+    if(!config->Get(ConfigKeys::Debugging::VisualDebugEnabled) && !config->Get(ConfigKeys::Debugging::OutputHudVideoEnabled))
         return;
 
     // draw the tracked object
@@ -120,7 +121,7 @@ void VisualDebugger::setSquareTracks(std::vector<cv::Point> squarePoints) {
 }
 
 void VisualDebugger::captureImage() {
-    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideoEnabled())
+    if(!config->Get(ConfigKeys::Debugging::VisualDebugEnabled) && !config->Get(ConfigKeys::Debugging::OutputHudVideoEnabled))
         return;
 
     if(originalFrame == NULL || originalFrame->cols * originalFrame->rows == 0)
@@ -130,7 +131,7 @@ void VisualDebugger::captureImage() {
             std::chrono::duration_cast<std::chrono::milliseconds>(
                     std::chrono::system_clock::now().time_since_epoch());
 
-    std::string imgPath = config->getOutputPath() + "/" + std::to_string(ms.count()) + "_Image.jpg";
+    std::string imgPath = config->Get(ConfigKeys::Debugging::OutputPath) + "/" + std::to_string(ms.count()) + "_Image.jpg";
 
     cv::imwrite(imgPath, *originalFrame);
 
@@ -183,7 +184,7 @@ std::string VisualDebugger::getStateName(State state){
 void VisualDebugger::setStatus(State state, int battery, double altitude, Point gps, Point orientation,
     int fps, long runningTime){
 
-    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideoEnabled())
+    if(!config->Get(ConfigKeys::Debugging::VisualDebugEnabled) && !config->Get(ConfigKeys::Debugging::OutputHudVideoEnabled))
         return;
 
     if(frame.cols == 0 && frame.rows == 0)
@@ -272,8 +273,8 @@ void VisualDebugger::setOrbSlam(ORB_SLAM2::System* slam) {
 */
 int VisualDebugger::show(long deltaTime){
 
-    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideoEnabled() &&
-            !config->isOutputRawVideoEnabled())
+    if(!config->Get(ConfigKeys::Debugging::VisualDebugEnabled) && !config->Get(ConfigKeys::Debugging::OutputHudVideoEnabled) &&
+            !config->Get(ConfigKeys::Debugging::OutputRawVideoEnabled))
         return 0;
 
     if(frame.cols == 0 || frame.rows == 0)
@@ -316,7 +317,7 @@ int VisualDebugger::show(long deltaTime){
 
         double timePerFrame = 1000000 / OUTPUT_FPS;
 
-        int framesPassed = config->isRealTimeVideoOutputEnabled() ? (int)(deltaTime / timePerFrame) : 1;
+        int framesPassed = config->Get(ConfigKeys::Debugging::RealTimeVideoOutputEnabled) ? (int)(deltaTime / timePerFrame) : 1;
 
         if(framesPassed > OUTPUT_FPS)
             Logger::logWarning("%u frames passed") << framesPassed;
@@ -331,7 +332,7 @@ int VisualDebugger::show(long deltaTime){
 
     }
 
-    if(config->isVisualDebugEnabled() && frame.cols > 0 && frame.rows > 0) {
+    if(config->Get(ConfigKeys::Debugging::VisualDebugEnabled) && frame.cols > 0 && frame.rows > 0) {
         cv::imshow(windowName, frame);
         return cv::waitKey(1);
     } else {
@@ -358,7 +359,7 @@ void VisualDebugger::writeConsole(std::string str) {
 
 void VisualDebugger::setNavigationCommand(NavigationCommand command) {
 
-    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideoEnabled())
+    if(!config->Get(ConfigKeys::Debugging::VisualDebugEnabled) && !config->Get(ConfigKeys::Debugging::OutputHudVideoEnabled))
         return;
 
     if(frame.cols == 0 && frame.rows == 0)
@@ -381,7 +382,7 @@ void VisualDebugger::setNavigationCommand(NavigationCommand command) {
 
 void VisualDebugger::setFollowCommand(FollowCommand command) {
 
-    if(!config->isVisualDebugEnabled() && !config->isOutputHudVideoEnabled())
+    if(!config->Get(ConfigKeys::Debugging::VisualDebugEnabled) && !config->Get(ConfigKeys::Debugging::OutputHudVideoEnabled))
         return;
 
     if(frame.cols == 0 && frame.rows == 0)
@@ -436,7 +437,7 @@ void VisualDebugger::drawHorizon(int y) {
 
     cv::line(frame, cv::Point(0,y), cv::Point(frame.cols,y), RED_COLOR);
 
-    std::string str = (boost::format("Tilt: %u") % config->getCameraTilt()).str();
+    std::string str = (boost::format("Tilt: %u") % config->Get(ConfigKeys::Drone::CameraTilt)).str();
 
     cv::Size textSize = cv::getTextSize(str, CONSOLE_FONT, 1, 1, NULL);
     cv::Point textOrigin = cv::Point(frame.cols - textSize.width - 10, y - textSize.height);
@@ -454,7 +455,7 @@ void VisualDebugger::OpticalFlow(OpticalFlowPoints *points) {
     points->bgMask.copyTo(mask);
     cv::cvtColor(mask, mask, cv::COLOR_GRAY2BGR);
 
-    if(config->isVisualDebugEnabled()) {
+    if(config->Get(ConfigKeys::Debugging::VisualDebugEnabled)) {
 
         for (int j = 0; j < points->Clusters.size(); ++j) {
             std::vector<cv::Point2f> &cluster = points->Clusters[j];
@@ -483,7 +484,7 @@ void VisualDebugger::OpticalFlow(OpticalFlowPoints *points) {
 
 void VisualDebugger::ShowMarkers(std::vector<Marker> markers) {
 
-    if (config->isVisualDebugEnabled()) {
+    if (config->Get(ConfigKeys::Debugging::VisualDebugEnabled)) {
 
         for(Marker& marker : markers){
             cv::Scalar color = colors[marker.Id % (sizeof(colors)/sizeof(cv::Scalar))];
@@ -502,7 +503,7 @@ void VisualDebugger::ShowMarkers(std::vector<Marker> markers) {
             cv::Point textOrigin = cv::Point((int)point.x, (int)(point.y - textSize.height - 10));
             cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, color, 1, cv::LINE_AA);
 
-            cv::aruco::drawAxis(frame, config->getCameraMatrix(), config->getDistortionCoefficients(),
+            cv::aruco::drawAxis(frame, config->Get(ConfigKeys::Drone::CameraMatrix), config->Get(ConfigKeys::Drone::DistortionCoefficients),
                                 marker.Rotation, marker.Translation, 0.1);
 
         }

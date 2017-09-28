@@ -22,6 +22,7 @@
 #include "bodytests/BodyTestRmove2.cpp"
 #include "bodytests/BodyTestDummy.cpp"
 #include "bodytests/BodyTestMarker.cpp"
+#include "ConfigKeys.h"
 
 Body::Body(Hal *hal) {
     this->hal = hal;
@@ -32,7 +33,7 @@ Body::Body(Hal *hal) {
 void Body::setup(Config* config) {
     Logger::getInstance().setSource("BODY");
     this->config = config;
-    communicateWithBrain(config->getBrainHost(), config->getBrainPort());
+    communicateWithBrain(config->Get(ConfigKeys::Communications::BrainHost), config->Get(ConfigKeys::Communications::BrainPort));
     visualDebugger.setup(config);
     hal->setup(config);
     hal->Connect();
@@ -78,7 +79,7 @@ void Body::loop() {
             messsageHandler.handle(msg);
         }
 
-        if(config->isPingEnabled())
+        if(config->Get(ConfigKeys::Communications::PingEnabled))
             waitPing();
 
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
@@ -111,11 +112,10 @@ void Body::loop() {
             } else if (key == (int)'c'){
                 visualDebugger.captureImage();
             } else if (key == (int)'t'){
-                config->setCameraTilt(std::min(config->getVerticalFov()/2,config->getCameraTilt() + 0.1));
+                config->Set(ConfigKeys::Drone::CameraTilt,std::min(config->Get(ConfigKeys::Drone::VerticalFOV)/2,config->Get(ConfigKeys::Drone::CameraTilt) + 0.1));
             } else if (key == (int)'r'){
-                config->setCameraTilt(std::max(-config->getVerticalFov()/2,config->getCameraTilt() - 0.1));
+                config->Set(ConfigKeys::Drone::CameraTilt,std::max(config->Get(ConfigKeys::Drone::VerticalFOV)/2,config->Get(ConfigKeys::Drone::CameraTilt) - 0.1));
             }
-
         } else if(mc->stopped()) {//q dentro de manual control
             should_exit = true;
         }
@@ -124,7 +124,7 @@ void Body::loop() {
         if(should_exit)
             break;
 
-        usleep(config->getSleepDelay());
+        usleep(config->Get(ConfigKeys::Body::SleepDelay));
     }
 
     visualDebugger.cleanup();
@@ -177,7 +177,7 @@ void Body::cleanup() {
 void Body::waitPing() {
     pingWait += deltaTime;
 
-    if(pingWait > (config->getPingLapse() + config->getPingTimeout()) * 1000) {
+    if(pingWait > (config->Get(ConfigKeys::Communications::PingLapse) + config->Get(ConfigKeys::Communications::PingTimeout)) * 1000) {
         Logger::logError("Ping not received in %u milliseconds") << (int)(pingWait / 1000);
         should_exit = true;
     }

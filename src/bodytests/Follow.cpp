@@ -3,6 +3,7 @@
 //
 
 #include <zconf.h>
+#include <src/ConfigKeys.h>
 #include "../logging/Logger.h"
 #include "../tracking/DetectAndTrack.h"
 #include "../tracking/HogDetector.h"
@@ -79,7 +80,7 @@ class Follow : public BodyTest {
             currentTime += deltaTime;
 
             if (frame != NULL) {
-                config->setFrameSize(cv::Point(frame->size().width,frame->size().height));
+                config->Set(ConfigKeys::Drone::FrameSize, cv::Size(frame->size().width,frame->size().height));
 
                 std::vector<Track> objects = detectAndTrack->update(frame);
                 visualDebugger->setTracks(objects);

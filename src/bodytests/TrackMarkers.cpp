@@ -8,6 +8,7 @@
 #include <src/navigation/World.h>
 #include <src/navigation/NavigationDebugger.h>
 #include <src/navigation/MarkerFollower.h>
+#include <src/ConfigKeys.h>
 #include "../logging/Logger.h"
 #include "../tracking/DetectAndTrack.h"
 #include "../tracking/HogDetector.h"
@@ -55,7 +56,7 @@ class TrackMarkers : public BodyTest {
         world.addMarker(cv::Vec3d(1.67,0,0),cv::Vec3d(0,0,-90), 3);
         world.addMarker(cv::Vec3d(1.67,2.75,0),cv::Vec3d(0,0,0), 2);
 
-        world.addDrone(cv::Vec3d(5,0,0),cv::Vec3d(0,0,0), config->getId());
+        world.addDrone(cv::Vec3d(5,0,0),cv::Vec3d(0,0,0), config->Get(ConfigKeys::Drone::Id));
 
         drone = world.getDrones()[0];
 
