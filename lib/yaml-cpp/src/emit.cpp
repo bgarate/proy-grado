@@ -1,7 +1,6 @@
 #include "yaml-cpp/node/emit.h"
 #include "yaml-cpp/emitfromevents.h"
 #include "yaml-cpp/emitter.h"
-#include "CustomYAMLConverter.h"
 #include "nodeevents.h"
 
 namespace YAML {

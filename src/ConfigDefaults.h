@@ -5,8 +5,6 @@
 #ifndef PROY_GRADO_CONFIGDEFAULTS_H
 #define PROY_GRADO_CONFIGDEFAULTS_H
 
-#include "Config.h"
-
 class Config;
 
 class ConfigDefaults {

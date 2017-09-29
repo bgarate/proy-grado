@@ -6,7 +6,6 @@
 
 DEFINE_CONFIG_KEY(Drone, Name, std::string)
 DEFINE_CONFIG_KEY(Drone, Id, int)
-DEFINE_CONFIG_KEY(Drone, Hal, HalType)
 DEFINE_CONFIG_KEY(Drone, FOV, double)
 DEFINE_CONFIG_KEY(Drone, FrameSize, cv::Size)
 DEFINE_CONFIG_KEY(Drone, CameraTilt, double)
@@ -43,3 +42,7 @@ DEFINE_CONFIG_KEY(Debugging, OutputRawVideoEnabled, bool);
 DEFINE_CONFIG_KEY(Debugging, OutputPath, std::string);
 
 DEFINE_CONFIG_KEY(Body, SleepDelay, int)
+DEFINE_CONFIG_KEY(Body, Hal, HalType)
+DEFINE_CONFIG_KEY(Body, Start, bool)
+
+DEFINE_CONFIG_KEY(Brain, Start, bool)

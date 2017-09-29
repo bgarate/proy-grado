@@ -13,7 +13,6 @@ struct ConfigKeys {
     struct Drone {
         CONFIG_KEY(Drone, Name, std::string)
         CONFIG_KEY(Drone, Id, int)
-        CONFIG_KEY(Drone, Hal, HalType)
         CONFIG_KEY(Drone, FOV, double)
         CONFIG_KEY(Drone, FrameSize, cv::Size)
         CONFIG_KEY(Drone, CameraTilt, double)
@@ -47,6 +46,12 @@ struct ConfigKeys {
 
     struct Body {
         CONFIG_KEY(Body, SleepDelay, int)
+        CONFIG_KEY(Body, Hal, HalType)
+        CONFIG_KEY(Body, Start, bool)
+    };
+
+    struct Brain {
+        CONFIG_KEY(Body, Start, bool)
     };
 };
 

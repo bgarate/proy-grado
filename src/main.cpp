@@ -1,5 +1,4 @@
 #include <iostream>
-#include <boost/program_options.hpp>
 #include <wait.h>
 #include <tiff.h>
 #include "hal/dummyHal/dummyHal.h"
@@ -9,10 +8,7 @@
 #include "hal/vrep/vrephal.cpp"
 #include "hal/pb2/pb2hal.cpp"
 #include "hal/HalType.hpp"
-
-Config *getConfig(const boost::program_options::variables_map &vm);
-
-namespace po = boost::program_options;
+#include "ConfigKeys.h"
 
 void welcome_message() {
     std::cout << "PROYECTO DE GRADO - 2017" << std::endl;
@@ -23,62 +19,38 @@ void welcome_message() {
 int main(int argc, const char* args[]) {
     welcome_message();
 
-    po::options_description desc = po::options_description("Opciones posibles");
+    Config *config = new Config;
 
-    desc.add_options()
-            ("brain", "Starts the brain")
-            ("body", "Starts the body")
-            ("brainHost", po::value<std::string>(), "Host where to find the brain")
-            ("brainPort", po::value<uint16 >(), "Port where to find the brain")
-            ("broadcastPort", po::value<uint16>(), "Port to which drones can broadcast an advertisement")
-            ("advertisementLapse", po::value<int>(), "Lapse in milliseconds between drone advertisements")
-            ("commsPort", po::value<int>(), "Port in which the drone acepts incoming connections from other drones")
-            ("pingLapse", po::value<int>(), "Interval between Brain-Body pings")
-            ("pingTimeout", po::value<int>(), "Timeout before a ping is considered lost")
-            ("visualDebug", po::value<bool>(), "Enable visual debugging")
-            ("outputRaw", po::value<bool>(), "Enable video output for RAW frames")
-            ("outputHUD", po::value<bool>(), "Enable video output for HUD frames")
-            ("outputPath", po::value<std::string>(), "Output path")
-            ("realTimeOutput", po::value<bool>(), "Video output is real time")
-            ("hal", po::value<string>(), "Hal to be used (dummy,pb2,vrep)")
-            ("ping", po::value<bool>(), "Enables ping between body and brain")
-            ("sleepDelay", po::value<int>(), "Sleep delay in brain and body loop in microseconds");
+    if(argc > 1){
+        config->SetPath(args[0]);
+    } else {
+        config->SetPath("config.yaml");
+    }
 
-    po::variables_map vm;
-    po::store(po::parse_command_line(argc, args, desc), vm);
-    po::notify(vm);
+    config->Load();
 
-    bool startBrain = vm.count("brain") > 0;
-    bool startBody = vm.count("body") > 0;
+    bool startBrain = config->Get(ConfigKeys::Brain::Start);
+    bool startBody = config->Get(ConfigKeys::Brain::Start);
 
     if (!startBody && !startBrain) {
         std::cout << "A body or a brain must at least be initialized" << "\n";
         return 0;
     }
 
-    Config *config = getConfig(vm);
-
     Hal* hal;
 
     if(startBody) {
 
-        if(vm.count("hal") == 0){
-            std::cout << "A Hal type must be chosen\n   --hal=[dummy|pb2|vrep]" << endl;
-            return 0;
-        }
-        string choosenHal = vm["hal"].as<string>();
+        HalType choosenHal = config->Get(ConfigKeys::Body::Hal);
 
-        if(choosenHal == "dummy") {
-            config->setHalType(HalType::Dummy);
+        if(choosenHal == HalType::Dummy) {
             hal = new DummyHal();
-        } else if(choosenHal == "pb2") {
-            config->setHalType(HalType::Pb2);
+        } else if(choosenHal == HalType::Pb2) {
             hal = new Pb2hal();
-        } else if(choosenHal == "vrep") {
-            config->setHalType(HalType::Vrep);
+        } else if(choosenHal == HalType::Vrep) { ;
             hal = new Vrephal();
         } else {
-            std::cout << "Unknown Hal type '" << choosenHal << "'" << endl;
+            std::cout << "Unknown Hal type '" << endl;
             return 0;
         }
     }
@@ -109,73 +81,12 @@ int main(int argc, const char* args[]) {
 
     delete config;
 
+    config->Save();
+
     Logger::logWarning("Program exiting");
     waitpid(-1, NULL, 0);
 
 
     return 0;
-}
-
-Config *getConfig(const boost::program_options::variables_map &vm) {
-
-    Config* config = new Config();
-
-    if(vm.count("brainHost") > 0) {
-        config->setBrainHost(vm["brainHost"].as<string>());
-    }
-
-    if(vm.count("brainPort") > 0) {
-        config->setBrainPort(vm["brainPort"].as<int>());
-    }
-
-    if(vm.count("commsPort") > 0) {
-        config->setCommsPort(vm["commsPort"].as<int>());
-    }
-
-    if(vm.count("broadcastPort") > 0) {
-        config->setAdvertisementLapse(vm["broadcastPort"].as<int>());
-    }
-
-    if(vm.count("advertisementLapse") > 0) {
-        config->setAdvertisementLapse(vm["advertisementLapse"].as<int>());
-    }
-
-    if(vm.count("pingLapse") > 0) {
-        config->setPingLapse(vm["pingLapse"].as<int>());
-    }
-
-    if(vm.count("pingTimeout") > 0) {
-        config->setPingTimeout(vm["pingTimeout"].as<int>());
-    }
-
-    if(vm.count("visualDebug") > 0) {
-        config->setVisualDebugEnabled(vm["visualDebug"].as<bool>());
-    }
-
-    if(vm.count("outputRaw") > 0) {
-        config->setOutputRawVideoEnabled(vm["outputRaw"].as<bool>());
-    }
-
-    if(vm.count("outputHUD") > 0) {
-        config->setOutputHudVideoEnabled(vm["outputHUD"].as<bool>());
-    }
-
-    if(vm.count("outputPath") > 0) {
-        config->setOutputPath(vm["outputPath"].as<string>());
-    }
-
-    if(vm.count("realTimeOutput") > 0) {
-        config->setRealTimeVideoOutputEnabled(vm["realTimeOutput"].as<bool>());
-    }
-
-    if(vm.count("ping") > 0) {
-        config->setPingEnabled(vm["ping"].as<bool>());
-    }
-
-    if(vm.count("sleepDelay") > 0) {
-        config->setSleepDelay(vm["sleepDelay"].as<int>());
-    }
-
-    return config;
 }
 

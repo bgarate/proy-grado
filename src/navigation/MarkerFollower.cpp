@@ -151,7 +151,7 @@ void MarkerFollower::EstimatePosition(const std::vector<Marker> &markers, double
 
 Point MarkerFollower::getAngularDisplacement(cv::Point2i markerCenter) {
 
-    cv::Size frameSize = config->getFrameSize();
+    cv::Size frameSize = config->Get(ConfigKeys::Drone::FrameSize);
 
     cv::Point frameCenter = cv::Point(frameSize.width/2, frameSize.height/2);
 
@@ -159,7 +159,7 @@ Point MarkerFollower::getAngularDisplacement(cv::Point2i markerCenter) {
     double displacementX = markerCenter.x - frameCenter.x;
 
 
-    double tgPan = displacementX/(frameSize.width/2)*std::tan(toRadians(config->getFov()/2));
+    double tgPan = displacementX/(frameSize.width/2)*std::tan(toRadians(config->Get(ConfigKeys::Drone::FOV)/2));
     double tgTilt = displacementY/(frameSize.height/2)*std::tan(toRadians(config->Get(ConfigKeys::Drone::VerticalFOV)/2));
 
     return Point(toDegrees(std::atan(tgPan)),toDegrees(std::atan(tgTilt)),0);

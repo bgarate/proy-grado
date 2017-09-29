@@ -21,6 +21,9 @@
 #include "yaml-cpp/node/type.h"
 #include "yaml-cpp/null.h"
 
+#include <opencv2/opencv.hpp>
+#include "../../../../../src/hal/HalType.hpp"
+
 namespace YAML {
 class Binary;
 struct _Null;
@@ -326,6 +329,107 @@ struct convert<Binary> {
     return true;
   }
 };
+
+/* CUSTOM CONVERSIONS */
+
+
+template<>
+struct convert<cv::Size_<int>> {
+static Node encode(const cv::Size_<int>& rhs) {
+    Node node;
+    node.push_back(rhs.width);
+    node.push_back(rhs.height);
+    return node;
+}
+
+    static bool decode(const Node& node, cv::Size_<int>& rhs) {
+        if(!node.IsSequence() || node.size() != 2) {
+            return false;
+        }
+
+        rhs.width = node[0].as<int>();
+        rhs.height = node[1].as<int>();
+        return true;
+    }
+};
+
+template<>
+struct convert<cv::Mat> {
+    static Node encode(const cv::Mat& rhs) {
+        Node node;
+        node["rows"] = rhs.rows;
+        node["cols"] = rhs.cols;
+        node["type"] = rhs.type();
+
+        // TODO: Solo funciona para matrices con un solo canal!
+
+        unsigned char *p = rhs.data;
+
+        Node data = node["data"];
+
+        for (int i = 0; i < rhs.cols * rhs.rows; ++i) {
+            data[i] = *p++;
+        }
+
+        return node;
+    }
+
+    static bool decode(const Node& node, cv::Mat& rhs) {
+
+        rhs = cv::Mat(node["rows"].as<int>(), node["cols"].as<int>(), node["type"].as<int>());
+
+        // TODO: Solo funciona para matrices con un solo canal!
+
+        unsigned char *p = rhs.data;
+
+        Node data = node["data"];
+
+        for (int i = 0; i < node["data"].size(); ++i) {
+            *p++ = data[i].as<uchar>();
+        }
+
+        return true;
+    }
+};
+
+    template<>
+    struct convert<HalType> {
+        static Node encode(const HalType& rhs) {
+            Node node;
+
+            switch (rhs) {
+                case HalType::Vrep:
+                    node = "Vrep";
+                case HalType::Pb2:
+                    node = "Pb2";
+                case HalType::Dummy:
+                    node = "Dummy";
+                default:
+                    throw std::runtime_error("Haltype desconocido");
+            }
+
+            return node;
+        }
+
+        static bool decode(const Node& node, HalType& rhs) {
+
+            std::string haltype = node.as<std::string>();
+
+            if(haltype == "Vrep")
+                rhs = HalType::Vrep;
+            else if(haltype == "Pb2")
+                rhs =  HalType::Pb2;
+            else if(haltype == "Dummy")
+                rhs =  HalType::Dummy;
+            else
+                throw std::runtime_error("Representacion de haltype desconocido");
+
+            return true;
+        }
+    };
+
+
+
 }
 
 #endif  // NODE_CONVERT_H_62B23520_7C8E_11DE_8A39_0800200C9A66

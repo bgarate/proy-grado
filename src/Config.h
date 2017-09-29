@@ -10,6 +10,7 @@
 #include "ConfigDefaults.h"
 #include <opencv2/opencv.hpp>
 #include <yaml-cpp/yaml.h>
+#include <src/logging/Logger.h>
 
 #define CONFIG_KEY(PARENT, KEY, T) static const ConfigKey<T> KEY;
 #define DEFINE_CONFIG_KEY(PARENT, KEY, T) const ConfigKey<T> ConfigKeys::PARENT::KEY = ConfigKey<T>(#KEY,#PARENT);
@@ -42,6 +43,7 @@ public:
 
     void SetPath(const std::string &path) {
         this->path = std::string(path);
+        Logger::logDebug("Configuration file path set to %s") << path;
     }
 
     template <typename T>
@@ -56,9 +58,12 @@ public:
 
     void Load() {
 
+        Logger::logDebug("Loading configurations from path %s") << path;
+
         std::ifstream file(path);
 
         if(file) {
+            Logger::logDebug("Configuration file not found at %s. A new one will be created with default settings") << path;
             ConfigDefaults::SetDefaults(this);
             Save();
         }
@@ -67,6 +72,7 @@ public:
     }
 
     void Save() {
+        Logger::logDebug("Saving configuration file at %s") << path;
         std::ofstream file(path);
         file << config;
         file.close();

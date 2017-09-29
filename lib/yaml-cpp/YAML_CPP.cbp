@@ -528,9 +528,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/CustomYAMLConverter.h">
-			<Option target="yaml-cpp"/>
-		</Unit>
 		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/anchor.h">
 			<Option target="yaml-cpp"/>
 		</Unit>
