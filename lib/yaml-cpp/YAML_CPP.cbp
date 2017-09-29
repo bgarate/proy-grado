@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="YAML_CPP"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\lib\;CMake Files\lib\yaml-cpp\;CMake Files\lib\yaml-cpp\test\;CMake Files\lib\yaml-cpp\test\gtest-1.8.0\;CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googlemock\;CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googletest\;CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googletest\cmake\;CMake Files\lib\yaml-cpp\util\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\usr\;CMake Files\..\..\..\usr\local\;CMake Files\..\..\..\usr\local\share\;CMake Files\..\..\..\usr\local\share\OpenCV\;CMake Files\..\Pangolin\;CMake Files\..\Pangolin\build\;CMake Files\..\Pangolin\build\src\;CMake Files\cmake\;CMake Files\src\;CMake Files\src\proto\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="format">
+				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 format"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="yaml-cpp">
+				<Option output="/home/bruno/proy-grado/lib/yaml-cpp/libyaml-cpp.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 yaml-cpp"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="yaml-cpp/fast">
+				<Option output="/home/bruno/proy-grado/lib/yaml-cpp/libyaml-cpp.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 yaml-cpp/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="releasable">
+				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 releasable"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="debuggable">
+				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 debuggable"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="run-tests">
+				<Option output="/home/bruno/proy-grado/run-tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 run-tests"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="run-tests/fast">
+				<Option output="/home/bruno/proy-grado/run-tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 run-tests/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock_main">
+				<Option output="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/libgmock_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock_main/fast">
+				<Option output="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/libgmock_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock">
+				<Option output="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/libgmock.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock/fast">
+				<Option output="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/libgmock.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main">
+				<Option output="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main/fast">
+				<Option output="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest">
+				<Option output="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/libgtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest/fast">
+				<Option output="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/libgtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/include"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="read">
+				<Option output="/home/bruno/proy-grado/read" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 read"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="read/fast">
+				<Option output="/home/bruno/proy-grado/read" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 read/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sandbox">
+				<Option output="/home/bruno/proy-grado/sandbox" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 sandbox"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sandbox/fast">
+				<Option output="/home/bruno/proy-grado/sandbox" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 sandbox/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="parse">
+				<Option output="/home/bruno/proy-grado/parse" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 parse"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="parse/fast">
+				<Option output="/home/bruno/proy-grado/parse" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/src"/>
+					<Add directory="/home/bruno/proy-grado/lib/yaml-cpp/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 parse/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/CustomYAMLConverter.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/anchor.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/binary.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/contrib/anchordict.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/contrib/graphbuilder.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/dll.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/emitfromevents.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/emitter.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/emitterdef.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/emittermanip.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/emitterstyle.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/eventhandler.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/exceptions.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/mark.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/convert.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/detail/bool_type.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/detail/impl.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/detail/iterator.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/detail/iterator_fwd.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/detail/memory.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/detail/node.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/detail/node_data.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/detail/node_ref.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/emit.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/impl.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/iterator.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/node.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/parse.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/ptr.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/node/type.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/noncopyable.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/null.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/ostream_wrapper.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/parser.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/stlemitter.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/traits.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/include/yaml-cpp/yaml.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/binary.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/collectionstack.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/contrib/graphbuilder.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/contrib/graphbuilderadapter.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/contrib/graphbuilderadapter.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/convert.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/directives.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/directives.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/emit.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/emitfromevents.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/emitter.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/emitterstate.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/emitterstate.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/emitterutils.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/emitterutils.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/exceptions.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/exp.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/exp.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/indentation.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/memory.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/node.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/node_data.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/nodebuilder.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/nodebuilder.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/nodeevents.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/nodeevents.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/null.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/ostream_wrapper.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/parse.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/parser.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/ptr_vector.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/regex_yaml.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/regex_yaml.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/regeximpl.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/scanner.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/scanner.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/scanscalar.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/scanscalar.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/scantag.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/scantag.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/scantoken.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/setting.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/simplekey.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/singledocparser.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/singledocparser.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/stream.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/stream.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/streamcharsource.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/stringsource.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/tag.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/tag.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/src/token.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/src/gmock-all.cc">
+			<Option target="gmock_main"/>
+			<Option target="gmock"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/src/gmock_main.cc">
+			<Option target="gmock_main"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/src/gtest-all.cc">
+			<Option target="gmock_main"/>
+			<Option target="gmock"/>
+			<Option target="gtest"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/src/gtest_main.cc">
+			<Option target="gtest_main"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/handler_test.h">
+			<Option target="run-tests"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/integration/emitter_test.cpp">
+			<Option target="run-tests"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/integration/encoding_test.cpp">
+			<Option target="run-tests"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/integration/gen_emitter_test.cpp">
+			<Option target="run-tests"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/integration/handler_spec_test.cpp">
+			<Option target="run-tests"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/integration/handler_test.cpp">
+			<Option target="run-tests"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/integration/load_node_test.cpp">
+			<Option target="run-tests"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/integration/node_spec_test.cpp">
+			<Option target="run-tests"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/main.cpp">
+			<Option target="run-tests"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/mock_event_handler.h">
+			<Option target="run-tests"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/node/node_test.cpp">
+			<Option target="run-tests"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/ostream_wrapper_test.cpp">
+			<Option target="run-tests"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/regex_test.cpp">
+			<Option target="run-tests"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/specexamples.h">
+			<Option target="run-tests"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/util/parse.cpp">
+			<Option target="parse"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/util/read.cpp">
+			<Option target="read"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/util/sandbox.cpp">
+			<Option target="sandbox"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/FindFFmpeg.cmake">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/FindEigen3.cmake">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/yaml-cpp-config.cmake.in">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/yaml-cpp-config.cmake.in">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/yaml-cpp-config-version.cmake.in">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/yaml-cpp.pc.cmake">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/yaml-cpp-config.cmake.in">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/yaml-cpp-config.cmake.in">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/yaml-cpp-config-version.cmake.in">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/yaml-cpp.pc.cmake">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googlemock\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googlemock\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googlemock\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googlemock\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googletest\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googletest\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googletest\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googletest\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googletest\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\test\gtest-1.8.0\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/util/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\util\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/util/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\yaml-cpp\util\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/../../../usr/local/share/OpenCV/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/../../../usr/local/share/OpenCV/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/../../../usr/local/share/OpenCV/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/../../../usr/local/share/OpenCV/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/../Pangolin/build/src/PangolinConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\Pangolin\build\src\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/../Pangolin/build/src/PangolinConfig.cmake">
+			<Option virtualFolder="CMake Files\..\Pangolin\build\src\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/../Pangolin/build/src/PangolinTargets.cmake">
+			<Option virtualFolder="CMake Files\..\Pangolin\build\src\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/cmake/FindCairo.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/src/proto/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\proto\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
