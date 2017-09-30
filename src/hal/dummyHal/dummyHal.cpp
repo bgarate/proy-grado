@@ -4,13 +4,12 @@
 
 #include "../hal.hpp"
 #include <memory.h>
+#include <src/ConfigKeys.h>
 #include "dummyHal.h"
 #include "../Point.h"
 
 DummyHal::DummyHal() {
     state = State::Landed;
-    //videoSource.open(-1);
-    videoSource.open("drone.mp4");
 }
 
 void DummyHal::move(int roll, int pitch, int yaw, int gaz) {
@@ -19,6 +18,16 @@ void DummyHal::move(int roll, int pitch, int yaw, int gaz) {
 
 void DummyHal::setup(Config* config) {
     this->config = config;
+
+    std::string source = config->Get(ConfigKeys::Body::DummyCameraVideoSource);
+
+    try {
+        int cameraSource = std::stoi(source);
+        videoSource.open(cameraSource);
+    } catch (std::invalid_argument){
+        videoSource.open(source);
+    }
+
 }
 
 void DummyHal::land() {

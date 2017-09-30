@@ -50,6 +50,7 @@ Body:
   Start: true
   Hal: Dummy
   ParentOnFork: true
-  TestToExecute: "OpticalFlowObstacleAvoidance"
+  TestToExecute: OpticalFlowObstacleAvoidance
+  DummyCameraVideoSource: -1
 Brain:
   Start: true

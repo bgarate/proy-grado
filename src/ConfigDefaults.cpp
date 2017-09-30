@@ -45,9 +45,10 @@ void ConfigDefaults::SetDefaults(Config* config) {
 
     config->Set(ConfigKeys::Body::SleepDelay, 0);
     config->Set(ConfigKeys::Body::Start, true);
-    config->Set(ConfigKeys::Body::Hal,HalType::Pb2);
+    config->Set(ConfigKeys::Body::Hal,HalType::Dummy);
     config->Set(ConfigKeys::Body::ParentOnFork,true);
-    config->Set(ConfigKeys::Body::TestToExecute,std::string(""));
+    config->Set(ConfigKeys::Body::TestToExecute,std::string("OpticalFlowObstacleAvoidance"));
+    config->Set(ConfigKeys::Body::DummyCameraVideoSource,std::string("drone.mp4"));
 
     config->Set(ConfigKeys::Brain::Start, true);
 

@@ -24,7 +24,7 @@ int main(int argc, const char* args[]) {
     Config *config = new Config;
 
     if(argc > 1){
-        config->SetPath(args[0]);
+        config->SetPath(args[1]);
     } else {
         config->SetPath("config.yaml");
     }

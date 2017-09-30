@@ -45,5 +45,6 @@ DEFINE_CONFIG_KEY(Body, Hal, HalType)
 DEFINE_CONFIG_KEY(Body, Start, bool)
 DEFINE_CONFIG_KEY(Body, ParentOnFork, bool)
 DEFINE_CONFIG_KEY(Body, TestToExecute, std::string)
+DEFINE_CONFIG_KEY(Body, DummyCameraVideoSource, std::string)
 
 DEFINE_CONFIG_KEY(Brain, Start, bool)

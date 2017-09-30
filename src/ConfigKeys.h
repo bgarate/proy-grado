@@ -49,6 +49,7 @@ struct ConfigKeys {
         CONFIG_KEY(Body, Start, bool)
         CONFIG_KEY(Body, ParentOnFork, bool)
         CONFIG_KEY(Body, TestToExecute, std::string)
+        CONFIG_KEY(Body, DummyCameraVideoSource, std::string)
     };
 
     struct Brain {
