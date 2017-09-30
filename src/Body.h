@@ -47,6 +47,8 @@ private:
     bool inmc;
 
     void CalculateFPS();
+
+    void PrintAvailableTests();
 };
 
 

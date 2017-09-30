@@ -16,7 +16,6 @@ struct ConfigKeys {
         CONFIG_KEY(Drone, FOV, double)
         CONFIG_KEY(Drone, FrameSize, cv::Size)
         CONFIG_KEY(Drone, CameraTilt, double)
-        CONFIG_KEY(Drone, SleepDelay, int)
         CONFIG_KEY(Drone, CameraMatrix, cv::Mat)
         CONFIG_KEY(Drone, DistortionCoefficients, cv::Mat)
 
@@ -48,6 +47,8 @@ struct ConfigKeys {
         CONFIG_KEY(Body, SleepDelay, int)
         CONFIG_KEY(Body, Hal, HalType)
         CONFIG_KEY(Body, Start, bool)
+        CONFIG_KEY(Body, ParentOnFork, bool)
+        CONFIG_KEY(Body, TestToExecute, std::string)
     };
 
     struct Brain {

@@ -9,7 +9,6 @@ DEFINE_CONFIG_KEY(Drone, Id, int)
 DEFINE_CONFIG_KEY(Drone, FOV, double)
 DEFINE_CONFIG_KEY(Drone, FrameSize, cv::Size)
 DEFINE_CONFIG_KEY(Drone, CameraTilt, double)
-DEFINE_CONFIG_KEY(Drone, SleepDelay, int)
 DEFINE_CONFIG_KEY(Drone, CameraMatrix, cv::Mat)
 DEFINE_CONFIG_KEY(Drone, DistortionCoefficients, cv::Mat)
 
@@ -44,5 +43,7 @@ DEFINE_CONFIG_KEY(Debugging, OutputPath, std::string);
 DEFINE_CONFIG_KEY(Body, SleepDelay, int)
 DEFINE_CONFIG_KEY(Body, Hal, HalType)
 DEFINE_CONFIG_KEY(Body, Start, bool)
+DEFINE_CONFIG_KEY(Body, ParentOnFork, bool)
+DEFINE_CONFIG_KEY(Body, TestToExecute, std::string)
 
 DEFINE_CONFIG_KEY(Brain, Start, bool)

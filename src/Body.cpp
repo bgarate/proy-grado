@@ -4,6 +4,7 @@
 
 #include <src/proto/message.pb.h>
 #include <chrono>
+#include <src/bodytests/BodyTestRegistry.h>
 #include "Body.h"
 #include "logging/Logger.h"
 #include "Brain.h"
@@ -52,13 +53,9 @@ void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
 void Body::loop() {
 
-    BodyTest* bt = new PatrolAndFollow();
-    //BodyTest* bt = new OrbSlam2();
-    //BodyTest* bt = new OpticalFlowObstacleAvoidance();
-    //BodyTest* bt = new BodyTestRmove2();
-    //BodyTest* bt = new Follow();
-    //BodyTest* bt = new BodyTestMarker();
-    //BodyTest* bt = new TrackMarkers();
+    PrintAvailableTests();
+
+    BodyTest* bt = BodyTestRegistry::Get(config->Get(ConfigKeys::Body::TestToExecute));
 
     bt->InitBodyTest(this->hal, config, &visualDebugger);
     Logger::logInfo("Body started");
@@ -181,6 +178,17 @@ void Body::waitPing() {
         Logger::logError("Ping not received in %u milliseconds") << (int)(pingWait / 1000);
         should_exit = true;
     }
+}
+
+void Body::PrintAvailableTests() {
+
+    std::string str = "Available body tests:\n";
+
+    for(std::string& test : BodyTestRegistry::GetAvailableTests()){
+        str += "\t- " + test + "\n";
+    }
+
+    Logger::logDebug(str);
 }
 
 

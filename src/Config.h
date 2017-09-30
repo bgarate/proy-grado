@@ -53,6 +53,11 @@ public:
 
     template <typename T>
     T Get(const ConfigKey<T> &key) {
+
+        if(key.Handler) {
+            return key.Handler(this);
+        }
+
         return config[std::string(key.Parent)][std::string(key.Key)].as<T>();
     }
 
@@ -62,7 +67,7 @@ public:
 
         std::ifstream file(path);
 
-        if(file) {
+        if(!file.good()) {
             Logger::logDebug("Configuration file not found at %s. A new one will be created with default settings") << path;
             ConfigDefaults::SetDefaults(this);
             Save();

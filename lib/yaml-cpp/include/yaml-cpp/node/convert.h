@@ -363,7 +363,7 @@ struct convert<cv::Mat> {
 
         // TODO: Solo funciona para matrices con un solo canal!
 
-        unsigned char *p = rhs.data;
+        double *p = (double*)rhs.data;
 
         Node data = node["data"];
 
@@ -380,12 +380,12 @@ struct convert<cv::Mat> {
 
         // TODO: Solo funciona para matrices con un solo canal!
 
-        unsigned char *p = rhs.data;
+        double *p = (double*)rhs.data;
 
         Node data = node["data"];
 
         for (int i = 0; i < node["data"].size(); ++i) {
-            *p++ = data[i].as<uchar>();
+            *p++ = data[i].as<double>();
         }
 
         return true;
@@ -400,10 +400,13 @@ struct convert<cv::Mat> {
             switch (rhs) {
                 case HalType::Vrep:
                     node = "Vrep";
+                    break;
                 case HalType::Pb2:
                     node = "Pb2";
+                    break;
                 case HalType::Dummy:
                     node = "Dummy";
+                    break;
                 default:
                     throw std::runtime_error("Haltype desconocido");
             }

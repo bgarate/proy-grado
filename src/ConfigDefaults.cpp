@@ -8,6 +8,8 @@
 
 void ConfigDefaults::SetDefaults(Config* config) {
 
+    config->Set(ConfigKeys::Drone::Name, std::string("drone-01"));
+    config->Set(ConfigKeys::Drone::Id, 1);
     config->Set(ConfigKeys::Drone::CameraTilt, 15.0);
     config->Set(ConfigKeys::Drone::FOV, 80.0);
     config->Set(ConfigKeys::Drone::FrameSize, cv::Size(640,480));
@@ -43,6 +45,9 @@ void ConfigDefaults::SetDefaults(Config* config) {
 
     config->Set(ConfigKeys::Body::SleepDelay, 0);
     config->Set(ConfigKeys::Body::Start, true);
+    config->Set(ConfigKeys::Body::Hal,HalType::Pb2);
+    config->Set(ConfigKeys::Body::ParentOnFork,true);
+    config->Set(ConfigKeys::Body::TestToExecute,std::string(""));
 
     config->Set(ConfigKeys::Brain::Start, true);
 

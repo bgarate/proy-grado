@@ -19,6 +19,8 @@ void welcome_message() {
 int main(int argc, const char* args[]) {
     welcome_message();
 
+    Logger::getInstance().setSource("START");
+
     Config *config = new Config;
 
     if(argc > 1){
@@ -55,10 +57,14 @@ int main(int argc, const char* args[]) {
         }
     }
 
+    bool isParent = true;
+
     if (startBody && startBrain) {
         pid_t pid = fork();
 
-        startBody = pid != 0;
+        isParent = pid != 0;
+
+        startBody = isParent && config->Get(ConfigKeys::Body::ParentOnFork);
         startBrain = !startBody;
     }
 
@@ -79,9 +85,10 @@ int main(int argc, const char* args[]) {
         brain.cleanup();
     }
 
-    delete config;
+    if(isParent)
+        config->Save();
 
-    config->Save();
+    delete config;
 
     Logger::logWarning("Program exiting");
     waitpid(-1, NULL, 0);

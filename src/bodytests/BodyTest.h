@@ -4,6 +4,9 @@
 #include "../hal/hal.hpp"
 #include "../VisualDebugger.h"
 
+#define BODY_TEST_CLASS(NAME) \
+    class NAME
+
 class BodyTest {
 
 public:
@@ -12,6 +15,7 @@ public:
     virtual bool BodyTestStep(double deltaTime) = 0;
 
     virtual void FinishBodyTest() = 0;
+
 };
 
 
