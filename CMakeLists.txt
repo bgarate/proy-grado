@@ -62,8 +62,12 @@ set(SOURCE_FILES ${SOURCE_FILES} src/landtracking/MarkerTrack.cpp src/landtracki
 set(SOURCE_FILES ${SOURCE_FILES} src/main.cpp src/tracking/OpticalFlow.cpp src/tracking/OpticalFlow.h src/tracking/DbScan.cpp src/tracking/DbScan.h src/tracking/Helpers.h)
 
 set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h)
+set(SOURCE_FILES ${SOURCE_FILES} src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h)
+
 set(CALIBRATION_MAIN src/calibration.cpp)
 set(MARKER_MAIN src/navigation/MarkerTracker.cpp src/navigation/MarkerTracker.h src/marker.cpp)
+
 
 ADD_SUBDIRECTORY(src/proto)
 ADD_SUBDIRECTORY(lib/yaml-cpp/)

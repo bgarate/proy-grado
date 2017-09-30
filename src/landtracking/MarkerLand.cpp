@@ -1,162 +1,242 @@
-//
-// Created by santy on 25/07/17.
-//
-
+#include <zconf.h>
 #include "MarkerLand.h"
 
 
 MarkerLand::MarkerLand(){
 
+    this->state = LandingState::Inactive;
+    lastres.pitch = 0;
+    lastres.roll = 0;
+    lastres.yaw = 0;
+    lastres.gaz = 0;
+    lastres.land = false;
+    preland = false;
+    countWithoutReference = 0;
+    countZeroVel = 0;
 }
 
-LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameSize){
+LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameSize, double altitude){
 
     LandMoveCommand res;
     res.pitch = 0;
     res.roll = 0;
     res.yaw = 0;
+    res.gaz = 0;
     res.land = false;
+
+    res.gaz = (float)(landAltitude - altitude)/landAltitude * (this->gazvelfactor);
 
     if(this->state == LandingState::Inactive){
 
-        this->state = LandingState::Finding;
-    } else if(this->state == LandingState::Finding){
-
-        if(points.size() == 4){
-
-            this->state = LandingState::Rotating;
-        }else{
-            //Buscar Puntos: todo
-        }
-
-    } else if(this->state == LandingState::Rotating){
-
-        if(points.size() == 4){
-
-            //ordenar por y
-            int orderbyY[4] = {1,2,3,4};
-            for(int i = 0; i < 4; i++){
-                    for (int k = i+1; k < 4; k++){
-                        if(points[orderbyY[k]].y <  points[orderbyY[i]].y){
-                            int aux = orderbyY[i];
-                            orderbyY[i] = orderbyY[k];
-                            orderbyY[k] = aux;
-                        }
-                    }
-            }
-
-            if( (points[orderbyY[0]].y -points[orderbyY[1]].y) < frameSize.y*alignmentTolerance){//Estoy alineado
-
-                this->state = LandingState::Centring;
-
-            }else{//Tengo que alinear
-
-                //order en x
-                int a, b;
-                if(points[orderbyY[0]].x > points[orderbyY[1]].x){
-                    a=0;
-                    b=1;
-                }else{
-                    a=1;
-                    b=0;
-                }
-
-                if( points[orderbyY[a]].y > points[orderbyY[b]].y ){
-
-                    //girar a la derecha
-                    res.roll = this->rollPorcent;
-                } else {
-
-                    // girar a la izquierda
-                    res.roll = this->rollPorcent;
-                }
-            }
-        }
-
+        this->state = LandingState::Centring;
     } else if(this->state == LandingState::Centring){
 
-        if(points.size() == 4){
+        if (points.size() > 0){
 
-            float d = 0;
-            int b;
-            for(int i = 0; i<4; i++){
+            countWithoutReference = 0;
 
-                cv::Point aux = points[0] - points[i];
+            if(points.size()>=3){//Centrar punto medio
 
-                if( (aux.x*aux.x+aux.y+aux.y) > d){
-                    b = i;
+                //Calcular punto opuesto a [0]
+                float dc01,dc02,dc12;
+                cv::Point v01,v02,v12;
+                int a,b,c;
+
+                v01 = points[0] - points[1];
+                dc01 = v01.x*v01.x+v01.y*v01.y;
+
+                v02 = points[0] - points[2];
+                dc02 = v02.x*v02.x+v02.y*v02.y;
+
+                v12 = points[1] - points[2];
+                dc12 = v12.x*v12.x+v12.y*v12.y;
+
+                if(dc01> dc02 && dc01 > dc12){
+                    a=0;
+                    b=1;
+                    c=2;
+                } else if(dc02 > dc01 && dc02 > dc12){
+                    a=0;
+                    b=2;
+                    c=1;
+                } else {
+                    a=1;
+                    b=2;
+                    c=0;
                 }
-            }
 
-            cv::Point squareCenter( (points[0].x+points[b].x)/2, (points[0].y+points[b].y)/2);
-            cv::Point frameCenter = cv::Point(frameSize.x / 2,
-                                              frameSize.y / 2);
-
-            if( (squareCenter.x-frameCenter.x) < frameSize.x*alignmentTolerance
-                    and (squareCenter.y-frameCenter.y) < frameSize.y*alignmentTolerance){
-
-                this->state = LandingState::FinalPositioning;
-            } else {
+                cv::Point squareCenter( (points[a].x+points[b].x)/2, (points[a].y+points[b].y)/2);
+                cv::Point frameCenter = cv::Point(frameSize.x / 2, frameSize.y / 2);
 
                 //movimiento eje x
-                if( squareCenter.x > frameCenter.x){
+                res.roll = ( ((float)squareCenter.x - (float)frameCenter.x) / ((float)frameSize.x/2) ) * (this->rollvelfactor);
 
-                    //movera la derecha
-                    res.roll = this->rollPorcent;
+
+                //movimiento eje y
+                res.pitch = ( ((float)frameCenter.y - (float)squareCenter.y ) / ((float)frameSize.y/2) ) * (this->pitchvelfactor);
+
+                //movimiento de rotación
+                int ys[2];//Puntos agrupados por similitud de y de izquierda a derecha
+                if(std::abs(points[c].y-points[a].y) < std::abs(points[c].y-points[b].y)){
+
+                    if(points[a].x < points[c].x){
+                        ys[0]=a;
+                        ys[1]=c;
+                    }else{
+                        ys[0]=c;
+                        ys[1]=a;
+                    }
                 } else {
 
+                    if(points[b].x < points[c].x){
+                        ys[0]=b;
+                        ys[1]=c;
+                    }else{
+                        ys[0]=c;
+                        ys[1]=b;
+                    }
+                }
+
+
+                cv::Point auxpoit = points[ys[1]] - points[ys[0]];
+                float l = (float) std::sqrt(auxpoit.x*auxpoit.x + auxpoit.y*auxpoit.y);
+                if( points[ys[0]].y < points[ys[1]].y ){//ys[0] está mas arriba
+
+                    //girar a la izquierda
+                    if( (((float)points[ys[1]].y-(float)points[ys[0]].y) / l) > 0.5 ){
+                        res.yaw= (((float)points[ys[1]].y-(float)points[ys[0]].y) / l) * (this->yawvelfactor);
+                    } else {
+                        res.yaw= -(((float)points[ys[1]].y-(float)points[ys[0]].y) / l) * (this->yawvelfactor);
+                    }
+
+                }else{//ys[1] está mas arriba
+
+                    //girar a la derecha
+                    res.yaw= (((float)points[ys[0]].y-(float)points[ys[1]].y) / l) * (this->yawvelfactor);
+                }
+
+                //NO GIRAR
+                res.yaw=0.0;
+
+                //Tengo que aterrizar?
+                if(std::abs(res.pitch)<pitchtolerance &&std::abs(res.roll)<rolltolerance &&std::abs(res.yaw)<yawtolerance){
+
+                    countZeroVel++;
+
+                    if(countZeroVel > contZeroVelTolerance){
+                        this->state = LandingState::Landing;
+                        res.state = this->state;
+                        return res;
+                    }
+                } else {
+                    countZeroVel=0;
+                }
+
+
+            } else if (points.size()==2){
+
+                cv::Point frameCenter = cv::Point(frameSize.x / 2, frameSize.y / 2);
+
+                ////Movimiento eje x
+                if( points[0].x > frameCenter.x && points[1].x > frameCenter.x){
+
+                    //Movera la derecha
+                    int auxmax=0;
+                    if(points[1].x>points[0].x)
+                        auxmax=1;
+                    res.roll = ((float)points[auxmax].x) / ((float)frameSize.x) * (this->rollvelfactor);
+
+                } else if( points[0].x < frameCenter.x && points[1].x < frameCenter.x){
+
                     //mover a la izuierda
-                    res.roll = - this->rollPorcent;
+                    int auxmax=0;
+                    if(points[1].x<points[0].x)
+                        auxmax=1;
+                    res.roll = -((float)frameSize.x - (float)points[auxmax].x) / ((float)frameSize.x) * (this->rollvelfactor);
                 }
 
                 //movimiento eje y
-                if( squareCenter.y > frameCenter.x ){
-
-                    //mover hacia adelante
-                    res.pitch = this->pitchPorcent;
-                } else {
+                if( points[0].y > frameCenter.y && points[1].y > frameCenter.y){
 
                     //mover hacia atras
-                    res.pitch = -this->pitchPorcent;
+                    int auxmax=0;
+                    if(points[1].y>points[0].y)
+                        auxmax=1;
+                    res.pitch = -((float)points[auxmax].y)/ ((float)frameSize.y) * (this->pitchvelfactor);
+
+                } else if( points[0].y < frameCenter.y && points[1].y < frameCenter.y){
+
+                    //mover hacia adelande
+                    int auxmax=0;
+                    if(points[1].y<points[0].y)
+                        auxmax=1;
+                    res.pitch =  ((float)frameSize.y - (float)points[auxmax].y) / ((float)frameSize.y) * (this->pitchvelfactor);
                 }
+
+            } else {//size 1
+
+                cv::Point frameCenter = cv::Point(frameSize.x / 2,
+                                                  frameSize.y / 2);
+
+                //movimiento eje x
+                if( points[0].x > frameCenter.x ){
+
+                    //movera la derecha
+                    res.roll = ((float)points[0].x/(float)frameSize.x) * (this->rollvelfactor);
+
+                } else if( points[0].x < frameCenter.x ){
+
+                    //mover a la izuierda
+                    res.roll = -((float)frameSize.x - (float)points[0].x )/ ((float)frameSize.x) * (this->rollvelfactor);
+                }
+
+                //movimiento eje y
+                if( points[0].y > frameCenter.y){
+
+                    //mover hacia atras
+                    res.pitch = -((float)points[0].y/(float)frameSize.y) * (this->pitchvelfactor);
+
+                } else if( points[0].y < frameCenter.y){
+
+                    //mover hacia adelande
+                    res.pitch = ((float)frameSize.y - (float)points[0].y ) / ((float)frameSize.y) * (this->pitchvelfactor);
+                }
+
             }
+
+
+        }else {
+            //Buscar Puntos in referencia (sigo la ultima orden conocida)
+
+            countWithoutReference++;
+            if(countWithoutReference < maxSetpsWithoutReference){
+                res.pitch = lastres.pitch;
+                res.roll = lastres.roll;
+                res.yaw = lastres.yaw;
+                res.gaz = withoutReferencePitch;
+            }
+
         }
 
-    } else if(this->state == LandingState::FinalPositioning){
+    } else if(this->state == LandingState::Landing){
 
-        if(points.size() == 2){
+        if(!this->preland){
+            res.gaz = this->gazpreland;
+            res.pitch= this->pitchpreland;
+            res.roll= this->rollpreland;
 
-            //ordenar por y
-            int orderbyY[4] = {1,2,3,4};
-            for(int i = 0; i < 4; i++){
-                for (int k = i+1; k < 4; k++){
-                    if(points[orderbyY[k]].y <  points[orderbyY[i]].y){
-                        int aux = orderbyY[i];
-                        orderbyY[i] = orderbyY[k];
-                        orderbyY[k] = aux;
-                    }
-                }
-            }
-
-            if( points[orderbyY[0]].y - (frameSize.y/2) < alignmentTolerance){
-
-                this->state = LandingState::Inactive;
-                //land
-                res.land = true;
-            } else {
-
-                if(points[orderbyY[0]].y > (frameSize.y/2)){
-                    //mover hacia adelante
-                    res.pitch = this->pitchPorcent;
-                } else {
-                    //mover hacia atras
-                    res.pitch = -this->pitchPorcent;
-                }
-            }
-
+            this->preland=true;
+        } else{
+            res.land = true;
         }
 
     }
+    res.state = this->state;
+    lastres.pitch = res.pitch;
+    lastres.roll = res.roll;
+    lastres.yaw = res.yaw;
+    lastres.gaz = res.gaz;
+    return res;
 }
 
 bool MarkerLand::isLanding(){
@@ -166,4 +246,9 @@ bool MarkerLand::isLanding(){
 
 void MarkerLand::stopLanding(){
     this->state = LandingState::Inactive;
+    lastres.pitch = 0;
+    lastres.roll = 0;
+    lastres.yaw = 0;
+    lastres.gaz = 0;
+    lastres.land = false;
 }
