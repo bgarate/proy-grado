@@ -12,6 +12,8 @@
 #include "../hal/hal.hpp"
 //#include <lib/ORB_SLAM2/include/System.h>
 #include <src/tracking/CascadeDetector.h>
+#include <src/tracking/C4Detector.h>
+#include <src/tracking/CombC4CascadeDetector.h>
 
 class PatrolAndFollow : public BodyTest {
 
@@ -62,7 +64,11 @@ class PatrolAndFollow : public BodyTest {
 
         this->hal = hal;
 
-        detector = new CascadeDetector();
+        //detector = new CascadeDetector();
+        //detector = new HogDetector();
+        //detector = new C4Detector();
+        detector = new CombC4CascadeDetector();
+
         tracker = new MultiTracker(MultiTracker::Algorithm::KCF);
         detectAndTrack =  new DetectAndTrack(detector, tracker);
         follower = new Follower(config);
@@ -71,7 +77,6 @@ class PatrolAndFollow : public BodyTest {
         config->setFrameSize(cv::Point(frame->size().width,frame->size().height));
 
         this->visualDebugger = visualDebugger;
-
     }
 
     bool BodyTestStep(double deltaTime) override {
@@ -105,7 +110,7 @@ class PatrolAndFollow : public BodyTest {
             return false;
 
             //ATERRIZAR
-        } else if (sequence.size() == 0 && rmovemode && !hal->isRmoving() && !waitingLanding) {
+        } else if (false  && sequence.size() == 0 && rmovemode && !hal->isRmoving() && !waitingLanding) {
             // Aterrizar
             Logger::logError("Aterrizar");
             visualDebugger->writeConsole("Aterrizar");

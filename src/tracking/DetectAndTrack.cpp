@@ -5,6 +5,7 @@
 #include "DetectAndTrack.h"
 #include "../logging/Logger.h"
 #include "AreaRect.h"
+#include "CascadeDetector.h"
 
 DetectAndTrack::DetectAndTrack(DetectionAlgorithm *detector, TrackingAlgorithm *tracker) {
     this->detector = detector;
@@ -19,7 +20,7 @@ bool DetectAndTrack::insideROI(cv::Rect2d r, std::shared_ptr<cv::Mat> frame) {
 
 std::vector<Track> DetectAndTrack::update(std::shared_ptr<cv::Mat> frame) {
 
-    if(trackedFrames % FRAMES_DETECT_INTERVAL <= FRAMES_TO_DETECT ) {
+    /*if(trackedFrames % FRAMES_DETECT_INTERVAL <= FRAMES_TO_DETECT ) {
 
         detector->detect(frame);
 
@@ -27,9 +28,31 @@ std::vector<Track> DetectAndTrack::update(std::shared_ptr<cv::Mat> frame) {
             accumulatedFound.push_back(found);
         }
 
-   }
+   }*/
 
     if(trackedFrames % FRAMES_DETECT_INTERVAL == FRAMES_TO_DETECT ) {
+
+        //Segundo detector
+        /*DetectionAlgorithm* detector2 = new CascadeDetector();
+
+        detector2->detect(frame);
+
+        std::vector<cv::Rect2d> found2 = detector2->getFound();
+        std::vector<cv::Rect2d> prefilteredFound2;
+        filter_rects(found2, 0, prefilteredFound2);
+
+        for(cv::Rect2d found : prefilteredFound2) {
+            accumulatedFound.push_back(found);
+        }*/
+
+        //Detector original
+        detector->detect(frame);
+
+        for(cv::Rect2d found : detector->getFound()) {
+            accumulatedFound.push_back(found);
+        }
+
+
 
         std::vector<cv::Rect2d> tracksToKeep;
 
@@ -131,7 +154,6 @@ void DetectAndTrack::filter_rects(std::vector<cv::Rect2d> &candidates, unsigned 
 
             double overlap = (width*heigth)/std::min(selected.area,r.area);
 
-
             if(overlap > KEEP_TRACK_OVERLAP_THRESHOLD){
                 toRemove.push_back(indexToRemove);
                 if(isFromNewTrack != r.isPreviousTrack) {
@@ -147,7 +169,7 @@ void DetectAndTrack::filter_rects(std::vector<cv::Rect2d> &candidates, unsigned 
             }
         }
 
-        if(indexToRemove>0)
+        //if(indexToRemove>0)
             objects.push_back(rectToKeep);
 
         for(unsigned int j : toRemove)

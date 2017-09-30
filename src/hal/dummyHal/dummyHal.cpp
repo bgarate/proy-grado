@@ -10,7 +10,7 @@
 DummyHal::DummyHal() {
     state = State::Landed;
     //videoSource.open(-1);
-    videoSource.open("drone.mp4");
+    videoSource.open("video01.mp4");
 }
 
 void DummyHal::move(int roll, int pitch, int yaw, int gaz) {
