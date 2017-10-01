@@ -11,20 +11,20 @@
 				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="format">
 				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 format"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 format"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="yaml-cpp">
@@ -46,10 +46,10 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 yaml-cpp"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 yaml-cpp"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="yaml-cpp/fast">
@@ -71,35 +71,35 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 yaml-cpp/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 yaml-cpp/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="releasable">
 				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 releasable"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 releasable"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="debuggable">
 				<Option working_dir="/home/bruno/proy-grado/lib/yaml-cpp"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 debuggable"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 debuggable"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="run-tests">
-				<Option output="/home/bruno/proy-grado/run-tests" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/bruno/proy-grado"/>
+				<Option output="/home/bruno/proy-grado/bin/run-tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -119,15 +119,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 run-tests"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 run-tests"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="run-tests/fast">
-				<Option output="/home/bruno/proy-grado/run-tests" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/bruno/proy-grado"/>
+				<Option output="/home/bruno/proy-grado/bin/run-tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -147,10 +147,10 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 run-tests/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 run-tests/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock_main">
@@ -176,10 +176,10 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock_main/fast">
@@ -205,10 +205,10 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock">
@@ -234,10 +234,10 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock/fast">
@@ -263,10 +263,10 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest_main">
@@ -290,10 +290,10 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest_main/fast">
@@ -317,10 +317,10 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest">
@@ -344,10 +344,10 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest/fast">
@@ -371,15 +371,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/test/gtest-1.8.0/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="read">
-				<Option output="/home/bruno/proy-grado/read" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/bruno/proy-grado"/>
+				<Option output="/home/bruno/proy-grado/bin/read" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -396,15 +396,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 read"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 read"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="read/fast">
-				<Option output="/home/bruno/proy-grado/read" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/bruno/proy-grado"/>
+				<Option output="/home/bruno/proy-grado/bin/read" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -421,15 +421,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 read/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 read/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="sandbox">
-				<Option output="/home/bruno/proy-grado/sandbox" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/bruno/proy-grado"/>
+				<Option output="/home/bruno/proy-grado/bin/sandbox" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -446,15 +446,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 sandbox"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 sandbox"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="sandbox/fast">
-				<Option output="/home/bruno/proy-grado/sandbox" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/bruno/proy-grado"/>
+				<Option output="/home/bruno/proy-grado/bin/sandbox" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -471,15 +471,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 sandbox/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 sandbox/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="parse">
-				<Option output="/home/bruno/proy-grado/parse" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/bruno/proy-grado"/>
+				<Option output="/home/bruno/proy-grado/bin/parse" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -496,15 +496,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 parse"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 parse"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="parse/fast">
-				<Option output="/home/bruno/proy-grado/parse" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/bruno/proy-grado"/>
+				<Option output="/home/bruno/proy-grado/bin/parse" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bruno/proy-grado/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -521,10 +521,10 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 parse/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 parse/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bruno/proy-grado/lib/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
@@ -864,12 +864,6 @@
 		<Unit filename="/home/bruno/proy-grado/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/bruno/proy-grado/FindFFmpeg.cmake">
-			<Option virtualFolder="CMake Files\"/>
-		</Unit>
-		<Unit filename="/home/bruno/proy-grado/FindEigen3.cmake">
-			<Option virtualFolder="CMake Files\"/>
-		</Unit>
 		<Unit filename="/home/bruno/proy-grado/lib/yaml-cpp/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\lib\yaml-cpp\"/>
 		</Unit>
@@ -984,7 +978,13 @@
 		<Unit filename="/home/bruno/proy-grado/../Pangolin/build/src/PangolinTargets.cmake">
 			<Option virtualFolder="CMake Files\..\Pangolin\build\src\"/>
 		</Unit>
+		<Unit filename="/home/bruno/proy-grado/cmake/FindFFmpeg.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
 		<Unit filename="/home/bruno/proy-grado/cmake/FindCairo.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/bruno/proy-grado/cmake/FindEigen3.cmake">
 			<Option virtualFolder="CMake Files\cmake\"/>
 		</Unit>
 		<Unit filename="/home/bruno/proy-grado/src/proto/CMakeLists.txt">

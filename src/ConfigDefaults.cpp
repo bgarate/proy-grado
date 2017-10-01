@@ -48,7 +48,8 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Body::Hal,HalType::Dummy);
     config->Set(ConfigKeys::Body::ParentOnFork,true);
     config->Set(ConfigKeys::Body::TestToExecute,std::string("OpticalFlowObstacleAvoidance"));
-    config->Set(ConfigKeys::Body::DummyCameraVideoSource,std::string("drone.mp4"));
+    config->Set(ConfigKeys::Body::DummyCameraVideoSource,std::string("../sample-input/drone.mp4"));
+    config->Set(ConfigKeys::Body::CascadeDetector,std::string("../resources/pedestrian_cascade_web_LBP.xml"));
 
     config->Set(ConfigKeys::Brain::Start, true);
 

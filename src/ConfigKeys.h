@@ -50,6 +50,7 @@ struct ConfigKeys {
         CONFIG_KEY(Body, ParentOnFork, bool)
         CONFIG_KEY(Body, TestToExecute, std::string)
         CONFIG_KEY(Body, DummyCameraVideoSource, std::string)
+        CONFIG_KEY(Body, CascadeDetector, std::string)
     };
 
     struct Brain {
