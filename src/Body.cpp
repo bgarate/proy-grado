@@ -23,7 +23,7 @@
 #include "bodytests/BodyTestRmove2.cpp"
 #include "bodytests/BodyTestDummy.cpp"
 #include "bodytests/BodyTestMarker.cpp"
-#include "ConfigKeys.h"
+#include "src/config/ConfigKeys.h"
 
 Body::Body(Hal *hal) {
     this->hal = hal;

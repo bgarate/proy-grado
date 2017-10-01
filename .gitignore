@@ -91,6 +91,7 @@ fabric.properties
 
 /proy_grado.cbp
 /proy_grado
+/bin/*
 /calibration
 /cmake-build-debug/
 !/src/hal/pb2/lib/*

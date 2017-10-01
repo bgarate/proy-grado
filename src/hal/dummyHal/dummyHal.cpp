@@ -4,7 +4,7 @@
 
 #include "../hal.hpp"
 #include <memory.h>
-#include <src/ConfigKeys.h>
+#include <src/config/ConfigKeys.h>
 #include "dummyHal.h"
 #include "../Point.h"
 

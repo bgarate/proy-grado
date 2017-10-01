@@ -6,7 +6,7 @@
 #define PROY_GRADO_NAVIGATIONDEBUGGER_H
 
 
-#include <src/Config.h>
+#include <src/config/Config.h>
 #include <pangolin/pangolin.h>
 #include "cairo.h"
 #include "cairo-xlib.h"

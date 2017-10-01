@@ -4,7 +4,7 @@
 
 #include <src/tracking/Follower.h>
 #include <src/logging/Logger.h>
-#include <src/ConfigKeys.h>
+#include <src/config/ConfigKeys.h>
 #include "MarkerFollower.h"
 
 MarkerFollower::MarkerFollower(Config *config, World *world) {

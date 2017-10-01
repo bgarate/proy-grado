@@ -2,7 +2,7 @@
 #define PROY_GRADO_BODYTEST1_H
 
 #include "../hal/hal.hpp"
-#include "../VisualDebugger.h"
+#include "src/debugging/VisualDebugger.h"
 
 #define BODY_TEST_CLASS(NAME) \
     class NAME

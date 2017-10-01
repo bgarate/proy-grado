@@ -8,12 +8,12 @@
 #include <src/navigation/World.h>
 #include <src/navigation/NavigationDebugger.h>
 #include <src/navigation/MarkerFollower.h>
-#include <src/ConfigKeys.h>
+#include <src/config/ConfigKeys.h>
 #include "../logging/Logger.h"
 #include "../tracking/DetectAndTrack.h"
 #include "../tracking/HogDetector.h"
 #include "../tracking/MultiTracker.h"
-#include "../VisualDebugger.h"
+#include "src/debugging/VisualDebugger.h"
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
 

@@ -7,8 +7,8 @@
 #include "messages/Broadcaster.h"
 #include "Brain.h"
 #include "logging/Logger.h"
-#include "Config.h"
-#include "ConfigKeys.h"
+#include "src/config/Config.h"
+#include "src/config/ConfigKeys.h"
 
 namespace chrono = std::chrono;
 

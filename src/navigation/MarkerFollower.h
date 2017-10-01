@@ -6,7 +6,7 @@
 #define PROY_GRADO_MARKERFOLLOWER_H
 
 
-#include <src/Config.h>
+#include <src/config/Config.h>
 #include <src/hal/Point.h>
 #include "World.h"
 #include "MarkerTracker.h"

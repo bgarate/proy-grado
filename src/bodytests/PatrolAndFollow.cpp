@@ -7,12 +7,12 @@
 #include <src/tracking/DetectAndTrack.h>
 #include <src/tracking/HogDetector.h>
 #include <src/tracking/MultiTracker.h>
-#include <src/VisualDebugger.h>
+#include <src/debugging/VisualDebugger.h>
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
 //#include <lib/ORB_SLAM2/include/System.h>
 #include <src/tracking/CascadeDetector.h>
-#include <src/ConfigKeys.h>
+#include <src/config/ConfigKeys.h>
 
 class PatrolAndFollow : public BodyTest {
 

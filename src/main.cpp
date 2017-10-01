@@ -8,7 +8,7 @@
 #include "hal/vrep/vrephal.cpp"
 #include "hal/pb2/pb2hal.cpp"
 #include "hal/HalType.hpp"
-#include "ConfigKeys.h"
+#include "src/config/ConfigKeys.h"
 
 void welcome_message() {
     std::cout << "PROYECTO DE GRADO - 2017" << std::endl;

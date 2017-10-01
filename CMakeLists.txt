@@ -35,8 +35,8 @@ set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES src/proto/message.pb.h src/proto/message.pb.cc
         src/tracking/TrackingAlgorithm.h
-        src/ConfigDefaults.cpp src/ConfigDefaults.h
-        src/Config.h src/ConfigKeys.h src/ConfigKeys.cpp
+        src/config/ConfigDefaults.cpp src/config/ConfigDefaults.h
+        src/config/Config.h src/config/ConfigKeys.h src/config/ConfigKeys.cpp
         src/tracking/Follower.cpp src/tracking/Follower.h
         src/logging/Logger.cpp src/logging/Logger.h
         src/tracking/HogDetector.cpp src/tracking/HogDetector.h
@@ -53,7 +53,7 @@ set(SOURCE_FILES src/proto/message.pb.h src/proto/message.pb.cc
         src/messages/Connection.cpp src/messages/Connection.h
         src/messages/AsyncSocketChannel.cpp src/messages/AsyncSocketChannel.h
         src/messages/PackedMessage.h
-        src/messages/MessageBuilder.cpp src/messages/MessageBuilder.h src/MessageHandler.cpp src/MessageHandler.h
+        src/messages/MessageBuilder.cpp src/messages/MessageBuilder.h src/messages/MessageHandler.cpp src/messages/MessageHandler.h
         src/hal/HalType.hpp
         src/hal/hal.hpp
         src/hal/vrep/extApi.c src/hal/vrep/extApi.h src/hal/vrep/extApiInternal.h
@@ -64,14 +64,14 @@ set(SOURCE_FILES src/proto/message.pb.h src/proto/message.pb.cc
         src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h
         src/messages/IpResolver.cpp src/messages/IpResolver.h src/hal/pb2/VideoDecoder.cpp src/hal/pb2/VideoDecoder.h
         src/hal/pb2/CommandHandler.cpp src/hal/pb2/CommandHandler.h src/tracking/AreaRect.h src/hal/ManualControl.cpp
-        src/hal/ManualControl.h src/VisualDebugger.cpp src/VisualDebugger.h
+        src/hal/ManualControl.h src/debugging/VisualDebugger.cpp src/debugging/VisualDebugger.h
         src/bodytests/OpticalFlowObstacleAvoidance.cpp
         src/landtracking/MarkerLand.h src/landtracking/MarkerLand.cpp
         src/bodytests/TrackMarkers.cpp src/navigation/MarkerTracker.cpp src/navigation/MarkerTracker.h
         src/navigation/World.cpp src/navigation/World.h src/navigation/NavigationDebugger.cpp src/navigation/NavigationDebugger.h
         src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h
         src/navigation/MarkerFollower.cpp src/navigation/MarkerFollower.h
-        src/main.cpp src/tracking/OpticalFlow.cpp src/tracking/OpticalFlow.h src/tracking/DbScan.cpp src/tracking/DbScan.h src/tracking/Helpers.h
+        src/main.cpp src/tracking/OpticalFlow.cpp src/tracking/OpticalFlow.h src/tracking/DbScan.cpp src/tracking/DbScan.h src/utils/Helpers.h
         src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h
         src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h)
 

@@ -9,8 +9,8 @@
 #include "communication/Communication.h"
 #include "messages/SocketChannel.h"
 #include "messages/Broadcaster.h"
-#include "MessageHandler.h"
-#include "Config.h"
+#include "src/messages/MessageHandler.h"
+#include "src/config/Config.h"
 
 class Brain {
 public:

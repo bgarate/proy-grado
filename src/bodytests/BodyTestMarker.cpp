@@ -1,5 +1,5 @@
 #include "BodyTest.h"
-#include "../VisualDebugger.h"
+#include "src/debugging/VisualDebugger.h"
 #include "../logging/Logger.h"
 #include "src/landtracking/MarkerTrack.h"
 #include <thread>

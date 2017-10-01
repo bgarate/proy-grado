@@ -4,7 +4,7 @@
 
 #include <cmath>
 #include "Follower.h"
-#include "src/ConfigKeys.h"
+#include "src/config/ConfigKeys.h"
 
 FollowCommand::FollowCommand() {
     this->followee = Follower::NOT_FOLLOWING;

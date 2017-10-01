@@ -3,10 +3,10 @@
 //
 
 #include <memory>
-#include <src/Config.h>
+#include <src/config/Config.h>
 #include <thread>
 #include <src/logging/Logger.h>
-#include <src/ConfigKeys.h>
+#include <src/config/ConfigKeys.h>
 #include "MarkerTracker.h"
 
 MarkerTracker::MarkerTracker(Config* config) {
