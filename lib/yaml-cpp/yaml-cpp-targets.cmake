@@ -48,7 +48,7 @@ add_library(yaml-cpp STATIC IMPORTED)
 set_property(TARGET yaml-cpp APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(yaml-cpp PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "CXX"
-  IMPORTED_LOCATION_DEBUG "/home/bruno/proy-grado/lib/yaml-cpp/libyaml-cpp.a"
+  IMPORTED_LOCATION_DEBUG "/home/santy/Escritorio/Proyecto/Git/proy-grado/lib/yaml-cpp/libyaml-cpp.a"
   )
 
 # This file does not depend on other imported targets which have
