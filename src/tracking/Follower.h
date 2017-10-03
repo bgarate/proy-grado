@@ -8,7 +8,7 @@
 
 #include "Track.h"
 #include "../hal/Point.h"
-#include "../Config.h"
+#include "src/config/Config.h"
 
 class FollowCommand {
 public:

@@ -7,7 +7,7 @@
 #include "../tracking/DetectAndTrack.h"
 #include "../tracking/HogDetector.h"
 #include "../tracking/MultiTracker.h"
-#include "../VisualDebugger.h"
+#include "src/debugging/VisualDebugger.h"
 //#include "../../lib/ORB_SLAM2/include/System.h"
 #include "BodyTest.h"
 #include "../hal/hal.hpp"

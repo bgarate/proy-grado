@@ -4,6 +4,7 @@
 
 #include <src/tracking/Follower.h>
 #include <src/logging/Logger.h>
+#include <src/config/ConfigKeys.h>
 #include "MarkerFollower.h"
 
 MarkerFollower::MarkerFollower(Config *config, World *world) {
@@ -89,7 +90,7 @@ void MarkerFollower::EstimatePosition(const std::vector<Marker> &markers, double
         cv::Vec3d posXyz = marker.getXYZPosition();
         double groundDistance2 = sqrt(posXyz[0]*posXyz[0] + posXyz[1]*posXyz[1]);
 
-        /*double verticalAngle = 90 - config->getCameraTilt() - angularDisplacement.Tilt();
+        /*double verticalAngle = 90 - config->Get(ConfigKeys::Drone::CameraTilt)() - angularDisplacement.Tilt();
         double groundDistance1 = effectiveAltitude * tan(toRadians(verticalAngle));*/
 
         //std::cout << "Distance estimation difference:" << groundDistance1 << " " << groundDistance2 << std::endl;
@@ -150,7 +151,7 @@ void MarkerFollower::EstimatePosition(const std::vector<Marker> &markers, double
 
 Point MarkerFollower::getAngularDisplacement(cv::Point2i markerCenter) {
 
-    cv::Size frameSize = config->getFrameSize();
+    cv::Size frameSize = config->Get(ConfigKeys::Drone::FrameSize);
 
     cv::Point frameCenter = cv::Point(frameSize.width/2, frameSize.height/2);
 
@@ -158,8 +159,8 @@ Point MarkerFollower::getAngularDisplacement(cv::Point2i markerCenter) {
     double displacementX = markerCenter.x - frameCenter.x;
 
 
-    double tgPan = displacementX/(frameSize.width/2)*std::tan(toRadians(config->getFov()/2));
-    double tgTilt = displacementY/(frameSize.height/2)*std::tan(toRadians(config->getVerticalFov()/2));
+    double tgPan = displacementX/(frameSize.width/2)*std::tan(toRadians(config->Get(ConfigKeys::Drone::FOV)/2));
+    double tgTilt = displacementY/(frameSize.height/2)*std::tan(toRadians(config->Get(ConfigKeys::Drone::VerticalFOV)/2));
 
     return Point(toDegrees(std::atan(tgPan)),toDegrees(std::atan(tgTilt)),0);
 

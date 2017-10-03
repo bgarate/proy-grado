@@ -8,10 +8,10 @@
 #include <iostream>
 #include "hal/ManualControl.h"
 #include "messages/SocketChannel.h"
-#include "MessageHandler.h"
+#include "src/messages/MessageHandler.h"
 #include "hal/hal.hpp"
-#include "Config.h"
-#include "VisualDebugger.h"
+#include "src/config/Config.h"
+#include "src/debugging/VisualDebugger.h"
 
 class Body {
 public:
@@ -47,6 +47,8 @@ private:
     bool inmc;
 
     void CalculateFPS();
+
+    void PrintAvailableTests();
 };
 
 

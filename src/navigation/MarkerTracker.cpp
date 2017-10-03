@@ -3,9 +3,10 @@
 //
 
 #include <memory>
-#include <src/Config.h>
+#include <src/config/Config.h>
 #include <thread>
 #include <src/logging/Logger.h>
+#include <src/config/ConfigKeys.h>
 #include "MarkerTracker.h"
 
 MarkerTracker::MarkerTracker(Config* config) {
@@ -33,8 +34,8 @@ void MarkerTracker::Update(std::shared_ptr<cv::Mat> frame, double deltaTime) {
         corners, ids);
 
     cv::aruco::estimatePoseSingleMarkers(corners,MARKER_SIDE_LENGTH,
-                                         config->getCameraMatrix(),
-                                         config->getDistortionCoefficients(),
+                                         config->Get(ConfigKeys::Drone::CameraMatrix),
+                                         config->Get(ConfigKeys::Drone::DistortionCoefficients),
                                          rotations, translations);
 
     Markers.clear();

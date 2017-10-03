@@ -6,7 +6,7 @@
 #include <opencv/cv.hpp>
 #include "OpticalFlow.h"
 #include "DbScan.h"
-#include "Helpers.h"
+#include "src/utils/Helpers.h"
 
 const cv::Size OpticalFlow::SUB_PIX_WIN_SIZE = cv::Size(10,10);
 const cv::Size OpticalFlow::WIN_SIZE = cv::Size(31,31);

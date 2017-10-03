@@ -91,9 +91,11 @@ fabric.properties
 
 /proy_grado.cbp
 /proy_grado
+/bin/*
 /calibration
 /cmake-build-debug/
 !/src/hal/pb2/lib/*
 /output/*.avi
 /resources/mav0/*
 /resources/rgbd_dataset_freiburg1_360
+/output/*

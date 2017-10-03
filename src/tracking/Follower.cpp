@@ -4,6 +4,7 @@
 
 #include <cmath>
 #include "Follower.h"
+#include "src/config/ConfigKeys.h"
 
 FollowCommand::FollowCommand() {
     this->followee = Follower::NOT_FOLLOWING;
@@ -32,8 +33,8 @@ FollowCommand Follower::follow(std::vector<Track> tracks, double altitude, doubl
         return followCommand;
     }
 
-    cv::Point frameCenter = cv::Point(config->getFrameSize().width / 2,
-                                      config->getFrameSize().height / 2);
+    cv::Point frameCenter = cv::Point(config->Get<cv::Size>(ConfigKeys::Drone::FrameSize).width / 2,
+                                      config->Get<cv::Size>(ConfigKeys::Drone::FrameSize).height / 2);
 
     std::sort(tracks.begin(),tracks.end(),[this,frameCenter](Track a, Track b){
         cv::Point aCenter = cv::Point(a.getRect().x + a.getRect().width / 2,
@@ -69,7 +70,7 @@ FollowCommand Follower::getCommand(double altitude, double deltaTime, const cv::
 
     FollowCommand followCommand;
 
-    double verticalAngle = 90 - config->getCameraTilt() - angularDisplacement.Tilt();
+    double verticalAngle = 90 - config->Get<double>(ConfigKeys::Drone::CameraTilt) - angularDisplacement.Tilt();
     double horizontalAngle = angularDisplacement.Pan();
 
     double distance = altitude * tan(toRadians(verticalAngle));
@@ -116,7 +117,7 @@ Point Follower::getRotation(double horizontalAngle, double deltaTime) {
 
 Point Follower::getAngularDisplacement(cv::Point2i trackPoint) {
 
-    cv::Size frameSize = config->getFrameSize();
+    cv::Size frameSize = config->Get<cv::Size>(ConfigKeys::Drone::FrameSize);
 
     cv::Point frameCenter = cv::Point(frameSize.width/2, frameSize.height/2);
 
@@ -125,9 +126,10 @@ Point Follower::getAngularDisplacement(cv::Point2i trackPoint) {
     double displacementY = trackPoint.y - frameCenter.y;
     double displacementX = trackPoint.x - frameCenter.x;
 
+    double fov = config->Get<double>(ConfigKeys::Drone::FOV);
 
-    double tgPan = displacementX/(frameSize.width/2)*std::tan(toRadians(config->getFov()/2));
-    double tgTilt = displacementY/(frameSize.height/2)*std::tan(toRadians(config->getVerticalFov()/2));
+    double tgPan = displacementX/(frameSize.width/2)*std::tan(toRadians(fov/2));
+    double tgTilt = displacementY/(frameSize.height/2)*std::tan(toRadians(config->Get<double>(ConfigKeys::Drone::VerticalFOV)/2));
 
     return Point(toDegrees(std::atan(tgPan)),toDegrees(std::atan(tgTilt)),0);
 
@@ -135,12 +137,12 @@ Point Follower::getAngularDisplacement(cv::Point2i trackPoint) {
 
 int Follower::getHorizon() {
 
-    cv::Size frameSize = config->getFrameSize();
+    cv::Size frameSize = config->Get<cv::Size>(ConfigKeys::Drone::FrameSize);
 
     int frameCenter = frameSize.height/2;
 
-    double tgTilt = std::tan(toRadians(config->getCameraTilt()));
-    double tgHalfFov = std::tan(toRadians(config->getVerticalFov()/2));
+    double tgTilt = std::tan(toRadians(config->Get<double>(ConfigKeys::Drone::CameraTilt)));
+    double tgHalfFov = std::tan(toRadians(config->Get<double>(ConfigKeys::Drone::VerticalFOV)/2));
 
     double displacementY = tgTilt/tgHalfFov*frameCenter;
 

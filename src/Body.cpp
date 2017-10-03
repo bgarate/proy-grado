@@ -4,6 +4,7 @@
 
 #include <src/proto/message.pb.h>
 #include <chrono>
+#include <src/bodytests/BodyTestRegistry.h>
 #include "Body.h"
 #include "logging/Logger.h"
 #include "Brain.h"
@@ -22,6 +23,7 @@
 #include "bodytests/BodyTestRmove2.cpp"
 #include "bodytests/BodyTestDummy.cpp"
 #include "bodytests/BodyTestMarker.cpp"
+#include "src/config/ConfigKeys.h"
 
 Body::Body(Hal *hal) {
     this->hal = hal;
@@ -32,7 +34,7 @@ Body::Body(Hal *hal) {
 void Body::setup(Config* config) {
     Logger::getInstance().setSource("BODY");
     this->config = config;
-    communicateWithBrain(config->getBrainHost(), config->getBrainPort());
+    communicateWithBrain(config->Get(ConfigKeys::Communications::BrainHost), config->Get(ConfigKeys::Communications::BrainPort));
     visualDebugger.setup(config);
     hal->setup(config);
     hal->Connect();
@@ -41,6 +43,7 @@ void Body::setup(Config* config) {
     this->mc = new ManualControl(hal);
     this->inmc = false;
 }
+
 void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
     communication.connect(brainHost, port);
@@ -50,13 +53,9 @@ void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
 
 void Body::loop() {
 
-    BodyTest* bt = new PatrolAndFollow();
-    //BodyTest* bt = new OrbSlam2();
-    //BodyTest* bt = new OpticalFlowObstacleAvoidance();
-    //BodyTest* bt = new BodyTestRmove2();
-    //BodyTest* bt = new Follow();
-    //BodyTest* bt = new BodyTestMarker();
-    //BodyTest* bt = new TrackMarkers();
+    PrintAvailableTests();
+
+    BodyTest* bt = BodyTestRegistry::Get(config->Get(ConfigKeys::Body::TestToExecute));
 
     bt->InitBodyTest(this->hal, config, &visualDebugger);
     Logger::logInfo("Body started");
@@ -77,7 +76,7 @@ void Body::loop() {
             messsageHandler.handle(msg);
         }
 
-        if(config->isPingEnabled())
+        if(config->Get(ConfigKeys::Communications::PingEnabled))
             waitPing();
 
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
@@ -110,11 +109,10 @@ void Body::loop() {
             } else if (key == (int)'c'){
                 visualDebugger.captureImage();
             } else if (key == (int)'t'){
-                config->setCameraTilt(std::min(config->getVerticalFov()/2,config->getCameraTilt() + 0.1));
+                config->Set(ConfigKeys::Drone::CameraTilt,std::min(config->Get(ConfigKeys::Drone::VerticalFOV)/2,config->Get(ConfigKeys::Drone::CameraTilt) + 0.1));
             } else if (key == (int)'r'){
-                config->setCameraTilt(std::max(-config->getVerticalFov()/2,config->getCameraTilt() - 0.1));
+                config->Set(ConfigKeys::Drone::CameraTilt,std::max(config->Get(ConfigKeys::Drone::VerticalFOV)/2,config->Get(ConfigKeys::Drone::CameraTilt) - 0.1));
             }
-
         } else if(mc->stopped()) {//q dentro de manual control
             should_exit = true;
         }
@@ -123,7 +121,7 @@ void Body::loop() {
         if(should_exit)
             break;
 
-        usleep(config->getSleepDelay());
+        usleep(config->Get(ConfigKeys::Body::SleepDelay));
     }
 
     visualDebugger.cleanup();
@@ -176,10 +174,21 @@ void Body::cleanup() {
 void Body::waitPing() {
     pingWait += deltaTime;
 
-    if(pingWait > (config->getPingLapse() + config->getPingTimeout()) * 1000) {
+    if(pingWait > (config->Get(ConfigKeys::Communications::PingLapse) + config->Get(ConfigKeys::Communications::PingTimeout)) * 1000) {
         Logger::logError("Ping not received in %u milliseconds") << (int)(pingWait / 1000);
         should_exit = true;
     }
+}
+
+void Body::PrintAvailableTests() {
+
+    std::string str = "Available body tests:\n";
+
+    for(std::string& test : BodyTestRegistry::GetAvailableTests()){
+        str += "\t- " + test + "\n";
+    }
+
+    Logger::logDebug(str);
 }
 
 

@@ -3,11 +3,12 @@
 //
 
 #include <zconf.h>
+#include <src/config/ConfigKeys.h>
 #include "../logging/Logger.h"
 #include "../tracking/DetectAndTrack.h"
 #include "../tracking/HogDetector.h"
 #include "../tracking/MultiTracker.h"
-#include "../VisualDebugger.h"
+#include "src/debugging/VisualDebugger.h"
 #include "../tracking/Follower.h"
 #include "../tracking/CascadeDetector.h"
 #include "BodyTest.h"
@@ -62,7 +63,7 @@ class FlightManeuver : public BodyTest {
         follower = new Follower(config);
 
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
-        config->setFrameSize(cv::Point(frame->size().width,frame->size().height));
+        config->Set(ConfigKeys::Drone::FrameSize, cv::Size(frame->size().width,frame->size().height));
 
         this->visualDebugger = visualDebugger;
 
