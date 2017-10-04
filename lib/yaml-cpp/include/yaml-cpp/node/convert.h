@@ -363,12 +363,10 @@ struct convert<cv::Mat> {
 
         // TODO: Solo funciona para matrices con un solo canal!
 
-        double *p = (double*)rhs.data;
-
         Node data = node["data"];
 
         for (int i = 0; i < rhs.cols * rhs.rows; ++i) {
-            data[i] = *p++;
+            data[i] = rhs.at<double>(i/rhs.cols,i%rhs.cols);
         }
 
         return node;
@@ -376,17 +374,17 @@ struct convert<cv::Mat> {
 
     static bool decode(const Node& node, cv::Mat& rhs) {
 
-        rhs = cv::Mat(node["rows"].as<int>(), node["cols"].as<int>(), node["type"].as<int>());
+        cv::Mat mat(node["rows"].as<int>(), node["cols"].as<int>(), node["type"].as<int>());
 
         // TODO: Solo funciona para matrices con un solo canal!
-
-        double *p = (double*)rhs.data;
 
         Node data = node["data"];
 
         for (int i = 0; i < node["data"].size(); ++i) {
-            *p++ = data[i].as<double>();
+            mat.at<double>(i/mat.cols,i%mat.cols) = data[i].as<double>();
         }
+
+        mat.copyTo(rhs);
 
         return true;
     }
