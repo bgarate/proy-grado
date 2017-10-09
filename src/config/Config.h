@@ -11,6 +11,7 @@
 #include <opencv2/opencv.hpp>
 #include <yaml-cpp/yaml.h>
 #include <src/logging/Logger.h>
+#include <src/navigation/World.h>
 
 #define CONFIG_KEY(PARENT, KEY, T) static const ConfigKey<T> KEY;
 #define DEFINE_CONFIG_KEY(PARENT, KEY, T) const ConfigKey<T> ConfigKeys::PARENT::KEY = ConfigKey<T>(#KEY,#PARENT);
@@ -60,6 +61,71 @@ public:
 
         return config[std::string(key.Parent)][std::string(key.Key)].as<T>();
     }
+
+    ObjectType GetObjectTypeFromString(std::string str) {
+        if(str == "marker")
+            return ObjectType::MARKER;
+        if(str == "drone")
+            return ObjectType::DRONE;
+
+        throw new std::runtime_error("Uknown object type " + str);
+    }
+
+    std::string GetStringFromObjectType(ObjectType type) {
+        switch (type) {
+            case ObjectType::DRONE:
+                return "drone";
+            case ObjectType::MARKER:
+                return "marker";
+            default:
+                throw new std::runtime_error("Uknown object type");
+        }
+    }
+
+    World GetWorld() {
+        YAML::Node worldNode = config["World"];
+        YAML::Node objects = worldNode["Objects"];
+
+        World world;
+
+        for (int i = 0; i < objects.size(); ++i) {
+
+            YAML::Node object = objects[i];
+            ObjectType type = GetObjectTypeFromString(object["type"].as<std::string>());
+            cv::Vec3d position = object["position"].as<cv::Vec3d>();
+            cv::Vec3d rotation = object["rotation"].as<cv::Vec3d>();
+            int id = object["id"].as<int>();
+
+            world.addObject(type, position, rotation, id);
+
+        }
+
+        return world;
+
+    }
+
+    void SetWorld(World world) {
+        YAML::Node worldNode = config["World"];
+        YAML::Node objects = worldNode["Objects"];
+
+        std::vector<WorldObject*> worldObjects = world.getObjects();
+
+        for (int i = 0; i < worldObjects.size(); ++i) {
+
+            YAML::Node object;
+            WorldObject* worldObject = worldObjects[i];
+
+            object["id"] = worldObject->getId();
+            object["type"] = GetStringFromObjectType(worldObject->getType());
+            object["position"] = worldObject->getPosition();
+            object["rotation"] = worldObject->getRotation();
+
+            objects.push_back(object);
+
+        }
+
+}
+
 
     void Load() {
 

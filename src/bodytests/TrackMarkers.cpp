@@ -40,23 +40,7 @@ class TrackMarkers : public BodyTest {
         this->visualDebugger = visualDebugger;
         tracker = new MarkerTracker(config);
 
-        world.addMarker(cv::Vec3d(0,0,0),cv::Vec3d(0,0,0), 0);
-        world.addMarker(cv::Vec3d(0,2.65,0),cv::Vec3d(0,0,0), 5);
-        world.addMarker(cv::Vec3d(0,2.65+2.05,0),cv::Vec3d(0,0,0), 1);
-        world.addMarker(cv::Vec3d(0,2.65+2.05+1.56,0),cv::Vec3d(0,0,90), 8);
-
-        world.addMarker(cv::Vec3d(1.74,2.65+2.05+1.56,0),cv::Vec3d(0,0,90), 4);
-        world.addMarker(cv::Vec3d(1.74+1.47,2.65+2.05+1.56,0),cv::Vec3d(0,0,180), 11);
-
-        world.addMarker(cv::Vec3d(1.74+1.47,1.40+1.40+1.9,0),cv::Vec3d(0,0,180), 9);
-        world.addMarker(cv::Vec3d(1.74+1.47,1.40+1.40,0),cv::Vec3d(0,0,180), 10);
-        world.addMarker(cv::Vec3d(1.74+1.47,1.40,0),cv::Vec3d(0,0,180), 6);
-        world.addMarker(cv::Vec3d(1.74+1.47,0,0),cv::Vec3d(0,0,-90), 7);
-
-        world.addMarker(cv::Vec3d(1.67,0,0),cv::Vec3d(0,0,-90), 3);
-        world.addMarker(cv::Vec3d(1.67,2.75,0),cv::Vec3d(0,0,0), 2);
-
-        world.addDrone(cv::Vec3d(5,0,0),cv::Vec3d(0,0,0), config->Get(ConfigKeys::Drone::Id));
+        world = config->GetWorld();
 
         drone = world.getDrones()[0];
 
@@ -108,8 +92,10 @@ class TrackMarkers : public BodyTest {
                 drone->setPosition(follower->EstimatedPosition);
                 drone->setRotation(follower->EstimatedPose);
 
+
                 visualDebugger->ShowMarkers(tracker->Markers);
                 visualDebugger->setNavigationCommand(command);
+                navigationDebugger->setVisibleMarkers(tracker->Markers);
                 navigationDebugger->Run(command,
                                         follower->getTargetId(), follower->EstimatedPositions,
                                         follower->EstimatedPoses);

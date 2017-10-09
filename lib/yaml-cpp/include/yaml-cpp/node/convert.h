@@ -342,7 +342,7 @@ static Node encode(const cv::Size_<int>& rhs) {
     return node;
 }
 
-    static bool decode(const Node& node, cv::Size_<int>& rhs) {
+    static bool decode(const Node& node, cv::Size2i& rhs) {
         if(!node.IsSequence() || node.size() != 2) {
             return false;
         }
@@ -352,6 +352,28 @@ static Node encode(const cv::Size_<int>& rhs) {
         return true;
     }
 };
+
+
+    template<typename T, int n>
+    struct convert<cv::Vec<T,n>> {
+        static Node encode(const cv::Vec<T,n>& rhs) {
+            Node node;
+            for(int i = 0; i < n; i++)
+                node.push_back(rhs[i]);
+            return node;
+        }
+
+        static bool decode(const Node& node, cv::Vec<T,n>& rhs) {
+            if(!node.IsSequence() || node.size() != n) {
+                return false;
+            }
+
+            for(int i = 0; i < n; i++)
+                rhs = node[i].as<T>();
+
+            return true;
+        }
+    };
 
 template<>
 struct convert<cv::Mat> {
@@ -366,7 +388,8 @@ struct convert<cv::Mat> {
         Node data = node["data"];
 
         for (int i = 0; i < rhs.cols * rhs.rows; ++i) {
-            data[i] = rhs.at<double>(i/rhs.cols,i%rhs.cols);
+            double d = rhs.at<double>(i/rhs.cols,i%rhs.cols);
+            data[i] = d;
         }
 
         return node;
