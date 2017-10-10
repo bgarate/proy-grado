@@ -369,7 +369,7 @@ static Node encode(const cv::Size_<int>& rhs) {
             }
 
             for(int i = 0; i < n; i++)
-                rhs = node[i].as<T>();
+                rhs[i] = node[i].as<T>();
 
             return true;
         }
