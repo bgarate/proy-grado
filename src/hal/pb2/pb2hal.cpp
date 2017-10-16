@@ -146,8 +146,11 @@ class Pb2hal: public Hal {
             case ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_EMERGENCY_LANDING:
                 return State::EmergencyLanding;
             case ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_MOTOR_RAMPING:
+                return State::Unknown;
             case ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_MAX:
+                return State::Unknown;
             case ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_USERTAKEOFF:
+                return State::Unknown;
             default:
                 throw new std::runtime_error("Unknown flying state");
         }
