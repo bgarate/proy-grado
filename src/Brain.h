@@ -6,6 +6,7 @@
 #define PROY_GRADO_BRAIN_H
 
 
+#include "communication/InterCommunication.h"
 #include "communication/Communication.h"
 #include "messages/SocketChannel.h"
 #include "messages/Broadcaster.h"
@@ -23,36 +24,18 @@ public:
     void cleanup();
 
 private:
-    Communication communication;
-    SocketChannel bodyCommunication;
-    MessageHandler messsageHandler;
 
     Config* config;
-    void PingHandler(Message &msg);
-
-    void advertise();
 
     bool should_exit = false;
-
-    void communicateWithBody(unsigned short port);
 
     void shutdown();
 
     long deltaTime = 0;
     long runningTime = 0;
-    long lastAdvertisementTime = 0;
-    Broadcaster broadcaster;
 
-    void handleMessages();
+    InterCommunication * interComm;
 
-    void AdvertisementHandler(Message &msg);
-
-    void HelloHandler(Message &msg);
-
-    void sendPingIfAppropiate();
-
-    unsigned int pingWait;
-    bool waitingPing;
 };
 
 
