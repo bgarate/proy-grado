@@ -7,7 +7,7 @@
 
 
 #include "communication/InterCommunication.h"
-#include "communication/Communication.h"
+#include "src/communication/BrainCommunication.h"
 #include "messages/SocketChannel.h"
 #include "messages/Broadcaster.h"
 #include "src/messages/MessageHandler.h"
@@ -35,6 +35,7 @@ private:
     long runningTime = 0;
 
     InterCommunication * interComm;
+    BrainCommunication * brainComm;
 
 };
 

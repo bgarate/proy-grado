@@ -100,10 +100,10 @@
 		<Unit filename="/home/bruno/proy-grado/src/Brain.h">
 			<Option target="proy_grado"/>
 		</Unit>
-		<Unit filename="/home/bruno/proy-grado/src/communication/SocketChannel.cpp">
+		<Unit filename="/home/bruno/proy-grado/src/bodySocket/SocketChannel.cpp">
 			<Option target="proy_grado"/>
 		</Unit>
-		<Unit filename="/home/bruno/proy-grado/src/communication/SocketChannel.h">
+		<Unit filename="/home/bruno/proy-grado/src/bodySocket/SocketChannel.h">
 			<Option target="proy_grado"/>
 		</Unit>
 		<Unit filename="/home/bruno/proy-grado/src/logging/Logger.cpp">

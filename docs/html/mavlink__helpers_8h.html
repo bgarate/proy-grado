@@ -380,7 +380,7 @@ Here is the caller graph for this function:</div>
 <p>Messages are parsed into an internal buffer (one for each channel). When a complete message is received it is copies into *returnMsg and the channel's status is copied into *returnStats.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">chan</td><td>ID of the current channel. This allows to parse different channels with this function. a channel is not a physical message channel like a serial port, but a logic partition of the communication streams in this case. COMM_NB is the limit for the number of channels on MCU (e.g. ARM7), while COMM_NB_HIGH is the limit for the number of channels in Linux/Windows </td></tr>
+    <tr><td class="paramname">chan</td><td>ID of the current channel. This allows to parse different channels with this function. a channel is not a physical message channel like a serial port, but a logic partition of the bodySocket streams in this case. COMM_NB is the limit for the number of channels on MCU (e.g. ARM7), while COMM_NB_HIGH is the limit for the number of channels in Linux/Windows </td></tr>
     <tr><td class="paramname">c</td><td>The char to parse</td></tr>
     <tr><td class="paramname">returnMsg</td><td>NULL if no message could be decoded, the message data else </td></tr>
     <tr><td class="paramname">returnStats</td><td>if a message was decoded, this is filled with the channel's stats </td></tr>
@@ -619,7 +619,7 @@ Here is the caller graph for this function:</div>
 <p>Messages are parsed into an internal buffer (one for each channel). When a complete message is received it is copies into *returnMsg and the channel's status is copied into *returnStats.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">chan</td><td>ID of the current channel. This allows to parse different channels with this function. a channel is not a physical message channel like a serial port, but a logic partition of the communication streams in this case. COMM_NB is the limit for the number of channels on MCU (e.g. ARM7), while COMM_NB_HIGH is the limit for the number of channels in Linux/Windows </td></tr>
+    <tr><td class="paramname">chan</td><td>ID of the current channel. This allows to parse different channels with this function. a channel is not a physical message channel like a serial port, but a logic partition of the bodySocket streams in this case. COMM_NB is the limit for the number of channels on MCU (e.g. ARM7), while COMM_NB_HIGH is the limit for the number of channels in Linux/Windows </td></tr>
     <tr><td class="paramname">c</td><td>The char to parse</td></tr>
     <tr><td class="paramname">returnMsg</td><td>NULL if no message could be decoded, the message data else </td></tr>
     <tr><td class="paramname">returnStats</td><td>if a message was decoded, this is filled with the channel's stats </td></tr>

@@ -2,13 +2,12 @@
 // Created by bruno on 09/04/17.
 //
 
-#include <src/proto/message.pb.h>
-#include "messages/MessageBuilder.h"
-#include "messages/Broadcaster.h"
+#include "proto/message.pb.h"
+#include "src/communication/BrainCommunication.h"
 #include "Brain.h"
 #include "logging/Logger.h"
-#include "src/config/Config.h"
-#include "src/config/ConfigKeys.h"
+#include "config/Config.h"
+#include "config/ConfigKeys.h"
 
 namespace chrono = std::chrono;
 
@@ -20,8 +19,10 @@ void Brain::setup(Config* config) {
     this->config = config;
 
     interComm = new InterCommunication();
-
     interComm->setupInterComm(config);
+
+    brainComm = new BrainCommunication();
+    brainComm->setupBrainComm(config);
 
     Logger::getInstance().setSource("BRAIN");
 
@@ -42,6 +43,7 @@ void Brain::loop() {
         runningTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - startTime).count();
 
         interComm->interCommStep(runningTime, deltaTime);
+        brainComm->brainCommStep(runningTime, deltaTime);
 
         if(should_exit) {
             break;
@@ -54,6 +56,7 @@ void Brain::loop() {
 void Brain::shutdown() {
     should_exit = true;
     interComm->shutdownInterComm();
+    brainComm->shutdownBrainComm();
 }
 
 void Brain::cleanup() {

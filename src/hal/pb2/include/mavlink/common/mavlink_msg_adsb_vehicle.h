@@ -16,7 +16,7 @@ typedef struct __mavlink_adsb_vehicle_t {
  uint8_t altitude_type; /*< Type from ADSB_ALTITUDE_TYPE enum*/
  char callsign[9]; /*< The callsign, 8+null*/
  uint8_t emitter_type; /*< Type from ADSB_EMITTER_TYPE enum*/
- uint8_t tslc; /*< Time since last communication in seconds*/
+ uint8_t tslc; /*< Time since last bodySocket in seconds*/
 }) mavlink_adsb_vehicle_t;
 
 #define MAVLINK_MSG_ID_ADSB_VEHICLE_LEN 38

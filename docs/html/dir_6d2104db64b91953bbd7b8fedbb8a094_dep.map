@@ -1,5 +1,5 @@
-<map id="src/communication" name="src/communication">
-<area shape="rect" id="node1" href="dir_6d2104db64b91953bbd7b8fedbb8a094.html" title="communication" alt="" coords="27,52,138,100"/>
+<map id="src/bodySocket" name="src/bodySocket">
+<area shape="rect" id="node1" href="dir_6d2104db64b91953bbd7b8fedbb8a094.html" title="bodySocket" alt="" coords="27,52,138,100"/>
 <area shape="rect" id="node2" href="dir_51b8ddc8ad9e5a56f13bccf85e770ab4.html" title="proto" alt="" coords="107,148,179,196"/>
 <area shape="rect" id="edge1-headlabel" href="dir_000001_000006.html" title="1" alt="" coords="121,121,129,135"/>
 <area shape="rect" id="node3" href="dir_7e580a9e3cd345dd51216eb99dadc8eb.html" title="messages" alt="" coords="163,52,245,100"/>

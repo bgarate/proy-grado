@@ -200,7 +200,7 @@ EXTAPI_DLLEXPORT simxInt simxStart(const simxChar* connectionAddress,simxInt con
 
     extApi_createMutexes(clientID);
 
-    /* Launch the socket/shared memory communication thread */
+    /* Launch the socket/shared memory bodySocket thread */
     _communicationThreadRunning[clientID]=1;
     _connectionID[clientID]=-1;
     _tempConnectionAddress[clientID]=connectionAddress;
@@ -254,7 +254,7 @@ EXTAPI_DLLEXPORT simxVoid simxFinish(simxInt clientID)
                 extApi_sleepMs(500);
             }
 
-            /* now tell the communication thread the end and wait until it's done: */
+            /* now tell the bodySocket thread the end and wait until it's done: */
             _communicationThreadRunning[clientID]=0;
             while (_communicationThreadRunning[clientID]==0)
                 extApi_switchThread();
@@ -295,7 +295,7 @@ EXTAPI_DLLEXPORT simxVoid simxFinish(simxInt clientID)
             if (_communicationThreadRunning[i])
             {
 
-                /* now tell the communication thread to end and wait until it's done: */
+                /* now tell the bodySocket thread to end and wait until it's done: */
                 _communicationThreadRunning[i]=0;
                 while (_communicationThreadRunning[i]==0)
                     extApi_switchThread();
@@ -417,7 +417,7 @@ simxUChar* _exec_null(simxInt clientID,simxInt cmdRaw,simxInt opMode,simxUChar o
     extApi_lockResources(clientID);
     cmdPtr=_getCommandPointer_(cmdRaw,_messageReceived[clientID]+SIMX_HEADER_SIZE,_messageReceived_dataSize[clientID]-SIMX_HEADER_SIZE);
     cmdPtr=_setLastFetchedCmd(clientID,cmdPtr,error);
-    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the communication thread again! */
+    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the bodySocket thread again! */
     extApi_unlockResources(clientID);
     if (opMode==simx_opmode_blocking) /* A cmd reply stays in the inbox always.. except when the mode is simx_opmode_blocking (to avoid polluting the inbox) */
         _removeCommandReply_null(clientID,cmdRaw);
@@ -480,7 +480,7 @@ simxUChar* _exec_null_buffer(simxInt clientID,simxInt cmdRaw,simxInt opMode,simx
     extApi_lockResources(clientID);
     cmdPtr=_getCommandPointer_(cmdRaw,_messageReceived[clientID]+SIMX_HEADER_SIZE,_messageReceived_dataSize[clientID]-SIMX_HEADER_SIZE);
     cmdPtr=_setLastFetchedCmd(clientID,cmdPtr,error);
-    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the communication thread again! */
+    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the bodySocket thread again! */
     extApi_unlockResources(clientID);
     if (opMode==simx_opmode_blocking) /* A cmd reply stays in the inbox always.. except when the mode is simx_opmode_blocking (to avoid polluting the inbox) */
         _removeCommandReply_null(clientID,cmdRaw);
@@ -540,7 +540,7 @@ simxUChar* _exec_int(simxInt clientID,simxInt cmdRaw,simxInt opMode,simxUChar op
     extApi_lockResources(clientID);
     cmdPtr=_getCommandPointer_i(cmdRaw,intValue,_messageReceived[clientID]+SIMX_HEADER_SIZE,_messageReceived_dataSize[clientID]-SIMX_HEADER_SIZE);
     cmdPtr=_setLastFetchedCmd(clientID,cmdPtr,error);
-    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the communication thread again! */
+    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the bodySocket thread again! */
     extApi_unlockResources(clientID);
     if (opMode==simx_opmode_blocking) /* A cmd reply stays in the inbox always.. except when the mode is simx_opmode_blocking (to avoid polluting the inbox) */
         _removeCommandReply_int(clientID,cmdRaw,intValue);
@@ -598,7 +598,7 @@ simxUChar* _exec_intint(simxInt clientID,simxInt cmdRaw,simxInt opMode,simxUChar
     extApi_lockResources(clientID);
     cmdPtr=_getCommandPointer_ii(cmdRaw,intValue1,intValue2,_messageReceived[clientID]+SIMX_HEADER_SIZE,_messageReceived_dataSize[clientID]-SIMX_HEADER_SIZE);
     cmdPtr=_setLastFetchedCmd(clientID,cmdPtr,error);
-    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the communication thread again! */
+    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the bodySocket thread again! */
     extApi_unlockResources(clientID);
     if (opMode==simx_opmode_blocking) /* A cmd reply stays in the inbox always.. except when the mode is simx_opmode_blocking (to avoid polluting the inbox) */
         _removeCommandReply_intint(clientID,cmdRaw,intValue1,intValue2);
@@ -659,7 +659,7 @@ simxUChar* _exec_string(simxInt clientID,simxInt cmdRaw,simxInt opMode,simxUChar
     extApi_lockResources(clientID);
     cmdPtr=_getCommandPointer_s(cmdRaw,stringValue,_messageReceived[clientID]+SIMX_HEADER_SIZE,_messageReceived_dataSize[clientID]-SIMX_HEADER_SIZE);
     cmdPtr=_setLastFetchedCmd(clientID,cmdPtr,error);
-    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the communication thread again! */
+    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the bodySocket thread again! */
     extApi_unlockResources(clientID);
     if (opMode==simx_opmode_blocking) /* A cmd reply stays in the inbox always.. except when the mode is simx_opmode_blocking (to avoid polluting the inbox) */
         _removeCommandReply_string(clientID,cmdRaw,stringValue);
@@ -721,7 +721,7 @@ simxUChar* _exec_int_int(simxInt clientID,simxInt cmdRaw,simxInt opMode,simxUCha
     extApi_lockResources(clientID);
     cmdPtr=_getCommandPointer_i(cmdRaw,intValue,_messageReceived[clientID]+SIMX_HEADER_SIZE,_messageReceived_dataSize[clientID]-SIMX_HEADER_SIZE);
     cmdPtr=_setLastFetchedCmd(clientID,cmdPtr,error);
-    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the communication thread again! */
+    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the bodySocket thread again! */
     extApi_unlockResources(clientID);
     if (opMode==simx_opmode_blocking) /* A cmd reply stays in the inbox always.. except when the mode is simx_opmode_blocking (to avoid polluting the inbox) */
         _removeCommandReply_int(clientID,cmdRaw,intValue);
@@ -783,7 +783,7 @@ simxUChar* _exec_intint_int(simxInt clientID,simxInt cmdRaw,simxInt opMode,simxU
     extApi_lockResources(clientID);
     cmdPtr=_getCommandPointer_ii(cmdRaw,intValue1,intValue2,_messageReceived[clientID]+SIMX_HEADER_SIZE,_messageReceived_dataSize[clientID]-SIMX_HEADER_SIZE);
     cmdPtr=_setLastFetchedCmd(clientID,cmdPtr,error);
-    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the communication thread again! */
+    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the bodySocket thread again! */
     extApi_unlockResources(clientID);
     if (opMode==simx_opmode_blocking) /* A cmd reply stays in the inbox always.. except when the mode is simx_opmode_blocking (to avoid polluting the inbox) */
         _removeCommandReply_intint(clientID,cmdRaw,intValue1,intValue2);
@@ -842,7 +842,7 @@ simxUChar* _exec_intint_buffer(simxInt clientID,simxInt cmdRaw,simxInt opMode,si
     extApi_lockResources(clientID);
     cmdPtr=_getCommandPointer_ii(cmdRaw,intValue1,intValue2,_messageReceived[clientID]+SIMX_HEADER_SIZE,_messageReceived_dataSize[clientID]-SIMX_HEADER_SIZE);
     cmdPtr=_setLastFetchedCmd(clientID,cmdPtr,error);
-    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the communication thread again! */
+    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the bodySocket thread again! */
     extApi_unlockResources(clientID);
     if (opMode==simx_opmode_blocking) /* A cmd reply stays in the inbox always.. except when the mode is simx_opmode_blocking (to avoid polluting the inbox) */
         _removeCommandReply_intint(clientID,cmdRaw,intValue1,intValue2);
@@ -904,7 +904,7 @@ simxUChar* _exec_int_float(simxInt clientID,simxInt cmdRaw,simxInt opMode,simxUC
     extApi_lockResources(clientID);
     cmdPtr=_getCommandPointer_i(cmdRaw,intValue,_messageReceived[clientID]+SIMX_HEADER_SIZE,_messageReceived_dataSize[clientID]-SIMX_HEADER_SIZE);
     cmdPtr=_setLastFetchedCmd(clientID,cmdPtr,error);
-    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the communication thread again! */
+    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the bodySocket thread again! */
     extApi_unlockResources(clientID);
     if (opMode==simx_opmode_blocking) /* A cmd reply stays in the inbox always.. except when the mode is simx_opmode_blocking (to avoid polluting the inbox) */
         _removeCommandReply_int(clientID,cmdRaw,intValue);
@@ -966,7 +966,7 @@ simxUChar* _exec_int_buffer(simxInt clientID,simxInt cmdRaw,simxInt opMode,simxU
     extApi_lockResources(clientID);
     cmdPtr=_getCommandPointer_i(cmdRaw,intValue,_messageReceived[clientID]+SIMX_HEADER_SIZE,_messageReceived_dataSize[clientID]-SIMX_HEADER_SIZE);
     cmdPtr=_setLastFetchedCmd(clientID,cmdPtr,error);
-    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the communication thread again! */
+    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the bodySocket thread again! */
     extApi_unlockResources(clientID);
     if (opMode==simx_opmode_blocking) /* A cmd reply stays in the inbox always.. except when the mode is simx_opmode_blocking (to avoid polluting the inbox) */
         _removeCommandReply_int(clientID,cmdRaw,intValue);
@@ -1028,7 +1028,7 @@ simxUChar* _exec_string_buffer(simxInt clientID,simxInt cmdRaw,simxInt opMode,si
     extApi_lockResources(clientID);
     cmdPtr=_getCommandPointer_s(cmdRaw,stringValue,_messageReceived[clientID]+SIMX_HEADER_SIZE,_messageReceived_dataSize[clientID]-SIMX_HEADER_SIZE);
     cmdPtr=_setLastFetchedCmd(clientID,cmdPtr,error);
-    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the communication thread again! */
+    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the bodySocket thread again! */
     extApi_unlockResources(clientID);
     if (opMode==simx_opmode_blocking) /* A cmd reply stays in the inbox always.. except when the mode is simx_opmode_blocking (to avoid polluting the inbox) */
         _removeCommandReply_string(clientID,cmdRaw,stringValue);
@@ -1089,7 +1089,7 @@ simxUChar* _exec_intstringstring_buffer(simxInt clientID,simxInt cmdRaw,simxInt 
     extApi_lockResources(clientID);
     cmdPtr=_getCommandPointer_iss(cmdRaw,intValue,stringValue1,stringValue2,_messageReceived[clientID]+SIMX_HEADER_SIZE,_messageReceived_dataSize[clientID]-SIMX_HEADER_SIZE);
     cmdPtr=_setLastFetchedCmd(clientID,cmdPtr,error);
-    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the communication thread again! */
+    _waitBeforeSendingAgainWhenMessageIDArrived[clientID]=-1; /* make sure to enable the bodySocket thread again! */
     extApi_unlockResources(clientID);
     if (opMode==simx_opmode_blocking) /* A cmd reply stays in the inbox always.. except when the mode is simx_opmode_blocking (to avoid polluting the inbox) */
         _removeCommandReply_intstringstring(clientID,cmdRaw,intValue,stringValue1,stringValue2);

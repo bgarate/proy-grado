@@ -44,7 +44,7 @@ enum \hyperlink{_a_r_s_a_l___socket_8h_a384a22e08e042073bccebf450786749b}{e\+A\+
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{_a_r_s_a_l___socket_8h_ad9532f98f64eaec58788a6a37675cb0c}{A\+R\+S\+A\+L\+\_\+\+Socket\+\_\+\+Create} (int domain, int \hyperlink{x509_8h_ab512b8f495325c7ea0f5a5a5d3f938eb}{type}, int protocol)
-\begin{DoxyCompactList}\small\item\em Creates an endpoint for communication and returns a descriptor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Creates an endpoint for bodySocket and returns a descriptor. \end{DoxyCompactList}\item
 int \hyperlink{_a_r_s_a_l___socket_8h_a8d5f5fa26d0ee0cf59dc47fdb4065fdd}{A\+R\+S\+A\+L\+\_\+\+Socket\+\_\+\+Connect} (int sockfd, const struct sockaddr $\ast$addr, socklen\+\_\+t addrlen)
 \begin{DoxyCompactList}\small\item\em Initiate a connection on a socket, If the socket sock is of type S\+O\+C\+K\+\_\+\+D\+G\+R\+AM then addr is the address to which datagrams are sent by default, and the only address from which datagrams are received. If the socket is of type S\+O\+C\+K\+\_\+\+S\+T\+R\+E\+AM, this call attempts to make a connection to the socket that is bound to the address specified by addr. \end{DoxyCompactList}\item 
 ssize\+\_\+t \hyperlink{_a_r_s_a_l___socket_8h_a3fc7ef7d25487cdbc6fe81f9d0431a33}{A\+R\+S\+A\+L\+\_\+\+Socket\+\_\+\+Sendto} (int sockfd, const void $\ast$buf, size\+\_\+t buflen, int \hyperlink{pkcs7_8h_ac8bf36fe0577cba66bccda3a6f7e80a4}{flags}, const struct sockaddr $\ast$dest\+\_\+addr, socklen\+\_\+t addrlen)
@@ -233,13 +233,13 @@ Initiate a connection on a socket, If the socket sock is of type S\+O\+C\+K\+\_\
 )}\hypertarget{_a_r_s_a_l___socket_8h_ad9532f98f64eaec58788a6a37675cb0c}{}\label{_a_r_s_a_l___socket_8h_ad9532f98f64eaec58788a6a37675cb0c}
 
 
-Creates an endpoint for communication and returns a descriptor. 
+Creates an endpoint for bodySocket and returns a descriptor.
 
 
 \begin{DoxyParams}{Parameters}
-{\em domain} & The communication domain \\
+{\em domain} & The bodySocket domain \\
 \hline
-{\em type} & The communication semantics. \\
+{\em type} & The bodySocket semantics. \\
 \hline
 {\em protocol} & A protocol to be used with the socket \\
 \hline

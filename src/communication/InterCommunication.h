@@ -6,11 +6,12 @@
 #define PROY_GRADO_INTERCOMMUNICATION_H
 
 
+#include "../messages/Connection.h"
+#include "../messages/AsyncSocketChannel.h"
 #include "../config/Config.h"
 #include "../messages/Broadcaster.h"
 #include "../messages/SocketChannel.h"
 #include "../messages/MessageHandler.h"
-#include "Communication.h"
 
 class InterCommunication {
 
@@ -26,36 +27,31 @@ public:
 
 private:
 
-    Communication communication;
-    SocketChannel bodyCommunication;
+    std::map<unsigned int, Connection::Pointer> connections;
+    MessageQueue* queue;
+    AsyncSocketChannel socketHandler;
+    std::string name;
+    unsigned int id;
+    int socketPort;
+    boost::asio::ip::address_v4 ip;
+
+    void acceptedConnectionHandler(Connection::Pointer connection);
+
+    //Communication bodySocket;
     MessageHandler messsageHandler;
     long lastAdvertisementTime = 0;
     Broadcaster broadcaster;
-    unsigned int pingWait;
-    bool waitingPing;
     int advertisementLapse;
-    int pingTimeout;
-    bool pingEnabled;
 
-    //Handler para los mensajes
-
-    void pingHandler(Message &msg);
 
     void advertisementHandler(Message &msg);
 
     void helloHandler(Message &msg);
 
-    //
-
-    void communicateWithBody(unsigned short port);
-
     void advertise(long runningTime);
-
 
     void handleMessages();
 
-
-    void sendPingIfAppropiate(long deltaTime);
 
 };
 

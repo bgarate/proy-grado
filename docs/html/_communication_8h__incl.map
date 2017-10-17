@@ -1,4 +1,4 @@
-<map id="src/communication/Communication.h" name="src/communication/Communication.h">
+<map id="src/bodySocket/Communication.h" name="src/bodySocket/Communication.h">
 <area shape="rect" id="node3" href="$_async_socket_channel_8h.html" title="src/messages/AsyncSocket\lChannel.h" alt="" coords="541,80,728,121"/>
 <area shape="rect" id="node7" href="$message_8pb_8h.html" title="src/proto/message.pb.h" alt="" coords="1057,333,1215,360"/>
 <area shape="rect" id="node26" href="$_connection_8h.html" title="Connection.h" alt="" coords="829,169,928,196"/>

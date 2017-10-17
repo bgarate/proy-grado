@@ -4,7 +4,7 @@
 
 #include <google/protobuf/message.h>
 #include "../proto/message.pb.h"
-#include "../communication/Communication.h"
+//#include "../communication/Communication.h"
 #include "AsyncSocketChannel.h"
 
 #include "boost/asio/connect.hpp"
@@ -107,7 +107,7 @@ AsyncSocketChannel::AsyncSocketChannel(MessageQueue* queue):queue(queue) {
 
 }
 
-Connection::Pointer AsyncSocketChannel::getConnection(address_v4 address, unsigned short port) {
+Connection::Pointer AsyncSocketChannel::getConnection(boost::asio::ip::address_v4 address, unsigned short port) {
 
     for(Connection::Pointer c: connections){
         boost::asio::ip::tcp::endpoint remoteEndpoint = c->getSocket().remote_endpoint();

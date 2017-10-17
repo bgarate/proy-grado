@@ -189,7 +189,7 @@ Enumerations</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ad9532f98f64eaec58788a6a37675cb0c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_r_s_a_l___socket_8h.html#ad9532f98f64eaec58788a6a37675cb0c">ARSAL_Socket_Create</a> (int domain, int <a class="el" href="x509_8h.html#ab512b8f495325c7ea0f5a5a5d3f938eb">type</a>, int protocol)</td></tr>
-<tr class="memdesc:ad9532f98f64eaec58788a6a37675cb0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an endpoint for communication and returns a descriptor.  <a href="#ad9532f98f64eaec58788a6a37675cb0c">More...</a><br /></td></tr>
+<tr class="memdesc:ad9532f98f64eaec58788a6a37675cb0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an endpoint for bodySocket and returns a descriptor.  <a href="#ad9532f98f64eaec58788a6a37675cb0c">More...</a><br /></td></tr>
 <tr class="separator:ad9532f98f64eaec58788a6a37675cb0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d5f5fa26d0ee0cf59dc47fdb4065fdd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_r_s_a_l___socket_8h.html#a8d5f5fa26d0ee0cf59dc47fdb4065fdd">ARSAL_Socket_Connect</a> (int sockfd, const struct sockaddr *addr, socklen_t addrlen)</td></tr>
 <tr class="memdesc:a8d5f5fa26d0ee0cf59dc47fdb4065fdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initiate a connection on a socket, If the socket sock is of type SOCK_DGRAM then addr is the address to which datagrams are sent by default, and the only address from which datagrams are received. If the socket is of type SOCK_STREAM, this call attempts to make a connection to the socket that is bound to the address specified by addr.  <a href="#a8d5f5fa26d0ee0cf59dc47fdb4065fdd">More...</a><br /></td></tr>
@@ -478,11 +478,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates an endpoint for communication and returns a descriptor. </p>
+<p>Creates an endpoint for bodySocket and returns a descriptor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">domain</td><td>The communication domain </td></tr>
-    <tr><td class="paramname">type</td><td>The communication semantics. </td></tr>
+    <tr><td class="paramname">domain</td><td>The bodySocket domain </td></tr>
+    <tr><td class="paramname">type</td><td>The bodySocket semantics. </td></tr>
     <tr><td class="paramname">protocol</td><td>A protocol to be used with the socket </td></tr>
   </table>
   </dd>

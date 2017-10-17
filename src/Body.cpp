@@ -26,30 +26,24 @@
 #include "src/config/ConfigKeys.h"
 
 Body::Body(Hal *hal) {
+
     this->hal = hal;
-    messsageHandler.registerHandler(Message_Type::Message_Type_PING, [this](Message m){this->PingHandler(m);});
-    messsageHandler.registerHandler(Message_Type::Message_Type_SHUTDOWN, [this](Message m){this->ShutdownHandler(m);});
 }
 
 void Body::setup(Config* config) {
     Logger::getInstance().setSource("BODY");
     this->config = config;
-    communicateWithBrain(config->Get(ConfigKeys::Communications::BrainHost), config->Get(ConfigKeys::Communications::BrainPort));
     visualDebugger.setup(config);
     hal->setup(config);
     hal->Connect();
-    pingWait = 0;
 
     this->mc = new ManualControl(hal);
     this->inmc = false;
+
+    bodyComm = new BodyCommunication();
+    bodyComm->setupBodyComm(config);
 }
 
-void Body::communicateWithBrain(std::string brainHost, unsigned short port) {
-
-    communication.connect(brainHost, port);
-    Logger::logInfo("Body has established a connection!");
-
-}
 
 void Body::loop() {
 
@@ -71,15 +65,9 @@ void Body::loop() {
         deltaTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - lastTime).count();
         runningTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - startTime).count();
 
-        if(communication.messageAvailable()) {
-            Message msg = communication.receive();
-            messsageHandler.handle(msg);
-        }
-
-        if(config->Get(ConfigKeys::Communications::PingEnabled))
-            waitPing();
-
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
+
+        bodyComm->bodyCommStep(runningTime, deltaTime);
 
         if (frame != NULL) {
             visualDebugger.setFrame(frame);
@@ -118,7 +106,7 @@ void Body::loop() {
         }
 
 
-        if(should_exit)
+        if(should_exit || bodyComm->shouldExit())
             break;
 
         usleep(config->Get(ConfigKeys::Body::SleepDelay));
@@ -142,42 +130,9 @@ void Body::CalculateFPS() {
     }
 }
 
-void Body::PingHandler(Message& msg){
-
-    Ping* ping = msg.mutable_ping();
-    if(ping->type() == Ping_PingType_REQUEST) {
-        Logger::logDebug("PING REQUEST received. Last was %u milliseconds ago") << pingWait / 1000;
-        ping->set_type(Ping_PingType_ACK);
-        communication.send(msg);
-        Logger::logDebug("PING ACK sent");
-        pingWait = 0;
-    } else {
-        Logger::logDebug("PING ACK received");
-    }
-
-}
-
-void Body::ShutdownHandler(Message& msg){
-
-    //DoShutdown* shutdown = msg.mutable_shutdown();
-    Logger::logWarning("SHUTDOWN requested");
-
-    should_exit = true;
-
-}
-
 void Body::cleanup() {
     visualDebugger.cleanup();
     hal->Disconnect();
-}
-
-void Body::waitPing() {
-    pingWait += deltaTime;
-
-    if(pingWait > (config->Get(ConfigKeys::Communications::PingLapse) + config->Get(ConfigKeys::Communications::PingTimeout)) * 1000) {
-        Logger::logError("Ping not received in %u milliseconds") << (int)(pingWait / 1000);
-        should_exit = true;
-    }
 }
 
 void Body::PrintAvailableTests() {

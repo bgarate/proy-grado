@@ -1,4 +1,4 @@
-<map id="src/communication/Communication.cpp" name="src/communication/Communication.cpp">
+<map id="src/bodySocket/Communication.cpp" name="src/bodySocket/Communication.cpp">
 <area shape="rect" id="node2" href="$_message_builder_8h.html" title="src/messages/MessageBuilder.h" alt="" coords="1522,80,1734,107"/>
 <area shape="rect" id="node21" href="$_communication_8h.html" title="Communication.h" alt="" coords="1351,80,1475,107"/>
 <area shape="rect" id="node3" href="$message_8pb_8h.html" title="src/proto/message.pb.h" alt="" coords="1413,408,1571,435"/>

@@ -1,5 +1,5 @@
 <map id="src/Brain.h" name="src/Brain.h">
-<area shape="rect" id="node2" href="$_communication_8h.html" title="src/communication/Communication.h" alt="" coords="1359,80,1598,107"/>
+<area shape="rect" id="node2" href="$_communication_8h.html" title="src/bodySocket/Communication.h" alt="" coords="1359,80,1598,107"/>
 <area shape="rect" id="node36" href="$_socket_channel_8h.html" title="src/messages/SocketChannel.h" alt="" coords="307,244,515,271"/>
 <area shape="rect" id="node37" href="$_broadcaster_8h.html" title="src/messages/Broadcaster.h" alt="" coords="1736,80,1925,107"/>
 <area shape="rect" id="node39" href="$_message_handler_8h.html" title="MessageHandler.h" alt="" coords="2141,80,2272,107"/>

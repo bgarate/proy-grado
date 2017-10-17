@@ -2,16 +2,15 @@
 // Created by santy on 15/10/17.
 //
 
+#include <src/messages/IpResolver.h>
 #include "../messages/MessageBuilder.h"
 #include "../config/ConfigKeys.h"
 #include "InterCommunication.h"
 
 //Public
 
-InterCommunication::InterCommunication(){
+InterCommunication::InterCommunication() : queue(new MessageQueue), socketHandler(queue) {
 
-    messsageHandler.registerHandler(Message_Type::Message_Type_PING,
-                                    [this](Message m){this->pingHandler(m);});
     messsageHandler.registerHandler(Message_Type::Message_Type_ADVERTISEMENT,
                                     [this](Message m){this->advertisementHandler(m);});
     messsageHandler.registerHandler(Message_Type::Message_Type_HELLO,
@@ -20,52 +19,39 @@ InterCommunication::InterCommunication(){
 
 void InterCommunication::setupInterComm(Config* config){
 
-    communicateWithBody(config->Get(ConfigKeys::Communications::BrainPort));
-    broadcaster.setup(config->Get(ConfigKeys::Communications::BroadcastPort));
-    communication.setup(config->Get(ConfigKeys::Drone::Name), config->Get(ConfigKeys::Drone::Id));
-    communication.serve(config->Get(ConfigKeys::Communications::CommunicationPort));
-
     advertisementLapse = config->Get(ConfigKeys::Communications::AdvertisementLapse);
-    pingTimeout = config->Get(ConfigKeys::Communications::PingTimeout);
-    pingEnabled = config->Get(ConfigKeys::Communications::PingEnabled);
 
-    pingWait = 0;
-    waitingPing = false;
+    broadcaster.setup(config->Get(ConfigKeys::Communications::BroadcastPort));
+
+    this->name = config->Get(ConfigKeys::Drone::Name);
+    this->id = config->Get(ConfigKeys::Drone::Id);
+    socketPort = config->Get(ConfigKeys::Communications::CommunicationPort);
+
+    IpResolver resolver;
+    ip = resolver.resolve();
+
+    socketHandler.AceptedConnection = [this](Connection::Pointer c){acceptedConnectionHandler(c); };
+    socketHandler.serve(socketPort);
 }
 
 void InterCommunication::interCommStep(long runningTime, long deltaTime) {
 
     handleMessages();
-
     advertise(runningTime);
-
-    if(pingEnabled)
-        sendPingIfAppropiate(deltaTime);
 }
 
 void InterCommunication::shutdownInterComm() {
 
-    bodyCommunication.send(MessageBuilder::build(Message_Type_SHUTDOWN));
-    Logger::logWarning("SHUTDOWN request sent");
 }
 
 //Private
 
+void InterCommunication::acceptedConnectionHandler(Connection::Pointer connection) {
 
-void InterCommunication::pingHandler(Message& msg){
+    boost::asio::ip::tcp::endpoint localEndpoint = connection->getSocket().local_endpoint();
+    Message msg = MessageBuilder::hello(name, id, localEndpoint.address().to_v4(), localEndpoint.port());
 
-    Ping* ping = msg.mutable_ping();
-    if(ping->type() == Ping_PingType_REQUEST) {
-
-        Logger::logDebug("PING REQUEST received");
-        ping->set_type(Ping_PingType_ACK);
-        bodyCommunication.send(msg);
-
-    } else {
-        Logger::logDebug("PING ACK received. Request was sent %u milliseconds ago") << pingWait / 1000;
-        waitingPing = false;
-        pingWait = 0;
-    }
+    connection->send(msg);
 
 }
 
@@ -77,11 +63,18 @@ void InterCommunication::advertisementHandler(Message& msg){
 
     std::cout << std::endl << "Manejando Advertise" << std::endl;
 
-    if(address != communication.getIp() && advertisement->port() != communication.getPort()){
+    if(address != ip || advertisement->port() != socketPort){
         Logger::logDebug("Advertisement received from %s:%u") << address.to_string() <<
                                                               advertisement->port();
 
-        communication.connect(address, (unsigned short) advertisement->port());
+        Connection::Pointer c = socketHandler.getConnection(address, advertisement->port());
+
+        if(c != NULL)
+            return;
+
+        Connection::Pointer connection = socketHandler.connect(address, advertisement->port());
+        boost::asio::ip::tcp::endpoint localEndpoint = connection->getSocket().local_endpoint();
+        Message msg = MessageBuilder::hello(name, id, localEndpoint.address().to_v4(), localEndpoint.port());
     }
 
 }
@@ -96,30 +89,26 @@ void InterCommunication::helloHandler(Message& msg){
                                                             hello->id() << address.to_string() <<
                                                             hello->port();
 
-    communication.asociate(hello);
+    Connection::Pointer c = socketHandler.getConnection(boost::asio::ip::address_v4(hello->ip()),
+                                                        (unsigned short) hello->port());
+
+    if(c == NULL)
+        throw new std::runtime_error("Couldn't find a matching remote endpoint to asociate a connection");
+
+    connections[hello->id()] = c;
 
 }
 
-void InterCommunication::communicateWithBody(unsigned short port) {
-
-    bodyCommunication.serve(port);
-    Logger::logInfo("Brain has established a connection!");
-}
 
 void InterCommunication::handleMessages(){
-
-    if(bodyCommunication.messageAvailable()) {
-        Message msg = bodyCommunication.receive();
-        messsageHandler.handle(msg);
-    }
 
     if(broadcaster.messageAvailable()) {
         Message msg = broadcaster.receive();
         messsageHandler.handle(msg);
     }
 
-    while (communication.messageAvailable()) {
-        Message msg = communication.getMessage();
+    while (!queue->empty()) {
+        Message msg = queue->pop();
         messsageHandler.handle(msg);
     }
 }
@@ -132,8 +121,8 @@ void InterCommunication::advertise(long runningTime) {
 
         Advertisement* advertisement = msg.mutable_advertisement();
 
-        advertisement->set_ip((uint32_t) communication.getIp().to_ulong());
-        advertisement->set_port(communication.getPort());
+        advertisement->set_ip((uint32_t) ip.to_ulong());
+        advertisement->set_port(socketPort);
 
         broadcaster.broadcast(msg);
         Logger::logDebug("Advertising sent");
@@ -142,24 +131,4 @@ void InterCommunication::advertise(long runningTime) {
     }
 }
 
-void InterCommunication::sendPingIfAppropiate(long deltaTime) {
 
-    pingWait += deltaTime;
-
-    if(waitingPing && pingWait > pingTimeout * 1000) {
-
-        Logger::logError("Ping not ACKed in %u milliseconds") << pingWait / 1000;
-        //should_exit = true;
-
-    } else if(!waitingPing && pingWait > pingTimeout * 1000) {
-
-        Message ping = MessageBuilder::build(Message_Type_PING);
-        ping.mutable_ping()->set_type(Ping_PingType::Ping_PingType_REQUEST);
-
-        bodyCommunication.send(ping);
-        Logger::logDebug("PING REQUEST sent");
-
-        pingWait = 0;
-        waitingPing = true;
-    }
-}
