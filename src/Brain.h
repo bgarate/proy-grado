@@ -7,11 +7,11 @@
 
 
 #include "communication/InterCommunication.h"
-#include "src/communication/BrainCommunication.h"
+#include "communication/BrainCommunication.h"
 #include "messages/SocketChannel.h"
 #include "messages/Broadcaster.h"
-#include "src/messages/MessageHandler.h"
-#include "src/config/Config.h"
+#include "messages/MessageHandler.h"
+#include "config/Config.h"
 
 class Brain {
 public:

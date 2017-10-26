@@ -9,10 +9,10 @@
 #include "communication/BodyCommunication.h"
 #include "hal/ManualControl.h"
 #include "messages/SocketChannel.h"
-#include "src/messages/MessageHandler.h"
+#include "messages/MessageHandler.h"
 #include "hal/hal.hpp"
-#include "src/config/Config.h"
-#include "src/debugging/VisualDebugger.h"
+#include "config/Config.h"
+#include "debugging/VisualDebugger.h"
 
 class Body {
 public:

@@ -3,16 +3,16 @@
 //
 
 #include <zconf.h>
-#include <src/logging/Logger.h>
-#include <src/tracking/DetectAndTrack.h>
-#include <src/tracking/HogDetector.h>
-#include <src/tracking/MultiTracker.h>
-#include <src/debugging/VisualDebugger.h>
+#include "../logging/Logger.h"
+#include "../tracking/DetectAndTrack.h"
+#include "../tracking/HogDetector.h"
+#include "../tracking/MultiTracker.h"
+#include "../debugging/VisualDebugger.h"
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
 //#include <lib/ORB_SLAM2/include/System.h>
-#include <src/tracking/CascadeDetector.h>
-#include <src/config/ConfigKeys.h>
+#include "../tracking/CascadeDetector.h"
+#include "../config/ConfigKeys.h"
 
 class PatrolAndFollow : public BodyTest {
 

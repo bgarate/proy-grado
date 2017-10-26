@@ -4,15 +4,15 @@
 
 #include <boost/format.hpp>
 #include <chrono>
-#include <src/tracking/OpticalFlow.h>
-#include <src/landtracking/MarkerTrack.h>
-#include <src/navigation/MarkerFollower.h>
-#include "src/logging/Logger.h"
-#include "src/tracking/DetectAndTrack.h"
+#include "../tracking/OpticalFlow.h"
+#include "../landtracking/MarkerTrack.h"
+#include "../navigation/MarkerFollower.h"
+#include "../logging/Logger.h"
+#include "../tracking/DetectAndTrack.h"
 #include "VisualDebugger.h"
-#include "src/hal/Point.h"
-#include "src/tracking/MultiTracker.h"
-#include "src/config/ConfigKeys.h"
+#include "../hal/Point.h"
+#include "../tracking/MultiTracker.h"
+#include "../config/ConfigKeys.h"
 
 const cv::Scalar VisualDebugger::WHITE_COLOR = cv::Scalar(255,255,255);
 const cv::Scalar VisualDebugger::GREEN_COLOR = cv::Scalar(0,205,0);

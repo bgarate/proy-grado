@@ -3,12 +3,12 @@
 //
 
 #include <zconf.h>
-#include <src/tracking/OpticalFlow.h>
+#include "../tracking/OpticalFlow.h"
 #include "../logging/Logger.h"
 #include "../tracking/DetectAndTrack.h"
 #include "../tracking/HogDetector.h"
 #include "../tracking/MultiTracker.h"
-#include "src/debugging/VisualDebugger.h"
+#include "../debugging/VisualDebugger.h"
 //#include "../../lib/ORB_SLAM2/include/System.h"
 #include "BodyTest.h"
 #include "../hal/hal.hpp"

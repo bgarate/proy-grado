@@ -9,16 +9,16 @@
 
 #include <opencv2/core/mat.hpp>
 #include <memory>
-#include "src/config/Config.h"
-#include "src/hal/Point.h"
-#include "src/tracking/Track.h"
+#include "../config/Config.h"
+#include "../hal/Point.h"
+#include "../tracking/Track.h"
 #include <opencv/cv.hpp>
-#include <src/tracking/OpticalFlow.h>
-#include <src/navigation/MarkerTracker.h>
-#include "src/hal/hal.hpp"
-#include "src/tracking/Follower.h"
-#include "src/navigation/MarkerFollower.h"
-#include "src/tracking/MultiTracker.h"
+#include "../tracking/OpticalFlow.h"
+#include "../navigation/MarkerTracker.h"
+#include "../hal/hal.hpp"
+#include "../tracking/Follower.h"
+#include "../navigation/MarkerFollower.h"
+#include "../tracking/MultiTracker.h"
 
 class VisualDebugger {
 public:

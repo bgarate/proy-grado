@@ -7,7 +7,7 @@
 #include "../tracking/DetectAndTrack.h"
 #include "../tracking/HogDetector.h"
 #include "../tracking/MultiTracker.h"
-#include "src/debugging/VisualDebugger.h"
+#include "../debugging/VisualDebugger.h"
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
 

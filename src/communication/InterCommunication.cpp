@@ -2,7 +2,7 @@
 // Created by santy on 15/10/17.
 //
 
-#include <src/messages/IpResolver.h>
+#include "../messages/IpResolver.h"
 #include "../messages/MessageBuilder.h"
 #include "../config/ConfigKeys.h"
 #include "InterCommunication.h"
