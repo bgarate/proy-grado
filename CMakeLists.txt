@@ -49,7 +49,6 @@ set(SOURCE_FILES src/proto/message.pb.h src/proto/message.pb.cc
         src/Body.cpp src/Body.h
         src/bodytests/BodyTestRegistry.cpp src/bodytests/BodyTestRegistry.h
         src/bodytests/BodyTest.h src/bodytests/BodyTest1.cpp src/bodytests/BodyTest2.cpp
-        src/communication/Communication.cpp src/communication/Communication.h
         src/messages/Connection.cpp src/messages/Connection.h
         src/messages/AsyncSocketChannel.cpp src/messages/AsyncSocketChannel.h
         src/messages/PackedMessage.h

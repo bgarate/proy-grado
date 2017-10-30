@@ -75,6 +75,7 @@ void InterCommunication::advertisementHandler(Message& msg){
         Connection::Pointer connection = socketHandler.connect(address, advertisement->port());
         boost::asio::ip::tcp::endpoint localEndpoint = connection->getSocket().local_endpoint();
         Message msg = MessageBuilder::hello(name, id, localEndpoint.address().to_v4(), localEndpoint.port());
+        connection->send(msg);
     }
 
 }
