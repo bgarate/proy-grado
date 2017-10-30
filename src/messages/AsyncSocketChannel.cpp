@@ -40,7 +40,9 @@ Connection::Pointer AsyncSocketChannel::connect(boost::asio::ip::address_v4 addr
 
     while (!success) {
         try {
+
             res = tryConnect(address, port);
+            connections.push_back(res);
             success = true;
         } catch (const boost::system::system_error &ex) {
             if (retries >= MAX_NUMBER_RETRIES) {
@@ -52,6 +54,8 @@ Connection::Pointer AsyncSocketChannel::connect(boost::asio::ip::address_v4 addr
             sleep(1);
         }
     }
+
+    Logger::logDebug("Connected to %s:%u") << address << port;
 
     return res;
 

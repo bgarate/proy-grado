@@ -61,8 +61,6 @@ void InterCommunication::advertisementHandler(Message& msg){
 
     boost::asio::ip::address_v4 address = boost::asio::ip::address_v4(advertisement->ip());
 
-    std::cout << std::endl << "Manejando Advertise" << std::endl;
-
     if(address != ip || advertisement->port() != socketPort){
         Logger::logDebug("Advertisement received from %s:%u") << address.to_string() <<
                                                               advertisement->port();
