@@ -1,10 +1,11 @@
 syntax = "proto3";
 
 import "ping.proto";
-import "advertisement.proto";
 import "shutdown.proto";
+import "advertisement.proto";
 import "hello.proto";
-import "state.proto";
+import "dronestate.proto";
+
 
 message Message {
 
@@ -15,13 +16,13 @@ message Message {
         SHUTDOWN = 1;
         ADVERTISEMENT = 2;
         HELLO = 3;
-        STATE = 4;
+        DRONESTATE = 4;
     }
 
     Ping ping = 100;
     DoShutdown shutdown = 101;
     Advertisement advertisement = 102;
     Hello hello = 103;
-    State state = 104;
+    DroneState dronestate = 104;
 
 }

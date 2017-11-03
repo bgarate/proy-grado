@@ -30,10 +30,10 @@
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "ping.pb.h"
-#include "advertisement.pb.h"
 #include "shutdown.pb.h"
+#include "advertisement.pb.h"
 #include "hello.pb.h"
-#include "state.pb.h"
+#include "dronestate.pb.h"
 // @@protoc_insertion_point(includes)
 class Advertisement;
 class AdvertisementDefaultTypeInternal;
@@ -41,6 +41,9 @@ extern AdvertisementDefaultTypeInternal _Advertisement_default_instance_;
 class DoShutdown;
 class DoShutdownDefaultTypeInternal;
 extern DoShutdownDefaultTypeInternal _DoShutdown_default_instance_;
+class DroneState;
+class DroneStateDefaultTypeInternal;
+extern DroneStateDefaultTypeInternal _DroneState_default_instance_;
 class Hello;
 class HelloDefaultTypeInternal;
 extern HelloDefaultTypeInternal _Hello_default_instance_;
@@ -50,9 +53,6 @@ extern MessageDefaultTypeInternal _Message_default_instance_;
 class Ping;
 class PingDefaultTypeInternal;
 extern PingDefaultTypeInternal _Ping_default_instance_;
-class State;
-class StateDefaultTypeInternal;
-extern StateDefaultTypeInternal _State_default_instance_;
 
 namespace protobuf_message_2eproto {
 // Internal implementation detail -- do not call these.
@@ -70,13 +70,13 @@ enum Message_Type {
   Message_Type_SHUTDOWN = 1,
   Message_Type_ADVERTISEMENT = 2,
   Message_Type_HELLO = 3,
-  Message_Type_STATE = 4,
+  Message_Type_DRONESTATE = 4,
   Message_Type_Message_Type_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
   Message_Type_Message_Type_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
 bool Message_Type_IsValid(int value);
 const Message_Type Message_Type_Type_MIN = Message_Type_PING;
-const Message_Type Message_Type_Type_MAX = Message_Type_STATE;
+const Message_Type Message_Type_Type_MAX = Message_Type_DRONESTATE;
 const int Message_Type_Type_ARRAYSIZE = Message_Type_Type_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Message_Type_descriptor();
@@ -165,8 +165,8 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
     Message_Type_ADVERTISEMENT;
   static const Type HELLO =
     Message_Type_HELLO;
-  static const Type STATE =
-    Message_Type_STATE;
+  static const Type DRONESTATE =
+    Message_Type_DRONESTATE;
   static inline bool Type_IsValid(int value) {
     return Message_Type_IsValid(value);
   }
@@ -226,14 +226,14 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::Hello* release_hello();
   void set_allocated_hello(::Hello* hello);
 
-  // .State state = 104;
-  bool has_state() const;
-  void clear_state();
-  static const int kStateFieldNumber = 104;
-  const ::State& state() const;
-  ::State* mutable_state();
-  ::State* release_state();
-  void set_allocated_state(::State* state);
+  // .DroneState dronestate = 104;
+  bool has_dronestate() const;
+  void clear_dronestate();
+  static const int kDronestateFieldNumber = 104;
+  const ::DroneState& dronestate() const;
+  ::DroneState* mutable_dronestate();
+  ::DroneState* release_dronestate();
+  void set_allocated_dronestate(::DroneState* dronestate);
 
   // .Message.Type type = 1;
   void clear_type();
@@ -249,7 +249,7 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::DoShutdown* shutdown_;
   ::Advertisement* advertisement_;
   ::Hello* hello_;
-  ::State* state_;
+  ::DroneState* dronestate_;
   int type_;
   mutable int _cached_size_;
   friend struct  protobuf_message_2eproto::TableStruct;
@@ -432,43 +432,43 @@ inline void Message::set_allocated_hello(::Hello* hello) {
   // @@protoc_insertion_point(field_set_allocated:Message.hello)
 }
 
-// .State state = 104;
-inline bool Message::has_state() const {
-  return this != internal_default_instance() && state_ != NULL;
+// .DroneState dronestate = 104;
+inline bool Message::has_dronestate() const {
+  return this != internal_default_instance() && dronestate_ != NULL;
 }
-inline void Message::clear_state() {
-  if (GetArenaNoVirtual() == NULL && state_ != NULL) delete state_;
-  state_ = NULL;
+inline void Message::clear_dronestate() {
+  if (GetArenaNoVirtual() == NULL && dronestate_ != NULL) delete dronestate_;
+  dronestate_ = NULL;
 }
-inline const ::State& Message::state() const {
-  // @@protoc_insertion_point(field_get:Message.state)
-  return state_ != NULL ? *state_
-                         : *::State::internal_default_instance();
+inline const ::DroneState& Message::dronestate() const {
+  // @@protoc_insertion_point(field_get:Message.dronestate)
+  return dronestate_ != NULL ? *dronestate_
+                         : *::DroneState::internal_default_instance();
 }
-inline ::State* Message::mutable_state() {
+inline ::DroneState* Message::mutable_dronestate() {
   
-  if (state_ == NULL) {
-    state_ = new ::State;
+  if (dronestate_ == NULL) {
+    dronestate_ = new ::DroneState;
   }
-  // @@protoc_insertion_point(field_mutable:Message.state)
-  return state_;
+  // @@protoc_insertion_point(field_mutable:Message.dronestate)
+  return dronestate_;
 }
-inline ::State* Message::release_state() {
-  // @@protoc_insertion_point(field_release:Message.state)
+inline ::DroneState* Message::release_dronestate() {
+  // @@protoc_insertion_point(field_release:Message.dronestate)
   
-  ::State* temp = state_;
-  state_ = NULL;
+  ::DroneState* temp = dronestate_;
+  dronestate_ = NULL;
   return temp;
 }
-inline void Message::set_allocated_state(::State* state) {
-  delete state_;
-  state_ = state;
-  if (state) {
+inline void Message::set_allocated_dronestate(::DroneState* dronestate) {
+  delete dronestate_;
+  dronestate_ = dronestate;
+  if (dronestate) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_set_allocated:Message.state)
+  // @@protoc_insertion_point(field_set_allocated:Message.dronestate)
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS

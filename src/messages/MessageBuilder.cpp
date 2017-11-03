@@ -30,6 +30,10 @@ Message MessageBuilder::build(Message_Type type) {
             Hello* hello = new Hello();
             msg.set_allocated_hello(hello);
             break;
+        }case Message_Type_DRONESTATE: {
+            DroneState* state = new DroneState();
+            msg.set_allocated_dronestate(state);
+            break;
         }
         default:
             throw new std::runtime_error("Message type not recognized");

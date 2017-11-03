@@ -39,7 +39,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, shutdown_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, advertisement_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, hello_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, state_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, dronestate_),
 };
 
 static const ::google::protobuf::internal::MigrationSchema schemas[] = {
@@ -83,10 +83,10 @@ void TableStruct::InitDefaultsImpl() {
 
   ::google::protobuf::internal::InitProtobufDefaults();
   ::protobuf_ping_2eproto::InitDefaults();
-  ::protobuf_advertisement_2eproto::InitDefaults();
   ::protobuf_shutdown_2eproto::InitDefaults();
+  ::protobuf_advertisement_2eproto::InitDefaults();
   ::protobuf_hello_2eproto::InitDefaults();
-  ::protobuf_state_2eproto::InitDefaults();
+  ::protobuf_dronestate_2eproto::InitDefaults();
   _Message_default_instance_.DefaultConstruct();
   _Message_default_instance_.get_mutable()->ping_ = const_cast< ::Ping*>(
       ::Ping::internal_default_instance());
@@ -96,8 +96,8 @@ void TableStruct::InitDefaultsImpl() {
       ::Advertisement::internal_default_instance());
   _Message_default_instance_.get_mutable()->hello_ = const_cast< ::Hello*>(
       ::Hello::internal_default_instance());
-  _Message_default_instance_.get_mutable()->state_ = const_cast< ::State*>(
-      ::State::internal_default_instance());
+  _Message_default_instance_.get_mutable()->dronestate_ = const_cast< ::DroneState*>(
+      ::DroneState::internal_default_instance());
 }
 
 void InitDefaults() {
@@ -107,25 +107,26 @@ void InitDefaults() {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] = {
-      "\n\rmessage.proto\032\nping.proto\032\023advertiseme"
-      "nt.proto\032\016shutdown.proto\032\013hello.proto\032\013s"
-      "tate.proto\"\370\001\n\007Message\022\033\n\004type\030\001 \001(\0162\r.M"
-      "essage.Type\022\023\n\004ping\030d \001(\0132\005.Ping\022\035\n\010shut"
-      "down\030e \001(\0132\013.DoShutdown\022%\n\radvertisement"
-      "\030f \001(\0132\016.Advertisement\022\025\n\005hello\030g \001(\0132\006."
-      "Hello\022\025\n\005state\030h \001(\0132\006.State\"G\n\004Type\022\010\n\004"
-      "PING\020\000\022\014\n\010SHUTDOWN\020\001\022\021\n\rADVERTISEMENT\020\002\022"
-      "\t\n\005HELLO\020\003\022\t\n\005STATE\020\004b\006proto3"
+      "\n\rmessage.proto\032\nping.proto\032\016shutdown.pr"
+      "oto\032\023advertisement.proto\032\013hello.proto\032\020d"
+      "ronestate.proto\"\207\002\n\007Message\022\033\n\004type\030\001 \001("
+      "\0162\r.Message.Type\022\023\n\004ping\030d \001(\0132\005.Ping\022\035\n"
+      "\010shutdown\030e \001(\0132\013.DoShutdown\022%\n\radvertis"
+      "ement\030f \001(\0132\016.Advertisement\022\025\n\005hello\030g \001"
+      "(\0132\006.Hello\022\037\n\ndronestate\030h \001(\0132\013.DroneSt"
+      "ate\"L\n\004Type\022\010\n\004PING\020\000\022\014\n\010SHUTDOWN\020\001\022\021\n\rA"
+      "DVERTISEMENT\020\002\022\t\n\005HELLO\020\003\022\016\n\nDRONESTATE\020"
+      "\004b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 349);
+      descriptor, 369);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "message.proto", &protobuf_RegisterTypes);
   ::protobuf_ping_2eproto::AddDescriptors();
-  ::protobuf_advertisement_2eproto::AddDescriptors();
   ::protobuf_shutdown_2eproto::AddDescriptors();
+  ::protobuf_advertisement_2eproto::AddDescriptors();
   ::protobuf_hello_2eproto::AddDescriptors();
-  ::protobuf_state_2eproto::AddDescriptors();
+  ::protobuf_dronestate_2eproto::AddDescriptors();
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
 }
 
@@ -164,7 +165,7 @@ const Message_Type Message::PING;
 const Message_Type Message::SHUTDOWN;
 const Message_Type Message::ADVERTISEMENT;
 const Message_Type Message::HELLO;
-const Message_Type Message::STATE;
+const Message_Type Message::DRONESTATE;
 const Message_Type Message::Type_MIN;
 const Message_Type Message::Type_MAX;
 const int Message::Type_ARRAYSIZE;
@@ -178,7 +179,7 @@ const int Message::kPingFieldNumber;
 const int Message::kShutdownFieldNumber;
 const int Message::kAdvertisementFieldNumber;
 const int Message::kHelloFieldNumber;
-const int Message::kStateFieldNumber;
+const int Message::kDronestateFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Message::Message()
@@ -214,10 +215,10 @@ Message::Message(const Message& from)
   } else {
     hello_ = NULL;
   }
-  if (from.has_state()) {
-    state_ = new ::State(*from.state_);
+  if (from.has_dronestate()) {
+    dronestate_ = new ::DroneState(*from.dronestate_);
   } else {
-    state_ = NULL;
+    dronestate_ = NULL;
   }
   type_ = from.type_;
   // @@protoc_insertion_point(copy_constructor:Message)
@@ -248,7 +249,7 @@ void Message::SharedDtor() {
     delete hello_;
   }
   if (this != internal_default_instance()) {
-    delete state_;
+    delete dronestate_;
   }
 }
 
@@ -293,10 +294,10 @@ void Message::Clear() {
     delete hello_;
   }
   hello_ = NULL;
-  if (GetArenaNoVirtual() == NULL && state_ != NULL) {
-    delete state_;
+  if (GetArenaNoVirtual() == NULL && dronestate_ != NULL) {
+    delete dronestate_;
   }
-  state_ = NULL;
+  dronestate_ = NULL;
   type_ = 0;
 }
 
@@ -368,11 +369,11 @@ bool Message::MergePartialFromCodedStream(
         break;
       }
 
-      // .State state = 104;
+      // .DroneState dronestate = 104;
       case 104: {
         if (tag == 834u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_state()));
+               input, mutable_dronestate()));
         } else {
           goto handle_unusual;
         }
@@ -433,10 +434,10 @@ void Message::SerializeWithCachedSizes(
       103, *this->hello_, output);
   }
 
-  // .State state = 104;
-  if (this->has_state()) {
+  // .DroneState dronestate = 104;
+  if (this->has_dronestate()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      104, *this->state_, output);
+      104, *this->dronestate_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:Message)
@@ -480,11 +481,11 @@ void Message::SerializeWithCachedSizes(
         103, *this->hello_, false, target);
   }
 
-  // .State state = 104;
-  if (this->has_state()) {
+  // .DroneState dronestate = 104;
+  if (this->has_dronestate()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        104, *this->state_, false, target);
+        104, *this->dronestate_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:Message)
@@ -523,11 +524,11 @@ size_t Message::ByteSizeLong() const {
         *this->hello_);
   }
 
-  // .State state = 104;
-  if (this->has_state()) {
+  // .DroneState dronestate = 104;
+  if (this->has_dronestate()) {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->state_);
+        *this->dronestate_);
   }
 
   // .Message.Type type = 1;
@@ -574,8 +575,8 @@ void Message::MergeFrom(const Message& from) {
   if (from.has_hello()) {
     mutable_hello()->::Hello::MergeFrom(from.hello());
   }
-  if (from.has_state()) {
-    mutable_state()->::State::MergeFrom(from.state());
+  if (from.has_dronestate()) {
+    mutable_dronestate()->::DroneState::MergeFrom(from.dronestate());
   }
   if (from.type() != 0) {
     set_type(from.type());
@@ -609,7 +610,7 @@ void Message::InternalSwap(Message* other) {
   std::swap(shutdown_, other->shutdown_);
   std::swap(advertisement_, other->advertisement_);
   std::swap(hello_, other->hello_);
-  std::swap(state_, other->state_);
+  std::swap(dronestate_, other->dronestate_);
   std::swap(type_, other->type_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -792,43 +793,43 @@ void Message::set_allocated_hello(::Hello* hello) {
   // @@protoc_insertion_point(field_set_allocated:Message.hello)
 }
 
-// .State state = 104;
-bool Message::has_state() const {
-  return this != internal_default_instance() && state_ != NULL;
+// .DroneState dronestate = 104;
+bool Message::has_dronestate() const {
+  return this != internal_default_instance() && dronestate_ != NULL;
 }
-void Message::clear_state() {
-  if (GetArenaNoVirtual() == NULL && state_ != NULL) delete state_;
-  state_ = NULL;
+void Message::clear_dronestate() {
+  if (GetArenaNoVirtual() == NULL && dronestate_ != NULL) delete dronestate_;
+  dronestate_ = NULL;
 }
-const ::State& Message::state() const {
-  // @@protoc_insertion_point(field_get:Message.state)
-  return state_ != NULL ? *state_
-                         : *::State::internal_default_instance();
+const ::DroneState& Message::dronestate() const {
+  // @@protoc_insertion_point(field_get:Message.dronestate)
+  return dronestate_ != NULL ? *dronestate_
+                         : *::DroneState::internal_default_instance();
 }
-::State* Message::mutable_state() {
+::DroneState* Message::mutable_dronestate() {
   
-  if (state_ == NULL) {
-    state_ = new ::State;
+  if (dronestate_ == NULL) {
+    dronestate_ = new ::DroneState;
   }
-  // @@protoc_insertion_point(field_mutable:Message.state)
-  return state_;
+  // @@protoc_insertion_point(field_mutable:Message.dronestate)
+  return dronestate_;
 }
-::State* Message::release_state() {
-  // @@protoc_insertion_point(field_release:Message.state)
+::DroneState* Message::release_dronestate() {
+  // @@protoc_insertion_point(field_release:Message.dronestate)
   
-  ::State* temp = state_;
-  state_ = NULL;
+  ::DroneState* temp = dronestate_;
+  dronestate_ = NULL;
   return temp;
 }
-void Message::set_allocated_state(::State* state) {
-  delete state_;
-  state_ = state;
-  if (state) {
+void Message::set_allocated_dronestate(::DroneState* dronestate) {
+  delete dronestate_;
+  dronestate_ = dronestate;
+  if (dronestate) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_set_allocated:Message.state)
+  // @@protoc_insertion_point(field_set_allocated:Message.dronestate)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

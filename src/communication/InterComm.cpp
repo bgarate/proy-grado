@@ -8,7 +8,7 @@
 
 InterComm::InterComm() {
 
-    messsageHandler.registerHandler(Message_Type::Message_Type_STATE,
+    messsageHandler.registerHandler(Message_Type::Message_Type_DRONESTATE,
                                     [this](Message m){ this->stateHandler(m);});
 }
 
@@ -41,7 +41,7 @@ void InterComm::shutdownInterComm() {
 
 void InterComm::stateHandler(Message &msg){
 
-    State* state = msg.mutable_state();
+    DroneState* state = msg.mutable_dronestate();
 
     boost::asio::ip::address_v4 address = boost::asio::ip::address_v4(state->ip());
 
@@ -65,9 +65,9 @@ void InterComm::sendState(long runningTime) {
 
     if(runningTime - lastStateSend > stateSendLapse * 1000) {
 
-        Message msg = MessageBuilder::build(Message_Type::Message_Type_STATE);
+        Message msg = MessageBuilder::build(Message_Type::Message_Type_DRONESTATE);
 
-        State* state = msg.mutable_state();
+        DroneState* state = msg.mutable_dronestate();
 
         state->set_ip((uint32_t) ip.to_ulong());
         state->set_port(socketPort);
