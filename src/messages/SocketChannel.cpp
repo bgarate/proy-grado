@@ -29,6 +29,7 @@ void SocketChannel::tryConnect(std::string host, unsigned short port){
     tcp::resolver::iterator endpoint_iterator = resolver.resolve(query);
 
     socket = new tcp::socket(service);
+
     asio::connect(*socket, endpoint_iterator);
 
     Logger::logDebug("Connected to %s:%u") << socket->remote_endpoint().address() << port;

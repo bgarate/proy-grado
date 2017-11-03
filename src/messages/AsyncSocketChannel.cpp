@@ -88,6 +88,7 @@ void AsyncSocketChannel::acceptNext() {
             connection->start();
             connections.push_back(connection);
             AceptedConnection(connection);
+            Logger::logError("Connection accepted!!!!!!!!!!");
         } else {
             Logger::logError("Error accepting connection:\n%s") << error.message();
         }

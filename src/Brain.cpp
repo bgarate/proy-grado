@@ -3,7 +3,7 @@
 //
 
 #include "proto/message.pb.h"
-#include "communication/BrainCommunication.h"
+#include "src/communication/BrainComm.h"
 #include "Brain.h"
 #include "logging/Logger.h"
 #include "config/Config.h"
@@ -18,10 +18,12 @@ void Brain::setup(Config* config) {
 
     this->config = config;
 
-    interComm = new InterCommunication();
+    //interCommunication = new InterCommunication();
+    //interCommunication->setupInterComm(config);
+    interComm = new InterComm();
     interComm->setupInterComm(config);
 
-    brainComm = new BrainCommunication();
+    brainComm = new BrainComm();
     brainComm->setupBrainComm(config);
 
     Logger::getInstance().setSource("BRAIN");
@@ -42,6 +44,7 @@ void Brain::loop() {
         deltaTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - lastTime).count();
         runningTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - startTime).count();
 
+        //interCommunication->interCommStep(runningTime, deltaTime);
         interComm->interCommStep(runningTime, deltaTime);
         brainComm->brainCommStep(runningTime, deltaTime);
 
@@ -55,6 +58,7 @@ void Brain::loop() {
 
 void Brain::shutdown() {
     should_exit = true;
+    //interCommunication->shutdownInterComm();
     interComm->shutdownInterComm();
     brainComm->shutdownBrainComm();
 }

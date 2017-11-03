@@ -6,7 +6,7 @@
 #define PROY_GRADO_BODY_H
 
 #include <iostream>
-#include "communication/BodyCommunication.h"
+#include "src/communication/BodyComm.h"
 #include "hal/ManualControl.h"
 #include "messages/SocketChannel.h"
 #include "messages/MessageHandler.h"
@@ -26,7 +26,7 @@ private:
     VisualDebugger visualDebugger;
     Hal* hal;
 
-    BodyCommunication * bodyComm;
+    BodyComm * bodyComm;
 
     bool should_exit = false;
     Config* config;

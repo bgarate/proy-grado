@@ -40,7 +40,7 @@ void Body::setup(Config* config) {
     this->mc = new ManualControl(hal);
     this->inmc = false;
 
-    bodyComm = new BodyCommunication();
+    bodyComm = new BodyComm();
     bodyComm->setupBodyComm(config);
 }
 

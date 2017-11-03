@@ -3,18 +3,18 @@
 //
 
 #include "../config/ConfigKeys.h"
-#include "BodyCommunication.h"
+#include "BodyComm.h"
 
 
 //public:
 
-BodyCommunication::BodyCommunication(){
+BodyComm::BodyComm(){
 
     messsageHandler.registerHandler(Message_Type::Message_Type_PING, [this](Message m){this->PingHandler(m);});
     messsageHandler.registerHandler(Message_Type::Message_Type_SHUTDOWN, [this](Message m){this->ShutdownHandler(m);});
 }
 
-void BodyCommunication::setupBodyComm(Config *config){
+void BodyComm::setupBodyComm(Config *config){
 
     bodySocket.connect(config->Get(ConfigKeys::Communications::BrainHost), config->Get(ConfigKeys::Communications::BrainPort));
     Logger::logInfo("Body has established a connection!");
@@ -25,7 +25,7 @@ void BodyCommunication::setupBodyComm(Config *config){
     pingLapse = config->Get(ConfigKeys::Communications::PingLapse);
 }
 
-void BodyCommunication::bodyCommStep(long runningTime, long deltaTime){
+void BodyComm::bodyCommStep(long runningTime, long deltaTime){
 
     if(bodySocket.messageAvailable()) {
         Message msg = bodySocket.receive();
@@ -37,17 +37,17 @@ void BodyCommunication::bodyCommStep(long runningTime, long deltaTime){
 
 }
 
-void BodyCommunication::shutdownBodyComm(){
+void BodyComm::shutdownBodyComm(){
 
 }
 
-bool BodyCommunication::shouldExit(){
+bool BodyComm::shouldExit(){
     return should_exit;
 }
 
 //private:
 
-void BodyCommunication::PingHandler(Message& msg){
+void BodyComm::PingHandler(Message& msg){
 
     Ping* ping = msg.mutable_ping();
     if(ping->type() == Ping_PingType_REQUEST) {
@@ -62,7 +62,7 @@ void BodyCommunication::PingHandler(Message& msg){
 
 }
 
-void BodyCommunication::ShutdownHandler(Message& msg){
+void BodyComm::ShutdownHandler(Message& msg){
 
     //DoShutdown* shutdown = msg.mutable_shutdown();
     Logger::logWarning("SHUTDOWN requested");
@@ -71,7 +71,7 @@ void BodyCommunication::ShutdownHandler(Message& msg){
 
 }
 
-void BodyCommunication::waitPing(long deltaTime) {
+void BodyComm::waitPing(long deltaTime) {
     pingWait += deltaTime;
 
     if(pingWait > (pingLapse + pingTimeout) * 1000) {

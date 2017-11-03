@@ -10,11 +10,11 @@
 #include "../messages/MessageHandler.h"
 #include "../config/Config.h"
 
-class BodyCommunication {
+class BodyComm {
 
 public:
 
-    BodyCommunication();
+    BodyComm();
 
     void setupBodyComm(Config *config);
 

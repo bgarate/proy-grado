@@ -10,11 +10,11 @@
 #include "../messages/MessageHandler.h"
 #include "../config/Config.h"
 
-class BrainCommunication {
+class BrainComm {
 
 public:
 
-    BrainCommunication();
+    BrainComm();
 
     void setupBrainComm(Config *config);
 

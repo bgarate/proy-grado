@@ -2,20 +2,20 @@
 // Created by santy on 16/10/17.
 //
 
-#include "BrainCommunication.h"
+#include "BrainComm.h"
 #include "../messages/MessageBuilder.h"
 #include "../config/ConfigKeys.h"
 
 
 //Public
 
-BrainCommunication::BrainCommunication(){
+BrainComm::BrainComm(){
 
     messsageHandler.registerHandler(Message_Type::Message_Type_PING,
                                     [this](Message m){this->pingHandler(m);});
 }
 
-void BrainCommunication::setupBrainComm(Config *config){
+void BrainComm::setupBrainComm(Config *config){
 
     brainSocket.serve(config->Get(ConfigKeys::Communications::BrainPort));
     Logger::logInfo("Brain has established a connection!");
@@ -27,7 +27,7 @@ void BrainCommunication::setupBrainComm(Config *config){
     waitingPing = false;
 }
 
-void BrainCommunication::brainCommStep(long runningTime, long deltaTime) {
+void BrainComm::brainCommStep(long runningTime, long deltaTime) {
 
     handleMessages();
 
@@ -35,7 +35,7 @@ void BrainCommunication::brainCommStep(long runningTime, long deltaTime) {
         sendPingIfAppropiate(deltaTime);
 }
 
-void BrainCommunication::shutdownBrainComm() {
+void BrainComm::shutdownBrainComm() {
 
     brainSocket.send(MessageBuilder::build(Message_Type_SHUTDOWN));
     Logger::logWarning("SHUTDOWN request sent");
@@ -43,7 +43,7 @@ void BrainCommunication::shutdownBrainComm() {
 
 //Private
 
-void BrainCommunication::sendPingIfAppropiate(long deltaTime) {
+void BrainComm::sendPingIfAppropiate(long deltaTime) {
 
     pingWait += deltaTime;
 
@@ -65,7 +65,7 @@ void BrainCommunication::sendPingIfAppropiate(long deltaTime) {
     }
 }
 
-void BrainCommunication::pingHandler(Message& msg){
+void BrainComm::pingHandler(Message& msg){
 
     Ping* ping = msg.mutable_ping();
     if(ping->type() == Ping_PingType_REQUEST) {
@@ -83,7 +83,7 @@ void BrainCommunication::pingHandler(Message& msg){
 }
 
 
-void BrainCommunication::handleMessages(){
+void BrainComm::handleMessages(){
 
     if(brainSocket.messageAvailable()) {
         Message msg = brainSocket.receive();

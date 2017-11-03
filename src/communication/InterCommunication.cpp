@@ -48,6 +48,8 @@ void InterCommunication::shutdownInterComm() {
 
 void InterCommunication::acceptedConnectionHandler(Connection::Pointer connection) {
 
+    Logger::logError("Connection handler executed");
+
     boost::asio::ip::tcp::endpoint localEndpoint = connection->getSocket().local_endpoint();
     Message msg = MessageBuilder::hello(name, id, localEndpoint.address().to_v4(), localEndpoint.port());
 
