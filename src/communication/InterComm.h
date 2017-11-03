@@ -27,19 +27,21 @@ public:
 
 private:
 
+    unsigned int seqNum = 1;
+
     std::string name;
     unsigned int id;
     int socketPort;
     boost::asio::ip::address_v4 ip;
 
     MessageHandler messsageHandler;
-    long lastAdvertisementTime = 0;
+    long lastStateSend = 0;
     Broadcaster broadcaster;
-    int advertisementLapse;
+    int stateSendLapse;
 
-    void advertisementHandler(Message &msg);
+    void stateHandler(Message &msg);
 
-    void advertise(long runningTime);
+    void sendState(long runningTime);
 
     void handleMessages();
 };

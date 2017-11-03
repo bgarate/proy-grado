@@ -8,7 +8,7 @@
 
 #include "communication/InterCommunication.h"
 #include "communication/InterComm.h"
-#include "src/communication/BrainComm.h"
+#include "communication/BrainComm.h"
 #include "messages/SocketChannel.h"
 #include "messages/Broadcaster.h"
 #include "messages/MessageHandler.h"

@@ -3,7 +3,7 @@
 //
 
 #include "proto/message.pb.h"
-#include "src/communication/BrainComm.h"
+#include "communication/BrainComm.h"
 #include "Brain.h"
 #include "logging/Logger.h"
 #include "config/Config.h"

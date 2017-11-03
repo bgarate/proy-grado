@@ -6,7 +6,7 @@
 #define PROY_GRADO_BODY_H
 
 #include <iostream>
-#include "src/communication/BodyComm.h"
+#include "communication/BodyComm.h"
 #include "hal/ManualControl.h"
 #include "messages/SocketChannel.h"
 #include "messages/MessageHandler.h"

@@ -8,13 +8,13 @@
 
 InterComm::InterComm() {
 
-    messsageHandler.registerHandler(Message_Type::Message_Type_ADVERTISEMENT,
-                                    [this](Message m){this->advertisementHandler(m);});
+    messsageHandler.registerHandler(Message_Type::Message_Type_STATE,
+                                    [this](Message m){ this->stateHandler(m);});
 }
 
 void InterComm::setupInterComm(Config* config){
 
-    advertisementLapse = config->Get(ConfigKeys::Communications::AdvertisementLapse);
+    stateSendLapse = config->Get(ConfigKeys::Communications::AdvertisementLapse);
 
     broadcaster.setup(config->Get(ConfigKeys::Communications::BroadcastPort));
 
@@ -30,7 +30,7 @@ void InterComm::setupInterComm(Config* config){
 void InterComm::interCommStep(long runningTime, long deltaTime) {
 
     handleMessages();
-    advertise(runningTime);
+    sendState(runningTime);
 }
 
 void InterComm::shutdownInterComm() {
@@ -39,15 +39,14 @@ void InterComm::shutdownInterComm() {
 
 //Private
 
-void InterComm::advertisementHandler(Message& msg){
+void InterComm::stateHandler(Message &msg){
 
-    Advertisement* advertisement = msg.mutable_advertisement();
+    State* state = msg.mutable_state();
 
-    boost::asio::ip::address_v4 address = boost::asio::ip::address_v4(advertisement->ip());
+    boost::asio::ip::address_v4 address = boost::asio::ip::address_v4(state->ip());
 
-    if(address != ip || advertisement->port() != socketPort){
-        Logger::logDebug("Advertisement received from %s:%u") << address.to_string() <<
-                                                              advertisement->port();
+    if(address != ip || state->port() != socketPort){
+        Logger::logDebug("State received from %s:%u with seq_num %u") << address.to_string() << state->port() << state->seq_num();
 
     }
 
@@ -62,21 +61,25 @@ void InterComm::handleMessages(){
 
 }
 
-void InterComm::advertise(long runningTime) {
+void InterComm::sendState(long runningTime) {
 
-    if(runningTime - lastAdvertisementTime > advertisementLapse * 1000) {
+    if(runningTime - lastStateSend > stateSendLapse * 1000) {
 
-        Message msg = MessageBuilder::build(Message_Type::Message_Type_ADVERTISEMENT);
+        Message msg = MessageBuilder::build(Message_Type::Message_Type_STATE);
 
-        Advertisement* advertisement = msg.mutable_advertisement();
+        State* state = msg.mutable_state();
 
-        advertisement->set_ip((uint32_t) ip.to_ulong());
-        advertisement->set_port(socketPort);
+        state->set_ip((uint32_t) ip.to_ulong());
+        state->set_port(socketPort);
+        state->set_drone_id(id);
+        state->set_name(name);
+        state->set_seq_num(seqNum);
+        seqNum++;
 
         broadcaster.broadcast(msg);
-        Logger::logDebug("Advertising sent");
+        Logger::logDebug("State sent");
 
-        lastAdvertisementTime = runningTime;
+        lastStateSend = runningTime;
     }
 }
 

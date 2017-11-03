@@ -33,6 +33,7 @@
 #include "advertisement.pb.h"
 #include "shutdown.pb.h"
 #include "hello.pb.h"
+#include "state.pb.h"
 // @@protoc_insertion_point(includes)
 class Advertisement;
 class AdvertisementDefaultTypeInternal;
@@ -49,6 +50,9 @@ extern MessageDefaultTypeInternal _Message_default_instance_;
 class Ping;
 class PingDefaultTypeInternal;
 extern PingDefaultTypeInternal _Ping_default_instance_;
+class State;
+class StateDefaultTypeInternal;
+extern StateDefaultTypeInternal _State_default_instance_;
 
 namespace protobuf_message_2eproto {
 // Internal implementation detail -- do not call these.
@@ -66,12 +70,13 @@ enum Message_Type {
   Message_Type_SHUTDOWN = 1,
   Message_Type_ADVERTISEMENT = 2,
   Message_Type_HELLO = 3,
+  Message_Type_STATE = 4,
   Message_Type_Message_Type_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
   Message_Type_Message_Type_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
 bool Message_Type_IsValid(int value);
 const Message_Type Message_Type_Type_MIN = Message_Type_PING;
-const Message_Type Message_Type_Type_MAX = Message_Type_HELLO;
+const Message_Type Message_Type_Type_MAX = Message_Type_STATE;
 const int Message_Type_Type_ARRAYSIZE = Message_Type_Type_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Message_Type_descriptor();
@@ -160,6 +165,8 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
     Message_Type_ADVERTISEMENT;
   static const Type HELLO =
     Message_Type_HELLO;
+  static const Type STATE =
+    Message_Type_STATE;
   static inline bool Type_IsValid(int value) {
     return Message_Type_IsValid(value);
   }
@@ -219,6 +226,15 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::Hello* release_hello();
   void set_allocated_hello(::Hello* hello);
 
+  // .State state = 104;
+  bool has_state() const;
+  void clear_state();
+  static const int kStateFieldNumber = 104;
+  const ::State& state() const;
+  ::State* mutable_state();
+  ::State* release_state();
+  void set_allocated_state(::State* state);
+
   // .Message.Type type = 1;
   void clear_type();
   static const int kTypeFieldNumber = 1;
@@ -233,6 +249,7 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::DoShutdown* shutdown_;
   ::Advertisement* advertisement_;
   ::Hello* hello_;
+  ::State* state_;
   int type_;
   mutable int _cached_size_;
   friend struct  protobuf_message_2eproto::TableStruct;
@@ -413,6 +430,45 @@ inline void Message::set_allocated_hello(::Hello* hello) {
     
   }
   // @@protoc_insertion_point(field_set_allocated:Message.hello)
+}
+
+// .State state = 104;
+inline bool Message::has_state() const {
+  return this != internal_default_instance() && state_ != NULL;
+}
+inline void Message::clear_state() {
+  if (GetArenaNoVirtual() == NULL && state_ != NULL) delete state_;
+  state_ = NULL;
+}
+inline const ::State& Message::state() const {
+  // @@protoc_insertion_point(field_get:Message.state)
+  return state_ != NULL ? *state_
+                         : *::State::internal_default_instance();
+}
+inline ::State* Message::mutable_state() {
+  
+  if (state_ == NULL) {
+    state_ = new ::State;
+  }
+  // @@protoc_insertion_point(field_mutable:Message.state)
+  return state_;
+}
+inline ::State* Message::release_state() {
+  // @@protoc_insertion_point(field_release:Message.state)
+  
+  ::State* temp = state_;
+  state_ = NULL;
+  return temp;
+}
+inline void Message::set_allocated_state(::State* state) {
+  delete state_;
+  state_ = state;
+  if (state) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:Message.state)
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS

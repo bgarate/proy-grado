@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message State {
+    fixed32 ip = 1;
+    uint32 port = 2;
+    uint32 drone_id = 3;
+    uint32 seq_num = 4;
+    string name = 5;
+}
