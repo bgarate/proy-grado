@@ -39,6 +39,8 @@ void Brain::loop() {
 
     interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_PATROLING);
 
+    int aux = 0;
+
     while (true) {
         lastTime = newTime;
         newTime = chrono::steady_clock::now();
@@ -50,8 +52,13 @@ void Brain::loop() {
         interComm->interCommStep(runningTime, deltaTime);
         brainComm->brainCommStep(runningTime, deltaTime);
 
-        for (std::map<int, DroneState*>::iterator it=interComm->droneStates.begin(); it!=interComm->droneStates.end(); ++it)
-            std::cout << "The drone " << it->first << " is " << it->second->curren_task() << '\n';
+        //DEBUG
+        aux = (aux+1) % 10000;
+        if(aux==0){
+            for (std::map<int, DroneState*>::iterator it=interComm->droneStates.begin(); it!=interComm->droneStates.end(); ++it)
+                if(it->first != myid)
+                    std::cout << "The drone " << it->first << " is " << it->second->curren_task() << '\n';
+        }
 
         if(should_exit) {
             break;
