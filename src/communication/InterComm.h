@@ -27,6 +27,9 @@ public:
 
 private:
 
+    std::map<int, long> lastSeq;
+    std::map<int, DroneState*> lastState;
+
     long seqNum;
 
     std::string name;

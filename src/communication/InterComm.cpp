@@ -44,10 +44,16 @@ void InterComm::stateHandler(Message &msg){
 
     DroneState* state = msg.mutable_dronestate();
 
-    boost::asio::ip::address_v4 address = boost::asio::ip::address_v4(state->ip());
+    //boost::asio::ip::address_v4 address = boost::asio::ip::address_v4(state->ip());
+    int droneId = state->drone_id();
+    long seqNum = state->seq_num();
 
-    if(address != ip || state->port() != socketPort){
-        Logger::logDebug("State received from %s:%u with seq_num %u") << address.to_string() << state->port() << state->seq_num();
+    if(droneId != id && (lastSeq.find(droneId) != lastSeq.end() || lastSeq[droneId] < seqNum)){
+
+        Logger::logDebug("State received from drone %u with seq_num %u") << droneId << seqNum;
+
+        lastSeq[droneId] = seqNum;
+        lastState[droneId] = state;
 
     }
 
