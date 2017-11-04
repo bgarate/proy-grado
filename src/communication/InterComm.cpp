@@ -1,3 +1,4 @@
+#include <chrono>
 #include "InterComm.h"
 
 #include "../messages/IpResolver.h"
@@ -73,8 +74,10 @@ void InterComm::sendState(long runningTime) {
         state->set_port(socketPort);
         state->set_drone_id(id);
         state->set_name(name);
+
+        auto now = std::chrono::high_resolution_clock::now();
+        seqNum = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
         state->set_seq_num(seqNum);
-        seqNum++;
 
         broadcaster.broadcast(msg);
         Logger::logDebug("State sent");

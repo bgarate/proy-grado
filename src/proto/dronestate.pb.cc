@@ -92,7 +92,7 @@ void AddDescriptorsImpl() {
   static const char descriptor[] = {
       "\n\020dronestate.proto\"W\n\nDroneState\022\n\n\002ip\030\001"
       " \001(\007\022\014\n\004port\030\002 \001(\r\022\020\n\010drone_id\030\003 \001(\r\022\017\n\007"
-      "seq_num\030\004 \001(\r\022\014\n\004name\030\005 \001(\tb\006proto3"
+      "seq_num\030\004 \001(\003\022\014\n\004name\030\005 \001(\tb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
       descriptor, 115);
@@ -143,15 +143,15 @@ DroneState::DroneState(const DroneState& from)
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   ::memcpy(&ip_, &from.ip_,
-    reinterpret_cast<char*>(&seq_num_) -
-    reinterpret_cast<char*>(&ip_) + sizeof(seq_num_));
+    reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&ip_) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:DroneState)
 }
 
 void DroneState::SharedCtor() {
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&ip_, 0, reinterpret_cast<char*>(&seq_num_) -
-    reinterpret_cast<char*>(&ip_) + sizeof(seq_num_));
+  ::memset(&ip_, 0, reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&ip_) + sizeof(drone_id_));
   _cached_size_ = 0;
 }
 
@@ -190,8 +190,8 @@ DroneState* DroneState::New(::google::protobuf::Arena* arena) const {
 void DroneState::Clear() {
 // @@protoc_insertion_point(message_clear_start:DroneState)
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&ip_, 0, reinterpret_cast<char*>(&seq_num_) -
-    reinterpret_cast<char*>(&ip_) + sizeof(seq_num_));
+  ::memset(&ip_, 0, reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&ip_) + sizeof(drone_id_));
 }
 
 bool DroneState::MergePartialFromCodedStream(
@@ -243,12 +243,12 @@ bool DroneState::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 seq_num = 4;
+      // int64 seq_num = 4;
       case 4: {
         if (tag == 32u) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
                  input, &seq_num_)));
         } else {
           goto handle_unusual;
@@ -310,9 +310,9 @@ void DroneState::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->drone_id(), output);
   }
 
-  // uint32 seq_num = 4;
+  // int64 seq_num = 4;
   if (this->seq_num() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->seq_num(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(4, this->seq_num(), output);
   }
 
   // string name = 5;
@@ -347,9 +347,9 @@ void DroneState::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->drone_id(), target);
   }
 
-  // uint32 seq_num = 4;
+  // int64 seq_num = 4;
   if (this->seq_num() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->seq_num(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(4, this->seq_num(), target);
   }
 
   // string name = 5;
@@ -390,18 +390,18 @@ size_t DroneState::ByteSizeLong() const {
         this->port());
   }
 
+  // int64 seq_num = 4;
+  if (this->seq_num() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->seq_num());
+  }
+
   // uint32 drone_id = 3;
   if (this->drone_id() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt32Size(
         this->drone_id());
-  }
-
-  // uint32 seq_num = 4;
-  if (this->seq_num() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->seq_num());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -440,11 +440,11 @@ void DroneState::MergeFrom(const DroneState& from) {
   if (from.port() != 0) {
     set_port(from.port());
   }
-  if (from.drone_id() != 0) {
-    set_drone_id(from.drone_id());
-  }
   if (from.seq_num() != 0) {
     set_seq_num(from.seq_num());
+  }
+  if (from.drone_id() != 0) {
+    set_drone_id(from.drone_id());
   }
 }
 
@@ -474,8 +474,8 @@ void DroneState::InternalSwap(DroneState* other) {
   name_.Swap(&other->name_);
   std::swap(ip_, other->ip_);
   std::swap(port_, other->port_);
-  std::swap(drone_id_, other->drone_id_);
   std::swap(seq_num_, other->seq_num_);
+  std::swap(drone_id_, other->drone_id_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
@@ -529,15 +529,15 @@ void DroneState::set_drone_id(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:DroneState.drone_id)
 }
 
-// uint32 seq_num = 4;
+// int64 seq_num = 4;
 void DroneState::clear_seq_num() {
-  seq_num_ = 0u;
+  seq_num_ = GOOGLE_LONGLONG(0);
 }
-::google::protobuf::uint32 DroneState::seq_num() const {
+::google::protobuf::int64 DroneState::seq_num() const {
   // @@protoc_insertion_point(field_get:DroneState.seq_num)
   return seq_num_;
 }
-void DroneState::set_seq_num(::google::protobuf::uint32 value) {
+void DroneState::set_seq_num(::google::protobuf::int64 value) {
   
   seq_num_ = value;
   // @@protoc_insertion_point(field_set:DroneState.seq_num)

@@ -139,17 +139,17 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::uint32 port() const;
   void set_port(::google::protobuf::uint32 value);
 
+  // int64 seq_num = 4;
+  void clear_seq_num();
+  static const int kSeqNumFieldNumber = 4;
+  ::google::protobuf::int64 seq_num() const;
+  void set_seq_num(::google::protobuf::int64 value);
+
   // uint32 drone_id = 3;
   void clear_drone_id();
   static const int kDroneIdFieldNumber = 3;
   ::google::protobuf::uint32 drone_id() const;
   void set_drone_id(::google::protobuf::uint32 value);
-
-  // uint32 seq_num = 4;
-  void clear_seq_num();
-  static const int kSeqNumFieldNumber = 4;
-  ::google::protobuf::uint32 seq_num() const;
-  void set_seq_num(::google::protobuf::uint32 value);
 
   // @@protoc_insertion_point(class_scope:DroneState)
  private:
@@ -158,8 +158,8 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::uint32 ip_;
   ::google::protobuf::uint32 port_;
+  ::google::protobuf::int64 seq_num_;
   ::google::protobuf::uint32 drone_id_;
-  ::google::protobuf::uint32 seq_num_;
   mutable int _cached_size_;
   friend struct  protobuf_dronestate_2eproto::TableStruct;
 };
@@ -213,15 +213,15 @@ inline void DroneState::set_drone_id(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:DroneState.drone_id)
 }
 
-// uint32 seq_num = 4;
+// int64 seq_num = 4;
 inline void DroneState::clear_seq_num() {
-  seq_num_ = 0u;
+  seq_num_ = GOOGLE_LONGLONG(0);
 }
-inline ::google::protobuf::uint32 DroneState::seq_num() const {
+inline ::google::protobuf::int64 DroneState::seq_num() const {
   // @@protoc_insertion_point(field_get:DroneState.seq_num)
   return seq_num_;
 }
-inline void DroneState::set_seq_num(::google::protobuf::uint32 value) {
+inline void DroneState::set_seq_num(::google::protobuf::int64 value) {
   
   seq_num_ = value;
   // @@protoc_insertion_point(field_set:DroneState.seq_num)

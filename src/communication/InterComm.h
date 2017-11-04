@@ -27,7 +27,7 @@ public:
 
 private:
 
-    unsigned int seqNum = 1;
+    long seqNum;
 
     std::string name;
     unsigned int id;
