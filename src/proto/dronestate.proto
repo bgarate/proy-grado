@@ -6,4 +6,13 @@ message DroneState {
     uint32 drone_id = 3;
     int64 seq_num = 4;
     string name = 5;
+
+    CurrentTask curren_task = 6;
+
+    enum CurrentTask {
+        INNACTIVE = 0;
+        PATROLING = 1;
+        FOLLOWING = 2;
+        CHARGING = 3;
+    }
 }

@@ -39,6 +39,8 @@ private:
     InterComm * interComm;
     BrainComm * brainComm;
 
+    unsigned int myid;
+
 };
 
 

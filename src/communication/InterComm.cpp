@@ -17,14 +17,25 @@ void InterComm::setupInterComm(Config* config){
 
     stateSendLapse = config->Get(ConfigKeys::Communications::AdvertisementLapse);
 
-    broadcaster.setup(config->Get(ConfigKeys::Communications::BroadcastPort));
-
     this->name = config->Get(ConfigKeys::Drone::Name);
     this->id = config->Get(ConfigKeys::Drone::Id);
-    socketPort = config->Get(ConfigKeys::Communications::CommunicationPort);
+    broadcastPort = config->Get(ConfigKeys::Communications::BroadcastPort);
+
+    broadcaster.setup(broadcastPort);
 
     IpResolver resolver;
     ip = resolver.resolve();
+
+    droneStates[id] =  new DroneState();
+    droneStates[id]->set_ip((uint32_t) ip.to_ulong());
+    droneStates[id]->set_port(broadcastPort);
+    droneStates[id]->set_drone_id(id);
+    droneStates[id]->set_name(name);
+    droneStates[id]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE);
+
+    auto now = std::chrono::high_resolution_clock::now();
+    seqNum = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+    droneStates[id]->set_seq_num(seqNum);
 
 }
 
@@ -53,7 +64,7 @@ void InterComm::stateHandler(Message &msg){
         Logger::logDebug("State received from drone %u with seq_num %u") << droneId << seqNum;
 
         lastSeq[droneId] = seqNum;
-        lastState[droneId] = state;
+        droneStates[droneId] = state;
 
     }
 
@@ -76,10 +87,11 @@ void InterComm::sendState(long runningTime) {
 
         DroneState* state = msg.mutable_dronestate();
 
-        state->set_ip((uint32_t) ip.to_ulong());
-        state->set_port(socketPort);
-        state->set_drone_id(id);
-        state->set_name(name);
+        state->set_ip(droneStates[id]->ip());
+        state->set_port(droneStates[id]->port());
+        state->set_drone_id(droneStates[id]->drone_id());
+        state->set_name(droneStates[id]->name());
+        state->set_curren_task(droneStates[id]->curren_task());
 
         auto now = std::chrono::high_resolution_clock::now();
         seqNum = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();

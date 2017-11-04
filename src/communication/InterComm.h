@@ -24,17 +24,17 @@ public:
 
     void shutdownInterComm();
 
+    std::map<int, DroneState*> droneStates;
 
 private:
 
     std::map<int, long> lastSeq;
-    std::map<int, DroneState*> lastState;
 
     long seqNum;
 
     std::string name;
     unsigned int id;
-    int socketPort;
+    int broadcastPort;
     boost::asio::ip::address_v4 ip;
 
     MessageHandler messsageHandler;

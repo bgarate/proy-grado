@@ -261,9 +261,9 @@ void VisualDebugger::drawOrbSlam() {
 
     std::string state = frameDrawer->DrawFrame(frame);
 
-    if(state != lastState) {
+    if(state != droneStates) {
         writeConsole(state);
-        lastState = state;
+        droneStates = state;
     }*/
 }
 /*

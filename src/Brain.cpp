@@ -18,6 +18,8 @@ void Brain::setup(Config* config) {
 
     this->config = config;
 
+    this->myid = config->Get(ConfigKeys::Drone::Id);
+
     //interCommunication = new InterCommunication();
     //interCommunication->setupInterComm(config);
     interComm = new InterComm();
@@ -35,7 +37,7 @@ void Brain::loop() {
     chrono::steady_clock::time_point lastTime = startTime;
     chrono::steady_clock::time_point newTime = startTime;
 
-    Logger::logInfo("Advertisement received");
+    interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_PATROLING);
 
     while (true) {
         lastTime = newTime;
@@ -47,6 +49,9 @@ void Brain::loop() {
         //interCommunication->interCommStep(runningTime, deltaTime);
         interComm->interCommStep(runningTime, deltaTime);
         brainComm->brainCommStep(runningTime, deltaTime);
+
+        for (std::map<int, DroneState*>::iterator it=interComm->droneStates.begin(); it!=interComm->droneStates.end(); ++it)
+            std::cout << "The drone " << it->first << " is " << it->second->curren_task() << '\n';
 
         if(should_exit) {
             break;

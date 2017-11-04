@@ -25,6 +25,7 @@ namespace protobuf_dronestate_2eproto {
 namespace {
 
 ::google::protobuf::Metadata file_level_metadata[1];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 
 }  // namespace
 
@@ -38,6 +39,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, drone_id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, seq_num_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, curren_task_),
 };
 
 static const ::google::protobuf::internal::MigrationSchema schemas[] = {
@@ -55,7 +57,7 @@ void protobuf_AssignDescriptors() {
   ::google::protobuf::MessageFactory* factory = NULL;
   AssignDescriptors(
       "dronestate.proto", schemas, file_default_instances, TableStruct::offsets, factory,
-      file_level_metadata, NULL, NULL);
+      file_level_metadata, file_level_enum_descriptors, NULL);
 }
 
 void protobuf_AssignDescriptorsOnce() {
@@ -90,12 +92,15 @@ void InitDefaults() {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] = {
-      "\n\020dronestate.proto\"W\n\nDroneState\022\n\n\002ip\030\001"
-      " \001(\007\022\014\n\004port\030\002 \001(\r\022\020\n\010drone_id\030\003 \001(\r\022\017\n\007"
-      "seq_num\030\004 \001(\003\022\014\n\004name\030\005 \001(\tb\006proto3"
+      "\n\020dronestate.proto\"\317\001\n\nDroneState\022\n\n\002ip\030"
+      "\001 \001(\007\022\014\n\004port\030\002 \001(\r\022\020\n\010drone_id\030\003 \001(\r\022\017\n"
+      "\007seq_num\030\004 \001(\003\022\014\n\004name\030\005 \001(\t\022,\n\013curren_t"
+      "ask\030\006 \001(\0162\027.DroneState.CurrentTask\"H\n\013Cu"
+      "rrentTask\022\r\n\tINNACTIVE\020\000\022\r\n\tPATROLING\020\001\022"
+      "\r\n\tFOLLOWING\020\002\022\014\n\010CHARGING\020\003b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 115);
+      descriptor, 236);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "dronestate.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -114,6 +119,31 @@ struct StaticDescriptorInitializer {
 
 }  // namespace protobuf_dronestate_2eproto
 
+const ::google::protobuf::EnumDescriptor* DroneState_CurrentTask_descriptor() {
+  protobuf_dronestate_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_dronestate_2eproto::file_level_enum_descriptors[0];
+}
+bool DroneState_CurrentTask_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const DroneState_CurrentTask DroneState::INNACTIVE;
+const DroneState_CurrentTask DroneState::PATROLING;
+const DroneState_CurrentTask DroneState::FOLLOWING;
+const DroneState_CurrentTask DroneState::CHARGING;
+const DroneState_CurrentTask DroneState::CurrentTask_MIN;
+const DroneState_CurrentTask DroneState::CurrentTask_MAX;
+const int DroneState::CurrentTask_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
@@ -123,6 +153,7 @@ const int DroneState::kPortFieldNumber;
 const int DroneState::kDroneIdFieldNumber;
 const int DroneState::kSeqNumFieldNumber;
 const int DroneState::kNameFieldNumber;
+const int DroneState::kCurrenTaskFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DroneState::DroneState()
@@ -143,15 +174,15 @@ DroneState::DroneState(const DroneState& from)
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   ::memcpy(&ip_, &from.ip_,
-    reinterpret_cast<char*>(&drone_id_) -
-    reinterpret_cast<char*>(&ip_) + sizeof(drone_id_));
+    reinterpret_cast<char*>(&curren_task_) -
+    reinterpret_cast<char*>(&ip_) + sizeof(curren_task_));
   // @@protoc_insertion_point(copy_constructor:DroneState)
 }
 
 void DroneState::SharedCtor() {
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&ip_, 0, reinterpret_cast<char*>(&drone_id_) -
-    reinterpret_cast<char*>(&ip_) + sizeof(drone_id_));
+  ::memset(&ip_, 0, reinterpret_cast<char*>(&curren_task_) -
+    reinterpret_cast<char*>(&ip_) + sizeof(curren_task_));
   _cached_size_ = 0;
 }
 
@@ -190,8 +221,8 @@ DroneState* DroneState::New(::google::protobuf::Arena* arena) const {
 void DroneState::Clear() {
 // @@protoc_insertion_point(message_clear_start:DroneState)
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&ip_, 0, reinterpret_cast<char*>(&drone_id_) -
-    reinterpret_cast<char*>(&ip_) + sizeof(drone_id_));
+  ::memset(&ip_, 0, reinterpret_cast<char*>(&curren_task_) -
+    reinterpret_cast<char*>(&ip_) + sizeof(curren_task_));
 }
 
 bool DroneState::MergePartialFromCodedStream(
@@ -271,6 +302,20 @@ bool DroneState::MergePartialFromCodedStream(
         break;
       }
 
+      // .DroneState.CurrentTask curren_task = 6;
+      case 6: {
+        if (tag == 48u) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_curren_task(static_cast< ::DroneState_CurrentTask >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0 ||
@@ -325,6 +370,12 @@ void DroneState::SerializeWithCachedSizes(
       5, this->name(), output);
   }
 
+  // .DroneState.CurrentTask curren_task = 6;
+  if (this->curren_task() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      6, this->curren_task(), output);
+  }
+
   // @@protoc_insertion_point(serialize_end:DroneState)
 }
 
@@ -361,6 +412,12 @@ void DroneState::SerializeWithCachedSizes(
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         5, this->name(), target);
+  }
+
+  // .DroneState.CurrentTask curren_task = 6;
+  if (this->curren_task() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      6, this->curren_task(), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:DroneState)
@@ -402,6 +459,12 @@ size_t DroneState::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt32Size(
         this->drone_id());
+  }
+
+  // .DroneState.CurrentTask curren_task = 6;
+  if (this->curren_task() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->curren_task());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -446,6 +509,9 @@ void DroneState::MergeFrom(const DroneState& from) {
   if (from.drone_id() != 0) {
     set_drone_id(from.drone_id());
   }
+  if (from.curren_task() != 0) {
+    set_curren_task(from.curren_task());
+  }
 }
 
 void DroneState::CopyFrom(const ::google::protobuf::Message& from) {
@@ -476,6 +542,7 @@ void DroneState::InternalSwap(DroneState* other) {
   std::swap(port_, other->port_);
   std::swap(seq_num_, other->seq_num_);
   std::swap(drone_id_, other->drone_id_);
+  std::swap(curren_task_, other->curren_task_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
@@ -593,6 +660,20 @@ void DroneState::set_allocated_name(::std::string* name) {
   }
   name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
   // @@protoc_insertion_point(field_set_allocated:DroneState.name)
+}
+
+// .DroneState.CurrentTask curren_task = 6;
+void DroneState::clear_curren_task() {
+  curren_task_ = 0;
+}
+::DroneState_CurrentTask DroneState::curren_task() const {
+  // @@protoc_insertion_point(field_get:DroneState.curren_task)
+  return static_cast< ::DroneState_CurrentTask >(curren_task_);
+}
+void DroneState::set_curren_task(::DroneState_CurrentTask value) {
+  
+  curren_task_ = value;
+  // @@protoc_insertion_point(field_set:DroneState.curren_task)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

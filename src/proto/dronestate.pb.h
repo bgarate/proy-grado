@@ -27,6 +27,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 class DroneState;
@@ -44,6 +45,29 @@ void AddDescriptors();
 void InitDefaults();
 }  // namespace protobuf_dronestate_2eproto
 
+enum DroneState_CurrentTask {
+  DroneState_CurrentTask_INNACTIVE = 0,
+  DroneState_CurrentTask_PATROLING = 1,
+  DroneState_CurrentTask_FOLLOWING = 2,
+  DroneState_CurrentTask_CHARGING = 3,
+  DroneState_CurrentTask_DroneState_CurrentTask_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  DroneState_CurrentTask_DroneState_CurrentTask_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool DroneState_CurrentTask_IsValid(int value);
+const DroneState_CurrentTask DroneState_CurrentTask_CurrentTask_MIN = DroneState_CurrentTask_INNACTIVE;
+const DroneState_CurrentTask DroneState_CurrentTask_CurrentTask_MAX = DroneState_CurrentTask_CHARGING;
+const int DroneState_CurrentTask_CurrentTask_ARRAYSIZE = DroneState_CurrentTask_CurrentTask_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* DroneState_CurrentTask_descriptor();
+inline const ::std::string& DroneState_CurrentTask_Name(DroneState_CurrentTask value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    DroneState_CurrentTask_descriptor(), value);
+}
+inline bool DroneState_CurrentTask_Parse(
+    const ::std::string& name, DroneState_CurrentTask* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<DroneState_CurrentTask>(
+    DroneState_CurrentTask_descriptor(), name, value);
+}
 // ===================================================================
 
 class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:DroneState) */ {
@@ -111,6 +135,36 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // nested types ----------------------------------------------------
 
+  typedef DroneState_CurrentTask CurrentTask;
+  static const CurrentTask INNACTIVE =
+    DroneState_CurrentTask_INNACTIVE;
+  static const CurrentTask PATROLING =
+    DroneState_CurrentTask_PATROLING;
+  static const CurrentTask FOLLOWING =
+    DroneState_CurrentTask_FOLLOWING;
+  static const CurrentTask CHARGING =
+    DroneState_CurrentTask_CHARGING;
+  static inline bool CurrentTask_IsValid(int value) {
+    return DroneState_CurrentTask_IsValid(value);
+  }
+  static const CurrentTask CurrentTask_MIN =
+    DroneState_CurrentTask_CurrentTask_MIN;
+  static const CurrentTask CurrentTask_MAX =
+    DroneState_CurrentTask_CurrentTask_MAX;
+  static const int CurrentTask_ARRAYSIZE =
+    DroneState_CurrentTask_CurrentTask_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  CurrentTask_descriptor() {
+    return DroneState_CurrentTask_descriptor();
+  }
+  static inline const ::std::string& CurrentTask_Name(CurrentTask value) {
+    return DroneState_CurrentTask_Name(value);
+  }
+  static inline bool CurrentTask_Parse(const ::std::string& name,
+      CurrentTask* value) {
+    return DroneState_CurrentTask_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   // string name = 5;
@@ -151,6 +205,12 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::uint32 drone_id() const;
   void set_drone_id(::google::protobuf::uint32 value);
 
+  // .DroneState.CurrentTask curren_task = 6;
+  void clear_curren_task();
+  static const int kCurrenTaskFieldNumber = 6;
+  ::DroneState_CurrentTask curren_task() const;
+  void set_curren_task(::DroneState_CurrentTask value);
+
   // @@protoc_insertion_point(class_scope:DroneState)
  private:
 
@@ -160,6 +220,7 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::uint32 port_;
   ::google::protobuf::int64 seq_num_;
   ::google::protobuf::uint32 drone_id_;
+  int curren_task_;
   mutable int _cached_size_;
   friend struct  protobuf_dronestate_2eproto::TableStruct;
 };
@@ -279,10 +340,38 @@ inline void DroneState::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:DroneState.name)
 }
 
+// .DroneState.CurrentTask curren_task = 6;
+inline void DroneState::clear_curren_task() {
+  curren_task_ = 0;
+}
+inline ::DroneState_CurrentTask DroneState::curren_task() const {
+  // @@protoc_insertion_point(field_get:DroneState.curren_task)
+  return static_cast< ::DroneState_CurrentTask >(curren_task_);
+}
+inline void DroneState::set_curren_task(::DroneState_CurrentTask value) {
+  
+  curren_task_ = value;
+  // @@protoc_insertion_point(field_set:DroneState.curren_task)
+}
+
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 
+
+#ifndef SWIG
+namespace google {
+namespace protobuf {
+
+template <> struct is_proto_enum< ::DroneState_CurrentTask> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::DroneState_CurrentTask>() {
+  return ::DroneState_CurrentTask_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
+#endif  // SWIG
 
 // @@protoc_insertion_point(global_scope)
 
