@@ -1,10 +1,10 @@
 #include "BodyTest.h"
-#include "src/debugging/VisualDebugger.h"
+#include "../debugging/VisualDebugger.h"
 #include "../logging/Logger.h"
-#include "src/landtracking/MarkerTrack.h"
+#include "../landtracking/MarkerTrack.h"
 #include <thread>
 #include <unistd.h>
-#include "src/landtracking/MarkerLand.h"
+#include "../landtracking/MarkerLand.h"
 
 class BodyTestMarker: public BodyTest {
 

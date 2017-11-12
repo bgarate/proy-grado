@@ -10,7 +10,7 @@
 #include "ConfigDefaults.h"
 #include <opencv2/opencv.hpp>
 #include <yaml-cpp/yaml.h>
-#include <src/logging/Logger.h>
+#include "../logging/Logger.h"
 
 #define CONFIG_KEY(PARENT, KEY, T) static const ConfigKey<T> KEY;
 #define DEFINE_CONFIG_KEY(PARENT, KEY, T) const ConfigKey<T> ConfigKeys::PARENT::KEY = ConfigKey<T>(#KEY,#PARENT);

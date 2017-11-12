@@ -1,4 +1,4 @@
-#include "src/debugging/VisualDebugger.h"
+#include "../debugging/VisualDebugger.h"
 #include "BodyTest.h"
 #include "../tracking/DetectAndTrack.h"
 #include "../tracking/MultiTracker.h"

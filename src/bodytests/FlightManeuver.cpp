@@ -3,12 +3,12 @@
 //
 
 #include <zconf.h>
-#include <src/config/ConfigKeys.h>
+#include "../config/ConfigKeys.h"
 #include "../logging/Logger.h"
 #include "../tracking/DetectAndTrack.h"
 #include "../tracking/HogDetector.h"
 #include "../tracking/MultiTracker.h"
-#include "src/debugging/VisualDebugger.h"
+#include "../debugging/VisualDebugger.h"
 #include "../tracking/Follower.h"
 #include "../tracking/CascadeDetector.h"
 #include "BodyTest.h"

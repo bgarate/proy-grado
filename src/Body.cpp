@@ -4,7 +4,7 @@
 
 #include <src/proto/message.pb.h>
 #include <chrono>
-#include <src/bodytests/BodyTestRegistry.h>
+#include "bodytests/BodyTestRegistry.h"
 #include "Body.h"
 #include "logging/Logger.h"
 #include "Brain.h"
@@ -23,7 +23,7 @@
 #include "bodytests/BodyTestRmove2.cpp"
 #include "bodytests/BodyTestDummy.cpp"
 #include "bodytests/BodyTestMarker.cpp"
-#include "src/config/ConfigKeys.h"
+#include "config/ConfigKeys.h"
 
 Body::Body(Hal *hal) {
     this->hal = hal;

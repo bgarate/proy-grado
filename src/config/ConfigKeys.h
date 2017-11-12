@@ -5,8 +5,8 @@
 #ifndef PROY_GRADO_CONFIGKEYS_H
 #define PROY_GRADO_CONFIGKEYS_H
 
-#include <src/config/Config.h>
-#include <src/hal/HalType.hpp>
+#include "Config.h"
+#include "../hal/HalType.hpp"
 
 struct ConfigKeys {
 

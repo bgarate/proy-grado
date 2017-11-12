@@ -2,9 +2,9 @@
 // Created by bruno on 12/08/17.
 //
 
-#include <src/tracking/Follower.h>
-#include <src/logging/Logger.h>
-#include <src/config/ConfigKeys.h>
+#include "../tracking/Follower.h"
+#include "../logging/Logger.h"
+#include "../config/ConfigKeys.h"
 #include "MarkerFollower.h"
 
 MarkerFollower::MarkerFollower(Config *config, World *world) {

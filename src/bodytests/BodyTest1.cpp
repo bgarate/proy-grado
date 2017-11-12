@@ -2,7 +2,7 @@
 #include "../tracking/DetectAndTrack.h"
 #include "../tracking/MultiTracker.h"
 #include "../tracking/HogDetector.h"
-#include "src/debugging/VisualDebugger.h"
+#include "../debugging/VisualDebugger.h"
 #include <thread>
 #include <unistd.h>
 

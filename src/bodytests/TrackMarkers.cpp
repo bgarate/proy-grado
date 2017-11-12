@@ -4,16 +4,16 @@
 
 #include <zconf.h>
 #include <opencv2/core/matx.hpp>
-#include <src/navigation/MarkerTracker.h>
-#include <src/navigation/World.h>
-#include <src/navigation/NavigationDebugger.h>
-#include <src/navigation/MarkerFollower.h>
-#include <src/config/ConfigKeys.h>
+#include "../navigation/MarkerTracker.h"
+#include "../navigation/World.h"
+#include "../navigation/NavigationDebugger.h"
+#include "../navigation/MarkerFollower.h"
+#include "../config/ConfigKeys.h"
 #include "../logging/Logger.h"
 #include "../tracking/DetectAndTrack.h"
 #include "../tracking/HogDetector.h"
 #include "../tracking/MultiTracker.h"
-#include "src/debugging/VisualDebugger.h"
+#include "../debugging/VisualDebugger.h"
 #include "BodyTest.h"
 #include "../hal/hal.hpp"
 
