@@ -12,3 +12,4 @@ sample-input/markerland.mp4 filter=lfs diff=lfs merge=lfs -text
 sample-input/dash.mp4 filter=lfs diff=lfs merge=lfs -text
 sample-input/drone2.mp4 filter=lfs diff=lfs merge=lfs -text
 sample-input/exapleTracking.mpg filter=lfs diff=lfs merge=lfs -text
+sample-input/markers.mpg filter=lfs diff=lfs merge=lfs -text

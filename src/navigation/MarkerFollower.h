@@ -10,6 +10,7 @@
 #include <src/hal/Point.h>
 #include "World.h"
 #include "MarkerTracker.h"
+#include <boost/circular_buffer.hpp>
 
 struct NavigationCommand {
     NavigationCommand():ForwardSpeed(0), YawSpeed(0) {};
@@ -31,6 +32,8 @@ public:
     cv::Vec3d EstimatedPosition;
     std::vector<cv::Vec3d> EstimatedPoses;
     cv::Vec3d EstimatedPose;
+
+    boost::circular_buffer<cv::Vec3d> PositionsHistory;
 
     int getTargetId();
 
@@ -60,6 +63,10 @@ private:
     double signedMod(double a, double n);
 
     double angleDifference(double a, double b);
+
+    cv::Vec3d previousEstimation;
+
+    void SmoothEstimation();
 };
 
 

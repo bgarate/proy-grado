@@ -12,6 +12,7 @@
 #include <yaml-cpp/yaml.h>
 #include <src/logging/Logger.h>
 #include <src/navigation/World.h>
+#include <src/navigation/Path.h>
 
 #define CONFIG_KEY(PARENT, KEY, T) static const ConfigKey<T> KEY;
 #define DEFINE_CONFIG_KEY(PARENT, KEY, T) const ConfigKey<T> ConfigKeys::PARENT::KEY = ConfigKey<T>(#KEY,#PARENT);
@@ -108,12 +109,12 @@ public:
         YAML::Node worldNode = config["World"];
         YAML::Node objects = worldNode["Objects"];
 
-        std::vector<WorldObject*> worldObjects = world.getObjects();
+        std::vector<WorldObject *> worldObjects = world.getObjects();
 
         for (int i = 0; i < worldObjects.size(); ++i) {
 
             YAML::Node object;
-            WorldObject* worldObject = worldObjects[i];
+            WorldObject *worldObject = worldObjects[i];
 
             object["id"] = worldObject->getId();
             object["type"] = GetStringFromObjectType(worldObject->getType());
@@ -124,7 +125,44 @@ public:
 
         }
 
-}
+    }
+
+    Path GetPath() {
+        YAML::Node pathNode = config["Path"];
+
+        Path path;
+
+        for (int i = 0; i < pathNode.size(); ++i) {
+
+            YAML::Node object = pathNode[i];
+            cv::Vec3d position = object["position"].as<cv::Vec3d>();
+            double rotation = object["rotation"].as<double>();
+
+            path.AddPoint(position, rotation);
+
+        }
+
+        return path;
+
+    }
+
+    void SetPath(Path path) {
+        YAML::Node pathNode = config["Path"];
+
+        std::vector<PathPoint> points = path.GetPoints();
+
+        for (int i = 0; i < points.size(); ++i) {
+
+            YAML::Node object;
+            PathPoint point = points[i];
+
+            object["position"] = point.Postion;
+            object["rotation"] = point.Rotation;
+
+            pathNode.push_back(object);
+        }
+
+    }
 
 
     void Load() {

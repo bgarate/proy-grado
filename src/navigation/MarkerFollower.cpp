@@ -3,11 +3,10 @@
 //
 
 #include <src/tracking/Follower.h>
-#include <src/logging/Logger.h>
 #include <src/config/ConfigKeys.h>
 #include "MarkerFollower.h"
 
-MarkerFollower::MarkerFollower(Config *config, World *world) {
+MarkerFollower::MarkerFollower(Config *config, World *world) : PositionsHistory(1000) {
     this->config = config;
     this->world = world;
     drone = world->getDrones()[0];
@@ -21,6 +20,11 @@ void MarkerFollower::setPath(std::vector<int> path) {
 NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double altitude, double deltaTime) {
 
     EstimatePosition(markers, altitude);
+
+    // TODO: Para el smoothin se usan valores smootheados. Lo mejor hacer smoothing sobre los valores RAW
+    SmoothEstimation();
+
+    PositionsHistory.push_back(EstimatedPosition);
 
     WorldObject* target = world->getMarker(path[currentTarget]);
 
@@ -83,32 +87,10 @@ void MarkerFollower::EstimatePosition(const std::vector<Marker> &markers, double
         if(markerDescription == NULL)
             return;
 
-        Point angularDisplacement = getAngularDisplacement(marker.getCenter());
-
-        double effectiveAltitude = altitude - markerDescription->getPosition()[2];
-
         cv::Vec3d posXyz = marker.getXYZPosition();
-        double groundDistance2 = sqrt(posXyz[0]*posXyz[0] + posXyz[1]*posXyz[1]);
-
-        /*double verticalAngle = 90 - config->Get(ConfigKeys::Drone::CameraTilt)() - angularDisplacement.Tilt();
-        double groundDistance1 = effectiveAltitude * tan(toRadians(verticalAngle));*/
-
-        //std::cout << "Distance estimation difference:" << groundDistance1 << " " << groundDistance2 << std::endl;
-
-        double groundDistance = groundDistance2;//(groundDistance1 + groundDistance2)/2;
-
-        //double horizontalAngle1 = angularDisplacement.Pan();
-        double horizontalAngle2 = toDegrees(atan(posXyz[0] / posXyz[1]));
-
-        // TODO: Revisar
-        double horizontalAngle = horizontalAngle2; //horizontalAngle1 / 4 + horizontalAngle2 / 2;
-
-        //std::cout << "Angle estimation difference:" << horizontalAngle1 << " " << horizontalAngle2 << std::endl;
-
+        double groundDistance = sqrt(posXyz[0]*posXyz[0] + posXyz[1]*posXyz[1]);
         double estimatedMarkerAngle = marker.getEulerAngles()[2];
-
         double estimatedCameraAngle = markerDescription->getRotation()[2] - estimatedMarkerAngle;
-
 
         cv::Vec2d estimatedTranslation =
                 cv::Vec2d(sin(toRadians(estimatedCameraAngle)) * groundDistance,
@@ -122,8 +104,6 @@ void MarkerFollower::EstimatePosition(const std::vector<Marker> &markers, double
         estimatedPosition[1] -= estimatedTranslation[1];
 
         EstimatedPositions.push_back(estimatedPosition);
-
-        //std::cout << "Camera angle: " << estimatedCameraAngle << std::endl;;
 
     }
 
@@ -145,7 +125,6 @@ void MarkerFollower::EstimatePosition(const std::vector<Marker> &markers, double
 
     // Ver https://en.wikipedia.org/wiki/Mean_of_circular_quantities
     EstimatedPose[2] = toDegrees(atan2(sines, cosines));
-    //std::cout << EstimatedPose[2] << std::endl;
 
 }
 
@@ -177,4 +156,21 @@ double MarkerFollower::toRadians(double deg) {
 
 double MarkerFollower::distanceToMarker(Marker m) {
     return cv::norm(m.Translation);
+}
+
+/*
+ * Ver https://en.wikipedia.org/wiki/Moving_average#Weighted_moving_average
+ */
+void MarkerFollower::SmoothEstimation() {
+
+    int numberOfSmoothingSamples = std::min(config->Get(ConfigKeys::Body::TrackingSmoothingSamples), (int)PositionsHistory.size());
+
+    cv::Vec3d weightedSum = EstimatedPosition * numberOfSmoothingSamples;
+
+    for(int i = 1; i < numberOfSmoothingSamples; i++){
+        weightedSum += (numberOfSmoothingSamples - i) * PositionsHistory[PositionsHistory.size()-i];
+    }
+
+    EstimatedPosition = weightedSum * 2 / ((float)numberOfSmoothingSamples*(numberOfSmoothingSamples + 1));
+
 }

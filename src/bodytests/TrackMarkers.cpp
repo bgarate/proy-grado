@@ -35,6 +35,8 @@ class TrackMarkers : public BodyTest {
     double targetAltitude = 1.5;
     double altitudeSlowdownRadius = 1;
 
+    Path path;
+
     void InitBodyTest(Hal *hal, Config* config, VisualDebugger* visualDebugger) override {
         this->hal = hal;
         this->visualDebugger = visualDebugger;
@@ -53,6 +55,7 @@ class TrackMarkers : public BodyTest {
 
         follower->setPath(path);
 
+        this->path = config->GetPath();
         //navigationDebuggerThread = std::thread(&NavigationDebugger::Run, navigationDebugger);
     }
 
@@ -98,12 +101,7 @@ class TrackMarkers : public BodyTest {
                 navigationDebugger->setVisibleMarkers(tracker->Markers);
                 navigationDebugger->Run(command,
                                         follower->getTargetId(), follower->EstimatedPositions,
-                                        follower->EstimatedPoses);
-
-                /*if(tracker->Markers.size()>0) {
-                    world.getDrones()[0]->setInversePose(
-                            cv::Vec3d(tracker->Markers[0].Translation),cv::Vec3d(tracker->Markers[0].Rotation));
-                }*/
+                                        follower->EstimatedPoses, path, follower->PositionsHistory);
 
                 double currentAltitude = hal->getAltitude();
                 double deltaAltitude = targetAltitude - currentAltitude;

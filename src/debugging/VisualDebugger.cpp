@@ -503,6 +503,18 @@ void VisualDebugger::ShowMarkers(std::vector<Marker> markers) {
             cv::Point textOrigin = cv::Point((int)point.x, (int)(point.y - textSize.height - 10));
             cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, color, 1, cv::LINE_AA);
 
+            point = marker.Corners[2];
+            cv::Vec3d t = marker.getXYZPosition();
+            cv::Vec3d r = marker.getEulerAngles();
+            str = (boost::format("T: %.2fm %.2fm %.2fm") % t[0] % t[1] % t[2]).str();
+            textSize = cv::getTextSize(str, CONSOLE_FONT, 1, 1, NULL);
+            textOrigin = cv::Point((int)point.x, (int)(point.y + 10));
+            cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, color, 1, cv::LINE_AA);
+
+            str = (boost::format("R: %.2fm %.2fm %.2fm") % r[0] % r[1] % r[2]).str();
+            textOrigin = cv::Point((int)point.x, (int)(point.y + textSize.height + 20));
+            cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, color, 1, cv::LINE_AA);
+
             cv::aruco::drawAxis(frame, config->Get(ConfigKeys::Drone::CameraMatrix), config->Get(ConfigKeys::Drone::DistortionCoefficients),
                                 marker.Rotation, marker.Translation, 0.1);
 

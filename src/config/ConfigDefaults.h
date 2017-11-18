@@ -6,6 +6,7 @@
 #define PROY_GRADO_CONFIGDEFAULTS_H
 
 #include <src/navigation/World.h>
+#include <src/navigation/Path.h>
 
 class Config;
 
@@ -14,6 +15,8 @@ public:
     static void SetDefaults(Config *config);
 
     static World getWorld(Config *config);
+
+    static Path getPath(Config *config);
 };
 
 

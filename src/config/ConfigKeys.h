@@ -51,6 +51,7 @@ struct ConfigKeys {
         CONFIG_KEY(Body, TestToExecute, std::string)
         CONFIG_KEY(Body, DummyCameraVideoSource, std::string)
         CONFIG_KEY(Body, CascadeDetector, std::string)
+        CONFIG_KEY(Body, TrackingSmoothingSamples, int)
     };
 
     struct Brain {

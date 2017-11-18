@@ -46,15 +46,18 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Body::Start, true);
     config->Set(ConfigKeys::Body::Hal,HalType::Dummy);
     config->Set(ConfigKeys::Body::ParentOnFork,true);
-    config->Set(ConfigKeys::Body::TestToExecute,std::string("OpticalFlowObstacleAvoidance"));
-    config->Set(ConfigKeys::Body::DummyCameraVideoSource,std::string("../sample-input/drone2.mp4"));
+    config->Set(ConfigKeys::Body::TestToExecute,std::string("TrackMarkers"));
+    config->Set(ConfigKeys::Body::DummyCameraVideoSource,std::string("-1")); // ../sample-input/drone2.mp4
     config->Set(ConfigKeys::Body::CascadeDetector,std::string("../resources/pedestrian_cascade_web_LBP.xml"));
+    config->Set(ConfigKeys::Body::TrackingSmoothingSamples, 10);
 
     config->Set(ConfigKeys::Brain::Start, true);
 
     World world = getWorld(config);
     config->SetWorld(world);
 
+    Path path = getPath(config);
+    config->SetPath(path);
 }
 
 World ConfigDefaults::getWorld(Config *config) {
@@ -78,4 +81,18 @@ World ConfigDefaults::getWorld(Config *config) {
 
     world.addDrone(cv::Vec3d(5, 0, 0), cv::Vec3d(0, 0, 0), config->Get(ConfigKeys::Drone::Id));
     return world;
+}
+
+Path ConfigDefaults::getPath(Config *config) {
+    Path path;
+
+    path.AddPoint(cv::Vec3d(-1.35, -1.6, 5), 45);
+    path.AddPoint(cv::Vec3d(-1.2, 3.4, 5), 135);
+    path.AddPoint(cv::Vec3d(3.8, 3.4, 5), -135);
+    path.AddPoint(cv::Vec3d(3.4, 1.6, 5), -90);
+    path.AddPoint(cv::Vec3d(5.3, 1.8, 5), -135);
+    path.AddPoint(cv::Vec3d(5.6, -1.4, 5), -45);
+    path.AddPoint(cv::Vec3d(3.1, -1.2, 5), 0);
+
+    return path;
 }

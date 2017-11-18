@@ -12,6 +12,7 @@
 #include "cairo-xlib.h"
 #include "World.h"
 #include "MarkerFollower.h"
+#include "Path.h"
 
 enum class Axis {
     X,
@@ -27,7 +28,8 @@ public:
     void Run(NavigationCommand command,
              int targetId,
              std::vector<cv::Vec3d> estimatedPositions,
-             std::vector<cv::Vec3d> estimatedPoses);
+             std::vector<cv::Vec3d> estimatedPoses,
+             Path path, boost::circular_buffer<cv::Vec3d> positionHistory);
 
     void setVisibleMarkers(std::vector<Marker> visibleMarkers);
 
@@ -44,7 +46,8 @@ private:
 
     cairo_surface_t *cairo_create_x11_surface0(int x, int y);
 
-    const int SCALE = 45;
+    const int SCALE = 100;
+    const double ARROW_HEAD_ANGLE = 45;
     static const cv::Size SIZE;
     static const cv::Point ORIGIN;
 
@@ -82,6 +85,10 @@ private:
     void DrawCoordinates(Axis axis);
 
     int Get(double x, Axis axis);
+
+    void DrawPath(Path path);
+
+    void DrawPositionHistory(const boost::circular_buffer<cv::Vec3d, std::allocator<cv::Vec3d>> &positionHistory);
 };
 
 
