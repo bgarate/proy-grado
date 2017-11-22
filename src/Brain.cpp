@@ -55,15 +55,15 @@ void Brain::loop() {
         //DEBUG
         aux = (aux+1) % 10000;
         if(aux==0){
-            for (std::map<int, DroneState*>::iterator it=interComm->droneStates.begin(); it!=interComm->droneStates.end(); ++it)
-                if(it->first != myid){
+            for (std::map<int, DroneState*>::iterator it=interComm->droneStates.begin(); it!=interComm->droneStates.end(); ++it) {
+
                     std::string state = "";
-                    if (it->second->curren_task() == 0){state = "INNACTIVE";}
-                    if (it->second->curren_task() == 1){state = "PATROLING";}
-                    if (it->second->curren_task() == 2){state = "FOLLOWING";}
-                    if (it->second->curren_task() == 3){state = "CHARGING";}
+                    if (it->second->curren_task() == 0) { state = "INNACTIVE"; }
+                    if (it->second->curren_task() == 1) { state = "PATROLING"; }
+                    if (it->second->curren_task() == 2) { state = "FOLLOWING"; }
+                    if (it->second->curren_task() == 3) { state = "CHARGING"; }
                     std::cout << "The drone " << it->first << " is " << state << '\n';
-                }
+            }
         }
 
         if(should_exit) {
