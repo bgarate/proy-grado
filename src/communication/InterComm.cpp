@@ -51,6 +51,16 @@ void InterComm::shutdownInterComm() {
 
 //Private
 
+void InterComm::copyDroneState(DroneState* orig, DroneState* copy){
+
+    copy->set_ip(orig->ip());
+    copy->set_port(orig->port());
+    copy->set_drone_id(orig->drone_id());
+    copy->set_name(orig->name());
+    copy->set_curren_task(orig->curren_task());
+    copy->set_seq_num(orig->seq_num());
+}
+
 void InterComm::stateHandler(Message &msg){
 
     DroneState* state = msg.mutable_dronestate();
@@ -64,8 +74,11 @@ void InterComm::stateHandler(Message &msg){
         Logger::logDebug("State received from drone %u with seq_num %u") << droneId << seqNum;
 
         lastSeq[droneId] = seqNum;
-        droneStates[droneId] = state;
+        if(lastSeq.find(droneId) == lastSeq.end())
+            droneStates[droneId] = new DroneState();
 
+        //droneStates[droneId] = state;
+        copyDroneState(state,droneStates[droneId]);
     }
 
 }

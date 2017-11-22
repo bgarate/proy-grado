@@ -42,11 +42,15 @@ private:
     Broadcaster broadcaster;
     int stateSendLapse;
 
+    void copyDroneState(DroneState* orig, DroneState* copy);
+
     void stateHandler(Message &msg);
 
     void sendState(long runningTime);
 
     void handleMessages();
+
+
 };
 
 
