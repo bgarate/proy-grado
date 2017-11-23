@@ -15,8 +15,6 @@ InterComm::InterComm() {
 
 void InterComm::setupInterComm(Config* config){
 
-    stateSendLapse = config->Get(ConfigKeys::Communications::AdvertisementLapse);
-
     this->name = config->Get(ConfigKeys::Drone::Name);
     this->id = config->Get(ConfigKeys::Drone::Id);
     broadcastPort = config->Get(ConfigKeys::Communications::BroadcastPort);
@@ -41,8 +39,18 @@ void InterComm::setupInterComm(Config* config){
 
 void InterComm::interCommStep(long runningTime, long deltaTime) {
 
+    this->runningTime = runningTime;
+
     handleMessages();
-    sendState(runningTime);
+    sendState();
+
+    //exipre messages
+    for (std::map<int, long>::iterator it=droneTimestamps.begin(); it!=droneTimestamps.end(); ++it) {
+        if (runningTime - it->second > stateExpireLapse * 1000) {
+            droneStates.erase(it->first);
+            droneTimestamps.erase(it->first);
+        }
+    }
 }
 
 void InterComm::shutdownInterComm() {
@@ -65,7 +73,6 @@ void InterComm::stateHandler(Message &msg){
 
     DroneState* state = msg.mutable_dronestate();
 
-    //boost::asio::ip::address_v4 address = boost::asio::ip::address_v4(state->ip());
     int droneId = state->drone_id();
     long seqNum = state->seq_num();
 
@@ -74,11 +81,12 @@ void InterComm::stateHandler(Message &msg){
         Logger::logDebug("State received from drone %u with seq_num %u") << droneId << seqNum;
 
         lastSeq[droneId] = seqNum;
-        if(lastSeq.find(droneId) == lastSeq.end())
-            droneStates[droneId] = new DroneState();
 
-        //droneStates[droneId] = state;
+        if (droneStates[droneId] == NULL) {
+            droneStates[droneId] = new DroneState();
+        }
         copyDroneState(state,droneStates[droneId]);
+        droneTimestamps[droneId] = this->runningTime;
     }
 
 }
@@ -92,7 +100,7 @@ void InterComm::handleMessages(){
 
 }
 
-void InterComm::sendState(long runningTime) {
+void InterComm::sendState() {
 
     if(runningTime - lastStateSend > stateSendLapse * 1000) {
 

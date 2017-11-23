@@ -40,13 +40,17 @@ private:
     MessageHandler messsageHandler;
     long lastStateSend = 0;
     Broadcaster broadcaster;
-    int stateSendLapse;
+    int stateSendLapse = 300; //ToDo Parametrizar
+    int stateExpireLapse = 5000; //ToDo Parametrizar
+
+    long runningTime;
+    std::map<int, long> droneTimestamps;
 
     void copyDroneState(DroneState* orig, DroneState* copy);
 
     void stateHandler(Message &msg);
 
-    void sendState(long runningTime);
+    void sendState();
 
     void handleMessages();
 
