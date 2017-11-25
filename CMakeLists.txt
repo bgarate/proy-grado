@@ -72,7 +72,7 @@ set(SOURCE_FILES src/proto/message.pb.h src/proto/message.pb.cc
         src/navigation/MarkerFollower.cpp src/navigation/MarkerFollower.h
         src/main.cpp src/tracking/OpticalFlow.cpp src/tracking/OpticalFlow.h src/tracking/DbScan.cpp src/tracking/DbScan.h src/utils/Helpers.h
         src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h
-        src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h src/communication/InterCommunication.cpp src/communication/InterCommunication.h src/communication/BrainComm.cpp src/communication/BrainComm.h src/communication/BodyComm.cpp src/communication/BodyComm.h src/communication/InterComm.cpp src/communication/InterComm.h)
+        src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h src/communication/BrainComm.cpp src/communication/BrainComm.h src/communication/BodyComm.cpp src/communication/BodyComm.h src/communication/InterComm.cpp src/communication/InterComm.h)
 
 set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h
         src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h)

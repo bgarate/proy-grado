@@ -6,7 +6,6 @@
 #define PROY_GRADO_BRAIN_H
 
 
-#include "communication/InterCommunication.h"
 #include "communication/InterComm.h"
 #include "communication/BrainComm.h"
 #include "messages/SocketChannel.h"
@@ -35,12 +34,15 @@ private:
     long deltaTime = 0;
     long runningTime = 0;
 
-    //InterCommunication * interCommunication;
+
     InterComm * interComm;
     BrainComm * brainComm;
 
     unsigned int myid;
 
+
+    long lastDebug = 0;
+    void debugDroneStates(long runningTime);
 };
 
 

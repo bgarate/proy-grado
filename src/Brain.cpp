@@ -20,8 +20,6 @@ void Brain::setup(Config* config) {
 
     this->myid = config->Get(ConfigKeys::Drone::Id);
 
-    //interCommunication = new InterCommunication();
-    //interCommunication->setupInterComm(config);
     interComm = new InterComm();
     interComm->setupInterComm(config);
 
@@ -48,23 +46,14 @@ void Brain::loop() {
         deltaTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - lastTime).count();
         runningTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - startTime).count();
 
-        //interCommunication->interCommStep(runningTime, deltaTime);
         interComm->interCommStep(runningTime, deltaTime);
         brainComm->brainCommStep(runningTime, deltaTime);
 
-        //DEBUG
-        aux = (aux+1) % 10000;
-        if(aux==0){
-            for (std::map<int, DroneState*>::iterator it=interComm->droneStates.begin(); it!=interComm->droneStates.end(); ++it) {
+        //Decidir que hacer
+        
 
-                    std::string state = "";
-                    if (it->second->curren_task() == 0) { state = "INNACTIVE"; }
-                    if (it->second->curren_task() == 1) { state = "PATROLING"; }
-                    if (it->second->curren_task() == 2) { state = "FOLLOWING"; }
-                    if (it->second->curren_task() == 3) { state = "CHARGING"; }
-                    std::cout << "The drone " << it->first << " is " << state << '\n';
-            }
-        }
+        //DEBUG: Imprimir estado de la flotilla
+        debugDroneStates(runningTime);
 
         if(should_exit) {
             break;
@@ -76,11 +65,28 @@ void Brain::loop() {
 
 void Brain::shutdown() {
     should_exit = true;
-    //interCommunication->shutdownInterComm();
     interComm->shutdownInterComm();
     brainComm->shutdownBrainComm();
 }
 
 void Brain::cleanup() {
+
+}
+
+void Brain::debugDroneStates(long runningTime){
+
+    if(runningTime - lastDebug > 3000 * 1000) {
+        for (std::map<int, DroneState*>::iterator it=interComm->droneStates.begin(); it!=interComm->droneStates.end(); ++it) {
+
+            std::string state = "";
+            if (it->second->curren_task() == 0) { state = "INNACTIVE"; }
+            if (it->second->curren_task() == 1) { state = "PATROLING"; }
+            if (it->second->curren_task() == 2) { state = "FOLLOWING"; }
+            if (it->second->curren_task() == 3) { state = "ALERT"; }
+            if (it->second->curren_task() == 4) { state = "CHARGING"; }
+            std::cout << "The drone " << it->first << " is " << state << '\n';
+        }
+    }
+    lastDebug = runningTime;
 
 }
