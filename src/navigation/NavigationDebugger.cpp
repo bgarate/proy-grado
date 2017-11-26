@@ -84,7 +84,8 @@ void NavigationDebugger::DrawAxis(std::string name, cv::Vec3d axis) {
 void NavigationDebugger::Run(NavigationCommand command, int targetId,
                              std::vector<cv::Vec3d> estimatedPositions,
                              std::vector<cv::Vec3d> estimatedPoses,
-                             Path path, boost::circular_buffer<cv::Vec3d> positionHistory) {
+                             Path path, boost::circular_buffer<cv::Vec3d> positionHistory,
+                             cv::Vec3d nextPosition) {
 
     cairo_set_source_rgb(cr, 1,1,1);
     cairo_paint(cr);
@@ -110,6 +111,7 @@ void NavigationDebugger::Run(NavigationCommand command, int targetId,
     }
 
     DrawPositionHistory(positionHistory);
+    DrawNextPosition(nextPosition);
 
     DrawDrone();
 
@@ -373,5 +375,24 @@ void NavigationDebugger::DrawCoordinates(Axis axis) {
 
     cairo_set_dash (cr, NULL, 0, 0);
     cairo_set_line_width(cr, 1);
+
+}
+
+void NavigationDebugger::DrawNextPosition(cv::Vec3d nextPosition) {
+
+    cairo_set_source_rgb(cr, 1, 0, 0);
+    DrawCross(nextPosition,0.15);
+
+}
+
+void NavigationDebugger::DrawCross(cv::Vec3d v, double size) {
+
+    cairo_move_to(cr, GetX(v[0] - size/2), GetY(v[1] + size/2));
+    cairo_rel_line_to(cr, GetScaleX(size), GetScaleY(size));
+    cairo_stroke(cr);
+
+    cairo_move_to(cr, GetX(v[0] - size/2), GetY(v[1] - size/2));
+    cairo_rel_line_to(cr, GetScaleX(size), -GetScaleY(size));
+    cairo_stroke(cr);
 
 }

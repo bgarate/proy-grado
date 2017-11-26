@@ -6,7 +6,7 @@
 #include <src/config/ConfigKeys.h>
 #include "MarkerFollower.h"
 
-MarkerFollower::MarkerFollower(Config *config, World *world) : PositionsHistory(1000) {
+MarkerFollower::MarkerFollower(Config *config, World *world) : PositionsHistory(1000), DeltaTimeHistory(1000) {
     this->config = config;
     this->world = world;
     drone = world->getDrones()[0];
@@ -19,12 +19,18 @@ void MarkerFollower::setPath(std::vector<int> path) {
 
 NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double altitude, double deltaTime) {
 
+    runningTime += deltaTime;
+
     EstimatePosition(markers, altitude);
 
     // TODO: Para el smoothin se usan valores smootheados. Lo mejor hacer smoothing sobre los valores RAW
+    // TODO: El smoothing no toma en cuenta el tiempo, se asume que el deltaTime es fijo
     SmoothEstimation();
 
     PositionsHistory.push_back(EstimatedPosition);
+    DeltaTimeHistory.push_back(deltaTime);
+
+    EstimateNextPosition();
 
     WorldObject* target = world->getMarker(path[currentTarget]);
 
@@ -168,9 +174,30 @@ void MarkerFollower::SmoothEstimation() {
     cv::Vec3d weightedSum = EstimatedPosition * numberOfSmoothingSamples;
 
     for(int i = 1; i < numberOfSmoothingSamples; i++){
-        weightedSum += (numberOfSmoothingSamples - i) * PositionsHistory[PositionsHistory.size()-i];
+        weightedSum += (numberOfSmoothingSamples - i) * PositionsHistory[PositionsHistory.size() - i];
     }
 
     EstimatedPosition = weightedSum * 2 / ((float)numberOfSmoothingSamples*(numberOfSmoothingSamples + 1));
+
+}
+
+void MarkerFollower::EstimateNextPosition() {
+
+    int numberOfSmoothingSamples = std::min(config->Get(ConfigKeys::Body::TrackingSmoothingSamples), (int)PositionsHistory.size() - 1);
+
+    cv::Vec3d weightedSumOfDisplacements = cv::Vec3d(0,0,0);
+    double weightedSumOfDeltaTimes = 0;
+
+    for(int i = 1; i <= numberOfSmoothingSamples; i++){
+
+        cv::Vec3d posA = PositionsHistory[PositionsHistory.size() - i - 1];
+        cv::Vec3d posB = PositionsHistory[PositionsHistory.size() - i];
+
+        weightedSumOfDisplacements += (posB - posA) * (numberOfSmoothingSamples - i + 1);
+        weightedSumOfDeltaTimes += DeltaTimeHistory[DeltaTimeHistory.size() - i] * (numberOfSmoothingSamples - i + 1);
+    }
+
+    cv::Vec3d smoothedDisplacement = (weightedSumOfDisplacements / weightedSumOfDeltaTimes) * NEXT_POSITION_MICROSECONDS;
+    PredictedPosition = PositionsHistory[PositionsHistory.size() - 1] + smoothedDisplacement;
 
 }

@@ -101,7 +101,8 @@ class TrackMarkers : public BodyTest {
                 navigationDebugger->setVisibleMarkers(tracker->Markers);
                 navigationDebugger->Run(command,
                                         follower->getTargetId(), follower->EstimatedPositions,
-                                        follower->EstimatedPoses, path, follower->PositionsHistory);
+                                        follower->EstimatedPoses, path, follower->PositionsHistory,
+                                        follower->PredictedPosition);
 
                 double currentAltitude = hal->getAltitude();
                 double deltaAltitude = targetAltitude - currentAltitude;

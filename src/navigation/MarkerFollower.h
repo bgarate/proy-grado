@@ -30,10 +30,15 @@ public:
     NavigationCommand update(std::vector<Marker> markers, double altitude, double deltaTime);
     std::vector<cv::Vec3d> EstimatedPositions;
     cv::Vec3d EstimatedPosition;
+    cv::Vec3d PredictedPosition;
+
     std::vector<cv::Vec3d> EstimatedPoses;
     cv::Vec3d EstimatedPose;
 
+    double runningTime = 0;
+
     boost::circular_buffer<cv::Vec3d> PositionsHistory;
+    boost::circular_buffer<double> DeltaTimeHistory;
 
     int getTargetId();
 
@@ -42,6 +47,8 @@ public:
     static constexpr double ALIGNEMENT_ANGLE_THRESOLD = 15;
     static constexpr double DISPLACEMENT_MAX_VELOCITY = 0.15;
     static constexpr double YAW_MAX_VELOCITY = 0.5;
+
+    static constexpr double NEXT_POSITION_MICROSECONDS = 1000000;
 private:
 
     Config* config;
@@ -67,6 +74,8 @@ private:
     cv::Vec3d previousEstimation;
 
     void SmoothEstimation();
+
+    void EstimateNextPosition();
 };
 
 

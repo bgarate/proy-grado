@@ -29,7 +29,8 @@ public:
              int targetId,
              std::vector<cv::Vec3d> estimatedPositions,
              std::vector<cv::Vec3d> estimatedPoses,
-             Path path, boost::circular_buffer<cv::Vec3d> positionHistory);
+             Path path, boost::circular_buffer<cv::Vec3d> positionHistor,
+             cv::Vec3d nextPosition);
 
     void setVisibleMarkers(std::vector<Marker> visibleMarkers);
 
@@ -89,6 +90,10 @@ private:
     void DrawPath(Path path);
 
     void DrawPositionHistory(const boost::circular_buffer<cv::Vec3d, std::allocator<cv::Vec3d>> &positionHistory);
+
+    void DrawNextPosition(cv::Vec3d vec);
+
+    void DrawCross(cv::Vec3d v, double size);
 };
 
 
