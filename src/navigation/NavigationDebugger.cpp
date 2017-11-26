@@ -81,11 +81,10 @@ void NavigationDebugger::DrawAxis(std::string name, cv::Vec3d axis) {
 
 }
 
-void NavigationDebugger::Run(NavigationCommand command, int targetId,
-                             std::vector<cv::Vec3d> estimatedPositions,
-                             std::vector<cv::Vec3d> estimatedPoses,
-                             Path path, boost::circular_buffer<cv::Vec3d> positionHistory,
-                             cv::Vec3d nextPosition) {
+void NavigationDebugger::Run(NavigationCommand command, int targetId, std::vector<cv::Vec3d> estimatedPositions,
+                             std::vector<cv::Vec3d> estimatedPoses, Path path,
+                             boost::circular_buffer<cv::Vec3d, std::allocator<cv::Vec3d>> positionHistory, cv::Vec3d nextPosition,
+                             cv::Vec3d projectedNextPosition, cv::Vec3d followTarget) {
 
     cairo_set_source_rgb(cr, 1,1,1);
     cairo_paint(cr);
@@ -99,10 +98,6 @@ void NavigationDebugger::Run(NavigationCommand command, int targetId,
 
         DrawMarkerSquare(marker);
 
-        if(targetId == marker->getId()) {
-            DrawTargetMarker(marker);
-        }
-
         DrawTargetOrientation(marker);
     }
 
@@ -111,13 +106,14 @@ void NavigationDebugger::Run(NavigationCommand command, int targetId,
     }
 
     DrawPositionHistory(positionHistory);
-    DrawNextPosition(nextPosition);
+    DrawNextPosition(nextPosition, projectedNextPosition);
+    DrawTarget(followTarget);
 
     DrawDrone();
 
     DrawDroneEstimatedPositions(estimatedPositions, estimatedPoses);
 
-    DrawPath(path);
+    DrawPath(path, targetId);
 
     cairo_surface_flush(surface);
     XFlush(dsp);
@@ -176,12 +172,16 @@ void NavigationDebugger::DrawDroneEstimatedPositions(const std::vector<cv::Vec3d
     }
 }
 
-void NavigationDebugger::DrawPath(Path path)  {
+void NavigationDebugger::DrawPath(Path path, int targetId)  {
 
     std::vector<PathPoint> points = path.GetPoints();
 
     for(int i = 0; i < points.size(); i++) {
         PathPoint point = points[i];
+
+        if((targetId + 1) % points.size() == i) {
+            DrawTargetMarker(point);
+        }
 
         cairo_set_source_rgb (cr, 1, 0, 0);
 
@@ -228,25 +228,25 @@ void NavigationDebugger::DrawTargetOrientation(WorldObject *marker) {
     cairo_stroke(cr);
 }
 
-void NavigationDebugger::DrawTargetMarker(WorldObject *marker) {
+void NavigationDebugger::DrawTargetMarker(PathPoint point) {
     cairo_set_source_rgb (cr, 1, 1, 1);
 
-    cairo_rectangle (cr, GetX(marker->getPosition()[0] - 0.10),
-                     GetY(marker->getPosition()[1] + 0.10), GetScaleX(0.20), GetScaleY(0.20));
+    cairo_rectangle (cr, GetX(point.Postion[0] - 0.10),
+                     GetY(point.Postion[1] + 0.10), GetScaleX(0.20), GetScaleY(0.20));
     cairo_stroke(cr);
 
     cairo_set_dash (cr, dashPattern, 1, 0);
 
     cairo_set_source_rgb (cr, 0, 0, 1);
-    cairo_arc(cr, GetX(marker->getPosition()[0]),
-              GetY(marker->getPosition()[1]),
+    cairo_arc(cr, GetX(point.Postion[0]),
+              GetY(point.Postion[1]),
               GetScaleX(MarkerFollower::TARGET_APROXIMATION_DISTANCE), 0, 2 * M_PI);
 
 
     cairo_stroke(cr);
 
-    cairo_arc(cr, GetX(marker->getPosition()[0]),
-              GetY(marker->getPosition()[1]),
+    cairo_arc(cr, GetX(point.Postion[0]),
+              GetY(point.Postion[1]),
               GetScaleX(MarkerFollower::TARGET_REACHED_DISTANCE), 0, 2 * M_PI);
 
     cairo_stroke(cr);
@@ -378,10 +378,15 @@ void NavigationDebugger::DrawCoordinates(Axis axis) {
 
 }
 
-void NavigationDebugger::DrawNextPosition(cv::Vec3d nextPosition) {
+void NavigationDebugger::DrawNextPosition(cv::Vec3d nextPosition, cv::Vec3d projectedNextPosition) {
 
     cairo_set_source_rgb(cr, 1, 0, 0);
     DrawCross(nextPosition,0.15);
+    DrawCross(projectedNextPosition,0.05);
+
+    cairo_move_to(cr, GetX(nextPosition[0]), GetY(nextPosition[1]));
+    cairo_line_to(cr, GetX(projectedNextPosition[0]), GetY(projectedNextPosition[1]));
+    cairo_stroke(cr);
 
 }
 
@@ -394,5 +399,12 @@ void NavigationDebugger::DrawCross(cv::Vec3d v, double size) {
     cairo_move_to(cr, GetX(v[0] - size/2), GetY(v[1] - size/2));
     cairo_rel_line_to(cr, GetScaleX(size), -GetScaleY(size));
     cairo_stroke(cr);
+
+}
+
+void NavigationDebugger::DrawTarget(cv::Vec3d followTarget) {
+
+    cairo_set_source_rgb(cr, 1, 0, 0);
+    DrawCross(followTarget,0.15);
 
 }

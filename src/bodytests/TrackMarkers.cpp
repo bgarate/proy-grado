@@ -51,11 +51,10 @@ class TrackMarkers : public BodyTest {
         navigationDebugger = new NavigationDebugger(config, &world);
         navigationDebugger->Init();
 
-        std::vector<int> path = {0,5,1,8,4,11,9,10,6,7,3};
-
-        follower->setPath(path);
 
         this->path = config->GetPath();
+
+        follower->setPath(path);
         //navigationDebuggerThread = std::thread(&NavigationDebugger::Run, navigationDebugger);
     }
 
@@ -99,10 +98,10 @@ class TrackMarkers : public BodyTest {
                 visualDebugger->ShowMarkers(tracker->Markers);
                 visualDebugger->setNavigationCommand(command);
                 navigationDebugger->setVisibleMarkers(tracker->Markers);
-                navigationDebugger->Run(command,
-                                        follower->getTargetId(), follower->EstimatedPositions,
-                                        follower->EstimatedPoses, path, follower->PositionsHistory,
-                                        follower->PredictedPosition);
+                navigationDebugger->Run(command, follower->getTargetId(), follower->EstimatedPositions,
+                                        follower->EstimatedPoses, path,
+                                        follower->PositionsHistory, follower->PredictedPosition,
+                                        follower->ProjectedPredictedPosition, follower->FollowTarget);
 
                 double currentAltitude = hal->getAltitude();
                 double deltaAltitude = targetAltitude - currentAltitude;

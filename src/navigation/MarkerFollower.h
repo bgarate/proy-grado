@@ -26,11 +26,13 @@ class MarkerFollower {
 
 public:
     MarkerFollower(Config* config, World* world);
-    void setPath(std::vector<int> path);
+    void setPath(Path path);
     NavigationCommand update(std::vector<Marker> markers, double altitude, double deltaTime);
     std::vector<cv::Vec3d> EstimatedPositions;
     cv::Vec3d EstimatedPosition;
     cv::Vec3d PredictedPosition;
+    cv::Vec3d ProjectedPredictedPosition;
+    cv::Vec3d FollowTarget;
 
     std::vector<cv::Vec3d> EstimatedPoses;
     cv::Vec3d EstimatedPose;
@@ -54,7 +56,7 @@ private:
     Config* config;
     World* world;
     WorldObject* drone;
-    std::vector<int> path;
+    Path path;
     int currentTarget = 0;
 
     double distanceToMarker(Marker m);
@@ -76,6 +78,8 @@ private:
     void SmoothEstimation();
 
     void EstimateNextPosition();
+
+    void ProjectNextPosition();
 };
 
 

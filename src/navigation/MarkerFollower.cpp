@@ -12,8 +12,8 @@ MarkerFollower::MarkerFollower(Config *config, World *world) : PositionsHistory(
     drone = world->getDrones()[0];
 }
 
-void MarkerFollower::setPath(std::vector<int> path) {
-    this->path = std::vector<int>(path);
+void MarkerFollower::setPath(Path path) {
+    this->path = path;
     currentTarget = 0;
 }
 
@@ -31,18 +31,19 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
     DeltaTimeHistory.push_back(deltaTime);
 
     EstimateNextPosition();
+    ProjectNextPosition();
 
-    WorldObject* target = world->getMarker(path[currentTarget]);
+    PathPoint target = path.GetPoints()[currentTarget];
 
-    cv::Vec3d targetVector = target->getPosition() - EstimatedPosition;
+    cv::Vec3d targetVector = target.Postion - EstimatedPosition;
     double distanceToTarget = cv::norm(targetVector);
-    double alignmentAngle = angleDifference(target->getRotation()[2],EstimatedPose[2]);
+    double alignmentAngle = angleDifference(target.Rotation,EstimatedPose[2]);
 
     bool alignToMarker = true;
 
     if(distanceToTarget <= TARGET_REACHED_DISTANCE &&
             std::abs(alignmentAngle) > ALIGNEMENT_ANGLE_THRESOLD) {
-        currentTarget = (currentTarget + 1) % path.size();
+        currentTarget = (currentTarget + 1) % path.GetPoints().size();
         return NavigationCommand();
     } else if(distanceToTarget > TARGET_APROXIMATION_DISTANCE) {
         alignToMarker = false;
@@ -64,7 +65,7 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
 
 int MarkerFollower::getTargetId() {
 
-    return path[currentTarget];
+    return currentTarget;
 }
 
 double MarkerFollower::angleDifference(double target, double origin){
@@ -199,5 +200,20 @@ void MarkerFollower::EstimateNextPosition() {
 
     cv::Vec3d smoothedDisplacement = (weightedSumOfDisplacements / weightedSumOfDeltaTimes) * NEXT_POSITION_MICROSECONDS;
     PredictedPosition = PositionsHistory[PositionsHistory.size() - 1] + smoothedDisplacement;
+
+}
+
+void MarkerFollower::ProjectNextPosition() {
+
+    std::vector<PathPoint> points = path.GetPoints();
+
+    PathPoint a = points[currentTarget];
+    PathPoint b = points[(currentTarget + 1) % points.size()];
+
+    cv::Vec3d direction = cv::normalize(b.Postion-a.Postion);
+    cv::Vec3d toPredicted = PredictedPosition - a.Postion;
+
+    ProjectedPredictedPosition = a.Postion + direction * (toPredicted.dot(direction));
+    FollowTarget = ProjectedPredictedPosition + direction * 0.25;
 
 }
