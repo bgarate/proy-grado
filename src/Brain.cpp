@@ -43,6 +43,9 @@ void Brain::loop() {
     int taskLapse = rand() % range + 3;
     long taskStartTime = std::chrono::duration_cast<std::chrono::microseconds>(chrono::steady_clock::now() - startTime).count();
 
+    //DEBUG
+    lastDebug = 0;
+
     while (true) {
         lastTime = newTime;
         newTime = chrono::steady_clock::now();
@@ -52,6 +55,9 @@ void Brain::loop() {
 
         interComm->interCommStep(runningTime, deltaTime);
         brainComm->brainCommStep(runningTime, deltaTime);
+
+        //DEBUG: Imprimir estado de la flotilla
+        debugDroneStates(runningTime);
 
         ////COMPORTAMIENTO SIMULADO START
 
@@ -112,8 +118,6 @@ void Brain::loop() {
 
         ////COMPORTAMIENTO SIMULADO END
 
-        //DEBUG: Imprimir estado de la flotilla
-        debugDroneStates(runningTime);
 
         if(should_exit) {
             break;
@@ -135,7 +139,7 @@ void Brain::cleanup() {
 
 void Brain::debugDroneStates(long runningTime){
 
-    if(runningTime - lastDebug > 3000 * 1000) {
+    if(runningTime - lastDebug > 10  * 1000) {
         for (std::map<int, DroneState*>::iterator it=interComm->droneStates.begin(); it!=interComm->droneStates.end(); ++it) {
 
             std::string state = "";
