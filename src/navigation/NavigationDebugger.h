@@ -68,7 +68,7 @@ private:
 
     static const double dashPattern[1];
 
-    void DrawDrone();
+    void DrawDrone(NavigationCommand command);
 
     void DrawMarkerSquare(WorldObject *marker);
 

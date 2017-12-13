@@ -14,11 +14,12 @@
 
 struct NavigationCommand {
     NavigationCommand():ForwardSpeed(0), YawSpeed(0) {};
-    NavigationCommand(double forwardSpeed, double yawSpeed)
-            : ForwardSpeed(forwardSpeed), YawSpeed(yawSpeed){
+    NavigationCommand(double forwardSpeed, double lateralSpeed,double yawSpeed)
+            : ForwardSpeed(forwardSpeed), LateralSpeed(lateralSpeed),YawSpeed(yawSpeed){
 
     }
     double ForwardSpeed;
+    double LateralSpeed;
     double YawSpeed;
 };
 
@@ -80,6 +81,8 @@ private:
     void EstimateNextPosition();
 
     void ProjectNextPosition();
+
+    cv::Vec2d Rotate(cv::Vec2d v, double angle);
 };
 
 

@@ -33,34 +33,32 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
     EstimateNextPosition();
     ProjectNextPosition();
 
-    PathPoint target = path.GetPoints()[currentTarget];
+    PathPoint targetPathPoint = path.GetPoints()[currentTarget];
 
-    cv::Vec3d targetVector = target.Postion - EstimatedPosition;
-    double distanceToTarget = cv::norm(targetVector);
-    double alignmentAngle = angleDifference(target.Rotation,EstimatedPose[2]);
+    cv::Vec3d targetVector3d = FollowTarget - EstimatedPosition;
+    cv::Vec2d targetVector = Rotate(cv::Vec2d(targetVector3d[0],targetVector3d[1]),toRadians(EstimatedPose[2]));
+    double distanceToPathPoint = cv::norm(targetPathPoint.Postion - EstimatedPosition);
 
-    bool alignToMarker = true;
+    double alignmentAngle = angleDifference(targetPathPoint.Rotation,EstimatedPose[2] - 90);
 
-    if(distanceToTarget <= TARGET_REACHED_DISTANCE &&
-            std::abs(alignmentAngle) > ALIGNEMENT_ANGLE_THRESOLD) {
+    if(distanceToPathPoint <= TARGET_REACHED_DISTANCE &&
+            std::abs(alignmentAngle) < ALIGNEMENT_ANGLE_THRESOLD) {
         currentTarget = (currentTarget + 1) % path.GetPoints().size();
         return NavigationCommand();
-    } else if(distanceToTarget > TARGET_APROXIMATION_DISTANCE) {
-        alignToMarker = false;
     }
 
-    double targetAngle;
+    double forwardSpeed = std::max(std::min(targetVector[1] / TARGET_APROXIMATION_DISTANCE,1.0),-1.0) * DISPLACEMENT_MAX_VELOCITY;
+    double lateralSpped = std::max(std::min(targetVector[0] / TARGET_APROXIMATION_DISTANCE,1.0),-1.0) * DISPLACEMENT_MAX_VELOCITY;
+    double yawSpeed = std::max(std::min(alignmentAngle / ALIGNEMENT_ANGLE_THRESOLD,1.0),-1.0) * YAW_MAX_VELOCITY;
 
-    if(alignToMarker)
-        targetAngle = alignmentAngle;
-    else
-        targetAngle = toDegrees(std::atan(targetVector[0]/targetVector[1]));
+    return NavigationCommand(forwardSpeed,lateralSpped, yawSpeed);
 
-    double forwardSpeed = std::min(distanceToTarget / TARGET_APROXIMATION_DISTANCE,1.0) * DISPLACEMENT_MAX_VELOCITY;
-    double yawSpeed = std::max(std::min(targetAngle / ALIGNEMENT_ANGLE_THRESOLD,1.0),-1.0) * YAW_MAX_VELOCITY;
+}
 
-    return NavigationCommand(forwardSpeed, yawSpeed);
-
+cv::Vec2d MarkerFollower::Rotate(cv::Vec2d v, double angle)
+{
+    return cv::Vec2d(v[0] * std::cos(angle) - v[1] * std::sin(angle),
+                     v[0] * std::sin(angle) + v[1] * std::cos(angle));
 }
 
 int MarkerFollower::getTargetId() {

@@ -109,9 +109,9 @@ void NavigationDebugger::Run(NavigationCommand command, int targetId, std::vecto
     DrawNextPosition(nextPosition, projectedNextPosition);
     DrawTarget(followTarget);
 
-    DrawDrone();
+    DrawDrone(command);
 
-    DrawDroneEstimatedPositions(estimatedPositions, estimatedPoses);
+    //DrawDroneEstimatedPositions(estimatedPositions, estimatedPoses);
 
     DrawPath(path, targetId);
 
@@ -270,7 +270,7 @@ void NavigationDebugger::DrawMarkerSquare(WorldObject *marker) {
     cairo_fill(cr);
 }
 
-void NavigationDebugger::DrawDrone() {
+void NavigationDebugger::DrawDrone(NavigationCommand command) {
     cairo_set_source_rgb (cr, 0, 1, 0);
 
     cairo_save(cr);
@@ -295,6 +295,10 @@ void NavigationDebugger::DrawDrone() {
     cairo_move_to(cr, 0 , 0);
     cairo_rel_line_to(cr, 0, -GetScaleY(0.15));
     cairo_stroke(cr);
+
+    cairo_set_source_rgb (cr, 0.6, 0.5, 0.8);
+    cairo_move_to(cr, 0 , 0);
+    cairo_rel_line_to(cr, GetScaleX(command.LateralSpeed) * 3, -GetScaleY(command.ForwardSpeed) * 3);
 
     cairo_restore(cr);
 
