@@ -18,7 +18,6 @@ Brain::Brain() {
 void Brain::setup(Config* config) {
 
     this->config = config;
-
     this->myid = config->Get(ConfigKeys::Drone::Id);
 
     interComm = new InterComm();
@@ -36,6 +35,7 @@ void Brain::loop() {
     chrono::steady_clock::time_point lastTime = startTime;
     chrono::steady_clock::time_point newTime = startTime;
 
+    //Comienzo inactivo
     interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE);
 
     //COMPORAMIENTO SIMULADO VARIABLES
@@ -140,6 +140,8 @@ void Brain::cleanup() {
 void Brain::debugDroneStates(long runningTime){
 
     if(runningTime - lastDebug > 10  * 1000) {
+
+        std::cout << '\n';
         for (std::map<int, DroneState*>::iterator it=interComm->droneStates.begin(); it!=interComm->droneStates.end(); ++it) {
 
             std::string state = "";
@@ -150,6 +152,7 @@ void Brain::debugDroneStates(long runningTime){
             if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) { state = "CHARGING"; }
             std::cout << "The drone " << it->first << " is " << state << '\n';
         }
+        std::cout << '\n';
     }
     lastDebug = runningTime;
 

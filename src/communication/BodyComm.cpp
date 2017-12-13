@@ -76,6 +76,6 @@ void BodyComm::waitPing(long deltaTime) {
 
     if(pingWait > (pingLapse + pingTimeout) * 1000) {
         Logger::logError("Ping not received in %u milliseconds") << (int)(pingWait / 1000);
-        //should_exit = true;
+        should_exit = true;
     }
 }
