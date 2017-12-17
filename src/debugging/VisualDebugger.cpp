@@ -178,6 +178,8 @@ std::string VisualDebugger::getStateName(State state){
             return "Emergency";
         case State::EmergencyLanding:
             return "Emergency landing";
+        default:
+            return "Unknown";
     }
 }
 

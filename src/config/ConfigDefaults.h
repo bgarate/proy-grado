@@ -5,8 +5,8 @@
 #ifndef PROY_GRADO_CONFIGDEFAULTS_H
 #define PROY_GRADO_CONFIGDEFAULTS_H
 
-#include <src/navigation/World.h>
-#include <src/navigation/Path.h>
+#include "../navigation/World.h"
+#include "../navigation/Path.h"
 
 class Config;
 
