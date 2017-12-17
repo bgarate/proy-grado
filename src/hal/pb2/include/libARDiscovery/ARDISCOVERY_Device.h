@@ -38,7 +38,7 @@
 #ifndef _ARDISCOVERY_DEVICE_H_
 #define _ARDISCOVERY_DEVICE_H_
 
-#include <json/json.h>
+#include <json-c/json.h>
 #include <libARNetworkAL/ARNETWORKAL_Manager.h>
 #include <libARNetworkAL/ARNETWORKAL_Error.h>
 #include <libARNetwork/ARNETWORK_IOBufferParam.h>
@@ -142,6 +142,11 @@ eARDISCOVERY_ERROR ARDISCOVERY_Device_DeleteARNetworkAL (ARDISCOVERY_Device_t *d
  * @brief Initialize the NetworkConfiguration to use with the device  //TODO add commentary !!!!!!!!!!!!
  */
 eARDISCOVERY_ERROR ARDISCOVERY_Device_InitNetworkConfiguration (ARDISCOVERY_Device_t *discoveryDevice, ARDISCOVERY_NetworkConfiguration_t *networkConfiguration);
+
+/**
+ * @brief Destroys the NetworkConfiguration to use with the device
+ */
+eARDISCOVERY_ERROR ARDISCOVERY_Device_DestroyNetworkConfiguration (ARDISCOVERY_Device_t *discoveryDevice, ARDISCOVERY_NetworkConfiguration_t *networkConfiguration);
 
 /***********************
  * -- Wifi part --

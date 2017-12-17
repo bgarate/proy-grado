@@ -36,10 +36,213 @@ typedef enum
     ARCOMMANDS_GENERIC_LIST_FLAGS_MAX
 } eARCOMMANDS_GENERIC_LIST_FLAGS;
 
-#define ARCOMMANDS_FLAG_GENERIC_LIST_FLAGS_FIRST (1 << ARCOMMANDS_GENERIC_LIST_FLAGS_FIRST)    ///< indicate it's the first element of the list.
-#define ARCOMMANDS_FLAG_GENERIC_LIST_FLAGS_LAST (1 << ARCOMMANDS_GENERIC_LIST_FLAGS_LAST)    ///< indicate it's the last element of the list.
-#define ARCOMMANDS_FLAG_GENERIC_LIST_FLAGS_EMPTY (1 << ARCOMMANDS_GENERIC_LIST_FLAGS_EMPTY)    ///< indicate the list is empty (implies First/Last). All other arguments should be ignored.
-#define ARCOMMANDS_FLAG_GENERIC_LIST_FLAGS_REMOVE (1 << ARCOMMANDS_GENERIC_LIST_FLAGS_REMOVE)    ///< This value should be removed from the existing list.
+#define ARCOMMANDS_FLAG_GENERIC_LIST_FLAGS_FIRST (UINT32_C(1) << ARCOMMANDS_GENERIC_LIST_FLAGS_FIRST)    ///< indicate it's the first element of the list.
+#define ARCOMMANDS_FLAG_GENERIC_LIST_FLAGS_LAST (UINT32_C(1) << ARCOMMANDS_GENERIC_LIST_FLAGS_LAST)    ///< indicate it's the last element of the list.
+#define ARCOMMANDS_FLAG_GENERIC_LIST_FLAGS_EMPTY (UINT32_C(1) << ARCOMMANDS_GENERIC_LIST_FLAGS_EMPTY)    ///< indicate the list is empty (implies First/Last). All other arguments should be ignored.
+#define ARCOMMANDS_FLAG_GENERIC_LIST_FLAGS_REMOVE (UINT32_C(1) << ARCOMMANDS_GENERIC_LIST_FLAGS_REMOVE)    ///< This value should be removed from the existing list.
+
+// Feature animation
+
+/**
+ * @brief Animation type.
+ */
+typedef enum
+{
+    ARCOMMANDS_ANIMATION_TYPE_NONE = 0,    ///< No animation
+    ARCOMMANDS_ANIMATION_TYPE_FLIP = 1,    ///< The drone makes a flip
+    ARCOMMANDS_ANIMATION_TYPE_HORIZONTAL_PANORAMA = 2,    ///< The drone horizontaly rotates on itself
+    ARCOMMANDS_ANIMATION_TYPE_DRONIE = 3,    ///< The drone flies away on a given distance with a computed angle
+    ARCOMMANDS_ANIMATION_TYPE_HORIZONTAL_REVEAL = 4,    ///< The drone starts looking down, then moves forward while slowly looking at the horizon
+    ARCOMMANDS_ANIMATION_TYPE_VERTICAL_REVEAL = 5,    ///< The drone starts looking down, then moves up while slowly looking at the horizon.\nWhen it reaches its target altitude, it rotates on itself to do a panorama.
+    ARCOMMANDS_ANIMATION_TYPE_SPIRAL = 6,    ///< The drone circles around its target.
+    ARCOMMANDS_ANIMATION_TYPE_PARABOLA = 7,    ///< The drone makes a parabola on top of its target and ends on the other side of it.
+    ARCOMMANDS_ANIMATION_TYPE_CANDLE = 8,    ///< The drone flies horizontally in direction of the target then flies up.
+    ARCOMMANDS_ANIMATION_TYPE_DOLLY_SLIDE = 9,    ///< The drone slides horizontally.
+    ARCOMMANDS_ANIMATION_TYPE_MAX
+} eARCOMMANDS_ANIMATION_TYPE;
+
+#define ARCOMMANDS_FLAG_ANIMATION_TYPE_NONE (UINT32_C(1) << ARCOMMANDS_ANIMATION_TYPE_NONE)    ///< No animation
+#define ARCOMMANDS_FLAG_ANIMATION_TYPE_FLIP (UINT32_C(1) << ARCOMMANDS_ANIMATION_TYPE_FLIP)    ///< The drone makes a flip
+#define ARCOMMANDS_FLAG_ANIMATION_TYPE_HORIZONTAL_PANORAMA (UINT32_C(1) << ARCOMMANDS_ANIMATION_TYPE_HORIZONTAL_PANORAMA)    ///< The drone horizontaly rotates on itself
+#define ARCOMMANDS_FLAG_ANIMATION_TYPE_DRONIE (UINT32_C(1) << ARCOMMANDS_ANIMATION_TYPE_DRONIE)    ///< The drone flies away on a given distance with a computed angle
+#define ARCOMMANDS_FLAG_ANIMATION_TYPE_HORIZONTAL_REVEAL (UINT32_C(1) << ARCOMMANDS_ANIMATION_TYPE_HORIZONTAL_REVEAL)    ///< The drone starts looking down, then moves forward while slowly looking at the horizon
+#define ARCOMMANDS_FLAG_ANIMATION_TYPE_VERTICAL_REVEAL (UINT32_C(1) << ARCOMMANDS_ANIMATION_TYPE_VERTICAL_REVEAL)    ///< The drone starts looking down, then moves up while slowly looking at the horizon.\nWhen it reaches its target altitude, it rotates on itself to do a panorama.
+#define ARCOMMANDS_FLAG_ANIMATION_TYPE_SPIRAL (UINT32_C(1) << ARCOMMANDS_ANIMATION_TYPE_SPIRAL)    ///< The drone circles around its target.
+#define ARCOMMANDS_FLAG_ANIMATION_TYPE_PARABOLA (UINT32_C(1) << ARCOMMANDS_ANIMATION_TYPE_PARABOLA)    ///< The drone makes a parabola on top of its target and ends on the other side of it.
+#define ARCOMMANDS_FLAG_ANIMATION_TYPE_CANDLE (UINT32_C(1) << ARCOMMANDS_ANIMATION_TYPE_CANDLE)    ///< The drone flies horizontally in direction of the target then flies up.
+#define ARCOMMANDS_FLAG_ANIMATION_TYPE_DOLLY_SLIDE (UINT32_C(1) << ARCOMMANDS_ANIMATION_TYPE_DOLLY_SLIDE)    ///< The drone slides horizontally.
+
+
+/**
+ * @brief Animation state.
+ */
+typedef enum
+{
+    ARCOMMANDS_ANIMATION_STATE_IDLE = 0,    ///< The animation is not running.
+    ARCOMMANDS_ANIMATION_STATE_RUNNING = 1,    ///< The animation is running.
+    ARCOMMANDS_ANIMATION_STATE_CANCELING = 2,    ///< The current animation is canceling.
+    ARCOMMANDS_ANIMATION_STATE_MAX
+} eARCOMMANDS_ANIMATION_STATE;
+
+
+/**
+ * @brief Animation play mode.
+ */
+typedef enum
+{
+    ARCOMMANDS_ANIMATION_PLAY_MODE_NORMAL = 0,    ///< Animation is played once, normally.
+    ARCOMMANDS_ANIMATION_PLAY_MODE_ONCE_THEN_MIRRORED = 1,    ///< Animation is played once and then the animation is played mirrored.
+    ARCOMMANDS_ANIMATION_PLAY_MODE_MAX
+} eARCOMMANDS_ANIMATION_PLAY_MODE;
+
+
+/**
+ * @brief Animation flip type.
+ */
+typedef enum
+{
+    ARCOMMANDS_ANIMATION_FLIP_TYPE_FRONT = 0,    ///< The drone makes a front flip
+    ARCOMMANDS_ANIMATION_FLIP_TYPE_BACK = 1,    ///< The drone makes a back flip
+    ARCOMMANDS_ANIMATION_FLIP_TYPE_LEFT = 2,    ///< The drone makes a left flip (its left side goes up)
+    ARCOMMANDS_ANIMATION_FLIP_TYPE_RIGHT = 3,    ///< The drone makes a right flip (its right side goes up)
+    ARCOMMANDS_ANIMATION_FLIP_TYPE_MAX
+} eARCOMMANDS_ANIMATION_FLIP_TYPE;
+
+
+/**
+ * @brief Horizontal panorama configuration parameter.
+ */
+typedef enum
+{
+    ARCOMMANDS_ANIMATION_HORIZONTAL_PANORAMA_CONFIG_PARAM_ROTATION_ANGLE = 0,    ///< Rotation angle parameter.
+    ARCOMMANDS_ANIMATION_HORIZONTAL_PANORAMA_CONFIG_PARAM_ROTATION_SPEED = 1,    ///< Rotation speed parameter.
+    ARCOMMANDS_ANIMATION_HORIZONTAL_PANORAMA_CONFIG_PARAM_MAX
+} eARCOMMANDS_ANIMATION_HORIZONTAL_PANORAMA_CONFIG_PARAM;
+
+#define ARCOMMANDS_FLAG_ANIMATION_HORIZONTAL_PANORAMA_CONFIG_PARAM_ROTATION_ANGLE (UINT32_C(1) << ARCOMMANDS_ANIMATION_HORIZONTAL_PANORAMA_CONFIG_PARAM_ROTATION_ANGLE)    ///< Rotation angle parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_HORIZONTAL_PANORAMA_CONFIG_PARAM_ROTATION_SPEED (UINT32_C(1) << ARCOMMANDS_ANIMATION_HORIZONTAL_PANORAMA_CONFIG_PARAM_ROTATION_SPEED)    ///< Rotation speed parameter.
+
+
+/**
+ * @brief Dronie animation configuration parameter.
+ */
+typedef enum
+{
+    ARCOMMANDS_ANIMATION_DRONIE_CONFIG_PARAM_SPEED = 0,    ///< Speed parameter.
+    ARCOMMANDS_ANIMATION_DRONIE_CONFIG_PARAM_DISTANCE = 1,    ///< Distance parameter.
+    ARCOMMANDS_ANIMATION_DRONIE_CONFIG_PARAM_PLAY_MODE = 2,    ///< Play mode parameter.
+    ARCOMMANDS_ANIMATION_DRONIE_CONFIG_PARAM_MAX
+} eARCOMMANDS_ANIMATION_DRONIE_CONFIG_PARAM;
+
+#define ARCOMMANDS_FLAG_ANIMATION_DRONIE_CONFIG_PARAM_SPEED (UINT32_C(1) << ARCOMMANDS_ANIMATION_DRONIE_CONFIG_PARAM_SPEED)    ///< Speed parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_DRONIE_CONFIG_PARAM_DISTANCE (UINT32_C(1) << ARCOMMANDS_ANIMATION_DRONIE_CONFIG_PARAM_DISTANCE)    ///< Distance parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_DRONIE_CONFIG_PARAM_PLAY_MODE (UINT32_C(1) << ARCOMMANDS_ANIMATION_DRONIE_CONFIG_PARAM_PLAY_MODE)    ///< Play mode parameter.
+
+
+/**
+ * @brief Horizontal reveal animation configuration parameter.
+ */
+typedef enum
+{
+    ARCOMMANDS_ANIMATION_HORIZONTAL_REVEAL_CONFIG_PARAM_SPEED = 0,    ///< Speed parameter.
+    ARCOMMANDS_ANIMATION_HORIZONTAL_REVEAL_CONFIG_PARAM_DISTANCE = 1,    ///< Distance parameter.
+    ARCOMMANDS_ANIMATION_HORIZONTAL_REVEAL_CONFIG_PARAM_PLAY_MODE = 2,    ///< Play mode parameter.
+    ARCOMMANDS_ANIMATION_HORIZONTAL_REVEAL_CONFIG_PARAM_MAX
+} eARCOMMANDS_ANIMATION_HORIZONTAL_REVEAL_CONFIG_PARAM;
+
+#define ARCOMMANDS_FLAG_ANIMATION_HORIZONTAL_REVEAL_CONFIG_PARAM_SPEED (UINT32_C(1) << ARCOMMANDS_ANIMATION_HORIZONTAL_REVEAL_CONFIG_PARAM_SPEED)    ///< Speed parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_HORIZONTAL_REVEAL_CONFIG_PARAM_DISTANCE (UINT32_C(1) << ARCOMMANDS_ANIMATION_HORIZONTAL_REVEAL_CONFIG_PARAM_DISTANCE)    ///< Distance parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_HORIZONTAL_REVEAL_CONFIG_PARAM_PLAY_MODE (UINT32_C(1) << ARCOMMANDS_ANIMATION_HORIZONTAL_REVEAL_CONFIG_PARAM_PLAY_MODE)    ///< Play mode parameter.
+
+
+/**
+ * @brief Vertical reveal animation configuration parameter.
+ */
+typedef enum
+{
+    ARCOMMANDS_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM_SPEED = 0,    ///< Speed parameter.
+    ARCOMMANDS_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM_VERTICAL_DISTANCE = 1,    ///< Vertical distance parameter.
+    ARCOMMANDS_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM_ROTATION_ANGLE = 2,    ///< Rotation angle parameter.
+    ARCOMMANDS_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM_ROTATION_SPEED = 3,    ///< Rotation speed parameter.
+    ARCOMMANDS_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM_PLAY_MODE = 4,    ///< Play mode parameter.
+    ARCOMMANDS_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM_MAX
+} eARCOMMANDS_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM;
+
+#define ARCOMMANDS_FLAG_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM_SPEED (UINT32_C(1) << ARCOMMANDS_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM_SPEED)    ///< Speed parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM_VERTICAL_DISTANCE (UINT32_C(1) << ARCOMMANDS_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM_VERTICAL_DISTANCE)    ///< Vertical distance parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM_ROTATION_ANGLE (UINT32_C(1) << ARCOMMANDS_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM_ROTATION_ANGLE)    ///< Rotation angle parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM_ROTATION_SPEED (UINT32_C(1) << ARCOMMANDS_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM_ROTATION_SPEED)    ///< Rotation speed parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM_PLAY_MODE (UINT32_C(1) << ARCOMMANDS_ANIMATION_VERTICAL_REVEAL_CONFIG_PARAM_PLAY_MODE)    ///< Play mode parameter.
+
+
+/**
+ * @brief Spiral animation configuration parameter.
+ */
+typedef enum
+{
+    ARCOMMANDS_ANIMATION_SPIRAL_CONFIG_PARAM_SPEED = 0,    ///< Speed parameter.
+    ARCOMMANDS_ANIMATION_SPIRAL_CONFIG_PARAM_RADIUS_VARIATION = 1,    ///< Radius variation parameter.
+    ARCOMMANDS_ANIMATION_SPIRAL_CONFIG_PARAM_VERTICAL_DISTANCE = 2,    ///< Vertical distance parameter.
+    ARCOMMANDS_ANIMATION_SPIRAL_CONFIG_PARAM_REVOLUTION_NB = 3,    ///< Revolution number parameter.
+    ARCOMMANDS_ANIMATION_SPIRAL_CONFIG_PARAM_PLAY_MODE = 4,    ///< Play mode parameter.
+    ARCOMMANDS_ANIMATION_SPIRAL_CONFIG_PARAM_MAX
+} eARCOMMANDS_ANIMATION_SPIRAL_CONFIG_PARAM;
+
+#define ARCOMMANDS_FLAG_ANIMATION_SPIRAL_CONFIG_PARAM_SPEED (UINT32_C(1) << ARCOMMANDS_ANIMATION_SPIRAL_CONFIG_PARAM_SPEED)    ///< Speed parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_SPIRAL_CONFIG_PARAM_RADIUS_VARIATION (UINT32_C(1) << ARCOMMANDS_ANIMATION_SPIRAL_CONFIG_PARAM_RADIUS_VARIATION)    ///< Radius variation parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_SPIRAL_CONFIG_PARAM_VERTICAL_DISTANCE (UINT32_C(1) << ARCOMMANDS_ANIMATION_SPIRAL_CONFIG_PARAM_VERTICAL_DISTANCE)    ///< Vertical distance parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_SPIRAL_CONFIG_PARAM_REVOLUTION_NB (UINT32_C(1) << ARCOMMANDS_ANIMATION_SPIRAL_CONFIG_PARAM_REVOLUTION_NB)    ///< Revolution number parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_SPIRAL_CONFIG_PARAM_PLAY_MODE (UINT32_C(1) << ARCOMMANDS_ANIMATION_SPIRAL_CONFIG_PARAM_PLAY_MODE)    ///< Play mode parameter.
+
+
+/**
+ * @brief Parabola animation configuration parameter.
+ */
+typedef enum
+{
+    ARCOMMANDS_ANIMATION_PARABOLA_CONFIG_PARAM_SPEED = 0,    ///< Speed parameter.
+    ARCOMMANDS_ANIMATION_PARABOLA_CONFIG_PARAM_VERTICAL_DISTANCE = 1,    ///< Vertical distance parameter.
+    ARCOMMANDS_ANIMATION_PARABOLA_CONFIG_PARAM_PLAY_MODE = 2,    ///< Play mode parameter.
+    ARCOMMANDS_ANIMATION_PARABOLA_CONFIG_PARAM_MAX
+} eARCOMMANDS_ANIMATION_PARABOLA_CONFIG_PARAM;
+
+#define ARCOMMANDS_FLAG_ANIMATION_PARABOLA_CONFIG_PARAM_SPEED (UINT32_C(1) << ARCOMMANDS_ANIMATION_PARABOLA_CONFIG_PARAM_SPEED)    ///< Speed parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_PARABOLA_CONFIG_PARAM_VERTICAL_DISTANCE (UINT32_C(1) << ARCOMMANDS_ANIMATION_PARABOLA_CONFIG_PARAM_VERTICAL_DISTANCE)    ///< Vertical distance parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_PARABOLA_CONFIG_PARAM_PLAY_MODE (UINT32_C(1) << ARCOMMANDS_ANIMATION_PARABOLA_CONFIG_PARAM_PLAY_MODE)    ///< Play mode parameter.
+
+
+/**
+ * @brief Candle animation configuration parameter.
+ */
+typedef enum
+{
+    ARCOMMANDS_ANIMATION_CANDLE_CONFIG_PARAM_SPEED = 0,    ///< Speed parameter.
+    ARCOMMANDS_ANIMATION_CANDLE_CONFIG_PARAM_VERTICAL_DISTANCE = 1,    ///< Vertical distance parameter.
+    ARCOMMANDS_ANIMATION_CANDLE_CONFIG_PARAM_PLAY_MODE = 2,    ///< Play mode parameter.
+    ARCOMMANDS_ANIMATION_CANDLE_CONFIG_PARAM_MAX
+} eARCOMMANDS_ANIMATION_CANDLE_CONFIG_PARAM;
+
+#define ARCOMMANDS_FLAG_ANIMATION_CANDLE_CONFIG_PARAM_SPEED (UINT32_C(1) << ARCOMMANDS_ANIMATION_CANDLE_CONFIG_PARAM_SPEED)    ///< Speed parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_CANDLE_CONFIG_PARAM_VERTICAL_DISTANCE (UINT32_C(1) << ARCOMMANDS_ANIMATION_CANDLE_CONFIG_PARAM_VERTICAL_DISTANCE)    ///< Vertical distance parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_CANDLE_CONFIG_PARAM_PLAY_MODE (UINT32_C(1) << ARCOMMANDS_ANIMATION_CANDLE_CONFIG_PARAM_PLAY_MODE)    ///< Play mode parameter.
+
+
+/**
+ * @brief Dolly slide animation configuration parameter.
+ */
+typedef enum
+{
+    ARCOMMANDS_ANIMATION_DOLLY_SLIDE_CONFIG_PARAM_SPEED = 0,    ///< Speed parameter.
+    ARCOMMANDS_ANIMATION_DOLLY_SLIDE_CONFIG_PARAM_ANGLE = 1,    ///< Angle parameter.
+    ARCOMMANDS_ANIMATION_DOLLY_SLIDE_CONFIG_PARAM_HORIZONTAL_DISTANCE = 2,    ///< Horizontal distance parameter.
+    ARCOMMANDS_ANIMATION_DOLLY_SLIDE_CONFIG_PARAM_PLAY_MODE = 3,    ///< Play mode parameter.
+    ARCOMMANDS_ANIMATION_DOLLY_SLIDE_CONFIG_PARAM_MAX
+} eARCOMMANDS_ANIMATION_DOLLY_SLIDE_CONFIG_PARAM;
+
+#define ARCOMMANDS_FLAG_ANIMATION_DOLLY_SLIDE_CONFIG_PARAM_SPEED (UINT32_C(1) << ARCOMMANDS_ANIMATION_DOLLY_SLIDE_CONFIG_PARAM_SPEED)    ///< Speed parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_DOLLY_SLIDE_CONFIG_PARAM_ANGLE (UINT32_C(1) << ARCOMMANDS_ANIMATION_DOLLY_SLIDE_CONFIG_PARAM_ANGLE)    ///< Angle parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_DOLLY_SLIDE_CONFIG_PARAM_HORIZONTAL_DISTANCE (UINT32_C(1) << ARCOMMANDS_ANIMATION_DOLLY_SLIDE_CONFIG_PARAM_HORIZONTAL_DISTANCE)    ///< Horizontal distance parameter.
+#define ARCOMMANDS_FLAG_ANIMATION_DOLLY_SLIDE_CONFIG_PARAM_PLAY_MODE (UINT32_C(1) << ARCOMMANDS_ANIMATION_DOLLY_SLIDE_CONFIG_PARAM_PLAY_MODE)    ///< Play mode parameter.
 
 // Feature ARDrone3
 
@@ -260,7 +463,7 @@ typedef enum
     ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_LANDING = 4,    ///< Landing state
     ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_EMERGENCY = 5,    ///< Emergency state
     ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_USERTAKEOFF = 6,    ///< User take off state. Waiting for user action to take off.
-    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_MOTOR_RAMPING = 7,    ///< Motor ramping state (for fixed wings).
+    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_MOTOR_RAMPING = 7,    ///< Motor ramping state.
     ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_EMERGENCY_LANDING = 8,    ///< Emergency landing state.\nDrone autopilot has detected defective sensor(s).\nOnly Yaw argument in PCMD is taken into account.\nAll others flying commands are ignored.
     ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_MAX
 } eARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE;
@@ -341,10 +544,47 @@ typedef enum
 {
     ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_STATUS_RUNNING = 0,    ///< The drone is actually flying to the given position
     ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_STATUS_DONE = 1,    ///< The drone has reached the target
-    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_STATUS_CANCELED = 2,    ///< The move to has been canceled, either by a new moveTo command or\nby a CancelMoveTo command.
+    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_STATUS_CANCELED = 2,    ///< The move to has been canceled, either by a CancelMoveTo command\nor when a disconnection appears.
     ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_STATUS_ERROR = 3,    ///< The move to has not been finished or started because of an error.
     ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_STATUS_MAX
 } eARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_STATUS;
+
+
+/**
+ * @brief Motion state
+ */
+typedef enum
+{
+    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOTIONSTATE_STATE_STEADY = 0,    ///< Drone is steady
+    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOTIONSTATE_STATE_MOVING = 1,    ///< Drone is moving
+    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOTIONSTATE_STATE_MAX
+} eARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOTIONSTATE_STATE;
+
+
+/**
+ * @brief Status of the move to
+ */
+typedef enum
+{
+    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_PILOTEDPOI_STATUS_UNAVAILABLE = 0,    ///< The piloted POI is not available
+    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_PILOTEDPOI_STATUS_AVAILABLE = 1,    ///< The piloted POI is available
+    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_PILOTEDPOI_STATUS_PENDING = 2,    ///< Piloted POI has been requested. Waiting to be in state that allow the piloted POI to start
+    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_PILOTEDPOI_STATUS_RUNNING = 3,    ///< Piloted POI is running
+    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_PILOTEDPOI_STATUS_MAX
+} eARCOMMANDS_ARDRONE3_PILOTINGSTATE_PILOTEDPOI_STATUS;
+
+
+/**
+ * @brief Status of battery to return home
+ */
+typedef enum
+{
+    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_RETURNHOMEBATTERYCAPACITY_STATUS_OK = 0,    ///< The battery is full enough to do a return home
+    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_RETURNHOMEBATTERYCAPACITY_STATUS_WARNING = 1,    ///< The battery is about to be too discharged to do a return home
+    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_RETURNHOMEBATTERYCAPACITY_STATUS_CRITICAL = 2,    ///< The battery level is too low to return to the home position
+    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_RETURNHOMEBATTERYCAPACITY_STATUS_UNKNOWN = 3,    ///< Battery capacity to do a return home is unknown.\nThis can be either because the home is unknown or the position of the drone is unknown,\nor the drone has not enough information to determine how long it takes to fly home.
+    ARCOMMANDS_ARDRONE3_PILOTINGSTATE_RETURNHOMEBATTERYCAPACITY_STATUS_MAX
+} eARCOMMANDS_ARDRONE3_PILOTINGSTATE_RETURNHOMEBATTERYCAPACITY_STATUS;
 
 
 /**
@@ -877,6 +1117,28 @@ typedef enum
     ARCOMMANDS_ARDRONE3_GPSSTATE_HOMETYPECHOSENCHANGED_TYPE_MAX
 } eARCOMMANDS_ARDRONE3_GPSSTATE_HOMETYPECHOSENCHANGED_TYPE;
 
+
+/**
+ * @brief Accessory type
+ */
+typedef enum
+{
+    ARCOMMANDS_ARDRONE3_ACCESSORYSTATE_CONNECTEDACCESSORIES_ACCESSORY_TYPE_SEQUOIA = 0,    ///< Parrot Sequoia (multispectral camera for agriculture)
+    ARCOMMANDS_ARDRONE3_ACCESSORYSTATE_CONNECTEDACCESSORIES_ACCESSORY_TYPE_FLIR = 1,    ///< FLIR camera (thermal+rgb camera)
+    ARCOMMANDS_ARDRONE3_ACCESSORYSTATE_CONNECTEDACCESSORIES_ACCESSORY_TYPE_MAX
+} eARCOMMANDS_ARDRONE3_ACCESSORYSTATE_CONNECTEDACCESSORIES_ACCESSORY_TYPE;
+
+
+/**
+ * @brief State of the alert sound
+ */
+typedef enum
+{
+    ARCOMMANDS_ARDRONE3_SOUNDSTATE_ALERTSOUND_STATE_STOPPED = 0,    ///< Alert sound is not playing
+    ARCOMMANDS_ARDRONE3_SOUNDSTATE_ALERTSOUND_STATE_PLAYING = 1,    ///< Alert sound is playing
+    ARCOMMANDS_ARDRONE3_SOUNDSTATE_ALERTSOUND_STATE_MAX
+} eARCOMMANDS_ARDRONE3_SOUNDSTATE_ALERTSOUND_STATE;
+
 // Feature common
 
 /**
@@ -1359,13 +1621,13 @@ typedef enum
     ARCOMMANDS_FOLLOW_ME_INPUT_MAX
 } eARCOMMANDS_FOLLOW_ME_INPUT;
 
-#define ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_DRONE_CALIBRATED (1 << ARCOMMANDS_FOLLOW_ME_INPUT_DRONE_CALIBRATED)    ///< Drone is calibrated
-#define ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_DRONE_GPS_GOOD_ACCURACY (1 << ARCOMMANDS_FOLLOW_ME_INPUT_DRONE_GPS_GOOD_ACCURACY)    ///< Drone gps has fixed and has a good accuracy
-#define ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_TARGET_GPS_GOOD_ACCURACY (1 << ARCOMMANDS_FOLLOW_ME_INPUT_TARGET_GPS_GOOD_ACCURACY)    ///< Target gps data is known and has a good accuracy
-#define ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_TARGET_BAROMETER_OK (1 << ARCOMMANDS_FOLLOW_ME_INPUT_TARGET_BAROMETER_OK)    ///< Target barometer data is available
-#define ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_DRONE_FAR_ENOUGH (1 << ARCOMMANDS_FOLLOW_ME_INPUT_DRONE_FAR_ENOUGH)    ///< Drone is far enough from the target
-#define ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_DRONE_HIGH_ENOUGH (1 << ARCOMMANDS_FOLLOW_ME_INPUT_DRONE_HIGH_ENOUGH)    ///< Drone is high enough from the ground
-#define ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_IMAGE_DETECTION (1 << ARCOMMANDS_FOLLOW_ME_INPUT_IMAGE_DETECTION)    ///< Target detection is done by image detection among other things
+#define ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_DRONE_CALIBRATED (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_INPUT_DRONE_CALIBRATED)    ///< Drone is calibrated
+#define ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_DRONE_GPS_GOOD_ACCURACY (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_INPUT_DRONE_GPS_GOOD_ACCURACY)    ///< Drone gps has fixed and has a good accuracy
+#define ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_TARGET_GPS_GOOD_ACCURACY (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_INPUT_TARGET_GPS_GOOD_ACCURACY)    ///< Target gps data is known and has a good accuracy
+#define ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_TARGET_BAROMETER_OK (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_INPUT_TARGET_BAROMETER_OK)    ///< Target barometer data is available
+#define ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_DRONE_FAR_ENOUGH (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_INPUT_DRONE_FAR_ENOUGH)    ///< Drone is far enough from the target
+#define ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_DRONE_HIGH_ENOUGH (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_INPUT_DRONE_HIGH_ENOUGH)    ///< Drone is high enough from the ground
+#define ARCOMMANDS_FLAG_FOLLOW_ME_INPUT_IMAGE_DETECTION (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_INPUT_IMAGE_DETECTION)    ///< Target detection is done by image detection among other things
 
 
 /**
@@ -1379,9 +1641,9 @@ typedef enum
     ARCOMMANDS_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_MAX
 } eARCOMMANDS_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM;
 
-#define ARCOMMANDS_FLAG_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_DISTANCE (1 << ARCOMMANDS_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_DISTANCE)    ///< Distance configuration
-#define ARCOMMANDS_FLAG_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_ELEVATION (1 << ARCOMMANDS_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_ELEVATION)    ///< Elevation configuration
-#define ARCOMMANDS_FLAG_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_AZIMUTH (1 << ARCOMMANDS_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_AZIMUTH)    ///< Azimuth configuration
+#define ARCOMMANDS_FLAG_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_DISTANCE (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_DISTANCE)    ///< Distance configuration
+#define ARCOMMANDS_FLAG_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_ELEVATION (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_ELEVATION)    ///< Elevation configuration
+#define ARCOMMANDS_FLAG_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_AZIMUTH (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_GEO_REL_CONFIGURE_PARAM_AZIMUTH)    ///< Azimuth configuration
 
 
 /**
@@ -1398,12 +1660,12 @@ typedef enum
     ARCOMMANDS_FOLLOW_ME_ANIMATION_MAX
 } eARCOMMANDS_FOLLOW_ME_ANIMATION;
 
-#define ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_NONE (1 << ARCOMMANDS_FOLLOW_ME_ANIMATION_NONE)    ///< No animation
-#define ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_HELICOID (1 << ARCOMMANDS_FOLLOW_ME_ANIMATION_HELICOID)    ///< Turn around the target
-#define ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_SWING (1 << ARCOMMANDS_FOLLOW_ME_ANIMATION_SWING)    ///< Pass by the zenith and change of side
-#define ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_BOOMERANG (1 << ARCOMMANDS_FOLLOW_ME_ANIMATION_BOOMERANG)    ///< Fly far from the target and fly back
-#define ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_CANDLE (1 << ARCOMMANDS_FOLLOW_ME_ANIMATION_CANDLE)    ///< Move to the target and go high when it is near
-#define ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_DOLLY_SLIDE (1 << ARCOMMANDS_FOLLOW_ME_ANIMATION_DOLLY_SLIDE)    ///< Fly in line
+#define ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_NONE (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_ANIMATION_NONE)    ///< No animation
+#define ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_HELICOID (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_ANIMATION_HELICOID)    ///< Turn around the target
+#define ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_SWING (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_ANIMATION_SWING)    ///< Pass by the zenith and change of side
+#define ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_BOOMERANG (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_ANIMATION_BOOMERANG)    ///< Fly far from the target and fly back
+#define ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_CANDLE (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_ANIMATION_CANDLE)    ///< Move to the target and go high when it is near
+#define ARCOMMANDS_FLAG_FOLLOW_ME_ANIMATION_DOLLY_SLIDE (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_ANIMATION_DOLLY_SLIDE)    ///< Fly in line
 
 
 /**
@@ -1417,9 +1679,9 @@ typedef enum
     ARCOMMANDS_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_MAX
 } eARCOMMANDS_FOLLOW_ME_HELICOID_CONFIGURE_PARAM;
 
-#define ARCOMMANDS_FLAG_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_SPEED (1 << ARCOMMANDS_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_SPEED)    ///< Speed parameter
-#define ARCOMMANDS_FLAG_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_REVOLUTION_NB (1 << ARCOMMANDS_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_REVOLUTION_NB)    ///< Number of turn
-#define ARCOMMANDS_FLAG_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_VERTICAL_DISTANCE (1 << ARCOMMANDS_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_VERTICAL_DISTANCE)    ///< Vertical distance
+#define ARCOMMANDS_FLAG_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_SPEED (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_SPEED)    ///< Speed parameter
+#define ARCOMMANDS_FLAG_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_REVOLUTION_NB (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_REVOLUTION_NB)    ///< Number of turn
+#define ARCOMMANDS_FLAG_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_VERTICAL_DISTANCE (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_HELICOID_CONFIGURE_PARAM_VERTICAL_DISTANCE)    ///< Vertical distance
 
 
 /**
@@ -1432,8 +1694,8 @@ typedef enum
     ARCOMMANDS_FOLLOW_ME_SWING_CONFIGURE_PARAM_MAX
 } eARCOMMANDS_FOLLOW_ME_SWING_CONFIGURE_PARAM;
 
-#define ARCOMMANDS_FLAG_FOLLOW_ME_SWING_CONFIGURE_PARAM_SPEED (1 << ARCOMMANDS_FOLLOW_ME_SWING_CONFIGURE_PARAM_SPEED)    ///< Speed parameter
-#define ARCOMMANDS_FLAG_FOLLOW_ME_SWING_CONFIGURE_PARAM_VERTICAL_DISTANCE (1 << ARCOMMANDS_FOLLOW_ME_SWING_CONFIGURE_PARAM_VERTICAL_DISTANCE)    ///< Vertical distance
+#define ARCOMMANDS_FLAG_FOLLOW_ME_SWING_CONFIGURE_PARAM_SPEED (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_SWING_CONFIGURE_PARAM_SPEED)    ///< Speed parameter
+#define ARCOMMANDS_FLAG_FOLLOW_ME_SWING_CONFIGURE_PARAM_VERTICAL_DISTANCE (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_SWING_CONFIGURE_PARAM_VERTICAL_DISTANCE)    ///< Vertical distance
 
 
 /**
@@ -1446,8 +1708,8 @@ typedef enum
     ARCOMMANDS_FOLLOW_ME_BOOMERANG_CONFIGURE_PARAM_MAX
 } eARCOMMANDS_FOLLOW_ME_BOOMERANG_CONFIGURE_PARAM;
 
-#define ARCOMMANDS_FLAG_FOLLOW_ME_BOOMERANG_CONFIGURE_PARAM_SPEED (1 << ARCOMMANDS_FOLLOW_ME_BOOMERANG_CONFIGURE_PARAM_SPEED)    ///< Speed parameter
-#define ARCOMMANDS_FLAG_FOLLOW_ME_BOOMERANG_CONFIGURE_PARAM_DISTANCE (1 << ARCOMMANDS_FOLLOW_ME_BOOMERANG_CONFIGURE_PARAM_DISTANCE)    ///< Distance
+#define ARCOMMANDS_FLAG_FOLLOW_ME_BOOMERANG_CONFIGURE_PARAM_SPEED (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_BOOMERANG_CONFIGURE_PARAM_SPEED)    ///< Speed parameter
+#define ARCOMMANDS_FLAG_FOLLOW_ME_BOOMERANG_CONFIGURE_PARAM_DISTANCE (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_BOOMERANG_CONFIGURE_PARAM_DISTANCE)    ///< Distance
 
 
 /**
@@ -1460,8 +1722,8 @@ typedef enum
     ARCOMMANDS_FOLLOW_ME_CANDLE_CONFIGURE_PARAM_MAX
 } eARCOMMANDS_FOLLOW_ME_CANDLE_CONFIGURE_PARAM;
 
-#define ARCOMMANDS_FLAG_FOLLOW_ME_CANDLE_CONFIGURE_PARAM_SPEED (1 << ARCOMMANDS_FOLLOW_ME_CANDLE_CONFIGURE_PARAM_SPEED)    ///< Speed parameter
-#define ARCOMMANDS_FLAG_FOLLOW_ME_CANDLE_CONFIGURE_PARAM_VERTICAL_DISTANCE (1 << ARCOMMANDS_FOLLOW_ME_CANDLE_CONFIGURE_PARAM_VERTICAL_DISTANCE)    ///< Follow the target keeping the same vector
+#define ARCOMMANDS_FLAG_FOLLOW_ME_CANDLE_CONFIGURE_PARAM_SPEED (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_CANDLE_CONFIGURE_PARAM_SPEED)    ///< Speed parameter
+#define ARCOMMANDS_FLAG_FOLLOW_ME_CANDLE_CONFIGURE_PARAM_VERTICAL_DISTANCE (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_CANDLE_CONFIGURE_PARAM_VERTICAL_DISTANCE)    ///< Follow the target keeping the same vector
 
 
 /**
@@ -1475,9 +1737,9 @@ typedef enum
     ARCOMMANDS_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_MAX
 } eARCOMMANDS_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM;
 
-#define ARCOMMANDS_FLAG_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_SPEED (1 << ARCOMMANDS_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_SPEED)    ///< Speed parameter
-#define ARCOMMANDS_FLAG_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_ANGLE (1 << ARCOMMANDS_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_ANGLE)    ///< Angle
-#define ARCOMMANDS_FLAG_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_HORIZONTAL_DISTANCE (1 << ARCOMMANDS_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_HORIZONTAL_DISTANCE)    ///< Horizontal distance
+#define ARCOMMANDS_FLAG_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_SPEED (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_SPEED)    ///< Speed parameter
+#define ARCOMMANDS_FLAG_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_ANGLE (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_ANGLE)    ///< Angle
+#define ARCOMMANDS_FLAG_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_HORIZONTAL_DISTANCE (UINT32_C(1) << ARCOMMANDS_FOLLOW_ME_DOLLY_SLIDE_CONFIGURE_PARAM_HORIZONTAL_DISTANCE)    ///< Horizontal distance
 
 
 /**
@@ -2025,6 +2287,8 @@ typedef enum
     ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_LIGHT_BLINK = 22,    ///< switch blink light (ON/OFF)
     ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_LIGHT_SINUS = 23,    ///< switch sinus light (ON/OFF)
     ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_LIGHT_TOGGLE = 24,    ///< toggle between light animations (OFF-continuous-blink-sinus-OFF)
+    ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_PILOTING_MODE_TOGGLE = 25,    ///< toggle between easy and preferred piloting mode
+    ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_VIDEO_RECORD_TOGGLE = 26,    ///< start or stop video
     ARCOMMANDS_MAPPER_MINI_BUTTON_ACTION_MAX
 } eARCOMMANDS_MAPPER_MINI_BUTTON_ACTION;
 
@@ -2052,8 +2316,8 @@ typedef enum
     ARCOMMANDS_MAPPER_MINI_MODE_MAX
 } eARCOMMANDS_MAPPER_MINI_MODE;
 
-#define ARCOMMANDS_FLAG_MAPPER_MINI_MODE_QUAD (1 << ARCOMMANDS_MAPPER_MINI_MODE_QUAD)    ///< Quadricopter mode
-#define ARCOMMANDS_FLAG_MAPPER_MINI_MODE_PLANE (1 << ARCOMMANDS_MAPPER_MINI_MODE_PLANE)    ///< Plane mode
+#define ARCOMMANDS_FLAG_MAPPER_MINI_MODE_QUAD (UINT32_C(1) << ARCOMMANDS_MAPPER_MINI_MODE_QUAD)    ///< Quadricopter mode
+#define ARCOMMANDS_FLAG_MAPPER_MINI_MODE_PLANE (UINT32_C(1) << ARCOMMANDS_MAPPER_MINI_MODE_PLANE)    ///< Plane mode
 
 // Feature MiniDrone
 
@@ -2137,6 +2401,18 @@ typedef enum
 
 
 /**
+ * @brief 
+ */
+typedef enum
+{
+    ARCOMMANDS_MINIDRONE_PILOTINGSTATE_PILOTINGMODECHANGED_MODE_EASY = 0,    ///< The flight envelope of Mambo FPV has been divided in three piloting modes.\nThe first one corresponds to the well-known flying mode currently used for\nMambo, which is based in an horizontal stabilisation (performed via the\nvertical camera and the acceleration information) and a vertical acceleration\n(by means of the ultrasound, the barometer and the vertical accelerometer) in\norder for the drone to stay in fixed point position when no piloting commands\nare sent by the user.
+    ARCOMMANDS_MINIDRONE_PILOTINGSTATE_PILOTINGMODECHANGED_MODE_MEDIUM = 1,    ///< The second piloting mode consists of deactivating the horizontal stabilisation.\nThus, in this flying mode, when no piloting command is received, the drone will\ntry to stay at 0° tilt angle instead of responding to a 0 m/s horizontal speed\nreference. This behaviour will result in a slight horizontal drift.
+    ARCOMMANDS_MINIDRONE_PILOTINGSTATE_PILOTINGMODECHANGED_MODE_DIFFICULT = 2,    ///< The third piloting mode also adds the vertical stabilisation deactivation and,\ntherefore, a slight vertical drift. When flying in the third mode, a closed\nloop height control is no longer performed in order for the drone to keep a\ncertain height and vertical speed. Instead, the vertical command coming from\nthe user will directly generate an open loop acceleration command.
+    ARCOMMANDS_MINIDRONE_PILOTINGSTATE_PILOTINGMODECHANGED_MODE_MAX
+} eARCOMMANDS_MINIDRONE_PILOTINGSTATE_PILOTINGMODECHANGED_MODE;
+
+
+/**
  * @brief Direction for the flip
  */
 typedef enum
@@ -2199,6 +2475,30 @@ typedef enum
     ARCOMMANDS_MINIDRONE_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_LOWBATTERY = 5,    ///< Battery is too low to record.
     ARCOMMANDS_MINIDRONE_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR_MAX
 } eARCOMMANDS_MINIDRONE_MEDIARECORDEVENT_PICTUREEVENTCHANGED_ERROR;
+
+
+/**
+ * @brief Piloting modes.
+ */
+typedef enum
+{
+    ARCOMMANDS_MINIDRONE_PILOTINGSETTINGS_PREFERREDPILOTINGMODE_MODE_EASY = 0,    ///< The flight envelope of Mambo FPV has been divided in three piloting modes.\nThe first one corresponds to the well-known flying mode currently used for\nMambo, which is based in an horizontal stabilisation (performed via the\nvertical camera and the acceleration information) and a vertical acceleration\n(by means of the ultrasound, the barometer and the vertical accelerometer) in\norder for the drone to stay in fixed point position when no piloting commands\nare sent by the user.
+    ARCOMMANDS_MINIDRONE_PILOTINGSETTINGS_PREFERREDPILOTINGMODE_MODE_MEDIUM = 1,    ///< The second piloting mode consists of deactivating the horizontal stabilisation.\nThus, in this flying mode, when no piloting command is received, the drone will\ntry to stay at 0° tilt angle instead of responding to a 0 m/s horizontal speed\nreference. This behaviour will result in a slight horizontal drift.
+    ARCOMMANDS_MINIDRONE_PILOTINGSETTINGS_PREFERREDPILOTINGMODE_MODE_DIFFICULT = 2,    ///< The third piloting mode also adds the vertical stabilisation deactivation and,\ntherefore, a slight vertical drift. When flying in the third mode, a closed\nloop height control is no longer performed in order for the drone to keep a\ncertain height and vertical speed. Instead, the vertical command coming from\nthe user will directly generate an open loop acceleration command.
+    ARCOMMANDS_MINIDRONE_PILOTINGSETTINGS_PREFERREDPILOTINGMODE_MODE_MAX
+} eARCOMMANDS_MINIDRONE_PILOTINGSETTINGS_PREFERREDPILOTINGMODE_MODE;
+
+
+/**
+ * @brief 
+ */
+typedef enum
+{
+    ARCOMMANDS_MINIDRONE_PILOTINGSETTINGSSTATE_PREFERREDPILOTINGMODECHANGED_MODE_EASY = 0,    ///< The flight envelope of Mambo FPV has been divided in three piloting modes.\nThe first one corresponds to the well-known flying mode currently used for\nMambo, which is based in an horizontal stabilisation (performed via the\nvertical camera and the acceleration information) and a vertical acceleration\n(by means of the ultrasound, the barometer and the vertical accelerometer) in\norder for the drone to stay in fixed point position when no piloting commands\nare sent by the user.
+    ARCOMMANDS_MINIDRONE_PILOTINGSETTINGSSTATE_PREFERREDPILOTINGMODECHANGED_MODE_MEDIUM = 1,    ///< The second piloting mode consists of deactivating the horizontal stabilisation.\nThus, in this flying mode, when no piloting command is received, the drone will\ntry to stay at 0° tilt angle instead of responding to a 0 m/s horizontal speed\nreference. This behaviour will result in a slight horizontal drift.
+    ARCOMMANDS_MINIDRONE_PILOTINGSETTINGSSTATE_PREFERREDPILOTINGMODECHANGED_MODE_DIFFICULT = 2,    ///< The third piloting mode also adds the vertical stabilisation deactivation and,\ntherefore, a slight vertical drift. When flying in the third mode, a closed\nloop height control is no longer performed in order for the drone to keep a\ncertain height and vertical speed. Instead, the vertical command coming from\nthe user will directly generate an open loop acceleration command.
+    ARCOMMANDS_MINIDRONE_PILOTINGSETTINGSSTATE_PREFERREDPILOTINGMODECHANGED_MODE_MAX
+} eARCOMMANDS_MINIDRONE_PILOTINGSETTINGSSTATE_PREFERREDPILOTINGMODECHANGED_MODE;
 
 
 /**
@@ -2268,6 +2568,141 @@ typedef enum
     ARCOMMANDS_MINIDRONE_USBACCESSORY_GUNCONTROL_ACTION_FIRE = 0,    ///< Fire.
     ARCOMMANDS_MINIDRONE_USBACCESSORY_GUNCONTROL_ACTION_MAX
 } eARCOMMANDS_MINIDRONE_USBACCESSORY_GUNCONTROL_ACTION;
+
+
+/**
+ * @brief Power mode of the camera.
+ */
+typedef enum
+{
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_POWERMODECHANGED_POWER_MODE_LOW = 0,    ///< Low power: most hardware is powered off, wake up via USB resume.\n\nUsed when charging.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_POWERMODECHANGED_POWER_MODE_MEDIUM = 1,    ///< Medium power: video hardware is powered off.\n\nUsed when drone is not flying during more than 3 minutes.\nNote that it can still stream the SD content.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_POWERMODECHANGED_POWER_MODE_NORMAL = 2,    ///< Normal power: all features are available.\n\nUsed when flying.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_POWERMODECHANGED_POWER_MODE_MAX
+} eARCOMMANDS_MINIDRONE_MINICAMSTATE_POWERMODECHANGED_POWER_MODE;
+
+
+/**
+ * @brief State of the camera.
+ */
+typedef enum
+{
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_STATECHANGED_STATE_UNPLUGGED = 0,    ///< Minicam is unplugged.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_STATECHANGED_STATE_PLUGGED = 1,    ///< Minicam is plugged, but not ready.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_STATECHANGED_STATE_READY = 2,    ///< Minicam is ready.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_STATECHANGED_STATE_MAX
+} eARCOMMANDS_MINIDRONE_MINICAMSTATE_STATECHANGED_STATE;
+
+
+/**
+ * @brief State of device picture recording.
+ */
+typedef enum
+{
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_STATE_READY = 0,    ///< Picture recording is ready.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_STATE_BUSY = 1,    ///< Picture recording is busy.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_STATE_NOT_AVAILABLE = 2,    ///< Picture recording is not available.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_STATE_MAX
+} eARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_STATE;
+
+
+/**
+ * @brief Result of device picture recording.
+ */
+typedef enum
+{
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_RESULT_SUCCESS = 0,    ///< Success.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_RESULT_FULL_DEVICE = 1,    ///< Device is full.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_RESULT_CONTINUOUS_SHOOTING = 2,    ///< Continuous shooting is already running.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_RESULT_FULL_QUEUE = 3,    ///< Over snapshot max queue size.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_RESULT_ERROR = 4,    ///< Couldn't take picture.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_RESULT_NO_SD = 5,    ///< SD card doesn't exist.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_RESULT_SD_BAD_FORMAT = 6,    ///< SD card format error.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_RESULT_SD_FORMATTING = 7,    ///< SD card is formatting.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_RESULT_MAX
+} eARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_RESULT;
+
+
+/**
+ * @brief State of device video recording.
+ */
+typedef enum
+{
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_STATE_STOPPED = 0,    ///< Video is stopped.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_STATE_STARTED = 1,    ///< Video is started.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_STATE_NOTAVAILABLE = 2,    ///< The video recording is not available.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_STATE_MAX
+} eARCOMMANDS_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_STATE;
+
+
+/**
+ * @brief Error to explain the state.
+ */
+typedef enum
+{
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_ERROR_OK = 0,    ///< No Error.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_ERROR_UNKNOWN = 1,    ///< Unknown generic error.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_ERROR_CAMERA_KO = 2,    ///< Video camera is out of order.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_ERROR_MEMORYFULL = 3,    ///< Memory full ; cannot save one additional video.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_ERROR_LOWBATTERY = 4,    ///< Battery is too low to start/keep recording.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_ERROR_NO_SD = 5,    ///< SD card doesn't exist.
+    ARCOMMANDS_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_ERROR_MAX
+} eARCOMMANDS_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_ERROR;
+
+
+/**
+ * @brief Type of the electric frequency.
+ */
+typedef enum
+{
+    ARCOMMANDS_MINIDRONE_VIDEOSETTINGS_ELECTRICFREQUENCY_FREQUENCY_FIFTY_HERTZ = 0,    ///< Electric frequency of the country is 50hz.
+    ARCOMMANDS_MINIDRONE_VIDEOSETTINGS_ELECTRICFREQUENCY_FREQUENCY_SIXTY_HERTZ = 1,    ///< Electric frequency of the country is 60hz.
+    ARCOMMANDS_MINIDRONE_VIDEOSETTINGS_ELECTRICFREQUENCY_FREQUENCY_MAX
+} eARCOMMANDS_MINIDRONE_VIDEOSETTINGS_ELECTRICFREQUENCY_FREQUENCY;
+
+
+/**
+ * @brief Video resolution type.
+ */
+typedef enum
+{
+    ARCOMMANDS_MINIDRONE_VIDEOSETTINGS_VIDEORESOLUTION_TYPE_VGA = 0,    ///< 16/9 VGA streaming (640 x 360).
+    ARCOMMANDS_MINIDRONE_VIDEOSETTINGS_VIDEORESOLUTION_TYPE_HD = 1,    ///< HD streaming (1280 x 720).
+    ARCOMMANDS_MINIDRONE_VIDEOSETTINGS_VIDEORESOLUTION_TYPE_MAX
+} eARCOMMANDS_MINIDRONE_VIDEOSETTINGS_VIDEORESOLUTION_TYPE;
+
+
+/**
+ * @brief Type of the electric frequency.
+ */
+typedef enum
+{
+    ARCOMMANDS_MINIDRONE_VIDEOSETTINGSSTATE_ELECTRICFREQUENCYCHANGED_FREQUENCY_FIFTY_HERTZ = 0,    ///< Electric frequency of the country is 50hz.
+    ARCOMMANDS_MINIDRONE_VIDEOSETTINGSSTATE_ELECTRICFREQUENCYCHANGED_FREQUENCY_SIXTY_HERTZ = 1,    ///< Electric frequency of the country is 60hz.
+    ARCOMMANDS_MINIDRONE_VIDEOSETTINGSSTATE_ELECTRICFREQUENCYCHANGED_FREQUENCY_MAX
+} eARCOMMANDS_MINIDRONE_VIDEOSETTINGSSTATE_ELECTRICFREQUENCYCHANGED_FREQUENCY;
+
+
+/**
+ * @brief Video resolution type.
+ */
+typedef enum
+{
+    ARCOMMANDS_MINIDRONE_VIDEOSETTINGSSTATE_VIDEORESOLUTIONCHANGED_TYPE_VGA = 0,    ///< 16/9 VGA streaming (640 x 360).
+    ARCOMMANDS_MINIDRONE_VIDEOSETTINGSSTATE_VIDEORESOLUTIONCHANGED_TYPE_HD = 1,    ///< HD streaming (1280 x 720).
+    ARCOMMANDS_MINIDRONE_VIDEOSETTINGSSTATE_VIDEORESOLUTIONCHANGED_TYPE_MAX
+} eARCOMMANDS_MINIDRONE_VIDEOSETTINGSSTATE_VIDEORESOLUTIONCHANGED_TYPE;
+
+
+/**
+ * @brief Command to record video
+ */
+typedef enum
+{
+    ARCOMMANDS_MINIDRONE_MINICAM_VIDEO_RECORD_STOP = 0,    ///< Stop the video recording.
+    ARCOMMANDS_MINIDRONE_MINICAM_VIDEO_RECORD_START = 1,    ///< Start the video recording.
+    ARCOMMANDS_MINIDRONE_MINICAM_VIDEO_RECORD_MAX
+} eARCOMMANDS_MINIDRONE_MINICAM_VIDEO_RECORD;
 
 // Feature powerup
 
@@ -2636,16 +3071,16 @@ typedef enum
     ARCOMMANDS_RC_CHANNEL_ACTION_MAX
 } eARCOMMANDS_RC_CHANNEL_ACTION;
 
-#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_INVALID (1 << ARCOMMANDS_RC_CHANNEL_ACTION_INVALID)    ///< Invalid/Unused channel.
-#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_ROLL (1 << ARCOMMANDS_RC_CHANNEL_ACTION_ROLL)    ///< Roll axis channel.
-#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_PITCH (1 << ARCOMMANDS_RC_CHANNEL_ACTION_PITCH)    ///< Pitch axis channel.
-#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_YAW (1 << ARCOMMANDS_RC_CHANNEL_ACTION_YAW)    ///< Yaw axis channel.
-#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_GAZ (1 << ARCOMMANDS_RC_CHANNEL_ACTION_GAZ)    ///< Gaz / Throttle / Altitude axis channel.
-#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_TAKEOFF_LAND (1 << ARCOMMANDS_RC_CHANNEL_ACTION_TAKEOFF_LAND)    ///< Takeoff / Land channel.
-#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_EMERGENCY (1 << ARCOMMANDS_RC_CHANNEL_ACTION_EMERGENCY)    ///< Emergency channel.
-#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_RETURN_HOME (1 << ARCOMMANDS_RC_CHANNEL_ACTION_RETURN_HOME)    ///< Return Home channel.
-#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_PILOTING_MODE (1 << ARCOMMANDS_RC_CHANNEL_ACTION_PILOTING_MODE)    ///< RC Piloting mode.\nAuto mode: used for doing flightplans and for assisted flying\nwith a non-RC controller.\nEasy manual mode: used for assisted flying with a RC controller.\nManual mode: used for non-assisted flying with a RC controller and\nfor directly controlling the servomotors.
-#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_TAKE_CONTROL (1 << ARCOMMANDS_RC_CHANNEL_ACTION_TAKE_CONTROL)    ///< RC take control.\nWhen take control is activated the RC controller, if\navailable, becomes the main controller.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_INVALID (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_ACTION_INVALID)    ///< Invalid/Unused channel.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_ROLL (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_ACTION_ROLL)    ///< Roll axis channel.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_PITCH (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_ACTION_PITCH)    ///< Pitch axis channel.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_YAW (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_ACTION_YAW)    ///< Yaw axis channel.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_GAZ (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_ACTION_GAZ)    ///< Gaz / Throttle / Altitude axis channel.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_TAKEOFF_LAND (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_ACTION_TAKEOFF_LAND)    ///< Takeoff / Land channel.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_EMERGENCY (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_ACTION_EMERGENCY)    ///< Emergency channel.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_RETURN_HOME (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_ACTION_RETURN_HOME)    ///< Return Home channel.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_PILOTING_MODE (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_ACTION_PILOTING_MODE)    ///< RC Piloting mode.\nAuto mode: used for doing flightplans and for assisted flying\nwith a non-RC controller.\nEasy manual mode: used for assisted flying with a RC controller.\nManual mode: used for non-assisted flying with a RC controller and\nfor directly controlling the servomotors.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_ACTION_TAKE_CONTROL (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_ACTION_TAKE_CONTROL)    ///< RC take control.\nWhen take control is activated the RC controller, if\navailable, becomes the main controller.
 
 
 /**
@@ -2675,13 +3110,13 @@ typedef enum
     ARCOMMANDS_RC_CHANNEL_TYPE_MAX
 } eARCOMMANDS_RC_CHANNEL_TYPE;
 
-#define ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_INVALID (1 << ARCOMMANDS_RC_CHANNEL_TYPE_INVALID)    ///< Invalid channel physical type.
-#define ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_SIGNED_AXIS (1 << ARCOMMANDS_RC_CHANNEL_TYPE_SIGNED_AXIS)    ///< Signed axis type.
-#define ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_UNSIGNED_AXIS (1 << ARCOMMANDS_RC_CHANNEL_TYPE_UNSIGNED_AXIS)    ///< Unsigned axis type.
-#define ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_MONOSTABLE_BUTTON (1 << ARCOMMANDS_RC_CHANNEL_TYPE_MONOSTABLE_BUTTON)    ///< Monostable button type.
-#define ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_BISTABLE_BUTTON (1 << ARCOMMANDS_RC_CHANNEL_TYPE_BISTABLE_BUTTON)    ///< Bistable button type.
-#define ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_TRISTATE_BUTTON (1 << ARCOMMANDS_RC_CHANNEL_TYPE_TRISTATE_BUTTON)    ///< Tristate button type.
-#define ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_ROTARY_BUTTON (1 << ARCOMMANDS_RC_CHANNEL_TYPE_ROTARY_BUTTON)    ///< Rotary button type.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_INVALID (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_TYPE_INVALID)    ///< Invalid channel physical type.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_SIGNED_AXIS (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_TYPE_SIGNED_AXIS)    ///< Signed axis type.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_UNSIGNED_AXIS (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_TYPE_UNSIGNED_AXIS)    ///< Unsigned axis type.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_MONOSTABLE_BUTTON (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_TYPE_MONOSTABLE_BUTTON)    ///< Monostable button type.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_BISTABLE_BUTTON (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_TYPE_BISTABLE_BUTTON)    ///< Bistable button type.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_TRISTATE_BUTTON (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_TYPE_TRISTATE_BUTTON)    ///< Tristate button type.
+#define ARCOMMANDS_FLAG_RC_CHANNEL_TYPE_ROTARY_BUTTON (UINT32_C(1) << ARCOMMANDS_RC_CHANNEL_TYPE_ROTARY_BUTTON)    ///< Rotary button type.
 
 // Feature SkyController
 
@@ -2706,6 +3141,28 @@ typedef enum
     ARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGED_BAND_5GHZ = 1,    ///< 5 GHz band
     ARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGED_BAND_MAX
 } eARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGED_BAND;
+
+
+/**
+ * @brief The band of this channel : 2.4 GHz or 5 GHz
+ */
+typedef enum
+{
+    ARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGEDV2_BAND_2_4GHZ = 0,    ///< 2.4 GHz band
+    ARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGEDV2_BAND_5GHZ = 1,    ///< 5 GHz band
+    ARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGEDV2_BAND_MAX
+} eARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGEDV2_BAND;
+
+
+/**
+ * @brief Type of environment
+ */
+typedef enum
+{
+    ARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIENVIRONMENTCHANGED_ENVIRONMENT_INDOOR = 0,    ///< indoor environment
+    ARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIENVIRONMENTCHANGED_ENVIRONMENT_OUTDOOR = 1,    ///< outdoor environment
+    ARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIENVIRONMENTCHANGED_ENVIRONMENT_MAX
+} eARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIENVIRONMENTCHANGED_ENVIRONMENT;
 
 
 /**
@@ -2856,6 +3313,20 @@ typedef enum
 
 
 /**
+ * @brief The calibration state
+ */
+typedef enum
+{
+    ARCOMMANDS_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATEV2_STATE_NOTCALIBRATED = 0,    ///< A calibration is needed
+    ARCOMMANDS_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATEV2_STATE_CALIBRATINGX = 1,    ///< A calibration is in progress on the X axis
+    ARCOMMANDS_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATEV2_STATE_CALIBRATINGY = 2,    ///< A calibration is in progress on the Y axis
+    ARCOMMANDS_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATEV2_STATE_CALIBRATINGZ = 3,    ///< A calibration is in progress on the Z axis
+    ARCOMMANDS_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATEV2_STATE_CALIBRATED = 4,    ///< The sensor is calibrated
+    ARCOMMANDS_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATEV2_STATE_MAX
+} eARCOMMANDS_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATEV2_STATE;
+
+
+/**
  * @brief Reason of the shutdown of the product
  */
 typedef enum
@@ -2866,6 +3337,33 @@ typedef enum
     ARCOMMANDS_SKYCONTROLLER_COMMONEVENTSTATE_SHUTDOWN_REASON_FACTORY_RESET = 3,    ///< The product is going to be factory reset
     ARCOMMANDS_SKYCONTROLLER_COMMONEVENTSTATE_SHUTDOWN_REASON_MAX
 } eARCOMMANDS_SKYCONTROLLER_COMMONEVENTSTATE_SHUTDOWN_REASON;
+
+// Feature thermal_cam
+
+/**
+ * @brief Camera state
+ */
+typedef enum
+{
+    ARCOMMANDS_THERMAL_CAM_STATE_ACTIVATED = 0,    ///< Camera is activated
+    ARCOMMANDS_THERMAL_CAM_STATE_DEACTIVATED = 1,    ///< Camera is deactivated
+    ARCOMMANDS_THERMAL_CAM_STATE_PENDING = 2,    ///< Activation is pending
+    ARCOMMANDS_THERMAL_CAM_STATE_MAX
+} eARCOMMANDS_THERMAL_CAM_STATE;
+
+
+/**
+ * @brief Thermal range
+ */
+typedef enum
+{
+    ARCOMMANDS_THERMAL_CAM_RANGE_HIGH = 0,    ///< High range (from 0 to 400°C)
+    ARCOMMANDS_THERMAL_CAM_RANGE_LOW = 1,    ///< Low range (from 0 to 120°C)
+    ARCOMMANDS_THERMAL_CAM_RANGE_MAX
+} eARCOMMANDS_THERMAL_CAM_RANGE;
+
+#define ARCOMMANDS_FLAG_THERMAL_CAM_RANGE_HIGH (UINT32_C(1) << ARCOMMANDS_THERMAL_CAM_RANGE_HIGH)    ///< High range (from 0 to 400°C)
+#define ARCOMMANDS_FLAG_THERMAL_CAM_RANGE_LOW (UINT32_C(1) << ARCOMMANDS_THERMAL_CAM_RANGE_LOW)    ///< Low range (from 0 to 120°C)
 
 // Feature wifi
 
@@ -2879,8 +3377,8 @@ typedef enum
     ARCOMMANDS_WIFI_BAND_MAX
 } eARCOMMANDS_WIFI_BAND;
 
-#define ARCOMMANDS_FLAG_WIFI_BAND_2_4_GHZ (1 << ARCOMMANDS_WIFI_BAND_2_4_GHZ)    ///< 2.4 GHz band
-#define ARCOMMANDS_FLAG_WIFI_BAND_5_GHZ (1 << ARCOMMANDS_WIFI_BAND_5_GHZ)    ///< 5 GHz band
+#define ARCOMMANDS_FLAG_WIFI_BAND_2_4_GHZ (UINT32_C(1) << ARCOMMANDS_WIFI_BAND_2_4_GHZ)    ///< 2.4 GHz band
+#define ARCOMMANDS_FLAG_WIFI_BAND_5_GHZ (UINT32_C(1) << ARCOMMANDS_WIFI_BAND_5_GHZ)    ///< 5 GHz band
 
 
 /**
@@ -2927,8 +3425,8 @@ typedef enum
     ARCOMMANDS_WIFI_ENVIRONMENT_MAX
 } eARCOMMANDS_WIFI_ENVIRONMENT;
 
-#define ARCOMMANDS_FLAG_WIFI_ENVIRONMENT_INDOOR (1 << ARCOMMANDS_WIFI_ENVIRONMENT_INDOOR)    ///< indoor environment
-#define ARCOMMANDS_FLAG_WIFI_ENVIRONMENT_OUTDOOR (1 << ARCOMMANDS_WIFI_ENVIRONMENT_OUTDOOR)    ///< outdoor environment
+#define ARCOMMANDS_FLAG_WIFI_ENVIRONMENT_INDOOR (UINT32_C(1) << ARCOMMANDS_WIFI_ENVIRONMENT_INDOOR)    ///< indoor environment
+#define ARCOMMANDS_FLAG_WIFI_ENVIRONMENT_OUTDOOR (UINT32_C(1) << ARCOMMANDS_WIFI_ENVIRONMENT_OUTDOOR)    ///< outdoor environment
 
 
 /**
@@ -3102,6 +3600,7 @@ typedef struct
 
 } ARCOMMANDS_Generic_DroneSettingsChanged_t;
 
+// Feature animation
 // Feature ARDrone3
 // Feature common
 // Feature controller_info
@@ -3115,6 +3614,7 @@ typedef struct
 // Feature powerup
 // Feature rc
 // Feature SkyController
+// Feature thermal_cam
 // Feature wifi
 
 #endif /* _LIBARCOMMANDS_ARCOMMANDS_TYPES_H_ */

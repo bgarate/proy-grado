@@ -137,7 +137,9 @@ typedef enum MAV_CMD
 	MAV_CMD_USER_4=31013, /* User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item. |User defined| User defined| User defined| User defined| User defined| User defined| User defined|  */
 	MAV_CMD_USER_5=31014, /* User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item. |User defined| User defined| User defined| User defined| User defined| User defined| User defined|  */
 	MAV_CMD_SET_VIEW_MODE=50000, /* Set the view mode |View mode type (see MAV_VIEW_MODE_TYPE)| Index of the ROI if view mode type is VIEW_MODE_TYPE_ROI. Empty otherwise.| Empty| Empty| Empty| Empty| Empty|  */
-	MAV_CMD_ENUM_END=50001, /*  | */
+	MAV_CMD_SET_STILL_CAPTURE_MODE=50001, /* Set the still capture mode |Still capture mode type (see MAV_STILL_CAPTURE_MODE_TYPE)| Timelapse interval in milliseconds if still capture mode type is STILL_CAPTURE_MODE_TYPE_TIMELAPSE. Interval in centimeters between each capture if still capture mode type is STILL_CAPTURE_MODE_TYPE_GPS_POSITION. Overlapping percentage between each capture if still capture mode type is STILL_CAPTURE_MODE_TYPE_AUTOMATIC_OVERLAP.| Empty| Empty| Empty| Empty| Empty|  */
+	MAV_CMD_SET_PHOTO_SENSORS=50002, /* Set the photo sensors that are/will be used. |Photo sensors bitfield (see MAV_PHOTO_SENSORS_FLAG)| Empty| Empty| Empty| Empty| Empty| Empty|  */
+	MAV_CMD_ENUM_END=50003, /*  | */
 } MAV_CMD;
 #endif
 
@@ -151,6 +153,32 @@ typedef enum MAV_VIEW_MODE_TYPE
 	VIEW_MODE_TYPE_ROI=2, /* Vehicle orientation is given by a ROI. | */
 	MAV_VIEW_MODE_TYPE_ENUM_END=3, /*  | */
 } MAV_VIEW_MODE_TYPE;
+#endif
+
+/** @brief Type of still capture that is performed upon a still capture initiation. */
+#ifndef HAVE_ENUM_MAV_STILL_CAPTURE_MODE_TYPE
+#define HAVE_ENUM_MAV_STILL_CAPTURE_MODE_TYPE
+typedef enum MAV_STILL_CAPTURE_MODE_TYPE
+{
+	STILL_CAPTURE_MODE_TYPE_TIMELAPSE=0, /* Timelapse capture. | */
+	STILL_CAPTURE_MODE_TYPE_GPS_POSITION=1, /* Capture according to the GPS position of the vehicle. Images are captured with an equal spacing. | */
+	STILL_CAPTURE_MODE_TYPE_AUTOMATIC_OVERLAP=2, /* Capture according to an overlap rate. Images captured will overlap each other by a percentage defined by the overlap rate. | */
+	MAV_STILL_CAPTURE_MODE_TYPE_ENUM_END=3, /*  | */
+} MAV_STILL_CAPTURE_MODE_TYPE;
+#endif
+
+/** @brief These flags encode the photo sensors. */
+#ifndef HAVE_ENUM_MAV_PHOTO_SENSORS_FLAG
+#define HAVE_ENUM_MAV_PHOTO_SENSORS_FLAG
+typedef enum MAV_PHOTO_SENSORS_FLAG
+{
+	MAV_PHOTO_SENSORS_FLAG_RGB=1, /* 0x01 RGB sensor. | */
+	MAV_PHOTO_SENSORS_FLAG_GREEN_BAND=2, /* 0x02 Green band sensor. | */
+	MAV_PHOTO_SENSORS_FLAG_RED_BAND=4, /* 0x04 Red band sensor. | */
+	MAV_PHOTO_SENSORS_FLAG_RED_EDGE_BAND=8, /* 0x08 Red-edge band sensor. | */
+	MAV_PHOTO_SENSORS_FLAG_NEAR_IR_BAND=16, /* 0x10 Near-infrared band sensor. | */
+	MAV_PHOTO_SENSORS_FLAG_ENUM_END=17, /*  | */
+} MAV_PHOTO_SENSORS_FLAG;
 #endif
 
 // MAVLINK VERSION

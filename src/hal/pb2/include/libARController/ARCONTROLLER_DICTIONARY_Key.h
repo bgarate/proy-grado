@@ -23,6 +23,18 @@ typedef enum
 {
     ARCONTROLLER_DICTIONARY_KEY_GENERIC = 0, /**< Key used to define the feature <code>Generic</code> */
     ARCONTROLLER_DICTIONARY_KEY_GENERIC_DRONESETTINGSCHANGED, /**< Key used to define the event <code>DroneSettingsChanged</code> in project <code>Generic</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ANIMATION, /**< Key used to define the feature <code>Animation</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ANIMATION_AVAILABILITY, /**< Key used to define the event <code>Availability</code> in project <code>Animation</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ANIMATION_STATE, /**< Key used to define the event <code>State</code> in project <code>Animation</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ANIMATION_FLIPSTATE, /**< Key used to define the event <code>FlipState</code> in project <code>Animation</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ANIMATION_HORIZONTALPANORAMASTATE, /**< Key used to define the event <code>HorizontalPanoramaState</code> in project <code>Animation</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ANIMATION_DRONIESTATE, /**< Key used to define the event <code>DronieState</code> in project <code>Animation</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ANIMATION_HORIZONTALREVEALSTATE, /**< Key used to define the event <code>HorizontalRevealState</code> in project <code>Animation</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ANIMATION_VERTICALREVEALSTATE, /**< Key used to define the event <code>VerticalRevealState</code> in project <code>Animation</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ANIMATION_SPIRALSTATE, /**< Key used to define the event <code>SpiralState</code> in project <code>Animation</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ANIMATION_PARABOLASTATE, /**< Key used to define the event <code>ParabolaState</code> in project <code>Animation</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ANIMATION_CANDLESTATE, /**< Key used to define the event <code>CandleState</code> in project <code>Animation</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ANIMATION_DOLLYSLIDESTATE, /**< Key used to define the event <code>DollySlideState</code> in project <code>Animation</code> */
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3, /**< Key used to define the feature <code>ARDrone3</code> */
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_MEDIARECORDSTATE_PICTURESTATECHANGED, /**< Key used to define the event <code>MediaRecordStatePictureStateChanged</code> in project <code>ARDrone3</code> */
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_MEDIARECORDSTATE_VIDEOSTATECHANGED, /**< Key used to define the event <code>MediaRecordStateVideoStateChanged</code> in project <code>ARDrone3</code> */
@@ -44,6 +56,9 @@ typedef enum
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_LANDINGSTATECHANGED, /**< Key used to define the event <code>PilotingStateLandingStateChanged</code> in project <code>ARDrone3</code> */
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_AIRSPEEDCHANGED, /**< Key used to define the event <code>PilotingStateAirSpeedChanged</code> in project <code>ARDrone3</code> */
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED, /**< Key used to define the event <code>PilotingStateMoveToChanged</code> in project <code>ARDrone3</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_MOTIONSTATE, /**< Key used to define the event <code>PilotingStateMotionState</code> in project <code>ARDrone3</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_PILOTEDPOI, /**< Key used to define the event <code>PilotingStatePilotedPOI</code> in project <code>ARDrone3</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_RETURNHOMEBATTERYCAPACITY, /**< Key used to define the event <code>PilotingStateReturnHomeBatteryCapacity</code> in project <code>ARDrone3</code> */
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGEVENT_MOVEBYEND, /**< Key used to define the event <code>PilotingEventMoveByEnd</code> in project <code>ARDrone3</code> */
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_NETWORKSTATE_WIFISCANLISTCHANGED, /**< Key used to define the event <code>NetworkStateWifiScanListChanged</code> in project <code>ARDrone3</code> */
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_NETWORKSTATE_ALLWIFISCANCHANGED, /**< Key used to define the event <code>NetworkStateAllWifiScanChanged</code> in project <code>ARDrone3</code> */
@@ -65,6 +80,7 @@ typedef enum
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSETTINGSSTATE_CIRCLINGRADIUSCHANGED, /**< Key used to define the event <code>PilotingSettingsStateCirclingRadiusChanged</code> in project <code>ARDrone3</code> */
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSETTINGSSTATE_CIRCLINGALTITUDECHANGED, /**< Key used to define the event <code>PilotingSettingsStateCirclingAltitudeChanged</code> in project <code>ARDrone3</code> */
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSETTINGSSTATE_PITCHMODECHANGED, /**< Key used to define the event <code>PilotingSettingsStatePitchModeChanged</code> in project <code>ARDrone3</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSETTINGSSTATE_MOTIONDETECTION, /**< Key used to define the event <code>PilotingSettingsStateMotionDetection</code> in project <code>ARDrone3</code> */
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_SPEEDSETTINGSSTATE_MAXVERTICALSPEEDCHANGED, /**< Key used to define the event <code>SpeedSettingsStateMaxVerticalSpeedChanged</code> in project <code>ARDrone3</code> */
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_SPEEDSETTINGSSTATE_MAXROTATIONSPEEDCHANGED, /**< Key used to define the event <code>SpeedSettingsStateMaxRotationSpeedChanged</code> in project <code>ARDrone3</code> */
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_SPEEDSETTINGSSTATE_HULLPROTECTIONCHANGED, /**< Key used to define the event <code>SpeedSettingsStateHullProtectionChanged</code> in project <code>ARDrone3</code> */
@@ -111,6 +127,9 @@ typedef enum
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_GPSSTATE_HOMETYPEAVAILABILITYCHANGED, /**< Key used to define the event <code>GPSStateHomeTypeAvailabilityChanged</code> in project <code>ARDrone3</code> */
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_GPSSTATE_HOMETYPECHOSENCHANGED, /**< Key used to define the event <code>GPSStateHomeTypeChosenChanged</code> in project <code>ARDrone3</code> */
     ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PROSTATE_FEATURES, /**< Key used to define the event <code>PROStateFeatures</code> in project <code>ARDrone3</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_ACCESSORYSTATE_CONNECTEDACCESSORIES, /**< Key used to define the event <code>AccessoryStateConnectedAccessories</code> in project <code>ARDrone3</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_ACCESSORYSTATE_BATTERY, /**< Key used to define the event <code>AccessoryStateBattery</code> in project <code>ARDrone3</code> */
+    ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_SOUNDSTATE_ALERTSOUND, /**< Key used to define the event <code>SoundStateAlertSound</code> in project <code>ARDrone3</code> */
     ARCONTROLLER_DICTIONARY_KEY_COMMON, /**< Key used to define the feature <code>Common</code> */
     ARCONTROLLER_DICTIONARY_KEY_COMMON_NETWORKEVENT_DISCONNECTION, /**< Key used to define the event <code>NetworkEventDisconnection</code> in project <code>Common</code> */
     ARCONTROLLER_DICTIONARY_KEY_COMMON_SETTINGSSTATE_ALLSETTINGSCHANGED, /**< Key used to define the event <code>SettingsStateAllSettingsChanged</code> in project <code>Common</code> */
@@ -242,12 +261,15 @@ typedef enum
     ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSTATE_AUTOTAKEOFFMODECHANGED, /**< Key used to define the event <code>PilotingStateAutoTakeOffModeChanged</code> in project <code>MiniDrone</code> */
     ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSTATE_FLYINGMODECHANGED, /**< Key used to define the event <code>PilotingStateFlyingModeChanged</code> in project <code>MiniDrone</code> */
     ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSTATE_PLANEGEARBOXCHANGED, /**< Key used to define the event <code>PilotingStatePlaneGearBoxChanged</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSTATE_PILOTINGMODECHANGED, /**< Key used to define the event <code>PilotingStatePilotingModeChanged</code> in project <code>MiniDrone</code> */
     ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MEDIARECORDSTATE_PICTURESTATECHANGED, /**< Key used to define the event <code>MediaRecordStatePictureStateChanged</code> in project <code>MiniDrone</code> */
     ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MEDIARECORDSTATE_PICTURESTATECHANGEDV2, /**< Key used to define the event <code>MediaRecordStatePictureStateChangedV2</code> in project <code>MiniDrone</code> */
     ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MEDIARECORDEVENT_PICTUREEVENTCHANGED, /**< Key used to define the event <code>MediaRecordEventPictureEventChanged</code> in project <code>MiniDrone</code> */
     ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSETTINGSSTATE_MAXALTITUDECHANGED, /**< Key used to define the event <code>PilotingSettingsStateMaxAltitudeChanged</code> in project <code>MiniDrone</code> */
     ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSETTINGSSTATE_MAXTILTCHANGED, /**< Key used to define the event <code>PilotingSettingsStateMaxTiltChanged</code> in project <code>MiniDrone</code> */
     ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSETTINGSSTATE_BANKEDTURNCHANGED, /**< Key used to define the event <code>PilotingSettingsStateBankedTurnChanged</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSETTINGSSTATE_MAXTHROTTLECHANGED, /**< Key used to define the event <code>PilotingSettingsStateMaxThrottleChanged</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSETTINGSSTATE_PREFERREDPILOTINGMODECHANGED, /**< Key used to define the event <code>PilotingSettingsStatePreferredPilotingModeChanged</code> in project <code>MiniDrone</code> */
     ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_SPEEDSETTINGSSTATE_MAXVERTICALSPEEDCHANGED, /**< Key used to define the event <code>SpeedSettingsStateMaxVerticalSpeedChanged</code> in project <code>MiniDrone</code> */
     ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_SPEEDSETTINGSSTATE_MAXROTATIONSPEEDCHANGED, /**< Key used to define the event <code>SpeedSettingsStateMaxRotationSpeedChanged</code> in project <code>MiniDrone</code> */
     ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_SPEEDSETTINGSSTATE_WHEELSCHANGED, /**< Key used to define the event <code>SpeedSettingsStateWheelsChanged</code> in project <code>MiniDrone</code> */
@@ -261,6 +283,20 @@ typedef enum
     ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_USBACCESSORYSTATE_CLAWSTATE, /**< Key used to define the event <code>UsbAccessoryStateClawState</code> in project <code>MiniDrone</code> */
     ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_USBACCESSORYSTATE_GUNSTATE, /**< Key used to define the event <code>UsbAccessoryStateGunState</code> in project <code>MiniDrone</code> */
     ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONEPOSITION, /**< Key used to define the event <code>NavigationDataStateDronePosition</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONESPEED, /**< Key used to define the event <code>NavigationDataStateDroneSpeed</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONEALTITUDE, /**< Key used to define the event <code>NavigationDataStateDroneAltitude</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONEQUATERNION, /**< Key used to define the event <code>NavigationDataStateDroneQuaternion</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_POWERMODECHANGED, /**< Key used to define the event <code>MinicamStatePowerModeChanged</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_PRODUCTSERIALCHANGED, /**< Key used to define the event <code>MinicamStateProductSerialChanged</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_STATECHANGED, /**< Key used to define the event <code>MinicamStateStateChanged</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_VERSIONCHANGED, /**< Key used to define the event <code>MinicamStateVersionChanged</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_PICTURECHANGED, /**< Key used to define the event <code>MinicamStatePictureChanged</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED, /**< Key used to define the event <code>MinicamStateVideoStateChanged</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_MASSSTORAGEFORMATCHANGED, /**< Key used to define the event <code>MinicamStateMassStorageFormatChanged</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_VIDEOSETTINGSSTATE_AUTORECORDCHANGED, /**< Key used to define the event <code>VideoSettingsStateAutorecordChanged</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_VIDEOSETTINGSSTATE_ELECTRICFREQUENCYCHANGED, /**< Key used to define the event <code>VideoSettingsStateElectricFrequencyChanged</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_VIDEOSETTINGSSTATE_VIDEORESOLUTIONCHANGED, /**< Key used to define the event <code>VideoSettingsStateVideoResolutionChanged</code> in project <code>MiniDrone</code> */
+    ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_REMOTECONTROLLERSTATE_CONNECTIONCHANGED, /**< Key used to define the event <code>RemoteControllerStateConnectionChanged</code> in project <code>MiniDrone</code> */
     ARCONTROLLER_DICTIONARY_KEY_POWERUP, /**< Key used to define the feature <code>Powerup</code> */
     ARCONTROLLER_DICTIONARY_KEY_POWERUP_PILOTINGSTATE_ALERTSTATECHANGED, /**< Key used to define the event <code>PilotingStateAlertStateChanged</code> in project <code>Powerup</code> */
     ARCONTROLLER_DICTIONARY_KEY_POWERUP_PILOTINGSTATE_FLYINGSTATECHANGED, /**< Key used to define the event <code>PilotingStateFlyingStateChanged</code> in project <code>Powerup</code> */
@@ -294,6 +330,9 @@ typedef enum
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGED, /**< Key used to define the event <code>WifiStateWifiAuthChannelListChanged</code> in project <code>SkyController</code> */
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_WIFISTATE_ALLWIFIAUTHCHANNELCHANGED, /**< Key used to define the event <code>WifiStateAllWifiAuthChannelChanged</code> in project <code>SkyController</code> */
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_WIFISTATE_WIFISIGNALCHANGED, /**< Key used to define the event <code>WifiStateWifiSignalChanged</code> in project <code>SkyController</code> */
+    ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGEDV2, /**< Key used to define the event <code>WifiStateWifiAuthChannelListChangedV2</code> in project <code>SkyController</code> */
+    ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_WIFISTATE_WIFICOUNTRYCHANGED, /**< Key used to define the event <code>WifiStateWifiCountryChanged</code> in project <code>SkyController</code> */
+    ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_WIFISTATE_WIFIENVIRONMENTCHANGED, /**< Key used to define the event <code>WifiStateWifiEnvironmentChanged</code> in project <code>SkyController</code> */
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_DEVICESTATE_DEVICELIST, /**< Key used to define the event <code>DeviceStateDeviceList</code> in project <code>SkyController</code> */
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_DEVICESTATE_CONNEXIONCHANGED, /**< Key used to define the event <code>DeviceStateConnexionChanged</code> in project <code>SkyController</code> */
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_SETTINGSSTATE_ALLSETTINGSCHANGED, /**< Key used to define the event <code>SettingsStateAllSettingsChanged</code> in project <code>SkyController</code> */
@@ -301,6 +340,7 @@ typedef enum
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_SETTINGSSTATE_PRODUCTSERIALCHANGED, /**< Key used to define the event <code>SettingsStateProductSerialChanged</code> in project <code>SkyController</code> */
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_SETTINGSSTATE_PRODUCTVARIANTCHANGED, /**< Key used to define the event <code>SettingsStateProductVariantChanged</code> in project <code>SkyController</code> */
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_SETTINGSSTATE_PRODUCTVERSIONCHANGED, /**< Key used to define the event <code>SettingsStateProductVersionChanged</code> in project <code>SkyController</code> */
+    ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_SETTINGSSTATE_CPUID, /**< Key used to define the event <code>SettingsStateCPUID</code> in project <code>SkyController</code> */
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_COMMONSTATE_ALLSTATESCHANGED, /**< Key used to define the event <code>CommonStateAllStatesChanged</code> in project <code>SkyController</code> */
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_SKYCONTROLLERSTATE_BATTERYCHANGED, /**< Key used to define the event <code>SkyControllerStateBatteryChanged</code> in project <code>SkyController</code> */
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_SKYCONTROLLERSTATE_GPSFIXCHANGED, /**< Key used to define the event <code>SkyControllerStateGpsFixChanged</code> in project <code>SkyController</code> */
@@ -328,8 +368,13 @@ typedef enum
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_COPILOTINGSTATE_PILOTINGSOURCE, /**< Key used to define the event <code>CoPilotingStatePilotingSource</code> in project <code>SkyController</code> */
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATE, /**< Key used to define the event <code>CalibrationStateMagnetoCalibrationState</code> in project <code>SkyController</code> */
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONQUALITYUPDATESSTATE, /**< Key used to define the event <code>CalibrationStateMagnetoCalibrationQualityUpdatesState</code> in project <code>SkyController</code> */
+    ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATEV2, /**< Key used to define the event <code>CalibrationStateMagnetoCalibrationStateV2</code> in project <code>SkyController</code> */
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_BUTTONEVENTS_SETTINGS, /**< Key used to define the event <code>ButtonEventsSettings</code> in project <code>SkyController</code> */
     ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_COMMONEVENTSTATE_SHUTDOWN, /**< Key used to define the event <code>CommonEventStateShutdown</code> in project <code>SkyController</code> */
+    ARCONTROLLER_DICTIONARY_KEY_THERMAL_CAM, /**< Key used to define the feature <code>ThermalCam</code> */
+    ARCONTROLLER_DICTIONARY_KEY_THERMAL_CAM_CAMERASTATE, /**< Key used to define the event <code>CameraState</code> in project <code>ThermalCam</code> */
+    ARCONTROLLER_DICTIONARY_KEY_THERMAL_CAM_SENSITIVITY, /**< Key used to define the event <code>Sensitivity</code> in project <code>ThermalCam</code> */
+    ARCONTROLLER_DICTIONARY_KEY_THERMAL_CAM_CALIBRATIONINFOS, /**< Key used to define the event <code>CalibrationInfos</code> in project <code>ThermalCam</code> */
     ARCONTROLLER_DICTIONARY_KEY_WIFI, /**< Key used to define the feature <code>Wifi</code> */
     ARCONTROLLER_DICTIONARY_KEY_WIFI_SCANNEDITEM, /**< Key used to define the event <code>ScannedItem</code> in project <code>Wifi</code> */
     ARCONTROLLER_DICTIONARY_KEY_WIFI_AUTHORIZEDCHANNEL, /**< Key used to define the event <code>AuthorizedChannel</code> in project <code>Wifi</code> */

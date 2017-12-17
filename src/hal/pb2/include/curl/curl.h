@@ -691,7 +691,7 @@ typedef enum {
   CURLUSESSL_NONE,    /* do not attempt to use SSL */
   CURLUSESSL_TRY,     /* try using SSL, proceed anyway otherwise */
   CURLUSESSL_CONTROL, /* SSL for the control connection or fail */
-  CURLUSESSL_ALL,     /* SSL for all bodySocket or fail */
+  CURLUSESSL_ALL,     /* SSL for all communication or fail */
   CURLUSESSL_LAST     /* not an option, never use */
 } curl_usessl;
 
@@ -700,7 +700,7 @@ typedef enum {
 /* - ALLOW_BEAST tells libcurl to allow the BEAST SSL vulnerability in the
    name of improving interoperability with older servers. Some SSL libraries
    have introduced work-arounds for this flaw but those work-arounds sometimes
-   make the SSL bodySocket fail. To regain functionality with those broken
+   make the SSL communication fail. To regain functionality with those broken
    servers, a user can this way allow the vulnerability back. */
 #define CURLSSLOPT_ALLOW_BEAST (1<<0)
 
@@ -1233,7 +1233,7 @@ typedef enum {
   /* Enable SSL/TLS for FTP, pick one of:
      CURLUSESSL_TRY     - try using SSL, proceed anyway otherwise
      CURLUSESSL_CONTROL - SSL for the control connection or fail
-     CURLUSESSL_ALL     - SSL for all bodySocket or fail
+     CURLUSESSL_ALL     - SSL for all communication or fail
   */
   CINIT(USE_SSL, LONG, 119),
 

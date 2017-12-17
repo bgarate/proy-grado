@@ -391,7 +391,7 @@ typedef enum MAV_CMD_ACK
 {
 	MAV_CMD_ACK_OK=1, /* Command / mission item is ok. | */
 	MAV_CMD_ACK_ERR_FAIL=2, /* Generic error message if none of the other reasons fails or if no detailed error reporting is implemented. | */
-	MAV_CMD_ACK_ERR_ACCESS_DENIED=3, /* The system is refusing to accept this command from this source / bodySocket partner. | */
+	MAV_CMD_ACK_ERR_ACCESS_DENIED=3, /* The system is refusing to accept this command from this source / communication partner. | */
 	MAV_CMD_ACK_ERR_NOT_SUPPORTED=4, /* Command or mission item is not supported, other commands would be accepted. | */
 	MAV_CMD_ACK_ERR_COORDINATE_FRAME_NOT_SUPPORTED=5, /* The coordinate frame of this command / mission item is not supported. | */
 	MAV_CMD_ACK_ERR_COORDINATES_OUT_OF_RANGE=6, /* The coordinate frame of this command is ok, but he coordinate values exceed the safety limits of this system. This is a generic error, please use the more specific error messages below if possible. | */
@@ -454,7 +454,7 @@ typedef enum MAV_MISSION_RESULT
 	MAV_MISSION_INVALID_PARAM6_Y=11, /* y/param6 has an invalid value | */
 	MAV_MISSION_INVALID_PARAM7=12, /* param7 has an invalid value | */
 	MAV_MISSION_INVALID_SEQUENCE=13, /* received waypoint out of sequence | */
-	MAV_MISSION_DENIED=14, /* not accepting any mission commands from this bodySocket partner | */
+	MAV_MISSION_DENIED=14, /* not accepting any mission commands from this communication partner | */
 	MAV_MISSION_RESULT_ENUM_END=15, /*  | */
 } MAV_MISSION_RESULT;
 #endif

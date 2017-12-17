@@ -188,6 +188,387 @@ void ARCOMMANDS_Decoder_SetGenericDroneSettingsChangedCb (ARCOMMANDS_Decoder_t *
  */
 void ARCOMMANDS_Decoder_SetGenericDroneSettingsChangedCallback (ARCOMMANDS_Decoder_GenericDroneSettingsChangedCallback_t callback, void *custom) DEPRECATED;
 
+// Feature animation
+
+
+/**
+ * @brief callback type for the command animation.cancel
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationCancelCallback_t) (void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.cancel
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.cancel
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationCancelCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationCancelCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.cancel
+ * @param callback new callback for the command animation.cancel
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationCancelCallback (ARCOMMANDS_Decoder_AnimationCancelCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.start_flip
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationStartFlipCallback_t) (eARCOMMANDS_ANIMATION_FLIP_TYPE type, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.start_flip
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.start_flip
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartFlipCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationStartFlipCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.start_flip
+ * @param callback new callback for the command animation.start_flip
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartFlipCallback (ARCOMMANDS_Decoder_AnimationStartFlipCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.start_horizontal_panorama
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationStartHorizontalPanoramaCallback_t) (uint8_t provided_params, float rotation_angle, float rotation_speed, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.start_horizontal_panorama
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.start_horizontal_panorama
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartHorizontalPanoramaCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationStartHorizontalPanoramaCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.start_horizontal_panorama
+ * @param callback new callback for the command animation.start_horizontal_panorama
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartHorizontalPanoramaCallback (ARCOMMANDS_Decoder_AnimationStartHorizontalPanoramaCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.start_dronie
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationStartDronieCallback_t) (uint8_t provided_params, float speed, float distance, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.start_dronie
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.start_dronie
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartDronieCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationStartDronieCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.start_dronie
+ * @param callback new callback for the command animation.start_dronie
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartDronieCallback (ARCOMMANDS_Decoder_AnimationStartDronieCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.start_horizontal_reveal
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationStartHorizontalRevealCallback_t) (uint8_t provided_params, float speed, float distance, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.start_horizontal_reveal
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.start_horizontal_reveal
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartHorizontalRevealCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationStartHorizontalRevealCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.start_horizontal_reveal
+ * @param callback new callback for the command animation.start_horizontal_reveal
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartHorizontalRevealCallback (ARCOMMANDS_Decoder_AnimationStartHorizontalRevealCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.start_vertical_reveal
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationStartVerticalRevealCallback_t) (uint8_t provided_params, float speed, float vertical_distance, float rotation_angle, float rotation_speed, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.start_vertical_reveal
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.start_vertical_reveal
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartVerticalRevealCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationStartVerticalRevealCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.start_vertical_reveal
+ * @param callback new callback for the command animation.start_vertical_reveal
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartVerticalRevealCallback (ARCOMMANDS_Decoder_AnimationStartVerticalRevealCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.start_spiral
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationStartSpiralCallback_t) (uint8_t provided_params, float speed, float radius_variation, float vertical_distance, float revolution_nb, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.start_spiral
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.start_spiral
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartSpiralCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationStartSpiralCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.start_spiral
+ * @param callback new callback for the command animation.start_spiral
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartSpiralCallback (ARCOMMANDS_Decoder_AnimationStartSpiralCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.start_parabola
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationStartParabolaCallback_t) (uint8_t provided_params, float speed, float vertical_distance, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.start_parabola
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.start_parabola
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartParabolaCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationStartParabolaCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.start_parabola
+ * @param callback new callback for the command animation.start_parabola
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartParabolaCallback (ARCOMMANDS_Decoder_AnimationStartParabolaCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.start_candle
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationStartCandleCallback_t) (uint8_t provided_params, float speed, float vertical_distance, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.start_candle
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.start_candle
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartCandleCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationStartCandleCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.start_candle
+ * @param callback new callback for the command animation.start_candle
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartCandleCallback (ARCOMMANDS_Decoder_AnimationStartCandleCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.start_dolly_slide
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationStartDollySlideCallback_t) (uint8_t provided_params, float speed, float angle, float horizontal_distance, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.start_dolly_slide
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.start_dolly_slide
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartDollySlideCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationStartDollySlideCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.start_dolly_slide
+ * @param callback new callback for the command animation.start_dolly_slide
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStartDollySlideCallback (ARCOMMANDS_Decoder_AnimationStartDollySlideCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.availability
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationAvailabilityCallback_t) (uint32_t values, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.availability
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.availability
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationAvailabilityCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationAvailabilityCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.availability
+ * @param callback new callback for the command animation.availability
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationAvailabilityCallback (ARCOMMANDS_Decoder_AnimationAvailabilityCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.state
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationStateCallback_t) (eARCOMMANDS_ANIMATION_TYPE type, uint8_t percent, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.state
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStateCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationStateCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.state
+ * @param callback new callback for the command animation.state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationStateCallback (ARCOMMANDS_Decoder_AnimationStateCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.flip_state
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationFlipStateCallback_t) (eARCOMMANDS_ANIMATION_STATE state, eARCOMMANDS_ANIMATION_FLIP_TYPE type, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.flip_state
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.flip_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationFlipStateCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationFlipStateCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.flip_state
+ * @param callback new callback for the command animation.flip_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationFlipStateCallback (ARCOMMANDS_Decoder_AnimationFlipStateCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.horizontal_panorama_state
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationHorizontalPanoramaStateCallback_t) (eARCOMMANDS_ANIMATION_STATE state, float rotation_angle, float rotation_speed, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.horizontal_panorama_state
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.horizontal_panorama_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationHorizontalPanoramaStateCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationHorizontalPanoramaStateCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.horizontal_panorama_state
+ * @param callback new callback for the command animation.horizontal_panorama_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationHorizontalPanoramaStateCallback (ARCOMMANDS_Decoder_AnimationHorizontalPanoramaStateCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.dronie_state
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationDronieStateCallback_t) (eARCOMMANDS_ANIMATION_STATE state, float speed, float distance, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.dronie_state
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.dronie_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationDronieStateCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationDronieStateCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.dronie_state
+ * @param callback new callback for the command animation.dronie_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationDronieStateCallback (ARCOMMANDS_Decoder_AnimationDronieStateCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.horizontal_reveal_state
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationHorizontalRevealStateCallback_t) (eARCOMMANDS_ANIMATION_STATE state, float speed, float distance, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.horizontal_reveal_state
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.horizontal_reveal_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationHorizontalRevealStateCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationHorizontalRevealStateCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.horizontal_reveal_state
+ * @param callback new callback for the command animation.horizontal_reveal_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationHorizontalRevealStateCallback (ARCOMMANDS_Decoder_AnimationHorizontalRevealStateCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.vertical_reveal_state
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationVerticalRevealStateCallback_t) (eARCOMMANDS_ANIMATION_STATE state, float speed, float vertical_distance, float rotation_angle, float rotation_speed, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.vertical_reveal_state
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.vertical_reveal_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationVerticalRevealStateCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationVerticalRevealStateCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.vertical_reveal_state
+ * @param callback new callback for the command animation.vertical_reveal_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationVerticalRevealStateCallback (ARCOMMANDS_Decoder_AnimationVerticalRevealStateCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.spiral_state
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationSpiralStateCallback_t) (eARCOMMANDS_ANIMATION_STATE state, float speed, float radius_variation, float vertical_distance, float revolution_nb, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.spiral_state
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.spiral_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationSpiralStateCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationSpiralStateCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.spiral_state
+ * @param callback new callback for the command animation.spiral_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationSpiralStateCallback (ARCOMMANDS_Decoder_AnimationSpiralStateCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.parabola_state
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationParabolaStateCallback_t) (eARCOMMANDS_ANIMATION_STATE state, float speed, float vertical_distance, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.parabola_state
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.parabola_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationParabolaStateCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationParabolaStateCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.parabola_state
+ * @param callback new callback for the command animation.parabola_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationParabolaStateCallback (ARCOMMANDS_Decoder_AnimationParabolaStateCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.candle_state
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationCandleStateCallback_t) (eARCOMMANDS_ANIMATION_STATE state, float speed, float vertical_distance, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.candle_state
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.candle_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationCandleStateCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationCandleStateCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.candle_state
+ * @param callback new callback for the command animation.candle_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationCandleStateCallback (ARCOMMANDS_Decoder_AnimationCandleStateCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command animation.dolly_slide_state
+ */
+typedef void (*ARCOMMANDS_Decoder_AnimationDollySlideStateCallback_t) (eARCOMMANDS_ANIMATION_STATE state, float speed, float angle, float horizontal_distance, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command animation.dolly_slide_state
+ * @param decoder the decoder instance
+ * @param callback new callback for the command animation.dolly_slide_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationDollySlideStateCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_AnimationDollySlideStateCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command animation.dolly_slide_state
+ * @param callback new callback for the command animation.dolly_slide_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetAnimationDollySlideStateCallback (ARCOMMANDS_Decoder_AnimationDollySlideStateCallback_t callback, void *custom) DEPRECATED;
+
 // Feature ARDrone3
 
 
@@ -406,6 +787,42 @@ void ARCOMMANDS_Decoder_SetARDrone3PilotingCancelMoveToCb (ARCOMMANDS_Decoder_t 
  * @param custom pointer that will be passed to all calls to the callback
  */
 void ARCOMMANDS_Decoder_SetARDrone3PilotingCancelMoveToCallback (ARCOMMANDS_Decoder_ARDrone3PilotingCancelMoveToCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command ARDrone3.Piloting.StartPilotedPOI
+ */
+typedef void (*ARCOMMANDS_Decoder_ARDrone3PilotingStartPilotedPOICallback_t) (double latitude, double longitude, double altitude, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command ARDrone3.Piloting.StartPilotedPOI
+ * @param decoder the decoder instance
+ * @param callback new callback for the command ARDrone3.Piloting.StartPilotedPOI
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3PilotingStartPilotedPOICb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ARDrone3PilotingStartPilotedPOICallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command ARDrone3.Piloting.StartPilotedPOI
+ * @param callback new callback for the command ARDrone3.Piloting.StartPilotedPOI
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3PilotingStartPilotedPOICallback (ARCOMMANDS_Decoder_ARDrone3PilotingStartPilotedPOICallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command ARDrone3.Piloting.StopPilotedPOI
+ */
+typedef void (*ARCOMMANDS_Decoder_ARDrone3PilotingStopPilotedPOICallback_t) (void *custom);
+/**
+ * @brief Set Decoder callback setter for the command ARDrone3.Piloting.StopPilotedPOI
+ * @param decoder the decoder instance
+ * @param callback new callback for the command ARDrone3.Piloting.StopPilotedPOI
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3PilotingStopPilotedPOICb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ARDrone3PilotingStopPilotedPOICallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command ARDrone3.Piloting.StopPilotedPOI
+ * @param callback new callback for the command ARDrone3.Piloting.StopPilotedPOI
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3PilotingStopPilotedPOICallback (ARCOMMANDS_Decoder_ARDrone3PilotingStopPilotedPOICallback_t callback, void *custom) DEPRECATED;
 
 /**
  * @brief callback type for the command ARDrone3.Animations.Flip
@@ -876,6 +1293,24 @@ void ARCOMMANDS_Decoder_SetARDrone3PilotingSettingsPitchModeCb (ARCOMMANDS_Decod
 void ARCOMMANDS_Decoder_SetARDrone3PilotingSettingsPitchModeCallback (ARCOMMANDS_Decoder_ARDrone3PilotingSettingsPitchModeCallback_t callback, void *custom) DEPRECATED;
 
 /**
+ * @brief callback type for the command ARDrone3.PilotingSettings.SetMotionDetectionMode
+ */
+typedef void (*ARCOMMANDS_Decoder_ARDrone3PilotingSettingsSetMotionDetectionModeCallback_t) (uint8_t enable, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command ARDrone3.PilotingSettings.SetMotionDetectionMode
+ * @param decoder the decoder instance
+ * @param callback new callback for the command ARDrone3.PilotingSettings.SetMotionDetectionMode
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3PilotingSettingsSetMotionDetectionModeCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ARDrone3PilotingSettingsSetMotionDetectionModeCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command ARDrone3.PilotingSettings.SetMotionDetectionMode
+ * @param callback new callback for the command ARDrone3.PilotingSettings.SetMotionDetectionMode
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3PilotingSettingsSetMotionDetectionModeCallback (ARCOMMANDS_Decoder_ARDrone3PilotingSettingsSetMotionDetectionModeCallback_t callback, void *custom) DEPRECATED;
+
+/**
  * @brief callback type for the command ARDrone3.SpeedSettings.MaxVerticalSpeed
  */
 typedef void (*ARCOMMANDS_Decoder_ARDrone3SpeedSettingsMaxVerticalSpeedCallback_t) (float current, void *custom);
@@ -1344,6 +1779,42 @@ void ARCOMMANDS_Decoder_SetARDrone3AntiflickeringSetModeCb (ARCOMMANDS_Decoder_t
 void ARCOMMANDS_Decoder_SetARDrone3AntiflickeringSetModeCallback (ARCOMMANDS_Decoder_ARDrone3AntiflickeringSetModeCallback_t callback, void *custom) DEPRECATED;
 
 /**
+ * @brief callback type for the command ARDrone3.Sound.StartAlertSound
+ */
+typedef void (*ARCOMMANDS_Decoder_ARDrone3SoundStartAlertSoundCallback_t) (void *custom);
+/**
+ * @brief Set Decoder callback setter for the command ARDrone3.Sound.StartAlertSound
+ * @param decoder the decoder instance
+ * @param callback new callback for the command ARDrone3.Sound.StartAlertSound
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3SoundStartAlertSoundCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ARDrone3SoundStartAlertSoundCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command ARDrone3.Sound.StartAlertSound
+ * @param callback new callback for the command ARDrone3.Sound.StartAlertSound
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3SoundStartAlertSoundCallback (ARCOMMANDS_Decoder_ARDrone3SoundStartAlertSoundCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command ARDrone3.Sound.StopAlertSound
+ */
+typedef void (*ARCOMMANDS_Decoder_ARDrone3SoundStopAlertSoundCallback_t) (void *custom);
+/**
+ * @brief Set Decoder callback setter for the command ARDrone3.Sound.StopAlertSound
+ * @param decoder the decoder instance
+ * @param callback new callback for the command ARDrone3.Sound.StopAlertSound
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3SoundStopAlertSoundCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ARDrone3SoundStopAlertSoundCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command ARDrone3.Sound.StopAlertSound
+ * @param callback new callback for the command ARDrone3.Sound.StopAlertSound
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3SoundStopAlertSoundCallback (ARCOMMANDS_Decoder_ARDrone3SoundStopAlertSoundCallback_t callback, void *custom) DEPRECATED;
+
+/**
  * @brief callback type for the command ARDrone3.MediaRecordState.PictureStateChanged
  */
 typedef void (*ARCOMMANDS_Decoder_ARDrone3MediaRecordStatePictureStateChangedCallback_t) (uint8_t state, uint8_t mass_storage_id, void *custom);
@@ -1702,6 +2173,60 @@ void ARCOMMANDS_Decoder_SetARDrone3PilotingStateMoveToChangedCb (ARCOMMANDS_Deco
  * @param custom pointer that will be passed to all calls to the callback
  */
 void ARCOMMANDS_Decoder_SetARDrone3PilotingStateMoveToChangedCallback (ARCOMMANDS_Decoder_ARDrone3PilotingStateMoveToChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command ARDrone3.PilotingState.MotionState
+ */
+typedef void (*ARCOMMANDS_Decoder_ARDrone3PilotingStateMotionStateCallback_t) (eARCOMMANDS_ARDRONE3_PILOTINGSTATE_MOTIONSTATE_STATE state, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command ARDrone3.PilotingState.MotionState
+ * @param decoder the decoder instance
+ * @param callback new callback for the command ARDrone3.PilotingState.MotionState
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3PilotingStateMotionStateCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ARDrone3PilotingStateMotionStateCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command ARDrone3.PilotingState.MotionState
+ * @param callback new callback for the command ARDrone3.PilotingState.MotionState
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3PilotingStateMotionStateCallback (ARCOMMANDS_Decoder_ARDrone3PilotingStateMotionStateCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command ARDrone3.PilotingState.PilotedPOI
+ */
+typedef void (*ARCOMMANDS_Decoder_ARDrone3PilotingStatePilotedPOICallback_t) (double latitude, double longitude, double altitude, eARCOMMANDS_ARDRONE3_PILOTINGSTATE_PILOTEDPOI_STATUS status, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command ARDrone3.PilotingState.PilotedPOI
+ * @param decoder the decoder instance
+ * @param callback new callback for the command ARDrone3.PilotingState.PilotedPOI
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3PilotingStatePilotedPOICb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ARDrone3PilotingStatePilotedPOICallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command ARDrone3.PilotingState.PilotedPOI
+ * @param callback new callback for the command ARDrone3.PilotingState.PilotedPOI
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3PilotingStatePilotedPOICallback (ARCOMMANDS_Decoder_ARDrone3PilotingStatePilotedPOICallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command ARDrone3.PilotingState.ReturnHomeBatteryCapacity
+ */
+typedef void (*ARCOMMANDS_Decoder_ARDrone3PilotingStateReturnHomeBatteryCapacityCallback_t) (eARCOMMANDS_ARDRONE3_PILOTINGSTATE_RETURNHOMEBATTERYCAPACITY_STATUS status, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command ARDrone3.PilotingState.ReturnHomeBatteryCapacity
+ * @param decoder the decoder instance
+ * @param callback new callback for the command ARDrone3.PilotingState.ReturnHomeBatteryCapacity
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3PilotingStateReturnHomeBatteryCapacityCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ARDrone3PilotingStateReturnHomeBatteryCapacityCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command ARDrone3.PilotingState.ReturnHomeBatteryCapacity
+ * @param callback new callback for the command ARDrone3.PilotingState.ReturnHomeBatteryCapacity
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3PilotingStateReturnHomeBatteryCapacityCallback (ARCOMMANDS_Decoder_ARDrone3PilotingStateReturnHomeBatteryCapacityCallback_t callback, void *custom) DEPRECATED;
 
 /**
  * @brief callback type for the command ARDrone3.PilotingEvent.moveByEnd
@@ -2080,6 +2605,24 @@ void ARCOMMANDS_Decoder_SetARDrone3PilotingSettingsStatePitchModeChangedCb (ARCO
  * @param custom pointer that will be passed to all calls to the callback
  */
 void ARCOMMANDS_Decoder_SetARDrone3PilotingSettingsStatePitchModeChangedCallback (ARCOMMANDS_Decoder_ARDrone3PilotingSettingsStatePitchModeChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command ARDrone3.PilotingSettingsState.MotionDetection
+ */
+typedef void (*ARCOMMANDS_Decoder_ARDrone3PilotingSettingsStateMotionDetectionCallback_t) (uint8_t enabled, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command ARDrone3.PilotingSettingsState.MotionDetection
+ * @param decoder the decoder instance
+ * @param callback new callback for the command ARDrone3.PilotingSettingsState.MotionDetection
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3PilotingSettingsStateMotionDetectionCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ARDrone3PilotingSettingsStateMotionDetectionCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command ARDrone3.PilotingSettingsState.MotionDetection
+ * @param callback new callback for the command ARDrone3.PilotingSettingsState.MotionDetection
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3PilotingSettingsStateMotionDetectionCallback (ARCOMMANDS_Decoder_ARDrone3PilotingSettingsStateMotionDetectionCallback_t callback, void *custom) DEPRECATED;
 
 /**
  * @brief callback type for the command ARDrone3.SpeedSettingsState.MaxVerticalSpeedChanged
@@ -2908,6 +3451,60 @@ void ARCOMMANDS_Decoder_SetARDrone3PROStateFeaturesCb (ARCOMMANDS_Decoder_t *dec
  * @param custom pointer that will be passed to all calls to the callback
  */
 void ARCOMMANDS_Decoder_SetARDrone3PROStateFeaturesCallback (ARCOMMANDS_Decoder_ARDrone3PROStateFeaturesCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command ARDrone3.AccessoryState.ConnectedAccessories
+ */
+typedef void (*ARCOMMANDS_Decoder_ARDrone3AccessoryStateConnectedAccessoriesCallback_t) (uint8_t id, eARCOMMANDS_ARDRONE3_ACCESSORYSTATE_CONNECTEDACCESSORIES_ACCESSORY_TYPE accessory_type, const char * uid, const char * swVersion, uint8_t list_flags, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command ARDrone3.AccessoryState.ConnectedAccessories
+ * @param decoder the decoder instance
+ * @param callback new callback for the command ARDrone3.AccessoryState.ConnectedAccessories
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3AccessoryStateConnectedAccessoriesCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ARDrone3AccessoryStateConnectedAccessoriesCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command ARDrone3.AccessoryState.ConnectedAccessories
+ * @param callback new callback for the command ARDrone3.AccessoryState.ConnectedAccessories
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3AccessoryStateConnectedAccessoriesCallback (ARCOMMANDS_Decoder_ARDrone3AccessoryStateConnectedAccessoriesCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command ARDrone3.AccessoryState.Battery
+ */
+typedef void (*ARCOMMANDS_Decoder_ARDrone3AccessoryStateBatteryCallback_t) (uint8_t id, uint8_t batteryLevel, uint8_t list_flags, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command ARDrone3.AccessoryState.Battery
+ * @param decoder the decoder instance
+ * @param callback new callback for the command ARDrone3.AccessoryState.Battery
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3AccessoryStateBatteryCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ARDrone3AccessoryStateBatteryCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command ARDrone3.AccessoryState.Battery
+ * @param callback new callback for the command ARDrone3.AccessoryState.Battery
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3AccessoryStateBatteryCallback (ARCOMMANDS_Decoder_ARDrone3AccessoryStateBatteryCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command ARDrone3.SoundState.AlertSound
+ */
+typedef void (*ARCOMMANDS_Decoder_ARDrone3SoundStateAlertSoundCallback_t) (eARCOMMANDS_ARDRONE3_SOUNDSTATE_ALERTSOUND_STATE state, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command ARDrone3.SoundState.AlertSound
+ * @param decoder the decoder instance
+ * @param callback new callback for the command ARDrone3.SoundState.AlertSound
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3SoundStateAlertSoundCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ARDrone3SoundStateAlertSoundCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command ARDrone3.SoundState.AlertSound
+ * @param callback new callback for the command ARDrone3.SoundState.AlertSound
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetARDrone3SoundStateAlertSoundCallback (ARCOMMANDS_Decoder_ARDrone3SoundStateAlertSoundCallback_t callback, void *custom) DEPRECATED;
 
 // Feature common
 
@@ -4523,7 +5120,7 @@ void ARCOMMANDS_Decoder_SetDebugSetSettingCallback (ARCOMMANDS_Decoder_DebugSetS
 /**
  * @brief callback type for the command debug.settings_info
  */
-typedef void (*ARCOMMANDS_Decoder_DebugSettingsInfoCallback_t) (uint8_t listFlags, uint16_t id, const char * label, eARCOMMANDS_DEBUG_SETTING_TYPE type, eARCOMMANDS_DEBUG_SETTING_MODE mode, const char * range_min, const char * range_max, const char * range_step, const char * value, void *custom);
+typedef void (*ARCOMMANDS_Decoder_DebugSettingsInfoCallback_t) (uint8_t list_flags, uint16_t id, const char * label, eARCOMMANDS_DEBUG_SETTING_TYPE type, eARCOMMANDS_DEBUG_SETTING_MODE mode, const char * range_min, const char * range_max, const char * range_step, const char * value, void *custom);
 /**
  * @brief Set Decoder callback setter for the command debug.settings_info
  * @param decoder the decoder instance
@@ -6627,6 +7224,24 @@ void ARCOMMANDS_Decoder_SetMiniDronePilotingPlaneGearBoxCb (ARCOMMANDS_Decoder_t
 void ARCOMMANDS_Decoder_SetMiniDronePilotingPlaneGearBoxCallback (ARCOMMANDS_Decoder_MiniDronePilotingPlaneGearBoxCallback_t callback, void *custom) DEPRECATED;
 
 /**
+ * @brief callback type for the command MiniDrone.Piloting.TogglePilotingMode
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDronePilotingTogglePilotingModeCallback_t) (void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.Piloting.TogglePilotingMode
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.Piloting.TogglePilotingMode
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDronePilotingTogglePilotingModeCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDronePilotingTogglePilotingModeCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.Piloting.TogglePilotingMode
+ * @param callback new callback for the command MiniDrone.Piloting.TogglePilotingMode
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDronePilotingTogglePilotingModeCallback (ARCOMMANDS_Decoder_MiniDronePilotingTogglePilotingModeCallback_t callback, void *custom) DEPRECATED;
+
+/**
  * @brief callback type for the command MiniDrone.Animations.Flip
  */
 typedef void (*ARCOMMANDS_Decoder_MiniDroneAnimationsFlipCallback_t) (eARCOMMANDS_MINIDRONE_ANIMATIONS_FLIP_DIRECTION direction, void *custom);
@@ -6751,6 +7366,42 @@ void ARCOMMANDS_Decoder_SetMiniDronePilotingSettingsBankedTurnCb (ARCOMMANDS_Dec
  * @param custom pointer that will be passed to all calls to the callback
  */
 void ARCOMMANDS_Decoder_SetMiniDronePilotingSettingsBankedTurnCallback (ARCOMMANDS_Decoder_MiniDronePilotingSettingsBankedTurnCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.PilotingSettings.MaxThrottle
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDronePilotingSettingsMaxThrottleCallback_t) (float max, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.PilotingSettings.MaxThrottle
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.PilotingSettings.MaxThrottle
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDronePilotingSettingsMaxThrottleCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDronePilotingSettingsMaxThrottleCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.PilotingSettings.MaxThrottle
+ * @param callback new callback for the command MiniDrone.PilotingSettings.MaxThrottle
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDronePilotingSettingsMaxThrottleCallback (ARCOMMANDS_Decoder_MiniDronePilotingSettingsMaxThrottleCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.PilotingSettings.PreferredPilotingMode
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDronePilotingSettingsPreferredPilotingModeCallback_t) (eARCOMMANDS_MINIDRONE_PILOTINGSETTINGS_PREFERREDPILOTINGMODE_MODE mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.PilotingSettings.PreferredPilotingMode
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.PilotingSettings.PreferredPilotingMode
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDronePilotingSettingsPreferredPilotingModeCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDronePilotingSettingsPreferredPilotingModeCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.PilotingSettings.PreferredPilotingMode
+ * @param callback new callback for the command MiniDrone.PilotingSettings.PreferredPilotingMode
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDronePilotingSettingsPreferredPilotingModeCallback (ARCOMMANDS_Decoder_MiniDronePilotingSettingsPreferredPilotingModeCallback_t callback, void *custom) DEPRECATED;
 
 /**
  * @brief callback type for the command MiniDrone.SpeedSettings.MaxVerticalSpeed
@@ -7005,6 +7656,114 @@ void ARCOMMANDS_Decoder_SetMiniDroneRemoteControllerSetPairedRemoteCb (ARCOMMAND
 void ARCOMMANDS_Decoder_SetMiniDroneRemoteControllerSetPairedRemoteCallback (ARCOMMANDS_Decoder_MiniDroneRemoteControllerSetPairedRemoteCallback_t callback, void *custom) DEPRECATED;
 
 /**
+ * @brief callback type for the command MiniDrone.VideoSettings.Autorecord
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneVideoSettingsAutorecordCallback_t) (uint8_t enable, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.VideoSettings.Autorecord
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.VideoSettings.Autorecord
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneVideoSettingsAutorecordCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneVideoSettingsAutorecordCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.VideoSettings.Autorecord
+ * @param callback new callback for the command MiniDrone.VideoSettings.Autorecord
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneVideoSettingsAutorecordCallback (ARCOMMANDS_Decoder_MiniDroneVideoSettingsAutorecordCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.VideoSettings.ElectricFrequency
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneVideoSettingsElectricFrequencyCallback_t) (eARCOMMANDS_MINIDRONE_VIDEOSETTINGS_ELECTRICFREQUENCY_FREQUENCY frequency, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.VideoSettings.ElectricFrequency
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.VideoSettings.ElectricFrequency
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneVideoSettingsElectricFrequencyCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneVideoSettingsElectricFrequencyCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.VideoSettings.ElectricFrequency
+ * @param callback new callback for the command MiniDrone.VideoSettings.ElectricFrequency
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneVideoSettingsElectricFrequencyCallback (ARCOMMANDS_Decoder_MiniDroneVideoSettingsElectricFrequencyCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.VideoSettings.VideoResolution
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneVideoSettingsVideoResolutionCallback_t) (eARCOMMANDS_MINIDRONE_VIDEOSETTINGS_VIDEORESOLUTION_TYPE type, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.VideoSettings.VideoResolution
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.VideoSettings.VideoResolution
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneVideoSettingsVideoResolutionCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneVideoSettingsVideoResolutionCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.VideoSettings.VideoResolution
+ * @param callback new callback for the command MiniDrone.VideoSettings.VideoResolution
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneVideoSettingsVideoResolutionCallback (ARCOMMANDS_Decoder_MiniDroneVideoSettingsVideoResolutionCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.Minicam.Picture
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneMinicamPictureCallback_t) (void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.Minicam.Picture
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.Minicam.Picture
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamPictureCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneMinicamPictureCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.Minicam.Picture
+ * @param callback new callback for the command MiniDrone.Minicam.Picture
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamPictureCallback (ARCOMMANDS_Decoder_MiniDroneMinicamPictureCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.Minicam.Video
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneMinicamVideoCallback_t) (eARCOMMANDS_MINIDRONE_MINICAM_VIDEO_RECORD record, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.Minicam.Video
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.Minicam.Video
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamVideoCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneMinicamVideoCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.Minicam.Video
+ * @param callback new callback for the command MiniDrone.Minicam.Video
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamVideoCallback (ARCOMMANDS_Decoder_MiniDroneMinicamVideoCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.Minicam.MassStorageFormat
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneMinicamMassStorageFormatCallback_t) (void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.Minicam.MassStorageFormat
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.Minicam.MassStorageFormat
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamMassStorageFormatCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneMinicamMassStorageFormatCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.Minicam.MassStorageFormat
+ * @param callback new callback for the command MiniDrone.Minicam.MassStorageFormat
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamMassStorageFormatCallback (ARCOMMANDS_Decoder_MiniDroneMinicamMassStorageFormatCallback_t callback, void *custom) DEPRECATED;
+
+/**
  * @brief callback type for the command MiniDrone.PilotingState.FlatTrimChanged
  */
 typedef void (*ARCOMMANDS_Decoder_MiniDronePilotingStateFlatTrimChangedCallback_t) (void *custom);
@@ -7113,6 +7872,24 @@ void ARCOMMANDS_Decoder_SetMiniDronePilotingStatePlaneGearBoxChangedCb (ARCOMMAN
 void ARCOMMANDS_Decoder_SetMiniDronePilotingStatePlaneGearBoxChangedCallback (ARCOMMANDS_Decoder_MiniDronePilotingStatePlaneGearBoxChangedCallback_t callback, void *custom) DEPRECATED;
 
 /**
+ * @brief callback type for the command MiniDrone.PilotingState.PilotingModeChanged
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDronePilotingStatePilotingModeChangedCallback_t) (eARCOMMANDS_MINIDRONE_PILOTINGSTATE_PILOTINGMODECHANGED_MODE mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.PilotingState.PilotingModeChanged
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.PilotingState.PilotingModeChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDronePilotingStatePilotingModeChangedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDronePilotingStatePilotingModeChangedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.PilotingState.PilotingModeChanged
+ * @param callback new callback for the command MiniDrone.PilotingState.PilotingModeChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDronePilotingStatePilotingModeChangedCallback (ARCOMMANDS_Decoder_MiniDronePilotingStatePilotingModeChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
  * @brief callback type for the command MiniDrone.MediaRecordState.PictureStateChanged
  */
 typedef void (*ARCOMMANDS_Decoder_MiniDroneMediaRecordStatePictureStateChangedCallback_t) (uint8_t state, uint8_t mass_storage_id, void *custom);
@@ -7219,6 +7996,42 @@ void ARCOMMANDS_Decoder_SetMiniDronePilotingSettingsStateBankedTurnChangedCb (AR
  * @param custom pointer that will be passed to all calls to the callback
  */
 void ARCOMMANDS_Decoder_SetMiniDronePilotingSettingsStateBankedTurnChangedCallback (ARCOMMANDS_Decoder_MiniDronePilotingSettingsStateBankedTurnChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.PilotingSettingsState.MaxThrottleChanged
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDronePilotingSettingsStateMaxThrottleChangedCallback_t) (float max, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.PilotingSettingsState.MaxThrottleChanged
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.PilotingSettingsState.MaxThrottleChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDronePilotingSettingsStateMaxThrottleChangedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDronePilotingSettingsStateMaxThrottleChangedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.PilotingSettingsState.MaxThrottleChanged
+ * @param callback new callback for the command MiniDrone.PilotingSettingsState.MaxThrottleChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDronePilotingSettingsStateMaxThrottleChangedCallback (ARCOMMANDS_Decoder_MiniDronePilotingSettingsStateMaxThrottleChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.PilotingSettingsState.PreferredPilotingModeChanged
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDronePilotingSettingsStatePreferredPilotingModeChangedCallback_t) (eARCOMMANDS_MINIDRONE_PILOTINGSETTINGSSTATE_PREFERREDPILOTINGMODECHANGED_MODE mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.PilotingSettingsState.PreferredPilotingModeChanged
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.PilotingSettingsState.PreferredPilotingModeChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDronePilotingSettingsStatePreferredPilotingModeChangedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDronePilotingSettingsStatePreferredPilotingModeChangedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.PilotingSettingsState.PreferredPilotingModeChanged
+ * @param callback new callback for the command MiniDrone.PilotingSettingsState.PreferredPilotingModeChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDronePilotingSettingsStatePreferredPilotingModeChangedCallback (ARCOMMANDS_Decoder_MiniDronePilotingSettingsStatePreferredPilotingModeChangedCallback_t callback, void *custom) DEPRECATED;
 
 /**
  * @brief callback type for the command MiniDrone.SpeedSettingsState.MaxVerticalSpeedChanged
@@ -7453,6 +8266,258 @@ void ARCOMMANDS_Decoder_SetMiniDroneNavigationDataStateDronePositionCb (ARCOMMAN
  * @param custom pointer that will be passed to all calls to the callback
  */
 void ARCOMMANDS_Decoder_SetMiniDroneNavigationDataStateDronePositionCallback (ARCOMMANDS_Decoder_MiniDroneNavigationDataStateDronePositionCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.NavigationDataState.DroneSpeed
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneNavigationDataStateDroneSpeedCallback_t) (float speed_x, float speed_y, float speed_z, uint16_t ts, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.NavigationDataState.DroneSpeed
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.NavigationDataState.DroneSpeed
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneNavigationDataStateDroneSpeedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneNavigationDataStateDroneSpeedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.NavigationDataState.DroneSpeed
+ * @param callback new callback for the command MiniDrone.NavigationDataState.DroneSpeed
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneNavigationDataStateDroneSpeedCallback (ARCOMMANDS_Decoder_MiniDroneNavigationDataStateDroneSpeedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.NavigationDataState.DroneAltitude
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneNavigationDataStateDroneAltitudeCallback_t) (float altitude, uint16_t ts, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.NavigationDataState.DroneAltitude
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.NavigationDataState.DroneAltitude
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneNavigationDataStateDroneAltitudeCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneNavigationDataStateDroneAltitudeCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.NavigationDataState.DroneAltitude
+ * @param callback new callback for the command MiniDrone.NavigationDataState.DroneAltitude
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneNavigationDataStateDroneAltitudeCallback (ARCOMMANDS_Decoder_MiniDroneNavigationDataStateDroneAltitudeCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.NavigationDataState.DroneQuaternion
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneNavigationDataStateDroneQuaternionCallback_t) (float q_w, float q_x, float q_y, float q_z, uint16_t ts, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.NavigationDataState.DroneQuaternion
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.NavigationDataState.DroneQuaternion
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneNavigationDataStateDroneQuaternionCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneNavigationDataStateDroneQuaternionCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.NavigationDataState.DroneQuaternion
+ * @param callback new callback for the command MiniDrone.NavigationDataState.DroneQuaternion
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneNavigationDataStateDroneQuaternionCallback (ARCOMMANDS_Decoder_MiniDroneNavigationDataStateDroneQuaternionCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.MinicamState.PowerModeChanged
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneMinicamStatePowerModeChangedCallback_t) (eARCOMMANDS_MINIDRONE_MINICAMSTATE_POWERMODECHANGED_POWER_MODE power_mode, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.MinicamState.PowerModeChanged
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.MinicamState.PowerModeChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamStatePowerModeChangedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneMinicamStatePowerModeChangedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.MinicamState.PowerModeChanged
+ * @param callback new callback for the command MiniDrone.MinicamState.PowerModeChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamStatePowerModeChangedCallback (ARCOMMANDS_Decoder_MiniDroneMinicamStatePowerModeChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.MinicamState.ProductSerialChanged
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneMinicamStateProductSerialChangedCallback_t) (const char * serial_number, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.MinicamState.ProductSerialChanged
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.MinicamState.ProductSerialChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamStateProductSerialChangedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneMinicamStateProductSerialChangedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.MinicamState.ProductSerialChanged
+ * @param callback new callback for the command MiniDrone.MinicamState.ProductSerialChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamStateProductSerialChangedCallback (ARCOMMANDS_Decoder_MiniDroneMinicamStateProductSerialChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.MinicamState.StateChanged
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneMinicamStateStateChangedCallback_t) (eARCOMMANDS_MINIDRONE_MINICAMSTATE_STATECHANGED_STATE state, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.MinicamState.StateChanged
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.MinicamState.StateChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamStateStateChangedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneMinicamStateStateChangedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.MinicamState.StateChanged
+ * @param callback new callback for the command MiniDrone.MinicamState.StateChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamStateStateChangedCallback (ARCOMMANDS_Decoder_MiniDroneMinicamStateStateChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.MinicamState.VersionChanged
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneMinicamStateVersionChangedCallback_t) (const char * software, const char * hardware, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.MinicamState.VersionChanged
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.MinicamState.VersionChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamStateVersionChangedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneMinicamStateVersionChangedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.MinicamState.VersionChanged
+ * @param callback new callback for the command MiniDrone.MinicamState.VersionChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamStateVersionChangedCallback (ARCOMMANDS_Decoder_MiniDroneMinicamStateVersionChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.MinicamState.PictureChanged
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneMinicamStatePictureChangedCallback_t) (eARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_STATE state, eARCOMMANDS_MINIDRONE_MINICAMSTATE_PICTURECHANGED_RESULT result, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.MinicamState.PictureChanged
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.MinicamState.PictureChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamStatePictureChangedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneMinicamStatePictureChangedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.MinicamState.PictureChanged
+ * @param callback new callback for the command MiniDrone.MinicamState.PictureChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamStatePictureChangedCallback (ARCOMMANDS_Decoder_MiniDroneMinicamStatePictureChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.MinicamState.VideoStateChanged
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneMinicamStateVideoStateChangedCallback_t) (eARCOMMANDS_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_STATE state, eARCOMMANDS_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_ERROR error, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.MinicamState.VideoStateChanged
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.MinicamState.VideoStateChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamStateVideoStateChangedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneMinicamStateVideoStateChangedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.MinicamState.VideoStateChanged
+ * @param callback new callback for the command MiniDrone.MinicamState.VideoStateChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamStateVideoStateChangedCallback (ARCOMMANDS_Decoder_MiniDroneMinicamStateVideoStateChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.MinicamState.MassStorageFormatChanged
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneMinicamStateMassStorageFormatChangedCallback_t) (uint8_t state, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.MinicamState.MassStorageFormatChanged
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.MinicamState.MassStorageFormatChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamStateMassStorageFormatChangedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneMinicamStateMassStorageFormatChangedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.MinicamState.MassStorageFormatChanged
+ * @param callback new callback for the command MiniDrone.MinicamState.MassStorageFormatChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneMinicamStateMassStorageFormatChangedCallback (ARCOMMANDS_Decoder_MiniDroneMinicamStateMassStorageFormatChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.VideoSettingsState.AutorecordChanged
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneVideoSettingsStateAutorecordChangedCallback_t) (uint8_t enabled, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.VideoSettingsState.AutorecordChanged
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.VideoSettingsState.AutorecordChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneVideoSettingsStateAutorecordChangedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneVideoSettingsStateAutorecordChangedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.VideoSettingsState.AutorecordChanged
+ * @param callback new callback for the command MiniDrone.VideoSettingsState.AutorecordChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneVideoSettingsStateAutorecordChangedCallback (ARCOMMANDS_Decoder_MiniDroneVideoSettingsStateAutorecordChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.VideoSettingsState.ElectricFrequencyChanged
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneVideoSettingsStateElectricFrequencyChangedCallback_t) (eARCOMMANDS_MINIDRONE_VIDEOSETTINGSSTATE_ELECTRICFREQUENCYCHANGED_FREQUENCY frequency, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.VideoSettingsState.ElectricFrequencyChanged
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.VideoSettingsState.ElectricFrequencyChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneVideoSettingsStateElectricFrequencyChangedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneVideoSettingsStateElectricFrequencyChangedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.VideoSettingsState.ElectricFrequencyChanged
+ * @param callback new callback for the command MiniDrone.VideoSettingsState.ElectricFrequencyChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneVideoSettingsStateElectricFrequencyChangedCallback (ARCOMMANDS_Decoder_MiniDroneVideoSettingsStateElectricFrequencyChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.VideoSettingsState.VideoResolutionChanged
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneVideoSettingsStateVideoResolutionChangedCallback_t) (eARCOMMANDS_MINIDRONE_VIDEOSETTINGSSTATE_VIDEORESOLUTIONCHANGED_TYPE type, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.VideoSettingsState.VideoResolutionChanged
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.VideoSettingsState.VideoResolutionChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneVideoSettingsStateVideoResolutionChangedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneVideoSettingsStateVideoResolutionChangedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.VideoSettingsState.VideoResolutionChanged
+ * @param callback new callback for the command MiniDrone.VideoSettingsState.VideoResolutionChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneVideoSettingsStateVideoResolutionChangedCallback (ARCOMMANDS_Decoder_MiniDroneVideoSettingsStateVideoResolutionChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command MiniDrone.RemoteControllerState.ConnectionChanged
+ */
+typedef void (*ARCOMMANDS_Decoder_MiniDroneRemoteControllerStateConnectionChangedCallback_t) (uint8_t state, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command MiniDrone.RemoteControllerState.ConnectionChanged
+ * @param decoder the decoder instance
+ * @param callback new callback for the command MiniDrone.RemoteControllerState.ConnectionChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneRemoteControllerStateConnectionChangedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_MiniDroneRemoteControllerStateConnectionChangedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command MiniDrone.RemoteControllerState.ConnectionChanged
+ * @param callback new callback for the command MiniDrone.RemoteControllerState.ConnectionChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetMiniDroneRemoteControllerStateConnectionChangedCallback (ARCOMMANDS_Decoder_MiniDroneRemoteControllerStateConnectionChangedCallback_t callback, void *custom) DEPRECATED;
 
 // Feature powerup
 
@@ -8814,6 +9879,42 @@ void ARCOMMANDS_Decoder_SetSkyControllerCalibrationEnableMagnetoCalibrationQuali
 void ARCOMMANDS_Decoder_SetSkyControllerCalibrationEnableMagnetoCalibrationQualityUpdatesCallback (ARCOMMANDS_Decoder_SkyControllerCalibrationEnableMagnetoCalibrationQualityUpdatesCallback_t callback, void *custom) DEPRECATED;
 
 /**
+ * @brief callback type for the command SkyController.Calibration.StartCalibration
+ */
+typedef void (*ARCOMMANDS_Decoder_SkyControllerCalibrationStartCalibrationCallback_t) (void *custom);
+/**
+ * @brief Set Decoder callback setter for the command SkyController.Calibration.StartCalibration
+ * @param decoder the decoder instance
+ * @param callback new callback for the command SkyController.Calibration.StartCalibration
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetSkyControllerCalibrationStartCalibrationCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_SkyControllerCalibrationStartCalibrationCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command SkyController.Calibration.StartCalibration
+ * @param callback new callback for the command SkyController.Calibration.StartCalibration
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetSkyControllerCalibrationStartCalibrationCallback (ARCOMMANDS_Decoder_SkyControllerCalibrationStartCalibrationCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command SkyController.Calibration.AbortCalibration
+ */
+typedef void (*ARCOMMANDS_Decoder_SkyControllerCalibrationAbortCalibrationCallback_t) (void *custom);
+/**
+ * @brief Set Decoder callback setter for the command SkyController.Calibration.AbortCalibration
+ * @param decoder the decoder instance
+ * @param callback new callback for the command SkyController.Calibration.AbortCalibration
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetSkyControllerCalibrationAbortCalibrationCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_SkyControllerCalibrationAbortCalibrationCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command SkyController.Calibration.AbortCalibration
+ * @param callback new callback for the command SkyController.Calibration.AbortCalibration
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetSkyControllerCalibrationAbortCalibrationCallback (ARCOMMANDS_Decoder_SkyControllerCalibrationAbortCalibrationCallback_t callback, void *custom) DEPRECATED;
+
+/**
  * @brief callback type for the command SkyController.Factory.Reset
  */
 typedef void (*ARCOMMANDS_Decoder_SkyControllerFactoryResetCallback_t) (void *custom);
@@ -8920,6 +10021,60 @@ void ARCOMMANDS_Decoder_SetSkyControllerWifiStateWifiSignalChangedCb (ARCOMMANDS
  * @param custom pointer that will be passed to all calls to the callback
  */
 void ARCOMMANDS_Decoder_SetSkyControllerWifiStateWifiSignalChangedCallback (ARCOMMANDS_Decoder_SkyControllerWifiStateWifiSignalChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command SkyController.WifiState.WifiAuthChannelListChangedV2
+ */
+typedef void (*ARCOMMANDS_Decoder_SkyControllerWifiStateWifiAuthChannelListChangedV2Callback_t) (eARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGEDV2_BAND band, uint8_t channel, uint8_t in_or_out, uint8_t list_flags, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command SkyController.WifiState.WifiAuthChannelListChangedV2
+ * @param decoder the decoder instance
+ * @param callback new callback for the command SkyController.WifiState.WifiAuthChannelListChangedV2
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetSkyControllerWifiStateWifiAuthChannelListChangedV2Cb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_SkyControllerWifiStateWifiAuthChannelListChangedV2Callback_t callback, void *custom);
+/**
+ * @brief callback setter for the command SkyController.WifiState.WifiAuthChannelListChangedV2
+ * @param callback new callback for the command SkyController.WifiState.WifiAuthChannelListChangedV2
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetSkyControllerWifiStateWifiAuthChannelListChangedV2Callback (ARCOMMANDS_Decoder_SkyControllerWifiStateWifiAuthChannelListChangedV2Callback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command SkyController.WifiState.WifiCountryChanged
+ */
+typedef void (*ARCOMMANDS_Decoder_SkyControllerWifiStateWifiCountryChangedCallback_t) (const char * code, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command SkyController.WifiState.WifiCountryChanged
+ * @param decoder the decoder instance
+ * @param callback new callback for the command SkyController.WifiState.WifiCountryChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetSkyControllerWifiStateWifiCountryChangedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_SkyControllerWifiStateWifiCountryChangedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command SkyController.WifiState.WifiCountryChanged
+ * @param callback new callback for the command SkyController.WifiState.WifiCountryChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetSkyControllerWifiStateWifiCountryChangedCallback (ARCOMMANDS_Decoder_SkyControllerWifiStateWifiCountryChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command SkyController.WifiState.WifiEnvironmentChanged
+ */
+typedef void (*ARCOMMANDS_Decoder_SkyControllerWifiStateWifiEnvironmentChangedCallback_t) (eARCOMMANDS_SKYCONTROLLER_WIFISTATE_WIFIENVIRONMENTCHANGED_ENVIRONMENT environment, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command SkyController.WifiState.WifiEnvironmentChanged
+ * @param decoder the decoder instance
+ * @param callback new callback for the command SkyController.WifiState.WifiEnvironmentChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetSkyControllerWifiStateWifiEnvironmentChangedCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_SkyControllerWifiStateWifiEnvironmentChangedCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command SkyController.WifiState.WifiEnvironmentChanged
+ * @param callback new callback for the command SkyController.WifiState.WifiEnvironmentChanged
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetSkyControllerWifiStateWifiEnvironmentChangedCallback (ARCOMMANDS_Decoder_SkyControllerWifiStateWifiEnvironmentChangedCallback_t callback, void *custom) DEPRECATED;
 
 /**
  * @brief callback type for the command SkyController.DeviceState.DeviceList
@@ -9046,6 +10201,24 @@ void ARCOMMANDS_Decoder_SetSkyControllerSettingsStateProductVersionChangedCb (AR
  * @param custom pointer that will be passed to all calls to the callback
  */
 void ARCOMMANDS_Decoder_SetSkyControllerSettingsStateProductVersionChangedCallback (ARCOMMANDS_Decoder_SkyControllerSettingsStateProductVersionChangedCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command SkyController.SettingsState.CPUID
+ */
+typedef void (*ARCOMMANDS_Decoder_SkyControllerSettingsStateCPUIDCallback_t) (const char * id, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command SkyController.SettingsState.CPUID
+ * @param decoder the decoder instance
+ * @param callback new callback for the command SkyController.SettingsState.CPUID
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetSkyControllerSettingsStateCPUIDCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_SkyControllerSettingsStateCPUIDCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command SkyController.SettingsState.CPUID
+ * @param callback new callback for the command SkyController.SettingsState.CPUID
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetSkyControllerSettingsStateCPUIDCallback (ARCOMMANDS_Decoder_SkyControllerSettingsStateCPUIDCallback_t callback, void *custom) DEPRECATED;
 
 /**
  * @brief callback type for the command SkyController.CommonState.AllStatesChanged
@@ -9534,6 +10707,24 @@ void ARCOMMANDS_Decoder_SetSkyControllerCalibrationStateMagnetoCalibrationQualit
 void ARCOMMANDS_Decoder_SetSkyControllerCalibrationStateMagnetoCalibrationQualityUpdatesStateCallback (ARCOMMANDS_Decoder_SkyControllerCalibrationStateMagnetoCalibrationQualityUpdatesStateCallback_t callback, void *custom) DEPRECATED;
 
 /**
+ * @brief callback type for the command SkyController.CalibrationState.MagnetoCalibrationStateV2
+ */
+typedef void (*ARCOMMANDS_Decoder_SkyControllerCalibrationStateMagnetoCalibrationStateV2Callback_t) (eARCOMMANDS_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATEV2_STATE state, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command SkyController.CalibrationState.MagnetoCalibrationStateV2
+ * @param decoder the decoder instance
+ * @param callback new callback for the command SkyController.CalibrationState.MagnetoCalibrationStateV2
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetSkyControllerCalibrationStateMagnetoCalibrationStateV2Cb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_SkyControllerCalibrationStateMagnetoCalibrationStateV2Callback_t callback, void *custom);
+/**
+ * @brief callback setter for the command SkyController.CalibrationState.MagnetoCalibrationStateV2
+ * @param callback new callback for the command SkyController.CalibrationState.MagnetoCalibrationStateV2
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetSkyControllerCalibrationStateMagnetoCalibrationStateV2Callback (ARCOMMANDS_Decoder_SkyControllerCalibrationStateMagnetoCalibrationStateV2Callback_t callback, void *custom) DEPRECATED;
+
+/**
  * @brief callback type for the command SkyController.ButtonEvents.Settings
  */
 typedef void (*ARCOMMANDS_Decoder_SkyControllerButtonEventsSettingsCallback_t) (void *custom);
@@ -9568,6 +10759,117 @@ void ARCOMMANDS_Decoder_SetSkyControllerCommonEventStateShutdownCb (ARCOMMANDS_D
  * @param custom pointer that will be passed to all calls to the callback
  */
 void ARCOMMANDS_Decoder_SetSkyControllerCommonEventStateShutdownCallback (ARCOMMANDS_Decoder_SkyControllerCommonEventStateShutdownCallback_t callback, void *custom) DEPRECATED;
+
+// Feature thermal_cam
+
+
+/**
+ * @brief callback type for the command thermal_cam.activate
+ */
+typedef void (*ARCOMMANDS_Decoder_ThermalCamActivateCallback_t) (uint8_t cam_id, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command thermal_cam.activate
+ * @param decoder the decoder instance
+ * @param callback new callback for the command thermal_cam.activate
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetThermalCamActivateCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ThermalCamActivateCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command thermal_cam.activate
+ * @param callback new callback for the command thermal_cam.activate
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetThermalCamActivateCallback (ARCOMMANDS_Decoder_ThermalCamActivateCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command thermal_cam.deactivate
+ */
+typedef void (*ARCOMMANDS_Decoder_ThermalCamDeactivateCallback_t) (uint8_t cam_id, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command thermal_cam.deactivate
+ * @param decoder the decoder instance
+ * @param callback new callback for the command thermal_cam.deactivate
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetThermalCamDeactivateCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ThermalCamDeactivateCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command thermal_cam.deactivate
+ * @param callback new callback for the command thermal_cam.deactivate
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetThermalCamDeactivateCallback (ARCOMMANDS_Decoder_ThermalCamDeactivateCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command thermal_cam.set_sensitivity
+ */
+typedef void (*ARCOMMANDS_Decoder_ThermalCamSetSensitivityCallback_t) (uint8_t cam_id, eARCOMMANDS_THERMAL_CAM_RANGE range, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command thermal_cam.set_sensitivity
+ * @param decoder the decoder instance
+ * @param callback new callback for the command thermal_cam.set_sensitivity
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetThermalCamSetSensitivityCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ThermalCamSetSensitivityCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command thermal_cam.set_sensitivity
+ * @param callback new callback for the command thermal_cam.set_sensitivity
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetThermalCamSetSensitivityCallback (ARCOMMANDS_Decoder_ThermalCamSetSensitivityCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command thermal_cam.camera_state
+ */
+typedef void (*ARCOMMANDS_Decoder_ThermalCamCameraStateCallback_t) (uint8_t cam_id, eARCOMMANDS_THERMAL_CAM_STATE state, uint8_t list_flags, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command thermal_cam.camera_state
+ * @param decoder the decoder instance
+ * @param callback new callback for the command thermal_cam.camera_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetThermalCamCameraStateCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ThermalCamCameraStateCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command thermal_cam.camera_state
+ * @param callback new callback for the command thermal_cam.camera_state
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetThermalCamCameraStateCallback (ARCOMMANDS_Decoder_ThermalCamCameraStateCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command thermal_cam.sensitivity
+ */
+typedef void (*ARCOMMANDS_Decoder_ThermalCamSensitivityCallback_t) (uint8_t cam_id, eARCOMMANDS_THERMAL_CAM_RANGE current_range, uint8_t available_ranges, uint8_t list_flags, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command thermal_cam.sensitivity
+ * @param decoder the decoder instance
+ * @param callback new callback for the command thermal_cam.sensitivity
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetThermalCamSensitivityCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ThermalCamSensitivityCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command thermal_cam.sensitivity
+ * @param callback new callback for the command thermal_cam.sensitivity
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetThermalCamSensitivityCallback (ARCOMMANDS_Decoder_ThermalCamSensitivityCallback_t callback, void *custom) DEPRECATED;
+
+/**
+ * @brief callback type for the command thermal_cam.calibration_infos
+ */
+typedef void (*ARCOMMANDS_Decoder_ThermalCamCalibrationInfosCallback_t) (uint8_t cam_id, float roll, float pitch, float yaw, uint8_t list_flags, void *custom);
+/**
+ * @brief Set Decoder callback setter for the command thermal_cam.calibration_infos
+ * @param decoder the decoder instance
+ * @param callback new callback for the command thermal_cam.calibration_infos
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetThermalCamCalibrationInfosCb (ARCOMMANDS_Decoder_t *decoder, ARCOMMANDS_Decoder_ThermalCamCalibrationInfosCallback_t callback, void *custom);
+/**
+ * @brief callback setter for the command thermal_cam.calibration_infos
+ * @param callback new callback for the command thermal_cam.calibration_infos
+ * @param custom pointer that will be passed to all calls to the callback
+ */
+void ARCOMMANDS_Decoder_SetThermalCamCalibrationInfosCallback (ARCOMMANDS_Decoder_ThermalCamCalibrationInfosCallback_t callback, void *custom) DEPRECATED;
 
 // Feature wifi
 
