@@ -34,6 +34,8 @@ struct ConfigKeys {
         CONFIG_KEY(Communications, PingTimeout, int)
         CONFIG_KEY(Communications, PingLapse, int)
         CONFIG_KEY(Communications, PingEnabled, bool);
+        CONFIG_KEY(Communications, StateSendLapse, int);
+        CONFIG_KEY(Communications, StateExpireLapse, int);
     };
 
     struct Debugging {

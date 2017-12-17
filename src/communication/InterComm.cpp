@@ -17,7 +17,9 @@ void InterComm::setupInterComm(Config* config){
 
     this->name = config->Get(ConfigKeys::Drone::Name);
     this->id = config->Get(ConfigKeys::Drone::Id);
-    broadcastPort = config->Get(ConfigKeys::Communications::BroadcastPort);
+    this->broadcastPort = config->Get(ConfigKeys::Communications::BroadcastPort);
+    this->stateSendLapse = config->Get(ConfigKeys::Communications::StateSendLapse);
+    this->stateExpireLapse = config->Get(ConfigKeys::Communications::StateExpireLapse);
 
     broadcaster.setup(broadcastPort);
 

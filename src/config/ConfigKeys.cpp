@@ -33,6 +33,8 @@ DEFINE_CONFIG_KEY(Communications, CommunicationPort, int)
 DEFINE_CONFIG_KEY(Communications, PingTimeout, int)
 DEFINE_CONFIG_KEY(Communications, PingLapse, int)
 DEFINE_CONFIG_KEY(Communications, PingEnabled, bool);
+DEFINE_CONFIG_KEY(Communications, StateSendLapse, int);
+DEFINE_CONFIG_KEY(Communications, StateExpireLapse, int);
 
 DEFINE_CONFIG_KEY(Debugging, VisualDebugEnabled, bool);
 DEFINE_CONFIG_KEY(Debugging, OutputHudVideoEnabled, bool);

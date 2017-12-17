@@ -40,8 +40,8 @@ private:
     MessageHandler messsageHandler;
     long lastStateSend = 0;
     Broadcaster broadcaster;
-    int stateSendLapse = 300; //ToDo Parametrizar
-    int stateExpireLapse = 5000; //ToDo Parametrizar
+    int stateSendLapse; //ToDo Parametrizar
+    int stateExpireLapse; //ToDo Parametrizar
 
     long runningTime;
     std::map<int, long> droneTimestamps;

@@ -36,6 +36,8 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Communications::PingTimeout, 10000);
     config->Set(ConfigKeys::Communications::PingLapse, 5000);
     config->Set(ConfigKeys::Communications::PingEnabled, false);
+    config->Set(ConfigKeys::Communications::StateSendLapse, 300);
+    config->Set(ConfigKeys::Communications::StateExpireLapse, 5000);
 
     config->Set(ConfigKeys::Debugging::VisualDebugEnabled, true);
     config->Set(ConfigKeys::Debugging::OutputHudVideoEnabled, true);
