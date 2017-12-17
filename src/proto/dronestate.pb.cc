@@ -92,15 +92,16 @@ void InitDefaults() {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] = {
-      "\n\020dronestate.proto\"\317\001\n\nDroneState\022\n\n\002ip\030"
+      "\n\020dronestate.proto\"\332\001\n\nDroneState\022\n\n\002ip\030"
       "\001 \001(\007\022\014\n\004port\030\002 \001(\r\022\020\n\010drone_id\030\003 \001(\r\022\017\n"
       "\007seq_num\030\004 \001(\003\022\014\n\004name\030\005 \001(\t\022,\n\013curren_t"
-      "ask\030\006 \001(\0162\027.DroneState.CurrentTask\"H\n\013Cu"
+      "ask\030\006 \001(\0162\027.DroneState.CurrentTask\"S\n\013Cu"
       "rrentTask\022\r\n\tINNACTIVE\020\000\022\r\n\tPATROLING\020\001\022"
-      "\r\n\tFOLLOWING\020\002\022\014\n\010CHARGING\020\003b\006proto3"
+      "\r\n\tFOLLOWING\020\002\022\t\n\005ALERT\020\003\022\014\n\010CHARGING\020\004b"
+      "\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 236);
+      descriptor, 247);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "dronestate.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -129,6 +130,7 @@ bool DroneState_CurrentTask_IsValid(int value) {
     case 1:
     case 2:
     case 3:
+    case 4:
       return true;
     default:
       return false;
@@ -139,6 +141,7 @@ bool DroneState_CurrentTask_IsValid(int value) {
 const DroneState_CurrentTask DroneState::INNACTIVE;
 const DroneState_CurrentTask DroneState::PATROLING;
 const DroneState_CurrentTask DroneState::FOLLOWING;
+const DroneState_CurrentTask DroneState::ALERT;
 const DroneState_CurrentTask DroneState::CHARGING;
 const DroneState_CurrentTask DroneState::CurrentTask_MIN;
 const DroneState_CurrentTask DroneState::CurrentTask_MAX;

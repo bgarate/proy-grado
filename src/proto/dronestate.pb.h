@@ -49,7 +49,8 @@ enum DroneState_CurrentTask {
   DroneState_CurrentTask_INNACTIVE = 0,
   DroneState_CurrentTask_PATROLING = 1,
   DroneState_CurrentTask_FOLLOWING = 2,
-  DroneState_CurrentTask_CHARGING = 3,
+  DroneState_CurrentTask_ALERT = 3,
+  DroneState_CurrentTask_CHARGING = 4,
   DroneState_CurrentTask_DroneState_CurrentTask_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
   DroneState_CurrentTask_DroneState_CurrentTask_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
@@ -142,6 +143,8 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
     DroneState_CurrentTask_PATROLING;
   static const CurrentTask FOLLOWING =
     DroneState_CurrentTask_FOLLOWING;
+  static const CurrentTask ALERT =
+    DroneState_CurrentTask_ALERT;
   static const CurrentTask CHARGING =
     DroneState_CurrentTask_CHARGING;
   static inline bool CurrentTask_IsValid(int value) {
