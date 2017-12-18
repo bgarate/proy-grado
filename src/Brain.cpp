@@ -53,8 +53,8 @@ void Brain::loop() {
         deltaTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - lastTime).count();
         runningTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - startTime).count();
 
-        interComm->interCommStep(runningTime, deltaTime);
-        brainComm->brainCommStep(runningTime, deltaTime);
+        //interComm->interCommStep(runningTime, deltaTime);
+        //brainComm->brainCommStep(runningTime, deltaTime);
 
         //DEBUG: Imprimir estado de la flotilla
         debugDroneStates(runningTime);
