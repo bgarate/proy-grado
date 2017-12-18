@@ -37,13 +37,13 @@ typedef enum
     ARCONTROLLER_DEVICE_STATE_RUNNING, /**< device controller is running */
     ARCONTROLLER_DEVICE_STATE_PAUSED, /**< device controller is paused */
     ARCONTROLLER_DEVICE_STATE_STOPPING, /**< device controller is stopping */
-    
+
     ARCONTROLLER_DEVICE_STATE_MAX /**< Max of the enumeration */
 }eARCONTROLLER_DEVICE_STATE;
 
 /**
  * @brief Callback used when the state of the device Controller is changed.
- * @param[in] newState The new state of the Device Contoller
+ * @param[in] newState The new state of the Device Controller
  * @param[in] error Error causing this new state.
  * @param[in] customData Custom Data set by the register
  */
@@ -51,7 +51,7 @@ typedef void (*ARCONTROLLER_Device_StateChangedCallback_t) (eARCONTROLLER_DEVICE
 
 /**
  * @brief Callback used when the extension state of the device Controller is changed.
- * @param[in] newState The new state of the extension of the Device Contoller
+ * @param[in] newState The new state of the extension of the Device Controller
  * @param[in] product the type of the extension.
  * @param[in] name the name of the extension.
  * @param[in] error Error causing this new state.
@@ -70,6 +70,7 @@ typedef struct ARCONTROLLER_Device_Private_t ARCONTROLLER_Device_Private_t;
 typedef struct
 {
     ARCONTROLLER_FEATURE_Generic_t *generic; /**< */
+    ARCONTROLLER_FEATURE_Animation_t *animation; /**< */
     ARCONTROLLER_FEATURE_ARDrone3_t *aRDrone3; /**< */
     ARCONTROLLER_FEATURE_Common_t *common; /**< */
     ARCONTROLLER_FEATURE_ControllerInfo_t *controller_info; /**< */
@@ -83,6 +84,7 @@ typedef struct
     ARCONTROLLER_FEATURE_Powerup_t *powerup; /**< */
     ARCONTROLLER_FEATURE_Rc_t *rc; /**< */
     ARCONTROLLER_FEATURE_SkyController_t *skyController; /**< */
+    ARCONTROLLER_FEATURE_ThermalCam_t *thermal_cam; /**< */
     ARCONTROLLER_FEATURE_Wifi_t *wifi; /**< */
     ARCONTROLLER_Device_Private_t *privatePart; /**< private part of the deviceController */
 }ARCONTROLLER_Device_t;
@@ -268,6 +270,20 @@ int ARCONTROLLER_Device_HasOutputAudioStream (ARCONTROLLER_Device_t *deviceContr
  * @return 1 if the device controller can send audio stream, otherwide 0.
  */
 int ARCONTROLLER_Device_HasInputAudioStream (ARCONTROLLER_Device_t *deviceController, eARCONTROLLER_ERROR *error);
+
+/**
+ * @brief Starts the video streaming (if available).
+ * @param deviceController The device controller.
+ * @return ARCONTROLLER_OK if no error occured.
+ */
+eARCONTROLLER_ERROR ARCONTROLLER_Device_StartVideoStream (ARCONTROLLER_Device_t *deviceController);
+
+/**
+ * @brief Stops the video streaming (if available).
+ * @param deviceController The device controller.
+ * @return ARCONTROLLER_OK if no error occured.
+ */
+eARCONTROLLER_ERROR ARCONTROLLER_Device_StopVideoStream (ARCONTROLLER_Device_t *deviceController);
 
 #endif /* _ARCONTROLLER_DEVICE_H_ */
 

@@ -15,6 +15,7 @@ extern "C" {
 #include <inttypes.h>
 #include <libARStream2/arstream2_error.h>
 #include <libARStream2/arstream2_stream_stats.h>
+#include <libARStream2/arstream2_stream_metadata.h>
 #include <libARSAL/ARSAL_Socket.h>
 
 
@@ -229,6 +230,7 @@ typedef struct
     int replaceStartCodesWithNaluSize;              /**< if true, replace the NAL units start code with the NALU size */
     int generateSkippedPSlices;                     /**< if true, generate skipped P slices to replace missing slices for pre-decoder error concealment */
     int generateFirstGrayIFrame;                    /**< if true, generate a first gray IDR frame to initialize the decoding (waitForSync must be enabled) */
+    int ardiscoveryProductType;                     /**< ARDiscovery product type (used for the recording feature) */
     const char *debugPath;                          /**< Optional path for writing debug files (optional, can be NULL) */
 
 } ARSTREAM2_StreamReceiver_Config_t;
@@ -254,25 +256,6 @@ typedef struct ARSTREAM2_StreamReceiver_ResenderConfig_t
     int maxNetworkLatencyMs;                        /**< Maximum acceptable network latency in milliseconds */
 
 } ARSTREAM2_StreamReceiver_ResenderConfig_t;
-
-
-/**
- * @brief ARSTREAM2 StreamReceiver untimed metadata.
- */
-typedef struct ARSTREAM2_StreamReceiver_UntimedMetadata_t
-{
-    char *canonicalName;                            /**< Unique identifier (such as device serial number) */
-    char *friendlyName;                             /**< Friendly name (such as maker + model) */
-    char *applicationName;                          /**< Application name (such as software name and version) */
-    char *runDate;                                  /**< Run date and time */
-    char *runUuid;                                  /**< Run UUID */
-    double takeoffLatitude;                         /**< Takeoff latitude (500 means unknown) */
-    double takeoffLongitude;                        /**< Takeoff longitude (500 means unknown) */
-    float takeoffAltitude;                          /**< Takeoff altitude */
-    float pictureHFov;                              /**< Camera horizontal field of view (0 means unknown) */
-    float pictureVFov;                              /**< Camera vertical field of view (0 means unknown) */
-
-} ARSTREAM2_StreamReceiver_UntimedMetadata_t;
 
 
 /**
@@ -483,7 +466,7 @@ eARSTREAM2_ERROR ARSTREAM2_StreamReceiver_GetSpsPps(ARSTREAM2_StreamReceiver_Han
  * @return ARSTREAM2_ERROR_NOT_FOUND it the item has not been found
  */
 eARSTREAM2_ERROR ARSTREAM2_StreamReceiver_GetUntimedMetadata(ARSTREAM2_StreamReceiver_Handle streamReceiverHandle,
-                                                             ARSTREAM2_StreamReceiver_UntimedMetadata_t *metadata, uint32_t *sendInterval);
+                                                             ARSTREAM2_Stream_UntimedMetadata_t *metadata, uint32_t *sendInterval);
 
 
 /**
@@ -497,7 +480,7 @@ eARSTREAM2_ERROR ARSTREAM2_StreamReceiver_GetUntimedMetadata(ARSTREAM2_StreamRec
  * @return ARSTREAM2_ERROR_BAD_PARAMETERS if the streamReceiverHandle or metadata pointer are invalid
  */
 eARSTREAM2_ERROR ARSTREAM2_StreamReceiver_SetUntimedMetadata(ARSTREAM2_StreamReceiver_Handle streamReceiverHandle,
-                                                             const ARSTREAM2_StreamReceiver_UntimedMetadata_t *metadata, uint32_t sendInterval);
+                                                             const ARSTREAM2_Stream_UntimedMetadata_t *metadata, uint32_t sendInterval);
 
 
 /**
@@ -510,7 +493,7 @@ eARSTREAM2_ERROR ARSTREAM2_StreamReceiver_SetUntimedMetadata(ARSTREAM2_StreamRec
  * @return ARSTREAM2_ERROR_BAD_PARAMETERS if the streamReceiverHandle or metadata pointer are invalid
  */
 eARSTREAM2_ERROR ARSTREAM2_StreamReceiver_GetPeerUntimedMetadata(ARSTREAM2_StreamReceiver_Handle streamReceiverHandle,
-                                                                 ARSTREAM2_StreamReceiver_UntimedMetadata_t *metadata);
+                                                                 ARSTREAM2_Stream_UntimedMetadata_t *metadata);
 
 
 #ifdef __cplusplus

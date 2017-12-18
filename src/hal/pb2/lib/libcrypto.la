@@ -5,10 +5,10 @@
 # It is necessary for linking the library.
 
 # The name that we can dlopen(3).
-dlname=''
+dlname='libcrypto.so.34'
 
 # Names of this library.
-library_names=''
+library_names='libcrypto.so.34.0.0 libcrypto.so.34 libcrypto.so'
 
 # The name of the static archive.
 old_library='libcrypto.a'
@@ -17,7 +17,7 @@ old_library='libcrypto.a'
 inherited_linker_flags=' -pthread'
 
 # Libraries that this one depends upon.
-dependency_libs=' -L/home/bruno/arsdk/out/arsdk-native/staging/lib/x86_64-linux-gnu -L/home/bruno/arsdk/out/arsdk-native/staging/lib -L/home/bruno/arsdk/out/arsdk-native/staging/usr/lib/x86_64-linux-gnu -L/home/bruno/arsdk/out/arsdk-native/staging/usr/lib -pthread -lrt'
+dependency_libs=' -L/mnt/01D359BCDE60DCD0/FING/Proyecto/SDK/linuxsdk3New/out/arsdk-native/staging/lib/x86_64-linux-gnu -L/mnt/01D359BCDE60DCD0/FING/Proyecto/SDK/linuxsdk3New/out/arsdk-native/staging/lib -L/mnt/01D359BCDE60DCD0/FING/Proyecto/SDK/linuxsdk3New/out/arsdk-native/staging/usr/lib/x86_64-linux-gnu -L/mnt/01D359BCDE60DCD0/FING/Proyecto/SDK/linuxsdk3New/out/arsdk-native/staging/usr/lib -pthread -lrt'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/home/bruno/arsdk/out/arsdk-native/staging/usr/lib'
+libdir='/mnt/01D359BCDE60DCD0/FING/Proyecto/SDK/linuxsdk3New/out/arsdk-native/staging/usr/lib'

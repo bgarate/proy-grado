@@ -23,7 +23,7 @@
 # This should most probably benefit from getting a "Requires:" field added
 # dynamically by configure.
 #
-prefix=/home/bruno/arsdk/out/arsdk-native/staging/usr
+prefix=/mnt/01D359BCDE60DCD0/FING/Proyecto/SDK/linuxsdk3New/out/arsdk-native/staging/usr
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

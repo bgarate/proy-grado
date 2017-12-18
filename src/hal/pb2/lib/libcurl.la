@@ -17,7 +17,7 @@ old_library='libcurl.a'
 inherited_linker_flags=' -pthread'
 
 # Libraries that this one depends upon.
-dependency_libs=' -L/home/bruno/arsdk/out/arsdk-native/staging/lib/x86_64-linux-gnu -L/home/bruno/arsdk/out/arsdk-native/staging/lib -L/home/bruno/arsdk/out/arsdk-native/staging/usr/lib/x86_64-linux-gnu -L/home/bruno/arsdk/out/arsdk-native/staging/usr/lib /home/bruno/arsdk/out/arsdk-native/staging/usr/lib/libcrypto.la -pthread -lz -lrt'
+dependency_libs=' -L/mnt/01D359BCDE60DCD0/FING/Proyecto/SDK/linuxsdk3New/out/arsdk-native/staging/lib/x86_64-linux-gnu -L/mnt/01D359BCDE60DCD0/FING/Proyecto/SDK/linuxsdk3New/out/arsdk-native/staging/lib -L/mnt/01D359BCDE60DCD0/FING/Proyecto/SDK/linuxsdk3New/out/arsdk-native/staging/usr/lib/x86_64-linux-gnu -L/mnt/01D359BCDE60DCD0/FING/Proyecto/SDK/linuxsdk3New/out/arsdk-native/staging/usr/lib /mnt/01D359BCDE60DCD0/FING/Proyecto/SDK/linuxsdk3New/out/arsdk-native/staging/usr/lib/libssl.la /mnt/01D359BCDE60DCD0/FING/Proyecto/SDK/linuxsdk3New/out/arsdk-native/staging/usr/lib/libcrypto.la -pthread -lz -lrt'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/home/bruno/arsdk/out/arsdk-native/staging/usr/lib'
+libdir='/mnt/01D359BCDE60DCD0/FING/Proyecto/SDK/linuxsdk3New/out/arsdk-native/staging/usr/lib'

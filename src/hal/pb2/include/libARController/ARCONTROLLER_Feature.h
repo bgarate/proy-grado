@@ -153,6 +153,305 @@ eARCONTROLLER_ERROR ARCONTROLLER_FEATURE_Generic_SetNetworkController (ARCONTROL
 ARCONTROLLER_DICTIONARY_ELEMENT_t *ARCONTROLLER_Generic_GetCommandElements (ARCONTROLLER_FEATURE_Generic_t *feature, eARCONTROLLER_DICTIONARY_KEY commandKey, eARCONTROLLER_ERROR *error);
 
 /*******************************
+ * --- FEATURE animation --- 
+ ******************************/
+
+/**
+ * @brief Private part of ARCONTROLLER_FEATURE_Animation_t.
+ */
+typedef struct ARCONTROLLER_FEATURE_Animation_Private_t ARCONTROLLER_FEATURE_Animation_Private_t;
+
+/**
+ * @brief Feature controller allow to send command related of animation Feature.
+ * All messages related to the animations
+ */
+typedef struct ARCONTROLLER_FEATURE_Animation_t ARCONTROLLER_FEATURE_Animation_t;
+
+/**
+ * @brief Create a new animation Feature Controller
+ * @warning This function allocate memory
+ * @post ARCONTROLLER_FEATURE_Animation_Delete() must be called to delete the Feature Controller and free the memory allocated.
+ * @param[in] networkController The networkController used to send commands ; can be NULL and defind later with ARCONTROLLER_FEATURE_Animation_SetNetworkController().
+ * @param[out] error executing error.
+ * @return the new animation Feature Controller
+ * @see ARCONTROLLER_FEATURE_Animation_Delete
+ */
+ARCONTROLLER_FEATURE_Animation_t *ARCONTROLLER_FEATURE_Animation_New (ARCONTROLLER_Network_t *networkController, eARCONTROLLER_ERROR *error);
+
+/**
+ * @brief Delete the animation Feature Controller
+ * @warning This function free memory
+ * @param feature The feature controller to delete
+ * @see ARCONTROLLER_FEATURE_Animation_New
+ */
+void ARCONTROLLER_FEATURE_Animation_Delete (ARCONTROLLER_FEATURE_Animation_t **feature);
+
+/**
+ * @brief Register the feature controller to be called when the commands are decoded.
+ * @param feature The feature controller to register
+ * return executing error
+ */
+eARCONTROLLER_ERROR ARCONTROLLER_FEATURE_Animation_RegisterARCommands (ARCONTROLLER_FEATURE_Animation_t *feature);
+
+/**
+ * @brief Unegister the feature controller to be called when the commands are decoded.
+ * @param feature The feature controller to unregister
+ * return executing error
+ */
+eARCONTROLLER_ERROR ARCONTROLLER_FEATURE_Animation_UnregisterARCommands (ARCONTROLLER_FEATURE_Animation_t *feature);
+
+/**
+ * @brief Get the dictionay of the animation Feature Controller
+ * @param feature The feature controller owning the dictionary to get
+ * @param[out] error executing error.
+ */
+ARCONTROLLER_DICTIONARY_COMMANDS_t *ARCONTROLLER_FEATURE_Animation_GetDictionary (ARCONTROLLER_FEATURE_Animation_t *feature, eARCONTROLLER_ERROR *error);
+
+/**
+ * @brief Add a callback to use when a command in project <code>Animation</code> is received
+ * @param feature The feature controller receiving the command.
+ * @param[in] callback the callback to add.
+ * @param[in] commandKey Key of the command which the callback must be associated.
+ * @param[out] error executing error.
+ * @param[int] customData custom data given as parameter to the callback.
+ * @see ARCONTROLLER_FEATURE_Animation_RemoveCallback.
+ */
+eARCONTROLLER_ERROR ARCONTROLLER_FEATURE_Animation_AddCallback (ARCONTROLLER_FEATURE_Animation_t *feature, eARCONTROLLER_DICTIONARY_KEY commandKey, ARCONTROLLER_DICTIONARY_CALLBACK_t callback, void *customData);
+
+/**
+ * @brief Remove a callback used when a command in project <code>Animation</code> is received
+ * @param feature The feature controller receiving the command.
+ * @param[in] commandKey Key of the command which the callback must be unassociated.
+ * @param[in] callback the callback to remove.
+ * @param[int] customData The custom data given to the register.
+ * @param[out] error executing error.
+ */
+eARCONTROLLER_ERROR ARCONTROLLER_FEATURE_Animation_RemoveCallback (ARCONTROLLER_FEATURE_Animation_t *feature, eARCONTROLLER_DICTIONARY_KEY commandKey, ARCONTROLLER_DICTIONARY_CALLBACK_t callback, void *customData);
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_AVAILABILITY_VALUES; /**< Key of the argument </code>values</code> of event <code>Availability</code> in feature <code>Animation</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_STATE_TYPE; /**< Key of the argument </code>type</code> of event <code>State</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_STATE_PERCENT; /**< Key of the argument </code>percent</code> of event <code>State</code> in feature <code>Animation</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_FLIPSTATE_STATE; /**< Key of the argument </code>state</code> of event <code>FlipState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_FLIPSTATE_TYPE; /**< Key of the argument </code>type</code> of event <code>FlipState</code> in feature <code>Animation</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_HORIZONTALPANORAMASTATE_STATE; /**< Key of the argument </code>state</code> of event <code>HorizontalPanoramaState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_HORIZONTALPANORAMASTATE_ROTATION_ANGLE; /**< Key of the argument </code>rotation_angle</code> of event <code>HorizontalPanoramaState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_HORIZONTALPANORAMASTATE_ROTATION_SPEED; /**< Key of the argument </code>rotation_speed</code> of event <code>HorizontalPanoramaState</code> in feature <code>Animation</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_DRONIESTATE_STATE; /**< Key of the argument </code>state</code> of event <code>DronieState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_DRONIESTATE_SPEED; /**< Key of the argument </code>speed</code> of event <code>DronieState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_DRONIESTATE_DISTANCE; /**< Key of the argument </code>distance</code> of event <code>DronieState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_DRONIESTATE_PLAY_MODE; /**< Key of the argument </code>play_mode</code> of event <code>DronieState</code> in feature <code>Animation</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_HORIZONTALREVEALSTATE_STATE; /**< Key of the argument </code>state</code> of event <code>HorizontalRevealState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_HORIZONTALREVEALSTATE_SPEED; /**< Key of the argument </code>speed</code> of event <code>HorizontalRevealState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_HORIZONTALREVEALSTATE_DISTANCE; /**< Key of the argument </code>distance</code> of event <code>HorizontalRevealState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_HORIZONTALREVEALSTATE_PLAY_MODE; /**< Key of the argument </code>play_mode</code> of event <code>HorizontalRevealState</code> in feature <code>Animation</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_VERTICALREVEALSTATE_STATE; /**< Key of the argument </code>state</code> of event <code>VerticalRevealState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_VERTICALREVEALSTATE_SPEED; /**< Key of the argument </code>speed</code> of event <code>VerticalRevealState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_VERTICALREVEALSTATE_VERTICAL_DISTANCE; /**< Key of the argument </code>vertical_distance</code> of event <code>VerticalRevealState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_VERTICALREVEALSTATE_ROTATION_ANGLE; /**< Key of the argument </code>rotation_angle</code> of event <code>VerticalRevealState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_VERTICALREVEALSTATE_ROTATION_SPEED; /**< Key of the argument </code>rotation_speed</code> of event <code>VerticalRevealState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_VERTICALREVEALSTATE_PLAY_MODE; /**< Key of the argument </code>play_mode</code> of event <code>VerticalRevealState</code> in feature <code>Animation</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_SPIRALSTATE_STATE; /**< Key of the argument </code>state</code> of event <code>SpiralState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_SPIRALSTATE_SPEED; /**< Key of the argument </code>speed</code> of event <code>SpiralState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_SPIRALSTATE_RADIUS_VARIATION; /**< Key of the argument </code>radius_variation</code> of event <code>SpiralState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_SPIRALSTATE_VERTICAL_DISTANCE; /**< Key of the argument </code>vertical_distance</code> of event <code>SpiralState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_SPIRALSTATE_REVOLUTION_NB; /**< Key of the argument </code>revolution_nb</code> of event <code>SpiralState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_SPIRALSTATE_PLAY_MODE; /**< Key of the argument </code>play_mode</code> of event <code>SpiralState</code> in feature <code>Animation</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_PARABOLASTATE_STATE; /**< Key of the argument </code>state</code> of event <code>ParabolaState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_PARABOLASTATE_SPEED; /**< Key of the argument </code>speed</code> of event <code>ParabolaState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_PARABOLASTATE_VERTICAL_DISTANCE; /**< Key of the argument </code>vertical_distance</code> of event <code>ParabolaState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_PARABOLASTATE_PLAY_MODE; /**< Key of the argument </code>play_mode</code> of event <code>ParabolaState</code> in feature <code>Animation</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_CANDLESTATE_STATE; /**< Key of the argument </code>state</code> of event <code>CandleState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_CANDLESTATE_SPEED; /**< Key of the argument </code>speed</code> of event <code>CandleState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_CANDLESTATE_VERTICAL_DISTANCE; /**< Key of the argument </code>vertical_distance</code> of event <code>CandleState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_CANDLESTATE_PLAY_MODE; /**< Key of the argument </code>play_mode</code> of event <code>CandleState</code> in feature <code>Animation</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_DOLLYSLIDESTATE_STATE; /**< Key of the argument </code>state</code> of event <code>DollySlideState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_DOLLYSLIDESTATE_SPEED; /**< Key of the argument </code>speed</code> of event <code>DollySlideState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_DOLLYSLIDESTATE_ANGLE; /**< Key of the argument </code>angle</code> of event <code>DollySlideState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_DOLLYSLIDESTATE_HORIZONTAL_DISTANCE; /**< Key of the argument </code>horizontal_distance</code> of event <code>DollySlideState</code> in feature <code>Animation</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ANIMATION_DOLLYSLIDESTATE_PLAY_MODE; /**< Key of the argument </code>play_mode</code> of event <code>DollySlideState</code> in feature <code>Animation</code> */
+
+/**
+ * @brief Send a command <code>Cancel</code> in feature <code>Animation</code>
+ * Cancel current animation.
+ * @param feature feature owning the commands
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_Animation_SendCancel_t) (ARCONTROLLER_FEATURE_Animation_t *feature);
+
+/**
+ * @brief Send a command <code>StartFlip</code> in feature <code>Animation</code>
+ * Start a flip animation.
+ * Starting this animation when another animation is started (or canceling), will cancel the current one to start this one.
+ * @param feature feature owning the commands
+ * @param type Type of the flip Animation flip type.
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_Animation_SendStartFlip_t) (ARCONTROLLER_FEATURE_Animation_t *feature, eARCOMMANDS_ANIMATION_FLIP_TYPE type);
+
+/**
+ * @brief Send a command <code>StartHorizontalPanorama</code> in feature <code>Animation</code>
+ * Start an horizontal panorama animation.
+ * Starting this animation when another animation is started (or canceling), will cancel the current one to start this one.
+ * This animation will make the drone horizontaly rotates on itself.
+ * @param feature feature owning the commands
+ * @param provided_params Bitfield of the config parameters on which given values should be used. Setting a bit to 1 means that the corresponding parameter should be used, otherwise default value should be used. Horizontal panorama configuration parameter.
+ * @param rotation_angle Desired rotation angle in rad. Positive value makes a clockwise panorama, negative is anti-clockwise. Not used when rotation angle of provided_params param is 0.
+ * @param rotation_speed The desired rotation speed of the anim in rad/s Not used when rotation speed of provided_params param is 0.
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_Animation_SendStartHorizontalPanorama_t) (ARCONTROLLER_FEATURE_Animation_t *feature, uint8_t provided_params, float rotation_angle, float rotation_speed);
+
+/**
+ * @brief Send a command <code>StartDronie</code> in feature <code>Animation</code>
+ * Start a dronie animation.
+ * Starting this animation when another animation is started (or canceling), will cancel the current one to start this one.
+ * This animation will make the drone flies away on a given distance with a computed angle.
+ * @param feature feature owning the commands
+ * @param provided_params Bitfield of the config parameters on which given values should be used. Setting a bit to 1 means that the corresponding parameter should be used, otherwise default value should be used. Dronie animation configuration parameter.
+ * @param speed Desired speed in m/s. Not used when speed of provided_params param is 0.
+ * @param distance Desired dronie distance in m (length of the hypotenuse). Not used when distance of provided_params param is 0.
+ * @param play_mode Desired play mode. Not used when play mode of provided_params param is 0. Animation play mode.
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_Animation_SendStartDronie_t) (ARCONTROLLER_FEATURE_Animation_t *feature, uint8_t provided_params, float speed, float distance, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode);
+
+/**
+ * @brief Send a command <code>StartHorizontalReveal</code> in feature <code>Animation</code>
+ * Start an horizontal reveal animation.
+ * Starting this animation when another animation is started (or canceling), will cancel the current one to start this one.
+ * This animation will make the drone starts looking down, then moves forward while slowly looking at the horizon.
+ * @param feature feature owning the commands
+ * @param provided_params Bitfield of the config parameters on which given values should be used. Setting a bit to 1 means that the corresponding parameter should be used, otherwise default value should be used. Horizontal reveal animation configuration parameter.
+ * @param speed Desired speed in m/s. Not used when speed of provided_params param is 0.
+ * @param distance Desired distance in m. Not used when distance of provided_params param is 0.
+ * @param play_mode Desired play mode. Not used when play mode of provided_params param is 0. Animation play mode.
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_Animation_SendStartHorizontalReveal_t) (ARCONTROLLER_FEATURE_Animation_t *feature, uint8_t provided_params, float speed, float distance, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode);
+
+/**
+ * @brief Send a command <code>StartVerticalReveal</code> in feature <code>Animation</code>
+ * Start a vertical reveal animation.
+ * Starting this animation when another animation is started (or canceling), will cancel the current one to start this one.
+ * This animation will make the drone starts looking down, then moves up while slowly looking at the horizon. When it reaches its target altitude, it rotates on itself to do a panorama.
+ * @param feature feature owning the commands
+ * @param provided_params Bitfield of the config parameters on which given values should be used. Setting a bit to 1 means that the corresponding parameter should be used, otherwise default value should be used. Vertical reveal animation configuration parameter.
+ * @param speed Desired speed in m/s. Not used when speed of provided_params param is 0.
+ * @param vertical_distance Desired vertical distance in m. Not used when vertical distance of provided_params param is 0.
+ * @param rotation_angle Desired rotation angle in rad. Positive value makes a clockwise panorama, negative is anti-clockwise. Not used when rotation angle of provided_params param is 0.
+ * @param rotation_speed The desired rotation speed of the anim in rad/s Not used when rotation speed of provided_params param is 0.
+ * @param play_mode Desired play mode. Not used when play mode of provided_params param is 0. Animation play mode.
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_Animation_SendStartVerticalReveal_t) (ARCONTROLLER_FEATURE_Animation_t *feature, uint8_t provided_params, float speed, float vertical_distance, float rotation_angle, float rotation_speed, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode);
+
+/**
+ * @brief Send a command <code>StartSpiral</code> in feature <code>Animation</code>
+ * Start a spiral animation.
+ * Starting this animation when another animation is started (or canceling), will cancel the current one to start this one.
+ * This animation will make the drone circles around its target.
+ * @param feature feature owning the commands
+ * @param provided_params Bitfield of the config parameters on which given values should be used. Setting a bit to 1 means that the corresponding parameter should be used, otherwise default value should be used. Spiral animation configuration parameter.
+ * @param speed Desired speed in m/s. Not used when speed of provided_params param is 0.
+ * @param radius_variation Desired relative radius variation in m. A value of 2 means that the ending radius will be twice as big as the starting radius. A value of -2 means that the ending radius will half of the size of the starting radius. A value of 1 means that the radius will not change during the animation. Not used when radius variation of provided_params param is 0.
+ * @param vertical_distance Desired vertical distance in m. If negative, the spiral will be directed to the ground. Not used when vertical distance of provided_params param is 0.
+ * @param revolution_nb The number of revolution (in turn). Positive value makes a clockwise spiral, negative is anti-clockwise. Example: 1.5 makes an entire turn plus half of a turn
+ * @param play_mode Desired play mode. Not used when play mode of provided_params param is 0. Animation play mode.
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_Animation_SendStartSpiral_t) (ARCONTROLLER_FEATURE_Animation_t *feature, uint8_t provided_params, float speed, float radius_variation, float vertical_distance, float revolution_nb, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode);
+
+/**
+ * @brief Send a command <code>StartParabola</code> in feature <code>Animation</code>
+ * Start a parabola animation.
+ * Starting this animation when another animation is started (or canceling), will cancel the current one to start this one.
+ * This animation will make the drone makes a parabola on top of its target and ends on the other side of it.
+ * @param feature feature owning the commands
+ * @param provided_params Bitfield of the config parameters on which given values should be used. Setting a bit to 1 means that the corresponding parameter should be used, otherwise default value should be used. Parabola animation configuration parameter.
+ * @param speed Desired speed in m/s. Not used when speed of provided_params param is 0.
+ * @param vertical_distance Desired vertical distance in m. Not used when vertical distance of provided_params param is 0.
+ * @param play_mode Desired play mode. Not used when play mode of provided_params param is 0. Animation play mode.
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_Animation_SendStartParabola_t) (ARCONTROLLER_FEATURE_Animation_t *feature, uint8_t provided_params, float speed, float vertical_distance, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode);
+
+/**
+ * @brief Send a command <code>StartCandle</code> in feature <code>Animation</code>
+ * Start a candle animation.
+ * Starting this animation when another animation is started (or canceling), will cancel the current one to start this one.
+ * This animation will make the drone flies horizontally in direction of the target then flies up.
+ * @param feature feature owning the commands
+ * @param provided_params Bitfield of the config parameters on which given values should be used. Setting a bit to 1 means that the corresponding parameter should be used, otherwise default value should be used. Candle animation configuration parameter.
+ * @param speed Desired speed in m/s. Not used when speed of provided_params param is 0.
+ * @param vertical_distance Desired vertical distance in m. Not used when vertical distance of provided_params param is 0.
+ * @param play_mode Desired play mode. Not used when play mode of provided_params param is 0. Animation play mode.
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_Animation_SendStartCandle_t) (ARCONTROLLER_FEATURE_Animation_t *feature, uint8_t provided_params, float speed, float vertical_distance, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode);
+
+/**
+ * @brief Send a command <code>StartDollySlide</code> in feature <code>Animation</code>
+ * Start a dolly slide animation.
+ * Starting this animation when another animation is started (or canceling), will cancel the current one to start this one.
+ * This animation will make the drone slides horizontally.
+ * @param feature feature owning the commands
+ * @param provided_params Bitfield of the config parameters on which given values should be used. Setting a bit to 1 means that the corresponding parameter should be used, otherwise default value should be used. Dolly slide animation configuration parameter.
+ * @param speed Desired speed in m/s. Not used when speed of provided_params param is 0.
+ * @param angle Desired drone-target-destination angle in rad. Not used when angle of provided_params param is 0.
+ * @param horizontal_distance Desired horizontal distance in m.. Not used when angle of provided_params param is 0.
+ * @param play_mode Desired play mode. Not used when play mode of provided_params param is 0. Animation play mode.
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_Animation_SendStartDollySlide_t) (ARCONTROLLER_FEATURE_Animation_t *feature, uint8_t provided_params, float speed, float angle, float horizontal_distance, eARCOMMANDS_ANIMATION_PLAY_MODE play_mode);
+
+/**
+ * @brief Feature controller allow to send command related of animation Feature.
+ * All messages related to the animations
+ */
+struct ARCONTROLLER_FEATURE_Animation_t
+{
+    ARCONTROLLER_FEATURE_Animation_SendCancel_t sendCancel;
+    ARCONTROLLER_FEATURE_Animation_SendStartFlip_t sendStartFlip;
+    ARCONTROLLER_FEATURE_Animation_SendStartHorizontalPanorama_t sendStartHorizontalPanorama;
+    ARCONTROLLER_FEATURE_Animation_SendStartDronie_t sendStartDronie;
+    ARCONTROLLER_FEATURE_Animation_SendStartHorizontalReveal_t sendStartHorizontalReveal;
+    ARCONTROLLER_FEATURE_Animation_SendStartVerticalReveal_t sendStartVerticalReveal;
+    ARCONTROLLER_FEATURE_Animation_SendStartSpiral_t sendStartSpiral;
+    ARCONTROLLER_FEATURE_Animation_SendStartParabola_t sendStartParabola;
+    ARCONTROLLER_FEATURE_Animation_SendStartCandle_t sendStartCandle;
+    ARCONTROLLER_FEATURE_Animation_SendStartDollySlide_t sendStartDollySlide;
+    ARCONTROLLER_FEATURE_Animation_Private_t *privatePart; /**< Private part of ARCONTROLLER_FEATURE_Animation_t */
+};
+
+/**
+ * @brief Set a NetworkController to use to send commands.
+ * @param feature The feature controller receiving the command.
+ * @param[in] commandKey Key of the command which the callback must be unassociated.
+ * @param[in] networkController The networkController used to send commands ; must be not NULL.
+ * @return error executing error.
+ */
+eARCONTROLLER_ERROR ARCONTROLLER_FEATURE_Animation_SetNetworkController (ARCONTROLLER_FEATURE_Animation_t *feature, ARCONTROLLER_Network_t *networkController);
+
+/**
+ * @brief Get the elements of a command received.
+ * @param feature The feature controller receiving the command.
+ * @param[in] commandKey Key of the command.
+ * @param[out] error executing error.
+ * @return Element dictionary of the command ; Can be null if an error is occurred.
+ */
+ARCONTROLLER_DICTIONARY_ELEMENT_t *ARCONTROLLER_Animation_GetCommandElements (ARCONTROLLER_FEATURE_Animation_t *feature, eARCONTROLLER_DICTIONARY_KEY commandKey, eARCONTROLLER_ERROR *error);
+
+/*******************************
  * --- FEATURE ARDrone3 --- 
  ******************************/
 
@@ -291,6 +590,15 @@ extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_MOVETOCHAN
 extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_HEADING; /**< Key of the argument </code>heading</code> of event <code>PilotingStateMoveToChanged</code> in feature <code>ARDrone3</code> */
 extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_MOVETOCHANGED_STATUS; /**< Key of the argument </code>status</code> of event <code>PilotingStateMoveToChanged</code> in feature <code>ARDrone3</code> */
 
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_MOTIONSTATE_STATE; /**< Key of the argument </code>state</code> of event <code>PilotingStateMotionState</code> in feature <code>ARDrone3</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_PILOTEDPOI_LATITUDE; /**< Key of the argument </code>latitude</code> of event <code>PilotingStatePilotedPOI</code> in feature <code>ARDrone3</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_PILOTEDPOI_LONGITUDE; /**< Key of the argument </code>longitude</code> of event <code>PilotingStatePilotedPOI</code> in feature <code>ARDrone3</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_PILOTEDPOI_ALTITUDE; /**< Key of the argument </code>altitude</code> of event <code>PilotingStatePilotedPOI</code> in feature <code>ARDrone3</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_PILOTEDPOI_STATUS; /**< Key of the argument </code>status</code> of event <code>PilotingStatePilotedPOI</code> in feature <code>ARDrone3</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSTATE_RETURNHOMEBATTERYCAPACITY_STATUS; /**< Key of the argument </code>status</code> of event <code>PilotingStateReturnHomeBatteryCapacity</code> in feature <code>ARDrone3</code> */
+
 extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGEVENT_MOVEBYEND_DX; /**< Key of the argument </code>dX</code> of event <code>PilotingEventMoveByEnd</code> in feature <code>ARDrone3</code> */
 extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGEVENT_MOVEBYEND_DY; /**< Key of the argument </code>dY</code> of event <code>PilotingEventMoveByEnd</code> in feature <code>ARDrone3</code> */
 extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGEVENT_MOVEBYEND_DZ; /**< Key of the argument </code>dZ</code> of event <code>PilotingEventMoveByEnd</code> in feature <code>ARDrone3</code> */
@@ -351,6 +659,8 @@ extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSETTINGSSTATE_CI
 extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSETTINGSSTATE_CIRCLINGALTITUDECHANGED_MAX; /**< Key of the argument </code>max</code> of event <code>PilotingSettingsStateCirclingAltitudeChanged</code> in feature <code>ARDrone3</code> */
 
 extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSETTINGSSTATE_PITCHMODECHANGED_VALUE; /**< Key of the argument </code>value</code> of event <code>PilotingSettingsStatePitchModeChanged</code> in feature <code>ARDrone3</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PILOTINGSETTINGSSTATE_MOTIONDETECTION_ENABLED; /**< Key of the argument </code>enabled</code> of event <code>PilotingSettingsStateMotionDetection</code> in feature <code>ARDrone3</code> */
 
 extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_SPEEDSETTINGSSTATE_MAXVERTICALSPEEDCHANGED_CURRENT; /**< Key of the argument </code>current</code> of event <code>SpeedSettingsStateMaxVerticalSpeedChanged</code> in feature <code>ARDrone3</code> */
 extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_SPEEDSETTINGSSTATE_MAXVERTICALSPEEDCHANGED_MIN; /**< Key of the argument </code>min</code> of event <code>SpeedSettingsStateMaxVerticalSpeedChanged</code> in feature <code>ARDrone3</code> */
@@ -479,6 +789,16 @@ extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_GPSSTATE_HOMETYPEAVAILAB
 extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_GPSSTATE_HOMETYPECHOSENCHANGED_TYPE; /**< Key of the argument </code>type</code> of event <code>GPSStateHomeTypeChosenChanged</code> in feature <code>ARDrone3</code> */
 
 extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PROSTATE_FEATURES_FEATURES; /**< Key of the argument </code>features</code> of event <code>PROStateFeatures</code> in feature <code>ARDrone3</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_ACCESSORYSTATE_CONNECTEDACCESSORIES_ID; /**< Key of the argument </code>id</code> of event <code>AccessoryStateConnectedAccessories</code> in feature <code>ARDrone3</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_ACCESSORYSTATE_CONNECTEDACCESSORIES_ACCESSORY_TYPE; /**< Key of the argument </code>accessory_type</code> of event <code>AccessoryStateConnectedAccessories</code> in feature <code>ARDrone3</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_ACCESSORYSTATE_CONNECTEDACCESSORIES_UID; /**< Key of the argument </code>uid</code> of event <code>AccessoryStateConnectedAccessories</code> in feature <code>ARDrone3</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_ACCESSORYSTATE_CONNECTEDACCESSORIES_SWVERSION; /**< Key of the argument </code>swVersion</code> of event <code>AccessoryStateConnectedAccessories</code> in feature <code>ARDrone3</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_ACCESSORYSTATE_BATTERY_ID; /**< Key of the argument </code>id</code> of event <code>AccessoryStateBattery</code> in feature <code>ARDrone3</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_ACCESSORYSTATE_BATTERY_BATTERYLEVEL; /**< Key of the argument </code>batteryLevel</code> of event <code>AccessoryStateBattery</code> in feature <code>ARDrone3</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_SOUNDSTATE_ALERTSOUND_STATE; /**< Key of the argument </code>state</code> of event <code>SoundStateAlertSound</code> in feature <code>ARDrone3</code> */
 
 /**
  * @brief Send a command <code>PilotingFlatTrim</code> in feature <code>ARDrone3</code>
@@ -675,7 +995,9 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ARDrone3_SendPilotingMoveBy_t
 /**
  * @brief Send a command <code>PilotingUserTakeOff</code> in feature <code>ARDrone3</code>
  * Prepare the drone to take off.
- * This is the command that initiates the take off process on the fixed wings.
+ * On copters: initiates the thrown takeoff. Note that the drone will do the thrown take off even if it is steady.
+ * On fixed wings: initiates the take off process on the fixed wings.
+ * 
  * Setting the state to 0 will cancel the preparation. You can cancel it before that the drone takes off.
  * @param feature feature owning the commands
  * @param state State of user take off mode - 1 to enter in user take off. - 0 to exit from user take off.
@@ -696,7 +1018,7 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ARDrone3_SendPilotingCircle_t
 /**
  * @brief Send a command <code>PilotingMoveTo</code> in feature <code>ARDrone3</code>
  * Move the drone to a specified location.
- * If a new command moveTo is sent, the drone will immediatly cancel the previous one.
+ * If a new command moveTo is sent, the drone will immediatly run it (no cancel will be issued).
  * If a [CancelMoveTo](#1-0-11) command is sent, the moveTo is stopped.
  * During the moveTo, all pitch, roll and gaz values of the piloting command will be ignored by the drone.
  * However, the yaw value can be used.
@@ -718,6 +1040,28 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ARDrone3_SendPilotingMoveTo_t
  * return executing error
  */
 typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ARDrone3_SendPilotingCancelMoveTo_t) (ARCONTROLLER_FEATURE_ARDrone3_t *feature);
+
+/**
+ * @brief Send a command <code>PilotingStartPilotedPOI</code> in feature <code>ARDrone3</code>
+ * Start a piloted Point Of Interest.
+ * During a piloted POI, the drone will always look at the given POI but can be piloted normally. However, yaw value is ignored. Camera tilt and pan command is also ignored.
+ * Ignored if [PilotedPOI](#1-4-14) state is UNAVAILABLE.
+ * @param feature feature owning the commands
+ * @param latitude Latitude of the location (in degrees) to look at
+ * @param longitude Longitude of the location (in degrees) to look at
+ * @param altitude Altitude above sea level (in m) to look at
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ARDrone3_SendPilotingStartPilotedPOI_t) (ARCONTROLLER_FEATURE_ARDrone3_t *feature, double latitude, double longitude, double altitude);
+
+/**
+ * @brief Send a command <code>PilotingStopPilotedPOI</code> in feature <code>ARDrone3</code>
+ * Stop the piloted Point Of Interest.
+ * If [PilotedPOI](#1-4-14) state is RUNNING or PENDING, stop it.
+ * @param feature feature owning the commands
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ARDrone3_SendPilotingStopPilotedPOI_t) (ARCONTROLLER_FEATURE_ARDrone3_t *feature);
 
 /**
  * @brief Send a command <code>AnimationsFlip</code> in feature <code>ARDrone3</code>
@@ -1097,6 +1441,7 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ARDrone3_SendPilotingSettings
 
 /**
  * @brief Send a command <code>PilotingSettingsCirclingRadius</code> in feature <code>ARDrone3</code>
+ * @deprecated
  * Set circling radius.
  * Only available for fixed wings.
  * @param feature feature owning the commands
@@ -1124,6 +1469,16 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ARDrone3_SendPilotingSettings
  * return executing error
  */
 typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ARDrone3_SendPilotingSettingsPitchMode_t) (ARCONTROLLER_FEATURE_ARDrone3_t *feature, eARCOMMANDS_ARDRONE3_PILOTINGSETTINGS_PITCHMODE_VALUE value);
+
+/**
+ * @brief Send a command <code>PilotingSettingsSetMotionDetectionMode</code> in feature <code>ARDrone3</code>
+ * Enable/disable the motion detection.
+ * If the motion detection is enabled, the drone will send its [MotionState](#1-4-13) when its [FlyingState](#1-4-1) is landed. If the motion detection is disabled, [MotionState](#1-4-13) is steady.
+ * @param feature feature owning the commands
+ * @param enable 1 to enable the motion detection, 0 to disable it.
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ARDrone3_SendPilotingSettingsSetMotionDetectionMode_t) (ARCONTROLLER_FEATURE_ARDrone3_t *feature, uint8_t enable);
 
 /**
  * @brief Send a command <code>SpeedSettingsMaxVerticalSpeed</code> in feature <code>ARDrone3</code>
@@ -1302,7 +1657,7 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ARDrone3_SendMediaStreamingVi
 
 /**
  * @brief Send a command <code>MediaStreamingVideoStreamMode</code> in feature <code>ARDrone3</code>
- * Video stream mode
+ * Set the stream mode.
  * @param feature feature owning the commands
  * @param mode stream mode
  * return executing error
@@ -1323,6 +1678,7 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ARDrone3_SendGPSSettingsSetHo
 
 /**
  * @brief Send a command <code>GPSSettingsResetHome</code> in feature <code>ARDrone3</code>
+ * @deprecated
  * Reset home position.
  * @param feature feature owning the commands
  * return executing error
@@ -1386,6 +1742,22 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ARDrone3_SendAntiflickeringEl
 typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ARDrone3_SendAntiflickeringSetMode_t) (ARCONTROLLER_FEATURE_ARDrone3_t *feature, eARCOMMANDS_ARDRONE3_ANTIFLICKERING_SETMODE_MODE mode);
 
 /**
+ * @brief Send a command <code>SoundStartAlertSound</code> in feature <code>ARDrone3</code>
+ * Start the alert sound. The alert sound can only be started when the drone is not flying.
+ * @param feature feature owning the commands
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ARDrone3_SendSoundStartAlertSound_t) (ARCONTROLLER_FEATURE_ARDrone3_t *feature);
+
+/**
+ * @brief Send a command <code>SoundStopAlertSound</code> in feature <code>ARDrone3</code>
+ * Stop the alert sound.
+ * @param feature feature owning the commands
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ARDrone3_SendSoundStopAlertSound_t) (ARCONTROLLER_FEATURE_ARDrone3_t *feature);
+
+/**
  * @brief Feature controller allow to send command related of ARDrone3 Feature.
  * All ARDrone3-only commands
  */
@@ -1410,6 +1782,8 @@ struct ARCONTROLLER_FEATURE_ARDrone3_t
     ARCONTROLLER_FEATURE_ARDrone3_SendPilotingCircle_t sendPilotingCircle;
     ARCONTROLLER_FEATURE_ARDrone3_SendPilotingMoveTo_t sendPilotingMoveTo;
     ARCONTROLLER_FEATURE_ARDrone3_SendPilotingCancelMoveTo_t sendPilotingCancelMoveTo;
+    ARCONTROLLER_FEATURE_ARDrone3_SendPilotingStartPilotedPOI_t sendPilotingStartPilotedPOI;
+    ARCONTROLLER_FEATURE_ARDrone3_SendPilotingStopPilotedPOI_t sendPilotingStopPilotedPOI;
     ARCONTROLLER_FEATURE_ARDrone3_SendAnimationsFlip_t sendAnimationsFlip;
     ARCONTROLLER_FEATURE_ARDrone3_SendCameraOrientation_t sendCameraOrientation;
     ARCONTROLLER_FEATURE_ARDrone3_SetCameraOrientation_t setCameraOrientation;
@@ -1445,6 +1819,7 @@ struct ARCONTROLLER_FEATURE_ARDrone3_t
     ARCONTROLLER_FEATURE_ARDrone3_SendPilotingSettingsCirclingRadius_t sendPilotingSettingsCirclingRadius;
     ARCONTROLLER_FEATURE_ARDrone3_SendPilotingSettingsCirclingAltitude_t sendPilotingSettingsCirclingAltitude;
     ARCONTROLLER_FEATURE_ARDrone3_SendPilotingSettingsPitchMode_t sendPilotingSettingsPitchMode;
+    ARCONTROLLER_FEATURE_ARDrone3_SendPilotingSettingsSetMotionDetectionMode_t sendPilotingSettingsSetMotionDetectionMode;
     ARCONTROLLER_FEATURE_ARDrone3_SendSpeedSettingsMaxVerticalSpeed_t sendSpeedSettingsMaxVerticalSpeed;
     ARCONTROLLER_FEATURE_ARDrone3_SendSpeedSettingsMaxRotationSpeed_t sendSpeedSettingsMaxRotationSpeed;
     ARCONTROLLER_FEATURE_ARDrone3_SendSpeedSettingsHullProtection_t sendSpeedSettingsHullProtection;
@@ -1471,6 +1846,8 @@ struct ARCONTROLLER_FEATURE_ARDrone3_t
     ARCONTROLLER_FEATURE_ARDrone3_SendGPSSettingsReturnHomeDelay_t sendGPSSettingsReturnHomeDelay;
     ARCONTROLLER_FEATURE_ARDrone3_SendAntiflickeringElectricFrequency_t sendAntiflickeringElectricFrequency;
     ARCONTROLLER_FEATURE_ARDrone3_SendAntiflickeringSetMode_t sendAntiflickeringSetMode;
+    ARCONTROLLER_FEATURE_ARDrone3_SendSoundStartAlertSound_t sendSoundStartAlertSound;
+    ARCONTROLLER_FEATURE_ARDrone3_SendSoundStopAlertSound_t sendSoundStopAlertSound;
     ARCONTROLLER_FEATURE_ARDrone3_Private_t *privatePart; /**< Private part of ARCONTROLLER_FEATURE_ARDrone3_t */
 };
 
@@ -1923,7 +2300,8 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_Common_SendCalibrationMagneto
 
 /**
  * @brief Send a command <code>CalibrationPitotCalibration</code> in feature <code>Common</code>
- * Sent when a calibration of the pitot is asked or is aborted
+ * Start or abort Pitot tube calibration process.
+ * 
  * @param feature feature owning the commands
  * @param calibrate 1 if the calibration should be started, 0 if it should be aborted
  * return executing error
@@ -2017,7 +2395,7 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_Common_SendChargerSetMaxCharg
 
 /**
  * @brief Send a command <code>FactoryReset</code> in feature <code>Common</code>
- * This command will request a factory reset from the prodcut. *The factory reset procedure implies an automatic reboot*, which will be done immediately after recieving this command.
+ * This command will request a factory reset from the prodcut. *The factory reset procedure implies an automatic reboot*, which will be done immediately after receiving this command.
  * @param feature feature owning the commands
  * return executing error
  */
@@ -2458,7 +2836,6 @@ eARCONTROLLER_ERROR ARCONTROLLER_FEATURE_Debug_AddCallback (ARCONTROLLER_FEATURE
  */
 eARCONTROLLER_ERROR ARCONTROLLER_FEATURE_Debug_RemoveCallback (ARCONTROLLER_FEATURE_Debug_t *feature, eARCONTROLLER_DICTIONARY_KEY commandKey, ARCONTROLLER_DICTIONARY_CALLBACK_t callback, void *customData);
 
-extern const char *ARCONTROLLER_DICTIONARY_KEY_DEBUG_SETTINGSINFO_LISTFLAGS; /**< Key of the argument </code>listFlags</code> of event <code>SettingsInfo</code> in feature <code>Debug</code> */
 extern const char *ARCONTROLLER_DICTIONARY_KEY_DEBUG_SETTINGSINFO_ID; /**< Key of the argument </code>id</code> of event <code>SettingsInfo</code> in feature <code>Debug</code> */
 extern const char *ARCONTROLLER_DICTIONARY_KEY_DEBUG_SETTINGSINFO_LABEL; /**< Key of the argument </code>label</code> of event <code>SettingsInfo</code> in feature <code>Debug</code> */
 extern const char *ARCONTROLLER_DICTIONARY_KEY_DEBUG_SETTINGSINFO_TYPE; /**< Key of the argument </code>type</code> of event <code>SettingsInfo</code> in feature <code>Debug</code> */
@@ -2823,8 +3200,7 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_FollowMe_SendStart_t) (ARCONT
 
 /**
  * @brief Send a command <code>Stop</code> in feature <code>FollowMe</code>
- * Begin or stop geographic type followMe (follow the leader keeping the same vector).
- * Sending this command will stop other running followMe.
+ * Stop current followMe.
  * @param feature feature owning the commands
  * return executing error
  */
@@ -2858,7 +3234,8 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_FollowMe_SendConfigureRelativ
 
 /**
  * @brief Send a command <code>StopAnimation</code> in feature <code>FollowMe</code>
- * Stop current followMe animation
+ * Stop current followMe animation.
+ * This message has been deprecated. Please use the animation feature.
  * @param feature feature owning the commands
  * return executing error
  */
@@ -2868,6 +3245,7 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_FollowMe_SendStopAnimation_t)
  * @brief Send a command <code>StartHelicoidAnim</code> in feature <code>FollowMe</code>
  * Start a helicoid animation.
  * The helicoid animation allows the drone to revolve around the target while going up, with a fixed radius.
+ * This message has been deprecated. Please use the animation feature.
  * @param feature feature owning the commands
  * @param use_default Helicoid animation configuration parameters.
  * @param speed The desired speed of the anim in m/s Not used when speed_is_default is 1
@@ -2881,6 +3259,7 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_FollowMe_SendStartHelicoidAni
  * @brief Send a command <code>StartSwingAnim</code> in feature <code>FollowMe</code>
  * Start a swing animation.
  * The swing animation enables a vertical point of view while the drone passes over the target.
+ * This message has been deprecated. Please use the animation feature.
  * @param feature feature owning the commands
  * @param use_default Swing configure parameters.
  * @param speed The desired speed of the anim in m/s Not used when speed_is_default is 1 Not used when start is 0
@@ -2893,6 +3272,7 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_FollowMe_SendStartSwingAnim_t
  * @brief Send a command <code>StartBoomerangAnim</code> in feature <code>FollowMe</code>
  * Start a boomerang animation.
  * The boomerang animation enables a zoom-out/zoom-in trajectory while preserving the framing chosen by the user.
+ * This message has been deprecated. Please use the animation feature.
  * @param feature feature owning the commands
  * @param use_default Boomerang animation configure parameters.
  * @param speed The desired speed of the anim in m/s Not used when speed_is_default is 1 Not used when start is 0
@@ -2905,6 +3285,7 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_FollowMe_SendStartBoomerangAn
  * @brief Send a command <code>StartCandleAnim</code> in feature <code>FollowMe</code>
  * Start a candle animation.
  * The candle animation enables a zoom-in directly on the target followed by a vertical zoom-out.
+ * This message has been deprecated. Please use the animation feature.
  * @param feature feature owning the commands
  * @param use_default Candle animation configure parameters.
  * @param speed The desired speed of the anim in m/s Not used when speed_is_default is 1 Not used when start is 0
@@ -2917,6 +3298,7 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_FollowMe_SendStartCandleAnim_
  * @brief Send a command <code>StartDollySlideAnim</code> in feature <code>FollowMe</code>
  * Start a dolly slide animation.
  * Allows the drone to catch up to the target before flying past it, creating a zoom-in/zoom_out effect without a curved path.
+ * This message has been deprecated. Please use the animation feature.
  * @param feature feature owning the commands
  * @param use_default Dolly slide animation configure parameters.
  * @param speed The desired speed of the anim in m/s Not used when speed_is_default is 1 Not used when start is 0
@@ -2928,7 +3310,7 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_FollowMe_SendStartDollySlideA
 
 /**
  * @brief Send a command <code>TargetFramingPosition</code> in feature <code>FollowMe</code>
- * Target desired framing in the video.
+ * Set the desired target framing in the video.
  * @param feature feature owning the commands
  * @param horizontal Horizontal position in the video (in %, from left to right)
  * @param vertical Vertical position in the video (in %, from bottom to top)
@@ -3914,6 +4296,8 @@ extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSTATE_FLYINGMOD
 
 extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSTATE_PLANEGEARBOXCHANGED_STATE; /**< Key of the argument </code>state</code> of event <code>PilotingStatePlaneGearBoxChanged</code> in feature <code>MiniDrone</code> */
 
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSTATE_PILOTINGMODECHANGED_MODE; /**< Key of the argument </code>mode</code> of event <code>PilotingStatePilotingModeChanged</code> in feature <code>MiniDrone</code> */
+
 extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MEDIARECORDSTATE_PICTURESTATECHANGED_STATE; /**< Key of the argument </code>state</code> of event <code>MediaRecordStatePictureStateChanged</code> in feature <code>MiniDrone</code> */
 extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MEDIARECORDSTATE_PICTURESTATECHANGED_MASS_STORAGE_ID; /**< Key of the argument </code>mass_storage_id</code> of event <code>MediaRecordStatePictureStateChanged</code> in feature <code>MiniDrone</code> */
 
@@ -3932,6 +4316,10 @@ extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSETTINGSSTATE_M
 extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSETTINGSSTATE_MAXTILTCHANGED_MAX; /**< Key of the argument </code>max</code> of event <code>PilotingSettingsStateMaxTiltChanged</code> in feature <code>MiniDrone</code> */
 
 extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSETTINGSSTATE_BANKEDTURNCHANGED_STATE; /**< Key of the argument </code>state</code> of event <code>PilotingSettingsStateBankedTurnChanged</code> in feature <code>MiniDrone</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSETTINGSSTATE_MAXTHROTTLECHANGED_MAX; /**< Key of the argument </code>max</code> of event <code>PilotingSettingsStateMaxThrottleChanged</code> in feature <code>MiniDrone</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_PILOTINGSETTINGSSTATE_PREFERREDPILOTINGMODECHANGED_MODE; /**< Key of the argument </code>mode</code> of event <code>PilotingSettingsStatePreferredPilotingModeChanged</code> in feature <code>MiniDrone</code> */
 
 extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_SPEEDSETTINGSSTATE_MAXVERTICALSPEEDCHANGED_CURRENT; /**< Key of the argument </code>current</code> of event <code>SpeedSettingsStateMaxVerticalSpeedChanged</code> in feature <code>MiniDrone</code> */
 extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_SPEEDSETTINGSSTATE_MAXVERTICALSPEEDCHANGED_MIN; /**< Key of the argument </code>min</code> of event <code>SpeedSettingsStateMaxVerticalSpeedChanged</code> in feature <code>MiniDrone</code> */
@@ -3978,6 +4366,45 @@ extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRO
 extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONEPOSITION_POSZ; /**< Key of the argument </code>posz</code> of event <code>NavigationDataStateDronePosition</code> in feature <code>MiniDrone</code> */
 extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONEPOSITION_PSI; /**< Key of the argument </code>psi</code> of event <code>NavigationDataStateDronePosition</code> in feature <code>MiniDrone</code> */
 extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONEPOSITION_TS; /**< Key of the argument </code>ts</code> of event <code>NavigationDataStateDronePosition</code> in feature <code>MiniDrone</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONESPEED_SPEED_X; /**< Key of the argument </code>speed_x</code> of event <code>NavigationDataStateDroneSpeed</code> in feature <code>MiniDrone</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONESPEED_SPEED_Y; /**< Key of the argument </code>speed_y</code> of event <code>NavigationDataStateDroneSpeed</code> in feature <code>MiniDrone</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONESPEED_SPEED_Z; /**< Key of the argument </code>speed_z</code> of event <code>NavigationDataStateDroneSpeed</code> in feature <code>MiniDrone</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONESPEED_TS; /**< Key of the argument </code>ts</code> of event <code>NavigationDataStateDroneSpeed</code> in feature <code>MiniDrone</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONEALTITUDE_ALTITUDE; /**< Key of the argument </code>altitude</code> of event <code>NavigationDataStateDroneAltitude</code> in feature <code>MiniDrone</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONEALTITUDE_TS; /**< Key of the argument </code>ts</code> of event <code>NavigationDataStateDroneAltitude</code> in feature <code>MiniDrone</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONEQUATERNION_Q_W; /**< Key of the argument </code>q_w</code> of event <code>NavigationDataStateDroneQuaternion</code> in feature <code>MiniDrone</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONEQUATERNION_Q_X; /**< Key of the argument </code>q_x</code> of event <code>NavigationDataStateDroneQuaternion</code> in feature <code>MiniDrone</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONEQUATERNION_Q_Y; /**< Key of the argument </code>q_y</code> of event <code>NavigationDataStateDroneQuaternion</code> in feature <code>MiniDrone</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONEQUATERNION_Q_Z; /**< Key of the argument </code>q_z</code> of event <code>NavigationDataStateDroneQuaternion</code> in feature <code>MiniDrone</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_NAVIGATIONDATASTATE_DRONEQUATERNION_TS; /**< Key of the argument </code>ts</code> of event <code>NavigationDataStateDroneQuaternion</code> in feature <code>MiniDrone</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_POWERMODECHANGED_POWER_MODE; /**< Key of the argument </code>power_mode</code> of event <code>MinicamStatePowerModeChanged</code> in feature <code>MiniDrone</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_PRODUCTSERIALCHANGED_SERIAL_NUMBER; /**< Key of the argument </code>serial_number</code> of event <code>MinicamStateProductSerialChanged</code> in feature <code>MiniDrone</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_STATECHANGED_STATE; /**< Key of the argument </code>state</code> of event <code>MinicamStateStateChanged</code> in feature <code>MiniDrone</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_VERSIONCHANGED_SOFTWARE; /**< Key of the argument </code>software</code> of event <code>MinicamStateVersionChanged</code> in feature <code>MiniDrone</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_VERSIONCHANGED_HARDWARE; /**< Key of the argument </code>hardware</code> of event <code>MinicamStateVersionChanged</code> in feature <code>MiniDrone</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_PICTURECHANGED_STATE; /**< Key of the argument </code>state</code> of event <code>MinicamStatePictureChanged</code> in feature <code>MiniDrone</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_PICTURECHANGED_RESULT; /**< Key of the argument </code>result</code> of event <code>MinicamStatePictureChanged</code> in feature <code>MiniDrone</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_STATE; /**< Key of the argument </code>state</code> of event <code>MinicamStateVideoStateChanged</code> in feature <code>MiniDrone</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_VIDEOSTATECHANGED_ERROR; /**< Key of the argument </code>error</code> of event <code>MinicamStateVideoStateChanged</code> in feature <code>MiniDrone</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_MINICAMSTATE_MASSSTORAGEFORMATCHANGED_STATE; /**< Key of the argument </code>state</code> of event <code>MinicamStateMassStorageFormatChanged</code> in feature <code>MiniDrone</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_VIDEOSETTINGSSTATE_AUTORECORDCHANGED_ENABLED; /**< Key of the argument </code>enabled</code> of event <code>VideoSettingsStateAutorecordChanged</code> in feature <code>MiniDrone</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_VIDEOSETTINGSSTATE_ELECTRICFREQUENCYCHANGED_FREQUENCY; /**< Key of the argument </code>frequency</code> of event <code>VideoSettingsStateElectricFrequencyChanged</code> in feature <code>MiniDrone</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_VIDEOSETTINGSSTATE_VIDEORESOLUTIONCHANGED_TYPE; /**< Key of the argument </code>type</code> of event <code>VideoSettingsStateVideoResolutionChanged</code> in feature <code>MiniDrone</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_MINIDRONE_REMOTECONTROLLERSTATE_CONNECTIONCHANGED_STATE; /**< Key of the argument </code>state</code> of event <code>RemoteControllerStateConnectionChanged</code> in feature <code>MiniDrone</code> */
 
 /**
  * @brief Send a command <code>PilotingFlatTrim</code> in feature <code>MiniDrone</code>
@@ -4131,6 +4558,15 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_MiniDrone_SendPilotingFlyingM
 typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_MiniDrone_SendPilotingPlaneGearBox_t) (ARCONTROLLER_FEATURE_MiniDrone_t *feature, eARCOMMANDS_MINIDRONE_PILOTING_PLANEGEARBOX_STATE state);
 
 /**
+ * @brief Send a command <code>PilotingTogglePilotingMode</code> in feature <code>MiniDrone</code>
+ * Command to toggle between "easy" piloting mode and "preferred" piloting mode.
+ * This command only works while the drone is flying.
+ * @param feature feature owning the commands
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_MiniDrone_SendPilotingTogglePilotingMode_t) (ARCONTROLLER_FEATURE_MiniDrone_t *feature);
+
+/**
  * @brief Send a command <code>AnimationsFlip</code> in feature <code>MiniDrone</code>
  * Make a flip
  * @param feature feature owning the commands
@@ -4193,6 +4629,29 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_MiniDrone_SendPilotingSetting
  * return executing error
  */
 typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_MiniDrone_SendPilotingSettingsBankedTurn_t) (ARCONTROLLER_FEATURE_MiniDrone_t *feature, uint8_t value);
+
+/**
+ * @brief Send a command <code>PilotingSettingsMaxThrottle</code> in feature <code>MiniDrone</code>
+ * This setting represents the vertical acceleration command that will be sent to the drone when piloting in gaz mode.
+ * In this case, closed loop height control is no longer performed; an open loop vertical acceleration command is generated instead.
+ * This command results from multiplying the user command coming from the joystick (float value between 0 and 1) by the MaxThrottle setting (also a value between 0 and 1) and by the gravity constant.
+ * Thus, we obtain the corresponding value in [m/s²] that will then be mixed with the attitude commands and translated into rotation speeds.
+ * As an example, if the value of this setting is 0.5, the maximal acceleration command that can be generated when the user command equals 1 is :
+ * acc_cmd_max = 1 * 0.5 * 9.81 m/s² = 4.905 m/s².
+ * @param feature feature owning the commands
+ * @param max Max throttle, between 0 and 1.
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_MiniDrone_SendPilotingSettingsMaxThrottle_t) (ARCONTROLLER_FEATURE_MiniDrone_t *feature, float max);
+
+/**
+ * @brief Send a command <code>PilotingSettingsPreferredPilotingMode</code> in feature <code>MiniDrone</code>
+ * The flight envelope of Mambo FPV has been divided in three piloting modes.
+ * @param feature feature owning the commands
+ * @param mode Piloting modes.
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_MiniDrone_SendPilotingSettingsPreferredPilotingMode_t) (ARCONTROLLER_FEATURE_MiniDrone_t *feature, eARCOMMANDS_MINIDRONE_PILOTINGSETTINGS_PREFERREDPILOTINGMODE_MODE mode);
 
 /**
  * @brief Send a command <code>SpeedSettingsMaxVerticalSpeed</code> in feature <code>MiniDrone</code>
@@ -4329,6 +4788,58 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_MiniDrone_SendUsbAccessoryGun
 typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_MiniDrone_SendRemoteControllerSetPairedRemote_t) (ARCONTROLLER_FEATURE_MiniDrone_t *feature, uint16_t msb_mac, uint16_t mid_mac, uint16_t lsb_mac);
 
 /**
+ * @brief Send a command <code>VideoSettingsAutorecord</code> in feature <code>MiniDrone</code>
+ * Set video automatic recording state.
+ * @param feature feature owning the commands
+ * @param enable 0: disabled 1: enabled
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_MiniDrone_SendVideoSettingsAutorecord_t) (ARCONTROLLER_FEATURE_MiniDrone_t *feature, uint8_t enable);
+
+/**
+ * @brief Send a command <code>VideoSettingsElectricFrequency</code> in feature <code>MiniDrone</code>
+ * Set the electric frequency (Anti-flickering).
+ * @param feature feature owning the commands
+ * @param frequency Type of the electric frequency.
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_MiniDrone_SendVideoSettingsElectricFrequency_t) (ARCONTROLLER_FEATURE_MiniDrone_t *feature, eARCOMMANDS_MINIDRONE_VIDEOSETTINGS_ELECTRICFREQUENCY_FREQUENCY frequency);
+
+/**
+ * @brief Send a command <code>VideoSettingsVideoResolution</code> in feature <code>MiniDrone</code>
+ * Set video streaming and recording resolution.
+ * @param feature feature owning the commands
+ * @param type Video resolution type.
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_MiniDrone_SendVideoSettingsVideoResolution_t) (ARCONTROLLER_FEATURE_MiniDrone_t *feature, eARCOMMANDS_MINIDRONE_VIDEOSETTINGS_VIDEORESOLUTION_TYPE type);
+
+/**
+ * @brief Send a command <code>MinicamPicture</code> in feature <code>MiniDrone</code>
+ * Take picture.
+ * @param feature feature owning the commands
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_MiniDrone_SendMinicamPicture_t) (ARCONTROLLER_FEATURE_MiniDrone_t *feature);
+
+/**
+ * @brief Send a command <code>MinicamVideo</code> in feature <code>MiniDrone</code>
+ * Start/Stop video recording.
+ * @param feature feature owning the commands
+ * @param record Command to record video
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_MiniDrone_SendMinicamVideo_t) (ARCONTROLLER_FEATURE_MiniDrone_t *feature, eARCOMMANDS_MINIDRONE_MINICAM_VIDEO_RECORD record);
+
+/**
+ * @brief Send a command <code>MinicamMassStorageFormat</code> in feature <code>MiniDrone</code>
+ * Format mass storage.
+ * @param feature feature owning the commands
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_MiniDrone_SendMinicamMassStorageFormat_t) (ARCONTROLLER_FEATURE_MiniDrone_t *feature);
+
+/**
  * @brief Feature controller allow to send command related of MiniDrone Feature.
  * All MiniDrone-only commands
  */
@@ -4349,6 +4860,7 @@ struct ARCONTROLLER_FEATURE_MiniDrone_t
     ARCONTROLLER_FEATURE_MiniDrone_SendPilotingAutoTakeOffMode_t sendPilotingAutoTakeOffMode;
     ARCONTROLLER_FEATURE_MiniDrone_SendPilotingFlyingMode_t sendPilotingFlyingMode;
     ARCONTROLLER_FEATURE_MiniDrone_SendPilotingPlaneGearBox_t sendPilotingPlaneGearBox;
+    ARCONTROLLER_FEATURE_MiniDrone_SendPilotingTogglePilotingMode_t sendPilotingTogglePilotingMode;
     ARCONTROLLER_FEATURE_MiniDrone_SendAnimationsFlip_t sendAnimationsFlip;
     ARCONTROLLER_FEATURE_MiniDrone_SendAnimationsCap_t sendAnimationsCap;
     ARCONTROLLER_FEATURE_MiniDrone_SendMediaRecordPicture_t sendMediaRecordPicture;
@@ -4356,6 +4868,8 @@ struct ARCONTROLLER_FEATURE_MiniDrone_t
     ARCONTROLLER_FEATURE_MiniDrone_SendPilotingSettingsMaxAltitude_t sendPilotingSettingsMaxAltitude;
     ARCONTROLLER_FEATURE_MiniDrone_SendPilotingSettingsMaxTilt_t sendPilotingSettingsMaxTilt;
     ARCONTROLLER_FEATURE_MiniDrone_SendPilotingSettingsBankedTurn_t sendPilotingSettingsBankedTurn;
+    ARCONTROLLER_FEATURE_MiniDrone_SendPilotingSettingsMaxThrottle_t sendPilotingSettingsMaxThrottle;
+    ARCONTROLLER_FEATURE_MiniDrone_SendPilotingSettingsPreferredPilotingMode_t sendPilotingSettingsPreferredPilotingMode;
     ARCONTROLLER_FEATURE_MiniDrone_SendSpeedSettingsMaxVerticalSpeed_t sendSpeedSettingsMaxVerticalSpeed;
     ARCONTROLLER_FEATURE_MiniDrone_SendSpeedSettingsMaxRotationSpeed_t sendSpeedSettingsMaxRotationSpeed;
     ARCONTROLLER_FEATURE_MiniDrone_SendSpeedSettingsWheels_t sendSpeedSettingsWheels;
@@ -4370,6 +4884,12 @@ struct ARCONTROLLER_FEATURE_MiniDrone_t
     ARCONTROLLER_FEATURE_MiniDrone_SendUsbAccessoryClawControl_t sendUsbAccessoryClawControl;
     ARCONTROLLER_FEATURE_MiniDrone_SendUsbAccessoryGunControl_t sendUsbAccessoryGunControl;
     ARCONTROLLER_FEATURE_MiniDrone_SendRemoteControllerSetPairedRemote_t sendRemoteControllerSetPairedRemote;
+    ARCONTROLLER_FEATURE_MiniDrone_SendVideoSettingsAutorecord_t sendVideoSettingsAutorecord;
+    ARCONTROLLER_FEATURE_MiniDrone_SendVideoSettingsElectricFrequency_t sendVideoSettingsElectricFrequency;
+    ARCONTROLLER_FEATURE_MiniDrone_SendVideoSettingsVideoResolution_t sendVideoSettingsVideoResolution;
+    ARCONTROLLER_FEATURE_MiniDrone_SendMinicamPicture_t sendMinicamPicture;
+    ARCONTROLLER_FEATURE_MiniDrone_SendMinicamVideo_t sendMinicamVideo;
+    ARCONTROLLER_FEATURE_MiniDrone_SendMinicamMassStorageFormat_t sendMinicamMassStorageFormat;
     ARCONTROLLER_FEATURE_MiniDrone_Private_t *privatePart; /**< Private part of ARCONTROLLER_FEATURE_MiniDrone_t */
 };
 
@@ -5014,6 +5534,14 @@ extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_WIFISTATE_WIFIAUTHC
 
 extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_WIFISTATE_WIFISIGNALCHANGED_LEVEL; /**< Key of the argument </code>level</code> of event <code>WifiStateWifiSignalChanged</code> in feature <code>SkyController</code> */
 
+extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGEDV2_BAND; /**< Key of the argument </code>band</code> of event <code>WifiStateWifiAuthChannelListChangedV2</code> in feature <code>SkyController</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGEDV2_CHANNEL; /**< Key of the argument </code>channel</code> of event <code>WifiStateWifiAuthChannelListChangedV2</code> in feature <code>SkyController</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_WIFISTATE_WIFIAUTHCHANNELLISTCHANGEDV2_IN_OR_OUT; /**< Key of the argument </code>in_or_out</code> of event <code>WifiStateWifiAuthChannelListChangedV2</code> in feature <code>SkyController</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_WIFISTATE_WIFICOUNTRYCHANGED_CODE; /**< Key of the argument </code>code</code> of event <code>WifiStateWifiCountryChanged</code> in feature <code>SkyController</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_WIFISTATE_WIFIENVIRONMENTCHANGED_ENVIRONMENT; /**< Key of the argument </code>environment</code> of event <code>WifiStateWifiEnvironmentChanged</code> in feature <code>SkyController</code> */
+
 extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_DEVICESTATE_DEVICELIST_NAME; /**< Key of the argument </code>name</code> of event <code>DeviceStateDeviceList</code> in feature <code>SkyController</code> */
 
 extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_DEVICESTATE_CONNEXIONCHANGED_STATUS; /**< Key of the argument </code>status</code> of event <code>DeviceStateConnexionChanged</code> in feature <code>SkyController</code> */
@@ -5028,6 +5556,8 @@ extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_SETTINGSSTATE_PRODU
 
 extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_SETTINGSSTATE_PRODUCTVERSIONCHANGED_SOFTWARE; /**< Key of the argument </code>software</code> of event <code>SettingsStateProductVersionChanged</code> in feature <code>SkyController</code> */
 extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_SETTINGSSTATE_PRODUCTVERSIONCHANGED_HARDWARE; /**< Key of the argument </code>hardware</code> of event <code>SettingsStateProductVersionChanged</code> in feature <code>SkyController</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_SETTINGSSTATE_CPUID_ID; /**< Key of the argument </code>id</code> of event <code>SettingsStateCPUID</code> in feature <code>SkyController</code> */
 
 
 extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_SKYCONTROLLERSTATE_BATTERYCHANGED_PERCENT; /**< Key of the argument </code>percent</code> of event <code>SkyControllerStateBatteryChanged</code> in feature <code>SkyController</code> */
@@ -5094,6 +5624,8 @@ extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_CALIBRATIONSTATE_MA
 extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATE_Z_QUALITY; /**< Key of the argument </code>Z_Quality</code> of event <code>CalibrationStateMagnetoCalibrationState</code> in feature <code>SkyController</code> */
 
 extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONQUALITYUPDATESSTATE_ENABLED; /**< Key of the argument </code>enabled</code> of event <code>CalibrationStateMagnetoCalibrationQualityUpdatesState</code> in feature <code>SkyController</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_CALIBRATIONSTATE_MAGNETOCALIBRATIONSTATEV2_STATE; /**< Key of the argument </code>state</code> of event <code>CalibrationStateMagnetoCalibrationStateV2</code> in feature <code>SkyController</code> */
 
 
 extern const char *ARCONTROLLER_DICTIONARY_KEY_SKYCONTROLLER_COMMONEVENTSTATE_SHUTDOWN_REASON; /**< Key of the argument </code>reason</code> of event <code>CommonEventStateShutdown</code> in feature <code>SkyController</code> */
@@ -5186,7 +5718,7 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_SkyController_SendSettingsAll
 
 /**
  * @brief Send a command <code>SettingsReset</code> in feature <code>SkyController</code>
- * This command is not implemented.
+ * Reset all settings (i.e. everything except drone pairing).
  * @param feature feature owning the commands
  * return executing error
  */
@@ -5408,6 +5940,24 @@ typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_SkyController_SendCoPilotingS
 typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_SkyController_SendCalibrationEnableMagnetoCalibrationQualityUpdates_t) (ARCONTROLLER_FEATURE_SkyController_t *feature, uint8_t enable);
 
 /**
+ * @brief Send a command <code>CalibrationStartCalibration</code> in feature <code>SkyController</code>
+ * Asks the SkyController to start a magneto calibration.
+ * If the calibration is already started, this command has no effect.
+ * @param feature feature owning the commands
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_SkyController_SendCalibrationStartCalibration_t) (ARCONTROLLER_FEATURE_SkyController_t *feature);
+
+/**
+ * @brief Send a command <code>CalibrationAbortCalibration</code> in feature <code>SkyController</code>
+ * Asks the SkyController to abort an in-progress magneto calibration.
+ * If no calibration is in progress, this command has no effect.
+ * @param feature feature owning the commands
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_SkyController_SendCalibrationAbortCalibration_t) (ARCONTROLLER_FEATURE_SkyController_t *feature);
+
+/**
  * @brief Send a command <code>FactoryReset</code> in feature <code>SkyController</code>
  * This command will request a factory reset from the SkyController. *The factory reset procedure implies an automatic reboot*, which will be done immediately after recieving this command.
  * @param feature feature owning the commands
@@ -5452,6 +6002,8 @@ struct ARCONTROLLER_FEATURE_SkyController_t
     ARCONTROLLER_FEATURE_SkyController_SendAxisFiltersDefaultAxisFilters_t sendAxisFiltersDefaultAxisFilters;
     ARCONTROLLER_FEATURE_SkyController_SendCoPilotingSetPilotingSource_t sendCoPilotingSetPilotingSource;
     ARCONTROLLER_FEATURE_SkyController_SendCalibrationEnableMagnetoCalibrationQualityUpdates_t sendCalibrationEnableMagnetoCalibrationQualityUpdates;
+    ARCONTROLLER_FEATURE_SkyController_SendCalibrationStartCalibration_t sendCalibrationStartCalibration;
+    ARCONTROLLER_FEATURE_SkyController_SendCalibrationAbortCalibration_t sendCalibrationAbortCalibration;
     ARCONTROLLER_FEATURE_SkyController_SendFactoryReset_t sendFactoryReset;
     ARCONTROLLER_FEATURE_SkyController_Private_t *privatePart; /**< Private part of ARCONTROLLER_FEATURE_SkyController_t */
 };
@@ -5473,6 +6025,153 @@ eARCONTROLLER_ERROR ARCONTROLLER_FEATURE_SkyController_SetNetworkController (ARC
  * @return Element dictionary of the command ; Can be null if an error is occurred.
  */
 ARCONTROLLER_DICTIONARY_ELEMENT_t *ARCONTROLLER_SkyController_GetCommandElements (ARCONTROLLER_FEATURE_SkyController_t *feature, eARCONTROLLER_DICTIONARY_KEY commandKey, eARCONTROLLER_ERROR *error);
+
+/*******************************
+ * --- FEATURE thermal_cam --- 
+ ******************************/
+
+/**
+ * @brief Private part of ARCONTROLLER_FEATURE_ThermalCam_t.
+ */
+typedef struct ARCONTROLLER_FEATURE_ThermalCam_Private_t ARCONTROLLER_FEATURE_ThermalCam_Private_t;
+
+/**
+ * @brief Feature controller allow to send command related of thermal_cam Feature.
+ * Thermal camera accessory feature
+ */
+typedef struct ARCONTROLLER_FEATURE_ThermalCam_t ARCONTROLLER_FEATURE_ThermalCam_t;
+
+/**
+ * @brief Create a new thermal_cam Feature Controller
+ * @warning This function allocate memory
+ * @post ARCONTROLLER_FEATURE_ThermalCam_Delete() must be called to delete the Feature Controller and free the memory allocated.
+ * @param[in] networkController The networkController used to send commands ; can be NULL and defind later with ARCONTROLLER_FEATURE_ThermalCam_SetNetworkController().
+ * @param[out] error executing error.
+ * @return the new thermal_cam Feature Controller
+ * @see ARCONTROLLER_FEATURE_ThermalCam_Delete
+ */
+ARCONTROLLER_FEATURE_ThermalCam_t *ARCONTROLLER_FEATURE_ThermalCam_New (ARCONTROLLER_Network_t *networkController, eARCONTROLLER_ERROR *error);
+
+/**
+ * @brief Delete the thermal_cam Feature Controller
+ * @warning This function free memory
+ * @param feature The feature controller to delete
+ * @see ARCONTROLLER_FEATURE_ThermalCam_New
+ */
+void ARCONTROLLER_FEATURE_ThermalCam_Delete (ARCONTROLLER_FEATURE_ThermalCam_t **feature);
+
+/**
+ * @brief Register the feature controller to be called when the commands are decoded.
+ * @param feature The feature controller to register
+ * return executing error
+ */
+eARCONTROLLER_ERROR ARCONTROLLER_FEATURE_ThermalCam_RegisterARCommands (ARCONTROLLER_FEATURE_ThermalCam_t *feature);
+
+/**
+ * @brief Unegister the feature controller to be called when the commands are decoded.
+ * @param feature The feature controller to unregister
+ * return executing error
+ */
+eARCONTROLLER_ERROR ARCONTROLLER_FEATURE_ThermalCam_UnregisterARCommands (ARCONTROLLER_FEATURE_ThermalCam_t *feature);
+
+/**
+ * @brief Get the dictionay of the thermal_cam Feature Controller
+ * @param feature The feature controller owning the dictionary to get
+ * @param[out] error executing error.
+ */
+ARCONTROLLER_DICTIONARY_COMMANDS_t *ARCONTROLLER_FEATURE_ThermalCam_GetDictionary (ARCONTROLLER_FEATURE_ThermalCam_t *feature, eARCONTROLLER_ERROR *error);
+
+/**
+ * @brief Add a callback to use when a command in project <code>ThermalCam</code> is received
+ * @param feature The feature controller receiving the command.
+ * @param[in] callback the callback to add.
+ * @param[in] commandKey Key of the command which the callback must be associated.
+ * @param[out] error executing error.
+ * @param[int] customData custom data given as parameter to the callback.
+ * @see ARCONTROLLER_FEATURE_ThermalCam_RemoveCallback.
+ */
+eARCONTROLLER_ERROR ARCONTROLLER_FEATURE_ThermalCam_AddCallback (ARCONTROLLER_FEATURE_ThermalCam_t *feature, eARCONTROLLER_DICTIONARY_KEY commandKey, ARCONTROLLER_DICTIONARY_CALLBACK_t callback, void *customData);
+
+/**
+ * @brief Remove a callback used when a command in project <code>ThermalCam</code> is received
+ * @param feature The feature controller receiving the command.
+ * @param[in] commandKey Key of the command which the callback must be unassociated.
+ * @param[in] callback the callback to remove.
+ * @param[int] customData The custom data given to the register.
+ * @param[out] error executing error.
+ */
+eARCONTROLLER_ERROR ARCONTROLLER_FEATURE_ThermalCam_RemoveCallback (ARCONTROLLER_FEATURE_ThermalCam_t *feature, eARCONTROLLER_DICTIONARY_KEY commandKey, ARCONTROLLER_DICTIONARY_CALLBACK_t callback, void *customData);
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_THERMAL_CAM_CAMERASTATE_CAM_ID; /**< Key of the argument </code>cam_id</code> of event <code>CameraState</code> in feature <code>ThermalCam</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_THERMAL_CAM_CAMERASTATE_STATE; /**< Key of the argument </code>state</code> of event <code>CameraState</code> in feature <code>ThermalCam</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_THERMAL_CAM_SENSITIVITY_CAM_ID; /**< Key of the argument </code>cam_id</code> of event <code>Sensitivity</code> in feature <code>ThermalCam</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_THERMAL_CAM_SENSITIVITY_CURRENT_RANGE; /**< Key of the argument </code>current_range</code> of event <code>Sensitivity</code> in feature <code>ThermalCam</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_THERMAL_CAM_SENSITIVITY_AVAILABLE_RANGES; /**< Key of the argument </code>available_ranges</code> of event <code>Sensitivity</code> in feature <code>ThermalCam</code> */
+
+extern const char *ARCONTROLLER_DICTIONARY_KEY_THERMAL_CAM_CALIBRATIONINFOS_CAM_ID; /**< Key of the argument </code>cam_id</code> of event <code>CalibrationInfos</code> in feature <code>ThermalCam</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_THERMAL_CAM_CALIBRATIONINFOS_ROLL; /**< Key of the argument </code>roll</code> of event <code>CalibrationInfos</code> in feature <code>ThermalCam</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_THERMAL_CAM_CALIBRATIONINFOS_PITCH; /**< Key of the argument </code>pitch</code> of event <code>CalibrationInfos</code> in feature <code>ThermalCam</code> */
+extern const char *ARCONTROLLER_DICTIONARY_KEY_THERMAL_CAM_CALIBRATIONINFOS_YAW; /**< Key of the argument </code>yaw</code> of event <code>CalibrationInfos</code> in feature <code>ThermalCam</code> */
+
+/**
+ * @brief Send a command <code>Activate</code> in feature <code>ThermalCam</code>
+ * Activate a given thermal camera.
+ * Activating a camera may deactivate others on some drones.
+ * @param feature feature owning the commands
+ * @param cam_id Thermal camera id, as given in the [connected accessories](#1-33-0) event.
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ThermalCam_SendActivate_t) (ARCONTROLLER_FEATURE_ThermalCam_t *feature, uint8_t cam_id);
+
+/**
+ * @brief Send a command <code>Deactivate</code> in feature <code>ThermalCam</code>
+ * Deactivate a given thermal camera.
+ * @param feature feature owning the commands
+ * @param cam_id Thermal camera id, as given in the [connected accessories](#1-33-0) event.
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ThermalCam_SendDeactivate_t) (ARCONTROLLER_FEATURE_ThermalCam_t *feature, uint8_t cam_id);
+
+/**
+ * @brief Send a command <code>SetSensitivity</code> in feature <code>ThermalCam</code>
+ * Set the thermal camera sensitivity range.
+ * @param feature feature owning the commands
+ * @param cam_id Thermal camera id, as given in the [connected accessories](#1-33-0) event.
+ * @param range Thermal range
+ * return executing error
+ */
+typedef eARCONTROLLER_ERROR (*ARCONTROLLER_FEATURE_ThermalCam_SendSetSensitivity_t) (ARCONTROLLER_FEATURE_ThermalCam_t *feature, uint8_t cam_id, eARCOMMANDS_THERMAL_CAM_RANGE range);
+
+/**
+ * @brief Feature controller allow to send command related of thermal_cam Feature.
+ * Thermal camera accessory feature
+ */
+struct ARCONTROLLER_FEATURE_ThermalCam_t
+{
+    ARCONTROLLER_FEATURE_ThermalCam_SendActivate_t sendActivate;
+    ARCONTROLLER_FEATURE_ThermalCam_SendDeactivate_t sendDeactivate;
+    ARCONTROLLER_FEATURE_ThermalCam_SendSetSensitivity_t sendSetSensitivity;
+    ARCONTROLLER_FEATURE_ThermalCam_Private_t *privatePart; /**< Private part of ARCONTROLLER_FEATURE_ThermalCam_t */
+};
+
+/**
+ * @brief Set a NetworkController to use to send commands.
+ * @param feature The feature controller receiving the command.
+ * @param[in] commandKey Key of the command which the callback must be unassociated.
+ * @param[in] networkController The networkController used to send commands ; must be not NULL.
+ * @return error executing error.
+ */
+eARCONTROLLER_ERROR ARCONTROLLER_FEATURE_ThermalCam_SetNetworkController (ARCONTROLLER_FEATURE_ThermalCam_t *feature, ARCONTROLLER_Network_t *networkController);
+
+/**
+ * @brief Get the elements of a command received.
+ * @param feature The feature controller receiving the command.
+ * @param[in] commandKey Key of the command.
+ * @param[out] error executing error.
+ * @return Element dictionary of the command ; Can be null if an error is occurred.
+ */
+ARCONTROLLER_DICTIONARY_ELEMENT_t *ARCONTROLLER_ThermalCam_GetCommandElements (ARCONTROLLER_FEATURE_ThermalCam_t *feature, eARCONTROLLER_DICTIONARY_KEY commandKey, eARCONTROLLER_ERROR *error);
 
 /*******************************
  * --- FEATURE wifi --- 
