@@ -111,7 +111,7 @@ void NavigationDebugger::Run(NavigationCommand command, int targetId, std::vecto
 
     DrawDrone(command);
 
-    //DrawDroneEstimatedPositions(estimatedPositions, estimatedPoses);
+    DrawDroneEstimatedPositions(estimatedPositions, estimatedPoses);
 
     DrawPath(path, targetId);
 
