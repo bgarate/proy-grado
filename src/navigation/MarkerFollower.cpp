@@ -23,12 +23,19 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
 
     EstimatePosition(markers, altitude);
 
-    // TODO: Para el smoothin se usan valores smootheados. Lo mejor hacer smoothing sobre los valores RAW
-    // TODO: El smoothing no toma en cuenta el tiempo, se asume que el deltaTime es fijo
-    SmoothEstimation();
+    if(norm(EstimatedPosition) > 100) {
+        if (PositionsHistory.size() > 0)
+            EstimatedPosition = PositionsHistory[PositionsHistory.size() - 1];
+        else
+            EstimatedPosition = cv::Vec3d(0,0,0);
+    }
+        // TODO: Para el smoothin se usan valores smootheados. Lo mejor hacer smoothing sobre los valores RAW
+        // TODO: El smoothing no toma en cuenta el tiempo, se asume que el deltaTime es fijo
+        SmoothEstimation();
 
-    PositionsHistory.push_back(EstimatedPosition);
-    DeltaTimeHistory.push_back(deltaTime);
+        PositionsHistory.push_back(EstimatedPosition);
+        DeltaTimeHistory.push_back(deltaTime);
+
 
     EstimateNextPosition();
     ProjectNextPosition();
