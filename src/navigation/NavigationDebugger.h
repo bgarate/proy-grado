@@ -45,7 +45,7 @@ private:
 
     cairo_surface_t *cairo_create_x11_surface0(int x, int y);
 
-    const int SCALE = 75;
+    const int SCALE = 25;
     const double ARROW_HEAD_ANGLE = 45;
     static const cv::Size SIZE;
     static const cv::Point ORIGIN;

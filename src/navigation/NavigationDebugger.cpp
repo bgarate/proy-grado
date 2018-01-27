@@ -124,6 +124,9 @@ void NavigationDebugger::DrawPositionHistory(
 
     int historySize = positionHistory.size();
 
+    if(historySize == 0)
+        return;
+
     cairo_set_source_rgb(cr, 1,0,0);
     cairo_move_to (cr, GetX(positionHistory[historySize - 1][0]), GetY(positionHistory[historySize - 1][1]));
 
