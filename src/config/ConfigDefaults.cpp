@@ -41,6 +41,7 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Debugging::OutputRawVideoEnabled, false);
     config->Set(ConfigKeys::Debugging::OutputPath, std::string(""));
     config->Set(ConfigKeys::Debugging::RealTimeVideoOutputEnabled, false);
+    config->Set(ConfigKeys::Debugging::NavigationDebuggerScale, 50);
 
     config->Set(ConfigKeys::Body::SleepDelay, 0);
     config->Set(ConfigKeys::Body::Start, true);

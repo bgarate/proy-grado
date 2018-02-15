@@ -37,6 +37,7 @@ private:
     World *world;
     WorldObject* drone;
     Display *dsp;
+    int SCALE;
 
     std::vector<Marker> visibleMarkers;
 
@@ -45,7 +46,7 @@ private:
 
     cairo_surface_t *cairo_create_x11_surface0(int x, int y);
 
-    const int SCALE = 25;
+    //const int SCALE= 50;
     const double ARROW_HEAD_ANGLE = 45;
     static const cv::Size SIZE;
     static const cv::Point ORIGIN;
@@ -67,6 +68,8 @@ private:
     void DrawAxis(std::string name, cv::Vec3d axis);
 
     static const double dashPattern[1];
+
+    void DrawPadSquare(WorldObject *pad);
 
     void DrawDrone(NavigationCommand command);
 

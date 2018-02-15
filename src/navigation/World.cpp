@@ -49,6 +49,16 @@ std::vector<WorldObject *> World::getMarkers() {
     return ret;
 }
 
+std::vector<WorldObject *> World::getPads() {
+    std::unique_lock<std::mutex> lck(objectsMutex);
+    std::vector<WorldObject *> ret;
+
+    std::copy_if(objects.begin(), objects.end(),
+                 std::back_inserter(ret), [](const WorldObject* o){return o->getType() == ObjectType::PAD;} );
+
+    return ret;
+}
+
 void World::addObject(ObjectType type, cv::Vec3d position, cv::Vec3d rotation, int id) {
     std::unique_lock<std::mutex> lck(objectsMutex);
     objects.push_back(new WorldObject(position, rotation, type, id));

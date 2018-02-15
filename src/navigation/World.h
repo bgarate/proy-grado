@@ -9,7 +9,7 @@
 #include "opencv2/opencv.hpp"
 
 enum class ObjectType {
-    DRONE, MARKER
+    DRONE, MARKER, PAD
 };
 
 class WorldObject {
@@ -62,6 +62,7 @@ public:
     std::vector<WorldObject*> getObjects();
     std::vector<WorldObject*> getDrones();
     std::vector<WorldObject*> getMarkers();
+    std::vector<WorldObject*> getPads();
 
     WorldObject* getMarker(int id);
 private:

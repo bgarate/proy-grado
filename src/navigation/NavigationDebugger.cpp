@@ -18,6 +18,7 @@ NavigationDebugger::NavigationDebugger(Config *config, World* world) {
     this->config = config;
     this->world = world;
     drone = world->getDrones()[0];
+    this->SCALE = config->Get(ConfigKeys::Debugging::NavigationDebuggerScale);
 }
 
 
@@ -93,6 +94,11 @@ void NavigationDebugger::Run(NavigationCommand command, int targetId, std::vecto
     DrawAxis("y", cv::Vec3d(0,1,0));
     DrawCoordinates(Axis::X);
     DrawCoordinates(Axis::Y);
+
+    for(WorldObject* pad : world->getPads()) {
+
+        DrawPadSquare(pad);
+    }
 
     for(WorldObject* marker : world->getMarkers()) {
 
@@ -270,6 +276,15 @@ void NavigationDebugger::DrawMarkerSquare(WorldObject *marker) {
 
     cairo_rectangle (cr, GetX(marker->getPosition()[0] - 0.15),
                      GetY(marker->getPosition()[1] + 0.15), GetScaleX(0.30), GetScaleY(0.30));
+    cairo_fill(cr);
+}
+
+void NavigationDebugger::DrawPadSquare(WorldObject *pad) {
+
+    cairo_set_source_rgb (cr, 0.5, 0.5, 0.5);
+
+    cairo_rectangle (cr, GetX(pad->getPosition()[0] - 0.30),
+                     GetY(pad->getPosition()[1] + 0.30), GetScaleX(0.60), GetScaleY(0.60));
     cairo_fill(cr);
 }
 

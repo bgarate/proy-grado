@@ -68,6 +68,8 @@ public:
             return ObjectType::MARKER;
         if(str == "drone")
             return ObjectType::DRONE;
+        if(str == "pad")
+            return ObjectType::PAD;
 
         throw new std::runtime_error("Uknown object type " + str);
     }
@@ -78,6 +80,8 @@ public:
                 return "drone";
             case ObjectType::MARKER:
                 return "marker";
+            case ObjectType::PAD:
+                return "pad";
             default:
                 throw new std::runtime_error("Uknown object type");
         }
