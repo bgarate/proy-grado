@@ -33,9 +33,12 @@ void MarkerTracker::Update(std::shared_ptr<cv::Mat> frame, double deltaTime) {
     cv::aruco::detectMarkers(*frame, dictionary,
         corners, ids);
 
+    cv::Mat cameraMatrix = config->Get(ConfigKeys::Drone::CameraMatrix);
+    cv::Mat distortionCoefficients = config->Get(ConfigKeys::Drone::DistortionCoefficients);
+
     cv::aruco::estimatePoseSingleMarkers(corners,MARKER_SIDE_LENGTH,
-                                         config->Get(ConfigKeys::Drone::CameraMatrix),
-                                         config->Get(ConfigKeys::Drone::DistortionCoefficients),
+                                         cameraMatrix,
+                                         distortionCoefficients,
                                          rotations, translations);
 
     Markers.clear();

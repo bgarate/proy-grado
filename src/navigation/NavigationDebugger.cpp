@@ -2,25 +2,30 @@
 // Created by bruno on 09/08/17.
 //
 
-#include "../logging/Logger.h"
+
+#include <src/logging/Logger.h>
+#include <src/config/ConfigKeys.h>
 #include "NavigationDebugger.h"
 #include "World.h"
 #include "MarkerTracker.h"
 #include "MarkerFollower.h"
+#include "Path.h"
 
-const cv::Size NavigationDebugger::SIZE = cv::Size(640,480);
+const cv::Size NavigationDebugger::SIZE = cv::Size(1024,768);
+const cv::Point NavigationDebugger::ORIGIN = cv::Point(300,300);
 const double NavigationDebugger::dashPattern[1] = {4.0};
 
 NavigationDebugger::NavigationDebugger(Config *config, World* world) {
     this->config = config;
     this->world = world;
     drone = world->getDrones()[0];
+    this->SCALE = config->Get(ConfigKeys::Debugging::NavigationDebuggerScale);
 }
 
 
 void NavigationDebugger::Init() {
 
-    surface = cairo_create_x11_surface0(640,480);
+    surface = cairo_create_x11_surface0(SIZE.width,SIZE.height);
     cr = cairo_create(surface);
 }
 
@@ -78,103 +83,263 @@ void NavigationDebugger::DrawAxis(std::string name, cv::Vec3d axis) {
 
 }
 
-void NavigationDebugger::Run(NavigationCommand command, int targetId,
-                             std::vector<cv::Vec3d> estimatedPositions,
-                             std::vector<cv::Vec3d> estimatedPoses) {
+void NavigationDebugger::Run(NavigationCommand command, int targetId, std::vector<cv::Vec3d> estimatedPositions,
+                             std::vector<cv::Vec3d> estimatedPoses, Path path,
+                             boost::circular_buffer<cv::Vec3d, std::allocator<cv::Vec3d>> positionHistory, cv::Vec3d nextPosition,
+                             cv::Vec3d projectedNextPosition, cv::Vec3d followTarget) {
 
     cairo_set_source_rgb(cr, 1,1,1);
     cairo_paint(cr);
 
     DrawAxis("x", cv::Vec3d(1,0,0));
     DrawAxis("y", cv::Vec3d(0,1,0));
+    DrawCoordinates(Axis::X);
+    DrawCoordinates(Axis::Y);
+
+    for(WorldObject* pad : world->getPads()) {
+
+        DrawPadSquare(pad);
+    }
 
     for(WorldObject* marker : world->getMarkers()) {
-        cairo_set_source_rgb (cr, 0, 0, 1);
 
-        cairo_rectangle (cr, GetX(marker->getPosition()[0] - 0.15),
-                         GetY(marker->getPosition()[1] + 0.15), GetScaleX(0.30), GetScaleY(0.30));
-        cairo_fill(cr);
+        DrawMarkerSquare(marker);
 
-        if(targetId == marker->getId()) {
-            cairo_set_source_rgb (cr, 1, 1, 1);
-
-            cairo_rectangle (cr, GetX(marker->getPosition()[0] - 0.10),
-                             GetY(marker->getPosition()[1] + 0.10), GetScaleX(0.20), GetScaleY(0.20));
-            cairo_stroke(cr);
-
-            cairo_set_dash (cr, dashPattern, 1, 0);
-
-            cairo_set_source_rgb (cr, 0, 0, 1);
-            cairo_arc(cr, GetX(marker->getPosition()[0]),
-                             GetY(marker->getPosition()[1]),
-                      GetScaleX(MarkerFollower::TARGET_APROXIMATION_DISTANCE), 0,2*M_PI);
-
-
-            cairo_stroke(cr);
-
-            cairo_arc(cr, GetX(marker->getPosition()[0]),
-                      GetY(marker->getPosition()[1]),
-                      GetScaleX(MarkerFollower::TARGET_REACHED_DISTANCE), 0,2*M_PI);
-
-            cairo_stroke(cr);
-
-            cairo_set_dash (cr, NULL, 0, 0);
-
-        }
-
-        double rotationZ = marker->getRotation()[2];
-        cairo_set_source_rgb (cr, 0, 1, 0);
-        cairo_move_to(cr, GetX(marker->getPosition()[0]),GetY(marker->getPosition()[1]));
-        cairo_rel_line_to(cr, GetScaleX(0.15) * std::sin(toRadians(rotationZ)),
-                          -GetScaleY(0.15) * std::cos(toRadians(rotationZ)));
-        cairo_stroke(cr);
+        DrawTargetOrientation(marker);
     }
-
 
     for(WorldObject* marker : world->getMarkers()) {
-        cairo_set_source_rgb (cr, 1, 0.5, 0.5);
-        Text(std::to_string(marker->getId()),
-             cv::Point2i(GetX(marker->getPosition()[0] - 0.15), GetY(marker->getPosition()[1] + 0.15)), 8);
+        DrawMarkerTextId(marker);
     }
 
-    for(int i = 0; i < estimatedPositions.size(); i++){
-        cairo_set_source_rgb (cr, 1, 0, 0);
-        cv::Vec3d pos = estimatedPositions[i];
-        double pose = estimatedPoses[i][2];
+    DrawPositionHistory(positionHistory);
+    DrawNextPosition(nextPosition, projectedNextPosition);
+    DrawTarget(followTarget);
 
-        cairo_rectangle (cr, GetX(pos[0] - 0.15), GetY(pos[1] + 0.15), GetScaleX(0.30), GetScaleY(0.30));
-        cairo_fill(cr);
+    DrawDrone(command);
 
-        cairo_set_source_rgb (cr, 0, 1, 0);
-        cairo_move_to(cr, GetX(pos[0]), GetY(pos[1]));
-        cairo_rel_line_to(cr, GetScaleX(0.15) * std::sin(toRadians(pose)),
-                          -GetScaleY(0.15) * std::cos(toRadians(pose)));
-        cairo_stroke(cr);
+    DrawDroneEstimatedPositions(estimatedPositions, estimatedPoses);
 
-    }
-
-    cairo_set_source_rgb (cr, 0, 1, 0);
-
-    cairo_rectangle (cr, GetX(drone->getPosition()[0] - 0.15), GetY(drone->getPosition()[1] + 0.15),
-                     GetScaleX(0.30), GetScaleY(0.30));
-    cairo_fill(cr);
-
-    cairo_set_source_rgb (cr, 0, 0, 1);
-    cairo_move_to(cr, GetX(drone->getPosition()[0]) , GetY(drone->getPosition()[1]));
-    cairo_rel_line_to(cr, GetScaleX(0.15) * std::sin(toRadians(drone->getRotation()[2])),
-                      -GetScaleY(0.15) * std::cos(toRadians(drone->getRotation()[2])));
-    cairo_stroke(cr);
+    DrawPath(path, targetId);
 
     cairo_surface_flush(surface);
     XFlush(dsp);
 }
 
+void NavigationDebugger::DrawPositionHistory(
+        const boost::circular_buffer<cv::Vec3d, std::allocator<cv::Vec3d>> &positionHistory) {
+
+    int historySize = positionHistory.size();
+
+    if(historySize == 0)
+        return;
+
+    cairo_set_source_rgb(cr, 1,0,0);
+    cairo_move_to (cr, GetX(positionHistory[historySize - 1][0]), GetY(positionHistory[historySize - 1][1]));
+
+    for(int i = historySize - 1; i > std::max(0, historySize - 300); i--) {
+        cairo_line_to (cr, GetX(positionHistory[i][0]) + 1, GetY(positionHistory[i][1]) + 1);
+    }
+
+    cairo_stroke(cr);
+}
+
+void NavigationDebugger::DrawDroneEstimatedPositions(const std::vector<cv::Vec3d> &estimatedPositions,
+                                                     const std::vector<cv::Vec3d> &estimatedPoses) {
+    for(int i = 0; i < estimatedPositions.size(); i++) {
+        cairo_set_source_rgb(cr, 1, 0, 0);
+
+        cairo_save(cr);
+
+        cv::Vec3d pos = estimatedPositions[i];
+        double pose = estimatedPoses[i][2];
+
+        cairo_translate(cr, GetX(pos[0]), GetY(pos[1]));
+        cairo_rotate(cr, toRadians(pose));
+
+        cairo_set_source_rgb(cr, 1, 0, 0);
+
+        cairo_arc(cr, GetScaleX(-0.10), GetScaleY(-0.10),
+                  GetScaleX(0.10), 0, M_PI * 2);
+        cairo_stroke(cr);
+        cairo_arc(cr, GetScaleX(-0.10), GetScaleY(+0.10),
+                  GetScaleX(0.10), 0, M_PI * 2);
+        cairo_stroke(cr);
+        cairo_arc(cr, GetScaleX(+0.10), GetScaleY(-0.10),
+                  GetScaleX(0.10), 0, M_PI * 2);
+        cairo_stroke(cr);
+        cairo_arc(cr, GetScaleX(+0.10), GetScaleY(+0.10),
+                  GetScaleX(0.10), 0, M_PI * 2);
+        cairo_stroke(cr);
+
+        cairo_set_source_rgb(cr, 0, 1, 0);
+        cairo_move_to(cr, 0, 0);
+        cairo_rel_line_to(cr, 0, -GetScaleY(0.15));
+
+        cairo_stroke(cr);
+
+        cairo_restore(cr);
+    }
+}
+
+void NavigationDebugger::DrawPath(Path path, int targetId)  {
+
+    std::vector<PathPoint> points = path.GetPoints();
+
+    for(int i = 0; i < points.size(); i++) {
+        PathPoint point = points[i];
+
+        if((targetId + 1) % points.size() == i) {
+            DrawTargetMarker(point);
+        }
+
+        cairo_set_source_rgb (cr, 1, 0, 0);
+
+        cairo_move_to(cr, GetX(point.Postion[0]),GetY(point.Postion[1]));
+
+        cv::Point2d arrowEnd(GetX(point.Postion[0] + 0.5 * sin(toRadians(point.Rotation))),
+                           GetY(point.Postion[1] + 0.5 * cos(toRadians(point.Rotation))));
+
+        cairo_line_to(cr, arrowEnd.x,arrowEnd.y);
+        cairo_stroke(cr);
+
+        cairo_move_to(cr, arrowEnd.x,arrowEnd.y);
+        cairo_rel_line_to(cr, GetScaleX(0.15) * sin(toRadians( - point.Rotation + ARROW_HEAD_ANGLE)),
+                      GetScaleY(0.15) * cos(toRadians( - point.Rotation +  ARROW_HEAD_ANGLE)));
+        cairo_stroke(cr);
+
+        cairo_move_to(cr, arrowEnd.x,arrowEnd.y);
+        cairo_rel_line_to(cr, GetScaleX(0.15) * sin(toRadians( - point.Rotation - ARROW_HEAD_ANGLE)),
+                          GetScaleY(0.15) * cos(toRadians( - point.Rotation - ARROW_HEAD_ANGLE)));
+        cairo_stroke(cr);
+
+        PathPoint nextPoint = points[(i + 1) % points.size()];
+
+        cairo_set_source_rgb (cr, 0, 0, 1);
+        cairo_move_to(cr, GetX(point.Postion[0]), GetY(point.Postion[1]));
+        cairo_line_to(cr, GetX(nextPoint.Postion[0]), GetY(nextPoint.Postion[1]));
+        cairo_stroke(cr);
+    }
+
+}
+
+void NavigationDebugger::DrawMarkerTextId(WorldObject *marker) {
+    cairo_set_source_rgb (cr, 1, 0.5, 0.5);
+    Text(std::__cxx11::to_string(marker->getId()),
+         cv::Point2i(GetX(marker->getPosition()[0] - 0.15), GetY(marker->getPosition()[1] + 0.15)), 8);
+}
+
+void NavigationDebugger::DrawTargetOrientation(WorldObject *marker) {
+    double rotationZ = marker->getRotation()[2];
+    cairo_set_source_rgb (cr, 0, 1, 0);
+    cairo_move_to(cr, GetX(marker->getPosition()[0]), GetY(marker->getPosition()[1]));
+    cairo_rel_line_to(cr, GetScaleX(0.15) * sin(toRadians(rotationZ)),
+                      -GetScaleY(0.15) * cos(toRadians(rotationZ)));
+    cairo_stroke(cr);
+}
+
+void NavigationDebugger::DrawTargetMarker(PathPoint point) {
+    cairo_set_source_rgb (cr, 1, 1, 1);
+
+    cairo_rectangle (cr, GetX(point.Postion[0] - 0.10),
+                     GetY(point.Postion[1] + 0.10), GetScaleX(0.20), GetScaleY(0.20));
+    cairo_stroke(cr);
+
+    cairo_set_dash (cr, dashPattern, 1, 0);
+
+    cairo_set_source_rgb (cr, 0, 0, 1);
+    cairo_arc(cr, GetX(point.Postion[0]),
+              GetY(point.Postion[1]),
+              GetScaleX(MarkerFollower::TARGET_APROXIMATION_DISTANCE), 0, 2 * M_PI);
+
+
+    cairo_stroke(cr);
+
+    cairo_arc(cr, GetX(point.Postion[0]),
+              GetY(point.Postion[1]),
+              GetScaleX(MarkerFollower::TARGET_REACHED_DISTANCE), 0, 2 * M_PI);
+
+    cairo_stroke(cr);
+
+    cairo_set_dash (cr, NULL, 0, 0);
+}
+
+void NavigationDebugger::DrawMarkerSquare(WorldObject *marker) {
+    bool markerInSight = any_of(visibleMarkers.begin(), visibleMarkers.end(), [marker](const Marker& m)-> bool {
+            return m.Id == marker->getId();
+        });
+
+    if(markerInSight) {
+            cairo_set_source_rgb (cr, 0, 1, 1);
+        } else {
+            cairo_set_source_rgb (cr, 0, 0, 1);
+        }
+
+    cairo_rectangle (cr, GetX(marker->getPosition()[0] - 0.15),
+                     GetY(marker->getPosition()[1] + 0.15), GetScaleX(0.30), GetScaleY(0.30));
+    cairo_fill(cr);
+}
+
+void NavigationDebugger::DrawPadSquare(WorldObject *pad) {
+
+    cairo_set_source_rgb (cr, 0.5, 0.5, 0.5);
+
+    cairo_rectangle (cr, GetX(pad->getPosition()[0] - 0.30),
+                     GetY(pad->getPosition()[1] + 0.30), GetScaleX(0.60), GetScaleY(0.60));
+    cairo_fill(cr);
+}
+
+void NavigationDebugger::DrawDrone(NavigationCommand command) {
+    cairo_set_source_rgb (cr, 0, 1, 0);
+
+    cairo_save(cr);
+
+    cairo_translate(cr,GetX(drone->getPosition()[0]),GetY(drone->getPosition()[1]));
+    cairo_rotate(cr,toRadians(drone->getRotation()[2]));
+
+    cairo_arc (cr, GetScaleX(- 0.10), GetScaleY(- 0.10),
+                     GetScaleX(0.12), 0, M_PI*2);
+    cairo_fill(cr);
+    cairo_arc (cr, GetScaleX( - 0.10), GetScaleY( + 0.10),
+               GetScaleX(0.10), 0, M_PI*2);
+    cairo_fill(cr);
+    cairo_arc (cr, GetScaleX( + 0.10), GetScaleY( - 0.10),
+               GetScaleX(0.10), 0, M_PI*2);
+    cairo_fill(cr);
+    cairo_arc (cr, GetScaleX( + 0.10), GetScaleY( + 0.10),
+               GetScaleX(0.10), 0, M_PI*2);
+    cairo_fill(cr);
+
+    cairo_set_source_rgb (cr, 0, 0, 1);
+    cairo_move_to(cr, 0 , 0);
+    cairo_rel_line_to(cr, 0, -GetScaleY(0.15));
+    cairo_stroke(cr);
+
+    cairo_set_source_rgb (cr, 0.6, 0.5, 0.8);
+    cairo_move_to(cr, 0 , 0);
+    cairo_rel_line_to(cr, GetScaleX(command.LateralSpeed) * 3, -GetScaleY(command.ForwardSpeed) * 3);
+
+    cairo_restore(cr);
+
+}
+
 int NavigationDebugger::GetX(double x) {
-    return (int)(x * SCALE) + 100;
+    return Get(x, Axis::X);
+}
+
+int NavigationDebugger::Get(double a, Axis axis) {
+    switch (axis){
+        case Axis::X:
+            return (int)(a * SCALE) + ORIGIN.x;
+        case Axis::Y:
+            return  SIZE.height - (int)(a * SCALE + ORIGIN.y);
+        default:
+            throw new std::runtime_error("Invalid axis");
+    }
 }
 
 int NavigationDebugger::GetY(double y) {
-    return  SIZE.height - (int)(y * SCALE + 100);
+    return Get(y, Axis::Y);
 }
 
 int NavigationDebugger::GetScaleX(double x) {
@@ -193,108 +358,76 @@ int NavigationDebugger::GetScaleY(double y) {
     return (int)(y * SCALE);
 }
 
-//
-//void NavigationDebugger::Run() {
-//
-//    // Create OpenGL window in single line
-//    pangolin::CreateWindowAndBind("Main",640,480);
-//
-//    // 3D Mouse handler requires depth testing to be enabled
-//    glEnable(GL_DEPTH_TEST);
-//
-//    // Define Camera Render Object (for view / scene browsing)
-//    pangolin::OpenGlRenderState s_cam(
-//            pangolin::ProjectionMatrix(640,480,420,420,320,240,0.1,1000),
-//                pangolin::ModelViewLookAt(0,0,5, 0,0,0, pangolin::AxisY)
-//    );
-//
-//    const int UI_WIDTH = 180;
-//
-//    // Add named OpenGL viewport to window and provide 3D Handler
-//    pangolin::View& d_cam = pangolin::CreateDisplay()
-//            .SetBounds(0.0, 1.0, pangolin::Attach::Pix(UI_WIDTH), 1.0, -640.0f/480.0f)
-//            .SetHandler(new pangolin::Handler3D(s_cam));
-//
-//    // Default hooks for exiting (Esc) and fullscreen (tab).
-//    while( !pangolin::ShouldQuit() )
-//    {
-//        // Clear entire screen
-//        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//
-//        // Activate efficiently by object
-//        d_cam.Activate(s_cam);
-//
-//        glClearColor(1,1,1,0.5);
-//
-//        // Render some stuff
-//        glColor3f(0,0,00);
-//        glLineWidth(1);
-//        pangolin::glDrawAxis(5);
-//
-//        std::vector<WorldObject*> drones = world->getDrones();
-//
-//        for(WorldObject* drone : drones) {
-//
-//            glLineWidth(2);
-//            glColor3f(0.0f,1.0f,0.0f);
-//
-//            cv::Vec3d position = drone->getPosition();
-//            cv::Vec3d rotation = drone->getRotation();
-//            cv::Mat cameraMatrix = drone->getCameraMatrix();
-//            cameraMatrix = cameraMatrix.t();
-//
-//            std::cout << cameraMatrix << std::endl;
-//            double halfSize = std::sqrt(MarkerTracker::MARKER_SIDE_LENGTH / 2);
-//
-//            glPushMatrix();
-//            glMultMatrixd(&cameraMatrix.at<double>(0));
-//            glRotated(M_PI,1,0,0);
-//
-//            //glTranslated(position[0], position[1], position[2]);
-//            //glRotated(rotation[0] / M_PI * 180, 1,0,0);
-//            //glRotated(rotation[1] / M_PI * 180, 0,0,1);
-//            //glRotated(rotation[2] / M_PI * 180, 0,0,-1);
-//
-//
-//            //glBegin(GL_LINES);
-//            /*
-//            glVertex3f(pos[0] - halfSize,pos[1] - halfSize,pos[2]);
-//            glVertex3f(pos[0] + halfSize,pos[1] - halfSize,pos[2]);
-//            glVertex3f(pos[0] + halfSize,pos[1] + halfSize,pos[2]);
-//            glVertex3f(pos[0] - halfSize,pos[1] + halfSize,pos[2]);
-//*/
-//            pangolin::glDrawAxis(1);
-//
-//            //glEnd();
-//            glPopMatrix();
-//
-//        }
-//
-//        std::vector<WorldObject*> markers = world->getMarkers();
-//
-//        for(WorldObject* marker : markers) {
-//
-//            glLineWidth(2);
-//            glColor3f(1.0f,0.0f,0.0f);
-//
-//            cv::Vec3d pos = marker->getPosition();
-//            float halfSize = std::sqrt(MarkerTracker::MARKER_SIDE_LENGTH / 2);
-//
-//            glBegin(GL_QUADS);
-//            glPushMatrix();
-//
-//            glVertex3f(pos[0] - halfSize,pos[1] - halfSize,pos[2]);
-//            glVertex3f(pos[0] + halfSize,pos[1] - halfSize,pos[2]);
-//            glVertex3f(pos[0] + halfSize,pos[1] + halfSize,pos[2]);
-//            glVertex3f(pos[0] - halfSize,pos[1] + halfSize,pos[2]);
-//
-//            glPopMatrix();
-//            glEnd();
-//
-//            glPopMatrix();
-//        }
-//
-//        // Swap frames and Process Events
-//        pangolin::FinishFrame();
-//    }
-//}
+void NavigationDebugger::setVisibleMarkers(std::vector<Marker> visibleMarkers) {
+    this->visibleMarkers = visibleMarkers;
+}
+
+void NavigationDebugger::DrawCoordinates(Axis axis) {
+
+    int sizeOfLine;
+    int sizeOfAxis;
+    cv::Point axisDirection;
+
+    switch(axis) {
+        case Axis::X:
+            sizeOfLine = SIZE.height;
+            sizeOfAxis = SIZE.width;
+            axisDirection = cv::Point(1,0);
+            break;
+        case Axis::Y:
+            sizeOfLine  = SIZE.width;
+            sizeOfAxis = SIZE.height;
+            axisDirection = cv::Point(0,1);
+            break;
+        default:
+            throw new std::runtime_error("Invalid axis");
+    }
+
+    int start = -Get(0, axis) / SCALE;
+    int end = (sizeOfAxis - Get(0, axis)) / SCALE;
+
+    cairo_set_source_rgb(cr, 0,0,0);
+    cairo_set_dash (cr, dashPattern, 1, 0);
+    cairo_set_line_width(cr, 0.5);
+
+    for(int i = start; i <= end; i++) {
+        cairo_move_to(cr, GetX(i) * axisDirection.x, GetY(-i) * axisDirection.y);
+        cairo_rel_line_to(cr, axisDirection.y * sizeOfLine , axisDirection.x * sizeOfLine );
+        cairo_stroke(cr);
+    }
+
+    cairo_set_dash (cr, NULL, 0, 0);
+    cairo_set_line_width(cr, 1);
+
+}
+
+void NavigationDebugger::DrawNextPosition(cv::Vec3d nextPosition, cv::Vec3d projectedNextPosition) {
+
+    cairo_set_source_rgb(cr, 1, 0, 0);
+    DrawCross(nextPosition,0.15);
+    DrawCross(projectedNextPosition,0.05);
+
+    cairo_move_to(cr, GetX(nextPosition[0]), GetY(nextPosition[1]));
+    cairo_line_to(cr, GetX(projectedNextPosition[0]), GetY(projectedNextPosition[1]));
+    cairo_stroke(cr);
+
+}
+
+void NavigationDebugger::DrawCross(cv::Vec3d v, double size) {
+
+    cairo_move_to(cr, GetX(v[0] - size/2), GetY(v[1] + size/2));
+    cairo_rel_line_to(cr, GetScaleX(size), GetScaleY(size));
+    cairo_stroke(cr);
+
+    cairo_move_to(cr, GetX(v[0] - size/2), GetY(v[1] - size/2));
+    cairo_rel_line_to(cr, GetScaleX(size), -GetScaleY(size));
+    cairo_stroke(cr);
+
+}
+
+void NavigationDebugger::DrawTarget(cv::Vec3d followTarget) {
+
+    cairo_set_source_rgb(cr, 1, 0, 0);
+    DrawCross(followTarget,0.15);
+
+}

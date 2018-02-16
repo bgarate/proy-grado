@@ -7,7 +7,7 @@
 #include "AreaRect.h"
 
 CascadeDetector::CascadeDetector() {
-    if(!cascade.load("resources/pedestrian_cascade_web_LBP.xml"))
+    if(!cascade.load("../resources/pedestrian_cascade_web_LBP.xml"))
         throw new std::runtime_error("Could not load detector");
 }
 

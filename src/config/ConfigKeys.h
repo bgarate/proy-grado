@@ -44,6 +44,7 @@ struct ConfigKeys {
         CONFIG_KEY(Debugging, RealTimeVideoOutputEnabled, bool);
         CONFIG_KEY(Debugging, OutputRawVideoEnabled, bool);
         CONFIG_KEY(Debugging, OutputPath, std::string);
+        CONFIG_KEY(Debugging, NavigationDebuggerScale, int);
     };
 
     struct Body {
@@ -54,6 +55,7 @@ struct ConfigKeys {
         CONFIG_KEY(Body, TestToExecute, std::string)
         CONFIG_KEY(Body, DummyCameraVideoSource, std::string)
         CONFIG_KEY(Body, CascadeDetector, std::string)
+        CONFIG_KEY(Body, TrackingSmoothingSamples, int)
     };
 
     struct Brain {

@@ -178,6 +178,8 @@ std::string VisualDebugger::getStateName(State state){
             return "Emergency";
         case State::EmergencyLanding:
             return "Emergency landing";
+        default:
+            return "Unknown";
     }
 }
 
@@ -370,13 +372,16 @@ void VisualDebugger::setNavigationCommand(NavigationCommand command) {
     cv::rectangle(frame, cv::Point(frameCenter.x - 40, frameCenter.y - 40),
                   cv::Point(frameCenter.x + 40, frameCenter.y + 40), RED_COLOR);
 
-    double xPercentage = command.YawSpeed / MarkerFollower::YAW_MAX_VELOCITY;
+    double xPercentage = command.LateralSpeed / MarkerFollower::DISPLACEMENT_MAX_VELOCITY;
     double yPercentage = command.ForwardSpeed / MarkerFollower::DISPLACEMENT_MAX_VELOCITY;
+    double yawPercentage = command.YawSpeed / MarkerFollower::YAW_MAX_VELOCITY;
 
     cv::Point displacement = cv::Point(frameCenter.x + xPercentage * 40,
                                        frameCenter.y - yPercentage * 40);
 
     cv::arrowedLine(frame, frameCenter, displacement, RED_COLOR);
+    cv::arrowedLine(frame, cv::Point(frameCenter.x,frameCenter.y - 40),
+                    cv::Point(frameCenter.x + yawPercentage * 40, frameCenter.y - 40), GREEN_COLOR);
 
 }
 
@@ -501,6 +506,18 @@ void VisualDebugger::ShowMarkers(std::vector<Marker> markers) {
             std::string str = (boost::format("%u, %.2fm") % marker.Id % marker.Distance).str();
             cv::Size textSize = cv::getTextSize(str, CONSOLE_FONT, 1, 1, NULL);
             cv::Point textOrigin = cv::Point((int)point.x, (int)(point.y - textSize.height - 10));
+            cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, color, 1, cv::LINE_AA);
+
+            point = marker.Corners[2];
+            cv::Vec3d t = marker.getXYZPosition();
+            cv::Vec3d r = marker.getEulerAngles();
+            str = (boost::format("T: %.2fm %.2fm %.2fm") % t[0] % t[1] % t[2]).str();
+            textSize = cv::getTextSize(str, CONSOLE_FONT, 1, 1, NULL);
+            textOrigin = cv::Point((int)point.x, (int)(point.y + 10));
+            cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, color, 1, cv::LINE_AA);
+
+            str = (boost::format("R: %.2fm %.2fm %.2fm") % r[0] % r[1] % r[2]).str();
+            textOrigin = cv::Point((int)point.x, (int)(point.y + textSize.height + 20));
             cv::putText(frame, str, textOrigin, CONSOLE_FONT, 1, color, 1, cv::LINE_AA);
 
             cv::aruco::drawAxis(frame, config->Get(ConfigKeys::Drone::CameraMatrix), config->Get(ConfigKeys::Drone::DistortionCoefficients),

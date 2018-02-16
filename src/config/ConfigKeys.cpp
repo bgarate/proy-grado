@@ -41,6 +41,7 @@ DEFINE_CONFIG_KEY(Debugging, OutputHudVideoEnabled, bool);
 DEFINE_CONFIG_KEY(Debugging, RealTimeVideoOutputEnabled, bool);
 DEFINE_CONFIG_KEY(Debugging, OutputRawVideoEnabled, bool);
 DEFINE_CONFIG_KEY(Debugging, OutputPath, std::string);
+DEFINE_CONFIG_KEY(Debugging, NavigationDebuggerScale, int);
 
 DEFINE_CONFIG_KEY(Body, SleepDelay, int)
 DEFINE_CONFIG_KEY(Body, Hal, HalType)
@@ -49,5 +50,6 @@ DEFINE_CONFIG_KEY(Body, ParentOnFork, bool)
 DEFINE_CONFIG_KEY(Body, TestToExecute, std::string)
 DEFINE_CONFIG_KEY(Body, DummyCameraVideoSource, std::string)
 DEFINE_CONFIG_KEY(Body, CascadeDetector, std::string)
+DEFINE_CONFIG_KEY(Body, TrackingSmoothingSamples, int)
 
 DEFINE_CONFIG_KEY(Brain, Start, bool)

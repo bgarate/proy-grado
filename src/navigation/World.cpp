@@ -7,13 +7,11 @@
 #include "World.h"
 
 void World::addMarker(cv::Vec3d position, cv::Vec3d rotation, int id) {
-    std::unique_lock<std::mutex> lck(objectsMutex);
-    objects.push_back(new WorldObject(position, rotation, ObjectType::MARKER, id));
+    addObject(ObjectType::MARKER, position, rotation, id);
 }
 
 void World::addDrone(cv::Vec3d position, cv::Vec3d rotation, int id) {
-    std::unique_lock<std::mutex> lck(objectsMutex);
-    objects.push_back(new WorldObject(position, rotation, ObjectType::DRONE, id));
+    addObject(ObjectType::DRONE, position, rotation, id);
 }
 
 std::vector<WorldObject *> World::getObjects() {
@@ -49,6 +47,55 @@ std::vector<WorldObject *> World::getMarkers() {
                  std::back_inserter(ret), [](const WorldObject* o){return o->getType() == ObjectType::MARKER;} );
 
     return ret;
+}
+
+std::vector<WorldObject *> World::getPads() {
+    std::unique_lock<std::mutex> lck(objectsMutex);
+    std::vector<WorldObject *> ret;
+
+    std::copy_if(objects.begin(), objects.end(),
+                 std::back_inserter(ret), [](const WorldObject* o){return o->getType() == ObjectType::PAD;} );
+
+    return ret;
+}
+
+void World::addObject(ObjectType type, cv::Vec3d position, cv::Vec3d rotation, int id) {
+    std::unique_lock<std::mutex> lck(objectsMutex);
+    objects.push_back(new WorldObject(position, rotation, type, id));
+}
+
+World::World(World&& other) {
+    std::lock_guard<std::mutex> lock(other.objectsMutex);
+    objects = std::move(other.objects);
+}
+
+World::World(World& other) {
+    std::lock_guard<std::mutex> lock(other.objectsMutex);
+    objects = other.objects;
+}
+
+World::World() {
+
+}
+
+World &World::operator=(const World &other) {
+    if(this !=  &other) {
+        std::unique_lock<std::mutex> otherLock(other.objectsMutex, std::defer_lock);
+        std::unique_lock<std::mutex> lock(objectsMutex, std::defer_lock);
+        std::lock(otherLock, lock);
+        objects = other.objects;
+    }
+    return *this;
+}
+
+World& World::operator=(World &&other) {
+    if(this !=  &other) {
+        std::unique_lock<std::mutex> otherLock(other.objectsMutex, std::defer_lock);
+        std::unique_lock<std::mutex> lock(objectsMutex, std::defer_lock);
+        std::lock(otherLock, lock);
+        objects = other.objects;
+    }
+    return *this;
 }
 
 void WorldObject::setPosition(const cv::Vec3d position) {

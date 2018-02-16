@@ -5,11 +5,11 @@
 #ifndef PROY_GRADO_WORLD_H
 #define PROY_GRADO_WORLD_H
 
-#include <opencv2/core/matx.hpp>
 #include <mutex>
+#include "opencv2/opencv.hpp"
 
 enum class ObjectType {
-    DRONE, MARKER
+    DRONE, MARKER, PAD
 };
 
 class WorldObject {
@@ -50,18 +50,24 @@ private:
 class World {
 
 public:
+    World();
+    World(World&& other);
+    World(World &other);
+    World& operator=(const World& other);
+    World& operator=(World &&other);
+
     void addMarker(cv::Vec3d position, cv::Vec3d rotation, int id);
     void addDrone(cv::Vec3d position, cv::Vec3d rotation, int id);
+    void addObject(ObjectType type, cv::Vec3d position, cv::Vec3d rotation, int id);
     std::vector<WorldObject*> getObjects();
     std::vector<WorldObject*> getDrones();
     std::vector<WorldObject*> getMarkers();
+    std::vector<WorldObject*> getPads();
 
     WorldObject* getMarker(int id);
-
 private:
     std::vector<WorldObject*> objects;
-    std::mutex objectsMutex;
-
+    mutable std::mutex objectsMutex;
 };
 
 

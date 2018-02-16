@@ -152,7 +152,8 @@ class Pb2hal: public Hal {
             case ARCOMMANDS_ARDRONE3_PILOTINGSTATE_FLYINGSTATECHANGED_STATE_USERTAKEOFF:
                 return State::Unknown;
             default:
-                throw new std::runtime_error("Unknown flying state");
+                break;
+                //throw new std::runtime_error("Unknown flying state");
         }
     }
 

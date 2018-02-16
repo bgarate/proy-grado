@@ -106,7 +106,7 @@ class PatrolAndFollow : public BodyTest {
             return false;
 
             //ATERRIZAR
-        } else if (sequence.size() == 0 && rmovemode && !hal->isRmoving() && !waitingLanding) {
+        } else if (false && sequence.size() == 0 && rmovemode && !hal->isRmoving() && !waitingLanding) {
             // Aterrizar
             Logger::logError("Aterrizar");
             visualDebugger->writeConsole("Aterrizar");
