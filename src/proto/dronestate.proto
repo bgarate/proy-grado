@@ -9,11 +9,23 @@ message DroneState {
 
     CurrentTask curren_task = 6;
 
-    enum CurrentTask {
+    Point position = 7;
+    Point rotation = 8;
+
+
+    message Point{
+        double x = 1;
+        double y = 2;
+        double z = 3;
+    }
+
+   enum CurrentTask {
         INNACTIVE = 0;
         PATROLING = 1;
         FOLLOWING = 2;
         ALERT = 3;
         CHARGING = 4;
     }
+
+
 }

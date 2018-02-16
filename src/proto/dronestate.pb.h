@@ -33,6 +33,9 @@
 class DroneState;
 class DroneStateDefaultTypeInternal;
 extern DroneStateDefaultTypeInternal _DroneState_default_instance_;
+class DroneState_Point;
+class DroneState_PointDefaultTypeInternal;
+extern DroneState_PointDefaultTypeInternal _DroneState_Point_default_instance_;
 
 namespace protobuf_dronestate_2eproto {
 // Internal implementation detail -- do not call these.
@@ -70,6 +73,103 @@ inline bool DroneState_CurrentTask_Parse(
     DroneState_CurrentTask_descriptor(), name, value);
 }
 // ===================================================================
+
+class DroneState_Point : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:DroneState.Point) */ {
+ public:
+  DroneState_Point();
+  virtual ~DroneState_Point();
+
+  DroneState_Point(const DroneState_Point& from);
+
+  inline DroneState_Point& operator=(const DroneState_Point& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const DroneState_Point& default_instance();
+
+  static inline const DroneState_Point* internal_default_instance() {
+    return reinterpret_cast<const DroneState_Point*>(
+               &_DroneState_Point_default_instance_);
+  }
+
+  void Swap(DroneState_Point* other);
+
+  // implements Message ----------------------------------------------
+
+  inline DroneState_Point* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  DroneState_Point* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const DroneState_Point& from);
+  void MergeFrom(const DroneState_Point& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output)
+      const PROTOBUF_FINAL {
+    return InternalSerializeWithCachedSizesToArray(
+        ::google::protobuf::io::CodedOutputStream::IsDefaultSerializationDeterministic(), output);
+  }
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(DroneState_Point* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // double x = 1;
+  void clear_x();
+  static const int kXFieldNumber = 1;
+  double x() const;
+  void set_x(double value);
+
+  // double y = 2;
+  void clear_y();
+  static const int kYFieldNumber = 2;
+  double y() const;
+  void set_y(double value);
+
+  // double z = 3;
+  void clear_z();
+  static const int kZFieldNumber = 3;
+  double z() const;
+  void set_z(double value);
+
+  // @@protoc_insertion_point(class_scope:DroneState.Point)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  double x_;
+  double y_;
+  double z_;
+  mutable int _cached_size_;
+  friend struct  protobuf_dronestate_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
 
 class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:DroneState) */ {
  public:
@@ -136,6 +236,8 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // nested types ----------------------------------------------------
 
+  typedef DroneState_Point Point;
+
   typedef DroneState_CurrentTask CurrentTask;
   static const CurrentTask INNACTIVE =
     DroneState_CurrentTask_INNACTIVE;
@@ -184,6 +286,24 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
+  // .DroneState.Point position = 7;
+  bool has_position() const;
+  void clear_position();
+  static const int kPositionFieldNumber = 7;
+  const ::DroneState_Point& position() const;
+  ::DroneState_Point* mutable_position();
+  ::DroneState_Point* release_position();
+  void set_allocated_position(::DroneState_Point* position);
+
+  // .DroneState.Point rotation = 8;
+  bool has_rotation() const;
+  void clear_rotation();
+  static const int kRotationFieldNumber = 8;
+  const ::DroneState_Point& rotation() const;
+  ::DroneState_Point* mutable_rotation();
+  ::DroneState_Point* release_rotation();
+  void set_allocated_rotation(::DroneState_Point* rotation);
+
   // fixed32 ip = 1;
   void clear_ip();
   static const int kIpFieldNumber = 1;
@@ -219,6 +339,8 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr name_;
+  ::DroneState_Point* position_;
+  ::DroneState_Point* rotation_;
   ::google::protobuf::uint32 ip_;
   ::google::protobuf::uint32 port_;
   ::google::protobuf::int64 seq_num_;
@@ -233,6 +355,52 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
 // ===================================================================
 
 #if !PROTOBUF_INLINE_NOT_IN_HEADERS
+// DroneState_Point
+
+// double x = 1;
+inline void DroneState_Point::clear_x() {
+  x_ = 0;
+}
+inline double DroneState_Point::x() const {
+  // @@protoc_insertion_point(field_get:DroneState.Point.x)
+  return x_;
+}
+inline void DroneState_Point::set_x(double value) {
+  
+  x_ = value;
+  // @@protoc_insertion_point(field_set:DroneState.Point.x)
+}
+
+// double y = 2;
+inline void DroneState_Point::clear_y() {
+  y_ = 0;
+}
+inline double DroneState_Point::y() const {
+  // @@protoc_insertion_point(field_get:DroneState.Point.y)
+  return y_;
+}
+inline void DroneState_Point::set_y(double value) {
+  
+  y_ = value;
+  // @@protoc_insertion_point(field_set:DroneState.Point.y)
+}
+
+// double z = 3;
+inline void DroneState_Point::clear_z() {
+  z_ = 0;
+}
+inline double DroneState_Point::z() const {
+  // @@protoc_insertion_point(field_get:DroneState.Point.z)
+  return z_;
+}
+inline void DroneState_Point::set_z(double value) {
+  
+  z_ = value;
+  // @@protoc_insertion_point(field_set:DroneState.Point.z)
+}
+
+// -------------------------------------------------------------------
+
 // DroneState
 
 // fixed32 ip = 1;
@@ -357,7 +525,87 @@ inline void DroneState::set_curren_task(::DroneState_CurrentTask value) {
   // @@protoc_insertion_point(field_set:DroneState.curren_task)
 }
 
+// .DroneState.Point position = 7;
+inline bool DroneState::has_position() const {
+  return this != internal_default_instance() && position_ != NULL;
+}
+inline void DroneState::clear_position() {
+  if (GetArenaNoVirtual() == NULL && position_ != NULL) delete position_;
+  position_ = NULL;
+}
+inline const ::DroneState_Point& DroneState::position() const {
+  // @@protoc_insertion_point(field_get:DroneState.position)
+  return position_ != NULL ? *position_
+                         : *::DroneState_Point::internal_default_instance();
+}
+inline ::DroneState_Point* DroneState::mutable_position() {
+  
+  if (position_ == NULL) {
+    position_ = new ::DroneState_Point;
+  }
+  // @@protoc_insertion_point(field_mutable:DroneState.position)
+  return position_;
+}
+inline ::DroneState_Point* DroneState::release_position() {
+  // @@protoc_insertion_point(field_release:DroneState.position)
+  
+  ::DroneState_Point* temp = position_;
+  position_ = NULL;
+  return temp;
+}
+inline void DroneState::set_allocated_position(::DroneState_Point* position) {
+  delete position_;
+  position_ = position;
+  if (position) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:DroneState.position)
+}
+
+// .DroneState.Point rotation = 8;
+inline bool DroneState::has_rotation() const {
+  return this != internal_default_instance() && rotation_ != NULL;
+}
+inline void DroneState::clear_rotation() {
+  if (GetArenaNoVirtual() == NULL && rotation_ != NULL) delete rotation_;
+  rotation_ = NULL;
+}
+inline const ::DroneState_Point& DroneState::rotation() const {
+  // @@protoc_insertion_point(field_get:DroneState.rotation)
+  return rotation_ != NULL ? *rotation_
+                         : *::DroneState_Point::internal_default_instance();
+}
+inline ::DroneState_Point* DroneState::mutable_rotation() {
+  
+  if (rotation_ == NULL) {
+    rotation_ = new ::DroneState_Point;
+  }
+  // @@protoc_insertion_point(field_mutable:DroneState.rotation)
+  return rotation_;
+}
+inline ::DroneState_Point* DroneState::release_rotation() {
+  // @@protoc_insertion_point(field_release:DroneState.rotation)
+  
+  ::DroneState_Point* temp = rotation_;
+  rotation_ = NULL;
+  return temp;
+}
+inline void DroneState::set_allocated_rotation(::DroneState_Point* rotation) {
+  delete rotation_;
+  rotation_ = rotation;
+  if (rotation) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:DroneState.rotation)
+}
+
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 

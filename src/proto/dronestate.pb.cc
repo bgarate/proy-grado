@@ -16,6 +16,8 @@
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
+class DroneState_PointDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<DroneState_Point> {
+} _DroneState_Point_default_instance_;
 class DroneStateDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<DroneState> {
 } _DroneState_default_instance_;
 
@@ -24,12 +26,19 @@ namespace protobuf_dronestate_2eproto {
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[1];
+::google::protobuf::Metadata file_level_metadata[2];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 
 }  // namespace
 
 const ::google::protobuf::uint32 TableStruct::offsets[] = {
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState_Point, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState_Point, x_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState_Point, y_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState_Point, z_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -40,13 +49,17 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, seq_num_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, name_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, curren_task_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, position_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, rotation_),
 };
 
 static const ::google::protobuf::internal::MigrationSchema schemas[] = {
-  { 0, -1, sizeof(DroneState)},
+  { 0, -1, sizeof(DroneState_Point)},
+  { 7, -1, sizeof(DroneState)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&_DroneState_Point_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_DroneState_default_instance_),
 };
 
@@ -68,21 +81,28 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 1);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 2);
 }
 
 }  // namespace
 
 void TableStruct::Shutdown() {
-  _DroneState_default_instance_.Shutdown();
+  _DroneState_Point_default_instance_.Shutdown();
   delete file_level_metadata[0].reflection;
+  _DroneState_default_instance_.Shutdown();
+  delete file_level_metadata[1].reflection;
 }
 
 void TableStruct::InitDefaultsImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::internal::InitProtobufDefaults();
+  _DroneState_Point_default_instance_.DefaultConstruct();
   _DroneState_default_instance_.DefaultConstruct();
+  _DroneState_default_instance_.get_mutable()->position_ = const_cast< ::DroneState_Point*>(
+      ::DroneState_Point::internal_default_instance());
+  _DroneState_default_instance_.get_mutable()->rotation_ = const_cast< ::DroneState_Point*>(
+      ::DroneState_Point::internal_default_instance());
 }
 
 void InitDefaults() {
@@ -92,16 +112,19 @@ void InitDefaults() {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] = {
-      "\n\020dronestate.proto\"\332\001\n\nDroneState\022\n\n\002ip\030"
+      "\n\020dronestate.proto\"\316\002\n\nDroneState\022\n\n\002ip\030"
       "\001 \001(\007\022\014\n\004port\030\002 \001(\r\022\020\n\010drone_id\030\003 \001(\r\022\017\n"
       "\007seq_num\030\004 \001(\003\022\014\n\004name\030\005 \001(\t\022,\n\013curren_t"
-      "ask\030\006 \001(\0162\027.DroneState.CurrentTask\"S\n\013Cu"
-      "rrentTask\022\r\n\tINNACTIVE\020\000\022\r\n\tPATROLING\020\001\022"
-      "\r\n\tFOLLOWING\020\002\022\t\n\005ALERT\020\003\022\014\n\010CHARGING\020\004b"
-      "\006proto3"
+      "ask\030\006 \001(\0162\027.DroneState.CurrentTask\022#\n\010po"
+      "sition\030\007 \001(\0132\021.DroneState.Point\022#\n\010rotat"
+      "ion\030\010 \001(\0132\021.DroneState.Point\032(\n\005Point\022\t\n"
+      "\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\"S\n\013Curren"
+      "tTask\022\r\n\tINNACTIVE\020\000\022\r\n\tPATROLING\020\001\022\r\n\tF"
+      "OLLOWING\020\002\022\t\n\005ALERT\020\003\022\014\n\010CHARGING\020\004b\006pro"
+      "to3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 247);
+      descriptor, 363);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "dronestate.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -151,12 +174,335 @@ const int DroneState::CurrentTask_ARRAYSIZE;
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int DroneState_Point::kXFieldNumber;
+const int DroneState_Point::kYFieldNumber;
+const int DroneState_Point::kZFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+DroneState_Point::DroneState_Point()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_dronestate_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:DroneState.Point)
+}
+DroneState_Point::DroneState_Point(const DroneState_Point& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&x_, &from.x_,
+    reinterpret_cast<char*>(&z_) -
+    reinterpret_cast<char*>(&x_) + sizeof(z_));
+  // @@protoc_insertion_point(copy_constructor:DroneState.Point)
+}
+
+void DroneState_Point::SharedCtor() {
+  ::memset(&x_, 0, reinterpret_cast<char*>(&z_) -
+    reinterpret_cast<char*>(&x_) + sizeof(z_));
+  _cached_size_ = 0;
+}
+
+DroneState_Point::~DroneState_Point() {
+  // @@protoc_insertion_point(destructor:DroneState.Point)
+  SharedDtor();
+}
+
+void DroneState_Point::SharedDtor() {
+}
+
+void DroneState_Point::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* DroneState_Point::descriptor() {
+  protobuf_dronestate_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_dronestate_2eproto::file_level_metadata[0].descriptor;
+}
+
+const DroneState_Point& DroneState_Point::default_instance() {
+  protobuf_dronestate_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+DroneState_Point* DroneState_Point::New(::google::protobuf::Arena* arena) const {
+  DroneState_Point* n = new DroneState_Point;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void DroneState_Point::Clear() {
+// @@protoc_insertion_point(message_clear_start:DroneState.Point)
+  ::memset(&x_, 0, reinterpret_cast<char*>(&z_) -
+    reinterpret_cast<char*>(&x_) + sizeof(z_));
+}
+
+bool DroneState_Point::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:DroneState.Point)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // double x = 1;
+      case 1: {
+        if (tag == 9u) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &x_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // double y = 2;
+      case 2: {
+        if (tag == 17u) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &y_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // double z = 3;
+      case 3: {
+        if (tag == 25u) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &z_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:DroneState.Point)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:DroneState.Point)
+  return false;
+#undef DO_
+}
+
+void DroneState_Point::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:DroneState.Point)
+  // double x = 1;
+  if (this->x() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->x(), output);
+  }
+
+  // double y = 2;
+  if (this->y() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->y(), output);
+  }
+
+  // double z = 3;
+  if (this->z() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->z(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:DroneState.Point)
+}
+
+::google::protobuf::uint8* DroneState_Point::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic;  // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:DroneState.Point)
+  // double x = 1;
+  if (this->x() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->x(), target);
+  }
+
+  // double y = 2;
+  if (this->y() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->y(), target);
+  }
+
+  // double z = 3;
+  if (this->z() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->z(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:DroneState.Point)
+  return target;
+}
+
+size_t DroneState_Point::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:DroneState.Point)
+  size_t total_size = 0;
+
+  // double x = 1;
+  if (this->x() != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double y = 2;
+  if (this->y() != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double z = 3;
+  if (this->z() != 0) {
+    total_size += 1 + 8;
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void DroneState_Point::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:DroneState.Point)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DroneState_Point* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const DroneState_Point>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:DroneState.Point)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:DroneState.Point)
+    MergeFrom(*source);
+  }
+}
+
+void DroneState_Point::MergeFrom(const DroneState_Point& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:DroneState.Point)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.x() != 0) {
+    set_x(from.x());
+  }
+  if (from.y() != 0) {
+    set_y(from.y());
+  }
+  if (from.z() != 0) {
+    set_z(from.z());
+  }
+}
+
+void DroneState_Point::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:DroneState.Point)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DroneState_Point::CopyFrom(const DroneState_Point& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:DroneState.Point)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DroneState_Point::IsInitialized() const {
+  return true;
+}
+
+void DroneState_Point::Swap(DroneState_Point* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void DroneState_Point::InternalSwap(DroneState_Point* other) {
+  std::swap(x_, other->x_);
+  std::swap(y_, other->y_);
+  std::swap(z_, other->z_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata DroneState_Point::GetMetadata() const {
+  protobuf_dronestate_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_dronestate_2eproto::file_level_metadata[0];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// DroneState_Point
+
+// double x = 1;
+void DroneState_Point::clear_x() {
+  x_ = 0;
+}
+double DroneState_Point::x() const {
+  // @@protoc_insertion_point(field_get:DroneState.Point.x)
+  return x_;
+}
+void DroneState_Point::set_x(double value) {
+  
+  x_ = value;
+  // @@protoc_insertion_point(field_set:DroneState.Point.x)
+}
+
+// double y = 2;
+void DroneState_Point::clear_y() {
+  y_ = 0;
+}
+double DroneState_Point::y() const {
+  // @@protoc_insertion_point(field_get:DroneState.Point.y)
+  return y_;
+}
+void DroneState_Point::set_y(double value) {
+  
+  y_ = value;
+  // @@protoc_insertion_point(field_set:DroneState.Point.y)
+}
+
+// double z = 3;
+void DroneState_Point::clear_z() {
+  z_ = 0;
+}
+double DroneState_Point::z() const {
+  // @@protoc_insertion_point(field_get:DroneState.Point.z)
+  return z_;
+}
+void DroneState_Point::set_z(double value) {
+  
+  z_ = value;
+  // @@protoc_insertion_point(field_set:DroneState.Point.z)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int DroneState::kIpFieldNumber;
 const int DroneState::kPortFieldNumber;
 const int DroneState::kDroneIdFieldNumber;
 const int DroneState::kSeqNumFieldNumber;
 const int DroneState::kNameFieldNumber;
 const int DroneState::kCurrenTaskFieldNumber;
+const int DroneState::kPositionFieldNumber;
+const int DroneState::kRotationFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DroneState::DroneState()
@@ -176,6 +522,16 @@ DroneState::DroneState(const DroneState& from)
   if (from.name().size() > 0) {
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
+  if (from.has_position()) {
+    position_ = new ::DroneState_Point(*from.position_);
+  } else {
+    position_ = NULL;
+  }
+  if (from.has_rotation()) {
+    rotation_ = new ::DroneState_Point(*from.rotation_);
+  } else {
+    rotation_ = NULL;
+  }
   ::memcpy(&ip_, &from.ip_,
     reinterpret_cast<char*>(&curren_task_) -
     reinterpret_cast<char*>(&ip_) + sizeof(curren_task_));
@@ -184,8 +540,8 @@ DroneState::DroneState(const DroneState& from)
 
 void DroneState::SharedCtor() {
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&ip_, 0, reinterpret_cast<char*>(&curren_task_) -
-    reinterpret_cast<char*>(&ip_) + sizeof(curren_task_));
+  ::memset(&position_, 0, reinterpret_cast<char*>(&curren_task_) -
+    reinterpret_cast<char*>(&position_) + sizeof(curren_task_));
   _cached_size_ = 0;
 }
 
@@ -196,6 +552,12 @@ DroneState::~DroneState() {
 
 void DroneState::SharedDtor() {
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) {
+    delete position_;
+  }
+  if (this != internal_default_instance()) {
+    delete rotation_;
+  }
 }
 
 void DroneState::SetCachedSize(int size) const {
@@ -205,7 +567,7 @@ void DroneState::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* DroneState::descriptor() {
   protobuf_dronestate_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_dronestate_2eproto::file_level_metadata[0].descriptor;
+  return protobuf_dronestate_2eproto::file_level_metadata[1].descriptor;
 }
 
 const DroneState& DroneState::default_instance() {
@@ -224,6 +586,14 @@ DroneState* DroneState::New(::google::protobuf::Arena* arena) const {
 void DroneState::Clear() {
 // @@protoc_insertion_point(message_clear_start:DroneState)
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == NULL && position_ != NULL) {
+    delete position_;
+  }
+  position_ = NULL;
+  if (GetArenaNoVirtual() == NULL && rotation_ != NULL) {
+    delete rotation_;
+  }
+  rotation_ = NULL;
   ::memset(&ip_, 0, reinterpret_cast<char*>(&curren_task_) -
     reinterpret_cast<char*>(&ip_) + sizeof(curren_task_));
 }
@@ -319,6 +689,28 @@ bool DroneState::MergePartialFromCodedStream(
         break;
       }
 
+      // .DroneState.Point position = 7;
+      case 7: {
+        if (tag == 58u) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_position()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .DroneState.Point rotation = 8;
+      case 8: {
+        if (tag == 66u) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_rotation()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0 ||
@@ -379,6 +771,18 @@ void DroneState::SerializeWithCachedSizes(
       6, this->curren_task(), output);
   }
 
+  // .DroneState.Point position = 7;
+  if (this->has_position()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      7, *this->position_, output);
+  }
+
+  // .DroneState.Point rotation = 8;
+  if (this->has_rotation()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      8, *this->rotation_, output);
+  }
+
   // @@protoc_insertion_point(serialize_end:DroneState)
 }
 
@@ -423,6 +827,20 @@ void DroneState::SerializeWithCachedSizes(
       6, this->curren_task(), target);
   }
 
+  // .DroneState.Point position = 7;
+  if (this->has_position()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        7, *this->position_, false, target);
+  }
+
+  // .DroneState.Point rotation = 8;
+  if (this->has_rotation()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        8, *this->rotation_, false, target);
+  }
+
   // @@protoc_insertion_point(serialize_to_array_end:DroneState)
   return target;
 }
@@ -436,6 +854,20 @@ size_t DroneState::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->name());
+  }
+
+  // .DroneState.Point position = 7;
+  if (this->has_position()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->position_);
+  }
+
+  // .DroneState.Point rotation = 8;
+  if (this->has_rotation()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->rotation_);
   }
 
   // fixed32 ip = 1;
@@ -500,6 +932,12 @@ void DroneState::MergeFrom(const DroneState& from) {
 
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
+  if (from.has_position()) {
+    mutable_position()->::DroneState_Point::MergeFrom(from.position());
+  }
+  if (from.has_rotation()) {
+    mutable_rotation()->::DroneState_Point::MergeFrom(from.rotation());
+  }
   if (from.ip() != 0) {
     set_ip(from.ip());
   }
@@ -541,6 +979,8 @@ void DroneState::Swap(DroneState* other) {
 }
 void DroneState::InternalSwap(DroneState* other) {
   name_.Swap(&other->name_);
+  std::swap(position_, other->position_);
+  std::swap(rotation_, other->rotation_);
   std::swap(ip_, other->ip_);
   std::swap(port_, other->port_);
   std::swap(seq_num_, other->seq_num_);
@@ -551,7 +991,7 @@ void DroneState::InternalSwap(DroneState* other) {
 
 ::google::protobuf::Metadata DroneState::GetMetadata() const {
   protobuf_dronestate_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_dronestate_2eproto::file_level_metadata[0];
+  return protobuf_dronestate_2eproto::file_level_metadata[1];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -677,6 +1117,84 @@ void DroneState::set_curren_task(::DroneState_CurrentTask value) {
   
   curren_task_ = value;
   // @@protoc_insertion_point(field_set:DroneState.curren_task)
+}
+
+// .DroneState.Point position = 7;
+bool DroneState::has_position() const {
+  return this != internal_default_instance() && position_ != NULL;
+}
+void DroneState::clear_position() {
+  if (GetArenaNoVirtual() == NULL && position_ != NULL) delete position_;
+  position_ = NULL;
+}
+const ::DroneState_Point& DroneState::position() const {
+  // @@protoc_insertion_point(field_get:DroneState.position)
+  return position_ != NULL ? *position_
+                         : *::DroneState_Point::internal_default_instance();
+}
+::DroneState_Point* DroneState::mutable_position() {
+  
+  if (position_ == NULL) {
+    position_ = new ::DroneState_Point;
+  }
+  // @@protoc_insertion_point(field_mutable:DroneState.position)
+  return position_;
+}
+::DroneState_Point* DroneState::release_position() {
+  // @@protoc_insertion_point(field_release:DroneState.position)
+  
+  ::DroneState_Point* temp = position_;
+  position_ = NULL;
+  return temp;
+}
+void DroneState::set_allocated_position(::DroneState_Point* position) {
+  delete position_;
+  position_ = position;
+  if (position) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:DroneState.position)
+}
+
+// .DroneState.Point rotation = 8;
+bool DroneState::has_rotation() const {
+  return this != internal_default_instance() && rotation_ != NULL;
+}
+void DroneState::clear_rotation() {
+  if (GetArenaNoVirtual() == NULL && rotation_ != NULL) delete rotation_;
+  rotation_ = NULL;
+}
+const ::DroneState_Point& DroneState::rotation() const {
+  // @@protoc_insertion_point(field_get:DroneState.rotation)
+  return rotation_ != NULL ? *rotation_
+                         : *::DroneState_Point::internal_default_instance();
+}
+::DroneState_Point* DroneState::mutable_rotation() {
+  
+  if (rotation_ == NULL) {
+    rotation_ = new ::DroneState_Point;
+  }
+  // @@protoc_insertion_point(field_mutable:DroneState.rotation)
+  return rotation_;
+}
+::DroneState_Point* DroneState::release_rotation() {
+  // @@protoc_insertion_point(field_release:DroneState.rotation)
+  
+  ::DroneState_Point* temp = rotation_;
+  rotation_ = NULL;
+  return temp;
+}
+void DroneState::set_allocated_rotation(::DroneState_Point* rotation) {
+  delete rotation_;
+  rotation_ = rotation;
+  if (rotation) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:DroneState.rotation)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

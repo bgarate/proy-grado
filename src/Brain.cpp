@@ -37,6 +37,12 @@ void Brain::loop() {
 
     //Comienzo inactivo
     interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE);
+    DroneState_Point* p = new DroneState_Point();
+    p->set_x(0.0);
+    p->set_y(0.0);
+    p->set_z(0.0);
+    interComm->droneStates[myid]->set_allocated_position(p);
+    interComm->droneStates[myid]->set_allocated_rotation(p);
 
     //COMPORAMIENTO SIMULADO VARIABLES
     int range = 10 - 3 + 1;
@@ -150,7 +156,10 @@ void Brain::debugDroneStates(long runningTime){
             if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING) { state = "FOLLOWING"; }
             if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT) { state = "ALERT"; }
             if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) { state = "CHARGING"; }
-            std::cout << "The drone " << it->first << " is " << state << '\n';
+            std::cout << "The drone " << it->first << " is " << state
+                      << " with position {" << it->second->position().x() << ", " << it->second->position().y () << ", " << it->second->position().z()
+                      << "} and rotation {" << it->second->position().x() << ", " << it->second->position().y () << ", " << it->second->position().z() << "}"
+                      << "\n";
         }
         std::cout << '\n';
     }
