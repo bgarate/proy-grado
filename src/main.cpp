@@ -62,9 +62,12 @@ int main(int argc, const char* args[]) {
     if (startBody && startBrain) {
         pid_t pid = fork();
 
-        isParent = pid == 0;
+        if(config->Get(ConfigKeys::Body::ParentOnFork))
+            isParent = pid != 0;
+        else
+            isParent = pid == 0;
 
-        startBody = isParent && config->Get(ConfigKeys::Body::ParentOnFork);
+        startBody = isParent;
         startBrain = !startBody;
     }
 

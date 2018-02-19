@@ -3,6 +3,7 @@
 //
 
 #include <src/proto/dronestate.pb.h>
+#include <src/navigation/NavigationDebugger.h>
 #include "proto/message.pb.h"
 #include "communication/BrainComm.h"
 #include "Brain.h"
@@ -28,21 +29,48 @@ void Brain::setup(Config* config) {
 
     Logger::getInstance().setSource("BRAIN");
 
+    //NAVDEB
+    world = config->GetWorld();
+    navigationDebugger = new NavigationDebugger(config, &world);
+    navigationDebugger->Init();
+    follower = new MarkerFollower(config, &world);
+    path = config->GetPath();
+    follower->setPath(path);
+    drone = world.getDrones()[0];
+
+    simulatedPath = new int[8];
+    simulatedPath[0] = 10;
+    simulatedPath[1] = 13;
+    simulatedPath[2] = 19;
+    simulatedPath[3] = 20;
+    simulatedPath[4] = 21;
+    simulatedPath[5] = 15;
+    simulatedPath[6] = 12;
+    simulatedPath[7] = 11;
+    nextMarker = 0;
+    //NAVDEB
+
 };
 
 void Brain::loop() {
+
     chrono::steady_clock::time_point startTime = chrono::steady_clock::now();
     chrono::steady_clock::time_point lastTime = startTime;
     chrono::steady_clock::time_point newTime = startTime;
 
     //Comienzo inactivo
     interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE);
+    DroneState_Point* r = new DroneState_Point();
+    r->set_x(0.0);
+    r->set_y(0.0);
+    r->set_z(0.0);
+    interComm->droneStates[myid]->set_allocated_rotation(r);
     DroneState_Point* p = new DroneState_Point();
-    p->set_x(0.0);
-    p->set_y(0.0);
+    p->set_x(2.0);
+    p->set_y(-1.0);
     p->set_z(0.0);
     interComm->droneStates[myid]->set_allocated_position(p);
-    interComm->droneStates[myid]->set_allocated_rotation(p);
+
 
     //COMPORAMIENTO SIMULADO VARIABLES
     int range = 10 - 3 + 1;
@@ -93,8 +121,9 @@ void Brain::loop() {
             taskStartTime = runningTime;
 
         //Si no tengo que estar alerta o terminó el lapso de mi tarea cambio de estado
-        } else if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT
-                  || runningTime - taskStartTime > taskLapse * 1000 * 1000) {
+        } else if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT ||
+                    interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE
+                    || runningTime - taskStartTime > taskLapse * 1000 * 1000) {
 
             //Si estoy inactivo, following o cargando  paso a patrullar
             if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE
@@ -117,10 +146,82 @@ void Brain::loop() {
                 }
             }
 
-            //Actualizo lapso y start time
-            taskLapse = rand() % range + 3;
-            taskStartTime = runningTime;
         }
+
+        //NAVDEB
+        if(runningTime - lastChange > lapseToChange) {
+
+
+            switch (interComm->droneStates[myid]->curren_task()) {
+                case DroneState::CurrentTask::DroneState_CurrentTask_CHARGING :
+
+                    nextMarker = -1;
+                    previousMarker = -1;
+                    break;
+
+                case DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE :
+
+                    nextMarker = -1;
+                    previousMarker = -1;
+                    break;
+
+                case DroneState::CurrentTask::DroneState_CurrentTask_PATROLING
+                     or DroneState::CurrentTask::DroneState_CurrentTask_ALERT
+                     or DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING:
+
+                    previousMarker = nextMarker;
+                    nextMarker = (nextMarker + 1) % 8;
+                    break;
+
+                default:
+
+                    nextMarker = -1;
+                    previousMarker = -1;
+                    break;
+
+            }
+            
+            lastChange = runningTime;
+        }
+
+
+        if(runningTime - lastRefreshTime > pirntLapse){
+
+            double difference = (runningTime - lastChange)/(1000.0 * 1000.0);
+
+            cv::Vec3d *position;
+            if(previousMarker == -1 && nextMarker == -1) {
+
+                position = new cv::Vec3d(2, -1, 0);
+
+            }else if(previousMarker == -1) {
+
+                position = new cv::Vec3d( (2*(1-difference) + world.getMarker(simulatedPath[nextMarker])->getPosition().val[0]*difference)
+                        , (-1*(1-difference) + world.getMarker(simulatedPath[nextMarker])->getPosition().val[1]*difference)
+                        , 1);
+
+            }else{
+
+                position = new cv::Vec3d((world.getMarker(simulatedPath[previousMarker])->getPosition().val[0]*(1-difference) + world.getMarker(simulatedPath[nextMarker])->getPosition().val[0]*difference)
+                        , (world.getMarker(simulatedPath[previousMarker])->getPosition().val[1]*(1-difference) + world.getMarker(simulatedPath[nextMarker])->getPosition().val[1]*difference)
+                        , 1);
+
+            }
+            drone->setPosition(*position);
+
+            navigationDebugger->Run(command, follower->getTargetId(), follower->EstimatedPositions,
+                                    follower->EstimatedPoses, path,
+                                    follower->PositionsHistory, follower->PredictedPosition,
+                                    follower->ProjectedPredictedPosition, follower->FollowTarget);
+
+
+            lastRefreshTime = runningTime;
+        }
+        //NAVDEB
+
+        //Actualizo lapso y start time
+        taskLapse = rand() % range + 3;
+        taskStartTime = runningTime;
 
         ////COMPORTAMIENTO SIMULADO END
 
@@ -145,7 +246,7 @@ void Brain::cleanup() {
 
 void Brain::debugDroneStates(long runningTime){
 
-    if(runningTime - lastDebug > 10  * 1000) {
+    if(runningTime - lastDebug > 1 * 1000  * 1000) {
 
         std::cout << '\n';
         for (std::map<int, DroneState*>::iterator it=interComm->droneStates.begin(); it!=interComm->droneStates.end(); ++it) {
@@ -158,11 +259,13 @@ void Brain::debugDroneStates(long runningTime){
             if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) { state = "CHARGING"; }
             std::cout << "The drone " << it->first << " is " << state
                       << " with position {" << it->second->position().x() << ", " << it->second->position().y () << ", " << it->second->position().z()
-                      << "} and rotation {" << it->second->position().x() << ", " << it->second->position().y () << ", " << it->second->position().z() << "}"
+                      << "} and rotation {" << it->second->rotation().x() << ", " << it->second->rotation().y () << ", " << it->second->rotation().z() << "}"
                       << "\n";
         }
         std::cout << '\n';
+
+        lastDebug = runningTime;
     }
-    lastDebug = runningTime;
+
 
 }
