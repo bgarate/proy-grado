@@ -87,7 +87,7 @@ void Brain::loop() {
         deltaTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - lastTime).count();
         runningTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - startTime).count();
 
-        //interComm->interCommStep(runningTime, deltaTime);
+        interComm->interCommStep(runningTime, deltaTime);
         //brainComm->brainCommStep(runningTime, deltaTime);
 
         //DEBUG: Imprimir estado de la flotilla
@@ -137,13 +137,13 @@ void Brain::loop() {
 
                 //Decido aleatroriamente paso a Charging o following
                 //Paso a cargar si nadio ya lo está haciendo
-                if(rand() % 2 == 0 && !someoneCharging){
+                if(rand() % 3 == 0 && !someoneCharging){
                     //Paso a charging
                     interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_CHARGING);
-                } else {
+                } else if(rand() % 3 == 1) {
                     //Paso a following
                     interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING);
-                }
+                }//else sigo patrullando
             }
 
             //Actualizo lapso y start time
@@ -165,9 +165,19 @@ void Brain::loop() {
                     nextMarker = -1;
                     previousMarker = -1;
 
-            }else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING
-                      || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT
-                      || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING){
+            }else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT){
+
+                if(nextMarker == 0)
+                    previousMarker = 0;
+                else
+                    nextMarker = 0;
+
+
+            }else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING){
+
+                previousMarker = nextMarker;
+
+            } else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING){
 
                     previousMarker = nextMarker;
                     nextMarker = (nextMarker + 1) % 8;
