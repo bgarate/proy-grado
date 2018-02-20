@@ -91,7 +91,7 @@ void Brain::loop() {
         //brainComm->brainCommStep(runningTime, deltaTime);
 
         //DEBUG: Imprimir estado de la flotilla
-        debugDroneStates(runningTime);
+        //debugDroneStates(runningTime);
 
         ////COMPORTAMIENTO SIMULADO START
 
@@ -121,8 +121,8 @@ void Brain::loop() {
             taskStartTime = runningTime;
 
         //Si no tengo que estar alerta o terminó el lapso de mi tarea cambio de estado
-        } else if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT ||
-                    interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE
+        } else if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT
+                    ||  interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE
                     || runningTime - taskStartTime > taskLapse * 1000 * 1000) {
 
             //Si estoy inactivo, following o cargando  paso a patrullar
@@ -146,58 +146,64 @@ void Brain::loop() {
                 }
             }
 
+            //Actualizo lapso y start time
+            taskLapse = rand() % range + 3;
+            taskStartTime = runningTime;
         }
 
         //NAVDEB
         if(runningTime - lastChange > lapseToChange) {
 
 
-            switch (interComm->droneStates[myid]->curren_task()) {
-                case DroneState::CurrentTask::DroneState_CurrentTask_CHARGING :
+            if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING ) {
+
+                previousMarker = nextMarker;
+                nextMarker = -1;
+
+            }else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE){
 
                     nextMarker = -1;
                     previousMarker = -1;
-                    break;
 
-                case DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE :
-
-                    nextMarker = -1;
-                    previousMarker = -1;
-                    break;
-
-                case DroneState::CurrentTask::DroneState_CurrentTask_PATROLING
-                     or DroneState::CurrentTask::DroneState_CurrentTask_ALERT
-                     or DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING:
+            }else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING
+                      || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT
+                      || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING){
 
                     previousMarker = nextMarker;
                     nextMarker = (nextMarker + 1) % 8;
-                    break;
 
-                default:
+            }else{
 
-                    nextMarker = -1;
+                          nextMarker = -1;
                     previousMarker = -1;
                     break;
 
             }
-            
+
             lastChange = runningTime;
         }
 
 
-        if(runningTime - lastRefreshTime > pirntLapse){
+        if(runningTime - lastRefreshTime > pirntLapse) {
 
-            double difference = (runningTime - lastChange)/(1000.0 * 1000.0);
+            double difference = (runningTime - lastChange) / (1000.0 * 1000.0);
 
             cv::Vec3d *position;
-            if(previousMarker == -1 && nextMarker == -1) {
+            if (previousMarker == -1 && nextMarker == -1) {
 
                 position = new cv::Vec3d(2, -1, 0);
 
-            }else if(previousMarker == -1) {
+            } else if (previousMarker == -1) {
 
-                position = new cv::Vec3d( (2*(1-difference) + world.getMarker(simulatedPath[nextMarker])->getPosition().val[0]*difference)
-                        , (-1*(1-difference) + world.getMarker(simulatedPath[nextMarker])->getPosition().val[1]*difference)
+                position = new cv::Vec3d((2 * (1 - difference) +
+                                          world.getMarker(simulatedPath[nextMarker])->getPosition().val[0] *
+                                          difference), (-1 * (1 - difference) + world.getMarker(
+                        simulatedPath[nextMarker])->getPosition().val[1] * difference), 1);
+
+            } else if(nextMarker == -1){
+
+                position = new cv::Vec3d((world.getMarker(simulatedPath[previousMarker])->getPosition().val[0]*(1-difference) + 2 *difference)
+                        , (world.getMarker(simulatedPath[previousMarker])->getPosition().val[1]*(1-difference) + -1 *difference)
                         , 1);
 
             }else{
@@ -208,7 +214,13 @@ void Brain::loop() {
 
             }
             drone->setPosition(*position);
-
+            std::string state;
+            if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE) { state = "INNACTIVE"; }
+            if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING) { state = "PATROLING"; }
+            if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING) { state = "FOLLOWING"; }
+            if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT) { state = "ALERT"; }
+            if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) { state = "CHARGING"; }
+            drone->setState(state);
             navigationDebugger->Run(command, follower->getTargetId(), follower->EstimatedPositions,
                                     follower->EstimatedPoses, path,
                                     follower->PositionsHistory, follower->PredictedPosition,
@@ -219,9 +231,6 @@ void Brain::loop() {
         }
         //NAVDEB
 
-        //Actualizo lapso y start time
-        taskLapse = rand() % range + 3;
-        taskStartTime = runningTime;
 
         ////COMPORTAMIENTO SIMULADO END
 

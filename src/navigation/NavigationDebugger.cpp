@@ -290,6 +290,7 @@ void NavigationDebugger::DrawPadSquare(WorldObject *pad) {
 }
 
 void NavigationDebugger::DrawDrone(NavigationCommand command) {
+
     cairo_set_source_rgb (cr, 0, 1, 0);
 
     cairo_save(cr);
@@ -320,6 +321,10 @@ void NavigationDebugger::DrawDrone(NavigationCommand command) {
     cairo_rel_line_to(cr, GetScaleX(command.LateralSpeed) * 3, -GetScaleY(command.ForwardSpeed) * 3);
 
     cairo_restore(cr);
+
+    cairo_set_source_rgb (cr, 0.5, 0.5, 0.5);
+    Text(std::__cxx11::to_string(drone->getId())+": "+drone->getState(),
+         cv::Point2i(GetX(drone->getPosition()[0] - 0.30), GetY(drone->getPosition()[1] + 0.30)), 9);
 
 }
 

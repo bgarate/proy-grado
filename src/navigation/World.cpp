@@ -6,12 +6,12 @@
 #include <iostream>
 #include "World.h"
 
-void World::addMarker(cv::Vec3d position, cv::Vec3d rotation, int id) {
-    addObject(ObjectType::MARKER, position, rotation, id);
+void World::addMarker(cv::Vec3d position, cv::Vec3d rotation, int id, std::string state) {
+    addObject(ObjectType::MARKER, position, rotation, id, state);
 }
 
-void World::addDrone(cv::Vec3d position, cv::Vec3d rotation, int id) {
-    addObject(ObjectType::DRONE, position, rotation, id);
+void World::addDrone(cv::Vec3d position, cv::Vec3d rotation, int id, std::string state) {
+    addObject(ObjectType::DRONE, position, rotation, id, state);
 }
 
 std::vector<WorldObject *> World::getObjects() {
@@ -59,9 +59,9 @@ std::vector<WorldObject *> World::getPads() {
     return ret;
 }
 
-void World::addObject(ObjectType type, cv::Vec3d position, cv::Vec3d rotation, int id) {
+void World::addObject(ObjectType type, cv::Vec3d position, cv::Vec3d rotation, int id, std::string state) {
     std::unique_lock<std::mutex> lck(objectsMutex);
-    objects.push_back(new WorldObject(position, rotation, type, id));
+    objects.push_back(new WorldObject(position, rotation, type, id, state));
 }
 
 World::World(World&& other) {
@@ -108,6 +108,11 @@ void WorldObject::setRotation(const cv::Vec3d rotation) {
     this->rotation = rotation;
 }
 
+void WorldObject::setState(const std::string state){
+    std::unique_lock<std::mutex> lck(mutex);
+    this->state = state;
+}
+
 const cv::Vec3d WorldObject::getPosition() {
     std::unique_lock<std::mutex> lck(mutex);
     return cv::Vec3d(position);
@@ -129,6 +134,10 @@ int WorldObject::getId() const {
 
 ObjectType WorldObject::getType() const {
     return type;
+}
+
+std::string WorldObject::getState() const{
+    return state;
 }
 
 void WorldObject::calculateObjectMatrix(const cv::Vec3d &position, const cv::Vec3d &rotation) {

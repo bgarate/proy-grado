@@ -18,8 +18,8 @@ public:
         cameraMatrix = (cv::Mat)cv::Matx44d();
     }
 
-    WorldObject(cv::Vec3d position, cv::Vec3d rotation, ObjectType type, int id):
-            position(position), rotation(rotation), type(type), id(id) {
+    WorldObject(cv::Vec3d position, cv::Vec3d rotation, ObjectType type, int id, std::string state):
+            position(position), rotation(rotation), type(type), id(id), state(state) {
         cameraMatrix = (cv::Mat)cv::Matx44d();
 
     }
@@ -29,14 +29,18 @@ public:
     void setInversePose(const cv::Vec3d& position, const cv::Vec3d& rotation);
     int getId() const;
     ObjectType getType() const;
+    std::string getState() const;
     cv::Mat getCameraMatrix();
 
     void setRotation(const cv::Vec3d rotation);
 
     void setPosition(const cv::Vec3d position);
 
+    void setState(const std::string state);
+
 private:
 
+    std::string state;
     cv::Vec3d position;
     cv::Vec3d rotation;
     cv::Mat cameraMatrix;
@@ -56,9 +60,9 @@ public:
     World& operator=(const World& other);
     World& operator=(World &&other);
 
-    void addMarker(cv::Vec3d position, cv::Vec3d rotation, int id);
-    void addDrone(cv::Vec3d position, cv::Vec3d rotation, int id);
-    void addObject(ObjectType type, cv::Vec3d position, cv::Vec3d rotation, int id);
+    void addMarker(cv::Vec3d position, cv::Vec3d rotation, int id, std::string state);
+    void addDrone(cv::Vec3d position, cv::Vec3d rotation, int id, std::string state);
+    void addObject(ObjectType type, cv::Vec3d position, cv::Vec3d rotation, int id, std::string state);
     std::vector<WorldObject*> getObjects();
     std::vector<WorldObject*> getDrones();
     std::vector<WorldObject*> getMarkers();

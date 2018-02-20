@@ -101,7 +101,12 @@ public:
             cv::Vec3d rotation = object["rotation"].as<cv::Vec3d>();
             int id = object["id"].as<int>();
 
-            world.addObject(type, position, rotation, id);
+            std::string state = "";
+            if(object["state"] != NULL)
+                state = object["state"].as<std::string>();
+
+
+            world.addObject(type, position, rotation, id, state);
 
         }
 
