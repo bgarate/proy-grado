@@ -38,7 +38,7 @@ void Brain::setup(Config* config) {
     follower->setPath(path);
     drone = world.getDrones()[0];
 
-    simulatedPath = new int[8];
+    /*simulatedPath = new int[8];
     simulatedPath[0] = 10;
     simulatedPath[1] = 13;
     simulatedPath[2] = 19;
@@ -46,7 +46,7 @@ void Brain::setup(Config* config) {
     simulatedPath[4] = 21;
     simulatedPath[5] = 15;
     simulatedPath[6] = 12;
-    simulatedPath[7] = 11;
+    simulatedPath[7] = 11;*/
     nextMarker = 0;
     //NAVDEB
 
@@ -180,7 +180,7 @@ void Brain::loop() {
             } else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING){
 
                     previousMarker = nextMarker;
-                    nextMarker = (nextMarker + 1) % 8;
+                    nextMarker = (nextMarker + 1) % pathSize;
 
             }else{
 

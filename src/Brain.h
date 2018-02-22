@@ -53,7 +53,8 @@ private:
     WorldObject* drone;
     World world;
 
-    int* simulatedPath;
+    const int pathSize = 8;
+    int* simulatedPath = new int[pathSize] {10, 13, 19, 20, 21, 15, 12, 11};
     int nextMarker, previousMarker;
     long lastRefreshTime = 0;
     long pirntLapse = 0.1 * 1000 * 1000;
