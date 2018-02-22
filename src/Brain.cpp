@@ -224,6 +224,11 @@ void Brain::loop() {
 
             }
             drone->setPosition(*position);
+            DroneState_Point *p = new DroneState_Point();
+            p->set_x(position->val[0]);
+            p->set_y(position->val[1]);
+            p->set_z(1);
+            interComm->droneStates[myid]->set_allocated_rotation(p);
             std::string state;
             if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE) { state = "INNACTIVE"; }
             if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING) { state = "PATROLING"; }
