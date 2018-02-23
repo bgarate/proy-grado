@@ -196,7 +196,8 @@ void Brain::loop() {
 
         if(runningTime - lastRefreshTime > pirntLapse) {
 
-            double difference = (runningTime - lastChange) / (1000.0 * 1000.0);
+            double difference = (double)(runningTime - lastChange) / lapseToChange;
+
 
             cv::Vec3d *position;
             if (previousMarker == -1 && nextMarker == -1) {
@@ -224,11 +225,13 @@ void Brain::loop() {
 
             }
             drone->setPosition(*position);
+
             DroneState_Point *p = new DroneState_Point();
             p->set_x(position->val[0]);
             p->set_y(position->val[1]);
             p->set_z(1);
-            interComm->droneStates[myid]->set_allocated_rotation(p);
+            interComm->droneStates[myid]->set_allocated_position(p);
+
             std::string state;
             if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE) { state = "INNACTIVE"; }
             if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING) { state = "PATROLING"; }
@@ -236,7 +239,35 @@ void Brain::loop() {
             if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT) { state = "ALERT"; }
             if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) { state = "CHARGING"; }
             drone->setState(state);
-            navigationDebugger->Run(command, follower->getTargetId(), follower->EstimatedPositions,
+
+            std::vector<WorldObject*> otherDrones;
+            for (std::map<int, DroneState*>::iterator it=interComm->droneStates.begin(); it!=interComm->droneStates.end(); ++it) {
+
+
+
+                ObjectType type = ObjectType::DRONE;
+                cv::Vec3d position;
+                position.val[0] = it->second->position().x();
+                position.val[1] = it->second->position().y();
+                position.val[2] = it->second->position().z();
+                cv::Vec3d rotation;
+                rotation.val[0] = it->second->rotation().x();
+                rotation.val[1] = it->second->rotation().y();
+                rotation.val[2] = it->second->rotation().z();
+                int id = it->first;
+
+                std::string state = "";
+                if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE) { state = "INNACTIVE"; }
+                if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING) { state = "PATROLING"; }
+                if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING) { state = "FOLLOWING"; }
+                if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT) { state = "ALERT"; }
+                if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) { state = "CHARGING"; }
+
+                otherDrones.push_back(new WorldObject(position, rotation, type, id, state));
+
+            }
+
+            navigationDebugger->Run(otherDrones, command, follower->getTargetId(), follower->EstimatedPositions,
                                     follower->EstimatedPoses, path,
                                     follower->PositionsHistory, follower->PredictedPosition,
                                     follower->ProjectedPredictedPosition, follower->FollowTarget);

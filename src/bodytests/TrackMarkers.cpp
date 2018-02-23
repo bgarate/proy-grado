@@ -98,7 +98,8 @@ class TrackMarkers : public BodyTest {
                 visualDebugger->ShowMarkers(tracker->Markers);
                 visualDebugger->setNavigationCommand(command);
                 navigationDebugger->setVisibleMarkers(tracker->Markers);
-                navigationDebugger->Run(command, follower->getTargetId(), follower->EstimatedPositions,
+                std::vector<WorldObject*> otherDrones;
+                navigationDebugger->Run(otherDrones, command, follower->getTargetId(), follower->EstimatedPositions,
                                         follower->EstimatedPoses, path,
                                         follower->PositionsHistory, follower->PredictedPosition,
                                         follower->ProjectedPredictedPosition, follower->FollowTarget);

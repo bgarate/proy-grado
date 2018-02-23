@@ -83,7 +83,7 @@ void NavigationDebugger::DrawAxis(std::string name, cv::Vec3d axis) {
 
 }
 
-void NavigationDebugger::Run(NavigationCommand command, int targetId, std::vector<cv::Vec3d> estimatedPositions,
+void NavigationDebugger::Run(std::vector<WorldObject*> otherDrones, NavigationCommand command, int targetId, std::vector<cv::Vec3d> estimatedPositions,
                              std::vector<cv::Vec3d> estimatedPoses, Path path,
                              boost::circular_buffer<cv::Vec3d, std::allocator<cv::Vec3d>> positionHistory, cv::Vec3d nextPosition,
                              cv::Vec3d projectedNextPosition, cv::Vec3d followTarget) {
@@ -106,6 +106,10 @@ void NavigationDebugger::Run(NavigationCommand command, int targetId, std::vecto
         DrawMarkerSquare(marker);
 
         DrawTargetOrientation(marker);
+    }
+
+    for(WorldObject* drone : otherDrones) {
+        DrawOtherDrone(drone);
     }
 
     for(WorldObject* marker : world->getMarkers()) {
@@ -319,6 +323,41 @@ void NavigationDebugger::DrawDrone(NavigationCommand command) {
     cairo_set_source_rgb (cr, 0.6, 0.5, 0.8);
     cairo_move_to(cr, 0 , 0);
     cairo_rel_line_to(cr, GetScaleX(command.LateralSpeed) * 3, -GetScaleY(command.ForwardSpeed) * 3);
+
+    cairo_restore(cr);
+
+    cairo_set_source_rgb (cr, 0.5, 0.5, 0.5);
+    Text(std::__cxx11::to_string(drone->getId())+": "+drone->getState(),
+         cv::Point2i(GetX(drone->getPosition()[0] - 0.30), GetY(drone->getPosition()[1] + 0.30)), 9);
+
+}
+
+void NavigationDebugger::DrawOtherDrone(WorldObject *drone){
+
+    cairo_set_source_rgb (cr, 0, 1, 0);
+
+    cairo_save(cr);
+
+    cairo_translate(cr,GetX(drone->getPosition()[0]),GetY(drone->getPosition()[1]));
+    cairo_rotate(cr,toRadians(drone->getRotation()[2]));
+
+    cairo_arc (cr, GetScaleX(- 0.10), GetScaleY(- 0.10),
+               GetScaleX(0.12), 0, M_PI*2);
+    cairo_fill(cr);
+    cairo_arc (cr, GetScaleX( - 0.10), GetScaleY( + 0.10),
+               GetScaleX(0.10), 0, M_PI*2);
+    cairo_fill(cr);
+    cairo_arc (cr, GetScaleX( + 0.10), GetScaleY( - 0.10),
+               GetScaleX(0.10), 0, M_PI*2);
+    cairo_fill(cr);
+    cairo_arc (cr, GetScaleX( + 0.10), GetScaleY( + 0.10),
+               GetScaleX(0.10), 0, M_PI*2);
+    cairo_fill(cr);
+
+    cairo_set_source_rgb (cr, 0, 0, 1);
+    cairo_move_to(cr, 0 , 0);
+    cairo_rel_line_to(cr, 0, -GetScaleY(0.15));
+    cairo_stroke(cr);
 
     cairo_restore(cr);
 

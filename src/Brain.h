@@ -59,7 +59,7 @@ private:
     long lastRefreshTime = 0;
     long pirntLapse = 0.1 * 1000 * 1000;
     long lastChange = 0;
-    long lapseToChange = 1 * 1000 * 1000;
+    long lapseToChange = 2 * 1000 * 1000;
     //NAVDEB
 };
 
