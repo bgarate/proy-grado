@@ -46,11 +46,11 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
 
     PathPoint targetPathPoint = path.GetPoints()[currentTarget];
 
-    cv::Vec3d targetVector3d = EstimatedPosition - FollowTarget;
+    cv::Vec3d targetVector3d = FollowTarget - EstimatedPosition;
     cv::Vec2d targetVector2d = cv::Vec2d(targetVector3d[0],targetVector3d[1]);
+
     cv::Vec2d normalizedTarget = cv::normalize(targetVector2d);
-    cv::Vec2d targetVector = Rotate(normalizedTarget,toRadians(EstimatedPose[2] + 90));
-    targetVector[1] = -targetVector[1];
+    cv::Vec2d targetVector = Rotate(normalizedTarget,toRadians(EstimatedPose[2]));
 
     double distanceToPathPoint = cv::norm(targetPathPoint.Postion - EstimatedPosition);
 
@@ -62,10 +62,10 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
         return NavigationCommand();
     }
 
+    double speed = std::min(distanceToPathPoint / TARGET_APROXIMATION_DISTANCE,1.0) * DISPLACEMENT_MAX_VELOCITY;
 
-
-    double forwardSpeed = targetVector[0] * 0.15; //std::max(std::min(targetVector[0] / TARGET_APROXIMATION_DISTANCE,0.5),-0.5) * DISPLACEMENT_MAX_VELOCITY;
-    double lateralSpped = targetVector[1] * 0.15; //std::max(std::min(targetVector[1] / TARGET_APROXIMATION_DISTANCE,0.5),-0.5) * DISPLACEMENT_MAX_VELOCITY;
+    double forwardSpeed = targetVector[1] * speed;
+    double lateralSpped = targetVector[0] * speed;
     double yawSpeed = std::max(std::min(alignmentAngle / ALIGNEMENT_ANGLE_THRESOLD,0.5),-0.5) * YAW_MAX_VELOCITY;
 
     return NavigationCommand(forwardSpeed,lateralSpped, 0);//yawSpeed);
@@ -235,5 +235,13 @@ void MarkerFollower::ProjectNextPosition() {
 
     ProjectedPredictedPosition = a.Postion + direction * (toPredicted.dot(direction));
     FollowTarget = ProjectedPredictedPosition + direction * 0.25;
+
+    float multiplier = toPredicted.dot(direction) + 0.25;
+    float norm = cv::norm(b.Postion - a.Postion);
+
+    if(multiplier > norm)
+        FollowTarget = b.Postion;
+    else if (multiplier < 0)
+        FollowTarget = a.Postion;
 
 }
