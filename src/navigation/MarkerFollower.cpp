@@ -46,9 +46,12 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
 
     PathPoint targetPathPoint = path.GetPoints()[currentTarget];
 
-    cv::Vec3d targetVector3d = FollowTarget - EstimatedPosition;
-    cv::Vec2d targetVector = Rotate(cv::Vec2d(targetVector3d[0],targetVector3d[1]),toRadians(
-            EstimatedPose[2]));
+    cv::Vec3d targetVector3d = EstimatedPosition - FollowTarget;
+    cv::Vec2d targetVector2d = cv::Vec2d(targetVector3d[0],targetVector3d[1]);
+    cv::Vec2d normalizedTarget = cv::normalize(targetVector2d);
+    cv::Vec2d targetVector = Rotate(normalizedTarget,toRadians(EstimatedPose[2] + 90));
+    targetVector[1] = -targetVector[1];
+
     double distanceToPathPoint = cv::norm(targetPathPoint.Postion - EstimatedPosition);
 
     double alignmentAngle = angleDifference(targetPathPoint.Rotation,EstimatedPose[2] - 90);
@@ -59,8 +62,10 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
         return NavigationCommand();
     }
 
-    double forwardSpeed = std::max(std::min(targetVector[0] / TARGET_APROXIMATION_DISTANCE,0.5),-0.5) * DISPLACEMENT_MAX_VELOCITY;
-    double lateralSpped = std::max(std::min(targetVector[1] / TARGET_APROXIMATION_DISTANCE,0.5),-0.5) * DISPLACEMENT_MAX_VELOCITY;
+
+
+    double forwardSpeed = targetVector[0] * 0.15; //std::max(std::min(targetVector[0] / TARGET_APROXIMATION_DISTANCE,0.5),-0.5) * DISPLACEMENT_MAX_VELOCITY;
+    double lateralSpped = targetVector[1] * 0.15; //std::max(std::min(targetVector[1] / TARGET_APROXIMATION_DISTANCE,0.5),-0.5) * DISPLACEMENT_MAX_VELOCITY;
     double yawSpeed = std::max(std::min(alignmentAngle / ALIGNEMENT_ANGLE_THRESOLD,0.5),-0.5) * YAW_MAX_VELOCITY;
 
     return NavigationCommand(forwardSpeed,lateralSpped, 0);//yawSpeed);
@@ -104,21 +109,23 @@ void MarkerFollower::EstimatePosition(const std::vector<Marker> &markers, double
         if(markerDescription == NULL)
             return;
 
-        cv::Vec3d posXyz = marker.getXYZPosition();
+        cv::Vec3d posXyz = marker.getCameraTranslation();
         double groundDistance = sqrt(posXyz[0]*posXyz[0] + posXyz[1]*posXyz[1]);
         double estimatedMarkerAngle = marker.getEulerAngles()[2];
         double estimatedCameraAngle = markerDescription->getRotation()[2] - estimatedMarkerAngle;
 
+/*
         cv::Vec2d estimatedTranslation =
                 cv::Vec2d(sin(toRadians(estimatedCameraAngle)) * groundDistance,
                           cos(toRadians(estimatedCameraAngle)) * groundDistance);
-
+*/
         EstimatedPoses.push_back(cv::Vec3d(0, 0, estimatedCameraAngle));
 
         cv::Vec3d estimatedPosition = markerDescription->getPosition();
+
         estimatedPosition[2] = altitude;
-        estimatedPosition[0] -= estimatedTranslation[0];
-        estimatedPosition[1] -= estimatedTranslation[1];
+        estimatedPosition[0] += posXyz[0];
+        estimatedPosition[1] += posXyz[1];
 
         EstimatedPositions.push_back(estimatedPosition);
 

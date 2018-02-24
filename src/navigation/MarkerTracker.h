@@ -68,6 +68,15 @@ struct Marker {
         return Translation[1] > 0;
     }
 
+    cv::Vec3d getCameraTranslation() const{
+        cv::Mat rotationMatrix;
+        cv::Rodrigues(Rotation,rotationMatrix);
+        rotationMatrix = rotationMatrix.t();
+        cv::Mat inverseTranslation = -rotationMatrix * (cv::Mat)Translation;
+        return (cv::Vec3d)inverseTranslation;
+    }
+
+
     std::vector<cv::Point2f> Corners;
     int Id;
     cv::Vec3d Rotation;

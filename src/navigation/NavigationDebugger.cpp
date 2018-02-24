@@ -312,7 +312,7 @@ void NavigationDebugger::DrawDrone(NavigationCommand command) {
 
     cairo_set_source_rgb (cr, 0, 0, 1);
     cairo_move_to(cr, 0 , 0);
-    cairo_rel_line_to(cr, 0, -GetScaleY(0.15));
+    cairo_rel_line_to(cr, 0, -GetScaleY(1));
     cairo_stroke(cr);
 
     cairo_set_source_rgb (cr, 0.6, 0.5, 0.8);
