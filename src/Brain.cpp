@@ -4,6 +4,7 @@
 
 #include <src/proto/dronestate.pb.h>
 #include <src/navigation/NavigationDebugger.h>
+#include <src/utils/Helpers.h>
 #include "proto/message.pb.h"
 #include "communication/BrainComm.h"
 #include "Brain.h"
@@ -34,9 +35,11 @@ void Brain::setup(Config* config) {
     navigationDebugger = new NavigationDebugger(config, &world);
     navigationDebugger->Init();
     follower = new MarkerFollower(config, &world);
-    path = config->GetPath();
     follower->setPath(path);
     drone = world.getDrones()[0];
+
+    path = config->GetPath();
+    size = path.GetPoints().size();
 
     /*simulatedPath = new int[8];
     simulatedPath[0] = 10;
@@ -73,6 +76,7 @@ void Brain::loop() {
 
 
     //COMPORAMIENTO SIMULADO VARIABLES
+    srand(time(NULL));
     int range = 10 - 3 + 1;
     int taskLapse = rand() % range + 3;
     long taskStartTime = std::chrono::duration_cast<std::chrono::microseconds>(chrono::steady_clock::now() - startTime).count();
@@ -137,10 +141,10 @@ void Brain::loop() {
 
                 //Decido aleatroriamente paso a Charging o following
                 //Paso a cargar si nadio ya lo está haciendo
-                if(rand() % 3 == 0 && !someoneCharging){
+                if(rand() % 5 == 0 && !someoneCharging){
                     //Paso a charging
                     interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_CHARGING);
-                } else if(rand() % 3 == 1) {
+                } else if(rand() % 5 == 1) {
                     //Paso a following
                     interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING);
                 }//else sigo patrullando
@@ -180,7 +184,8 @@ void Brain::loop() {
             } else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING){
 
                     previousMarker = nextMarker;
-                    nextMarker = (nextMarker + 1) % pathSize;
+                    //nextMarker = (nextMarker + 1) % pathSize;
+                    nextMarker = (nextMarker + 1) % size;
 
             }else{
 
@@ -200,31 +205,59 @@ void Brain::loop() {
 
 
             cv::Vec3d *position;
+            cv::Vec3d *rotation;
+            rotation = new cv::Vec3d(0, 0, 0);
             if (previousMarker == -1 && nextMarker == -1) {
 
                 position = new cv::Vec3d(2, -1, 0);
+                rotation = new cv::Vec3d(0, 0, 0);
 
             } else if (previousMarker == -1) {
 
-                position = new cv::Vec3d((2 * (1 - difference) +
-                                          world.getMarker(simulatedPath[nextMarker])->getPosition().val[0] *
-                                          difference), (-1 * (1 - difference) + world.getMarker(
-                        simulatedPath[nextMarker])->getPosition().val[1] * difference), 1);
+                position = new cv::Vec3d((2 * (1 - difference)
+                            + path.GetPoints().at(nextMarker).Postion.val[0] * difference)
+                        ,(-1 * (1 - difference)
+                            + path.GetPoints().at(nextMarker).Postion.val[1] * difference)
+                        , 1);
+
+                cv::Vec3d aux(2, -1, 0);
+                aux = path.GetPoints().at(nextMarker).Postion - aux;
+                if(aux.val[0] != 0){
+                    double edge = atan2 (aux.val[0],aux.val[1]) * 180 / M_PI;
+                    rotation = new cv::Vec3d(0, 0, edge);
+                }
 
             } else if(nextMarker == -1){
 
-                position = new cv::Vec3d((world.getMarker(simulatedPath[previousMarker])->getPosition().val[0]*(1-difference) + 2 *difference)
-                        , (world.getMarker(simulatedPath[previousMarker])->getPosition().val[1]*(1-difference) + -1 *difference)
+                position = new cv::Vec3d((path.GetPoints().at(previousMarker).Postion.val[0]*(1-difference)
+                            + 2 *difference)
+                        , (path.GetPoints().at(previousMarker).Postion.val[1]*(1-difference)
+                            + -1 *difference)
                         , 1);
+
+                cv::Vec3d aux(2, -1, 0);
+                aux = aux - path.GetPoints().at(previousMarker).Postion;
+                if(aux.val[0] != 0){
+                    double edge = atan2 (aux.val[0],aux.val[1]) * 180 / M_PI;
+                    rotation = new cv::Vec3d(0, 0, edge);
+                }
 
             }else{
 
-                position = new cv::Vec3d((world.getMarker(simulatedPath[previousMarker])->getPosition().val[0]*(1-difference) + world.getMarker(simulatedPath[nextMarker])->getPosition().val[0]*difference)
-                        , (world.getMarker(simulatedPath[previousMarker])->getPosition().val[1]*(1-difference) + world.getMarker(simulatedPath[nextMarker])->getPosition().val[1]*difference)
+                position = new cv::Vec3d((path.GetPoints().at(previousMarker).Postion.val[0]*(1-difference)
+                            + path.GetPoints().at(nextMarker).Postion.val[0]*difference)
+                        , (path.GetPoints().at(previousMarker).Postion.val[1]*(1-difference)
+                            + path.GetPoints().at(nextMarker).Postion.val[1]*difference)
                         , 1);
+
+                float a = path.GetPoints().at(previousMarker).Rotation;
+                float b = path.GetPoints().at(nextMarker).Rotation;
+
+                rotation = new cv::Vec3d(0, 0, a + Helpers::angleDifference(b,a)*difference);
 
             }
             drone->setPosition(*position);
+            drone->setRotation(*rotation);
 
             DroneState_Point *p = new DroneState_Point();
             p->set_x(position->val[0]);
@@ -243,28 +276,27 @@ void Brain::loop() {
             std::vector<WorldObject*> otherDrones;
             for (std::map<int, DroneState*>::iterator it=interComm->droneStates.begin(); it!=interComm->droneStates.end(); ++it) {
 
+                if(it->first != myid ){
+                    ObjectType type = ObjectType::DRONE;
+                    cv::Vec3d position;
+                    position.val[0] = it->second->position().x();
+                    position.val[1] = it->second->position().y();
+                    position.val[2] = it->second->position().z();
+                    cv::Vec3d rotation;
+                    rotation.val[0] = it->second->rotation().x();
+                    rotation.val[1] = it->second->rotation().y();
+                    rotation.val[2] = it->second->rotation().z();
+                    int id = it->first;
 
+                    std::string state = "";
+                    if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE) { state = "INNACTIVE"; }
+                    if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING) { state = "PATROLING"; }
+                    if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING) { state = "FOLLOWING"; }
+                    if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT) { state = "ALERT"; }
+                    if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) { state = "CHARGING"; }
 
-                ObjectType type = ObjectType::DRONE;
-                cv::Vec3d position;
-                position.val[0] = it->second->position().x();
-                position.val[1] = it->second->position().y();
-                position.val[2] = it->second->position().z();
-                cv::Vec3d rotation;
-                rotation.val[0] = it->second->rotation().x();
-                rotation.val[1] = it->second->rotation().y();
-                rotation.val[2] = it->second->rotation().z();
-                int id = it->first;
-
-                std::string state = "";
-                if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE) { state = "INNACTIVE"; }
-                if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING) { state = "PATROLING"; }
-                if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING) { state = "FOLLOWING"; }
-                if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT) { state = "ALERT"; }
-                if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) { state = "CHARGING"; }
-
-                otherDrones.push_back(new WorldObject(position, rotation, type, id, state));
-
+                    otherDrones.push_back(new WorldObject(position, rotation, type, id, state));
+                }
             }
 
             navigationDebugger->Run(otherDrones, command, follower->getTargetId(), follower->EstimatedPositions,

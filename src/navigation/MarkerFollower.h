@@ -70,10 +70,6 @@ private:
 
     void EstimatePosition(const std::vector<Marker> &markers, double altitude);
 
-    double signedMod(double a, double n);
-
-    double angleDifference(double a, double b);
-
     cv::Vec3d previousEstimation;
 
     void SmoothEstimation();

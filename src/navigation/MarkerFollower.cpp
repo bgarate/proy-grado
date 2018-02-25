@@ -2,6 +2,7 @@
 // Created by bruno on 12/08/17.
 //
 
+#include <src/utils/Helpers.h>
 #include "../tracking/Follower.h"
 #include "../logging/Logger.h"
 #include "../config/ConfigKeys.h"
@@ -51,7 +52,7 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
             EstimatedPose[2]));
     double distanceToPathPoint = cv::norm(targetPathPoint.Postion - EstimatedPosition);
 
-    double alignmentAngle = angleDifference(targetPathPoint.Rotation,EstimatedPose[2] - 90);
+    double alignmentAngle = Helpers::angleDifference(targetPathPoint.Rotation,EstimatedPose[2] - 90);
 
     if(distanceToPathPoint <= TARGET_REACHED_DISTANCE &&
             std::abs(alignmentAngle) < ALIGNEMENT_ANGLE_THRESOLD) {
@@ -76,17 +77,6 @@ cv::Vec2d MarkerFollower::Rotate(cv::Vec2d v, double angle)
 int MarkerFollower::getTargetId() {
 
     return currentTarget;
-}
-
-double MarkerFollower::angleDifference(double target, double origin){
-    double  diff = target - origin;
-    diff = signedMod((diff + 180),360.0) - 180;
-
-    return diff;
-}
-
-double MarkerFollower::signedMod(double a, double n) {
-    return a - std::floor(a/n) * n;
 }
 
 void MarkerFollower::EstimatePosition(const std::vector<Marker> &markers, double altitude) {

@@ -27,6 +27,17 @@ public:
       return r;
     }
 
+    static double angleDifference(double target, double origin){
+        double  diff = target - origin;
+        diff = signedMod((diff + 180),360.0) - 180;
+
+        return diff;
+    }
+
+    static double signedMod(double a, double n) {
+        return a - std::floor(a/n) * n;
+    }
+
 
 };
 
