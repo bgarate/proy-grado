@@ -25,7 +25,7 @@ public:
     NavigationDebugger(Config* config, World* world);
     void Init();
     void Shutdown();
-    void Run(NavigationCommand command, int targetId, std::vector<cv::Vec3d> estimatedPositions,
+    void Run(std::vector<WorldObject*> otherDrones, NavigationCommand command, int targetId, std::vector<cv::Vec3d> estimatedPositions,
                  std::vector<cv::Vec3d> estimatedPoses, Path path,
                  boost::circular_buffer<cv::Vec3d, std::allocator<cv::Vec3d>> positionHistor, cv::Vec3d nextPosition,
                  cv::Vec3d predictedNextPosition, cv::Vec3d followTarget);
@@ -72,6 +72,8 @@ private:
     void DrawPadSquare(WorldObject *pad);
 
     void DrawDrone(NavigationCommand command);
+
+    void DrawOtherDrone(WorldObject *drone);
 
     void DrawMarkerSquare(WorldObject *marker);
 

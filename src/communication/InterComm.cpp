@@ -33,6 +33,18 @@ void InterComm::setupInterComm(Config* config){
     droneStates[id]->set_name(name);
     droneStates[id]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE);
 
+    DroneState_Point *p  = new DroneState_Point();
+    p->set_x(0);
+    p->set_y(0);
+    p->set_z(0);
+    droneStates[id]->set_allocated_position(p);
+
+    DroneState_Point *r  = new DroneState_Point();
+    r->set_x(0);
+    r->set_y(0);
+    r->set_z(0);
+    droneStates[id]->set_allocated_rotation(r);
+
     auto now = std::chrono::high_resolution_clock::now();
     seqNum = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
     droneStates[id]->set_seq_num(seqNum);
@@ -69,6 +81,18 @@ void InterComm::copyDroneState(DroneState* orig, DroneState* copy){
     copy->set_name(orig->name());
     copy->set_curren_task(orig->curren_task());
     copy->set_seq_num(orig->seq_num());
+
+    DroneState_Point *p = new DroneState_Point();
+    p->set_x(orig->position().x());
+    p->set_y(orig->position().y());
+    p->set_z(orig->position().z());
+    copy->set_allocated_position(p);
+
+    DroneState_Point *r  = new DroneState_Point();
+    r->set_x(orig->rotation().x());
+    r->set_y(orig->rotation().y());
+    r->set_z(orig->rotation().z());
+    copy->set_allocated_rotation(r);
 }
 
 void InterComm::stateHandler(Message &msg){
@@ -115,6 +139,18 @@ void InterComm::sendState() {
         state->set_drone_id(droneStates[id]->drone_id());
         state->set_name(droneStates[id]->name());
         state->set_curren_task(droneStates[id]->curren_task());
+
+        DroneState_Point *p  = new DroneState_Point();
+        p->set_x(droneStates[id]->position().x());
+        p->set_y(droneStates[id]->position().y());
+        p->set_z(droneStates[id]->position().z());
+        state->set_allocated_position(p);
+
+        DroneState_Point *r  = new DroneState_Point();
+        r->set_x(droneStates[id]->rotation().x());
+        r->set_y(droneStates[id]->rotation().y());
+        r->set_z(droneStates[id]->rotation().z());
+        state->set_allocated_rotation(r);
 
         auto now = std::chrono::high_resolution_clock::now();
         seqNum = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
