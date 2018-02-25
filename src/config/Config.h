@@ -34,6 +34,7 @@ public:
     const char* Key;
     const char* Parent;
     CalculatedKeyDelegate Handler;
+    std::shared_ptr<std::mutex> mutex = std::shared_ptr<std::mutex>(new std::mutex);
 
 };
 
@@ -44,17 +45,21 @@ public:
     Config():path("config.yaml"){}
 
     void SetPath(const std::string &path) {
+
         this->path = std::string(path);
         Logger::logDebug("Configuration file path set to %s") << path;
     }
 
     template <typename T>
     void Set(const ConfigKey<T> &key, T value) {
+        std::lock_guard<std::mutex> lck(*key.mutex);
+
         config[std::string(key.Parent)][std::string(key.Key)] = value;
     }
 
     template <typename T>
     T Get(const ConfigKey<T> &key) {
+        std::lock_guard<std::mutex> lck(*key.mutex);
 
         if(key.Handler) {
             return key.Handler(this);
@@ -88,6 +93,8 @@ public:
     }
 
     World GetWorld() {
+        std::lock_guard<std::mutex> lck(worldMutex);
+
         YAML::Node worldNode = config["World"];
         YAML::Node objects = worldNode["Objects"];
 
@@ -101,12 +108,7 @@ public:
             cv::Vec3d rotation = object["rotation"].as<cv::Vec3d>();
             int id = object["id"].as<int>();
 
-            std::string state = "";
-            if(object["state"] != NULL)
-                state = object["state"].as<std::string>();
-
-
-            world.addObject(type, position, rotation, id, state);
+            world.addObject(type, position, rotation, id, "");
 
         }
 
@@ -115,6 +117,8 @@ public:
     }
 
     void SetWorld(World world) {
+        std::lock_guard<std::mutex> lck(worldMutex);
+
         YAML::Node worldNode = config["World"];
         YAML::Node objects = worldNode["Objects"];
 
@@ -137,6 +141,8 @@ public:
     }
 
     Path GetPath() {
+        std::lock_guard<std::mutex> lck(pathMutex);
+
         YAML::Node pathNode = config["Path"];
 
         Path path;
@@ -156,6 +162,8 @@ public:
     }
 
     void SetPath(Path path) {
+        std::lock_guard<std::mutex> lck(pathMutex);
+
         YAML::Node pathNode = config["Path"];
 
         std::vector<PathPoint> points = path.GetPoints();
@@ -199,6 +207,10 @@ public:
 private:
     YAML::Node config;
     std::string path;
+
+    std::mutex worldMutex;
+    std::mutex pathMutex;
+
 };
 
 

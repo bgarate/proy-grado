@@ -24,8 +24,6 @@ void Brain::setup(Config* config) {
     interComm = new InterComm();
     interComm->setupInterComm(config);
 
-    brainComm = new BrainComm();
-    brainComm->setupBrainComm(config);
 
     Logger::getInstance().setSource("BRAIN");
 
@@ -292,7 +290,6 @@ void Brain::loop() {
 void Brain::shutdown() {
     should_exit = true;
     interComm->shutdownInterComm();
-    brainComm->shutdownBrainComm();
 }
 
 void Brain::cleanup() {

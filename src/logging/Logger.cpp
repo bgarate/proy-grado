@@ -80,6 +80,10 @@ Logger::Formatter Logger::logError(std::string msg) {
     return Formatter(msg, LogType::ERROR);
 }
 
+Logger::Formatter Logger::logAndThrow(std::string msg) {
+    return Formatter(msg, LogType::ERROR, true);
+}
+
 Logger::Formatter Logger::logWarning(std::string msg) {
     return Formatter(msg, LogType::WARNING);
 }

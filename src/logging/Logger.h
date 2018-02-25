@@ -18,7 +18,8 @@ public:
     class Formatter {
     public:
 
-        Formatter(std::string msg, LogType logType):format(msg), logType(logType) {
+        Formatter(std::string msg, LogType logType, bool throwExceptionAfterFormat = false):
+                format(msg), logType(logType),throwExceptionAfterFormat(throwExceptionAfterFormat) {
             if(format.remaining_args() == 0)
                 Logger::getInstance().Log(format.str(),logType);
         }
@@ -32,15 +33,18 @@ public:
         Logger::Formatter &operator<<(const T &x) {
             format % x;
 
-            if(format.remaining_args() == 0)
-                Logger::getInstance().Log(format.str(),logType);
-
+            if(format.remaining_args() == 0) {
+                Logger::getInstance().Log(format.str(), logType);
+                if(throwExceptionAfterFormat)
+                    throw new std::runtime_error(format.str());
+            }
             return *this;
         }
 
     private:
         LogType logType;
         boost::format format;
+        bool throwExceptionAfterFormat;
     };
 
     Logger();
@@ -55,6 +59,7 @@ public:
     static Formatter logCritical(std::string msg);
     static Formatter logError(std::string msg);
     static Formatter logWarning(std::string msg);
+    static Formatter logAndThrow(std::string msg);
 
     void setSource(std::string source);
 

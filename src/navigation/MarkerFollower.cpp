@@ -68,7 +68,7 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
 
     double forwardSpeed = targetVector[1] * speed;
     double lateralSpped = targetVector[0] * speed;
-    double yawSpeed = std::max(std::min(alignmentAngle / ALIGNEMENT_ANGLE_THRESOLD,1),-1) * YAW_MAX_VELOCITY;
+    double yawSpeed = std::max(std::min(alignmentAngle / ALIGNEMENT_ANGLE_THRESOLD,1.0),-1.0) * YAW_MAX_VELOCITY;
 
     return NavigationCommand(forwardSpeed,lateralSpped, yawSpeed);
 

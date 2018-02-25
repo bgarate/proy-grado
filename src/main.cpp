@@ -1,6 +1,7 @@
 #include <iostream>
 #include <wait.h>
 #include <tiff.h>
+#include <src/communication/SharedMemory.h>
 #include "hal/dummyHal/dummyHal.h"
 #include "logging/Logger.h"
 #include "Body.h"
@@ -14,6 +15,42 @@ void welcome_message() {
     std::cout << "PROYECTO DE GRADO - 2017" << std::endl;
     std::cout << "Inteligencia computacional para la planificación de vuelo de vehículos aéreos no tripulados" << std::endl;
     std::cout << "Santiago Díaz, Bruno Garate, Sergio Nesmachnow, Santiago Iturriaga" << std::endl << std::endl;
+}
+
+void runBody(Config* config, SharedMemory* shared) {
+
+    Logger::logDebug("Initializing body");
+
+    Hal* hal;
+
+    HalType choosenHal = config->Get(ConfigKeys::Body::Hal);
+
+    if(choosenHal == HalType::Dummy) {
+        hal = new DummyHal();
+    } else if(choosenHal == HalType::Pb2) {
+        hal = new Pb2hal();
+    } else if(choosenHal == HalType::Vrep) { ;
+        hal = new Vrephal();
+    } else {
+        Logger::logAndThrow("Unknown Hal type");
+        return;
+    }
+
+    Body body(hal);
+
+    body.setup(config);
+    body.loop();
+    body.cleanup();
+    delete hal;
+}
+
+void runBrain(Config* config, SharedMemory* shared){
+    Logger::logDebug("Initializing brain");
+    Brain brain;
+
+    brain.setup(config);
+    brain.loop();
+    brain.cleanup();
 }
 
 int main(int argc, const char* args[]) {
@@ -32,70 +69,39 @@ int main(int argc, const char* args[]) {
     config->Load();
 
     bool startBrain = config->Get(ConfigKeys::Brain::Start);
-    bool startBody = config->Get(ConfigKeys::Brain::Start);
+    bool startBody = config->Get(ConfigKeys::Body::Start);
 
     if (!startBody && !startBrain) {
-        std::cout << "A body or a brain must at least be initialized" << "\n";
+        Logger::logAndThrow("A body or a brain must at least be initialized");
         return 0;
     }
 
-    Hal* hal;
+    std::thread brainThread;
+    std::thread bodyThread;
+
+    if (startBody)
+        bodyThread = std::thread(runBody, config);
+
+    if(startBrain)
+        brainThread = std::thread(runBrain, config);
 
     if(startBody) {
-
-        HalType choosenHal = config->Get(ConfigKeys::Body::Hal);
-
-        if(choosenHal == HalType::Dummy) {
-            hal = new DummyHal();
-        } else if(choosenHal == HalType::Pb2) {
-            hal = new Pb2hal();
-        } else if(choosenHal == HalType::Vrep) { ;
-            hal = new Vrephal();
-        } else {
-            std::cout << "Unknown Hal type '" << endl;
-            return 0;
-        }
+        if(!bodyThread.joinable())
+            Logger::logAndThrow("Body thread is not joinable!");
+        bodyThread.join();
     }
 
-    bool isParent = true;
-
-    if (startBody && startBrain) {
-        pid_t pid = fork();
-
-        if(config->Get(ConfigKeys::Body::ParentOnFork))
-            isParent = pid != 0;
-        else
-            isParent = pid == 0;
-
-        startBody = isParent;
-        startBrain = !startBody;
+    if(startBrain) {
+        if(!brainThread.joinable())
+            Logger::logAndThrow("Brain thread is not joinable!");
+        brainThread.join();
     }
 
-    if (startBody) {
-
-        Body body(hal);
-
-        body.setup(config);
-        body.loop();
-        body.cleanup();
-        delete hal;
-
-    } else {
-        Brain brain;
-
-        brain.setup(config);
-        brain.loop();
-        brain.cleanup();
-    }
-
-    if(isParent)
-        config->Save();
+    config->Save();
 
     delete config;
 
     Logger::logWarning("Program exiting");
-    waitpid(-1, NULL, 0);
-
 
     return 0;
 }
