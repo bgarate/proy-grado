@@ -54,7 +54,9 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
 
     double distanceToPathPoint = cv::norm(targetPathPoint.Postion - EstimatedPosition);
 
-    double alignmentAngle = angleDifference(targetPathPoint.Rotation,EstimatedPose[2] - 90);
+    double alignmentAngle = angleDifference(targetPathPoint.Rotation,EstimatedPose[2] -90);
+
+    std::printf("Angle: %f\n",alignmentAngle);
 
     if(distanceToPathPoint <= TARGET_REACHED_DISTANCE &&
             std::abs(alignmentAngle) < ALIGNEMENT_ANGLE_THRESOLD) {
@@ -66,9 +68,9 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
 
     double forwardSpeed = targetVector[1] * speed;
     double lateralSpped = targetVector[0] * speed;
-    double yawSpeed = std::max(std::min(alignmentAngle / ALIGNEMENT_ANGLE_THRESOLD,0.5),-0.5) * YAW_MAX_VELOCITY;
+    double yawSpeed = std::max(std::min(alignmentAngle / ALIGNEMENT_ANGLE_THRESOLD,1),-1) * YAW_MAX_VELOCITY;
 
-    return NavigationCommand(forwardSpeed,lateralSpped, 0);//yawSpeed);
+    return NavigationCommand(forwardSpeed,lateralSpped, yawSpeed);
 
 }
 
