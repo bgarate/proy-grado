@@ -190,7 +190,7 @@ void MapDebugger::DrawMarkerSquare(WorldObject *marker) {
 
 void MapDebugger::DrawPadSquare(WorldObject *pad) {
 
-    cairo_set_source_rgb (cr, 0.5, 0.5, 0.5);
+    cairo_set_source_rgb (cr, 1, 1, 0.7);
 
     cairo_rectangle (cr, GetX(pad->getPosition()[0] - 0.30),
                      GetY(pad->getPosition()[1] + 0.30), GetScaleX(0.60), GetScaleY(0.60));
@@ -202,7 +202,7 @@ void MapDebugger::DrawDrones(DroneState *drone, int myid){
     if(drone->drone_id() == myid)
         cairo_set_source_rgb (cr, 0, 1, 0);
     else
-        cairo_set_source_rgb (cr, 0.5, 0.5, 0.5);
+        cairo_set_source_rgb (cr, 0.75, 0.75, 0.75);
 
     cairo_save(cr);
 
