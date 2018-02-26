@@ -334,6 +334,12 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::DroneState_CurrentTask curren_task() const;
   void set_curren_task(::DroneState_CurrentTask value);
 
+  // uint32 battery_level = 9;
+  void clear_battery_level();
+  static const int kBatteryLevelFieldNumber = 9;
+  ::google::protobuf::uint32 battery_level() const;
+  void set_battery_level(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:DroneState)
  private:
 
@@ -346,6 +352,7 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::int64 seq_num_;
   ::google::protobuf::uint32 drone_id_;
   int curren_task_;
+  ::google::protobuf::uint32 battery_level_;
   mutable int _cached_size_;
   friend struct  protobuf_dronestate_2eproto::TableStruct;
 };
@@ -601,6 +608,20 @@ inline void DroneState::set_allocated_rotation(::DroneState_Point* rotation) {
     
   }
   // @@protoc_insertion_point(field_set_allocated:DroneState.rotation)
+}
+
+// uint32 battery_level = 9;
+inline void DroneState::clear_battery_level() {
+  battery_level_ = 0u;
+}
+inline ::google::protobuf::uint32 DroneState::battery_level() const {
+  // @@protoc_insertion_point(field_get:DroneState.battery_level)
+  return battery_level_;
+}
+inline void DroneState::set_battery_level(::google::protobuf::uint32 value) {
+  
+  battery_level_ = value;
+  // @@protoc_insertion_point(field_set:DroneState.battery_level)
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS

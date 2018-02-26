@@ -45,6 +45,7 @@ void InterComm::setupInterComm(Config* config){
     r->set_z(0);
     droneStates[id]->set_allocated_rotation(r);
 
+    droneStates[id]->set_battery_level(999);
     auto now = std::chrono::high_resolution_clock::now();
     seqNum = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
     droneStates[id]->set_seq_num(seqNum);
@@ -93,6 +94,8 @@ void InterComm::copyDroneState(DroneState* orig, DroneState* copy){
     r->set_y(orig->rotation().y());
     r->set_z(orig->rotation().z());
     copy->set_allocated_rotation(r);
+
+    copy->set_battery_level(orig->battery_level());
 }
 
 void InterComm::stateHandler(Message &msg){
@@ -151,6 +154,8 @@ void InterComm::sendState() {
         r->set_y(droneStates[id]->rotation().y());
         r->set_z(droneStates[id]->rotation().z());
         state->set_allocated_rotation(r);
+
+        state->set_battery_level(droneStates[id]->battery_level());
 
         auto now = std::chrono::high_resolution_clock::now();
         seqNum = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();

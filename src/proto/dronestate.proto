@@ -12,6 +12,8 @@ message DroneState {
     Point position = 7;
     Point rotation = 8;
 
+    uint32 battery_level = 9;
+
 
     message Point{
         double x = 1;

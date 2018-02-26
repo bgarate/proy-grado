@@ -3,7 +3,7 @@
 //
 
 #include <src/proto/dronestate.pb.h>
-#include <src/navigation/NavigationDebugger.h>
+#include <src/debugging/MapDebugger.h>
 #include <src/utils/Helpers.h>
 #include "proto/message.pb.h"
 #include "communication/BrainComm.h"
@@ -32,24 +32,11 @@ void Brain::setup(Config* config) {
 
     //NAVDEB
     world = config->GetWorld();
-    navigationDebugger = new NavigationDebugger(config, &world);
-    navigationDebugger->Init();
-    follower = new MarkerFollower(config, &world);
-    follower->setPath(path);
-    drone = world.getDrones()[0];
+    mapDebugger = new MapDebugger(config, &world);
+    mapDebugger->Init();
 
     path = config->GetPath();
     size = path.GetPoints().size();
-
-    /*simulatedPath = new int[8];
-    simulatedPath[0] = 10;
-    simulatedPath[1] = 13;
-    simulatedPath[2] = 19;
-    simulatedPath[3] = 20;
-    simulatedPath[4] = 21;
-    simulatedPath[5] = 15;
-    simulatedPath[6] = 12;
-    simulatedPath[7] = 11;*/
     nextMarker = 0;
     //NAVDEB
 
@@ -73,7 +60,8 @@ void Brain::loop() {
     p->set_y(-1.0);
     p->set_z(0.0);
     interComm->droneStates[myid]->set_allocated_position(p);
-
+    nextMarker = -1;
+    previousMarker = -1;
 
     //COMPORAMIENTO SIMULADO VARIABLES
     srand(time(NULL));
@@ -184,7 +172,6 @@ void Brain::loop() {
             } else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING){
 
                     previousMarker = nextMarker;
-                    //nextMarker = (nextMarker + 1) % pathSize;
                     nextMarker = (nextMarker + 1) % size;
 
             }else{
@@ -256,53 +243,20 @@ void Brain::loop() {
                 rotation = new cv::Vec3d(0, 0, a + Helpers::angleDifference(b,a)*difference);
 
             }
-            drone->setPosition(*position);
-            drone->setRotation(*rotation);
 
             DroneState_Point *p = new DroneState_Point();
             p->set_x(position->val[0]);
             p->set_y(position->val[1]);
-            p->set_z(1);
+            p->set_z(position->val[2]);
             interComm->droneStates[myid]->set_allocated_position(p);
 
-            std::string state;
-            if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE) { state = "INNACTIVE"; }
-            if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING) { state = "PATROLING"; }
-            if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING) { state = "FOLLOWING"; }
-            if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT) { state = "ALERT"; }
-            if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) { state = "CHARGING"; }
-            drone->setState(state);
+            DroneState_Point *r = new DroneState_Point();
+            r->set_x(rotation->val[0]);
+            r->set_y(rotation->val[1]);
+            r->set_z(rotation->val[2]);
+            interComm->droneStates[myid]->set_allocated_rotation(r);
 
-            std::vector<WorldObject*> otherDrones;
-            for (std::map<int, DroneState*>::iterator it=interComm->droneStates.begin(); it!=interComm->droneStates.end(); ++it) {
-
-                if(it->first != myid ){
-                    ObjectType type = ObjectType::DRONE;
-                    cv::Vec3d position;
-                    position.val[0] = it->second->position().x();
-                    position.val[1] = it->second->position().y();
-                    position.val[2] = it->second->position().z();
-                    cv::Vec3d rotation;
-                    rotation.val[0] = it->second->rotation().x();
-                    rotation.val[1] = it->second->rotation().y();
-                    rotation.val[2] = it->second->rotation().z();
-                    int id = it->first;
-
-                    std::string state = "";
-                    if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE) { state = "INNACTIVE"; }
-                    if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING) { state = "PATROLING"; }
-                    if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING) { state = "FOLLOWING"; }
-                    if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT) { state = "ALERT"; }
-                    if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) { state = "CHARGING"; }
-
-                    otherDrones.push_back(new WorldObject(position, rotation, type, id, state));
-                }
-            }
-
-            navigationDebugger->Run(otherDrones, command, follower->getTargetId(), follower->EstimatedPositions,
-                                    follower->EstimatedPoses, path,
-                                    follower->PositionsHistory, follower->PredictedPosition,
-                                    follower->ProjectedPredictedPosition, follower->FollowTarget);
+            mapDebugger->Run(interComm->droneStates,myid,path);
 
 
             lastRefreshTime = runningTime;

@@ -12,7 +12,7 @@
 #include "messages/Broadcaster.h"
 #include "messages/MessageHandler.h"
 #include "config/Config.h"
-#include <src/navigation/NavigationDebugger.h>
+#include <src/debugging/MapDebugger.h>
 
 class Brain {
 public:
@@ -46,11 +46,7 @@ private:
     void debugDroneStates(long runningTime);
 
     //NAVDEB
-    NavigationDebugger* navigationDebugger;
-    NavigationCommand command;
-    MarkerFollower* follower;
-
-    WorldObject* drone;
+    MapDebugger* mapDebugger;
     World world;
 
     Path path;

@@ -342,7 +342,7 @@ void NavigationDebugger::DrawOtherDrone(WorldObject *drone){
     cairo_rotate(cr,toRadians(drone->getRotation()[2]));
 
     cairo_arc (cr, GetScaleX(- 0.10), GetScaleY(- 0.10),
-               GetScaleX(0.12), 0, M_PI*2);
+               GetScaleX(0.10), 0, M_PI*2);
     cairo_fill(cr);
     cairo_arc (cr, GetScaleX( - 0.10), GetScaleY( + 0.10),
                GetScaleX(0.10), 0, M_PI*2);
