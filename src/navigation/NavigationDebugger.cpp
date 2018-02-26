@@ -3,8 +3,8 @@
 //
 
 
-#include <src/logging/Logger.h>
-#include <src/config/ConfigKeys.h>
+#include "../logging/Logger.h"
+#include "../config/ConfigKeys.h"
 #include "NavigationDebugger.h"
 #include "World.h"
 #include "MarkerTracker.h"
