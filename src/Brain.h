@@ -12,7 +12,7 @@
 #include "messages/Broadcaster.h"
 #include "messages/MessageHandler.h"
 #include "config/Config.h"
-#include <src/debugging/MapDebugger.h>
+#include "debugging/MapDebugger.h"
 
 class Brain {
 public:

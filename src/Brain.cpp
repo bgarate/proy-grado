@@ -3,8 +3,8 @@
 //
 
 #include <src/proto/dronestate.pb.h>
-#include <src/debugging/MapDebugger.h>
-#include <src/utils/Helpers.h>
+#include "debugging/MapDebugger.h"
+#include "utils/Helpers.h"
 #include "proto/message.pb.h"
 #include "communication/BrainComm.h"
 #include "Brain.h"
