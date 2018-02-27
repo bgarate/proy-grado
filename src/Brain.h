@@ -49,6 +49,10 @@ private:
     MapDebugger* mapDebugger;
     World world;
 
+    int batteryDuration = 60 * 1000 * 1000;
+    int chargeMargin = 20;
+    long chargeLapse = 5 * 1000 * 1000;
+
     Path path;
     int size;
     int nextMarker, previousMarker;
