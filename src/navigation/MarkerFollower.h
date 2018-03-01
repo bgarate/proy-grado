@@ -45,11 +45,11 @@ public:
 
     int getTargetId();
 
-    static constexpr double TARGET_APROXIMATION_DISTANCE = 0.5;
-    static constexpr double TARGET_REACHED_DISTANCE = 0.2;
+    static constexpr double TARGET_APROXIMATION_DISTANCE = 2;
+    static constexpr double TARGET_REACHED_DISTANCE = 1;
     static constexpr double ALIGNEMENT_ANGLE_THRESOLD = 15;
     static constexpr double DISPLACEMENT_MAX_VELOCITY = 0.15;
-    static constexpr double YAW_MAX_VELOCITY = 0.5;
+    static constexpr double YAW_MAX_VELOCITY = 0.15;
 
     static constexpr double NEXT_POSITION_MICROSECONDS = 1000000;
 private:
