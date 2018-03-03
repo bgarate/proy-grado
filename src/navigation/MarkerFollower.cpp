@@ -44,22 +44,21 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
     EstimateNextPosition();
     ProjectNextPosition();
 
-    PathPoint targetPathPoint = path.GetPoints()[currentTarget];
+    PathPoint targetPathPoint = path.GetPoints()[(currentTarget + 1) % path.GetPoints().size()];
 
     cv::Vec3d targetVector3d = FollowTarget - EstimatedPosition;
     cv::Vec2d targetVector2d = cv::Vec2d(targetVector3d[0],targetVector3d[1]);
 
     cv::Vec2d normalizedTarget = cv::normalize(targetVector2d);
     cv::Vec2d targetVector = Rotate(normalizedTarget,toRadians(EstimatedPose[2]));
+// TODO: Considerar altura
+    cv::Vec3d v = targetPathPoint.Postion - EstimatedPosition;
+    double distanceToPathPoint = cv::norm(cv::Vec2d(v[0],v[1]));
 
-    double distanceToPathPoint = cv::norm(targetPathPoint.Postion - EstimatedPosition);
+    double alignmentAngle = angleDifference(targetPathPoint.Rotation,EstimatedPose[2]);
 
-    double alignmentAngle = angleDifference(targetPathPoint.Rotation,EstimatedPose[2] -90);
-
-    std::printf("Angle: %f\n",alignmentAngle);
-
-    if(distanceToPathPoint <= TARGET_REACHED_DISTANCE &&
-            std::abs(alignmentAngle) < ALIGNEMENT_ANGLE_THRESOLD) {
+    if(distanceToPathPoint <= TARGET_REACHED_DISTANCE /*&&
+            std::abs(alignmentAngle) < ALIGNEMENT_ANGLE_THRESOLD*/) {
         currentTarget = (currentTarget + 1) % path.GetPoints().size();
         return NavigationCommand();
     }
@@ -245,5 +244,7 @@ void MarkerFollower::ProjectNextPosition() {
         FollowTarget = b.Postion;
     else if (multiplier < 0)
         FollowTarget = a.Postion;
+// SUPER HACK!
+    FollowTarget = b.Postion;
 
 }
