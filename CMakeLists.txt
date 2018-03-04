@@ -35,7 +35,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 # Src
 
-set(SOURCE_FILES src/proto/message.pb.h src/proto/message.pb.cc
+set(SOURCE_FILES
         src/tracking/TrackingAlgorithm.h
         src/config/ConfigDefaults.cpp src/config/ConfigDefaults.h
         src/config/Config.h src/config/ConfigKeys.h src/config/ConfigKeys.cpp
@@ -74,12 +74,15 @@ set(SOURCE_FILES src/proto/message.pb.h src/proto/message.pb.cc
         src/navigation/MarkerFollower.cpp src/navigation/MarkerFollower.h
         src/main.cpp src/tracking/OpticalFlow.cpp src/tracking/OpticalFlow.h src/tracking/DbScan.cpp src/tracking/DbScan.h src/utils/Helpers.h
         src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h
-        src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h src/navigation/Path.cpp src/navigation/Path.h src/communication/BrainComm.cpp src/communication/BrainComm.h src/communication/BodyComm.cpp src/communication/BodyComm.h src/communication/InterComm.cpp src/communication/InterComm.h src/communication/SharedMemory.h)
+        src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h src/navigation/Path.cpp src/navigation/Path.h
+        src/communication/BrainComm.cpp src/communication/BrainComm.h src/communication/BodyComm.cpp src/communication/BodyComm.h
+        src/communication/InterComm.cpp src/communication/InterComm.h src/communication/SharedMemory.h src/stateMachine/BodyState.h
+        src/stateMachine/BodyStateMachine.h src/stateMachine/BodyStateMachineControl.h src/stateMachine/StepName.h src/systems/System.h src/systems/SystemManager.h src/stateMachine/PatrollingState.h)
 
 
 set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h
         src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h)
-set(CALIBRATION_MAIN src/calibration.cpp)
+set(CALIBRATION_MAIN src/calibration.cpp src/stateMachine/BodyState.h src/systems/MarkerTrackerSystem.h src/stateMachine/TakingOffState.h)
 set(MARKER_MAIN src/navigation/MarkerTracker.cpp src/navigation/MarkerTracker.h src/marker.cpp)
 
 # Otros proyectos a compilar

@@ -22,16 +22,16 @@ enum class Axis {
 
 class NavigationDebugger {
 public:
-    NavigationDebugger(Config* config, World* world);
-    void Init();
+    void Init(Config* config);
     void Shutdown();
-    void Run(std::vector<WorldObject*> otherDrones, NavigationCommand command, int targetId, std::vector<cv::Vec3d> estimatedPositions,
-                 std::vector<cv::Vec3d> estimatedPoses, Path path,
-                 boost::circular_buffer<cv::Vec3d, std::allocator<cv::Vec3d>> positionHistor, cv::Vec3d nextPosition,
-                 cv::Vec3d predictedNextPosition, cv::Vec3d followTarget);
+    void Run(NavigationCommand command, int targetId,
+             cv::Vec3d nextPosition, cv::Vec3d projectedNextPosition, cv::Vec3d followTarget);
 
     void setVisibleMarkers(std::vector<Marker> visibleMarkers);
 
+    void SetEstimations(std::vector<cv::Vec3d> estimatedPositions, std::vector<cv::Vec3d> estimatedPoses);
+
+    void SetPositionHistory(boost::circular_buffer<cv::Vec3d, std::allocator<cv::Vec3d>> positionHistory);
 private:
     Config* config;
     World *world;
@@ -40,6 +40,10 @@ private:
     int SCALE;
 
     std::vector<Marker> visibleMarkers;
+    std::vector<cv::Vec3d> estimatedPositions;
+    std::vector<cv::Vec3d> estimatedPoses;
+    boost::circular_buffer<cv::Vec3d, std::allocator<cv::Vec3d>> positionHistory;
+
 
     cairo_surface_t* surface;
     cairo_t* cr;
@@ -99,6 +103,7 @@ private:
     void DrawCross(cv::Vec3d v, double size);
 
     void DrawTarget(cv::Vec3d followTarget);
+
 };
 
 

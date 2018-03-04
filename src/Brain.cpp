@@ -4,6 +4,7 @@
 
 #include <src/proto/dronestate.pb.h>
 #include <src/navigation/NavigationDebugger.h>
+#include <src/communication/SharedMemory.h>
 #include "proto/message.pb.h"
 #include "communication/BrainComm.h"
 #include "Brain.h"
@@ -16,10 +17,12 @@ namespace chrono = std::chrono;
 Brain::Brain() {
 }
 
-void Brain::setup(Config* config) {
+void Brain::setup(Config* config, SharedMemory* shared) {
 
     this->config = config;
     this->myid = config->Get(ConfigKeys::Drone::Id);
+
+    this->shared = shared;
 
     interComm = new InterComm();
     interComm->setupInterComm(config);
@@ -29,8 +32,8 @@ void Brain::setup(Config* config) {
 
     //NAVDEB
     world = config->GetWorld();
-    navigationDebugger = new NavigationDebugger(config, &world);
-    navigationDebugger->Init();
+    navigationDebugger = new NavigationDebugger();
+    navigationDebugger->Init(config);
     follower = new MarkerFollower(config, &world);
     path = config->GetPath();
     follower->setPath(path);
@@ -265,9 +268,9 @@ void Brain::loop() {
 
             }
 
-            navigationDebugger->Run(otherDrones, command, follower->getTargetId(), follower->EstimatedPositions,
-                                    follower->EstimatedPoses, path,
-                                    follower->PositionsHistory, follower->PredictedPosition,
+            navigationDebugger->SetPositionHistory(follower->PositionsHistory);
+            navigationDebugger->SetEstimations(follower->EstimatedPositions,follower->EstimatedPoses);
+            navigationDebugger->Run(command, follower->getTargetId(), follower->PredictedPosition,
                                     follower->ProjectedPredictedPosition, follower->FollowTarget);
 
 

@@ -84,6 +84,10 @@ int MarkerFollower::getTargetId() {
     return currentTarget;
 }
 
+void MarkerFollower::setTarget(int target) {
+    currentTarget = target;
+}
+
 double MarkerFollower::angleDifference(double target, double origin){
     double  diff = target - origin;
     diff = signedMod((diff + 180),360.0) - 180;

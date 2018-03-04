@@ -6,6 +6,9 @@
 #define PROY_GRADO_BODY_H
 
 #include <iostream>
+#include <src/navigation/NavigationDebugger.h>
+#include <src/stateMachine/BodyStateMachine.h>
+#include <src/systems/SystemManager.h>
 #include "communication/BodyComm.h"
 #include "hal/ManualControl.h"
 #include "messages/SocketChannel.h"
@@ -16,20 +19,27 @@
 
 class Body {
 public:
-    Body(Hal* hal);
+    Body(Hal *hal);
 
-    void setup(Config* config);
+    void setup(Config *config, SharedMemory *shared);
+
     void loop();
+
     void cleanup();
+
+    BodyStateMachine* StateMachine = NULL;
+    SystemManager* Systems = NULL;
+
 private:
 
     VisualDebugger visualDebugger;
-    Hal* hal;
+    NavigationDebugger navigationDebugger;
+    Hal *hal;
 
-    BodyComm * bodyComm;
-
+    BodyComm *bodyComm;
     bool should_exit = false;
     Config* config;
+    SharedMemory* shared;
 
     int elapsedFrames = 0;
     int elapsedTime = 0;

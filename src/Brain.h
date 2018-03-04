@@ -20,13 +20,14 @@ public:
 
     void loop();
 
-    void setup(Config* config);
+    void setup(Config* config, SharedMemory* shared);
 
     void cleanup();
 
 private:
 
     Config* config;
+    SharedMemory *shared;
 
     bool should_exit = false;
 
@@ -61,6 +62,7 @@ private:
     long lastChange = 0;
     long lapseToChange = 2 * 1000 * 1000;
     //NAVDEB
+
 };
 
 

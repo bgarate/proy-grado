@@ -4,36 +4,27 @@
 
 #include <src/proto/message.pb.h>
 #include <chrono>
+#include <src/communication/SharedMemory.h>
+#include <src/stateMachine/StepName.h>
 #include "bodytests/BodyTestRegistry.h"
 #include "Body.h"
 #include "logging/Logger.h"
 #include "Brain.h"
-#include "tracking/DetectAndTrack.h"
-#include "tracking/MultiTracker.h"
-#include "tracking/HogDetector.h"
-#include "bodytests/BodyTest.h"
-#include "bodytests/OpticalFlowObstacleAvoidance.cpp"
 #include "bodytests/TrackMarkers.cpp"
-#include "bodytests/BodyTest1.cpp"
-#include "bodytests/BodyTest2.cpp"
-#include "bodytests/FlightManeuver.cpp"
-#include "bodytests/Follow.cpp"
-#include "bodytests/PatrolAndFollow.cpp"
-#include "bodytests/BodyTestRmove.cpp"
-#include "bodytests/BodyTestRmove2.cpp"
-#include "bodytests/BodyTestDummy.cpp"
-#include "bodytests/BodyTestMarker.cpp"
-#include "config/ConfigKeys.h"
 
 Body::Body(Hal *hal) {
 
     this->hal = hal;
 }
 
-void Body::setup(Config* config) {
+void Body::setup(Config* config, SharedMemory* shared) {
     Logger::getInstance().setSource("BODY");
+
     this->config = config;
+    this->shared = shared;
+
     visualDebugger.setup(config);
+    navigationDebugger.Init(config);
     hal->setup(config);
     hal->Connect();
 
@@ -42,6 +33,10 @@ void Body::setup(Config* config) {
 
     bodyComm = new BodyComm();
     bodyComm->setupBodyComm(config);
+
+    StateMachine = new BodyStateMachine();
+    Systems = new SystemManager();
+
 }
 
 
@@ -49,9 +44,11 @@ void Body::loop() {
 
     PrintAvailableTests();
 
-    BodyTest* bt = BodyTestRegistry::Get(config->Get(ConfigKeys::Body::TestToExecute));
+    std::string textToExecute = config->Get(ConfigKeys::Body::TestToExecute);
 
-    bt->InitBodyTest(this->hal, config, &visualDebugger);
+    Systems->Init(config, hal,shared, &visualDebugger, &navigationDebugger);
+    StateMachine->Init(StepName::TAKING_OFF,config,hal, shared, &visualDebugger, &navigationDebugger);
+
     Logger::logInfo("Body started");
 
     std::chrono::steady_clock::time_point startTime = std::chrono::steady_clock::now();
@@ -73,38 +70,34 @@ void Body::loop() {
             visualDebugger.setFrame(frame);
         }
 
-        if(!inmc){
+        Systems->Step(deltaTime);
+        StateMachine->Step(deltaTime);
 
-            bool res = bt->BodyTestStep(deltaTime);
+        CalculateFPS();
 
-            if(!res)
-                should_exit = true;
+        visualDebugger.setStatus(hal->getState(),hal->bateryLevel(),
+                                 hal->getAltitude(), hal->getGPSPosition(), hal->getOrientation(), fps, runningTime);
+        visualDebugger.drawMouse(deltaTime);
 
-            CalculateFPS();
+        StatusInfo info = shared->getStatusInfo();
+        navigationDebugger.Run(info.ExecutedCommand, info.CurrentTargetId, info.PredictedFuturePosition,
+                                info.ProjectedPositionOnPath, info.TargetOnPath);
 
-            visualDebugger.setStatus(hal->getState(),hal->bateryLevel(),
-                                     hal->getAltitude(), hal->getGPSPosition(), hal->getOrientation(), fps, runningTime);
-            visualDebugger.drawMouse(deltaTime);
-            visualDebugger.drawOrbSlam();
-            int key = visualDebugger.show(deltaTime);
+        int key = visualDebugger.show(deltaTime);
 
-            if(key == 27){
-                should_exit = true;
-            } else if (key == 32) {
-                visualDebugger.cleanup();
-                mc->run();
-                inmc=true;
-            } else if (key == (int)'c'){
-                visualDebugger.captureImage();
-            } else if (key == (int)'t'){
-                config->Set(ConfigKeys::Drone::CameraTilt,std::min(config->Get(ConfigKeys::Drone::VerticalFOV)/2,config->Get(ConfigKeys::Drone::CameraTilt) + 0.1));
-            } else if (key == (int)'r'){
-                config->Set(ConfigKeys::Drone::CameraTilt,std::max(config->Get(ConfigKeys::Drone::VerticalFOV)/2,config->Get(ConfigKeys::Drone::CameraTilt) - 0.1));
-            }
-        } else if(mc->stopped()) {//q dentro de manual control
+        if(key == 27){
             should_exit = true;
+        } else if (key == 32) {
+            visualDebugger.cleanup();
+            mc->run();
+            inmc=true;
+        } else if (key == (int)'c'){
+            visualDebugger.captureImage();
+        } else if (key == (int)'t'){
+            config->Set(ConfigKeys::Drone::CameraTilt,std::min(config->Get(ConfigKeys::Drone::VerticalFOV)/2,config->Get(ConfigKeys::Drone::CameraTilt) + 0.1));
+        } else if (key == (int)'r'){
+            config->Set(ConfigKeys::Drone::CameraTilt,std::max(config->Get(ConfigKeys::Drone::VerticalFOV)/2,config->Get(ConfigKeys::Drone::CameraTilt) - 0.1));
         }
-
 
         if(should_exit || bodyComm->shouldExit())
             break;
@@ -115,7 +108,9 @@ void Body::loop() {
     visualDebugger.cleanup();
 
     Logger::logDebug("Finishing test");
-    bt->FinishBodyTest();
+
+    StateMachine->Cleanup();
+    Systems->Cleanup();
 
 }
 

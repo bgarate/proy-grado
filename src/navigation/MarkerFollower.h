@@ -44,6 +44,7 @@ public:
     boost::circular_buffer<double> DeltaTimeHistory;
 
     int getTargetId();
+    void setTarget(int target);
 
     static constexpr double TARGET_APROXIMATION_DISTANCE = 2;
     static constexpr double TARGET_REACHED_DISTANCE = 1;
@@ -83,6 +84,7 @@ private:
     void ProjectNextPosition();
 
     cv::Vec2d Rotate(cv::Vec2d v, double angle);
+
 };
 
 

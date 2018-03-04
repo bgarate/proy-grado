@@ -15,15 +15,13 @@ const cv::Size NavigationDebugger::SIZE = cv::Size(1024,768);
 const cv::Point NavigationDebugger::ORIGIN = cv::Point(300,300);
 const double NavigationDebugger::dashPattern[1] = {4.0};
 
-NavigationDebugger::NavigationDebugger(Config *config, World* world) {
+void NavigationDebugger::Init(Config* config) {
+
     this->config = config;
-    this->world = world;
+    World noPtrWorld = config->GetWorld();
+    this->world = &noPtrWorld;
     drone = world->getDrones()[0];
     this->SCALE = config->Get(ConfigKeys::Debugging::NavigationDebuggerScale);
-}
-
-
-void NavigationDebugger::Init() {
 
     surface = cairo_create_x11_surface0(SIZE.width,SIZE.height);
     cr = cairo_create(surface);
@@ -83,10 +81,17 @@ void NavigationDebugger::DrawAxis(std::string name, cv::Vec3d axis) {
 
 }
 
-void NavigationDebugger::Run(std::vector<WorldObject*> otherDrones, NavigationCommand command, int targetId, std::vector<cv::Vec3d> estimatedPositions,
-                             std::vector<cv::Vec3d> estimatedPoses, Path path,
-                             boost::circular_buffer<cv::Vec3d, std::allocator<cv::Vec3d>> positionHistory, cv::Vec3d nextPosition,
-                             cv::Vec3d projectedNextPosition, cv::Vec3d followTarget) {
+void NavigationDebugger::SetEstimations(std::vector<cv::Vec3d> estimatedPositions, std::vector<cv::Vec3d> estimatedPoses) {
+    this->estimatedPositions = estimatedPositions;
+    this->estimatedPoses = estimatedPoses;
+}
+
+void NavigationDebugger::SetPositionHistory(boost::circular_buffer<cv::Vec3d, std::allocator<cv::Vec3d>> positionHistory) {
+    this->positionHistory = positionHistory;
+}
+
+void NavigationDebugger::Run(NavigationCommand command, int targetId,
+                             cv::Vec3d nextPosition, cv::Vec3d projectedNextPosition, cv::Vec3d followTarget) {
 
     cairo_set_source_rgb(cr, 1,1,1);
     cairo_paint(cr);
@@ -108,8 +113,9 @@ void NavigationDebugger::Run(std::vector<WorldObject*> otherDrones, NavigationCo
         DrawTargetOrientation(marker);
     }
 
-    for(WorldObject* drone : otherDrones) {
-        DrawOtherDrone(drone);
+    for(WorldObject* otherDrone : world->getDrones()) {
+        if(otherDrone->getId() != drone->getId())
+        DrawOtherDrone(otherDrone);
     }
 
     for(WorldObject* marker : world->getMarkers()) {
@@ -124,7 +130,7 @@ void NavigationDebugger::Run(std::vector<WorldObject*> otherDrones, NavigationCo
 
     DrawDroneEstimatedPositions(estimatedPositions, estimatedPoses);
 
-    DrawPath(path, targetId);
+    DrawPath(config->GetPath(), targetId);
 
     cairo_surface_flush(surface);
     XFlush(dsp);

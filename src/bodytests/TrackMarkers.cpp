@@ -38,7 +38,7 @@ class TrackMarkers : public BodyTest {
     Path path;
 
     void InitBodyTest(Hal *hal, Config* config, VisualDebugger* visualDebugger) override {
-        this->hal = hal;
+        /*this->hal = hal;
         this->visualDebugger = visualDebugger;
         tracker = new MarkerTracker(config);
 
@@ -55,7 +55,7 @@ class TrackMarkers : public BodyTest {
         this->path = config->GetPath();
 
         follower->setPath(path);
-        //navigationDebuggerThread = std::thread(&NavigationDebugger::Run, navigationDebugger);
+        //navigationDebuggerThread = std::thread(&NavigationDebugger::Run, navigationDebugger);*/
     }
 
     bool tookOff = false;
@@ -63,7 +63,7 @@ class TrackMarkers : public BodyTest {
 
     bool BodyTestStep(double deltaTime) override {
 
-        std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
+  /*      std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
         hal->setCameraTilt(Camera::Middle);
 
         //DESPEGAR
@@ -112,7 +112,7 @@ class TrackMarkers : public BodyTest {
             }
 
         }
-
+*/
         return true;
 
     }

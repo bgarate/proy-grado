@@ -7,15 +7,22 @@
 #ifndef PROY_GRADO_SHAREDMEMORY_H
 #define PROY_GRADO_SHAREDMEMORY_H
 
+#include <src/navigation/MarkerFollower.h>
 #include "../config/Config.h"
 
 class StatusInfo {
-
+public:
     cv::Vec3d CurrentPosition;
+    cv::Vec3d CurrentPose;
     cv::Vec3d PredictedFuturePosition;
     cv::Vec3d ProjectedPositionOnPath;
     cv::Vec3d TargetOnPath;
 
+    int CurrentTargetId;
+
+    NavigationCommand FollowPathCommand;
+
+    NavigationCommand ExecutedCommand;
 };
 
 class SharedMemory {

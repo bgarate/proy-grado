@@ -2,6 +2,7 @@
 #include <wait.h>
 #include <tiff.h>
 #include <src/communication/SharedMemory.h>
+#include <src/systems/MarkerTrackerSystem.h>
 #include "hal/dummyHal/dummyHal.h"
 #include "logging/Logger.h"
 #include "Body.h"
@@ -38,7 +39,10 @@ void runBody(Config* config, SharedMemory* shared) {
 
     Body body(hal);
 
-    body.setup(config);
+    MarkerTrackerSystem* mts = new MarkerTrackerSystem();
+    body.Systems->RegisterSystem(mts);
+
+    body.setup(config, shared);
     body.loop();
     body.cleanup();
     delete hal;
@@ -48,7 +52,7 @@ void runBrain(Config* config, SharedMemory* shared){
     Logger::logDebug("Initializing brain");
     Brain brain;
 
-    brain.setup(config);
+    brain.setup(config, shared);
     brain.loop();
     brain.cleanup();
 }
@@ -79,11 +83,13 @@ int main(int argc, const char* args[]) {
     std::thread brainThread;
     std::thread bodyThread;
 
+    SharedMemory* shared = new SharedMemory();
+
     if (startBody)
-        bodyThread = std::thread(runBody, config);
+        bodyThread = std::thread(runBody, config, shared);
 
     if(startBrain)
-        brainThread = std::thread(runBrain, config);
+        brainThread = std::thread(runBrain, config, shared);
 
     if(startBody) {
         if(!bodyThread.joinable())
@@ -99,6 +105,7 @@ int main(int argc, const char* args[]) {
 
     config->Save();
 
+    delete shared;
     delete config;
 
     Logger::logWarning("Program exiting");
