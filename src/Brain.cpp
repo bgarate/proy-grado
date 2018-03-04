@@ -23,22 +23,25 @@ void Brain::setup(Config* config) {
     this->myid = config->Get(ConfigKeys::Drone::Id);
 
     interComm = new InterComm();
-    interComm->setupInterComm(config);
+    interComm->setupInterComm(config, true);
 
     brainComm = new BrainComm();
     brainComm->setupBrainComm(config);
 
     Logger::getInstance().setSource("BRAIN");
 
-    //NAVDEB
-    world = config->GetWorld();
-    mapDebugger = new MapDebugger(config, &world);
-    mapDebugger->Init();
+    //MapDebugger
+    mapEnabled = config->Get(ConfigKeys::Debugging::MapDebuggerInBrain);
+    if(mapEnabled){
+        world = config->GetWorld();
+        mapDebugger = new MapDebugger(config, &world);
+        mapDebugger->Init();
+    }
 
+    //Simulated movement
     path = config->GetPath();
     size = path.GetPoints().size();
     nextMarker = 0;
-    //NAVDEB
 
 };
 
@@ -49,7 +52,7 @@ void Brain::loop() {
     chrono::steady_clock::time_point newTime = startTime;
 
     //Comienzo inactivo
-    interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE);
+    interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_PATROLING);
     DroneState_Point* r = new DroneState_Point();
     r->set_x(0.0);
     r->set_y(0.0);
@@ -188,8 +191,6 @@ void Brain::loop() {
             taskStartTime = runningTime;
         }
 
-        //NAVDEB
-
         //Movimiento simulado
         if(runningTime - lastChange > lapseToChange) {
 
@@ -301,12 +302,11 @@ void Brain::loop() {
             r->set_z(rotation->val[2]);
             interComm->droneStates[myid]->set_allocated_rotation(r);
 
-            mapDebugger->Run(interComm->droneStates,myid,path);
-
+            if(mapEnabled)
+                mapDebugger->Run(interComm->droneStates,myid,path);
 
             lastRefreshTime = runningTime;
         }
-        //NAVDEB
 
 
         ////COMPORTAMIENTO SIMULADO END

@@ -45,23 +45,24 @@ private:
     long lastDebug = 0;
     void debugDroneStates(long runningTime);
 
-    //NAVDEB
-    MapDebugger* mapDebugger;
-    World world;
+    //Movimiento simulado
+    Path path;
+    int size;
+    int nextMarker, previousMarker;
+    long lastChange = 0;
+    long lapseToChange = 2 * 1000 * 1000;
 
+    //Bateria simulada
     int batteryDuration = 60 * 1000 * 1000;
     int chargeMargin = 20;
     long chargeLapse = 5 * 1000 * 1000;
 
-    Path path;
-    int size;
-    int nextMarker, previousMarker;
-
+    //Map debugger
+    MapDebugger* mapDebugger;
+    bool mapEnabled;
+    World world;
     long lastRefreshTime = 0;
     long pirntLapse = 0.1 * 1000 * 1000;
-    long lastChange = 0;
-    long lapseToChange = 2 * 1000 * 1000;
-    //NAVDEB
 };
 
 

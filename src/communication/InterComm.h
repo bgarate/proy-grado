@@ -18,7 +18,7 @@ public:
 
     InterComm();
 
-    void setupInterComm(Config* config);
+    void setupInterComm(Config* config, bool active);
 
     void interCommStep(long runningTime, long deltaTime);
 
@@ -27,6 +27,8 @@ public:
     std::map<int, DroneState*> droneStates;
 
 private:
+
+    bool active;
 
     std::map<int, long> lastSeq;
 

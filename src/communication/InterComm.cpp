@@ -13,42 +13,53 @@ InterComm::InterComm() {
                                     [this](Message m){ this->stateHandler(m);});
 }
 
-void InterComm::setupInterComm(Config* config){
+void InterComm::setupInterComm(Config* config, bool active){
 
-    this->name = config->Get(ConfigKeys::Drone::Name);
-    this->id = config->Get(ConfigKeys::Drone::Id);
+    this->active = active;
+
+    IpResolver resolver;
+    ip = resolver.resolve();
+
+    if(active) {
+        this->name = config->Get(ConfigKeys::Drone::Name);
+        this->id = config->Get(ConfigKeys::Drone::Id);
+    } else {
+        this->name = "Debugger";
+        this->id = -1;
+    }
     this->broadcastPort = config->Get(ConfigKeys::Communications::BroadcastPort);
     this->stateSendLapse = config->Get(ConfigKeys::Communications::StateSendLapse);
     this->stateExpireLapse = config->Get(ConfigKeys::Communications::StateExpireLapse);
 
     broadcaster.setup(broadcastPort);
 
-    IpResolver resolver;
-    ip = resolver.resolve();
+    if(active) {
 
-    droneStates[id] =  new DroneState();
-    droneStates[id]->set_ip((uint32_t) ip.to_ulong());
-    droneStates[id]->set_port(broadcastPort);
-    droneStates[id]->set_drone_id(id);
-    droneStates[id]->set_name(name);
-    droneStates[id]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE);
+        droneStates[id] = new DroneState();
+        droneStates[id]->set_ip((uint32_t) ip.to_ulong());
+        droneStates[id]->set_port(broadcastPort);
+        droneStates[id]->set_drone_id(id);
+        droneStates[id]->set_name(name);
+        droneStates[id]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE);
 
-    DroneState_Point *p  = new DroneState_Point();
-    p->set_x(0);
-    p->set_y(0);
-    p->set_z(0);
-    droneStates[id]->set_allocated_position(p);
+        DroneState_Point *p = new DroneState_Point();
+        p->set_x(0);
+        p->set_y(0);
+        p->set_z(0);
+        droneStates[id]->set_allocated_position(p);
 
-    DroneState_Point *r  = new DroneState_Point();
-    r->set_x(0);
-    r->set_y(0);
-    r->set_z(0);
-    droneStates[id]->set_allocated_rotation(r);
+        DroneState_Point *r = new DroneState_Point();
+        r->set_x(0);
+        r->set_y(0);
+        r->set_z(0);
+        droneStates[id]->set_allocated_rotation(r);
 
-    droneStates[id]->set_battery_level(999);
-    auto now = std::chrono::high_resolution_clock::now();
-    seqNum = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
-    droneStates[id]->set_seq_num(seqNum);
+        droneStates[id]->set_battery_level(999);
+        auto now = std::chrono::high_resolution_clock::now();
+        seqNum = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+        droneStates[id]->set_seq_num(seqNum);
+    }
+
 
 }
 
@@ -57,7 +68,8 @@ void InterComm::interCommStep(long runningTime, long deltaTime) {
     this->runningTime = runningTime;
 
     handleMessages();
-    sendState();
+    if(active)
+        sendState();
 
     //exipre messages
     for (std::map<int, long>::iterator it=droneTimestamps.begin(); it!=droneTimestamps.end(); ++it) {

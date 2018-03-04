@@ -42,6 +42,7 @@ DEFINE_CONFIG_KEY(Debugging, RealTimeVideoOutputEnabled, bool);
 DEFINE_CONFIG_KEY(Debugging, OutputRawVideoEnabled, bool);
 DEFINE_CONFIG_KEY(Debugging, OutputPath, std::string);
 DEFINE_CONFIG_KEY(Debugging, NavigationDebuggerScale, int);
+DEFINE_CONFIG_KEY(Debugging, MapDebuggerInBrain, bool);
 
 DEFINE_CONFIG_KEY(Body, SleepDelay, int)
 DEFINE_CONFIG_KEY(Body, Hal, HalType)
