@@ -45,6 +45,9 @@ private:
     long lastDebug = 0;
     void debugDroneStates(long runningTime);
 
+    int lowBatteryLevel;
+    int critialBatteryLevel;
+
     //Movimiento simulado
     Path path;
     int size;
@@ -54,8 +57,7 @@ private:
 
     //Bateria simulada
     int batteryDuration = 60 * 1000 * 1000;
-    int chargeMargin = 20;
-    long chargeLapse = 5 * 1000 * 1000;
+    long chargeLapse = 10 * 1000 * 1000;
 
     //Map debugger
     MapDebugger* mapDebugger;

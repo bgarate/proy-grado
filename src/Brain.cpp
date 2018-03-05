@@ -28,6 +28,9 @@ void Brain::setup(Config* config) {
     brainComm = new BrainComm();
     brainComm->setupBrainComm(config);
 
+    this->lowBatteryLevel = config->Get(ConfigKeys::Brain::LowBatteryLevel);
+    this->critialBatteryLevel = config->Get(ConfigKeys::Brain::CritialBatteryLevel);
+
     Logger::getInstance().setSource("BRAIN");
 
     //MapDebugger
@@ -112,20 +115,23 @@ void Brain::loop() {
         }
 
 
-        //Tengo que cargar? hay alguien cargando? alguien siguiendo?
+        //Tengo que cargar?
+        bool shouldCharge = (batteryLevel < critialBatteryLevel) || (batteryLevel < lowBatteryLevel && interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING);
+        // hay alguien cargando? alguien siguiendo?
         bool someoneFollowing = false;
         bool someoneCharging = false;
         bool shouldLeaveCharge = false;
-        bool shouldCharge = batteryLevel < chargeMargin;
         for (std::map<int, DroneState*>::iterator it=interComm->droneStates.begin(); it!=interComm->droneStates.end(); ++it) {
             if(it->first != myid){
 
+                //alguien following
                 if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING) { someoneFollowing = true; }
-
+                //alguien cargando
                 if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) {
                     someoneCharging = true;
+                    //tiene menos bateria que yo?
                     if(it->second->battery_level() < interComm->droneStates[myid]->battery_level()
-                            ||(it->second->battery_level() == interComm->droneStates[myid]->battery_level()
+                            || (it->second->battery_level() == interComm->droneStates[myid]->battery_level()
                                 && it->first < myid)){
                         shouldLeaveCharge = true;
                     }
@@ -140,7 +146,8 @@ void Brain::loop() {
 
             interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_ALERT);
 
-        //Si tengo que cargar y no lo estoy haciendo, y no hay nadie cargando voy a cargar
+
+        //Si tengo que cargar, no lo estoy haciendo y no hay nadie cargando voy a cargar
         } else if (interComm->droneStates[myid]->curren_task() != DroneState::CurrentTask::DroneState_CurrentTask_CHARGING
                     && !someoneCharging && shouldCharge){
 
@@ -151,6 +158,7 @@ void Brain::loop() {
             taskLapse = chargeLapse;
             taskStartTime = runningTime;
 
+
         //Si hay alguien cargando con más prioridad y yo tambien estoy cargando dejo de hacerlo
         } else if(shouldLeaveCharge && interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING){
 
@@ -158,6 +166,7 @@ void Brain::loop() {
 
             taskLapse = (rand() % range + 3) * 1000 * 1000;
             taskStartTime = runningTime;
+
 
         //Si no tengo que estar alerta o terminó el lapso de mi tarea cambio de estado
         } else if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT
@@ -190,6 +199,7 @@ void Brain::loop() {
             taskLapse = (rand() % range + 3) * 1000 * 1000;
             taskStartTime = runningTime;
         }
+
 
         //Movimiento simulado
         if(runningTime - lastChange > lapseToChange) {
@@ -225,7 +235,6 @@ void Brain::loop() {
                     nextMarker = -1;
                     previousMarker = -1;
                     break;
-
             }
 
             lastChange = runningTime;
@@ -327,31 +336,5 @@ void Brain::shutdown() {
 }
 
 void Brain::cleanup() {
-
-}
-
-void Brain::debugDroneStates(long runningTime){
-
-    if(runningTime - lastDebug > 1 * 1000  * 1000) {
-
-        std::cout << '\n';
-        for (std::map<int, DroneState*>::iterator it=interComm->droneStates.begin(); it!=interComm->droneStates.end(); ++it) {
-
-            std::string state = "";
-            if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE) { state = "INNACTIVE"; }
-            if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING) { state = "PATROLING"; }
-            if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING) { state = "FOLLOWING"; }
-            if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT) { state = "ALERT"; }
-            if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) { state = "CHARGING"; }
-            std::cout << "The drone " << it->first << " is " << state
-                      << " with position {" << it->second->position().x() << ", " << it->second->position().y () << ", " << it->second->position().z()
-                      << "} and rotation {" << it->second->rotation().x() << ", " << it->second->rotation().y () << ", " << it->second->rotation().z() << "}"
-                      << "\n";
-        }
-        std::cout << '\n';
-
-        lastDebug = runningTime;
-    }
-
 
 }

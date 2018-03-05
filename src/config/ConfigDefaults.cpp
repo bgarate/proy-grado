@@ -56,6 +56,8 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Body::TrackingSmoothingSamples, 10);
 
     config->Set(ConfigKeys::Brain::Start, true);
+    config->Set(ConfigKeys::Brain::LowBatteryLevel, 20);
+    config->Set(ConfigKeys::Brain::CritialBatteryLevel, 5);
 
     World world = getWorld(config);
     config->SetWorld(world);
