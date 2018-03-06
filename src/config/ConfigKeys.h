@@ -62,7 +62,7 @@ struct ConfigKeys {
     struct Brain {
         CONFIG_KEY(Body, Start, bool)
         CONFIG_KEY(Body, LowBatteryLevel, int)
-        CONFIG_KEY(Body, CritialBatteryLevel, int)
+        CONFIG_KEY(Body, CriticalBatteryLevel, int)
     };
 };
 

@@ -35,7 +35,8 @@ class TrackMarkers : public BodyTest {
     double targetAltitude = 1.5;
     double altitudeSlowdownRadius = 1;
 
-    Path path;
+    unsigned int myid;
+    std::map<int, Path> path;
 
     void InitBodyTest(Hal *hal, Config* config, VisualDebugger* visualDebugger) override {
         this->hal = hal;
@@ -51,10 +52,10 @@ class TrackMarkers : public BodyTest {
         navigationDebugger = new NavigationDebugger(config, &world);
         navigationDebugger->Init();
 
+        this->myid = config->Get(ConfigKeys::Drone::Id);
+        this->path = config->GetPaths();
 
-        this->path = config->GetPath();
-
-        follower->setPath(path);
+        follower->setPath(path[myid]);
         //navigationDebuggerThread = std::thread(&NavigationDebugger::Run, navigationDebugger);
     }
 
@@ -98,9 +99,8 @@ class TrackMarkers : public BodyTest {
                 visualDebugger->ShowMarkers(tracker->Markers);
                 visualDebugger->setNavigationCommand(command);
                 navigationDebugger->setVisibleMarkers(tracker->Markers);
-                std::vector<WorldObject*> otherDrones;
-                navigationDebugger->Run(otherDrones, command, follower->getTargetId(), follower->EstimatedPositions,
-                                        follower->EstimatedPoses, path,
+                navigationDebugger->Run(command, follower->getTargetId(), follower->EstimatedPositions,
+                                        follower->EstimatedPoses, path[myid],
                                         follower->PositionsHistory, follower->PredictedPosition,
                                         follower->ProjectedPredictedPosition, follower->FollowTarget);
 

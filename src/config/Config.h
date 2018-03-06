@@ -136,22 +136,31 @@ public:
 
     }
 
-    Path GetPath() {
-        YAML::Node pathNode = config["Path"];
+    std::map<int, Path> GetPaths() {
 
-        Path path;
+        YAML::Node pathsNode = config["Paths"];
+        std::map<int, Path> paths;
 
-        for (int i = 0; i < pathNode.size(); ++i) {
+        for (int i = 0; i < pathsNode.size(); ++i) {
 
-            YAML::Node object = pathNode[i];
-            cv::Vec3d position = object["position"].as<cv::Vec3d>();
-            double rotation = object["rotation"].as<double>();
+            YAML::Node object = pathsNode[i];
+            Path path;
+            YAML::Node pathNode = object["path"];
 
-            path.AddPoint(position, rotation);
+            for (int i = 0; i < pathNode.size(); ++i) {
 
+                YAML::Node object = pathNode[i];
+                cv::Vec3d position = object["position"].as<cv::Vec3d>();
+                double rotation = object["rotation"].as<double>();
+
+                path.AddPoint(position, rotation);
+
+            }
+
+            paths[object["droneId"].as<int>()] =  path;
         }
 
-        return path;
+        return paths;
 
     }
 

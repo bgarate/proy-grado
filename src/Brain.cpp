@@ -29,7 +29,7 @@ void Brain::setup(Config* config) {
     brainComm->setupBrainComm(config);
 
     this->lowBatteryLevel = config->Get(ConfigKeys::Brain::LowBatteryLevel);
-    this->critialBatteryLevel = config->Get(ConfigKeys::Brain::CritialBatteryLevel);
+    this->critialBatteryLevel = config->Get(ConfigKeys::Brain::CriticalBatteryLevel);
 
     Logger::getInstance().setSource("BRAIN");
 
@@ -42,8 +42,8 @@ void Brain::setup(Config* config) {
     }
 
     //Simulated movement
-    path = config->GetPath();
-    size = path.GetPoints().size();
+    path = config->GetPaths();
+    size = path[myid].GetPoints().size();
     nextMarker = 0;
 
 };
@@ -257,13 +257,13 @@ void Brain::loop() {
             } else if (previousMarker == -1) {
 
                 position = new cv::Vec3d((2 * (1 - difference)
-                            + path.GetPoints().at(nextMarker).Postion.val[0] * difference)
+                            + path[myid].GetPoints().at(nextMarker).Postion.val[0] * difference)
                         ,(-1 * (1 - difference)
-                            + path.GetPoints().at(nextMarker).Postion.val[1] * difference)
+                            + path[myid].GetPoints().at(nextMarker).Postion.val[1] * difference)
                         , 1);
 
                 cv::Vec3d aux(2, -1, 0);
-                aux = path.GetPoints().at(nextMarker).Postion - aux;
+                aux = path[myid].GetPoints().at(nextMarker).Postion - aux;
                 if(aux.val[0] != 0){
                     double edge = atan2 (aux.val[0],aux.val[1]) * 180 / M_PI;
                     rotation = new cv::Vec3d(0, 0, edge);
@@ -271,14 +271,14 @@ void Brain::loop() {
 
             } else if(nextMarker == -1){
 
-                position = new cv::Vec3d((path.GetPoints().at(previousMarker).Postion.val[0]*(1-difference)
+                position = new cv::Vec3d((path[myid].GetPoints().at(previousMarker).Postion.val[0]*(1-difference)
                             + 2 *difference)
-                        , (path.GetPoints().at(previousMarker).Postion.val[1]*(1-difference)
+                        , (path[myid].GetPoints().at(previousMarker).Postion.val[1]*(1-difference)
                             + -1 *difference)
                         , 1);
 
                 cv::Vec3d aux(2, -1, 0);
-                aux = aux - path.GetPoints().at(previousMarker).Postion;
+                aux = aux - path[myid].GetPoints().at(previousMarker).Postion;
                 if(aux.val[0] != 0){
                     double edge = atan2 (aux.val[0],aux.val[1]) * 180 / M_PI;
                     rotation = new cv::Vec3d(0, 0, edge);
@@ -286,14 +286,14 @@ void Brain::loop() {
 
             }else{
 
-                position = new cv::Vec3d((path.GetPoints().at(previousMarker).Postion.val[0]*(1-difference)
-                            + path.GetPoints().at(nextMarker).Postion.val[0]*difference)
-                        , (path.GetPoints().at(previousMarker).Postion.val[1]*(1-difference)
-                            + path.GetPoints().at(nextMarker).Postion.val[1]*difference)
+                position = new cv::Vec3d((path[myid].GetPoints().at(previousMarker).Postion.val[0]*(1-difference)
+                            + path[myid].GetPoints().at(nextMarker).Postion.val[0]*difference)
+                        , (path[myid].GetPoints().at(previousMarker).Postion.val[1]*(1-difference)
+                            + path[myid].GetPoints().at(nextMarker).Postion.val[1]*difference)
                         , 1);
 
-                float a = path.GetPoints().at(previousMarker).Rotation;
-                float b = path.GetPoints().at(nextMarker).Rotation;
+                float a = path[myid].GetPoints().at(previousMarker).Rotation;
+                float b = path[myid].GetPoints().at(nextMarker).Rotation;
 
                 rotation = new cv::Vec3d(0, 0, a + Helpers::angleDifference(b,a)*difference);
 
@@ -312,7 +312,7 @@ void Brain::loop() {
             interComm->droneStates[myid]->set_allocated_rotation(r);
 
             if(mapEnabled)
-                mapDebugger->Run(interComm->droneStates,myid,path);
+                mapDebugger->Run(interComm->droneStates,myid,path[myid]);
 
             lastRefreshTime = runningTime;
         }

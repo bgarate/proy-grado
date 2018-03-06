@@ -55,4 +55,4 @@ DEFINE_CONFIG_KEY(Body, TrackingSmoothingSamples, int)
 
 DEFINE_CONFIG_KEY(Brain, Start, bool)
 DEFINE_CONFIG_KEY(Brain, LowBatteryLevel, int)
-DEFINE_CONFIG_KEY(Brain, CritialBatteryLevel, int)
+DEFINE_CONFIG_KEY(Brain, CriticalBatteryLevel, int)
