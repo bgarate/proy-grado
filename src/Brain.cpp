@@ -195,7 +195,8 @@ void Brain::loop() {
 
             //Si estoy inactivo o following  paso a patrullar
             if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE
-                    || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING) {
+                    || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING
+                    || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT) {
 
                 interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_PATROLING);
 
@@ -205,7 +206,7 @@ void Brain::loop() {
                 interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_PATROLING);
                 startBattryTime = runningTime;
 
-            //Si estoy patrullando
+            //Si estoy patrullando o alerta paso a patrullar
             } else {
 
                 //Decido aleatroriamente paso a following o sigo patrullando
