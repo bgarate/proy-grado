@@ -49,8 +49,9 @@ private:
     int critialBatteryLevel;
 
     //Movimiento simulado
-    std::map<int, Path> path;
-    int size;
+    std::map<int, Path> paths;
+    int actualPath;
+    int pathSize;
     int nextMarker, previousMarker;
     long lastChange = 0;
     long lapseToChange = 2 * 1000 * 1000;
