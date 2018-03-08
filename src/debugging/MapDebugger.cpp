@@ -129,29 +129,29 @@ void MapDebugger::DrawPath(Path path)  {
 
         cairo_set_source_rgb (cr, 1, 0, 0);
 
-        cairo_move_to(cr, GetX(point.Postion[0]),GetY(point.Postion[1]));
+        cairo_move_to(cr, GetX(point.position[0]),GetY(point.position[1]));
 
-        cv::Point2d arrowEnd(GetX(point.Postion[0] + 0.5 * sin(toRadians(point.Rotation))),
-                           GetY(point.Postion[1] + 0.5 * cos(toRadians(point.Rotation))));
+        cv::Point2d arrowEnd(GetX(point.position[0] + 0.5 * sin(toRadians(point.rotation))),
+                           GetY(point.position[1] + 0.5 * cos(toRadians(point.rotation))));
 
         cairo_line_to(cr, arrowEnd.x,arrowEnd.y);
         cairo_stroke(cr);
 
         cairo_move_to(cr, arrowEnd.x,arrowEnd.y);
-        cairo_rel_line_to(cr, GetScaleX(0.15) * sin(toRadians( - point.Rotation + ARROW_HEAD_ANGLE)),
-                      GetScaleY(0.15) * cos(toRadians( - point.Rotation +  ARROW_HEAD_ANGLE)));
+        cairo_rel_line_to(cr, GetScaleX(0.15) * sin(toRadians( - point.rotation + ARROW_HEAD_ANGLE)),
+                      GetScaleY(0.15) * cos(toRadians( - point.rotation +  ARROW_HEAD_ANGLE)));
         cairo_stroke(cr);
 
         cairo_move_to(cr, arrowEnd.x,arrowEnd.y);
-        cairo_rel_line_to(cr, GetScaleX(0.15) * sin(toRadians( - point.Rotation - ARROW_HEAD_ANGLE)),
-                          GetScaleY(0.15) * cos(toRadians( - point.Rotation - ARROW_HEAD_ANGLE)));
+        cairo_rel_line_to(cr, GetScaleX(0.15) * sin(toRadians( - point.rotation - ARROW_HEAD_ANGLE)),
+                          GetScaleY(0.15) * cos(toRadians( - point.rotation - ARROW_HEAD_ANGLE)));
         cairo_stroke(cr);
 
         PathPoint nextPoint = points[(i + 1) % points.size()];
 
         cairo_set_source_rgb (cr, 0, 0, 1);
-        cairo_move_to(cr, GetX(point.Postion[0]), GetY(point.Postion[1]));
-        cairo_line_to(cr, GetX(nextPoint.Postion[0]), GetY(nextPoint.Postion[1]));
+        cairo_move_to(cr, GetX(point.position[0]), GetY(point.position[1]));
+        cairo_line_to(cr, GetX(nextPoint.position[0]), GetY(nextPoint.position[1]));
         cairo_stroke(cr);
     }
 

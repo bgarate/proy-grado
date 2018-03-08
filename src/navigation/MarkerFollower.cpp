@@ -50,9 +50,9 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
     cv::Vec3d targetVector3d = FollowTarget - EstimatedPosition;
     cv::Vec2d targetVector = Rotate(cv::Vec2d(targetVector3d[0],targetVector3d[1]),toRadians(
             EstimatedPose[2]));
-    double distanceToPathPoint = cv::norm(targetPathPoint.Postion - EstimatedPosition);
+    double distanceToPathPoint = cv::norm(targetPathPoint.position - EstimatedPosition);
 
-    double alignmentAngle = Helpers::angleDifference(targetPathPoint.Rotation,EstimatedPose[2] - 90);
+    double alignmentAngle = Helpers::angleDifference(targetPathPoint.rotation,EstimatedPose[2] - 90);
 
     if(distanceToPathPoint <= TARGET_REACHED_DISTANCE &&
             std::abs(alignmentAngle) < ALIGNEMENT_ANGLE_THRESOLD) {
@@ -213,10 +213,10 @@ void MarkerFollower::ProjectNextPosition() {
     PathPoint a = points[currentTarget];
     PathPoint b = points[(currentTarget + 1) % points.size()];
 
-    cv::Vec3d direction = cv::normalize(b.Postion-a.Postion);
-    cv::Vec3d toPredicted = PredictedPosition - a.Postion;
+    cv::Vec3d direction = cv::normalize(b.position-a.position);
+    cv::Vec3d toPredicted = PredictedPosition - a.position;
 
-    ProjectedPredictedPosition = a.Postion + direction * (toPredicted.dot(direction));
+    ProjectedPredictedPosition = a.position + direction * (toPredicted.dot(direction));
     FollowTarget = ProjectedPredictedPosition + direction * 0.25;
 
 }

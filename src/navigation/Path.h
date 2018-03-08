@@ -13,11 +13,11 @@ public:
     PathPoint() {
 
     }
-    PathPoint(cv::Vec3d position, double rotation) : Postion(position), Rotation(rotation) {
+    PathPoint(cv::Vec3d position, double rotation) : position(position), rotation(rotation) {
 
     }
-    cv::Vec3d Postion;
-    double Rotation;
+    cv::Vec3d position;
+    double rotation;
 };
 
 class Path {

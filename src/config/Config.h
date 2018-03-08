@@ -174,8 +174,8 @@ public:
             YAML::Node object;
             PathPoint point = points[i];
 
-            object["position"] = point.Postion;
-            object["rotation"] = point.Rotation;
+            object["position"] = point.position;
+            object["rotation"] = point.rotation;
 
             pathNode.push_back(object);
         }

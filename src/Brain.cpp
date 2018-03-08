@@ -45,7 +45,6 @@ void Brain::setup(Config* config) {
     paths = config->GetPaths();
     actualPath = myid;
     pathSize = paths[myid].GetPoints().size();
-    nextMarker = 0;
 
 };
 
@@ -68,7 +67,15 @@ void Brain::loop() {
     p->set_z(0.0);
     interComm->droneStates[myid]->set_allocated_position(p);
     nextMarker = -1;
+    nextPosition.val[0] = 2;
+    nextPosition.val[1] = -1;
+    nextPosition.val[2] = 0;
+    nextRotation = 0;
     previousMarker = -1;
+    previousPosition.val[0] = 2;
+    previousPosition.val[1] = -1;
+    previousPosition.val[2] = 0;
+    previousRotation = 0;
 
     //Simulación de bateria
     long startBattryTime = std::chrono::duration_cast<std::chrono::microseconds>(chrono::steady_clock::now() - startTime).count();
@@ -228,34 +235,72 @@ void Brain::loop() {
             if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING ) {
 
                 previousMarker = nextMarker;
+                previousPosition = nextPosition;
+                previousRotation = nextRotation;
                 nextMarker = -1;
+                nextPosition.val[0] = 2;
+                nextPosition.val[1] = -1;
+                nextPosition.val[2] = 0;
+                nextRotation = 0;
+
 
             }else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE){
 
-                    nextMarker = -1;
-                    previousMarker = -1;
+                nextMarker = -1;
+                nextPosition.val[0] = 2;
+                nextPosition.val[1] = -1;
+                nextPosition.val[2] = 0;
+                nextRotation = 0;
+                previousMarker = -1;
+                previousPosition.val[0] = 2;
+                previousPosition.val[1] = -1;
+                previousPosition.val[2] = 0;
+                previousRotation = 0;
 
             }else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT){
 
-                if(nextMarker == 0)
-                    previousMarker = 0;
-                else
+                if(nextMarker == 0) {
+                    previousMarker = nextMarker;
+                    previousPosition = nextPosition;
+                    previousRotation = nextRotation;
+                }else {
                     nextMarker = 0;
+                    nextPosition.val[0] = paths[actualPath].GetPoints().at(0).position.val[0];
+                    nextPosition.val[1] = paths[actualPath].GetPoints().at(0).position.val[1];
+                    nextPosition.val[2] = paths[actualPath].GetPoints().at(0).position.val[2];
+                    nextRotation = paths[actualPath].GetPoints().at(0).rotation;
+                }
 
             }else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING){
 
                 previousMarker = nextMarker;
+                previousPosition = nextPosition;
+                previousRotation = nextRotation;
 
             } else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING){
 
-                    previousMarker = nextMarker;
-                    nextMarker = (nextMarker + 1) % pathSize;
+                previousMarker = nextMarker;
+                previousPosition = nextPosition;
+                previousRotation = nextRotation;
+                nextMarker = (nextMarker + 1) % pathSize;
 
+                nextPosition.val[0] = paths[actualPath].GetPoints().at(nextMarker).position.val[0];
+                nextPosition.val[1] = paths[actualPath].GetPoints().at(nextMarker).position.val[1];
+                nextPosition.val[2] = paths[actualPath].GetPoints().at(nextMarker).position.val[2];
+                nextRotation = paths[actualPath].GetPoints().at(nextMarker).rotation;
             }else{
 
-                    nextMarker = -1;
-                    previousMarker = -1;
-                    break;
+                nextMarker = -1;
+                nextPosition.val[0] = paths[actualPath].GetPoints().at(0).position.val[0];
+                nextPosition.val[1] = paths[actualPath].GetPoints().at(0).position.val[1];
+                nextPosition.val[2] = paths[actualPath].GetPoints().at(0).position.val[2];
+                nextRotation = paths[actualPath].GetPoints().at(0).rotation;
+                previousMarker = -1;
+                previousPosition.val[0] = 2;
+                previousPosition.val[1] = -1;
+                previousPosition.val[2] = 0;
+                previousRotation = 0;
+
             }
 
             lastChange = runningTime;
@@ -270,55 +315,16 @@ void Brain::loop() {
             cv::Vec3d *rotation;
             rotation = new cv::Vec3d(0, 0, 0);
 
-            if (previousMarker == -1 && nextMarker == -1) {
-
-                position = new cv::Vec3d(2, -1, 0);
-                rotation = new cv::Vec3d(0, 0, 0);
-
-            } else if (previousMarker == -1) {
-
-                position = new cv::Vec3d((2 * (1 - difference)
-                            + paths[actualPath].GetPoints().at(nextMarker).Postion.val[0] * difference)
-                        ,(-1 * (1 - difference)
-                            + paths[actualPath].GetPoints().at(nextMarker).Postion.val[1] * difference)
-                        , 1);
-
-                cv::Vec3d aux(2, -1, 0);
-                aux = paths[actualPath].GetPoints().at(nextMarker).Postion - aux;
-                if(aux.val[0] != 0){
-                    double edge = atan2 (aux.val[0],aux.val[1]) * 180 / M_PI;
-                    rotation = new cv::Vec3d(0, 0, edge);
-                }
-
-            } else if(nextMarker == -1){
-
-                position = new cv::Vec3d((paths[actualPath].GetPoints().at(previousMarker).Postion.val[0]*(1-difference)
-                            + 2 *difference)
-                        , (paths[actualPath].GetPoints().at(previousMarker).Postion.val[1]*(1-difference)
-                            + -1 *difference)
-                        , 1);
-
-                cv::Vec3d aux(2, -1, 0);
-                aux = aux - paths[actualPath].GetPoints().at(previousMarker).Postion;
-                if(aux.val[0] != 0){
-                    double edge = atan2 (aux.val[0],aux.val[1]) * 180 / M_PI;
-                    rotation = new cv::Vec3d(0, 0, edge);
-                }
-
-            }else{
-
-                position = new cv::Vec3d((paths[actualPath].GetPoints().at(previousMarker).Postion.val[0]*(1-difference)
-                            + paths[actualPath].GetPoints().at(nextMarker).Postion.val[0]*difference)
-                        , (paths[actualPath].GetPoints().at(previousMarker).Postion.val[1]*(1-difference)
-                            + paths[actualPath].GetPoints().at(nextMarker).Postion.val[1]*difference)
-                        , 1);
-
-                float a = paths[actualPath].GetPoints().at(previousMarker).Rotation;
-                float b = paths[actualPath].GetPoints().at(nextMarker).Rotation;
-
-                rotation = new cv::Vec3d(0, 0, a + Helpers::angleDifference(b,a)*difference);
-
-            }
+            //Calcular position
+            position = new cv::Vec3d((previousPosition.val[0]*(1-difference)
+                                      + nextPosition.val[0]*difference)
+                    , (previousPosition.val[1]*(1-difference)
+                       + nextPosition.val[1]*difference)
+                    , 1);
+            //Calcular rotation
+            float a = previousRotation;
+            float b = nextRotation;
+            rotation = new cv::Vec3d(0, 0, a + Helpers::angleDifference(b,a)*difference);
 
             DroneState_Point *p = new DroneState_Point();
             p->set_x(position->val[0]);

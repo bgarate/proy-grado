@@ -52,7 +52,13 @@ private:
     std::map<int, Path> paths;
     int actualPath;
     int pathSize;
+
     int nextMarker, previousMarker;
+    cv::Vec3d previousPosition;
+    double previousRotation;
+    cv::Vec3d nextPosition;
+    double nextRotation;
+
     long lastChange = 0;
     long lapseToChange = 2 * 1000 * 1000;
 
