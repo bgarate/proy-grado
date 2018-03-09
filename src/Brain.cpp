@@ -46,6 +46,8 @@ void Brain::setup(Config* config) {
     actualPath = myid;
     pathSize = paths[myid].GetPoints().size();
 
+    pads = world.getPads();
+
 };
 
 void Brain::loop() {
@@ -68,14 +70,14 @@ void Brain::loop() {
     interComm->droneStates[myid]->set_allocated_position(p);
     nextMarker = -1;
     nextPosition.val[0] = 2;
-    nextPosition.val[1] = -1;
+    nextPosition.val[1] = 3;
     nextPosition.val[2] = 0;
-    nextRotation = 0;
+    nextRotation = 180;
     previousMarker = -1;
     previousPosition.val[0] = 2;
-    previousPosition.val[1] = -1;
+    previousPosition.val[1] = 3;
     previousPosition.val[2] = 0;
-    previousRotation = 0;
+    previousRotation = 180;
 
     //Simulación de bateria
     long startBattryTime = std::chrono::duration_cast<std::chrono::microseconds>(chrono::steady_clock::now() - startTime).count();
@@ -181,6 +183,29 @@ void Brain::loop() {
             //Paso a charging
             interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_CHARGING);
 
+            //Calcular pad mas cercano
+            closestPad = -1;
+            for (int i = 0 ; i != pads.size(); ++i) {
+
+                if(closestPad == -1){
+                    closestPad = i;
+                }else {
+                    float currentNorm = std::sqrt((pads[i]->getPosition().val[0]-interComm->droneStates[myid]->position().x())
+                                                     *(pads[i]->getPosition().val[0]-interComm->droneStates[myid]->position().x())
+                                                  + (pads[i]->getPosition().val[1]-interComm->droneStates[myid]->position().y())
+                                                     *(pads[i]->getPosition().val[1]-interComm->droneStates[myid]->position().y()));
+                    float bestNorm = std::sqrt((pads[closestPad]->getPosition().val[0]-interComm->droneStates[myid]->position().x())
+                                                 *(pads[closestPad]->getPosition().val[0]-interComm->droneStates[myid]->position().x())
+                                               + (pads[closestPad]->getPosition().val[1]-interComm->droneStates[myid]->position().y())
+                                                 * (pads[closestPad]->getPosition().val[1]-interComm->droneStates[myid]->position().y()));
+                    std::cout << "CurrentNorm: " << currentNorm << "\n";
+                    std::cout << "BestNorm: " << bestNorm << "\n";
+                    if(currentNorm < bestNorm){
+                        closestPad = i;
+                    }
+                }
+            }
+
             //Actualizo lapso y start time
             taskLapse = chargeLapse;
             taskStartTime = runningTime;
@@ -238,22 +263,22 @@ void Brain::loop() {
                 previousPosition = nextPosition;
                 previousRotation = nextRotation;
                 nextMarker = -1;
-                nextPosition.val[0] = 2;
-                nextPosition.val[1] = -1;
-                nextPosition.val[2] = 0;
-                nextRotation = 0;
+                nextPosition.val[0] = pads[closestPad]->getPosition().val[0];
+                nextPosition.val[1] = pads[closestPad]->getPosition().val[1];
+                nextPosition.val[2] = pads[closestPad]->getPosition().val[2];
+                nextRotation = pads[closestPad]->getRotation().val[2];
 
 
             }else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE){
 
                 nextMarker = -1;
                 nextPosition.val[0] = 2;
-                nextPosition.val[1] = -1;
+                nextPosition.val[1] = 3;
                 nextPosition.val[2] = 0;
                 nextRotation = 0;
                 previousMarker = -1;
                 previousPosition.val[0] = 2;
-                previousPosition.val[1] = -1;
+                previousPosition.val[1] = 3;
                 previousPosition.val[2] = 0;
                 previousRotation = 0;
 
@@ -288,19 +313,6 @@ void Brain::loop() {
                 nextPosition.val[1] = paths[actualPath].GetPoints().at(nextMarker).position.val[1];
                 nextPosition.val[2] = paths[actualPath].GetPoints().at(nextMarker).position.val[2];
                 nextRotation = paths[actualPath].GetPoints().at(nextMarker).rotation;
-            }else{
-
-                nextMarker = -1;
-                nextPosition.val[0] = paths[actualPath].GetPoints().at(0).position.val[0];
-                nextPosition.val[1] = paths[actualPath].GetPoints().at(0).position.val[1];
-                nextPosition.val[2] = paths[actualPath].GetPoints().at(0).position.val[2];
-                nextRotation = paths[actualPath].GetPoints().at(0).rotation;
-                previousMarker = -1;
-                previousPosition.val[0] = 2;
-                previousPosition.val[1] = -1;
-                previousPosition.val[2] = 0;
-                previousRotation = 0;
-
             }
 
             lastChange = runningTime;

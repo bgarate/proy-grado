@@ -53,6 +53,9 @@ private:
     int actualPath;
     int pathSize;
 
+    int closestPad = -1;
+    std::vector<WorldObject *> pads;
+
     int nextMarker, previousMarker;
     cv::Vec3d previousPosition;
     double previousRotation;
