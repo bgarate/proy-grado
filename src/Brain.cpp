@@ -355,7 +355,11 @@ void Brain::loop() {
 
             //Si estoy following seteo objeto seguido igual a mi position
             if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING){
-                interComm->droneStates[myid]->set_allocated_followed_position(p);
+                DroneState_Point *fp = new DroneState_Point();
+                fp->set_x(position->val[0]);
+                fp->set_y(position->val[1]);
+                fp->set_z(position->val[2]);
+                interComm->droneStates[myid]->set_allocated_followed_position(fp);
             }
 
             DroneState_Point *r = new DroneState_Point();
