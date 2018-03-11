@@ -288,7 +288,7 @@ void Brain::loop() {
                 //Mirar hacia el objeto seguido
                 cv::Vec3d aux(nextPosition.val[0], nextPosition.val[1], nextPosition.val[2]);
                 cv::Vec3d aux2(interComm->droneStates[alertid]->position().x(), interComm->droneStates[alertid]->position().y(), interComm->droneStates[alertid]->position().z());
-                aux = aux - aux2;
+                aux = aux2 - aux;
                 if(aux.val[0] != 0){
                     double edge = atan2 (aux.val[0],aux.val[1]) * 180 / M_PI;
                     nextRotation = edge;
