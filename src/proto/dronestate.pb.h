@@ -304,6 +304,15 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::DroneState_Point* release_rotation();
   void set_allocated_rotation(::DroneState_Point* rotation);
 
+  // .DroneState.Point followed_position = 10;
+  bool has_followed_position() const;
+  void clear_followed_position();
+  static const int kFollowedPositionFieldNumber = 10;
+  const ::DroneState_Point& followed_position() const;
+  ::DroneState_Point* mutable_followed_position();
+  ::DroneState_Point* release_followed_position();
+  void set_allocated_followed_position(::DroneState_Point* followed_position);
+
   // fixed32 ip = 1;
   void clear_ip();
   static const int kIpFieldNumber = 1;
@@ -347,6 +356,7 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::DroneState_Point* position_;
   ::DroneState_Point* rotation_;
+  ::DroneState_Point* followed_position_;
   ::google::protobuf::uint32 ip_;
   ::google::protobuf::uint32 port_;
   ::google::protobuf::int64 seq_num_;
@@ -622,6 +632,45 @@ inline void DroneState::set_battery_level(::google::protobuf::uint32 value) {
   
   battery_level_ = value;
   // @@protoc_insertion_point(field_set:DroneState.battery_level)
+}
+
+// .DroneState.Point followed_position = 10;
+inline bool DroneState::has_followed_position() const {
+  return this != internal_default_instance() && followed_position_ != NULL;
+}
+inline void DroneState::clear_followed_position() {
+  if (GetArenaNoVirtual() == NULL && followed_position_ != NULL) delete followed_position_;
+  followed_position_ = NULL;
+}
+inline const ::DroneState_Point& DroneState::followed_position() const {
+  // @@protoc_insertion_point(field_get:DroneState.followed_position)
+  return followed_position_ != NULL ? *followed_position_
+                         : *::DroneState_Point::internal_default_instance();
+}
+inline ::DroneState_Point* DroneState::mutable_followed_position() {
+  
+  if (followed_position_ == NULL) {
+    followed_position_ = new ::DroneState_Point;
+  }
+  // @@protoc_insertion_point(field_mutable:DroneState.followed_position)
+  return followed_position_;
+}
+inline ::DroneState_Point* DroneState::release_followed_position() {
+  // @@protoc_insertion_point(field_release:DroneState.followed_position)
+  
+  ::DroneState_Point* temp = followed_position_;
+  followed_position_ = NULL;
+  return temp;
+}
+inline void DroneState::set_allocated_followed_position(::DroneState_Point* followed_position) {
+  delete followed_position_;
+  followed_position_ = followed_position;
+  if (followed_position) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:DroneState.followed_position)
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS

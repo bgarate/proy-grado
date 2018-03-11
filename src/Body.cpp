@@ -40,8 +40,8 @@ void Body::setup(Config* config) {
     this->mc = new ManualControl(hal);
     this->inmc = false;
 
-    bodyComm = new BodyComm();
-    bodyComm->setupBodyComm(config);
+    //bodyComm = new BodyComm();
+    //bodyComm->setupBodyComm(config);
 }
 
 
@@ -67,7 +67,7 @@ void Body::loop() {
 
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
 
-        bodyComm->bodyCommStep(runningTime, deltaTime);
+        //bodyComm->bodyCommStep(runningTime, deltaTime);
 
         if (frame != NULL) {
             visualDebugger.setFrame(frame);
@@ -106,7 +106,7 @@ void Body::loop() {
         }
 
 
-        if(should_exit || bodyComm->shouldExit())
+        if(should_exit /*|| bodyComm->shouldExit()*/)
             break;
 
         usleep(config->Get(ConfigKeys::Body::SleepDelay));

@@ -29,6 +29,20 @@ std::vector<WorldObject *> World::getDrones() {
     return ret;
 }
 
+WorldObject * World::getDrone(int id) {
+    std::unique_lock<std::mutex> lck(objectsMutex);
+    std::vector<WorldObject *> ret;
+
+    std::copy_if(objects.begin(), objects.end(),
+                 std::back_inserter(ret), [](const WorldObject* o){return o->getType() == ObjectType::DRONE;} );
+
+    for(WorldObject * wo : ret){
+        if(wo->getId() == id)
+            return wo;
+    }
+    return NULL;
+}
+
 WorldObject* World::getMarker(int id) {
     std::unique_lock<std::mutex> lck(objectsMutex);
 

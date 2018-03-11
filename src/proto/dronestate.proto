@@ -14,6 +14,8 @@ message DroneState {
 
     uint32 battery_level = 9;
 
+    Point followed_position = 10;
+
 
     message Point{
         double x = 1;

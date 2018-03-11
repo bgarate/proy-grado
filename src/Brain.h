@@ -37,13 +37,9 @@ private:
 
 
     InterComm * interComm;
-    BrainComm * brainComm;
 
     unsigned int myid;
-
-
-    long lastDebug = 0;
-    void debugDroneStates(long runningTime);
+    unsigned int alertid;
 
     int lowBatteryLevel;
     int critialBatteryLevel;

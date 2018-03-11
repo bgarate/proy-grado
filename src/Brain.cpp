@@ -25,9 +25,6 @@ void Brain::setup(Config* config) {
     interComm = new InterComm();
     interComm->setupInterComm(config, true);
 
-    brainComm = new BrainComm();
-    brainComm->setupBrainComm(config);
-
     this->lowBatteryLevel = config->Get(ConfigKeys::Brain::LowBatteryLevel);
     this->critialBatteryLevel = config->Get(ConfigKeys::Brain::CriticalBatteryLevel);
 
@@ -57,27 +54,28 @@ void Brain::loop() {
     chrono::steady_clock::time_point newTime = startTime;
 
     //Comienzo inactivo
-    interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_PATROLING);
+    interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE);
+    WorldObject* d = world.getDrone(myid);
     DroneState_Point* r = new DroneState_Point();
-    r->set_x(0.0);
-    r->set_y(0.0);
-    r->set_z(0.0);
+    r->set_x(d->getRotation().val[0]);
+    r->set_y(d->getRotation().val[1]);
+    r->set_z(d->getRotation().val[2]);
     interComm->droneStates[myid]->set_allocated_rotation(r);
     DroneState_Point* p = new DroneState_Point();
-    p->set_x(2.0);
-    p->set_y(-1.0);
-    p->set_z(0.0);
+    p->set_x(d->getPosition().val[0]);
+    p->set_y(d->getPosition().val[1]);
+    p->set_z(d->getPosition().val[2]);
     interComm->droneStates[myid]->set_allocated_position(p);
     nextMarker = -1;
-    nextPosition.val[0] = 2;
-    nextPosition.val[1] = 3;
-    nextPosition.val[2] = 0;
-    nextRotation = 180;
+    nextPosition.val[0] = interComm->droneStates[myid]->position().x();
+    nextPosition.val[1] = interComm->droneStates[myid]->position().y();
+    nextPosition.val[2] = interComm->droneStates[myid]->position().z();
+    nextRotation = interComm->droneStates[myid]->rotation().y();
     previousMarker = -1;
-    previousPosition.val[0] = 2;
-    previousPosition.val[1] = 3;
-    previousPosition.val[2] = 0;
-    previousRotation = 180;
+    previousPosition.val[0] = nextPosition.val[0];
+    previousPosition.val[1] = nextPosition.val[1];
+    previousPosition.val[2] = nextPosition.val[2];
+    previousRotation = nextRotation;
 
     //Simulación de bateria
     long startBattryTime = std::chrono::duration_cast<std::chrono::microseconds>(chrono::steady_clock::now() - startTime).count();
@@ -88,9 +86,6 @@ void Brain::loop() {
     int range = 10 - 3 + 1;
     int taskLapse = (rand() % range + 3) * 1000 * 1000;
     long taskStartTime = std::chrono::duration_cast<std::chrono::microseconds>(chrono::steady_clock::now() - startTime).count();
-
-    //DEBUG
-    lastDebug = 0;
 
     while (true) {
         lastTime = newTime;
@@ -140,7 +135,10 @@ void Brain::loop() {
             if(it->first != myid){
 
                 //alguien following
-                if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING) { someoneFollowing = true; }
+                if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING) {
+                    someoneFollowing = true;
+                    alertid = it->first;
+                }
                 //alguien cargando
                 if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) {
                     someoneCharging = true;
@@ -272,19 +270,29 @@ void Brain::loop() {
             }else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE){
 
                 nextMarker = -1;
-                nextPosition.val[0] = 2;
-                nextPosition.val[1] = 3;
-                nextPosition.val[2] = 0;
-                nextRotation = 0;
+                nextPosition.val[0] = d->getPosition().val[0];
+                nextPosition.val[1] = d->getPosition().val[1];
+                nextPosition.val[2] = d->getPosition().val[2];
+                nextRotation = d->getRotation().val[2];
                 previousMarker = -1;
-                previousPosition.val[0] = 2;
-                previousPosition.val[1] = 3;
-                previousPosition.val[2] = 0;
-                previousRotation = 0;
+                previousPosition.val[0] = nextPosition.val[0];
+                previousPosition.val[1] = nextPosition.val[1];
+                previousPosition.val[2] = nextPosition.val[2];
+                previousRotation = d->getRotation().val[2];
 
             }else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT){
 
-                if(nextMarker == 0) {
+                previousMarker = nextMarker;
+                previousPosition = nextPosition;
+
+                //Calcular rotation
+                float a = nextRotation;
+                float b = interComm->droneStates[alertid]->rotation().y();
+                cv::Vec3d * rotation = new cv::Vec3d(0, 0, a + Helpers::angleDifference(b,a));
+                nextRotation = rotation->val[1];
+                previousRotation = nextRotation;
+
+                /*if(nextMarker == 0) {
                     previousMarker = nextMarker;
                     previousPosition = nextPosition;
                     previousRotation = nextRotation;
@@ -300,9 +308,10 @@ void Brain::loop() {
 
                 previousMarker = nextMarker;
                 previousPosition = nextPosition;
-                previousRotation = nextRotation;
+                previousRotation = nextRotation;*/
 
-            } else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING){
+            } else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING
+                        || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING){
 
                 previousMarker = nextMarker;
                 previousPosition = nextPosition;
@@ -344,6 +353,11 @@ void Brain::loop() {
             p->set_z(position->val[2]);
             interComm->droneStates[myid]->set_allocated_position(p);
 
+            //Si estoy following seteo objeto seguido igual a mi position
+            if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING){
+                interComm->droneStates[myid]->set_allocated_followed_position(p);
+            }
+
             DroneState_Point *r = new DroneState_Point();
             r->set_x(rotation->val[0]);
             r->set_y(rotation->val[1]);
@@ -371,7 +385,6 @@ void Brain::loop() {
 void Brain::shutdown() {
     should_exit = true;
     interComm->shutdownInterComm();
-    brainComm->shutdownBrainComm();
 }
 
 void Brain::cleanup() {

@@ -26,7 +26,7 @@ private:
     VisualDebugger visualDebugger;
     Hal* hal;
 
-    BodyComm * bodyComm;
+    //BodyComm * bodyComm;
 
     bool should_exit = false;
     Config* config;
