@@ -285,12 +285,15 @@ void Brain::loop() {
                 previousMarker = nextMarker;
                 previousPosition = nextPosition;
 
-                //Calcular rotation
-                float a = nextRotation;
-                float b = interComm->droneStates[alertid]->rotation().y();
-                cv::Vec3d * rotation = new cv::Vec3d(0, 0, a + Helpers::angleDifference(b,a));
-                nextRotation = rotation->val[1];
-                previousRotation = nextRotation;
+                //Mirar hacia el objeto seguido
+                cv::Vec3d aux(nextPosition.val[0], nextPosition.val[1], nextPosition.val[2]);
+                cv::Vec3d aux2(interComm->droneStates[alertid]->position().x(), interComm->droneStates[alertid]->position().y(), interComm->droneStates[alertid]->position().z());
+                aux = aux - aux2;
+                if(aux.val[0] != 0){
+                    double edge = atan2 (aux.val[0],aux.val[1]) * 180 / M_PI;
+                    nextRotation = edge;
+                    previousRotation = edge;
+                }
 
                 /*if(nextMarker == 0) {
                     previousMarker = nextMarker;
