@@ -126,12 +126,12 @@ void Brain::loop() {
         }
 
         //Tengo que volver a mi path? ya volvì a mi path?
-        if(actualPath != myid && interComm->droneStates[actualPath]->curren_task() != DroneState::CurrentTask::DroneState_CurrentTask_CHARGED){
+        if(actualPath != myid && interComm->droneStates[actualPath]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGED){
             //Vuelvo a mi path
             actualPath = myid;
             pathSize = paths[myid].GetPoints().size();
         } else if(interComm->droneStates[myid]->covered_drone_id() != 0
-                  && interComm->droneStates[interComm->droneStates[myid]->covered_drone_id()]->curren_task() != DroneState::CurrentTask::DroneState_CurrentTask_CHARGED
+                  && interComm->droneStates[interComm->droneStates[myid]->covered_drone_id()]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGED
                   && previousMarker < pathSize) {
             //Volvì a mi ruta
             interComm->droneStates[myid]->set_covered_drone_id(0);
@@ -157,7 +157,8 @@ void Brain::loop() {
                 }
 
                 //alguien cargando
-                if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) {
+                if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING
+                        || it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGED) {
                     someoneCharging = true;
 
                     if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING){
