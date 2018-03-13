@@ -309,6 +309,7 @@ void Brain::loop() {
 
                 previousMarker = nextMarker;
                 previousPosition = nextPosition;
+                previousRotation = nextRotation;
 
                 //Mirar hacia el objeto seguido
                 cv::Vec3d aux(nextPosition.val[0], nextPosition.val[1], nextPosition.val[2]);
@@ -317,7 +318,6 @@ void Brain::loop() {
                 if(aux.val[0] != 0){
                     double edge = atan2 (aux.val[0],aux.val[1]) * 180 / M_PI;
                     nextRotation = edge;
-                    previousRotation = edge;
                 }
 
             /*}else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING){

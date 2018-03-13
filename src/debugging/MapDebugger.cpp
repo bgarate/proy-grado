@@ -222,9 +222,9 @@ void MapDebugger::DrawDrones(DroneState *drone, int myid){
                GetScaleX(0.10), 0, M_PI*2);
     cairo_fill(cr);
 
-    cairo_set_source_rgb (cr, 0, 0, 1);
+    cairo_set_source_rgb (cr, 1, 0, 0);
     cairo_move_to(cr, 0 , 0);
-    cairo_rel_line_to(cr, 0, -GetScaleY(0.15));
+    cairo_rel_line_to(cr, 0, -GetScaleY(0.25));
     cairo_stroke(cr);
 
     cairo_restore(cr);
