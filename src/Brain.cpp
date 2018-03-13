@@ -173,7 +173,7 @@ void Brain::loop() {
                     } else {
 
                         //tengo que cubrir a este drone?
-                        if(paths.find(it->first) != paths.end()){
+                        if(paths.find(it->first) != paths.end() && it->second->curren_task() != DroneState::CurrentTask::DroneState_CurrentTask_CHARGED){
                             actualPath = it->first;
                             pathSize = paths[it->first].GetPoints().size();
                             interComm->droneStates[myid]->set_covered_drone_id(it->first);
