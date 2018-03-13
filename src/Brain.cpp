@@ -132,7 +132,10 @@ void Brain::loop() {
             pathSize = paths[myid].GetPoints().size();
         } else if(interComm->droneStates[myid]->covered_drone_id() != 0
                   && interComm->droneStates[interComm->droneStates[myid]->covered_drone_id()]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGED
-                  && previousMarker < pathSize) {
+                  && previousPosition.val[0] == paths[myid].GetPoints().at(previousMarker).position.val[0]
+                  && previousPosition.val[1] == paths[myid].GetPoints().at(previousMarker).position.val[1]
+                  && previousPosition.val[2] == paths[myid].GetPoints().at(previousMarker).position.val[2]
+                  && previousRotation == paths[myid].GetPoints().at(previousMarker).rotation) {
             //Volvì a mi ruta
             interComm->droneStates[myid]->set_covered_drone_id(0);
         }
