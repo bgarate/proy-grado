@@ -154,6 +154,7 @@ void InterComm::sendState() {
         state->set_drone_id(droneStates[id]->drone_id());
         state->set_name(droneStates[id]->name());
         state->set_curren_task(droneStates[id]->curren_task());
+        state->set_covered_drone_id(droneStates[id]->covered_drone_id());
 
         DroneState_Point *p  = new DroneState_Point();
         p->set_x(droneStates[id]->position().x());
