@@ -55,6 +55,7 @@ void Brain::loop() {
 
     //Comienzo inactivo
     interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE);
+    interComm->droneStates[myid]->set_covered_drone_id(0);
     WorldObject* d = world.getDrone(myid);
     DroneState_Point* r = new DroneState_Point();
     r->set_x(d->getRotation().val[0]);
@@ -101,11 +102,16 @@ void Brain::loop() {
         ////COMPORTAMIENTO SIMULADO START
 
         //Actualizar battery level
-        if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING && nextMarker == previousMarker){
+        if(nextMarker == previousMarker && (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING
+                                            || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGED)){
 
             double diff = (double)(runningTime - taskStartTime) / chargeLapse;
 
-            batteryLevel = diff *100;
+            if(diff > 1)
+                batteryLevel = 100;
+            else
+                batteryLevel = diff *100;
+
             if(interComm->droneStates[myid]->battery_level() < (int)batteryLevel)
                 interComm->droneStates[myid]->set_battery_level((int)batteryLevel);
 
@@ -119,17 +125,23 @@ void Brain::loop() {
             interComm->droneStates[myid]->set_battery_level((int)batteryLevel);
         }
 
-
-        //Tengo que cargar?
-        bool shouldCharge = (batteryLevel < critialBatteryLevel) || (batteryLevel < lowBatteryLevel && interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING);
-        //Tengo que volver a mi path?
-        if(actualPath != myid && interComm->droneStates[actualPath]->curren_task() != DroneState::CurrentTask::DroneState_CurrentTask_CHARGING){
+        //Tengo que volver a mi path? ya volvì a mi path?
+        if(actualPath != myid && interComm->droneStates[actualPath]->curren_task() != DroneState::CurrentTask::DroneState_CurrentTask_CHARGED){
+            //Vuelvo a mi path
             actualPath = myid;
             pathSize = paths[myid].GetPoints().size();
+        } else if(interComm->droneStates[myid]->covered_drone_id() != 0
+                  && interComm->droneStates[interComm->droneStates[myid]->covered_drone_id()]->curren_task() != DroneState::CurrentTask::DroneState_CurrentTask_CHARGED
+                  && previousMarker < pathSize) {
+            //Volvì a mi ruta
+            interComm->droneStates[myid]->set_covered_drone_id(0);
         }
         // hay alguien cargando? alguien siguiendo?
+        //Tengo que cargar?
+        bool shouldCharge = (batteryLevel < critialBatteryLevel) || (batteryLevel < lowBatteryLevel && interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING);
         bool someoneFollowing = false;
         bool someoneCharging = false;
+        bool someoneCovering = false;
         bool shouldLeaveCharge = false;
         for (std::map<int, DroneState*>::iterator it=interComm->droneStates.begin(); it!=interComm->droneStates.end(); ++it) {
             if(it->first != myid){
@@ -139,6 +151,11 @@ void Brain::loop() {
                     someoneFollowing = true;
                     alertid = it->first;
                 }
+                //alguien me esta cubriendo
+                if (it->second->covered_drone_id() == myid) {
+                    someoneCovering = true;
+                }
+
                 //alguien cargando
                 if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) {
                     someoneCharging = true;
@@ -158,6 +175,7 @@ void Brain::loop() {
                         if(paths.find(it->first) != paths.end()){
                             actualPath = it->first;
                             pathSize = paths[it->first].GetPoints().size();
+                            interComm->droneStates[myid]->set_covered_drone_id(it->first);
                         }
                     }
 
@@ -208,42 +226,43 @@ void Brain::loop() {
             taskLapse = chargeLapse;
             taskStartTime = runningTime;
 
+        //Si la batteria està llena estoy cargado
+        } else if(interComm->droneStates[myid]->battery_level() == 100 && interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) {
 
-        //Si hay alguien cargando con más prioridad y yo tambien estoy cargando dejo de hacerlo
-        } else if(shouldLeaveCharge && interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING){
+            interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_CHARGED);
 
+        //Termine de cargar y mi path está libre
+        }else if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGED && !someoneCovering) {
+
+            //Reseteo simulador de bateria
+            startBattryTime = runningTime;
+
+            //Paso a patruyar
             interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_PATROLING);
 
+            //Actualizo lapso y start time
             taskLapse = (rand() % range + 3) * 1000 * 1000;
             taskStartTime = runningTime;
 
+        } else if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT//estoy alerta y tengo que volver a patrullar
+                    ||  interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE//estoy inactivo
+                    || (shouldLeaveCharge && interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING)//Hay alguien mas cargando con màs prioridad
+                    || (runningTime - taskStartTime > taskLapse && interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING)//Termine de seguir a alguien
+                ) {
 
-        //Si no tengo que estar alerta o terminó el lapso de mi tarea cambio de estado
-        } else if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT
-                    ||  interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE
-                    || runningTime - taskStartTime > taskLapse) {
+            //Paso a patruyar
+            interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_PATROLING);
 
-            //Si estoy inactivo o following  paso a patrullar
-            if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE
-                    || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING
-                    || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT) {
+            //Actualizo lapso y start time
+            taskLapse = (rand() % range + 3) * 1000 * 1000;
+            taskStartTime = runningTime;
 
-                interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_PATROLING);
+        } else if (runningTime - taskStartTime > taskLapse && interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING){//Si termine mi lapso de patrullaje
 
-            //Si estoy cargando  paso a patrullar
-            }if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING){
-
-                interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_PATROLING);
-                startBattryTime = runningTime;
-
-            //Si estoy patrullando o alerta paso a patrullar
-            } else {
-
-                //Decido aleatroriamente paso a following o sigo patrullando
-                if(rand() % 5 == 1) {
-                    //Paso a following
-                    interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING);
-                }
+            //Decido aleatroriamente paso a following o sigo patrullando
+            if(rand() % 5 == 1) {
+                //Paso a following
+                interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING);
             }
 
             //Actualizo lapso y start time
@@ -255,7 +274,8 @@ void Brain::loop() {
         //Movimiento simulado
         if(runningTime - lastChange > lapseToChange) {
 
-            if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING ) {
+            if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING
+                    || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGED) {
 
                 previousMarker = nextMarker;
                 previousPosition = nextPosition;
@@ -295,23 +315,12 @@ void Brain::loop() {
                     previousRotation = edge;
                 }
 
-                /*if(nextMarker == 0) {
-                    previousMarker = nextMarker;
-                    previousPosition = nextPosition;
-                    previousRotation = nextRotation;
-                }else {
-                    nextMarker = 0;
-                    nextPosition.val[0] = paths[actualPath].GetPoints().at(0).position.val[0];
-                    nextPosition.val[1] = paths[actualPath].GetPoints().at(0).position.val[1];
-                    nextPosition.val[2] = paths[actualPath].GetPoints().at(0).position.val[2];
-                    nextRotation = paths[actualPath].GetPoints().at(0).rotation;
-                }
-
-            }else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING){
+            /*}else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING){
 
                 previousMarker = nextMarker;
                 previousPosition = nextPosition;
                 previousRotation = nextRotation;*/
+
 
             } else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING
                         || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING){

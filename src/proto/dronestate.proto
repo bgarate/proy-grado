@@ -8,13 +8,14 @@ message DroneState {
     string name = 5;
 
     CurrentTask curren_task = 6;
+    uint32 covered_drone_id = 7;
 
-    Point position = 7;
-    Point rotation = 8;
+    Point position = 8;
+    Point rotation = 9;
 
-    uint32 battery_level = 9;
+    uint32 battery_level = 10;
 
-    Point followed_position = 10;
+    Point followed_position = 11;
 
 
     message Point{
@@ -29,6 +30,7 @@ message DroneState {
         FOLLOWING = 2;
         ALERT = 3;
         CHARGING = 4;
+        CHARGED = 5;
     }
 
 

@@ -235,7 +235,7 @@ void MapDebugger::DrawDrones(DroneState *drone, int myid){
     if (drone->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING) { state = "FOLLOWING"; }
     if (drone->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT) { state = "ALERT"; }
     if (drone->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) { state = "CHARGING"; }
-
+    if (drone->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGED) { state = "CHARGED"; }
 
     cairo_set_source_rgb (cr, 0.5, 0.5, 0.5);
     Text("Drone "+std::__cxx11::to_string(drone->drone_id())+" "+std::__cxx11::to_string(drone->battery_level())+"%",

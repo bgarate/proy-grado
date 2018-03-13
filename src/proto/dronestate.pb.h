@@ -54,12 +54,13 @@ enum DroneState_CurrentTask {
   DroneState_CurrentTask_FOLLOWING = 2,
   DroneState_CurrentTask_ALERT = 3,
   DroneState_CurrentTask_CHARGING = 4,
+  DroneState_CurrentTask_CHARGED = 5,
   DroneState_CurrentTask_DroneState_CurrentTask_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
   DroneState_CurrentTask_DroneState_CurrentTask_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
 bool DroneState_CurrentTask_IsValid(int value);
 const DroneState_CurrentTask DroneState_CurrentTask_CurrentTask_MIN = DroneState_CurrentTask_INNACTIVE;
-const DroneState_CurrentTask DroneState_CurrentTask_CurrentTask_MAX = DroneState_CurrentTask_CHARGING;
+const DroneState_CurrentTask DroneState_CurrentTask_CurrentTask_MAX = DroneState_CurrentTask_CHARGED;
 const int DroneState_CurrentTask_CurrentTask_ARRAYSIZE = DroneState_CurrentTask_CurrentTask_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* DroneState_CurrentTask_descriptor();
@@ -249,6 +250,8 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
     DroneState_CurrentTask_ALERT;
   static const CurrentTask CHARGING =
     DroneState_CurrentTask_CHARGING;
+  static const CurrentTask CHARGED =
+    DroneState_CurrentTask_CHARGED;
   static inline bool CurrentTask_IsValid(int value) {
     return DroneState_CurrentTask_IsValid(value);
   }
@@ -286,28 +289,28 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
-  // .DroneState.Point position = 7;
+  // .DroneState.Point position = 8;
   bool has_position() const;
   void clear_position();
-  static const int kPositionFieldNumber = 7;
+  static const int kPositionFieldNumber = 8;
   const ::DroneState_Point& position() const;
   ::DroneState_Point* mutable_position();
   ::DroneState_Point* release_position();
   void set_allocated_position(::DroneState_Point* position);
 
-  // .DroneState.Point rotation = 8;
+  // .DroneState.Point rotation = 9;
   bool has_rotation() const;
   void clear_rotation();
-  static const int kRotationFieldNumber = 8;
+  static const int kRotationFieldNumber = 9;
   const ::DroneState_Point& rotation() const;
   ::DroneState_Point* mutable_rotation();
   ::DroneState_Point* release_rotation();
   void set_allocated_rotation(::DroneState_Point* rotation);
 
-  // .DroneState.Point followed_position = 10;
+  // .DroneState.Point followed_position = 11;
   bool has_followed_position() const;
   void clear_followed_position();
-  static const int kFollowedPositionFieldNumber = 10;
+  static const int kFollowedPositionFieldNumber = 11;
   const ::DroneState_Point& followed_position() const;
   ::DroneState_Point* mutable_followed_position();
   ::DroneState_Point* release_followed_position();
@@ -343,9 +346,15 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::DroneState_CurrentTask curren_task() const;
   void set_curren_task(::DroneState_CurrentTask value);
 
-  // uint32 battery_level = 9;
+  // uint32 covered_drone_id = 7;
+  void clear_covered_drone_id();
+  static const int kCoveredDroneIdFieldNumber = 7;
+  ::google::protobuf::uint32 covered_drone_id() const;
+  void set_covered_drone_id(::google::protobuf::uint32 value);
+
+  // uint32 battery_level = 10;
   void clear_battery_level();
-  static const int kBatteryLevelFieldNumber = 9;
+  static const int kBatteryLevelFieldNumber = 10;
   ::google::protobuf::uint32 battery_level() const;
   void set_battery_level(::google::protobuf::uint32 value);
 
@@ -362,6 +371,7 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::int64 seq_num_;
   ::google::protobuf::uint32 drone_id_;
   int curren_task_;
+  ::google::protobuf::uint32 covered_drone_id_;
   ::google::protobuf::uint32 battery_level_;
   mutable int _cached_size_;
   friend struct  protobuf_dronestate_2eproto::TableStruct;
@@ -542,7 +552,21 @@ inline void DroneState::set_curren_task(::DroneState_CurrentTask value) {
   // @@protoc_insertion_point(field_set:DroneState.curren_task)
 }
 
-// .DroneState.Point position = 7;
+// uint32 covered_drone_id = 7;
+inline void DroneState::clear_covered_drone_id() {
+  covered_drone_id_ = 0u;
+}
+inline ::google::protobuf::uint32 DroneState::covered_drone_id() const {
+  // @@protoc_insertion_point(field_get:DroneState.covered_drone_id)
+  return covered_drone_id_;
+}
+inline void DroneState::set_covered_drone_id(::google::protobuf::uint32 value) {
+  
+  covered_drone_id_ = value;
+  // @@protoc_insertion_point(field_set:DroneState.covered_drone_id)
+}
+
+// .DroneState.Point position = 8;
 inline bool DroneState::has_position() const {
   return this != internal_default_instance() && position_ != NULL;
 }
@@ -581,7 +605,7 @@ inline void DroneState::set_allocated_position(::DroneState_Point* position) {
   // @@protoc_insertion_point(field_set_allocated:DroneState.position)
 }
 
-// .DroneState.Point rotation = 8;
+// .DroneState.Point rotation = 9;
 inline bool DroneState::has_rotation() const {
   return this != internal_default_instance() && rotation_ != NULL;
 }
@@ -620,7 +644,7 @@ inline void DroneState::set_allocated_rotation(::DroneState_Point* rotation) {
   // @@protoc_insertion_point(field_set_allocated:DroneState.rotation)
 }
 
-// uint32 battery_level = 9;
+// uint32 battery_level = 10;
 inline void DroneState::clear_battery_level() {
   battery_level_ = 0u;
 }
@@ -634,7 +658,7 @@ inline void DroneState::set_battery_level(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:DroneState.battery_level)
 }
 
-// .DroneState.Point followed_position = 10;
+// .DroneState.Point followed_position = 11;
 inline bool DroneState::has_followed_position() const {
   return this != internal_default_instance() && followed_position_ != NULL;
 }
