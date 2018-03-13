@@ -121,7 +121,7 @@ void InterComm::stateHandler(Message &msg){
 
     if(droneId != id && (lastSeq.find(droneId) != lastSeq.end() || lastSeq[droneId] < seqNum)){
 
-        Logger::logDebug("State received from drone %u with seq_num %u") << droneId << seqNum;
+        //Logger::logDebug("State received from drone %u with seq_num %u") << droneId << seqNum;
 
         lastSeq[droneId] = seqNum;
 
@@ -177,7 +177,7 @@ void InterComm::sendState() {
         state->set_seq_num(seqNum);
 
         broadcaster.broadcast(msg);
-        Logger::logDebug("State sent");
+        //Logger::logDebug("State sent");
 
         lastStateSend = runningTime;
     }
