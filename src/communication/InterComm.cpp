@@ -41,6 +41,7 @@ void InterComm::setupInterComm(Config* config, bool active){
         droneStates[id]->set_drone_id(id);
         droneStates[id]->set_name(name);
         droneStates[id]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE);
+        droneStates[id]->set_covered_drone_id(0);
 
         DroneState_Point *p = new DroneState_Point();
         p->set_x(0);
@@ -93,6 +94,7 @@ void InterComm::copyDroneState(DroneState* orig, DroneState* copy){
     copy->set_drone_id(orig->drone_id());
     copy->set_name(orig->name());
     copy->set_curren_task(orig->curren_task());
+    copy->set_covered_drone_id(orig->covered_drone_id());
     copy->set_seq_num(orig->seq_num());
 
     DroneState_Point *p = new DroneState_Point();
