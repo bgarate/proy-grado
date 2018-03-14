@@ -174,7 +174,7 @@ void Brain::loop() {
         }
 
         //Estoy en mi path?
-        bool inPath = previousMarker != -1  && nextMarker != -1 && previousMarker < pathSize && nextMarker < pathSize
+        bool inPath = previousMarker != -1  && nextMarker != -1 && previousMarker < paths[myid].GetPoints().size() && nextMarker < paths[myid].GetPoints().size()
                         && previousPosition.val[0] == paths[myid].GetPoints().at(previousMarker).position.val[0]
                         && previousPosition.val[1] == paths[myid].GetPoints().at(previousMarker).position.val[1]
                         && previousPosition.val[2] == paths[myid].GetPoints().at(previousMarker).position.val[2]
