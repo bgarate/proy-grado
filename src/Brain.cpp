@@ -349,7 +349,7 @@ void Brain::loop() {
 
             float distance = std::sqrt((previousPosition.val[0]-nextPosition.val[0])*(previousPosition.val[0]-nextPosition.val[0])
                                           + (previousPosition.val[1]-nextPosition.val[1])*(previousPosition.val[1]-nextPosition.val[1]));
-            lapseToChange = (1/speedMS) * (1/distance) * 1000.0 * 1000.0;
+            lapseToChange = (1/speedMS) * distance * 1000.0 * 1000.0;
             lastChange = runningTime;
         }
 
