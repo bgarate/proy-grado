@@ -59,7 +59,8 @@ private:
     double nextRotation;
 
     long lastChange = 0;
-    long lapseToChange = 2 * 1000 * 1000;
+    long lapseToChange; //= 2 * 1000 * 1000;
+    float speedMS = 0.5;
 
     //Bateria simulada
     int batteryDuration = 60 * 1000 * 1000;
