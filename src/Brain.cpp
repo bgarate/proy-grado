@@ -105,6 +105,10 @@ void Brain::loop() {
         if(nextMarker == previousMarker && (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING
                                             || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGED)){
 
+            //comencé a cargar?
+            if(taskStartTime == -1)
+                taskStartTime = runningTime;
+
             double diff = (double)(runningTime - taskStartTime) / chargeLapse;
 
             if(diff > 1)
@@ -228,7 +232,7 @@ void Brain::loop() {
 
             //Actualizo lapso y start time
             taskLapse = chargeLapse;
-            taskStartTime = runningTime;
+            taskStartTime = -1;
 
         //Si la batteria està llena estoy cargado
         } else if(interComm->droneStates[myid]->battery_level() == 100 && interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING) {
@@ -254,6 +258,7 @@ void Brain::loop() {
         || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING)) {
 
         interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_ALERT);
+        taskStartTime = -1;
 
     } else if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_ALERT//estoy alerta y tengo que volver a patrullar
                     ||  interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_INNACTIVE//estoy inactivo
@@ -268,7 +273,7 @@ void Brain::loop() {
             taskLapse = (rand() % range + 3) * 1000 * 1000;
             taskStartTime = runningTime;
 
-        } else if (runningTime - taskStartTime > taskLapse && interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING){//Si termine mi lapso de patrullaje
+        } else if (taskStartTime != -1 && runningTime - taskStartTime > taskLapse && interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING){//Si termine mi lapso de patrullaje
 
             //Decido aleatroriamente paso a following o sigo patrullando
             if(rand() % 5 == 1 && inPath) {
@@ -349,6 +354,7 @@ void Brain::loop() {
 
             float distance = std::sqrt((previousPosition.val[0]-nextPosition.val[0])*(previousPosition.val[0]-nextPosition.val[0])
                                           + (previousPosition.val[1]-nextPosition.val[1])*(previousPosition.val[1]-nextPosition.val[1]));
+            if (distance == 0){distance = 1;}
             lapseToChange = (1/speedMS) * distance * 1000.0 * 1000.0;
             lastChange = runningTime;
         }
