@@ -55,13 +55,14 @@ enum DroneState_CurrentTask {
   DroneState_CurrentTask_ALERT = 3,
   DroneState_CurrentTask_CHARGING = 4,
   DroneState_CurrentTask_CHARGED = 5,
-  DroneState_CurrentTask_RETURNING2PATH = 6,
+  DroneState_CurrentTask_BACKFROMPAD = 6,
+  DroneState_CurrentTask_GOINGTOPAD = 7,
   DroneState_CurrentTask_DroneState_CurrentTask_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
   DroneState_CurrentTask_DroneState_CurrentTask_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
 bool DroneState_CurrentTask_IsValid(int value);
 const DroneState_CurrentTask DroneState_CurrentTask_CurrentTask_MIN = DroneState_CurrentTask_INNACTIVE;
-const DroneState_CurrentTask DroneState_CurrentTask_CurrentTask_MAX = DroneState_CurrentTask_RETURNING2PATH;
+const DroneState_CurrentTask DroneState_CurrentTask_CurrentTask_MAX = DroneState_CurrentTask_GOINGTOPAD;
 const int DroneState_CurrentTask_CurrentTask_ARRAYSIZE = DroneState_CurrentTask_CurrentTask_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* DroneState_CurrentTask_descriptor();
@@ -253,8 +254,10 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
     DroneState_CurrentTask_CHARGING;
   static const CurrentTask CHARGED =
     DroneState_CurrentTask_CHARGED;
-  static const CurrentTask RETURNING2PATH =
-    DroneState_CurrentTask_RETURNING2PATH;
+  static const CurrentTask BACKFROMPAD =
+    DroneState_CurrentTask_BACKFROMPAD;
+  static const CurrentTask GOINGTOPAD =
+    DroneState_CurrentTask_GOINGTOPAD;
   static inline bool CurrentTask_IsValid(int value) {
     return DroneState_CurrentTask_IsValid(value);
   }
