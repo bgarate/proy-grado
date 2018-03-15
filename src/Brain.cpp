@@ -151,9 +151,11 @@ void Brain::loop() {
 
                 //alguien cargando
                 if (it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING
-                        || it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGED) {
+                        || it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGED
+                        || it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_RETURNING2PATH) {
                     chargingCount++;
 
+                    //Tengo que dejar de cargar?
                     if(interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING//yo tambien estoy cargando
                             && it->second->pad_in_use() == pads[closestPad]->getId()//En el mismo charging pad
                             && (it->second->battery_level() < interComm->droneStates[myid]->battery_level()//El tiene menos bateria que yo
@@ -162,17 +164,16 @@ void Brain::loop() {
 
                             shouldLeaveCharge = true;
 
-                    } else {
-
-                        //tengo que cubrir a este drone?
-                        if(paths.find(it->first) != paths.end() && it->second->curren_task() != DroneState::CurrentTask::DroneState_CurrentTask_CHARGED){
-                            actualPath = it->first;
-                            pathSize = paths[it->first].GetPoints().size();
-                            interComm->droneStates[myid]->set_covered_drone_id(it->first);
-                        }
                     }
+                    //tengo que cubrir a este drone?
+                    if(interComm->droneStates[myid]->covered_drone_id() == 0
+                       && it->second->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_CHARGING
+                        && paths.find(it->first) != paths.end()){
 
-
+                        actualPath = it->first;
+                        pathSize = paths[it->first].GetPoints().size();
+                        interComm->droneStates[myid]->set_covered_drone_id(it->first);
+                    }
                 }
             }
         }
@@ -230,6 +231,11 @@ void Brain::loop() {
             //Aviso el pad en el que voy a cargar
             interComm->droneStates[myid]->set_pad_in_use(pads[closestPad]->getId());
 
+            //Dejo de cubrir si lo estoy haciendo
+            actualPath = myid;
+            pathSize = paths[myid].GetPoints().size();
+            interComm->droneStates[myid]->set_covered_drone_id(0);
+
             //Actualizo lapso y start time
             taskLapse = chargeLapse;
             taskStartTime = -1;
@@ -245,7 +251,15 @@ void Brain::loop() {
             //Reseteo simulador de bateria
             startBattryTime = runningTime;
 
-            //Paso a patruyar
+            //Velvo a mi ruta
+            interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_RETURNING2PATH);
+
+            taskStartTime = -1;
+
+            //Si ya volvi a mi ruta despues de cargar
+    }else if(inPath && interComm->droneStates[myid]->curren_task() == DroneState_CurrentTask_RETURNING2PATH) {
+
+            //Velvo a patrullar
             interComm->droneStates[myid]->set_curren_task(DroneState::CurrentTask::DroneState_CurrentTask_PATROLING);
 
             //Actualizo lapso y start time
@@ -339,7 +353,8 @@ void Brain::loop() {
 
 
             } else if (interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING
-                        || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING){
+                        || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_PATROLING
+                        || interComm->droneStates[myid]->curren_task() == DroneState::CurrentTask::DroneState_CurrentTask_RETURNING2PATH){
 
                 previousMarker = nextMarker;
                 previousPosition = nextPosition;

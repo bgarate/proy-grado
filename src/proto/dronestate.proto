@@ -32,6 +32,7 @@ message DroneState {
         ALERT = 3;
         CHARGING = 4;
         CHARGED = 5;
+        RETURNING2PATH = 6;
     }
 
 
