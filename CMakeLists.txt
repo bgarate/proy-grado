@@ -69,21 +69,41 @@ set(SOURCE_FILES
         src/bodytests/OpticalFlowObstacleAvoidance.cpp
         src/landtracking/MarkerLand.h src/landtracking/MarkerLand.cpp
         src/bodytests/TrackMarkers.cpp src/navigation/MarkerTracker.cpp src/navigation/MarkerTracker.h
-        src/navigation/World.cpp src/navigation/World.h src/navigation/NavigationDebugger.cpp src/navigation/NavigationDebugger.h
+        src/navigation/World.cpp src/navigation/World.h
+        src/navigation/NavigationDebugger.cpp src/navigation/NavigationDebugger.h
         src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h
         src/navigation/MarkerFollower.cpp src/navigation/MarkerFollower.h
         src/main.cpp src/tracking/OpticalFlow.cpp src/tracking/OpticalFlow.h src/tracking/DbScan.cpp src/tracking/DbScan.h src/utils/Helpers.h
         src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h
-        src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h src/navigation/Path.cpp src/navigation/Path.h
-        src/communication/BrainComm.cpp src/communication/BrainComm.h src/communication/BodyComm.cpp src/communication/BodyComm.h
-        src/communication/InterComm.cpp src/communication/InterComm.h src/communication/SharedMemory.h src/stateMachine/BodyState.h
-        src/stateMachine/BodyStateMachine.h src/stateMachine/BodyStateMachineControl.h src/stateMachine/StepName.h src/systems/System.h src/systems/SystemManager.h src/stateMachine/PatrollingState.h)
+        src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h
+        src/navigation/Path.cpp src/navigation/Path.h
+        src/communication/BrainComm.cpp src/communication/BrainComm.h
+        src/communication/BodyComm.cpp src/communication/BodyComm.h
+        src/communication/InterComm.cpp src/communication/InterComm.h
+        src/debugging/MapDebugger.cpp src/debugging/MapDebugger.h
+        src/communication/SharedMemory.h src/stateMachine/BodyState.h
+        src/stateMachine/BodyStateMachine.h src/stateMachine/BodyStateMachineControl.h
+        src/stateMachine/StepName.h src/systems/System.h
+        src/systems/SystemManager.h src/stateMachine/PatrollingState.h)
 
 
 set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h
         src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h)
 set(CALIBRATION_MAIN src/calibration.cpp src/stateMachine/BodyState.h src/systems/MarkerTrackerSystem.h src/stateMachine/TakingOffState.h)
 set(MARKER_MAIN src/navigation/MarkerTracker.cpp src/navigation/MarkerTracker.h src/marker.cpp)
+
+set(EXTERNAL_DEBUGGER src/external_debugger.cpp
+        src/messages/MessageBuilder.cpp src/messages/MessageBuilder.h
+        src/messages/MessageHandler.cpp src/messages/MessageHandler.h
+        src/messages/IpResolver.cpp src/messages/IpResolver.h
+        src/messages/Broadcaster.cpp src/messages/Broadcaster.h
+        src/logging/Logger.cpp src/logging/Logger.h
+        src/config/ConfigDefaults.cpp src/config/ConfigDefaults.h
+        src/config/Config.h src/config/ConfigKeys.h src/config/ConfigKeys.cpp
+        src/navigation/World.cpp src/navigation/World.h
+        src/navigation/Path.cpp src/navigation/Path.h
+        src/communication/InterComm.cpp src/communication/InterComm.h
+        src/debugging/MapDebugger.cpp src/debugging/MapDebugger.h)
 
 # Otros proyectos a compilar
 
@@ -112,12 +132,14 @@ add_executable(proy_grado ${SOURCE_FILES})
 add_executable(marker_generator ${MARKER_MAIN})
 add_executable(calibration ${CALIBRATION_MAIN})
 add_executable(landtracking ${LANDTRACKING_MAIN})
+add_executable(external_debugger ${EXTERNAL_DEBUGGER})
 
 # Flags de compilación
 
 target_compile_options(proy_grado PUBLIC -DNON_MATLAB_PARSING -DMAX_EXT_API_CONNECTIONS=255 -D__linux)
 target_compile_options(calibration PUBLIC -DNON_MATLAB_PARSING -DMAX_EXT_API_CONNECTIONS=255 -D__linux)
 target_compile_options(landtracking PUBLIC -DNON_MATLAB_PARSING -DMAX_EXT_API_CONNECTIONS=255 -D__linux)
+target_compile_options(external_debugger PUBLIC -DNON_MATLAB_PARSING -DMAX_EXT_API_CONNECTIONS=255 -D__linux)
 
 # Librerias a linkear
 
@@ -145,3 +167,11 @@ target_link_libraries(landtracking ${OpenCV_LIBS})
 target_link_libraries(marker_generator ${OpenCV_LIBS})
 target_link_libraries(marker_generator ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(marker_generator ${Boost_LIBRARIES})
+
+target_link_libraries(external_debugger yaml-cpp)
+target_link_libraries(external_debugger ${EIGEN3_LIBS} ${Pangolin_LIBRARIES})
+target_link_libraries(external_debugger ${OpenCV_LIBS})
+target_link_libraries(external_debugger ${Protobuf_LIBRARIES})
+target_link_libraries(external_debugger proto)
+target_link_libraries(external_debugger ${CAIRO_LIBRARIES})
+target_link_libraries(external_debugger ${Boost_LIBRARIES})

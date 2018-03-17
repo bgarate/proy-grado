@@ -45,6 +45,7 @@ struct ConfigKeys {
         CONFIG_KEY(Debugging, OutputRawVideoEnabled, bool);
         CONFIG_KEY(Debugging, OutputPath, std::string);
         CONFIG_KEY(Debugging, NavigationDebuggerScale, int);
+        CONFIG_KEY(Debugging, MapDebuggerInBrain, bool);
     };
 
     struct Body {
@@ -60,6 +61,8 @@ struct ConfigKeys {
 
     struct Brain {
         CONFIG_KEY(Body, Start, bool)
+        CONFIG_KEY(Body, LowBatteryLevel, int)
+        CONFIG_KEY(Body, CriticalBatteryLevel, int)
     };
 };
 

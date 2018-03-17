@@ -65,6 +65,7 @@ public:
     void addObject(ObjectType type, cv::Vec3d position, cv::Vec3d rotation, int id, std::string state);
     std::vector<WorldObject*> getObjects();
     std::vector<WorldObject*> getDrones();
+    WorldObject* getDrone(int id);
     std::vector<WorldObject*> getMarkers();
     std::vector<WorldObject*> getPads();
 

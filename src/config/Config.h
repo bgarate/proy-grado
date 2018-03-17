@@ -140,24 +140,31 @@ public:
 
     }
 
-    Path GetPath() {
-        std::lock_guard<std::mutex> lck(pathMutex);
+    std::map<int, Path> GetPaths() {
 
-        YAML::Node pathNode = config["Path"];
+        YAML::Node pathsNode = config["Paths"];
+        std::map<int, Path> paths;
 
-        Path path;
+        for (int i = 0; i < pathsNode.size(); ++i) {
 
-        for (int i = 0; i < pathNode.size(); ++i) {
+            YAML::Node object = pathsNode[i];
+            Path path;
+            YAML::Node pathNode = object["path"];
 
-            YAML::Node object = pathNode[i];
-            cv::Vec3d position = object["position"].as<cv::Vec3d>();
-            double rotation = object["rotation"].as<double>();
+            for (int i = 0; i < pathNode.size(); ++i) {
 
-            path.AddPoint(position, rotation);
+                YAML::Node object = pathNode[i];
+                cv::Vec3d position = object["position"].as<cv::Vec3d>();
+                double rotation = object["rotation"].as<double>();
 
+                path.AddPoint(position, rotation);
+
+            }
+
+            paths[object["droneId"].as<int>()] =  path;
         }
 
-        return path;
+        return paths;
 
     }
 
@@ -173,8 +180,8 @@ public:
             YAML::Node object;
             PathPoint point = points[i];
 
-            object["position"] = point.Postion;
-            object["rotation"] = point.Rotation;
+            object["position"] = point.position;
+            object["rotation"] = point.rotation;
 
             pathNode.push_back(object);
         }

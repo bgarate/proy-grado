@@ -36,6 +36,7 @@ private:
     NavigationDebugger navigationDebugger;
     Hal *hal;
 
+
     BodyComm *bodyComm;
     bool should_exit = false;
     Config* config;

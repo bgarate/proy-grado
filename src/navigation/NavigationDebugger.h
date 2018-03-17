@@ -77,8 +77,6 @@ private:
 
     void DrawDrone(NavigationCommand command);
 
-    void DrawOtherDrone(WorldObject *drone);
-
     void DrawMarkerSquare(WorldObject *marker);
 
     void DrawTargetMarker(PathPoint point);

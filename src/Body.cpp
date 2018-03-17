@@ -37,6 +37,7 @@ void Body::setup(Config* config, SharedMemory* shared) {
     StateMachine = new BodyStateMachine();
     Systems = new SystemManager();
 
+
 }
 
 
@@ -64,7 +65,7 @@ void Body::loop() {
 
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
 
-        bodyComm->bodyCommStep(runningTime, deltaTime);
+        //bodyComm->bodyCommStep(runningTime, deltaTime);
 
         if (frame != NULL) {
             visualDebugger.setFrame(frame);
@@ -100,6 +101,7 @@ void Body::loop() {
         }
 
         if(should_exit || bodyComm->shouldExit())
+
             break;
 
         usleep(config->Get(ConfigKeys::Body::SleepDelay));

@@ -7,10 +7,16 @@ message DroneState {
     int64 seq_num = 4;
     string name = 5;
 
-    CurrentTask curren_task = 6;
+    Point position = 6;
+    Point rotation = 7;
 
-    Point position = 7;
-    Point rotation = 8;
+    CurrentTask curren_task = 8;
+
+    uint32 battery_level = 9;
+    uint32 pad_in_use = 10;
+    uint32 covered_drone_id = 11;
+    Point followed_position = 12;
+
 
 
     message Point{
@@ -25,6 +31,9 @@ message DroneState {
         FOLLOWING = 2;
         ALERT = 3;
         CHARGING = 4;
+        CHARGED = 5;
+        BACKFROMPAD = 6;
+        GOINGTOPAD = 7;
     }
 
 

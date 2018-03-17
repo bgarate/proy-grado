@@ -44,6 +44,7 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Debugging::OutputPath, std::string(""));
     config->Set(ConfigKeys::Debugging::RealTimeVideoOutputEnabled, false);
     config->Set(ConfigKeys::Debugging::NavigationDebuggerScale, 50);
+    config->Set(ConfigKeys::Debugging::MapDebuggerInBrain, false);
 
     config->Set(ConfigKeys::Body::SleepDelay, 0);
     config->Set(ConfigKeys::Body::Start, true);
@@ -55,6 +56,8 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Body::TrackingSmoothingSamples, 10);
 
     config->Set(ConfigKeys::Brain::Start, true);
+    config->Set(ConfigKeys::Brain::LowBatteryLevel, 20);
+    config->Set(ConfigKeys::Brain::CriticalBatteryLevel, 5);
 
     World world = getWorld(config);
     config->SetWorld(world);

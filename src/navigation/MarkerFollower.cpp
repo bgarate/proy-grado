@@ -2,6 +2,7 @@
 // Created by bruno on 12/08/17.
 //
 
+#include "../utils/Helpers.h"
 #include "../tracking/Follower.h"
 #include "../logging/Logger.h"
 #include "../config/ConfigKeys.h"
@@ -52,10 +53,10 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
     cv::Vec2d normalizedTarget = cv::normalize(targetVector2d);
     cv::Vec2d targetVector = Rotate(normalizedTarget,toRadians(EstimatedPose[2]));
 // TODO: Considerar altura
-    cv::Vec3d v = targetPathPoint.Postion - EstimatedPosition;
+    cv::Vec3d v = targetPathPoint.position - EstimatedPosition;
     double distanceToPathPoint = cv::norm(cv::Vec2d(v[0],v[1]));
 
-    double alignmentAngle = angleDifference(targetPathPoint.Rotation,EstimatedPose[2]);
+    double alignmentAngle = angleDifference(targetPathPoint.rotation,EstimatedPose[2]);
 
     if(distanceToPathPoint <= TARGET_REACHED_DISTANCE /*&&
             std::abs(alignmentAngle) < ALIGNEMENT_ANGLE_THRESOLD*/) {
@@ -98,6 +99,7 @@ double MarkerFollower::angleDifference(double target, double origin){
 double MarkerFollower::signedMod(double a, double n) {
     return a - std::floor(a/n) * n;
 }
+
 
 void MarkerFollower::EstimatePosition(const std::vector<Marker> &markers, double altitude) {
 
@@ -235,20 +237,20 @@ void MarkerFollower::ProjectNextPosition() {
     PathPoint a = points[currentTarget];
     PathPoint b = points[(currentTarget + 1) % points.size()];
 
-    cv::Vec3d direction = cv::normalize(b.Postion-a.Postion);
-    cv::Vec3d toPredicted = PredictedPosition - a.Postion;
+    cv::Vec3d direction = cv::normalize(b.position-a.position);
+    cv::Vec3d toPredicted = PredictedPosition - a.position;
 
-    ProjectedPredictedPosition = a.Postion + direction * (toPredicted.dot(direction));
+    ProjectedPredictedPosition = a.position + direction * (toPredicted.dot(direction));
     FollowTarget = ProjectedPredictedPosition + direction * 0.25;
 
     float multiplier = toPredicted.dot(direction) + 0.25;
-    float norm = cv::norm(b.Postion - a.Postion);
+    float norm = cv::norm(b.position - a.position);
 
     if(multiplier > norm)
-        FollowTarget = b.Postion;
+        FollowTarget = b.position;
     else if (multiplier < 0)
-        FollowTarget = a.Postion;
+        FollowTarget = a.position;
 // SUPER HACK!
-    FollowTarget = b.Postion;
+    FollowTarget = b.position;
 
 }

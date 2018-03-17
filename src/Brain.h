@@ -12,7 +12,7 @@
 #include "messages/Broadcaster.h"
 #include "messages/MessageHandler.h"
 #include "config/Config.h"
-#include <src/navigation/NavigationDebugger.h>
+#include "debugging/MapDebugger.h"
 
 class Brain {
 public:
@@ -38,31 +38,41 @@ private:
 
 
     InterComm * interComm;
-    //BrainComm * brainComm;
 
     unsigned int myid;
+    unsigned int alertid;
 
+    int lowBatteryLevel;
+    int critialBatteryLevel;
 
-    long lastDebug = 0;
-    void debugDroneStates(long runningTime);
+    //Movimiento simulado
+    std::map<int, Path> paths;
+    int actualPath;
+    int pathSize;
 
-    //NAVDEB
-    NavigationDebugger* navigationDebugger;
-    NavigationCommand command;
-    MarkerFollower* follower;
-    Path path;
-    WorldObject* drone;
-    World world;
+    int closestPad = -1;
+    std::vector<WorldObject *> pads;
 
-    const int pathSize = 8;
-    int* simulatedPath = new int[pathSize] {19};
     int nextMarker, previousMarker;
+    cv::Vec3d previousPosition;
+    double previousRotation;
+    cv::Vec3d nextPosition;
+    double nextRotation;
+
+    long lastChange = 0;
+    long lapseToChange; //= 2 * 1000 * 1000;
+    float speedMS = 0.5;
+
+    //Bateria simulada
+    int batteryDuration = 60 * 1000 * 1000;
+    long chargeLapse = 10 * 1000 * 1000;
+
+    //Map debugger
+    MapDebugger* mapDebugger;
+    bool mapEnabled;
+    World world;
     long lastRefreshTime = 0;
     long pirntLapse = 0.1 * 1000 * 1000;
-    long lastChange = 0;
-    long lapseToChange = 2 * 1000 * 1000;
-    //NAVDEB
-
 };
 
 
