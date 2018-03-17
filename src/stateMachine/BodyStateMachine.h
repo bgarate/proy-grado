@@ -18,7 +18,7 @@ public:
 
     void Init(std::string firstStep,Config* config, Hal* hal, SharedMemory* shared, VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger) {
 
-        BodyStateMachineControl control(this);
+        BodyStateMachineControl* control = new BodyStateMachineControl(this);
 
         for(const std::pair<std::string,BodyState*>& pair: states){
             pair.second->init(config, hal, shared, control,visualDebugger, navigationDebugger);

@@ -1,6 +1,8 @@
 
 #include <src/communication/SharedMemory.h>
 #include <src/systems/MarkerTrackerSystem.h>
+#include <src/stateMachine/TakingOffState.h>
+#include <src/stateMachine/PatrollingState.h>
 #include "hal/dummyHal/dummyHal.h"
 #include "Body.h"
 #include "Brain.h"
@@ -35,10 +37,15 @@ void runBody(Config* config, SharedMemory* shared) {
 
     Body body(hal);
 
+    body.setup(config, shared);
+
     MarkerTrackerSystem* mts = new MarkerTrackerSystem();
     body.Systems->RegisterSystem(mts);
+    BodyState* s = new TakingOffState();
+    body.StateMachine->RegisterState(s);
+    s = new PatrollingState();
+    body.StateMachine->RegisterState(s);
 
-    body.setup(config, shared);
     body.loop();
     body.cleanup();
     delete hal;

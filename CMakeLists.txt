@@ -89,7 +89,7 @@ set(SOURCE_FILES
         src/stateMachine/BodyState.h
         src/stateMachine/BodyStateMachine.h src/stateMachine/BodyStateMachineControl.h
         src/stateMachine/StepName.h src/systems/System.h
-        src/systems/SystemManager.h src/stateMachine/PatrollingState.h)
+        src/systems/SystemManager.h src/stateMachine/PatrollingState.h src/stateMachine/StepName.cpp)
 
 
 set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h

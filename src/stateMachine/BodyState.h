@@ -14,7 +14,7 @@ public:
 
     virtual std::string getName() = 0;
 
-    virtual void init(Config* config, Hal* hal, SharedMemory* shared, BodyStateMachineControl contro,  VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger) = 0;
+    virtual void init(Config* config, Hal* hal, SharedMemory* shared, BodyStateMachineControl* control,  VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger) = 0;
 
     virtual void prepare() = 0;
 

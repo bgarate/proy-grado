@@ -19,7 +19,7 @@ public:
         return StepName::PATROLLING;
     }
 
-    void init(Config* config, Hal* hal, SharedMemory* shared, BodyStateMachineControl contro,  VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger) override {
+    void init(Config* config, Hal* hal, SharedMemory* shared, BodyStateMachineControl* control,  VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger) override {
         this->hal = hal;
         this->shared = shared;
         this->visualDebugger = visualDebugger;

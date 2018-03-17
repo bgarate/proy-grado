@@ -30,8 +30,8 @@ void Body::setup(Config* config, SharedMemory* shared) {
     this->mc = new ManualControl(hal);
     this->inmc = false;
 
-    bodyComm = new BodyComm();
-    bodyComm->setupBodyComm(config);
+    //bodyComm = new BodyComm();
+    //bodyComm->setupBodyComm(config);
 
     StateMachine = new BodyStateMachine();
     Systems = new SystemManager();
@@ -99,7 +99,7 @@ void Body::loop() {
             config->Set(ConfigKeys::Drone::CameraTilt,std::max(config->Get(ConfigKeys::Drone::VerticalFOV)/2,config->Get(ConfigKeys::Drone::CameraTilt) - 0.1));
         }
 
-        if(should_exit || bodyComm->shouldExit())
+        if(should_exit /*|| bodyComm->shouldExit()*/)
 
             break;
 

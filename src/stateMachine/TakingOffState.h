@@ -19,7 +19,7 @@ public:
         return StepName::TAKING_OFF;
     }
 
-    void init(Config* config, Hal* hal, SharedMemory* shared, BodyStateMachineControl control,  VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger) override {
+    void init(Config* config, Hal* hal, SharedMemory* shared, BodyStateMachineControl* control,  VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger) override {
         this->hal = hal;
         this->shared = shared;
         this->visualDebugger = visualDebugger;
@@ -38,7 +38,7 @@ public:
         visualDebugger->writeConsole("Despegado");
 
         if(hal->getState() == State::Hovering || hal->getState() == State::Flying)
-            control.Transition(StepName::PATROLLING);
+            control->Transition(StepName::PATROLLING);
     }
 
     void leave() override {
@@ -52,8 +52,8 @@ private:
     Hal* hal;
     SharedMemory *shared;
     VisualDebugger *visualDebugger;
-    bool takingOff = false|;
-    BodyStateMachineControl control;
+    bool takingOff = false;
+    BodyStateMachineControl* control;
 };
 
 
