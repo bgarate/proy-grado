@@ -25,16 +25,28 @@ public:
     NavigationCommand ExecutedCommand;
 };
 
+class ControlInfo {
+public:
+
+};
+
 class SharedMemory {
 public:
 
     StatusInfo getStatusInfo();
     void setStatusInfo(StatusInfo status);
 
+    ControlInfo getControlInfo();
+    void setControlInfo(ControlInfo status);
+
 private:
 
     StatusInfo statusInfo;
     std::mutex statusInfoMutex;
+
+    ControlInfo controlInfo;
+    std::mutex controlInfoMutex;
+
 
 };
 
