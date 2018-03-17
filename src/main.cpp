@@ -1,15 +1,11 @@
-#include <iostream>
-#include <wait.h>
-#include <tiff.h>
+
 #include <src/communication/SharedMemory.h>
 #include <src/systems/MarkerTrackerSystem.h>
 #include "hal/dummyHal/dummyHal.h"
-#include "logging/Logger.h"
 #include "Body.h"
 #include "Brain.h"
 #include "hal/vrep/vrephal.cpp"
 #include "hal/pb2/pb2hal.cpp"
-#include "hal/HalType.hpp"
 #include "config/ConfigKeys.h"
 
 void welcome_message() {

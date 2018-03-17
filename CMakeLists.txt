@@ -47,8 +47,6 @@ set(SOURCE_FILES
         src/tracking/DetectAndTrack.cpp src/tracking/DetectAndTrack.h
         src/tracking/Track.cpp src/tracking/Track.h
         src/messages/SocketChannel.cpp src/messages/SocketChannel.h
-        src/Brain.cpp src/Brain.h
-        src/Body.cpp src/Body.h
         src/bodytests/BodyTestRegistry.cpp src/bodytests/BodyTestRegistry.h
         src/bodytests/BodyTest.h src/bodytests/BodyTest1.cpp src/bodytests/BodyTest2.cpp
         src/messages/Connection.cpp src/messages/Connection.h
@@ -73,6 +71,12 @@ set(SOURCE_FILES
         src/navigation/NavigationDebugger.cpp src/navigation/NavigationDebugger.h
         src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h
         src/navigation/MarkerFollower.cpp src/navigation/MarkerFollower.h
+        src/Body.cpp src/Body.h
+        src/stateMachine/StepName.h
+        src/stateMachine/BodyStateMachine.h src/stateMachine/BodyStateMachineControl.h src/systems/System.h src/systems/SystemManager.h src/stateMachine/PatrollingState.h
+        src/systems/MarkerTrackerSystem.h src/stateMachine/TakingOffState.h
+        src/Brain.cpp src/Brain.h
+
         src/main.cpp src/tracking/OpticalFlow.cpp src/tracking/OpticalFlow.h src/tracking/DbScan.cpp src/tracking/DbScan.h src/utils/Helpers.h
         src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h
         src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h
@@ -81,7 +85,8 @@ set(SOURCE_FILES
         src/communication/BodyComm.cpp src/communication/BodyComm.h
         src/communication/InterComm.cpp src/communication/InterComm.h
         src/debugging/MapDebugger.cpp src/debugging/MapDebugger.h
-        src/communication/SharedMemory.h src/stateMachine/BodyState.h
+        src/communication/SharedMemory.cpp src/communication/SharedMemory.h
+        src/stateMachine/BodyState.h
         src/stateMachine/BodyStateMachine.h src/stateMachine/BodyStateMachineControl.h
         src/stateMachine/StepName.h src/systems/System.h
         src/systems/SystemManager.h src/stateMachine/PatrollingState.h)
@@ -89,7 +94,7 @@ set(SOURCE_FILES
 
 set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h
         src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h)
-set(CALIBRATION_MAIN src/calibration.cpp src/stateMachine/BodyState.h src/systems/MarkerTrackerSystem.h src/stateMachine/TakingOffState.h)
+set(CALIBRATION_MAIN src/calibration.cpp)
 set(MARKER_MAIN src/navigation/MarkerTracker.cpp src/navigation/MarkerTracker.h src/marker.cpp)
 
 set(EXTERNAL_DEBUGGER src/external_debugger.cpp

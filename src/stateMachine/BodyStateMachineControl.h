@@ -9,7 +9,7 @@
 
 class ITransition {
 public:
-    virtual void Transition(std::string nextStep);
+    virtual void Transition(std::string nextStep) = 0;
 };
 
 class BodyStateMachineControl {

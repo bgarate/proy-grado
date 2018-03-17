@@ -1,24 +1,24 @@
-#include "../logging/Logger.h"
-#include "../config/ConfigKeys.h"
+//
+// Created by bruno on 09/08/17.
+//
+
+
+#include <src/logging/Logger.h>
+#include <src/config/ConfigKeys.h>
 #include "NavigationDebugger.h"
-#include "World.h"
-#include "MarkerTracker.h"
-#include "MarkerFollower.h"
-#include "Path.h"
+#include "cairo-xlib.h"
 
 const cv::Size NavigationDebugger::SIZE = cv::Size(1024,768);
 const cv::Point NavigationDebugger::ORIGIN = cv::Point(300,300);
 const double NavigationDebugger::dashPattern[1] = {4.0};
 
-NavigationDebugger::NavigationDebugger(Config *config, World* world) {
+void NavigationDebugger::Init(Config* config) {
+
     this->config = config;
-    this->world = world;
+    World noPtrWorld = config->GetWorld();
+    this->world = &noPtrWorld;
     drone = world->getDrones()[0];
     this->SCALE = config->Get(ConfigKeys::Debugging::NavigationDebuggerScale);
-}
-
-
-void NavigationDebugger::Init() {
 
     surface = cairo_create_x11_surface0(SIZE.width,SIZE.height);
     cr = cairo_create(surface);
@@ -78,10 +78,17 @@ void NavigationDebugger::DrawAxis(std::string name, cv::Vec3d axis) {
 
 }
 
-void NavigationDebugger::Run(NavigationCommand command, int targetId, std::vector<cv::Vec3d> estimatedPositions,
-                             std::vector<cv::Vec3d> estimatedPoses, Path path,
-                             boost::circular_buffer<cv::Vec3d, std::allocator<cv::Vec3d>> positionHistory, cv::Vec3d nextPosition,
-                             cv::Vec3d projectedNextPosition, cv::Vec3d followTarget) {
+void NavigationDebugger::SetEstimations(std::vector<cv::Vec3d> estimatedPositions, std::vector<cv::Vec3d> estimatedPoses) {
+    this->estimatedPositions = estimatedPositions;
+    this->estimatedPoses = estimatedPoses;
+}
+
+void NavigationDebugger::SetPositionHistory(boost::circular_buffer<cv::Vec3d, std::allocator<cv::Vec3d>> positionHistory) {
+    this->positionHistory = positionHistory;
+}
+
+void NavigationDebugger::Run(NavigationCommand command, int targetId,
+                             cv::Vec3d nextPosition, cv::Vec3d projectedNextPosition, cv::Vec3d followTarget) {
 
     cairo_set_source_rgb(cr, 1,1,1);
     cairo_paint(cr);
@@ -103,6 +110,11 @@ void NavigationDebugger::Run(NavigationCommand command, int targetId, std::vecto
         DrawTargetOrientation(marker);
     }
 
+    for(WorldObject* otherDrone : world->getDrones()) {
+        if(otherDrone->getId() != drone->getId())
+            DrawOtherDrone(otherDrone);
+    }
+
     for(WorldObject* marker : world->getMarkers()) {
         DrawMarkerTextId(marker);
     }
@@ -115,7 +127,7 @@ void NavigationDebugger::Run(NavigationCommand command, int targetId, std::vecto
 
     DrawDroneEstimatedPositions(estimatedPositions, estimatedPoses);
 
-    DrawPath(path, targetId);
+    DrawPath(config->GetPaths().at(config->Get(ConfigKeys::Drone::Id)), targetId);
 
     cairo_surface_flush(surface);
     XFlush(dsp);
@@ -294,7 +306,46 @@ void NavigationDebugger::DrawDrone(NavigationCommand command) {
     cairo_rotate(cr,toRadians(drone->getRotation()[2]));
 
     cairo_arc (cr, GetScaleX(- 0.10), GetScaleY(- 0.10),
+               GetScaleX(0.12), 0, M_PI*2);
+    cairo_fill(cr);
+    cairo_arc (cr, GetScaleX( - 0.10), GetScaleY( + 0.10),
                GetScaleX(0.10), 0, M_PI*2);
+    cairo_fill(cr);
+    cairo_arc (cr, GetScaleX( + 0.10), GetScaleY( - 0.10),
+               GetScaleX(0.10), 0, M_PI*2);
+    cairo_fill(cr);
+    cairo_arc (cr, GetScaleX( + 0.10), GetScaleY( + 0.10),
+               GetScaleX(0.10), 0, M_PI*2);
+    cairo_fill(cr);
+
+    cairo_set_source_rgb (cr, 0, 0, 1);
+    cairo_move_to(cr, 0 , 0);
+    cairo_rel_line_to(cr, 0, -GetScaleY(1));
+    cairo_stroke(cr);
+
+    cairo_set_source_rgb (cr, 0.6, 0.5, 0.8);
+    cairo_move_to(cr, 0 , 0);
+    cairo_rel_line_to(cr, GetScaleX(command.LateralSpeed) * 3, -GetScaleY(command.ForwardSpeed) * 3);
+
+    cairo_restore(cr);
+
+    cairo_set_source_rgb (cr, 0.5, 0.5, 0.5);
+    Text(std::__cxx11::to_string(drone->getId())+": "+drone->getState(),
+         cv::Point2i(GetX(drone->getPosition()[0] - 0.30), GetY(drone->getPosition()[1] + 0.30)), 9);
+
+}
+
+void NavigationDebugger::DrawOtherDrone(WorldObject *drone){
+
+    cairo_set_source_rgb (cr, 0, 1, 0);
+
+    cairo_save(cr);
+
+    cairo_translate(cr,GetX(drone->getPosition()[0]),GetY(drone->getPosition()[1]));
+    cairo_rotate(cr,toRadians(drone->getRotation()[2]));
+
+    cairo_arc (cr, GetScaleX(- 0.10), GetScaleY(- 0.10),
+               GetScaleX(0.12), 0, M_PI*2);
     cairo_fill(cr);
     cairo_arc (cr, GetScaleX( - 0.10), GetScaleY( + 0.10),
                GetScaleX(0.10), 0, M_PI*2);
@@ -310,10 +361,6 @@ void NavigationDebugger::DrawDrone(NavigationCommand command) {
     cairo_move_to(cr, 0 , 0);
     cairo_rel_line_to(cr, 0, -GetScaleY(0.15));
     cairo_stroke(cr);
-
-    cairo_set_source_rgb (cr, 0.6, 0.5, 0.8);
-    cairo_move_to(cr, 0 , 0);
-    cairo_rel_line_to(cr, GetScaleX(command.LateralSpeed) * 3, -GetScaleY(command.ForwardSpeed) * 3);
 
     cairo_restore(cr);
 
