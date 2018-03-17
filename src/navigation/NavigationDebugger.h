@@ -9,7 +9,6 @@
 #include "../config/Config.h"
 #include <pangolin/pangolin.h>
 #include "cairo.h"
-#include "cairo-xlib.h"
 #include "World.h"
 #include "MarkerFollower.h"
 #include "Path.h"
@@ -19,6 +18,9 @@ enum class Axis {
     Y,
     Z
 };
+
+struct _XDisplay;
+typedef struct _XDisplay Display;
 
 class NavigationDebugger {
 public:

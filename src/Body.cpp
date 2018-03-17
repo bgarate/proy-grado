@@ -8,7 +8,6 @@
 #include <src/stateMachine/StepName.h>
 #include "bodytests/BodyTestRegistry.h"
 #include "Body.h"
-#include "logging/Logger.h"
 #include "Brain.h"
 #include "bodytests/TrackMarkers.cpp"
 

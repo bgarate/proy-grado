@@ -6,10 +6,7 @@
 #include <src/logging/Logger.h>
 #include <src/config/ConfigKeys.h>
 #include "NavigationDebugger.h"
-#include "World.h"
-#include "MarkerTracker.h"
-#include "MarkerFollower.h"
-#include "Path.h"
+#include "cairo-xlib.h"
 
 const cv::Size NavigationDebugger::SIZE = cv::Size(1024,768);
 const cv::Point NavigationDebugger::ORIGIN = cv::Point(300,300);

@@ -12,8 +12,8 @@ public:
     static std::string PATROLLING;
 };
 
-std::string TAKING_OFF = "taking-off";
-std::string LANDING = "landing";
-std::string PATROLLING = "patrolling";
+std::string StepName::TAKING_OFF = "taking-off";
+std::string StepName::LANDING = "landing";
+std::string StepName::PATROLLING = "patrolling";
 
 #endif //PROY_GRADO_STEPNAME_H
