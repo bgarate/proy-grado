@@ -100,11 +100,11 @@ public:
 
         //Actualizar battery level
         //Si estoy cargando aumento el battery level
-        if(bodyInfo.landedInPad){
+        if(brainInfo.currentTask == BrainInfo::CHARGING || brainInfo.currentTask == BrainInfo::CHARGED){
 
             double diff = (double)(runningTime - taskStartTime) / chargeLapse;
 
-            if(diff > 1)
+            if(diff >= 1)
                 bodyInfo.batteryLevel = 100;
             else
                 bodyInfo.batteryLevel = (int)(diff *100);
@@ -113,7 +113,7 @@ public:
         } else {
 
             double diff = (double)(runningTime - startBattryTime) / batteryDuration;
-            if(diff > 1)
+            if(diff >= 1)
                 bodyInfo.batteryLevel = 0;
             else
                 bodyInfo.batteryLevel = (int)(100 - diff *100);
@@ -161,7 +161,7 @@ public:
             //Actualizo lapso y start time
             taskLapse = (rand() % range + 3) * 1000 * 1000;
             taskStartTime = runningTime;
-        } else if (runningTime - taskStartTime > taskLapse){
+        } else if (runningTime - taskStartTime > taskLapse && bodyInfo.intruderDetected){
 
             //dejo following
             bodyInfo.intruderDetected = false;
