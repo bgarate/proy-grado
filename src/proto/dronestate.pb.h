@@ -346,11 +346,11 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::uint32 drone_id() const;
   void set_drone_id(::google::protobuf::uint32 value);
 
-  // .DroneState.CurrentTask curren_task = 8;
-  void clear_curren_task();
-  static const int kCurrenTaskFieldNumber = 8;
-  ::DroneState_CurrentTask curren_task() const;
-  void set_curren_task(::DroneState_CurrentTask value);
+  // .DroneState.CurrentTask current_task = 8;
+  void clear_current_task();
+  static const int kCurrentTaskFieldNumber = 8;
+  ::DroneState_CurrentTask current_task() const;
+  void set_current_task(::DroneState_CurrentTask value);
 
   // uint32 battery_level = 9;
   void clear_battery_level();
@@ -382,7 +382,7 @@ class DroneState : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::uint32 port_;
   ::google::protobuf::int64 seq_num_;
   ::google::protobuf::uint32 drone_id_;
-  int curren_task_;
+  int current_task_;
   ::google::protobuf::uint32 battery_level_;
   ::google::protobuf::uint32 pad_in_use_;
   ::google::protobuf::uint32 covered_drone_id_;
@@ -629,18 +629,18 @@ inline void DroneState::set_allocated_rotation(::DroneState_Point* rotation) {
   // @@protoc_insertion_point(field_set_allocated:DroneState.rotation)
 }
 
-// .DroneState.CurrentTask curren_task = 8;
-inline void DroneState::clear_curren_task() {
-  curren_task_ = 0;
+// .DroneState.CurrentTask current_task = 8;
+inline void DroneState::clear_current_task() {
+  current_task_ = 0;
 }
-inline ::DroneState_CurrentTask DroneState::curren_task() const {
-  // @@protoc_insertion_point(field_get:DroneState.curren_task)
-  return static_cast< ::DroneState_CurrentTask >(curren_task_);
+inline ::DroneState_CurrentTask DroneState::current_task() const {
+  // @@protoc_insertion_point(field_get:DroneState.current_task)
+  return static_cast< ::DroneState_CurrentTask >(current_task_);
 }
-inline void DroneState::set_curren_task(::DroneState_CurrentTask value) {
+inline void DroneState::set_current_task(::DroneState_CurrentTask value) {
   
-  curren_task_ = value;
-  // @@protoc_insertion_point(field_set:DroneState.curren_task)
+  current_task_ = value;
+  // @@protoc_insertion_point(field_set:DroneState.current_task)
 }
 
 // uint32 battery_level = 9;

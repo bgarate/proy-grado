@@ -36,7 +36,7 @@ public:
         if (frame == NULL || !frame->empty())
             return;
 
-        StatusInfo info = shared->getStatusInfo();
+        BodyInfo info = shared->getBodyInfo();
 
         tracker->Update(frame, deltaTime);
         follower->setTarget(info.CurrentTargetId);
@@ -53,7 +53,7 @@ public:
         info.FollowPathCommand = command;
         info.CurrentTargetId = follower->getTargetId();
 
-        shared->setStatusInfo(info);
+        shared->setBodyInfo(info);
 
         visualDebugger->ShowMarkers(tracker->Markers);
         navigationDebugger->setVisibleMarkers(tracker->Markers);

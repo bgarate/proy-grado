@@ -8,3 +8,4 @@
 std::string StepName::TAKING_OFF = "taking-off";
 std::string StepName::LANDING = "landing";
 std::string StepName::PATROLLING = "patrolling";
+std::string StepName::VIRTUAL_DRONE = "virtual-drone";

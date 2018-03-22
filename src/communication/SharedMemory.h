@@ -10,8 +10,9 @@
 #include <src/navigation/MarkerFollower.h>
 #include "../config/Config.h"
 
-class StatusInfo {
+class BodyInfo {
 public:
+    bool ready;
     cv::Vec3d CurrentPosition;
     cv::Vec3d CurrentPose;
     cv::Vec3d PredictedFuturePosition;
@@ -23,29 +24,55 @@ public:
     NavigationCommand FollowPathCommand;
 
     NavigationCommand ExecutedCommand;
+
+    bool intruderDetected;
+    cv::Vec3d intruderPosition;
+
+    bool inPath;
+    bool landedInPad;
+    int batteryLevel;
+
 };
 
-class ControlInfo {
+class BrainInfo {
 public:
+
+    enum CurrentTask {
+        INNACTIVE,
+        PATROLING,
+        FOLLOWING,
+        ALERT,
+        CHARGING,
+        CHARGED,
+        BACKFROMPAD,
+        GOINGTOPAD,
+    };
+
+    CurrentTask currentTask;
+    int currentPathId;
+    int currentPadId;
+
+    cv::Vec3d alertedPosition;
+
 
 };
 
 class SharedMemory {
 public:
 
-    StatusInfo getStatusInfo();
-    void setStatusInfo(StatusInfo status);
+    BodyInfo getBodyInfo();
+    void setBodyInfo(BodyInfo status);
 
-    ControlInfo getControlInfo();
-    void setControlInfo(ControlInfo status);
+    BrainInfo getBrainInfo();
+    void setBrainInfo(BrainInfo status);
 
 private:
 
-    StatusInfo statusInfo;
-    std::mutex statusInfoMutex;
+    BodyInfo bodyInfo;
+    std::mutex bodyInfoMutex;
 
-    ControlInfo controlInfo;
-    std::mutex controlInfoMutex;
+    BrainInfo brainInfo;
+    std::mutex brainInfoMutex;
 
 
 };

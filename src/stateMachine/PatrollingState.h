@@ -31,7 +31,7 @@ public:
 
     void step(double deltaTime) override {
 
-        StatusInfo info = shared->getStatusInfo();
+        BodyInfo info = shared->getBodyInfo();
         NavigationCommand command = info.FollowPathCommand;
 
         double currentAltitude = hal->getAltitude();
@@ -42,7 +42,7 @@ public:
         hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (gaz * 100));
 
         info.ExecutedCommand = command;
-        shared->setStatusInfo(info);
+        shared->setBodyInfo(info);
     }
 
     void leave() override {

@@ -50,7 +50,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, name_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, position_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, rotation_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, curren_task_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, current_task_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, battery_level_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, pad_in_use_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DroneState, covered_drone_id_),
@@ -118,23 +118,23 @@ void InitDefaults() {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] = {
-      "\n\020dronestate.proto\"\360\003\n\nDroneState\022\n\n\002ip\030"
+      "\n\020dronestate.proto\"\361\003\n\nDroneState\022\n\n\002ip\030"
       "\001 \001(\007\022\014\n\004port\030\002 \001(\r\022\020\n\010drone_id\030\003 \001(\r\022\017\n"
       "\007seq_num\030\004 \001(\003\022\014\n\004name\030\005 \001(\t\022#\n\010position"
       "\030\006 \001(\0132\021.DroneState.Point\022#\n\010rotation\030\007 "
-      "\001(\0132\021.DroneState.Point\022,\n\013curren_task\030\010 "
-      "\001(\0162\027.DroneState.CurrentTask\022\025\n\rbattery_"
-      "level\030\t \001(\r\022\022\n\npad_in_use\030\n \001(\r\022\030\n\020cover"
-      "ed_drone_id\030\013 \001(\r\022,\n\021followed_position\030\014"
-      " \001(\0132\021.DroneState.Point\032(\n\005Point\022\t\n\001x\030\001 "
-      "\001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\"\201\001\n\013CurrentTas"
-      "k\022\r\n\tINNACTIVE\020\000\022\r\n\tPATROLING\020\001\022\r\n\tFOLLO"
-      "WING\020\002\022\t\n\005ALERT\020\003\022\014\n\010CHARGING\020\004\022\013\n\007CHARG"
-      "ED\020\005\022\017\n\013BACKFROMPAD\020\006\022\016\n\nGOINGTOPAD\020\007b\006p"
-      "roto3"
+      "\001(\0132\021.DroneState.Point\022-\n\014current_task\030\010"
+      " \001(\0162\027.DroneState.CurrentTask\022\025\n\rbattery"
+      "_level\030\t \001(\r\022\022\n\npad_in_use\030\n \001(\r\022\030\n\020cove"
+      "red_drone_id\030\013 \001(\r\022,\n\021followed_position\030"
+      "\014 \001(\0132\021.DroneState.Point\032(\n\005Point\022\t\n\001x\030\001"
+      " \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\"\201\001\n\013CurrentTa"
+      "sk\022\r\n\tINNACTIVE\020\000\022\r\n\tPATROLING\020\001\022\r\n\tFOLL"
+      "OWING\020\002\022\t\n\005ALERT\020\003\022\014\n\010CHARGING\020\004\022\013\n\007CHAR"
+      "GED\020\005\022\017\n\013BACKFROMPAD\020\006\022\016\n\nGOINGTOPAD\020\007b\006"
+      "proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 525);
+      descriptor, 526);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "dronestate.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -518,7 +518,7 @@ const int DroneState::kSeqNumFieldNumber;
 const int DroneState::kNameFieldNumber;
 const int DroneState::kPositionFieldNumber;
 const int DroneState::kRotationFieldNumber;
-const int DroneState::kCurrenTaskFieldNumber;
+const int DroneState::kCurrentTaskFieldNumber;
 const int DroneState::kBatteryLevelFieldNumber;
 const int DroneState::kPadInUseFieldNumber;
 const int DroneState::kCoveredDroneIdFieldNumber;
@@ -729,14 +729,14 @@ bool DroneState::MergePartialFromCodedStream(
         break;
       }
 
-      // .DroneState.CurrentTask curren_task = 8;
+      // .DroneState.CurrentTask current_task = 8;
       case 8: {
         if (tag == 64u) {
           int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_curren_task(static_cast< ::DroneState_CurrentTask >(value));
+          set_current_task(static_cast< ::DroneState_CurrentTask >(value));
         } else {
           goto handle_unusual;
         }
@@ -859,10 +859,10 @@ void DroneState::SerializeWithCachedSizes(
       7, *this->rotation_, output);
   }
 
-  // .DroneState.CurrentTask curren_task = 8;
-  if (this->curren_task() != 0) {
+  // .DroneState.CurrentTask current_task = 8;
+  if (this->current_task() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      8, this->curren_task(), output);
+      8, this->current_task(), output);
   }
 
   // uint32 battery_level = 9;
@@ -938,10 +938,10 @@ void DroneState::SerializeWithCachedSizes(
         7, *this->rotation_, false, target);
   }
 
-  // .DroneState.CurrentTask curren_task = 8;
-  if (this->curren_task() != 0) {
+  // .DroneState.CurrentTask current_task = 8;
+  if (this->current_task() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      8, this->curren_task(), target);
+      8, this->current_task(), target);
   }
 
   // uint32 battery_level = 9;
@@ -1028,10 +1028,10 @@ size_t DroneState::ByteSizeLong() const {
         this->drone_id());
   }
 
-  // .DroneState.CurrentTask curren_task = 8;
-  if (this->curren_task() != 0) {
+  // .DroneState.CurrentTask current_task = 8;
+  if (this->current_task() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->curren_task());
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->current_task());
   }
 
   // uint32 battery_level = 9;
@@ -1106,8 +1106,8 @@ void DroneState::MergeFrom(const DroneState& from) {
   if (from.drone_id() != 0) {
     set_drone_id(from.drone_id());
   }
-  if (from.curren_task() != 0) {
-    set_curren_task(from.curren_task());
+  if (from.current_task() != 0) {
+    set_current_task(from.current_task());
   }
   if (from.battery_level() != 0) {
     set_battery_level(from.battery_level());
@@ -1151,7 +1151,7 @@ void DroneState::InternalSwap(DroneState* other) {
   std::swap(port_, other->port_);
   std::swap(seq_num_, other->seq_num_);
   std::swap(drone_id_, other->drone_id_);
-  std::swap(curren_task_, other->curren_task_);
+  std::swap(current_task_, other->current_task_);
   std::swap(battery_level_, other->battery_level_);
   std::swap(pad_in_use_, other->pad_in_use_);
   std::swap(covered_drone_id_, other->covered_drone_id_);
@@ -1352,18 +1352,18 @@ void DroneState::set_allocated_rotation(::DroneState_Point* rotation) {
   // @@protoc_insertion_point(field_set_allocated:DroneState.rotation)
 }
 
-// .DroneState.CurrentTask curren_task = 8;
-void DroneState::clear_curren_task() {
-  curren_task_ = 0;
+// .DroneState.CurrentTask current_task = 8;
+void DroneState::clear_current_task() {
+  current_task_ = 0;
 }
-::DroneState_CurrentTask DroneState::curren_task() const {
-  // @@protoc_insertion_point(field_get:DroneState.curren_task)
-  return static_cast< ::DroneState_CurrentTask >(curren_task_);
+::DroneState_CurrentTask DroneState::current_task() const {
+  // @@protoc_insertion_point(field_get:DroneState.current_task)
+  return static_cast< ::DroneState_CurrentTask >(current_task_);
 }
-void DroneState::set_curren_task(::DroneState_CurrentTask value) {
+void DroneState::set_current_task(::DroneState_CurrentTask value) {
   
-  curren_task_ = value;
-  // @@protoc_insertion_point(field_set:DroneState.curren_task)
+  current_task_ = value;
+  // @@protoc_insertion_point(field_set:DroneState.current_task)
 }
 
 // uint32 battery_level = 9;

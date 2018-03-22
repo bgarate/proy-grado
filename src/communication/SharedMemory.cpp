@@ -1,22 +1,22 @@
 
 #include "SharedMemory.h"
 
-StatusInfo SharedMemory::getStatusInfo() {
-    std::lock_guard<std::mutex> lck(statusInfoMutex);
-    return statusInfo;
+BodyInfo SharedMemory::getBodyInfo() {
+    std::lock_guard<std::mutex> lck(bodyInfoMutex);
+    return bodyInfo;
 }
 
-void SharedMemory::setStatusInfo(StatusInfo status) {
-    std::lock_guard<std::mutex> lck(statusInfoMutex);
-    statusInfo = status;
+void SharedMemory::setBodyInfo(BodyInfo status) {
+    std::lock_guard<std::mutex> lck(bodyInfoMutex);
+    bodyInfo = status;
 }
 
-ControlInfo SharedMemory::getControlInfo() {
-    std::lock_guard<std::mutex> lck(controlInfoMutex);
-    return controlInfo;
+BrainInfo SharedMemory::getBrainInfo() {
+    std::lock_guard<std::mutex> lck(brainInfoMutex);
+    return brainInfo;
 }
 
-void SharedMemory::setControlInfo(ControlInfo control) {
-    std::lock_guard<std::mutex> lck(controlInfoMutex);
-    controlInfo = control;
+void SharedMemory::setBrainInfo(BrainInfo control) {
+    std::lock_guard<std::mutex> lck(brainInfoMutex);
+    brainInfo = control;
 }

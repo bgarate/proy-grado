@@ -23,7 +23,7 @@ void Body::setup(Config* config, SharedMemory* shared) {
     this->shared = shared;
 
     visualDebugger.setup(config);
-    navigationDebugger.Init(config);
+    //navigationDebugger.Init(config);
     hal->setup(config);
     hal->Connect();
 
@@ -47,7 +47,8 @@ void Body::loop() {
     std::string textToExecute = config->Get(ConfigKeys::Body::TestToExecute);
 
     Systems->Init(config, hal,shared, &visualDebugger, &navigationDebugger);
-    StateMachine->Init(StepName::TAKING_OFF,config,hal, shared, &visualDebugger, &navigationDebugger);
+    //StateMachine->Init(StepName::TAKING_OFF,config,hal, shared, &visualDebugger, &navigationDebugger);
+    StateMachine->Init(StepName::VIRTUAL_DRONE,config,hal, shared, &visualDebugger, &navigationDebugger);
 
     Logger::logInfo("Body started");
 
@@ -79,9 +80,9 @@ void Body::loop() {
                                  hal->getAltitude(), hal->getGPSPosition(), hal->getOrientation(), fps, runningTime);
         visualDebugger.drawMouse(deltaTime);
 
-        StatusInfo info = shared->getStatusInfo();
-        navigationDebugger.Run(info.ExecutedCommand, info.CurrentTargetId, info.PredictedFuturePosition,
-                                info.ProjectedPositionOnPath, info.TargetOnPath);
+        BodyInfo info = shared->getBodyInfo();
+        //navigationDebugger.Run(info.ExecutedCommand, info.CurrentTargetId, info.PredictedFuturePosition,
+        //                        info.ProjectedPositionOnPath, info.TargetOnPath);
 
         int key = visualDebugger.show(deltaTime);
 

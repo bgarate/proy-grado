@@ -47,25 +47,9 @@ private:
 
     //Movimiento simulado
     std::map<int, Path> paths;
-    int actualPath;
-    int pathSize;
 
     int closestPad = -1;
     std::vector<WorldObject *> pads;
-
-    int nextMarker, previousMarker;
-    cv::Vec3d previousPosition;
-    double previousRotation;
-    cv::Vec3d nextPosition;
-    double nextRotation;
-
-    long lastChange = 0;
-    long lapseToChange; //= 2 * 1000 * 1000;
-    float speedMS = 0.5;
-
-    //Bateria simulada
-    int batteryDuration = 60 * 1000 * 1000;
-    long chargeLapse = 10 * 1000 * 1000;
 
     //Map debugger
     MapDebugger* mapDebugger;

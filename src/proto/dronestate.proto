@@ -10,7 +10,7 @@ message DroneState {
     Point position = 6;
     Point rotation = 7;
 
-    CurrentTask curren_task = 8;
+    CurrentTask current_task = 8;
 
     uint32 battery_level = 9;
     uint32 pad_in_use = 10;
