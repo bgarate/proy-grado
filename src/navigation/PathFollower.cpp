@@ -6,20 +6,21 @@
 #include "../tracking/Follower.h"
 #include "../logging/Logger.h"
 #include "../config/ConfigKeys.h"
-#include "MarkerFollower.h"
+#include "PathFollower.h"
+#include "CommandGenerator.h"
 
-MarkerFollower::MarkerFollower(Config *config, World *world) : PositionsHistory(1000), DeltaTimeHistory(1000) {
+PathFollower::PathFollower(Config *config, World *world) : PositionsHistory(1000), DeltaTimeHistory(1000) {
     this->config = config;
     this->world = world;
     drone = world->getDrones()[0];
 }
 
-void MarkerFollower::setPath(Path path) {
+void PathFollower::setPath(Path path) {
     this->path = path;
     currentTarget = 0;
 }
 
-NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double altitude, double deltaTime) {
+NavigationCommand PathFollower::update(std::vector<Marker> markers, double altitude, double deltaTime) {
 
     runningTime += deltaTime;
 
@@ -34,25 +35,19 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
         else
             EstimatedPosition = cv::Vec3d(0,0,0);
     }
-        // TODO: Para el smoothin se usan valores smootheados. Lo mejor hacer smoothing sobre los valores RAW
-        // TODO: El smoothing no toma en cuenta el tiempo, se asume que el deltaTime es fijo
-        SmoothEstimation();
+    // TODO: Para el smoothin se usan valores smootheados. Lo mejor hacer smoothing sobre los valores RAW
+    // TODO: El smoothing no toma en cuenta el tiempo, se asume que el deltaTime es fijo
+    SmoothEstimation();
 
-        PositionsHistory.push_back(EstimatedPosition);
-        DeltaTimeHistory.push_back(deltaTime);
-
+    PositionsHistory.push_back(EstimatedPosition);
+    DeltaTimeHistory.push_back(deltaTime);
 
     EstimateNextPosition();
     ProjectNextPosition();
 
     PathPoint targetPathPoint = path.GetPoints()[(currentTarget + 1) % path.GetPoints().size()];
 
-    cv::Vec3d targetVector3d = FollowTarget - EstimatedPosition;
-    cv::Vec2d targetVector2d = cv::Vec2d(targetVector3d[0],targetVector3d[1]);
-
-    cv::Vec2d normalizedTarget = cv::normalize(targetVector2d);
-    cv::Vec2d targetVector = Helpers::rotate(normalizedTarget,Helpers::toRadians(EstimatedPose[2]));
-// TODO: Considerar altura
+    // TODO: Considerar altura
     cv::Vec3d v = targetPathPoint.position - EstimatedPosition;
     double distanceToPathPoint = cv::norm(cv::Vec2d(v[0],v[1]));
 
@@ -64,38 +59,21 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
         return NavigationCommand();
     }
 
-    double speed = std::min(distanceToPathPoint / TARGET_APROXIMATION_DISTANCE,1.0) * DISPLACEMENT_MAX_VELOCITY;
+    CommandGenerator generator(EstimatedPosition, EstimatedPose[2]);
 
-    double forwardSpeed = targetVector[1] * speed;
-    double lateralSpped = targetVector[0] * speed;
-    double yawSpeed = std::max(std::min(alignmentAngle / ALIGNEMENT_ANGLE_THRESOLD,1.0),-1.0) * YAW_MAX_VELOCITY;
-
-    return NavigationCommand(forwardSpeed,lateralSpped, yawSpeed);
-
+    return generator.getCommand(targetPathPoint.position, targetPathPoint.rotation);
 }
 
-int MarkerFollower::getTargetId() {
+int PathFollower::getTargetId() {
 
     return currentTarget;
 }
 
-void MarkerFollower::setTarget(int target) {
+void PathFollower::setTarget(int target) {
     currentTarget = target;
 }
 
-double MarkerFollower::angleDifference(double target, double origin){
-    double  diff = target - origin;
-    diff = signedMod((diff + 180),360.0) - 180;
-
-    return diff;
-}
-
-double MarkerFollower::signedMod(double a, double n) {
-    return a - std::floor(a/n) * n;
-}
-
-
-void MarkerFollower::EstimatePosition(const std::vector<Marker> &markers, double altitude) {
+void PathFollower::EstimatePosition(const std::vector<Marker> &markers, double altitude) {
 
     if(markers.size() == 0)
         return;
@@ -153,7 +131,7 @@ void MarkerFollower::EstimatePosition(const std::vector<Marker> &markers, double
 
 }
 
-Point MarkerFollower::getAngularDisplacement(cv::Point2i markerCenter) {
+Point PathFollower::getAngularDisplacement(cv::Point2i markerCenter) {
 
     cv::Size frameSize = config->Get(ConfigKeys::Drone::FrameSize);
 
@@ -170,14 +148,14 @@ Point MarkerFollower::getAngularDisplacement(cv::Point2i markerCenter) {
 
 }
 
-double MarkerFollower::distanceToMarker(Marker m) {
+double PathFollower::distanceToMarker(Marker m) {
     return cv::norm(m.Translation);
 }
 
 /*
  * Ver https://en.wikipedia.org/wiki/Moving_average#Weighted_moving_average
  */
-void MarkerFollower::SmoothEstimation() {
+void PathFollower::SmoothEstimation() {
 
     int numberOfSmoothingSamples = config->Get(ConfigKeys::Body::TrackingSmoothingSamples);
 
@@ -194,7 +172,7 @@ void MarkerFollower::SmoothEstimation() {
 
 }
 
-void MarkerFollower::EstimateNextPosition() {
+void PathFollower::EstimateNextPosition() {
 
     int numberOfSmoothingSamples = std::min(config->Get(ConfigKeys::Body::TrackingSmoothingSamples), (int)PositionsHistory.size() - 1);
 
@@ -215,7 +193,7 @@ void MarkerFollower::EstimateNextPosition() {
 
 }
 
-void MarkerFollower::ProjectNextPosition() {
+void PathFollower::ProjectNextPosition() {
 
     std::vector<PathPoint> points = path.GetPoints();
 
@@ -226,16 +204,13 @@ void MarkerFollower::ProjectNextPosition() {
     cv::Vec3d toPredicted = PredictedPosition - a.position;
 
     ProjectedPredictedPosition = a.position + direction * (toPredicted.dot(direction));
-    FollowTarget = ProjectedPredictedPosition + direction * 0.25;
+    TargetOnPath = ProjectedPredictedPosition + direction * 0.25;
 
     float multiplier = toPredicted.dot(direction) + 0.25;
     float norm = cv::norm(b.position - a.position);
 
     if(multiplier > norm)
-        FollowTarget = b.position;
+        TargetOnPath = b.position;
     else if (multiplier < 0)
-        FollowTarget = a.position;
-// SUPER HACK!
-    FollowTarget = b.position;
-
+        TargetOnPath = a.position;
 }

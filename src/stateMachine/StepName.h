@@ -14,6 +14,7 @@ public:
     static std::string PATROLLING;
     static std::string VIRTUAL_DRONE;
     static std::string FOLLOWING;
+    static std::string GOING_TO_PAD;
 };
 
 #endif //PROY_GRADO_STEPNAME_H

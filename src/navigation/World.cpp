@@ -47,6 +47,16 @@ WorldObject * World::getDrone(int id) {
     return NULL;
 }
 
+WorldObject * World::getPad(int id) {
+    std::unique_lock<std::mutex> lck(objectsMutex);
+
+    for(WorldObject * wo : objects){
+        if(wo->getId() == id && wo->getType() == ObjectType::PAD)
+            return wo;
+    }
+    return NULL;
+}
+
 WorldObject* World::getMarker(int id) {
     std::unique_lock<std::mutex> lck(objectsMutex);
 

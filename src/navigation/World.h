@@ -70,11 +70,13 @@ public:
     WorldObject* getDrone(int id);
     std::vector<WorldObject*> getMarkers();
     std::vector<WorldObject*> getPads();
+    WorldObject *getPad(int id);
 
     WorldObject* getMarker(int id);
 private:
     std::vector<WorldObject*> objects;
     mutable std::mutex objectsMutex;
+
 };
 
 

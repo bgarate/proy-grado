@@ -31,7 +31,7 @@ std::string BodyStateBase::expectedStep() {
         case BrainInfo::BACKFROMPAD:
             return "";
         case BrainInfo::GOINGTOPAD:
-            return NULL;
+            return StepName::GOING_TO_PAD;
     }
 }
 

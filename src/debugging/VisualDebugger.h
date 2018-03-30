@@ -17,7 +17,7 @@
 #include "../navigation/MarkerTracker.h"
 #include "../hal/hal.hpp"
 #include "../tracking/Follower.h"
-#include "../navigation/MarkerFollower.h"
+#include "src/navigation/PathFollower.h"
 #include "../tracking/MultiTracker.h"
 
 class VisualDebugger {

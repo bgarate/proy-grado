@@ -6,7 +6,7 @@
 #include <chrono>
 #include "../tracking/OpticalFlow.h"
 #include "../landtracking/MarkerTrack.h"
-#include "../navigation/MarkerFollower.h"
+#include "src/navigation/PathFollower.h"
 #include "../logging/Logger.h"
 #include "../tracking/DetectAndTrack.h"
 #include "VisualDebugger.h"
@@ -372,9 +372,9 @@ void VisualDebugger::setNavigationCommand(NavigationCommand command) {
     cv::rectangle(frame, cv::Point(frameCenter.x - 40, frameCenter.y - 40),
                   cv::Point(frameCenter.x + 40, frameCenter.y + 40), RED_COLOR);
 
-    double xPercentage = command.LateralSpeed / MarkerFollower::DISPLACEMENT_MAX_VELOCITY;
-    double yPercentage = command.ForwardSpeed / MarkerFollower::DISPLACEMENT_MAX_VELOCITY;
-    double yawPercentage = command.YawSpeed / MarkerFollower::YAW_MAX_VELOCITY;
+    double xPercentage = command.LateralSpeed / PathFollower::DISPLACEMENT_MAX_VELOCITY;
+    double yPercentage = command.ForwardSpeed / PathFollower::DISPLACEMENT_MAX_VELOCITY;
+    double yawPercentage = command.YawSpeed / PathFollower::YAW_MAX_VELOCITY;
 
     cv::Point displacement = cv::Point(frameCenter.x + xPercentage * 40,
                                        frameCenter.y - yPercentage * 40);

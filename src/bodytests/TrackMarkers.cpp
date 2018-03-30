@@ -7,7 +7,7 @@
 #include "../navigation/MarkerTracker.h"
 #include "../navigation/World.h"
 #include "../navigation/NavigationDebugger.h"
-#include "../navigation/MarkerFollower.h"
+#include "src/navigation/PathFollower.h"
 #include "../config/ConfigKeys.h"
 #include "../logging/Logger.h"
 #include "../tracking/DetectAndTrack.h"
@@ -28,7 +28,7 @@ class TrackMarkers : public BodyTest {
     MarkerTracker* tracker;
     std::thread navigationDebuggerThread;
     NavigationDebugger* navigationDebugger;
-    MarkerFollower* follower;
+    PathFollower* follower;
 
     WorldObject* drone;
 
@@ -47,7 +47,7 @@ class TrackMarkers : public BodyTest {
 
         drone = world.getDrones()[0];
 
-        follower = new MarkerFollower(config, &world);
+        follower = new PathFollower(config, &world);
 
         navigationDebugger = new NavigationDebugger(config, &world);
         navigationDebugger->Init();
@@ -105,7 +105,7 @@ class TrackMarkers : public BodyTest {
                 navigationDebugger->Run(command, follower->getTargetId(), follower->EstimatedPositions,
                                         follower->EstimatedPoses, path[myid],
                                         follower->PositionsHistory, follower->PredictedPosition,
-                                        follower->ProjectedPredictedPosition, follower->FollowTarget);
+                                        follower->ProjectedPredictedPosition, follower->TargetOnPath);
 
                 double currentAltitude = hal->getAltitude();
                 double deltaAltitude = targetAltitude - currentAltitude;

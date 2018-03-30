@@ -70,7 +70,7 @@ set(SOURCE_FILES
         src/navigation/World.cpp src/navigation/World.h
         src/navigation/NavigationDebugger.cpp src/navigation/NavigationDebugger.h
         src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h
-        src/navigation/MarkerFollower.cpp src/navigation/MarkerFollower.h
+        src/navigation/PathFollower.cpp src/navigation/PathFollower.h
         src/Body.cpp src/Body.h
         src/stateMachine/StepName.h
         src/stateMachine/BodyStateMachine.h src/stateMachine/BodyStateMachineControl.h src/systems/System.h src/systems/SystemManager.h src/stateMachine/PatrollingState.h
@@ -89,7 +89,7 @@ set(SOURCE_FILES
         src/stateMachine/IBodyState.h
         src/stateMachine/BodyStateMachine.h src/stateMachine/BodyStateMachineControl.h
         src/stateMachine/StepName.h src/systems/System.h
-        src/systems/SystemManager.h src/stateMachine/PatrollingState.h src/stateMachine/StepName.cpp src/stateMachine/BodyStateBase.cpp src/stateMachine/BodyStateBase.h src/systems/SystemBase.cpp src/systems/SystemBase.h src/stateMachine/FollowingState.cpp src/stateMachine/FollowingState.h src/systems/FollowerSystem.cpp src/systems/FollowerSystem.h)
+        src/systems/SystemManager.h src/stateMachine/PatrollingState.h src/stateMachine/StepName.cpp src/stateMachine/BodyStateBase.cpp src/stateMachine/BodyStateBase.h src/systems/SystemBase.cpp src/systems/SystemBase.h src/stateMachine/FollowingState.cpp src/stateMachine/FollowingState.h src/systems/FollowerSystem.cpp src/systems/FollowerSystem.h src/stateMachine/GoToPad.h src/navigation/CommandGenerator.h)
 
 
 set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h

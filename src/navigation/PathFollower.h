@@ -19,17 +19,17 @@ struct NavigationCommand {
     double YawSpeed;
 };
 
-class MarkerFollower {
+class PathFollower {
 
 public:
-    MarkerFollower(Config* config, World* world);
+    PathFollower(Config* config, World* world);
     void setPath(Path path);
     NavigationCommand update(std::vector<Marker> markers, double altitude, double deltaTime);
     std::vector<cv::Vec3d> EstimatedPositions;
     cv::Vec3d EstimatedPosition;
     cv::Vec3d PredictedPosition;
     cv::Vec3d ProjectedPredictedPosition;
-    cv::Vec3d FollowTarget;
+    cv::Vec3d TargetOnPath;
 
     std::vector<cv::Vec3d> EstimatedPoses;
     cv::Vec3d EstimatedPose;

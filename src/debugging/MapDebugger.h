@@ -12,7 +12,7 @@
 #include "cairo.h"
 #include "cairo-xlib.h"
 #include "../navigation/World.h"
-#include "../navigation/MarkerFollower.h"
+#include "src/navigation/PathFollower.h"
 #include "../navigation/Path.h"
 
 enum class Axis2 {

@@ -8,7 +8,7 @@
 #include "MapDebugger.h"
 #include "../navigation/World.h"
 #include "../navigation/MarkerTracker.h"
-#include "../navigation/MarkerFollower.h"
+#include "src/navigation/PathFollower.h"
 #include "../navigation/Path.h"
 
 const cv::Size MapDebugger::SIZE = cv::Size(1024,768);

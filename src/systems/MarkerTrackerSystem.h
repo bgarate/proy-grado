@@ -44,7 +44,7 @@ public:
         bodyInfo.CurrentPosition = follower->EstimatedPosition;
         bodyInfo.PredictedFuturePosition = follower->PredictedPosition;
         bodyInfo.ProjectedPositionOnPath = follower->ProjectedPredictedPosition;
-        bodyInfo.TargetOnPath = follower->FollowTarget;
+        bodyInfo.TargetOnPath = follower->TargetOnPath;
         bodyInfo.CurrentPose = follower->EstimatedPose;
         bodyInfo.FollowPathCommand = command;
         bodyInfo.CurrentTargetId = follower->getTargetId();
@@ -62,7 +62,7 @@ public:
 
 private:
     MarkerTracker* tracker;
-    MarkerFollower* follower;
+    PathFollower* follower;
 
     World world;
     WorldObject* drone;

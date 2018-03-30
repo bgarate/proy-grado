@@ -10,3 +10,4 @@ std::string StepName::LANDING = "landing";
 std::string StepName::PATROLLING = "patrolling";
 std::string StepName::VIRTUAL_DRONE = "virtual-drone";
 std::string StepName::FOLLOWING = "following";
+std::string StepName::GOING_TO_PAD = "going-to-pad";

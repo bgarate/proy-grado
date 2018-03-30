@@ -7,7 +7,7 @@
 #ifndef PROY_GRADO_SHAREDMEMORY_H
 #define PROY_GRADO_SHAREDMEMORY_H
 
-#include <src/navigation/MarkerFollower.h>
+#include <src/navigation/PathFollower.h>
 #include <src/tracking/Follower.h>
 #include "../config/Config.h"
 

@@ -10,7 +10,7 @@
 #include <pangolin/pangolin.h>
 #include "cairo.h"
 #include "World.h"
-#include "MarkerFollower.h"
+#include "PathFollower.h"
 #include "Path.h"
 
 enum class Axis {
