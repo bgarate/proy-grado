@@ -9,6 +9,7 @@
 
 #include <src/navigation/PathFollower.h>
 #include <src/tracking/Follower.h>
+#include <src/landtracking/MarkerLand.h>
 #include "../config/Config.h"
 
 class BodyInfo {
@@ -24,6 +25,7 @@ public:
 
     NavigationCommand FollowPathCommand;
     NavigationCommand FollowDetectionCommand;
+    LandMoveCommand PadLandingCommand;
 
     NavigationCommand ExecutedCommand;
 
