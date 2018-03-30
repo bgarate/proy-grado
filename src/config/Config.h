@@ -168,23 +168,36 @@ public:
 
     }
 
-    void SetPath(Path path) {
+    void SetPath(std::map<int, Path> paths) {
+
         std::lock_guard<std::mutex> lck(pathMutex);
 
-        YAML::Node pathNode = config["Path"];
+        YAML::Node pathsNode = config["Paths"];
 
-        std::vector<PathPoint> points = path.GetPoints();
+        for(std::pair<int, Path> kv : paths){
 
-        for (int i = 0; i < points.size(); ++i) {
+            YAML::Node item;
+            item["droneId"] = kv.first;
 
-            YAML::Node object;
-            PathPoint point = points[i];
+            YAML::Node pathElements;
+            item["path"] = pathElements;
 
-            object["position"] = point.position;
-            object["rotation"] = point.rotation;
+            std::vector<PathPoint> points = kv.second.GetPoints();
 
-            pathNode.push_back(object);
+            for (int i = 0; i < points.size(); ++i) {
+
+                YAML::Node object;
+                PathPoint point = points[i];
+
+                object["position"] = point.position;
+                object["rotation"] = point.rotation;
+
+                pathElements.push_back(object);
+            }
+
+            pathsNode.push_back(item);
         }
+
 
     }
 

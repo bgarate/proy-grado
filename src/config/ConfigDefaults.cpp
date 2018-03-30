@@ -44,7 +44,7 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Debugging::OutputPath, std::string(""));
     config->Set(ConfigKeys::Debugging::RealTimeVideoOutputEnabled, false);
     config->Set(ConfigKeys::Debugging::NavigationDebuggerScale, 50);
-    config->Set(ConfigKeys::Debugging::MapDebuggerInBrain, false);
+    config->Set(ConfigKeys::Debugging::MapDebuggerInBrain, true);
 
     config->Set(ConfigKeys::Body::SleepDelay, 0);
     config->Set(ConfigKeys::Body::Start, true);
@@ -62,43 +62,77 @@ void ConfigDefaults::SetDefaults(Config* config) {
     World world = getWorld(config);
     config->SetWorld(world);
 
-    Path path = getPath(config);
-    config->SetPath(path);
+    std::map<int, Path> paths = getPath(config);
+    config->SetPath(paths);
 }
 
 World ConfigDefaults::getWorld(Config *config) {
     World world;
 
-    world.addMarker(cv::Vec3d(0, 0, 0), cv::Vec3d(0, 0, 0), 0, "");
-    world.addMarker(cv::Vec3d(0, 2.65, 0), cv::Vec3d(0, 0, 0), 5, "");
-    world.addMarker(cv::Vec3d(0, 2.65 + 2.05, 0), cv::Vec3d(0, 0, 0), 1, "");
-    world.addMarker(cv::Vec3d(0, 2.65 + 2.05 + 1.56, 0), cv::Vec3d(0, 0, 90), 8, "");
+    world.addMarker(cv::Vec3d(0, 0, 0), cv::Vec3d(0, 0, 0), 1, "");
+    world.addMarker(cv::Vec3d(0, 1, 0), cv::Vec3d(0, 0, 0), 2, "");
+    world.addMarker(cv::Vec3d(0, 2, 0), cv::Vec3d(0, 0, 0), 3, "");
+    world.addMarker(cv::Vec3d(1, 0, 0), cv::Vec3d(0, 0, 0), 4, "");
+    world.addMarker(cv::Vec3d(1, 1, 0), cv::Vec3d(0, 0, 0), 5, "");
+    world.addMarker(cv::Vec3d(1, 2, 0), cv::Vec3d(0, 0, 0), 6, "");
+    world.addMarker(cv::Vec3d(2, 0, 0), cv::Vec3d(0, 0, 0), 7, "");
+    world.addMarker(cv::Vec3d(2, 1, 0), cv::Vec3d(0, 0, 0), 8, "");
+    world.addMarker(cv::Vec3d(2, 2, 0), cv::Vec3d(0, 0, 0), 9, "");
+    world.addMarker(cv::Vec3d(3, 0, 0), cv::Vec3d(0, 0, 0), 10, "");
+    world.addMarker(cv::Vec3d(3, 1, 0), cv::Vec3d(0, 0, 0), 11, "");
+    world.addMarker(cv::Vec3d(3, 2, 0), cv::Vec3d(0, 0, 0), 12, "");
+    world.addMarker(cv::Vec3d(4, 0, 0), cv::Vec3d(0, 0, 0), 13, "");
+    world.addMarker(cv::Vec3d(4, 1, 0), cv::Vec3d(0, 0, 0), 14, "");
+    world.addMarker(cv::Vec3d(4, 2, 0), cv::Vec3d(0, 0, 0), 15, "");
+    world.addMarker(cv::Vec3d(-1, 0, 0), cv::Vec3d(0, 0, 0), 16, "");
+    world.addMarker(cv::Vec3d(-1, 1, 0), cv::Vec3d(0, 0, 0), 17, "");
+    world.addMarker(cv::Vec3d(-1, 2, 0), cv::Vec3d(0, 0, 0), 18, "");
+    world.addMarker(cv::Vec3d(5, 0, 0), cv::Vec3d(0, 0, 0), 19, "");
+    world.addMarker(cv::Vec3d(5, 1, 0), cv::Vec3d(0, 0, 0), 20, "");
+    world.addMarker(cv::Vec3d(5, 2, 0), cv::Vec3d(0, 0, 0), 21, "");
 
-    world.addMarker(cv::Vec3d(1.74, 2.65 + 2.05 + 1.56, 0), cv::Vec3d(0, 0, 90), 4, "");
-    world.addMarker(cv::Vec3d(1.74 + 1.47, 2.65 + 2.05 + 1.56, 0), cv::Vec3d(0, 0, 180), 11, "");
+    world.addPad(cv::Vec3d(2, -1, 0), cv::Vec3d(0, 0, 0), 1);
 
-    world.addMarker(cv::Vec3d(1.74 + 1.47, 1.40 + 1.40 + 1.9, 0), cv::Vec3d(0, 0, 180), 9, "");
-    world.addMarker(cv::Vec3d(1.74 + 1.47, 1.40 + 1.40, 0), cv::Vec3d(0, 0, 180), 10, "");
-    world.addMarker(cv::Vec3d(1.74 + 1.47, 1.40, 0), cv::Vec3d(0, 0, 180), 6, "");
-    world.addMarker(cv::Vec3d(1.74 + 1.47, 0, 0), cv::Vec3d(0, 0, -90), 7, "");
+    world.addDrone(cv::Vec3d(2, 3, 0), cv::Vec3d(0, 0, 180), config->Get(ConfigKeys::Drone::Id), "");
 
-    world.addMarker(cv::Vec3d(1.67, 0, 0), cv::Vec3d(0, 0, -90), 3, "");
-    world.addMarker(cv::Vec3d(1.67, 2.75, 0), cv::Vec3d(0, 0, 0), 2, "");
-
-    world.addDrone(cv::Vec3d(5, 0, 0), cv::Vec3d(0, 0, 0), config->Get(ConfigKeys::Drone::Id), "");
     return world;
 }
 
-Path ConfigDefaults::getPath(Config *config) {
-    Path path;
+std::map<int, Path> ConfigDefaults::getPath(Config *config) {
 
-    path.AddPoint(cv::Vec3d(-1.35, -1.6, 5), 45);
-    path.AddPoint(cv::Vec3d(-1.2, 3.4, 5), 135);
-    path.AddPoint(cv::Vec3d(3.8, 3.4, 5), -135);
-    path.AddPoint(cv::Vec3d(3.4, 1.6, 5), -90);
-    path.AddPoint(cv::Vec3d(5.3, 1.8, 5), -135);
-    path.AddPoint(cv::Vec3d(5.6, -1.4, 5), -45);
-    path.AddPoint(cv::Vec3d(3.1, -1.2, 5), 0);
+    Path path1;
 
-    return path;
+    path1.AddPoint(cv::Vec3d(3, 0, 0), 90);
+    path1.AddPoint(cv::Vec3d(4, 0, 0), 90);
+    path1.AddPoint(cv::Vec3d(5, 0, 0), 0);
+    path1.AddPoint(cv::Vec3d(5, 1, 0), 0);
+    path1.AddPoint(cv::Vec3d(5, 2, 0), -90);
+    path1.AddPoint(cv::Vec3d(4, 2, 0), -90);
+    path1.AddPoint(cv::Vec3d(3, 2, 0), -180);
+    path1.AddPoint(cv::Vec3d(3, 1, 0), -180);
+
+    Path path2;
+
+    path2.AddPoint(cv::Vec3d(3, 0, 0), 90);
+    path2.AddPoint(cv::Vec3d(4, 0, 0), 90);
+    path2.AddPoint(cv::Vec3d(5, 0, 0), 0);
+    path2.AddPoint(cv::Vec3d(5, 1, 0), 0);
+    path2.AddPoint(cv::Vec3d(5, 2, 0), -90);
+    path2.AddPoint(cv::Vec3d(4, 2, 0), -90);
+    path2.AddPoint(cv::Vec3d(3, 2, 0), -90);
+    path2.AddPoint(cv::Vec3d(2, 2, 0), -90);
+    path2.AddPoint(cv::Vec3d(1, 2, 0), -90);
+    path2.AddPoint(cv::Vec3d(0, 2, 0), -90);
+    path2.AddPoint(cv::Vec3d(-1, 2, 0), -180);
+    path2.AddPoint(cv::Vec3d(-1, 1, 0), -180);
+    path2.AddPoint(cv::Vec3d(-1, 0, 0), 90);
+    path2.AddPoint(cv::Vec3d(0, 0, 0), 90);
+    path2.AddPoint(cv::Vec3d(1, 0, 0), 90);
+    path2.AddPoint(cv::Vec3d(2, 0, 0), 90);
+
+    std::map<int, Path> paths;
+    paths[1] = path1;
+    paths[2] = path2;
+
+    return paths;
 }

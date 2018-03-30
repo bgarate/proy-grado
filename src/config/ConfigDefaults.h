@@ -16,7 +16,7 @@ public:
 
     static World getWorld(Config *config);
 
-    static Path getPath(Config *config);
+    static std::map<int, Path> getPath(Config *config);
 };
 
 

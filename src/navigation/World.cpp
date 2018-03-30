@@ -10,6 +10,10 @@ void World::addMarker(cv::Vec3d position, cv::Vec3d rotation, int id, std::strin
     addObject(ObjectType::MARKER, position, rotation, id, state);
 }
 
+void World::addPad(cv::Vec3d position, cv::Vec3d rotation, int id) {
+    addObject(ObjectType::PAD, position, rotation, id, "");
+}
+
 void World::addDrone(cv::Vec3d position, cv::Vec3d rotation, int id, std::string state) {
     addObject(ObjectType::DRONE, position, rotation, id, state);
 }

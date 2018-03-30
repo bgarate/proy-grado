@@ -13,7 +13,7 @@
 class BodyInfo {
 public:
     bool ready;
-    cv::Vec3d CurrentPosition;
+        cv::Vec3d CurrentPosition;
     cv::Vec3d CurrentPose;
     cv::Vec3d PredictedFuturePosition;
     cv::Vec3d ProjectedPositionOnPath;

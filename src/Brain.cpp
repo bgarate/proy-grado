@@ -35,8 +35,11 @@ void Brain::setup(Config* config, SharedMemory* shared) {
 
     //MapDebugger
     mapEnabled = config->Get(ConfigKeys::Debugging::MapDebuggerInBrain);
+
+    world = config->GetWorld();
+
     if(mapEnabled){
-        world = config->GetWorld();
+
         mapDebugger = new MapDebugger(config, &world);
         mapDebugger->Init();
     }
