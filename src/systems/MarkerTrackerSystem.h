@@ -11,17 +11,15 @@
 #include <src/hal/hal.hpp>
 #include <src/debugging/VisualDebugger.h>
 #include "System.h"
+#include "SystemBase.h"
 
-class MarkerTrackerSystem: public ISystem {
+class MarkerTrackerSystem: public SystemBase {
 public:
 
-    void Init(Config* config, Hal* hal, SharedMemory* shared, VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger) override {
+    void internalInit() override {
         tracker = new MarkerTracker(config);
 
         world = config->GetWorld();
-        this->hal = hal;
-        this->navigationDebugger = navigationDebugger;
-        this->visualDebugger = visualDebugger;
 
         drone = world.getDrones()[0];
 
@@ -29,31 +27,27 @@ public:
 
     }
 
-    void Update(double deltaTime) override {
+    void internalUpdate(double deltaTime) override {
 
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
 
         if (frame == NULL || !frame->empty())
             return;
 
-        BodyInfo info = shared->getBodyInfo();
-
         tracker->Update(frame, deltaTime);
-        follower->setTarget(info.CurrentTargetId);
+        follower->setTarget(bodyInfo.CurrentTargetId);
         NavigationCommand command = follower->update(tracker->Markers, hal->getAltitude(), deltaTime);
 
         drone->setPosition(follower->EstimatedPosition);
         drone->setRotation(follower->EstimatedPose);
 
-        info.CurrentPosition = follower->EstimatedPosition;
-        info.PredictedFuturePosition = follower->PredictedPosition;
-        info.ProjectedPositionOnPath = follower->ProjectedPredictedPosition;
-        info.TargetOnPath = follower->FollowTarget;
-        info.CurrentPose = follower->EstimatedPose;
-        info.FollowPathCommand = command;
-        info.CurrentTargetId = follower->getTargetId();
-
-        shared->setBodyInfo(info);
+        bodyInfo.CurrentPosition = follower->EstimatedPosition;
+        bodyInfo.PredictedFuturePosition = follower->PredictedPosition;
+        bodyInfo.ProjectedPositionOnPath = follower->ProjectedPredictedPosition;
+        bodyInfo.TargetOnPath = follower->FollowTarget;
+        bodyInfo.CurrentPose = follower->EstimatedPose;
+        bodyInfo.FollowPathCommand = command;
+        bodyInfo.CurrentTargetId = follower->getTargetId();
 
         visualDebugger->ShowMarkers(tracker->Markers);
         navigationDebugger->setVisibleMarkers(tracker->Markers);
@@ -67,17 +61,11 @@ public:
     }
 
 private:
-    Config* config;
-    SharedMemory* shared;
-
     MarkerTracker* tracker;
-    NavigationDebugger* navigationDebugger;
-    VisualDebugger* visualDebugger;
     MarkerFollower* follower;
 
     World world;
     WorldObject* drone;
-    Hal* hal;
 };
 
 

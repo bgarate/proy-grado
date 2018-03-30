@@ -47,8 +47,11 @@ void Body::loop() {
     std::string textToExecute = config->Get(ConfigKeys::Body::TestToExecute);
 
     Systems->Init(config, hal,shared, &visualDebugger, &navigationDebugger);
-    //StateMachine->Init(StepName::TAKING_OFF,config,hal, shared, &visualDebugger, &navigationDebugger);
-    StateMachine->Init(StepName::VIRTUAL_DRONE,config,hal, shared, &visualDebugger, &navigationDebugger);
+
+    if(config->Get(ConfigKeys::Body::VirtualBody))
+        StateMachine->Init(StepName::VIRTUAL_DRONE,config,hal, shared, &visualDebugger, &navigationDebugger);
+    else
+        StateMachine->Init(StepName::TAKING_OFF,config,hal, shared, &visualDebugger, &navigationDebugger);
 
     Logger::logInfo("Body started");
 

@@ -9,28 +9,27 @@
 #include <src/debugging/VisualDebugger.h>
 #include <src/communication/SharedMemory.h>
 #include <src/navigation/NavigationDebugger.h>
-#include "BodyState.h"
+#include "IBodyState.h"
 #include "StepName.h"
+#include "BodyStateBase.h"
 
-class TakingOffState: public BodyState {
+class TakingOffState: public BodyStateBase {
 public:
 
     std::string getName() override {
         return StepName::TAKING_OFF;
     }
 
-    void init(Config* config, Hal* hal, SharedMemory* shared, BodyStateMachineControl* control,  VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger) override {
-        this->hal = hal;
-        this->shared = shared;
-        this->visualDebugger = visualDebugger;
-        this->control = control;
-    }
-
     void prepare() override {
 
     }
 
-    void step(double deltaTime) override {
+    void internalInit() override {
+
+    }
+
+    void internalStep(double deltaTime) override {
+
         if(hal->getState() == State::Landed && !takingOff)
             hal->takeoff();
 
@@ -48,12 +47,9 @@ public:
     void cleanup() override {
 
     }
+
 private:
-    Hal* hal;
-    SharedMemory *shared;
-    VisualDebugger *visualDebugger;
     bool takingOff = false;
-    BodyStateMachineControl* control;
 };
 
 

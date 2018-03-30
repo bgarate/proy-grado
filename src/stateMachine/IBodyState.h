@@ -9,7 +9,7 @@
 #include "BodyStateMachineControl.h"
 
 
-class BodyState {
+class IBodyState {
 public:
 
     virtual std::string getName() = 0;

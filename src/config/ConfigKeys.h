@@ -57,6 +57,7 @@ struct ConfigKeys {
         CONFIG_KEY(Body, DummyCameraVideoSource, std::string)
         CONFIG_KEY(Body, CascadeDetector, std::string)
         CONFIG_KEY(Body, TrackingSmoothingSamples, int)
+        CONFIG_KEY(Body, VirtualBody, bool)
     };
 
     struct Brain {

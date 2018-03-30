@@ -40,10 +40,10 @@ void runBody(Config* config, SharedMemory* shared) {
 
     body.setup(config, shared);
 
-    MarkerTrackerSystem* mts = new MarkerTrackerSystem();
-    body.Systems->RegisterSystem(mts);
-    BodyState* s = new VirtualDroneState();
-    body.StateMachine->RegisterState(s);
+    body.Systems->RegisterSystem(new MarkerTrackerSystem());
+    body.StateMachine->RegisterState(new VirtualDroneState());
+    body.StateMachine->RegisterState(new TakingOffState());
+    body.StateMachine->RegisterState(new PatrollingState());
 
     body.loop();
     body.cleanup();

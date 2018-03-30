@@ -86,10 +86,10 @@ set(SOURCE_FILES
         src/communication/InterComm.cpp src/communication/InterComm.h
         src/debugging/MapDebugger.cpp src/debugging/MapDebugger.h
         src/communication/SharedMemory.cpp src/communication/SharedMemory.h
-        src/stateMachine/BodyState.h
+        src/stateMachine/IBodyState.h
         src/stateMachine/BodyStateMachine.h src/stateMachine/BodyStateMachineControl.h
         src/stateMachine/StepName.h src/systems/System.h
-        src/systems/SystemManager.h src/stateMachine/PatrollingState.h src/stateMachine/StepName.cpp)
+        src/systems/SystemManager.h src/stateMachine/PatrollingState.h src/stateMachine/StepName.cpp src/stateMachine/BodyStateBase.cpp src/stateMachine/BodyStateBase.h src/systems/SystemBase.cpp src/systems/SystemBase.h)
 
 
 set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h

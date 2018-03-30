@@ -12,23 +12,19 @@
 #include <src/config/ConfigKeys.h>
 #include <chrono>
 #include <src/utils/Helpers.h>
-#include "BodyState.h"
+#include "IBodyState.h"
 #include "StepName.h"
+#include "BodyStateBase.h"
 
-class VirtualDroneState: public BodyState {
+class VirtualDroneState: public BodyStateBase {
 public:
 
     std::string getName() override {
         return StepName::VIRTUAL_DRONE;
     }
 
-    void init(Config* config, Hal* hal, SharedMemory* shared, BodyStateMachineControl* control,  VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger) override {
-        this->hal = hal;
-        this->shared = shared;
-        this->visualDebugger = visualDebugger;
-        this->control = control;
+    void internalInit() override {
 
-        //this->config = config;
         this->myid = config->Get(ConfigKeys::Drone::Id);
 
         this->shared = shared;
@@ -54,6 +50,7 @@ public:
         previousRotation = nextRotation;
 
         BodyInfo bodyInfo = shared->getBodyInfo();
+
         bodyInfo.batteryLevel = 100;
         bodyInfo.CurrentPosition.val[0] = d->getPosition().val[0];
         bodyInfo.CurrentPosition.val[1] = d->getPosition().val[1];
@@ -65,6 +62,7 @@ public:
         bodyInfo.inPath = false;
         bodyInfo.landedInPad = false;
         bodyInfo.ready = true;
+
         shared->setBodyInfo(bodyInfo);
     }
 
@@ -77,7 +75,6 @@ public:
         //Simulación de bateria
         startBattryTime = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - startTime).count();
 
-
         //COMPORAMIENTO SIMULADO VARIABLES
         srand(time(NULL));
         range = 10 - 3 + 1;
@@ -86,11 +83,7 @@ public:
 
     }
 
-    void step(double deltaTime) override {
-
-        //Obtener infos
-        BodyInfo bodyInfo = shared->getBodyInfo();
-        BrainInfo brainInfo = shared->getBrainInfo();
+    void internalStep(double deltaTime) override {
 
         lastTime = newTime;
         newTime = std::chrono::steady_clock::now();
@@ -269,9 +262,6 @@ public:
         bodyInfo.CurrentPose.val[1] = 0;
         bodyInfo.CurrentPose.val[2] = a + Helpers::angleDifference(b,a)*difference;
 
-        //grabar info actualizada
-        shared->setBodyInfo(bodyInfo);
-
     }
 
     void leave() override {
@@ -282,11 +272,7 @@ public:
 
     }
 private:
-    Hal* hal;
-    SharedMemory *shared;
-    VisualDebugger *visualDebugger;
     bool takingOff = false;
-    BodyStateMachineControl* control;
 
     unsigned int myid;
 

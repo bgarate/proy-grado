@@ -54,6 +54,7 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Body::DummyCameraVideoSource,std::string("-1")); // ../sample-input/drone2.mp4
     config->Set(ConfigKeys::Body::CascadeDetector,std::string("../resources/pedestrian_cascade_web_LBP.xml"));
     config->Set(ConfigKeys::Body::TrackingSmoothingSamples, 10);
+    config->Set(ConfigKeys::Body::VirtualBody, false);
 
     config->Set(ConfigKeys::Brain::Start, true);
     config->Set(ConfigKeys::Brain::LowBatteryLevel, 20);

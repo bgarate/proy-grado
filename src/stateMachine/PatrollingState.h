@@ -8,31 +8,29 @@
 #include <src/communication/SharedMemory.h>
 #include <src/debugging/VisualDebugger.h>
 #include <src/navigation/NavigationDebugger.h>
-#include "BodyState.h"
+#include "IBodyState.h"
 #include "BodyStateMachineControl.h"
 #include "StepName.h"
+#include "BodyStateBase.h"
 
-class PatrollingState: public BodyState {
+class PatrollingState: public BodyStateBase {
 public:
 
     std::string getName() override {
         return StepName::PATROLLING;
     }
 
-    void init(Config* config, Hal* hal, SharedMemory* shared, BodyStateMachineControl* control,  VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger) override {
-        this->hal = hal;
-        this->shared = shared;
-        this->visualDebugger = visualDebugger;
-    }
-
     void prepare() override {
 
     }
 
-    void step(double deltaTime) override {
+    void internalInit() override {
 
-        BodyInfo info = shared->getBodyInfo();
-        NavigationCommand command = info.FollowPathCommand;
+    }
+
+    void internalStep(double deltaTime) override {
+
+        NavigationCommand command = bodyInfo.FollowPathCommand;
 
         double currentAltitude = hal->getAltitude();
         double deltaAltitude = targetAltitude - currentAltitude;
@@ -41,8 +39,8 @@ public:
         visualDebugger->setNavigationCommand(command);
         hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (gaz * 100));
 
-        info.ExecutedCommand = command;
-        shared->setBodyInfo(info);
+        bodyInfo.ExecutedCommand = command;
+
     }
 
     void leave() override {
@@ -52,10 +50,8 @@ public:
     void cleanup() override {
 
     }
+
 private:
-    Hal* hal;
-    SharedMemory *shared;
-    VisualDebugger *visualDebugger;
 
     double targetAltitude = 2;
     double altitudeSlowdownRadius = 1;

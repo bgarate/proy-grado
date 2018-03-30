@@ -6,13 +6,13 @@
 #define PROY_GRADO_BODYSTATEMACHINE_H
 
 
-#include "BodyState.h"
+#include "IBodyState.h"
 #include "BodyStateMachineControl.h"
 
 class BodyStateMachine: public ITransition {
 public:
 
-    void RegisterState(BodyState* state){
+    void RegisterState(IBodyState* state){
         states[state->getName()] = state;
     }
 
@@ -20,7 +20,7 @@ public:
 
         BodyStateMachineControl* control = new BodyStateMachineControl(this);
 
-        for(const std::pair<std::string,BodyState*>& pair: states){
+        for(const std::pair<std::string,IBodyState*>& pair: states){
             pair.second->init(config, hal, shared, control,visualDebugger, navigationDebugger);
         }
 
@@ -45,15 +45,15 @@ public:
     void Cleanup() {
         currentState->leave();
 
-        for(const std::pair<std::string,BodyState*>& pair: states){
+        for(const std::pair<std::string,IBodyState*>& pair: states){
             pair.second->cleanup();
         }
 
     }
 
 private:
-    std::map<std::string, BodyState*> states;
-    BodyState* currentState = NULL;
+    std::map<std::string, IBodyState*> states;
+    IBodyState* currentState = NULL;
 };
 
 
