@@ -22,7 +22,7 @@ std::string BodyStateBase::expectedStep() {
         case BrainInfo::PATROLING:
             return StepName::PATROLLING;
         case BrainInfo::FOLLOWING:
-            return "";
+            return StepName::FOLLOWING;
         case BrainInfo::ALERT:
             return "";
         case BrainInfo::CHARGED:

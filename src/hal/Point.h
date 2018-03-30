@@ -42,6 +42,8 @@ typedef struct Point {
 
     double Tilt() { return  y;}
 
+    double Norm() { return std::sqrt(std::pow(x, 2) + std::pow(y, 2)); }
+
 } Point;
 
 #endif //PROY_GRADO_POINT_H

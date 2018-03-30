@@ -59,10 +59,6 @@ private:
 
     double distanceToMarker(Marker m);
 
-    double toDegrees(double rad);
-
-    double toRadians(double deg);
-
     Point getAngularDisplacement(cv::Point2i markerCenter);
 
     void EstimatePosition(const std::vector<Marker> &markers, double altitude);
@@ -78,8 +74,6 @@ private:
     void EstimateNextPosition();
 
     void ProjectNextPosition();
-
-    cv::Vec2d Rotate(cv::Vec2d v, double angle);
 
 };
 

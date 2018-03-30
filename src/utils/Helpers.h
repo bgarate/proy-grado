@@ -38,6 +38,20 @@ public:
         return a - std::floor(a/n) * n;
     }
 
+    static cv::Vec2d rotate(cv::Vec2d v, double angle)
+    {
+        return cv::Vec2d(v[0] * std::cos(angle) - v[1] * std::sin(angle),
+                         v[0] * std::sin(angle) + v[1] * std::cos(angle));
+    }
+
+
+    static double toDegrees(double rad) {
+        return rad / M_PI * 180;
+    }
+
+    static double toRadians(double deg) {
+        return deg / 180 * M_PI;
+    }
 
 };
 

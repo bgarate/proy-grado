@@ -9,6 +9,7 @@
 #include <iostream>
 #include <cstring>
 #include <ctime>
+#include "memory"
 
 class DetectionAlgorithm {
 public:

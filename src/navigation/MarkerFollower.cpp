@@ -51,7 +51,7 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
     cv::Vec2d targetVector2d = cv::Vec2d(targetVector3d[0],targetVector3d[1]);
 
     cv::Vec2d normalizedTarget = cv::normalize(targetVector2d);
-    cv::Vec2d targetVector = Rotate(normalizedTarget,toRadians(EstimatedPose[2]));
+    cv::Vec2d targetVector = Helpers::rotate(normalizedTarget,Helpers::toRadians(EstimatedPose[2]));
 // TODO: Considerar altura
     cv::Vec3d v = targetPathPoint.position - EstimatedPosition;
     double distanceToPathPoint = cv::norm(cv::Vec2d(v[0],v[1]));
@@ -72,12 +72,6 @@ NavigationCommand MarkerFollower::update(std::vector<Marker> markers, double alt
 
     return NavigationCommand(forwardSpeed,lateralSpped, yawSpeed);
 
-}
-
-cv::Vec2d MarkerFollower::Rotate(cv::Vec2d v, double angle)
-{
-    return cv::Vec2d(v[0] * std::cos(angle) - v[1] * std::sin(angle),
-                     v[0] * std::sin(angle) + v[1] * std::cos(angle));
 }
 
 int MarkerFollower::getTargetId() {
@@ -146,8 +140,8 @@ void MarkerFollower::EstimatePosition(const std::vector<Marker> &markers, double
 
     for(int i = 0; i < EstimatedPositions.size(); i++) {
         EstimatedPosition += EstimatedPositions[i];
-        sines += sin(toRadians(EstimatedPoses[i][2]));
-        cosines += cos(toRadians(EstimatedPoses[i][2]));
+        sines += sin(Helpers::toRadians(EstimatedPoses[i][2]));
+        cosines += cos(Helpers::toRadians(EstimatedPoses[i][2]));
     }
 
     EstimatedPosition[0] /= EstimatedPositions.size();
@@ -155,7 +149,7 @@ void MarkerFollower::EstimatePosition(const std::vector<Marker> &markers, double
     EstimatedPosition[2] /= EstimatedPositions.size();
 
     // Ver https://en.wikipedia.org/wiki/Mean_of_circular_quantities
-    EstimatedPose[2] = toDegrees(atan2(sines, cosines));
+    EstimatedPose[2] = Helpers::toDegrees(atan2(sines, cosines));
 
 }
 
@@ -169,20 +163,11 @@ Point MarkerFollower::getAngularDisplacement(cv::Point2i markerCenter) {
     double displacementX = markerCenter.x - frameCenter.x;
 
 
-    double tgPan = displacementX/(frameSize.width/2)*std::tan(toRadians(config->Get(ConfigKeys::Drone::FOV)/2));
-    double tgTilt = displacementY/(frameSize.height/2)*std::tan(toRadians(config->Get(ConfigKeys::Drone::VerticalFOV)/2));
+    double tgPan = displacementX/(frameSize.width/2)*std::tan(Helpers::toRadians(config->Get(ConfigKeys::Drone::FOV)/2));
+    double tgTilt = displacementY/(frameSize.height/2)*std::tan(Helpers::toRadians(config->Get(ConfigKeys::Drone::VerticalFOV)/2));
 
-    return Point(toDegrees(std::atan(tgPan)),toDegrees(std::atan(tgTilt)),0);
+    return Point(Helpers::toDegrees(std::atan(tgPan)),Helpers::toDegrees(std::atan(tgTilt)),0);
 
-}
-
-
-double MarkerFollower::toDegrees(double rad) {
-    return rad / M_PI * 180;
-}
-
-double MarkerFollower::toRadians(double deg) {
-    return deg / 180 * M_PI;
 }
 
 double MarkerFollower::distanceToMarker(Marker m) {

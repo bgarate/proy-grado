@@ -8,6 +8,7 @@
 #define PROY_GRADO_SHAREDMEMORY_H
 
 #include <src/navigation/MarkerFollower.h>
+#include <src/tracking/Follower.h>
 #include "../config/Config.h"
 
 class BodyInfo {
@@ -22,6 +23,7 @@ public:
     int CurrentTargetId;
 
     NavigationCommand FollowPathCommand;
+    NavigationCommand FollowDetectionCommand;
 
     NavigationCommand ExecutedCommand;
 

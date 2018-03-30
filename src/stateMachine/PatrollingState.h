@@ -52,7 +52,6 @@ public:
     }
 
 private:
-
     double targetAltitude = 2;
     double altitudeSlowdownRadius = 1;
 };
