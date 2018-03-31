@@ -30,7 +30,18 @@ public:
     }
 
     void Step(double deltaTime) {
+        if(shouldShutdown)
+            throw new std::runtime_error("Should shutdown");
+
         currentState->step(deltaTime);
+    }
+
+    void DoShutdown() override {
+        shouldShutdown = true;
+    }
+
+    bool ShouldShutdown() {
+        return shouldShutdown;
     }
 
     virtual void Transition(std::string nextStep){
@@ -53,6 +64,7 @@ public:
     }
 
 private:
+    bool shouldShutdown = false;
     std::map<std::string, IBodyState*> states;
     IBodyState* currentState = NULL;
 };

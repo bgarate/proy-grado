@@ -15,7 +15,7 @@
 #include <X11/Xutil.h>
 
 const cv::Size MapDebugger::SIZE = cv::Size(1024,768);
-const cv::Point MapDebugger::ORIGIN = cv::Point(300,300);
+cv::Point MapDebugger::ORIGIN = cv::Point(300,300);
 const double MapDebugger::dashPattern[1] = {4.0};
 
 MapDebugger::MapDebugger(Config *config, World* world) {
@@ -86,10 +86,13 @@ void MapDebugger::DrawAxis(std::string name, cv::Vec3d axis) {
 
 }
 
-void MapDebugger::Run(std::map<int, DroneState*> droneStates, int myid, Path path) {
+bool MapDebugger::Run(std::map<int, DroneState*> droneStates, int myid, Path path, double deltaTime) {
 
     ProcessEvents();
-    ProcessInput();
+    bool ret = ProcessInput(deltaTime);
+
+    if(!ret)
+        return false;
 
     cairo_set_source_rgb(cr, 1,1,1);
     cairo_paint(cr);
@@ -119,11 +122,12 @@ void MapDebugger::Run(std::map<int, DroneState*> droneStates, int myid, Path pat
         DrawMarkerTextId(marker);
     }
 
-
     DrawPath(path);
 
     cairo_surface_flush(surface);
     XFlush(dsp);
+
+    return true;
 }
 
 void MapDebugger::DrawPath(Path path)  {
@@ -339,11 +343,7 @@ void MapDebugger::ProcessEvents() {
     switch (event.type) {
         case KeyPress:
             key = XLookupKeysym(&event.xkey, 0);
-            holdKeys[key] = true;
             pressedKeys.insert(key);
-        case KeyRelease:
-            key = XLookupKeysym(&event.xkey, 0);
-            holdKeys[key] = false;
         default:
             break;
     }
@@ -354,17 +354,27 @@ bool MapDebugger::isKeyPressed(long k) {
     return pressedKeys.find(k) != pressedKeys.end();
 }
 
-bool MapDebugger::isKeyHold(long k) {
-    return holdKeys[k];
-}
+bool MapDebugger::ProcessInput(double deltaTime) {
 
-void MapDebugger::ProcessInput() {
+    if(isKeyPressed(XK_comma))
+        SCALE -= 0.000005f * deltaTime;
 
-    if(isKeyHold(XK_comma))
-        SCALE -= 0.5;
+    if(isKeyPressed(XK_period))
+        SCALE += 0.000005f * deltaTime;
 
-    if(isKeyHold(XK_period))
-        SCALE += 0.1;
+    if(isKeyPressed(XK_Up))
+        ORIGIN.y -= 0.0001f * deltaTime;
+
+    if(isKeyPressed(XK_Down))
+        ORIGIN.y += 0.0001f * deltaTime;
+
+    if(isKeyPressed(XK_Right))
+        ORIGIN.x -= 0.0001f * deltaTime;
+
+    if(isKeyPressed(XK_Left))
+        ORIGIN.x += 0.0001f * deltaTime;
+
+    return !isKeyPressed(XK_Escape);
 
 }
 

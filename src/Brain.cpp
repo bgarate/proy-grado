@@ -288,13 +288,20 @@ void Brain::loop() {
         }
 
         //Actualizar map debugger
-        if(runningTime - lastRefreshTime > pirntLapse) {
+        double timeLapse = runningTime - lastRefreshTime;
+        if(timeLapse > pirntLapse) {
 
             if(mapEnabled)
-                mapDebugger->Run(interComm->droneStates,myid,paths[brainInfo.currentPathId]);
+                should_exit = !mapDebugger->Run(interComm->droneStates,myid,paths[brainInfo.currentPathId], timeLapse);
 
             lastRefreshTime = runningTime;
         }
+
+        if(bodyInfo.isShutingDown)
+            should_exit = true;
+
+        if(should_exit)
+            brainInfo.currentTask = BrainInfo::SHUTDOWN;
 
         //grabar info actualizada
         shared->setBrainInfo(brainInfo);
@@ -309,9 +316,10 @@ void Brain::loop() {
 
 void Brain::shutdown() {
     should_exit = true;
+    mapDebugger->Shutdown();
     interComm->shutdownInterComm();
 }
 
 void Brain::cleanup() {
-
+    Logger::logInfo("Cleaning up");
 }

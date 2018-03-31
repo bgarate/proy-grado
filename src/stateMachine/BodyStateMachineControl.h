@@ -11,6 +11,7 @@
 class ITransition {
 public:
     virtual void Transition(std::string nextStep) = 0;
+    virtual void DoShutdown() = 0;
 };
 
 class BodyStateMachineControl {
@@ -22,6 +23,10 @@ public:
 
     void Transition(std::string nextStep) {
         stateMachine->Transition(nextStep);
+    }
+
+    void DoShutdown(){
+        stateMachine->DoShutdown();
     }
 
     SystemManager* getSystemManager(){

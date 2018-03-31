@@ -89,7 +89,7 @@ set(SOURCE_FILES
         src/stateMachine/IBodyState.h
         src/stateMachine/BodyStateMachine.h src/stateMachine/BodyStateMachineControl.h
         src/stateMachine/StepName.h src/systems/System.h
-        src/systems/SystemManager.h src/stateMachine/PatrollingState.h src/stateMachine/StepName.cpp src/stateMachine/BodyStateBase.cpp src/stateMachine/BodyStateBase.h src/systems/SystemBase.cpp src/systems/SystemBase.h src/stateMachine/FollowingState.cpp src/stateMachine/FollowingState.h src/systems/FollowerSystem.cpp src/systems/FollowerSystem.h src/stateMachine/GoToPad.h src/navigation/CommandGenerator.h src/systems/PadLandingSystem.cpp src/systems/PadLandingSystem.h src/systems/BatterySystem.h src/stateMachine/GoToPath.h src/stateMachine/AlertState.h)
+        src/systems/SystemManager.h src/stateMachine/PatrollingState.h src/stateMachine/StepName.cpp src/stateMachine/BodyStateBase.cpp src/stateMachine/BodyStateBase.h src/systems/SystemBase.cpp src/systems/SystemBase.h src/stateMachine/FollowingState.cpp src/stateMachine/FollowingState.h src/systems/FollowerSystem.cpp src/systems/FollowerSystem.h src/stateMachine/GoToPad.h src/navigation/CommandGenerator.h src/systems/PadLandingSystem.cpp src/systems/PadLandingSystem.h src/systems/BatterySystem.h src/stateMachine/GoToPath.h src/stateMachine/AlertState.h src/stateMachine/ShutdownState.h)
 
 
 set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h

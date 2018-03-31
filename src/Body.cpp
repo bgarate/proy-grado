@@ -42,8 +42,6 @@ void Body::setup(Config* config, SharedMemory* shared) {
 
 void Body::loop() {
 
-    PrintAvailableTests();
-
     std::string textToExecute = config->Get(ConfigKeys::Body::TestToExecute);
 
     Systems->Init(config, hal,shared, &visualDebugger, &navigationDebugger);
@@ -92,7 +90,6 @@ void Body::loop() {
         if(key == 27){
             should_exit = true;
         } else if (key == 32) {
-            visualDebugger.cleanup();
             mc->run();
             inmc=true;
         } else if (key == (int)'c'){
@@ -103,19 +100,24 @@ void Body::loop() {
             config->Set(ConfigKeys::Drone::CameraTilt,std::max(config->Get(ConfigKeys::Drone::VerticalFOV)/2,config->Get(ConfigKeys::Drone::CameraTilt) - 0.1));
         }
 
-        if(should_exit /*|| bodyComm->shouldExit()*/)
+        BrainInfo brainInfo = shared->getBrainInfo();
 
+        if(brainInfo.currentTask == BrainInfo::SHUTDOWN)
+            should_exit = true;
+
+        if(StateMachine->ShouldShutdown())
+            should_exit = true;
+
+        if(should_exit){
+            BodyInfo bodyInfo = shared->getBodyInfo();
+            bodyInfo.isShutingDown = true;
+            shared->setBodyInfo(bodyInfo);
             break;
+        }
 
         usleep(config->Get(ConfigKeys::Body::SleepDelay));
     }
 
-    visualDebugger.cleanup();
-
-    Logger::logDebug("Finishing test");
-
-    StateMachine->Cleanup();
-    Systems->Cleanup();
 
 }
 
@@ -131,20 +133,10 @@ void Body::CalculateFPS() {
 }
 
 void Body::cleanup() {
+    Logger::logInfo("Cleaning up");
+
     visualDebugger.cleanup();
+    StateMachine->Cleanup();
+    Systems->Cleanup();
     hal->Disconnect();
 }
-
-void Body::PrintAvailableTests() {
-
-    std::string str = "Available body tests:\n";
-
-    for(std::string& test : BodyTestRegistry::GetAvailableTests()){
-        str += "\t- " + test + "\n";
-    }
-
-    Logger::logDebug(str);
-}
-
-
-

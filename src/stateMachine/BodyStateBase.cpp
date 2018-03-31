@@ -17,22 +17,25 @@ void BodyStateBase::doTransition() {
 
 std::string BodyStateBase::expectedStep() {
     switch (shared->getBrainInfo().currentTask){
-        case BrainInfo::INNACTIVE:
-            return "";
         case BrainInfo::PATROLING:
             return StepName::PATROLLING;
         case BrainInfo::FOLLOWING:
             return StepName::FOLLOWING;
         case BrainInfo::ALERT:
             return StepName::ALERT;
-        case BrainInfo::CHARGED:
-        case BrainInfo::CHARGING:
-            return "";
         case BrainInfo::BACKFROMPAD:
             return StepName::GOING_TO_PATH;
         case BrainInfo::GOINGTOPAD:
             return StepName::GOING_TO_PAD;
+        case BrainInfo::SHUTDOWN:
+            return StepName::SHUTDOWN;
+        case BrainInfo::INNACTIVE:
+        case BrainInfo::CHARGED:
+        case BrainInfo::CHARGING:
+            return "";
     }
+
+    throw std::runtime_error("Unknown step");
 }
 
 void BodyStateBase::init(Config *config, Hal *hal, SharedMemory *shared, BodyStateMachineControl *control,

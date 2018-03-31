@@ -26,7 +26,7 @@ public:
     MapDebugger(Config* config, World* world);
     void Init();
     void Shutdown();
-    void Run(std::map<int, DroneState*> droneStates, int myid, Path path);
+    bool Run(std::map<int, DroneState*> droneStates, int myid, Path path, double deltaTime);
     void setVisibleMarkers(std::vector<Marker> visibleMarkers);
 
 private:
@@ -34,11 +34,7 @@ private:
     World *world;
     WorldObject* drone;
     Display *dsp;
-    int SCALE;
-
-    static const int KEY_MAP_SIZE = 512;
-
-    bool holdKeys[KEY_MAP_SIZE];
+    float SCALE;
 
     std::set<long> pressedKeys;
 
@@ -52,7 +48,7 @@ private:
     //const int SCALE= 50;
     const double ARROW_HEAD_ANGLE = 45;
     static const cv::Size SIZE;
-    static const cv::Point ORIGIN;
+    static cv::Point ORIGIN;
 
     int GetX(double x);
 
@@ -92,9 +88,7 @@ private:
 
     bool isKeyPressed(long k);
 
-    bool isKeyHold(long k);
-
-    void ProcessInput();
+    bool ProcessInput(double deltaTime);
 };
 
 

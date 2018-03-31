@@ -21,6 +21,8 @@ public:
     cv::Vec3d ProjectedPositionOnPath;
     cv::Vec3d TargetOnPath;
 
+    bool isShutingDown;
+
     int CurrentTargetId;
 
     NavigationCommand FollowPathCommand;
@@ -50,6 +52,7 @@ public:
         CHARGED,
         BACKFROMPAD,
         GOINGTOPAD,
+        SHUTDOWN
     };
 
     CurrentTask currentTask;

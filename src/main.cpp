@@ -11,6 +11,7 @@
 #include <src/systems/BatterySystem.h>
 #include <src/stateMachine/GoToPath.h>
 #include <src/stateMachine/AlertState.h>
+#include <src/stateMachine/ShutdownState.h>
 #include "hal/dummyHal/dummyHal.h"
 #include "Body.h"
 #include "Brain.h"
@@ -59,6 +60,7 @@ void runBody(Config* config, SharedMemory* shared) {
     body.StateMachine->RegisterState(new GoToPad());
     body.StateMachine->RegisterState(new GoToPath());
     body.StateMachine->RegisterState(new AlertState());
+    body.StateMachine->RegisterState(new ShutdownState());
 
     body.loop();
     body.cleanup();

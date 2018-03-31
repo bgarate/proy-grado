@@ -52,9 +52,10 @@ int main(int argc, const char* args[]) {
 
         interComm->interCommStep(runningTime, deltaTime);
 
-        if(runningTime - lastRefreshTime > pirntLapse) {
+        double timeLapse = runningTime - lastRefreshTime;
+        if(timeLapse > pirntLapse) {
 
-            mapDebugger->Run(interComm->droneStates,-1,*path);
+            mapDebugger->Run(interComm->droneStates,-1,*path, timeLapse);
             lastRefreshTime = runningTime;
         }
 

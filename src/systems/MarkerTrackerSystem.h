@@ -21,6 +21,8 @@ public:
 
         world = config->GetWorld();
 
+        follower = new PathFollower(config, &world);
+
         drone = world.getDrones()[0];
 
         hal->setCameraTilt(Camera::Middle);
@@ -33,7 +35,7 @@ public:
 
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
 
-        if (frame == NULL || !frame->empty())
+        if (frame == NULL || frame->empty())
             return;
 
         if(brainInfo.currentPathId != currentPathId){
