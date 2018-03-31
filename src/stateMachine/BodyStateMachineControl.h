@@ -5,6 +5,7 @@
 #ifndef PROY_GRADO_BODYSTATEMACHINECONTROL_H
 #define PROY_GRADO_BODYSTATEMACHINECONTROL_H
 
+#include <src/systems/SystemManager.h>
 #include "string"
 
 class ITransition {
@@ -14,15 +15,21 @@ public:
 
 class BodyStateMachineControl {
 public:
-    BodyStateMachineControl(ITransition* stateMachine):stateMachine(stateMachine) {
+    BodyStateMachineControl(ITransition* stateMachine, SystemManager* systemManager):
+            stateMachine(stateMachine), systemManager(systemManager) {
 
     }
 
     void Transition(std::string nextStep) {
         stateMachine->Transition(nextStep);
     }
+
+    SystemManager* getSystemManager(){
+        return systemManager;
+    };
 private:
     ITransition* stateMachine;
+    SystemManager* systemManager;
 };
 
 #endif //PROY_GRADO_BODYSTATEMACHINECONTROL_H

@@ -18,6 +18,11 @@ public:
 
     void prepare() override {
         takingOff = false;
+
+        control->getSystemManager()->Disable<FollowerSystem>();
+        control->getSystemManager()->Disable<PadLandingSystem>();
+
+        control->getSystemManager()->Enable<MarkerTrackerSystem>();
     }
 
     void leave() override {

@@ -8,12 +8,14 @@
 
 #include <src/communication/SharedMemory.h>
 #include "System.h"
+#include <typeinfo>
 
 class SystemManager {
 
 public:
     void RegisterSystem(ISystem *system) {
         systems.push_back(system);
+        system->Enabled = true;
     }
 
     void Init(Config* config, Hal* hal, SharedMemory* shared, VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger) {
@@ -33,6 +35,26 @@ public:
         for (ISystem *s: systems) {
             s->Cleanup();
         }
+    }
+
+    template <class T>
+    T* Get(){
+        for (ISystem *s: systems) {
+            if (typeid(*s) == typeid(T))
+                return (T*)s;
+        }
+
+        throw new std::runtime_error("System not found");
+    }
+
+    template <class T>
+    void Enable() {
+        Get<T>()->Enabled = true;
+    }
+
+    template <class T>
+    void Disable() {
+        Get<T>()->Enabled = false;
     }
 
 private:

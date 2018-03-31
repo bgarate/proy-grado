@@ -10,7 +10,7 @@
 
 class CascadeDetector : public DetectionAlgorithm{
 public:
-    CascadeDetector();
+    CascadeDetector(std::string path);
     std::vector<cv::Rect2d> getFound() override;
     void detect(std::shared_ptr<cv::Mat> frame) override;
 

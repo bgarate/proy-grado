@@ -57,6 +57,7 @@ void BodyStateBase::step(double deltaTime) {
         return;
     }
 
+    visualDebugger->setSubStatus(getName());
     internalStep(deltaTime);
 
     shared->setBodyInfo(bodyInfo);

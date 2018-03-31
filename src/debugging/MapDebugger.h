@@ -27,7 +27,6 @@ public:
     void Init();
     void Shutdown();
     void Run(std::map<int, DroneState*> droneStates, int myid, Path path);
-
     void setVisibleMarkers(std::vector<Marker> visibleMarkers);
 
 private:
@@ -36,6 +35,12 @@ private:
     WorldObject* drone;
     Display *dsp;
     int SCALE;
+
+    static const int KEY_MAP_SIZE = 512;
+
+    bool holdKeys[KEY_MAP_SIZE];
+
+    std::set<long> pressedKeys;
 
     std::vector<Marker> visibleMarkers;
 
@@ -83,6 +88,13 @@ private:
 
     void DrawPath(Path path);
 
+    void ProcessEvents();
+
+    bool isKeyPressed(long k);
+
+    bool isKeyHold(long k);
+
+    void ProcessInput();
 };
 
 

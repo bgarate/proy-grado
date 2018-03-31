@@ -41,7 +41,7 @@ class Follow : public BodyTest {
     void InitBodyTest(Hal *hal, Config* config, VisualDebugger* visualDebugger) override {
         this->hal = hal;
 
-        detector = new CascadeDetector();
+        detector = new CascadeDetector(config->Get(ConfigKeys::Body::CascadeDetector));
         tracker = new MultiTracker(MultiTracker::Algorithm::KCF);
         detectAndTrack =  new DetectAndTrack(detector, tracker);
         follower = new Follower(config);

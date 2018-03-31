@@ -8,6 +8,7 @@
 #include <src/stateMachine/BodyStateBase.h>
 #include <src/stateMachine/StepName.h>
 #include <src/navigation/CommandGenerator.h>
+#include <src/systems/PadLandingSystem.h>
 
 class GoToPad : public BodyStateBase {
 public:
@@ -17,6 +18,11 @@ public:
 
     void prepare() override {
         landing = false;
+
+        control->getSystemManager()->Disable<FollowerSystem>();
+
+        control->getSystemManager()->Enable<PadLandingSystem>();
+        control->getSystemManager()->Enable<MarkerTrackerSystem>();
     }
 
     void leave() override {
@@ -45,7 +51,7 @@ protected:
                 bodyInfo.landedInPad = true;
             }
         } if(landingCommand.state == LandingState::Inactive ||
-           std::abs(landingCommand.roll+landingCommand.pitch+landingCommand.yaw)>0.0001) {
+           std::abs(landingCommand.roll)+std::abs(landingCommand.pitch)+std::abs(landingCommand.yaw)>0.0001) {
 
             CommandGenerator generator(bodyInfo.CurrentPosition, bodyInfo.CurrentPose[2]);
             int padId = brainInfo.currentPadId;

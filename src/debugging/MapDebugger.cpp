@@ -10,6 +10,9 @@
 #include "../navigation/MarkerTracker.h"
 #include "src/navigation/PathFollower.h"
 #include "../navigation/Path.h"
+#include <X11/keysym.h>
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
 
 const cv::Size MapDebugger::SIZE = cv::Size(1024,768);
 const cv::Point MapDebugger::ORIGIN = cv::Point(300,300);
@@ -40,7 +43,7 @@ cairo_surface_t *MapDebugger::cairo_create_x11_surface0(int x, int y)
     screen = DefaultScreen(dsp);
     da = XCreateSimpleWindow(dsp, DefaultRootWindow(dsp),
                              0, 0, SIZE.width, SIZE.height, 0, 0, 0);
-    XSelectInput(dsp, da, ButtonPressMask | KeyPressMask);
+    XSelectInput(dsp, da, ButtonPressMask|StructureNotifyMask|KeyPressMask|KeyReleaseMask|KeymapStateMask);
     XMapWindow(dsp, da);
 
     sfc = cairo_xlib_surface_create(dsp, da,
@@ -84,6 +87,9 @@ void MapDebugger::DrawAxis(std::string name, cv::Vec3d axis) {
 }
 
 void MapDebugger::Run(std::map<int, DroneState*> droneStates, int myid, Path path) {
+
+    ProcessEvents();
+    ProcessInput();
 
     cairo_set_source_rgb(cr, 1,1,1);
     cairo_paint(cr);
@@ -321,4 +327,44 @@ void MapDebugger::DrawCoordinates(Axis2 axis) {
 
 }
 
+void MapDebugger::ProcessEvents() {
+
+    XEvent event;
+
+    XNextEvent(dsp,&event);
+    unsigned long key;
+
+    pressedKeys.clear();
+
+    switch (event.type) {
+        case KeyPress:
+            key = XLookupKeysym(&event.xkey, 0);
+            holdKeys[key] = true;
+            pressedKeys.insert(key);
+        case KeyRelease:
+            key = XLookupKeysym(&event.xkey, 0);
+            holdKeys[key] = false;
+        default:
+            break;
+    }
+
+}
+
+bool MapDebugger::isKeyPressed(long k) {
+    return pressedKeys.find(k) != pressedKeys.end();
+}
+
+bool MapDebugger::isKeyHold(long k) {
+    return holdKeys[k];
+}
+
+void MapDebugger::ProcessInput() {
+
+    if(isKeyHold(XK_comma))
+        SCALE -= 0.5;
+
+    if(isKeyHold(XK_period))
+        SCALE += 0.1;
+
+}
 

@@ -63,7 +63,7 @@ class PatrolAndFollow : public BodyTest {
 
         this->hal = hal;
 
-        detector = new CascadeDetector();
+        detector = new CascadeDetector(config->Get(ConfigKeys::Body::CascadeDetector));
         tracker = new MultiTracker(MultiTracker::Algorithm::KCF);
         detectAndTrack =  new DetectAndTrack(detector, tracker);
         follower = new Follower(config);

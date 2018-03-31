@@ -8,6 +8,8 @@
 #include <src/communication/SharedMemory.h>
 #include <src/debugging/VisualDebugger.h>
 #include <src/navigation/NavigationDebugger.h>
+#include <src/systems/FollowerSystem.h>
+#include <src/systems/PadLandingSystem.h>
 #include "IBodyState.h"
 #include "BodyStateMachineControl.h"
 #include "StepName.h"
@@ -21,7 +23,10 @@ public:
     }
 
     void prepare() override {
+        control->getSystemManager()->Disable<FollowerSystem>();
+        control->getSystemManager()->Disable<PadLandingSystem>();
 
+        control->getSystemManager()->Enable<MarkerTrackerSystem>();
     }
 
     void internalInit() override {

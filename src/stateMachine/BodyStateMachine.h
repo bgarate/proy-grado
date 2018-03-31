@@ -16,9 +16,10 @@ public:
         states[state->getName()] = state;
     }
 
-    void Init(std::string firstStep,Config* config, Hal* hal, SharedMemory* shared, VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger) {
+    void Init(std::string firstStep,Config* config, Hal* hal, SharedMemory* shared, VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger,
+        SystemManager* systemManager) {
 
-        BodyStateMachineControl* control = new BodyStateMachineControl(this);
+        BodyStateMachineControl* control = new BodyStateMachineControl(this, systemManager);
 
         for(const std::pair<std::string,IBodyState*>& pair: states){
             pair.second->init(config, hal, shared, control,visualDebugger, navigationDebugger);
