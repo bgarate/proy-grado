@@ -34,6 +34,11 @@ public:
         return diff;
     }
 
+    static double toAngle(cv::Vec2d v){
+        v = cv::normalize(v);
+        return toDegrees(std::tanh(v[1]/v[0]));
+    }
+
     static double signedMod(double a, double n) {
         return a - std::floor(a/n) * n;
     }

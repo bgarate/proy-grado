@@ -10,6 +10,7 @@
 #include <src/systems/PadLandingSystem.h>
 #include <src/systems/BatterySystem.h>
 #include <src/stateMachine/GoToPath.h>
+#include <src/stateMachine/AlertState.h>
 #include "hal/dummyHal/dummyHal.h"
 #include "Body.h"
 #include "Brain.h"
@@ -57,6 +58,7 @@ void runBody(Config* config, SharedMemory* shared) {
     body.StateMachine->RegisterState(new FollowingState());
     body.StateMachine->RegisterState(new GoToPad());
     body.StateMachine->RegisterState(new GoToPath());
+    body.StateMachine->RegisterState(new AlertState());
 
     body.loop();
     body.cleanup();

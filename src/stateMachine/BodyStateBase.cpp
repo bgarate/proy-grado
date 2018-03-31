@@ -24,13 +24,12 @@ std::string BodyStateBase::expectedStep() {
         case BrainInfo::FOLLOWING:
             return StepName::FOLLOWING;
         case BrainInfo::ALERT:
-            return "";
+            return StepName::ALERT;
         case BrainInfo::CHARGED:
-            return StepName::GOING_TO_PATH;
         case BrainInfo::CHARGING:
             return "";
         case BrainInfo::BACKFROMPAD:
-            return "";
+            return StepName::GOING_TO_PATH;
         case BrainInfo::GOINGTOPAD:
             return StepName::GOING_TO_PAD;
     }

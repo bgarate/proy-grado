@@ -140,6 +140,10 @@ public:
 
     }
 
+    Path GetPath(int path) {
+        return GetPaths()[path];
+    }
+
     std::map<int, Path> GetPaths() {
 
         YAML::Node pathsNode = config["Paths"];

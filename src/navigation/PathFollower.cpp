@@ -53,6 +53,7 @@ NavigationCommand PathFollower::update(std::vector<Marker> markers, double altit
 
     double alignmentAngle = Helpers::angleDifference(targetPathPoint.rotation,EstimatedPose[2]);
 
+    // TODO: Utilizar yaw
     if(distanceToPathPoint <= TARGET_REACHED_DISTANCE /*&&
             std::abs(alignmentAngle) < ALIGNEMENT_ANGLE_THRESOLD*/) {
         currentTarget = (currentTarget + 1) % path.GetPoints().size();

@@ -25,6 +25,8 @@ public:
 
         hal->setCameraTilt(Camera::Middle);
 
+        currentPathId = -1;
+
     }
 
     void internalUpdate(double deltaTime) override {
@@ -33,6 +35,12 @@ public:
 
         if (frame == NULL || !frame->empty())
             return;
+
+        if(brainInfo.currentPathId != currentPathId){
+            currentPathId = brainInfo.currentPathId;
+            follower->setPath(config->GetPath(currentPathId));
+            follower->setTarget(0);
+        }
 
         tracker->Update(frame, deltaTime);
         follower->setTarget(bodyInfo.CurrentTargetId);
@@ -66,6 +74,7 @@ private:
 
     World world;
     WorldObject* drone;
+    int currentPathId = -1;
 };
 
 

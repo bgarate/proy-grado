@@ -16,6 +16,7 @@ public:
     static std::string FOLLOWING;
     static std::string GOING_TO_PAD;
     static std::string GOING_TO_PATH;
+    static std::string ALERT;
 };
 
 #endif //PROY_GRADO_STEPNAME_H
