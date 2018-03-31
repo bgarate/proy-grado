@@ -10,7 +10,7 @@
 #include <src/landtracking/MarkerTrack.h>
 #include "SystemBase.h"
 
-class PadLandingSystem : SystemBase {
+class PadLandingSystem : public SystemBase {
 
     void Cleanup() override;
 

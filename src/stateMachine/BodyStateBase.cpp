@@ -26,6 +26,7 @@ std::string BodyStateBase::expectedStep() {
         case BrainInfo::ALERT:
             return "";
         case BrainInfo::CHARGED:
+            return StepName::GOING_TO_PATH;
         case BrainInfo::CHARGING:
             return "";
         case BrainInfo::BACKFROMPAD:

@@ -27,6 +27,7 @@ public:
 
     }
 private:
+    World world;
     double targetAltitude = 2;
     double altitudeSlowdownRadius = 1;
     bool landing = false;
@@ -64,8 +65,7 @@ protected:
         }
 
     }
-private:
-    World world;
+
 };
 
 #endif //PROY_GRADO_GOTOPAD_H

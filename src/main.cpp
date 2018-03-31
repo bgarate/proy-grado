@@ -7,6 +7,9 @@
 #include <src/stateMachine/FollowingState.h>
 #include <src/systems/FollowerSystem.h>
 #include <src/stateMachine/GoToPad.h>
+#include <src/systems/PadLandingSystem.h>
+#include <src/systems/BatterySystem.h>
+#include <src/stateMachine/GoToPath.h>
 #include "hal/dummyHal/dummyHal.h"
 #include "Body.h"
 #include "Brain.h"
@@ -45,12 +48,15 @@ void runBody(Config* config, SharedMemory* shared) {
 
     body.Systems->RegisterSystem(new MarkerTrackerSystem());
     body.Systems->RegisterSystem(new FollowerSystem());
+    body.Systems->RegisterSystem(new PadLandingSystem());
+    body.Systems->RegisterSystem(new BatterySystem());
 
     body.StateMachine->RegisterState(new VirtualDroneState());
     body.StateMachine->RegisterState(new TakingOffState());
     body.StateMachine->RegisterState(new PatrollingState());
     body.StateMachine->RegisterState(new FollowingState());
     body.StateMachine->RegisterState(new GoToPad());
+    body.StateMachine->RegisterState(new GoToPath());
 
     body.loop();
     body.cleanup();

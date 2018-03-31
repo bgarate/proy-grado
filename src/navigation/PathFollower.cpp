@@ -51,7 +51,7 @@ NavigationCommand PathFollower::update(std::vector<Marker> markers, double altit
     cv::Vec3d v = targetPathPoint.position - EstimatedPosition;
     double distanceToPathPoint = cv::norm(cv::Vec2d(v[0],v[1]));
 
-    double alignmentAngle = angleDifference(targetPathPoint.rotation,EstimatedPose[2]);
+    double alignmentAngle = Helpers::angleDifference(targetPathPoint.rotation,EstimatedPose[2]);
 
     if(distanceToPathPoint <= TARGET_REACHED_DISTANCE /*&&
             std::abs(alignmentAngle) < ALIGNEMENT_ANGLE_THRESOLD*/) {
