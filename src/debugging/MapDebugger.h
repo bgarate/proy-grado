@@ -9,6 +9,7 @@
 #include "../config/Config.h"
 #include <pangolin/pangolin.h>
 #include <src/proto/dronestate.pb.h>
+#include <src/communication/SharedMemory.h>
 #include "cairo.h"
 #include "cairo-xlib.h"
 #include "../navigation/World.h"
@@ -29,12 +30,18 @@ public:
     bool Run(std::map<int, DroneState*> droneStates, int myid, Path path, double deltaTime);
     void setVisibleMarkers(std::vector<Marker> visibleMarkers);
 
+    bool isStateForced();
+    BrainInfo::CurrentTask getForcedState();
+    void updatePosition(cv::Vec3d position);
 private:
     Config* config;
     World *world;
     WorldObject* drone;
     Display *dsp;
     float SCALE;
+
+    // TODO: Desprolijo ponerlo acá
+    BrainInfo::CurrentTask forcedState = BrainInfo::INNACTIVE;
 
     std::set<long> pressedKeys;
 
@@ -44,6 +51,8 @@ private:
     cairo_t* cr;
 
     cairo_surface_t *cairo_create_x11_surface0(int x, int y);
+
+    boost::circular_buffer<cv::Vec3d> positionHistory;
 
     //const int SCALE= 50;
     const double ARROW_HEAD_ANGLE = 45;
@@ -89,6 +98,8 @@ private:
     bool isKeyPressed(long k);
 
     bool ProcessInput(double deltaTime);
+
+    void DrawPositionHistory();
 };
 
 

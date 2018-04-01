@@ -14,14 +14,14 @@
 
 class BodyInfo {
 public:
-    bool ready;
-        cv::Vec3d CurrentPosition;
+    bool ready = false;
+    cv::Vec3d CurrentPosition;
     cv::Vec3d CurrentPose;
     cv::Vec3d PredictedFuturePosition;
     cv::Vec3d ProjectedPositionOnPath;
     cv::Vec3d TargetOnPath;
 
-    bool isShutingDown;
+    bool isShutingDown = false;
 
     int CurrentTargetId;
 
@@ -31,11 +31,11 @@ public:
 
     NavigationCommand ExecutedCommand;
 
-    bool intruderDetected;
+    bool intruderDetected = false;
     cv::Vec3d intruderPosition;
 
-    bool inPath;
-    bool landedInPad;
+    bool inPath = false;
+    bool landedInPad = false;
     int batteryLevel;
 
 };

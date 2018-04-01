@@ -55,6 +55,8 @@ private:
     void CalculateFPS();
 
     void PrintAvailableTests();
+
+    void ProcessInput(int key);
 };
 
 

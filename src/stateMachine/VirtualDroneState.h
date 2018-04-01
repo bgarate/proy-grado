@@ -29,6 +29,10 @@ public:
 
         this->shared = shared;
 
+    }
+
+    void prepare() override {
+
         //Simulated movement
         paths = config->GetPaths();
 
@@ -64,9 +68,6 @@ public:
         bodyInfo.ready = true;
 
         shared->setBodyInfo(bodyInfo);
-    }
-
-    void prepare() override {
 
         startTime = std::chrono::steady_clock::now();
         lastTime = startTime;

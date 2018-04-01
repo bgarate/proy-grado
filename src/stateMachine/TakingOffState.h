@@ -38,7 +38,8 @@ public:
             hal->takeoff();
 
         takingOff = true;
-        visualDebugger->writeConsole("Despegado");
+
+        bodyInfo.ready = true;
 
         if(hal->getState() == State::Hovering || hal->getState() == State::Flying)
             control->Transition(StepName::PATROLLING);

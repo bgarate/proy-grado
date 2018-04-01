@@ -13,12 +13,14 @@
 #include <X11/keysym.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
+#include <src/communication/SharedMemory.h>
 
 const cv::Size MapDebugger::SIZE = cv::Size(1024,768);
 cv::Point MapDebugger::ORIGIN = cv::Point(300,300);
 const double MapDebugger::dashPattern[1] = {4.0};
 
-MapDebugger::MapDebugger(Config *config, World* world) {
+MapDebugger::MapDebugger(Config *config, World* world) :
+        positionHistory(1000) {
     this->config = config;
     this->world = world;
     drone = world->getDrones()[0];
@@ -207,12 +209,33 @@ void MapDebugger::DrawPadSquare(WorldObject *pad) {
     cairo_fill(cr);
 }
 
+void MapDebugger::DrawPositionHistory() {
+
+    int historySize = positionHistory.size();
+
+    if(historySize == 0)
+        return;
+
+    cairo_set_source_rgb(cr, 1,0,0);
+    cairo_move_to (cr, GetX(positionHistory[historySize - 1][0]), GetY(positionHistory[historySize - 1][1]));
+
+    for(int i = historySize - 1; i > std::max(0, historySize - 300); i--) {
+        cairo_line_to (cr, GetX(positionHistory[i][0]) + 1, GetY(positionHistory[i][1]) + 1);
+    }
+
+    cairo_stroke(cr);
+}
+
+
 void MapDebugger::DrawDrones(DroneState *drone, int myid){
 
-    if(drone->drone_id() == myid)
-        cairo_set_source_rgb (cr, 0, 1, 0);
-    else
+    if(drone->drone_id() == myid) {
+        DrawPositionHistory();
+        cairo_set_source_rgb(cr, 0, 1, 0);
+    } else {
         cairo_set_source_rgb (cr, 0.75, 0.75, 0.75);
+    }
+
 
     cairo_save(cr);
 
@@ -374,7 +397,30 @@ bool MapDebugger::ProcessInput(double deltaTime) {
     if(isKeyPressed(XK_Left))
         ORIGIN.x += 0.0001f * deltaTime;
 
+    if(isKeyPressed(XK_1))
+        forcedState = BrainInfo::PATROLING;
+    else if(isKeyPressed(XK_2))
+        forcedState = BrainInfo::FOLLOWING;
+    else if(isKeyPressed(XK_3))
+        forcedState = BrainInfo::GOINGTOPAD;
+    else if(isKeyPressed(XK_4))
+        forcedState = BrainInfo::BACKFROMPAD;
+    else if(isKeyPressed(XK_0))
+        forcedState = BrainInfo::INNACTIVE;
+
     return !isKeyPressed(XK_Escape);
 
+}
+
+bool MapDebugger::isStateForced() {
+    return forcedState != BrainInfo::INNACTIVE;
+}
+
+BrainInfo::CurrentTask MapDebugger::getForcedState() {
+    return forcedState;
+}
+
+void MapDebugger::updatePosition(cv::Vec3d position) {
+    positionHistory.push_back(position);
 }
 

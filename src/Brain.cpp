@@ -287,6 +287,11 @@ void Brain::loop() {
 
         }
 
+        mapDebugger->updatePosition(bodyInfo.CurrentPosition);
+
+        if(mapDebugger->isStateForced())
+            brainInfo.currentTask = mapDebugger->getForcedState();
+
         //Actualizar map debugger
         double timeLapse = runningTime - lastRefreshTime;
         if(timeLapse > pirntLapse) {

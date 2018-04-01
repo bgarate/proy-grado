@@ -87,18 +87,7 @@ void Body::loop() {
 
         int key = visualDebugger.show(deltaTime);
 
-        if(key == 27){
-            should_exit = true;
-        } else if (key == 32) {
-            mc->run();
-            inmc=true;
-        } else if (key == (int)'c'){
-            visualDebugger.captureImage();
-        } else if (key == (int)'t'){
-            config->Set(ConfigKeys::Drone::CameraTilt,std::min(config->Get(ConfigKeys::Drone::VerticalFOV)/2,config->Get(ConfigKeys::Drone::CameraTilt) + 0.1));
-        } else if (key == (int)'r'){
-            config->Set(ConfigKeys::Drone::CameraTilt,std::max(config->Get(ConfigKeys::Drone::VerticalFOV)/2,config->Get(ConfigKeys::Drone::CameraTilt) - 0.1));
-        }
+        ProcessInput(key);
 
         BrainInfo brainInfo = shared->getBrainInfo();
 
@@ -119,6 +108,29 @@ void Body::loop() {
     }
 
 
+}
+
+void Body::ProcessInput(int key) {
+    switch (key) {
+        case 27:
+            should_exit = true;
+            break;
+        case 32:
+            mc->run();
+            inmc = true;
+            break;
+        case (int) 'c':
+            visualDebugger.captureImage();
+            break;
+        case (int) 't':
+            config->Set(ConfigKeys::Drone::CameraTilt, std::min(config->Get(ConfigKeys::Drone::VerticalFOV) / 2,
+                                                                config->Get(ConfigKeys::Drone::CameraTilt) + 0.1));
+            break;
+        case (int) 'r':
+            config->Set(ConfigKeys::Drone::CameraTilt, std::max(config->Get(ConfigKeys::Drone::VerticalFOV) / 2,
+                                                                config->Get(ConfigKeys::Drone::CameraTilt) - 0.1));
+            break;
+    }
 }
 
 void Body::CalculateFPS() {
