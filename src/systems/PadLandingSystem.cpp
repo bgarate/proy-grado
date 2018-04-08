@@ -21,6 +21,7 @@ void PadLandingSystem::internalUpdate(double deltaTime) {
 
     std::vector<cv::Point> squarePoints = markTrack->Track(frame);
     visualDebugger->setSquareTracks(squarePoints);
+    visualDebugger->setRedTracks(markTrack->redRects, markTrack->redContours);
 
     cv::Point frameSize(frame->size().width,frame->size().height);
 

@@ -57,6 +57,7 @@ private:
     Path path;
     int currentTarget = 0;
 
+    int lastYawSign = 1;
     double distanceToMarker(Marker m);
 
     Point getAngularDisplacement(cv::Point2i markerCenter);

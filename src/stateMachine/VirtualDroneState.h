@@ -25,6 +25,11 @@ public:
 
     void internalInit() override {
 
+
+        control->getSystemManager()->Disable<FollowerSystem>();
+        control->getSystemManager()->Enable<PadLandingSystem>();
+        control->getSystemManager()->Disable<MarkerTrackerSystem>();
+
         this->myid = config->Get(ConfigKeys::Drone::Id);
 
         this->shared = shared;

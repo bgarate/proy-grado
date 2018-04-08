@@ -2,6 +2,7 @@
 // Created by bruno on 30/03/18.
 //
 
+#include <src/config/ConfigKeys.h>
 #include "BodyStateBase.h"
 #include "StepName.h"
 
@@ -47,6 +48,7 @@ void BodyStateBase::init(Config *config, Hal *hal, SharedMemory *shared, BodySta
     this->control = control;
     this->config = config;
     this->navigationDebugger = navigationDebugger;
+    this->isvirtual = config->Get(ConfigKeys::Body::VirtualBody);
 
     internalInit();
 }
@@ -55,7 +57,7 @@ void BodyStateBase::step(double deltaTime) {
     brainInfo = shared->getBrainInfo();
     bodyInfo = shared->getBodyInfo();
 
-    if(shouldTransition()){
+    if(!isvirtual && shouldTransition()){
         doTransition();
         return;
     }

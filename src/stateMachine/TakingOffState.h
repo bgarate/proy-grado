@@ -39,10 +39,11 @@ public:
 
         takingOff = true;
 
-        bodyInfo.ready = true;
-
-        if(hal->getState() == State::Hovering || hal->getState() == State::Flying)
+        if(hal->getState() == State::Hovering || hal->getState() == State::Flying) {
+            bodyInfo.ready = true;
             control->Transition(StepName::PATROLLING);
+        }
+
     }
 
     void leave() override {

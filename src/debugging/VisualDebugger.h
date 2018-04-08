@@ -51,6 +51,8 @@ public:
 
     void setNavigationCommand(NavigationCommand command);
 
+    void setRedTracks(std::vector<cv::Rect> rects,std::vector<std::vector<cv::Point>> contours);
+
 private:
     Config* config;
     cv::Mat frame;

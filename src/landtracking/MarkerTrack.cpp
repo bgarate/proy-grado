@@ -13,8 +13,21 @@ std::vector<cv::Point> MarkerTrack::Track(std::shared_ptr<cv::Mat> frame){
     gray = new cv::Mat(frame->size(), CV_MAKETYPE(frame->depth(), 1));
     edges = new cv::Mat(frame->size(), CV_MAKETYPE(frame->depth(), 1));
 
-    cvtColor(*frame,*gray,CV_RGB2GRAY);
-    //cv::threshold(*gray, *gray, 220,255,cv::THRESH_TOZERO);
+    std::vector<cv::Mat> rgbChannels(3);
+    cv::split(*frame, rgbChannels);
+
+    cv::Mat g, fin_img;
+    g = cv::Mat::zeros(frame->size(), CV_8UC1);
+
+    std::vector<cv::Mat> channels;
+    channels.push_back(rgbChannels[0]);
+    channels.push_back(rgbChannels[1]);
+    channels.push_back(g);
+
+    /// Merge the three channels
+    merge(channels, fin_img);
+
+    cvtColor(fin_img,*gray,CV_RGB2GRAY);
 
     Canny(*gray, *edges, 100 , 200, 3);
     findContours(*edges, contours, hierarchy, cv::RETR_TREE, cv::CHAIN_APPROX_SIMPLE);
@@ -28,6 +41,8 @@ std::vector<cv::Point> MarkerTrack::Track(std::shared_ptr<cv::Mat> frame){
     }
 
     std::vector<cv::Point> squarePoints;
+
+    CalculateRedZones(*frame);
 
     for( int i = 0; i < contours.size(); i++ ){
 
@@ -88,4 +103,35 @@ std::vector<cv::Point> MarkerTrack::Track(std::shared_ptr<cv::Mat> frame){
     delete edges;
 
     return squarePoints;
+}
+
+void MarkerTrack::CalculateRedZones(cv::Mat frame) {
+
+    //cv::Mat hsv;
+    //cvtColor(frame, hsv, cv::COLOR_BGR2HSV);
+
+    cv::Mat1b mask;
+    inRange(frame, cv::Scalar(10,10,180), cv::Scalar(100,100,255), mask);
+
+    //morphological opening (remove small objects from the foreground)
+    cv::erode(mask, mask, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(10, 10)) );
+    cv::dilate( mask, mask, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(10, 10)) );
+
+    std::vector<std::vector<cv::Point>> contours;
+    std::vector<cv::Vec4i> hierarchy;
+
+    cv::findContours(mask,contours,hierarchy,cv::RETR_TREE,cv::CHAIN_APPROX_SIMPLE);
+
+    redRects.clear();
+    redContours.clear();
+
+    for(std::vector<cv::Point> &contour : contours){
+        if(cv::contourArea(contour) < 50)
+            continue;
+
+        redContours.push_back(contour);
+        redRects.push_back(cv::boundingRect(contour));
+
+    }
+
 }

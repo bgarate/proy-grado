@@ -90,12 +90,12 @@ void MapDebugger::DrawAxis(std::string name, cv::Vec3d axis) {
 
 bool MapDebugger::Run(std::map<int, DroneState*> droneStates, int myid, Path path, double deltaTime) {
 
-    ProcessEvents();
+/*    ProcessEvents();
     bool ret = ProcessInput(deltaTime);
 
     if(!ret)
         return false;
-
+*/
     cairo_set_source_rgb(cr, 1,1,1);
     cairo_paint(cr);
 
@@ -360,8 +360,6 @@ void MapDebugger::ProcessEvents() {
 
     XNextEvent(dsp,&event);
     unsigned long key;
-
-    pressedKeys.clear();
 
     switch (event.type) {
         case KeyPress:

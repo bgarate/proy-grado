@@ -115,8 +115,11 @@ void Brain::loop() {
             interComm->droneStates[myid]->set_allocated_followed_position(fp);
         }
 
+        currentFlyingTime += deltaTime;
+
         //Tengo que cargar?
-        bool shouldCharge = (bodyInfo.batteryLevel < critialBatteryLevel) || (bodyInfo.batteryLevel < lowBatteryLevel && brainInfo.currentTask == BrainInfo::PATROLING);
+        bool shouldCharge = (bodyInfo.batteryLevel < critialBatteryLevel) || (bodyInfo.batteryLevel < lowBatteryLevel && brainInfo.currentTask == BrainInfo::PATROLING) ||            currentFlyingTime >= MAX_FLYING_TIME;
+
         //Hay alguien following? Hay alguien cargando? Hay alguien cargando en mi mismo path con más prioridad? Alguien me está cubriendo?
         bool someoneFollowing = false;
         int chargingCount = 0;
@@ -188,6 +191,8 @@ void Brain::loop() {
             && brainInfo.currentTask != BrainInfo::CHARGED
             && brainInfo.currentTask != BrainInfo::BACKFROMPAD
             && chargingCount < pads.size()) {
+
+            currentFlyingTime = 0;
 
             //Paso a going to pad
             interComm->droneStates[myid]->set_current_task(DroneState::CurrentTask::DroneState_CurrentTask_GOINGTOPAD);

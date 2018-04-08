@@ -51,7 +51,9 @@ protected:
                 bodyInfo.landedInPad = true;
             }
         } if(landingCommand.state == LandingState::Inactive ||
-           std::abs(landingCommand.roll)+std::abs(landingCommand.pitch)+std::abs(landingCommand.yaw)>0.0001) {
+           std::abs(landingCommand.roll)+std::abs(landingCommand.pitch)+std::abs(landingCommand.yaw)<0.0001) {
+
+            visualDebugger->setSubStatus("going-to-pad locating");
 
             CommandGenerator generator(bodyInfo.CurrentPosition, bodyInfo.CurrentPose[2]);
             int padId = brainInfo.currentPadId;
@@ -65,6 +67,7 @@ protected:
             hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (gaz * 100));
 
         } else if(!landingCommand.land) {
+            visualDebugger->setSubStatus("going-to-pad tracking");
             hal->move((int)(landingCommand.roll*100),(int)(landingCommand.pitch*100), (int)(-landingCommand.yaw * 100),(int)(landingCommand.gaz * 100));
         } else {
             hal->land();

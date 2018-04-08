@@ -28,6 +28,7 @@ protected:
     BodyStateMachineControl* control;
     Config* config;
     NavigationDebugger* navigationDebugger;
+    bool isvirtual;
 
     BodyInfo bodyInfo;
     BrainInfo brainInfo;

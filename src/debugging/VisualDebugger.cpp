@@ -99,6 +99,16 @@ void VisualDebugger::setTracks(std::vector<Track> tracks) {
 
 }
 
+void VisualDebugger::setRedTracks(std::vector<cv::Rect> rects,std::vector<std::vector<cv::Point>> contours) {
+
+    cv::drawContours(frame,contours,-1,RED_COLOR);
+
+    for(cv::Rect &r : rects) {
+        cv::rectangle(frame, r,RED_COLOR);
+    }
+
+}
+
 void VisualDebugger::setSquareTracks(std::vector<cv::Point> squarePoints) {
 
     for( int k = 0; k < squarePoints.size(); k++ ){
@@ -115,7 +125,7 @@ void VisualDebugger::setSquareTracks(std::vector<cv::Point> squarePoints) {
                 j = 2;
             }
 
-            //cv::rectangle(frame, squarePoints[0],squarePoints[j], cv::Scalar(0,0,255), 2, 8, 0);
+            cv::rectangle(frame, squarePoints[0],squarePoints[j], cv::Scalar(0,0,255), 2, 8, 0);
         }
     }
 }

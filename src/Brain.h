@@ -36,6 +36,8 @@ private:
     long deltaTime = 0;
     long runningTime = 0;
 
+    long currentFlyingTime = 0;
+    long MAX_FLYING_TIME = 20000000;
 
     InterComm * interComm;
 
