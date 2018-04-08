@@ -85,7 +85,7 @@ std::vector<cv::Point> MarkerTrack::Track(std::shared_ptr<cv::Mat> frame){
                     }
                 }
 
-                if(isnew){
+                if(isnew && std::any_of(redRects.begin(),redRects.end(),[p](const cv::Rect r){return p.inside(r);})){
                     squarePoints.push_back(p);
                 }
 
@@ -113,9 +113,9 @@ void MarkerTrack::CalculateRedZones(cv::Mat frame) {
     cv::Mat1b mask;
     inRange(frame, cv::Scalar(10,10,180), cv::Scalar(100,100,255), mask);
 
-    //morphological opening (remove small objects from the foreground)
-    cv::erode(mask, mask, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(10, 10)) );
-    cv::dilate( mask, mask, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(10, 10)) );
+    cv::dilate(mask, mask, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(30, 30)) );
+    cv::erode(mask, mask, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(20, 20)) );
+
 
     std::vector<std::vector<cv::Point>> contours;
     std::vector<cv::Vec4i> hierarchy;
@@ -126,7 +126,7 @@ void MarkerTrack::CalculateRedZones(cv::Mat frame) {
     redContours.clear();
 
     for(std::vector<cv::Point> &contour : contours){
-        if(cv::contourArea(contour) < 50)
+        if(cv::contourArea(contour) < 5)
             continue;
 
         redContours.push_back(contour);
