@@ -24,8 +24,17 @@ NavigationCommand PathFollower::update(std::vector<Marker> markers, double altit
 
     runningTime += deltaTime;
 
-    if(markers.size() == 0)
-        return NavigationCommand(0,0,lastYawSign);
+    if(markers.size() == 0) {
+        timeSinceLastMarkerSeen += deltaTime;
+
+        if(timeSinceLastMarkerSeen > 1000000) {
+            return NavigationCommand(0,0,lastYawSign);
+        } else {
+            return lastCommand;
+        }
+
+    }
+    timeSinceLastMarkerSeen = 0;
 
     EstimatePosition(markers, altitude);
 
@@ -63,7 +72,9 @@ NavigationCommand PathFollower::update(std::vector<Marker> markers, double altit
     CommandGenerator generator(EstimatedPosition, EstimatedPose[2]);
 
     lastYawSign = targetPathPoint.rotation < 0 ? -1 : 1;
-    return generator.getCommand(targetPathPoint.position, targetPathPoint.rotation);
+    lastCommand = generator.getCommand(targetPathPoint.position, targetPathPoint.rotation);
+
+    return lastCommand;
 }
 
 int PathFollower::getTargetId() {

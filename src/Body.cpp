@@ -107,6 +107,11 @@ void Body::loop() {
         usleep(config->Get(ConfigKeys::Body::SleepDelay));
     }
 
+    hal->land();
+
+    while (hal->getState() != State::Landed)
+        ;
+
 
 }
 

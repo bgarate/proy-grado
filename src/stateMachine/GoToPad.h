@@ -46,6 +46,8 @@ protected:
 
         LandMoveCommand landingCommand = bodyInfo.PadLandingCommand;
 
+        hal->setCameraTilt(Camera::Bottom);
+
         if(landing) {
             if(hal->getState() == State::Landed){
                 bodyInfo.landedInPad = true;

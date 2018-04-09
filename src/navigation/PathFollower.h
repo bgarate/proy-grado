@@ -58,6 +58,9 @@ private:
     int currentTarget = 0;
 
     int lastYawSign = 1;
+    NavigationCommand lastCommand;
+    long timeSinceLastMarkerSeen = 0;
+
     double distanceToMarker(Marker m);
 
     Point getAngularDisplacement(cv::Point2i markerCenter);

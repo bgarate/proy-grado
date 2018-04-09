@@ -107,15 +107,16 @@ std::vector<cv::Point> MarkerTrack::Track(std::shared_ptr<cv::Mat> frame){
 
 void MarkerTrack::CalculateRedZones(cv::Mat frame) {
 
-    //cv::Mat hsv;
-    //cvtColor(frame, hsv, cv::COLOR_BGR2HSV);
+    cv::Mat hsv;
+    cv::Mat frameInv = ~frame;
+    cvtColor(frameInv, hsv, cv::COLOR_BGR2HSV);
 
     cv::Mat1b mask;
-    inRange(frame, cv::Scalar(10,10,180), cv::Scalar(100,100,255), mask);
+    inRange(hsv, cv::Scalar(80,30,30), cv::Scalar(100,255,255), mask);
 
     cv::dilate(mask, mask, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(30, 30)) );
-    cv::erode(mask, mask, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(20, 20)) );
 
+    cv::imshow("Red",mask);
 
     std::vector<std::vector<cv::Point>> contours;
     std::vector<cv::Vec4i> hierarchy;
