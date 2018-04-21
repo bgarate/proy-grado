@@ -700,14 +700,14 @@ class Pb2hal: public Hal {
     }
 
     void setImageExposure(float exposure) override {
-	    double targetExposure = (exposure + 1) / 2 * (maxExposure - minExposure) + minExposure;
-	    Logger::logInfo("Setting exposure to %1.2f from range[%1,%1]") << targetExposure << minExposure << maxExposure;
+	    double targetExposure = (exposure + 100) / 200 * (maxExposure - minExposure) + minExposure;
+	    Logger::logInfo("Setting exposure to %1.2f from range[%f,%f]") << targetExposure << minExposure << maxExposure;
 	    deviceController->aRDrone3->sendPictureSettingsExpositionSelection(deviceController->aRDrone3,targetExposure);
     }
 
     void setImageSaturation(float saturation) override {
-        double targetSaturation = (saturation + 1) / 2 * (maxSaturation - minSaturation) + minExposure;
-        Logger::logInfo("Setting saturation to %1.2f from range[%1,%1]") << targetSaturation << minExposure << maxExposure;
+        double targetSaturation = (saturation + 100) / 200 * (maxSaturation - minSaturation) + minSaturation;
+        Logger::logInfo("Setting saturation to %1.2f from range[%f,%f]") << targetSaturation << minSaturation << minSaturation;
         deviceController->aRDrone3->sendPictureSettingsSaturationSelection(deviceController->aRDrone3,targetSaturation);
     }
 
