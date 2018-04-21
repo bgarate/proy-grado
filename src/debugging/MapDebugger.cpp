@@ -43,8 +43,8 @@ cairo_surface_t *MapDebugger::cairo_create_x11_surface0(int x, int y)
     if ((dsp = XOpenDisplay(NULL)) == NULL)
         exit(1);
     screen = DefaultScreen(dsp);
-    da = XCreateSimpleWindow(dsp, DefaultRootWindow(dsp),
-                             0, 0, SIZE.width, SIZE.height, 0, 0, 0);
+    da = XCreateWindow(dsp, DefaultRootWindow(dsp),
+                             0, 0, SIZE.width, SIZE.height, 0, 0, CopyFromParent,CopyFromParent, 0, 0);
     XSelectInput(dsp, da, ButtonPressMask|StructureNotifyMask|KeyPressMask|KeyReleaseMask|KeymapStateMask);
     XMapWindow(dsp, da);
 
@@ -382,22 +382,22 @@ bool MapDebugger::isKeyPressed(long k) {
 bool MapDebugger::ProcessInput(double deltaTime) {
 
     if(isKeyPressed(XK_KP_Subtract))
-        SCALE -= 0.000005f * deltaTime;
+        SCALE -= 0.00005f * deltaTime;
 
     if(isKeyPressed(XK_KP_Add))
-        SCALE += 0.000005f * deltaTime;
+        SCALE += 0.00005f * deltaTime;
 
     if(isKeyPressed(XK_Up))
-        ORIGIN.y -= 0.0001f * deltaTime;
+        ORIGIN.y -= 0.0005f * deltaTime;
 
     if(isKeyPressed(XK_Down))
-        ORIGIN.y += 0.0001f * deltaTime;
+        ORIGIN.y += 0.0005f * deltaTime;
 
     if(isKeyPressed(XK_Right))
-        ORIGIN.x -= 0.0001f * deltaTime;
+        ORIGIN.x -= 0.0005f * deltaTime;
 
     if(isKeyPressed(XK_Left))
-        ORIGIN.x += 0.0001f * deltaTime;
+        ORIGIN.x += 0.0005f * deltaTime;
 
     if(isKeyPressed(XK_1))
         forcedState = BrainInfo::PATROLING;
