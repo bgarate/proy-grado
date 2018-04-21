@@ -107,7 +107,6 @@ public:
         if(brainInfo.currentTask == BrainInfo::CHARGING || brainInfo.currentTask == BrainInfo::CHARGED){
 
             double diff = (double)(runningTime - taskStartTime) / chargeLapse;
-            std::cout << diff << "\n";
 
             if(diff >= 1)
                 bodyInfo.batteryLevel = 100;
