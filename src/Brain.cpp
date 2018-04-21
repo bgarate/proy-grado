@@ -33,7 +33,7 @@ void Brain::setup(Config* config, SharedMemory* shared) {
     Logger::getInstance().setSource("BRAIN");
 
     //MapDebugger
-    mapEnabled = config->Get(ConfigKeys::Debugging::MapDebuggerInBrain);
+    mapEnabled = config->Get(ConfigKeys::Debugging::MapDebuggerEnabled);
 
     world = config->GetWorld();
 

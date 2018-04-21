@@ -25,14 +25,7 @@ Config* config) -> double {
 return fov/aspect;
 })
 
-DEFINE_CONFIG_KEY(Communications, BrainHost, std::string)
-DEFINE_CONFIG_KEY(Communications, BrainPort, int)
 DEFINE_CONFIG_KEY(Communications, BroadcastPort, int)
-DEFINE_CONFIG_KEY(Communications, AdvertisementLapse, int)
-DEFINE_CONFIG_KEY(Communications, CommunicationPort, int)
-DEFINE_CONFIG_KEY(Communications, PingTimeout, int)
-DEFINE_CONFIG_KEY(Communications, PingLapse, int)
-DEFINE_CONFIG_KEY(Communications, PingEnabled, bool);
 DEFINE_CONFIG_KEY(Communications, StateSendLapse, int);
 DEFINE_CONFIG_KEY(Communications, StateExpireLapse, int);
 
@@ -41,13 +34,12 @@ DEFINE_CONFIG_KEY(Debugging, OutputHudVideoEnabled, bool);
 DEFINE_CONFIG_KEY(Debugging, RealTimeVideoOutputEnabled, bool);
 DEFINE_CONFIG_KEY(Debugging, OutputRawVideoEnabled, bool);
 DEFINE_CONFIG_KEY(Debugging, OutputPath, std::string);
-DEFINE_CONFIG_KEY(Debugging, NavigationDebuggerScale, int);
-DEFINE_CONFIG_KEY(Debugging, MapDebuggerInBrain, bool);
+DEFINE_CONFIG_KEY(Debugging, MapDebuggerScale, int);
+DEFINE_CONFIG_KEY(Debugging, MapDebuggerEnabled, bool);
 
 DEFINE_CONFIG_KEY(Body, SleepDelay, int)
 DEFINE_CONFIG_KEY(Body, Hal, HalType)
 DEFINE_CONFIG_KEY(Body, Start, bool)
-DEFINE_CONFIG_KEY(Body, ParentOnFork, bool)
 DEFINE_CONFIG_KEY(Body, TestToExecute, std::string)
 DEFINE_CONFIG_KEY(Body, DummyCameraVideoSource, std::string)
 DEFINE_CONFIG_KEY(Body, CascadeDetector, std::string)
