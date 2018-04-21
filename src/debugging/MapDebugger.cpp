@@ -20,7 +20,7 @@ cv::Point MapDebugger::ORIGIN = cv::Point(300,300);
 const double MapDebugger::dashPattern[1] = {4.0};
 
 MapDebugger::MapDebugger(Config *config, World* world) :
-        positionHistory(1000) {
+        positionHistory(200) {
     this->config = config;
     this->world = world;
     drone = world->getDrones()[0];
@@ -219,11 +219,16 @@ void MapDebugger::DrawPositionHistory() {
     cairo_set_source_rgb(cr, 1,0,0);
     cairo_move_to (cr, GetX(positionHistory[historySize - 1][0]), GetY(positionHistory[historySize - 1][1]));
 
-    for(int i = historySize - 1; i > std::max(0, historySize - 300); i--) {
+    for(int i = historySize - 1; i >= 0; i--) {
         cairo_line_to (cr, GetX(positionHistory[i][0]) + 1, GetY(positionHistory[i][1]) + 1);
-    }
+        cairo_stroke(cr);
 
-    cairo_stroke(cr);
+        cairo_move_to (cr, GetX(positionHistory[i][0]) + 1, GetY(positionHistory[i][1]) + 1);
+
+        float interpolation = i/(float)(historySize - 1);
+        cairo_set_source_rgb(cr,interpolation,1-interpolation,0);
+
+    }
 }
 
 

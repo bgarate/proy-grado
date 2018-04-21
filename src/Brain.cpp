@@ -291,14 +291,14 @@ void Brain::loop() {
 
         }
 
-        mapDebugger->updatePosition(bodyInfo.CurrentPosition);
-
         if(mapDebugger->isStateForced())
             brainInfo.currentTask = mapDebugger->getForcedState();
 
         //Actualizar map debugger
         double timeLapse = runningTime - lastRefreshTime;
         if(timeLapse > pirntLapse) {
+
+            mapDebugger->updatePosition(bodyInfo.CurrentPosition);
 
             if(mapEnabled)
                 should_exit = !mapDebugger->Run(interComm->droneStates,myid,paths[brainInfo.currentPathId], timeLapse);
