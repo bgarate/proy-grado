@@ -570,9 +570,11 @@ void VisualDebugger::ProcessInput(int key) {
             currentParameter = (currentParameter + 1) % visualParameters.size();
             break;
         case '+':
+        case 171:
             direction = 1;
             break;
         case '-':
+        case 173:
             direction = -1;
             break;
     }

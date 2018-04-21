@@ -695,16 +695,19 @@ class Pb2hal: public Hal {
 
     void setWhiteBalance(WhiteBalanceMode mode) override {
         eARCOMMANDS_ARDRONE3_PICTURESETTINGS_AUTOWHITEBALANCESELECTION_TYPE type = getAutoBalanceType(mode);
+        Logger::logInfo("Setting white balance to %d") << type;
 	    deviceController->aRDrone3->sendPictureSettingsAutoWhiteBalanceSelection(deviceController->aRDrone3, type);
     }
 
     void setImageExposure(float exposure) override {
 	    double targetExposure = (exposure + 1) / 2 * (maxExposure - minExposure) + minExposure;
+	    Logger::logInfo("Setting exposure to %1.2f from range[%1,%1]") << targetExposure << minExposure << maxExposure;
 	    deviceController->aRDrone3->sendPictureSettingsExpositionSelection(deviceController->aRDrone3,targetExposure);
     }
 
     void setImageSaturation(float saturation) override {
         double targetSaturation = (saturation + 1) / 2 * (maxSaturation - minSaturation) + minExposure;
+        Logger::logInfo("Setting saturation to %1.2f from range[%1,%1]") << targetSaturation << minExposure << maxExposure;
         deviceController->aRDrone3->sendPictureSettingsSaturationSelection(deviceController->aRDrone3,targetSaturation);
     }
 
