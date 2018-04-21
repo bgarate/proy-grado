@@ -119,7 +119,7 @@ void MarkerTrack::CalculateRedZones(cv::Mat frame) {
 
     cv::dilate(mask, mask, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(30, 30)) );
 
-    cv::imshow("Red",mask);
+    //cv::imshow("Red",mask);
 
     std::vector<std::vector<cv::Point>> contours;
     std::vector<cv::Vec4i> hierarchy;

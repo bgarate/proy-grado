@@ -34,6 +34,7 @@ message DroneState {
         CHARGED = 5;
         BACKFROMPAD = 6;
         GOINGTOPAD = 7;
+        SHUTDOWN = 8;
     }
 
 

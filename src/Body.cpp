@@ -6,6 +6,7 @@
 #include <chrono>
 #include <src/communication/SharedMemory.h>
 #include <src/stateMachine/StepName.h>
+#include <src/systems/OpticalFlowSystem.h>
 #include "bodytests/BodyTestRegistry.h"
 #include "Body.h"
 #include "Brain.h"
@@ -17,7 +18,6 @@ Body::Body(Hal *hal) {
 }
 
 void Body::setup(Config* config, SharedMemory* shared) {
-    Logger::getInstance().setSource("BODY");
 
     this->config = config;
     this->shared = shared;
@@ -68,9 +68,11 @@ void Body::loop() {
                         0, (int)WhiteBalanceMode::CoolWhite, 1),
         VisualParameter(VisualParameterType::Tilt, "TLT", config->Get(ConfigKeys::Drone::CameraTilt),
                         -config->Get(ConfigKeys::Drone::VerticalFOV) / 2,
-                        config->Get(ConfigKeys::Drone::VerticalFOV) / 2, 0.5)
+                        config->Get(ConfigKeys::Drone::VerticalFOV) / 2, 0.5),
+        VisualParameter(VisualParameterType::OpticalFlow,"OFL", 0, 0,1,1)
     };
 
+    ForceChangeParameters(parameters);
     visualDebugger.setParameters(parameters);
 
     while (true) {
@@ -172,9 +174,9 @@ void Body::ProcessParameters(std::vector<VisualParameter> parameters) {
         if(!parameter.Changed)
             continue;
 
-        switch (parameter.Type){
+        switch (parameter.Type) {
             case VisualParameterType::Tilt:
-                config->Set(ConfigKeys::Drone::CameraTilt, (double)parameter.Value);
+                config->Set(ConfigKeys::Drone::CameraTilt, (double) parameter.Value);
                 break;
             case VisualParameterType::Exposure:
                 config->Set(ConfigKeys::Body::Exposure, parameter.Value);
@@ -184,12 +186,25 @@ void Body::ProcessParameters(std::vector<VisualParameter> parameters) {
                 config->Set(ConfigKeys::Body::Saturation, parameter.Value);
                 hal->setImageSaturation(parameter.Value);
                 break;
-            case VisualParameterType::WhiteBalance:
-                WhiteBalanceMode  wb = (WhiteBalanceMode)(int)parameter.Value;
+            case VisualParameterType::WhiteBalance: {
+                WhiteBalanceMode wb = (WhiteBalanceMode) (int) parameter.Value;
                 config->Set(ConfigKeys::Body::WhiteBalance, wb);
                 hal->setWhiteBalance(wb);
+                break;
+            }
+            case VisualParameterType::OpticalFlow:
+                Systems->Get<OpticalFlowSystem>()->Enabled = (bool) parameter.Value;
                 break;
         }
 
     }
+}
+
+void Body::ForceChangeParameters(std::vector<VisualParameter> parameters) {
+
+    for(VisualParameter& parameter: parameters)
+        parameter.Changed = true;
+
+    ProcessParameters(parameters);
+
 }

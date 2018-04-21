@@ -56,6 +56,8 @@ private:
     void ProcessInput(int key);
 
     void ProcessParameters(std::vector<VisualParameter> parameters);
+
+    void ForceChangeParameters(std::vector<VisualParameter> parameters);
 };
 
 

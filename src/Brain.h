@@ -55,6 +55,8 @@ private:
     World world;
     long lastRefreshTime = 0;
     long pirntLapse = 0.1 * 1000 * 1000;
+
+    DroneState_CurrentTask MapCurrentTask(BrainInfo::CurrentTask task);
 };
 
 

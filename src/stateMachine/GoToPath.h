@@ -56,7 +56,7 @@ protected:
         if(state != State::Hovering && state != State::Flying)
             return;
 
-        CommandGenerator generator(bodyInfo.CurrentPosition, bodyInfo.CurrentPose[2]);
+        CommandGenerator generator(bodyInfo.CurrentPosition, bodyInfo.CurrentPose[2], config);
 
         // TODO: No toma en cuenta el target mas cercano en todos los segmentos de path
         NavigationCommand command = generator.getCommand(bodyInfo.TargetOnPath, bodyInfo.CurrentPose[2]);

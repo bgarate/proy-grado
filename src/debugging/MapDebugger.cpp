@@ -15,7 +15,7 @@
 #include <X11/Xutil.h>
 #include <src/communication/SharedMemory.h>
 
-const cv::Size MapDebugger::SIZE = cv::Size(1024,768);
+const cv::Size MapDebugger::SIZE = cv::Size(640,480);
 cv::Point MapDebugger::ORIGIN = cv::Point(300,300);
 const double MapDebugger::dashPattern[1] = {4.0};
 
@@ -42,11 +42,21 @@ cairo_surface_t *MapDebugger::cairo_create_x11_surface0(int x, int y)
 
     if ((dsp = XOpenDisplay(NULL)) == NULL)
         exit(1);
+
     screen = DefaultScreen(dsp);
     da = XCreateWindow(dsp, DefaultRootWindow(dsp),
-                             0, 0, SIZE.width, SIZE.height, 0, 0, CopyFromParent,CopyFromParent, 0, 0);
+                             10, 10, SIZE.width, SIZE.height, 0, 0, CopyFromParent,CopyFromParent, 0, 0);
     XSelectInput(dsp, da, ButtonPressMask|StructureNotifyMask|KeyPressMask|KeyReleaseMask|KeymapStateMask);
     XMapWindow(dsp, da);
+
+    XSizeHints    my_hints = {0};
+
+    my_hints.flags  = PPosition;
+    my_hints.x      = 10;
+    my_hints.y      = 10;
+    my_hints.width = SIZE.width;
+    my_hints.height = SIZE.height;
+    XSetNormalHints(dsp, da, &my_hints);
 
     sfc = cairo_xlib_surface_create(dsp, da,
                                     DefaultVisual(dsp, screen), x, y);

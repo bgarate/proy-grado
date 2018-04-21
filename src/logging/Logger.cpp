@@ -13,7 +13,7 @@
 
 
 Logger &Logger::getInstance() {
-    static Logger logger;
+    thread_local static Logger logger;
     return logger;
 }
 

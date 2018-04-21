@@ -13,6 +13,11 @@ PathFollower::PathFollower(Config *config, World *world) : PositionsHistory(1000
     this->config = config;
     this->world = world;
     drone = world->getDrones()[0];
+
+    double startAlignementDistance = config->Get(ConfigKeys::Body::StartAlignementDistance);
+    double targetReachedDistance = config->Get(ConfigKeys::Body::TargetReachedRadius);
+    double alignmentAngleThreshold = config->Get(ConfigKeys::Body::AlignmentAngleThreshold);
+
 }
 
 void PathFollower::setPath(Path path) {
@@ -62,18 +67,18 @@ NavigationCommand PathFollower::update(std::vector<Marker> markers, double altit
 
     double alignmentAngle = Helpers::angleDifference(targetPathPoint.rotation,EstimatedPose[2]);
 
-    if(distanceToPathPoint <= TARGET_REACHED_DISTANCE &&
-            std::abs(alignmentAngle) < ALIGNEMENT_ANGLE_THRESOLD) {
+    if(distanceToPathPoint <= targetReachedDistance &&
+            std::abs(alignmentAngle) < alignmentAngleThreshold) {
 
         currentTarget = (currentTarget + 1) % path.GetPoints().size();
         return NavigationCommand();
 
     }
 
-    double targetRotation = distanceToPathPoint < TARGET_START_ALIGNEMENT_DISTANCE ?
+    double targetRotation = distanceToPathPoint < startAlignementDistance ?
                             targetPathPoint.rotation : EstimatedPose[2];
 
-    CommandGenerator generator(EstimatedPosition, EstimatedPose[2]);
+    CommandGenerator generator(EstimatedPosition, EstimatedPose[2], config);
 
     lastCommand = generator.getCommand(targetPathPoint.position, targetRotation);
     lastYawSign = lastCommand.YawSpeed < 0 ? -1 : 1;
@@ -148,26 +153,6 @@ void PathFollower::EstimatePosition(const std::vector<Marker> &markers, double a
 
 }
 
-Point PathFollower::getAngularDisplacement(cv::Point2i markerCenter) {
-
-    cv::Size frameSize = config->Get(ConfigKeys::Drone::FrameSize);
-
-    cv::Point frameCenter = cv::Point(frameSize.width/2, frameSize.height/2);
-
-    double displacementY = markerCenter.y - frameCenter.y;
-    double displacementX = markerCenter.x - frameCenter.x;
-
-
-    double tgPan = displacementX/(frameSize.width/2)*std::tan(Helpers::toRadians(config->Get(ConfigKeys::Drone::FOV)/2));
-    double tgTilt = displacementY/(frameSize.height/2)*std::tan(Helpers::toRadians(config->Get(ConfigKeys::Drone::VerticalFOV)/2));
-
-    return Point(Helpers::toDegrees(std::atan(tgPan)),Helpers::toDegrees(std::atan(tgTilt)),0);
-
-}
-
-double PathFollower::distanceToMarker(Marker m) {
-    return cv::norm(m.Translation);
-}
 
 /*
  * Ver https://en.wikipedia.org/wiki/Moving_average#Weighted_moving_average

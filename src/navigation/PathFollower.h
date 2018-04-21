@@ -43,12 +43,9 @@ public:
     int getTargetId();
     void setTarget(int target);
 
-    static constexpr double TARGET_APROXIMATION_DISTANCE = 2;
-    static constexpr double TARGET_REACHED_DISTANCE = 1;
-    static constexpr double TARGET_START_ALIGNEMENT_DISTANCE = 3;
-    static constexpr double ALIGNEMENT_ANGLE_THRESOLD = 50;
-    static constexpr double DISPLACEMENT_MAX_VELOCITY = 0.15;
-    static constexpr double YAW_MAX_VELOCITY = 0.15;
+    double startAlignementDistance;
+    double targetReachedDistance;
+    double alignmentAngleThreshold;
 
     static constexpr double NEXT_POSITION_MICROSECONDS = 1000000;
 private:
@@ -63,17 +60,7 @@ private:
     NavigationCommand lastCommand;
     long timeSinceLastMarkerSeen = 0;
 
-    double distanceToMarker(Marker m);
-
-    Point getAngularDisplacement(cv::Point2i markerCenter);
-
     void EstimatePosition(const std::vector<Marker> &markers, double altitude);
-
-    double signedMod(double a, double n);
-
-    double angleDifference(double a, double b);
-
-    cv::Vec3d previousEstimation;
 
     void SmoothEstimation();
 

@@ -12,6 +12,7 @@
 #include <src/stateMachine/GoToPath.h>
 #include <src/stateMachine/AlertState.h>
 #include <src/stateMachine/ShutdownState.h>
+#include <src/systems/OpticalFlowSystem.h>
 #include "hal/dummyHal/dummyHal.h"
 #include "Body.h"
 #include "Brain.h"
@@ -26,6 +27,8 @@ void welcome_message() {
 }
 
 void runBody(Config* config, SharedMemory* shared) {
+
+    Logger::getInstance().setSource("BODY");
 
     Logger::logDebug("Initializing body");
 
@@ -52,6 +55,7 @@ void runBody(Config* config, SharedMemory* shared) {
     body.Systems->RegisterSystem(new FollowerSystem());
     body.Systems->RegisterSystem(new PadLandingSystem());
     body.Systems->RegisterSystem(new BatterySystem());
+    body.Systems->RegisterSystem(new OpticalFlowSystem());
 
     body.StateMachine->RegisterState(new VirtualDroneState());
     body.StateMachine->RegisterState(new TakingOffState());
@@ -68,6 +72,9 @@ void runBody(Config* config, SharedMemory* shared) {
 }
 
 void runBrain(Config* config, SharedMemory* shared){
+
+    Logger::getInstance().setSource("BRAIN");
+
     Logger::logDebug("Initializing brain");
     Brain brain;
 
