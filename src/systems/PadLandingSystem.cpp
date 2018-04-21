@@ -10,8 +10,8 @@ void PadLandingSystem::Cleanup() {
 
 void PadLandingSystem::internalInit() {
 
-    this->markTrack = new MarkerTrack();
-    this->markerLand = new MarkerLand();
+    this->markTrack = new MarkerTrack(this->config);
+    this->markerLand = new MarkerLand(this->config);
 
 }
 

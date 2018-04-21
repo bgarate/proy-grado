@@ -69,6 +69,19 @@ struct ConfigKeys {
         CONFIG_KEY(Body, LowBatteryLevel, int)
         CONFIG_KEY(Body, CriticalBatteryLevel, int)
     };
+
+    struct Land {
+        CONFIG_KEY(Land, MarkerDetectTolerance, float)
+        CONFIG_KEY(Land, PitchVelFactor, float)
+        CONFIG_KEY(Land, RollVelFactor, float)
+        CONFIG_KEY(Land, GazVelFactor, float)
+        CONFIG_KEY(Land, LandAltitude, float)
+        CONFIG_KEY(Land, PitchTolerance, float)
+        CONFIG_KEY(Land, RollTolerance, float)
+        CONFIG_KEY(Land, GazAdjustment, float)
+        CONFIG_KEY(Land, PitchAdjustment, float)
+        CONFIG_KEY(Land, RollAdjustment, float)
+    };
 };
 
 #include "Config.h"

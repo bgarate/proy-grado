@@ -1,4 +1,5 @@
 #include <opencv2/opencv.hpp>
+#include <src/config/Config.h>
 
 #ifndef PROY_GRADO_MARKERLAND_H
 #define PROY_GRADO_MARKERLAND_H
@@ -18,7 +19,8 @@ public:
 class MarkerLand {
 
 public:
-    MarkerLand();
+
+    explicit MarkerLand(Config* config);
 
     LandMoveCommand land(std::vector<cv::Point> points, cv::Point frameSize, double altitude);
 
@@ -29,23 +31,23 @@ public:
 private:
     LandingState state;
 
-    const float pitchvelfactor = 0.06;
-    const float rollvelfactor = 0.08;
+    float pitchvelfactor;
+    float rollvelfactor;
     const float yawvelfactor = 0.6;
-    const float gazvelfactor = 0.5;
+    float gazvelfactor;
 
-    const float landAltitude = 1.0;
+    float landAltitude;
 
-    const float pitchtolerance = 0.01;
-    const float rolltolerance = 0.005;
+    float pitchtolerance;
+    float rolltolerance;
     const float yawtolerance = 0.05;
 
-    const float gazpreland = -0.5;
-    const float pitchpreland = 0.8;
-    const float rollpreland = -0.4;
+    float gazpreland;
+    float pitchpreland;
+    float rollpreland;
 
     const int maxSetpsWithoutReference = 100;
-    const float withoutReferencePitch = 0.05;
+    const float withoutReferenceGaz = 0.05;
 
     const int contZeroVelTolerance = 5;
 
