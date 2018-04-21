@@ -55,7 +55,6 @@ private:
 
     boost::circular_buffer<cv::Vec3d> positionHistory;
 
-    //const int SCALE= 50;
     const double ARROW_HEAD_ANGLE = 45;
     static const cv::Size SIZE;
     static cv::Point ORIGIN;
