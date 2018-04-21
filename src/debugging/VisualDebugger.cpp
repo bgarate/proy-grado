@@ -389,9 +389,9 @@ void VisualDebugger::setNavigationCommand(NavigationCommand command) {
     cv::rectangle(frame, cv::Point(frameCenter.x - 40, frameCenter.y - 40),
                   cv::Point(frameCenter.x + 40, frameCenter.y + 40), RED_COLOR);
 
-    double xPercentage = command.LateralSpeed / PathFollower::DISPLACEMENT_MAX_VELOCITY;
-    double yPercentage = command.ForwardSpeed / PathFollower::DISPLACEMENT_MAX_VELOCITY;
-    double yawPercentage = command.YawSpeed / PathFollower::YAW_MAX_VELOCITY;
+    double xPercentage = command.LateralSpeed / config->Get(ConfigKeys::Body::DisplacementMaxVelocity);
+    double yPercentage = command.ForwardSpeed / config->Get(ConfigKeys::Body::DisplacementMaxVelocity);
+    double yawPercentage = command.YawSpeed / config->Get(ConfigKeys::Body::YawMaxVelocity);
 
     cv::Point displacement = cv::Point(frameCenter.x + xPercentage * 40,
                                        frameCenter.y - yPercentage * 40);
@@ -433,8 +433,8 @@ void VisualDebugger::setFollowCommand(FollowCommand command) {
     cv::rectangle(frame, cv::Point(frameCenter.x - 40, frameCenter.y - 40),
                   cv::Point(frameCenter.x + 40, frameCenter.y + 40), RED_COLOR);
 
-    double xPercentage = command.outputRotation.Yaw() / Follower::YAW_MAX_VELOCITY;
-    double yPercentage = command.outputDisplacement.Pitch() / Follower::DISPLACEMENT_MAX_VELOCITIY;
+    double xPercentage = command.outputRotation.Yaw() / config->Get(ConfigKeys::Body::YawMaxVelocity);
+    double yPercentage = command.outputDisplacement.Pitch() / config->Get(ConfigKeys::Body::DisplacementMaxVelocity);
 
     cv::Point displacement = cv::Point(frameCenter.x + xPercentage * 40,
                                        frameCenter.y - yPercentage * 40);

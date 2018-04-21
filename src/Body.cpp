@@ -17,7 +17,6 @@ Body::Body(Hal *hal) {
 }
 
 void Body::setup(Config* config, SharedMemory* shared) {
-    Logger::getInstance().setSource("BODY");
 
     this->config = config;
     this->shared = shared;

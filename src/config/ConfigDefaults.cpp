@@ -51,6 +51,17 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Body::Saturation, 0.0f);
     config->Set(ConfigKeys::Body::WhiteBalance, WhiteBalanceMode::Auto);
 
+    config->Set(ConfigKeys::Body::TargetReachedRadius, 1.0f);
+    config->Set(ConfigKeys::Body::TargetSlowdownRadius, 2.0f);
+    config->Set(ConfigKeys::Body::YawAproximationAngle, 20.0f);
+    config->Set(ConfigKeys::Body::AlignmentAngleThreshold, 45.0f);
+    config->Set(ConfigKeys::Body::DisplacementMaxVelocity, 0.15f);
+    config->Set(ConfigKeys::Body::YawMaxVelocity, 0.50f);
+    config->Set(ConfigKeys::Body::AltitudeSlowDownRadius, 2.0f);
+    config->Set(ConfigKeys::Body::FollowerTargetDistance, 5.0f);
+    config->Set(ConfigKeys::Body::StartAlignementDistance, 3.0f);
+
+
     config->Set(ConfigKeys::Brain::Start, true);
     config->Set(ConfigKeys::Brain::LowBatteryLevel, 20);
     config->Set(ConfigKeys::Brain::CriticalBatteryLevel, 10);

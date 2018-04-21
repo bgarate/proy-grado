@@ -20,9 +20,7 @@ struct ConfigKeys {
         CONFIG_KEY(Drone, CameraTilt, double)
         CONFIG_KEY(Drone, CameraMatrix, cv::Mat)
         CONFIG_KEY(Drone, DistortionCoefficients, cv::Mat)
-
         CONFIG_KEY(Drone, FrameSizeRatio, double)
-
         CONFIG_KEY(Drone, VerticalFOV, double)
     };
 
@@ -54,6 +52,16 @@ struct ConfigKeys {
         CONFIG_KEY(Body, WhiteBalance, WhiteBalanceMode)
         CONFIG_KEY(Body, Saturation, float)
         CONFIG_KEY(Body, Exposure, float)
+
+        CONFIG_KEY(Body, TargetSlowdownRadius, float)
+        CONFIG_KEY(Body, AlignmentAngleThreshold, float)
+        CONFIG_KEY(Body, DisplacementMaxVelocity, float)
+        CONFIG_KEY(Body, YawMaxVelocity, float)
+        CONFIG_KEY(Body, AltitudeSlowDownRadius, float)
+        CONFIG_KEY(Body, FollowerTargetDistance, float)
+        CONFIG_KEY(Body, YawAproximationAngle, float)
+        CONFIG_KEY(Body, TargetReachedRadius, float)
+        CONFIG_KEY(Body, StartAlignementDistance, float)
     };
 
     struct Brain {

@@ -57,7 +57,7 @@ protected:
 
             visualDebugger->setSubStatus("going-to-pad locating");
 
-            CommandGenerator generator(bodyInfo.CurrentPosition, bodyInfo.CurrentPose[2]);
+            CommandGenerator generator(bodyInfo.CurrentPosition, bodyInfo.CurrentPose[2], config);
             int padId = brainInfo.currentPadId;
             WorldObject* pad = world.getPad(padId);
 

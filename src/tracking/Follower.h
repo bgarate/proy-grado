@@ -30,21 +30,11 @@ public:
     cv::Point getFolloweeVelocity();
     static const int NOT_FOLLOWING = -1;
 
-    static constexpr const double YAW_MAX_VELOCITY = 1;
-    static constexpr const double DISPLACEMENT_MAX_VELOCITIY = 0.3;
-
     FollowCommand getCommand(double altitude, double deltaTime, const cv::Point &trackPoint);
 
     int getHorizon();
 
 private:
-
-
-    static constexpr const double TARGET_DISTANCE = 5;
-    static constexpr const double TARGET_DISTANCE_SLOW_DOWN_RADIUS = 2;
-
-    static constexpr const double TARGET_YAW_SLOW_DOWN_RADIUS = 20;
-
 
     cv::Point followeeVelocity;
     int followee = NOT_FOLLOWING;
@@ -61,6 +51,12 @@ private:
     Point getRotation(double horizontalAngle, double deltaTime);
 
     double distance(cv::Point a, cv::Point b);
+
+    float followerTargetDistance;
+    float targetSlowdownRadius;
+    float yawMaxVelocity;
+    float yawAproximationAngle;
+    float displacementMaxVelocity;
 };
 
 

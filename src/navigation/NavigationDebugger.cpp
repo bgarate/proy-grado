@@ -257,14 +257,14 @@ void NavigationDebugger::DrawTargetMarker(PathPoint point) {
     cairo_set_source_rgb (cr, 0, 0, 1);
     cairo_arc(cr, GetX(point.position[0]),
               GetY(point.position[1]),
-              GetScaleX(PathFollower::TARGET_APROXIMATION_DISTANCE), 0, 2 * M_PI);
+              GetScaleX(config->Get(ConfigKeys::Body::TargetSlowdownRadius)), 0, 2 * M_PI);
 
 
     cairo_stroke(cr);
 
     cairo_arc(cr, GetX(point.position[0]),
               GetY(point.position[1]),
-              GetScaleX(PathFollower::TARGET_REACHED_DISTANCE), 0, 2 * M_PI);
+              GetScaleX(config->Get(ConfigKeys::Body::TargetReachedRadius)), 0, 2 * M_PI);
 
     cairo_stroke(cr);
 

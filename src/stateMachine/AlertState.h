@@ -39,7 +39,7 @@ protected:
     }
 
     void internalStep(double deltaTime) override {
-        CommandGenerator generator(bodyInfo.CurrentPosition, bodyInfo.CurrentPose[2]);
+        CommandGenerator generator(bodyInfo.CurrentPosition, bodyInfo.CurrentPose[2], config);
 
         cv::Vec2d target(brainInfo.alertedPosition[0] - bodyInfo.CurrentPosition[0],
                          brainInfo.alertedPosition[1] - bodyInfo.CurrentPosition[1]);

@@ -27,6 +27,8 @@ void welcome_message() {
 
 void runBody(Config* config, SharedMemory* shared) {
 
+    Logger::getInstance().setSource("BODY");
+
     Logger::logDebug("Initializing body");
 
     Hal* hal;
@@ -68,6 +70,9 @@ void runBody(Config* config, SharedMemory* shared) {
 }
 
 void runBrain(Config* config, SharedMemory* shared){
+
+    Logger::getInstance().setSource("BRAIN");
+
     Logger::logDebug("Initializing brain");
     Brain brain;
 

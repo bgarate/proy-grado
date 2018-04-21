@@ -88,7 +88,7 @@ Point Follower::getDisplacement(double distance, double deltaTime) {
 
     Point displacement = Point();
 
-    double dif = distance - TARGET_DISTANCE;
+    double dif = distance - followerTargetDistance;
 
     if(dif <= 0)
         return displacement;
@@ -97,8 +97,7 @@ Point Follower::getDisplacement(double distance, double deltaTime) {
     // esto y la orientación del drone respecto a una brújula y el acelerómetro para determinar
     // su velocidad respecto a ejes locales.
 
-    displacement.Pitch(std::min((dif / TARGET_DISTANCE_SLOW_DOWN_RADIUS),1.0) *
-                               DISPLACEMENT_MAX_VELOCITIY);
+    displacement.Pitch(std::min((dif / targetSlowdownRadius),1.0) * displacementMaxVelocity);
 
     return displacement;
 };
@@ -109,8 +108,7 @@ Point Follower::getRotation(double horizontalAngle, double deltaTime) {
 
     // TODO: Falta emplear la velocidad angular actual y deltaTime
 
-    rotation.Yaw(std::min((horizontalAngle / TARGET_YAW_SLOW_DOWN_RADIUS),1.0) *
-                       YAW_MAX_VELOCITY);
+    rotation.Yaw(std::min((horizontalAngle / yawAproximationAngle),1.0) * yawMaxVelocity);
 
     return rotation;
 };
@@ -168,6 +166,11 @@ cv::Point Follower::getFolloweeVelocity() {
 
 Follower::Follower(Config* config) {
     this->config = config;
+    followerTargetDistance = config->Get(ConfigKeys::Body::FollowerTargetDistance);
+    targetSlowdownRadius = config->Get(ConfigKeys::Body::TargetSlowdownRadius);
+    yawMaxVelocity = config->Get(ConfigKeys::Body::YawMaxVelocity);
+    yawAproximationAngle = config->Get(ConfigKeys::Body::YawAproximationAngle);
+    displacementMaxVelocity = config->Get(ConfigKeys::Body::DisplacementMaxVelocity);
 }
 
 double Follower::toDegrees(double rad) {

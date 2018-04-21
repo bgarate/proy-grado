@@ -30,8 +30,6 @@ void Brain::setup(Config* config, SharedMemory* shared) {
     this->lowBatteryLevel = config->Get(ConfigKeys::Brain::LowBatteryLevel);
     this->critialBatteryLevel = config->Get(ConfigKeys::Brain::CriticalBatteryLevel);
 
-    Logger::getInstance().setSource("BRAIN");
-
     //MapDebugger
     mapEnabled = config->Get(ConfigKeys::Debugging::MapDebuggerEnabled);
 
