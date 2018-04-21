@@ -20,6 +20,24 @@
 #include "src/navigation/PathFollower.h"
 #include "../tracking/MultiTracker.h"
 
+enum class VisualParameterType {Tilt, Exposure, Saturation, WhiteBalance};
+
+class VisualParameter {
+public:
+    VisualParameter(VisualParameterType type, std::string name, float value, float min, float max, float step) :
+            Type(type), Name(name), Value(value), Min(min), Max(max), Step(step) {
+        Changed = false;
+    }
+
+    VisualParameterType Type;
+    std::string Name;
+    float Value;
+    float Min;
+    float Max;
+    float Step;
+    bool Changed;
+};
+
 class VisualDebugger {
 public:
     void setup(Config* config);
@@ -53,6 +71,10 @@ public:
 
     void setRedTracks(std::vector<cv::Rect> rects,std::vector<std::vector<cv::Point>> contours);
 
+    void setParameters(std::vector<VisualParameter> parameters);
+
+    std::vector<VisualParameter> getParameters();
+
 private:
     Config* config;
     cv::Mat frame;
@@ -71,6 +93,9 @@ private:
     static const int CONSOLE_FONT_SIZE = 1;
     static const int CONSOLE_FONT_THICKNESS = 1;
     static constexpr const double OUTPUT_FPS = 25;
+
+    std::vector<VisualParameter> visualParameters;
+    int currentParameter = 0;
 
     double altitude = 0;
 
@@ -109,6 +134,9 @@ private:
 
     std::string subStatus = "";
 
+    void ProcessInput(int key);
+
+    void ShowParameters();
 };
 
 

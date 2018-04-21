@@ -17,11 +17,7 @@ void FollowingState::internalStep(double deltaTime) {
 
         NavigationCommand command = bodyInfo.FollowDetectionCommand;
 
-        double currentAltitude = hal->getAltitude();
-        double deltaAltitude = targetAltitude - currentAltitude;
-        double gaz = std::max(-1.0, std::min(1.0, (deltaAltitude / altitudeSlowdownRadius)));
-
-        hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (gaz * 100));
+        hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (command.Gaz * 100));
 
         bodyInfo.ExecutedCommand = command;
 

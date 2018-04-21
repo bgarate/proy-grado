@@ -13,7 +13,7 @@
 class SystemBase : public ISystem {
 public:
     void Init(Config* config, Hal* hal, SharedMemory* shared, VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger) override;
-    void Update(double deltaTime) override;
+    void Update(long deltaTime) override;
 
 protected:
     virtual void internalInit() = 0;

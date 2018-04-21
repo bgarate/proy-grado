@@ -37,12 +37,8 @@ public:
 
         NavigationCommand command = bodyInfo.FollowPathCommand;
 
-        double currentAltitude = hal->getAltitude();
-        double deltaAltitude = targetAltitude - currentAltitude;
-        double gaz = std::max(-1.0, std::min(1.0, (deltaAltitude / altitudeSlowdownRadius)));
-
         visualDebugger->setNavigationCommand(command);
-        hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (gaz * 100));
+        hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (command.Gaz * 100));
 
         bodyInfo.ExecutedCommand = command;
 
@@ -57,8 +53,7 @@ public:
     }
 
 private:
-    double targetAltitude = 2;
-    double altitudeSlowdownRadius = 1;
+
 };
 
 #endif //PROY_GRADO_PATROLLINGSTATE_H

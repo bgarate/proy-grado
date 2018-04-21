@@ -36,7 +36,7 @@ void MapDebugger::Init() {
 
 cairo_surface_t *MapDebugger::cairo_create_x11_surface0(int x, int y)
 {
-    Drawable da;
+
     int screen;
     cairo_surface_t *sfc;
 
@@ -90,12 +90,12 @@ void MapDebugger::DrawAxis(std::string name, cv::Vec3d axis) {
 
 bool MapDebugger::Run(std::map<int, DroneState*> droneStates, int myid, Path path, double deltaTime) {
 
-/*    ProcessEvents();
+    ProcessEvents();
     bool ret = ProcessInput(deltaTime);
 
     if(!ret)
         return false;
-*/
+
     cairo_set_source_rgb(cr, 1,1,1);
     cairo_paint(cr);
 
@@ -358,17 +358,21 @@ void MapDebugger::ProcessEvents() {
 
     XEvent event;
 
-    XNextEvent(dsp,&event);
-    unsigned long key;
+    pressedKeys.clear();
 
-    switch (event.type) {
-        case KeyPress:
-            key = XLookupKeysym(&event.xkey, 0);
-            pressedKeys.insert(key);
-        default:
-            break;
+    long eventMask = KeyPressMask;
+
+    while(XCheckWindowEvent(dsp,da,eventMask,&event)) {
+        unsigned long key;
+
+        switch (event.type) {
+            case KeyPress:
+                key = XLookupKeysym(&event.xkey, 0);
+                pressedKeys.insert(key);
+            default:
+                break;
+        }
     }
-
 }
 
 bool MapDebugger::isKeyPressed(long k) {
@@ -377,10 +381,10 @@ bool MapDebugger::isKeyPressed(long k) {
 
 bool MapDebugger::ProcessInput(double deltaTime) {
 
-    if(isKeyPressed(XK_comma))
+    if(isKeyPressed(XK_KP_Subtract))
         SCALE -= 0.000005f * deltaTime;
 
-    if(isKeyPressed(XK_period))
+    if(isKeyPressed(XK_KP_Add))
         SCALE += 0.000005f * deltaTime;
 
     if(isKeyPressed(XK_Up))

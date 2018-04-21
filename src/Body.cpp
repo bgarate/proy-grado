@@ -26,6 +26,9 @@ void Body::setup(Config* config, SharedMemory* shared) {
     //navigationDebugger.Init(config);
     hal->setup(config);
     hal->Connect();
+    hal->setWhiteBalance(config->Get(ConfigKeys::Body::WhiteBalance));
+    hal->setImageExposure(config->Get(ConfigKeys::Body::Exposure));
+    hal->setImageSaturation(config->Get(ConfigKeys::Body::Saturation));
 
     this->mc = new ManualControl(hal);
     this->inmc = false;
@@ -56,6 +59,19 @@ void Body::loop() {
     std::chrono::steady_clock::time_point startTime = std::chrono::steady_clock::now();
     std::chrono::steady_clock::time_point lastTime;
     std::chrono::steady_clock::time_point newTime = startTime;
+
+    std::vector<VisualParameter> parameters = {
+        VisualParameter(VisualParameterType::Saturation, "SAT", config->Get(ConfigKeys::Body::Saturation),
+                        -100, 100, 10),
+        VisualParameter(VisualParameterType::Exposure, "EXP", config->Get(ConfigKeys::Body::Exposure), -100, 100, 10),
+        VisualParameter(VisualParameterType::WhiteBalance, "WHI", (int)config->Get(ConfigKeys::Body::WhiteBalance),
+                        0, (int)WhiteBalanceMode::CoolWhite, 1),
+        VisualParameter(VisualParameterType::Tilt, "TLT", config->Get(ConfigKeys::Drone::CameraTilt),
+                        -config->Get(ConfigKeys::Drone::VerticalFOV) / 2,
+                        config->Get(ConfigKeys::Drone::VerticalFOV) / 2, 0.5)
+    };
+
+    visualDebugger.setParameters(parameters);
 
     while (true) {
         lastTime = newTime;
@@ -88,6 +104,7 @@ void Body::loop() {
         int key = visualDebugger.show(deltaTime);
 
         ProcessInput(key);
+        ProcessParameters(visualDebugger.getParameters());
 
         BrainInfo brainInfo = shared->getBrainInfo();
 
@@ -127,14 +144,6 @@ void Body::ProcessInput(int key) {
         case (int) 'c':
             visualDebugger.captureImage();
             break;
-        case (int) 't':
-            config->Set(ConfigKeys::Drone::CameraTilt, std::min(config->Get(ConfigKeys::Drone::VerticalFOV) / 2,
-                                                                config->Get(ConfigKeys::Drone::CameraTilt) + 0.1));
-            break;
-        case (int) 'r':
-            config->Set(ConfigKeys::Drone::CameraTilt, std::max(config->Get(ConfigKeys::Drone::VerticalFOV) / 2,
-                                                                config->Get(ConfigKeys::Drone::CameraTilt) - 0.1));
-            break;
     }
 }
 
@@ -156,4 +165,31 @@ void Body::cleanup() {
     StateMachine->Cleanup();
     Systems->Cleanup();
     hal->Disconnect();
+}
+
+void Body::ProcessParameters(std::vector<VisualParameter> parameters) {
+    for(VisualParameter& parameter : parameters){
+        if(!parameter.Changed)
+            continue;
+
+        switch (parameter.Type){
+            case VisualParameterType::Tilt:
+                config->Set(ConfigKeys::Drone::CameraTilt, (double)parameter.Value);
+                break;
+            case VisualParameterType::Exposure:
+                config->Set(ConfigKeys::Body::Exposure, parameter.Value);
+                hal->setImageExposure(parameter.Value);
+                break;
+            case VisualParameterType::Saturation:
+                config->Set(ConfigKeys::Body::Saturation, parameter.Value);
+                hal->setImageSaturation(parameter.Value);
+                break;
+            case VisualParameterType::WhiteBalance:
+                WhiteBalanceMode  wb = (WhiteBalanceMode)(int)parameter.Value;
+                config->Set(ConfigKeys::Body::WhiteBalance, wb);
+                hal->setWhiteBalance(wb);
+                break;
+        }
+
+    }
 }

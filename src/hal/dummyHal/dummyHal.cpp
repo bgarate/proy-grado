@@ -16,6 +16,18 @@ void DummyHal::move(int roll, int pitch, int yaw, int gaz) {
     return;
 }
 
+void DummyHal::setWhiteBalance(WhiteBalanceMode mode) {
+
+}
+
+void DummyHal::setImageExposure(float exposure) {
+
+}
+
+void DummyHal::setImageSaturation(float saturation) {
+
+}
+
 void DummyHal::setup(Config* config) {
     this->config = config;
 

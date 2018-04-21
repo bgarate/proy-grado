@@ -9,14 +9,15 @@
 #include <boost/circular_buffer.hpp>
 
 struct NavigationCommand {
-    NavigationCommand():ForwardSpeed(0), YawSpeed(0) {};
-    NavigationCommand(double forwardSpeed, double lateralSpeed,double yawSpeed)
-            : ForwardSpeed(forwardSpeed), LateralSpeed(lateralSpeed),YawSpeed(yawSpeed){
+    NavigationCommand():ForwardSpeed(0), LateralSpeed(0), YawSpeed(0), Gaz(0){};
+    NavigationCommand(double forwardSpeed, double lateralSpeed,double yawSpeed, double gaz)
+            : ForwardSpeed(forwardSpeed), LateralSpeed(lateralSpeed),YawSpeed(yawSpeed), Gaz(gaz){
 
     }
     double ForwardSpeed;
     double LateralSpeed;
     double YawSpeed;
+    double Gaz;
 };
 
 class PathFollower {
@@ -44,7 +45,8 @@ public:
 
     static constexpr double TARGET_APROXIMATION_DISTANCE = 2;
     static constexpr double TARGET_REACHED_DISTANCE = 1;
-    static constexpr double ALIGNEMENT_ANGLE_THRESOLD = 15;
+    static constexpr double TARGET_START_ALIGNEMENT_DISTANCE = 3;
+    static constexpr double ALIGNEMENT_ANGLE_THRESOLD = 50;
     static constexpr double DISPLACEMENT_MAX_VELOCITY = 0.15;
     static constexpr double YAW_MAX_VELOCITY = 0.15;
 

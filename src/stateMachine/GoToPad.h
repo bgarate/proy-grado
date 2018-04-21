@@ -60,13 +60,13 @@ protected:
             CommandGenerator generator(bodyInfo.CurrentPosition, bodyInfo.CurrentPose[2]);
             int padId = brainInfo.currentPadId;
             WorldObject* pad = world.getPad(padId);
-            NavigationCommand command = generator.getCommand(pad->getPosition(), pad->getRotation()[2]);
 
-            double currentAltitude = hal->getAltitude();
-            double deltaAltitude = targetAltitude - currentAltitude;
-            double gaz = std::max(-1.0, std::min(1.0, (deltaAltitude / altitudeSlowdownRadius)));
+            cv::Vec3d targetPosition = pad->getPosition();
+            targetPosition[2] = bodyInfo.CurrentPosition[2];
 
-            hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (gaz * 100));
+            NavigationCommand command = generator.getCommand(targetPosition, pad->getRotation()[2]);
+
+            hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (command.Gaz * 100));
 
         } else if(!landingCommand.land) {
             visualDebugger->setSubStatus("going-to-pad tracking");

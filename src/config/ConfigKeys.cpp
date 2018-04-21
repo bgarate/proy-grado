@@ -2,6 +2,7 @@
 // Created by bruno on 24/09/17.
 //
 
+#include <src/hal/WhiteBalanceMode.h>
 #include "ConfigKeys.h"
 
 DEFINE_CONFIG_KEY(Drone, Name, std::string)
@@ -53,6 +54,9 @@ DEFINE_CONFIG_KEY(Body, DummyCameraVideoSource, std::string)
 DEFINE_CONFIG_KEY(Body, CascadeDetector, std::string)
 DEFINE_CONFIG_KEY(Body, TrackingSmoothingSamples, int)
 DEFINE_CONFIG_KEY(Body, VirtualBody, bool)
+DEFINE_CONFIG_KEY(Body, WhiteBalance, WhiteBalanceMode)
+DEFINE_CONFIG_KEY(Body, Saturation, float)
+DEFINE_CONFIG_KEY(Body, Exposure, float)
 
 DEFINE_CONFIG_KEY(Brain, Start, bool)
 DEFINE_CONFIG_KEY(Brain, LowBatteryLevel, int)

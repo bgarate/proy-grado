@@ -8,6 +8,7 @@
 
 #include "../config/Config.h"
 #include "../hal/HalType.hpp"
+#include "../hal/WhiteBalanceMode.h"
 
 struct ConfigKeys {
 
@@ -58,6 +59,9 @@ struct ConfigKeys {
         CONFIG_KEY(Body, CascadeDetector, std::string)
         CONFIG_KEY(Body, TrackingSmoothingSamples, int)
         CONFIG_KEY(Body, VirtualBody, bool)
+        CONFIG_KEY(Body, WhiteBalance, WhiteBalanceMode)
+        CONFIG_KEY(Body, Saturation, float)
+        CONFIG_KEY(Body, Exposure, float)
     };
 
     struct Brain {

@@ -485,5 +485,17 @@ public:
         return pos;
     }
 
+    void setWhiteBalance(WhiteBalanceMode mode) override {
+
+    }
+
+    void setImageExposure(float exposure) override {
+
+    }
+
+    void setImageSaturation(float saturation) override {
+
+    }
+
 
 };

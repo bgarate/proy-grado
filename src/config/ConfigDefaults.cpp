@@ -55,6 +55,9 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Body::CascadeDetector,std::string("../resources/pedestrian_cascade_web_LBP.xml"));
     config->Set(ConfigKeys::Body::TrackingSmoothingSamples, 10);
     config->Set(ConfigKeys::Body::VirtualBody, false);
+    config->Set(ConfigKeys::Body::Exposure, 0.0f);
+    config->Set(ConfigKeys::Body::Saturation, 0.0f);
+    config->Set(ConfigKeys::Body::WhiteBalance, WhiteBalanceMode::Auto);
 
     config->Set(ConfigKeys::Brain::Start, true);
     config->Set(ConfigKeys::Brain::LowBatteryLevel, 20);

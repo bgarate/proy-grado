@@ -4,6 +4,7 @@
 
 #include <boost/format.hpp>
 #include <chrono>
+#include <src/utils/Helpers.h>
 #include "../tracking/OpticalFlow.h"
 #include "../landtracking/MarkerTrack.h"
 #include "src/navigation/PathFollower.h"
@@ -325,6 +326,8 @@ int VisualDebugger::show(long deltaTime){
 
     }
 
+    ShowParameters();
+
     if(hudOutput.isOpened() || rawOutput.isOpened()) {
 
         double timePerFrame = 1000000 / OUTPUT_FPS;
@@ -346,7 +349,11 @@ int VisualDebugger::show(long deltaTime){
 
     if(config->Get(ConfigKeys::Debugging::VisualDebugEnabled) && frame.cols > 0 && frame.rows > 0) {
         cv::imshow(windowName, frame);
-        return cv::waitKey(1);
+        int key = cv::waitKey(1);
+
+        ProcessInput(key);
+
+        return key;
     } else {
         return 0;
     }
@@ -538,3 +545,76 @@ void VisualDebugger::ShowMarkers(std::vector<Marker> markers) {
     }
 
 }
+
+void VisualDebugger::setParameters(std::vector<VisualParameter> parameters) {
+    visualParameters = parameters;
+}
+
+std::vector<VisualParameter> VisualDebugger::getParameters() {
+    return visualParameters;
+}
+
+void VisualDebugger::ProcessInput(int key) {
+
+    for(VisualParameter& p : visualParameters){
+        p.Changed = false;
+    }
+
+    float direction = 0;
+
+    if(key == -1)
+        return;
+
+    switch (key){
+        case '\t':
+            currentParameter = (currentParameter + 1) % visualParameters.size();
+            break;
+        case '+':
+            direction = 1;
+            break;
+        case '-':
+            direction = -1;
+            break;
+    }
+
+    if(direction == 0)
+        return;
+
+    VisualParameter* parameter = &visualParameters[currentParameter];
+    parameter->Value = Helpers::Clamp(parameter->Value + parameter->Step * direction, parameter->Min, parameter->Max);
+    parameter->Changed = true;
+}
+
+void VisualDebugger::ShowParameters() {
+
+    std::string testString1 = "[EXP]";
+    std::string testString2 = (boost::format("%-10.2f") % 1).str();
+    cv::Size textSize1 = cv::getTextSize(testString1, CONSOLE_FONT, 1, 1, NULL);
+    cv::Size textSize2 = cv::getTextSize(testString2, CONSOLE_FONT, 1, 1, NULL);
+
+    float baseLine = (frame.size().height - ((textSize1.height + 5) * visualParameters.size()))/ 2;
+
+    cv::Point position(frame.size().width - textSize1.width - textSize2.width - 20, baseLine);
+
+    for (int i = 0; i < visualParameters.size(); i++){
+
+        VisualParameter parameter = visualParameters[i];
+        std::string str1 = (boost::format("[%3s]") % parameter.Name).str();
+        std::string str2 = (boost::format("%_10.2f") % parameter.Value).str();
+
+        if(i == currentParameter) {
+            cv::putText(frame, str1, cv::Point(position.x + 2, position.y + 2), CONSOLE_FONT, 1,
+                        VisualDebugger::BLACK_COLOR, 1, cv::LINE_AA);
+            cv::putText(frame, str2, cv::Point(position.x + textSize1.width + 12, position.y + 2), CONSOLE_FONT, 1,
+                        VisualDebugger::BLACK_COLOR, 1, cv::LINE_AA);
+        }
+
+        cv::putText(frame, str1, position, CONSOLE_FONT, 1, VisualDebugger::RED_COLOR, 1, cv::LINE_AA);
+        cv::putText(frame, str2, cv::Point(position.x + textSize1.width + 10, position.y), CONSOLE_FONT, 1, VisualDebugger::RED_COLOR, 1, cv::LINE_AA);
+
+        position.y += textSize1.height + 5;
+
+    }
+
+}
+

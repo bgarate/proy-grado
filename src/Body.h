@@ -57,6 +57,8 @@ private:
     void PrintAvailableTests();
 
     void ProcessInput(int key);
+
+    void ProcessParameters(std::vector<VisualParameter> parameters);
 };
 
 

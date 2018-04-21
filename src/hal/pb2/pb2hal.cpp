@@ -61,6 +61,11 @@ class Pb2hal: public Hal {
     VideoDecoder videoDecoder;
     CommandHandler commandHandler;
 
+    double maxSaturation = 100;
+    double minSaturation = -100;
+    double maxExposure = 3;
+    double minExposure = -3;
+
 	std::shared_ptr<cv::Mat> cvFrame = NULL;
     bool frameAvailable = false;
 
@@ -173,6 +178,10 @@ class Pb2hal: public Hal {
                                        [this](CommandDictionary* d) {this->MoveByEnd(d);});
         commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_COMMON_CAMERASETTINGSSTATE_CAMERASETTINGSCHANGED,
                                        [this](CommandDictionary* d) {this->CameraSettingsChanged(d);});
+        commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PICTURESETTINGSSTATE_SATURATIONCHANGED,
+                                       [this](CommandDictionary* d) {this->SaturationSettingsChanged(d);});
+        commandHandler.registerHandler(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PICTURESETTINGSSTATE_EXPOSITIONCHANGED,
+                                       [this](CommandDictionary* d) {this->ExposureSettingsChanged(d);});
 
     }
 
@@ -220,6 +229,18 @@ class Pb2hal: public Hal {
         //dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_COMMON_CAMERASETTINGSSTATE_CAMERASETTINGSCHANGED_TILTMAX);
         if (this->bottomTilt == -1)
             this->bottomTilt = dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_COMMON_CAMERASETTINGSSTATE_CAMERASETTINGSCHANGED_TILTMIN);
+    }
+
+    void ExposureSettingsChanged(CommandDictionary* dictionary)
+    {
+        this->maxExposure = dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PICTURESETTINGSSTATE_EXPOSITIONCHANGED_MAX);
+        this->minExposure = dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PICTURESETTINGSSTATE_EXPOSITIONCHANGED_MIN);
+    }
+
+    void SaturationSettingsChanged(CommandDictionary* dictionary)
+    {
+        this->maxSaturation= dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PICTURESETTINGSSTATE_SATURATIONCHANGED_MAX);
+        this->minSaturation = dictionary->getFloat(ARCONTROLLER_DICTIONARY_KEY_ARDRONE3_PICTURESETTINGSSTATE_SATURATIONCHANGED_MIN);
     }
 
     // called when a command has been received from the drone
@@ -656,6 +677,37 @@ class Pb2hal: public Hal {
     bool isRmoving(){
         return rmoveactive;
     }
+
+    eARCOMMANDS_ARDRONE3_PICTURESETTINGS_AUTOWHITEBALANCESELECTION_TYPE getAutoBalanceType(WhiteBalanceMode balance) {
+        switch (balance) {
+            case WhiteBalanceMode::Auto:
+                return ARCOMMANDS_ARDRONE3_PICTURESETTINGS_AUTOWHITEBALANCESELECTION_TYPE_AUTO;
+            case WhiteBalanceMode::Tungsten:
+                return ARCOMMANDS_ARDRONE3_PICTURESETTINGS_AUTOWHITEBALANCESELECTION_TYPE_TUNGSTEN;
+            case WhiteBalanceMode::Daylight:
+                return ARCOMMANDS_ARDRONE3_PICTURESETTINGS_AUTOWHITEBALANCESELECTION_TYPE_DAYLIGHT;
+            case WhiteBalanceMode::Cloudy:
+                return ARCOMMANDS_ARDRONE3_PICTURESETTINGS_AUTOWHITEBALANCESELECTION_TYPE_CLOUDY;
+            case WhiteBalanceMode::CoolWhite:
+                return ARCOMMANDS_ARDRONE3_PICTURESETTINGS_AUTOWHITEBALANCESELECTION_TYPE_COOL_WHITE;
+        }
+    }
+
+    void setWhiteBalance(WhiteBalanceMode mode) override {
+        eARCOMMANDS_ARDRONE3_PICTURESETTINGS_AUTOWHITEBALANCESELECTION_TYPE type = getAutoBalanceType(mode);
+	    deviceController->aRDrone3->sendPictureSettingsAutoWhiteBalanceSelection(deviceController->aRDrone3, type);
+    }
+
+    void setImageExposure(float exposure) override {
+	    double targetExposure = (exposure + 1) / 2 * (maxExposure - minExposure) + minExposure;
+	    deviceController->aRDrone3->sendPictureSettingsExpositionSelection(deviceController->aRDrone3,targetExposure);
+    }
+
+    void setImageSaturation(float saturation) override {
+        double targetSaturation = (saturation + 1) / 2 * (maxSaturation - minSaturation) + minExposure;
+        deviceController->aRDrone3->sendPictureSettingsSaturationSelection(deviceController->aRDrone3,targetSaturation);
+    }
+
 
 };
 

@@ -16,7 +16,8 @@ public:
     static constexpr double TARGET_APROXIMATION_DISTANCE = 2;
     static constexpr double ALIGNEMENT_ANGLE_THRESOLD = 15;
     static constexpr double DISPLACEMENT_MAX_VELOCITY = 0.15;
-    static constexpr double YAW_MAX_VELOCITY = 0.30;
+    static constexpr double YAW_MAX_VELOCITY = 0.50;
+    static constexpr double ALTITUDE_SLOW_DONW_RADIUS = 2;
 
     CommandGenerator(cv::Vec3d position, double rotation): Position(position), Rotation(rotation){
 
@@ -40,7 +41,10 @@ public:
         double lateralSpped = targetVector[0] * speed;
         double yawSpeed = std::max(std::min(alignmentAngle / ALIGNEMENT_ANGLE_THRESOLD,1.0),-1.0) * YAW_MAX_VELOCITY;
 
-        return NavigationCommand(forwardSpeed,lateralSpped, yawSpeed);
+        double deltaAltitude = targetVector[2] - Position[2];
+        double gaz = std::max(-1.0, std::min(1.0, (deltaAltitude / ALTITUDE_SLOW_DONW_RADIUS)));
+
+        return NavigationCommand(forwardSpeed,lateralSpped, yawSpeed, gaz);
     }
 
 private:

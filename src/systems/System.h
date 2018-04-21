@@ -13,7 +13,7 @@ class ISystem {
 public:
 
     virtual void Init(Config* config, Hal* hal, SharedMemory* shared, VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger) = 0;
-    virtual void Update(double deltaTime) = 0;
+    virtual void Update(long deltaTime) = 0;
     virtual void Cleanup() = 0;
     bool Enabled;
 

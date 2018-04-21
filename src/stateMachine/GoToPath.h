@@ -61,11 +61,7 @@ protected:
         // TODO: No toma en cuenta el target mas cercano en todos los segmentos de path
         NavigationCommand command = generator.getCommand(bodyInfo.TargetOnPath, bodyInfo.CurrentPose[2]);
 
-        double currentAltitude = hal->getAltitude();
-        double deltaAltitude = targetAltitude - currentAltitude;
-        double gaz = std::max(-1.0, std::min(1.0, (deltaAltitude / altitudeSlowdownRadius)));
-
-        hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (gaz * 100));
+        hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (command.Gaz * 100));
 
 
         cv::Vec2d d(bodyInfo.ProjectedPositionOnPath[0] - bodyInfo.CurrentPosition[0],

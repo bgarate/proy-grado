@@ -43,6 +43,12 @@ public:
 
     void setup(Config* config) override;
 
+    void setWhiteBalance(WhiteBalanceMode mode) override;
+
+    void setImageExposure(float exposure) override;
+
+    void setImageSaturation(float saturation) override;
+
 private:
     State state;
     cv::VideoCapture videoSource;

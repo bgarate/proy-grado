@@ -44,13 +44,9 @@ protected:
         cv::Vec2d target(brainInfo.alertedPosition[0] - bodyInfo.CurrentPosition[0],
                          brainInfo.alertedPosition[1] - bodyInfo.CurrentPosition[1]);
 
-        double currentAltitude = hal->getAltitude();
-        double deltaAltitude = targetAltitude - currentAltitude;
-        double gaz = std::max(-1.0, std::min(1.0, (deltaAltitude / altitudeSlowdownRadius)));
-
         NavigationCommand command = generator.getCommand(bodyInfo.CurrentPosition, Helpers::toAngle(target));
 
-        hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (gaz * 100));
+        hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (command.Gaz * 100));
     }
 
 };

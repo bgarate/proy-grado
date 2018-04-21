@@ -16,7 +16,7 @@ void SystemBase::Init(Config *config, Hal *hal, SharedMemory *shared, VisualDebu
     internalInit();
 }
 
-void SystemBase::Update(double deltaTime) {
+void SystemBase::Update(long deltaTime) {
     brainInfo = shared->getBrainInfo();
     bodyInfo = shared->getBodyInfo();
 

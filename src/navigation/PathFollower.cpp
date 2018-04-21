@@ -28,7 +28,7 @@ NavigationCommand PathFollower::update(std::vector<Marker> markers, double altit
         timeSinceLastMarkerSeen += deltaTime;
 
         if(timeSinceLastMarkerSeen > 1000000) {
-            return NavigationCommand(0,0,lastYawSign);
+            return NavigationCommand(0,0,lastYawSign, altitude);
         } else {
             return lastCommand;
         }
@@ -56,23 +56,27 @@ NavigationCommand PathFollower::update(std::vector<Marker> markers, double altit
 
     PathPoint targetPathPoint = path.GetPoints()[(currentTarget + 1) % path.GetPoints().size()];
 
-    // TODO: Considerar altura
+    // No considera altura para asumir que llegó
     cv::Vec3d v = targetPathPoint.position - EstimatedPosition;
     double distanceToPathPoint = cv::norm(cv::Vec2d(v[0],v[1]));
 
     double alignmentAngle = Helpers::angleDifference(targetPathPoint.rotation,EstimatedPose[2]);
 
-    // TODO: Utilizar yaw
-    if(distanceToPathPoint <= TARGET_REACHED_DISTANCE /*&&
-            std::abs(alignmentAngle) < ALIGNEMENT_ANGLE_THRESOLD*/) {
+    if(distanceToPathPoint <= TARGET_REACHED_DISTANCE &&
+            std::abs(alignmentAngle) < ALIGNEMENT_ANGLE_THRESOLD) {
+
         currentTarget = (currentTarget + 1) % path.GetPoints().size();
         return NavigationCommand();
+
     }
+
+    double targetRotation = distanceToPathPoint < TARGET_START_ALIGNEMENT_DISTANCE ?
+                            targetPathPoint.rotation : EstimatedPose[2];
 
     CommandGenerator generator(EstimatedPosition, EstimatedPose[2]);
 
-    lastYawSign = targetPathPoint.rotation < 0 ? -1 : 1;
-    lastCommand = generator.getCommand(targetPathPoint.position, targetPathPoint.rotation);
+    lastCommand = generator.getCommand(targetPathPoint.position, targetRotation);
+    lastYawSign = lastCommand.YawSpeed < 0 ? -1 : 1;
 
     return lastCommand;
 }

@@ -40,6 +40,7 @@ private:
     Display *dsp;
     float SCALE;
 
+    Drawable da;
     // TODO: Desprolijo ponerlo acá
     BrainInfo::CurrentTask forcedState = BrainInfo::INNACTIVE;
 

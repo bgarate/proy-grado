@@ -39,7 +39,7 @@ void FollowerSystem::internalUpdate(double deltaTime) {
 
     visualDebugger->drawHorizon(follower->getHorizon());
 
-    bodyInfo.FollowDetectionCommand = NavigationCommand(command.outputDisplacement.Pitch(), 0, command.outputRotation.Yaw());
+    bodyInfo.FollowDetectionCommand = NavigationCommand(command.outputDisplacement.Pitch(), 0, command.outputRotation.Yaw(), hal->getAltitude());
     bodyInfo.intruderDetected = follower->isFollowing();
 
     cv::Vec2d displacement = Helpers::rotate(cv::Vec2d(1,0),Helpers::toRadians(bodyInfo.CurrentPose[2])) * command.linearDisplacement.Norm();

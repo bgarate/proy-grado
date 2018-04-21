@@ -7,6 +7,7 @@
 #include "../config/Config.h"
 #include "memory"
 #include "Point.h"
+#include "WhiteBalanceMode.h"
 
 //Enumerado cámara
 	enum class Camera {Front, Bottom, Middle};
@@ -81,6 +82,12 @@ class Hal{
     virtual State getState() = 0;
 
 	virtual bool isRmoving() = 0;
+
+	virtual void setWhiteBalance(WhiteBalanceMode mode) = 0;
+
+	virtual void setImageExposure(float exposure) = 0;
+
+	virtual void setImageSaturation(float saturation) = 0;
 
 };
 

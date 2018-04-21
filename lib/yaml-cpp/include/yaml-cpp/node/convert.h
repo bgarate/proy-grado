@@ -23,6 +23,7 @@
 
 #include <opencv2/opencv.hpp>
 #include "../../../../../src/hal/HalType.hpp"
+#include "../../../../../src/hal/WhiteBalanceMode.h"
 
 namespace YAML {
 class Binary;
@@ -354,26 +355,28 @@ static Node encode(const cv::Size_<int>& rhs) {
 };
 
 
-    template<typename T, int n>
-    struct convert<cv::Vec<T,n>> {
-        static Node encode(const cv::Vec<T,n>& rhs) {
-            Node node;
-            for(int i = 0; i < n; i++)
-                node.push_back(rhs[i]);
-            return node;
+template<typename T, int n>
+struct convert<cv::Vec<T,n>> {
+    static Node encode(const cv::Vec<T,n>& rhs) {
+        Node node;
+        for(int i = 0; i < n; i++)
+            node.push_back(rhs[i]);
+        return node;
+    }
+
+    static bool decode(const Node& node, cv::Vec<T,n>& rhs) {
+        if(!node.IsSequence() || node.size() != n) {
+            return false;
         }
 
-        static bool decode(const Node& node, cv::Vec<T,n>& rhs) {
-            if(!node.IsSequence() || node.size() != n) {
-                return false;
-            }
+        for(int i = 0; i < n; i++)
+            rhs[i] = node[i].as<T>();
 
-            for(int i = 0; i < n; i++)
-                rhs[i] = node[i].as<T>();
+        return true;
+    }
+};
 
-            return true;
-        }
-    };
+
 
 template<>
 struct convert<cv::Mat> {
@@ -447,6 +450,56 @@ struct convert<cv::Mat> {
                 rhs =  HalType::Dummy;
             else
                 throw std::runtime_error("Representacion de haltype desconocido");
+
+            return true;
+        }
+    };
+
+
+    template<>
+    struct convert<WhiteBalanceMode> {
+        static Node encode(const WhiteBalanceMode& rhs) {
+            Node node;
+
+            switch (rhs) {
+                case WhiteBalanceMode::Auto:
+                    node = "Auto";
+                    break;
+                case WhiteBalanceMode::Cloudy:
+                    node = "Cloudy";
+                    break;
+                case WhiteBalanceMode::CoolWhite:
+                    node = "CoolWhite";
+                    break;
+                case WhiteBalanceMode::Daylight:
+                    node = "Daylight";
+                    break;
+                case WhiteBalanceMode::Tungsten:
+                    node = "Tungsten";
+                    break;
+                default:
+                    throw std::runtime_error("WhiteBalanceMode desconocido");
+            }
+
+            return node;
+        }
+
+        static bool decode(const Node& node, WhiteBalanceMode& rhs) {
+
+            std::string wb = node.as<std::string>();
+
+            if(wb == "Auto")
+                rhs = WhiteBalanceMode::Auto;
+            else if(wb == "Cloudy")
+                rhs =  WhiteBalanceMode::Cloudy;
+            else if(wb == "CoolWhite")
+                rhs =  WhiteBalanceMode::CoolWhite;
+            else if(wb == "Daylight")
+                rhs =  WhiteBalanceMode::Daylight;
+            else if(wb == "Tungsten")
+                rhs =  WhiteBalanceMode::Tungsten;
+            else
+                throw std::runtime_error("Representacion de WhiteBalanceMode desconocido");
 
             return true;
         }
