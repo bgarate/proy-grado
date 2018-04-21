@@ -15,7 +15,6 @@ class SystemManager {
 public:
     void RegisterSystem(ISystem *system) {
         systems.push_back(system);
-        system->Enabled = true;
     }
 
     void Init(Config* config, Hal* hal, SharedMemory* shared, VisualDebugger* visualDebugger, NavigationDebugger* navigationDebugger) {

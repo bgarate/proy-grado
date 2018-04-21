@@ -12,6 +12,7 @@ void SystemBase::Init(Config *config, Hal *hal, SharedMemory *shared, VisualDebu
     this->visualDebugger = visualDebugger;
     this->config = config;
     this->navigationDebugger = navigationDebugger;
+    this->Enabled = false;
 
     internalInit();
 }

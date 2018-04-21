@@ -117,7 +117,9 @@ void Brain::loop() {
         currentFlyingTime += deltaTime;
 
         //Tengo que cargar?
-        bool shouldCharge = (bodyInfo.batteryLevel < critialBatteryLevel) || (bodyInfo.batteryLevel < lowBatteryLevel && brainInfo.currentTask == BrainInfo::PATROLING) ||            currentFlyingTime >= MAX_FLYING_TIME;
+        bool shouldCharge = (bodyInfo.batteryLevel < critialBatteryLevel)
+                            || (bodyInfo.batteryLevel < lowBatteryLevel && brainInfo.currentTask == BrainInfo::PATROLING);
+                            //|| currentFlyingTime >= MAX_FLYING_TIME;
 
         //Hay alguien following? Hay alguien cargando? Hay alguien cargando en mi mismo path con más prioridad? Alguien me está cubriendo?
         bool someoneFollowing = false;

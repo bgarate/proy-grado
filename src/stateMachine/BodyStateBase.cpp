@@ -48,7 +48,7 @@ void BodyStateBase::init(Config *config, Hal *hal, SharedMemory *shared, BodySta
     this->control = control;
     this->config = config;
     this->navigationDebugger = navigationDebugger;
-    this->isvirtual = config->Get(ConfigKeys::Body::VirtualBody);
+    this->isvirtual = config->Get(ConfigKeys::VirtualBody::VirtualBodyEnabled);
 
     internalInit();
 }
