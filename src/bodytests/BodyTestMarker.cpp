@@ -27,9 +27,9 @@ public:
 
         this->visualDebugger = visualDebugger;
 
-        this->markTrack = new MarkerTrack();
+        this->markTrack = new MarkerTrack(config);
 
-        this->markerLand = new MarkerLand();
+        this->markerLand = new MarkerLand(config);
 
         Logger::logInfo("Bateria: %u") << hal->bateryLevel();
 

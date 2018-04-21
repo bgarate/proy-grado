@@ -1,8 +1,22 @@
 #include <zconf.h>
+#include <src/config/ConfigKeys.h>
 #include "MarkerLand.h"
 
 
-MarkerLand::MarkerLand(){
+MarkerLand::MarkerLand(Config* config){
+
+    pitchvelfactor = config->Get(ConfigKeys::Land::PitchVelFactor);
+    rollvelfactor = config->Get(ConfigKeys::Land::RollVelFactor);
+    gazvelfactor = config->Get(ConfigKeys::Land::GazVelFactor);
+
+    landAltitude = config->Get(ConfigKeys::Land::LandAltitude);
+
+    pitchtolerance = config->Get(ConfigKeys::Land::PitchTolerance);
+    rolltolerance = config->Get(ConfigKeys::Land::RollTolerance);
+
+    gazpreland = config->Get(ConfigKeys::Land::GazAdjustment);
+    pitchpreland = config->Get(ConfigKeys::Land::PitchAdjustment);
+    rollpreland = config->Get(ConfigKeys::Land::RollAdjustment);
 
     this->state = LandingState::Inactive;
     lastres.pitch = 0;
@@ -213,7 +227,7 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 res.pitch = lastres.pitch;
                 res.roll = lastres.roll;
                 res.yaw = lastres.yaw;
-                res.gaz = withoutReferencePitch;
+                res.gaz = withoutReferenceGaz;
             }
 
         }

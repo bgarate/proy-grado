@@ -55,6 +55,17 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Brain::LowBatteryLevel, 20);
     config->Set(ConfigKeys::Brain::CriticalBatteryLevel, 10);
 
+    config->Set(ConfigKeys::Land::MarkerDetectTolerance, 0.2f);
+    config->Set(ConfigKeys::Land::PitchVelFactor, 0.06f);
+    config->Set(ConfigKeys::Land::RollVelFactor, 0.08f);
+    config->Set(ConfigKeys::Land::GazVelFactor, 0.05f);
+    config->Set(ConfigKeys::Land::LandAltitude, 1.0f);
+    config->Set(ConfigKeys::Land::PitchTolerance, 0.01f);
+    config->Set(ConfigKeys::Land::RollTolerance, 0.005f);
+    config->Set(ConfigKeys::Land::GazAdjustment, -0.5f);
+    config->Set(ConfigKeys::Land::PitchAdjustment, 0.8f);
+    config->Set(ConfigKeys::Land::RollAdjustment, -0.4f);
+
     World world = getWorld(config);
     config->SetWorld(world);
 

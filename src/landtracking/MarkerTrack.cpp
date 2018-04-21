@@ -1,6 +1,9 @@
+#include <src/config/ConfigKeys.h>
 #include "MarkerTrack.h"
 
-MarkerTrack::MarkerTrack(){
+MarkerTrack::MarkerTrack(Config* config){
+
+    this->squareTolerance = config->Get(ConfigKeys::Land::MarkerDetectTolerance);
 }
 
 std::vector<cv::Point> MarkerTrack::Track(std::shared_ptr<cv::Mat> frame){
