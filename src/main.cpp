@@ -21,7 +21,7 @@
 
 void welcome_message() {
     std::cout << "PROYECTO DE GRADO - 2017" << std::endl;
-    std::cout << "Inteligencia computacional para la planificación de vuelo de vehículos aéreos no tripulados" << std::endl;
+    std::cout << "Planificación e instrumentación de vuelo de una flotilla de drones" << std::endl;
     std::cout << "Santiago Díaz, Bruno Garate, Sergio Nesmachnow, Santiago Iturriaga" << std::endl << std::endl;
 }
 
