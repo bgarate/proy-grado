@@ -1,9 +1,5 @@
 syntax = "proto3";
 
-import "ping.proto";
-import "shutdown.proto";
-import "advertisement.proto";
-import "hello.proto";
 import "dronestate.proto";
 
 
@@ -12,17 +8,9 @@ message Message {
     Type type = 1;
 
     enum Type {
-        PING = 0;
-        SHUTDOWN = 1;
-        ADVERTISEMENT = 2;
-        HELLO = 3;
-        DRONESTATE = 4;
+        DRONESTATE = 0;
     }
 
-    Ping ping = 100;
-    DoShutdown shutdown = 101;
-    Advertisement advertisement = 102;
-    Hello hello = 103;
-    DroneState dronestate = 104;
+    DroneState dronestate = 100;
 
 }

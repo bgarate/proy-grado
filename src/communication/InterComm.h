@@ -5,11 +5,8 @@
 #ifndef PROY_GRADO_INTERCOMM_H
 #define PROY_GRADO_INTERCOMM_H
 
-#include "../messages/Connection.h"
-#include "../messages/AsyncSocketChannel.h"
 #include "../config/Config.h"
 #include "../messages/Broadcaster.h"
-#include "../messages/SocketChannel.h"
 #include "../messages/MessageHandler.h"
 
 class InterComm {

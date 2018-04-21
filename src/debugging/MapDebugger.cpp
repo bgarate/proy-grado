@@ -24,7 +24,7 @@ MapDebugger::MapDebugger(Config *config, World* world) :
     this->config = config;
     this->world = world;
     drone = world->getDrones()[0];
-    this->SCALE = config->Get(ConfigKeys::Debugging::NavigationDebuggerScale);
+    this->SCALE = config->Get(ConfigKeys::Debugging::MapDebuggerScale);
 }
 
 

@@ -29,33 +29,17 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
-#include "ping.pb.h"
-#include "shutdown.pb.h"
-#include "advertisement.pb.h"
-#include "hello.pb.h"
 #include "dronestate.pb.h"
 // @@protoc_insertion_point(includes)
-class Advertisement;
-class AdvertisementDefaultTypeInternal;
-extern AdvertisementDefaultTypeInternal _Advertisement_default_instance_;
-class DoShutdown;
-class DoShutdownDefaultTypeInternal;
-extern DoShutdownDefaultTypeInternal _DoShutdown_default_instance_;
 class DroneState;
 class DroneStateDefaultTypeInternal;
 extern DroneStateDefaultTypeInternal _DroneState_default_instance_;
 class DroneState_Point;
 class DroneState_PointDefaultTypeInternal;
 extern DroneState_PointDefaultTypeInternal _DroneState_Point_default_instance_;
-class Hello;
-class HelloDefaultTypeInternal;
-extern HelloDefaultTypeInternal _Hello_default_instance_;
 class Message;
 class MessageDefaultTypeInternal;
 extern MessageDefaultTypeInternal _Message_default_instance_;
-class Ping;
-class PingDefaultTypeInternal;
-extern PingDefaultTypeInternal _Ping_default_instance_;
 
 namespace protobuf_message_2eproto {
 // Internal implementation detail -- do not call these.
@@ -69,16 +53,12 @@ void InitDefaults();
 }  // namespace protobuf_message_2eproto
 
 enum Message_Type {
-  Message_Type_PING = 0,
-  Message_Type_SHUTDOWN = 1,
-  Message_Type_ADVERTISEMENT = 2,
-  Message_Type_HELLO = 3,
-  Message_Type_DRONESTATE = 4,
+  Message_Type_DRONESTATE = 0,
   Message_Type_Message_Type_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
   Message_Type_Message_Type_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
 bool Message_Type_IsValid(int value);
-const Message_Type Message_Type_Type_MIN = Message_Type_PING;
+const Message_Type Message_Type_Type_MIN = Message_Type_DRONESTATE;
 const Message_Type Message_Type_Type_MAX = Message_Type_DRONESTATE;
 const int Message_Type_Type_ARRAYSIZE = Message_Type_Type_MAX + 1;
 
@@ -160,14 +140,6 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   // nested types ----------------------------------------------------
 
   typedef Message_Type Type;
-  static const Type PING =
-    Message_Type_PING;
-  static const Type SHUTDOWN =
-    Message_Type_SHUTDOWN;
-  static const Type ADVERTISEMENT =
-    Message_Type_ADVERTISEMENT;
-  static const Type HELLO =
-    Message_Type_HELLO;
   static const Type DRONESTATE =
     Message_Type_DRONESTATE;
   static inline bool Type_IsValid(int value) {
@@ -193,46 +165,10 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
 
   // accessors -------------------------------------------------------
 
-  // .Ping ping = 100;
-  bool has_ping() const;
-  void clear_ping();
-  static const int kPingFieldNumber = 100;
-  const ::Ping& ping() const;
-  ::Ping* mutable_ping();
-  ::Ping* release_ping();
-  void set_allocated_ping(::Ping* ping);
-
-  // .DoShutdown shutdown = 101;
-  bool has_shutdown() const;
-  void clear_shutdown();
-  static const int kShutdownFieldNumber = 101;
-  const ::DoShutdown& shutdown() const;
-  ::DoShutdown* mutable_shutdown();
-  ::DoShutdown* release_shutdown();
-  void set_allocated_shutdown(::DoShutdown* shutdown);
-
-  // .Advertisement advertisement = 102;
-  bool has_advertisement() const;
-  void clear_advertisement();
-  static const int kAdvertisementFieldNumber = 102;
-  const ::Advertisement& advertisement() const;
-  ::Advertisement* mutable_advertisement();
-  ::Advertisement* release_advertisement();
-  void set_allocated_advertisement(::Advertisement* advertisement);
-
-  // .Hello hello = 103;
-  bool has_hello() const;
-  void clear_hello();
-  static const int kHelloFieldNumber = 103;
-  const ::Hello& hello() const;
-  ::Hello* mutable_hello();
-  ::Hello* release_hello();
-  void set_allocated_hello(::Hello* hello);
-
-  // .DroneState dronestate = 104;
+  // .DroneState dronestate = 100;
   bool has_dronestate() const;
   void clear_dronestate();
-  static const int kDronestateFieldNumber = 104;
+  static const int kDronestateFieldNumber = 100;
   const ::DroneState& dronestate() const;
   ::DroneState* mutable_dronestate();
   ::DroneState* release_dronestate();
@@ -248,10 +184,6 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::Ping* ping_;
-  ::DoShutdown* shutdown_;
-  ::Advertisement* advertisement_;
-  ::Hello* hello_;
   ::DroneState* dronestate_;
   int type_;
   mutable int _cached_size_;
@@ -279,163 +211,7 @@ inline void Message::set_type(::Message_Type value) {
   // @@protoc_insertion_point(field_set:Message.type)
 }
 
-// .Ping ping = 100;
-inline bool Message::has_ping() const {
-  return this != internal_default_instance() && ping_ != NULL;
-}
-inline void Message::clear_ping() {
-  if (GetArenaNoVirtual() == NULL && ping_ != NULL) delete ping_;
-  ping_ = NULL;
-}
-inline const ::Ping& Message::ping() const {
-  // @@protoc_insertion_point(field_get:Message.ping)
-  return ping_ != NULL ? *ping_
-                         : *::Ping::internal_default_instance();
-}
-inline ::Ping* Message::mutable_ping() {
-  
-  if (ping_ == NULL) {
-    ping_ = new ::Ping;
-  }
-  // @@protoc_insertion_point(field_mutable:Message.ping)
-  return ping_;
-}
-inline ::Ping* Message::release_ping() {
-  // @@protoc_insertion_point(field_release:Message.ping)
-  
-  ::Ping* temp = ping_;
-  ping_ = NULL;
-  return temp;
-}
-inline void Message::set_allocated_ping(::Ping* ping) {
-  delete ping_;
-  ping_ = ping;
-  if (ping) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_set_allocated:Message.ping)
-}
-
-// .DoShutdown shutdown = 101;
-inline bool Message::has_shutdown() const {
-  return this != internal_default_instance() && shutdown_ != NULL;
-}
-inline void Message::clear_shutdown() {
-  if (GetArenaNoVirtual() == NULL && shutdown_ != NULL) delete shutdown_;
-  shutdown_ = NULL;
-}
-inline const ::DoShutdown& Message::shutdown() const {
-  // @@protoc_insertion_point(field_get:Message.shutdown)
-  return shutdown_ != NULL ? *shutdown_
-                         : *::DoShutdown::internal_default_instance();
-}
-inline ::DoShutdown* Message::mutable_shutdown() {
-  
-  if (shutdown_ == NULL) {
-    shutdown_ = new ::DoShutdown;
-  }
-  // @@protoc_insertion_point(field_mutable:Message.shutdown)
-  return shutdown_;
-}
-inline ::DoShutdown* Message::release_shutdown() {
-  // @@protoc_insertion_point(field_release:Message.shutdown)
-  
-  ::DoShutdown* temp = shutdown_;
-  shutdown_ = NULL;
-  return temp;
-}
-inline void Message::set_allocated_shutdown(::DoShutdown* shutdown) {
-  delete shutdown_;
-  shutdown_ = shutdown;
-  if (shutdown) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_set_allocated:Message.shutdown)
-}
-
-// .Advertisement advertisement = 102;
-inline bool Message::has_advertisement() const {
-  return this != internal_default_instance() && advertisement_ != NULL;
-}
-inline void Message::clear_advertisement() {
-  if (GetArenaNoVirtual() == NULL && advertisement_ != NULL) delete advertisement_;
-  advertisement_ = NULL;
-}
-inline const ::Advertisement& Message::advertisement() const {
-  // @@protoc_insertion_point(field_get:Message.advertisement)
-  return advertisement_ != NULL ? *advertisement_
-                         : *::Advertisement::internal_default_instance();
-}
-inline ::Advertisement* Message::mutable_advertisement() {
-  
-  if (advertisement_ == NULL) {
-    advertisement_ = new ::Advertisement;
-  }
-  // @@protoc_insertion_point(field_mutable:Message.advertisement)
-  return advertisement_;
-}
-inline ::Advertisement* Message::release_advertisement() {
-  // @@protoc_insertion_point(field_release:Message.advertisement)
-  
-  ::Advertisement* temp = advertisement_;
-  advertisement_ = NULL;
-  return temp;
-}
-inline void Message::set_allocated_advertisement(::Advertisement* advertisement) {
-  delete advertisement_;
-  advertisement_ = advertisement;
-  if (advertisement) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_set_allocated:Message.advertisement)
-}
-
-// .Hello hello = 103;
-inline bool Message::has_hello() const {
-  return this != internal_default_instance() && hello_ != NULL;
-}
-inline void Message::clear_hello() {
-  if (GetArenaNoVirtual() == NULL && hello_ != NULL) delete hello_;
-  hello_ = NULL;
-}
-inline const ::Hello& Message::hello() const {
-  // @@protoc_insertion_point(field_get:Message.hello)
-  return hello_ != NULL ? *hello_
-                         : *::Hello::internal_default_instance();
-}
-inline ::Hello* Message::mutable_hello() {
-  
-  if (hello_ == NULL) {
-    hello_ = new ::Hello;
-  }
-  // @@protoc_insertion_point(field_mutable:Message.hello)
-  return hello_;
-}
-inline ::Hello* Message::release_hello() {
-  // @@protoc_insertion_point(field_release:Message.hello)
-  
-  ::Hello* temp = hello_;
-  hello_ = NULL;
-  return temp;
-}
-inline void Message::set_allocated_hello(::Hello* hello) {
-  delete hello_;
-  hello_ = hello;
-  if (hello) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_set_allocated:Message.hello)
-}
-
-// .DroneState dronestate = 104;
+// .DroneState dronestate = 100;
 inline bool Message::has_dronestate() const {
   return this != internal_default_instance() && dronestate_ != NULL;
 }

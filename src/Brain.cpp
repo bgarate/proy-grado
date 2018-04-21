@@ -7,7 +7,6 @@
 #include "debugging/MapDebugger.h"
 #include "utils/Helpers.h"
 #include "proto/message.pb.h"
-#include "communication/BrainComm.h"
 #include "Brain.h"
 #include "logging/Logger.h"
 #include "config/Config.h"
@@ -34,7 +33,7 @@ void Brain::setup(Config* config, SharedMemory* shared) {
     Logger::getInstance().setSource("BRAIN");
 
     //MapDebugger
-    mapEnabled = config->Get(ConfigKeys::Debugging::MapDebuggerInBrain);
+    mapEnabled = config->Get(ConfigKeys::Debugging::MapDebuggerEnabled);
 
     world = config->GetWorld();
 

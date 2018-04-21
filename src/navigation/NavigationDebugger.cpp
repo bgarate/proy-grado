@@ -18,7 +18,7 @@ void NavigationDebugger::Init(Config* config) {
     World noPtrWorld = config->GetWorld();
     this->world = &noPtrWorld;
     drone = world->getDrones()[0];
-    this->SCALE = config->Get(ConfigKeys::Debugging::NavigationDebuggerScale);
+    this->SCALE = config->Get(ConfigKeys::Debugging::MapDebuggerScale);
 
     surface = cairo_create_x11_surface0(SIZE.width,SIZE.height);
     cr = cairo_create(surface);

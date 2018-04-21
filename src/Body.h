@@ -9,10 +9,7 @@
 #include <src/navigation/NavigationDebugger.h>
 #include <src/stateMachine/BodyStateMachine.h>
 #include <src/systems/SystemManager.h>
-#include "communication/BodyComm.h"
 #include "hal/ManualControl.h"
-#include "messages/SocketChannel.h"
-#include "messages/MessageHandler.h"
 #include "hal/hal.hpp"
 #include "config/Config.h"
 #include "debugging/VisualDebugger.h"

@@ -29,6 +29,7 @@ public:
         control->getSystemManager()->Disable<FollowerSystem>();
         control->getSystemManager()->Enable<PadLandingSystem>();
         control->getSystemManager()->Disable<MarkerTrackerSystem>();
+        control->getSystemManager()->Disable<PadLandingSystem>();
 
         this->myid = config->Get(ConfigKeys::Drone::Id);
 

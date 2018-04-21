@@ -27,14 +27,7 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Drone::CameraMatrix, cv::Mat(3,3,CV_64F,cameraMatrix));
     config->Set(ConfigKeys::Drone::DistortionCoefficients, cv::Mat(5,1,CV_64F,distortionCoefficients));
 
-    config->Set(ConfigKeys::Communications::BrainHost, std::string("localhost"));
-    config->Set(ConfigKeys::Communications::BrainPort, 11500);
     config->Set(ConfigKeys::Communications::BroadcastPort, 11501);
-    config->Set(ConfigKeys::Communications::AdvertisementLapse, 5000);
-    config->Set(ConfigKeys::Communications::CommunicationPort, 11502);
-    config->Set(ConfigKeys::Communications::PingTimeout, 10000);
-    config->Set(ConfigKeys::Communications::PingLapse, 5000);
-    config->Set(ConfigKeys::Communications::PingEnabled, false);
     config->Set(ConfigKeys::Communications::StateSendLapse, 300);
     config->Set(ConfigKeys::Communications::StateExpireLapse, 5000);
 
@@ -43,13 +36,12 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Debugging::OutputRawVideoEnabled, false);
     config->Set(ConfigKeys::Debugging::OutputPath, std::string(""));
     config->Set(ConfigKeys::Debugging::RealTimeVideoOutputEnabled, false);
-    config->Set(ConfigKeys::Debugging::NavigationDebuggerScale, 50);
-    config->Set(ConfigKeys::Debugging::MapDebuggerInBrain, true);
+    config->Set(ConfigKeys::Debugging::MapDebuggerScale, 50);
+    config->Set(ConfigKeys::Debugging::MapDebuggerEnabled, true);
 
     config->Set(ConfigKeys::Body::SleepDelay, 0);
     config->Set(ConfigKeys::Body::Start, true);
     config->Set(ConfigKeys::Body::Hal,HalType::Dummy);
-    config->Set(ConfigKeys::Body::ParentOnFork,true);
     config->Set(ConfigKeys::Body::TestToExecute,std::string("TrackMarkers"));
     config->Set(ConfigKeys::Body::DummyCameraVideoSource,std::string("-1")); // ../sample-input/drone2.mp4
     config->Set(ConfigKeys::Body::CascadeDetector,std::string("../resources/pedestrian_cascade_web_LBP.xml"));
@@ -61,7 +53,7 @@ void ConfigDefaults::SetDefaults(Config* config) {
 
     config->Set(ConfigKeys::Brain::Start, true);
     config->Set(ConfigKeys::Brain::LowBatteryLevel, 20);
-    config->Set(ConfigKeys::Brain::CriticalBatteryLevel, 5);
+    config->Set(ConfigKeys::Brain::CriticalBatteryLevel, 10);
 
     World world = getWorld(config);
     config->SetWorld(world);
