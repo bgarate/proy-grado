@@ -18,7 +18,7 @@ void InterComm::setupInterComm(Config* config, bool active){
     this->active = active;
 
     IpResolver resolver;
-    ip = resolver.resolve();
+    ip = resolver.resolve_ip();
 
     if(active) {
         this->name = config->Get(ConfigKeys::Drone::Name);
@@ -179,7 +179,7 @@ void InterComm::sendState() {
         seqNum = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
         state->set_seq_num(seqNum);
 
-        //broadcaster.broadcast(msg);
+        broadcaster.broadcast(msg);
         //Logger::logDebug("State sent");
 
         lastStateSend = runningTime;

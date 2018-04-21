@@ -66,7 +66,7 @@ bool SocketChannel::isServer() {
 void SocketChannel::serve(unsigned short port) {
 
     IpResolver resolver;
-    boost::asio::ip::address_v4 ip = resolver.resolve();
+    boost::asio::ip::address_v4 ip = resolver.resolve_ip();
     Logger::logDebug("Starting server on %s:%u") << ip.to_string() << port;
 
     tcp::acceptor acceptor(service, tcp::endpoint(tcp::v4(), port));

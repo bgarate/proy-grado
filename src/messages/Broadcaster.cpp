@@ -4,8 +4,10 @@
 
 #include "Broadcaster.h"
 #include "PackedMessage.h"
+#include "IpResolver.h"
 
 #include <boost/asio/write.hpp>
+#include <iostream>
 
 namespace asio = boost::asio;
 
@@ -16,7 +18,8 @@ void Broadcaster::setup(unsigned short port) {
     socket->set_option(udp::socket::reuse_address(true));
     socket->set_option(asio::socket_base::broadcast(true));
 
-    endpoint = udp::endpoint(asio::ip::address_v4::broadcast(), port);
+    IpResolver ipr;
+    endpoint = udp::endpoint(ipr.resolve_broadcast(), port);
     socket->bind(udp::endpoint(asio::ip::address_v4::any(),port));
 
     this->port = port;

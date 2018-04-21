@@ -15,7 +15,9 @@
 
 class IpResolver {
 public:
-    boost::asio::ip::address_v4 resolve(bool includeLoopback = false, std::string interface = "");
+    boost::asio::ip::address_v4 resolve_ip(bool includeLoopback = false, std::string interface = "");
+
+    boost::asio::ip::address_v4 resolve_broadcast(bool includeLoopback = false, std::string interface = "");
 };
 
 
