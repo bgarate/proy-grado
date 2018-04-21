@@ -289,8 +289,14 @@ void Brain::loop() {
 
         }
 
-        if(mapDebugger->isStateForced())
+        if(mapDebugger->isStateForced()) {
             brainInfo.currentTask = mapDebugger->getForcedState();
+            interComm->droneStates[myid]->set_current_task(MapCurrentTask(brainInfo.currentTask));
+            switch (brainInfo.currentTask) {
+                case BrainInfo::GOINGTOPAD:
+                    brainInfo.currentPadId = pads.front()->getId();
+            }
+        }
 
         //Actualizar map debugger
         double timeLapse = runningTime - lastRefreshTime;
@@ -329,4 +335,29 @@ void Brain::shutdown() {
 
 void Brain::cleanup() {
     Logger::logInfo("Cleaning up");
+}
+
+DroneState_CurrentTask Brain::MapCurrentTask(BrainInfo::CurrentTask task) {
+    switch (task) {
+        case BrainInfo::INNACTIVE:
+            return DroneState_CurrentTask_INNACTIVE;
+        case BrainInfo::PATROLING:
+            return DroneState_CurrentTask_PATROLING;
+        case BrainInfo::FOLLOWING:
+            return DroneState_CurrentTask_FOLLOWING;
+        case BrainInfo::ALERT:
+            return DroneState_CurrentTask_ALERT;
+        case BrainInfo::CHARGING:
+            return DroneState_CurrentTask_CHARGING;
+        case BrainInfo::CHARGED:
+            return DroneState_CurrentTask_CHARGED;
+        case BrainInfo::BACKFROMPAD:
+            return DroneState_CurrentTask_BACKFROMPAD;
+        case BrainInfo::GOINGTOPAD:
+            return DroneState_CurrentTask_GOINGTOPAD;
+        case BrainInfo::SHUTDOWN:
+            return DroneState_CurrentTask_SHUTDOWN;
+        default:
+            throw new std::runtime_error("CurrentTask desconocida");
+    };
 }

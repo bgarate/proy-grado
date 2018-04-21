@@ -26,12 +26,14 @@ const cv::Scalar VisualDebugger::CYAN_COLOR = cv::Scalar(255,255,0);
 void VisualDebugger::setup(Config *config) {
     this->config = config;
     windowName = "VisualDebugger";
+    opticalFlowWindowName = "Optical Flow";
+
 
     if(config->Get(ConfigKeys::Debugging::VisualDebugEnabled)) {
         cv::namedWindow(windowName, cv::WINDOW_AUTOSIZE);
+        cv::moveWindow(windowName, 1024, 10);
         cv::setMouseCallback(windowName, VisualDebugger::onMouse, this);
     }
-
 
     follower = new Follower(config);
     shouldOpen = config->Get(ConfigKeys::Debugging::OutputRawVideoEnabled) || config->Get(ConfigKeys::Debugging::OutputHudVideoEnabled);
@@ -499,7 +501,8 @@ void VisualDebugger::OpticalFlow(OpticalFlowPoints *points) {
             cv::circle(mask, points->ClustersCenters[l], 10, cv::Scalar(0, proximityColor, 0),-1);
         }
 
-        cv::imshow("Background", mask);
+        cv::imshow(opticalFlowWindowName, mask);
+        cv::moveWindow(opticalFlowWindowName, 1024, 500);
     }
 
 }

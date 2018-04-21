@@ -20,7 +20,7 @@
 #include "src/navigation/PathFollower.h"
 #include "../tracking/MultiTracker.h"
 
-enum class VisualParameterType {Tilt, Exposure, Saturation, WhiteBalance};
+enum class VisualParameterType {Tilt, Exposure, Saturation, WhiteBalance, OpticalFlow};
 
 class VisualParameter {
 public:
@@ -111,6 +111,8 @@ private:
                                                }};
 
     std::string windowName;
+    std::string opticalFlowWindowName;
+
     std::vector<std::string> console;
 
     static std::string getStateName(State state);
@@ -137,6 +139,7 @@ private:
     void ProcessInput(int key);
 
     void ShowParameters();
+
 };
 
 

@@ -118,7 +118,7 @@ void InitDefaults() {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] = {
-      "\n\020dronestate.proto\"\361\003\n\nDroneState\022\n\n\002ip\030"
+      "\n\020dronestate.proto\"\377\003\n\nDroneState\022\n\n\002ip\030"
       "\001 \001(\007\022\014\n\004port\030\002 \001(\r\022\020\n\010drone_id\030\003 \001(\r\022\017\n"
       "\007seq_num\030\004 \001(\003\022\014\n\004name\030\005 \001(\t\022#\n\010position"
       "\030\006 \001(\0132\021.DroneState.Point\022#\n\010rotation\030\007 "
@@ -127,14 +127,14 @@ void AddDescriptorsImpl() {
       "_level\030\t \001(\r\022\022\n\npad_in_use\030\n \001(\r\022\030\n\020cove"
       "red_drone_id\030\013 \001(\r\022,\n\021followed_position\030"
       "\014 \001(\0132\021.DroneState.Point\032(\n\005Point\022\t\n\001x\030\001"
-      " \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\"\201\001\n\013CurrentTa"
+      " \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\"\217\001\n\013CurrentTa"
       "sk\022\r\n\tINNACTIVE\020\000\022\r\n\tPATROLING\020\001\022\r\n\tFOLL"
       "OWING\020\002\022\t\n\005ALERT\020\003\022\014\n\010CHARGING\020\004\022\013\n\007CHAR"
-      "GED\020\005\022\017\n\013BACKFROMPAD\020\006\022\016\n\nGOINGTOPAD\020\007b\006"
-      "proto3"
+      "GED\020\005\022\017\n\013BACKFROMPAD\020\006\022\016\n\nGOINGTOPAD\020\007\022\014"
+      "\n\010SHUTDOWN\020\010b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 526);
+      descriptor, 540);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "dronestate.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -167,6 +167,7 @@ bool DroneState_CurrentTask_IsValid(int value) {
     case 5:
     case 6:
     case 7:
+    case 8:
       return true;
     default:
       return false;
@@ -182,6 +183,7 @@ const DroneState_CurrentTask DroneState::CHARGING;
 const DroneState_CurrentTask DroneState::CHARGED;
 const DroneState_CurrentTask DroneState::BACKFROMPAD;
 const DroneState_CurrentTask DroneState::GOINGTOPAD;
+const DroneState_CurrentTask DroneState::SHUTDOWN;
 const DroneState_CurrentTask DroneState::CurrentTask_MIN;
 const DroneState_CurrentTask DroneState::CurrentTask_MAX;
 const int DroneState::CurrentTask_ARRAYSIZE;
