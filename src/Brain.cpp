@@ -7,7 +7,6 @@
 #include "debugging/MapDebugger.h"
 #include "utils/Helpers.h"
 #include "proto/message.pb.h"
-#include "communication/BrainComm.h"
 #include "Brain.h"
 #include "logging/Logger.h"
 #include "config/Config.h"

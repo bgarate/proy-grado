@@ -7,10 +7,6 @@
 
 
 #include "communication/InterComm.h"
-#include "communication/BrainComm.h"
-#include "messages/SocketChannel.h"
-#include "messages/Broadcaster.h"
-#include "messages/MessageHandler.h"
 #include "config/Config.h"
 #include "debugging/MapDebugger.h"
 

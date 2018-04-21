@@ -46,11 +46,8 @@ set(SOURCE_FILES
         src/tracking/MultiTracker.cpp src/tracking/MultiTracker.h
         src/tracking/DetectAndTrack.cpp src/tracking/DetectAndTrack.h
         src/tracking/Track.cpp src/tracking/Track.h
-        src/messages/SocketChannel.cpp src/messages/SocketChannel.h
         src/bodytests/BodyTestRegistry.cpp src/bodytests/BodyTestRegistry.h
         src/bodytests/BodyTest.h src/bodytests/BodyTest1.cpp src/bodytests/BodyTest2.cpp
-        src/messages/Connection.cpp src/messages/Connection.h
-        src/messages/AsyncSocketChannel.cpp src/messages/AsyncSocketChannel.h
         src/messages/PackedMessage.h
         src/messages/MessageBuilder.cpp src/messages/MessageBuilder.h src/messages/MessageHandler.cpp src/messages/MessageHandler.h
         src/hal/HalType.hpp
@@ -60,7 +57,7 @@ set(SOURCE_FILES
         src/hal/pb2/pb2hal.cpp
         src/messages/Broadcaster.cpp src/messages/Broadcaster.h
         src/bodytests/FlightManeuver.cpp src/bodytests/Follow.cpp src/bodytests/PatrolAndFollow.cpp
-        src/messages/MessageQueue.cpp src/messages/MessageQueue.h src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h
+        src/hal/dummyHal/dummyHal.cpp src/hal/dummyHal/dummyHal.h
         src/messages/IpResolver.cpp src/messages/IpResolver.h src/hal/pb2/VideoDecoder.cpp src/hal/pb2/VideoDecoder.h
         src/hal/pb2/CommandHandler.cpp src/hal/pb2/CommandHandler.h src/tracking/AreaRect.h src/hal/ManualControl.cpp
         src/hal/ManualControl.h src/debugging/VisualDebugger.cpp src/debugging/VisualDebugger.h
@@ -81,8 +78,6 @@ set(SOURCE_FILES
         src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h
         src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h
         src/navigation/Path.cpp src/navigation/Path.h
-        src/communication/BrainComm.cpp src/communication/BrainComm.h
-        src/communication/BodyComm.cpp src/communication/BodyComm.h
         src/communication/InterComm.cpp src/communication/InterComm.h
         src/debugging/MapDebugger.cpp src/debugging/MapDebugger.h
         src/communication/SharedMemory.cpp src/communication/SharedMemory.h
@@ -92,7 +87,7 @@ set(SOURCE_FILES
         src/systems/SystemManager.h src/stateMachine/PatrollingState.h src/stateMachine/StepName.cpp src/stateMachine/BodyStateBase.cpp src/stateMachine/BodyStateBase.h src/systems/SystemBase.cpp src/systems/SystemBase.h src/stateMachine/FollowingState.cpp src/stateMachine/FollowingState.h src/systems/FollowerSystem.cpp src/systems/FollowerSystem.h src/stateMachine/GoToPad.h src/navigation/CommandGenerator.h src/systems/PadLandingSystem.cpp src/systems/PadLandingSystem.h src/systems/BatterySystem.h src/stateMachine/GoToPath.h src/stateMachine/AlertState.h src/stateMachine/ShutdownState.h)
 
 
-set(LANDTRACKING_MAIN src/landtracking/landtrack.cpp src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h
+set(LANDTRACKING_MAIN src/landtracking/MarkerTrack.cpp src/landtracking/MarkerTrack.h
         src/landtracking/MarkerLand.cpp src/landtracking/MarkerLand.h)
 set(CALIBRATION_MAIN src/calibration.cpp)
 set(MARKER_MAIN src/navigation/MarkerTracker.cpp src/navigation/MarkerTracker.h src/marker.cpp)

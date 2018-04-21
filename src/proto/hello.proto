@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-message Hello {
-    fixed32 ip = 1;
-    uint32 port = 2;
-    uint32 id = 3;
-    string name = 4;
-}

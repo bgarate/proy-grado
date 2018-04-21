@@ -35,10 +35,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, type_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, ping_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, shutdown_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, advertisement_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, hello_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Message, dronestate_),
 };
 
@@ -82,20 +78,8 @@ void TableStruct::InitDefaultsImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::internal::InitProtobufDefaults();
-  ::protobuf_ping_2eproto::InitDefaults();
-  ::protobuf_shutdown_2eproto::InitDefaults();
-  ::protobuf_advertisement_2eproto::InitDefaults();
-  ::protobuf_hello_2eproto::InitDefaults();
   ::protobuf_dronestate_2eproto::InitDefaults();
   _Message_default_instance_.DefaultConstruct();
-  _Message_default_instance_.get_mutable()->ping_ = const_cast< ::Ping*>(
-      ::Ping::internal_default_instance());
-  _Message_default_instance_.get_mutable()->shutdown_ = const_cast< ::DoShutdown*>(
-      ::DoShutdown::internal_default_instance());
-  _Message_default_instance_.get_mutable()->advertisement_ = const_cast< ::Advertisement*>(
-      ::Advertisement::internal_default_instance());
-  _Message_default_instance_.get_mutable()->hello_ = const_cast< ::Hello*>(
-      ::Hello::internal_default_instance());
   _Message_default_instance_.get_mutable()->dronestate_ = const_cast< ::DroneState*>(
       ::DroneState::internal_default_instance());
 }
@@ -107,25 +91,15 @@ void InitDefaults() {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] = {
-      "\n\rmessage.proto\032\nping.proto\032\016shutdown.pr"
-      "oto\032\023advertisement.proto\032\013hello.proto\032\020d"
-      "ronestate.proto\"\207\002\n\007Message\022\033\n\004type\030\001 \001("
-      "\0162\r.Message.Type\022\023\n\004ping\030d \001(\0132\005.Ping\022\035\n"
-      "\010shutdown\030e \001(\0132\013.DoShutdown\022%\n\radvertis"
-      "ement\030f \001(\0132\016.Advertisement\022\025\n\005hello\030g \001"
-      "(\0132\006.Hello\022\037\n\ndronestate\030h \001(\0132\013.DroneSt"
-      "ate\"L\n\004Type\022\010\n\004PING\020\000\022\014\n\010SHUTDOWN\020\001\022\021\n\rA"
-      "DVERTISEMENT\020\002\022\t\n\005HELLO\020\003\022\016\n\nDRONESTATE\020"
-      "\004b\006proto3"
+      "\n\rmessage.proto\032\020dronestate.proto\"_\n\007Mes"
+      "sage\022\033\n\004type\030\001 \001(\0162\r.Message.Type\022\037\n\ndro"
+      "nestate\030d \001(\0132\013.DroneState\"\026\n\004Type\022\016\n\nDR"
+      "ONESTATE\020\000b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 369);
+      descriptor, 138);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "message.proto", &protobuf_RegisterTypes);
-  ::protobuf_ping_2eproto::AddDescriptors();
-  ::protobuf_shutdown_2eproto::AddDescriptors();
-  ::protobuf_advertisement_2eproto::AddDescriptors();
-  ::protobuf_hello_2eproto::AddDescriptors();
   ::protobuf_dronestate_2eproto::AddDescriptors();
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
 }
@@ -150,10 +124,6 @@ const ::google::protobuf::EnumDescriptor* Message_Type_descriptor() {
 bool Message_Type_IsValid(int value) {
   switch (value) {
     case 0:
-    case 1:
-    case 2:
-    case 3:
-    case 4:
       return true;
     default:
       return false;
@@ -161,10 +131,6 @@ bool Message_Type_IsValid(int value) {
 }
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const Message_Type Message::PING;
-const Message_Type Message::SHUTDOWN;
-const Message_Type Message::ADVERTISEMENT;
-const Message_Type Message::HELLO;
 const Message_Type Message::DRONESTATE;
 const Message_Type Message::Type_MIN;
 const Message_Type Message::Type_MAX;
@@ -175,10 +141,6 @@ const int Message::Type_ARRAYSIZE;
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Message::kTypeFieldNumber;
-const int Message::kPingFieldNumber;
-const int Message::kShutdownFieldNumber;
-const int Message::kAdvertisementFieldNumber;
-const int Message::kHelloFieldNumber;
 const int Message::kDronestateFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -195,26 +157,6 @@ Message::Message(const Message& from)
       _internal_metadata_(NULL),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_ping()) {
-    ping_ = new ::Ping(*from.ping_);
-  } else {
-    ping_ = NULL;
-  }
-  if (from.has_shutdown()) {
-    shutdown_ = new ::DoShutdown(*from.shutdown_);
-  } else {
-    shutdown_ = NULL;
-  }
-  if (from.has_advertisement()) {
-    advertisement_ = new ::Advertisement(*from.advertisement_);
-  } else {
-    advertisement_ = NULL;
-  }
-  if (from.has_hello()) {
-    hello_ = new ::Hello(*from.hello_);
-  } else {
-    hello_ = NULL;
-  }
   if (from.has_dronestate()) {
     dronestate_ = new ::DroneState(*from.dronestate_);
   } else {
@@ -225,8 +167,8 @@ Message::Message(const Message& from)
 }
 
 void Message::SharedCtor() {
-  ::memset(&ping_, 0, reinterpret_cast<char*>(&type_) -
-    reinterpret_cast<char*>(&ping_) + sizeof(type_));
+  ::memset(&dronestate_, 0, reinterpret_cast<char*>(&type_) -
+    reinterpret_cast<char*>(&dronestate_) + sizeof(type_));
   _cached_size_ = 0;
 }
 
@@ -236,18 +178,6 @@ Message::~Message() {
 }
 
 void Message::SharedDtor() {
-  if (this != internal_default_instance()) {
-    delete ping_;
-  }
-  if (this != internal_default_instance()) {
-    delete shutdown_;
-  }
-  if (this != internal_default_instance()) {
-    delete advertisement_;
-  }
-  if (this != internal_default_instance()) {
-    delete hello_;
-  }
   if (this != internal_default_instance()) {
     delete dronestate_;
   }
@@ -278,22 +208,6 @@ Message* Message::New(::google::protobuf::Arena* arena) const {
 
 void Message::Clear() {
 // @@protoc_insertion_point(message_clear_start:Message)
-  if (GetArenaNoVirtual() == NULL && ping_ != NULL) {
-    delete ping_;
-  }
-  ping_ = NULL;
-  if (GetArenaNoVirtual() == NULL && shutdown_ != NULL) {
-    delete shutdown_;
-  }
-  shutdown_ = NULL;
-  if (GetArenaNoVirtual() == NULL && advertisement_ != NULL) {
-    delete advertisement_;
-  }
-  advertisement_ = NULL;
-  if (GetArenaNoVirtual() == NULL && hello_ != NULL) {
-    delete hello_;
-  }
-  hello_ = NULL;
   if (GetArenaNoVirtual() == NULL && dronestate_ != NULL) {
     delete dronestate_;
   }
@@ -325,53 +239,9 @@ bool Message::MergePartialFromCodedStream(
         break;
       }
 
-      // .Ping ping = 100;
+      // .DroneState dronestate = 100;
       case 100: {
         if (tag == 802u) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_ping()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .DoShutdown shutdown = 101;
-      case 101: {
-        if (tag == 810u) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_shutdown()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .Advertisement advertisement = 102;
-      case 102: {
-        if (tag == 818u) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_advertisement()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .Hello hello = 103;
-      case 103: {
-        if (tag == 826u) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_hello()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .DroneState dronestate = 104;
-      case 104: {
-        if (tag == 834u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_dronestate()));
         } else {
@@ -410,34 +280,10 @@ void Message::SerializeWithCachedSizes(
       1, this->type(), output);
   }
 
-  // .Ping ping = 100;
-  if (this->has_ping()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      100, *this->ping_, output);
-  }
-
-  // .DoShutdown shutdown = 101;
-  if (this->has_shutdown()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      101, *this->shutdown_, output);
-  }
-
-  // .Advertisement advertisement = 102;
-  if (this->has_advertisement()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      102, *this->advertisement_, output);
-  }
-
-  // .Hello hello = 103;
-  if (this->has_hello()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      103, *this->hello_, output);
-  }
-
-  // .DroneState dronestate = 104;
+  // .DroneState dronestate = 100;
   if (this->has_dronestate()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      104, *this->dronestate_, output);
+      100, *this->dronestate_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:Message)
@@ -453,39 +299,11 @@ void Message::SerializeWithCachedSizes(
       1, this->type(), target);
   }
 
-  // .Ping ping = 100;
-  if (this->has_ping()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        100, *this->ping_, false, target);
-  }
-
-  // .DoShutdown shutdown = 101;
-  if (this->has_shutdown()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        101, *this->shutdown_, false, target);
-  }
-
-  // .Advertisement advertisement = 102;
-  if (this->has_advertisement()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        102, *this->advertisement_, false, target);
-  }
-
-  // .Hello hello = 103;
-  if (this->has_hello()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        103, *this->hello_, false, target);
-  }
-
-  // .DroneState dronestate = 104;
+  // .DroneState dronestate = 100;
   if (this->has_dronestate()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        104, *this->dronestate_, false, target);
+        100, *this->dronestate_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:Message)
@@ -496,35 +314,7 @@ size_t Message::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:Message)
   size_t total_size = 0;
 
-  // .Ping ping = 100;
-  if (this->has_ping()) {
-    total_size += 2 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->ping_);
-  }
-
-  // .DoShutdown shutdown = 101;
-  if (this->has_shutdown()) {
-    total_size += 2 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->shutdown_);
-  }
-
-  // .Advertisement advertisement = 102;
-  if (this->has_advertisement()) {
-    total_size += 2 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->advertisement_);
-  }
-
-  // .Hello hello = 103;
-  if (this->has_hello()) {
-    total_size += 2 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->hello_);
-  }
-
-  // .DroneState dronestate = 104;
+  // .DroneState dronestate = 100;
   if (this->has_dronestate()) {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -563,18 +353,6 @@ void Message::MergeFrom(const Message& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:Message)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_ping()) {
-    mutable_ping()->::Ping::MergeFrom(from.ping());
-  }
-  if (from.has_shutdown()) {
-    mutable_shutdown()->::DoShutdown::MergeFrom(from.shutdown());
-  }
-  if (from.has_advertisement()) {
-    mutable_advertisement()->::Advertisement::MergeFrom(from.advertisement());
-  }
-  if (from.has_hello()) {
-    mutable_hello()->::Hello::MergeFrom(from.hello());
-  }
   if (from.has_dronestate()) {
     mutable_dronestate()->::DroneState::MergeFrom(from.dronestate());
   }
@@ -606,10 +384,6 @@ void Message::Swap(Message* other) {
   InternalSwap(other);
 }
 void Message::InternalSwap(Message* other) {
-  std::swap(ping_, other->ping_);
-  std::swap(shutdown_, other->shutdown_);
-  std::swap(advertisement_, other->advertisement_);
-  std::swap(hello_, other->hello_);
   std::swap(dronestate_, other->dronestate_);
   std::swap(type_, other->type_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -637,163 +411,7 @@ void Message::set_type(::Message_Type value) {
   // @@protoc_insertion_point(field_set:Message.type)
 }
 
-// .Ping ping = 100;
-bool Message::has_ping() const {
-  return this != internal_default_instance() && ping_ != NULL;
-}
-void Message::clear_ping() {
-  if (GetArenaNoVirtual() == NULL && ping_ != NULL) delete ping_;
-  ping_ = NULL;
-}
-const ::Ping& Message::ping() const {
-  // @@protoc_insertion_point(field_get:Message.ping)
-  return ping_ != NULL ? *ping_
-                         : *::Ping::internal_default_instance();
-}
-::Ping* Message::mutable_ping() {
-  
-  if (ping_ == NULL) {
-    ping_ = new ::Ping;
-  }
-  // @@protoc_insertion_point(field_mutable:Message.ping)
-  return ping_;
-}
-::Ping* Message::release_ping() {
-  // @@protoc_insertion_point(field_release:Message.ping)
-  
-  ::Ping* temp = ping_;
-  ping_ = NULL;
-  return temp;
-}
-void Message::set_allocated_ping(::Ping* ping) {
-  delete ping_;
-  ping_ = ping;
-  if (ping) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_set_allocated:Message.ping)
-}
-
-// .DoShutdown shutdown = 101;
-bool Message::has_shutdown() const {
-  return this != internal_default_instance() && shutdown_ != NULL;
-}
-void Message::clear_shutdown() {
-  if (GetArenaNoVirtual() == NULL && shutdown_ != NULL) delete shutdown_;
-  shutdown_ = NULL;
-}
-const ::DoShutdown& Message::shutdown() const {
-  // @@protoc_insertion_point(field_get:Message.shutdown)
-  return shutdown_ != NULL ? *shutdown_
-                         : *::DoShutdown::internal_default_instance();
-}
-::DoShutdown* Message::mutable_shutdown() {
-  
-  if (shutdown_ == NULL) {
-    shutdown_ = new ::DoShutdown;
-  }
-  // @@protoc_insertion_point(field_mutable:Message.shutdown)
-  return shutdown_;
-}
-::DoShutdown* Message::release_shutdown() {
-  // @@protoc_insertion_point(field_release:Message.shutdown)
-  
-  ::DoShutdown* temp = shutdown_;
-  shutdown_ = NULL;
-  return temp;
-}
-void Message::set_allocated_shutdown(::DoShutdown* shutdown) {
-  delete shutdown_;
-  shutdown_ = shutdown;
-  if (shutdown) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_set_allocated:Message.shutdown)
-}
-
-// .Advertisement advertisement = 102;
-bool Message::has_advertisement() const {
-  return this != internal_default_instance() && advertisement_ != NULL;
-}
-void Message::clear_advertisement() {
-  if (GetArenaNoVirtual() == NULL && advertisement_ != NULL) delete advertisement_;
-  advertisement_ = NULL;
-}
-const ::Advertisement& Message::advertisement() const {
-  // @@protoc_insertion_point(field_get:Message.advertisement)
-  return advertisement_ != NULL ? *advertisement_
-                         : *::Advertisement::internal_default_instance();
-}
-::Advertisement* Message::mutable_advertisement() {
-  
-  if (advertisement_ == NULL) {
-    advertisement_ = new ::Advertisement;
-  }
-  // @@protoc_insertion_point(field_mutable:Message.advertisement)
-  return advertisement_;
-}
-::Advertisement* Message::release_advertisement() {
-  // @@protoc_insertion_point(field_release:Message.advertisement)
-  
-  ::Advertisement* temp = advertisement_;
-  advertisement_ = NULL;
-  return temp;
-}
-void Message::set_allocated_advertisement(::Advertisement* advertisement) {
-  delete advertisement_;
-  advertisement_ = advertisement;
-  if (advertisement) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_set_allocated:Message.advertisement)
-}
-
-// .Hello hello = 103;
-bool Message::has_hello() const {
-  return this != internal_default_instance() && hello_ != NULL;
-}
-void Message::clear_hello() {
-  if (GetArenaNoVirtual() == NULL && hello_ != NULL) delete hello_;
-  hello_ = NULL;
-}
-const ::Hello& Message::hello() const {
-  // @@protoc_insertion_point(field_get:Message.hello)
-  return hello_ != NULL ? *hello_
-                         : *::Hello::internal_default_instance();
-}
-::Hello* Message::mutable_hello() {
-  
-  if (hello_ == NULL) {
-    hello_ = new ::Hello;
-  }
-  // @@protoc_insertion_point(field_mutable:Message.hello)
-  return hello_;
-}
-::Hello* Message::release_hello() {
-  // @@protoc_insertion_point(field_release:Message.hello)
-  
-  ::Hello* temp = hello_;
-  hello_ = NULL;
-  return temp;
-}
-void Message::set_allocated_hello(::Hello* hello) {
-  delete hello_;
-  hello_ = hello;
-  if (hello) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_set_allocated:Message.hello)
-}
-
-// .DroneState dronestate = 104;
+// .DroneState dronestate = 100;
 bool Message::has_dronestate() const {
   return this != internal_default_instance() && dronestate_ != NULL;
 }
