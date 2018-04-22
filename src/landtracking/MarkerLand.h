@@ -46,13 +46,20 @@ private:
     float pitchpreland;
     float rollpreland;
 
-    const int maxSetpsWithoutReference = 100;
-    const float withoutReferenceGaz = 0.05;
+    long lastReferenceTime;
+    int moveWithoutReferenceTime;
 
-    const int contZeroVelTolerance = 5;
+    float withoutReferenceGaz;
 
-    int countWithoutReference;
-    int countZeroVel;
+    long firstAlignmentTime;
+    int stabilisationTime;
+
+    long deltaTime = 0;
+    long runningTime = 0;
+    std::chrono::steady_clock::time_point startTime;
+    std::chrono::steady_clock::time_point lastTime;
+    std::chrono::steady_clock::time_point newTime;
+
     bool preland;
 
     LandMoveCommand lastres;

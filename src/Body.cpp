@@ -49,7 +49,7 @@ void Body::loop() {
 
     Systems->Init(config, hal,shared, &visualDebugger, &navigationDebugger);
 
-    if(config->Get(ConfigKeys::Body::VirtualBody))
+    if(config->Get(ConfigKeys::VirtualBody::VirtualBodyEnabled))
         StateMachine->Init(StepName::VIRTUAL_DRONE,config,hal, shared, &visualDebugger, &navigationDebugger, Systems);
     else
         StateMachine->Init(StepName::TAKING_OFF,config,hal, shared, &visualDebugger, &navigationDebugger, Systems);

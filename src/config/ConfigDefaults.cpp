@@ -36,7 +36,7 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Debugging::OutputRawVideoEnabled, false);
     config->Set(ConfigKeys::Debugging::OutputPath, std::string(""));
     config->Set(ConfigKeys::Debugging::RealTimeVideoOutputEnabled, false);
-    config->Set(ConfigKeys::Debugging::MapDebuggerScale, 50);
+    config->Set(ConfigKeys::Debugging::MapDebuggerScale, 75);
     config->Set(ConfigKeys::Debugging::MapDebuggerEnabled, true);
 
     config->Set(ConfigKeys::Body::SleepDelay, 0);
@@ -46,7 +46,6 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Body::DummyCameraVideoSource,std::string("-1")); // ../sample-input/drone2.mp4
     config->Set(ConfigKeys::Body::CascadeDetector,std::string("../resources/pedestrian_cascade_web_LBP.xml"));
     config->Set(ConfigKeys::Body::TrackingSmoothingSamples, 10);
-    config->Set(ConfigKeys::Body::VirtualBody, true);
     config->Set(ConfigKeys::Body::Exposure, 0.0f);
     config->Set(ConfigKeys::Body::Saturation, 0.0f);
     config->Set(ConfigKeys::Body::WhiteBalance, WhiteBalanceMode::Auto);
@@ -76,6 +75,14 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Land::GazAdjustment, -0.5f);
     config->Set(ConfigKeys::Land::PitchAdjustment, 0.8f);
     config->Set(ConfigKeys::Land::RollAdjustment, -0.4f);
+    config->Set(ConfigKeys::Land::NoReferenceGazVel, 0.05f);
+    config->Set(ConfigKeys::Land::MoveWithoutRefereceTime, 2);
+    config->Set(ConfigKeys::Land::StabilizationTime, 1);
+
+    config->Set(ConfigKeys::VirtualBody::VirtualBodyEnabled, true);
+    config->Set(ConfigKeys::VirtualBody::VirtualBodySpeed, 0.5f);
+    config->Set(ConfigKeys::VirtualBody::VirtualBatteryDuraion, 60);
+    config->Set(ConfigKeys::VirtualBody::VirtualBatteryChargeTime, 10);
 
     World world = getWorld(config);
     config->SetWorld(world);

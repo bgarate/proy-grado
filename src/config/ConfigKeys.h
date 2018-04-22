@@ -48,7 +48,6 @@ struct ConfigKeys {
         CONFIG_KEY(Body, DummyCameraVideoSource, std::string)
         CONFIG_KEY(Body, CascadeDetector, std::string)
         CONFIG_KEY(Body, TrackingSmoothingSamples, int)
-        CONFIG_KEY(Body, VirtualBody, bool)
         CONFIG_KEY(Body, WhiteBalance, WhiteBalanceMode)
         CONFIG_KEY(Body, Saturation, float)
         CONFIG_KEY(Body, Exposure, float)
@@ -81,6 +80,16 @@ struct ConfigKeys {
         CONFIG_KEY(Land, GazAdjustment, float)
         CONFIG_KEY(Land, PitchAdjustment, float)
         CONFIG_KEY(Land, RollAdjustment, float)
+        CONFIG_KEY(Land, NoReferenceGazVel, float)
+        CONFIG_KEY(Land, MoveWithoutRefereceTime, int)
+        CONFIG_KEY(Land, StabilizationTime, int)
+    };
+
+    struct VirtualBody {
+        CONFIG_KEY(VirtualBody, VirtualBodyEnabled, bool)
+        CONFIG_KEY(VirtualBody, VirtualBodySpeed, float)
+        CONFIG_KEY(VirtualBody, VirtualBatteryDuraion, int)
+        CONFIG_KEY(VirtualBody, VirtualBatteryChargeTime, int)
     };
 };
 

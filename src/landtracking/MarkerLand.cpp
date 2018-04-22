@@ -18,6 +18,11 @@ MarkerLand::MarkerLand(Config* config){
     pitchpreland = config->Get(ConfigKeys::Land::PitchAdjustment);
     rollpreland = config->Get(ConfigKeys::Land::RollAdjustment);
 
+    withoutReferenceGaz = config->Get(ConfigKeys::Land::NoReferenceGazVel);
+
+    moveWithoutReferenceTime = config->Get(ConfigKeys::Land::MoveWithoutRefereceTime) * 1000 * 1000;
+    stabilisationTime = config->Get(ConfigKeys::Land::StabilizationTime) * 1000 * 1000;
+
     this->state = LandingState::Inactive;
     lastres.pitch = 0;
     lastres.roll = 0;
@@ -25,11 +30,18 @@ MarkerLand::MarkerLand(Config* config){
     lastres.gaz = 0;
     lastres.land = false;
     preland = false;
-    countWithoutReference = 0;
-    countZeroVel = 0;
+
+    startTime = std::chrono::steady_clock::now();
+    lastTime = startTime;
+    newTime = startTime;
 }
 
 LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameSize, double altitude){
+
+    lastTime = newTime;
+    newTime = std::chrono::steady_clock::now();
+    deltaTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - lastTime).count();
+    runningTime = std::chrono::duration_cast<std::chrono::microseconds>(newTime - startTime).count();
 
     LandMoveCommand res;
     res.pitch = 0;
@@ -47,7 +59,7 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
         if (points.size() > 0){
 
-            countWithoutReference = 0;
+            lastReferenceTime = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - startTime).count();
 
             if(points.size()>=3){//Centrar punto medio
 
@@ -135,15 +147,13 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 //Tengo que aterrizar?
                 if(std::abs(res.pitch)<pitchtolerance &&std::abs(res.roll)<rolltolerance &&std::abs(res.yaw)<yawtolerance){
 
-                    countZeroVel++;
-
-                    if(countZeroVel > contZeroVelTolerance){
+                    if(runningTime - firstAlignmentTime > stabilisationTime){
                         this->state = LandingState::Landing;
                         res.state = this->state;
                         return res;
                     }
                 } else {
-                    countZeroVel=0;
+                    firstAlignmentTime = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - startTime).count();
                 }
 
 
@@ -222,8 +232,7 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
         }else {
             //Buscar Puntos in referencia (sigo la ultima orden conocida)
 
-            countWithoutReference++;
-            if(countWithoutReference < maxSetpsWithoutReference){
+            if(runningTime - lastReferenceTime < moveWithoutReferenceTime){
                 res.pitch = lastres.pitch;
                 res.roll = lastres.roll;
                 res.yaw = lastres.yaw;

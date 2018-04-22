@@ -15,7 +15,7 @@
 #include <X11/Xutil.h>
 #include <src/communication/SharedMemory.h>
 
-const cv::Size MapDebugger::SIZE = cv::Size(640,480);
+const cv::Size MapDebugger::SIZE = cv::Size(800,600);
 cv::Point MapDebugger::ORIGIN = cv::Point(300,300);
 const double MapDebugger::dashPattern[1] = {4.0};
 

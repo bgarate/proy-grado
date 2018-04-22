@@ -32,6 +32,11 @@ public:
 
         this->myid = config->Get(ConfigKeys::Drone::Id);
 
+        this->speedMS = config->Get(ConfigKeys::VirtualBody::VirtualBodySpeed);
+
+        this->batteryDuration = config->Get(ConfigKeys::VirtualBody::VirtualBatteryDuraion) * 1000 * 1000;
+        this->chargeLapse = config->Get(ConfigKeys::VirtualBody::VirtualBatteryChargeTime) * 1000 * 1000;
+
         this->shared = shared;
 
     }
@@ -306,12 +311,12 @@ private:
     double nextRotation;
 
     long lastChange = 0;
-    long lapseToChange; //= 2 * 1000 * 1000;
-    float speedMS = 0.5;
+    long lapseToChange;
+    float speedMS;
 
     //Bateria simulada
-    int batteryDuration = 60 * 1000 * 1000;
-    long chargeLapse = 10 * 1000 * 1000;
+    int batteryDuration;
+    long chargeLapse;
 };
 
 
