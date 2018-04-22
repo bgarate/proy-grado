@@ -103,6 +103,8 @@ void Body::loop() {
         //navigationDebugger.Run(info.ExecutedCommand, info.CurrentTargetId, info.PredictedFuturePosition,
         //                        info.ProjectedPositionOnPath, info.TargetOnPath);
 
+
+        visualDebugger.setSystemsState(Systems->GetSystems());
         int key = visualDebugger.show(deltaTime);
 
         ProcessInput(key);

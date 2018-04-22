@@ -12,6 +12,10 @@ public:
 
     }
 
+    std::string GetName() override {
+        return "Optical flow";
+    }
+
 protected:
 
     void internalInit() override {

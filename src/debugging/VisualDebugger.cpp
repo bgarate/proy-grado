@@ -5,6 +5,7 @@
 #include <boost/format.hpp>
 #include <chrono>
 #include <src/utils/Helpers.h>
+#include <src/systems/System.h>
 #include "../tracking/OpticalFlow.h"
 #include "../landtracking/MarkerTrack.h"
 #include "src/navigation/PathFollower.h"
@@ -149,6 +150,30 @@ void VisualDebugger::captureImage() {
     cv::imwrite(imgPath, *originalFrame);
 
     Logger::logInfo("Capture saved to %s") << imgPath;
+
+}
+
+void VisualDebugger::setSystemsState(std::vector<ISystem*> systems) {
+
+
+    std::string testString = "[X] Jiljgt";
+    cv::Size textSize = cv::getTextSize(testString, CONSOLE_FONT, 1, 1, NULL);
+
+    float baseLine = (frame.size().height - (textSize.height + 5) * systems.size())/ 2;
+
+    cv::Point position(10, baseLine);
+
+    for (int i = 0; i < systems.size(); i++){
+
+        ISystem* system = systems[i];
+        std::string str1 = (boost::format("[%s] %s") % (system->Enabled ? "X" : " ") % system->GetName()).str();
+
+        cv::putText(frame, str1, position, CONSOLE_FONT, 1, VisualDebugger::RED_COLOR, 1, cv::LINE_AA);
+
+        position.y += textSize.height + 5;
+
+    }
+
 
 }
 

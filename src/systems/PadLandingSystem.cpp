@@ -8,6 +8,10 @@ void PadLandingSystem::Cleanup() {
 
 }
 
+std::string PadLandingSystem::GetName() {
+    return "Pad landing";
+};
+
 void PadLandingSystem::internalInit() {
 
     this->markTrack = new MarkerTrack(this->config);

@@ -31,6 +31,10 @@ public:
 
     }
 
+    std::string GetName() override {
+        return "Marker tracker";
+    };
+
     void internalUpdate(double deltaTime) override {
 
         std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);

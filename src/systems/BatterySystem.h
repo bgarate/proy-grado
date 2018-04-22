@@ -14,6 +14,10 @@ public:
 
     }
 
+    std::string GetName() override {
+        return "Battery";
+    };
+
 protected:
     void internalInit() override {
 

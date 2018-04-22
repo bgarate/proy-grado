@@ -11,7 +11,7 @@
 
 class FollowerSystem : public SystemBase {
     void Cleanup() override;
-
+    std::string GetName() override;
     void internalInit() override;
 
     void internalUpdate(double deltaTime) override;

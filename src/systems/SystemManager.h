@@ -37,6 +37,10 @@ public:
         }
     }
 
+    std::vector<ISystem*> GetSystems() {
+        return systems;
+    }
+
     template <class T>
     T* Get(){
         for (ISystem *s: systems) {
