@@ -20,7 +20,7 @@ public:
 
 protected:
     void internalInit() override {
-
+        Enabled = true;
     }
 
     void internalUpdate(double deltaTime) override {
