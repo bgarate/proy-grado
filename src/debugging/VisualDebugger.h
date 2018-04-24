@@ -20,6 +20,8 @@
 #include "src/navigation/PathFollower.h"
 #include "../tracking/MultiTracker.h"
 
+class ISystem;
+
 enum class VisualParameterType {Tilt, Exposure, Saturation, WhiteBalance, OpticalFlow};
 
 class VisualParameter {
@@ -74,6 +76,8 @@ public:
     void setParameters(std::vector<VisualParameter> parameters);
 
     std::vector<VisualParameter> getParameters();
+
+    void setSystemsState(std::vector<ISystem*> systems);
 
 private:
     Config* config;

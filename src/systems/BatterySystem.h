@@ -14,9 +14,13 @@ public:
 
     }
 
+    std::string GetName() override {
+        return "Battery";
+    };
+
 protected:
     void internalInit() override {
-
+        Enabled = true;
     }
 
     void internalUpdate(double deltaTime) override {

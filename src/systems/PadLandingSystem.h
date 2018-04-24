@@ -17,6 +17,7 @@ class PadLandingSystem : public SystemBase {
     void internalInit() override;
 
     void internalUpdate(double deltaTime) override;
+    std::string GetName() override;
 
 private:
     MarkerTrack* markTrack;

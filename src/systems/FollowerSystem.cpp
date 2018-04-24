@@ -20,6 +20,10 @@ void FollowerSystem::internalInit() {
 
 }
 
+std::string FollowerSystem::GetName() {
+    return "Follower";
+};
+
 void FollowerSystem::internalUpdate(double deltaTime) {
 
     std::shared_ptr<cv::Mat> frame = hal->getFrame(Camera::Front);
