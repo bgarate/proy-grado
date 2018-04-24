@@ -33,7 +33,15 @@ void Broadcaster::broadcast(Message msg) {
     writeBuffer.clear();
     packedMessage.pack(writeBuffer);
 
-    socket->send_to(asio::buffer(writeBuffer), endpoint);
+    try{
+
+        socket->send_to(asio::buffer(writeBuffer), endpoint);
+
+    }catch (boost::system::system_error const& e){
+
+        std::cout << "Error de red! : " << e.what() << std::endl;
+    }
+
 
 }
 
