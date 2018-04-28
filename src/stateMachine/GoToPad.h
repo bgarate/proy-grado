@@ -20,9 +20,9 @@ public:
         landing = false;
 
         control->getSystemManager()->Disable<FollowerSystem>();
-
         control->getSystemManager()->Enable<PadLandingSystem>();
         control->getSystemManager()->Enable<MarkerTrackerSystem>();
+        control->getSystemManager()->Enable<BatterySystem>();
     }
 
     void leave() override {

@@ -11,6 +11,7 @@
 #include <src/navigation/NavigationDebugger.h>
 #include <src/systems/PadLandingSystem.h>
 #include <src/systems/FollowerSystem.h>
+#include <src/systems/BatterySystem.h>
 #include "IBodyState.h"
 #include "StepName.h"
 #include "BodyStateBase.h"
@@ -26,6 +27,7 @@ public:
         control->getSystemManager()->Disable<FollowerSystem>();
         control->getSystemManager()->Disable<PadLandingSystem>();
         control->getSystemManager()->Disable<MarkerTrackerSystem>();
+        control->getSystemManager()->Enable<BatterySystem>();
     }
 
     void internalInit() override {

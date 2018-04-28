@@ -19,8 +19,8 @@ public:
     void prepare() override {
         control->getSystemManager()->Disable<FollowerSystem>();
         control->getSystemManager()->Disable<PadLandingSystem>();
-
         control->getSystemManager()->Enable<MarkerTrackerSystem>();
+        control->getSystemManager()->Enable<BatterySystem>();
     }
 
     void leave() override {

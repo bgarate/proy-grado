@@ -5,6 +5,7 @@
 #include <src/systems/FollowerSystem.h>
 #include <src/systems/MarkerTrackerSystem.h>
 #include <src/systems/PadLandingSystem.h>
+#include <src/systems/BatterySystem.h>
 #include "FollowingState.h"
 #include "StepName.h"
 
@@ -30,9 +31,9 @@ std::string FollowingState::getName() {
 
 void FollowingState::prepare() {
     control->getSystemManager()->Disable<PadLandingSystem>();
-
     control->getSystemManager()->Enable<FollowerSystem>();
     control->getSystemManager()->Enable<MarkerTrackerSystem>();
+    control->getSystemManager()->Enable<BatterySystem>();
 }
 
 void FollowingState::leave() {
