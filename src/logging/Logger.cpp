@@ -39,6 +39,13 @@ void Logger::initConsole(std::string name) {
 
 void Logger::Log(std::string msg, Logger::LogType severity) {
 
+    if(console == NULL){
+        std::ostringstream str;
+        str << "T" << std::this_thread::get_id();
+        initConsole(str.str());
+    }
+
+
     switch (severity){
         case LogType::CRITICAL:
             console->critical(msg);

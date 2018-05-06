@@ -45,7 +45,7 @@ public:
         double lateralSpped = targetVector[0] * speed;
         double yawSpeed = std::max(std::min(alignmentAngle / AlignmentAngleThreshold,1.0),-1.0) * YawMaxVelocity;
 
-        double deltaAltitude = targetVector[2] - Position[2];
+        double deltaAltitude = 2 - Position[2];//targetVector[2];
         double gaz = std::max(-1.0, std::min(1.0, (deltaAltitude / AltitudeSlowDownRadius)));
 
         return NavigationCommand(forwardSpeed,lateralSpped, yawSpeed, gaz);

@@ -14,9 +14,9 @@ PathFollower::PathFollower(Config *config, World *world) : PositionsHistory(1000
     this->world = world;
     drone = world->getDrones()[0];
 
-    double startAlignementDistance = config->Get(ConfigKeys::Body::StartAlignementDistance);
-    double targetReachedDistance = config->Get(ConfigKeys::Body::TargetReachedRadius);
-    double alignmentAngleThreshold = config->Get(ConfigKeys::Body::AlignmentAngleThreshold);
+    startAlignementDistance = config->Get(ConfigKeys::Body::StartAlignementDistance);
+    targetReachedDistance = config->Get(ConfigKeys::Body::TargetReachedRadius);
+    alignmentAngleThreshold = config->Get(ConfigKeys::Body::AlignmentAngleThreshold);
 
 }
 
