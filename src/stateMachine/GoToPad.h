@@ -20,7 +20,7 @@ public:
         landing = false;
 
         control->getSystemManager()->Disable<FollowerSystem>();
-        control->getSystemManager()->Enable<PadLandingSystem>();
+        control->getSystemManager()->Disable<PadLandingSystem>();
         control->getSystemManager()->Enable<MarkerTrackerSystem>();
         control->getSystemManager()->Enable<BatterySystem>();
     }
@@ -49,7 +49,7 @@ protected:
 
         LandMoveCommand landingCommand = bodyInfo.PadLandingCommand;
 
-        hal->setCameraTilt(Camera::Bottom);
+
 
         //Ya aterrizó
         if(landing) {
@@ -70,6 +70,20 @@ protected:
             NavigationCommand command = generator.getCommand(targetPosition, pad->getRotation()[2]);
 
             hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (command.Gaz * 100));
+
+            if (command.ForwardSpeed+command.YawSpeed+command.Gaz < 0.01){
+
+                hal->setCameraTilt(Camera::Bottom);
+                control->getSystemManager()->Enable<PadLandingSystem>();
+                control->getSystemManager()->Disable<MarkerTrackerSystem>();
+
+            } else {
+
+                hal->setCameraTilt(Camera::Middle);
+                control->getSystemManager()->Disable<PadLandingSystem>();
+                control->getSystemManager()->Enable<MarkerTrackerSystem>();
+
+            }
 
         //Se está alineando
         } else if(!landingCommand.land) {
