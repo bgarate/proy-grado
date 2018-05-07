@@ -4,7 +4,7 @@
 #ifndef PROY_GRADO_MARKERLAND_H
 #define PROY_GRADO_MARKERLAND_H
 
-enum class LandingState {Inactive, Centring, Landing};
+enum class LandingState {Inactive, Centring, Landing, Lost};
 
 class LandMoveCommand {
 public:

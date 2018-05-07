@@ -54,11 +54,25 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
 
     if(this->state == LandingState::Inactive){
 
-        this->state = LandingState::Centring;
-    } else if(this->state == LandingState::Centring){
+        this->state = LandingState::Lost;
+
+    } else if(this->state == LandingState::Landing){
+
+        if(!this->preland){
+            res.gaz = this->gazpreland;
+            res.pitch= this->pitchpreland;
+            res.roll= this->rollpreland;
+
+            this->preland=true;
+        } else{
+            res.land = true;
+        }
+
+    } else {
 
         if (points.size() > 0){
 
+            this->state = LandingState::Centring;
             lastReferenceTime = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - startTime).count();
 
             if(points.size()>=3){//Centrar punto medio
@@ -237,20 +251,10 @@ LandMoveCommand MarkerLand::land(std::vector<cv::Point> points, cv::Point frameS
                 res.roll = lastres.roll;
                 res.yaw = lastres.yaw;
                 res.gaz = withoutReferenceGaz;
+            } else {
+                this->state = LandingState::Lost;
             }
 
-        }
-
-    } else if(this->state == LandingState::Landing){
-
-        if(!this->preland){
-            res.gaz = this->gazpreland;
-            res.pitch= this->pitchpreland;
-            res.roll= this->rollpreland;
-
-            this->preland=true;
-        } else{
-            res.land = true;
         }
 
     }

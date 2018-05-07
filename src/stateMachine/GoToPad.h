@@ -33,10 +33,13 @@ public:
 
     }
 private:
+
     World world;
     double targetAltitude = 2;
     double altitudeSlowdownRadius = 1;
     bool landing = false;
+
+
 protected:
     void internalInit() override {
         world = config->GetWorld();
@@ -48,12 +51,12 @@ protected:
 
         hal->setCameraTilt(Camera::Bottom);
 
+        //Ya aterrizó
         if(landing) {
             if(hal->getState() == State::Landed){
                 bodyInfo.landedInPad = true;
             }
-        } if(landingCommand.state == LandingState::Inactive ||
-           std::abs(landingCommand.roll)+std::abs(landingCommand.pitch)+std::abs(landingCommand.yaw)<0.0001) {
+        } if(landingCommand.state == LandingState::Inactive || landingCommand.state == LandingState::Lost) {
 
             visualDebugger->setSubStatus("going-to-pad locating");
 
@@ -68,13 +71,24 @@ protected:
 
             hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (command.Gaz * 100));
 
+        //Se está alineando
         } else if(!landingCommand.land) {
             visualDebugger->setSubStatus("going-to-pad tracking");
             hal->move((int)(landingCommand.roll*100),(int)(landingCommand.pitch*100), (int)(-landingCommand.yaw * 100),(int)(landingCommand.gaz * 100));
+        //Aterrizar!
         } else {
             hal->land();
+            landing = true;
         }
 
+        if(landingCommand.state == LandingState::Inactive)
+            std::cout << "Inactive" << std::endl;
+        if(landingCommand.state == LandingState::Centring)
+            std::cout << "Centring" << std::endl;
+        if(landingCommand.state == LandingState::Lost)
+            std::cout << "Lost" << std::endl;
+        if(landingCommand.state == LandingState::Landing)
+            std::cout << "Landing" << std::endl;
     }
 
 };
