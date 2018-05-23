@@ -64,18 +64,20 @@ protected:
             int padId = brainInfo.currentPadId;
             WorldObject* pad = world.getPad(padId);
 
-            cv::Vec3d targetPosition = pad->getPosition();
+            cv::Vec2d aux = Helpers::rotate(cv::Vec2d(0,-0.5), pad->getRotation()[2]);
+            cv::Vec3d targetPosition = pad->getPosition()+cv::Vec3d(aux[0], aux[1], 0);
             targetPosition[2] = bodyInfo.CurrentPosition[2];
 
             NavigationCommand command = generator.getCommand(targetPosition, pad->getRotation()[2]);
 
             hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (command.Gaz * 100));
 
-            if (command.ForwardSpeed+command.YawSpeed+command.Gaz < 0.01){
+            std::cout << std::abs(command.ForwardSpeed)+std::abs(command.LateralSpeed)+std::abs(command.Gaz+command.YawSpeed) << std::endl;
+            if (std::abs(command.ForwardSpeed)+std::abs(command.LateralSpeed)+std::abs(command.Gaz+command.YawSpeed) < 0.1){
 
                 hal->setCameraTilt(Camera::Bottom);
                 control->getSystemManager()->Enable<PadLandingSystem>();
-                control->getSystemManager()->Disable<MarkerTrackerSystem>();
+                //control->getSystemManager()->Disable<MarkerTrackerSystem>();
 
             } else {
 

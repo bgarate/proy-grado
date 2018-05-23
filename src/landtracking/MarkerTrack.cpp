@@ -45,7 +45,7 @@ std::vector<cv::Point> MarkerTrack::Track(std::shared_ptr<cv::Mat> frame){
 
     std::vector<cv::Point> squarePoints;
 
-    CalculateRedZones(*frame);
+    //CalculateRedZones(*frame);
 
     for( int i = 0; i < contours.size(); i++ ){
 
@@ -88,7 +88,7 @@ std::vector<cv::Point> MarkerTrack::Track(std::shared_ptr<cv::Mat> frame){
                     }
                 }
 
-                if(isnew && std::any_of(redRects.begin(),redRects.end(),[p](const cv::Rect r){return p.inside(r);})){
+                if(isnew /*&& std::any_of(redRects.begin(),redRects.end(),[p](const cv::Rect r){return p.inside(r);})*/){
                     squarePoints.push_back(p);
                 }
 
