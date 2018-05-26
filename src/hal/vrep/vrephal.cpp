@@ -431,8 +431,12 @@ public:
                                                    simx_opmode_blocking);
 
             //convertir imagen
-            cachedframe =
-                    std::shared_ptr<cv::Mat>(new cv::Mat(resolution[1], resolution[0], CV_8UC3, image));
+
+            if(image != NULL)
+                cachedframe = std::shared_ptr<cv::Mat>(new cv::Mat(resolution[1], resolution[0], CV_8UC3, image));
+            else
+                cachedframe = NULL;
+
             if (cachedframe != NULL && cachedframe->rows > 0 && cachedframe->cols > 0) {
                 cv::cvtColor(*cachedframe, *cachedframe, cv::COLOR_BGR2RGB);
                 cv::flip(*cachedframe, *cachedframe, 0);

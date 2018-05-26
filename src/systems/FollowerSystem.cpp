@@ -5,6 +5,7 @@
 #include <src/tracking/CascadeDetector.h>
 #include <src/utils/Helpers.h>
 #include <src/config/ConfigKeys.h>
+#include <src/tracking/HogDetector.h>
 #include "FollowerSystem.h"
 
 void FollowerSystem::Cleanup() {
@@ -14,6 +15,7 @@ void FollowerSystem::Cleanup() {
 void FollowerSystem::internalInit() {
 
     detector = new CascadeDetector(config->Get(ConfigKeys::Body::CascadeDetector));
+    //detector = new HogDetector();
     tracker = new MultiTracker(MultiTracker::Algorithm::KCF);
     detectAndTrack =  new DetectAndTrack(detector, tracker);
     follower = new Follower(config);

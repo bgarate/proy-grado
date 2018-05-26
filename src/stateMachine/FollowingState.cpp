@@ -14,10 +14,14 @@ void FollowingState::internalInit() {
 }
 
 void FollowingState::internalStep(double deltaTime) {
+
+    hal->setCameraTilt(Camera::Front);
+
     if(bodyInfo.intruderDetected) {
 
         NavigationCommand command = bodyInfo.FollowDetectionCommand;
 
+        visualDebugger->setNavigationCommand(command);
         hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (command.Gaz * 100));
 
         bodyInfo.ExecutedCommand = command;
@@ -32,7 +36,7 @@ std::string FollowingState::getName() {
 void FollowingState::prepare() {
     control->getSystemManager()->Disable<PadLandingSystem>();
     control->getSystemManager()->Enable<FollowerSystem>();
-    control->getSystemManager()->Enable<MarkerTrackerSystem>();
+    control->getSystemManager()->Disable<MarkerTrackerSystem>();
     control->getSystemManager()->Enable<BatterySystem>();
 }
 

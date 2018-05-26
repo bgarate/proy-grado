@@ -256,7 +256,7 @@ void Brain::loop() {
 
 
         //Si encontré un intruso
-        } else if(bodyInfo.intruderDetected && brainInfo.currentTask == BrainInfo::PATROLING && bodyInfo.inPath){
+        } else if(bodyInfo.intruderDetected && brainInfo.currentTask == BrainInfo::PATROLING /*&& bodyInfo.inPath*/){
 
             interComm->droneStates[myid]->set_current_task(DroneState::CurrentTask::DroneState_CurrentTask_FOLLOWING);
             brainInfo.currentTask = BrainInfo::FOLLOWING;
