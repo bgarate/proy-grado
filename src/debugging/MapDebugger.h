@@ -24,15 +24,63 @@ enum class Axis2 {
 
 class MapDebugger {
 public:
+    /**
+     * Constructor
+     *
+     * @param config clase con los configuración definidos en el parametro de configuración
+     * @param world clase con todos las posiciónes de los marcadores y las plataformas de carga
+     */
     MapDebugger(Config* config, World* world);
+
+    /**
+     * Ininializa el mapa
+     */
     void Init();
+
+    /**
+     * Elimina el mapa
+     */
     void Shutdown();
+
+    /**
+     * Step que actualiza la información del mapa
+     *
+     * @param droneStates conjunto de estados de todos los drones
+     * @param myid id del drone que esta mostrando el mapa
+     * @param path camino que actual
+     * @param deltaTime tiempo pasado desde la última iteración
+     * @return
+     */
     bool Run(std::map<int, DroneState*> droneStates, int myid, Path path, double deltaTime);
+
+    /**
+     * Actualiza los marcadores que son visibles por el drone
+     *
+     * @param visibleMarkers conjunto de marcadores visibles
+     */
     void setVisibleMarkers(std::vector<Marker> visibleMarkers);
 
+    /**
+     * Indica la tarea actual que esta realizando el dron está siendo forzado por un comando de debugging
+     *
+     * @return si el estado es forzado devuelve true, false en caso contrario.
+     */
     bool isStateForced();
+
+    /**
+     * Devuelve la tarea actual realizada por el dron, en caso de que isStateForced() sea true
+     *
+     * @return tarea actual que esta realizando el dron
+     */
     BrainInfo::CurrentTask getForcedState();
+
+    /**
+     * Actualiza la posición actual del drone en el mapa
+     *
+     * @param position vectro de tres componentes con la posición del dron
+     */
     void updatePosition(cv::Vec3d position);
+
 private:
     Config* config;
     World *world;

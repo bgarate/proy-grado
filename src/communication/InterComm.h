@@ -13,14 +13,36 @@ class InterComm {
 
 public:
 
+    /**
+     * Constructor
+     */
     InterComm();
 
+    /**
+     * Inicializa la comunicación
+     *
+     * @param config conjunto de parametros de configuración del programa
+     * @param active indica si difundir el estado o solo escuchar de forma pasiva
+     */
     void setupInterComm(Config* config, bool active);
 
+    /**
+     * Paso de la comunicación que debe ser ejectuado en cada interación
+     *
+     * @param runningTime tiempo pasado desde el inicio de la ejecución
+     * @param deltaTime tiempo pasado desde la anterior iteración
+     */
     void interCommStep(long runningTime, long deltaTime);
 
+    /**
+     * Termina la comunicación
+     */
     void shutdownInterComm();
 
+    /**
+     * Conjunto de estado de los drones mapeados por id, donde se puede setear los valores de mi estado para difundir y
+     * consultar el estado de los demás drones
+     */
     std::map<int, DroneState*> droneStates;
 
 private:
@@ -39,8 +61,8 @@ private:
     MessageHandler messsageHandler;
     long lastStateSend = 0;
     Broadcaster broadcaster;
-    int stateSendLapse; //ToDo Parametrizar
-    int stateExpireLapse; //ToDo Parametrizar
+    int stateSendLapse;
+    int stateExpireLapse;
 
     long runningTime;
     std::map<int, long> droneTimestamps;
