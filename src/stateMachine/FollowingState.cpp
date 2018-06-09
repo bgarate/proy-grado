@@ -37,7 +37,7 @@ std::string FollowingState::getName() {
 void FollowingState::prepare() {
     control->getSystemManager()->Disable<PadLandingSystem>();
     control->getSystemManager()->Enable<FollowerSystem>();
-    control->getSystemManager()->Disable<MarkerTrackerSystem>();
+    control->getSystemManager()->Enable<MarkerTrackerSystem>();
     control->getSystemManager()->Enable<BatterySystem>();
 }
 

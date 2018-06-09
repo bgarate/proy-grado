@@ -77,6 +77,7 @@ FollowCommand Follower::getCommand(double altitude, double deltaTime, const cv::
     double horizontalDistance = distance * tan(toRadians(horizontalAngle));
 
     followCommand.linearDisplacement = Point(horizontalDistance, distance, altitude);
+
     followCommand.angularDisplacement = angularDisplacement;
     followCommand.outputDisplacement = getDisplacement(distance, deltaTime);
     followCommand.outputRotation = getRotation(horizontalAngle, deltaTime);

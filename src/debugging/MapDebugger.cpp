@@ -244,13 +244,18 @@ void MapDebugger::DrawPositionHistory() {
 
 void MapDebugger::DrawDrones(DroneState *drone, int myid){
 
+    if(drone->current_task() == DroneState_CurrentTask::DroneState_CurrentTask_FOLLOWING){
+        cairo_set_source_rgb(cr, 1, 0, 1);
+        cairo_arc(cr, GetX(drone->followed_position().x()), GetY(drone->followed_position().y()), GetScaleX(0.15ut), 0, M_PI*2);
+        cairo_fill(cr);
+    }
+
     if(drone->drone_id() == myid) {
         DrawPositionHistory();
         cairo_set_source_rgb(cr, 0, 1, 0);
     } else {
         cairo_set_source_rgb (cr, 0.75, 0.75, 0.75);
     }
-
 
     cairo_save(cr);
 
