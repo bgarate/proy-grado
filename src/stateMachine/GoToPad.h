@@ -56,7 +56,7 @@ protected:
             if(hal->getState() == State::Landed){
                 bodyInfo.landedInPad = true;
             }
-        } if(landingCommand.state == LandingState::Inactive || landingCommand.state == LandingState::Lost) {
+        } if(true){//landingCommand.state == LandingState::Inactive || landingCommand.state == LandingState::Lost) {
 
             visualDebugger->setSubStatus("going-to-pad locating");
 
@@ -73,7 +73,7 @@ protected:
             hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (command.Gaz * 100));
 
             std::cout << std::abs(command.ForwardSpeed)+std::abs(command.LateralSpeed)+std::abs(command.Gaz+command.YawSpeed) << std::endl;
-            if (std::abs(command.ForwardSpeed)+std::abs(command.LateralSpeed)+std::abs(command.Gaz+command.YawSpeed) < 0.1){
+            if (true){//std::abs(command.ForwardSpeed)+std::abs(command.LateralSpeed)+std::abs(command.Gaz+command.YawSpeed) < 0.1){
 
                 hal->setCameraTilt(Camera::Bottom);
                 control->getSystemManager()->Enable<PadLandingSystem>();

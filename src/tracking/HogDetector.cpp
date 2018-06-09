@@ -25,7 +25,7 @@ void HogDetector::detect(std::shared_ptr<cv::Mat> frame) {
     else
         resizedFrame = *frame;
 
-    hog.detectMultiScale(resizedFrame, found, 1, cv::Size(4, 4), cv::Size(32, 32), 1.05, 1);
+    hog.detectMultiScale(resizedFrame, found, 1, cv::Size(6, 6), cv::Size(32, 32), 1.1);
 
     foundTargets.clear();
     for (cv::Rect &t : found)

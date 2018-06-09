@@ -325,7 +325,8 @@ void Brain::loop() {
             break;
         }
 
-        usleep(config->Get(ConfigKeys::Body::SleepDelay));
+        usleep(100000);
+        //usleep(config->Get(ConfigKeys::Body::SleepDelay));
     }
 }
 

@@ -29,7 +29,8 @@ void CascadeDetector::detect(std::shared_ptr<cv::Mat> frame) {
     if(SCALE_FACTOR != 1)
         cv::resize(resizedFrame, resizedFrame, cv::Size(),SCALE_FACTOR, SCALE_FACTOR);
 
-    cascade.detectMultiScale(resizedFrame, found, 1.05, 14, 0, cv::Size(20,60),cv::Size(400,1200));
+    //cascade.detectMultiScale(resizedFrame, found, 1.1, 14, 0, cv::Size(20,60),cv::Size(400,1200));
+    cascade.detectMultiScale(resizedFrame, found, 1.1, 4, 0, cv::Size(20,40),cv::Size(400,1200));
     //cascade.detectMultiScale(resizedFrame, found, 1.1, 4, 0, cv::Size(40,120),cv::Size(400,1200));
     //cascade.detectMultiScale(resizedFrame, found, 1.1, 8, 0, cv::Size(40,120),cv::Size(400,1200));
     //cascade.detectMultiScale(resizedFrame, found, 2, 14, 0, cv::Size(40,120),cv::Size(400,1200));

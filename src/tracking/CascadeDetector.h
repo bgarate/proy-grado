@@ -17,7 +17,7 @@ public:
 private:
     std::vector<cv::Rect2d> foundTargets;
     cv::CascadeClassifier cascade;
-    const float SCALE_FACTOR = 1;
+    const float SCALE_FACTOR = 0.75;
 };
 
 

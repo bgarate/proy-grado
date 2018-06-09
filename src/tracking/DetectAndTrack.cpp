@@ -47,12 +47,12 @@ std::vector<Track> DetectAndTrack::update(std::shared_ptr<cv::Mat> frame) {
             std::copy(accumulatedFound.begin(), accumulatedFound.end(), std::back_inserter(detectedAndKept));
 
             std::vector<cv::Rect2d> filteredRects;
-            filter_rects(detectedAndKept, tracksToKeep.size(), filteredRects);
+            //filter_rects(detectedAndKept, tracksToKeep.size(), filteredRects);
 
-            tracker->setTargets(filteredRects, frame);
+            tracker->setTargets(detectedAndKept, frame);
 
             int oldTrackingCount = trackCount;
-            tracks = updateDetections(filteredRects);
+            tracks = updateDetections(detectedAndKept);
 
             Logger::logDebug("%u new detections. %u objects kept. %u resulting objects. %u new tracks.") <<
                                                                                    accumulatedFound.size()

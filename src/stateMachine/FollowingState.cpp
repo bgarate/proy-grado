@@ -17,16 +17,17 @@ void FollowingState::internalStep(double deltaTime) {
 
     hal->setCameraTilt(Camera::Front);
 
-    if(bodyInfo.intruderDetected) {
+    NavigationCommand command;
 
-        NavigationCommand command = bodyInfo.FollowDetectionCommand;
+    if(bodyInfo.intruderDetected)
+        command = bodyInfo.FollowDetectionCommand;
 
-        visualDebugger->setNavigationCommand(command);
-        hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (command.Gaz * 100));
+    visualDebugger->setNavigationCommand(command);
+    hal->move((int)(command.LateralSpeed * 100), (int) (command.ForwardSpeed * 100), (int) (command.YawSpeed * 100), (int) (command.Gaz * 100));
 
-        bodyInfo.ExecutedCommand = command;
+    bodyInfo.ExecutedCommand = command;
 
-    }
+
 }
 
 std::string FollowingState::getName() {
