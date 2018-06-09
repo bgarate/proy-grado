@@ -47,12 +47,12 @@ std::vector<Track> DetectAndTrack::update(std::shared_ptr<cv::Mat> frame) {
             std::copy(accumulatedFound.begin(), accumulatedFound.end(), std::back_inserter(detectedAndKept));
 
             std::vector<cv::Rect2d> filteredRects;
-            //filter_rects(detectedAndKept, tracksToKeep.size(), filteredRects);
+            filter_rects(detectedAndKept, tracksToKeep.size(), filteredRects);
 
-            tracker->setTargets(detectedAndKept, frame);
+            tracker->setTargets(filteredRects, frame);
 
             int oldTrackingCount = trackCount;
-            tracks = updateDetections(detectedAndKept);
+            tracks = updateDetections(filteredRects);
 
             Logger::logDebug("%u new detections. %u objects kept. %u resulting objects. %u new tracks.") <<
                                                                                    accumulatedFound.size()
@@ -108,16 +108,14 @@ void DetectAndTrack::filter_rects(std::vector<cv::Rect2d> &candidates, unsigned 
 
     std::vector<unsigned int> toRemove;
 
-    while(!sortedCandidates.empty()){
+    while(!sortedCandidates.empty()) {
 
         AreaRect selected = sortedCandidates.back();
         cv::Rect rectToKeep = selected.rect;
-        bool isFromNewTrack = !selected.isPreviousTrack;
-        toRemove.push_back(sortedCandidates.size()-1);
 
-        unsigned int indexToRemove = 0;
+        toRemove.push_back(sortedCandidates.size() - 1);
 
-        for(unsigned int i = 0; i < sortedCandidates.size() - 1; i++) {
+        for (unsigned int i = 0; i < sortedCandidates.size() - 1; i++) {
 
             AreaRect r = sortedCandidates.at(i);
 
@@ -129,37 +127,20 @@ void DetectAndTrack::filter_rects(std::vector<cv::Rect2d> &candidates, unsigned 
             double width = std::max(0.0, xx2 - xx1 + 1);
             double heigth = std::max(0.0, yy2 - yy1 + 1);
 
-            double overlap = (width*heigth)/std::min(selected.area,r.area);
+            double overlap = (width * heigth) / std::min(selected.area, r.area);
 
-
-            if(overlap > KEEP_TRACK_OVERLAP_THRESHOLD){
-                toRemove.push_back(indexToRemove);
-                if(isFromNewTrack != r.isPreviousTrack) {
-                    isFromNewTrack = false;
-                    rectToKeep = r.isPreviousTrack ? rectToKeep : r.rect;
-                } else {
-                    if(r.rect.width * r.rect.height < selected.rect.height * selected.rect.width)
-                        rectToKeep = r.rect;
-                }
-
-            } else {
-                indexToRemove++;
+            if (overlap > KEEP_TRACK_OVERLAP_THRESHOLD) {
+                toRemove.push_back(i);
             }
         }
 
-        if(indexToRemove>0)
-            objects.push_back(rectToKeep);
+        objects.push_back(rectToKeep);
 
-        for(unsigned int j : toRemove)
+        for (unsigned int j : toRemove)
             sortedCandidates.erase(sortedCandidates.begin() + j);
 
         toRemove.clear();
-
-
     }
-
-    for(AreaRect &c : sortedCandidates)
-        objects.push_back(c.rect);
 
 }
 
