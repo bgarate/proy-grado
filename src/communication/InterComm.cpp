@@ -28,10 +28,11 @@ void InterComm::setupInterComm(Config* config, bool active){
         this->id = -1;
     }
     this->broadcastPort = config->Get(ConfigKeys::Communications::BroadcastPort);
+    this->broadcastLocalIp = config->Get(ConfigKeys::Communications::BroadcastLocalIp);
     this->stateSendLapse = config->Get(ConfigKeys::Communications::StateSendLapse);
     this->stateExpireLapse = config->Get(ConfigKeys::Communications::StateExpireLapse);
 
-    broadcaster.setup(broadcastPort);
+    broadcaster.setup(broadcastPort, broadcastLocalIp);
 
     if(active) {
 

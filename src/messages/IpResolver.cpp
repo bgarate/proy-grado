@@ -23,7 +23,7 @@ boost::asio::ip::address_v4 IpResolver::resolve_ip(bool includeLoopback, std::st
 
         tmpAddrPtr= ((struct sockaddr_in *)ifa->ifa_addr)->sin_addr;
 
-        if((includeLoopback || std::string(ifa->ifa_name) != "lo") &&
+        if((includeLoopback || std::string(ifa->ifa_name).substr(0,2) != "lo") &&
                 (interface == "" || interface == std::string(ifa->ifa_name))) {
 
             boost::asio::ip::address_v4::bytes_type bytes;
@@ -65,7 +65,7 @@ boost::asio::ip::address_v4 IpResolver::resolve_broadcast(bool includeLoopback, 
 
         tmpAddrPtr= ((struct sockaddr_in *)ifa->ifa_ifu.ifu_broadaddr)->sin_addr;
 
-        if((includeLoopback || std::string(ifa->ifa_name) != "lo") &&
+        if((includeLoopback || std::string(ifa->ifa_name).substr(0,2) != "lo") &&
            (interface == "" || interface == std::string(ifa->ifa_name))) {
 
             boost::asio::ip::address_v4::bytes_type bytes;

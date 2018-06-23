@@ -28,6 +28,7 @@ void ConfigDefaults::SetDefaults(Config* config) {
     config->Set(ConfigKeys::Drone::DistortionCoefficients, cv::Mat(5,1,CV_64F,distortionCoefficients));
 
     config->Set(ConfigKeys::Communications::BroadcastPort, 11501);
+    config->Set(ConfigKeys::Communications::BroadcastLocalIp, std::string(""));
     config->Set(ConfigKeys::Communications::StateSendLapse, 300);
     config->Set(ConfigKeys::Communications::StateExpireLapse, 5000);
 

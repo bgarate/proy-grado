@@ -11,16 +11,35 @@
 
 namespace asio = boost::asio;
 
-void Broadcaster::setup(unsigned short port) {
+void Broadcaster::setup(unsigned short port, std::string ip) {
     socket = new udp::socket(service);
 
     socket->open(udp::v4());
     socket->set_option(udp::socket::reuse_address(true));
     socket->set_option(asio::socket_base::broadcast(true));
 
-    IpResolver ipr;
-    endpoint = udp::endpoint(ipr.resolve_broadcast(), port);
-    socket->bind(udp::endpoint(asio::ip::address_v4::any(),port));
+    asio::ip::address_v4 address;
+    if(false){//local
+
+        IpResolver ipr;
+        endpoint = udp::endpoint(ipr.resolve_broadcast(false), port);
+
+        /*if(ip.length() > 0) { // USA lo: SÓLO PARA TESTING LOCAL!
+            address = asio::ip::address_v4::from_string(ip);
+        }*/
+
+        //endpoint = udp::endpoint(asio::ip::address_v4::from_string("192.168.1.255"), port);
+
+        address = asio::ip::address_v4::from_string(ip);
+
+    }else{
+        IpResolver ipr;
+        endpoint = udp::endpoint(ipr.resolve_broadcast(false), port);
+
+        address = asio::ip::address_v4::any();
+    }
+
+    socket->bind(udp::endpoint(address, port));
 
     this->port = port;
 }

@@ -56,6 +56,7 @@ private:
     std::string name;
     unsigned int id;
     int broadcastPort;
+    std::string broadcastLocalIp;
     boost::asio::ip::address_v4 ip;
 
     MessageHandler messsageHandler;

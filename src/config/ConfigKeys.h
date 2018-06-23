@@ -26,6 +26,7 @@ struct ConfigKeys {
 
     struct Communications {
         CONFIG_KEY(Communications, BroadcastPort, int)
+        CONFIG_KEY(Communications, BroadcastLocalIp, std::string)
         CONFIG_KEY(Communications, StateSendLapse, int);
         CONFIG_KEY(Communications, StateExpireLapse, int);
     };

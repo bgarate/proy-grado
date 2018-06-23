@@ -16,7 +16,7 @@ class Broadcaster {
 public:
     ~Broadcaster();
     void broadcast(Message msg);
-    void setup(unsigned short port);
+    void setup(unsigned short port, std::string ip);
     Message receive();
 
     bool messageAvailable();

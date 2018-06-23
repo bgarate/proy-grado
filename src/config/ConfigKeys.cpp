@@ -27,6 +27,7 @@ return fov/aspect;
 })
 
 DEFINE_CONFIG_KEY(Communications, BroadcastPort, int)
+DEFINE_CONFIG_KEY(Communications, BroadcastLocalIp, std::string)
 DEFINE_CONFIG_KEY(Communications, StateSendLapse, int);
 DEFINE_CONFIG_KEY(Communications, StateExpireLapse, int);
 
