@@ -87,6 +87,7 @@ void Body::loop() {
         //bodyComm->bodyCommStep(runningTime, deltaTime);
 
         if (frame != NULL) {
+
             visualDebugger.setFrame(frame);
         }
 
@@ -102,7 +103,6 @@ void Body::loop() {
         BodyInfo info = shared->getBodyInfo();
         //navigationDebugger.Run(info.ExecutedCommand, info.CurrentTargetId, info.PredictedFuturePosition,
         //                        info.ProjectedPositionOnPath, info.TargetOnPath);
-
 
         visualDebugger.setSystemsState(Systems->GetSystems());
         int key = visualDebugger.show(deltaTime);
