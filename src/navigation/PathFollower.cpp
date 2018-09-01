@@ -33,8 +33,9 @@ NavigationCommand PathFollower::update(std::vector<Marker> markers, double altit
         timeSinceLastMarkerSeen += deltaTime;
 
         if(timeSinceLastMarkerSeen > 1000000) {
-            return NavigationCommand(0,0,lastYawSign, altitude);
+            return NavigationCommand(0,0,lastYawSign, 0);
         } else {
+            lastCommand.Gaz = 0;
             return lastCommand;
         }
 
