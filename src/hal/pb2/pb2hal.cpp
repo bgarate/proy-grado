@@ -524,7 +524,7 @@ class Pb2hal: public Hal {
 	}
 
 
-	/************Movimiento*************/ 
+	/************Movimiento*************/
 
 	 void move(int roll, int pitch, int yaw, int gaz){
 
