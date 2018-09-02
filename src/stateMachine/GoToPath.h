@@ -47,6 +47,7 @@ protected:
     void internalStep(double deltaTime) override {
         if(!takingOff){
             hal->takeoff();
+            hal->setCameraTilt(Camera::Middle);
             takingOff = true;
             return;
         }
